@@ -17,7 +17,7 @@ This file records the pre-refactor repository baseline and the preservation/migr
 
 | Original Path | Artifact Type | Preservation Decision | Materialized Historical Target |
 |---|---|---|---|
-| `README.md` | Markdown | Preserve academic content, especially authors, affiliations, ORCID links, research context, publication provenance and evolving-model note | Root README redesigned model-centrically; publication/history content preserved in dedicated records |
+| `README.md` | Markdown | Preserve academic content, especially authors, affiliations, ORCID links, research context, publication provenance and evolving-model note | Exact original preserved at `releases/v1.0.0/README.original.md`; root README redesigned model-centrically while retaining visible academic credibility |
 | `models/CM-PharmE-1.0/CM-PharmE-1.0.drawio` | Draw.io source | Preserve byte-for-byte | `releases/v1.0.0/model/CM-PharmE-1.0.drawio` |
 | `models/CM-PharmE-1.0/CM-PharmE-1.0.owl` | OWL/RDF/XML | Preserve byte-for-byte; do not treat as cleaned canonical ontology | `releases/v1.0.0/ontology/CM-PharmE-1.0.owl` |
 | `models/CM-PharmE-1.0/CM-PharmE-1.0.png` | PNG | Preserve byte-for-byte | `releases/v1.0.0/model/CM-PharmE-1.0.png` |
@@ -42,6 +42,7 @@ This file records the pre-refactor repository baseline and the preservation/migr
 - [x] B0 — Baseline artifacts inventoried
 - [x] B1 — Target foundation structure created
 - [x] B1 — Historical release `v1.0.0` materialized
+- [x] B1 — Exact original v1.0 scholarly README preserved inside the release snapshot
 - [x] B1 — Root README redesigned while retaining authors/affiliations/ORCID/publication visibility
 - [x] B1 — `CHANGELOG.md` and `CITATION.cff` added
 - [x] B1 — Versioning and lifecycle policies added
