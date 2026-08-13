@@ -1,0 +1,12 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix meta: <https://w3id.org/cm-pharme/meta/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+<https://w3id.org/cm-pharme/ontology> a owl:Ontology ;
+    dcterms:description "Canonical formal ontology for the B3 development cycle, re-engineered from the CM-PharmE registries and v1.0.0 conceptual model." ;
+    dcterms:identifier "CM-PharmE-B3" ;
+    dcterms:source <https://github.com/ArazSaieArasi3/CM-PharmE> ;
+    dcterms:title "CM-PharmE Formal Ontology" ;
+    owl:versionIRI <https://w3id.org/cm-pharme/ontology/dev/b3> ;
+    owl:versionInfo "B3 development ontology derived from CM-PharmE v1.0.0" ;
+    meta:status "development" .
