@@ -34,6 +34,18 @@ This file records the pre-refactor repository baseline and the preservation/migr
 6. Every migrated/reclassified artifact remains traceable to its original path and baseline commit.
 7. Generated ontology/documentation distributions should not become independent manual sources of truth.
 
+## B2 Semantic Inventory Result
+
+- 39 canonical concepts from 40 graphical concept occurrences
+- 40 canonical relations from 41 labeled semantic relation occurrences
+- 5 domains
+- 39 per-concept pages
+- 40 per-relation pages
+- 5 per-domain pages
+- Concept↔Domain and Concept↔Relation traceability mappings
+- Frozen v1.0 concept/relation/domain registries
+- Structural extraction audit with explicit source-model review flags
+
 ## Batch Status
 
 - [x] B0 — Baseline commit recorded
@@ -47,8 +59,13 @@ This file records the pre-refactor repository baseline and the preservation/migr
 - [x] B1 — `CHANGELOG.md` and `CITATION.cff` added
 - [x] B1 — Versioning and lifecycle policies added
 - [x] B1 — Publication registry and v1.0.0 publication record added
-- [ ] B2 — Concept/relation/domain registries created
-- [ ] B2 — Current/vNext conceptual model documented
+- [x] B2 — Canonical concept/relation/domain registries created
+- [x] B2 — Stable IDs assigned to concepts, relations and domains
+- [x] B2 — One page per canonical concept, relation and domain created
+- [x] B2 — Concept↔Domain and Concept↔Relation mappings created
+- [x] B2 — v1.0 release semantic inventory and frozen registries created
+- [x] B2 — Current model baseline documented independently from manuscript revision numbers
+- [x] B2 — Structural extraction audit and descriptive statistics recorded
 - [ ] B3 — Formal ontology re-engineered
 - [ ] B4 — Evaluation and methodology packages completed
 - [ ] B5 — Generators, validation, final audit and release workflow completed
