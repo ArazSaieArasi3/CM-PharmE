@@ -1,0 +1,679 @@
+<?xml version='1.0' encoding='utf-8'?>
+<rdf:RDF xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xml:base="http://example.org/cm-pharme/1.0">
+
+  <owl:Ontology rdf:about="http://example.org/cm-pharme/1.0">
+    <owl:versionInfo>1.0</owl:versionInfo><rdfs:comment>Auto-converted from draw.io XML on 2025-09-05T16:52:26.991886Z</rdfs:comment>
+  </owl:Ontology>
+
+  <owl:Class rdf:about="#Pharmaceutical_Enterprise">
+    <rdfs:label>Pharmaceutical Enterprise</rdfs:label>
+    <rdfs:comment>stereotype: kind</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#Organizational_Unit_Structure">
+    <rdfs:label>Organizational Unit Structure</rdfs:label>
+    <rdfs:comment>stereotype: kind</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#Organizational_Stakeholder">
+    <rdfs:label>Organizational Stakeholder</rdfs:label>
+    <rdfs:comment>stereotype: role</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#Regulatory_Oversight">
+    <rdfs:label>Regulatory Oversight</rdfs:label>
+    <rdfs:comment>stereotype: relator</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#Enterprise_Capability">
+    <rdfs:label>Enterprise Capability</rdfs:label>
+    <rdfs:comment>stereotype: mode</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#Strategic_Resource_Allocation">
+    <rdfs:label>Strategic Resource Allocation</rdfs:label>
+    <rdfs:comment>stereotype: mode</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#Clinical_Workforce">
+    <rdfs:label>Clinical Workforce</rdfs:label>
+    <rdfs:comment>stereotype: role</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#Ecosystem_Actor">
+    <rdfs:label>Ecosystem Actor</rdfs:label>
+    <rdfs:comment>stereotype: role</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#Ecosystem_Relationship">
+    <rdfs:label>Ecosystem Relationship</rdfs:label>
+    <rdfs:comment>stereotype: relator</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#Ecosystem_Demand_Signal">
+    <rdfs:label>Ecosystem Demand Signal</rdfs:label>
+    <rdfs:comment>stereotype: mode</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#Ecosystem_Supply_Capacity">
+    <rdfs:label>Ecosystem Supply Capacity</rdfs:label>
+    <rdfs:comment>stereotype: mode</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#Public-Private_Partnership_Structure">
+    <rdfs:label>Public-Private Partnership Structure</rdfs:label>
+    <rdfs:comment>stereotype: kind</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#Ecosystem_Governance_Entity">
+    <rdfs:label>Ecosystem Governance Entity</rdfs:label>
+    <rdfs:comment>stereotype: kind</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#Strategic_Partnership_Agreement">
+    <rdfs:label>Strategic Partnership Agreement</rdfs:label>
+    <rdfs:comment>stereotype: relator</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#Pharmaceutical_Business_Process">
+    <rdfs:label>Pharmaceutical Business Process</rdfs:label>
+    <rdfs:comment>stereotype: perdurant</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#Clinical_Activity_Sequence">
+    <rdfs:label>Clinical Activity Sequence</rdfs:label>
+    <rdfs:comment>stereotype: perdurant</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#Individual_Patient">
+    <rdfs:label>Individual Patient</rdfs:label>
+    <rdfs:comment>stereotype: role</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#Clinical_Pathway">
+    <rdfs:label>Clinical Pathway</rdfs:label>
+    <rdfs:comment>stereotype: relator</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#Prescribing_Physician">
+    <rdfs:label>Prescribing Physician</rdfs:label>
+    <rdfs:comment>stereotype: role</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#Healthcare_Provider_Organization">
+    <rdfs:label>Healthcare Provider Organization</rdfs:label>
+    <rdfs:comment>stereotype: kind</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#Healthcare_Provider">
+    <rdfs:label>Healthcare Provider</rdfs:label>
+    <rdfs:comment>stereotype: role</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#Adverse_Event_Reporting_Procedure">
+    <rdfs:label>Adverse Event Reporting Procedure</rdfs:label>
+    <rdfs:comment>stereotype: perdurant</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#Regulatory_Authority_Entity">
+    <rdfs:label>Regulatory Authority Entity</rdfs:label>
+    <rdfs:comment>stereotype: kind</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#Regulatory_Authority_Role">
+    <rdfs:label>Regulatory Authority Role</rdfs:label>
+    <rdfs:comment>stereotype: role</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#Enterprise_Governance_Relator">
+    <rdfs:label>Enterprise Governance Relator</rdfs:label>
+    <rdfs:comment>stereotype: relator</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#Governance_Policy_Framework">
+    <rdfs:label>Governance Policy Framework</rdfs:label>
+    <rdfs:comment>stereotype: mode</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#Compliance_Requirement">
+    <rdfs:label>Compliance Requirement</rdfs:label>
+    <rdfs:comment>stereotype: mode</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#Risk_Management_Activity">
+    <rdfs:label>Risk Management Activity</rdfs:label>
+    <rdfs:comment>stereotype: perdurant</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#Digital_Health_Platform_Component">
+    <rdfs:label>Digital Health Platform Component</rdfs:label>
+    <rdfs:comment>stereotype: kind</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#AI-Enabled_Clinical_Decision_Support_System">
+    <rdfs:label>AI-Enabled Clinical Decision Support System</rdfs:label>
+    <rdfs:comment>stereotype: kind</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#Blockchain-Based_Supply_Chain_Ledger">
+    <rdfs:label>Blockchain-Based Supply Chain Ledger</rdfs:label>
+    <rdfs:comment>stereotype: kind</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#Supply_Chain_Relationship">
+    <rdfs:label>Supply Chain Relationship</rdfs:label>
+    <rdfs:comment>stereotype: relator</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#Electronic_Health_Record_System">
+    <rdfs:label>Electronic Health Record System</rdfs:label>
+    <rdfs:comment>stereotype: kind</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#Patient_Record_Quality">
+    <rdfs:label>Patient Record Quality</rdfs:label>
+    <rdfs:comment>stereotype: mode</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#Telemedicine_Service_Channel">
+    <rdfs:label>Telemedicine Service Channel</rdfs:label>
+    <rdfs:comment>stereotype: kind</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#0..*">
+    <rdfs:label>0..*</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#1">
+    <rdfs:label>1</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#0..*">
+    <rdfs:label>0..*</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#1">
+    <rdfs:label>1</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#Enterprise_Governance_Relator">
+    <rdfs:label>Enterprise Governance Relator</rdfs:label>
+    <rdfs:comment>stereotype: mode</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#1..*">
+    <rdfs:label>1..*</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#1">
+    <rdfs:label>1</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#1">
+    <rdfs:label>1</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#0..*">
+    <rdfs:label>0..*</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#is_part_ofcomponentOf">
+    <rdfs:label>is part ofcomponentOf</rdfs:label>
+    <rdfs:comment>stereotype: componentOf</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#1">
+    <rdfs:label>1</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#0..*">
+    <rdfs:label>0..*</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#1">
+    <rdfs:label>1</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#0..*">
+    <rdfs:label>0..*</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#1..*">
+    <rdfs:label>1..*</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#1">
+    <rdfs:label>1</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#0..*">
+    <rdfs:label>0..*</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#0..*">
+    <rdfs:label>0..*</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#0..*">
+    <rdfs:label>0..*</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#1">
+    <rdfs:label>1</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#1">
+    <rdfs:label>1</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#0..*">
+    <rdfs:label>0..*</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#is_part_of_acomponentOf">
+    <rdfs:label>is part of acomponentOf</rdfs:label>
+    <rdfs:comment>stereotype: componentOf</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#1..*">
+    <rdfs:label>1..*</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#2..*">
+    <rdfs:label>2..*</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#0..*">
+    <rdfs:label>0..*</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#1..*">
+    <rdfs:label>1..*</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#1">
+    <rdfs:label>1</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#1..*">
+    <rdfs:label>1..*</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#is_part_ofcomponentOf">
+    <rdfs:label>is part ofcomponentOf</rdfs:label>
+    <rdfs:comment>stereotype: componentOf</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#1..*">
+    <rdfs:label>1..*</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#0..*">
+    <rdfs:label>0..*</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#1..*">
+    <rdfs:label>1..*</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#0..*">
+    <rdfs:label>0..*</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#0..*">
+    <rdfs:label>0..*</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#1">
+    <rdfs:label>1</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#0..*">
+    <rdfs:label>0..*</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#1..*">
+    <rdfs:label>1..*</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#0..*">
+    <rdfs:label>0..*</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#1">
+    <rdfs:label>1</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#1..*">
+    <rdfs:label>1..*</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#1">
+    <rdfs:label>1</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#1">
+    <rdfs:label>1</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#0..*">
+    <rdfs:label>0..*</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#0..*">
+    <rdfs:label>0..*</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#1">
+    <rdfs:label>1</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#0..*">
+    <rdfs:label>0..*</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#0..*">
+    <rdfs:label>0..*</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#0..*">
+    <rdfs:label>0..*</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#1">
+    <rdfs:label>1</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#2..*">
+    <rdfs:label>2..*</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#1">
+    <rdfs:label>1</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#0..*">
+    <rdfs:label>0..*</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#1">
+    <rdfs:label>1</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#0..*">
+    <rdfs:label>0..*</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#1">
+    <rdfs:label>1</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#1..*">
+    <rdfs:label>1..*</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#1">
+    <rdfs:label>1</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#1">
+    <rdfs:label>1</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#1..*">
+    <rdfs:label>1..*</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#1">
+    <rdfs:label>1</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#0..*">
+    <rdfs:label>0..*</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#1">
+    <rdfs:label>1</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#1">
+    <rdfs:label>1</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#is_part_ofcomponentOf">
+    <rdfs:label>is part ofcomponentOf</rdfs:label>
+    <rdfs:comment>stereotype: componentOf</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#1">
+    <rdfs:label>1</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#0..*">
+    <rdfs:label>0..*</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#Pharmacovigilance_Requirement">
+    <rdfs:label>Pharmacovigilance Requirement</rdfs:label>
+    <rdfs:comment>stereotype: mode</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#Post-Market_Surveillance_Activity">
+    <rdfs:label>Post-Market Surveillance Activity</rdfs:label>
+    <rdfs:comment>stereotype: perdurant</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#Real-World_Evidence_Platform">
+    <rdfs:label>Real-World Evidence Platform</rdfs:label>
+    <rdfs:comment>stereotype: kind</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#0..*">
+    <rdfs:label>0..*</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#0..*">
+    <rdfs:label>0..*</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#0..*">
+    <rdfs:label>0..*</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#1">
+    <rdfs:label>1</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#0..*">
+    <rdfs:label>0..*</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#1">
+    <rdfs:label>1</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#0..*">
+    <rdfs:label>0..*</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#1">
+    <rdfs:label>1</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#1">
+    <rdfs:label>1</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#0..*">
+    <rdfs:label>0..*</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#1">
+    <rdfs:label>1</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#0..*">
+    <rdfs:label>0..*</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#0..*">
+    <rdfs:label>0..*</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#1">
+    <rdfs:label>1</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#0..*">
+    <rdfs:label>0..*</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#1">
+    <rdfs:label>1</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#Service_Offering_Specification">
+    <rdfs:label>Service Offering Specification</rdfs:label>
+    <rdfs:comment>stereotype: kind</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#0..*">
+    <rdfs:label>0..*</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#0..*">
+    <rdfs:label>0..*</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#1">
+    <rdfs:label>1</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#1..*">
+    <rdfs:label>1..*</rdfs:label>
+  </owl:Class>
+
+  <owl:ObjectProperty rdf:about="#relatedto">
+    <rdfs:label>relatedTo</rdfs:label>
+    <rdfs:domain rdf:resource="#Ecosystem_Demand_Signal" />
+    <rdfs:range rdf:resource="#Ecosystem_Demand_Signal" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#governsmaterial">
+    <rdfs:label>governsmaterial</rdfs:label>
+    <rdfs:domain rdf:resource="#Pharmaceutical_Enterprise" />
+    <rdfs:range rdf:resource="#Organizational_Stakeholder" />
+    <rdfs:comment>stereotype: material</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#isMediatedByMediation">
+    <rdfs:label>is mediated by mediation</rdfs:label>
+    <rdfs:domain rdf:resource="#Organizational_Stakeholder" />
+    <rdfs:range rdf:resource="#Enterprise_Governance_Relator" />
+    <rdfs:comment>stereotype: mediation</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#relatedto2">
+    <rdfs:label>relatedTo</rdfs:label>
+    <rdfs:domain rdf:resource="#Organizational_Unit_Structure" />
+    <rdfs:range rdf:resource="#Pharmaceutical_Enterprise" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#characterizesCharacterization">
+    <rdfs:label>characterizes characterization</rdfs:label>
+    <rdfs:domain rdf:resource="#Enterprise_Capability" />
+    <rdfs:range rdf:resource="#Pharmaceutical_Enterprise" />
+    <rdfs:comment>stereotype: characterization</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#characterizesCharacterization2">
+    <rdfs:label>characterizes characterization</rdfs:label>
+    <rdfs:domain rdf:resource="#Strategic_Resource_Allocation" />
+    <rdfs:range rdf:resource="#Organizational_Unit_Structure" />
+    <rdfs:comment>stereotype: characterization</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#specializesgeneralization">
+    <rdfs:label>specializesgeneralization</rdfs:label>
+    <rdfs:domain rdf:resource="#Clinical_Workforce" />
+    <rdfs:range rdf:resource="#Organizational_Stakeholder" />
+    <rdfs:comment>stereotype: generalization</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#isMediatedByMediation2">
+    <rdfs:label>is mediated by mediation</rdfs:label>
+    <rdfs:domain rdf:resource="#Ecosystem_Actor" />
+    <rdfs:range rdf:resource="#Ecosystem_Relationship" />
+    <rdfs:comment>stereotype: mediation</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#fulfillsmaterial">
+    <rdfs:label>fulfillsmaterial</rdfs:label>
+    <rdfs:domain rdf:resource="#Service_Offering_Specification" />
+    <rdfs:range rdf:resource="#Ecosystem_Demand_Signal" />
+    <rdfs:comment>stereotype: material</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#characterizesCharacterization3">
+    <rdfs:label>characterizes characterization</rdfs:label>
+    <rdfs:domain rdf:resource="#Ecosystem_Actor" />
+    <rdfs:range rdf:resource="#Ecosystem_Supply_Capacity" />
+    <rdfs:comment>stereotype: characterization</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#relatedto3">
+    <rdfs:label>relatedTo</rdfs:label>
+    <rdfs:domain rdf:resource="#Public-Private_Partnership_Structure" />
+    <rdfs:range rdf:resource="#Ecosystem_Governance_Entity" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#mediatesMediation">
+    <rdfs:label>mediates mediation</rdfs:label>
+    <rdfs:domain rdf:resource="#Ecosystem_Actor" />
+    <rdfs:range rdf:resource="#Strategic_Partnership_Agreement" />
+    <rdfs:comment>stereotype: mediation</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#participatesInAssociation">
+    <rdfs:label>participates in association</rdfs:label>
+    <rdfs:domain rdf:resource="#Pharmaceutical_Business_Process" />
+    <rdfs:range rdf:resource="#Organizational_Stakeholder" />
+    <rdfs:comment>stereotype: association</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#relatedto4">
+    <rdfs:label>relatedTo</rdfs:label>
+    <rdfs:domain rdf:resource="#Clinical_Activity_Sequence" />
+    <rdfs:range rdf:resource="#Pharmaceutical_Business_Process" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#isMediatedByMediation3">
+    <rdfs:label>is mediated by mediation</rdfs:label>
+    <rdfs:domain rdf:resource="#Individual_Patient" />
+    <rdfs:range rdf:resource="#Clinical_Pathway" />
+    <rdfs:comment>stereotype: mediation</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#isMediatedByMediation4">
+    <rdfs:label>is mediated by mediation</rdfs:label>
+    <rdfs:domain rdf:resource="#Prescribing_Physician" />
+    <rdfs:range rdf:resource="#Clinical_Pathway" />
+    <rdfs:comment>stereotype: mediation</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#assignsmaterial">
+    <rdfs:label>assignsmaterial</rdfs:label>
+    <rdfs:domain rdf:resource="#Healthcare_Provider_Organization" />
+    <rdfs:range rdf:resource="#Healthcare_Provider" />
+    <rdfs:comment>stereotype: material</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#participatesInAssociation2">
+    <rdfs:label>participates in association</rdfs:label>
+    <rdfs:domain rdf:resource="#Adverse_Event_Reporting_Procedure" />
+    <rdfs:range rdf:resource="#Healthcare_Provider" />
+    <rdfs:comment>stereotype: association</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#materialRelationMaterial">
+    <rdfs:label>material relation material</rdfs:label>
+    <rdfs:domain rdf:resource="#Regulatory_Authority_Entity" />
+    <rdfs:range rdf:resource="#Regulatory_Authority_Role" />
+    <rdfs:comment>stereotype: material</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#isMediatedBymediation">
+    <rdfs:label>is mediated bymediation</rdfs:label>
+    <rdfs:domain rdf:resource="#Regulatory_Authority_Role" />
+    <rdfs:range rdf:resource="#Regulatory_Oversight" />
+    <rdfs:comment>stereotype: mediation</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#characterizescharacterization">
+    <rdfs:label>characterizescharacterization</rdfs:label>
+    <rdfs:domain rdf:resource="#Governance_Policy_Framework" />
+    <rdfs:range rdf:resource="#Regulatory_Oversight" />
+    <rdfs:comment>stereotype: characterization</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#characterizescharacterization2">
+    <rdfs:label>characterizescharacterization</rdfs:label>
+    <rdfs:domain rdf:resource="#Compliance_Requirement" />
+    <rdfs:range rdf:resource="#Governance_Policy_Framework" />
+    <rdfs:comment>stereotype: characterization</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#mitigatesmaterial">
+    <rdfs:label>mitigatesmaterial</rdfs:label>
+    <rdfs:domain rdf:resource="#Risk_Management_Activity" />
+    <rdfs:range rdf:resource="#Compliance_Requirement" />
+    <rdfs:comment>stereotype: material</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#enablesmaterial">
+    <rdfs:label>enablesmaterial</rdfs:label>
+    <rdfs:domain rdf:resource="#Digital_Health_Platform_Component" />
+    <rdfs:range rdf:resource="#Pharmaceutical_Business_Process" />
+    <rdfs:comment>stereotype: material</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#mediatesmediation">
+    <rdfs:label>mediatesmediation</rdfs:label>
+    <rdfs:domain rdf:resource="#Supply_Chain_Relationship" />
+    <rdfs:range rdf:resource="#Blockchain-Based_Supply_Chain_Ledger" />
+    <rdfs:comment>stereotype: mediation</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#recordsmaterial">
+    <rdfs:label>recordsmaterial</rdfs:label>
+    <rdfs:domain rdf:resource="#Electronic_Health_Record_System" />
+    <rdfs:range rdf:resource="#Patient_Record_Quality" />
+    <rdfs:comment>stereotype: material</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#enablesmaterial2">
+    <rdfs:label>enablesmaterial</rdfs:label>
+    <rdfs:domain rdf:resource="#Telemedicine_Service_Channel" />
+    <rdfs:range rdf:resource="#Clinical_Pathway" />
+    <rdfs:comment>stereotype: material</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#isMediatedBymediation2">
+    <rdfs:label>is mediated bymediation</rdfs:label>
+    <rdfs:domain rdf:resource="#Ecosystem_Actor" />
+    <rdfs:range rdf:resource="#Strategic_Partnership_Agreement" />
+    <rdfs:comment>stereotype: mediation</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#isMediatedBymediation3">
+    <rdfs:label>is mediated bymediation</rdfs:label>
+    <rdfs:domain rdf:resource="#Organizational_Stakeholder" />
+    <rdfs:range rdf:resource="#Enterprise_Governance_Relator" />
+    <rdfs:comment>stereotype: mediation</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#governsmaterial2">
+    <rdfs:label>governsmaterial</rdfs:label>
+    <rdfs:domain rdf:resource="#Supply_Chain_Relationship" />
+    <rdfs:range rdf:resource="#Pharmaceutical_Enterprise" />
+    <rdfs:comment>stereotype: material</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#relatedto5">
+    <rdfs:label>relatedTo</rdfs:label>
+    <rdfs:domain rdf:resource="#Clinical_Pathway" />
+    <rdfs:range rdf:resource="#Pharmaceutical_Business_Process" />
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#characterizescharacterization3">
+    <rdfs:label>characterizescharacterization</rdfs:label>
+    <rdfs:domain rdf:resource="#Patient_Record_Quality" />
+    <rdfs:range rdf:resource="#Clinical_Pathway" />
+    <rdfs:comment>stereotype: characterization</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#constraintsmaterial">
+    <rdfs:label>constraintsmaterial</rdfs:label>
+    <rdfs:domain rdf:resource="#Pharmacovigilance_Requirement" />
+    <rdfs:range rdf:resource="#Post-Market_Surveillance_Activity" />
+    <rdfs:comment>stereotype: material</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#informsmaterial">
+    <rdfs:label>informsmaterial</rdfs:label>
+    <rdfs:domain rdf:resource="#Real-World_Evidence_Platform" />
+    <rdfs:range rdf:resource="#Pharmacovigilance_Requirement" />
+    <rdfs:comment>stereotype: material</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#informsmaterial2">
+    <rdfs:label>informsmaterial</rdfs:label>
+    <rdfs:domain rdf:resource="#Real-World_Evidence_Platform" />
+    <rdfs:range rdf:resource="#Pharmaceutical_Enterprise" />
+    <rdfs:comment>stereotype: material</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#informsmaterial3">
+    <rdfs:label>informsmaterial</rdfs:label>
+    <rdfs:domain rdf:resource="#Real-World_Evidence_Platform" />
+    <rdfs:range rdf:resource="#Risk_Management_Activity" />
+    <rdfs:comment>stereotype: material</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#followsmaterial">
+    <rdfs:label>followsmaterial</rdfs:label>
+    <rdfs:domain rdf:resource="#Post-Market_Surveillance_Activity" />
+    <rdfs:range rdf:resource="#Adverse_Event_Reporting_Procedure" />
+    <rdfs:comment>stereotype: material</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#governsmaterial3">
+    <rdfs:label>governsmaterial</rdfs:label>
+    <rdfs:domain rdf:resource="#Ecosystem_Relationship" />
+    <rdfs:range rdf:resource="#Ecosystem_Governance_Entity" />
+    <rdfs:comment>stereotype: material</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#recordsmaterial2">
+    <rdfs:label>recordsmaterial</rdfs:label>
+    <rdfs:domain rdf:resource="#Electronic_Health_Record_System" />
+    <rdfs:range rdf:resource="#Individual_Patient" />
+    <rdfs:comment>stereotype: material</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#assistsmaterial">
+    <rdfs:label>assistsmaterial</rdfs:label>
+    <rdfs:domain rdf:resource="#AI-Enabled_Clinical_Decision_Support_System" />
+    <rdfs:range rdf:resource="#Clinical_Activity_Sequence" />
+    <rdfs:comment>stereotype: material</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#materialRelationMaterial2">
+    <rdfs:label>material relation material</rdfs:label>
+    <rdfs:domain rdf:resource="#Ecosystem_Relationship" />
+    <rdfs:range rdf:resource="#Service_Offering_Specification" />
+    <rdfs:comment>stereotype: material</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#engagesInmaterial">
+    <rdfs:label>engages inmaterial</rdfs:label>
+    <rdfs:domain rdf:resource="#Pharmaceutical_Enterprise" />
+    <rdfs:range rdf:resource="#Strategic_Partnership_Agreement" />
+    <rdfs:comment>stereotype: material</rdfs:comment>
+  </owl:ObjectProperty>
+
+</rdf:RDF>

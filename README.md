@@ -1,9 +1,10 @@
-> **Note:** CM-PharmE is an evolving conceptual model that will be refined and extended over time as the research progresses.
-> This repository captures version 1.0 of the model, which represents the current state of development.
-> Users should note that this version may not be complete or entirely free of limitations; future updates will incorporate improvements, extensions,
-> and corrections based on ongoing research and feedback.
+# CM-PharmE
 
-# CM-PharmE ver.1: Towards a Conceptual Model for Pharmaceutical Ecosystem with a Business-Architecture Perspective (v1.0)
+**CM-PharmE** is an evolving, versioned, ontology-grounded conceptual model and research knowledge base for the pharmaceutical ecosystem. The repository is being restructured from a single-publication snapshot into a long-lived research asset that supports conceptual modeling, ontology engineering, evaluation, data mapping, publication traceability, and future applications.
+
+> **Current stable historical release:** `v1.0.0`  
+> **Current development line:** `vNext` on `refactor/research-repository-v1`  
+> CM-PharmE is expected to evolve over time. Released artifacts remain preserved and traceable even when concepts, relations, domains, mappings, or ontology alignments are refined in later versions.
 
 ## Authors and Affiliations
 
@@ -19,56 +20,61 @@
    Department of Computer Engineering, Ra.C., Islamic Azad University, Rasht, Iran  
    [ORCID: 0000-0001-7974-1845](https://orcid.org/0000-0001-7974-1845)
 
----
+## Overview
 
-## Abstract
+Pharmaceutical ecosystems involve multi-layered interactions across organizational, regulatory, clinical, technological, and inter-organizational domains. CM-PharmE provides a coherent conceptual foundation for representing those elements and their relationships with explicit ontological grounding. The initial model was developed with a business-architecture perspective and grounded in the Unified Foundational Ontology (UFO). The repository now separates the evolving conceptual model, formal ontology, release history, evaluation evidence, mappings, publications, and future applications so that each research release can be reproduced and compared over time.
 
-Pharmaceutical ecosystems involve multi-layered interactions across organizational, regulatory, and digital domains, demanding a coherent conceptual foundation to capture their dynamics. Previous frameworks have rarely combined business architecture with ontology, leaving ecosystem-level interactions only partially represented. This study addresses these gaps by proposing a business-architecture-informed conceptual framework grounded in the Unified Foundational Ontology (UFO). Importantly, the framework positions business architecture as a bridge to enterprise architecture, ensuring that ecosystem-level conceptualization aligns with organizational structures and strategic objectives. The framework was developed through a systematic literature review (PRISMA-guided) of 17 peer-reviewed studies (2018–2025) and a qualitative thematic synthesis. It formalizes key components and relationships across domains to ensure semantic coherence and structural clarity. The proposed model contributes to advancing theory and provides a reference for ontology-based system design, strategic governance, and policy development in pharmaceutical contexts. Furthermore, the framework offers extensibility for future adaptation at both the enterprise and ecosystem levels, supporting broader applicability in digital health, regulatory alignment, and inter-organizational collaboration.
+## Model Snapshot — v1.0.0
 
----
+![CM-PharmE v1.0.0 conceptual model](releases/v1.0.0/model/CM-PharmE-1.0.png)
 
-## Published Paper
+A domain-oriented view is also preserved in the historical release: [Domains of CM-PharmE v1.0.0](releases/v1.0.0/model/Domains-of-CM-PharmE-1.0.png).
 
-[DOI / Publisher Link]()
+## Explore CM-PharmE
 
----
+| Area | Purpose |
+|---|---|
+| [Concepts](docs/concepts/index.md) | Concept registry and future one-page-per-concept documentation |
+| [Relations](docs/relations/index.md) | Relation registry, semantics, source/target, lifecycle and version history |
+| [Domains](docs/domains/index.md) | Domain definitions, membership and cross-domain relationships |
+| [Versions](docs/versions/index.md) | Stable releases, development line and reproducible snapshots |
+| [Ontology](ontology/README.md) | Formal ontology source, distributions, upper-ontology grounding and validation |
+| [Mappings](mappings/README.md) | Concept/domain/ontology/data/publication mappings and traceability |
+| [Evaluation](docs/evaluations/index.md) | Layered evaluation framework and per-release evidence |
+| [Methodology](docs/methodology/index.md) | Model-design, ontology-engineering, mapping and evaluation methods |
+| [Architecture](docs/architecture/index.md) | Layered architecture and traceability model |
+| [Publications](publications/README.md) | Scholarly publications linked to specific model releases |
+| [Applications](applications/README.md) | Applications and tools built on CM-PharmE |
 
-## Repository Contents
+## Featured Publications
 
-| File/Folder | Description |
-|-------------|-------------|
-| `CM-PharmE-1.0.drawio` | Diagram of the conceptual model in Draw.io format |
-| `docs/` | Supplementary documentation including methodology, literature review notes, and thematic synthesis details |
-| `data/` | Any datasets, ontologies, or structured information supporting the conceptual model |
-| `scripts/` | Optional scripts for model analysis, visualization, or validation |
+CM-PharmE has been developed in connection with peer-reviewed academic research. The repository keeps publication records explicitly linked to the model release used by each study.
 
----
+- **Towards a Conceptual Model for Pharmaceutical Ecosystem with a Business-Architecture Perspective** — associated with the historical `v1.0.0` model. [Publication record](publications/ieee-2025/README.md)
+- Additional journal publications and their exact model-version mappings will be added as their repository metadata is finalized.
 
-## License
+> Publication status, DOI, publisher links, and other bibliographic identifiers are recorded only when verified; the repository does not infer missing bibliographic metadata.
 
-This repository is distributed under the [Insert License Name Here] license. See the [LICENSE](LICENSE) file for more details.
+## Release and Traceability Model
 
----
+Released semantic entities are not hard-deleted from history. Concepts, relations, and domains receive stable identifiers and lifecycle states such as `Proposed`, `Active`, `Deprecated`, `Retired`, or `Superseded`. Each stable release is intended to have a manifest recording the exact model, ontology, concepts, relations, domains, mappings, evaluation evidence, and linked publications for that release.
 
-## Usage Instructions
+- [v1.0.0 release documentation](docs/versions/v1.0.0.md)
+- [Semantic changelog](CHANGELOG.md)
+- [Migration inventory and provenance](MIGRATION_INVENTORY.md)
 
-1. Open the `CM-PharmE-1.0.drawio` file using [Draw.io](https://app.diagrams.net/) to explore and edit the conceptual model.  
-2. Refer to the `docs/` folder for guidance on interpreting model components and relationships.  
-3. Use any scripts in `scripts/` as described in their respective README or documentation.  
-4. For academic citation, reference the published paper using the DOI link provided above.
+## Ontology
 
----
+The OWL file distributed with the original v1.0 model is preserved as a historical artifact. It was generated from the conceptual diagram and is **not** treated as the future canonical ontology source. The formal ontology will be re-engineered in subsequent repository cycles with a canonical source, generated serializations, validation, stable IRIs, and explicit foundational-ontology mappings.
 
-## Changelog
+## Evaluation
 
-- **v1.0 (2025)**: Initial release of CM-PharmE conceptual model integrating business architecture and ontology for pharmaceutical ecosystems.  
-- **Future updates**: Will include refined diagrams, extended ontology components, and additional use-case scenarios.
+CM-PharmE uses a layered evaluation architecture covering syntax, logical consistency, structure, ontological grounding, expert/semantic validation, data and mapping validation, competency questions, application usability, and research reproducibility. Results are version-specific and are separated from the reusable evaluation methodology.
 
----
+## Citation
 
-## References
+A machine-readable citation record is provided in [`CITATION.cff`](CITATION.cff). Publications should cite the specific CM-PharmE release used in the research whenever possible.
 
-1. Unified Foundational Ontology (UFO) literature  
-2. PRISMA guidelines for systematic reviews  
-3. Selected peer-reviewed studies from 2018–2025 used in the thematic synthesis  
+## Repository Status
 
+This branch represents the first research-repository restructuring cycle. Historical artifacts remain preserved byte-for-byte through Git object identity and are materialized under `releases/v1.0.0/`. The original paths are retained during migration for traceability and will not be removed without explicit review.

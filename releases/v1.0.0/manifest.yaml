@@ -1,0 +1,32 @@
+release: "v1.0.0"
+status: "historical-stable"
+provenance:
+  baseline_branch: "main"
+  baseline_commit: "9efd0e3ac909e4065012fae7aeb6b0a94029c440"
+  preservation_branch: "archive/pre-refactor-2026-08-13"
+  migration_branch: "refactor/research-repository-v1"
+artifacts:
+  model_drawio:
+    path: "releases/v1.0.0/model/CM-PharmE-1.0.drawio"
+    original_path: "models/CM-PharmE-1.0/CM-PharmE-1.0.drawio"
+    git_blob_sha: "67d90cdc821b11b1a2a2d09fc4ec308b5dbfd066"
+  model_png:
+    path: "releases/v1.0.0/model/CM-PharmE-1.0.png"
+    original_path: "models/CM-PharmE-1.0/CM-PharmE-1.0.png"
+    git_blob_sha: "4b12ebf797172a6e3156b2109ca51b3271c157b0"
+  model_xml:
+    path: "releases/v1.0.0/model/CM-PharmE-1.0.xml"
+    original_path: "models/CM-PharmE-1.0/CM-PharmE-1.0.xml"
+    git_blob_sha: "0ec0841dd9b4ad4ba803ee76fc4e13b762b4ac82"
+  domains_png:
+    path: "releases/v1.0.0/model/Domains-of-CM-PharmE-1.0.png"
+    original_path: "models/CM-PharmE-1.0/Domains of CM-PharmE-1.0.png"
+    git_blob_sha: "26fb94618cab94f769ff749702a3cd791e6317cb"
+  ontology_owl:
+    path: "releases/v1.0.0/ontology/CM-PharmE-1.0.owl"
+    original_path: "models/CM-PharmE-1.0/CM-PharmE-1.0.owl"
+    git_blob_sha: "89fadb38b543eae498f648bf9e6b9eeffe61f09c"
+release_rules:
+  immutable: true
+  no_hard_delete_of_released_semantic_entities: true
+ontology_note: "The historical OWL artifact was auto-converted from the Draw.io/XML model and is preserved for reproducibility; it is not designated as the cleaned canonical ontology source for future releases."
