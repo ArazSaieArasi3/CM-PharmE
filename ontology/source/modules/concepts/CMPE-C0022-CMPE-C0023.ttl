@@ -1,0 +1,9 @@
+@prefix c: <https://w3id.org/cm-pharme/concept/> .
+@prefix d: <https://w3id.org/cm-pharme/domain/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix meta: <https://w3id.org/cm-pharme/meta/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+c:CMPE-C0022 a owl:Class ; dcterms:identifier "CMPE-C0022" ; skos:definition "A perdurant representing activities by which suspected adverse events are documented and communicated." ; skos:prefLabel "Adverse Event Reporting Procedure" ; meta:additionalDomain d:CMPE-D0004 ; meta:primaryDomain d:CMPE-D0003 ; meta:status "active" ; meta:stereotype meta:Perdurant .
+c:CMPE-C0023 a owl:Class ; dcterms:identifier "CMPE-C0023" ; skos:definition "An organization or institutional entity empowered to perform regulatory functions." ; skos:prefLabel "Regulatory Authority Entity" ; meta:additionalDomain d:CMPE-D0002 ; meta:primaryDomain d:CMPE-D0004 ; meta:status "active" ; meta:stereotype meta:Kind .
