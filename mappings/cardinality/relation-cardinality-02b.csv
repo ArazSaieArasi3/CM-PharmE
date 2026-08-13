@@ -1,0 +1,6 @@
+relation_id,canonical_label,raw_label,relation_type,source_concept_id,target_concept_id,source_end_multiplicity,target_end_multiplicity,lifecycle_status,cardinality_status,superseded_by,notes
+CMPE-R0016,assigns,,material,CMPE-C0020,CMPE-C0021,1,0..*,active,transcribed,,
+CMPE-R0017,participates in,,association,CMPE-C0022,CMPE-C0021,1..*,0..*,active,transcribed,,
+CMPE-R0018,material relation,,material,CMPE-C0023,CMPE-C0024,1,0..*,active,transcribed-provisional-label,,Generic source label retained pending terminology review.
+CMPE-R0019,is mediated by,,mediation,CMPE-C0024,CMPE-C0004,1,1..*,active,transcribed,,
+CMPE-R0020,characterizes,,characterization,CMPE-C0026,CMPE-C0004,0..*,1,active,transcribed,,
