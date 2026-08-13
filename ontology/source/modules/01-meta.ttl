@@ -1,0 +1,31 @@
+@prefix meta: <https://w3id.org/cm-pharme/meta/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+meta:Association a owl:NamedIndividual, meta:RelationStereotype ; skos:prefLabel "Association" .
+meta:Characterization a owl:NamedIndividual, meta:RelationStereotype ; skos:prefLabel "Characterization" .
+meta:ComponentOf a owl:NamedIndividual, meta:RelationStereotype ; skos:prefLabel "Component-of relation" .
+meta:Generalization a owl:NamedIndividual, meta:RelationStereotype ; skos:prefLabel "Generalization" .
+meta:GeneralizationRecord a owl:Class ; rdfs:label "Generalization Record" ; skos:definition "Traceability record for a source generalization formalized as rdfs:subClassOf." .
+meta:Kind a owl:NamedIndividual, meta:OntologicalStereotype ; skos:definition "UFO/OntoUML Kind stereotype." ; skos:prefLabel "Kind" .
+meta:MaterialRelation a owl:NamedIndividual, meta:RelationStereotype ; skos:prefLabel "Material relation" .
+meta:Mediation a owl:NamedIndividual, meta:RelationStereotype ; skos:prefLabel "Mediation" .
+meta:Mode a owl:NamedIndividual, meta:OntologicalStereotype ; skos:definition "UFO/OntoUML Mode stereotype." ; skos:prefLabel "Mode" .
+meta:Perdurant a owl:NamedIndividual, meta:OntologicalStereotype ; skos:definition "Perdurant/eventuality-like source-model stereotype." ; skos:prefLabel "Perdurant" .
+meta:Relator a owl:NamedIndividual, meta:OntologicalStereotype ; skos:definition "UFO/OntoUML Relator stereotype." ; skos:prefLabel "Relator" .
+meta:Role a owl:NamedIndividual, meta:OntologicalStereotype ; skos:definition "UFO/OntoUML Role stereotype." ; skos:prefLabel "Role" .
+meta:additionalDomain a owl:AnnotationProperty ; skos:definition "Additional domain." .
+meta:cardinalityStatus a owl:AnnotationProperty ; skos:definition "Cardinality provenance status." .
+meta:primaryDomain a owl:AnnotationProperty ; skos:definition "Primary domain." .
+meta:rawLabel a owl:AnnotationProperty ; skos:definition "Historical raw label." .
+meta:relationStereotype a owl:AnnotationProperty ; skos:definition "Relation stereotype." .
+meta:reviewNote a owl:AnnotationProperty ; skos:definition "Curation/review note." .
+meta:sourceClass a owl:ObjectProperty .
+meta:sourceEndMultiplicity a owl:AnnotationProperty ; skos:definition "Source-end multiplicity." .
+meta:status a owl:AnnotationProperty ; skos:definition "Lifecycle status." .
+meta:stereotype a owl:AnnotationProperty ; skos:definition "Concept ontological stereotype." .
+meta:targetClass a owl:ObjectProperty .
+meta:targetEndMultiplicity a owl:AnnotationProperty ; skos:definition "Target-end multiplicity." .
+meta:OntologicalStereotype a owl:Class ; rdfs:label "Ontological Stereotype" ; skos:definition "Metamodel category for concept stereotypes." .
+meta:RelationStereotype a owl:Class ; rdfs:label "Relation Stereotype" ; skos:definition "Metamodel category for relation stereotypes." .
