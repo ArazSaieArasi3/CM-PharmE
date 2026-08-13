@@ -1,0 +1,12 @@
+@prefix c: <https://w3id.org/cm-pharme/concept/> .
+@prefix d: <https://w3id.org/cm-pharme/domain/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix meta: <https://w3id.org/cm-pharme/meta/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix r: <https://w3id.org/cm-pharme/relation/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+c:CMPE-C0026 a owl:Class ; dcterms:identifier "CMPE-C0026" ; rdfs:subClassOf [ a owl:Restriction ; owl:onClass c:CMPE-C0027 ; owl:onProperty [ owl:inverseOf r:CMPE-R0021 ] ; owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ], [ a owl:Restriction ; owl:onClass c:CMPE-C0004 ; owl:onProperty r:CMPE-R0020 ; owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ; skos:definition "A mode representing an organized policy framework that guides governance and regulatory oversight." ; skos:prefLabel "Governance Policy Framework" ; meta:primaryDomain d:CMPE-D0004 ; meta:status "active" ; meta:stereotype meta:Mode .
+c:CMPE-C0027 a owl:Class ; dcterms:identifier "CMPE-C0027" ; skos:definition "A normative requirement specifying a condition that an entity or activity must satisfy for compliance." ; skos:prefLabel "Compliance Requirement" ; meta:primaryDomain d:CMPE-D0004 ; meta:status "active" ; meta:stereotype meta:Mode .
