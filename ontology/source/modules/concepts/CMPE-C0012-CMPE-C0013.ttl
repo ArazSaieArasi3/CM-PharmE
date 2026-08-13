@@ -1,0 +1,12 @@
+@prefix c: <https://w3id.org/cm-pharme/concept/> .
+@prefix d: <https://w3id.org/cm-pharme/domain/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix meta: <https://w3id.org/cm-pharme/meta/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix r: <https://w3id.org/cm-pharme/relation/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+c:CMPE-C0012 a owl:Class ; dcterms:identifier "CMPE-C0012" ; rdfs:subClassOf [ a owl:Restriction ; owl:onClass c:CMPE-C0013 ; owl:onProperty r:CMPE-R0010 ; owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ; skos:definition "An organizational structure that arranges collaboration between public and private parties." ; skos:prefLabel "Public-Private Partnership Structure" ; meta:additionalDomain d:CMPE-D0004 ; meta:primaryDomain d:CMPE-D0002 ; meta:status "active" ; meta:stereotype meta:Kind .
+c:CMPE-C0013 a owl:Class ; dcterms:identifier "CMPE-C0013" ; skos:definition "An organizational entity responsible for coordinating, steering, or governing aspects of the ecosystem." ; skos:prefLabel "Ecosystem Governance Entity" ; meta:additionalDomain d:CMPE-D0004 ; meta:primaryDomain d:CMPE-D0002 ; meta:status "active" ; meta:stereotype meta:Kind .
