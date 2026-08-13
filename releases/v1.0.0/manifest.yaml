@@ -5,6 +5,29 @@ provenance:
   baseline_commit: "9efd0e3ac909e4065012fae7aeb6b0a94029c440"
   preservation_branch: "archive/pre-refactor-2026-08-13"
   migration_branch: "refactor/research-repository-v1"
+semantic_inventory:
+  canonical_concepts: 39
+  graphical_concept_occurrences: 40
+  domains: 5
+  canonical_relations: 40
+  labeled_semantic_relation_occurrences: 41
+  concept_stereotypes:
+    kind: 13
+    mode: 8
+    role: 7
+    relator: 6
+    perdurant: 5
+  relation_categories:
+    material: 19
+    mediation: 8
+    characterization: 6
+    componentOf: 4
+    association: 2
+    generalization: 1
+frozen_registries:
+  concepts: "releases/v1.0.0/catalogs/concepts.yaml"
+  relations: "releases/v1.0.0/catalogs/relations.yaml"
+  domains: "releases/v1.0.0/catalogs/domains.yaml"
 artifacts:
   original_readme:
     path: "releases/v1.0.0/README.original.md"
@@ -33,4 +56,9 @@ artifacts:
 release_rules:
   immutable: true
   no_hard_delete_of_released_semantic_entities: true
+review_flags:
+  - "Enterprise Governance Relator appears twice with conflicting relator/mode stereotypes."
+  - "One exact mediation relation occurrence is collapsed after concept deduplication."
+  - "Ecosystem Actor to Strategic Partnership Agreement has both mediates and is-mediated-by source wording."
+  - "One unlabeled self-loop graphical artifact is excluded from the semantic registry."
 ontology_note: "The historical OWL artifact was auto-converted from the Draw.io/XML model and is preserved for reproducibility; it is not designated as the cleaned canonical ontology source for future releases."
