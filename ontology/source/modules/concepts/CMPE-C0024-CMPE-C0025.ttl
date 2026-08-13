@@ -1,0 +1,12 @@
+@prefix c: <https://w3id.org/cm-pharme/concept/> .
+@prefix d: <https://w3id.org/cm-pharme/domain/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix meta: <https://w3id.org/cm-pharme/meta/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix r: <https://w3id.org/cm-pharme/relation/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+c:CMPE-C0024 a owl:Class ; dcterms:identifier "CMPE-C0024" ; rdfs:subClassOf [ a owl:Restriction ; owl:onClass c:CMPE-C0023 ; owl:onProperty [ owl:inverseOf r:CMPE-R0018 ] ; owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ], [ a owl:Restriction ; owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ; owl:onClass c:CMPE-C0004 ; owl:onProperty r:CMPE-R0019 ] ; skos:definition "A role borne by a regulatory authority entity when exercising regulatory responsibilities." ; skos:prefLabel "Regulatory Authority Role" ; meta:primaryDomain d:CMPE-D0004 ; meta:status "active" ; meta:stereotype meta:Role .
+c:CMPE-C0025 a owl:Class ; dcterms:identifier "CMPE-C0025" ; rdfs:subClassOf [ a owl:Restriction ; owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ; owl:onClass c:CMPE-C0003 ; owl:onProperty [ owl:inverseOf r:CMPE-R0002 ] ] ; skos:definition "A relator representing governance commitments or institutional ties that mediate organizational stakeholder participation in enterprise governance." ; skos:prefLabel "Enterprise Governance Relator" ; meta:additionalDomain d:CMPE-D0004 ; meta:primaryDomain d:CMPE-D0001 ; meta:reviewNote "B3 retains the v1.0 occurrence typed as relator as canonical; the duplicated mode occurrence remains historical provenance.", "Source review flag: stereotype-conflict; conflicting source stereotype: mode." ; meta:status "active" ; meta:stereotype meta:Relator .
