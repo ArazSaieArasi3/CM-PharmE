@@ -1,0 +1,11 @@
+relation_id,canonical_label,raw_label,relation_type,source_concept_id,target_concept_id,source_end_multiplicity,target_end_multiplicity,lifecycle_status,cardinality_status,superseded_by,notes
+CMPE-R0001,governs,,material,CMPE-C0001,CMPE-C0003,1,0..*,active,provisional-source-label-duplication,,The source diagram contains duplicated cardinality label objects on this edge; the primary endpoint pair is retained provisionally.
+CMPE-R0002,is mediated by,,mediation,CMPE-C0003,CMPE-C0025,1..*,1,active,resolved-from-relator-occurrence,,Two graphical occurrences conflict because Enterprise Governance Relator was duplicated as relator and mode. The occurrence attached to the canonical relator node is authoritative for B3 cardinality.
+CMPE-R0003,is part of,,componentOf,CMPE-C0002,CMPE-C0001,0..*,1,active,transcribed,,
+CMPE-R0004,characterizes,,characterization,CMPE-C0005,CMPE-C0001,0..*,1,active,transcribed,,
+CMPE-R0005,characterizes,,characterization,CMPE-C0006,CMPE-C0002,0..*,1,active,transcribed,,
+CMPE-R0006,specializes,,generalization,CMPE-C0007,CMPE-C0003,,,active,not-applicable,,Formalized as rdfs:subClassOf rather than an owl:ObjectProperty.
+CMPE-R0007,is mediated by,,mediation,CMPE-C0008,CMPE-C0009,1,1..*,active,transcribed,,
+CMPE-R0008,fulfills,,material,CMPE-C0039,CMPE-C0010,0..*,0..*,active,transcribed,,
+CMPE-R0009,characterizes,,characterization,CMPE-C0008,CMPE-C0011,1,0..*,active,transcribed,,
+CMPE-R0010,is part of,is part of a,componentOf,CMPE-C0012,CMPE-C0013,0..*,1,active,transcribed,,Canonical wording normalizes the minor source-label variant.
