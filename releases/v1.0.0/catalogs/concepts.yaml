@@ -1,0 +1,11 @@
+schema_version: 1
+model_release: v1.0.0
+snapshot_of: catalog/concepts.yaml
+canonical_concept_count: 39
+graphical_concept_occurrences: 40
+stereotype_counts: {kind: 13, role: 7, relator: 6, mode: 8, perdurant: 5}
+review_flags:
+  - entity: CMPE-C0025
+    issue: stereotype-conflict
+    detail: "Enterprise Governance Relator appears twice in the source diagram, once as relator and once as mode; canonical registry retains relator."
+registry: ../../../catalog/concepts.yaml
