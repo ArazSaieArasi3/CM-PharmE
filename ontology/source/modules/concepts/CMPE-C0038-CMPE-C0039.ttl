@@ -1,0 +1,9 @@
+@prefix c: <https://w3id.org/cm-pharme/concept/> .
+@prefix d: <https://w3id.org/cm-pharme/domain/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix meta: <https://w3id.org/cm-pharme/meta/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+c:CMPE-C0038 a owl:Class ; dcterms:identifier "CMPE-C0038" ; skos:definition "An information platform that collects, integrates, or analyzes real-world data to produce or support real-world evidence." ; skos:prefLabel "Real-World Evidence Platform" ; meta:additionalDomain d:CMPE-D0003, d:CMPE-D0004 ; meta:primaryDomain d:CMPE-D0005 ; meta:status "active" ; meta:stereotype meta:Kind .
+c:CMPE-C0039 a owl:Class ; dcterms:identifier "CMPE-C0039" ; skos:definition "A specification that describes an ecosystem service offering and the demand it is intended to address." ; skos:prefLabel "Service Offering Specification" ; meta:primaryDomain d:CMPE-D0002 ; meta:status "active" ; meta:stereotype meta:Kind .
