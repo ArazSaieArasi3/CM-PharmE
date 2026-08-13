@@ -1,0 +1,12 @@
+@prefix c: <https://w3id.org/cm-pharme/concept/> .
+@prefix d: <https://w3id.org/cm-pharme/domain/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix meta: <https://w3id.org/cm-pharme/meta/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix r: <https://w3id.org/cm-pharme/relation/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+c:CMPE-C0014 a owl:Class ; dcterms:identifier "CMPE-C0014" ; rdfs:subClassOf [ a owl:Restriction ; owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ; owl:onClass c:CMPE-C0001 ; owl:onProperty [ owl:inverseOf r:CMPE-R0040 ] ], [ a owl:Restriction ; owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ; owl:onClass c:CMPE-C0008 ; owl:onProperty [ owl:inverseOf r:CMPE-R0027 ] ] ; skos:definition "A relator constituted by commitments that establish a strategic partnership among participating parties." ; skos:prefLabel "Strategic Partnership Agreement" ; meta:primaryDomain d:CMPE-D0002 ; meta:status "active" ; meta:stereotype meta:Relator .
+c:CMPE-C0015 a owl:Class ; dcterms:identifier "CMPE-C0015" ; rdfs:subClassOf [ a owl:Restriction ; owl:onClass c:CMPE-C0029 ; owl:onProperty [ owl:inverseOf r:CMPE-R0023 ] ; owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ], [ a owl:Restriction ; owl:onClass c:CMPE-C0018 ; owl:onProperty [ owl:inverseOf r:CMPE-R0029 ] ; owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ], [ a owl:Restriction ; owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ; owl:onClass c:CMPE-C0016 ; owl:onProperty [ owl:inverseOf r:CMPE-R0013 ] ] ; skos:definition "A perdurant representing an organized sequence or network of activities that realizes pharmaceutical business work." ; skos:prefLabel "Pharmaceutical Business Process" ; meta:additionalDomain d:CMPE-D0001 ; meta:primaryDomain d:CMPE-D0003 ; meta:status "active" ; meta:stereotype meta:Perdurant .
