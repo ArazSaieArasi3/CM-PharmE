@@ -1,0 +1,2 @@
+@prefix c:<https://w3id.org/cm-pharme/concept/> . @prefix meta:<https://w3id.org/cm-pharme/meta/> . @prefix owl:<http://www.w3.org/2002/07/owl#> . @prefix r:<https://w3id.org/cm-pharme/relation/> . @prefix rdfs:<http://www.w3.org/2000/01/rdf-schema#> . @prefix skos:<http://www.w3.org/2004/02/skos/core#> .
+r:CMPE-R0013 a owl:ObjectProperty; rdfs:domain c:CMPE-C0016; rdfs:range c:CMPE-C0015; skos:prefLabel "is part of"; meta:relationStereotype meta:ComponentOf; meta:sourceEndMultiplicity "1..*"; meta:targetEndMultiplicity "1"; meta:status "active" .
