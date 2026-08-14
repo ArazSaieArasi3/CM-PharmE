@@ -1,0 +1,57 @@
+schema_version: 1
+evaluation: CM-PharmE B4 vaccine-scenario manuscript-to-formal traceability
+principle: The manuscript scenario is interpretive evidence. B4 computational sample asserts only relations present in the canonical B3 formal ontology.
+items:
+- id: VS-01
+  manuscript_claim: Vaccine manufacturer is represented as Pharmaceutical Enterprise.
+  formal_status: supported
+  formal_evidence: [CMPE-C0001]
+  note: Represented by example individual typing.
+- id: VS-02
+  manuscript_claim: National health authority is represented as Regulatory Authority.
+  formal_status: supported-with-label-normalization
+  formal_evidence: [CMPE-C0023 Regulatory Authority Entity, CMPE-C0024 Regulatory Authority Role]
+  note: B4 keeps entity and role distinctions explicit.
+- id: VS-03
+  manuscript_claim: Distribution partnership is represented through Strategic Partnership Agreement mediating ecosystem actors.
+  formal_status: supported
+  formal_evidence: [CMPE-C0014, CMPE-R0027]
+  note: Two ecosystem actors are linked to the same agreement in the sample.
+- id: VS-04
+  manuscript_claim: Regulatory supervision is represented through Regulatory Oversight.
+  formal_status: supported
+  formal_evidence: [CMPE-C0023, CMPE-R0018, CMPE-C0024, CMPE-R0019, CMPE-C0004]
+- id: VS-05
+  manuscript_claim: Governance Policy and Compliance Requirement constrain relevant organizational and operational constructs.
+  formal_status: not-directly-encoded
+  formal_evidence: [CMPE-R0020 characterizes Regulatory Oversight, CMPE-R0021 characterizes Governance Policy Framework, CMPE-R0022 mitigates Compliance Requirement]
+  note: The current formal graph does not contain a direct policy/compliance-to-business-process constrain relation.
+- id: VS-06
+  manuscript_claim: Individual Patient participates in clinical activity through Clinical Pathway.
+  formal_status: supported
+  formal_evidence: [CMPE-C0017, CMPE-R0014, CMPE-C0018, CMPE-R0029, CMPE-C0015]
+- id: VS-07
+  manuscript_claim: Pharmacovigilance Requirement constrains Adverse Event Reporting Procedure.
+  formal_status: not-directly-encoded
+  formal_evidence: [CMPE-R0031 Pharmacovigilance Requirement -> Post-Market Surveillance Activity, CMPE-R0035 Post-Market Surveillance Activity -> Adverse Event Reporting Procedure]
+  note: B4 preserves the two-step canonical path rather than inventing a direct assertion.
+- id: VS-08
+  manuscript_claim: Real-World Evidence Platform supports surveillance and surveillance informs risk management.
+  formal_status: not-as-stated
+  formal_evidence: [CMPE-R0032 RWE Platform -> Pharmacovigilance Requirement, CMPE-R0034 RWE Platform -> Risk Management Activity]
+  note: The formal graph has direct RWE-to-risk and RWE-to-requirement relations, but no direct RWE-to-surveillance or surveillance-to-risk relation.
+- id: VS-09
+  manuscript_claim: Electronic Health Record supports clinical information exchange.
+  formal_status: partially-represented
+  formal_evidence: [CMPE-R0037 EHR -> Individual Patient, CMPE-R0025 EHR -> Patient Record Quality]
+  note: Information-exchange behavior is an application interpretation, not an explicit formal property.
+- id: VS-10
+  manuscript_claim: Blockchain ledger supports supply-chain traceability.
+  formal_status: partially-represented-and-review-flagged
+  formal_evidence: [CMPE-C0032 Supply Chain Relationship, CMPE-R0024 mediation to CMPE-C0031 Blockchain-Based Supply Chain Ledger]
+  note: The relation is represented, but B4 anti-pattern review retains a mediation-specificity concern.
+summary:
+  supported_or_supported_with_normalization: 5
+  not_directly_or_not_as_stated: 3
+  partially_represented: 2
+  ontology_modified_to_force_manuscript_alignment: false
