@@ -33,6 +33,19 @@ This changelog records research-model and repository-level changes that are mean
 - Introduced lifecycle and versioning policies for future semantic entities.
 - Documented `v1.0.0` as the current stable semantic baseline; manuscript revision numbers do not automatically create model versions.
 
+### B3 Formal Ontology Engineering
+- Added a modular formal-ontology authoring source derived from the canonical v1.0.0 semantic inventory.
+- Added stable identifier-based IRI policy under the planned `https://w3id.org/cm-pharme/` namespace without claiming deployed redirects.
+- Formalized 39 concept classes and 40 stable relation records as 39 OWL object properties plus one explicit generalization record.
+- Added formal concept definitions, domain/stereotype metadata, and OWL cardinality restrictions.
+- Added complete cardinality-registry coverage for all 40 stable relation IDs.
+- Deprecated `CMPE-R0011` while preserving provenance and supersession by active `CMPE-R0027`.
+- Normalized `CMPE-R0031` from the raw source label `constraints` to `constrains` while retaining provenance.
+- Added cautious UFO/OntoUML stereotype-correspondence notes without asserting unsupported external equivalence.
+- Recorded structural/reference-package validation evidence and a dedicated B3 formal-ontology audit.
+- Kept generated OWL/RDF/XML, RDF/XML, JSON-LD, N-Triples and SHACL outputs as derived artifacts pending deterministic GitHub CI/build materialization.
+- Explicitly deferred full OWL DL reasoner evidence, persistent-IRI deployment, broader competency-question execution and expert semantic validation.
+
 ## v1.0.0 — Historical Initial Release
 
 ### Added
