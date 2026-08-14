@@ -4,29 +4,33 @@ This directory stores machine-readable and scenario-oriented evidence for CM-Pha
 
 ## Evidence categories
 
-- `competency-questions.yaml` — versioned competency-question registry
-- `anti-patterns.yaml` — historical and current OntoUML-informed inspection records
-- `scenarios/` — reference scenarios used for representational and application checks
-- `evidence/` — publication-to-evidence traceability and evidence-status policy
-- `assertions/` — future machine-readable expected assertions and test oracles
-- `samples/` — future representative instance/data samples used in executable evaluation
+- `competency-questions.yaml` — versioned competency-question registry with current B4 execution status
+- `anti-patterns.yaml` — publication-derived anti-pattern baseline plus current B4 disposition
+- `scenarios/` — human-readable reference scenarios and their evidential boundaries
+- `samples/` — machine-readable constructed instance samples used in executable evaluation
+- `evidence/` — publication provenance, structural validation, query results, anti-pattern/scenario/expert evidence, and reasoner status
+- `assertions/` — reserved for additional explicit test oracles
+
+## B4 executed evidence
+
+B4 now includes:
+
+- `evidence/b4-structural-validation.json` — 28/28 structural/traceability checks
+- `evidence/b4-cq-results.csv` — expected and observed results for all eight executable competency queries
+- `evidence/b4-scenario-validation.json` — schema compatibility of the vaccine sample
+- `evidence/b4-scenario-traceability.yaml` — manuscript-to-formal scenario alignment and discrepancies
+- `evidence/b4-expert-evidence.yaml` — normalized four-expert publication evidence
+- `evidence/b4-reasoner-validation.md` — explicit record that OWL DL reasoner execution remains blocked / unverified in the current runtime
+- `samples/vaccine-distribution.ttl` — constructed machine-readable scenario
+
+The current anti-pattern dispositions are maintained in `anti-patterns.yaml`. The eight SPARQL queries are stored under `../ontology/queries/competency/`.
 
 ## Evidence rule
 
-A publication-reported result, a repository-recorded provenance statement, and a repository-executed validation result are different evidence states. Every B4 result should preserve that distinction.
+A publication-reported result, a repository-recorded provenance statement, and a repository-executed validation result are different evidence states. B4 preserves that distinction. A bounded PASS on a constructed scenario is not treated as empirical deployment evidence.
 
 ## Evaluation layers
 
-B4 organizes evidence across E1–E9:
+B4 organizes evidence across E1–E9: syntax, logic, structure, ontological validation, semantic/expert validation, data/mapping validation, competency questions, application validation, and research reproducibility.
 
-1. syntax validation
-2. logical validation
-3. structural validation
-4. ontological validation
-5. semantic/expert validation
-6. data and mapping validation
-7. competency questions
-8. application validation
-9. research reproducibility
-
-See [`../docs/methodology/evaluation-method.md`](../docs/methodology/evaluation-method.md) and [`../docs/evaluations/b4-evaluation-plan.md`](../docs/evaluations/b4-evaluation-plan.md).
+See the [evaluation method](../docs/methodology/evaluation-method.md), [B4 plan](../docs/evaluations/b4-evaluation-plan.md), [executed matrix](../docs/evaluations/b4-evaluation-matrix.md), and [B4 final evaluation](../docs/evaluations/b4-final-evaluation.md).
