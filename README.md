@@ -100,8 +100,12 @@ The repository converts that methodology into evaluation layers E1–E9: syntax,
 
 B4 explicitly distinguishes **publication-reported evidence** from **repository-reproduced or computationally verified evidence**. This is important because the published conference paper contains some stronger early evaluation statements that the later manuscript subsequently bounds more conservatively.
 
+B4/B4.10 now includes 28/28 structural checks, eight executable competency queries, a machine-readable five-domain vaccine scenario, anti-pattern re-evaluation, publication/expert traceability, and a reproducible GitHub Actions ROBOT/HermiT logical-validation workflow.
+
 - [Evaluation method](docs/methodology/evaluation-method.md)
 - [B4 paper-grounded evaluation plan](docs/evaluations/b4-evaluation-plan.md)
+- [B4/B4.10 executed evaluation matrix](docs/evaluations/b4-evaluation-matrix.md)
+- [B4.10 reasoner and semantic finding disposition](docs/evaluations/b4-10-semantic-finding-disposition.md)
 - [Machine-readable evaluation evidence](evaluation/README.md)
 - [Publication-to-repository traceability](docs/research/publication-to-repository-traceability.md)
 
@@ -142,9 +146,13 @@ See [Ontology](ontology/README.md) and the [B3 Formal Ontology Audit](docs/evalu
 
 ## Validation Boundary
 
-Current evidence supports structural traceability, formal-source coverage, and preliminary qualitative assessment within the examined scope. The repository does **not** yet claim universal ontology completeness, operational effectiveness, technical interoperability, or full OWL-DL consistency until corresponding B4/B5 evidence is recorded.
+Current repository evidence supports structural traceability, formal-source coverage, bounded executable competency questions, a machine-readable cross-domain scenario, and **repository-executed ROBOT/HermiT logical validation for the current logical axiom set**. GitHub Actions run `31796520297` completed successfully with HermiT exit code `0` after ROBOT `v1.9.10` was verified by SHA-256.
 
-The journal manuscript itself similarly treats expert review, anti-pattern inspection, competency questions, benchmarking, and scenario instantiation as complementary but preliminary evidence rather than definitive empirical or computational validation.
+The logical PASS does **not** establish universal ontology completeness, empirical effectiveness, technical interoperability, standards conformance, or correctness of every ontological modeling choice. B4.10 retains targeted role/mediation and part-whole findings as explicit semantic review items rather than silently changing the model.
+
+The GitHub modular source also differs from the B3 packaged canonical source in annotation/provenance coverage, while B4.10 records zero logical-predicate differences. Annotation parity remains a repository-engineering follow-up.
+
+The journal manuscript itself similarly treats expert review, anti-pattern inspection, competency questions, benchmarking, and scenario instantiation as complementary but preliminary evidence rather than definitive empirical validation.
 
 ## Citation
 
@@ -152,4 +160,4 @@ A machine-readable citation record is provided in [`CITATION.cff`](CITATION.cff)
 
 ## Repository Status
 
-B0–B3 are integrated into `main`: historical preservation, repository foundation, knowledge-model normalization, and formal-ontology engineering are established. B4 now transfers the two-paper research/evaluation lineage into a repository-native evidence architecture and prepares stronger logical, competency-question, semantic, scenario, and reproducibility validation. CI/build automation, generated-distribution materialization, persistent-IRI deployment, and public documentation tooling remain subsequent work.
+B0–B3 are integrated into `main`: historical preservation, repository foundation, knowledge-model normalization, and formal-ontology engineering are established. On the B4 evaluation branch, the two-paper research/evaluation lineage has been transferred into a repository-native evidence architecture; structural checks, competency queries, scenario validation, and ROBOT/HermiT logical validation have been executed. Open work is now concentrated on targeted semantic refinement decisions, annotation/provenance normalization, stronger independent expert/domain evidence where needed, deterministic generated-distribution/release automation, persistent-IRI deployment, and public documentation tooling.
