@@ -1,0 +1,14 @@
+PREFIX meta: <https://w3id.org/cm-pharme/meta/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+SELECT (COUNT(DISTINCT ?class) AS ?mappedCoreClasses)
+       (COUNT(DISTINCT ?domain) AS ?representedDomains)
+       (COUNT(DISTINCT ?scenarioClass) AS ?scenarioSpecificClassCount)
+WHERE {
+  ?instance a ?class .
+  FILTER(STRSTARTS(STR(?instance), "https://w3id.org/cm-pharme/example/vaccine/"))
+  ?class meta:primaryDomain ?domain .
+  OPTIONAL {
+    ?scenarioClass a owl:Class .
+    FILTER(STRSTARTS(STR(?scenarioClass), "https://w3id.org/cm-pharme/example/vaccine/"))
+  }
+}
