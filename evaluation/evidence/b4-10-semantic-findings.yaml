@@ -1,0 +1,82 @@
+schema_version: 1
+registry: CM-PharmE B4.10 Semantic Finding Disposition
+scope: evaluation-only; no ontology semantics changed
+allowed_dispositions:
+  - no-change-documentation-clarification
+  - model-refinement-candidate
+  - semantic-change-required
+  - defer-pending-domain-evidence
+findings:
+  - id: B410-F001
+    subject: CMPE-C0021 Healthcare Provider
+    issue: Role without explicit or inherited mediation in the current formal graph.
+    evidence:
+      - CMPE-C0021 is stereotyped as Role.
+      - CMPE-R0016 assigns Healthcare Provider Organization to Healthcare Provider, but is not formalized as mediation.
+      - B4 anti-pattern re-evaluation therefore cannot retain a blanket clean result for Role without Relator.
+    disposition: model-refinement-candidate
+    rationale: The role's relational dependence should be clarified before changing the core model. Existing assignment may express institutional role allocation, but it does not establish the intended UFO mediation commitment.
+    required_next_evidence:
+      - domain-expert clarification of the role context
+      - ontological review of assignment versus mediation
+    semantic_change_applied: false
+
+  - id: B410-F002
+    subject: CMPE-C0032 Supply Chain Relationship / CMPE-R0024
+    issue: Mediation specificity is weak because the current mediation points toward Blockchain-Based Supply Chain Ledger, a Kind, rather than clearly exposing participant roles/entities of the relator.
+    evidence:
+      - Historical journal-manuscript anti-pattern review already marked this area as a minor issue.
+      - B4 repository re-evaluation confirmed the concern.
+    disposition: model-refinement-candidate
+    rationale: A future refinement may need to separate the supply-chain relationship's participants from the digital ledger that records or supports it. The exact replacement relation must be evidence-driven rather than invented during evaluation.
+    required_next_evidence:
+      - source-model intent review
+      - domain-expert confirmation of supply-chain participants
+      - relation-direction and stereotype review
+    semantic_change_applied: false
+
+  - id: B410-F003
+    subject: CMPE-R0010 Public-Private Partnership Structure -> Ecosystem Governance Entity
+    issue: The source relation 'is part of a' may encode institutional membership/governance dependence rather than structural mereology.
+    evidence:
+      - Historical journal-manuscript anti-pattern review identified this as a minor part-whole concern.
+      - B4 re-evaluation retained the concern without finding a critical architecture defect.
+    disposition: defer-pending-domain-evidence
+    rationale: Both structural composition and institutional-governance interpretations are plausible from the current evidence. A semantic replacement should not be selected without stronger domain evidence.
+    required_next_evidence:
+      - intended PPP governance semantics
+      - mereological constraints for Ecosystem Governance Entity
+    semantic_change_applied: false
+
+  - id: B410-F004
+    subject: CMPE-R0029 Clinical Pathway -> Pharmaceutical Business Process
+    issue: The relation 'is part of' links a Relator to a Perdurant and therefore merits targeted mereological review.
+    evidence:
+      - B4 introduced this as a new review candidate after checking ontological categories.
+      - No critical inconsistency was produced by HermiT; the concern is semantic/ontological rather than logical incoherence.
+    disposition: model-refinement-candidate
+    rationale: The intended meaning may be participation, coordination, realization, or process integration rather than literal part-whole structure. The correct relation must be chosen only after reviewing the conceptual intent.
+    required_next_evidence:
+      - clinical-pathway conceptual intent
+      - UFO/OntoUML relation-pattern review
+    semantic_change_applied: false
+
+  - id: B410-F005
+    subject: Journal-manuscript scenario prose versus canonical formal relation graph
+    issue: Some application-level prose is broader or more direct than the explicit relation paths in the formal model.
+    evidence:
+      - Governance/compliance prose can imply direct process constraints not present in the graph.
+      - Pharmacovigilance prose compresses a two-step formal path into a direct narrative statement.
+      - RWE, EHR, and blockchain application descriptions are broader than some current formal properties.
+    disposition: no-change-documentation-clarification
+    rationale: The manuscript presents an application-oriented explanatory narrative, whereas the repository formal graph defines the canonical semantic commitments. The ontology should not be expanded merely to mirror prose. Traceability notes are sufficient unless future domain evidence establishes missing core relations.
+    required_next_evidence:
+      - only if a future research requirement demands direct formal relations
+    semantic_change_applied: false
+summary:
+  no_change_documentation_clarification: 1
+  model_refinement_candidate: 3
+  semantic_change_required: 0
+  defer_pending_domain_evidence: 1
+  core_semantic_changes_applied_in_b4_10: 0
+  architecture_redesign_required: false
