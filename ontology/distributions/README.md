@@ -11,7 +11,7 @@ The B3 local reference build successfully produced and structurally validated:
 - canonical consolidated Turtle
 - SHACL shapes
 
-The locally validated artifact hashes are recorded in [`../validation/B3_ARTIFACT_MANIFEST.md`](../validation/B3_ARTIFACT_MANIFEST.md).
+The locally validated artifact hashes are recorded in [`../validation/B3_ARTIFACT_SHA256SUMS.txt`](../validation/B3_ARTIFACT_SHA256SUMS.txt).
 
 ## Source-of-truth rule
 
