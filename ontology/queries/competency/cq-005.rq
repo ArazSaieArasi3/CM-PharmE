@@ -1,0 +1,14 @@
+PREFIX c: <https://w3id.org/cm-pharme/concept/>
+PREFIX r: <https://w3id.org/cm-pharme/relation/>
+SELECT ?digital ?relation ?target WHERE {
+  VALUES (?digitalClass ?relation) {
+    (c:CMPE-C0029 r:CMPE-R0023)
+    (c:CMPE-C0030 r:CMPE-R0038)
+    (c:CMPE-C0033 r:CMPE-R0037)
+    (c:CMPE-C0035 r:CMPE-R0026)
+    (c:CMPE-C0038 r:CMPE-R0032)
+    (c:CMPE-C0038 r:CMPE-R0034)
+  }
+  ?digital a ?digitalClass ; ?relation ?target .
+}
+ORDER BY ?digital ?relation
