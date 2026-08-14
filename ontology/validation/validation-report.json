@@ -1,0 +1,29 @@
+{
+  "validation_scope": "B3 local reference package: syntax, structural integrity, serialization equivalence, and curated semantic-repair checks",
+  "reasoner_status": {
+    "owl_dl_reasoner_executed": false,
+    "note": "HermiT/ELK/ROBOT was not bundled in the B3 execution runtime; no full OWL DL consistency claim is made."
+  },
+  "expected_counts": {
+    "concept_class_count": 39,
+    "relation_object_property_count": 39,
+    "generalization_record_count": 1,
+    "domain_count": 5,
+    "shacl_node_shape_count": 76,
+    "shacl_property_shape_count": 76
+  },
+  "reference_package_checks": {
+    "canonical_turtle_parses": true,
+    "canonical_triples": 1086,
+    "owl_restriction_count": 42,
+    "shacl_triples": 574,
+    "serialization_isomorphic_to_canonical": true,
+    "r0011_deprecated": true,
+    "r0011_replaced_by_r0027": true,
+    "r0031_normalized_label": true,
+    "c0025_canonical_relator": true,
+    "historical_converter_cardinality_classes_absent": true
+  },
+  "overall_reference_package_structural_status": "PASS",
+  "github_note": "This report records the locally generated B3 reference package. GitHub-branch reproducibility must be re-run after all B3 source/distribution artifacts are materialized."
+}

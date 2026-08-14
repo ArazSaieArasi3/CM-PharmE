@@ -1,0 +1,12 @@
+@prefix c: <https://w3id.org/cm-pharme/concept/> .
+@prefix d: <https://w3id.org/cm-pharme/domain/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix meta: <https://w3id.org/cm-pharme/meta/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix r: <https://w3id.org/cm-pharme/relation/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+c:CMPE-C0036 a owl:Class ; dcterms:identifier "CMPE-C0036" ; rdfs:subClassOf [ a owl:Restriction ; owl:onClass c:CMPE-C0038 ; owl:onProperty [ owl:inverseOf r:CMPE-R0032 ] ; owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ; skos:definition "A normative requirement specifying obligations for monitoring, assessing, reporting, or managing medicine safety." ; skos:prefLabel "Pharmacovigilance Requirement" ; meta:additionalDomain d:CMPE-D0003 ; meta:primaryDomain d:CMPE-D0004 ; meta:status "active" ; meta:stereotype meta:Mode .
+c:CMPE-C0037 a owl:Class ; dcterms:identifier "CMPE-C0037" ; rdfs:subClassOf [ a owl:Restriction ; owl:onClass c:CMPE-C0022 ; owl:onProperty r:CMPE-R0035 ; owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ; skos:definition "A perdurant representing monitoring and evidence-gathering activities performed after a medicinal product enters the market." ; skos:prefLabel "Post-Market Surveillance Activity" ; meta:additionalDomain d:CMPE-D0004 ; meta:primaryDomain d:CMPE-D0003 ; meta:status "active" ; meta:stereotype meta:Perdurant .

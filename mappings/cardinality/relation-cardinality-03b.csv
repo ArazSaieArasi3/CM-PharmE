@@ -1,0 +1,6 @@
+relation_id,canonical_label,raw_label,relation_type,source_concept_id,target_concept_id,source_end_multiplicity,target_end_multiplicity,lifecycle_status,cardinality_status,superseded_by,notes
+CMPE-R0026,enables,,material,CMPE-C0035,CMPE-C0018,1,0..*,active,transcribed,,
+CMPE-R0027,is mediated by,,mediation,CMPE-C0008,CMPE-C0014,2..*,1..*,active,curated-merge-from-R0011-R0027,,B3 preserves the semantically coherent label from R0027 and the multi-actor cardinality evidence from R0011; R0011 is deprecated and retained for provenance.
+CMPE-R0028,governs,,material,CMPE-C0032,CMPE-C0001,0..*,1,active,transcribed,,
+CMPE-R0029,is part of,,componentOf,CMPE-C0018,CMPE-C0015,1,1,active,transcribed,,
+CMPE-R0030,characterizes,,characterization,CMPE-C0034,CMPE-C0018,0..*,1,active,transcribed,,

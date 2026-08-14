@@ -1,0 +1,2 @@
+@prefix c:<https://w3id.org/cm-pharme/concept/> . @prefix meta:<https://w3id.org/cm-pharme/meta/> . @prefix owl:<http://www.w3.org/2002/07/owl#> . @prefix r:<https://w3id.org/cm-pharme/relation/> . @prefix rdfs:<http://www.w3.org/2000/01/rdf-schema#> . @prefix skos:<http://www.w3.org/2004/02/skos/core#> .
+r:CMPE-R0022 a owl:ObjectProperty; rdfs:domain c:CMPE-C0028; rdfs:range c:CMPE-C0027; skos:prefLabel "mitigates"; meta:relationStereotype meta:MaterialRelation; meta:sourceEndMultiplicity "0..*"; meta:targetEndMultiplicity "0..*"; meta:status "active" .

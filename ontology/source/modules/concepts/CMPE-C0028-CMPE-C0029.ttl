@@ -1,0 +1,12 @@
+@prefix c: <https://w3id.org/cm-pharme/concept/> .
+@prefix d: <https://w3id.org/cm-pharme/domain/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix meta: <https://w3id.org/cm-pharme/meta/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix r: <https://w3id.org/cm-pharme/relation/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+c:CMPE-C0028 a owl:Class ; dcterms:identifier "CMPE-C0028" ; rdfs:subClassOf [ a owl:Restriction ; owl:onClass c:CMPE-C0038 ; owl:onProperty [ owl:inverseOf r:CMPE-R0034 ] ; owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ; skos:definition "A perdurant representing activities to identify, assess, treat, or monitor risks." ; skos:prefLabel "Risk Management Activity" ; meta:additionalDomain d:CMPE-D0003 ; meta:primaryDomain d:CMPE-D0004 ; meta:status "active" ; meta:stereotype meta:Perdurant .
+c:CMPE-C0029 a owl:Class ; dcterms:identifier "CMPE-C0029" ; skos:definition "A software or information-system component that forms part of a digital health platform and enables ecosystem processes." ; skos:prefLabel "Digital Health Platform Component" ; meta:primaryDomain d:CMPE-D0005 ; meta:status "active" ; meta:stereotype meta:Kind .

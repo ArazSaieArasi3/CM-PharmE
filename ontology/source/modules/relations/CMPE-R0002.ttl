@@ -1,0 +1,9 @@
+@prefix c: <https://w3id.org/cm-pharme/concept/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix meta: <https://w3id.org/cm-pharme/meta/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix r: <https://w3id.org/cm-pharme/relation/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+r:CMPE-R0002 a owl:ObjectProperty ; dcterms:identifier "CMPE-R0002" ; rdfs:domain c:CMPE-C0003 ; rdfs:range c:CMPE-C0025 ; skos:definition "Mediation relation from Organizational Stakeholder to Enterprise Governance Relator." ; skos:prefLabel "is mediated by" ; meta:cardinalityStatus "resolved-from-relator-occurrence" ; meta:relationStereotype meta:Mediation ; meta:sourceEndMultiplicity "1..*" ; meta:status "active" ; meta:targetEndMultiplicity "1" .

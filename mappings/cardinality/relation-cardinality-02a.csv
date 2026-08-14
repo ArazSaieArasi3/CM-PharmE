@@ -1,0 +1,6 @@
+relation_id,canonical_label,raw_label,relation_type,source_concept_id,target_concept_id,source_end_multiplicity,target_end_multiplicity,lifecycle_status,cardinality_status,superseded_by,notes
+CMPE-R0011,mediates,,mediation,CMPE-C0008,CMPE-C0014,2..*,1..*,deprecated,superseded-by-CMPE-R0027,CMPE-R0027,Source semantics conflict with CMPE-R0027; retained for provenance and deprecated in B3.
+CMPE-R0012,participates in,,association,CMPE-C0015,CMPE-C0003,1..*,0..*,active,transcribed,,
+CMPE-R0013,is part of,,componentOf,CMPE-C0016,CMPE-C0015,1..*,1,active,transcribed,,
+CMPE-R0014,is mediated by,,mediation,CMPE-C0017,CMPE-C0018,0..*,1..*,active,transcribed,,
+CMPE-R0015,is mediated by,,mediation,CMPE-C0019,CMPE-C0018,0..*,1..*,active,transcribed,,

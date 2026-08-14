@@ -1,0 +1,12 @@
+@prefix c: <https://w3id.org/cm-pharme/concept/> .
+@prefix d: <https://w3id.org/cm-pharme/domain/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix meta: <https://w3id.org/cm-pharme/meta/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix r: <https://w3id.org/cm-pharme/relation/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+c:CMPE-C0019 a owl:Class ; dcterms:identifier "CMPE-C0019" ; rdfs:subClassOf [ a owl:Restriction ; owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ; owl:onClass c:CMPE-C0018 ; owl:onProperty r:CMPE-R0015 ] ; skos:definition "A physician role borne by a healthcare professional authorized and acting to prescribe therapeutic interventions." ; skos:prefLabel "Prescribing Physician" ; meta:additionalDomain d:CMPE-D0001 ; meta:primaryDomain d:CMPE-D0003 ; meta:status "active" ; meta:stereotype meta:Role .
+c:CMPE-C0018 a owl:Class ; dcterms:identifier "CMPE-C0018" ; rdfs:subClassOf [ a owl:Restriction ; owl:onClass c:CMPE-C0035 ; owl:onProperty [ owl:inverseOf r:CMPE-R0026 ] ; owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ], [ a owl:Restriction ; owl:onClass c:CMPE-C0015 ; owl:onProperty r:CMPE-R0029 ; owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ; skos:definition "A relator organizing and connecting patient, provider, and clinical activity participation around a coordinated course of care." ; skos:prefLabel "Clinical Pathway" ; meta:primaryDomain d:CMPE-D0003 ; meta:status "active" ; meta:stereotype meta:Relator .

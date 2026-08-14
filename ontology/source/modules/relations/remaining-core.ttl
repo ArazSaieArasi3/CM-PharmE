@@ -1,0 +1,6 @@
+@prefix c:<https://w3id.org/cm-pharme/concept/> . @prefix meta:<https://w3id.org/cm-pharme/meta/> . @prefix owl:<http://www.w3.org/2002/07/owl#> . @prefix r:<https://w3id.org/cm-pharme/relation/> . @prefix rdfs:<http://www.w3.org/2000/01/rdf-schema#> .
+r:CMPE-R0006 a meta:GeneralizationRecord; meta:sourceClass c:CMPE-C0007; meta:targetClass c:CMPE-C0003 .
+r:CMPE-R0008 a owl:ObjectProperty; rdfs:domain c:CMPE-C0039; rdfs:range c:CMPE-C0010 .
+r:CMPE-R0010 a owl:ObjectProperty; rdfs:domain c:CMPE-C0012; rdfs:range c:CMPE-C0013 .
+r:CMPE-R0011 a owl:ObjectProperty; rdfs:domain c:CMPE-C0008; rdfs:range c:CMPE-C0014; owl:deprecated true .
+r:CMPE-R0014 a owl:ObjectProperty; rdfs:domain c:CMPE-C0017; rdfs:range c:CMPE-C0018 .

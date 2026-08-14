@@ -1,0 +1,12 @@
+@prefix c: <https://w3id.org/cm-pharme/concept/> .
+@prefix d: <https://w3id.org/cm-pharme/domain/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix meta: <https://w3id.org/cm-pharme/meta/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix r: <https://w3id.org/cm-pharme/relation/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+c:CMPE-C0021 a owl:Class ; dcterms:identifier "CMPE-C0021" ; rdfs:subClassOf [ a owl:Restriction ; owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ; owl:onClass c:CMPE-C0022 ; owl:onProperty [ owl:inverseOf r:CMPE-R0017 ] ], [ a owl:Restriction ; owl:onClass c:CMPE-C0020 ; owl:onProperty [ owl:inverseOf r:CMPE-R0016 ] ; owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ; skos:definition "A role borne by a person or organization that delivers healthcare services." ; skos:prefLabel "Healthcare Provider" ; meta:additionalDomain d:CMPE-D0001 ; meta:primaryDomain d:CMPE-D0003 ; meta:status "active" ; meta:stereotype meta:Role .
+c:CMPE-C0020 a owl:Class ; dcterms:identifier "CMPE-C0020" ; skos:definition "An organization that provides healthcare services and assigns healthcare provider roles." ; skos:prefLabel "Healthcare Provider Organization" ; meta:additionalDomain d:CMPE-D0003 ; meta:primaryDomain d:CMPE-D0001 ; meta:status "active" ; meta:stereotype meta:Kind .

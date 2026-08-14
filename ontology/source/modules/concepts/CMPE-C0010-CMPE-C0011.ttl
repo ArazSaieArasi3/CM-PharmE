@@ -1,0 +1,12 @@
+@prefix c: <https://w3id.org/cm-pharme/concept/> .
+@prefix d: <https://w3id.org/cm-pharme/domain/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix meta: <https://w3id.org/cm-pharme/meta/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix r: <https://w3id.org/cm-pharme/relation/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+c:CMPE-C0010 a owl:Class ; dcterms:identifier "CMPE-C0010" ; skos:definition "A mode representing an observable or represented indication of demand within the pharmaceutical ecosystem." ; skos:prefLabel "Ecosystem Demand Signal" ; meta:primaryDomain d:CMPE-D0002 ; meta:status "active" ; meta:stereotype meta:Mode .
+c:CMPE-C0011 a owl:Class ; dcterms:identifier "CMPE-C0011" ; rdfs:subClassOf [ a owl:Restriction ; owl:onClass c:CMPE-C0008 ; owl:onProperty [ owl:inverseOf r:CMPE-R0009 ] ; owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ; skos:definition "A mode representing the capacity of an ecosystem actor or arrangement to supply products, services, or capabilities." ; skos:prefLabel "Ecosystem Supply Capacity" ; meta:primaryDomain d:CMPE-D0002 ; meta:status "active" ; meta:stereotype meta:Mode .

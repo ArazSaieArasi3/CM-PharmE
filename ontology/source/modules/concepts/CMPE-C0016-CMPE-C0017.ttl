@@ -1,0 +1,12 @@
+@prefix c: <https://w3id.org/cm-pharme/concept/> .
+@prefix d: <https://w3id.org/cm-pharme/domain/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix meta: <https://w3id.org/cm-pharme/meta/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix r: <https://w3id.org/cm-pharme/relation/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+c:CMPE-C0016 a owl:Class ; dcterms:identifier "CMPE-C0016" ; rdfs:subClassOf [ a owl:Restriction ; owl:onClass c:CMPE-C0015 ; owl:onProperty r:CMPE-R0013 ; owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ], [ a owl:Restriction ; owl:onClass c:CMPE-C0030 ; owl:onProperty [ owl:inverseOf r:CMPE-R0038 ] ; owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ; skos:definition "A perdurant representing an ordered sequence of clinical activities carried out within a healthcare or pharmaceutical process." ; skos:prefLabel "Clinical Activity Sequence" ; meta:primaryDomain d:CMPE-D0003 ; meta:status "active" ; meta:stereotype meta:Perdurant .
+c:CMPE-C0017 a owl:Class ; dcterms:identifier "CMPE-C0017" ; rdfs:subClassOf [ a owl:Restriction ; owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ; owl:onClass c:CMPE-C0018 ; owl:onProperty r:CMPE-R0014 ], [ a owl:Restriction ; owl:onClass c:CMPE-C0033 ; owl:onProperty [ owl:inverseOf r:CMPE-R0037 ] ; owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ; skos:definition "A patient role borne by an individual person participating in clinical care." ; skos:prefLabel "Individual Patient" ; meta:primaryDomain d:CMPE-D0003 ; meta:status "active" ; meta:stereotype meta:Role .
