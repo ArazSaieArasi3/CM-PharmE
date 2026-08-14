@@ -1,14 +1,16 @@
-# CM-PharmE B4 — Final Evaluation Report
+# CM-PharmE B4/B4.10 — Final Evaluation Report
 
 ## Purpose
 
-B4 evaluates CM-PharmE by turning the design and evaluation procedures reported in the published conference paper and the later journal manuscript under review into repository-native, inspectable evidence. The repository does not treat manuscript prose as validation by itself; it records provenance, executes what can be executed, and preserves the evidential boundary of what remains qualitative, illustrative, or unverified.
+B4 evaluates CM-PharmE by turning the design and evaluation procedures reported in the published conference paper and the later journal manuscript under review into repository-native, inspectable evidence. B4.10 closes the initial OWL reasoner gap and assigns explicit dispositions to the semantic findings exposed by B4.
 
-The stable semantic baseline remains `v1.0.0`. B4 does not assign a new semantic version.
+The repository does not treat manuscript prose as validation by itself; it records provenance, executes what can be executed, and preserves the evidential boundary of what remains qualitative, illustrative, conditional, or open.
+
+The stable semantic baseline remains `v1.0.0`. B4/B4.10 does not assign a new semantic version and applies no core semantic changes.
 
 ## Inputs
 
-B4 used the canonical 39-concept / 40-relation / 5-domain registries, the B3 cleaned formal ontology and cardinality registry, the two CM-PharmE publication records, eight manuscript competency questions, eight manuscript OntoUML-informed anti-pattern categories, the vaccine-distribution scenario, and publication-derived expert-review observations.
+B4/B4.10 used the canonical 39-concept / 40-relation / 5-domain registries, the B3 formal ontology and cardinality registry, the two CM-PharmE publication records, eight manuscript competency questions, eight manuscript OntoUML-informed anti-pattern categories, the vaccine-distribution scenario, publication-derived expert-review observations, and the repository-controlled ROBOT/HermiT workflow.
 
 ## 1. Structural and traceability validation
 
@@ -16,13 +18,13 @@ A computational cross-check was run over the B3 canonical reference ontology and
 
 **Result: PASS — 28/28 checks.**
 
-Validated items include 39 canonical concept classes; 39 OWL object properties plus one generalization record (`CMPE-R0006`); five domains; stable-ID agreement between registries and the formal graph; 40 unique relation IDs; source/target and cardinality-registry agreement; lifecycle agreement; definitions, primary domains, and stereotypes for all concepts; valid relation domain/range references; 42 qualified cardinality restrictions; absence of historical converter cardinality classes; and graph equivalence of the four B3 reference serializations to the 1,086-triple canonical graph.
+Validated items include 39 canonical concept classes; 39 OWL object properties plus one generalization record (`CMPE-R0006`); five domains; stable-ID agreement between registries and the formal graph; 40 unique relation IDs; source/target and cardinality-registry agreement; lifecycle agreement; definitions, primary domains, and stereotypes for all concepts; valid relation domain/range references; 42 qualified cardinality restrictions; absence of historical converter cardinality classes; and graph equivalence of the four B3 reference serializations to the 1,086-triple packaged canonical graph.
 
-This establishes strong structural traceability, not semantic completeness or OWL DL consistency.
+This establishes strong structural traceability, not semantic completeness by itself.
 
 ## 2. Executable competency questions
 
-The eight competency questions reported in the journal manuscript were implemented as SPARQL queries and executed against the B3 ontology plus a constructed vaccine-distribution sample.
+The eight competency questions reported in the journal manuscript were implemented as SPARQL queries and executed against the ontology plus a constructed vaccine-distribution sample.
 
 **Result: 8/8 bounded expected outcomes PASS.**
 
@@ -55,14 +57,9 @@ Schema check:
 
 ### Publication-to-formal traceability findings
 
-B4 identified several places where the journal manuscript's illustrative prose is semantically broader or more direct than the current formal relation graph:
+B4 identified places where the journal manuscript's application prose is broader or more direct than the canonical relation graph, including governance/compliance constraints, the pharmacovigilance reporting path, RWE/surveillance/risk interpretation, and application-oriented EHR/blockchain descriptions.
 
-1. The manuscript states that Governance Policy / Compliance Requirement constrain operational constructs, while the current graph does not encode a direct policy/compliance-to-business-process constraint relation.
-2. The manuscript describes Pharmacovigilance Requirement as constraining Adverse Event Reporting Procedure; the canonical graph instead has `CMPE-R0031` to Post-Market Surveillance Activity and `CMPE-R0035` from surveillance to the reporting procedure.
-3. The manuscript describes RWE Platform as supporting surveillance and surveillance information as informing risk management; the current graph instead explicitly connects RWE Platform to Pharmacovigilance Requirement and directly to Risk Management Activity.
-4. EHR information exchange and blockchain traceability are plausible application interpretations, but the current formal properties are narrower than those prose descriptions.
-
-B4 **does not modify the ontology to force agreement with manuscript prose**. These are recorded as traceability findings for subsequent semantic disposition.
+B4.10 disposition: **no ontology change merely to mirror manuscript prose**. These differences remain documentation/traceability findings unless future domain evidence establishes that a missing direct relation is part of the core semantics.
 
 ## 4. OntoUML-informed anti-pattern re-evaluation
 
@@ -77,19 +74,19 @@ The eight historical categories were rechecked using repository heuristics plus 
 
 ### Historical low-risk finding retained
 
-- Overloaded Association: no single stable property was found with multiple domain/range definitions, but generic `material relation` terminology remains provisional.
+- Overloaded Association: no single stable property was found with multiple conflicting domain/range definitions; generic `material relation` terminology remains provisional.
 
-### Historical minor findings retained
+### Findings requiring disposition
 
-- **Relator without Mediation / mediation specificity:** Supply Chain Relationship still lacks clear mediation to participant role types; `CMPE-R0024` connects it to a Blockchain Ledger kind.
-- **Part–Whole Misuse:** the Public–Private Partnership Structure → Ecosystem Governance Entity relation remains a semantic-review item.
+B4.10 records five explicit decisions:
 
-### New B4 review candidates
+1. **Healthcare Provider (`CMPE-C0021`) — Role without explicit/inherited mediation:** `model-refinement-candidate`.
+2. **Supply Chain Relationship / `CMPE-R0024` — mediation specificity:** `model-refinement-candidate`.
+3. **PPP Structure / `CMPE-R0010` — part-whole semantics:** `defer-pending-domain-evidence`.
+4. **Clinical Pathway / `CMPE-R0029` — Relator→Perdurant part-whole semantics:** `model-refinement-candidate`.
+5. **Manuscript scenario prose versus formal graph:** `no-change-documentation-clarification`.
 
-- **Healthcare Provider (`CMPE-C0021`)** is stereotyped as a Role but has no explicit or inherited mediation relation in the formal graph. This weakens the earlier blanket “Role without Relator = Clean” publication observation and should be semantically reviewed.
-- **Clinical Pathway (`CMPE-C0018`) → Pharmaceutical Business Process (`CMPE-C0015`)** through `CMPE-R0029 is part of` crosses Relator → Perdurant categories and merits targeted mereological review.
-
-No critical issue requiring immediate redesign of the five-domain architecture was identified.
+No semantic change was applied in B4.10. See `b4-10-semantic-finding-disposition.md` and `evaluation/evidence/b4-10-semantic-findings.yaml`.
 
 ## 5. Expert / semantic evidence
 
@@ -97,40 +94,58 @@ The later manuscript's four-expert qualitative review has been normalized into r
 
 **Result: PARTIAL.**
 
-The evidence is now traceable, but B4 did not perform a new independent expert panel. It therefore supports research provenance and refinement history rather than independent semantic validation.
+The evidence is traceable, but B4 did not perform a new independent expert panel. It therefore supports research provenance and refinement history rather than independent semantic validation.
 
 ## 6. Logical / reasoner validation
 
-B4 prepared the intended ROBOT/HermiT validation. Java is available and the current official ROBOT release was identified as `v1.9.10`, but the runtime does not contain ROBOT/HermiT/ELK/JFact/Owlready2 and external binary/package download is blocked.
+B4.10 introduced a repository-controlled GitHub Actions workflow using ROBOT `v1.9.10`, HermiT, Java 21, Python 3.12, and RDFLib `7.5.0`. The ROBOT JAR is pinned by SHA-256 before execution.
 
-**Result: NOT VERIFIED / BLOCKED.**
+Validated GitHub Actions run:
 
-No structural or SPARQL result is substituted for a DL reasoner result. B4 therefore makes no claim of OWL DL consistency, absence of unsatisfiable classes, or complete logical soundness. This is the most important remaining computational validation gap.
+- run ID: `31796520297`
+- run number: `2`
+- validated commit: `a9d6b38791435de51966804e81a1ca71db24e253`
+- ROBOT/HermiT exit code: `0`
+- run conclusion: **success**
+- artifact ID: `9217570209`
+- artifact digest: `sha256:e22464b746e420b81db8ef6bec8e0a08b71cd2afb0a9145bdb2674f589461af8`
+
+**Result: PASS — executable OWL logical validation.**
+
+ROBOT performs logical validation before classification and fails on inconsistency or unsatisfiable classes. The successful run therefore provides evidence that HermiT did not detect logical inconsistency or unsatisfiable named classes in the validated logical axiom set.
+
+### Source-parity boundary
+
+The GitHub modular source assembled to 888 triples while the B3 packaged canonical reference contains 1,086 triples. A graph-difference check found that the delta consists only of annotation/provenance predicates and contains **zero logical-predicate differences**. Thus the HermiT run evaluates the same logical axiom set, while annotation parity remains a repository-engineering follow-up.
+
+Logical consistency does not resolve the open ontological-semantic questions described above.
 
 ## 7. Evaluation status by layer
 
 See [`b4-evaluation-matrix.md`](b4-evaluation-matrix.md) for the E1–E9 evidence matrix.
 
 - E1 Syntax — PASS
-- E2 Logic — NOT VERIFIED / BLOCKED
+- E2 Logic — **PASS**
 - E3 Structure — PASS
 - E4 Ontological — CONDITIONAL
 - E5 Semantic / Expert — PARTIAL
 - E6 Data / Mapping — PASS, bounded
 - E7 Competency Questions — PASS, bounded
 - E8 Application — PARTIAL / illustrative
-- E9 Reproducibility — PARTIAL
+- E9 Reproducibility — **PASS for B4 scope**
 
 ## Final conclusion
 
-B4 materially strengthens CM-PharmE evaluation compared with publication-only evidence. It converts the eight competency questions into executable tests, creates a machine-readable cross-domain scenario, computationally verifies structural and registry traceability, and turns historical anti-pattern and expert observations into versioned evidence.
+B4/B4.10 materially strengthens CM-PharmE evaluation compared with publication-only evidence. It converts the eight competency questions into executable tests, creates a machine-readable cross-domain scenario, computationally verifies structural and registry traceability, turns historical anti-pattern and expert observations into versioned evidence, and now executes reproducible ROBOT/HermiT logical validation in GitHub Actions.
 
-At the same time, B4 exposes useful discrepancies that a manuscript-centered evaluation did not make explicit. In particular, some scenario prose is broader than the canonical relation graph, and at least two additional ontology-review candidates deserve explicit disposition.
+The evaluation also exposes useful discrepancies rather than hiding them. Three semantic findings remain model-refinement candidates, one is deferred pending domain evidence, and one manuscript/formal discrepancy is resolved as documentation clarification. No finding currently requires redesign of the five-domain architecture, and no reasoner-detected logical defect was found.
 
-The appropriate conclusion is therefore:
+The appropriate conclusion is:
 
-**B4 evaluation evidence package: PASS with open, explicitly recorded findings.**
+**B4/B4.10 evaluation evidence package: PASS with open, explicitly dispositioned semantic findings.**
+
+**OWL logical validation: PASS for the current logical axiom set.**
 
 **CM-PharmE stable-release readiness: NOT YET.**
 
-No semantic change should be made merely to make the ontology match manuscript prose. The next step is to run a reproducible DL reasoner workflow and then decide—separately and traceably—whether the identified role/mediation, part-whole, and scenario/formal discrepancies require ontology changes or only documentation clarification.
+Remaining blockers are no longer basic logical consistency. They are targeted semantic disposition/refinement decisions, annotation/provenance normalization of the GitHub modular source, stronger independent expert/domain evidence where required, and the broader build/release automation work planned for B5.
