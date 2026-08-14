@@ -43,8 +43,17 @@ This changelog records research-model and repository-level changes that are mean
 - Normalized `CMPE-R0031` from the raw source label `constraints` to `constrains` while retaining provenance.
 - Added cautious UFO/OntoUML stereotype-correspondence notes without asserting unsupported external equivalence.
 - Recorded structural/reference-package validation evidence and a dedicated B3 formal-ontology audit.
-- Kept generated OWL/RDF/XML, RDF/XML, JSON-LD, N-Triples and SHACL outputs as derived artifacts pending deterministic GitHub CI/build materialization.
-- Explicitly deferred full OWL DL reasoner evidence, persistent-IRI deployment, broader competency-question execution and expert semantic validation.
+- Kept generated serializations and SHACL outputs as derived artifacts pending deterministic GitHub CI/build materialization.
+- Deferred full OWL DL reasoner evidence, persistent-IRI deployment, broader competency-question execution, and expert semantic validation.
+
+### B4 Paper-Grounded Research and Evaluation
+- Added a repository-native problem/gap/solution narrative and application boundaries derived from the two CM-PharmE papers without duplicating manuscript structure.
+- Added reusable model-development and evaluation methods, including PRISMA/thematic-synthesis provenance, business-architecture-informed concern identification, UFO/OntoUML classification, and E1–E9 evaluation mapping.
+- Added the eight journal-manuscript competency questions and eight OntoUML-informed anti-pattern categories as machine-readable evaluation registries.
+- Added the vaccine-distribution reference scenario, evidence-status policy, and publication-evidence matrix.
+- Added curated method/evaluation references and explicit publication-to-repository traceability.
+- Added the journal manuscript under review to the publication registry and strengthened the published conference-paper record without inventing unverified bibliographic metadata.
+- No new semantic model release is declared by this B4 documentation/evaluation work.
 
 ## v1.0.0 — Historical Initial Release
 
