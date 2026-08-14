@@ -1,0 +1,81 @@
+schema_version: 1
+registry: CM-PharmE B4 Competency Questions
+source_basis:
+  primary: journal-manuscript-under-review
+  historical: published-conference-paper
+notes:
+  - The eight baseline questions are derived from the journal manuscript evaluation.
+  - Historical manuscript results are traceability-based and were not executable queries.
+  - B4 targets executable SPARQL evidence where representative data permits.
+questions:
+  - id: CMPE-CQ001
+    question: How are organizational structures and capabilities of pharmaceutical enterprises represented within the ecosystem?
+    domains: [Organizational/Structural]
+    key_concepts: [CMPE-C0001, CMPE-C0002, CMPE-C0003, CMPE-C0005, CMPE-C0006, CMPE-C0025]
+    manuscript_result: addressed
+    manuscript_boundary: Explicit constructs support enterprise identity, composition, capabilities, objectives, and governance participation.
+    b4_target: executable-query
+    repository_status: provenance-recorded
+
+  - id: CMPE-CQ002
+    question: How does the model capture inter-organizational collaboration and partnerships across the pharmaceutical ecosystem?
+    domains: [Ecosystem/Collaborative]
+    key_concepts: [CMPE-C0008, CMPE-C0009, CMPE-C0012, CMPE-C0014]
+    manuscript_result: addressed
+    manuscript_boundary: Explicit role and relator constructs support a traceable conceptual representation of collaboration.
+    b4_target: executable-query
+    repository_status: provenance-recorded
+
+  - id: CMPE-CQ003
+    question: How are business and clinical processes connected to ecosystem-level participation?
+    domains: [Operational/Process, Ecosystem/Collaborative]
+    key_concepts: [CMPE-C0015, CMPE-C0016, CMPE-C0018, CMPE-C0017, CMPE-C0019, CMPE-C0021]
+    manuscript_result: addressed
+    manuscript_boundary: The model connects temporally unfolding processes with participating roles and relational contexts.
+    b4_target: executable-query
+    repository_status: provenance-recorded
+
+  - id: CMPE-CQ004
+    question: How are regulatory governance and compliance constraints represented across pharmaceutical ecosystems?
+    domains: [Governance/Regulatory, Operational/Process]
+    key_concepts: [CMPE-C0023, CMPE-C0024, CMPE-C0004, CMPE-C0026, CMPE-C0027, CMPE-C0036, CMPE-C0028]
+    manuscript_result: addressed
+    manuscript_boundary: Explicit constructs and constraining relations cover the principal governance concerns examined.
+    b4_target: executable-query
+    repository_status: provenance-recorded
+
+  - id: CMPE-CQ005
+    question: How are digital technologies conceptually connected to ecosystem governance and operations?
+    domains: [Digital Transformation, Cross-Domain]
+    key_concepts: [CMPE-C0029, CMPE-C0030, CMPE-C0031, CMPE-C0033, CMPE-C0035, CMPE-C0038]
+    manuscript_result: addressed-conceptually
+    manuscript_boundary: Digital enablement and cross-domain dependencies are represented, but technical interoperability was not tested.
+    b4_target: executable-query
+    repository_status: provenance-recorded
+
+  - id: CMPE-CQ006
+    question: How are business-architecture concerns aligned with foundational ontology at the ecosystem level?
+    domains: [Cross-Domain]
+    key_concepts: []
+    manuscript_result: addressed-conceptually
+    manuscript_boundary: An analytical mapping exists without claiming formal BACM-to-OntoUML equivalence or metamodel conformance.
+    b4_target: traceability-test
+    repository_status: provenance-recorded
+
+  - id: CMPE-CQ007
+    question: In what way can CM-PharmE function as a reference architecture for pharmaceutical ecosystems?
+    domains: [Cross-Domain]
+    key_concepts: []
+    manuscript_result: partially-addressed
+    manuscript_boundary: Application pathways are analytical; adoption, implementation feasibility, transition cost, and measurable benefit were not evaluated.
+    b4_target: application-evidence
+    repository_status: provenance-recorded
+
+  - id: CMPE-CQ008
+    question: How can the model be adapted or extended to different pharmaceutical contexts?
+    domains: [Cross-Domain]
+    key_concepts: []
+    manuscript_result: partially-addressed
+    manuscript_boundary: Evidence is based on one illustrative vaccine-distribution scenario; no controlled extension experiment or multi-case deployment was conducted.
+    b4_target: scenario-and-extension-test
+    repository_status: provenance-recorded
