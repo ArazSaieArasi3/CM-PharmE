@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "comparison": "B3 packaged canonical Turtle vs B4.10 GitHub modular-source assembly",
+  "reference_package_sha256": "6db9409f6ab62b7f344e65a34dbcbb045914932c2872907d81fcdd1a14a512a1",
+  "reference_turtle_sha256": "ecdd2efb71c72b40c055e94b550bad59006cc66ddce851eca3e7e22853668132",
+  "assembled_turtle_sha256": "61d9d4a3ce8f3307da42945ca8f41cdc8829cd31411c9e501957c5d075dde28a",
+  "reference_triples": 1086,
+  "assembled_triples": 888,
+  "common_triples_after_bnode_normalization": 879,
+  "reference_only_triples": 207,
+  "assembled_only_triples": 9,
+  "reference_only_predicates": [
+    "http://purl.org/dc/terms/identifier",
+    "http://purl.org/dc/terms/isReplacedBy",
+    "http://purl.org/dc/terms/replaces",
+    "http://www.w3.org/2004/02/skos/core#definition",
+    "http://www.w3.org/2004/02/skos/core#prefLabel",
+    "https://w3id.org/cm-pharme/meta/cardinalityStatus",
+    "https://w3id.org/cm-pharme/meta/rawLabel",
+    "https://w3id.org/cm-pharme/meta/relationStereotype",
+    "https://w3id.org/cm-pharme/meta/reviewNote",
+    "https://w3id.org/cm-pharme/meta/sourceEndMultiplicity",
+    "https://w3id.org/cm-pharme/meta/status",
+    "https://w3id.org/cm-pharme/meta/targetEndMultiplicity"
+  ],
+  "assembled_only_predicates": [
+    "http://www.w3.org/2004/02/skos/core#definition",
+    "https://w3id.org/cm-pharme/meta/reviewNote"
+  ],
+  "logical_delta_reference_only": 0,
+  "logical_delta_assembled_only": 0,
+  "logical_axiom_parity": true,
+  "interpretation": "The GitHub modular source and B3 packaged canonical source differ in annotation/provenance coverage, but no differing triple uses a predicate outside the explicit annotation/provenance allow-list. HermiT therefore evaluated the same logical axiom set. Annotation parity remains a repository-engineering follow-up and must not be hidden by the logical PASS."
+}
