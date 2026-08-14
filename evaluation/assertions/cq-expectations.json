@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "queries": {
+    "cq-001.rq": {"min_rows": 1},
+    "cq-002.rq": {"min_rows": 1},
+    "cq-003.rq": {"min_rows": 1},
+    "cq-004.rq": {"min_rows": 1},
+    "cq-005.rq": {"min_rows": 5},
+    "cq-006.rq": {"exact_rows": 6},
+    "cq-007.rq": {"exact_rows": 1, "first_row_equals": {"representedDomains": 5}},
+    "cq-008.rq": {"exact_rows": 1, "first_row_equals": {"mappedCoreClasses": 32, "representedDomains": 5, "scenarioSpecificClassCount": 0}}
+  },
+  "boundary": "Regression assertions for the B4 constructed vaccine scenario. Intentional semantic evolution may require explicit expectation updates."
+}
