@@ -1,0 +1,87 @@
+schema_version: 1
+registry: CM-PharmE OntoUML-Informed Anti-Pattern Evidence
+source_basis: journal-manuscript-under-review
+method_boundary:
+  historical_method: focused-manual-inspection
+  automated_detector_used: false
+  exhaustive_catalog_used: false
+  result_scale: [clean, minor-issue, low-risk]
+items:
+  - id: CMPE-AP001
+    name: Type–Role Confusion
+    description: Modeling roles as rigid types or kinds as roles.
+    relevance: Organizational, clinical, and ecosystem roles.
+    historical_result: clean
+    historical_observation: No type-role conflation was identified among the inspected constructs; Individual Patient is a Role and Pharmaceutical Enterprise is a Kind.
+    historical_action: no-action-required
+    b4_status: to-be-rechecked
+
+  - id: CMPE-AP002
+    name: Role without Relator
+    description: A contextual role is represented without a mediating contextual relator.
+    relevance: Governance, clinical, and ecosystem participation roles.
+    historical_result: clean
+    historical_observation: No unmediated role was identified in the inspected scope; examples include Clinical Pathway and Enterprise Governance Relator.
+    historical_action: no-action-required
+    b4_status: to-be-rechecked
+
+  - id: CMPE-AP003
+    name: Relator without Mediation
+    description: A relator lacks explicit mediation to participant role or entity types.
+    relevance: Partnership, governance, and supply-chain relations.
+    historical_result: minor-issue
+    historical_observation: Supply Chain Relationship could benefit from more explicit mediation to role types.
+    historical_action: optional-refinement
+    b4_status: requires-focused-review
+
+  - id: CMPE-AP004
+    name: Event as Object
+    description: Events or processes are modeled as rigid object types.
+    relevance: Clinical and pharmaceutical business processes.
+    historical_result: clean
+    historical_observation: Inspected processes are represented as perdurants rather than rigid object types.
+    historical_action: no-action-required
+    b4_status: to-be-rechecked
+
+  - id: CMPE-AP005
+    name: Mode vs. Attribute Confusion
+    description: Qualities, dispositions, capabilities, signals, or requirements are represented with unsuitable independence commitments.
+    relevance: Capabilities, requirements, demand/supply signals, policies, and qualities.
+    historical_result: clean
+    historical_observation: Inspected capabilities, requirements, and demand/supply signals are represented as modes.
+    historical_action: no-action-required
+    b4_status: to-be-rechecked
+
+  - id: CMPE-AP006
+    name: Part–Whole Misuse
+    description: componentOf or partOf is used where the intended relation may not be structural composition.
+    relevance: Organizational and ecosystem structures.
+    historical_result: minor-issue
+    historical_observation: Public–Private Partnership Structure modeled as componentOf a governance entity may reflect institutional rather than structural composition.
+    historical_action: reconsider-relation-semantics
+    b4_status: requires-focused-review
+
+  - id: CMPE-AP007
+    name: Relation as Class
+    description: A relationship is modeled as a rigid entity rather than an appropriate relator or relation.
+    relevance: Contractual, governance, collaborative, and coordination constructs.
+    historical_result: clean
+    historical_observation: Inspected social, contractual, and governance relationship constructs are represented as relators.
+    historical_action: no-action-required
+    b4_status: to-be-rechecked
+
+  - id: CMPE-AP008
+    name: Overloaded Association
+    description: A single association carries multiple or ambiguous semantics.
+    relevance: Governance and information-related cross-domain relations.
+    historical_result: low-risk
+    historical_observation: No material semantic overloading was identified in the inspected scope, although further elaboration may improve clarity.
+    historical_action: no-immediate-action
+    b4_status: to-be-rechecked
+
+summary:
+  critical_issues: 0
+  minor_issues: 2
+  low_risk_observations: 1
+  clean_categories: 5
+  evidence_status: reported-in-journal-manuscript
