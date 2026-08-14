@@ -1,0 +1,47 @@
+@prefix c: <https://w3id.org/cm-pharme/concept/> .
+@prefix r: <https://w3id.org/cm-pharme/relation/> .
+@prefix ex: <https://w3id.org/cm-pharme/example/vaccine/> .
+
+ex:manufacturer a c:CMPE-C0001 ;
+    r:CMPE-R0001 ex:enterpriseStakeholder ;
+    r:CMPE-R0040 ex:distributionAgreement .
+ex:organizationUnit a c:CMPE-C0002 ; r:CMPE-R0003 ex:manufacturer .
+ex:enterpriseCapability a c:CMPE-C0005 ; r:CMPE-R0004 ex:manufacturer .
+ex:enterpriseStakeholder a c:CMPE-C0003 ; r:CMPE-R0002 ex:enterpriseGovernance .
+ex:enterpriseGovernance a c:CMPE-C0025 .
+
+ex:manufacturerActor a c:CMPE-C0008 ; r:CMPE-R0007 ex:ecosystemRelationship ; r:CMPE-R0027 ex:distributionAgreement .
+ex:authorityActor a c:CMPE-C0008 ; r:CMPE-R0007 ex:ecosystemRelationship ; r:CMPE-R0027 ex:distributionAgreement .
+ex:ecosystemRelationship a c:CMPE-C0009 .
+ex:distributionAgreement a c:CMPE-C0014 .
+
+ex:regulatoryAuthority a c:CMPE-C0023 ; r:CMPE-R0018 ex:regulatoryRole .
+ex:regulatoryRole a c:CMPE-C0024 ; r:CMPE-R0019 ex:regulatoryOversight .
+ex:regulatoryOversight a c:CMPE-C0004 .
+ex:governancePolicy a c:CMPE-C0026 ; r:CMPE-R0020 ex:regulatoryOversight .
+ex:complianceRequirement a c:CMPE-C0027 ; r:CMPE-R0021 ex:governancePolicy .
+ex:riskManagement a c:CMPE-C0028 ; r:CMPE-R0022 ex:complianceRequirement .
+
+ex:distributionProcess a c:CMPE-C0015 ; r:CMPE-R0012 ex:enterpriseStakeholder .
+ex:vaccinationSequence a c:CMPE-C0016 ; r:CMPE-R0013 ex:distributionProcess .
+ex:clinicalPathway a c:CMPE-C0018 ; r:CMPE-R0029 ex:distributionProcess .
+ex:vaccinatedPatient a c:CMPE-C0017 ; r:CMPE-R0014 ex:clinicalPathway .
+ex:prescribingPhysician a c:CMPE-C0019 ; r:CMPE-R0015 ex:clinicalPathway .
+
+ex:providerOrganization a c:CMPE-C0020 ; r:CMPE-R0016 ex:healthcareProvider .
+ex:healthcareProvider a c:CMPE-C0021 .
+ex:adverseEventReporting a c:CMPE-C0022 ; r:CMPE-R0017 ex:healthcareProvider .
+ex:postMarketSurveillance a c:CMPE-C0037 ; r:CMPE-R0035 ex:adverseEventReporting .
+ex:pharmacovigilanceRequirement a c:CMPE-C0036 ; r:CMPE-R0031 ex:postMarketSurveillance .
+
+ex:digitalHealthPlatform a c:CMPE-C0029 ; r:CMPE-R0023 ex:distributionProcess .
+ex:electronicHealthRecord a c:CMPE-C0033 ; r:CMPE-R0037 ex:vaccinatedPatient ; r:CMPE-R0025 ex:patientRecordQuality .
+ex:patientRecordQuality a c:CMPE-C0034 ; r:CMPE-R0030 ex:clinicalPathway .
+ex:aiDecisionSupport a c:CMPE-C0030 ; r:CMPE-R0038 ex:vaccinationSequence .
+ex:telemedicineChannel a c:CMPE-C0035 ; r:CMPE-R0026 ex:clinicalPathway .
+ex:realWorldEvidencePlatform a c:CMPE-C0038 ;
+    r:CMPE-R0032 ex:pharmacovigilanceRequirement ;
+    r:CMPE-R0033 ex:manufacturer ;
+    r:CMPE-R0034 ex:riskManagement .
+ex:supplyChainRelationship a c:CMPE-C0032 ; r:CMPE-R0024 ex:blockchainLedger ; r:CMPE-R0028 ex:manufacturer .
+ex:blockchainLedger a c:CMPE-C0031 .
