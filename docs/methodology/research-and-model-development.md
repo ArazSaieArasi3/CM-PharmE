@@ -82,7 +82,7 @@ Used for an existentially dependent capability, property, signal, policy, object
 ### Perdurant
 Used for a process, activity, procedure, or sequence that unfolds in time.
 
-Classification decisions are explicit modeling commitments rather than claims of universal pharmaceutical-domain truth.
+Classification decisions are explicit modeling commitments rather than claims of universal pharmaceutical-domain truth. CM-PharmE keeps these internal modeling commitments separate from unsupported external equivalence assertions. For maintained language/tooling context, see [Official OntoUML Ecosystem References](../references/ontouml-ecosystem.md).
 
 ## 7. Relation selection
 
@@ -99,7 +99,7 @@ The design principle is conservative commitment: do not introduce semantics stro
 
 Cardinalities are conceptual participation constraints rather than measured frequencies. Mandatory multiplicities are used only where the intended role, relator, or relation presupposes participation. Optional or multiple participation is retained when stronger restrictions are not justified.
 
-Where the historical diagram is ambiguous or duplicated, provenance and curation status are recorded explicitly rather than silently normalized. B3 materializes this policy in the relation-cardinality registry.
+Where the historical diagram is ambiguous or duplicated, provenance and curation status are recorded explicitly rather than silently normalized. The formal ontology engineering layer materializes this policy in the relation-cardinality registry.
 
 ## 9. Integration and cross-domain review
 
