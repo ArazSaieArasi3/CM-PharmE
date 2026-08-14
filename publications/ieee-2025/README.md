@@ -4,6 +4,8 @@
 
 **CM-PharmE ver.1: Towards a Conceptual Model for Pharmaceutical Ecosystem with a Business-Architecture Perspective**
 
+**Publisher page:** [IEEE Xplore](https://ieeexplore.ieee.org/abstract/document/11301544/)
+
 ## Authors
 
 - Araz Saie Arasi — ORCID: https://orcid.org/0009-0009-6739-5717
@@ -14,9 +16,9 @@
 
 **Published conference paper.**
 
-The later journal manuscript cites this work as published in the *9th Iranian Conference on Advances in Enterprise Architecture (ICAEA)*, Tehran, Iran, 2025, pp. 1–8.
+The later journal manuscript cites this work as published in the *9th Iranian Conference on Advances in Enterprise Architecture (ICAEA)*, Tehran, Iran, 2025, pp. 1–8. The IEEE Xplore record linked above is the direct publisher entry supplied for this publication.
 
-DOI and publisher URL are not added here until independently verified.
+DOI metadata is not duplicated here until independently verified from an authoritative bibliographic source or the publisher record itself.
 
 ## Model association
 
@@ -41,7 +43,7 @@ The paper reported qualitative evaluation across five dimensions:
 
 Some early evaluation statements are stronger than the evidential wording used in the later journal manuscript. The repository therefore preserves these results as **historical publication evidence** and does not automatically treat them as current repository-reproduced results.
 
-Examples include the reported `8/10` clarity result, easy customization across contexts, and participant actionability. B4 explicitly tracks these claims in [`../../evaluation/evidence/publication-evidence-matrix.csv`](../../evaluation/evidence/publication-evidence-matrix.csv).
+Examples include the reported `8/10` clarity result, easy customization across contexts, and participant actionability. The later **Evaluation and Evidence** work (historically tracked as B4) records these claims in [`../../evaluation/evidence/publication-evidence-matrix.csv`](../../evaluation/evidence/publication-evidence-matrix.csv).
 
 ## Relationship to later research
 
