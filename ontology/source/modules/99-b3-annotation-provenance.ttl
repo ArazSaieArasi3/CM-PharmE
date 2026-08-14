@@ -1,0 +1,242 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix meta: <https://w3id.org/cm-pharme/meta/> .
+@prefix r: <https://w3id.org/cm-pharme/relation/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+r:CMPE-R0001 meta:reviewNote "The source diagram contains duplicated cardinality label objects on this edge; the primary endpoint pair is retained provisionally." .
+
+r:CMPE-R0002 meta:reviewNote "Two graphical occurrences conflict because Enterprise Governance Relator was duplicated as relator and mode. The occurrence attached to the canonical relator node is authoritative for B3 cardinality." .
+
+r:CMPE-R0003 skos:definition "CM-PharmE relation connecting instances of Organizational Unit Structure to instances of Pharmaceutical Enterprise; canonical label “is part of” and relation stereotype “componentOf”." ;
+    meta:cardinalityStatus "transcribed" .
+
+r:CMPE-R0004 skos:definition "CM-PharmE relation connecting instances of Enterprise Capability to instances of Pharmaceutical Enterprise; canonical label “characterizes” and relation stereotype “characterization”." ;
+    meta:cardinalityStatus "transcribed" .
+
+r:CMPE-R0005 skos:definition "CM-PharmE relation connecting instances of Strategic Resource Allocation to instances of Organizational Unit Structure; canonical label “characterizes” and relation stereotype “characterization”." ;
+    meta:cardinalityStatus "transcribed" .
+
+r:CMPE-R0006 dcterms:identifier "CMPE-R0006" ;
+    skos:definition "CM-PharmE relation connecting instances of Clinical Workforce to instances of Organizational Stakeholder; canonical label “specializes” and relation stereotype “generalization”." ;
+    skos:prefLabel "specializes" ;
+    meta:relationStereotype meta:Generalization ;
+    meta:status "active" .
+
+r:CMPE-R0007 skos:definition "CM-PharmE relation connecting instances of Ecosystem Actor to instances of Ecosystem Relationship; canonical label “is mediated by” and relation stereotype “mediation”." ;
+    meta:cardinalityStatus "transcribed" .
+
+r:CMPE-R0008 dcterms:identifier "CMPE-R0008" ;
+    skos:definition "CM-PharmE relation connecting instances of Service Offering Specification to instances of Ecosystem Demand Signal; canonical label “fulfills” and relation stereotype “material”." ;
+    skos:prefLabel "fulfills" ;
+    meta:cardinalityStatus "transcribed" ;
+    meta:relationStereotype meta:MaterialRelation ;
+    meta:sourceEndMultiplicity "0..*" ;
+    meta:status "active" ;
+    meta:targetEndMultiplicity "0..*" .
+
+r:CMPE-R0009 skos:definition "CM-PharmE relation connecting instances of Ecosystem Actor to instances of Ecosystem Supply Capacity; canonical label “characterizes” and relation stereotype “characterization”." ;
+    meta:cardinalityStatus "transcribed" .
+
+r:CMPE-R0010 dcterms:identifier "CMPE-R0010" ;
+    skos:definition "CM-PharmE relation connecting instances of Public-Private Partnership Structure to instances of Ecosystem Governance Entity; canonical label “is part of” and relation stereotype “componentOf”." ;
+    skos:prefLabel "is part of" ;
+    meta:cardinalityStatus "transcribed" ;
+    meta:rawLabel "is part of a" ;
+    meta:relationStereotype meta:ComponentOf ;
+    meta:reviewNote "Canonical wording normalizes the minor source-label variant." ;
+    meta:sourceEndMultiplicity "0..*" ;
+    meta:status "active" ;
+    meta:targetEndMultiplicity "1" .
+
+r:CMPE-R0012 dcterms:identifier "CMPE-R0012" ;
+    skos:definition "CM-PharmE relation connecting instances of Pharmaceutical Business Process to instances of Organizational Stakeholder; canonical label “participates in” and relation stereotype “association”." ;
+    meta:cardinalityStatus "transcribed" .
+
+r:CMPE-R0013 dcterms:identifier "CMPE-R0013" ;
+    skos:definition "CM-PharmE relation connecting instances of Clinical Activity Sequence to instances of Pharmaceutical Business Process; canonical label “is part of” and relation stereotype “componentOf”." ;
+    meta:cardinalityStatus "transcribed" .
+
+r:CMPE-R0014 dcterms:identifier "CMPE-R0014" ;
+    skos:definition "CM-PharmE relation connecting instances of Individual Patient to instances of Clinical Pathway; canonical label “is mediated by” and relation stereotype “mediation”." ;
+    skos:prefLabel "is mediated by" ;
+    meta:cardinalityStatus "transcribed" ;
+    meta:relationStereotype meta:Mediation ;
+    meta:sourceEndMultiplicity "0..*" ;
+    meta:status "active" ;
+    meta:targetEndMultiplicity "1..*" .
+
+r:CMPE-R0015 dcterms:identifier "CMPE-R0015" ;
+    skos:definition "CM-PharmE relation connecting instances of Prescribing Physician to instances of Clinical Pathway; canonical label “is mediated by” and relation stereotype “mediation”." ;
+    meta:cardinalityStatus "transcribed" .
+
+r:CMPE-R0016 dcterms:identifier "CMPE-R0016" ;
+    skos:definition "CM-PharmE relation connecting instances of Healthcare Provider Organization to instances of Healthcare Provider; canonical label “assigns” and relation stereotype “material”." ;
+    meta:cardinalityStatus "transcribed" .
+
+r:CMPE-R0017 dcterms:identifier "CMPE-R0017" ;
+    skos:definition "CM-PharmE relation connecting instances of Adverse Event Reporting Procedure to instances of Healthcare Provider; canonical label “participates in” and relation stereotype “association”." ;
+    meta:cardinalityStatus "transcribed" .
+
+r:CMPE-R0018 dcterms:identifier "CMPE-R0018" ;
+    skos:definition "CM-PharmE relation connecting instances of Regulatory Authority Entity to instances of Regulatory Authority Role; canonical label “material relation” and relation stereotype “material”." ;
+    meta:cardinalityStatus "transcribed-provisional-label" .
+
+r:CMPE-R0019 dcterms:identifier "CMPE-R0019" ;
+    skos:definition "CM-PharmE relation connecting instances of Regulatory Authority Role to instances of Regulatory Oversight; canonical label “is mediated by” and relation stereotype “mediation”." ;
+    meta:cardinalityStatus "transcribed" ;
+    meta:relationStereotype meta:Mediation .
+
+r:CMPE-R0020 dcterms:identifier "CMPE-R0020" ;
+    skos:definition "CM-PharmE relation connecting instances of Governance Policy Framework to instances of Regulatory Oversight; canonical label “characterizes” and relation stereotype “characterization”." ;
+    meta:cardinalityStatus "transcribed" .
+
+r:CMPE-R0021 dcterms:identifier "CMPE-R0021" ;
+    skos:definition "CM-PharmE relation connecting instances of Compliance Requirement to instances of Governance Policy Framework; canonical label “characterizes” and relation stereotype “characterization”." ;
+    meta:cardinalityStatus "transcribed" ;
+    meta:relationStereotype meta:Characterization .
+
+r:CMPE-R0022 dcterms:identifier "CMPE-R0022" ;
+    skos:definition "CM-PharmE relation connecting instances of Risk Management Activity to instances of Compliance Requirement; canonical label “mitigates” and relation stereotype “material”." ;
+    meta:cardinalityStatus "transcribed" .
+
+r:CMPE-R0023 dcterms:identifier "CMPE-R0023" ;
+    skos:definition "CM-PharmE relation connecting instances of Digital Health Platform Component to instances of Pharmaceutical Business Process; canonical label “enables” and relation stereotype “material”." ;
+    meta:cardinalityStatus "transcribed" ;
+    meta:relationStereotype meta:MaterialRelation .
+
+r:CMPE-R0024 dcterms:identifier "CMPE-R0024" ;
+    skos:definition "CM-PharmE relation connecting instances of Supply Chain Relationship to instances of Blockchain-Based Supply Chain Ledger; canonical label “mediates” and relation stereotype “mediation”." ;
+    meta:cardinalityStatus "transcribed-direction-review" ;
+    meta:relationStereotype meta:Mediation .
+
+r:CMPE-R0025 dcterms:identifier "CMPE-R0025" ;
+    skos:definition "CM-PharmE relation connecting instances of Electronic Health Record System to instances of Patient Record Quality; canonical label “records” and relation stereotype “material”." ;
+    meta:cardinalityStatus "transcribed" ;
+    meta:relationStereotype meta:MaterialRelation .
+
+r:CMPE-R0026 dcterms:identifier "CMPE-R0026" ;
+    skos:definition "CM-PharmE relation connecting instances of Telemedicine Service Channel to instances of Clinical Pathway; canonical label “enables” and relation stereotype “material”." ;
+    meta:cardinalityStatus "transcribed" ;
+    meta:relationStereotype meta:MaterialRelation .
+
+r:CMPE-R0028 dcterms:identifier "CMPE-R0028" ;
+    skos:definition "CM-PharmE relation connecting instances of Supply Chain Relationship to instances of Pharmaceutical Enterprise; canonical label “governs” and relation stereotype “material”." ;
+    meta:cardinalityStatus "transcribed" ;
+    meta:relationStereotype meta:MaterialRelation .
+
+r:CMPE-R0029 dcterms:identifier "CMPE-R0029" ;
+    skos:definition "CM-PharmE relation connecting instances of Clinical Pathway to instances of Pharmaceutical Business Process; canonical label “is part of” and relation stereotype “componentOf”." ;
+    meta:cardinalityStatus "transcribed" ;
+    meta:relationStereotype meta:ComponentOf ;
+    meta:status "active" .
+
+r:CMPE-R0030 dcterms:identifier "CMPE-R0030" ;
+    skos:definition "CM-PharmE relation connecting instances of Patient Record Quality to instances of Clinical Pathway; canonical label “characterizes” and relation stereotype “characterization”." ;
+    meta:cardinalityStatus "transcribed" ;
+    meta:relationStereotype meta:Characterization .
+
+r:CMPE-R0031 dcterms:identifier "CMPE-R0031" ;
+    skos:definition "CM-PharmE relation connecting instances of Pharmacovigilance Requirement to instances of Post-Market Surveillance Activity; canonical label “constrains” and relation stereotype “material”." ;
+    meta:cardinalityStatus "transcribed-lexical-normalization" ;
+    meta:relationStereotype meta:MaterialRelation ;
+    meta:reviewNote "The grammatical source label “constraints” is normalized to “constrains”; the raw label is retained." .
+
+r:CMPE-R0032 dcterms:identifier "CMPE-R0032" ;
+    skos:definition "CM-PharmE relation connecting instances of Real-World Evidence Platform to instances of Pharmacovigilance Requirement; canonical label “informs” and relation stereotype “material”." ;
+    skos:prefLabel "informs" ;
+    meta:cardinalityStatus "transcribed" ;
+    meta:relationStereotype meta:MaterialRelation ;
+    meta:sourceEndMultiplicity "1" ;
+    meta:status "active" ;
+    meta:targetEndMultiplicity "0..*" .
+
+r:CMPE-R0033 dcterms:identifier "CMPE-R0033" ;
+    skos:definition "CM-PharmE relation connecting instances of Real-World Evidence Platform to instances of Pharmaceutical Enterprise; canonical label “informs” and relation stereotype “material”." ;
+    skos:prefLabel "informs" ;
+    meta:cardinalityStatus "transcribed" ;
+    meta:relationStereotype meta:MaterialRelation ;
+    meta:sourceEndMultiplicity "1" ;
+    meta:status "active" ;
+    meta:targetEndMultiplicity "0..*" .
+
+r:CMPE-R0034 dcterms:identifier "CMPE-R0034" ;
+    skos:definition "CM-PharmE relation connecting instances of Real-World Evidence Platform to instances of Risk Management Activity; canonical label “informs” and relation stereotype “material”." ;
+    skos:prefLabel "informs" ;
+    meta:cardinalityStatus "transcribed" ;
+    meta:relationStereotype meta:MaterialRelation ;
+    meta:sourceEndMultiplicity "1" ;
+    meta:status "active" ;
+    meta:targetEndMultiplicity "0..*" .
+
+r:CMPE-R0035 dcterms:identifier "CMPE-R0035" ;
+    skos:definition "CM-PharmE relation connecting instances of Post-Market Surveillance Activity to instances of Adverse Event Reporting Procedure; canonical label “follows” and relation stereotype “material”." ;
+    skos:prefLabel "follows" ;
+    meta:cardinalityStatus "transcribed" ;
+    meta:relationStereotype meta:MaterialRelation ;
+    meta:sourceEndMultiplicity "0..*" ;
+    meta:status "active" ;
+    meta:targetEndMultiplicity "1" .
+
+r:CMPE-R0036 dcterms:identifier "CMPE-R0036" ;
+    skos:definition "CM-PharmE relation connecting instances of Ecosystem Relationship to instances of Ecosystem Governance Entity; canonical label “governs” and relation stereotype “material”." ;
+    skos:prefLabel "governs" ;
+    meta:cardinalityStatus "transcribed" ;
+    meta:relationStereotype meta:MaterialRelation ;
+    meta:sourceEndMultiplicity "0..*" ;
+    meta:status "active" ;
+    meta:targetEndMultiplicity "1" .
+
+r:CMPE-R0037 dcterms:identifier "CMPE-R0037" ;
+    skos:definition "CM-PharmE relation connecting instances of Electronic Health Record System to instances of Individual Patient; canonical label “records” and relation stereotype “material”." ;
+    skos:prefLabel "records" ;
+    meta:cardinalityStatus "transcribed" ;
+    meta:relationStereotype meta:MaterialRelation ;
+    meta:sourceEndMultiplicity "1" ;
+    meta:status "active" ;
+    meta:targetEndMultiplicity "0..*" .
+
+r:CMPE-R0038 dcterms:identifier "CMPE-R0038" ;
+    skos:definition "CM-PharmE relation connecting instances of AI-Enabled Clinical Decision Support System to instances of Clinical Activity Sequence; canonical label “assists” and relation stereotype “material”." ;
+    skos:prefLabel "assists" ;
+    meta:cardinalityStatus "transcribed" ;
+    meta:relationStereotype meta:MaterialRelation ;
+    meta:sourceEndMultiplicity "1" ;
+    meta:status "active" ;
+    meta:targetEndMultiplicity "0..*" .
+
+r:CMPE-R0039 dcterms:identifier "CMPE-R0039" ;
+    skos:definition "CM-PharmE relation connecting instances of Ecosystem Relationship to instances of Service Offering Specification; canonical label “material relation” and relation stereotype “material”." ;
+    skos:prefLabel "material relation" ;
+    meta:cardinalityStatus "transcribed-provisional-label" ;
+    meta:relationStereotype meta:MaterialRelation ;
+    meta:reviewNote "The source label is generic and remains provisional pending domain terminology review." ;
+    meta:sourceEndMultiplicity "0..*" ;
+    meta:status "active" ;
+    meta:targetEndMultiplicity "0..*" .
+
+r:CMPE-R0040 dcterms:identifier "CMPE-R0040" ;
+    skos:definition "CM-PharmE relation connecting instances of Pharmaceutical Enterprise to instances of Strategic Partnership Agreement; canonical label “engages in” and relation stereotype “material”." ;
+    skos:prefLabel "engages in" ;
+    meta:cardinalityStatus "transcribed" ;
+    meta:relationStereotype meta:MaterialRelation ;
+    meta:sourceEndMultiplicity "1..*" ;
+    meta:status "active" ;
+    meta:targetEndMultiplicity "1" .
+
+r:CMPE-R0011 dcterms:identifier "CMPE-R0011" ;
+    dcterms:isReplacedBy r:CMPE-R0027 ;
+    skos:definition "CM-PharmE relation connecting instances of Ecosystem Actor to instances of Strategic Partnership Agreement; canonical label “mediates” and relation stereotype “mediation”." ;
+    skos:prefLabel "mediates" ;
+    meta:cardinalityStatus "superseded-by-CMPE-R0027" ;
+    meta:relationStereotype meta:Mediation ;
+    meta:reviewNote "Source semantics conflict with CMPE-R0027. Preserved for provenance and deprecated in B3." ;
+    meta:sourceEndMultiplicity "2..*" ;
+    meta:status "deprecated" ;
+    meta:targetEndMultiplicity "1..*" .
+
+r:CMPE-R0027 dcterms:identifier "CMPE-R0027" ;
+    dcterms:replaces r:CMPE-R0011 ;
+    skos:definition "CM-PharmE relation connecting instances of Ecosystem Actor to instances of Strategic Partnership Agreement; canonical label “is mediated by” and relation stereotype “mediation”." ;
+    meta:cardinalityStatus "curated-merge-from-R0011-R0027" ;
+    meta:relationStereotype meta:Mediation ;
+    meta:reviewNote "B3 preserves the semantically coherent label from R0027 and the 2..* actor-side evidence from R0011; R0011 is deprecated and retained for provenance." .

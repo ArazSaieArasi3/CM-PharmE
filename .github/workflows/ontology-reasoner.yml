@@ -1,12 +1,20 @@
-name: Ontology DL Reasoner Validation
+name: CM-PharmE Ontology CI
 
 on:
-  push:
-    branches:
-      - evaluation/b4-paper-grounded-validation-v1
+  pull_request:
     paths:
       - 'ontology/**'
       - 'tools/ontology/**'
+      - 'evaluation/**'
+      - '.github/workflows/ontology-reasoner.yml'
+  push:
+    branches:
+      - main
+      - automation/b5-reproducible-build-v1
+    paths:
+      - 'ontology/**'
+      - 'tools/ontology/**'
+      - 'evaluation/**'
       - '.github/workflows/ontology-reasoner.yml'
   workflow_dispatch:
 
@@ -14,9 +22,9 @@ permissions:
   contents: read
 
 jobs:
-  hermit-validation:
+  ontology-quality-gates:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
     env:
       ROBOT_VERSION: '1.9.10'
       ROBOT_SHA256: '16a73c074f3df359a7338a84b4e0788785fe06117f931bb9796e9619ea776105'
@@ -36,21 +44,43 @@ jobs:
           distribution: temurin
           java-version: '21'
 
-      - name: Install deterministic RDF dependency
+      - name: Install pinned RDF dependency
         run: python -m pip install --disable-pip-version-check 'rdflib==7.5.0'
 
-      - name: Assemble modular ontology source
-        run: python tools/ontology/assemble_modules.py
+      - name: Build deterministic ontology artifacts — pass A
+        run: python tools/ontology/build.py --output-root build/ontology-artifacts-a
+
+      - name: Build deterministic ontology artifacts — pass B
+        run: python tools/ontology/build.py --output-root build/ontology-artifacts-b
+
+      - name: Verify independent builds are byte-identical
+        shell: bash
+        run: |
+          set -euo pipefail
+          diff -qr build/ontology-artifacts-a build/ontology-artifacts-b
+
+      - name: Validate graph, SHACL and serializations
+        run: >-
+          python tools/ontology/validate.py
+          --artifact-root build/ontology-artifacts-a
+          --report build/ontology-artifacts-a/validation/quality-report.json
+
+      - name: Execute competency-question regression suite
+        run: >-
+          python tools/ontology/run_cqs.py
+          --ontology build/ontology-artifacts-a/source/cm-pharme.ttl
+          --output build/ontology-artifacts-a/validation/cq-report.json
 
       - name: Download and verify ROBOT
         shell: bash
         run: |
           set -euo pipefail
+          mkdir -p build/robot
           curl --fail --location --silent --show-error \
             "https://github.com/ontodev/robot/releases/download/v${ROBOT_VERSION}/robot.jar" \
-            --output build/ontology/robot.jar
-          echo "${ROBOT_SHA256}  build/ontology/robot.jar" | sha256sum --check --strict
-          java -jar build/ontology/robot.jar --version | tee build/ontology/robot-version.txt
+            --output build/robot/robot.jar
+          echo "${ROBOT_SHA256}  build/robot/robot.jar" | sha256sum --check --strict
+          java -jar build/robot/robot.jar --version | tee build/robot/robot-version.txt
 
       - name: Run ROBOT with HermiT logical validation
         id: reason
@@ -58,75 +88,85 @@ jobs:
         run: |
           set +e
           set -o pipefail
-          java -jar build/ontology/robot.jar reason \
+          java -jar build/robot/robot.jar reason \
             --reasoner hermit \
-            --input build/ontology/cm-pharme.ttl \
-            --dump-unsatisfiable build/ontology/unsatisfiable.owl \
-            --output build/ontology/cm-pharme-reasoned.owl \
-            2>&1 | tee build/ontology/robot-hermit.log
+            --input build/ontology-artifacts-a/source/cm-pharme.ttl \
+            --dump-unsatisfiable build/robot/unsatisfiable.owl \
+            --output build/robot/cm-pharme-reasoned.owl \
+            2>&1 | tee build/robot/robot-hermit.log
           exit_code=${PIPESTATUS[0]}
-          echo "${exit_code}" > build/ontology/robot-hermit.exitcode
+          echo "${exit_code}" > build/robot/robot-hermit.exitcode
           echo "exit_code=${exit_code}" >> "$GITHUB_OUTPUT"
           set -e
 
-      - name: Create machine-readable reasoner summary
+      - name: Create reasoner summary
         if: always()
         shell: bash
         run: |
           python - <<'PY'
           import json
           from pathlib import Path
-
-          build = Path('build/ontology')
-          exit_path = build / 'robot-hermit.exitcode'
-          exit_code = int(exit_path.read_text().strip()) if exit_path.exists() else None
+          p = Path('build/robot/robot-hermit.exitcode')
+          exit_code = int(p.read_text().strip()) if p.exists() else None
           summary = {
               'schema_version': 1,
               'tool': 'ROBOT',
               'robot_version': '1.9.10',
               'reasoner': 'HermiT',
               'robot_sha256': '16a73c074f3df359a7338a84b4e0788785fe06117f931bb9796e9619ea776105',
-              'input': 'build/ontology/cm-pharme.ttl',
+              'input': 'build/ontology-artifacts-a/source/cm-pharme.ttl',
               'exit_code': exit_code,
               'logical_validation_passed': exit_code == 0,
-              'interpretation': (
-                  'PASS: ROBOT/HermiT completed logical validation and classification.'
-                  if exit_code == 0
-                  else 'FAIL: inspect robot-hermit.log and unsatisfiable.owl when present.'
-              ),
           }
-          (build / 'reasoner-summary.json').write_text(json.dumps(summary, indent=2) + '\n')
+          Path('build/robot/reasoner-summary.json').write_text(json.dumps(summary, indent=2, sort_keys=True) + '\n')
           PY
 
-      - name: Publish validation summary
+      - name: Build deterministic release bundle twice
+        shell: bash
+        run: |
+          set -euo pipefail
+          python tools/ontology/package_release.py \
+            --artifact-root build/ontology-artifacts-a \
+            --output build/cm-pharme-ontology-artifacts-a.zip
+          python tools/ontology/package_release.py \
+            --artifact-root build/ontology-artifacts-a \
+            --output build/cm-pharme-ontology-artifacts-b.zip
+          cmp --silent build/cm-pharme-ontology-artifacts-a.zip build/cm-pharme-ontology-artifacts-b.zip
+          mv build/cm-pharme-ontology-artifacts-a.zip build/cm-pharme-ontology-artifacts.zip
+          rm build/cm-pharme-ontology-artifacts-b.zip
+          sha256sum build/cm-pharme-ontology-artifacts.zip | tee build/cm-pharme-ontology-artifacts.zip.sha256
+
+      - name: Publish CI summary
         if: always()
         shell: bash
         run: |
           {
-            echo '## CM-PharmE ROBOT/HermiT validation'
+            echo '## CM-PharmE ontology quality gates'
             echo
+            echo '- Full B3 graph parity target: 1,086 triples'
+            echo '- SHACL target: 574 triples / 76 node shapes / 76 property shapes'
+            echo '- Competency queries: 8 executable regression checks'
             echo "- ROBOT: v${ROBOT_VERSION}"
             echo '- Reasoner: HermiT'
-            echo "- ROBOT SHA-256: ${ROBOT_SHA256}"
-            echo "- Exit code: ${{ steps.reason.outputs.exit_code }}"
-            echo
-            echo 'ROBOT performs logical validation before classification; a non-zero result is treated as a failed logical validation and must not be replaced by structural evidence.'
+            echo "- HermiT exit code: ${{ steps.reason.outputs.exit_code }}"
+            echo '- Two clean builds are required to be byte-identical; distributions are published as CI/release artifacts, not hand-maintained repository files.'
           } >> "$GITHUB_STEP_SUMMARY"
 
-      - name: Upload reasoner evidence
+      - name: Upload build and validation evidence
         if: always()
         uses: actions/upload-artifact@v7.0.1
         with:
-          name: cm-pharme-b4-10-hermit-evidence
+          name: cm-pharme-b5-ontology-ci-evidence
           path: |
-            build/ontology/assembly-manifest.json
-            build/ontology/cm-pharme.ttl
-            build/ontology/cm-pharme-reasoned.owl
-            build/ontology/robot-version.txt
-            build/ontology/robot-hermit.log
-            build/ontology/robot-hermit.exitcode
-            build/ontology/reasoner-summary.json
-            build/ontology/unsatisfiable.owl
+            build/ontology-artifacts-a/
+            build/robot/cm-pharme-reasoned.owl
+            build/robot/robot-version.txt
+            build/robot/robot-hermit.log
+            build/robot/robot-hermit.exitcode
+            build/robot/reasoner-summary.json
+            build/robot/unsatisfiable.owl
+            build/cm-pharme-ontology-artifacts.zip
+            build/cm-pharme-ontology-artifacts.zip.sha256
           if-no-files-found: warn
           retention-days: 30
 
@@ -134,5 +174,5 @@ jobs:
         if: always()
         shell: bash
         run: |
-          test -f build/ontology/robot-hermit.exitcode
-          test "$(cat build/ontology/robot-hermit.exitcode)" = '0'
+          test -f build/robot/robot-hermit.exitcode
+          test "$(cat build/robot/robot-hermit.exitcode)" = '0'
