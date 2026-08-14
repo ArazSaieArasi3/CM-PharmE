@@ -53,7 +53,19 @@ This changelog records research-model and repository-level changes that are mean
 - Added the vaccine-distribution reference scenario, evidence-status policy, and publication-evidence matrix.
 - Added curated method/evaluation references and explicit publication-to-repository traceability.
 - Added the journal manuscript under review to the publication registry and strengthened the published conference-paper record without inventing unverified bibliographic metadata.
+- Executed 28/28 structural/traceability checks and 8/8 bounded competency-query tests.
+- Added a machine-readable vaccine-distribution sample spanning all five domains without scenario-specific core classes.
+- Re-evaluated the eight anti-pattern categories and recorded targeted semantic findings without changing the core ontology.
 - No new semantic model release is declared by this B4 documentation/evaluation work.
+
+### B4.10 Reasoner and Semantic Finding Disposition
+- Added `.github/workflows/ontology-reasoner.yml` for reproducible ROBOT/HermiT logical validation.
+- Pinned ROBOT `v1.9.10` by SHA-256 before execution and added deterministic recursive Turtle-module assembly with RDFLib `7.5.0`.
+- Completed GitHub Actions run `31796520297` successfully with HermiT exit code `0`, closing the initial E2 logical-validation gap for the current logical axiom set.
+- Uploaded versioned reasoner evidence including assembled input, manifest, reasoned OWL, tool/version record, exit code, and machine-readable summary.
+- Compared the 888-triple GitHub modular-source assembly with the 1,086-triple B3 packaged canonical source and recorded zero logical-predicate differences; annotation/provenance parity remains an engineering follow-up.
+- Dispositioned five semantic findings without changing core semantics: three model-refinement candidates, one domain-evidence deferral, and one manuscript/formal discrepancy handled as documentation clarification.
+- No five-domain architecture redesign was required and no new semantic release was declared.
 
 ## v1.0.0 — Historical Initial Release
 
