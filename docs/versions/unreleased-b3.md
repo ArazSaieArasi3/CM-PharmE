@@ -1,10 +1,10 @@
-# Unreleased — B3 Formal Ontology Development
+# Formal Ontology Engineering Record (B3)
 
-This page records the formal-ontology work performed on `ontology/b3-formal-ontology-v1`. It is **not** a new CM-PharmE semantic release by itself.
+This page records the formal-ontology work originally developed during the B3 engineering stage and later integrated into `main`. It is a historical engineering record, **not** a separate CM-PharmE semantic release.
 
-The current stable semantic baseline remains `v1.0.0`. B3 is an unreleased formalization and engineering cycle based on that semantic inventory. A new model version is assigned only when an explicit semantic diff justifies it.
+The current stable semantic baseline remains `v1.0.0`. The B3 formalization was built from that semantic inventory; later B4/B4.10 and B5 work added executable evaluation, OWL DL reasoning, reproducible builds and CI without automatically declaring a new model version.
 
-## B3 additions
+## Formal-ontology additions established in B3
 
 - persistent stable IRI design under `https://w3id.org/cm-pharme/`
 - modular formal ontology authoring source
@@ -18,6 +18,11 @@ The current stable semantic baseline remains `v1.0.0`. B3 is an unreleased forma
 - SHACL reference constraints and multi-serialization reference package
 - structural validation report and B3 audit
 
-## Not yet a release claim
+## Subsequent validation and engineering
 
-B3 does not yet constitute a new immutable release and does not alter the preserved `v1.0.0` artifacts. Full OWL DL reasoner evidence, CI/rebuild automation, final external ontology alignment, w3id registration, and broader evaluation remain follow-up work.
+Follow-up work originally deferred from B3 has since been completed and integrated into `main`:
+
+- B4/B4.10 added paper-grounded evaluation evidence, executable competency questions, a machine-readable evaluation scenario, semantic finding disposition and ROBOT/HermiT logical validation;
+- B5 restored full annotation/provenance parity with the validated B3 reference graph and added deterministic serialization, SHACL generation, build manifests, checksums, reproducible release bundles and GitHub Actions quality gates.
+
+The preserved `v1.0.0` artifacts remain unchanged. External `w3id.org` redirect registration, final external ontology-alignment decisions, broader independent expert/domain replication and future semantic refinements remain outside this historical engineering record.
