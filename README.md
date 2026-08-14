@@ -3,7 +3,7 @@
 **CM-PharmE** is an evolving, versioned, ontology-grounded conceptual model and research knowledge base for the pharmaceutical ecosystem. The repository is organized as a long-lived research asset supporting conceptual modeling, ontology engineering, evaluation, data mapping, publication traceability, and future applications.
 
 > **Current stable semantic baseline:** `v1.0.0`  
-> **Repository development branch:** `refactor/research-repository-v1`  
+> Ongoing development is managed through versioned branches and pull requests.  
 > A manuscript revision does **not** automatically create a new CM-PharmE model version. A new model release is declared only when semantic changes to concepts, relations, domains, mappings, or ontology commitments are explicitly identified and versioned.
 
 ## Authors and Affiliations
@@ -92,4 +92,4 @@ A machine-readable citation record is provided in [`CITATION.cff`](CITATION.cff)
 
 ## Repository Status
 
-Repository-preservation and foundation batches (B0–B1) and the v1.0 knowledge-model normalization/documentation batch (B2) are complete on the restructuring branch. Historical artifacts remain preserved byte-for-byte through Git object identity. Formal ontology re-engineering, deeper evaluation packages, automated validation/generation, and the public documentation site remain subsequent cycles.
+Repository-preservation and foundation batches (B0–B1) and the v1.0 knowledge-model normalization/documentation batch (B2) are complete. Historical artifacts remain preserved byte-for-byte through Git object identity. Formal ontology re-engineering, deeper evaluation packages, automated validation/generation, and the public documentation site remain subsequent cycles.
