@@ -1,0 +1,6 @@
+PREFIX meta: <https://w3id.org/cm-pharme/meta/>
+SELECT (COUNT(DISTINCT ?domain) AS ?representedDomains) WHERE {
+  ?instance a ?class .
+  FILTER(STRSTARTS(STR(?instance), "https://w3id.org/cm-pharme/example/vaccine/"))
+  ?class meta:primaryDomain ?domain .
+}
