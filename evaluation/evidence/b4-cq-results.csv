@@ -1,0 +1,9 @@
+cq_id,query_file,expected,observed,result,evidence_type
+CMPE-CQ001,cq-001.rq,"at least 1 row linking enterprise, unit, capability, stakeholder and governance relator",1 row(s),PASS,executable
+CMPE-CQ002,cq-002.rq,at least 1 agreement mediated by at least two distinct ecosystem actors,1 row(s),PASS,executable
+CMPE-CQ003,cq-003.rq,at least 1 process/sequence/pathway with patient and physician participation,1 row(s),PASS,executable
+CMPE-CQ004,cq-004.rq,at least 1 regulatory/governance/pharmacovigilance traceability path,1 row(s),PASS,executable-with-model-narrative-note
+CMPE-CQ005,cq-005.rq,at least 5 digital-to-operational/governance connections,6 row(s),PASS,executable
+CMPE-CQ006,cq-006.rq,6 representative constructs returned with domain and UFO/OntoUML stereotype,6 row(s),PASS,executable-traceability-only
+CMPE-CQ007,cq-007.rq,scenario represents all 5 CM-PharmE domains,representedDomains=5,PASS,bounded-application-evidence
+CMPE-CQ008,cq-008.rq,"scenario maps only to existing core classes, spans 5 domains, and creates 0 scenario-specific classes",mappedCoreClasses=32; representedDomains=5; scenarioSpecificClassCount=0,PASS,bounded-extension-evidence
