@@ -1,0 +1,43 @@
+schema_version: 1
+model_release: v1.0.0
+extraction_basis: drawio-xml-primary_owl-cross-check
+concepts:
+  - {id: CMPE-C0001, label: "Pharmaceutical Enterprise", slug: pharmaceutical-enterprise, stereotype: kind, status: active, primary_domain: CMPE-D0001, additional_domains: [CMPE-D0002], source_occurrences: 1}
+  - {id: CMPE-C0002, label: "Organizational Unit Structure", slug: organizational-unit-structure, stereotype: kind, status: active, primary_domain: CMPE-D0001, additional_domains: [], source_occurrences: 1}
+  - {id: CMPE-C0003, label: "Organizational Stakeholder", slug: organizational-stakeholder, stereotype: role, status: active, primary_domain: CMPE-D0001, additional_domains: [CMPE-D0002], source_occurrences: 1}
+  - {id: CMPE-C0004, label: "Regulatory Oversight", slug: regulatory-oversight, stereotype: relator, status: active, primary_domain: CMPE-D0004, additional_domains: [CMPE-D0002], source_occurrences: 1}
+  - {id: CMPE-C0005, label: "Enterprise Capability", slug: enterprise-capability, stereotype: mode, status: active, primary_domain: CMPE-D0001, additional_domains: [], source_occurrences: 1}
+  - {id: CMPE-C0006, label: "Strategic Resource Allocation", slug: strategic-resource-allocation, stereotype: mode, status: active, primary_domain: CMPE-D0001, additional_domains: [], source_occurrences: 1}
+  - {id: CMPE-C0007, label: "Clinical Workforce", slug: clinical-workforce, stereotype: role, status: active, primary_domain: CMPE-D0001, additional_domains: [CMPE-D0003], source_occurrences: 1}
+  - {id: CMPE-C0008, label: "Ecosystem Actor", slug: ecosystem-actor, stereotype: role, status: active, primary_domain: CMPE-D0002, additional_domains: [], source_occurrences: 1}
+  - {id: CMPE-C0009, label: "Ecosystem Relationship", slug: ecosystem-relationship, stereotype: relator, status: active, primary_domain: CMPE-D0002, additional_domains: [], source_occurrences: 1}
+  - {id: CMPE-C0010, label: "Ecosystem Demand Signal", slug: ecosystem-demand-signal, stereotype: mode, status: active, primary_domain: CMPE-D0002, additional_domains: [], source_occurrences: 1}
+  - {id: CMPE-C0011, label: "Ecosystem Supply Capacity", slug: ecosystem-supply-capacity, stereotype: mode, status: active, primary_domain: CMPE-D0002, additional_domains: [], source_occurrences: 1}
+  - {id: CMPE-C0012, label: "Public-Private Partnership Structure", slug: public-private-partnership-structure, stereotype: kind, status: active, primary_domain: CMPE-D0002, additional_domains: [CMPE-D0004], source_occurrences: 1}
+  - {id: CMPE-C0013, label: "Ecosystem Governance Entity", slug: ecosystem-governance-entity, stereotype: kind, status: active, primary_domain: CMPE-D0002, additional_domains: [CMPE-D0004], source_occurrences: 1}
+  - {id: CMPE-C0014, label: "Strategic Partnership Agreement", slug: strategic-partnership-agreement, stereotype: relator, status: active, primary_domain: CMPE-D0002, additional_domains: [], source_occurrences: 1}
+  - {id: CMPE-C0015, label: "Pharmaceutical Business Process", slug: pharmaceutical-business-process, stereotype: perdurant, status: active, primary_domain: CMPE-D0003, additional_domains: [CMPE-D0001], source_occurrences: 1}
+  - {id: CMPE-C0016, label: "Clinical Activity Sequence", slug: clinical-activity-sequence, stereotype: perdurant, status: active, primary_domain: CMPE-D0003, additional_domains: [], source_occurrences: 1}
+  - {id: CMPE-C0017, label: "Individual Patient", slug: individual-patient, stereotype: role, status: active, primary_domain: CMPE-D0003, additional_domains: [], source_occurrences: 1}
+  - {id: CMPE-C0018, label: "Clinical Pathway", slug: clinical-pathway, stereotype: relator, status: active, primary_domain: CMPE-D0003, additional_domains: [], source_occurrences: 1}
+  - {id: CMPE-C0019, label: "Prescribing Physician", slug: prescribing-physician, stereotype: role, status: active, primary_domain: CMPE-D0003, additional_domains: [CMPE-D0001], source_occurrences: 1}
+  - {id: CMPE-C0020, label: "Healthcare Provider Organization", slug: healthcare-provider-organization, stereotype: kind, status: active, primary_domain: CMPE-D0001, additional_domains: [CMPE-D0003], source_occurrences: 1}
+  - {id: CMPE-C0021, label: "Healthcare Provider", slug: healthcare-provider, stereotype: role, status: active, primary_domain: CMPE-D0003, additional_domains: [CMPE-D0001], source_occurrences: 1}
+  - {id: CMPE-C0022, label: "Adverse Event Reporting Procedure", slug: adverse-event-reporting-procedure, stereotype: perdurant, status: active, primary_domain: CMPE-D0003, additional_domains: [CMPE-D0004], source_occurrences: 1}
+  - {id: CMPE-C0023, label: "Regulatory Authority Entity", slug: regulatory-authority-entity, stereotype: kind, status: active, primary_domain: CMPE-D0004, additional_domains: [CMPE-D0002], source_occurrences: 1}
+  - {id: CMPE-C0024, label: "Regulatory Authority Role", slug: regulatory-authority-role, stereotype: role, status: active, primary_domain: CMPE-D0004, additional_domains: [], source_occurrences: 1}
+  - {id: CMPE-C0025, label: "Enterprise Governance Relator", slug: enterprise-governance-relator, stereotype: relator, status: active, primary_domain: CMPE-D0001, additional_domains: [CMPE-D0004], source_occurrences: 2, review_flag: stereotype-conflict, conflicting_source_stereotype: mode}
+  - {id: CMPE-C0026, label: "Governance Policy Framework", slug: governance-policy-framework, stereotype: mode, status: active, primary_domain: CMPE-D0004, additional_domains: [], source_occurrences: 1}
+  - {id: CMPE-C0027, label: "Compliance Requirement", slug: compliance-requirement, stereotype: mode, status: active, primary_domain: CMPE-D0004, additional_domains: [], source_occurrences: 1}
+  - {id: CMPE-C0028, label: "Risk Management Activity", slug: risk-management-activity, stereotype: perdurant, status: active, primary_domain: CMPE-D0004, additional_domains: [CMPE-D0003], source_occurrences: 1}
+  - {id: CMPE-C0029, label: "Digital Health Platform Component", slug: digital-health-platform-component, stereotype: kind, status: active, primary_domain: CMPE-D0005, additional_domains: [], source_occurrences: 1}
+  - {id: CMPE-C0030, label: "AI-Enabled Clinical Decision Support System", slug: ai-enabled-clinical-decision-support-system, stereotype: kind, status: active, primary_domain: CMPE-D0005, additional_domains: [CMPE-D0003], source_occurrences: 1}
+  - {id: CMPE-C0031, label: "Blockchain-Based Supply Chain Ledger", slug: blockchain-based-supply-chain-ledger, stereotype: kind, status: active, primary_domain: CMPE-D0005, additional_domains: [CMPE-D0003], source_occurrences: 1}
+  - {id: CMPE-C0032, label: "Supply Chain Relationship", slug: supply-chain-relationship, stereotype: relator, status: active, primary_domain: CMPE-D0002, additional_domains: [CMPE-D0003], source_occurrences: 1}
+  - {id: CMPE-C0033, label: "Electronic Health Record System", slug: electronic-health-record-system, stereotype: kind, status: active, primary_domain: CMPE-D0005, additional_domains: [CMPE-D0003], source_occurrences: 1}
+  - {id: CMPE-C0034, label: "Patient Record Quality", slug: patient-record-quality, stereotype: mode, status: active, primary_domain: CMPE-D0005, additional_domains: [CMPE-D0003], source_occurrences: 1}
+  - {id: CMPE-C0035, label: "Telemedicine Service Channel", slug: telemedicine-service-channel, stereotype: kind, status: active, primary_domain: CMPE-D0005, additional_domains: [CMPE-D0003], source_occurrences: 1}
+  - {id: CMPE-C0036, label: "Pharmacovigilance Requirement", slug: pharmacovigilance-requirement, stereotype: mode, status: active, primary_domain: CMPE-D0004, additional_domains: [CMPE-D0003], source_occurrences: 1}
+  - {id: CMPE-C0037, label: "Post-Market Surveillance Activity", slug: post-market-surveillance-activity, stereotype: perdurant, status: active, primary_domain: CMPE-D0003, additional_domains: [CMPE-D0004], source_occurrences: 1}
+  - {id: CMPE-C0038, label: "Real-World Evidence Platform", slug: real-world-evidence-platform, stereotype: kind, status: active, primary_domain: CMPE-D0005, additional_domains: [CMPE-D0004, CMPE-D0003], source_occurrences: 1}
+  - {id: CMPE-C0039, label: "Service Offering Specification", slug: service-offering-specification, stereotype: kind, status: active, primary_domain: CMPE-D0002, additional_domains: [], source_occurrences: 1}

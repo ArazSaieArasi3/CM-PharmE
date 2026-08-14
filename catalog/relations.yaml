@@ -1,0 +1,51 @@
+schema_version: 1
+model_release: v1.0.0
+extraction_basis: drawio-xml-primary_owl-cross-check
+source_semantic_relation_occurrences: 41
+canonical_relation_count: 40
+excluded_graph_artifacts: 1
+relations:
+  - {id: CMPE-R0001, label: "governs", stereotype: material, source: CMPE-C0001, target: CMPE-C0003, status: active}
+  - {id: CMPE-R0002, label: "is mediated by", stereotype: mediation, source: CMPE-C0003, target: CMPE-C0025, status: active, source_occurrences: 2, review_flag: exact-source-duplicate-collapsed}
+  - {id: CMPE-R0003, label: "is part of", stereotype: componentOf, source: CMPE-C0002, target: CMPE-C0001, status: active}
+  - {id: CMPE-R0004, label: "characterizes", stereotype: characterization, source: CMPE-C0005, target: CMPE-C0001, status: active}
+  - {id: CMPE-R0005, label: "characterizes", stereotype: characterization, source: CMPE-C0006, target: CMPE-C0002, status: active}
+  - {id: CMPE-R0006, label: "specializes", stereotype: generalization, source: CMPE-C0007, target: CMPE-C0003, status: active}
+  - {id: CMPE-R0007, label: "is mediated by", stereotype: mediation, source: CMPE-C0008, target: CMPE-C0009, status: active}
+  - {id: CMPE-R0008, label: "fulfills", stereotype: material, source: CMPE-C0039, target: CMPE-C0010, status: active}
+  - {id: CMPE-R0009, label: "characterizes", stereotype: characterization, source: CMPE-C0008, target: CMPE-C0011, status: active}
+  - {id: CMPE-R0010, label: "is part of", raw_label: "is part of a", stereotype: componentOf, source: CMPE-C0012, target: CMPE-C0013, status: active}
+  - {id: CMPE-R0011, label: "mediates", stereotype: mediation, source: CMPE-C0008, target: CMPE-C0014, status: active, review_flag: paired-direction-semantics}
+  - {id: CMPE-R0012, label: "participates in", stereotype: association, source: CMPE-C0015, target: CMPE-C0003, status: active}
+  - {id: CMPE-R0013, label: "is part of", stereotype: componentOf, source: CMPE-C0016, target: CMPE-C0015, status: active}
+  - {id: CMPE-R0014, label: "is mediated by", stereotype: mediation, source: CMPE-C0017, target: CMPE-C0018, status: active}
+  - {id: CMPE-R0015, label: "is mediated by", stereotype: mediation, source: CMPE-C0019, target: CMPE-C0018, status: active}
+  - {id: CMPE-R0016, label: "assigns", stereotype: material, source: CMPE-C0020, target: CMPE-C0021, status: active}
+  - {id: CMPE-R0017, label: "participates in", stereotype: association, source: CMPE-C0022, target: CMPE-C0021, status: active}
+  - {id: CMPE-R0018, label: "material relation", stereotype: material, source: CMPE-C0023, target: CMPE-C0024, status: active}
+  - {id: CMPE-R0019, label: "is mediated by", stereotype: mediation, source: CMPE-C0024, target: CMPE-C0004, status: active}
+  - {id: CMPE-R0020, label: "characterizes", stereotype: characterization, source: CMPE-C0026, target: CMPE-C0004, status: active}
+  - {id: CMPE-R0021, label: "characterizes", stereotype: characterization, source: CMPE-C0027, target: CMPE-C0026, status: active}
+  - {id: CMPE-R0022, label: "mitigates", stereotype: material, source: CMPE-C0028, target: CMPE-C0027, status: active}
+  - {id: CMPE-R0023, label: "enables", stereotype: material, source: CMPE-C0029, target: CMPE-C0015, status: active}
+  - {id: CMPE-R0024, label: "mediates", stereotype: mediation, source: CMPE-C0032, target: CMPE-C0031, status: active}
+  - {id: CMPE-R0025, label: "records", stereotype: material, source: CMPE-C0033, target: CMPE-C0034, status: active}
+  - {id: CMPE-R0026, label: "enables", stereotype: material, source: CMPE-C0035, target: CMPE-C0018, status: active}
+  - {id: CMPE-R0027, label: "is mediated by", stereotype: mediation, source: CMPE-C0008, target: CMPE-C0014, status: active, review_flag: paired-direction-semantics}
+  - {id: CMPE-R0028, label: "governs", stereotype: material, source: CMPE-C0032, target: CMPE-C0001, status: active}
+  - {id: CMPE-R0029, label: "is part of", stereotype: componentOf, source: CMPE-C0018, target: CMPE-C0015, status: active}
+  - {id: CMPE-R0030, label: "characterizes", stereotype: characterization, source: CMPE-C0034, target: CMPE-C0018, status: active}
+  - {id: CMPE-R0031, label: "constraints", stereotype: material, source: CMPE-C0036, target: CMPE-C0037, status: active}
+  - {id: CMPE-R0032, label: "informs", stereotype: material, source: CMPE-C0038, target: CMPE-C0036, status: active}
+  - {id: CMPE-R0033, label: "informs", stereotype: material, source: CMPE-C0038, target: CMPE-C0001, status: active}
+  - {id: CMPE-R0034, label: "informs", stereotype: material, source: CMPE-C0038, target: CMPE-C0028, status: active}
+  - {id: CMPE-R0035, label: "follows", stereotype: material, source: CMPE-C0037, target: CMPE-C0022, status: active}
+  - {id: CMPE-R0036, label: "governs", stereotype: material, source: CMPE-C0009, target: CMPE-C0013, status: active}
+  - {id: CMPE-R0037, label: "records", stereotype: material, source: CMPE-C0033, target: CMPE-C0017, status: active}
+  - {id: CMPE-R0038, label: "assists", stereotype: material, source: CMPE-C0030, target: CMPE-C0016, status: active}
+  - {id: CMPE-R0039, label: "material relation", stereotype: material, source: CMPE-C0009, target: CMPE-C0039, status: active}
+  - {id: CMPE-R0040, label: "engages in", stereotype: material, source: CMPE-C0001, target: CMPE-C0014, status: active}
+review_notes:
+  - "One unlabeled self-loop on Ecosystem Demand Signal is a graphical artifact and is excluded from the semantic registry."
+  - "CMPE-R0002 collapses two exact source occurrences caused by the duplicated Enterprise Governance Relator node."
+  - "CMPE-R0011 and CMPE-R0027 connect the same source and target but use opposite mediation wording; both are retained pending semantic-direction review."
