@@ -37,7 +37,7 @@ CM-PharmE organizes the ecosystem into five interrelated modeling domains:
 
 The domains are not intended to be isolated silos or implementation boundaries. They separate modeling responsibilities while allowing explicit cross-domain relations and constraints.
 
-The current stable semantic baseline contains 39 canonical concepts, 40 stable relation records, and five domains. The unreleased formal-ontology engineering layer represents these concepts using stable identifiers and formal semantics while retaining historical provenance.
+The current stable semantic baseline contains 39 canonical concepts, 40 stable relation records, and five domains. The repository also contains an integrated modular formal ontology, stable identifiers and IRIs, executable competency questions, ROBOT/HermiT logical validation, SHACL constraints, and a reproducible build/CI pipeline while preserving the historical `v1.0.0` artifacts unchanged.
 
 ## Design logic
 
@@ -46,7 +46,7 @@ The core design logic is deliberately two-stage:
 1. **Business-architecture concerns identify what should be represented.** Organization design, capabilities, stakeholder participation, value delivery, strategy, process, governance, and digital enablement are used as analytical lenses.
 2. **UFO/OntoUML clarifies what the selected constructs mean ontologically.** Candidate concepts are classified by identity, dependence, relational, and temporal characteristics; relations and cardinalities are then selected conservatively according to the intended semantics and available evidence.
 
-This is an analytical alignment, not a claim that CM-PharmE implements the complete BACM metamodel or that business-architecture concepts are formally equivalent to OntoUML stereotypes.
+This is an analytical alignment, not a claim that CM-PharmE implements the complete BACM metamodel or that business-architecture concepts are formally equivalent to OntoUML stereotypes. See the [Official OntoUML Ecosystem References](../references/ontouml-ecosystem.md).
 
 ## Why the model matters
 
@@ -67,6 +67,8 @@ These are application pathways, not claims of deployed effectiveness.
 
 The model was developed from a PRISMA-guided evidence review, thematic synthesis, business-architecture-informed decomposition, and UFO/OntoUML modeling procedure. The journal-oriented research extends the published initial study with stronger evidence-to-domain traceability and a bounded multi-method assessment including expert review, focused anti-pattern inspection, competency questions, comparative scenario analysis, and illustrative vaccine-distribution instantiation.
 
+Repository work subsequently made part of that assessment executable and reproducible: structural checks, eight competency queries, scenario validation, SHACL generation, deterministic serializations, and ROBOT/HermiT reasoning are recorded as repository evidence.
+
 The repository preserves the evidential boundary of those studies. CM-PharmE is not currently claimed to be:
 
 - a complete or uniquely correct ontology of the pharmaceutical ecosystem;
@@ -74,10 +76,10 @@ The repository preserves the evidential boundary of those studies. CM-PharmE is 
 - proven interoperable with implementation standards;
 - a complete reference architecture implementation;
 - a set of predefined DDD bounded contexts or microservices;
-- fully OWL-DL-validated until repository-recorded reasoner evidence is produced.
+- free of every open ontological modeling question merely because the current logical axiom set passes HermiT.
 
 ## Relationship to the publications
 
 The published conference paper records the initial research contribution and its early evaluation claims. The later journal manuscript, currently under review, preserves the five-domain conceptual architecture while strengthening the methodological explanation, traceability, comparative positioning, and evidential boundaries.
 
-Repository evidence therefore distinguishes what was **reported by a publication** from what has subsequently been **reproduced or verified in the repository**. See [Publication-to-Repository Traceability](publication-to-repository-traceability.md) and the [B4 Evaluation Plan](../evaluations/b4-evaluation-plan.md).
+Repository evidence therefore distinguishes what was **reported by a publication** from what has subsequently been **reproduced or verified in the repository**. See [Publication-to-Repository Traceability](publication-to-repository-traceability.md) and the [Final Evaluation Report](../evaluations/b4-final-evaluation.md).

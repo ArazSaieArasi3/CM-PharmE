@@ -47,13 +47,14 @@ The manuscript combines:
 - eight competency questions;
 - an illustrative vaccine-distribution instantiation.
 
-The manuscript explicitly treats this evidence as preliminary and criterion-specific rather than definitive proof of empirical effectiveness or computational consistency. B4 transfers these procedures into versioned repository evidence under [`../../evaluation/`](../../evaluation/) and [`../../docs/evaluations/`](../../docs/evaluations/).
+The manuscript explicitly treats this evidence as preliminary and criterion-specific rather than definitive proof of empirical effectiveness or computational consistency. The repository integrates these procedures into versioned and executable evidence under [`../../evaluation/`](../../evaluation/) and [`../../docs/evaluations/`](../../docs/evaluations/), including the completed B4/B4.10 evaluation work now merged into `main`.
 
 ## Model association
 
 - Stable semantic baseline: `v1.0.0`
-- Formal ontology engineering: unreleased B3 layer integrated into the repository
-- Evaluation development: B4 paper-grounded validation branch
+- Formal ontology engineering: B3 formalization integrated into `main`
+- Evaluation evidence: B4/B4.10 paper-grounded validation and logical reasoning integrated into `main`
+- Reproducible build and CI: B5 engineering integrated into `main`
 
 A manuscript revision does not itself create a new semantic model version. Version assignment follows explicit semantic changes and repository versioning policy.
 

@@ -5,6 +5,18 @@
 > **Current stable semantic baseline:** `v1.0.0`  
 > Engineering, evaluation or manuscript revisions do **not** automatically create a new semantic model version. A new CM-PharmE release is declared only when semantic changes are explicitly identified, evaluated and versioned.
 
+## Start Here
+
+If you are reviewing CM-PharmE for a paper or research assessment, the shortest path is:
+
+**[Published paper](https://ieeexplore.ieee.org/abstract/document/11301544/) → [Model](#model-at-a-glance--v100) → [Research method](docs/methodology/research-and-model-development.md) → [Evaluation](docs/evaluations/index.md) → [Reproducibility](docs/engineering/index.md)**
+
+If you are primarily interested in ontology engineering, start with:
+
+**[Ontology](ontology/README.md) → [Concepts](docs/concepts/index.md) → [Relations](docs/relations/index.md) → [Official OntoUML references](docs/references/ontouml-ecosystem.md) → [Executable evaluation](docs/evaluations/index.md)**
+
+For a broader map of the repository, see the [Documentation Map](docs/index.md).
+
 ## Authors and Affiliations
 
 1. **Araz Saie Arasi**  
@@ -38,7 +50,7 @@ CM-PharmE uses a two-stage modeling logic derived from the associated research:
 
 The model-development lineage combines PRISMA-guided evidence review, thematic synthesis, evidence-to-domain decomposition, business-architecture-informed conceptualization and UFO/OntoUML classification/relation-selection procedures.
 
-[Research and model-development method](docs/methodology/research-and-model-development.md)
+[Research and model-development method](docs/methodology/research-and-model-development.md) · [Official OntoUML ecosystem references](docs/references/ontouml-ecosystem.md)
 
 ## Model at a Glance — v1.0.0
 
@@ -72,27 +84,28 @@ These are conceptual modeling domains, not predefined DDD bounded contexts, serv
 
 | Area | Purpose |
 |---|---|
+| [Documentation Map](docs/index.md) | Reader-oriented map of the repository and recommended paths |
 | [Concepts](docs/concepts/index.md) | Stable concepts, stereotypes, domains and relation traceability |
 | [Relations](docs/relations/index.md) | Stable relation registry and semantic endpoints |
 | [Domains](docs/domains/index.md) | Five-domain architecture and mappings |
 | [Ontology](ontology/README.md) | Formal ontology source, distributions, IRI policy and validation |
 | [Mappings](mappings/README.md) | Concept/domain/relation/data/publication traceability |
-| [Evaluation](docs/evaluations/index.md) | E1–E9 evaluation evidence |
+| [Evaluation](docs/evaluations/index.md) | Nine-layer evaluation evidence and executable validation |
 | [Methodology](docs/methodology/index.md) | Evidence synthesis, modeling and evaluation methods |
 | [Engineering](docs/engineering/index.md) | Reproducible build, CI and release-readiness architecture |
 | [Research Rationale](docs/research/rationale.md) | Problem, gap, significance and boundaries |
 | [Applications & Boundaries](docs/research/applications-and-boundaries.md) | Intended application pathways and non-claims |
-| [Publications](publications/README.md) | Publication lineage and model/evidence association |
-| [Versions](docs/versions/index.md) | Stable releases and unreleased development |
+| [Publications](publications/README.md) | Publication lineage, publisher links and model/evidence association |
+| [Versions](docs/versions/index.md) | Stable semantic baseline and integrated engineering/evaluation history |
 
 ## Formal Ontology and Reproducible Build
 
 The historical OWL export bundled with `v1.0.0` is preserved unchanged for provenance but is not the cleaned canonical ontology source.
 
-B3 established the modular formal ontology. B4/B4.10 added executable evaluation and ROBOT/HermiT reasoning. B5 closes the repository-engineering loop:
+The repository modernization progressed through named engineering stages: **Formal Ontology Engineering (B3)** established the modular ontology; **Evaluation and Evidence (B4/B4.10)** added executable evaluation and ROBOT/HermiT reasoning; and **Reproducible Build and CI (B5)** completed the repository-engineering loop. The B-codes are retained as historical/provenance identifiers, while the natural-language names are preferred for reader-facing documentation.
 
-- the authoritative modular source reconstructs the **complete 1,086-triple B3 reference graph**;
-- the B3 SHACL reference is reproduced at **574 triples / 76 NodeShapes / 76 PropertyShapes**;
+- the authoritative modular source reconstructs the **complete 1,086-triple reference graph**;
+- the SHACL reference is reproduced at **574 triples / 76 NodeShapes / 76 PropertyShapes**;
 - consolidated Turtle, RDF/XML/OWL, RDF/XML, expanded JSON-LD and canonical N-Triples are generated deterministically;
 - two independent clean builds must be byte-identical in CI, and generated distributions are uploaded as CI/release artifacts;
 - build manifests and SHA-256 checksums are generated for each build;
@@ -100,28 +113,28 @@ B3 established the modular formal ontology. B4/B4.10 added executable evaluation
 - ROBOT/HermiT remains a required logical-validation gate;
 - CI produces a deterministic release bundle without automatically declaring a semantic release.
 
-Canonical B3 graph fingerprint:
+Canonical graph fingerprint:
 
 `cc823a8aff4d7e7818f8470f2dbad6ca8045ff92e5637fbf3503bc105170a83f`
 
-[B5 reproducible-build architecture](docs/engineering/b5-reproducible-build.md)
+[Reproducible-build architecture](docs/engineering/b5-reproducible-build.md)
 
 ## Evidence and Evaluation
 
-The associated research evaluates CM-PharmE through complementary procedures rather than a single aggregate score. The repository converts that methodology into layers E1–E9: syntax, logic, structure, ontological validation, semantic/expert validation, data/mapping validation, competency questions, application validation and reproducibility.
+The associated research evaluates CM-PharmE through complementary procedures rather than a single aggregate score. The repository organizes this as a **nine-layer evaluation framework**: Syntax Validation (E1), Logical Consistency (E2), Structural Integrity (E3), Ontological Soundness (E4), Semantic & Expert Validation (E5), Data & Mapping Validation (E6), Competency Questions (E7), Application Validation (E8), and Reproducibility (E9).
 
 Current repository evidence includes:
 
-- **28/28** B4 structural and traceability checks;
+- **28/28** structural and traceability checks;
 - **8/8** executable competency queries meeting their bounded expectations;
 - a machine-readable vaccine scenario spanning all five domains;
 - anti-pattern re-evaluation and explicit semantic finding disposition;
 - ROBOT/HermiT logical validation for the current logical axiom set;
-- B5 graph-fingerprint, SHACL, serialization and build-reproducibility gates.
+- graph-fingerprint, SHACL, serialization and build-reproducibility gates.
 
-Open semantic findings remain explicit: three model-refinement candidates and one item deferred pending domain evidence. B5 does not silently change the ontology to eliminate those findings.
+Open semantic findings remain explicit: three model-refinement candidates and one item deferred pending domain evidence. The engineering pipeline does not silently change the ontology to eliminate those findings.
 
-[B4/B4.10 final evaluation](docs/evaluations/b4-final-evaluation.md) · [B5 release readiness](docs/engineering/release-readiness.md)
+[Final evaluation report](docs/evaluations/b4-final-evaluation.md) · [Release readiness](docs/engineering/release-readiness.md)
 
 ## Applications and Boundaries
 
@@ -131,8 +144,8 @@ These are application pathways rather than claims of deployed effectiveness. CM-
 
 ## Featured Publications
 
-- **CM-PharmE ver.1: Towards a Conceptual Model for Pharmaceutical Ecosystem with a Business-Architecture Perspective** — published conference paper associated with the historical `v1.0.0` conceptual foundation. [Publication record](publications/ieee-2025/README.md)
-- **CM-PharmE 1.0: A Business-Architecture-Informed and Ontology-Grounded Conceptual Model for Pharmaceutical Ecosystems** — journal manuscript **under review**, strengthening methodology, traceability and bounded multi-layer evaluation while retaining the five-domain architecture. [Publication record](publications/journal-under-review/README.md)
+- **CM-PharmE ver.1: Towards a Conceptual Model for Pharmaceutical Ecosystem with a Business-Architecture Perspective** — published conference paper associated with the historical `v1.0.0` conceptual foundation. [IEEE Xplore](https://ieeexplore.ieee.org/abstract/document/11301544/) · [Repository record](publications/ieee-2025/README.md)
+- **CM-PharmE 1.0: A Business-Architecture-Informed and Ontology-Grounded Conceptual Model for Pharmaceutical Ecosystems** — journal manuscript **under review**, strengthening methodology, traceability and bounded multi-layer evaluation while retaining the five-domain architecture. [Repository record](publications/journal-under-review/README.md)
 
 Publication status, DOI, publisher links and bibliographic identifiers are recorded only when supported or verified.
 
@@ -158,4 +171,4 @@ A machine-readable citation record is provided in [`CITATION.cff`](CITATION.cff)
 
 ## Repository Status
 
-The B0–B5 repository-modernization architecture covers historical preservation, repository foundation, knowledge-model normalization, formal ontology engineering, paper-grounded evaluation, executable logical validation and reproducible build/CI engineering. The stable semantic baseline remains `v1.0.0` until an intentional next-generation semantic cycle is evaluated and released.
+The completed repository-modernization cycle covers historical preservation, repository foundation, knowledge-model normalization, formal ontology engineering, paper-grounded evaluation, executable logical validation and reproducible build/CI engineering. The stable semantic baseline remains `v1.0.0` until an intentional next-generation semantic cycle is evaluated and released.

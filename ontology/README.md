@@ -1,10 +1,10 @@
 # CM-PharmE Ontology
 
-This directory contains the formal-ontology engineering layer for CM-PharmE. The current stable semantic baseline remains `v1.0.0`; B3–B5 formalization, evaluation and repository engineering do not themselves declare a new semantic model release.
+This directory contains the formal-ontology engineering layer for CM-PharmE. The current stable semantic baseline remains `v1.0.0`; formalization, evaluation and repository engineering do not themselves declare a new semantic model release.
 
 ## Authoritative source
 
-The manual ontology authoring source is [`source/modules/`](source/modules/). It contains ontology metadata, metamodel terms, domains, concepts, relation/property formalization and the B5 annotation/provenance parity supplement.
+The manual ontology authoring source is [`source/modules/`](source/modules/). It contains ontology metadata, metamodel terms, domains, concepts, relation/property formalization and the annotation/provenance parity supplement.
 
 Related authoritative evidence includes:
 
@@ -25,19 +25,19 @@ The current formal graph contains:
 - full cardinality-registry coverage for all 40 stable relation IDs
 - lifecycle/provenance handling for deprecated and superseded relations
 
-## B5 source parity
+## Source parity and provenance
 
-B4.10 showed that the earlier GitHub modular source had 888 triples while the B3 packaged reference had 1,086 triples, with zero logical-axiom differences. B5 closes the remaining annotation/provenance gap.
+During evaluation, the earlier modular source was found to contain the same logical axiom set as the packaged formal reference but less annotation/provenance metadata. The reproducible-build phase closed that gap.
 
-The modular source now reconstructs the complete B3 reference graph at **1,086 triples** with canonical graph SHA-256:
+The modular source now reconstructs the complete reference graph at **1,086 triples** with canonical graph SHA-256:
 
 `cc823a8aff4d7e7818f8470f2dbad6ca8045ff92e5637fbf3503bc105170a83f`
 
-This parity restoration does not alter the logical axiom set and does not resolve the open B4.10 semantic-refinement candidates.
+This parity restoration did not alter the logical axiom set and did not silently resolve the open semantic-refinement candidates.
 
 ## Generated distributions and SHACL
 
-B5 deterministically generates the following consumer views in CI:
+The CI pipeline deterministically generates the following consumer views:
 
 - consolidated Turtle
 - RDF/XML / OWL
@@ -50,14 +50,24 @@ See [`distributions/`](distributions/) for the generation contract. The generate
 
 ## Validation
 
-The repository now combines:
+The repository combines:
 
-- B3 structural/reference-package validation;
-- B4 structural, scenario and competency-question evidence;
-- B4.10 ROBOT/HermiT logical validation;
-- B5 graph-fingerprint, serialization, byte-reproducibility, SHACL and CI quality gates.
+- structural/reference-package validation;
+- structural, scenario and competency-question evidence;
+- ROBOT/HermiT logical validation;
+- graph-fingerprint, serialization, byte-reproducibility, SHACL and CI quality gates.
 
-See [`validation/`](validation/) and [`../docs/engineering/b5-reproducible-build.md`](../docs/engineering/b5-reproducible-build.md).
+See [`validation/`](validation/), the [Evaluation overview](../docs/evaluations/index.md), and the [Reproducible-build architecture](../docs/engineering/b5-reproducible-build.md).
+
+## UFO/OntoUML relationship
+
+CM-PharmE uses UFO/OntoUML concepts as a modeling foundation, while keeping its internal metamodel terms and formal ontology separate from unsupported external equivalence claims. The repository does not currently claim native OntoUML Vocabulary or OntoUML Schema conformance.
+
+See:
+
+- [Official OntoUML Ecosystem References](../docs/references/ontouml-ecosystem.md)
+- [`mappings/ufo-stereotypes.ttl`](mappings/ufo-stereotypes.ttl)
+- [Research and Model Development Method](../docs/methodology/research-and-model-development.md)
 
 ## Persistent IRI boundary
 
