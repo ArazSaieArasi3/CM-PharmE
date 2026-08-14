@@ -1,0 +1,8 @@
+PREFIX c: <https://w3id.org/cm-pharme/concept/>
+PREFIX r: <https://w3id.org/cm-pharme/relation/>
+SELECT DISTINCT ?agreement ?actor1 ?actor2 WHERE {
+  ?agreement a c:CMPE-C0014 .
+  ?actor1 a c:CMPE-C0008 ; r:CMPE-R0027 ?agreement .
+  ?actor2 a c:CMPE-C0008 ; r:CMPE-R0027 ?agreement .
+  FILTER(STR(?actor1) < STR(?actor2))
+}

@@ -1,0 +1,9 @@
+PREFIX c: <https://w3id.org/cm-pharme/concept/>
+PREFIX r: <https://w3id.org/cm-pharme/relation/>
+SELECT ?enterprise ?unit ?capability ?stakeholder ?governance WHERE {
+  ?enterprise a c:CMPE-C0001 ; r:CMPE-R0001 ?stakeholder .
+  ?unit a c:CMPE-C0002 ; r:CMPE-R0003 ?enterprise .
+  ?capability a c:CMPE-C0005 ; r:CMPE-R0004 ?enterprise .
+  ?stakeholder a c:CMPE-C0003 ; r:CMPE-R0002 ?governance .
+  ?governance a c:CMPE-C0025 .
+}

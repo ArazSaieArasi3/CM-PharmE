@@ -1,0 +1,13 @@
+PREFIX c: <https://w3id.org/cm-pharme/concept/>
+PREFIX meta: <https://w3id.org/cm-pharme/meta/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+SELECT ?concept ?label ?domain ?stereotype WHERE {
+  VALUES ?concept {
+    c:CMPE-C0001 c:CMPE-C0003 c:CMPE-C0005
+    c:CMPE-C0015 c:CMPE-C0026 c:CMPE-C0029
+  }
+  ?concept skos:prefLabel ?label ;
+           meta:primaryDomain ?domain ;
+           meta:stereotype ?stereotype .
+}
+ORDER BY ?concept

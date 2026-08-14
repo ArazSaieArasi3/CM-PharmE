@@ -1,0 +1,87 @@
+schema_version: 2
+registry: CM-PharmE OntoUML-Informed Anti-Pattern Evidence
+source_basis:
+  historical: journal-manuscript-under-review
+  current: B4 repository re-evaluation
+method_boundary:
+  historical_method: focused-manual-inspection
+  b4_method: repository heuristics plus targeted semantic inspection
+  automated_full_ontouml_detector_used: false
+  exhaustive_catalog_used: false
+  note: B4 results are diagnostic evidence and do not constitute exhaustive OntoUML verification.
+items:
+- id: CMPE-AP001
+  name: Type–Role Confusion
+  description: Modeling roles as rigid types or kinds as roles.
+  historical_result: clean
+  historical_observation: Individual Patient was represented as a Role and Pharmaceutical Enterprise as a Kind; no type-role conflation was reported in the inspected scope.
+  b4_result: clean-confirmed
+  b4_evidence: Canonical concept stereotypes cross-check consistently with the registry; no inspected Kind/Role reversal was found.
+  b4_action: no-immediate-action
+- id: CMPE-AP002
+  name: Role without Relator
+  description: A contextual role is represented without an explicit or inherited mediating contextual relator.
+  historical_result: clean
+  historical_observation: The manuscript reported no unmediated role in its inspected scope.
+  b4_result: candidate-minor-issue
+  b4_evidence: Healthcare Provider (CMPE-C0021) is stereotyped as Role but has no explicit or inherited mediation relation in the current formal graph. Clinical Workforce (CMPE-C0007) is not flagged because it inherits the Organizational Stakeholder mediation context.
+  b4_action: semantic-review-required
+- id: CMPE-AP003
+  name: Relator without Mediation
+  description: A relator lacks explicit mediation to suitable participant role or entity types.
+  historical_result: minor-issue
+  historical_observation: Supply Chain Relationship could benefit from more explicit mediation to role types.
+  b4_result: minor-issue-confirmed
+  b4_evidence: Supply Chain Relationship (CMPE-C0032) uses CMPE-R0024, typed as mediation, toward Blockchain-Based Supply Chain Ledger (CMPE-C0031), a Kind, rather than clearly exposing the participant role types expected of the relator.
+  b4_action: targeted-semantic-review
+- id: CMPE-AP004
+  name: Event as Object
+  description: Events or processes are modeled as rigid object types.
+  historical_result: clean
+  historical_observation: Inspected clinical and pharmaceutical business processes were represented as perdurants.
+  b4_result: clean-confirmed
+  b4_evidence: Canonical process/activity concepts checked in B4 retain the Perdurant stereotype rather than Kind.
+  b4_action: no-immediate-action
+- id: CMPE-AP005
+  name: Mode vs. Attribute Confusion
+  description: Qualities, dispositions, capabilities, signals, policies, or requirements are represented with unsuitable independence commitments.
+  historical_result: clean
+  historical_observation: Inspected capabilities, requirements, and demand/supply signals were represented as modes.
+  b4_result: clean-confirmed
+  b4_evidence: The relevant canonical concepts remain consistently stereotyped as Mode in the registry and formal ontology.
+  b4_action: no-immediate-action
+- id: CMPE-AP006
+  name: Part–Whole Misuse
+  description: componentOf or partOf is used where the intended relation may not be structural composition.
+  historical_result: minor-issue
+  historical_observation: Public–Private Partnership Structure modeled as componentOf Ecosystem Governance Entity may reflect an institutional rather than structural composition.
+  b4_result: minor-issue-confirmed-plus-review-candidate
+  b4_evidence:
+    - CMPE-R0010 Public–Private Partnership Structure -> Ecosystem Governance Entity remains a semantic-review item.
+    - CMPE-R0029 Clinical Pathway (Relator) -> Pharmaceutical Business Process (Perdurant) via 'is part of' crosses ontological categories and merits targeted mereological review.
+  b4_action: targeted-mereological-review
+- id: CMPE-AP007
+  name: Relation as Class
+  description: A relationship is modeled as a rigid entity rather than an appropriate relator or relation.
+  historical_result: clean
+  historical_observation: Inspected social, contractual, and governance relationship constructs were represented as relators.
+  b4_result: clean-confirmed
+  b4_evidence: No inspected relationship construct was found to require reclassification as a rigid Kind merely to represent an association.
+  b4_action: no-immediate-action
+- id: CMPE-AP008
+  name: Overloaded Association
+  description: A single association carries multiple or ambiguous semantics.
+  historical_result: low-risk
+  historical_observation: No material semantic overloading was reported in the inspected scope, although further elaboration could improve clarity.
+  b4_result: low-risk-confirmed
+  b4_evidence: No stable property was found with multiple conflicting domain/range definitions. Generic 'material relation' labels CMPE-R0018 and CMPE-R0039 remain provisional semantic terminology rather than overloaded property definitions.
+  b4_action: terminology-review-when-evidence-permits
+summary:
+  b4_critical_issues: 0
+  clean_confirmed: 4
+  low_risk_confirmed: 1
+  historical_minor_issues_confirmed: 2
+  new_candidate_minor_items: [CMPE-AP002, CMPE-AP006]
+  architectural_redesign_required: false
+  evidence_status: repository-rechecked-with-explicit-limitations
+  overall_interpretation: No critical defect was identified in the checked scope, but targeted role/mediation and part-whole semantic review remains necessary before stronger ontological-validation claims.

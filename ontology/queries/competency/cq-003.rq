@@ -1,0 +1,9 @@
+PREFIX c: <https://w3id.org/cm-pharme/concept/>
+PREFIX r: <https://w3id.org/cm-pharme/relation/>
+SELECT ?process ?sequence ?pathway ?patient ?physician WHERE {
+  ?process a c:CMPE-C0015 .
+  ?sequence a c:CMPE-C0016 ; r:CMPE-R0013 ?process .
+  ?pathway a c:CMPE-C0018 ; r:CMPE-R0029 ?process .
+  ?patient a c:CMPE-C0017 ; r:CMPE-R0014 ?pathway .
+  ?physician a c:CMPE-C0019 ; r:CMPE-R0015 ?pathway .
+}

@@ -1,0 +1,11 @@
+PREFIX c: <https://w3id.org/cm-pharme/concept/>
+PREFIX r: <https://w3id.org/cm-pharme/relation/>
+SELECT ?authority ?oversight ?policy ?compliance ?pvRequirement ?surveillance ?reportProcedure WHERE {
+  ?authority a c:CMPE-C0023 ; r:CMPE-R0018 ?role .
+  ?role a c:CMPE-C0024 ; r:CMPE-R0019 ?oversight .
+  ?policy a c:CMPE-C0026 ; r:CMPE-R0020 ?oversight .
+  ?compliance a c:CMPE-C0027 ; r:CMPE-R0021 ?policy .
+  ?pvRequirement a c:CMPE-C0036 ; r:CMPE-R0031 ?surveillance .
+  ?surveillance a c:CMPE-C0037 ; r:CMPE-R0035 ?reportProcedure .
+  ?reportProcedure a c:CMPE-C0022 .
+}
