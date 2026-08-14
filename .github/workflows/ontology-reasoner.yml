@@ -159,7 +159,12 @@ jobs:
           name: cm-pharme-b5-ontology-ci-evidence
           path: |
             build/ontology-artifacts-a/
-            build/robot/
+            build/robot/cm-pharme-reasoned.owl
+            build/robot/robot-version.txt
+            build/robot/robot-hermit.log
+            build/robot/robot-hermit.exitcode
+            build/robot/reasoner-summary.json
+            build/robot/unsatisfiable.owl
             build/cm-pharme-ontology-artifacts.zip
             build/cm-pharme-ontology-artifacts.zip.sha256
           if-no-files-found: warn
