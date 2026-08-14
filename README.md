@@ -51,10 +51,10 @@ A domain-oriented view is also preserved in the historical release: [Domains of 
 | [Concepts](docs/concepts/index.md) | Canonical registry and one page per concept, with stable IDs, stereotypes, domains, relation traceability, and historical OWL snippets |
 | [Relations](docs/relations/index.md) | Canonical relation registry and one page per relation, including source/target and semantic relation category |
 | [Domains](docs/domains/index.md) | Five-domain architecture, domain scope, membership, and cross-domain mapping |
-| [Versions](docs/versions/index.md) | Stable releases, semantic inventories, and reproducible historical snapshots |
-| [Ontology](ontology/README.md) | Historical ontology provenance and the future formal-ontology engineering layer |
+| [Versions](docs/versions/index.md) | Stable releases, semantic inventories, and unreleased engineering work |
+| [Ontology](ontology/README.md) | Historical ontology provenance plus the unreleased B3 modular formal-ontology source, IRI policy, mappings, and validation boundary |
 | [Mappings](mappings/README.md) | Concept↔Domain, Concept↔Relation, ontology/data/publication mappings and traceability |
-| [Evaluation](docs/evaluations/index.md) | Layered evaluation framework and version-specific evidence |
+| [Evaluation](docs/evaluations/index.md) | Layered evaluation framework and version-/batch-specific evidence |
 | [Methodology](docs/methodology/index.md) | Model-design, ontology-engineering, mapping and evaluation methods |
 | [Architecture](docs/architecture/index.md) | Layered architecture and traceability model |
 | [Publications](publications/README.md) | Scholarly publications linked to specific model releases |
@@ -74,17 +74,22 @@ CM-PharmE has been developed in connection with peer-reviewed academic research.
 Released semantic entities are not hard-deleted from history. Concepts, relations, and domains receive stable identifiers and lifecycle states such as `Proposed`, `Active`, `Deprecated`, `Retired`, or `Superseded`. Each stable release maintains a manifest and frozen registries so that the exact semantic inventory remains reconstructable.
 
 - [v1.0.0 release documentation](docs/versions/v1.0.0.md)
+- [Unreleased B3 formal-ontology work](docs/versions/unreleased-b3.md)
 - [Semantic changelog](CHANGELOG.md)
 - [Migration inventory and provenance](MIGRATION_INVENTORY.md)
 - [Current-model baseline](model/current/README.md)
 
 ## Ontology
 
-The OWL file distributed with the original v1.0 model is preserved as a historical artifact. It was automatically generated from the conceptual diagram and contains converter artifacts, so it is **not** treated as the future canonical ontology source. The formal ontology will be re-engineered from the canonical knowledge registries with stable IRIs, generated serializations, validation, and explicit foundational-ontology mappings.
+The OWL file distributed with the original v1.0 model is preserved unchanged as a historical artifact. It was automatically generated from the conceptual diagram and contains converter artifacts, so it is **not** treated as the canonical cleaned ontology source.
+
+The unreleased B3 engineering cycle introduces a modular formal-ontology authoring source with stable identifier-based IRIs, formal concept definitions, relation/property semantics, endpoint cardinality traceability, lifecycle/provenance metadata, and cautious UFO/OntoUML correspondence notes. B3 remains under review and does not itself create a new semantic model release. See [Ontology](ontology/README.md) and the [B3 Formal Ontology Audit](docs/evaluations/b3-formal-ontology-audit.md).
 
 ## Evaluation
 
-CM-PharmE uses a layered evaluation architecture covering syntax, logical consistency, structure, ontological grounding, expert/semantic validation, data and mapping validation, competency questions, application usability, and research reproducibility. The first version-specific repository audit is available as the [v1.0.0 Structural Extraction Audit](docs/evaluations/v1.0.0-structural-audit.md).
+CM-PharmE uses a layered evaluation architecture covering syntax, logical consistency, structure, ontological grounding, expert/semantic validation, data and mapping validation, competency questions, application usability, and research reproducibility. Available evidence includes the [v1.0.0 Structural Extraction Audit](docs/evaluations/v1.0.0-structural-audit.md) and the unreleased [B3 Formal Ontology Audit](docs/evaluations/b3-formal-ontology-audit.md).
+
+B3 structural/reference-package validation has passed, but full OWL DL reasoner evidence and CI-driven rebuild reproducibility remain follow-up work; no unsupported logical-consistency or release-readiness claim is made.
 
 ## Citation
 
@@ -92,4 +97,4 @@ A machine-readable citation record is provided in [`CITATION.cff`](CITATION.cff)
 
 ## Repository Status
 
-Repository-preservation and foundation batches (B0–B1) and the v1.0 knowledge-model normalization/documentation batch (B2) are complete. Historical artifacts remain preserved byte-for-byte through Git object identity. Formal ontology re-engineering, deeper evaluation packages, automated validation/generation, and the public documentation site remain subsequent cycles.
+B0–B2 are integrated into `main` as the versioned research-knowledge-repository foundation. B3 adds an unreleased formal-ontology engineering layer for review while leaving the stable `v1.0.0` historical artifacts untouched. Full reasoner evaluation, CI/build automation, generated-distribution materialization, persistent-IRI deployment, broader semantic validation, and the public documentation site remain subsequent cycles.
