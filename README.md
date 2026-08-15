@@ -7,7 +7,7 @@
 
 ## Start Here
 
-If you are reviewing CM-PharmE for a paper or research assessment, the shortest path is:
+If you are reviewing CM-PharmE, the shortest path is:
 
 **[Published paper](https://ieeexplore.ieee.org/abstract/document/11301544/) → [Model](#model-at-a-glance--v100) → [Research method](docs/methodology/research-and-model-development.md) → [Evaluation](docs/evaluations/index.md) → [Reproducibility](docs/engineering/index.md)**
 
