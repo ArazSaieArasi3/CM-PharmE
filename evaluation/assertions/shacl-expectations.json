@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "profile": "CM-PharmE-vaccine-SHACL-bounded-v1",
+  "expected_conforms": false,
+  "expected_result_count": 3,
+  "expected_severity_counts": {
+    "Violation": 2,
+    "Warning": 1
+  },
+  "boundary": "The constructed vaccine scenario is intentionally evaluated against the full generated SHACL constraints. Known bounded findings are retained rather than editing the ontology or scenario only to force conformance. CI passes when the validator executes successfully and the documented finding profile remains stable."
+}
