@@ -54,8 +54,10 @@ def main() -> None:
         artifact_root / "validation/shacl-report.txt",
         artifact_root / "validation/owl2-dl-profile.txt",
         artifact_root / "validation/robot-measure.json",
-        artifact_root / "validation/roundtrip-omn.json",
-        artifact_root / "validation/roundtrip-ofn.json",
+        artifact_root / "validation/roundtrip-omn-diff.txt",
+        artifact_root / "validation/roundtrip-omn-summary.json",
+        artifact_root / "validation/roundtrip-ofn-diff.txt",
+        artifact_root / "validation/roundtrip-ofn-summary.json",
     ]
     missing = [str(path) for path in paths if not path.exists()]
     if missing:
@@ -67,12 +69,7 @@ def main() -> None:
             info = ZipInfo(arcname, date_time=FIXED_TIME)
             info.compress_type = ZIP_DEFLATED
             info.external_attr = 0o644 << 16
-            archive.writestr(
-                info,
-                path.read_bytes(),
-                compress_type=ZIP_DEFLATED,
-                compresslevel=9,
-            )
+            archive.writestr(info, path.read_bytes(), compress_type=ZIP_DEFLATED, compresslevel=9)
 
     summary = {
         "bundle": output.relative_to(ROOT).as_posix() if output.is_relative_to(ROOT) else str(output),
