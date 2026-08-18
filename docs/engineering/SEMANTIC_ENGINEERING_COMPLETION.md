@@ -2,15 +2,22 @@
 
 ## Scope
 
-This document closes the post-paper repository-engineering wave for the current CM-PharmE 1.0 semantic baseline. It strengthens formats, validation, regression testing, reproducibility, and documentation without declaring a new semantic model version.
+This document records the completed post-paper repository-engineering wave for the current CM-PharmE 1.0 semantic baseline. It strengthens formats, validation, regression testing, reproducibility, and documentation without declaring a new semantic model version.
 
 The authoritative ontology source remains the modular Turtle under `ontology/source/modules/`. Generated files are reproducible views and must not be edited independently.
 
-## Latest PR-gate result
+## Closure status
 
-Pull-request CI run **32160459326** completed successfully for the B6 branch. Every semantic-engineering step in the workflow passed, including deterministic dual builds, extended-format generation, structural validation, executable SHACL, positive and negative CQs, ROBOT format generation, formal-view axiom comparison, ontology metrics/profile assessment, HermiT reasoning, deterministic release packaging, and reasoner enforcement.
+B6 is **integrated into `main`**. The final B6 pull-request CI completed successfully before merge and exercised the complete semantic-engineering workflow: deterministic dual builds, extended-format generation, structural validation, executable SHACL, positive and negative CQs, ROBOT format generation, formal-view axiom comparison, ontology metrics/profile assessment, HermiT reasoning, deterministic release packaging, and reasoner enforcement.
 
-The branch has therefore reached the **merge decision gate**. Final repository closure still requires merge to `main` and a successful post-merge CI run.
+Integration evidence:
+
+- B6 merge commit on `main`: `935a56e788930d449d998464ae2caf8824eba38c`
+- final full B6 pull-request CI run: `32161058369`
+- workflow conclusion: **success**
+- stable semantic baseline after integration: **unchanged — `v1.0.0`**
+
+The public homepage and engineering documentation were subsequently refreshed and merged through PR #7 so that the repository entry point reflects the integrated B6 state. This documentation-only follow-up introduced no semantic ontology change.
 
 ## Completion dashboard
 
@@ -31,6 +38,7 @@ The branch has therefore reached the **merge decision gate**. Final repository c
 | Logical reasoning | ROBOT + HermiT | **PASS**; exit code 0 |
 | Deterministic builds | two clean RDF builds + formal-syntax output comparison | **PASS** |
 | Deterministic package | fixed-order/fixed-time release ZIP + SHA-256 | **PASS** |
+| Semantic engineering B6 | merged to `main` | **INTEGRATED / CLOSED** |
 | Repository boundary | no semantic-release/tag change in this wave | **PRESERVED** |
 
 ## Important formal findings preserved for future model evolution
@@ -49,7 +57,7 @@ These are not hidden or cosmetically repaired. They are retained as bounded evid
 
 ROBOT/OWLAPI reports that the canonical CM-PharmE 1.0 RDF source is not fully within the OWL 2 DL profile as currently serialized. The profile report identifies formalization-hygiene issues involving declaration expectations for annotation/external vocabulary resources and related OWLAPI signature treatment. This is distinct from logical inconsistency: HermiT still completes successfully with exit code 0 for the current axiom set.
 
-The B6 wave deliberately does not mutate the validated v1 canonical graph only to make the profile report green. A DL-normalized formal view or explicit declaration strategy can be treated as a governed future-version formalization improvement.
+The B6 wave deliberately does not mutate the validated v1 canonical graph only to make the profile report green. A DL-normalized formal view or explicit declaration strategy belongs to a governed future formalization/evolution decision rather than this closed v1 engineering wave.
 
 ## Important evidence boundary
 
@@ -67,6 +75,8 @@ The repository distinguishes engineering validity from semantic and empirical va
 - `tools/ontology/package_release.py` — deterministic expanded semantic release bundle.
 - `.github/workflows/ontology-reasoner.yml` — CI orchestration, ROBOT conversions/profile/metrics, HermiT reasoning, regression checks, and artifact publication.
 
-## Closure rule
+## Closure outcome
 
-This engineering wave is complete when the pull-request CI passes, the branch is merged into `main`, and the post-merge CI run also succeeds. Semantic changes, persistent IRI deployment, licensing, new datasets, and a new model version remain separate decision cycles.
+The intended CM-PharmE 1.0 repository-engineering scope is complete: the stable semantic source can be reconstructed, serialized into multiple consumer formats, assessed through complementary automated gates, and packaged reproducibly. The stable semantic baseline remains `v1.0.0`.
+
+Persistent IRI deployment, licensing, new datasets, new semantic concepts/relations, relational/KG application layers, and any future semantic release remain separate governance or research cycles and do not reopen this completed v1 engineering closure.
