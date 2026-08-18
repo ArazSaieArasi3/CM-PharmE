@@ -143,26 +143,24 @@ jobs:
             build/ontology-artifacts-a/distributions/cm-pharme.ofn \
             build/ontology-artifacts-b/distributions/cm-pharme.ofn
 
-      - name: Round-trip formal OWL syntaxes and compare canonical RDF graphs
+      - name: Compare formal OWL views at the OWL axiom level
         shell: bash
         run: |
           set -euo pipefail
-          java -jar build/robot/robot.jar convert \
-            --input build/ontology-artifacts-a/distributions/cm-pharme.omn \
-            --format owl \
-            --output build/ontology-artifacts-a/validation/roundtrip-omn.owl
-          java -jar build/robot/robot.jar convert \
-            --input build/ontology-artifacts-a/distributions/cm-pharme.ofn \
-            --format owl \
-            --output build/ontology-artifacts-a/validation/roundtrip-ofn.owl
-          python tools/ontology/semantic_diff.py \
+          java -jar build/robot/robot.jar diff \
             --left build/ontology-artifacts-a/source/cm-pharme.ttl \
-            --right build/ontology-artifacts-a/validation/roundtrip-omn.owl \
-            --output build/ontology-artifacts-a/validation/roundtrip-omn.json
-          python tools/ontology/semantic_diff.py \
+            --right build/ontology-artifacts-a/distributions/cm-pharme.omn \
+            --output build/ontology-artifacts-a/validation/roundtrip-omn-diff.txt
+          java -jar build/robot/robot.jar diff \
             --left build/ontology-artifacts-a/source/cm-pharme.ttl \
-            --right build/ontology-artifacts-a/validation/roundtrip-ofn.owl \
-            --output build/ontology-artifacts-a/validation/roundtrip-ofn.json
+            --right build/ontology-artifacts-a/distributions/cm-pharme.ofn \
+            --output build/ontology-artifacts-a/validation/roundtrip-ofn-diff.txt
+          python tools/ontology/check_robot_diff.py \
+            --diff build/ontology-artifacts-a/validation/roundtrip-omn-diff.txt \
+            --output build/ontology-artifacts-a/validation/roundtrip-omn-summary.json
+          python tools/ontology/check_robot_diff.py \
+            --diff build/ontology-artifacts-a/validation/roundtrip-ofn-diff.txt \
+            --output build/ontology-artifacts-a/validation/roundtrip-ofn-summary.json
 
       - name: Measure ontology and assess OWL 2 DL profile
         id: profile
@@ -250,6 +248,7 @@ jobs:
             echo '- Canonical graph target: 1,086 triples'
             echo '- RDF distributions: TTL, RDF/XML, JSON-LD expanded + compacted, N-Triples, TriG, N-Quads'
             echo '- OWL review distributions: Manchester (.omn) and Functional Syntax (.ofn)'
+            echo '- Formal-view equivalence: ROBOT axiom-level diff'
             echo '- SHACL target: 574 triples / 76 node shapes / 76 property shapes'
             echo '- SHACL sample validation: executed against registered bounded findings'
             echo '- Positive competency queries: 8 executable regression checks'
