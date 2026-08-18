@@ -2,46 +2,73 @@
 
 ## Post-closure engineering status
 
-The repository modernization cycle B0–B5 is **closed**. PR #4 was merged into `main`, and the post-merge ontology CI run on the resulting `main` commit completed successfully. The historical baseline, normalized knowledge model, formal ontology, evaluation evidence and reproducible build pipeline therefore all live on `main`.
+The repository modernization and semantic-engineering cycle through **B6** is integrated into `main` while preserving the stable semantic baseline `v1.0.0`.
 
-Closure evidence:
+The earlier B0–B5 closure established historical preservation, normalized knowledge-model artifacts, formal ontology source, evaluation evidence and deterministic build/CI. The subsequent B6 completion wave extended that engineering baseline with additional semantic formats, executable SHACL, negative competency regressions, formal-view checks, explicit OWL profile assessment, expanded deterministic packaging and consolidated engineering documentation.
 
-- B5 merge commit on `main`: `00010410d15c6e35eb267e93178b84beef1485d0`
-- post-merge GitHub Actions run: `31805218368`
-- workflow conclusion: **success**
+B6 integration evidence:
+
+- merge commit on `main`: `935a56e788930d449d998464ae2caf8824eba38c`
+- final pull-request CI run before merge: `32161058369`
+- pull-request workflow conclusion: **success**
+- stable semantic version after merge: **unchanged — `v1.0.0`**
+
+The ontology workflow is configured to execute on relevant pushes to `main`; engineering integration is therefore kept under the same automated validation contract after merge.
 
 ## Current release-decision gates
 
-| Gate | Status after B5 | Interpretation |
+| Gate | Current status | Interpretation |
 |---|---|---|
-| Historical v1.0.0 preservation | PASS | Immutable release artifacts retained |
-| Stable IDs / lifecycle / traceability | PASS | 39 concepts, 40 relations, 5 domains |
-| Formal ontology source | PASS | Modular authoring source established |
-| Full B3 graph parity | PASS | 1,086-triple reference graph reconstructable |
-| SHACL generation | PASS | 574 triples; 76 + 76 shapes |
-| Structural validation | PASS | Repository quality gates automated |
-| OWL DL logical validation | PASS | ROBOT/HermiT workflow verified on `main` |
-| Competency-question regression | PASS — bounded | Eight executable B4 queries |
-| Deterministic distributions | PASS | TTL, RDF/XML, JSON-LD and N-Triples generated deterministically as CI/release artifacts |
-| Deterministic release bundle | PASS | CI verifies byte-identical rebuild |
-| Repository modernization B0–B5 | CLOSED | Merge and post-merge `main` CI closure criteria satisfied |
+| Historical v1.0.0 preservation | PASS | Immutable historical release artifacts retained |
+| Stable IDs / lifecycle / traceability | PASS | 39 concepts, 40 relation records, 5 domains |
+| Formal ontology source | PASS | Modular Turtle authoring source established |
+| Canonical graph parity | PASS | 1,086-triple reference graph reconstructable |
+| OWL qualified restrictions | PASS | 42 qualified cardinality restrictions represented |
+| SHACL generation | PASS | 574 triples; 76 NodeShapes + 76 PropertyShapes |
+| Executed SHACL validation | PASS — bounded finding profile | Two Violations + one Warning reproduced intentionally on the vaccine sample |
+| Structural validation | PASS | 28/28 structural and traceability checks |
+| Positive competency-query regression | PASS — bounded | Eight executable queries meet registered expectations |
+| Negative competency-query regression | PASS — bounded | Four absence queries return the expected zero rows |
+| RDF-compatible distributions | PASS | Canonical graph preserved across generated RDF views |
+| Extended formats | PASS | Compacted JSON-LD/context, TriG and N-Quads generated deterministically |
+| Manchester / OWL Functional views | PASS with documented normalization boundary | Generated deterministically and compared at OWL axiom level |
+| OWL profile assessment | MEASURED | Current v1 canonical serialization is not claimed fully OWL 2 DL-profile conformant |
+| Logical reasoning | PASS | ROBOT/HermiT completes successfully for the current axiom set |
+| Deterministic dual build | PASS | Independent generated builds must be byte-identical |
+| Deterministic release bundle | PASS | Fixed-order/fixed-time package with SHA-256 evidence |
+| Semantic engineering B6 | INTEGRATED | Merged to `main` after successful full PR CI |
 | Open semantic findings | OPEN | Three refinement candidates + one domain-evidence deferral |
 | Independent expert/domain replication | PARTIAL | Publication evidence exists; broader replication remains future research |
 | License policy | OPEN — owner decision required | Must be selected explicitly before a formal public release policy is finalized |
 | `w3id.org` redirect deployment | OPEN | IRI policy exists; redirect registration is external administrative work |
 | New semantic version/tag | NOT YET | Must follow intentional semantic evolution, not engineering automation |
 
+## Formal findings deliberately preserved
+
+### SHACL
+
+The constructed vaccine scenario does not fully conform to the complete generated SHACL constraint set. The validator reproducibly identifies three registered findings: two Violations and one Warning. These are preserved as evidence and future refinement inputs rather than removed solely to obtain a cosmetically green conformance result.
+
+### OWL 2 DL profile
+
+ROBOT/OWLAPI profile assessment is executed explicitly. The current v1 canonical RDF serialization is not described as fully OWL 2 DL-profile conformant; formalization-hygiene findings around declaration/signature treatment are recorded separately from logical consistency. HermiT reasoning nevertheless succeeds for the current axiom set.
+
+These two results illustrate the repository's evidence policy: validation outcomes are reported according to what each technique actually establishes.
+
 ## Closure definition and outcome
 
-The defined closure criterion was: **B5 merged to `main` plus a successful post-merge CI audit on `main`.** That criterion has now been satisfied.
+The repository has now completed the intended v1 engineering modernization scope: the stable semantic model can be reconstructed, validated through multiple complementary gates, serialized into multiple consumer formats and packaged reproducibly from authoritative source.
 
-The following work is deliberately outside the closed B0–B5 modernization cycle and belongs to subsequent governance or research cycles:
+The following work is deliberately outside this completed v1 engineering cycle and belongs to subsequent governance or research cycles:
 
 - semantic refinement and CM-PharmE v2 design;
-- new paper/research questions;
-- independent datasets and empirical evaluation;
+- new concept discovery and domain-extension decisions;
+- independent DOI-backed datasets and empirical evaluation;
 - ontology-to-relational mapping and relational database implementation;
-- knowledge graph / application layers;
-- persistent IRI deployment and publication-administration decisions.
+- knowledge graph and application/observatory layers;
+- additional cross-dataset or cross-jurisdiction validation;
+- persistent IRI deployment;
+- licensing and publication-administration decisions;
+- any intentional new semantic version or tag.
 
-License selection and `w3id.org` registration are release-governance follow-ups and do not reopen the closed B0–B5 modeling/evaluation cycle.
+License selection and `w3id.org` registration are governance follow-ups and do not reopen the completed v1 engineering/modeling cycle.

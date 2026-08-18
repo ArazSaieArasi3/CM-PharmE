@@ -1,21 +1,25 @@
 # CM-PharmE
 
-**CM-PharmE** is an evolving, versioned, ontology-grounded conceptual model and research knowledge base for the pharmaceutical ecosystem. The repository is designed as a long-lived research asset supporting conceptual modeling, formal ontology engineering, evaluation, data mapping, publication traceability, reproducible builds and future applications.
+[![CM-PharmE Ontology CI](https://github.com/ArazSaieArasi3/CM-PharmE/actions/workflows/ontology-reasoner.yml/badge.svg?branch=main)](https://github.com/ArazSaieArasi3/CM-PharmE/actions/workflows/ontology-reasoner.yml)
+
+**CM-PharmE** is an evolving, versioned, ontology-grounded conceptual model and research knowledge base for the pharmaceutical ecosystem. The repository is designed as a long-lived research asset supporting conceptual modeling, formal ontology engineering, evaluation, data mapping, publication traceability, reproducible builds, semantic-query testing and future data/application layers.
 
 > **Current stable semantic baseline:** `v1.0.0`  
 > Engineering, evaluation or manuscript revisions do **not** automatically create a new semantic model version. A new CM-PharmE release is declared only when semantic changes are explicitly identified, evaluated and versioned.
 
+The latest repository-engineering closure is now integrated into `main`. It preserves the `v1.0.0` semantic baseline while substantially strengthening reproducibility, formal validation, serialization coverage, executable regression testing and research-artifact traceability.
+
 ## Start Here
 
-If you are reviewing CM-PharmE, the shortest path is:
+For the shortest research path:
 
-**[Published paper](https://ieeexplore.ieee.org/abstract/document/11301544/) → [Model](#model-at-a-glance--v100) → [Research method](docs/methodology/research-and-model-development.md) → [Evaluation](docs/evaluations/index.md) → [Reproducibility](docs/engineering/index.md)**
+**[Published paper](https://ieeexplore.ieee.org/abstract/document/11301544/) → [Model](#model-at-a-glance--v100) → [Research method](docs/methodology/research-and-model-development.md) → [Evaluation](docs/evaluations/index.md) → [Semantic engineering](docs/engineering/SEMANTIC_ENGINEERING_COMPLETION.md)**
 
-If you are primarily interested in ontology engineering, start with:
+For ontology/formal-engineering details:
 
-**[Ontology](ontology/README.md) → [Concepts](docs/concepts/index.md) → [Relations](docs/relations/index.md) → [Official OntoUML references](docs/references/ontouml-ecosystem.md) → [Executable evaluation](docs/evaluations/index.md)**
+**[Ontology](ontology/README.md) → [Concepts](docs/concepts/index.md) → [Relations](docs/relations/index.md) → [Formats](docs/engineering/FORMATS.md) → [Validation](docs/engineering/VALIDATION.md) → [Build](docs/engineering/BUILD.md)**
 
-For a broader map of the repository, see the [Documentation Map](docs/index.md).
+For a broader map, see the [Documentation Map](docs/index.md).
 
 ## Authors and Affiliations
 
@@ -37,7 +41,7 @@ Pharmaceutical ecosystems combine enterprises, regulators, healthcare actors, co
 
 The repository follows an artifact-oriented narrative rather than reproducing manuscript sections:
 
-**Problem → Research gap → CM-PharmE response → Design method → Evidence → Evaluation → Applications → Limitations → Evolution**
+**Problem → Research gap → CM-PharmE response → Design method → Evidence → Formalization → Evaluation → Reproducibility → Applications → Limitations → Evolution**
 
 [Research rationale](docs/research/rationale.md)
 
@@ -51,6 +55,26 @@ CM-PharmE uses a two-stage modeling logic derived from the associated research:
 The model-development lineage combines PRISMA-guided evidence review, thematic synthesis, evidence-to-domain decomposition, business-architecture-informed conceptualization and UFO/OntoUML classification/relation-selection procedures.
 
 [Research and model-development method](docs/methodology/research-and-model-development.md) · [Official OntoUML ecosystem references](docs/references/ontouml-ecosystem.md)
+
+## Repository at a Glance
+
+| Dimension | Current state |
+|---|---|
+| Stable semantic release | **v1.0.0** |
+| Canonical concepts | **39** |
+| Stable relation records | **40** — 39 OWL object properties + 1 explicit generalization |
+| Modeling domains | **5** |
+| OWL qualified cardinality restrictions | **42** |
+| Canonical formal graph | **1,086 triples** |
+| SHACL graph | **574 triples** |
+| SHACL shapes | **76 NodeShapes + 76 PropertyShapes** |
+| Positive executable competency queries | **8/8 PASS** |
+| Negative regression competency queries | **4/4 PASS** |
+| Structural/reference checks | **28/28 PASS** |
+| Logical reasoning | **ROBOT + HermiT PASS** for the current axiom set |
+| Deterministic build | **Two independent builds required to be byte-identical** |
+| Generated distribution/context artifacts | **11** plus SHACL and validation evidence |
+| Current semantic version impact of engineering work | **None — v1.0.0 remains stable** |
 
 ## Model at a Glance — v1.0.0
 
@@ -80,44 +104,53 @@ Concept stereotypes: 13 `kind`, 8 `mode`, 7 `role`, 6 `relator`, and 5 `perduran
 
 These are conceptual modeling domains, not predefined DDD bounded contexts, services or microservices.
 
-## Explore CM-PharmE
+## Formal Ontology and Semantic Engineering
 
-| Area | Purpose |
-|---|---|
-| [Documentation Map](docs/index.md) | Reader-oriented map of the repository and recommended paths |
-| [Concepts](docs/concepts/index.md) | Stable concepts, stereotypes, domains and relation traceability |
-| [Relations](docs/relations/index.md) | Stable relation registry and semantic endpoints |
-| [Domains](docs/domains/index.md) | Five-domain architecture and mappings |
-| [Ontology](ontology/README.md) | Formal ontology source, distributions, IRI policy and validation |
-| [Mappings](mappings/README.md) | Concept/domain/relation/data/publication traceability |
-| [Evaluation](docs/evaluations/index.md) | Nine-layer evaluation evidence and executable validation |
-| [Methodology](docs/methodology/index.md) | Evidence synthesis, modeling and evaluation methods |
-| [Engineering](docs/engineering/index.md) | Reproducible build, CI and release-readiness architecture |
-| [Research Rationale](docs/research/rationale.md) | Problem, gap, significance and boundaries |
-| [Applications & Boundaries](docs/research/applications-and-boundaries.md) | Intended application pathways and non-claims |
-| [Publications](publications/README.md) | Publication lineage, publisher links and model/evidence association |
-| [Versions](docs/versions/index.md) | Stable semantic baseline and integrated engineering/evaluation history |
+The historical OWL export bundled with `v1.0.0` is preserved unchanged for provenance but is not the cleaned canonical ontology source. The authoritative formal source is the modular Turtle under [`ontology/source/modules/`](ontology/source/modules/).
 
-## Formal Ontology and Reproducible Build
+The repository-engineering progression now includes formal ontology engineering, layered evaluation, executable logical validation, deterministic build/CI, extended ontology distributions and reproducible semantic packaging.
 
-The historical OWL export bundled with `v1.0.0` is preserved unchanged for provenance but is not the cleaned canonical ontology source.
+Current engineering capabilities include:
 
-The repository modernization progressed through named engineering stages: **Formal Ontology Engineering (B3)** established the modular ontology; **Evaluation and Evidence (B4/B4.10)** added executable evaluation and ROBOT/HermiT reasoning; and **Reproducible Build and CI (B5)** completed the repository-engineering loop. The B-codes are retained as historical/provenance identifiers, while the natural-language names are preferred for reader-facing documentation.
-
-- the authoritative modular source reconstructs the **complete 1,086-triple reference graph**;
-- the SHACL reference is reproduced at **574 triples / 76 NodeShapes / 76 PropertyShapes**;
-- consolidated Turtle, RDF/XML/OWL, RDF/XML, expanded JSON-LD and canonical N-Triples are generated deterministically;
-- two independent clean builds must be byte-identical in CI, and generated distributions are uploaded as CI/release artifacts;
-- build manifests and SHA-256 checksums are generated for each build;
-- eight competency queries run as regression gates;
-- ROBOT/HermiT remains a required logical-validation gate;
-- CI produces a deterministic release bundle without automatically declaring a semantic release.
+- reconstruction of the complete **1,086-triple canonical graph** from modular source;
+- deterministic generation of Turtle, OWL/RDF-XML, RDF/XML, expanded JSON-LD, compacted JSON-LD, JSON-LD context, N-Triples, TriG and N-Quads;
+- generation of **Manchester Syntax** and **OWL Functional Syntax** through ROBOT/OWLAPI;
+- graph-equivalence checking across RDF-compatible formats;
+- guarded OWL axiom-level comparison for formal syntax views;
+- generation of the **574-triple SHACL graph** with **76 NodeShapes and 76 PropertyShapes**;
+- executable SHACL validation over the machine-readable vaccine scenario;
+- eight positive competency-query regressions plus four negative absence regressions;
+- ROBOT ontology metrics and explicit OWL 2 DL profile assessment;
+- ROBOT/HermiT logical reasoning;
+- dual-build byte-reproducibility checks;
+- deterministic release ZIP generation with SHA-256 integrity evidence;
+- explicit separation between generated artifacts and authoritative authoring source.
 
 Canonical graph fingerprint:
 
 `cc823a8aff4d7e7818f8470f2dbad6ca8045ff92e5637fbf3503bc105170a83f`
 
-[Reproducible-build architecture](docs/engineering/b5-reproducible-build.md)
+[Semantic engineering completion](docs/engineering/SEMANTIC_ENGINEERING_COMPLETION.md) · [Formats](docs/engineering/FORMATS.md) · [Validation architecture](docs/engineering/VALIDATION.md) · [Reproducible build](docs/engineering/BUILD.md)
+
+### Validation pipeline
+
+```mermaid
+flowchart LR
+    A[Modular Turtle source] --> B[Deterministic build]
+    B --> C[RDF/OWL distributions]
+    B --> D[SHACL shapes]
+    C --> E[Graph equivalence and fingerprints]
+    D --> F[Executable SHACL validation]
+    C --> G[Positive and negative SPARQL CQs]
+    C --> H[ROBOT metrics and OWL profile assessment]
+    C --> I[HermiT logical reasoning]
+    E --> J[Deterministic release package]
+    F --> J
+    G --> J
+    H --> J
+    I --> J
+    J --> K[CI evidence and reproducible research artifacts]
+```
 
 ## Evidence and Evaluation
 
@@ -126,19 +159,55 @@ The associated research evaluates CM-PharmE through complementary procedures rat
 Current repository evidence includes:
 
 - **28/28** structural and traceability checks;
-- **8/8** executable competency queries meeting their bounded expectations;
+- **8/8** positive executable competency queries meeting their bounded expectations;
+- **4/4** negative competency regressions returning the expected empty result sets;
 - a machine-readable vaccine scenario spanning all five domains;
+- executed SHACL validation with a registered and reproducible finding profile;
 - anti-pattern re-evaluation and explicit semantic finding disposition;
+- ROBOT ontology metrics and explicit profile assessment;
 - ROBOT/HermiT logical validation for the current logical axiom set;
-- graph-fingerprint, SHACL, serialization and build-reproducibility gates.
+- graph-fingerprint, serialization-equivalence, dual-build and deterministic-package gates.
 
-Open semantic findings remain explicit: three model-refinement candidates and one item deferred pending domain evidence. The engineering pipeline does not silently change the ontology to eliminate those findings.
+The full generated SHACL constraint set currently reproduces **three registered findings** in the illustrative vaccine scenario: **two Violations and one Warning**. These findings are preserved as explicit evidence rather than hidden by changing the model or sample only to make validation appear fully conformant.
+
+Open semantic findings also remain explicit: three model-refinement candidates and one item deferred pending stronger domain evidence. They are inputs for a future semantic-evolution cycle, not silent changes to the stable `v1.0.0` baseline.
 
 [Final evaluation report](docs/evaluations/b4-final-evaluation.md) · [Release readiness](docs/engineering/release-readiness.md)
 
+## Formal Validation Boundary
+
+The current v1 canonical RDF source is explicitly assessed against the OWL 2 DL profile rather than being described as profile-conformant without evidence. The current source is **not claimed to be fully OWL 2 DL-profile conformant** in its present serialization; the profile assessment records formalization-hygiene findings involving declaration/signature treatment. This is distinct from logical inconsistency: **HermiT completes successfully for the current axiom set**.
+
+Likewise, SHACL execution, competency-query success, logical consistency and deterministic builds provide different kinds of evidence. None of them alone establishes universal domain completeness, empirical effectiveness, standards conformance or correctness of every ontological commitment.
+
+This explicit evidence boundary is part of the repository's reproducibility policy.
+
+## Explore CM-PharmE
+
+| Area | Purpose |
+|---|---|
+| [Documentation Map](docs/index.md) | Reader-oriented map of the repository and recommended paths |
+| [Concepts](docs/concepts/index.md) | Stable concepts, stereotypes, domains and relation traceability |
+| [Relations](docs/relations/index.md) | Stable relation registry and semantic endpoints |
+| [Domains](docs/domains/index.md) | Five-domain architecture and mappings |
+| [Ontology](ontology/README.md) | Formal source, inventory, distributions, IRI policy and validation |
+| [Formats](docs/engineering/FORMATS.md) | Supported ontology/data serializations and equivalence policy |
+| [Validation](docs/engineering/VALIDATION.md) | Layered structural, SHACL, CQ, profile and logical validation architecture |
+| [Build](docs/engineering/BUILD.md) | Deterministic build and reproducibility contract |
+| [Semantic Engineering Closure](docs/engineering/SEMANTIC_ENGINEERING_COMPLETION.md) | Latest integrated engineering state and preserved formal findings |
+| [Mappings](mappings/README.md) | Concept/domain/relation/data/publication traceability |
+| [Evaluation](docs/evaluations/index.md) | Nine-layer evaluation evidence and executable validation |
+| [Methodology](docs/methodology/index.md) | Evidence synthesis, modeling and evaluation methods |
+| [Engineering](docs/engineering/index.md) | Build, CI, validation and release-readiness architecture |
+| [Research Rationale](docs/research/rationale.md) | Problem, gap, significance and boundaries |
+| [Applications & Boundaries](docs/research/applications-and-boundaries.md) | Intended application pathways and non-claims |
+| [Publications](publications/README.md) | Publication lineage, publisher links and model/evidence association |
+| [Versions](docs/versions/index.md) | Stable semantic baseline and integrated engineering/evaluation history |
+| [Contribution Guide](CONTRIBUTING.md) | Semantic-source, generated-artifact and evidence-discipline rules |
+
 ## Applications and Boundaries
 
-CM-PharmE may support ecosystem/governance reasoning, requirements engineering, interoperability-oriented analysis, reference-architecture interpretation, standards-specific semantic mapping, knowledge-graph development, DDD/software-architecture analysis, dataset mapping and future database/application implementations.
+CM-PharmE may support ecosystem/governance reasoning, requirements engineering, interoperability-oriented analysis, reference-architecture interpretation, standards-specific semantic mapping, knowledge-graph development, DDD/software-architecture analysis, dataset mapping and future relational-database/application implementations.
 
 These are application pathways rather than claims of deployed effectiveness. CM-PharmE does not by itself establish legal compliance, FHIR/IDMP/BACM conformance, implementation feasibility, migration cost or organizational adoption.
 
@@ -158,12 +227,9 @@ Released semantic entities are not hard-deleted from history. Concepts, relation
 - [Lifecycle policy](docs/policies/lifecycle.md)
 - [Semantic changelog](CHANGELOG.md)
 - [Migration inventory](MIGRATION_INVENTORY.md)
+- [Release readiness](docs/engineering/release-readiness.md)
 
-## Validation Boundary
-
-Current evidence supports structural traceability, formal-source coverage, executable CQs, bounded scenario instantiation, reproducible serializations and OWL logical consistency for the validated axiom set. It does **not** establish universal domain completeness, empirical effectiveness, standards conformance or correctness of every open ontological modeling decision.
-
-The planned namespace is `https://w3id.org/cm-pharme/`, but the external `w3id.org` redirect is not yet registered. License selection is also intentionally left for an explicit repository-owner decision.
+The planned namespace is `https://w3id.org/cm-pharme/`, but the external `w3id.org` redirect is not yet registered. License selection also remains an explicit repository-owner governance decision.
 
 ## Citation
 
@@ -171,4 +237,6 @@ A machine-readable citation record is provided in [`CITATION.cff`](CITATION.cff)
 
 ## Repository Status
 
-The completed repository-modernization cycle covers historical preservation, repository foundation, knowledge-model normalization, formal ontology engineering, paper-grounded evaluation, executable logical validation and reproducible build/CI engineering. The stable semantic baseline remains `v1.0.0` until an intentional next-generation semantic cycle is evaluated and released.
+The completed repository-modernization and semantic-engineering cycle now covers historical preservation, repository foundation, knowledge-model normalization, formal ontology engineering, multi-layer evaluation, executable SHACL and competency-query validation, logical reasoning, expanded semantic formats, deterministic build/CI and reproducible release packaging.
+
+The stable semantic baseline remains `v1.0.0`. Future semantic refinement, independent datasets, ontology-to-relational mapping, knowledge-graph/application layers, persistent IRI deployment and any next-generation CM-PharmE release belong to intentionally governed future research/evolution cycles rather than being implied by repository engineering alone.
