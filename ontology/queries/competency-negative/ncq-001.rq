@@ -1,0 +1,4 @@
+PREFIX ex: <https://w3id.org/cm-pharme/example/vaccine/>
+SELECT ?relation WHERE {
+  ex:governancePolicy ?relation ex:distributionProcess .
+}
