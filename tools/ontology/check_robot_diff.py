@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
-"""Assert that a ROBOT plain diff reports no OWL axiom differences."""
+"""Validate a ROBOT axiom diff for formal-syntax conversion.
+
+Manchester/Functional renderers may materialize explicit OWL Declaration axioms for
+entities that were already used implicitly in the RDF source. Such declaration-only
+normalization is recorded but is not treated as a semantic axiom change. Any removed
+axiom or any added non-Declaration axiom fails the check.
+"""
 from __future__ import annotations
 
 import argparse
@@ -26,19 +32,35 @@ def main() -> None:
         match = pattern.search(text)
         counts.append(int(match.group("count")) if match else None)
 
-    # ROBOT may emit an empty report for identical ontologies. Otherwise require both counts to parse as zero.
+    removed = [line[2:].strip() for line in text.splitlines() if line.startswith("- ")]
+    added = [line[2:].strip() for line in text.splitlines() if line.startswith("+ ")]
+    declaration_additions = [axiom for axiom in added if axiom.startswith("Declaration(")]
+    nondeclaration_additions = [axiom for axiom in added if not axiom.startswith("Declaration(")]
+
     empty_report = not text.strip()
-    parsed_zero = counts == [0, 0]
-    passed = empty_report or parsed_zero
+    counts_consistent = (
+        empty_report
+        or (counts[0] == len(removed) and counts[1] == len(added))
+    )
+    passed = empty_report or (
+        counts_consistent
+        and len(removed) == 0
+        and len(nondeclaration_additions) == 0
+    )
+
     report = {
-        "schema_version": 1,
+        "schema_version": 2,
         "profile": "CM-PharmE-B6-ROBOT-axiom-diff-check",
         "diff_file": str(diff_path),
         "robot_plain_diff_empty": empty_report,
         "left_only_axioms": counts[0],
         "right_only_axioms": counts[1],
+        "removed_axioms": removed,
+        "declaration_only_additions": declaration_additions,
+        "nondeclaration_additions": nondeclaration_additions,
+        "counts_consistent_with_diff_lines": counts_consistent,
         "status": "PASS" if passed else "FAIL",
-        "boundary": "This checks OWLAPI/ROBOT axiom equivalence across formal-syntax conversion. RDF serialization may contain additional explicit declaration triples without changing the OWL axiom set.",
+        "boundary": "ROBOT/OWLAPI may materialize explicit Declaration axioms when rendering Manchester or Functional Syntax. This check permits only those declaration additions; any removed axiom or added non-Declaration axiom is treated as a semantic round-trip failure.",
     }
     output = Path(args.output)
     output.parent.mkdir(parents=True, exist_ok=True)
