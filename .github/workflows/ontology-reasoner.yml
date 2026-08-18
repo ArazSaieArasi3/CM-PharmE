@@ -6,15 +6,16 @@ on:
       - 'ontology/**'
       - 'tools/ontology/**'
       - 'evaluation/**'
+      - 'docs/engineering/**'
       - '.github/workflows/ontology-reasoner.yml'
   push:
     branches:
       - main
-      - automation/b5-reproducible-build-v1
     paths:
       - 'ontology/**'
       - 'tools/ontology/**'
       - 'evaluation/**'
+      - 'docs/engineering/**'
       - '.github/workflows/ontology-reasoner.yml'
   workflow_dispatch:
 
@@ -24,7 +25,7 @@ permissions:
 jobs:
   ontology-quality-gates:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 25
     env:
       ROBOT_VERSION: '1.9.10'
       ROBOT_SHA256: '16a73c074f3df359a7338a84b4e0788785fe06117f931bb9796e9619ea776105'
@@ -44,8 +45,11 @@ jobs:
           distribution: temurin
           java-version: '21'
 
-      - name: Install pinned RDF dependency
-        run: python -m pip install --disable-pip-version-check 'rdflib==7.5.0'
+      - name: Install pinned semantic dependencies
+        run: >-
+          python -m pip install --disable-pip-version-check
+          'rdflib==7.5.0'
+          'pyshacl==0.31.0'
 
       - name: Build deterministic ontology artifacts — pass A
         run: python tools/ontology/build.py --output-root build/ontology-artifacts-a
@@ -53,23 +57,48 @@ jobs:
       - name: Build deterministic ontology artifacts — pass B
         run: python tools/ontology/build.py --output-root build/ontology-artifacts-b
 
-      - name: Verify independent builds are byte-identical
+      - name: Generate deterministic extended RDF/application formats — pass A
+        run: python tools/ontology/extend_formats.py --artifact-root build/ontology-artifacts-a
+
+      - name: Generate deterministic extended RDF/application formats — pass B
+        run: python tools/ontology/extend_formats.py --artifact-root build/ontology-artifacts-b
+
+      - name: Verify independent RDF builds are byte-identical
         shell: bash
         run: |
           set -euo pipefail
           diff -qr build/ontology-artifacts-a build/ontology-artifacts-b
 
-      - name: Validate graph, SHACL and serializations
+      - name: Validate graph, SHACL structure and RDF serializations
         run: >-
           python tools/ontology/validate.py
           --artifact-root build/ontology-artifacts-a
           --report build/ontology-artifacts-a/validation/quality-report.json
 
-      - name: Execute competency-question regression suite
+      - name: Execute SHACL validation with registered bounded findings
+        run: >-
+          python tools/ontology/validate_shacl.py
+          --ontology build/ontology-artifacts-a/source/cm-pharme.ttl
+          --data evaluation/samples/vaccine-distribution.ttl
+          --shapes build/ontology-artifacts-a/shapes/cm-pharme.shacl.ttl
+          --expectations evaluation/assertions/shacl-expectations.json
+          --summary build/ontology-artifacts-a/validation/shacl-summary.json
+          --report-ttl build/ontology-artifacts-a/validation/shacl-report.ttl
+          --report-text build/ontology-artifacts-a/validation/shacl-report.txt
+
+      - name: Execute positive competency-question regression suite
         run: >-
           python tools/ontology/run_cqs.py
           --ontology build/ontology-artifacts-a/source/cm-pharme.ttl
           --output build/ontology-artifacts-a/validation/cq-report.json
+
+      - name: Execute negative competency-question regression suite
+        run: >-
+          python tools/ontology/run_cqs.py
+          --ontology build/ontology-artifacts-a/source/cm-pharme.ttl
+          --queries ontology/queries/competency-negative
+          --expectations evaluation/assertions/cq-negative-expectations.json
+          --output build/ontology-artifacts-a/validation/cq-negative-report.json
 
       - name: Download and verify ROBOT
         shell: bash
@@ -81,6 +110,77 @@ jobs:
             --output build/robot/robot.jar
           echo "${ROBOT_SHA256}  build/robot/robot.jar" | sha256sum --check --strict
           java -jar build/robot/robot.jar --version | tee build/robot/robot-version.txt
+
+      - name: Generate Manchester and OWL Functional Syntax — pass A
+        shell: bash
+        run: |
+          set -euo pipefail
+          java -jar build/robot/robot.jar convert \
+            --input build/ontology-artifacts-a/source/cm-pharme.ttl \
+            --format omn \
+            --output build/ontology-artifacts-a/distributions/cm-pharme.omn
+          java -jar build/robot/robot.jar convert \
+            --input build/ontology-artifacts-a/source/cm-pharme.ttl \
+            --format ofn \
+            --output build/ontology-artifacts-a/distributions/cm-pharme.ofn
+
+      - name: Generate Manchester and OWL Functional Syntax — pass B
+        shell: bash
+        run: |
+          set -euo pipefail
+          java -jar build/robot/robot.jar convert \
+            --input build/ontology-artifacts-b/source/cm-pharme.ttl \
+            --format omn \
+            --output build/ontology-artifacts-b/distributions/cm-pharme.omn
+          java -jar build/robot/robot.jar convert \
+            --input build/ontology-artifacts-b/source/cm-pharme.ttl \
+            --format ofn \
+            --output build/ontology-artifacts-b/distributions/cm-pharme.ofn
+          cmp --silent \
+            build/ontology-artifacts-a/distributions/cm-pharme.omn \
+            build/ontology-artifacts-b/distributions/cm-pharme.omn
+          cmp --silent \
+            build/ontology-artifacts-a/distributions/cm-pharme.ofn \
+            build/ontology-artifacts-b/distributions/cm-pharme.ofn
+
+      - name: Compare formal OWL views at the OWL axiom level
+        shell: bash
+        run: |
+          set -euo pipefail
+          java -jar build/robot/robot.jar diff \
+            --left build/ontology-artifacts-a/source/cm-pharme.ttl \
+            --right build/ontology-artifacts-a/distributions/cm-pharme.omn \
+            --output build/ontology-artifacts-a/validation/roundtrip-omn-diff.txt
+          java -jar build/robot/robot.jar diff \
+            --left build/ontology-artifacts-a/source/cm-pharme.ttl \
+            --right build/ontology-artifacts-a/distributions/cm-pharme.ofn \
+            --output build/ontology-artifacts-a/validation/roundtrip-ofn-diff.txt
+          python tools/ontology/check_robot_diff.py \
+            --diff build/ontology-artifacts-a/validation/roundtrip-omn-diff.txt \
+            --output build/ontology-artifacts-a/validation/roundtrip-omn-summary.json
+          python tools/ontology/check_robot_diff.py \
+            --diff build/ontology-artifacts-a/validation/roundtrip-ofn-diff.txt \
+            --output build/ontology-artifacts-a/validation/roundtrip-ofn-summary.json
+
+      - name: Measure ontology and assess OWL 2 DL profile
+        id: profile
+        shell: bash
+        run: |
+          set -euo pipefail
+          java -jar build/robot/robot.jar measure \
+            --input build/ontology-artifacts-a/source/cm-pharme.ttl \
+            --metrics all \
+            --format json \
+            --output build/ontology-artifacts-a/validation/robot-measure.json
+          set +e
+          java -jar build/robot/robot.jar validate-profile \
+            --profile DL \
+            --input build/ontology-artifacts-a/source/cm-pharme.ttl \
+            --output build/ontology-artifacts-a/validation/owl2-dl-profile.txt
+          profile_exit=$?
+          set -e
+          echo "profile_exit=${profile_exit}" >> "$GITHUB_OUTPUT"
+          echo "OWL 2 DL profile exit code: ${profile_exit}"
 
       - name: Run ROBOT with HermiT logical validation
         id: reason
@@ -118,7 +218,9 @@ jobs:
               'exit_code': exit_code,
               'logical_validation_passed': exit_code == 0,
           }
-          Path('build/robot/reasoner-summary.json').write_text(json.dumps(summary, indent=2, sort_keys=True) + '\n')
+          Path('build/robot/reasoner-summary.json').write_text(
+              json.dumps(summary, indent=2, sort_keys=True) + '\n'
+          )
           PY
 
       - name: Build deterministic release bundle twice
@@ -141,22 +243,29 @@ jobs:
         shell: bash
         run: |
           {
-            echo '## CM-PharmE ontology quality gates'
+            echo '## CM-PharmE semantic engineering completion gates'
             echo
-            echo '- Full B3 graph parity target: 1,086 triples'
+            echo '- Canonical graph target: 1,086 triples'
+            echo '- RDF distributions: TTL, RDF/XML, JSON-LD expanded + compacted, N-Triples, TriG, N-Quads'
+            echo '- OWL review distributions: Manchester (.omn) and Functional Syntax (.ofn)'
+            echo '- Formal-view equivalence: ROBOT axiom-level diff'
             echo '- SHACL target: 574 triples / 76 node shapes / 76 property shapes'
-            echo '- Competency queries: 8 executable regression checks'
+            echo '- SHACL sample validation: executed against registered bounded findings'
+            echo '- Positive competency queries: 8 executable regression checks'
+            echo '- Negative competency queries: 4 executable absence checks'
+            echo "- OWL 2 DL profile check exit code: ${{ steps.profile.outputs.profile_exit }}"
             echo "- ROBOT: v${ROBOT_VERSION}"
             echo '- Reasoner: HermiT'
             echo "- HermiT exit code: ${{ steps.reason.outputs.exit_code }}"
-            echo '- Two clean builds are required to be byte-identical; distributions are published as CI/release artifacts, not hand-maintained repository files.'
+            echo '- Independent RDF builds and formal-syntax outputs must be byte-identical.'
+            echo '- Generated distributions are CI/release artifacts; the modular Turtle source remains authoritative.'
           } >> "$GITHUB_STEP_SUMMARY"
 
       - name: Upload build and validation evidence
         if: always()
         uses: actions/upload-artifact@v7.0.1
         with:
-          name: cm-pharme-b5-ontology-ci-evidence
+          name: cm-pharme-b6-semantic-engineering-evidence
           path: |
             build/ontology-artifacts-a/
             build/robot/cm-pharme-reasoned.owl

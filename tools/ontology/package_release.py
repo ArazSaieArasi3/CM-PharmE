@@ -35,14 +35,31 @@ def main() -> None:
         artifact_root / "distributions/cm-pharme.owl",
         artifact_root / "distributions/cm-pharme.rdf",
         artifact_root / "distributions/cm-pharme.jsonld",
+        artifact_root / "distributions/cm-pharme.compact.jsonld",
+        artifact_root / "distributions/cm-pharme.context.json",
         artifact_root / "distributions/cm-pharme.nt",
+        artifact_root / "distributions/cm-pharme.trig",
+        artifact_root / "distributions/cm-pharme.nq",
+        artifact_root / "distributions/cm-pharme.omn",
+        artifact_root / "distributions/cm-pharme.ofn",
         artifact_root / "shapes/cm-pharme.shacl.ttl",
         artifact_root / "validation/build-manifest.json",
         artifact_root / "validation/SHA256SUMS.txt",
         artifact_root / "validation/quality-report.json",
+        artifact_root / "validation/extended-formats-report.json",
         artifact_root / "validation/cq-report.json",
+        artifact_root / "validation/cq-negative-report.json",
+        artifact_root / "validation/shacl-summary.json",
+        artifact_root / "validation/shacl-report.ttl",
+        artifact_root / "validation/shacl-report.txt",
+        artifact_root / "validation/owl2-dl-profile.txt",
+        artifact_root / "validation/robot-measure.json",
+        artifact_root / "validation/roundtrip-omn-diff.txt",
+        artifact_root / "validation/roundtrip-omn-summary.json",
+        artifact_root / "validation/roundtrip-ofn-diff.txt",
+        artifact_root / "validation/roundtrip-ofn-summary.json",
     ]
-    missing = [str(p) for p in paths if not p.exists()]
+    missing = [str(path) for path in paths if not path.exists()]
     if missing:
         raise SystemExit(f"Missing release artifacts: {missing}")
 
@@ -59,8 +76,9 @@ def main() -> None:
         "sha256": sha256_file(output),
         "bytes": output.stat().st_size,
         "files": len(paths),
+        "profile": "CM-PharmE-B6-semantic-engineering-completion-v1",
     }
-    print(json.dumps(summary, indent=2))
+    print(json.dumps(summary, indent=2, sort_keys=True))
 
 
 if __name__ == "__main__":
