@@ -37,5 +37,10 @@ Every admitted source should record:
 | CM-PharmE journal revision | Prior work | Stronger methodological/evaluation baseline and explicit limitation set. |
 | CM4DI conference work | Methodological lineage only | Reusable experience in UFO/OntoUML, modularity, CQs, and repository-supported evaluation; not pharmaceutical-domain evidence. |
 
+## W1 application/methodological evidence
+W1 created a dedicated application-evidence registry at `v2/research/w1/evidence-sources.md`. It records official shortage, critical-medicine, manufacturing/site, clinical-trial, pharmacovigilance and medicines-access sources; selected primary research examples for KG/AI use cases; UFO-grounded risk reference work; and a dated research/funding opportunity scan.
+
+W1 sources support stakeholder-need and use-case discovery only. They are **not automatically admitted as V2 empirical datasets**.
+
 ## Dataset registry status
-No dataset is admitted at W0. W2 will score and admit DOI-backed and authoritative sources using explicit criteria. Candidate names discussed before W2 remain candidates only until license, accessibility, schema, provenance, and research fit are verified.
+No dataset is admitted before W2. W2 will score and admit DOI-backed and authoritative sources using explicit criteria. Candidate names discussed in W0/W1 remain candidates only until license, accessibility, schema, provenance, geographic/temporal coverage, and research fit are verified. Held-out sources must be reserved before concept discovery if they are intended for generalizability evaluation.
