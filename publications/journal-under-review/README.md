@@ -18,7 +18,9 @@ The repository does not infer acceptance, publication date, DOI, volume/issue, p
 
 ## Relationship to the published CM-PharmE paper
 
-This manuscript builds on the initial CM-PharmE conceptual foundation reported in the published conference paper while preserving the core five-domain architecture. Its primary contribution relative to the earlier paper is methodological substantiation, stronger evidence-to-domain traceability, refined semantic explanation, comparative positioning, and a more explicitly bounded multi-layer assessment.
+This manuscript builds on the initial CM-PharmE conceptual foundation reported in the published conference paper while preserving the core five-domain architecture. Its primary contribution relative to the earlier paper is methodological substantiation, stronger evidence-to-domain traceability, refined semantic explanation, comparative positioning, a more explicitly bounded multi-layer assessment, and clearer application and implementation boundaries.
+
+Foundational explanatory material shared with the conference paper is treated as prior work and is condensed or cited rather than presented as a new journal contribution. The journal manuscript retains only the background needed to make the strengthened method, evaluation, and application discussion self-contained.
 
 It should therefore be read as a strengthened research treatment of the CM-PharmE 1.0 conceptual foundation rather than as an automatic declaration of a new semantic model release.
 
@@ -43,11 +45,12 @@ The manuscript combines:
 
 - a scenario-based comparative benchmark;
 - qualitative review by four experts;
-- focused manual inspection of eight OntoUML-informed anti-pattern categories;
-- eight competency questions;
-- an illustrative vaccine-distribution instantiation.
+- focused manual inspection of eight selected OntoUML-informed anti-pattern categories;
+- eight competency questions, operationalized as executable repository queries;
+- an illustrative vaccine-distribution instantiation;
+- repository-supported ROBOT/HermiT logical validation of the current axiom set.
 
-The manuscript explicitly treats this evidence as preliminary and criterion-specific rather than definitive proof of empirical effectiveness or computational consistency. The repository integrates these procedures into versioned and executable evidence under [`../../evaluation/`](../../evaluation/) and [`../../docs/evaluations/`](../../docs/evaluations/), including the completed B4/B4.10 evaluation work now merged into `main`.
+These procedures are interpreted according to their evidential boundaries. The executable-query and reasoner evidence supports bounded computational traceability and logical consistency for the current formalized model and scenario; it does not establish empirical effectiveness, universal domain completeness, standards conformance, operational interoperability, independent external validation, or correctness of every ontological commitment. The repository integrates the evaluation procedures into versioned and executable evidence under [`../../evaluation/`](../../evaluation/) and [`../../docs/evaluations/`](../../docs/evaluations/), including the completed B4/B4.10 evaluation work now merged into `main`.
 
 ## Model association
 
