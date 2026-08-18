@@ -27,9 +27,7 @@ The current formal graph contains:
 
 ## Source parity and provenance
 
-During evaluation, the earlier modular source was found to contain the same logical axiom set as the packaged formal reference but less annotation/provenance metadata. The reproducible-build phase closed that gap.
-
-The modular source now reconstructs the complete reference graph at **1,086 triples** with canonical graph SHA-256:
+The modular source reconstructs the complete reference graph at **1,086 triples** with canonical graph SHA-256:
 
 `cc823a8aff4d7e7818f8470f2dbad6ca8045ff92e5637fbf3503bc105170a83f`
 
@@ -37,27 +35,36 @@ This parity restoration did not alter the logical axiom set and did not silently
 
 ## Generated distributions and SHACL
 
-The CI pipeline deterministically generates the following consumer views:
+The CI pipeline generates a complete reproducible distribution family from the same authoritative source:
 
 - consolidated Turtle
-- RDF/XML / OWL
+- OWL / RDF-XML
 - RDF/XML
-- expanded JSON-LD
+- expanded and compacted JSON-LD plus JSON-LD context
 - canonical N-Triples
+- TriG and N-Quads dataset-capable views
+- Manchester Syntax
+- OWL Functional Syntax
 - SHACL shapes
 
-See [`distributions/`](distributions/) for the generation contract. The generated files and SHACL are published as CI/release artifacts rather than hand-maintained repository sources.
+RDF-compatible views are graph-equivalence checked. Manchester and Functional Syntax are produced through ROBOT/OWLAPI and compared with the source at the OWL axiom level. See [`distributions/`](distributions/) and [`../docs/engineering/FORMATS.md`](../docs/engineering/FORMATS.md).
 
 ## Validation
 
 The repository combines:
 
 - structural/reference-package validation;
-- structural, scenario and competency-question evidence;
+- executed SHACL validation over the vaccine sample with an explicitly registered bounded finding profile;
+- eight positive and four negative executable competency-query regressions;
+- ROBOT ontology metrics and OWL profile assessment;
 - ROBOT/HermiT logical validation;
-- graph-fingerprint, serialization, byte-reproducibility, SHACL and CI quality gates.
+- graph-fingerprint, serialization-equivalence, byte-reproducibility and deterministic-package gates.
 
-See [`validation/`](validation/), the [Evaluation overview](../docs/evaluations/index.md), and the [Reproducible-build architecture](../docs/engineering/b5-reproducible-build.md).
+The executable SHACL step currently reproduces **three registered findings** in the illustrative vaccine sample: two Violations and one Warning. These findings are intentionally preserved rather than editing the sample or ontology only to force conformance.
+
+The canonical CM-PharmE 1.0 RDF source is also explicitly assessed against the OWL 2 DL profile. The current source is **not reported as OWL 2 DL-profile conformant** because OWLAPI identifies formal-profile hygiene issues such as explicit declaration requirements around annotation/external vocabulary resources. This is recorded as a formalization finding rather than hidden. HermiT logical reasoning nevertheless completes successfully for the current axiom set. Neither result is interpreted as domain completeness or universal ontological correctness.
+
+See [`validation/`](validation/), the [Evaluation overview](../docs/evaluations/index.md), [Validation architecture](../docs/engineering/VALIDATION.md), and [Semantic engineering completion](../docs/engineering/SEMANTIC_ENGINEERING_COMPLETION.md).
 
 ## UFO/OntoUML relationship
 
