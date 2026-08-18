@@ -39,7 +39,7 @@ The manuscript documents:
 
 Reusable repository documentation is maintained under [`../../docs/methodology/`](../../docs/methodology/).
 
-## Evaluation represented in the repository
+## Evaluation represented in the repository and manuscript
 
 The manuscript combines:
 
@@ -48,9 +48,28 @@ The manuscript combines:
 - focused manual inspection of eight selected OntoUML-informed anti-pattern categories;
 - eight competency questions, operationalized as executable repository queries;
 - an illustrative vaccine-distribution instantiation;
-- repository-supported ROBOT/HermiT logical validation of the current axiom set.
+- repository-supported structural, mapping, logical and reproducibility checks;
+- ROBOT/HermiT logical validation of the current axiom set.
 
-These procedures are interpreted according to their evidential boundaries. The executable-query and reasoner evidence supports bounded computational traceability and logical consistency for the current formalized model and scenario; it does not establish empirical effectiveness, universal domain completeness, standards conformance, operational interoperability, independent external validation, or correctness of every ontological commitment. The repository integrates the evaluation procedures into versioned and executable evidence under [`../../evaluation/`](../../evaluation/) and [`../../docs/evaluations/`](../../docs/evaluations/), including the completed B4/B4.10 evaluation work now merged into `main`.
+For transparent synthesis, the final major-revision manuscript now explicitly reports the repository-supported evidence as a **nine-layer evaluation architecture (E1–E9)**:
+
+| Layer | Focus | Current status |
+|---|---|---|
+| E1 | Syntax validation | PASS |
+| E2 | Logical consistency | PASS |
+| E3 | Structural integrity | PASS — 28/28 checks |
+| E4 | Ontological soundness | CONDITIONAL |
+| E5 | Semantic / expert evidence | PARTIAL |
+| E6 | Data / mapping validation | PASS — bounded |
+| E7 | Competency questions | PASS — 8/8 bounded outcomes |
+| E8 | Application evidence | PARTIAL / illustrative |
+| E9 | Reproducibility | PASS |
+
+The formal/repository evidence includes the complete 1,086-triple canonical graph, deterministic generated serializations, a 574-triple SHACL graph with 76 NodeShapes and 76 PropertyShapes, 39 concept classes, 39 OWL object properties plus one generalization record, five domains, 42 qualified OWL cardinality restrictions, a machine-readable vaccine sample, executable competency-query regression checks, ROBOT/HermiT reasoning, graph fingerprints, checksums, repeated clean builds and a deterministic release bundle.
+
+These layers are **not** treated as nine statistically independent validation studies. Several layers reuse the same formal model, scenario and repository evidence. The explicit statuses preserve the evidential boundary: formal/computational PASS results do not convert the conditional ontological findings, limited expert evidence, or illustrative application evidence into stronger claims.
+
+The executable-query and reasoner evidence supports bounded computational traceability, reproducibility and logical consistency for the current formalized model and scenario; it does not establish empirical effectiveness, universal domain completeness, standards conformance, operational interoperability, independent external validation, or correctness of every ontological commitment. The repository integrates the evaluation procedures into versioned and executable evidence under [`../../evaluation/`](../../evaluation/) and [`../../docs/evaluations/`](../../docs/evaluations/).
 
 ## Model association
 
