@@ -29,7 +29,7 @@ Raw OWL entity counts are implementation counts and should not be confused with 
 - `40-mappings.ttl` — conservative external alignment hints.
 
 ## Formal validation result
-GitHub Actions run `32215753957` and follow-up workflow-only run `32215753957`/success evidence establish the frozen ontology baseline. The latest workflow implementation also completed successfully after the evidence artifact was reduced to a lean package.
+GitHub Actions run `32215753957` completed with **SUCCESS** on the frozen formal source/baseline. Its evidence artifact is intentionally lean and excludes the downloaded ROBOT binary.
 
 Mandatory checks:
 - Turtle parsing — PASS;
