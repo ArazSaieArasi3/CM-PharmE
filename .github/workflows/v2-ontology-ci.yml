@@ -140,7 +140,11 @@ jobs:
           name: cm-pharme-v2-w5-formal-evidence
           path: |
             build/v2-a/
-            build/robot/
+            build/robot/robot-version.txt
+            build/robot/owl2-dl-profile.txt
+            build/robot/hermit.log
+            build/robot/cm-pharme-v2-reasoned.owl
+            build/robot/unsatisfiable.owl
             formal-summary.md
           if-no-files-found: warn
           retention-days: 30
