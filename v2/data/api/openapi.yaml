@@ -1,0 +1,143 @@
+openapi: 3.1.0
+info:
+  title: CM-PharmE 2.0 Research Data API
+  version: 0.1.0
+  description: >-
+    Read-only research access contract over the W6 ontology-aligned reference
+    database/KG. This specification is an interface contract, not a production
+    deployment or availability claim.
+servers:
+  - url: http://localhost:8080
+    description: Reference/local implementation target
+paths:
+  /v1/meta:
+    get:
+      summary: Return representation and formal-baseline metadata
+      responses:
+        '200':
+          description: Metadata
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ontology_version: {type: string, example: 2.0.0-alpha.1}
+                  ontology_sha256: {type: string}
+                  data_wave: {type: string, example: W6}
+                  full_external_dataset_ingestion: {type: boolean, example: false}
+  /v1/presentations:
+    get:
+      summary: Query normalized medicinal-product presentations
+      parameters:
+        - in: query
+          name: nhif_code
+          schema: {type: string}
+      responses:
+        '200':
+          description: Presentation records
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Presentation'
+  /v1/observations:
+    get:
+      summary: Query aggregate observation results
+      parameters:
+        - in: query
+          name: presentation_id
+          schema: {type: string}
+        - in: query
+          name: geography_id
+          schema: {type: string}
+        - in: query
+          name: period_from
+          schema: {type: string, format: date}
+        - in: query
+          name: period_to
+          schema: {type: string, format: date}
+      responses:
+        '200':
+          description: Aggregate administrative observations; patient counts are not unique-patient identities
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Observation'
+  /v1/geographies:
+    get:
+      summary: Query normalized geographic entities and source aliases
+      responses:
+        '200':
+          description: Geography records
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Geography'
+  /v1/provenance/records/{source_hash}:
+    get:
+      summary: Trace a source record to dataset release, transformation and assertions
+      parameters:
+        - in: path
+          name: source_hash
+          required: true
+          schema: {type: string, pattern: '^[0-9a-f]{64}$'}
+      responses:
+        '200':
+          description: Provenance lineage
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProvenanceLineage'
+        '404': {description: Source record not found}
+components:
+  schemas:
+    Presentation:
+      type: object
+      required: [presentation_id, product_id]
+      properties:
+        presentation_id: {type: string}
+        product_id: {type: string}
+        product_name: {type: string}
+        substance_name: {type: [string, 'null']}
+        packaging: {type: [string, 'null']}
+        concentration: {type: [string, 'null']}
+        num_in_pack: {type: [number, 'null']}
+        nhif_code: {type: [string, 'null']}
+    Observation:
+      type: object
+      properties:
+        observation_id: {type: string}
+        observation_kind: {type: string}
+        presentation_id: {type: [string, 'null']}
+        facility_id: {type: [string, 'null']}
+        geography_id: {type: [string, 'null']}
+        reporting_period: {type: string, format: date}
+        patient_count: {type: [number, 'null']}
+        package_count: {type: [number, 'null']}
+        cost_bgn: {type: [number, 'null']}
+        cost_eur: {type: [number, 'null']}
+        dataset_release_id: {type: string}
+    Geography:
+      type: object
+      properties:
+        geography_id: {type: string}
+        canonical_name: {type: string}
+        geography_type: {type: string}
+        country_code: {type: [string, 'null']}
+        geonames_id: {type: [integer, 'null']}
+    ProvenanceLineage:
+      type: object
+      properties:
+        source_hash: {type: string}
+        dataset_id: {type: string}
+        dataset_release_id: {type: string}
+        doi: {type: [string, 'null']}
+        transformation_run_id: {type: [string, 'null']}
+        assertions:
+          type: array
+          items: {type: string}
