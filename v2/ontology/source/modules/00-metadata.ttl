@@ -17,6 +17,13 @@
   cmmeta:formalizationStatus "W5 Formal Gate candidate" ;
   cmmeta:persistentNamespaceStatus "w3id target namespace selected; redirect registration pending" .
 
+# Annotation declarations are explicit so the ontology remains inside OWL 2 DL profile checks.
+dct:title a owl:AnnotationProperty .
+dct:description a owl:AnnotationProperty .
+dct:creator a owl:AnnotationProperty .
+dct:issued a owl:AnnotationProperty .
+skos:closeMatch a owl:AnnotationProperty .
+
 cmmeta:ontoumlStereotype a owl:AnnotationProperty .
 cmmeta:conceptualModule a owl:AnnotationProperty .
 cmmeta:gateDIdentifier a owl:AnnotationProperty .
