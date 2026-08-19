@@ -321,11 +321,11 @@ def main():
         "mode": "schema-faithful-fixture",
         "primary_source_contract": out_spec["doi"],
         "secondary_source_contract": in_spec["doi"],
-        "full_external_dataset_ingestion": false,
-        "aggregate_patient_semantics_preserved": true,
+        "full_external_dataset_ingestion": False,
+        "aggregate_patient_semantics_preserved": True,
         "accepted_cross_source_match_assertions_created": match_count,
         "counts": counts,
-        "held_out_used": false,
+        "held_out_used": False,
     }
     Path(a.report).write_text(json.dumps(report, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     print(json.dumps(report, indent=2, sort_keys=True))
