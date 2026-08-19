@@ -50,6 +50,8 @@ Evaluate CM-PharmE 2.0 prospectively across independent evidence families. The p
 **Measures:** conforms flag; violation/warning counts by shape and severity; provenance completeness; identifier/geography/observation constraint coverage; sampled review of violations.  
 **Mandatory gate conditions:** controlled regression fixture must conform. Real/held-out datasets are not required to have zero violations; violations are empirical findings. Principal claims requiring a constrained field fail or are qualified if critical unresolved violations affect that field.
 
+**Implementation note after E5 execution:** the prospectively frozen E5 measures include provenance, geography, observation and identifier integrity, but the W5 SHACL file does not directly constrain all of those populated fixture dimensions. To operationalize those already-frozen measures without altering the W5 baseline, W7-E5 uses an evaluation-only integrity SHACL profile stored separately at `v2/evaluation/protocol/e5-data-integrity-shapes.ttl`. Controlled mutation cases were frozen before first execution in `v2/evaluation/protocol/e5-controlled-mutations.json`. This is an implementation of the existing protocol, not a post-result threshold change.
+
 ### W7-E6 — Dataset-to-ontology mapping quality — issue #95
 **Target:** admitted source contracts, mapping registries and populated data.  
 **Measures:** every in-scope field classified as direct, bounded/derived, ambiguous, unmapped or out-of-scope; mapped-field proportion; critical-field coverage; semantic-loss cases; provenance-link completeness; manual audit sample.  
@@ -137,6 +139,8 @@ The expert study must collect only what the approved instrument requires, keep i
 Any change to scientific evaluation criteria after the first W7 result is produced must be logged as a protocol amendment with date, reason, affected metrics and whether the change was made before or after seeing the affected result. Original criteria remain available for audit.
 
 **Implementation correction log — W7-E2:** the first E2 harness execution expected ROBOT to emit an unsatisfiable-class dump file even when the unsatisfiable set was empty. Both reasoners completed, but the comparison harness failed on the absent empty dump. The harness was corrected to interpret absent/empty dump files as empty sets and to retain reasoner log findings. No protocol criterion, threshold or interpretation rule was changed.
+
+**Implementation note — W7-E5:** the evaluation-only integrity SHACL profile operationalizes protocol measures that were frozen before E5 but not fully expressed in the W5 domain SHACL profile. It is kept separate from W5 artifacts. The first E5 run used the frozen integrity profile and mutation registry; no pass threshold was changed after execution.
 
 ## 11. Gate F minimum decision package
 Gate F should receive:
