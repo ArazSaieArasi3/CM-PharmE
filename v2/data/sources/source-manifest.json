@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "w6_status": "gate-e-candidate",
+  "execution_rule": "CI validates adapters with deterministic schema-faithful fixtures; full external dataset execution is not implied unless separately recorded.",
+  "held_out": [
+    "ClinicalTrials.gov/AACT",
+    "openFDA Drug Shortages",
+    "reserved national EML sample"
+  ],
+  "sources": [
+    {
+      "id": "P1-NHIF-OUTPATIENT",
+      "role": "primary",
+      "doi": "10.5281/zenodo.19160825",
+      "record_url": "https://zenodo.org/records/19160825",
+      "file_contract": "nhif_outpatient_pharmacy_combined.csv",
+      "license_note": "Zenodo record states CC BY 4.0 unless otherwise restricted by NHIF.",
+      "unit_of_observation": "aggregated region-product-diagnosis-period-part reimbursement record",
+      "required_columns": ["region_num","region_name","atc_code","atc_name","nhif_code","market_name","packaging","concentration","num_in_pack","icd_code","icd_name","patients_num","pack_num","costs","period","part","currency","costs_bgn","costs_eur"],
+      "w6_adapter": "nhif-outpatient-v1",
+      "ci_execution": "schema-faithful synthetic fixture",
+      "full_dataset_ingested_in_ci": false,
+      "semantic_boundary": "patients_num is an aggregate count, not a unique-patient identifier"
+    },
+    {
+      "id": "P2-NHIF-INPATIENT",
+      "role": "secondary",
+      "doi": "10.5281/zenodo.19160637",
+      "record_url": "https://zenodo.org/records/19160637",
+      "file_contract": "inpatient_data_20260322_124904.csv",
+      "license_note": "Zenodo record states CC BY 4.0 unless otherwise specified.",
+      "unit_of_observation": "aggregated facility-product-diagnosis-month reimbursement record",
+      "required_columns": ["region_num","region_name","hospital_code","hospital_name","atc_code","atc_name","nhif_code","market_name","packaging","concentration","num_in_pack","icd_code","icd_name","patients_num","pack_num","costs","period","currency","costs_bgn","costs_eur"],
+      "w6_adapter": "nhif-inpatient-v1",
+      "ci_execution": "schema-faithful synthetic fixture",
+      "full_dataset_ingested_in_ci": false,
+      "semantic_boundary": "hospital/facility identity is kept distinct from organization identity"
+    },
+    {
+      "id": "P3-FDA-ACTORS",
+      "role": "authoritative",
+      "record_url": "https://www.fda.gov/drugs/drug-approvals-and-databases/drug-establishments-current-registration-site-decrs",
+      "w6_adapter": "contract-only",
+      "ci_execution": "not executed",
+      "boundary": "organization/facility/registration source contract; no W6 empirical completeness claim"
+    },
+    {
+      "id": "P4-OPENFDA-PRODUCT",
+      "role": "authoritative",
+      "record_url": "https://open.fda.gov/apis/drug/ndc/",
+      "w6_adapter": "contract-only",
+      "ci_execution": "not executed",
+      "boundary": "identifier/product enrichment hook; no identifier is treated as universal entity identity"
+    },
+    {
+      "id": "P5-EMA-CRITICAL-SHORTAGE",
+      "role": "authoritative",
+      "record_url": "https://www.ema.europa.eu/en/about-us/about-website/download-website-data-json-data-format",
+      "w6_adapter": "contract-only",
+      "ci_execution": "not executed",
+      "boundary": "criticality/shortage semantics remain contextual and source-version dependent"
+    },
+    {
+      "id": "P7-GEONAMES",
+      "role": "normalization",
+      "record_url": "https://www.geonames.org/export/",
+      "w6_adapter": "identifier-hook",
+      "ci_execution": "local alias normalization only",
+      "boundary": "GeoNames is a geography normalization source, not pharmaceutical-domain evidence"
+    }
+  ]
+}
