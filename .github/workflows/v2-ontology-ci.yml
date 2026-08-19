@@ -1,0 +1,150 @@
+name: CM-PharmE 2.0 Formal Ontology CI
+
+on:
+  pull_request:
+    branches:
+      - v2/research-program
+    paths:
+      - 'v2/ontology/**'
+      - 'v2/ontouml/**'
+      - 'tools/v2_ontology/**'
+      - '.github/workflows/v2-ontology-ci.yml'
+  push:
+    branches:
+      - 'v2/**'
+    paths:
+      - 'v2/ontology/**'
+      - 'v2/ontouml/**'
+      - 'tools/v2_ontology/**'
+      - '.github/workflows/v2-ontology-ci.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  formal-gates:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      ROBOT_VERSION: '1.9.10'
+      ROBOT_SHA256: '16a73c074f3df359a7338a84b4e0788785fe06117f931bb9796e9619ea776105'
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7.0.1
+
+      - name: Set up Python
+        uses: actions/setup-python@v7.0.0
+        with:
+          python-version: '3.12'
+
+      - name: Set up Java
+        uses: actions/setup-java@v5.7.0
+        with:
+          distribution: temurin
+          java-version: '21'
+
+      - name: Install pinned semantic dependencies
+        run: >-
+          python -m pip install --disable-pip-version-check
+          'rdflib==7.5.0'
+          'pyshacl==0.31.0'
+
+      - name: Build and validate formal ontology — pass A
+        run: >-
+          python tools/v2_ontology/build_validate.py
+          --output-root build/v2-a
+          --require-shacl
+
+      - name: Build and validate formal ontology — pass B
+        run: >-
+          python tools/v2_ontology/build_validate.py
+          --output-root build/v2-b
+          --require-shacl
+
+      - name: Verify deterministic canonical build
+        shell: bash
+        run: |
+          set -euo pipefail
+          cmp --silent build/v2-a/distributions/cm-pharme-v2.nt build/v2-b/distributions/cm-pharme-v2.nt
+          cmp --silent build/v2-a/manifest.json build/v2-b/manifest.json
+
+      - name: Download and verify ROBOT
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p build/robot
+          curl --fail --location --silent --show-error \
+            "https://github.com/ontodev/robot/releases/download/v${ROBOT_VERSION}/robot.jar" \
+            --output build/robot/robot.jar
+          echo "${ROBOT_SHA256}  build/robot/robot.jar" | sha256sum --check --strict
+          java -jar build/robot/robot.jar --version | tee build/robot/robot-version.txt
+
+      - name: Enforce OWL 2 DL profile
+        shell: bash
+        run: |
+          set -euo pipefail
+          java -jar build/robot/robot.jar validate-profile \
+            --profile DL \
+            --input build/v2-a/distributions/cm-pharme-v2.owl \
+            --output build/robot/owl2-dl-profile.txt
+
+      - name: Run HermiT logical consistency and satisfiability check
+        shell: bash
+        run: |
+          set -euo pipefail
+          java -jar build/robot/robot.jar reason \
+            --reasoner hermit \
+            --input build/v2-a/distributions/cm-pharme-v2.owl \
+            --dump-unsatisfiable build/robot/unsatisfiable.owl \
+            --output build/robot/cm-pharme-v2-reasoned.owl \
+            2>&1 | tee build/robot/hermit.log
+
+      - name: Generate OWL review views
+        shell: bash
+        run: |
+          set -euo pipefail
+          java -jar build/robot/robot.jar convert \
+            --input build/v2-a/distributions/cm-pharme-v2.owl \
+            --format omn \
+            --output build/v2-a/distributions/cm-pharme-v2.omn
+          java -jar build/robot/robot.jar convert \
+            --input build/v2-a/distributions/cm-pharme-v2.owl \
+            --format ofn \
+            --output build/v2-a/distributions/cm-pharme-v2.ofn
+
+      - name: Record formal gate summary
+        if: always()
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          m = json.loads(Path('build/v2-a/manifest.json').read_text()) if Path('build/v2-a/manifest.json').exists() else {}
+          print('## CM-PharmE 2.0 W5 Formal Gate', file=open(Path.cwd() / 'formal-summary.md','w'))
+          with open('formal-summary.md','a') as f:
+              f.write(f"\n- Canonical graph SHA-256: `{m.get('canonical_graph_sha256','unavailable')}`\n")
+              f.write(f"- Counts: `{json.dumps(m.get('counts',{}), sort_keys=True)}`\n")
+              f.write(f"- SHACL: `{json.dumps(m.get('shacl',{}), sort_keys=True)}`\n")
+              f.write('- Conceptual registry: project-native Gate-D registry; not claimed as official OntoUML JSON.\n')
+              f.write('- Persistent namespace: w3id target selected; redirect registration remains pending.\n')
+              f.write('- Formal checks do not establish domain completeness, empirical correctness or standards conformance.\n')
+          PY
+          cat formal-summary.md >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload formal evidence
+        if: always()
+        uses: actions/upload-artifact@v7.0.1
+        with:
+          name: cm-pharme-v2-w5-formal-evidence
+          path: |
+            build/v2-a/
+            build/robot/robot-version.txt
+            build/robot/owl2-dl-profile.txt
+            build/robot/hermit.log
+            build/robot/cm-pharme-v2-reasoned.owl
+            build/robot/unsatisfiable.owl
+            formal-summary.md
+          if-no-files-found: warn
+          retention-days: 30

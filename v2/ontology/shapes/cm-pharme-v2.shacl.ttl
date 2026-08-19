@@ -1,0 +1,64 @@
+@prefix cmpe: <https://w3id.org/cm-pharme/2.0/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+cmpe:FacilityOperationShape a sh:NodeShape ;
+  sh:targetClass cmpe:FacilityOperation ;
+  sh:property [ sh:path cmpe:operationOrganization ; sh:minCount 1 ; sh:maxCount 1 ; sh:class cmpe:Organization ] ;
+  sh:property [ sh:path cmpe:operationFacility ; sh:minCount 1 ; sh:maxCount 1 ; sh:class cmpe:Facility ] .
+
+cmpe:EstablishmentRegistrationShape a sh:NodeShape ;
+  sh:targetClass cmpe:EstablishmentRegistration ;
+  sh:property [ sh:path cmpe:registrationEntity ; sh:minCount 1 ; sh:maxCount 1 ] ;
+  sh:property [ sh:path cmpe:registrationAuthority ; sh:minCount 1 ; sh:maxCount 1 ; sh:class cmpe:Organization ] ;
+  sh:property [ sh:path cmpe:registrationJurisdiction ; sh:minCount 1 ; sh:maxCount 1 ; sh:class cmpe:RegulatoryJurisdiction ] .
+
+cmpe:RegulatoryAuthorizationShape a sh:NodeShape ;
+  sh:targetClass cmpe:RegulatoryAuthorization ;
+  sh:property [ sh:path cmpe:authorizationAuthority ; sh:minCount 1 ; sh:maxCount 1 ; sh:class cmpe:Organization ] ;
+  sh:property [ sh:path cmpe:authorizationParty ; sh:minCount 1 ; sh:maxCount 1 ] ;
+  sh:property [ sh:path cmpe:authorizationJurisdiction ; sh:minCount 1 ; sh:maxCount 1 ; sh:class cmpe:RegulatoryJurisdiction ] .
+
+cmpe:MedicinalProductPresentationShape a sh:NodeShape ;
+  sh:targetClass cmpe:MedicinalProductPresentation ;
+  sh:property [ sh:path cmpe:presentationOf ; sh:minCount 1 ; sh:maxCount 1 ; sh:class cmpe:MedicinalProduct ] .
+
+cmpe:ProductClassificationAssignmentShape a sh:NodeShape ;
+  sh:targetClass cmpe:ProductClassificationAssignment ;
+  sh:property [ sh:path cmpe:classificationEntity ; sh:minCount 1 ; sh:maxCount 1 ] ;
+  sh:property [ sh:path cmpe:classificationEntry ; sh:minCount 1 ; sh:maxCount 1 ; sh:class cmpe:ClassificationEntry ] .
+
+cmpe:MarketListingShape a sh:NodeShape ;
+  sh:targetClass cmpe:MarketListing ;
+  sh:property [ sh:path cmpe:listingPresentation ; sh:minCount 1 ; sh:maxCount 1 ; sh:class cmpe:MedicinalProductPresentation ] ;
+  sh:property [ sh:path cmpe:listingResponsibleOrganization ; sh:minCount 1 ; sh:maxCount 1 ; sh:class cmpe:Organization ] ;
+  sh:property [ sh:path cmpe:listingJurisdiction ; sh:minCount 1 ; sh:maxCount 1 ; sh:class cmpe:RegulatoryJurisdiction ] .
+
+cmpe:EvidenceSupportShape a sh:NodeShape ;
+  sh:targetClass cmpe:EvidenceSupport ;
+  sh:property [ sh:path cmpe:evidenceRecord ; sh:minCount 1 ; sh:maxCount 1 ; sh:class cmpe:SourceRecord ] ;
+  sh:property [ sh:path cmpe:evidenceAssertion ; sh:minCount 1 ; sh:maxCount 1 ; sh:class cmpe:Assertion ] .
+
+cmpe:IdentifierAssignmentShape a sh:NodeShape ;
+  sh:targetClass cmpe:IdentifierAssignment ;
+  sh:property [ sh:path cmpe:identifierEntity ; sh:minCount 1 ; sh:maxCount 1 ] ;
+  sh:property [ sh:path cmpe:identifierScheme ; sh:minCount 1 ; sh:maxCount 1 ; sh:class cmpe:IdentifierScheme ] ;
+  sh:property [ sh:path cmpe:identifierLexicalValue ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] .
+
+cmpe:ContextualMedicineClassificationAssignmentShape a sh:NodeShape ;
+  sh:targetClass cmpe:ContextualMedicineClassificationAssignment ;
+  sh:property [ sh:path cmpe:contextClassificationProduct ; sh:minCount 1 ; sh:maxCount 1 ; sh:class cmpe:MedicinalProduct ] ;
+  sh:property [ sh:path cmpe:contextClassificationEntry ; sh:minCount 1 ; sh:maxCount 1 ; sh:class cmpe:ClassificationEntry ] .
+
+cmpe:SupplyDependencyShape a sh:NodeShape ;
+  sh:targetClass cmpe:SupplyDependency ;
+  sh:property [ sh:path cmpe:dependencyDependent ; sh:minCount 1 ; sh:maxCount 1 ] ;
+  sh:property [ sh:path cmpe:dependencyProvider ; sh:minCount 1 ; sh:maxCount 1 ] .
+
+cmpe:ShortageContextShape a sh:NodeShape ;
+  sh:targetClass cmpe:MedicineShortageSituation ;
+  sh:severity sh:Warning ;
+  sh:message "A shortage situation should record a jurisdiction when source evidence provides one."@en ;
+  sh:property [ sh:path cmpe:shortageJurisdiction ; sh:minCount 1 ; sh:severity sh:Warning ] .

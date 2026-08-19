@@ -1,0 +1,52 @@
+@prefix cmpe: <https://w3id.org/cm-pharme/2.0/> .
+@prefix ex: <https://example.org/cm-pharme-v2-smoke/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:org1 a cmpe:Organization .
+ex:facility1 a cmpe:Facility .
+ex:jurisdiction1 a cmpe:RegulatoryJurisdiction .
+
+ex:facilityOperation1 a cmpe:FacilityOperation ;
+  cmpe:operationOrganization ex:org1 ;
+  cmpe:operationFacility ex:facility1 .
+
+ex:authorization1 a cmpe:RegulatoryAuthorization ;
+  cmpe:authorizationAuthority ex:org1 ;
+  cmpe:authorizationParty ex:facility1 ;
+  cmpe:authorizationJurisdiction ex:jurisdiction1 .
+
+ex:product1 a cmpe:MedicinalProduct .
+ex:presentation1 a cmpe:MedicinalProductPresentation ;
+  cmpe:presentationOf ex:product1 .
+
+ex:idScheme1 a cmpe:IdentifierScheme .
+ex:idAssignment1 a cmpe:IdentifierAssignment ;
+  cmpe:identifierEntity ex:product1 ;
+  cmpe:identifierScheme ex:idScheme1 ;
+  cmpe:identifierLexicalValue "SMOKE-PRODUCT-001" .
+
+ex:classScheme1 a cmpe:ProductClassificationScheme .
+ex:classEntry1 a cmpe:ClassificationEntry ;
+  cmpe:entryInScheme ex:classScheme1 .
+ex:classAssignment1 a cmpe:ProductClassificationAssignment ;
+  cmpe:classificationEntity ex:product1 ;
+  cmpe:classificationEntry ex:classEntry1 .
+
+ex:listing1 a cmpe:MarketListing ;
+  cmpe:listingPresentation ex:presentation1 ;
+  cmpe:listingResponsibleOrganization ex:org1 ;
+  cmpe:listingJurisdiction ex:jurisdiction1 .
+
+ex:source1 a cmpe:DataSourceResource .
+ex:dataset1 a cmpe:Dataset .
+ex:release1 a cmpe:DatasetRelease .
+ex:record1 a cmpe:SourceRecord .
+ex:assertion1 a cmpe:Assertion .
+ex:evidence1 a cmpe:EvidenceSupport ;
+  cmpe:evidenceRecord ex:record1 ;
+  cmpe:evidenceAssertion ex:assertion1 .
+
+ex:source1 cmpe:maintainsDataset ex:dataset1 .
+ex:dataset1 cmpe:hasDatasetRelease ex:release1 .
+ex:release1 cmpe:containsSourceRecord ex:record1 .
