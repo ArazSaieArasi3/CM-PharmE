@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "benchmarks": [
+    {
+      "id": "QREP-01",
+      "purpose": "Product presentation identity/code mapping",
+      "columns": ["nhif_code", "product_name"],
+      "sql": "SELECT nhif_code, product_name FROM cmpe.v_product_presentations WHERE nhif_code IS NOT NULL ORDER BY nhif_code, product_name",
+      "sparql": "PREFIX cmpe: <https://w3id.org/cm-pharme/2.0/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT ?nhif_code ?product_name WHERE { ?a a cmpe:IdentifierAssignment ; cmpe:identifierLexicalValue ?nhif_code ; cmpe:identifierEntity ?p . ?p a cmpe:MedicinalProductPresentation ; cmpe:presentationOf ?product . ?product rdfs:label ?product_name . } ORDER BY ?nhif_code ?product_name"
+    },
+    {
+      "id": "QREP-02",
+      "purpose": "Aggregate patient-count observation by region, month and presentation code",
+      "columns": ["geography_name", "period", "nhif_code", "patient_count"],
+      "sql": "SELECT o.geography_name, o.reporting_period::text AS period, p.nhif_code, SUM(o.patient_count)::numeric AS patient_count FROM cmpe.v_observations o JOIN cmpe.v_product_presentations p ON p.presentation_id=o.presentation_id WHERE o.patient_count IS NOT NULL GROUP BY o.geography_name,o.reporting_period,p.nhif_code ORDER BY o.geography_name,o.reporting_period,p.nhif_code",
+      "sparql": "PREFIX cmpe: <https://w3id.org/cm-pharme/2.0/> PREFIX dct: <http://purl.org/dc/terms/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT ?geography_name ?period ?nhif_code (SUM(?v) AS ?patient_count) WHERE { ?obs a cmpe:ReimbursementUtilisationObservationResult ; cmpe:measureUnitLabel \"patient count\" ; cmpe:measureNumericValue ?v ; cmpe:validFrom ?dt ; dct:spatial ?geo ; cmpe:observationResultAbout ?p . ?geo rdfs:label ?geography_name . ?a a cmpe:IdentifierAssignment ; cmpe:identifierEntity ?p ; cmpe:identifierLexicalValue ?nhif_code . BIND(SUBSTR(STR(?dt),1,10) AS ?period) } GROUP BY ?geography_name ?period ?nhif_code ORDER BY ?geography_name ?period ?nhif_code"
+    },
+    {
+      "id": "QREP-03",
+      "purpose": "Dataset DOI to source-record count provenance traversal",
+      "columns": ["doi", "record_count"],
+      "sql": "SELECT d.doi, COUNT(sr.source_record_id)::bigint AS record_count FROM cmpe.dataset d JOIN cmpe.dataset_release dr ON dr.dataset_id=d.dataset_id JOIN cmpe.source_record sr ON sr.dataset_release_id=dr.dataset_release_id WHERE d.doi IS NOT NULL GROUP BY d.doi ORDER BY d.doi",
+      "sparql": "PREFIX cmpe: <https://w3id.org/cm-pharme/2.0/> PREFIX dct: <http://purl.org/dc/terms/> SELECT ?doi (COUNT(?sr) AS ?record_count) WHERE { ?d a cmpe:Dataset ; dct:identifier ?doi ; cmpe:hasDatasetRelease ?dr . ?dr cmpe:containsSourceRecord ?sr . } GROUP BY ?doi ORDER BY ?doi"
+    },
+    {
+      "id": "QREP-04",
+      "purpose": "Facility to physical geography relation",
+      "columns": ["facility_name", "geography_name"],
+      "sql": "SELECT f.preferred_name AS facility_name, g.canonical_name AS geography_name FROM cmpe.facility f JOIN cmpe.geography g ON g.geography_id=f.geography_id ORDER BY facility_name,geography_name",
+      "sparql": "PREFIX cmpe: <https://w3id.org/cm-pharme/2.0/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT ?facility_name ?geography_name WHERE { ?f a cmpe:Facility ; rdfs:label ?facility_name ; cmpe:locatedIn ?g . ?g rdfs:label ?geography_name . } ORDER BY ?facility_name ?geography_name"
+    }
+  ]
+}
