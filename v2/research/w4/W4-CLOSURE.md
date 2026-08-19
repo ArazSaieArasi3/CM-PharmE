@@ -3,7 +3,7 @@
 ## Status
 **W4 implementation: COMPLETE**
 
-**Gate D: READY FOR USER DECISION**
+**Gate D: APPROVED on 2026-08-19**
 
 ## Issues covered
 - V2-036 / #58 — Core and Extension architecture
@@ -32,7 +32,7 @@
 13. `gate-d-conceptual-freeze.md`
 14. manuscript/evidence-ledger alignment notes
 
-## W4 conceptual inventory
+## Approved W4 conceptual inventory
 - 32 Core types/pattern elements
 - 25 cross-cutting infrastructure elements
 - 30 modular extension elements
@@ -54,27 +54,13 @@ The increase from W3's 80 normalized candidates is due to explicit semantic spli
 - Evidence/provenance/mapping/entity-match semantics are first-class infrastructure.
 - Risk/Resilience and BA remain modular extensions.
 
-## Anti-pattern / semantic review
-Manual/static review against OntoUML specification and anti-pattern categories: **PASS**.
+## Semantic review
+Manual/static review against OntoUML specification and anti-pattern categories: **PASS with bounded residual issues**. This is not represented as an automated OntoUML tool run.
 
-Resolved/refactored concerns include role-vs-kind confusion, free-role risk, relator truth-makers, Product/Substance/Presentation conflation, Organization/Facility conflation, geography/jurisdiction conflation, identifier-as-identity, contextual-classification rigidity, event/situation confusion, observation/result confusion, capacity/evidence conflation, part-whole misuse and extension leakage.
+## Held-out integrity
+PASS. H1 ClinicalTrials.gov/AACT, H2 openFDA Drug Shortages and H3 selected national EML schemas were not used for W4 Core redesign.
 
-## Residual risks
-Non-blocking:
-- Product vs Presentation source granularity mapping.
-- formal treatment of dosage-form/package reference objects.
-- empirical incompleteness of Supply Dependency population.
-- deeper UFO-C alignment for normative requirements.
-- exact COVER/ROSE formal alignment.
-- native OntoUML JSON/tool serialization and automated validation before/during W5.
+## Decision
+**Gate D APPROVED. W5 Formal Ontology Engineering authorized.**
 
-## Gate D recommendation
-**APPROVE** the W4 conceptual baseline for W5 formalization.
-
-## Next wave after Gate D
-**W5 — Formal Ontology Engineering**
-
-W5 will convert the frozen conceptual commitments into a canonical formal ontology and synchronized serializations, with stable IRIs, modular imports, explicit ontology annotations, Relator/Mediation patterns, SHACL constraints, syntax/structure/logical checks and reproducible build artifacts. It will not silently alter Gate D identity/dependence decisions.
-
-## Main-branch safety
-All W4 work is isolated on `v2/w4-ufo-ontouml`. No V2 ontology/model/manuscript/application change targets `main`.
+Any material reversal of the frozen Gate D identity/dependence commitments requires a documented design-change review.
