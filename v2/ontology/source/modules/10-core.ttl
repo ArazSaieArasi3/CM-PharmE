@@ -1,0 +1,71 @@
+@prefix cmpe: <https://w3id.org/cm-pharme/2.0/> .
+@prefix cmmeta: <https://w3id.org/cm-pharme/2.0/meta/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# Core conceptual types
+cmpe:Organization a owl:Class ; rdfs:label "Organization"@en ; cmmeta:ontoumlStereotype "Kind" ; cmmeta:conceptualModule "core" ; cmmeta:conceptualModelVersion "Gate-D-2026-08-19" .
+cmpe:EcosystemParticipant a owl:Class ; rdfs:label "Ecosystem Participant"@en ; cmmeta:ontoumlStereotype "RoleMixin" ; cmmeta:conceptualModule "core" ; cmmeta:conceptualModelVersion "Gate-D-2026-08-19" .
+cmpe:RegulatoryAuthorityRole a owl:Class ; rdfs:subClassOf cmpe:Organization, cmpe:EcosystemParticipant ; rdfs:label "Regulatory Authority Role"@en ; cmmeta:ontoumlStereotype "Role" ; cmmeta:conceptualModule "core" ; cmmeta:conceptualModelVersion "Gate-D-2026-08-19" .
+cmpe:ManufacturerRole a owl:Class ; rdfs:subClassOf cmpe:Organization, cmpe:EcosystemParticipant ; rdfs:label "Manufacturer Role"@en ; cmmeta:ontoumlStereotype "Role" ; cmmeta:conceptualModule "core" ; cmmeta:conceptualModelVersion "Gate-D-2026-08-19" .
+cmpe:ImporterRole a owl:Class ; rdfs:subClassOf cmpe:Organization, cmpe:EcosystemParticipant ; rdfs:label "Importer Role"@en ; cmmeta:ontoumlStereotype "Role" ; cmmeta:conceptualModule "core" ; cmmeta:conceptualModelVersion "Gate-D-2026-08-19" .
+cmpe:ProductResponsibleLabelerRole a owl:Class ; rdfs:subClassOf cmpe:Organization, cmpe:EcosystemParticipant ; rdfs:label "Product-Responsible / Labeler Role"@en ; cmmeta:ontoumlStereotype "Role" ; cmmeta:conceptualModule "core" ; cmmeta:conceptualModelVersion "Gate-D-2026-08-19" .
+cmpe:WholesaleDistributorRole a owl:Class ; rdfs:subClassOf cmpe:Organization, cmpe:EcosystemParticipant ; rdfs:label "Wholesale Distributor Role"@en ; cmmeta:ontoumlStereotype "Role" ; cmmeta:conceptualModule "core" ; cmmeta:conceptualModelVersion "Gate-D-2026-08-19" .
+cmpe:ThirdPartyLogisticsProviderRole a owl:Class ; rdfs:subClassOf cmpe:Organization, cmpe:EcosystemParticipant ; rdfs:label "Third-Party Logistics Provider Role"@en ; cmmeta:ontoumlStereotype "Role" ; cmmeta:conceptualModule "core" ; cmmeta:conceptualModelVersion "Gate-D-2026-08-19" .
+cmpe:Facility a owl:Class ; rdfs:label "Facility"@en ; cmmeta:ontoumlStereotype "Kind" ; cmmeta:conceptualModule "core" ; cmmeta:conceptualModelVersion "Gate-D-2026-08-19" .
+cmpe:ManufacturingSiteRole a owl:Class ; rdfs:subClassOf cmpe:Facility, cmpe:EcosystemParticipant ; rdfs:label "Manufacturing Site Role"@en ; cmmeta:ontoumlStereotype "Role" ; cmmeta:conceptualModule "core" ; cmmeta:conceptualModelVersion "Gate-D-2026-08-19" .
+cmpe:DistributionSiteRole a owl:Class ; rdfs:subClassOf cmpe:Facility, cmpe:EcosystemParticipant ; rdfs:label "Distribution Site Role"@en ; cmmeta:ontoumlStereotype "Role" ; cmmeta:conceptualModule "core" ; cmmeta:conceptualModelVersion "Gate-D-2026-08-19" .
+cmpe:FacilityOperation a owl:Class ; rdfs:label "Facility Operation"@en ; cmmeta:ontoumlStereotype "Relator" ; cmmeta:conceptualModule "core" ; cmmeta:conceptualModelVersion "Gate-D-2026-08-19" .
+cmpe:EstablishmentRegistration a owl:Class ; rdfs:label "Establishment Registration"@en ; cmmeta:ontoumlStereotype "Relator" ; cmmeta:conceptualModule "core" ; cmmeta:conceptualModelVersion "Gate-D-2026-08-19" .
+cmpe:RegulatoryAuthorization a owl:Class ; rdfs:label "Regulatory Authorization"@en ; cmmeta:ontoumlStereotype "Relator" ; cmmeta:conceptualModule "core" ; cmmeta:conceptualModelVersion "Gate-D-2026-08-19" .
+cmpe:RegulatoryJurisdiction a owl:Class ; rdfs:label "Regulatory Jurisdiction"@en ; cmmeta:ontoumlStereotype "Kind" ; cmmeta:conceptualModule "core" ; cmmeta:conceptualModelVersion "Gate-D-2026-08-19" .
+cmpe:MedicinalProduct a owl:Class ; rdfs:label "Medicinal Product"@en ; cmmeta:ontoumlStereotype "Kind" ; cmmeta:conceptualModule "core" ; cmmeta:conceptualModelVersion "Gate-D-2026-08-19" .
+cmpe:PharmaceuticalSubstance a owl:Class ; rdfs:label "Pharmaceutical Substance"@en ; cmmeta:ontoumlStereotype "Kind" ; cmmeta:conceptualModule "core" ; cmmeta:conceptualModelVersion "Gate-D-2026-08-19" .
+cmpe:MedicinalProductPresentation a owl:Class ; rdfs:label "Medicinal Product Presentation"@en ; cmmeta:ontoumlStereotype "Kind" ; cmmeta:conceptualModule "core" ; cmmeta:conceptualModelVersion "Gate-D-2026-08-19" .
+cmpe:DosageFormSpecification a owl:Class ; rdfs:label "Dosage Form Specification"@en ; cmmeta:ontoumlStereotype "Kind" ; cmmeta:conceptualModule "core" ; cmmeta:conceptualModelVersion "Gate-D-2026-08-19" .
+cmpe:Strength a owl:Class ; rdfs:label "Strength"@en ; cmmeta:ontoumlStereotype "Quality" ; cmmeta:conceptualModule "core" ; cmmeta:conceptualModelVersion "Gate-D-2026-08-19" .
+cmpe:PackageConfiguration a owl:Class ; rdfs:label "Package Configuration"@en ; cmmeta:ontoumlStereotype "Kind" ; cmmeta:conceptualModule "core" ; cmmeta:conceptualModelVersion "Gate-D-2026-08-19" .
+cmpe:ProductClassificationScheme a owl:Class ; rdfs:label "Product Classification Scheme"@en ; cmmeta:ontoumlStereotype "Kind" ; cmmeta:conceptualModule "core" ; cmmeta:conceptualModelVersion "Gate-D-2026-08-19" .
+cmpe:ClassificationEntry a owl:Class ; rdfs:label "Classification Entry"@en ; cmmeta:ontoumlStereotype "Kind" ; cmmeta:conceptualModule "core" ; cmmeta:conceptualModelVersion "Gate-D-2026-08-19" .
+cmpe:ProductClassificationAssignment a owl:Class ; rdfs:label "Product Classification Assignment"@en ; cmmeta:ontoumlStereotype "Relator" ; cmmeta:conceptualModule "core" ; cmmeta:conceptualModelVersion "Gate-D-2026-08-19" .
+cmpe:MarketListing a owl:Class ; rdfs:label "Market Listing"@en ; cmmeta:ontoumlStereotype "Relator" ; cmmeta:conceptualModule "core" ; cmmeta:conceptualModelVersion "Gate-D-2026-08-19" .
+cmpe:ManufacturingActivity a owl:Class ; rdfs:label "Manufacturing Activity"@en ; cmmeta:ontoumlStereotype "Event" ; cmmeta:conceptualModule "core" ; cmmeta:conceptualModelVersion "Gate-D-2026-08-19" .
+cmpe:DistributionLogisticsActivity a owl:Class ; rdfs:label "Distribution / Logistics Activity"@en ; cmmeta:ontoumlStereotype "Event" ; cmmeta:conceptualModule "core" ; cmmeta:conceptualModelVersion "Gate-D-2026-08-19" .
+cmpe:MedicineShortageSituation a owl:Class ; rdfs:label "Medicine Shortage Situation"@en ; cmmeta:ontoumlStereotype "Situation" ; cmmeta:conceptualModule "core" ; cmmeta:conceptualModelVersion "Gate-D-2026-08-19" .
+cmpe:SupplyCapacity a owl:Class ; rdfs:label "Supply Capacity"@en ; cmmeta:ontoumlStereotype "Mode" ; cmmeta:conceptualModule "core" ; cmmeta:conceptualModelVersion "Gate-D-2026-08-19" .
+cmpe:AvailabilityObservationResult a owl:Class ; rdfs:subClassOf cmpe:ObservationResult ; rdfs:label "Availability Observation Result"@en ; cmmeta:ontoumlStereotype "Subkind" ; cmmeta:conceptualModule "core" ; cmmeta:conceptualModelVersion "Gate-D-2026-08-19" .
+cmpe:DemandObservationResult a owl:Class ; rdfs:subClassOf cmpe:ObservationResult ; rdfs:label "Demand Observation Result"@en ; cmmeta:ontoumlStereotype "Subkind" ; cmmeta:conceptualModule "core" ; cmmeta:conceptualModelVersion "Gate-D-2026-08-19" .
+cmpe:SupplyCapacityObservationResult a owl:Class ; rdfs:subClassOf cmpe:ObservationResult ; rdfs:label "Supply Capacity Observation Result"@en ; cmmeta:ontoumlStereotype "Subkind" ; cmmeta:conceptualModule "core" ; cmmeta:conceptualModelVersion "Gate-D-2026-08-19" .
+
+[] a owl:AllDisjointClasses ; owl:members ( cmpe:Organization cmpe:Facility cmpe:RegulatoryJurisdiction cmpe:MedicinalProduct cmpe:PharmaceuticalSubstance cmpe:MedicinalProductPresentation ) .
+
+cmpe:operates a owl:ObjectProperty ; rdfs:domain cmpe:Organization ; rdfs:range cmpe:Facility ; cmmeta:materialRelation "true"^^xsd:boolean ; cmmeta:derivedFromRelator "FacilityOperation" .
+cmpe:operationOrganization a owl:ObjectProperty ; rdfs:domain cmpe:FacilityOperation ; rdfs:range cmpe:Organization .
+cmpe:operationFacility a owl:ObjectProperty ; rdfs:domain cmpe:FacilityOperation ; rdfs:range cmpe:Facility .
+cmpe:registrationEntity a owl:ObjectProperty ; rdfs:domain cmpe:EstablishmentRegistration .
+cmpe:registrationAuthority a owl:ObjectProperty ; rdfs:domain cmpe:EstablishmentRegistration ; rdfs:range cmpe:Organization .
+cmpe:registrationJurisdiction a owl:ObjectProperty ; rdfs:domain cmpe:EstablishmentRegistration ; rdfs:range cmpe:RegulatoryJurisdiction .
+cmpe:authorizationAuthority a owl:ObjectProperty ; rdfs:domain cmpe:RegulatoryAuthorization ; rdfs:range cmpe:Organization .
+cmpe:authorizationParty a owl:ObjectProperty ; rdfs:domain cmpe:RegulatoryAuthorization .
+cmpe:authorizationJurisdiction a owl:ObjectProperty ; rdfs:domain cmpe:RegulatoryAuthorization ; rdfs:range cmpe:RegulatoryJurisdiction .
+cmpe:presentationOf a owl:ObjectProperty ; rdfs:domain cmpe:MedicinalProductPresentation ; rdfs:range cmpe:MedicinalProduct .
+cmpe:hasActiveSubstance a owl:ObjectProperty ; rdfs:range cmpe:PharmaceuticalSubstance .
+cmpe:hasDosageForm a owl:ObjectProperty ; rdfs:domain cmpe:MedicinalProductPresentation ; rdfs:range cmpe:DosageFormSpecification .
+cmpe:hasStrength a owl:ObjectProperty ; rdfs:domain cmpe:MedicinalProductPresentation ; rdfs:range cmpe:Strength .
+cmpe:hasPackageConfiguration a owl:ObjectProperty ; rdfs:domain cmpe:MedicinalProductPresentation ; rdfs:range cmpe:PackageConfiguration .
+cmpe:classificationEntity a owl:ObjectProperty ; rdfs:domain cmpe:ProductClassificationAssignment .
+cmpe:classificationEntry a owl:ObjectProperty ; rdfs:domain cmpe:ProductClassificationAssignment ; rdfs:range cmpe:ClassificationEntry .
+cmpe:entryInScheme a owl:ObjectProperty ; rdfs:domain cmpe:ClassificationEntry ; rdfs:range cmpe:ProductClassificationScheme .
+cmpe:listingPresentation a owl:ObjectProperty ; rdfs:domain cmpe:MarketListing ; rdfs:range cmpe:MedicinalProductPresentation .
+cmpe:listingResponsibleOrganization a owl:ObjectProperty ; rdfs:domain cmpe:MarketListing ; rdfs:range cmpe:Organization .
+cmpe:listingJurisdiction a owl:ObjectProperty ; rdfs:domain cmpe:MarketListing ; rdfs:range cmpe:RegulatoryJurisdiction .
+cmpe:shortageProduct a owl:ObjectProperty ; rdfs:domain cmpe:MedicineShortageSituation ; rdfs:range cmpe:MedicinalProduct .
+cmpe:shortagePresentation a owl:ObjectProperty ; rdfs:domain cmpe:MedicineShortageSituation ; rdfs:range cmpe:MedicinalProductPresentation .
+cmpe:shortageJurisdiction a owl:ObjectProperty ; rdfs:domain cmpe:MedicineShortageSituation ; rdfs:range cmpe:RegulatoryJurisdiction .
+cmpe:capacityBearer a owl:ObjectProperty ; rdfs:domain cmpe:SupplyCapacity .
+cmpe:observationResultAbout a owl:ObjectProperty ; rdfs:domain cmpe:ObservationResult .
+cmpe:producesObservationResult a owl:ObjectProperty ; rdfs:domain cmpe:ObservationActivity ; rdfs:range cmpe:ObservationResult .
