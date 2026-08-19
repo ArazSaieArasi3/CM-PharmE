@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "family": "W7-E3",
+  "status": "FROZEN_BEFORE_E3_EXECUTION",
+  "basis": [
+    "v2/research/w7/evaluation-protocol.md#W7-E3",
+    "v2/research/w4/anti-pattern-review.md",
+    "v2/ontouml/cm-pharme-v2.conceptual-model.json"
+  ],
+  "boundary": "This is a project-native executable checklist for the frozen Gate-D/W5 artifacts. It is not an official OntoUML tool validation or official OntoUML JSON conformance test.",
+  "allowed_stereotypes": ["Kind", "Subkind", "Role", "RoleMixin", "Relator", "Event", "Situation", "Mode", "Quality", "Datatype"],
+  "role_grounding": {
+    "Organization": ["RegulatoryAuthorityRole", "ManufacturerRole", "ImporterRole", "ProductResponsibleLabelerRole", "WholesaleDistributorRole", "ThirdPartyLogisticsProviderRole", "PayerFundingOrganizationRole"],
+    "Facility": ["ManufacturingSiteRole", "DistributionSiteRole"],
+    "MedicinalProduct": ["AlternativeMedicinalProductRole"]
+  },
+  "principal_relator_mediation_minimum": {
+    "FacilityOperation": 2,
+    "EstablishmentRegistration": 2,
+    "RegulatoryAuthorization": 2,
+    "ProductClassificationAssignment": 2,
+    "MarketListing": 2,
+    "EvidenceSupport": 2,
+    "IdentifierAssignment": 2,
+    "ContextualMedicineClassificationAssignment": 2,
+    "AlternativeMedicineAssignment": 2,
+    "SupplyDependency": 2
+  },
+  "extension_relators_review_only": ["RegulatoryOversight", "StrategicPartnershipAgreement"],
+  "expected_event_situation_stereotypes": {
+    "ManufacturingActivity": "Event",
+    "DistributionLogisticsActivity": "Event",
+    "DisruptionEvent": "Event",
+    "ProcurementActivity": "Event",
+    "RiskAssessmentActivity": "Event",
+    "RiskTreatmentActivity": "Event",
+    "AdverseEventReportingActivity": "Event",
+    "PostMarketSurveillanceActivity": "Event",
+    "MedicineShortageSituation": "Situation",
+    "StockoutSituation": "Situation"
+  },
+  "expected_mode_quality_stereotypes": {
+    "Strength": "Quality",
+    "MatchConfidence": "Quality",
+    "SupplyCapacity": "Mode",
+    "Vulnerability": "Mode",
+    "EnterpriseCapability": "Mode"
+  },
+  "contextual_classification_subclasses": ["EssentialMedicineClassification", "CriticalMedicineClassification"],
+  "mandatory_protected_distinctions": [
+    ["Organization", "Facility"],
+    ["Facility", "GeographicFeature"],
+    ["GeographicFeature", "RegulatoryJurisdiction"],
+    ["MedicinalProduct", "PharmaceuticalSubstance"],
+    ["MedicinalProduct", "MedicinalProductPresentation"],
+    ["ObservationActivity", "ObservationResult"],
+    ["MedicineShortageSituation", "SourceRecord"],
+    ["SupplyCapacity", "SupplyCapacityObservationResult"]
+  ],
+  "forbidden_internal_property_local_names": ["componentOf", "ecosystemRelationship", "supplyChainRelationship"]
+}
