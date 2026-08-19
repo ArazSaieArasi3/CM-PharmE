@@ -16,30 +16,12 @@
 - V2-043 / #65 — Integrated OntoUML conceptual model and decision registry
 - V2-044 / #66 — OntoUML anti-pattern/semantic review and Gate D
 
-## Main outputs
-1. `README.md`
-2. `architecture.md`
-3. `stereotype-decision-matrix.md`
-4. `relator-material-patterns.md`
-5. `events-situations-observations.md`
-6. `geography-jurisdiction.md`
-7. `risk-resilience-extension.md`
-8. `business-architecture-view.md`
-9. `integrated-ontouml-model.md`
-10. `integrated-ontouml-overview.puml`
-11. `anti-pattern-review.md`
-12. `w3-w4-transformation-ledger.md`
-13. `gate-d-conceptual-freeze.md`
-14. manuscript/evidence-ledger alignment notes
-
 ## Approved W4 conceptual inventory
 - 32 Core types/pattern elements
 - 25 cross-cutting infrastructure elements
 - 30 modular extension elements
 - **87 total named conceptual types/pattern elements**
 - 2 W3 candidates remain deferred
-
-The increase from W3's 80 normalized candidates is due to explicit semantic splits and required truth-makers (e.g., Observation Activity/Result, Classification Scheme/Entry/Assignment, Facility Operation, Evidence Support, Supply Capacity vs its observation, Risk Treatment Plan vs Activity).
 
 ## Principal conceptual decisions
 - Organization, Facility, Geography and Jurisdiction are separate identity layers.
