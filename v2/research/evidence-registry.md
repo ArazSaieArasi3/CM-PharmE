@@ -30,20 +30,20 @@ Every admitted source should record:
 - **Methodological evidence** — supports ontology-engineering and evaluation procedures.
 - **Application evidence** — supports concrete ecosystem needs/use cases.
 
-## Initial methodological lineage
+## Methodological lineage
 | Source | Role | V2 relevance |
 |---|---|---|
-| UFO foundational ontology literature | Methodological | Identity, rigidity, dependence, relators, events, modes, roles. |
+| UFO foundational ontology literature | Methodological | Identity, rigidity, dependence, relators, events, modes and roles. |
 | OntoUML methodology and tooling | Methodological | First-class conceptual modeling and anti-pattern/semantic evaluation. |
 | CM-PharmE conference paper | Prior work | Formal predecessor and V1 architectural baseline. |
 | CM-PharmE journal revision | Prior work | Stronger methodological/evaluation baseline and explicit limitation set. |
 | CM4DI conference work | Methodological lineage only | Reusable experience in UFO/OntoUML, modularity, CQs, and repository-supported evaluation; not pharmaceutical-domain evidence. |
 
-## W1 evidence
-W1 application/methodological evidence is registered at `v2/research/w1/evidence-sources.md` and supports stakeholder-need and use-case discovery. It is not automatically empirical V2 dataset evidence.
+## W1 application evidence
+W1 evidence is registered at `v2/research/w1/evidence-sources.md`. It supports stakeholder-need, use-case, geospatial, resilience, risk-alignment, application and opportunity discovery. It is not automatically empirical V2 dataset evidence.
 
-## W2 dataset/source evidence
-Detailed W2 records are maintained in:
+## W2 approved source portfolio — Gate C approved 2026-08-19
+Detailed W2 records:
 - `v2/research/w2/dataset-landscape.md`
 - `v2/research/w2/doi-dataset-registry.md`
 - `v2/research/w2/operational-source-registry.md`
@@ -52,20 +52,58 @@ Detailed W2 records are maintained in:
 - `v2/research/w2/dataset-scorecard.md`
 - `v2/research/w2/gate-c-dataset-portfolio.md`
 
-### Proposed primary DOI anchors
-- **10.5281/zenodo.19160825** — NHIF Bulgaria outpatient pharmacy reimbursement.
-- **10.5281/zenodo.19160637** — NHIF Bulgaria inpatient antineoplastic/coagulopathy medicines.
+### Primary DOI empirical anchors
+- **P1 — 10.5281/zenodo.19160825** — NHIF Bulgaria outpatient pharmacy reimbursement.
+- **P2 — 10.5281/zenodo.19160637** — NHIF Bulgaria inpatient antineoplastic/coagulopathy medicines.
 
-### Proposed conditional DOI evidence
-- **10.5281/zenodo.18851842** — operational pharmaceutical supply dataset; high semantic value but raw redistribution remains conditional because a standard open-data license was not verified.
+### Primary operational/reference discovery families
+- **P3** — FDA DECRS + WDD/3PL.
+- **P4** — openFDA NDC + FDA/openFDA SPL.
+- **P5** — EMA Union List of Critical Medicines + EMA medicine-shortage JSON / reporting evidence.
+- **P6** — WHO Model List/eEML.
+- **P7** — GeoNames, normalization only.
 
-### Proposed operational discovery/implementation families
-FDA DECRS/WDD3PL, openFDA NDC/SPL, EMA critical-medicine/shortage sources, WHO essential-medicine resources and GeoNames enrichment.
+### Conditional evidence
+- **C1 — 10.5281/zenodo.18851842** — operational pharmaceutical supply dataset; high semantic value for inventory/procurement/lead-time/stockout discovery, but raw redistribution remains prohibited in the public research package unless reuse terms are clarified.
+- **C2 — EMA EudraGMDP** — public semantic/schema evidence permitted; automated ingestion remains conditional on compliant bulk/API access verification.
 
-### Protected held-out families
-- **ClinicalTrials.gov / AACT** for organization/site/location/intervention and relational generalizability.
-- **openFDA Drug Shortages** for U.S. cross-jurisdiction shortage evaluation after EU-derived shortage/criticality discovery.
-- selected WHO national EMLs only after per-list audit.
+### Secondary/enrichment
+- **S1** ChEMBL 37 — substance/identifier enrichment.
+- **S2** NHIF Individually Approved Medicines — DOI `10.5281/zenodo.15680002`.
+- **S3** openFDA FAERS — optional Safety/Pharmacovigilance extension only.
 
-## Gate discipline
-No source receives its final W3/W6/W7 role until Gate C approval. Once Gate C is approved, held-out source roles are frozen before W3 concept discovery. Any later use of a held-out schema to admit Core concepts must be recorded and will invalidate clean held-out status for the affected concepts.
+### Protected held-out
+- **H1 ClinicalTrials.gov / AACT** — organization/site/location/intervention and relational generalizability.
+- **H2 openFDA Drug Shortages** — U.S. shortage cross-jurisdiction test.
+- **H3 selected WHO national EMLs** — later jurisdiction-sensitive essentiality test after per-list audit.
+
+## W3 concept/relation evidence artifacts
+- `v2/research/w3/source-schema-concept-extraction.md`
+- `v2/research/w3/candidate-concept-inventory.md`
+- `v2/research/w3/candidate-relations-events.md`
+- `v2/research/w3/geospatial-temporal-jurisdiction.md`
+- `v2/research/w3/provenance-evidence-observation.md`
+- `v2/research/w3/identifiers-entity-resolution.md`
+- `v2/research/w3/v1-v2-migration-matrix.md`
+- `v2/research/w3/evidence-traceability.md`
+- `v2/research/w3/concept-admission-protocol.md`
+- `v2/research/w3/gate-concept-inventory.md`
+
+## W3 evidence result
+W3 normalizes **80 pre-UFO concept candidates** and **80 candidate relationship semantics** from approved discovery sources and V1 lineage. Current disposition before W4:
+- 29 CORE candidates;
+- 23 cross-cutting infrastructure candidates;
+- 26 extension candidates;
+- 2 deferred candidates.
+
+The main evidence-backed semantic backbone is Organization/Role → Site/Facility → Regulatory/Jurisdiction context → Medicinal Product/Substance/Presentation → Geography/Time → Shortage/Availability/Demand/Supply observations → Evidence/Provenance/Identifier infrastructure.
+
+## Held-out integrity after W3
+H1/H2/H3 were not used to admit W3 Core concepts or relations. W3 records only their previously approved held-out role from W2. If a later wave mines a held-out schema before W7, that change must be recorded and held-out status revised rather than silently retained.
+
+## Persistent boundaries
+- No complete global product-level supplier→buyer→shipment network claim is supported by the current source landscape.
+- Finance/counterparty semantics remain outside Core.
+- C1 detailed supply semantics remain conditional.
+- EudraGMDP automated ingestion remains conditional.
+- W3 candidate UFO interpretations are hypotheses only; W4 determines final foundational treatment.
