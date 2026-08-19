@@ -24,8 +24,8 @@ M022,https://w3id.org/cm-pharme/2.0/EntityMatchAssertion,class,entity_match_asse
 M023,https://w3id.org/cm-pharme/2.0/MatchConfidence,quality,entity_match_assertion,confidence,relational_projection,Quality projected to bounded numeric field
 M024,https://w3id.org/cm-pharme/2.0/Assertion,class,assertion,assertion_id/public_id,direct,Canonical assertion/evidence target
 M025,https://w3id.org/cm-pharme/2.0/EvidenceSupport,class,evidence_support,source_record_id↔assertion_id,direct,Relator linking source record and assertion
-M026,https://w3id.org/cm-pharme/2.0/ObservationResult,class,observation_result,observation_result_id/public_id,polymorphic,observation_kind and ontology_iri retain subtype
-M027,https://w3id.org/cm-pharme/2.0/ReimbursementUtilisationObservationResult,class,observation_result,observation_kind='reimbursement_utilisation',direct,Aggregate administrative result; not patient identity
+M026,https://w3id.org/cm-pharme/2.0/ObservationResult,class,observation_result,observation_result_id/public_id,polymorphic,Relational source-level aggregate holds multiple measures and retains subtype through observation_kind/ontology_iri
+M027,https://w3id.org/cm-pharme/2.0/ReimbursementUtilisationObservationResult,class,observation_result,observation_kind='reimbursement_utilisation',one_to_many_rdf_projection,One source-level relational aggregate row is deterministically projected to separate RDF observation-result nodes per reported metric; no patient identity is created
 M028,https://w3id.org/cm-pharme/2.0/observationResultAbout,object_property,observation_result,product_presentation_id,bounded,Reference implementation uses presentation as principal aboutness target
 M029,https://w3id.org/cm-pharme/2.0/MedicineShortageSituation,class,medicine_shortage_situation,shortage_id/public_id,direct,Contextual shortage situation table
 M030,https://w3id.org/cm-pharme/2.0/DiagnosisClassificationReference,class,diagnosis_reference,diagnosis_reference_id,direct,Market-access extension reference
