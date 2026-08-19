@@ -13,7 +13,7 @@ from __future__ import annotations
 
 import argparse
 import json
-from collections import Counter, defaultdict
+from collections import Counter
 from pathlib import Path
 
 from pyshacl import validate
@@ -149,18 +149,20 @@ def apply_mutation(base: Graph, case: dict) -> Graph:
 
 
 def mutation_detected(rows: list[dict], case: dict) -> tuple[bool, list[dict]]:
-    expected_shape = expand(case["expected_shape"])
     min_severity = case["expected_min_severity"]
     min_rank = {"Info": 1, "Warning": 2, "Violation": 3}[min_severity]
+    if case["operation"] == "remove_property_from_first_target":
+        expected_path = str(expand(case["property"]))
+    elif case["operation"] == "add_minimal_shortage_without_jurisdiction":
+        expected_path = str(CMPE.shortageJurisdiction)
+    else:
+        expected_path = None
+
     hits = []
     for r in rows:
         sev_rank = SEVERITY_RANK.get(r["severity"] or "", 0)
-        # pySHACL often reports the blank-node property shape as sourceShape.
-        # We therefore accept a hit when the result is at least the expected
-        # severity and the focus/path semantics originate from the expected
-        # top-level target class profile. The top-level shape expectation is
-        # retained in the registry for human traceability.
-        if sev_rank >= min_rank:
+        path_ok = expected_path is None or r["path"] == expected_path
+        if sev_rank >= min_rank and path_ok:
             hits.append(r)
     return bool(hits), hits
 
@@ -177,17 +179,18 @@ def main():
     # Validate base profiles separately and combined, preserving provenance of findings.
     w5_conforms, w5_rows, w5_sev, w5_by_shape, _ = validate_graph(data, ontology, w5_shapes)
     e5_conforms, e5_rows, e5_sev, e5_by_shape, _ = validate_graph(data, ontology, e5_shapes)
-    combined_conforms, combined_rows, combined_sev, combined_by_shape, combined_text = validate_graph(data, ontology, all_shapes)
+    combined_conforms, combined_rows, combined_sev, combined_by_shape, _ = validate_graph(data, ontology, all_shapes)
 
     mutation_results = []
     for case in mutations["cases"]:
         mutated = apply_mutation(data, case)
-        conforms, rows, sev, by_shape, _ = validate_graph(mutated, ontology, all_shapes)
+        conforms, rows, sev, _, _ = validate_graph(mutated, ontology, all_shapes)
         detected, hits = mutation_detected(rows, case)
         mutation_results.append({
             "id": case["id"],
             "operation": case["operation"],
             "expected_shape": str(expand(case["expected_shape"])),
+            "expected_path": str(expand(case["property"])) if "property" in case else str(CMPE.shortageJurisdiction),
             "expected_min_severity": case["expected_min_severity"],
             "conforms_after_mutation": conforms,
             "detected": detected,
@@ -196,7 +199,6 @@ def main():
             "sample_hits": hits[:5],
         })
 
-    # Descriptive coverage of the pristine evaluation graph.
     counts = {
         "triples": len(data),
         "medicinal_product_presentations": len(set(data.subjects(RDF.type, CMPE.MedicinalProductPresentation))),
@@ -208,7 +210,6 @@ def main():
         "entity_matches": len(set(data.subjects(RDF.type, CMPE.EntityMatchAssertion))),
     }
 
-    # Explicit completeness descriptors from the pristine fixture.
     def complete(cls, prop):
         nodes = set(data.subjects(RDF.type, cls))
         satisfied = sum(1 for n in nodes if any(data.triples((n, prop, None))))
