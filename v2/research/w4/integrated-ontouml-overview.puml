@@ -1,0 +1,196 @@
+@startuml CM_PharmE_V2_W4_Overview
+hide methods
+hide fields
+skinparam classAttributeIconSize 0
+
+package "CORE — Organization & Facility" {
+  abstract class "Ecosystem Participant" as EcosystemParticipant <<RoleMixin>>
+  class Organization <<Kind>>
+  class Facility <<Kind>>
+  class "Regulatory Authority Role" as RegAuthorityRole <<Role>>
+  class "Manufacturer Role" as ManufacturerRole <<Role>>
+  class "Importer Role" as ImporterRole <<Role>>
+  class "Product-Responsible / Labeler Role" as LabelerRole <<Role>>
+  class "Wholesale Distributor Role" as WDDRole <<Role>>
+  class "3PL Provider Role" as TPLRole <<Role>>
+  class "Manufacturing Site Role" as MfgSiteRole <<Role>>
+  class "Distribution Site Role" as DistSiteRole <<Role>>
+  class "Facility Operation" as FacilityOperation <<Relator>>
+  class "Establishment Registration" as Registration <<Relator>>
+  class "Regulatory Authorization" as Authorization <<Relator>>
+  class "Regulatory Jurisdiction" as Jurisdiction <<Kind>>
+
+  EcosystemParticipant <|-- RegAuthorityRole
+  EcosystemParticipant <|-- ManufacturerRole
+  EcosystemParticipant <|-- ImporterRole
+  EcosystemParticipant <|-- LabelerRole
+  EcosystemParticipant <|-- WDDRole
+  EcosystemParticipant <|-- TPLRole
+  EcosystemParticipant <|-- MfgSiteRole
+  EcosystemParticipant <|-- DistSiteRole
+  Organization <|-- RegAuthorityRole
+  Organization <|-- ManufacturerRole
+  Organization <|-- ImporterRole
+  Organization <|-- LabelerRole
+  Organization <|-- WDDRole
+  Organization <|-- TPLRole
+  Facility <|-- MfgSiteRole
+  Facility <|-- DistSiteRole
+  FacilityOperation -- Organization : <<mediation>>
+  FacilityOperation -- Facility : <<mediation>>
+  Registration -- RegAuthorityRole : <<mediation>>
+  Registration -- Facility : <<mediation>>
+  Authorization -- RegAuthorityRole : <<mediation>>
+  Authorization -- EcosystemParticipant : <<mediation>>
+  Authorization --> Jurisdiction : appliesIn
+}
+
+package "CORE — Product" {
+  class "Medicinal Product" as Product <<Kind>>
+  class "Pharmaceutical Substance" as Substance <<Kind>>
+  class "Medicinal Product Presentation" as Presentation <<Kind>>
+  class "Dosage Form Specification" as DosageForm <<Kind>>
+  class Strength <<Quality>>
+  class "Package Configuration" as PackageConfig <<Kind>>
+  class "Product Classification Scheme" as ClassScheme <<Kind>>
+  class "Classification Entry" as ClassEntry <<Kind>>
+  class "Product Classification Assignment" as ClassAssignment <<Relator>>
+  class "Market Listing" as MarketListing <<Relator>>
+
+  Presentation --> Product : presentationOf
+  Presentation --> Substance : hasActiveSubstance
+  Presentation --> DosageForm : hasDosageForm
+  Presentation -- Strength : <<characterization>>
+  Presentation --> PackageConfig : hasPackage
+  ClassAssignment -- Product : <<mediation>>
+  ClassAssignment -- ClassEntry : <<mediation>>
+  ClassEntry --> ClassScheme : inScheme
+  MarketListing -- Presentation : <<mediation>>
+  MarketListing -- LabelerRole : <<mediation>>
+  MarketListing --> Jurisdiction : appliesIn
+}
+
+package "CORE — Events / Situations" {
+  class "Manufacturing Activity" as MfgActivity <<Event>>
+  class "Distribution / Logistics Activity" as DistActivity <<Event>>
+  class "Medicine Shortage Situation" as Shortage <<Situation>>
+  class "Supply Capacity" as SupplyCapacity <<Mode>>
+  class "Availability Observation Result" as AvailabilityResult <<Subkind>>
+  class "Demand Observation Result" as DemandResult <<Subkind>>
+  class "Supply Capacity Observation Result" as SupplyCapacityResult <<Subkind>>
+
+  Organization --> MfgActivity : participates
+  Facility --> MfgActivity : participates
+  Presentation --> MfgActivity : concerns
+  Organization --> DistActivity : participates
+  Facility --> DistActivity : participates
+  Shortage --> Presentation : involves
+  Shortage --> Jurisdiction : inContext
+  Organization -- SupplyCapacity : <<characterization>>
+  Facility -- SupplyCapacity : <<characterization>>
+}
+
+package "X-INFRA — Evidence / Provenance / Identity" {
+  class "Data Source Resource" as DataSource <<Kind>>
+  class Dataset <<Kind>>
+  class "Dataset Release" as DatasetRelease <<Kind>>
+  class "Source Record" as SourceRecord <<Kind>>
+  class Assertion <<Kind>>
+  class "Observation Activity" as ObservationActivity <<Event>>
+  class "Observation Result" as ObservationResult <<Kind>>
+  class "Evidence Item" as EvidenceItem <<RoleMixin>>
+  class "Evidence Support" as EvidenceSupport <<Relator>>
+  class "Mapping Assertion" as MappingAssertion <<Subkind>>
+  class "Entity Match Assertion" as MatchAssertion <<Subkind>>
+  class "Data Quality Finding" as DQFinding <<Subkind>>
+  class "Provenance Activity" as ProvActivity <<Event>>
+  class "Identifier Scheme" as IdScheme <<Kind>>
+  class "Identifier Assignment" as IdAssignment <<Relator>>
+  class "Match Confidence" as MatchConfidence <<Quality>>
+
+  Assertion <|-- MappingAssertion
+  Assertion <|-- MatchAssertion
+  Assertion <|-- DQFinding
+  ObservationResult <|-- AvailabilityResult
+  ObservationResult <|-- DemandResult
+  ObservationResult <|-- SupplyCapacityResult
+  DataSource --> Dataset : maintains
+  Dataset --> DatasetRelease : hasRelease
+  DatasetRelease --> SourceRecord : contains
+  ObservationActivity --> ObservationResult : produces
+  EvidenceSupport -- EvidenceItem : <<mediation>>
+  EvidenceSupport -- Assertion : <<mediation>>
+  IdAssignment -- IdScheme : <<mediation>>
+  MatchAssertion -- MatchConfidence : <<characterization>>
+}
+
+package "X-INFRA — Geography / Time" {
+  class "Geographic Feature" as GeoFeature <<Kind>>
+  class "Administrative Region" as AdminRegion <<Subkind>>
+  class Country <<Subkind>>
+  class "Geospatial Position" as Position <<Datatype>>
+  class Address <<Datatype>>
+  class "Time Interval" as TimeInterval <<Datatype>>
+  class "Reporting Period" as ReportingPeriod <<Datatype>>
+
+  GeoFeature <|-- AdminRegion
+  GeoFeature <|-- Country
+  Facility --> GeoFeature : locatedIn
+  Jurisdiction --> GeoFeature : hasGeographicScope
+}
+
+package "EXT — Resilience / Risk / Policy" {
+  class "Contextual Medicine Classification Assignment" as ContextClass <<Relator>>
+  class "Essential Medicine Classification" as EssentialClass <<Subkind>>
+  class "Critical Medicine Classification" as CriticalClass <<Subkind>>
+  class "Alternative Medicine Assignment" as AlternativeAssignment <<Relator>>
+  class "Alternative Medicinal Product Role" as AlternativeRole <<Role>>
+  class "Supply Dependency" as SupplyDependency <<Relator>>
+  class "Disruption Event" as Disruption <<Event>>
+  class "Stockout Situation" as Stockout <<Situation>>
+  abstract class "Asset-at-Risk" as AssetAtRisk <<RoleMixin>>
+  class Vulnerability <<Mode>>
+  class "Risk Assessment Activity" as RiskAssessment <<Event>>
+  class "Risk Treatment Plan" as RiskPlan <<Kind>>
+  class "Risk Treatment Activity" as RiskTreatment <<Event>>
+
+  ContextClass <|-- EssentialClass
+  ContextClass <|-- CriticalClass
+  AlternativeAssignment -- Product : <<mediation>>
+  AlternativeAssignment -- AlternativeRole : <<mediation>>
+  Product <|-- AlternativeRole
+  SupplyDependency -- Organization : <<mediation>>
+  SupplyDependency -- Facility : <<mediation>>
+  AssetAtRisk -- Vulnerability : <<characterization>>
+}
+
+package "EXT — BA / Other" {
+  class "Business Architecture View" as BAView <<Kind>>
+  class "Enterprise Capability" as Capability <<Mode>>
+  class "Strategic Partnership Agreement" as Partnership <<Relator>>
+  class "Service Offering Specification" as ServiceSpec <<Kind>>
+  class "Digital / Information System Component" as DigitalComponent <<Kind>>
+  abstract class "Clinical Care Participant" as ClinicalParticipant <<RoleMixin>>
+
+  Organization -- Capability : <<characterization>>
+  Partnership -- Organization : <<mediation>>
+  BAView --> Organization : maps
+  BAView --> MfgActivity : maps
+}
+
+note right of Shortage
+  Domain situation != source record.
+  Status is a controlled value,
+  not automatically a Phase.
+end note
+
+note bottom of Product
+  Product != Substance != Presentation
+  != Identifier Value.
+end note
+
+note bottom of Jurisdiction
+  Legal/social scope != geography.
+end note
+
+@enduml
