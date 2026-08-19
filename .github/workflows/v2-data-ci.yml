@@ -1,0 +1,160 @@
+name: CM-PharmE 2.0 W6 Data/KG CI
+
+on:
+  pull_request:
+    branches:
+      - v2/research-program
+    paths:
+      - 'v2/data/**'
+      - 'tools/v2_data/**'
+      - '.github/workflows/v2-data-ci.yml'
+  push:
+    branches:
+      - 'v2/**'
+    paths:
+      - 'v2/data/**'
+      - 'tools/v2_data/**'
+      - '.github/workflows/v2-data-ci.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  representation-gates:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    services:
+      postgres:
+        image: postgis/postgis:16-3.4
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: cmpe
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U postgres -d cmpe"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+    env:
+      DATABASE_URL: postgresql://postgres:postgres@localhost:5432/cmpe
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7.0.1
+
+      - name: Set up Python
+        uses: actions/setup-python@v7.0.0
+        with:
+          python-version: '3.12'
+
+      - name: Install pinned data/semantic dependencies
+        run: >-
+          python -m pip install --disable-pip-version-check
+          'psycopg[binary]==3.2.9'
+          'rdflib==7.5.0'
+          'pyshacl==0.31.0'
+          'PyYAML==6.0.2'
+
+      - name: Bootstrap PostgreSQL/PostGIS and ingest schema-faithful fixtures
+        run: >-
+          python tools/v2_data/bootstrap_ingest.py
+          --reset
+          --report build/w6/ingest-report.json
+
+      - name: Export deterministic W6 RDF ABox — pass A
+        run: >-
+          python tools/v2_data/export_kg.py
+          --output build/w6/a/cm-pharme-v2-fixture-kg.ttl
+          --manifest build/w6/a/kg-manifest.json
+
+      - name: Export deterministic W6 RDF ABox — pass B
+        run: >-
+          python tools/v2_data/export_kg.py
+          --output build/w6/b/cm-pharme-v2-fixture-kg.ttl
+          --manifest build/w6/b/kg-manifest.json
+
+      - name: Verify deterministic KG fingerprint and canonical N-Triples
+        shell: bash
+        run: |
+          set -euo pipefail
+          cmp --silent build/w6/a/cm-pharme-v2-fixture-kg.nt build/w6/b/cm-pharme-v2-fixture-kg.nt
+          cmp --silent build/w6/a/kg-manifest.json build/w6/b/kg-manifest.json
+          cp build/w6/a/cm-pharme-v2-fixture-kg.ttl build/w6/cm-pharme-v2-fixture-kg.ttl
+          cp build/w6/a/cm-pharme-v2-fixture-kg.nt build/w6/cm-pharme-v2-fixture-kg.nt
+          cp build/w6/a/kg-manifest.json build/w6/kg-manifest.json
+
+      - name: Validate RDB/KG traceability, provenance and SHACL
+        run: >-
+          python tools/v2_data/validate_w6.py
+          --kg build/w6/cm-pharme-v2-fixture-kg.ttl
+          --report build/w6/validation-report.json
+
+      - name: Validate selected SQL and SPARQL representation equivalence
+        run: >-
+          python tools/v2_data/compare_sql_sparql.py
+          --kg build/w6/cm-pharme-v2-fixture-kg.ttl
+          --report build/w6/sql-sparql-equivalence.json
+
+      - name: Validate OpenAPI contract syntax
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import yaml
+          doc = yaml.safe_load(Path('v2/data/api/openapi.yaml').read_text())
+          assert doc['openapi'].startswith('3.1')
+          assert '/v1/meta' in doc['paths']
+          assert '/v1/observations' in doc['paths']
+          print('OpenAPI contract: PASS')
+          PY
+
+      - name: Record Gate E implementation summary
+        if: always()
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          def load(name):
+              p = Path('build/w6') / name
+              return json.loads(p.read_text()) if p.exists() else {}
+          ingest = load('ingest-report.json')
+          kg = load('kg-manifest.json')
+          val = load('validation-report.json')
+          eq = load('sql-sparql-equivalence.json')
+          lines = [
+              '## CM-PharmE 2.0 W6 representation gates',
+              '',
+              f"- Source records in fixture: {ingest.get('counts',{}).get('source_record','unavailable')}",
+              f"- Relational observations: {ingest.get('counts',{}).get('observation_result','unavailable')}",
+              f"- KG triples: {kg.get('triple_count','unavailable')}",
+              f"- KG SHA-256: `{kg.get('canonical_ntriples_sha256','unavailable')}`",
+              f"- SHACL conformance: {val.get('shacl_conforms','unavailable')}",
+              f"- SQL↔SPARQL benchmarks: {eq.get('benchmarks_passed','?')}/{eq.get('benchmarks_total','?')}",
+              '- Full external dataset ingestion in CI: false',
+              '- Held-out H1–H3 used: false',
+              '- PASS is bounded to representation mechanics on schema-faithful fixtures.'
+          ]
+          Path('build/w6/gate-e-summary.md').write_text('\n'.join(lines) + '\n')
+          print('\n'.join(lines))
+          PY
+          cat build/w6/gate-e-summary.md >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload W6 Gate E evidence
+        if: always()
+        uses: actions/upload-artifact@v7.0.1
+        with:
+          name: cm-pharme-v2-w6-gate-e-evidence
+          path: |
+            build/w6/ingest-report.json
+            build/w6/kg-manifest.json
+            build/w6/validation-report.json
+            build/w6/sql-sparql-equivalence.json
+            build/w6/gate-e-summary.md
+            build/w6/cm-pharme-v2-fixture-kg.ttl
+            build/w6/cm-pharme-v2-fixture-kg.nt
+          if-no-files-found: warn
+          retention-days: 30
