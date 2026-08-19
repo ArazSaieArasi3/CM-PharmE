@@ -238,8 +238,8 @@ def main():
         "canonical_ntriples_sha256": hashlib.sha256(canonical).hexdigest(),
         "ontology_namespace": str(CMPE),
         "instance_namespace": INST,
-        "full_external_dataset_ingestion": false,
-        "held_out_used": false,
+        "full_external_dataset_ingestion": False,
+        "held_out_used": False,
     }
     Path(a.manifest).write_text(json.dumps(manifest, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     print(json.dumps(manifest, indent=2, sort_keys=True))
