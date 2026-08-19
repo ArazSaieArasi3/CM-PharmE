@@ -8,7 +8,7 @@ Keep manuscript claims synchronized with repository, datasets, ontology artifact
 |---|---|---|
 | C-01 | V2 provides broader pharmaceutical-ecosystem concept coverage than V1. | W3/W4 design expansion supported; comparative coverage result pending W7. |
 | C-02 | V2 is data-grounded rather than scenario-grounded. | **Supported as W2–W6 research/formalization/representation design; full empirical evaluation pending W7.** |
-| C-03 | UFO/OntoUML commitments are explicit and systematically preserved. | **Supported by Gate-D decisions and W5 machine-readable registry/formal annotations; W7-E3 evaluation pending. Official OntoUML-tool validation is not claimed.** |
+| C-03 | UFO/OntoUML commitments are explicit and systematically preserved. | **Supported with boundary by W7-E3: 17 executable project-native checks, 0 blocking failures, 87/87 stereotype registry/formal agreement, principal Relator mediation checks PASS, 8/8 protected distinctions PASS. This is not official OntoUML-tool conformance. Three non-blocking formalization warnings remain for extension Relators, OWL existential enforcement of Role dependence, and extension Mode bearers.** |
 | C-04 | Ontology, relational database and KG preserve traceable semantics. | **Supported for the registered W6 reference implementation/fixture: explicit ontology↔RDB registry, provenance checks and 4/4 paired SQL↔SPARQL benchmarks PASS. Broader empirical equivalence remains bounded; W7-E10 pending.** |
 | C-05 | V2 supports cross-jurisdiction/generalizable representation. | Held-out design protected through W6; results pending W7-E8. |
 | C-06 | Selected analytics/resilience use cases can be reproducibly executed. | Architecture/query mechanics supported in W6; demonstrator/effectiveness evidence pending W7/W8. |
@@ -20,16 +20,16 @@ Keep manuscript claims synchronized with repository, datasets, ontology artifact
 | C-12 | External sources were reserved before Core discovery for later generalizability evaluation. | **Design and W3–W6 contamination discipline supported; outcome pending W7-E8.** |
 | C-13 | Current public evidence does not justify complete global Product→Supplier→Buyer→Shipment reconstruction. | **Supported as limitation / negative finding.** |
 | C-14 | DOI-backed empirical anchors and authoritative operational sources play complementary research roles. | **Supported at source-role and W6 adapter-contract level; full mapping/coverage evaluation pending W7-E6/E7.** |
-| C-15 | V2 distinguishes Organization, contextual Role and physical Facility. | **Supported conceptually, protected in W5 OWL and preserved in W6 relational design.** |
-| C-16 | V2 distinguishes Medicinal Product, Substance, Presentation, Form, Strength and Package semantics. | **Supported conceptually/formally; Product/Substance/Presentation are separately realized in W6.** |
-| C-17 | Essential/Critical medicine classifications are contextual rather than intrinsic rigid Product kinds. | **Supported by W4 pattern and W5 assignment/Relator formalization.** |
+| C-15 | V2 distinguishes Organization, contextual Role and physical Facility. | **Supported conceptually, protected in W5 OWL, preserved in W6 relational design and rechecked in W7-E3.** |
+| C-16 | V2 distinguishes Medicinal Product, Substance, Presentation, Form, Strength and Package semantics. | **Supported conceptually/formally; Product/Substance/Presentation are separately realized in W6 and the main identity distinctions pass W7-E3.** |
+| C-17 | Essential/Critical medicine classifications are contextual rather than intrinsic rigid Product kinds. | **Supported by W4 pattern, W5 assignment/Relator formalization and W7-E3 contextual-classification check.** |
 | C-18 | Shortage/availability/demand/supply evidence requires explicit context and evidence semantics. | **Supported conceptually/formally; W6 establishes reusable observation/provenance representation mechanics.** |
 | C-19 | Provenance, identifier schemes and mapping assertions are first-class V2 infrastructure. | **Supported conceptually, formally and through populated W6 fixture provenance/identifier/evidence structures.** |
-| C-20 | Business Architecture is an optional analytical extension rather than the V2 Core decomposition. | **Supported as W3–W5 architecture decision.** |
-| C-21 | Regulatory registration/authorization must be separated from source records/documents/identifiers. | **Supported by W4 Relator analysis and W5 formalization.** |
-| C-22 | Observation Activity and Observation Result are distinct. | **Supported by W4/W5; W6 deliberately avoids fabricating unobserved activity instances from aggregate administrative rows.** |
-| C-23 | Supply Capacity is distinct from evidence about Supply Capacity. | **Supported by W4 Mode/Result distinction and W5 protected formalization.** |
-| C-24 | Risk/Resilience remains a modular extension aligned toward UFO-grounded reference work rather than duplicated in Core. | **Supported as architecture; exact COVER/ROSE alignment remains future work.** |
+| C-20 | Business Architecture is an optional analytical extension rather than the V2 Core decomposition. | **Supported as W3–W5 architecture decision; W7-E3 retains BA-specific gaps as extension-only warnings rather than Core failures.** |
+| C-21 | Regulatory registration/authorization must be separated from source records/documents/identifiers. | **Supported by W4 Relator analysis, W5 formalization and W7-E3 Relator/identifier checks.** |
+| C-22 | Observation Activity and Observation Result are distinct. | **Supported by W4/W5; W6 deliberately avoids fabricating unobserved activity instances from aggregate administrative rows; W7-E3 rechecks the distinction and production relation.** |
+| C-23 | Supply Capacity is distinct from evidence about Supply Capacity. | **Supported by W4 Mode/Result distinction, W5 protected formalization and W7-E3 characterization/protected-distinction checks.** |
+| C-24 | Risk/Resilience remains a modular extension aligned toward UFO-grounded reference work rather than duplicated in Core. | **Supported as architecture; exact COVER/ROSE alignment remains future work. W7-E3 flags `Vulnerability` bearer formalization as a non-blocking extension gap.** |
 | C-25 | The W5 formal ontology is reproducibly generated from controlled modular Turtle. | **Supported: deterministic canonical build PASS; independent W7-E13 audit pending.** |
 | C-26 | The W5 artifact satisfies OWL 2 DL and is logically processable by multiple applicable reasoners. | **Supported with boundary by W7-E2: OWL 2 DL PASS; HermiT and JFact both exit 0; 0 unsatisfiable named classes; exact agreement on 91 materialized named-class subclass pairs. JFact emits six compatibility messages for project-native conceptual datatypes; no current reasoning-bearing uses of those datatypes were detected.** |
 | C-27 | W5 serializations represent the same asserted RDF graph. | **Supported: TTL/RDF/XML/OWL/JSON-LD/N-Triples graph-isomorphism PASS.** |
@@ -90,6 +90,21 @@ Mandatory logical gate PASS; family status WARN due a documented JFact compatibi
 
 Repository report: `v2/research/w7/e2-logical-multireasoner.md`.
 
+### W7-E3 — UFO/OntoUML pattern and anti-pattern evaluation
+Project-native executable review PASS WITH WARNING. Actions run `32235300963`; evidence artifact `9358720068`.
+- conceptual elements: 87;
+- executable checks: 17;
+- blocking failures: 0;
+- stereotype registry/formal agreement: 87/87;
+- concrete Role identity grounding: 10/10;
+- principal Relator mediation checks: PASS;
+- protected distinctions: 8/8;
+- warnings: incomplete mediation for `RegulatoryOversight` and `StrategicPartnershipAgreement`; Role relational dependence not fully encoded as OWL existential restrictions; `Vulnerability` and `EnterpriseCapability` lack explicit bearer properties.
+
+Repository report: `v2/research/w7/e3-ontouml-pattern-review.md`.
+
+**Boundary:** W7-E3 is not official OntoUML-tool conformance; it is an executable project-native check of frozen Gate-D/W5 commitments.
+
 ## Evidence artifacts by wave
 ### W1
 `v2/research/w1/` — needs, use cases, analytics/AI, geospatial/resilience, application and opportunity evidence.
@@ -125,10 +140,11 @@ Repository report: `v2/research/w7/e2-logical-multireasoner.md`.
 
 ### W7
 - `v2/research/w7/evaluation-protocol.md` — frozen prospective protocol;
-- `v2/evaluation/protocol/` — metric/claim-evidence registries;
+- `v2/evaluation/protocol/` — metric/claim-evidence registries, including E3 pattern checklist;
 - `v2/evaluation/results/w7-evidence-status.csv` — family status register;
 - `v2/research/w7/e1-structural-quality.md` — W7-E1 report;
 - `v2/research/w7/e2-logical-multireasoner.md` — W7-E2 report;
+- `v2/research/w7/e3-ontouml-pattern-review.md` — W7-E3 report;
 - `tools/v2_evaluation/` — W7 evaluator code;
 - dedicated W7 GitHub Actions workflows.
 
@@ -146,10 +162,12 @@ Repository report: `v2/research/w7/e2-logical-multireasoner.md`.
 11. Limitations
 12. Conclusion
 
-## Writing guidance after W7-E2
-The manuscript may state that the frozen asserted ontology passed OWL 2 DL profile validation and that HermiT and JFact both completed on the current axiom set with no unsatisfiable named CM-PharmE classes and exact agreement on 91 materialized named-class subclass pairs. This statement must retain the boundary that JFact logged six compatibility messages for project-native conceptual datatypes; these datatypes are not currently used in reasoning-bearing positions, so no datatype-reasoning equivalence claim is made.
+## Writing guidance after W7-E3
+The manuscript may state that the frozen Gate-D/W5 conceptual-formal baseline passed a prospective project-native executable OntoUML pattern review with zero blocking failures across 17 checks, including 87/87 stereotype agreement, identity grounding of the evaluated concrete Roles, principal Relator mediation checks and preservation of all eight protected distinctions.
 
-Do not infer domain completeness, semantic truth, empirical validity, standards conformance or complete cross-reasoner equivalence from W7-E2.
+It must also state the boundary that this is **not an official OntoUML-tool conformance result**. The three non-blocking formalization warnings should remain visible where relevant, especially before strong claims about the Risk/Resilience or Business Architecture extensions.
+
+Do not infer domain completeness, semantic truth, empirical validity or official OntoUML certification from W7-E3.
 
 ## Persistent limitations
 - No complete global transaction-level pharmaceutical supply graph claim.
@@ -159,6 +177,7 @@ Do not infer domain completeness, semantic truth, empirical validity, standards 
 - Exact external-standard/risk-ontology conformance remains unclaimed without dedicated evaluation.
 - W6 CI validates mechanics on synthetic schema-faithful fixtures rather than full real datasets.
 - Project-native conceptual datatypes require future definition/refinement before datatype-dependent multi-reasoner claims.
+- OntoUML semantics are not fully enforceable through the current OWL projection; Role existential dependence and some extension Relator/Mode bearer patterns remain bounded gaps.
 
 ## Writing rule
 No result is written as completed until its corresponding repository/data evidence exists and passes the applicable gate.
