@@ -109,6 +109,8 @@ jobs:
           --jfact build/w7-e2/robot/jfact-reasoned.owl
           --hermit-unsat build/w7-e2/robot/hermit-unsatisfiable.owl
           --jfact-unsat build/w7-e2/robot/jfact-unsatisfiable.owl
+          --hermit-log build/w7-e2/robot/hermit.log
+          --jfact-log build/w7-e2/robot/jfact.log
           --output build/w7-e2/e2-logical-report.json
 
       - name: Record W7-E2 summary
@@ -122,13 +124,16 @@ jobs:
           r = json.loads(report_path.read_text()) if report_path.exists() else {}
           with open('w7-e2-summary.md','w') as f:
               f.write('## CM-PharmE 2.0 W7-E2 Logical Evaluation\n\n')
-              f.write(f"- Status: **{r.get('status','UNAVAILABLE')}**\n")
+              f.write(f"- Family status: **{r.get('status','UNAVAILABLE')}**\n")
+              f.write(f"- Mandatory logical gate: **{r.get('mandatory_logical_gate','UNAVAILABLE')}**\n")
               f.write(f"- Named internal classes: `{r.get('named_internal_classes','?')}`\n")
               f.write(f"- HermiT unsatisfiable named classes: `{r.get('hermit',{}).get('unsatisfiable_named_classes','?')}`\n")
               f.write(f"- JFact unsatisfiable named classes: `{r.get('jfact',{}).get('unsatisfiable_named_classes','?')}`\n")
               f.write(f"- HermiT named subclass pairs: `{r.get('hermit',{}).get('named_subclass_pairs','?')}`\n")
               f.write(f"- JFact named subclass pairs: `{r.get('jfact',{}).get('named_subclass_pairs','?')}`\n")
               f.write(f"- Named hierarchy agreement: `{r.get('agreement',{}).get('named_subclass_pairs_equal','?')}`\n")
+              f.write(f"- HermiT log findings: `{len(r.get('hermit',{}).get('log_findings',[]))}`\n")
+              f.write(f"- JFact log findings: `{len(r.get('jfact',{}).get('log_findings',[]))}`\n")
               f.write('- Boundary: logical/profile PASS does not establish semantic truth, completeness or empirical validity.\n')
           PY
           cat w7-e2-summary.md >> "$GITHUB_STEP_SUMMARY"
