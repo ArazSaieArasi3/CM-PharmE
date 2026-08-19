@@ -1,0 +1,37 @@
+mapping_id,ontology_iri,entity_kind,rdb_table,rdb_field_or_join,mapping_status,representation_note
+M001,https://w3id.org/cm-pharme/2.0/Dataset,class,dataset,dataset_id/public_id,direct,Dataset identity preserved
+M002,https://w3id.org/cm-pharme/2.0/DatasetRelease,class,dataset_release,dataset_release_id/public_id,direct,Release distinct from Dataset
+M003,https://w3id.org/cm-pharme/2.0/SourceRecord,class,source_record,source_record_id/source_hash,direct,Source record has deterministic content fingerprint
+M004,https://w3id.org/cm-pharme/2.0/ProvenanceActivity,class,transformation_run,transformation_run_id/public_id,direct,ETL run represented as provenance activity
+M005,https://w3id.org/cm-pharme/2.0/GeographicFeature,class,geography,geography_id/public_id,polymorphic,geography_type distinguishes supported subtypes
+M006,https://w3id.org/cm-pharme/2.0/AdministrativeRegion,class,geography,geography_type='administrative_region',direct,Administrative region row
+M007,https://w3id.org/cm-pharme/2.0/Country,class,geography,geography_type='country',direct,Country row
+M008,https://w3id.org/cm-pharme/2.0/RegulatoryJurisdiction,class,regulatory_jurisdiction,regulatory_jurisdiction_id,direct,Kept separate from physical geography
+M009,https://w3id.org/cm-pharme/2.0/Organization,class,organization,organization_id/public_id,direct,Organization identity not collapsed into Facility
+M010,https://w3id.org/cm-pharme/2.0/Facility,class,facility,facility_id/public_id,direct,Physical/operational facility identity
+M011,https://w3id.org/cm-pharme/2.0/FacilityOperation,class,facility_operation,organization_id↔facility_id,direct,Relator represented as associative table with its own identity
+M012,https://w3id.org/cm-pharme/2.0/PharmaceuticalSubstance,class,pharmaceutical_substance,substance_id/public_id,direct,Substance identity layer
+M013,https://w3id.org/cm-pharme/2.0/MedicinalProduct,class,medicinal_product,medicinal_product_id/public_id,direct,Product identity layer
+M014,https://w3id.org/cm-pharme/2.0/MedicinalProductPresentation,class,product_presentation,product_presentation_id/public_id,direct,Presentation/package-level identity layer
+M015,https://w3id.org/cm-pharme/2.0/presentationOf,object_property,product_presentation,medicinal_product_id,direct,Foreign key implements presentation→product relation
+M016,https://w3id.org/cm-pharme/2.0/hasActiveSubstance,object_property,medicinal_product,primary_substance_id,bounded,W6 reference schema models one primary substance hook; richer composition may require extension
+M017,https://w3id.org/cm-pharme/2.0/ProductClassificationScheme,class,product_classification_scheme,classification_scheme_id,direct,Classification scheme separated from product identity
+M018,https://w3id.org/cm-pharme/2.0/ClassificationEntry,class,classification_entry,classification_entry_id,direct,ATC and other entries represented as classification entries
+M019,https://w3id.org/cm-pharme/2.0/ProductClassificationAssignment,class,product_classification_assignment,medicinal_product_id↔classification_entry_id,direct,Contextual assignment with provenance hook
+M020,https://w3id.org/cm-pharme/2.0/IdentifierScheme,class,identifier_scheme,identifier_scheme_id,direct,Scheme separated from identifier lexical value
+M021,https://w3id.org/cm-pharme/2.0/IdentifierAssignment,class,identifier_assignment,entity_public_id+lexical_value,direct,Identifier assignment does not become entity identity
+M022,https://w3id.org/cm-pharme/2.0/EntityMatchAssertion,class,entity_match_assertion,entity_match_assertion_id,direct,Auditable match assertion with method/confidence/status
+M023,https://w3id.org/cm-pharme/2.0/MatchConfidence,quality,entity_match_assertion,confidence,relational_projection,Quality projected to bounded numeric field
+M024,https://w3id.org/cm-pharme/2.0/Assertion,class,assertion,assertion_id/public_id,direct,Canonical assertion/evidence target
+M025,https://w3id.org/cm-pharme/2.0/EvidenceSupport,class,evidence_support,source_record_id↔assertion_id,direct,Relator linking source record and assertion
+M026,https://w3id.org/cm-pharme/2.0/ObservationResult,class,observation_result,observation_result_id/public_id,polymorphic,observation_kind and ontology_iri retain subtype
+M027,https://w3id.org/cm-pharme/2.0/ReimbursementUtilisationObservationResult,class,observation_result,observation_kind='reimbursement_utilisation',direct,Aggregate administrative result; not patient identity
+M028,https://w3id.org/cm-pharme/2.0/observationResultAbout,object_property,observation_result,product_presentation_id,bounded,Reference implementation uses presentation as principal aboutness target
+M029,https://w3id.org/cm-pharme/2.0/MedicineShortageSituation,class,medicine_shortage_situation,shortage_id/public_id,direct,Contextual shortage situation table
+M030,https://w3id.org/cm-pharme/2.0/DiagnosisClassificationReference,class,diagnosis_reference,diagnosis_reference_id,direct,Market-access extension reference
+M031,https://w3id.org/cm-pharme/2.0/locatedIn,object_property,facility,geography_id,direct,Facility physical location; not regulatory jurisdiction
+M032,https://w3id.org/cm-pharme/2.0/identifierLexicalValue,datatype_property,identifier_assignment,lexical_value,direct,Lexical identifier stored separately from entity key
+M033,https://w3id.org/cm-pharme/2.0/validFrom,datatype_property,facility_operation,valid_from,bounded,Temporal projection for relator validity
+M034,https://w3id.org/cm-pharme/2.0/validTo,datatype_property,facility_operation,valid_to,bounded,Temporal projection for relator validity
+M035,https://w3id.org/cm-pharme/2.0/DataSourceResource,class,,,deferred,W6 stores Dataset/Release provenance; publisher/source-resource entity can be added when source ingestion requires it
+M036,https://w3id.org/cm-pharme/2.0/ObservationActivity,class,,,deferred,Administrative source rows provide persistent aggregate results; no unobserved activity instance is fabricated
