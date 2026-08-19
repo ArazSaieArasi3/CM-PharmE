@@ -62,7 +62,7 @@ def one(cur, sql: str, params: tuple[Any, ...]) -> int:
     row = cur.fetchone()
     if row is None:
         raise RuntimeError("Expected RETURNING row")
-    return int(row[0])
+    return int(next(iter(row.values())))
 
 
 def upsert_dataset(cur, spec: dict[str, Any]) -> tuple[int, int]:
@@ -270,8 +270,8 @@ def main():
             cur.execute(Path(a.views).read_text(encoding="utf-8"), prepare=False)
 
             geo = upsert_geographies(cur, a.geography)
-            out_dataset_id, out_release = upsert_dataset(cur, out_spec)
-            in_dataset_id, in_release = upsert_dataset(cur, in_spec)
+            _, out_release = upsert_dataset(cur, out_spec)
+            _, in_release = upsert_dataset(cur, in_spec)
             run_public = "run:w6-fixture:" + digest(Path(a.outpatient).read_text() + Path(a.inpatient).read_text())
             run_id = one(cur, """
                 INSERT INTO cmpe.transformation_run(public_id,adapter_name,adapter_version,status)
