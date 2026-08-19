@@ -1,6 +1,6 @@
 family_id,issue,status,primary_result,artifact_or_report,boundary_or_warning
 W7-E1,90,PASS_WITH_WARNING,"mandatory structural checks PASS; 87/87 conceptual registry; 36/36 mapping IRIs; 8/8 protected distinctions","v2/research/w7/e1-structural-quality.md; Actions run 32231194172; artifact 9357280400","annotation labels 87/144=60.42%; explicit domain 53/57; explicit range 42/57; structural PASS does not imply completeness"
-W7-E2,91,NOT_RUN,,, 
+W7-E2,91,WARN,"mandatory logical gate PASS; OWL 2 DL PASS; HermiT/JFact exit 0; 0 unsatisfiable named classes; 91/91 named subclass pairs agree","v2/research/w7/e2-logical-multireasoner.md; Actions run 32234016236; artifact 9358275161","JFact replaces six project-native conceptual datatypes with rdfs:Literal internally; current datatypes are not used in reasoning-bearing range/restriction positions, so named-class result remains valid but datatype compatibility is bounded"
 W7-E3,92,NOT_RUN,,, 
 W7-E4,93,NOT_RUN,,, 
 W7-E5,94,NOT_RUN,,, 
