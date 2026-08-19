@@ -133,12 +133,14 @@ Only data that satisfy the W2 admission/access/licensing rules may be downloaded
 ## 9. Expert-evaluation ethics boundary
 The expert study must collect only what the approved instrument requires, keep identifiers out of the public repository unless explicitly consented, and record whether institutional ethics review/waiver is required under the applicable institutional policy before recruitment. W7 does not invent or infer participant attributes.
 
-## 10. Protocol amendments
-Any change after the first W7 result is produced must be logged as an amendment with date, reason, affected metrics and whether the change was made before or after seeing the affected result. Original criteria remain available for audit.
+## 10. Protocol amendments and implementation corrections
+Any change to scientific evaluation criteria after the first W7 result is produced must be logged as a protocol amendment with date, reason, affected metrics and whether the change was made before or after seeing the affected result. Original criteria remain available for audit.
+
+**Implementation correction log — W7-E2:** the first E2 harness execution expected ROBOT to emit an unsatisfiable-class dump file even when the unsatisfiable set was empty. Both reasoners completed, but the comparison harness failed on the absent empty dump. The harness was corrected to interpret absent/empty dump files as empty sets and to retain reasoner log findings. No protocol criterion, threshold or interpretation rule was changed.
 
 ## 11. Gate F minimum decision package
 Gate F should receive:
-1. this frozen protocol and amendments;
+1. this frozen protocol and amendments/correction log;
 2. evaluation matrix with status/artifact links;
 3. claim-evidence gate table;
 4. per-family machine-readable reports;
