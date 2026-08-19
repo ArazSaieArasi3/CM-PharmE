@@ -1,0 +1,7 @@
+@prefix cmpe: <https://w3id.org/cm-pharme/2.0/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+# Additional Gate-D protected distinctions that are intentionally explicit in OWL.
+cmpe:ObservationActivity owl:disjointWith cmpe:ObservationResult .
+cmpe:MedicineShortageSituation owl:disjointWith cmpe:SourceRecord .
+cmpe:SupplyCapacity owl:disjointWith cmpe:SupplyCapacityObservationResult .
