@@ -1,10 +1,9 @@
-# Gate D — Conceptual Model Freeze Proposal
+# Gate D — Conceptual Model Freeze
 
 ## Status
-**W4 implementation complete — Gate D ready for user decision.**
+**APPROVED on 2026-08-19.**
 
-## Proposed freeze
-Approve the W4 integrated UFO/OntoUML conceptualization as the semantic baseline for W5 formal ontology engineering.
+The W4 UFO/OntoUML conceptual baseline is approved as the semantic baseline for W5 formal ontology engineering.
 
 ## Frozen commitments
 1. **Core identity providers**: Organization, Facility, Regulatory Jurisdiction, Medicinal Product, Pharmaceutical Substance, Product Presentation and selected information/geographic entities remain semantically distinct.
@@ -36,10 +35,7 @@ Manual/static semantic review: **PASS**.
 
 No critical/high unresolved identity, rigidity, role/relator, event/situation, observation/result, geography/jurisdiction or extension-leakage defect was identified. Residual issues are bounded formalization/source-mapping/alignment questions recorded in `anti-pattern-review.md`.
 
-## Gate D decision requested
-**Approve / Modify / Reject** the W4 conceptual baseline.
-
-### If approved
+## W5 authorization
 W5 is authorized to:
 - assign stable V2 IRIs and formal module imports;
 - encode classes/properties/axioms in OWL;
@@ -49,5 +45,7 @@ W5 is authorized to:
 - produce synchronized Turtle/RDF/XML/JSON-LD and other distributions from one canonical source;
 - prepare formal ontology gate tests before W6 data infrastructure.
 
-### Gate protection
+## Gate protection
 Any W5 change that would collapse a frozen identity distinction or move a modular extension into Core requires an explicit design-change record and, if material, a Gate D revisit.
+
+**Decision: Gate D APPROVED; W5 authorized.**
