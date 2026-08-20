@@ -1,0 +1,94 @@
+name: CM-PharmE 2.0 W7-E6 Mapping Quality
+
+on:
+  pull_request:
+    branches:
+      - v2/research-program
+    paths:
+      - 'v2/data/mappings/**'
+      - 'v2/data/sources/source-manifest.json'
+      - 'v2/evaluation/protocol/e6-mapping-quality-rules.json'
+      - 'tools/v2_evaluation/e6_mapping_quality.py'
+      - 'tools/v2_ontology/**'
+      - 'v2/ontology/**'
+      - '.github/workflows/v2-w7-e6-mapping.yml'
+  push:
+    branches:
+      - 'v2/**'
+    paths:
+      - 'v2/data/mappings/**'
+      - 'v2/data/sources/source-manifest.json'
+      - 'v2/evaluation/protocol/e6-mapping-quality-rules.json'
+      - 'tools/v2_evaluation/e6_mapping_quality.py'
+      - 'tools/v2_ontology/**'
+      - 'v2/ontology/**'
+      - '.github/workflows/v2-w7-e6-mapping.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  w7-e6-mapping-quality:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7.0.1
+
+      - name: Set up Python
+        uses: actions/setup-python@v7.0.0
+        with:
+          python-version: '3.12'
+
+      - name: Install pinned semantic dependencies
+        run: >-
+          python -m pip install --disable-pip-version-check
+          'rdflib==7.5.0'
+          'pyshacl==0.31.0'
+          'PyYAML==6.0.2'
+
+      - name: Rebuild frozen asserted ontology
+        run: >-
+          python tools/v2_ontology/build_validate.py
+          --output-root build/w7-e6/asserted
+          --require-shacl
+
+      - name: Evaluate source-field mapping quality
+        run: >-
+          python tools/v2_evaluation/e6_mapping_quality.py
+          --manifest v2/data/sources/source-manifest.json
+          --registry v2/data/mappings/source-field-ontology-mapping.csv
+          --coverage-index v2/data/mappings/source-mapping-coverage.csv
+          --rules v2/evaluation/protocol/e6-mapping-quality-rules.json
+          --ontology build/w7-e6/asserted/distributions/cm-pharme-v2.ttl
+          --output build/w7-e6/e6-mapping-quality.json
+          --summary build/w7-e6/e6-mapping-quality.md
+
+      - name: Record W7-E6 summary
+        if: always()
+        shell: bash
+        run: |
+          if [ -f build/w7-e6/e6-mapping-quality.md ]; then
+            cat build/w7-e6/e6-mapping-quality.md >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo 'W7-E6 summary unavailable because execution failed before report creation.' >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Upload W7-E6 evidence
+        if: always()
+        uses: actions/upload-artifact@v7.0.1
+        with:
+          name: cm-pharme-v2-w7-e6-mapping-evidence
+          path: |
+            v2/data/mappings/README.md
+            v2/data/mappings/source-field-ontology-mapping.csv
+            v2/data/mappings/source-mapping-coverage.csv
+            v2/data/mappings/ontology-rdb-mapping.csv
+            v2/data/sources/source-manifest.json
+            v2/evaluation/protocol/e6-mapping-quality-rules.json
+            build/w7-e6/e6-mapping-quality.json
+            build/w7-e6/e6-mapping-quality.md
+          if-no-files-found: warn
+          retention-days: 30
