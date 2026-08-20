@@ -1,0 +1,13 @@
+cq_id,status,ontology_basis,interpretation
+H1-CQ01,exact,"Facility; locatedIn; GeographicFeature; Organization/Facility disjointness","Trial site can be represented as Facility and located geographically without collapsing it into Organization."
+H1-CQ02,unsupported,,"No ClinicalStudy type or explicit study-sponsorship relation exists in the frozen ontology."
+H1-CQ03,partial,"MedicinalProduct; PharmaceuticalSubstance; MedicinalProductPresentation","Pharmaceutical identity distinctions are preserved, but an Intervention context/type is absent."
+H1-CQ04,unsupported,,"ObservationResult is intentionally not equated with a clinical-trial Outcome; explicit trial-outcome semantics are absent."
+H2-CQ01,exact,"MedicineShortageSituation; shortageProduct","Shortage-to-product semantics are explicit."
+H2-CQ02,exact,"MedicineShortageSituation; shortagePresentation","Shortage-to-presentation semantics are explicit."
+H2-CQ03,partial,"Assertion; SourceRecord; DisruptionEvent","Reason text/evidence can be preserved, but explicit shortage-has-reason semantics are missing."
+H2-CQ04,partial,"validFrom; validTo; ProvenanceActivity; MedicineShortageSituation","Temporal primitives exist, but source lifecycle statuses and posting/update/change/discontinued dates are not fully typed as domain lifecycle semantics."
+H3-CQ01,exact,"EssentialMedicineClassification; ContextualMedicineClassificationAssignment","Essentiality is represented contextually rather than as an intrinsic drug kind."
+H3-CQ02,exact,"contextClassificationJurisdiction; RegulatoryJurisdiction","Essential classification can be scoped to India as a jurisdiction."
+H3-CQ03,partial,"MedicinalProductPresentation; hasDosageForm; hasStrength","Form/strength distinctions are available, but NLEM medicine/active-moiety granularity may not equal a marketed presentation."
+H3-CQ04,unsupported,,"No explicit HealthcareLevel type or medicine-applicable-at-healthcare-level relation exists."
