@@ -1,5 +1,5 @@
 cq_id,status,ontology_basis,interpretation
-H1-CQ01,exact,"Facility; locatedIn; GeographicFeature; Organization/Facility disjointness","Trial site can be represented as Facility and located geographically without collapsing it into Organization."
+H1-CQ01,exact,"Facility; locatedIn; GeographicFeature; Organization","Trial site can be represented as Facility and located geographically without collapsing it into Organization; Gate-D disjointness is verified separately by the frozen ontology build gate."
 H1-CQ02,unsupported,,"No ClinicalStudy type or explicit study-sponsorship relation exists in the frozen ontology."
 H1-CQ03,partial,"MedicinalProduct; PharmaceuticalSubstance; MedicinalProductPresentation","Pharmaceutical identity distinctions are preserved, but an Intervention context/type is absent."
 H1-CQ04,unsupported,,"ObservationResult is intentionally not equated with a clinical-trial Outcome; explicit trial-outcome semantics are absent."
