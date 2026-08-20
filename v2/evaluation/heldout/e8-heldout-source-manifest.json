@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "evaluation_family": "W7-E8",
+  "frozen_on": "2026-08-20",
+  "purpose": "First authorized unblinding of H1-H3 for prospective held-out and cross-jurisdiction generalizability evaluation.",
+  "raw_payload_redistribution": false,
+  "snapshot_policy": "Repository artifacts freeze normalized semantic requirements and source/version/access metadata. Source-document bytes are not redistributed; later semantic changes are post-test amendments.",
+  "ontology_baseline_sha256": "59ef47eeed732290736e60bfa1c6bf43a12d15df2f50cff931badb5938cc954a",
+  "sources": [
+    {
+      "held_out_id": "H1",
+      "name": "ClinicalTrials.gov / AACT",
+      "jurisdiction_scope": "international registry with U.S. federal hosting",
+      "official_urls": [
+        "https://clinicaltrials.gov/data-api/api",
+        "https://clinicaltrials.gov/api/v2/version",
+        "https://aact.ctti-clinicaltrials.org/schema"
+      ],
+      "version_or_release": "ClinicalTrials.gov API 2.0.5; dataTimestamp 2026-08-10T09:00:05; AACT live schema accessed 2026-08-20",
+      "evidence_basis": "ClinicalTrials.gov API/study structure plus AACT relational schema conventions and table relationships.",
+      "held_out_use_boundary": "Semantic structure only for E8 first-pass generalizability; no H1-driven ontology adaptation before first-pass results are preserved."
+    },
+    {
+      "held_out_id": "H2",
+      "name": "openFDA Drug Shortages",
+      "jurisdiction_scope": "United States",
+      "official_urls": [
+        "https://open.fda.gov/apis/drug/drugshortages/",
+        "https://open.fda.gov/apis/drug/drugshortages/searchable-fields/",
+        "https://open.fda.gov/apis/drug/drugshortages/download/"
+      ],
+      "version_or_release": "official download page reported one file last updated 2026-07-23; API documentation accessed 2026-08-20",
+      "evidence_basis": "Native shortage fields plus openFDA harmonized drug identifiers.",
+      "held_out_use_boundary": "First-pass shortage representation/generalizability only; source-record fields are not automatically promoted to ontology classes."
+    },
+    {
+      "held_out_id": "H3",
+      "name": "India National List of Essential Medicines 2022",
+      "jurisdiction_scope": "India",
+      "official_urls": [
+        "https://cdsco.gov.in/opencms/opencms/en/consumer/Essential-Medicines/",
+        "https://cdsco.gov.in/opencms/resources/UploadCDSCOWeb/2018/UploadPublic_NoticesFiles/reportnlem2022.pdf"
+      ],
+      "version_or_release": "NLEM 2022, released 2022-09-13; official PDF 157 pages; accessed 2026-08-20",
+      "evidence_basis": "Medicine entries stratified by therapeutic section and Primary/Secondary/Tertiary level, with dosage-form and strength semantics.",
+      "held_out_use_boundary": "National EML cross-jurisdiction sample only; one national list is not treated as proof of global essential-medicine generalizability."
+    }
+  ]
+}
