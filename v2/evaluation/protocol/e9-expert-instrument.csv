@@ -1,0 +1,24 @@
+item_id,section,audience,dimension,statement_or_prompt,response_type,scale_or_options,confidence_required,comment_policy
+E9-01,Overall,all,clarity,"The purpose and scope of CM-PharmE 2.0 are clear.",rating,"1-5",yes,optional
+E9-02,Overall,all,semantic_adequacy,"The ontology provides an appropriate semantic abstraction of the pharmaceutical ecosystem for its stated scope.",rating,"1-5",yes,required_if_1_or_2
+E9-03,Overall,all,domain_relevance,"The represented concepts and relations are relevant to the intended pharmaceutical-ecosystem analyses.",rating,"1-5",yes,required_if_1_or_2
+E9-04,Identity,all,semantic_adequacy,"Distinguishing Organization from Facility is semantically appropriate.",rating,"1-5",yes,required_if_1_or_2
+E9-05,Identity,all,semantic_adequacy,"Distinguishing Geography from Regulatory Jurisdiction is semantically appropriate.",rating,"1-5",yes,required_if_1_or_2
+E9-06,Identity,all,semantic_adequacy,"Distinguishing Medicinal Product, Pharmaceutical Substance and Product Presentation is semantically appropriate.",rating,"1-5",yes,required_if_1_or_2
+E9-07,Observation,all,semantic_adequacy,"Distinguishing Observation Activity from Observation Result is semantically appropriate.",rating,"1-5",yes,required_if_1_or_2
+E9-08,Observation,all,semantic_adequacy,"Distinguishing Supply Capacity from a Supply-Capacity Observation Result is semantically appropriate.",rating,"1-5",yes,required_if_1_or_2
+E9-09,Regulation,pharma,domain_relevance,"The treatment of regulatory authorization, establishment registration and jurisdiction is useful for pharmaceutical-domain representation.",rating,"1-5",yes,required_if_1_or_2
+E9-10,Classification,pharma,semantic_adequacy,"Essential/critical medicine status is appropriately treated as contextual classification rather than an intrinsic medicine kind.",rating,"1-5",yes,required_if_1_or_2
+E9-11,Shortage,pharma,semantic_adequacy,"Medicine shortage is appropriately represented as a situation distinct from a source/report record.",rating,"1-5",yes,required_if_1_or_2
+E9-12,Provenance,all,usability,"The Dataset → Release → SourceRecord → Assertion/Evidence structure provides useful provenance for intended analyses.",rating,"1-5",yes,required_if_1_or_2
+E9-13,Ontology,ontology,semantic_adequacy,"The use of Kind, Role/RoleMixin, Relator, Event, Situation, Mode and Quality is conceptually coherent for the reviewed model.",rating,"1-5",yes,required_if_1_or_2
+E9-14,Ontology,ontology,clarity,"The modular separation of Core, cross-cutting infrastructure and Extensions is clear and defensible.",rating,"1-5",yes,required_if_1_or_2
+E9-15,Tasks,all,usability,"The ontology is useful for ontology↔RDB↔KG traceability and semantic integration tasks.",rating,"1-5",yes,required_if_1_or_2
+E9-16,Tasks,pharma,usability,"The ontology is useful for shortage/resilience-oriented pharmaceutical ecosystem analyses within the stated scope.",rating,"1-5",yes,required_if_1_or_2
+E9-17,Scope,all,scope_adequacy,"The boundary between the Core and optional domain extensions is appropriate.",rating,"1-5",yes,required_if_1_or_2
+E9-18,Gaps,all,missing_concepts,"List any concept(s) that are critically missing for the stated scope and intended principal use cases.",open_text,"free text",yes,required_if_any
+E9-19,Gaps,all,missing_relations,"List any relation(s) that are critically missing for the stated scope and intended principal use cases.",open_text,"free text",yes,required_if_any
+E9-20,Gaps,all,inappropriate_distinctions,"Identify any distinction, class or relation that you consider semantically inappropriate or unnecessarily complex.",open_text,"free text",yes,required_if_any
+E9-21,Generalizability,all,domain_relevance,"The model appears reusable across more than one pharmaceutical jurisdiction/data source when interpreted within its stated limitations.",rating,"1-5",yes,required_if_1_or_2
+E9-22,Overall,all,overall_confidence,"Overall, how confident are you in your evaluation of this model?",rating,"1-5",no,optional
+E9-23,Overall,all,recommendation,"Which disposition best reflects your review?",single_choice,"accept_as_is;accept_with_minor_refinement;requires_material_refinement;not_suitable_for_stated_scope",yes,required_if_requires_material_refinement_or_not_suitable
