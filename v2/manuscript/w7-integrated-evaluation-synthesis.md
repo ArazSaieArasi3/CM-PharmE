@@ -56,3 +56,6 @@ The prospective expert-review protocol, eligibility rules, two-stratum recruitme
 
 ## Gate-F readiness
 The computational evidence is ready for claim-by-claim Gate-F adjudication. Use `v2/evaluation/results/w7-claim-evidence-traceability.csv` as the authoritative pre-gate claim matrix. The E9 dependency remains open and must not be counted as completed human validation.
+
+## Synthesis closure
+The W7 integrated evidence synthesis is complete on the V2 evaluation branch. Any later change to claim disposition must be recorded through Gate F rather than silently rewriting this pre-gate synthesis.
