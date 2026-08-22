@@ -1,53 +1,71 @@
 # CM-PharmE 2.0 — W7 Prospective Multi-Family Evaluation
 
 ## Status
-W7 starts from the Gate-E-approved W6 merge baseline `59417e352c68585effc3056440fd1a815f6b92bc`.
+W7 starts from the Gate-E-approved W6 merge baseline `59417e352c68585effc3056440fd1a815f6b92bc` and is executed on `v2/w7-evaluation` through draft PR #105 to `v2/research-program`.
 
-The first mandatory action was protocol freeze before any W7 result was interpreted. W7 evidence families are kept separate; there is no single composite quality score.
+The evaluation protocol and claim gates were frozen before result interpretation. Evidence families remain analytically separate; no single composite quality score is used.
+
+**Current progress: 13/14 work items complete (92.86%).**  
+The only unfinished family is E9 prospective expert evaluation, whose protocol is frozen and whose real participant responses remain pending.
 
 ## Work register
-- V2-062 / #89 — prospective protocol and metric registry — COMPLETE
-- V2-063 / #90 — syntactic, structural and ontology quality — COMPLETE
-- V2-064 / #91 — OWL profile and multi-reasoner logic — COMPLETE
-- V2-065 / #92 — OntoUML pattern/anti-pattern review — COMPLETE
-- V2-066 / #93 — positive and negative competency questions — COMPLETE
-- V2-067 / #94 — SHACL/data conformance — COMPLETE
-- V2-068 / #95 — dataset-to-ontology mapping quality — NEXT
-- V2-069 / #96 — concept/relation coverage
-- V2-070 / #97 — held-out and cross-jurisdiction evaluation
-- V2-071 / #98 — prospective structured expert evaluation
-- V2-072 / #99 — ontology↔RDB↔KG semantic consistency
-- V2-073 / #100 — selected analytics/AI demonstrators
-- V2-074 / #101 — pharmaceutical resilience scenarios
-- V2-075 / #102 — independent rebuild/reproducibility audit
-- W7 evidence register / #103
-- Gate F / #104 — evidence sufficiency for principal manuscript claims
+- V2-062 / #89 — prospective protocol and metric registry — **COMPLETE**
+- V2-063 / #90 — syntactic, structural and ontology quality — **COMPLETE**
+- V2-064 / #91 — OWL profile and multi-reasoner logic — **COMPLETE**
+- V2-065 / #92 — OntoUML pattern/anti-pattern review — **COMPLETE**
+- V2-066 / #93 — positive and negative competency questions — **COMPLETE**
+- V2-067 / #94 — SHACL/data conformance — **COMPLETE**
+- V2-068 / #95 — dataset-to-ontology mapping quality — **COMPLETE**
+- V2-069 / #96 — concept/relation coverage — **COMPLETE**
+- V2-070 / #97 — held-out and cross-jurisdiction evaluation — **COMPLETE**
+- V2-071 / #98 — prospective structured expert evaluation — **PROTOCOL FROZEN / REAL RESPONSES PENDING**
+- V2-072 / #99 — ontology↔RDB↔KG semantic consistency — **COMPLETE**
+- V2-073 / #100 — selected analytics/AI demonstrators — **COMPLETE**
+- V2-074 / #101 — pharmaceutical resilience scenarios — **COMPLETE**
+- V2-075 / #102 — independent clean rebuild/reproducibility audit — **COMPLETE**
+- W7 evidence register / #103 — **CURRENT / SYNCHRONIZED**
+- Gate F / #104 — evidence sufficiency for principal manuscript claims — **PENDING**
 
-## Evidence completed to date
-### E1 — Structural quality
-Mandatory PASS with bounded annotation/domain/range warnings.
+## Evidence summary
+| Family | Status | Headline evidence |
+|---|---|---|
+| E1 Structural | PASS WITH WARNING | 87/87 conceptual registry; 36/36 mapping IRIs; 8/8 protected distinctions |
+| E2 Logical | WARN; mandatory gate PASS | OWL 2 DL; HermiT/JFact 0 unsatisfiable named classes; 91/91 named subclass agreement |
+| E3 UFO/OntoUML | PASS WITH WARNING | 17 executable project-native checks; 0 blocking failures; official OntoUML-tool conformance not claimed |
+| E4 CQs | PASS | 18/18 frozen outcomes: 8 positive, 10 negative |
+| E5 SHACL/data | PASS WITH WARNING | pristine fixture conforms; 8/8 controlled mutations detected; fixture-bounded |
+| E6 Mapping quality | PASS WITH WARNING | 39/39 field decisions explicit; 36/38 in-scope mapped; 2 ambiguous; 0 unmapped |
+| E7 Coverage | PASS WITH WARNING | 74/97 exact; 88/97 exact-or-partial; gaps retained |
+| E8 Held-out | PASS WITH WARNING | 23/51 exact; 38/51 exact-or-partial; 0 first-pass Core identity conflicts |
+| E9 Expert | PROTOCOL FROZEN / AWAITING COLLECTION | 23-item instrument and analysis/governance package frozen; no result claim before real responses |
+| E10 Ontology↔RDB↔KG | PASS WITH WARNING | 14/14 class/cardinality; 10/10 relation/cardinality; 44/44 identity; SQL↔SPARQL 4/4 |
+| E11 Analytics/AI | PASS WITH DEFERRED AI | 17 candidates audited; only AN-08 benchmark-supported; 0 AI novelty/performance claims |
+| E12 Resilience | PASS WITH WARNING | 5/5 controlled scenario outcomes; 5/5 provenance; representational claim only |
+| E13 Reproducibility | PASS WITH WARNING | clean rebuild 54/54 checks; W5/W6 deterministic fingerprints reproduced; computable W7 evidence regenerated |
 
-### E2 — Logical and multi-reasoner
-OWL 2 DL PASS; HermiT/JFact complete with 0 unsatisfiable named classes and exact agreement on 91 named subclass pairs; bounded datatype compatibility warning retained.
+## E13 reproducibility anchor
+Final run: `32566080703` — SUCCESS.  
+Artifact: `9474119730`.  
+Digest: `sha256:c5de10f0d4277d2c2b3b7bca681f75b56a658742b3c010f9bc06c71c56ebe508`.
 
-### E3 — UFO/OntoUML patterns
-Project-native executable review PASS WITH WARNING; 17 checks, 0 blocking failures, 87/87 stereotype agreement, 8/8 protected distinctions. Official OntoUML-tool conformance is not claimed.
+Frozen fingerprints reproduced:
+- W5 ontology: `59ef47eeed732290736e60bfa1c6bf43a12d15df2f50cff931badb5938cc954a`
+- W6 reference KG: `6f93a00c2fa9a853e44db80b547d69f8033719948a03cf09b2b175dff5b40825`
 
-### E4 — Competency questions
-18/18 frozen CQs PASS: 8 positive and 10 negative. Negative CQs remain open-world-bounded regression/consistency checks.
+Report: `v2/research/w7/e13-reproducibility-independent-rebuild.md`.
 
-### E5 — SHACL and data conformance
-Mandatory fixture gate PASS; family interpretation PASS WITH WARNING.
-- W5 SHACL: zero findings on pristine fixture;
-- W7-E5 integrity SHACL: zero findings;
-- combined profile: zero findings;
-- 8/8 controlled mutations detected;
-- provenance/geography/identifier/evidence completeness is complete on eligible fixture nodes;
-- only 3/11 W5 NodeShapes have direct fixture focus nodes, so unpopulated domain shapes remain empirically unexercised;
-- full real and held-out data conformance not executed in E5.
+## Expert-evidence boundary
+E9 freeze anchor: `7eb6be02b0acbf77f391813f616ab483d0018b86`.
 
-## Protected held-out boundary
-H1–H3 remain unopened/unused for evaluation until V2-070 executes under the frozen protocol. Any ontology change triggered by held-out evidence is recorded as post-test adaptation and is not counted as initial held-out success.
+Human expert evidence must be collected from real eligible participants and analyzed under the frozen plan. It is not synthesized, reconstructed or generated by CI. Until E9 is completed, Gate F cannot count the expert family as completed; expert-dependent claims must either receive real evidence or be explicitly narrowed/deferred.
+
+## Claim discipline
+- structural/formal PASS does not imply pharmaceutical-domain completeness;
+- fixture conformance does not imply full real-data validity;
+- held-out results are reported with first-pass gaps intact;
+- controlled resilience scenarios do not establish predictive or operational resilience;
+- deferred AI tasks carry no novelty/performance claim;
+- E13 establishes repository-level clean computational reproducibility, not third-party external replication.
 
 ## Main-branch boundary
-All W7 work remains on the V2 research line. `main` is not a target.
+All W7 work remains on the V2 research line. PR #105 targets `v2/research-program`, not `main`, and remains draft/unmerged until Gate F approval.
