@@ -119,7 +119,7 @@ def main() -> int:
             check("7eb6be02b0acbf77f391813f616ab483d0018b86" in FREEZE_RECORD.read_text(encoding="utf-8"), "FREEZE:anchor", "Freeze record retains the pre-collection anchor commit."),
             check("does not modify" in REVIEW_BRIEF.read_text(encoding="utf-8").lower(), "PACKAGE:brief_boundary", "Review brief explicitly states that it does not modify the frozen protocol."),
             check("outside the public repository" in RECRUITMENT_MESSAGE.read_text(encoding="utf-8").lower(), "PACKAGE:privacy", "Recruitment template preserves the public-repository privacy boundary."),
-            check("does not count e9 as completed" in RUNBOOK.read_text(encoding="utf-8").lower(), "PACKAGE:completion_boundary", "Runbook preserves the E9 completion boundary."),
+            check("completion requires real eligible expert responses" in RUNBOOK.read_text(encoding="utf-8").lower(), "PACKAGE:completion_boundary", "Runbook preserves the E9 completion boundary."),
         ])
 
         passed = all(c["passed"] for c in checks)
