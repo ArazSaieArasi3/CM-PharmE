@@ -1,0 +1,65 @@
+schema_version: "1.1"
+template:
+  id: research-manifest
+  version: "1.1.0"
+research:
+  id: R-006
+  title: "CM-PharmE — Pharmaceutical Ecosystem Conceptualization"
+  short_name: "CM-PharmE"
+  primary_program: P2
+  research_line_id: P2-L1
+  research_line: "Pharmaceutical Ecosystem Semantics"
+  cross_program_bridges: [P1, P5]
+  lifecycle_status: "Publication Only"
+  priority: A
+repository:
+  name: "CM-PharmE"
+  url: "https://github.com/ArazSaieArasi3/CM-PharmE"
+  default_branch: main
+  visibility: public
+portfolio_bindings:
+  publications: [PUB-016, PUB-004, PUB-005]
+  artifacts: [ART-007, ART-008]
+  products: []
+methodology:
+  portfolio:
+    repository: "https://github.com/ArazSaieArasi3/araz-research-portfolio"
+    manifest_contract: "1.1"
+  ogcm_rf:
+    enabled: true
+    framework_ref: "commit:cd7e1ba5381716a92419991462bc440fb4768386"
+    implementation_profile: ".research/ogcm-rf-profile.yaml"
+  methods:
+    - "PRISMA-guided evidence review"
+    - "Thematic synthesis"
+    - "Business-architecture-informed conceptualization"
+    - "UFO/OntoUML modeling"
+    - "Layered ontology/model evaluation"
+execution:
+  current_wave: "Journal review / publication-repository synchronization"
+  current_workstream: "Maintain v1.0.0 semantic baseline while journal manuscript remains under review; v2 is a future extension stream"
+  next_gate:
+    name: "Publication/revision decision gate"
+    criteria: "Editorial/reviewer outcome is known; manuscript and repository evidence remain synchronized; no semantic version change is made without actual semantic change."
+  next_action: "Preserve exact PUB-004 ↔ v1.0.0/evaluation binding and defer v2 semantic changes to an explicit new wave."
+progress:
+  problem_framing: done
+  evidence_base: done
+  literature_review: done
+  conceptualization: done
+  data: partial
+  artifact_design: done
+  implementation: done
+  evaluation: done
+  manuscript: in_progress
+  reproducibility: done
+  publication: in_progress
+verification:
+  last_verified: "2026-08-22"
+  evidence_basis:
+    - "Stable semantic baseline v1.0.0"
+    - "Published conference record PUB-016"
+    - "Distinct journal-under-review record PUB-004"
+    - "Deterministic build, SHACL, CQ and HermiT evidence"
+  coherence_debt: []
+  note: "Journal manuscript evolution does not automatically create a new semantic release."
