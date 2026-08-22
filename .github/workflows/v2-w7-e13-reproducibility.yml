@@ -1,0 +1,284 @@
+name: CM-PharmE 2.0 W7-E13 Reproducibility Audit
+
+on:
+  push:
+    branches:
+      - 'v2/**'
+    paths:
+      - 'tools/v2_evaluation/e13_reproducibility_audit.py'
+      - 'v2/evaluation/protocol/e13-reproducibility-baseline.json'
+      - '.github/workflows/v2-w7-e13-reproducibility.yml'
+  pull_request:
+    branches:
+      - v2/research-program
+    paths:
+      - 'tools/v2_evaluation/e13_reproducibility_audit.py'
+      - 'v2/evaluation/protocol/e13-reproducibility-baseline.json'
+      - '.github/workflows/v2-w7-e13-reproducibility.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  clean-rebuild-audit:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    services:
+      postgres:
+        image: postgis/postgis:16-3.4
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: cmpe
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U postgres -d cmpe"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 12
+    env:
+      DATABASE_URL: postgresql://postgres:postgres@localhost:5432/cmpe
+      ROBOT_VERSION: '1.9.10'
+      ROBOT_SHA256: '16a73c074f3df359a7338a84b4e0788785fe06117f931bb9796e9619ea776105'
+
+    steps:
+      - name: Checkout repository into clean runner
+        uses: actions/checkout@v7.0.1
+
+      - name: Set up pinned Python
+        uses: actions/setup-python@v7.0.0
+        with:
+          python-version: '3.12'
+
+      - name: Set up pinned Java
+        uses: actions/setup-java@v5.7.0
+        with:
+          distribution: temurin
+          java-version: '21'
+
+      - name: Install pinned computational dependencies
+        run: >-
+          python -m pip install --disable-pip-version-check
+          'psycopg[binary]==3.2.9'
+          'rdflib==7.5.0'
+          'pyshacl==0.31.0'
+          'PyYAML==6.0.2'
+
+      - name: Capture clean environment
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p build/w7-e13
+          {
+            echo "github_sha=${GITHUB_SHA}"
+            echo "runner_os=${RUNNER_OS}"
+            echo "runner_arch=${RUNNER_ARCH}"
+            echo "image_os=$(grep '^PRETTY_NAME=' /etc/os-release | cut -d= -f2- | tr -d '"')"
+            python --version
+            python -m pip --version
+          } > build/w7-e13/environment.txt
+          python -m pip freeze | sort > build/w7-e13/pip-freeze.txt
+          java -version 2> build/w7-e13/java-version.txt
+          python - <<'PY' >> build/w7-e13/environment.txt
+          import psycopg
+          with psycopg.connect('postgresql://postgres:postgres@localhost:5432/cmpe') as con:
+              with con.cursor() as cur:
+                  cur.execute('SELECT version()')
+                  print('postgres=' + cur.fetchone()[0])
+                  cur.execute('SELECT postgis_full_version()')
+                  print('postgis=' + cur.fetchone()[0])
+          PY
+          cp build/w7-e13/environment.txt build/w7-e13/postgres-version.txt
+
+      - name: Download and checksum ROBOT
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p build/w7-e13/robot
+          curl --fail --location --silent --show-error \
+            "https://github.com/ontodev/robot/releases/download/v${ROBOT_VERSION}/robot.jar" \
+            --output build/w7-e13/robot/robot.jar
+          echo "${ROBOT_SHA256}  build/w7-e13/robot/robot.jar" | sha256sum --check --strict
+          java -jar build/w7-e13/robot/robot.jar --version | tee build/w7-e13/robot/robot-version.txt
+
+      - name: Rebuild W5 formal ontology twice
+        run: |
+          set -euo pipefail
+          python tools/v2_ontology/build_validate.py --output-root build/w7-e13/formal-a --require-shacl
+          python tools/v2_ontology/build_validate.py --output-root build/w7-e13/formal-b --require-shacl
+          cmp --silent build/w7-e13/formal-a/distributions/cm-pharme-v2.nt build/w7-e13/formal-b/distributions/cm-pharme-v2.nt
+          cmp --silent build/w7-e13/formal-a/manifest.json build/w7-e13/formal-b/manifest.json
+
+      - name: Regenerate W7-E2 multi-reasoner evidence
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p build/w7-e13/e2
+          java -jar build/w7-e13/robot/robot.jar validate-profile \
+            --profile DL \
+            --input build/w7-e13/formal-a/distributions/cm-pharme-v2.owl \
+            --output build/w7-e13/e2/owl2-dl-profile.txt
+          java -jar build/w7-e13/robot/robot.jar reason \
+            --reasoner hermit \
+            --input build/w7-e13/formal-a/distributions/cm-pharme-v2.owl \
+            --dump-unsatisfiable build/w7-e13/e2/hermit-unsatisfiable.owl \
+            --output build/w7-e13/e2/hermit-reasoned.owl \
+            2>&1 | tee build/w7-e13/e2/hermit.log
+          java -jar build/w7-e13/robot/robot.jar reason \
+            --reasoner jfact \
+            --input build/w7-e13/formal-a/distributions/cm-pharme-v2.owl \
+            --dump-unsatisfiable build/w7-e13/e2/jfact-unsatisfiable.owl \
+            --output build/w7-e13/e2/jfact-reasoned.owl \
+            2>&1 | tee build/w7-e13/e2/jfact.log
+          python tools/v2_evaluation/e2_compare_reasoners.py \
+            --asserted build/w7-e13/formal-a/distributions/cm-pharme-v2.owl \
+            --hermit build/w7-e13/e2/hermit-reasoned.owl \
+            --jfact build/w7-e13/e2/jfact-reasoned.owl \
+            --hermit-unsat build/w7-e13/e2/hermit-unsatisfiable.owl \
+            --jfact-unsat build/w7-e13/e2/jfact-unsatisfiable.owl \
+            --hermit-log build/w7-e13/e2/hermit.log \
+            --jfact-log build/w7-e13/e2/jfact.log \
+            --output build/w7-e13/e2/e2-logical-report.json
+
+      - name: Fresh W6 PostgreSQL/PostGIS bootstrap
+        run: >-
+          python tools/v2_data/bootstrap_ingest.py
+          --reset
+          --report build/w7-e13/w6/ingest-report.json
+
+      - name: Export W6 KG twice and verify determinism
+        shell: bash
+        run: |
+          set -euo pipefail
+          python tools/v2_data/export_kg.py \
+            --output build/w7-e13/kg-a/cm-pharme-v2-fixture-kg.ttl \
+            --manifest build/w7-e13/kg-a/kg-manifest.json
+          python tools/v2_data/export_kg.py \
+            --output build/w7-e13/kg-b/cm-pharme-v2-fixture-kg.ttl \
+            --manifest build/w7-e13/kg-b/kg-manifest.json
+          cmp --silent build/w7-e13/kg-a/cm-pharme-v2-fixture-kg.nt build/w7-e13/kg-b/cm-pharme-v2-fixture-kg.nt
+          cmp --silent build/w7-e13/kg-a/kg-manifest.json build/w7-e13/kg-b/kg-manifest.json
+
+      - name: Regenerate W6 validation and SQL-SPARQL evidence
+        run: |
+          set -euo pipefail
+          python tools/v2_data/validate_w6.py \
+            --kg build/w7-e13/kg-a/cm-pharme-v2-fixture-kg.ttl \
+            --report build/w7-e13/w6/validation-report.json
+          python tools/v2_data/compare_sql_sparql.py \
+            --kg build/w7-e13/kg-a/cm-pharme-v2-fixture-kg.ttl \
+            --report build/w7-e13/w6/sql-sparql-equivalence.json
+
+      - name: Regenerate W7-E1 structural evidence
+        run: >-
+          python tools/v2_evaluation/structural_quality.py
+          --output build/w7-e13/e1/structural-quality.json
+
+      - name: Regenerate W7-E3 OntoUML pattern evidence
+        run: >-
+          python tools/v2_evaluation/e3_ontouml_patterns.py
+          --output build/w7-e13/e3/e3-ontouml-pattern-report.json
+
+      - name: Regenerate W7-E4 competency-question evidence
+        run: >-
+          python tools/v2_evaluation/e4_run_cqs.py
+          --registry v2/evaluation/protocol/e4-competency-questions.json
+          --kg build/w7-e13/kg-a/cm-pharme-v2-fixture-kg.ttl
+          --ontology build/w7-e13/formal-a/distributions/cm-pharme-v2.ttl
+          --output-json build/w7-e13/e4/e4-cq-results.json
+          --output-md build/w7-e13/e4/e4-cq-summary.md
+
+      - name: Regenerate W7-E5 SHACL/data evidence
+        run: >-
+          python tools/v2_evaluation/e5_shacl_conformance.py
+          --kg build/w7-e13/kg-a/cm-pharme-v2-fixture-kg.ttl
+          --ontology build/w7-e13/formal-a/distributions/cm-pharme-v2.ttl
+          --w5-shapes v2/ontology/shapes/cm-pharme-v2.shacl.ttl
+          --e5-shapes v2/evaluation/protocol/e5-data-integrity-shapes.ttl
+          --mutations v2/evaluation/protocol/e5-controlled-mutations.json
+          --output build/w7-e13/e5/e5-conformance-results.json
+          --summary build/w7-e13/e5/e5-conformance-summary.md
+
+      - name: Regenerate W7-E6 mapping evidence
+        run: >-
+          python tools/v2_evaluation/e6_mapping_quality.py
+          --manifest v2/data/sources/source-manifest.json
+          --registry v2/data/mappings/source-field-ontology-mapping.csv
+          --coverage-index v2/data/mappings/source-mapping-coverage.csv
+          --rules v2/evaluation/protocol/e6-mapping-quality-rules.json
+          --ontology build/w7-e13/formal-a/distributions/cm-pharme-v2.ttl
+          --output build/w7-e13/e6/e6-mapping-quality.json
+          --summary build/w7-e13/e6/e6-mapping-quality.md
+
+      - name: Regenerate W7-E7 coverage evidence
+        run: >-
+          python tools/v2_evaluation/e7_coverage.py
+          --registry v2/evaluation/protocol/e7-source-semantic-coverage.csv
+          --rules v2/evaluation/protocol/e7-coverage-rules.json
+          --ontology build/w7-e13/formal-a/distributions/cm-pharme-v2.ttl
+          --conceptual-model v2/ontouml/cm-pharme-v2.conceptual-model.json
+          --migration-matrix v2/research/w3/v1-v2-migration-matrix.md
+          --output build/w7-e13/e7/e7-coverage.json
+          --summary build/w7-e13/e7/e7-coverage.md
+
+      - name: Regenerate W7-E8 held-out report from frozen first-pass registries
+        run: >-
+          python tools/v2_evaluation/e8_heldout_generalizability.py
+          --requirements v2/evaluation/protocol/e8-heldout-requirements.csv
+          --mapping v2/evaluation/results/e8-heldout-first-pass-mapping.csv
+          --cqs v2/evaluation/protocol/e8-heldout-cqs.csv
+          --cq-results v2/evaluation/results/e8-heldout-cq-results.csv
+          --ontology-modules v2/ontology/source/modules
+          --output build/w7-e13/e8/e8-generalizability.json
+          --summary build/w7-e13/e8/e8-generalizability.md
+
+      - name: Regenerate W7-E10 cross-representation consistency
+        run: >-
+          python tools/v2_evaluation/e10_representation_consistency.py
+          --kg build/w7-e13/kg-a/cm-pharme-v2-fixture-kg.ttl
+          --sql-sparql-report build/w7-e13/w6/sql-sparql-equivalence.json
+          --output build/w7-e13/e10/e10-semantic-consistency.json
+          --summary build/w7-e13/e10/e10-semantic-consistency.md
+
+      - name: Regenerate W7-E11 analytics/AI evidence gate
+        run: >-
+          python tools/v2_evaluation/e11_analytics_ai_gate.py
+          --sql-sparql-report build/w7-e13/w6/sql-sparql-equivalence.json
+          --output build/w7-e13/e11/e11-analytics-ai-evaluation.json
+          --summary build/w7-e13/e11/e11-analytics-ai-evaluation.md
+
+      - name: Regenerate W7-E12 resilience scenarios
+        run: >-
+          python tools/v2_evaluation/e12_resilience_scenarios.py
+          --registry v2/evaluation/protocol/e12-resilience-scenario-registry.json
+          --scenarios v2/evaluation/protocol/e12-resilience-scenarios.ttl
+          --output build/w7-e13/e12/e12-resilience-evaluation.json
+          --summary build/w7-e13/e12/e12-resilience-evaluation.md
+
+      - name: Execute E13 audit and checksum manifest
+        run: >-
+          python tools/v2_evaluation/e13_reproducibility_audit.py
+          --output build/w7-e13/e13-reproducibility-audit.json
+          --summary build/w7-e13/e13-reproducibility-audit.md
+
+      - name: Publish E13 summary
+        if: always()
+        run: |
+          if [ -f build/w7-e13/e13-reproducibility-audit.md ]; then
+            cat build/w7-e13/e13-reproducibility-audit.md >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo 'E13 audit report unavailable because the rebuild failed before aggregation.' >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Upload E13 clean-rebuild evidence
+        if: always()
+        uses: actions/upload-artifact@v7.0.1
+        with:
+          name: cm-pharme-v2-w7-e13-reproducibility-evidence
+          path: |
+            build/w7-e13/
+            v2/evaluation/protocol/e13-reproducibility-baseline.json
+          if-no-files-found: warn
+          retention-days: 30
