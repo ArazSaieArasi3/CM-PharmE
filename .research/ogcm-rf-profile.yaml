@@ -1,0 +1,64 @@
+profile_schema_version: "1.0"
+implementation:
+  research_id: R-006
+  repository: "ArazSaieArasi3/CM-PharmE"
+  profile_status: active
+framework:
+  name: OGCM-RF
+  framework_ref: "commit:cd7e1ba5381716a92419991462bc440fb4768386"
+  conformance_level: not_assessed
+semantic_scope:
+  semantic_source_of_truth: "ontology/source/modules/ plus governed model/registry documentation"
+  core_boundary: "CM-PharmE v1.0.0 five-domain semantic foundation"
+  extensions:
+    - "future v2 research stream"
+  historical_or_superseded:
+    - "historical bundled OWL export preserved for provenance"
+modeling:
+  foundational_ontology: [UFO]
+  conceptual_modeling_language: [OntoUML]
+  ontology_languages: [OWL, RDF, Turtle, JSON-LD, TriG, N-Quads, Manchester, Functional]
+  constraint_languages: [SHACL]
+  canonical_serialization: "Modular Turtle source"
+identity_and_release:
+  ontology_iri: ""
+  persistent_iri_status: "repository-governed; no unsupported public persistent-IRI claim"
+  current_semantic_release: "v1.0.0"
+  development_state: "Engineering/evaluation/manuscript synchronization on main without semantic-version change"
+  release_manifest: "releases/v1.0.0/"
+traceability:
+  concept_registry: "docs/concepts/"
+  relation_registry: "docs/relations/"
+  domain_or_module_registry: "five-domain model + ontology/source/modules/"
+  competency_questions: "evaluation/ and executable query regression artifacts"
+  evidence_provenance: "docs/methodology/ + evaluation/evidence/ + publication traceability"
+  mappings: "mappings/ and data/evaluation mappings where applicable"
+validation_and_evaluation:
+  selected_layers: [E1, E2, E3, E4, E5, E6, E7, E8, E9]
+  reasoning: "ROBOT + HermiT PASS for current axiom set"
+  shacl_or_constraints: "574-triple SHACL graph; 76 NodeShapes + 76 PropertyShapes"
+  cq_regression: "8/8 positive executable CQs; 4/4 negative regression CQs"
+  comparative_or_expert: "Scenario/comparative and bounded expert/anti-pattern evidence; limitations retained"
+  reproducibility: "Deterministic byte-identical build requirement and multi-format graph-equivalence checks"
+publication_bindings:
+  - publication_id: PUB-016
+    semantic_release: "v1.0.0 historical conceptual foundation"
+    evaluation_package: "publications/ieee-2025/"
+    status: historical
+  - publication_id: PUB-004
+    semantic_release: "v1.0.0"
+    evaluation_package: "evaluation/ and docs/evaluations/"
+    status: development
+  - publication_id: PUB-005
+    semantic_release: "future v2 — not yet declared"
+    evaluation_package: ""
+    status: planned
+portfolio_integration:
+  manifest: ".research/manifest.yaml"
+adoption:
+  deviations: []
+  deferred_capabilities:
+    - "Formal OGCM-RF conformance assessment"
+    - "v2 semantic release decision"
+  last_reviewed: "2026-08-22"
+  notes: "Publication bindings distinguish conference history, current journal manuscript and future v2 research."
