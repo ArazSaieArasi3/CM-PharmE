@@ -1,0 +1,61 @@
+name: CM-PharmE 2.0 W7-E12 Resilience Scenarios
+
+on:
+  pull_request:
+    branches: [v2/research-program]
+    paths:
+      - 'v2/evaluation/protocol/e12-resilience-scenario-registry.json'
+      - 'v2/evaluation/protocol/e12-resilience-scenarios.ttl'
+      - 'v2/ontology/source/modules/**'
+      - 'tools/v2_evaluation/e12_resilience_scenarios.py'
+      - '.github/workflows/v2-w7-e12-resilience.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  w7-e12-resilience:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7.0.1
+
+      - name: Set up Python
+        uses: actions/setup-python@v7.0.0
+        with:
+          python-version: '3.12'
+
+      - name: Install pinned evaluation dependency
+        run: python -m pip install --disable-pip-version-check 'rdflib==7.5.0'
+
+      - name: Execute frozen resilience scenarios
+        run: |
+          python tools/v2_evaluation/e12_resilience_scenarios.py \
+            --registry v2/evaluation/protocol/e12-resilience-scenario-registry.json \
+            --scenarios v2/evaluation/protocol/e12-resilience-scenarios.ttl \
+            --output build/w7-e12/e12-resilience-evaluation.json \
+            --summary build/w7-e12/e12-resilience-evaluation.md
+
+      - name: Record E12 summary
+        if: always()
+        shell: bash
+        run: |
+          if [ -f build/w7-e12/e12-resilience-evaluation.md ]; then
+            cat build/w7-e12/e12-resilience-evaluation.md >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo 'W7-E12 report unavailable because execution failed before summary creation.' >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Upload W7-E12 evidence
+        if: always()
+        uses: actions/upload-artifact@v7.0.1
+        with:
+          name: cm-pharme-v2-w7-e12-resilience-evidence
+          path: |
+            build/w7-e12/e12-resilience-evaluation.json
+            build/w7-e12/e12-resilience-evaluation.md
+            v2/evaluation/protocol/e12-resilience-scenario-registry.json
+            v2/evaluation/protocol/e12-resilience-scenarios.ttl
+          if-no-files-found: warn
+          retention-days: 30
