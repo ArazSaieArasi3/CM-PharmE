@@ -1,0 +1,115 @@
+name: CM-PharmE 2.0 W8 Actor Facility Map
+
+on:
+  pull_request:
+    branches:
+      - v2/research-program
+    paths:
+      - 'v2/research/w8/actor-facility-*'
+      - 'v2/app/observatory/**'
+      - 'tools/v2_w8/**'
+      - '.github/workflows/v2-w8-actor-facility-map.yml'
+  push:
+    branches:
+      - 'v2/w8-*'
+    paths:
+      - 'v2/research/w8/actor-facility-*'
+      - 'v2/app/observatory/**'
+      - 'tools/v2_w8/**'
+      - '.github/workflows/v2-w8-actor-facility-map.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  actor-facility-map:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    services:
+      postgres:
+        image: postgis/postgis:16-3.4
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: cmpe
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U postgres -d cmpe"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+    env:
+      DATABASE_URL: postgresql://postgres:postgres@localhost:5432/cmpe
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7.0.1
+
+      - name: Set up Python
+        uses: actions/setup-python@v7.0.0
+        with:
+          python-version: '3.12'
+
+      - name: Install pinned dependencies
+        run: >-
+          python -m pip install --disable-pip-version-check
+          'psycopg[binary]==3.2.9'
+
+      - name: Bootstrap W6 PostgreSQL/PostGIS baseline
+        run: >-
+          python tools/v2_data/bootstrap_ingest.py
+          --reset
+          --report build/w8/w6-bootstrap-report.json
+
+      - name: Validate V2-077 mapping and T01/T02 fixtures
+        run: python tools/v2_w8/validate_actor_facility_map.py
+
+      - name: Exercise read-only CLI T01
+        run: >-
+          python tools/v2_w8/actor_facility_map.py lookup facility:w8-controlled:alpha --kind facility
+          > build/w8/t01-entity-lookup.json
+
+      - name: Exercise read-only CLI T02
+        run: >-
+          python tools/v2_w8/actor_facility_map.py bbox 5 5 15 15
+          > build/w8/t02-spatial-query.json
+
+      - name: Record bounded evidence summary
+        if: always()
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p = Path('build/w8/actor-facility-validation.json')
+          report = json.loads(p.read_text()) if p.exists() else {}
+          lines = [
+              '## CM-PharmE V2-077 actor/facility map',
+              '',
+              f"- Validation: {report.get('status','unavailable')}",
+              f"- Fixture results: {report.get('fixtures','unavailable')}",
+              '- Evidence scope: controlled fixture + W6 governed representation mechanics',
+              '- Geospatial completeness claim: false',
+              '- Usability/effectiveness claim: false',
+              '- Regulatory jurisdiction inferred from geometry: false',
+          ]
+          Path('build/w8/v2-077-summary.md').write_text('\n'.join(lines) + '\n')
+          print('\n'.join(lines))
+          PY
+          cat build/w8/v2-077-summary.md >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload V2-077 evidence
+        if: always()
+        uses: actions/upload-artifact@v7.0.1
+        with:
+          name: cm-pharme-v2-v2-077-evidence
+          path: |
+            build/w8/w6-bootstrap-report.json
+            build/w8/actor-facility-validation.json
+            build/w8/t01-entity-lookup.json
+            build/w8/t02-spatial-query.json
+            build/w8/v2-077-summary.md
+          if-no-files-found: warn
+          retention-days: 30
