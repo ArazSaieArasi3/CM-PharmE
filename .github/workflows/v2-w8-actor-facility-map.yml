@@ -71,10 +71,26 @@ jobs:
           python tools/v2_w8/actor_facility_map.py lookup facility:w8-controlled:alpha --kind facility
           > build/w8/t01-entity-lookup.json
 
-      - name: Exercise read-only CLI T02
+      - name: Exercise read-only CLI T02 and render bounded article map
         run: >-
           python tools/v2_w8/actor_facility_map.py bbox 5 5 15 15
+          --html-output build/w8/actor-facility-map.html
           > build/w8/t02-spatial-query.json
+
+      - name: Validate article-facing render boundaries
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('build/w8/actor-facility-map.html')
+          text = p.read_text(encoding='utf-8')
+          assert 'facility:w8-controlled:alpha' in text
+          assert 'geospatial completeness' in text.lower()
+          assert 'regulatory-jurisdiction inference' in text.lower()
+          assert 'production deployment' in text.lower()
+          assert 'facility:w8-controlled:beta' not in text
+          print('Bounded HTML render: PASS')
+          PY
 
       - name: Record bounded evidence summary
         if: always()
@@ -91,6 +107,7 @@ jobs:
               f"- Validation: {report.get('status','unavailable')}",
               f"- Fixture results: {report.get('fixtures','unavailable')}",
               '- Evidence scope: controlled fixture + W6 governed representation mechanics',
+              '- Article-facing bounded HTML map generated: true',
               '- Geospatial completeness claim: false',
               '- Usability/effectiveness claim: false',
               '- Regulatory jurisdiction inferred from geometry: false',
@@ -110,6 +127,7 @@ jobs:
             build/w8/actor-facility-validation.json
             build/w8/t01-entity-lookup.json
             build/w8/t02-spatial-query.json
+            build/w8/actor-facility-map.html
             build/w8/v2-077-summary.md
           if-no-files-found: warn
           retention-days: 30
