@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "evidence_family": "W7-E6",
+  "evaluated_sources": [
+    "P1-NHIF-OUTPATIENT",
+    "P2-NHIF-INPATIENT"
+  ],
+  "allowed_statuses": [
+    "direct",
+    "derived",
+    "bounded",
+    "ambiguous",
+    "unmapped",
+    "out_of_scope"
+  ],
+  "mapped_statuses": [
+    "direct",
+    "derived",
+    "bounded"
+  ],
+  "allowed_semantic_loss": [
+    "none",
+    "low",
+    "medium",
+    "high"
+  ],
+  "mandatory_rules": {
+    "all_required_fields_classified": true,
+    "no_duplicate_field_decisions_within_source": true,
+    "critical_field_may_not_be_unmapped": true,
+    "in_scope_field_requires_semantic_interpretation": true,
+    "in_scope_nonunmapped_field_requires_ontology_target": true,
+    "in_scope_field_requires_rdb_target": true,
+    "every_field_requires_provenance_rule": true,
+    "every_field_requires_rationale": true,
+    "cmpe_targets_must_resolve_in_frozen_ontology": true,
+    "manual_audit_sample_must_pass": true
+  },
+  "manual_audit_sample": [
+    "P1-F03",
+    "P1-F04",
+    "P1-F05",
+    "P1-F07",
+    "P1-F12",
+    "P1-F16",
+    "P2-F03",
+    "P2-F06",
+    "P2-F09",
+    "P2-F14",
+    "P2-F17",
+    "P2-F18"
+  ],
+  "interpretation": {
+    "mapped_field_proportion": "Descriptive proportion of in-scope fields classified direct, derived, or bounded. Ambiguous and unmapped fields remain visible and are excluded from the mapped numerator.",
+    "critical_fields": "A critical field may be bounded if the claim is correspondingly bounded, but it may not remain silently unmapped.",
+    "manual_audit": "Author-side semantic traceability review, not independent expert validation.",
+    "source_scope": "Only P1/P2 have frozen field-level schemas and are quantified in E6. Contract-only authoritative sources are reported separately and are not assigned invented field-coverage percentages.",
+    "completeness_boundary": "Mapping coverage is not ontology/domain completeness."
+  },
+  "held_out_used": false
+}

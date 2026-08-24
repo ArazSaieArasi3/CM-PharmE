@@ -1,0 +1,96 @@
+@prefix cmpe: <https://w3id.org/cm-pharme/2.0/> .
+@prefix ex: <https://w3id.org/cm-pharme/2.0/evaluation/e12/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Controlled W7-E12 evaluation ABox. These are synthetic scenario instances,
+# not claims about real organizations, products, shortages or outcomes.
+
+ex:scenarioDataset a cmpe:Dataset ; rdfs:label "W7-E12 controlled resilience scenario dataset"@en .
+ex:scenarioRelease a cmpe:DatasetRelease ; rdfs:label "W7-E12 frozen scenario release"@en .
+ex:scenarioDataset cmpe:hasDatasetRelease ex:scenarioRelease .
+
+# Shared controlled classification entry.
+ex:criticalEntry a cmpe:ClassificationEntry ; rdfs:label "Controlled critical-medicine entry"@en .
+
+# RES-01 — critical medicine single-provider disruption.
+ex:res01_product a cmpe:MedicinalProduct ; rdfs:label "RES-01 controlled product"@en .
+ex:res01_provider a cmpe:Organization ; rdfs:label "RES-01 controlled provider"@en .
+ex:res01_jurisdiction a cmpe:RegulatoryJurisdiction ; rdfs:label "RES-01 controlled jurisdiction"@en .
+ex:res01_critical a cmpe:CriticalMedicineClassification ;
+  cmpe:contextClassificationProduct ex:res01_product ;
+  cmpe:contextClassificationEntry ex:criticalEntry ;
+  cmpe:contextClassificationJurisdiction ex:res01_jurisdiction .
+ex:res01_dependency a cmpe:SupplyDependency ;
+  cmpe:dependencyDependent ex:res01_product ;
+  cmpe:dependencyProvider ex:res01_provider .
+ex:res01_disruption a cmpe:DisruptionEvent ; cmpe:disruptionAffects ex:res01_provider .
+ex:res01_shortage a cmpe:MedicineShortageSituation ;
+  cmpe:shortageProduct ex:res01_product ;
+  cmpe:shortageJurisdiction ex:res01_jurisdiction .
+ex:res01_record a cmpe:SourceRecord ; rdfs:label "Controlled evidence record RES-01"@en .
+ex:res01_assertion a cmpe:Assertion ; rdfs:label "Controlled scenario assertion RES-01"@en .
+ex:res01_support a cmpe:EvidenceSupport ;
+  cmpe:evidenceRecord ex:res01_record ;
+  cmpe:evidenceAssertion ex:res01_assertion .
+ex:scenarioRelease cmpe:containsSourceRecord ex:res01_record .
+
+# RES-02 — explicit alternative under disruption.
+ex:res02_product a cmpe:MedicinalProduct ; rdfs:label "RES-02 disrupted product"@en .
+ex:res02_alternative a cmpe:MedicinalProduct ; rdfs:label "RES-02 alternative product"@en .
+ex:res02_provider a cmpe:Organization ; rdfs:label "RES-02 controlled provider"@en .
+ex:res02_dependency a cmpe:SupplyDependency ;
+  cmpe:dependencyDependent ex:res02_product ;
+  cmpe:dependencyProvider ex:res02_provider .
+ex:res02_disruption a cmpe:DisruptionEvent ; cmpe:disruptionAffects ex:res02_provider .
+ex:res02_alternative_assignment a cmpe:AlternativeMedicineAssignment ;
+  cmpe:alternativeForProduct ex:res02_product ;
+  cmpe:alternativeProduct ex:res02_alternative .
+ex:res02_record a cmpe:SourceRecord ; rdfs:label "Controlled evidence record RES-02"@en .
+ex:res02_assertion a cmpe:Assertion ; rdfs:label "Controlled scenario assertion RES-02"@en .
+ex:res02_support a cmpe:EvidenceSupport ;
+  cmpe:evidenceRecord ex:res02_record ;
+  cmpe:evidenceAssertion ex:res02_assertion .
+ex:scenarioRelease cmpe:containsSourceRecord ex:res02_record .
+
+# RES-03 — shortage jurisdiction distinct from physical geography.
+ex:res03_product a cmpe:MedicinalProduct ; rdfs:label "RES-03 controlled product"@en .
+ex:res03_jurisdiction a cmpe:RegulatoryJurisdiction ; rdfs:label "RES-03 regulatory jurisdiction"@en .
+ex:res03_region a cmpe:GeographicFeature ; rdfs:label "RES-03 physical region"@en .
+ex:res03_facility a cmpe:Facility ; rdfs:label "RES-03 controlled facility"@en ; cmpe:locatedIn ex:res03_region .
+ex:res03_shortage a cmpe:MedicineShortageSituation ;
+  cmpe:shortageProduct ex:res03_product ;
+  cmpe:shortageJurisdiction ex:res03_jurisdiction .
+ex:res03_record a cmpe:SourceRecord ; rdfs:label "Controlled evidence record RES-03"@en .
+ex:res03_assertion a cmpe:Assertion ; rdfs:label "Controlled scenario assertion RES-03"@en .
+ex:res03_support a cmpe:EvidenceSupport ;
+  cmpe:evidenceRecord ex:res03_record ;
+  cmpe:evidenceAssertion ex:res03_assertion .
+ex:scenarioRelease cmpe:containsSourceRecord ex:res03_record .
+
+# RES-04 — treatment is representable; explicit completed recovery is intentionally absent.
+ex:res04_vulnerability a cmpe:Vulnerability ; rdfs:label "RES-04 controlled vulnerability"@en .
+ex:res04_plan a cmpe:RiskTreatmentPlan ; rdfs:label "RES-04 controlled treatment plan"@en .
+ex:res04_activity a cmpe:RiskTreatmentActivity ;
+  rdfs:label "RES-04 controlled treatment activity"@en ;
+  cmpe:riskTreatmentAddresses ex:res04_vulnerability .
+ex:res04_record a cmpe:SourceRecord ; rdfs:label "Controlled evidence record RES-04"@en .
+ex:res04_assertion a cmpe:Assertion ; rdfs:label "Controlled scenario assertion RES-04"@en .
+ex:res04_support a cmpe:EvidenceSupport ;
+  cmpe:evidenceRecord ex:res04_record ;
+  cmpe:evidenceAssertion ex:res04_assertion .
+ex:scenarioRelease cmpe:containsSourceRecord ex:res04_record .
+
+# RES-05 reuses the RES-01 pattern for a controlled missing-evidence mutation.
+ex:res05_product a cmpe:MedicinalProduct ; rdfs:label "RES-05 controlled product"@en .
+ex:res05_provider a cmpe:Organization ; rdfs:label "RES-05 controlled provider"@en .
+ex:res05_dependency a cmpe:SupplyDependency ;
+  cmpe:dependencyDependent ex:res05_product ;
+  cmpe:dependencyProvider ex:res05_provider .
+ex:res05_disruption a cmpe:DisruptionEvent ; cmpe:disruptionAffects ex:res05_provider .
+ex:res05_record a cmpe:SourceRecord ; rdfs:label "Controlled evidence record RES-05"@en .
+ex:res05_assertion a cmpe:Assertion ; rdfs:label "Controlled scenario assertion RES-05"@en .
+ex:res05_support a cmpe:EvidenceSupport ;
+  cmpe:evidenceRecord ex:res05_record ;
+  cmpe:evidenceAssertion ex:res05_assertion .
+ex:scenarioRelease cmpe:containsSourceRecord ex:res05_record .

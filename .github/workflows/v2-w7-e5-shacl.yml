@@ -1,0 +1,122 @@
+name: CM-PharmE 2.0 W7-E5 SHACL Data Conformance
+
+on:
+  pull_request:
+    branches:
+      - v2/research-program
+    paths:
+      - 'v2/evaluation/protocol/e5-data-integrity-shapes.ttl'
+      - 'v2/evaluation/protocol/e5-controlled-mutations.json'
+      - 'tools/v2_evaluation/e5_shacl_conformance.py'
+      - 'tools/v2_data/**'
+      - 'tools/v2_ontology/**'
+      - 'v2/data/**'
+      - 'v2/ontology/**'
+      - '.github/workflows/v2-w7-e5-shacl.yml'
+  push:
+    branches:
+      - 'v2/**'
+    paths:
+      - 'v2/evaluation/protocol/e5-data-integrity-shapes.ttl'
+      - 'v2/evaluation/protocol/e5-controlled-mutations.json'
+      - 'tools/v2_evaluation/e5_shacl_conformance.py'
+      - 'tools/v2_data/**'
+      - 'tools/v2_ontology/**'
+      - 'v2/data/**'
+      - 'v2/ontology/**'
+      - '.github/workflows/v2-w7-e5-shacl.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  w7-e5-shacl:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    services:
+      postgres:
+        image: postgis/postgis:16-3.4
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: cmpe
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U postgres -d cmpe"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+    env:
+      DATABASE_URL: postgresql://postgres:postgres@localhost:5432/cmpe
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7.0.1
+
+      - name: Set up Python
+        uses: actions/setup-python@v7.0.0
+        with:
+          python-version: '3.12'
+
+      - name: Install pinned dependencies
+        run: >-
+          python -m pip install --disable-pip-version-check
+          'psycopg[binary]==3.2.9'
+          'rdflib==7.5.0'
+          'pyshacl==0.31.0'
+          'PyYAML==6.0.2'
+
+      - name: Rebuild frozen asserted ontology
+        run: >-
+          python tools/v2_ontology/build_validate.py
+          --output-root build/w7-e5/asserted
+          --require-shacl
+
+      - name: Bootstrap Gate-E schema-faithful fixture database
+        run: >-
+          python tools/v2_data/bootstrap_ingest.py
+          --reset
+          --report build/w7-e5/ingest-report.json
+
+      - name: Export deterministic fixture KG
+        run: >-
+          python tools/v2_data/export_kg.py
+          --output build/w7-e5/cm-pharme-v2-fixture-kg.ttl
+          --manifest build/w7-e5/kg-manifest.json
+
+      - name: Execute frozen SHACL and data-conformance evaluation
+        run: >-
+          python tools/v2_evaluation/e5_shacl_conformance.py
+          --kg build/w7-e5/cm-pharme-v2-fixture-kg.ttl
+          --ontology build/w7-e5/asserted/distributions/cm-pharme-v2.ttl
+          --w5-shapes v2/ontology/shapes/cm-pharme-v2.shacl.ttl
+          --e5-shapes v2/evaluation/protocol/e5-data-integrity-shapes.ttl
+          --mutations v2/evaluation/protocol/e5-controlled-mutations.json
+          --output build/w7-e5/e5-conformance-results.json
+          --summary build/w7-e5/e5-conformance-summary.md
+
+      - name: Record W7-E5 summary
+        if: always()
+        run: |
+          if [ -f build/w7-e5/e5-conformance-summary.md ]; then
+            cat build/w7-e5/e5-conformance-summary.md >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo 'W7-E5 summary unavailable because execution failed before report creation.' >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Upload W7-E5 evidence
+        if: always()
+        uses: actions/upload-artifact@v7.0.1
+        with:
+          name: cm-pharme-v2-w7-e5-shacl-evidence
+          path: |
+            v2/evaluation/protocol/e5-data-integrity-shapes.ttl
+            v2/evaluation/protocol/e5-controlled-mutations.json
+            build/w7-e5/ingest-report.json
+            build/w7-e5/kg-manifest.json
+            build/w7-e5/e5-conformance-results.json
+            build/w7-e5/e5-conformance-summary.md
+          if-no-files-found: warn
+          retention-days: 30

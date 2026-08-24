@@ -1,0 +1,174 @@
+{
+  "schema_version": 1,
+  "family": "W7-E4",
+  "issue": 93,
+  "support_issue_freeze": 109,
+  "status": "FROZEN_BEFORE_FIRST_EXECUTION",
+  "evaluation_scope": "Gate-E schema-faithful fixture KG plus frozen asserted W5 ontology",
+  "held_out_used": false,
+  "negative_cq_interpretation": "Negative CQs are regression/consistency checks over the frozen asserted ontology and fixture graph. Under OWL open-world semantics, absence of a queried pattern is not interpreted as proof that the pattern is impossible in the domain unless explicit formal axioms support that conclusion.",
+  "competency_questions": [
+    {
+      "id": "CQ-P01",
+      "polarity": "positive",
+      "question": "Which medicinal products are linked to their active pharmaceutical substances?",
+      "graph": "kg",
+      "query_type": "SELECT",
+      "expected": {"row_count": 2},
+      "sparql": "PREFIX cmpe: <https://w3id.org/cm-pharme/2.0/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?product ?productLabel ?substance ?substanceLabel WHERE { ?product a cmpe:MedicinalProduct ; cmpe:hasActiveSubstance ?substance . ?substance a cmpe:PharmaceuticalSubstance . OPTIONAL { ?product rdfs:label ?productLabel } OPTIONAL { ?substance rdfs:label ?substanceLabel } } ORDER BY ?product"
+    },
+    {
+      "id": "CQ-P02",
+      "polarity": "positive",
+      "question": "Which medicinal-product presentations instantiate which medicinal products?",
+      "graph": "kg",
+      "query_type": "SELECT",
+      "expected": {"row_count": 2},
+      "sparql": "PREFIX cmpe: <https://w3id.org/cm-pharme/2.0/> SELECT DISTINCT ?presentation ?product WHERE { ?presentation a cmpe:MedicinalProductPresentation ; cmpe:presentationOf ?product . ?product a cmpe:MedicinalProduct . } ORDER BY ?presentation"
+    },
+    {
+      "id": "CQ-P03",
+      "polarity": "positive",
+      "question": "Which pharmaceutical facilities are linked to physical geography?",
+      "graph": "kg",
+      "query_type": "SELECT",
+      "expected": {"row_count": 2},
+      "sparql": "PREFIX cmpe: <https://w3id.org/cm-pharme/2.0/> SELECT DISTINCT ?facility ?geography WHERE { ?facility a cmpe:Facility ; cmpe:locatedIn ?geography . ?geography a ?geoType . FILTER(?geoType IN (cmpe:GeographicFeature, cmpe:AdministrativeRegion, cmpe:Country)) } ORDER BY ?facility"
+    },
+    {
+      "id": "CQ-P04",
+      "polarity": "positive",
+      "question": "Can provenance be traversed from a dataset through its release to each source record?",
+      "graph": "kg",
+      "query_type": "SELECT",
+      "expected": {"row_count": 7},
+      "sparql": "PREFIX cmpe: <https://w3id.org/cm-pharme/2.0/> SELECT DISTINCT ?dataset ?release ?record WHERE { ?dataset a cmpe:Dataset ; cmpe:hasDatasetRelease ?release . ?release a cmpe:DatasetRelease ; cmpe:containsSourceRecord ?record . ?record a cmpe:SourceRecord . } ORDER BY ?dataset ?record"
+    },
+    {
+      "id": "CQ-P05",
+      "polarity": "positive",
+      "question": "Can cross-source entity matches be represented with explicit confidence and a matched canonical presentation?",
+      "graph": "kg",
+      "query_type": "SELECT",
+      "expected": {"row_count": 2},
+      "sparql": "PREFIX cmpe: <https://w3id.org/cm-pharme/2.0/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?match ?subject ?object ?confidence ?presentation WHERE { ?match a cmpe:EntityMatchAssertion ; cmpe:matchSubject ?subject ; cmpe:matchObject ?object ; cmpe:hasMatchConfidence ?q ; rdfs:seeAlso ?presentation . ?q a cmpe:MatchConfidence ; rdf:value ?confidence . ?presentation a cmpe:MedicinalProductPresentation . } ORDER BY ?match"
+    },
+    {
+      "id": "CQ-P06",
+      "polarity": "positive",
+      "question": "Can medicinal-product presentations be resolved through explicit identifier assignments?",
+      "graph": "kg",
+      "query_type": "SELECT",
+      "expected": {"row_count": 2},
+      "sparql": "PREFIX cmpe: <https://w3id.org/cm-pharme/2.0/> SELECT DISTINCT ?presentation WHERE { ?assignment a cmpe:IdentifierAssignment ; cmpe:identifierEntity ?presentation ; cmpe:identifierScheme ?scheme ; cmpe:identifierLexicalValue ?value . ?presentation a cmpe:MedicinalProductPresentation . } ORDER BY ?presentation"
+    },
+    {
+      "id": "CQ-P07",
+      "polarity": "positive",
+      "question": "Do projected reimbursement/utilisation observations retain subject, time, geography and source-record provenance?",
+      "graph": "kg",
+      "query_type": "SELECT",
+      "expected": {"row_count": 28},
+      "sparql": "PREFIX cmpe: <https://w3id.org/cm-pharme/2.0/> PREFIX dct: <http://purl.org/dc/terms/> PREFIX prov: <http://www.w3.org/ns/prov#> SELECT DISTINCT ?obs ?presentation ?time ?geo ?source WHERE { ?obs a cmpe:ReimbursementUtilisationObservationResult ; cmpe:observationResultAbout ?presentation ; cmpe:validFrom ?time ; dct:spatial ?geo ; prov:wasDerivedFrom ?source . ?presentation a cmpe:MedicinalProductPresentation . ?source a cmpe:SourceRecord . } ORDER BY ?obs"
+    },
+    {
+      "id": "CQ-P08",
+      "polarity": "positive",
+      "question": "Does every evidence-support instance connect a source record to an assertion?",
+      "graph": "kg",
+      "query_type": "SELECT",
+      "expected": {"row_count": 7},
+      "sparql": "PREFIX cmpe: <https://w3id.org/cm-pharme/2.0/> SELECT DISTINCT ?support ?record ?assertion WHERE { ?support a cmpe:EvidenceSupport ; cmpe:evidenceRecord ?record ; cmpe:evidenceAssertion ?assertion . ?record a cmpe:SourceRecord . ?assertion a cmpe:Assertion . } ORDER BY ?support"
+    },
+    {
+      "id": "CQ-N01",
+      "polarity": "negative",
+      "question": "Is Facility asserted or hierarchically modeled as a subclass of Organization?",
+      "graph": "ontology",
+      "query_type": "ASK",
+      "expected": {"boolean": false},
+      "sparql": "PREFIX cmpe: <https://w3id.org/cm-pharme/2.0/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> ASK { cmpe:Facility rdfs:subClassOf+ cmpe:Organization }"
+    },
+    {
+      "id": "CQ-N02",
+      "polarity": "negative",
+      "question": "Is Medicinal Product asserted or hierarchically modeled as a subclass of Pharmaceutical Substance?",
+      "graph": "ontology",
+      "query_type": "ASK",
+      "expected": {"boolean": false},
+      "sparql": "PREFIX cmpe: <https://w3id.org/cm-pharme/2.0/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> ASK { cmpe:MedicinalProduct rdfs:subClassOf+ cmpe:PharmaceuticalSubstance }"
+    },
+    {
+      "id": "CQ-N03",
+      "polarity": "negative",
+      "question": "Is Medicinal Product asserted or hierarchically modeled as a subclass of Medicinal Product Presentation?",
+      "graph": "ontology",
+      "query_type": "ASK",
+      "expected": {"boolean": false},
+      "sparql": "PREFIX cmpe: <https://w3id.org/cm-pharme/2.0/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> ASK { cmpe:MedicinalProduct rdfs:subClassOf+ cmpe:MedicinalProductPresentation }"
+    },
+    {
+      "id": "CQ-N04",
+      "polarity": "negative",
+      "question": "Is Geographic Feature asserted or hierarchically modeled as a subclass of Regulatory Jurisdiction?",
+      "graph": "ontology",
+      "query_type": "ASK",
+      "expected": {"boolean": false},
+      "sparql": "PREFIX cmpe: <https://w3id.org/cm-pharme/2.0/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> ASK { cmpe:GeographicFeature rdfs:subClassOf+ cmpe:RegulatoryJurisdiction }"
+    },
+    {
+      "id": "CQ-N05",
+      "polarity": "negative",
+      "question": "Is Medicine Shortage Situation asserted or hierarchically modeled as a Source Record?",
+      "graph": "ontology",
+      "query_type": "ASK",
+      "expected": {"boolean": false},
+      "sparql": "PREFIX cmpe: <https://w3id.org/cm-pharme/2.0/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> ASK { cmpe:MedicineShortageSituation rdfs:subClassOf+ cmpe:SourceRecord }"
+    },
+    {
+      "id": "CQ-N06",
+      "polarity": "negative",
+      "question": "Is Observation Result asserted or hierarchically modeled as an Observation Activity?",
+      "graph": "ontology",
+      "query_type": "ASK",
+      "expected": {"boolean": false},
+      "sparql": "PREFIX cmpe: <https://w3id.org/cm-pharme/2.0/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> ASK { cmpe:ObservationResult rdfs:subClassOf+ cmpe:ObservationActivity }"
+    },
+    {
+      "id": "CQ-N07",
+      "polarity": "negative",
+      "question": "Is Supply Capacity Observation Result asserted or hierarchically modeled as Supply Capacity itself?",
+      "graph": "ontology",
+      "query_type": "ASK",
+      "expected": {"boolean": false},
+      "sparql": "PREFIX cmpe: <https://w3id.org/cm-pharme/2.0/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> ASK { cmpe:SupplyCapacityObservationResult rdfs:subClassOf+ cmpe:SupplyCapacity }"
+    },
+    {
+      "id": "CQ-N08",
+      "polarity": "negative",
+      "question": "Does any fixture observation result lack source-record provenance?",
+      "graph": "kg",
+      "query_type": "ASK",
+      "expected": {"boolean": false},
+      "sparql": "PREFIX cmpe: <https://w3id.org/cm-pharme/2.0/> PREFIX prov: <http://www.w3.org/ns/prov#> ASK { ?obs a cmpe:ReimbursementUtilisationObservationResult . FILTER NOT EXISTS { ?obs prov:wasDerivedFrom ?source . ?source a cmpe:SourceRecord . } }"
+    },
+    {
+      "id": "CQ-N09",
+      "polarity": "negative",
+      "question": "Does any evidence-support instance fail to connect both a source record and an assertion?",
+      "graph": "kg",
+      "query_type": "ASK",
+      "expected": {"boolean": false},
+      "sparql": "PREFIX cmpe: <https://w3id.org/cm-pharme/2.0/> ASK { ?support a cmpe:EvidenceSupport . FILTER( NOT EXISTS { ?support cmpe:evidenceRecord ?record . ?record a cmpe:SourceRecord . } || NOT EXISTS { ?support cmpe:evidenceAssertion ?assertion . ?assertion a cmpe:Assertion . } ) }"
+    },
+    {
+      "id": "CQ-N10",
+      "polarity": "negative",
+      "question": "Does any identifier assignment in the fixture lack its scheme, entity or lexical value?",
+      "graph": "kg",
+      "query_type": "ASK",
+      "expected": {"boolean": false},
+      "sparql": "PREFIX cmpe: <https://w3id.org/cm-pharme/2.0/> ASK { ?assignment a cmpe:IdentifierAssignment . FILTER( NOT EXISTS { ?assignment cmpe:identifierScheme ?scheme } || NOT EXISTS { ?assignment cmpe:identifierEntity ?entity } || NOT EXISTS { ?assignment cmpe:identifierLexicalValue ?value } ) }"
+    }
+  ]
+}

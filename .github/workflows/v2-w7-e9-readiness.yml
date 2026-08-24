@@ -1,0 +1,67 @@
+name: CM-PharmE 2.0 W7-E9 Collection Readiness
+
+on:
+  pull_request:
+    branches:
+      - v2/research-program
+    paths:
+      - 'v2/evaluation/protocol/e9-*'
+      - 'v2/evaluation/templates/e9-*'
+      - 'v2/evaluation/e9-participant-package/**'
+      - 'tools/v2_evaluation/e9_collection_readiness.py'
+      - '.github/workflows/v2-w7-e9-readiness.yml'
+  push:
+    branches:
+      - 'v2/**'
+    paths:
+      - 'v2/evaluation/protocol/e9-*'
+      - 'v2/evaluation/templates/e9-*'
+      - 'v2/evaluation/e9-participant-package/**'
+      - 'tools/v2_evaluation/e9_collection_readiness.py'
+      - '.github/workflows/v2-w7-e9-readiness.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  e9-readiness:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7.0.1
+
+      - name: Set up Python
+        uses: actions/setup-python@v7.0.0
+        with:
+          python-version: '3.12'
+
+      - name: Validate frozen E9 package and empty collection state
+        run: >-
+          python tools/v2_evaluation/e9_collection_readiness.py
+          --output build/w7-e9/e9-readiness.json
+          --summary build/w7-e9/e9-readiness.md
+
+      - name: Publish readiness summary
+        if: always()
+        shell: bash
+        run: |
+          if [ -f build/w7-e9/e9-readiness.md ]; then
+            cat build/w7-e9/e9-readiness.md >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo 'E9 readiness summary unavailable because validation failed before report creation.' >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Upload E9 readiness evidence
+        if: always()
+        uses: actions/upload-artifact@v7.0.1
+        with:
+          name: cm-pharme-v2-w7-e9-readiness-evidence
+          path: |
+            build/w7-e9/e9-readiness.json
+            build/w7-e9/e9-readiness.md
+            v2/evaluation/e9-participant-package/review-brief.md
+            v2/evaluation/e9-participant-package/recruitment-message.md
+            v2/evaluation/e9-participant-package/collection-runbook.md
+          if-no-files-found: warn
+          retention-days: 30

@@ -1,0 +1,101 @@
+@prefix cmpe: <https://w3id.org/cm-pharme/2.0/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# W7-E5 evaluation-only research-integrity profile.
+# These shapes do not change the frozen W5 ontology or W5 SHACL profile.
+# They operationalize provenance/geography/observation integrity measures
+# already frozen in the W7 evaluation protocol.
+
+cmpe:W7SourceRecordProvenanceShape a sh:NodeShape ;
+  sh:targetClass cmpe:SourceRecord ;
+  sh:property [
+    sh:path dct:identifier ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:severity sh:Violation ;
+  ] ;
+  sh:property [
+    sh:path prov:wasGeneratedBy ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:class cmpe:ProvenanceActivity ;
+    sh:severity sh:Violation ;
+  ] .
+
+cmpe:W7FacilityGeographyShape a sh:NodeShape ;
+  sh:targetClass cmpe:Facility ;
+  sh:property [
+    sh:path cmpe:locatedIn ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Violation ;
+  ] .
+
+cmpe:W7ObservationIntegrityShape a sh:NodeShape ;
+  sh:targetClass cmpe:ReimbursementUtilisationObservationResult ;
+  sh:property [
+    sh:path cmpe:observationResultAbout ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:class cmpe:MedicinalProductPresentation ;
+    sh:severity sh:Violation ;
+  ] ;
+  sh:property [
+    sh:path cmpe:measureNumericValue ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:datatype xsd:decimal ;
+    sh:severity sh:Violation ;
+  ] ;
+  sh:property [
+    sh:path cmpe:validFrom ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:datatype xsd:dateTime ;
+    sh:severity sh:Violation ;
+  ] ;
+  sh:property [
+    sh:path dct:spatial ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Violation ;
+  ] ;
+  sh:property [
+    sh:path prov:wasDerivedFrom ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:class cmpe:SourceRecord ;
+    sh:severity sh:Violation ;
+  ] ;
+  sh:property [
+    sh:path prov:wasGeneratedBy ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:class cmpe:ProvenanceActivity ;
+    sh:severity sh:Violation ;
+  ] .
+
+cmpe:W7DatasetReleaseTraceShape a sh:NodeShape ;
+  sh:targetClass cmpe:DatasetRelease ;
+  sh:property [
+    sh:path cmpe:containsSourceRecord ;
+    sh:minCount 1 ;
+    sh:class cmpe:SourceRecord ;
+    sh:severity sh:Violation ;
+  ] .
+
+cmpe:W7EntityMatchAuditShape a sh:NodeShape ;
+  sh:targetClass cmpe:EntityMatchAssertion ;
+  sh:property [ sh:path cmpe:matchSubject ; sh:minCount 1 ; sh:maxCount 1 ; sh:class cmpe:SourceRecord ; sh:severity sh:Violation ] ;
+  sh:property [ sh:path cmpe:matchObject ; sh:minCount 1 ; sh:maxCount 1 ; sh:class cmpe:SourceRecord ; sh:severity sh:Violation ] ;
+  sh:property [ sh:path cmpe:hasMatchConfidence ; sh:minCount 1 ; sh:maxCount 1 ; sh:class cmpe:MatchConfidence ; sh:severity sh:Violation ] .
+
+cmpe:W7MatchConfidenceValueShape a sh:NodeShape ;
+  sh:targetClass cmpe:MatchConfidence ;
+  sh:property [ sh:path rdf:value ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:decimal ; sh:minInclusive 0 ; sh:maxInclusive 1 ; sh:severity sh:Violation ] .

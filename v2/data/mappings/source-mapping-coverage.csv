@@ -1,0 +1,7 @@
+source_id,source_role,field_contract_status,field_count,field_level_mapping_status,execution_status,evaluation_scope,notes
+P1-NHIF-OUTPATIENT,primary,frozen,19,complete,fixture-executed,W7-E6 quantified,"All required source fields classified in source-field-ontology-mapping.csv; full external dataset not ingested in CI"
+P2-NHIF-INPATIENT,secondary,frozen,20,complete,fixture-executed,W7-E6 quantified,"All required source fields classified in source-field-ontology-mapping.csv; full external dataset not ingested in CI"
+P3-FDA-ACTORS,authoritative,contract-only,,deferred,not-executed,not quantified in E6,"Organization/facility/registration source contract exists, but no field-level schema snapshot is frozen in the repository yet"
+P4-OPENFDA-PRODUCT,authoritative,contract-only,,deferred,not-executed,not quantified in E6,"Product/identifier enrichment hook exists; field-level schema mapping requires a versioned source snapshot before quantitative scoring"
+P5-EMA-CRITICAL-SHORTAGE,authoritative,contract-only,,deferred,not-executed,not quantified in E6,"Criticality/shortage contract exists; field-level mapping must remain source-version and jurisdiction aware"
+P7-GEONAMES,normalization,normalization-hook,,specialized,alias-normalization-only,descriptive only,"Used for geography normalization rather than pharmaceutical-domain field coverage; not included in E6 pharmaceutical mapping denominator"

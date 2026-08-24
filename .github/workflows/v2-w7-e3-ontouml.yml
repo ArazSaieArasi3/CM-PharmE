@@ -1,0 +1,95 @@
+name: CM-PharmE 2.0 W7-E3 OntoUML Pattern Evaluation
+
+on:
+  pull_request:
+    branches:
+      - v2/research-program
+    paths:
+      - 'v2/ontology/**'
+      - 'v2/ontouml/**'
+      - 'v2/evaluation/protocol/e3-pattern-checks.json'
+      - 'tools/v2_evaluation/e3_ontouml_patterns.py'
+      - '.github/workflows/v2-w7-e3-ontouml.yml'
+  push:
+    branches:
+      - 'v2/**'
+    paths:
+      - 'v2/ontology/**'
+      - 'v2/ontouml/**'
+      - 'v2/evaluation/protocol/e3-pattern-checks.json'
+      - 'tools/v2_evaluation/e3_ontouml_patterns.py'
+      - '.github/workflows/v2-w7-e3-ontouml.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  w7-e3-ontouml-patterns:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7.0.1
+
+      - name: Set up Python
+        uses: actions/setup-python@v7.0.0
+        with:
+          python-version: '3.12'
+
+      - name: Install pinned semantic dependency
+        run: python -m pip install --disable-pip-version-check 'rdflib==7.5.0'
+
+      - name: Execute W7-E3 project-native OntoUML pattern evaluation
+        run: >-
+          python tools/v2_evaluation/e3_ontouml_patterns.py
+          --output build/w7-e3/e3-ontouml-pattern-report.json
+
+      - name: Verify W7-E3 gate state
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p = Path('build/w7-e3/e3-ontouml-pattern-report.json')
+          r = json.loads(p.read_text())
+          if r['status'] not in {'PASS','PASS_WITH_WARNING'}:
+              raise SystemExit(f"Unexpected E3 status: {r['status']}")
+          if r['blocking_failures'] != 0:
+              raise SystemExit('Blocking E3 failures remain')
+          print(json.dumps({'status': r['status'], 'checks': r['checks_total'], 'warnings': r['warnings']}, sort_keys=True))
+          PY
+
+      - name: Record W7-E3 summary
+        if: always()
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p = Path('build/w7-e3/e3-ontouml-pattern-report.json')
+          r = json.loads(p.read_text()) if p.exists() else {}
+          with open('w7-e3-summary.md','w') as f:
+              f.write('## CM-PharmE 2.0 W7-E3 OntoUML Pattern Evaluation\n\n')
+              f.write(f"- Status: **{r.get('status','UNAVAILABLE')}**\n")
+              f.write(f"- Conceptual elements: `{r.get('conceptual_elements','?')}`\n")
+              f.write(f"- Executable checks: `{r.get('checks_total','?')}`\n")
+              f.write(f"- Blocking failures: `{r.get('blocking_failures','?')}`\n")
+              f.write(f"- Warnings: `{r.get('warnings','?')}`\n")
+              f.write('- Official OntoUML tool executed: `false`\n')
+              f.write('- Boundary: project-native executable semantic review; not official OntoUML tool conformance.\n')
+          PY
+          cat w7-e3-summary.md >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload W7-E3 evidence
+        if: always()
+        uses: actions/upload-artifact@v7.0.1
+        with:
+          name: cm-pharme-v2-w7-e3-ontouml-evidence
+          path: |
+            build/w7-e3/e3-ontouml-pattern-report.json
+            v2/evaluation/protocol/e3-pattern-checks.json
+            w7-e3-summary.md
+          if-no-files-found: warn
+          retention-days: 30

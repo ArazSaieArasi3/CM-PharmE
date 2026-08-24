@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "status": "frozen-before-first-e5-execution",
+  "purpose": "Controlled sensitivity review for the W7-E5 SHACL evaluation. These mutations are applied only to copies of the Gate-E synthetic fixture graph.",
+  "open_world_boundary": "Mutation outcomes test whether registered SHACL constraints detect selected known defects; they do not estimate a population-level false-positive or false-negative rate.",
+  "cases": [
+    {
+      "id": "MUT-01",
+      "operation": "remove_property_from_first_target",
+      "target_class": "cmpe:MedicinalProductPresentation",
+      "property": "cmpe:presentationOf",
+      "expected_shape": "cmpe:MedicinalProductPresentationShape",
+      "expected_min_severity": "Violation"
+    },
+    {
+      "id": "MUT-02",
+      "operation": "remove_property_from_first_target",
+      "target_class": "cmpe:EvidenceSupport",
+      "property": "cmpe:evidenceAssertion",
+      "expected_shape": "cmpe:EvidenceSupportShape",
+      "expected_min_severity": "Violation"
+    },
+    {
+      "id": "MUT-03",
+      "operation": "remove_property_from_first_target",
+      "target_class": "cmpe:IdentifierAssignment",
+      "property": "cmpe:identifierScheme",
+      "expected_shape": "cmpe:IdentifierAssignmentShape",
+      "expected_min_severity": "Violation"
+    },
+    {
+      "id": "MUT-04",
+      "operation": "remove_property_from_first_target",
+      "target_class": "cmpe:Facility",
+      "property": "cmpe:locatedIn",
+      "expected_shape": "cmpe:W7FacilityGeographyShape",
+      "expected_min_severity": "Violation"
+    },
+    {
+      "id": "MUT-05",
+      "operation": "remove_property_from_first_target",
+      "target_class": "cmpe:ReimbursementUtilisationObservationResult",
+      "property": "prov:wasDerivedFrom",
+      "expected_shape": "cmpe:W7ObservationIntegrityShape",
+      "expected_min_severity": "Violation"
+    },
+    {
+      "id": "MUT-06",
+      "operation": "remove_property_from_first_target",
+      "target_class": "cmpe:ReimbursementUtilisationObservationResult",
+      "property": "dct:spatial",
+      "expected_shape": "cmpe:W7ObservationIntegrityShape",
+      "expected_min_severity": "Violation"
+    },
+    {
+      "id": "MUT-07",
+      "operation": "add_minimal_shortage_without_jurisdiction",
+      "expected_shape": "cmpe:ShortageContextShape",
+      "expected_min_severity": "Warning"
+    },
+    {
+      "id": "MUT-08",
+      "operation": "remove_property_from_first_target",
+      "target_class": "cmpe:SourceRecord",
+      "property": "prov:wasGeneratedBy",
+      "expected_shape": "cmpe:W7SourceRecordProvenanceShape",
+      "expected_min_severity": "Violation"
+    }
+  ]
+}

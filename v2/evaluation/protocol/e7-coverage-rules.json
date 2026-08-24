@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "evidence_family": "W7-E7",
+  "registry": "v2/evaluation/protocol/e7-source-semantic-coverage.csv",
+  "allowed_statuses": ["represented", "partial", "not_represented"],
+  "source_order": [
+    "P1-NHIF-OUTPATIENT",
+    "P2-NHIF-INPATIENT",
+    "P3-FDA-ACTORS",
+    "P4-OPENFDA-PRODUCT",
+    "P5-EMA-CRITICAL-SHORTAGE",
+    "P6-WHO-EML",
+    "P7-GEONAMES",
+    "C1-SUPPLY-OPERATIONS",
+    "C2-EUDRAGMDP",
+    "S1-CHEMBL37",
+    "S2-NHIF-INDIVIDUAL-ACCESS",
+    "S3-OPENFDA-FAERS"
+  ],
+  "held_out_forbidden_tokens": [
+    "ClinicalTrials.gov",
+    "AACT",
+    "openFDA Drug Shortages",
+    "H1",
+    "H2",
+    "H3"
+  ],
+  "coverage_interpretation": {
+    "exact_coverage": "represented / all normalized requirements",
+    "bounded_coverage": "(represented + partial) / all normalized requirements",
+    "not_represented": "retained as an empirical coverage gap; never silently removed",
+    "ontology_term_support": "Gate-D conceptual elements referenced by at least one represented or partial source requirement",
+    "incremental_coverage": "new unique CM-PharmE ontology targets contributed by each source in the frozen source_order; descriptive and order-dependent"
+  },
+  "mandatory_conditions": [
+    "all registry rows have a valid status and requirement type",
+    "all represented/partial CM-PharmE targets resolve in the frozen ontology",
+    "every source in source_order has at least one registered requirement",
+    "concept and relation denominators are explicit",
+    "not-represented requirements remain visible",
+    "held-out H1-H3 are not used",
+    "no global-domain-completeness conclusion is inferred from source coverage"
+  ],
+  "v1_comparison_boundary": "Use the existing W3 V1→V2 migration matrix for qualitative novelty/continuity accounting. Do not invent a quantitative V1 source-semantic coverage percentage because no equivalent frozen V1 source-requirement registry exists."
+}

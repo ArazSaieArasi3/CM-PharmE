@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "family": "W7-E13",
+  "issue": 102,
+  "purpose": "Prospectively define the clean-rebuild evidence and deterministic fingerprints required for the W7 reproducibility audit.",
+  "expected_fingerprints": {
+    "w5_canonical_ontology_sha256": "59ef47eeed732290736e60bfa1c6bf43a12d15df2f50cff931badb5938cc954a",
+    "w6_canonical_kg_sha256": "6f93a00c2fa9a853e44db80b547d69f8033719948a03cf09b2b175dff5b40825"
+  },
+  "environment_contract": {
+    "runner": "ubuntu-24.04",
+    "python": "3.12",
+    "java": "21-temurin",
+    "postgres_postgis_image": "postgis/postgis:16-3.4",
+    "robot_version": "1.9.10",
+    "robot_sha256": "16a73c074f3df359a7338a84b4e0788785fe06117f931bb9796e9619ea776105",
+    "python_packages": {
+      "psycopg[binary]": "3.2.9",
+      "rdflib": "7.5.0",
+      "pyshacl": "0.31.0",
+      "PyYAML": "6.0.2"
+    }
+  },
+  "computable_evidence_to_regenerate": [
+    "W5 formal ontology build and SHACL",
+    "W6 PostgreSQL/PostGIS bootstrap, deterministic KG export, SHACL/provenance validation and SQL-SPARQL benchmark",
+    "W7-E1 structural quality",
+    "W7-E2 OWL 2 DL and HermiT/JFact logical evaluation",
+    "W7-E3 project-native UFO/OntoUML pattern evaluation",
+    "W7-E4 competency questions",
+    "W7-E5 SHACL/data conformance and controlled mutations",
+    "W7-E6 dataset-to-ontology mapping quality",
+    "W7-E7 concept/relation coverage",
+    "W7-E8 held-out generalizability report from frozen first-pass registries",
+    "W7-E10 ontology-RDB-KG semantic consistency",
+    "W7-E11 analytics/AI evidence-sufficiency gate",
+    "W7-E12 controlled resilience scenarios"
+  ],
+  "excluded_from_automated_rebuild": {
+    "W7-E9": "Human expert responses are external empirical evidence and must not be synthesized or reconstructed by CI. Only the frozen protocol package is integrity-checked."
+  },
+  "acceptance_rules": [
+    "clean GitHub-hosted runner completes the full computable rebuild from repository sources",
+    "two independent ontology builds are byte-identical in canonical N-Triples and manifest",
+    "two deterministic KG exports are byte-identical in canonical N-Triples and manifest",
+    "ontology and KG fingerprints equal the frozen W5/W6 baselines",
+    "fresh PostgreSQL/PostGIS bootstrap succeeds",
+    "all computable W7 evaluators complete successfully under pinned dependencies",
+    "environment and dependency versions are captured",
+    "all generated evidence files are checksummed and retained as an Actions artifact"
+  ],
+  "boundary": "PASS establishes repository-level computational reproducibility in the captured CI environment. It is not independent replication by a third-party research team, does not reproduce human expert evidence, and does not imply empirical validity beyond the evaluated evidence families."
+}

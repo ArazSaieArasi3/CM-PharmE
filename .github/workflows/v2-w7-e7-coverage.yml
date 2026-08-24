@@ -1,0 +1,90 @@
+name: CM-PharmE 2.0 W7-E7 Concept Relation Coverage
+
+on:
+  pull_request:
+    branches:
+      - v2/research-program
+    paths:
+      - 'v2/evaluation/protocol/e7-source-semantic-coverage.csv'
+      - 'v2/evaluation/protocol/e7-coverage-rules.json'
+      - 'tools/v2_evaluation/e7_coverage.py'
+      - 'v2/ontouml/cm-pharme-v2.conceptual-model.json'
+      - 'v2/research/w3/v1-v2-migration-matrix.md'
+      - 'v2/ontology/**'
+      - '.github/workflows/v2-w7-e7-coverage.yml'
+  push:
+    branches:
+      - 'v2/**'
+    paths:
+      - 'v2/evaluation/protocol/e7-source-semantic-coverage.csv'
+      - 'v2/evaluation/protocol/e7-coverage-rules.json'
+      - 'tools/v2_evaluation/e7_coverage.py'
+      - 'v2/ontouml/cm-pharme-v2.conceptual-model.json'
+      - 'v2/research/w3/v1-v2-migration-matrix.md'
+      - 'v2/ontology/**'
+      - '.github/workflows/v2-w7-e7-coverage.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  w7-e7-coverage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7.0.1
+
+      - name: Set up Python
+        uses: actions/setup-python@v7.0.0
+        with:
+          python-version: '3.12'
+
+      - name: Install pinned semantic dependencies
+        run: >-
+          python -m pip install --disable-pip-version-check
+          'rdflib==7.5.0'
+          'pyshacl==0.31.0'
+          'PyYAML==6.0.2'
+
+      - name: Rebuild frozen asserted ontology
+        run: >-
+          python tools/v2_ontology/build_validate.py
+          --output-root build/w7-e7/asserted
+          --require-shacl
+
+      - name: Execute source-semantic concept and relation coverage evaluation
+        run: >-
+          python tools/v2_evaluation/e7_coverage.py
+          --registry v2/evaluation/protocol/e7-source-semantic-coverage.csv
+          --rules v2/evaluation/protocol/e7-coverage-rules.json
+          --ontology build/w7-e7/asserted/distributions/cm-pharme-v2.ttl
+          --conceptual-model v2/ontouml/cm-pharme-v2.conceptual-model.json
+          --migration-matrix v2/research/w3/v1-v2-migration-matrix.md
+          --output build/w7-e7/e7-coverage.json
+          --summary build/w7-e7/e7-coverage.md
+
+      - name: Record W7-E7 summary
+        if: always()
+        run: |
+          if [ -f build/w7-e7/e7-coverage.md ]; then
+            cat build/w7-e7/e7-coverage.md >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo 'W7-E7 summary unavailable because execution failed before report creation.' >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Upload W7-E7 evidence
+        if: always()
+        uses: actions/upload-artifact@v7.0.1
+        with:
+          name: cm-pharme-v2-w7-e7-coverage-evidence
+          path: |
+            v2/evaluation/protocol/e7-source-semantic-coverage.csv
+            v2/evaluation/protocol/e7-coverage-rules.json
+            v2/research/w3/source-schema-concept-extraction.md
+            v2/research/w3/v1-v2-migration-matrix.md
+            build/w7-e7/e7-coverage.json
+            build/w7-e7/e7-coverage.md
+          if-no-files-found: warn
+          retention-days: 30

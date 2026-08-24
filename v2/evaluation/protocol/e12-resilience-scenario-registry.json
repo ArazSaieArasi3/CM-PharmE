@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "family": "W7-E12",
+  "issue": 101,
+  "purpose": "Evaluate scenario/query-level representational adequacy for pharmaceutical resilience and critical-medicine vulnerability without treating controlled scenarios as predictive or operational validation.",
+  "freeze_rule": "Scenario definitions, assumptions, expected query outcomes, representability categories, provenance expectations and missing-evidence sensitivity rules are frozen before evaluator execution.",
+  "evidence_basis": [
+    "v2/research/w1/geospatial-resilience-risk.md",
+    "v2/research/w1/demonstrator-prioritization.md",
+    "v2/ontology/source/modules/10-core.ttl",
+    "v2/ontology/source/modules/20-xinfra.ttl",
+    "v2/ontology/source/modules/30-extensions.ttl",
+    "W7-E8 held-out shortage/generalizability findings"
+  ],
+  "claim_boundary": "The scenarios are controlled evaluation cases. PASS may support representational/scenario adequacy only. It does not establish prediction accuracy, causal validity, intervention effectiveness, stockout prevention, recovery performance, operational resilience, or real-world supply-chain completeness.",
+  "scenarios": [
+    {
+      "id": "RES-01",
+      "title": "Critical medicine single-provider disruption",
+      "w1_lineage": "RES-01/RES-02",
+      "question": "Can the model represent a critical medicinal product that depends on one provider affected by a disruption and is associated with a shortage in a jurisdiction?",
+      "required_classes": ["MedicinalProduct", "CriticalMedicineClassification", "SupplyDependency", "Organization", "DisruptionEvent", "MedicineShortageSituation", "RegulatoryJurisdiction"],
+      "required_properties": ["contextClassificationProduct", "contextClassificationJurisdiction", "dependencyDependent", "dependencyProvider", "disruptionAffects", "shortageProduct", "shortageJurisdiction"],
+      "expected_representability": "EXACT",
+      "expected_query_outcome": true,
+      "expected_provenance": true,
+      "expected_gap": null
+    },
+    {
+      "id": "RES-02",
+      "title": "Alternative medicine under provider disruption",
+      "w1_lineage": "RES-07",
+      "question": "Can the model represent an explicit alternative medicinal product for a disrupted product while preserving the disrupted dependency?",
+      "required_classes": ["MedicinalProduct", "AlternativeMedicineAssignment", "SupplyDependency", "DisruptionEvent"],
+      "required_properties": ["alternativeForProduct", "alternativeProduct", "dependencyDependent", "dependencyProvider", "disruptionAffects"],
+      "expected_representability": "EXACT",
+      "expected_query_outcome": true,
+      "expected_provenance": true,
+      "expected_gap": null
+    },
+    {
+      "id": "RES-03",
+      "title": "Jurisdictional shortage versus physical geography",
+      "w1_lineage": "RES-03",
+      "question": "Can shortage jurisdiction remain semantically distinct from the physical geography of a facility implicated in the scenario?",
+      "required_classes": ["MedicineShortageSituation", "RegulatoryJurisdiction", "Facility", "GeographicFeature"],
+      "required_properties": ["shortageJurisdiction", "locatedIn"],
+      "expected_representability": "EXACT",
+      "expected_query_outcome": true,
+      "expected_provenance": true,
+      "expected_gap": null
+    },
+    {
+      "id": "RES-04",
+      "title": "Risk treatment and recovery boundary",
+      "w1_lineage": "RES-07 / Risk & Resilience Extension",
+      "question": "Can a treatment activity address an identified vulnerability, and can completed recovery be represented explicitly?",
+      "required_classes": ["Vulnerability", "RiskTreatmentPlan", "RiskTreatmentActivity"],
+      "required_properties": ["riskTreatmentAddresses"],
+      "expected_representability": "PARTIAL",
+      "expected_query_outcome": true,
+      "expected_provenance": true,
+      "expected_gap": "No explicit RecoveryEvent/RecoveredState concept and no explicit RiskTreatmentPlan-to-RiskTreatmentActivity relation are present in the frozen ontology. Vulnerability also lacks an explicit bearer property, retained from E3 as a known extension warning."
+    },
+    {
+      "id": "RES-05",
+      "title": "Sensitivity to missing supply evidence",
+      "w1_lineage": "Cross-cutting evidence-sensitivity test",
+      "question": "Does removing the provider edge from an otherwise exposed critical-medicine scenario change the executable exposure query from supported to evidence-insufficient rather than being interpreted as resilience?",
+      "required_classes": ["SupplyDependency", "DisruptionEvent"],
+      "required_properties": ["dependencyDependent", "dependencyProvider", "disruptionAffects"],
+      "expected_representability": "EXACT_TEST_MECHANISM",
+      "expected_query_outcome_before_removal": true,
+      "expected_query_outcome_after_removal": false,
+      "expected_interpretation_after_removal": "INSUFFICIENT_EVIDENCE_NOT_RESILIENCE",
+      "expected_provenance": true,
+      "expected_gap": null
+    }
+  ],
+  "mandatory_gate": {
+    "conditions": [
+      "All required ontology terms referenced by the frozen scenarios resolve or are recorded as an expected gap.",
+      "All frozen executable scenario queries return their expected outcomes.",
+      "Each scenario has explicit controlled provenance records.",
+      "The missing-evidence sensitivity test changes outcome exactly as frozen and is interpreted as evidence insufficiency rather than negative domain truth.",
+      "No first-pass ontology change is made to improve scenario results.",
+      "All partial/gap findings remain visible in the report."
+    ]
+  }
+}

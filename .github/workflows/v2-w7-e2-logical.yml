@@ -1,0 +1,162 @@
+name: CM-PharmE 2.0 W7-E2 Logical Evaluation
+
+on:
+  pull_request:
+    branches:
+      - v2/research-program
+    paths:
+      - 'v2/ontology/**'
+      - 'tools/v2_ontology/**'
+      - 'tools/v2_evaluation/e2_compare_reasoners.py'
+      - '.github/workflows/v2-w7-e2-logical.yml'
+  push:
+    branches:
+      - 'v2/**'
+    paths:
+      - 'v2/ontology/**'
+      - 'tools/v2_ontology/**'
+      - 'tools/v2_evaluation/e2_compare_reasoners.py'
+      - '.github/workflows/v2-w7-e2-logical.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  w7-e2-logical:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      ROBOT_VERSION: '1.9.10'
+      ROBOT_SHA256: '16a73c074f3df359a7338a84b4e0788785fe06117f931bb9796e9619ea776105'
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7.0.1
+
+      - name: Set up Python
+        uses: actions/setup-python@v7.0.0
+        with:
+          python-version: '3.12'
+
+      - name: Set up Java
+        uses: actions/setup-java@v5.7.0
+        with:
+          distribution: temurin
+          java-version: '21'
+
+      - name: Install pinned semantic dependency
+        run: python -m pip install --disable-pip-version-check 'rdflib==7.5.0' 'pyshacl==0.31.0'
+
+      - name: Rebuild frozen asserted ontology
+        run: >-
+          python tools/v2_ontology/build_validate.py
+          --output-root build/w7-e2/asserted
+          --require-shacl
+
+      - name: Download and verify ROBOT
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p build/w7-e2/robot
+          curl --fail --location --silent --show-error \
+            "https://github.com/ontodev/robot/releases/download/v${ROBOT_VERSION}/robot.jar" \
+            --output build/w7-e2/robot/robot.jar
+          echo "${ROBOT_SHA256}  build/w7-e2/robot/robot.jar" | sha256sum --check --strict
+          java -jar build/w7-e2/robot/robot.jar --version | tee build/w7-e2/robot/robot-version.txt
+          java -version 2>&1 | tee build/w7-e2/robot/java-version.txt
+
+      - name: Enforce OWL 2 DL profile
+        shell: bash
+        run: |
+          set -euo pipefail
+          java -jar build/w7-e2/robot/robot.jar validate-profile \
+            --profile DL \
+            --input build/w7-e2/asserted/distributions/cm-pharme-v2.owl \
+            --output build/w7-e2/robot/owl2-dl-profile.txt
+
+      - name: Reason with HermiT
+        shell: bash
+        run: |
+          set -euo pipefail
+          /usr/bin/time -f 'elapsed_seconds=%e\nmax_rss_kb=%M\nexit_code=%x' \
+            -o build/w7-e2/robot/hermit-runtime.txt \
+            java -jar build/w7-e2/robot/robot.jar reason \
+              --reasoner hermit \
+              --input build/w7-e2/asserted/distributions/cm-pharme-v2.owl \
+              --dump-unsatisfiable build/w7-e2/robot/hermit-unsatisfiable.owl \
+              --output build/w7-e2/robot/hermit-reasoned.owl \
+              2>&1 | tee build/w7-e2/robot/hermit.log
+
+      - name: Reason with JFact
+        shell: bash
+        run: |
+          set -euo pipefail
+          /usr/bin/time -f 'elapsed_seconds=%e\nmax_rss_kb=%M\nexit_code=%x' \
+            -o build/w7-e2/robot/jfact-runtime.txt \
+            java -jar build/w7-e2/robot/robot.jar reason \
+              --reasoner jfact \
+              --input build/w7-e2/asserted/distributions/cm-pharme-v2.owl \
+              --dump-unsatisfiable build/w7-e2/robot/jfact-unsatisfiable.owl \
+              --output build/w7-e2/robot/jfact-reasoned.owl \
+              2>&1 | tee build/w7-e2/robot/jfact.log
+
+      - name: Compare reasoner results
+        run: >-
+          python tools/v2_evaluation/e2_compare_reasoners.py
+          --asserted build/w7-e2/asserted/distributions/cm-pharme-v2.owl
+          --hermit build/w7-e2/robot/hermit-reasoned.owl
+          --jfact build/w7-e2/robot/jfact-reasoned.owl
+          --hermit-unsat build/w7-e2/robot/hermit-unsatisfiable.owl
+          --jfact-unsat build/w7-e2/robot/jfact-unsatisfiable.owl
+          --hermit-log build/w7-e2/robot/hermit.log
+          --jfact-log build/w7-e2/robot/jfact.log
+          --output build/w7-e2/e2-logical-report.json
+
+      - name: Record W7-E2 summary
+        if: always()
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          report_path = Path('build/w7-e2/e2-logical-report.json')
+          r = json.loads(report_path.read_text()) if report_path.exists() else {}
+          with open('w7-e2-summary.md','w') as f:
+              f.write('## CM-PharmE 2.0 W7-E2 Logical Evaluation\n\n')
+              f.write(f"- Family status: **{r.get('status','UNAVAILABLE')}**\n")
+              f.write(f"- Mandatory logical gate: **{r.get('mandatory_logical_gate','UNAVAILABLE')}**\n")
+              f.write(f"- Named internal classes: `{r.get('named_internal_classes','?')}`\n")
+              f.write(f"- HermiT unsatisfiable named classes: `{r.get('hermit',{}).get('unsatisfiable_named_classes','?')}`\n")
+              f.write(f"- JFact unsatisfiable named classes: `{r.get('jfact',{}).get('unsatisfiable_named_classes','?')}`\n")
+              f.write(f"- HermiT named subclass pairs: `{r.get('hermit',{}).get('named_subclass_pairs','?')}`\n")
+              f.write(f"- JFact named subclass pairs: `{r.get('jfact',{}).get('named_subclass_pairs','?')}`\n")
+              f.write(f"- Named hierarchy agreement: `{r.get('agreement',{}).get('named_subclass_pairs_equal','?')}`\n")
+              f.write(f"- HermiT log findings: `{len(r.get('hermit',{}).get('log_findings',[]))}`\n")
+              f.write(f"- JFact log findings: `{len(r.get('jfact',{}).get('log_findings',[]))}`\n")
+              f.write('- Boundary: logical/profile PASS does not establish semantic truth, completeness or empirical validity.\n')
+          PY
+          cat w7-e2-summary.md >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload W7-E2 evidence
+        if: always()
+        uses: actions/upload-artifact@v7.0.1
+        with:
+          name: cm-pharme-v2-w7-e2-logical-evidence
+          path: |
+            build/w7-e2/asserted/manifest.json
+            build/w7-e2/e2-logical-report.json
+            build/w7-e2/robot/robot-version.txt
+            build/w7-e2/robot/java-version.txt
+            build/w7-e2/robot/owl2-dl-profile.txt
+            build/w7-e2/robot/hermit-runtime.txt
+            build/w7-e2/robot/jfact-runtime.txt
+            build/w7-e2/robot/hermit.log
+            build/w7-e2/robot/jfact.log
+            build/w7-e2/robot/hermit-unsatisfiable.owl
+            build/w7-e2/robot/jfact-unsatisfiable.owl
+            build/w7-e2/robot/hermit-reasoned.owl
+            build/w7-e2/robot/jfact-reasoned.owl
+            w7-e2-summary.md
+          if-no-files-found: warn
+          retention-days: 30
