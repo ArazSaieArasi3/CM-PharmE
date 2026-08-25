@@ -8,6 +8,7 @@ on:
       - 'v2/app/observatory/validate_kg_explorer.py'
       - 'v2/app/observatory/fixtures/kg-explorer-fixture.csv'
       - 'v2/research/w8/kg-explorer-mapping-freeze.csv'
+      - 'v2/research/w8/kg-explorer-v2-083-handoff.md'
       - '.github/workflows/v2-w8-kg-explorer.yml'
   workflow_dispatch:
 
@@ -36,6 +37,7 @@ jobs:
           cp kg-explorer-head-sha.txt kg-explorer-validation.txt kg-product-neighborhood.json kg-organization-neighborhood.json kg-explorer-evidence/
           cp v2/app/observatory/fixtures/kg-explorer-fixture.csv kg-explorer-evidence/
           cp v2/research/w8/kg-explorer-mapping-freeze.csv kg-explorer-evidence/
+          cp v2/research/w8/kg-explorer-v2-083-handoff.md kg-explorer-evidence/
       - name: Upload KG explorer evidence
         uses: actions/upload-artifact@v4
         with:
