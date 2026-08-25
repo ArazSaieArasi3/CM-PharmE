@@ -1,0 +1,47 @@
+name: V2 W8 Entity Relationship Browser
+
+on:
+  pull_request:
+    branches: [v2/research-program]
+    paths:
+      - 'v2/app/observatory/**'
+      - 'v2/research/w8/entity-relationship-browser-*'
+      - '.github/workflows/v2-w8-entity-relationship-browser.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  browser-boundary-gate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout exact head
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Record exact commit
+        run: |
+          git rev-parse HEAD | tee browser-head-sha.txt
+      - name: Validate deterministic browser contract
+        run: |
+          python v2/app/observatory/validate_entity_relationship_browser.py | tee browser-validation.txt
+      - name: Confirm SQL remains read-only
+        run: |
+          if grep -Eiq '(^|[[:space:]])(insert|update|delete|drop|alter|create)[[:space:]]' v2/app/observatory/sql/entity-relationship-browser.sql; then
+            echo 'FAIL: mutating SQL detected'
+            exit 1
+          fi
+          echo 'PASS: browser SQL is read-only' | tee browser-readonly.txt
+      - name: Persist evaluation handoff evidence
+        run: |
+          mkdir -p browser-evidence
+          cp browser-head-sha.txt browser-validation.txt browser-readonly.txt browser-evidence/
+          cp v2/app/observatory/fixtures/entity-relationship-browser-fixture.csv browser-evidence/
+          cp v2/research/w8/entity-relationship-browser-mapping-freeze.csv browser-evidence/
+      - name: Upload browser evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: v2-w8-entity-relationship-browser-evidence
+          path: browser-evidence/
+          if-no-files-found: error
