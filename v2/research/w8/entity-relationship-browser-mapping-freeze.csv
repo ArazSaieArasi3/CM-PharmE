@@ -1,0 +1,11 @@
+browser_surface,mapping_id,ontology_iri,rdb_table,exposure_status,boundary
+organization,M009,https://w3id.org/cm-pharme/2.0/Organization,organization,admitted,"Organization identity is not Facility identity"
+facility,M010,https://w3id.org/cm-pharme/2.0/Facility,facility,admitted,"Facility identity remains physical/operational"
+facility_operation,M011,https://w3id.org/cm-pharme/2.0/FacilityOperation,facility_operation,admitted,"Only registered organization↔facility relation; no inferred ownership/operator semantics"
+pharmaceutical_substance,M012,https://w3id.org/cm-pharme/2.0/PharmaceuticalSubstance,pharmaceutical_substance,admitted,"Substance identity is distinct from MedicinalProduct"
+medicinal_product,M013,https://w3id.org/cm-pharme/2.0/MedicinalProduct,medicinal_product,admitted,"Product identity layer"
+product_presentation,M014,https://w3id.org/cm-pharme/2.0/MedicinalProductPresentation,product_presentation,admitted,"Presentation/package identity is not MedicinalProduct identity"
+presentation_of,M015,https://w3id.org/cm-pharme/2.0/presentationOf,product_presentation,admitted,"Direct FK-backed presentation→product traversal only"
+has_active_substance,M016,https://w3id.org/cm-pharme/2.0/hasActiveSubstance,medicinal_product,bounded,"Reference schema exposes only the primary-substance hook; not a complete composition claim"
+identifier_assignment,M021,https://w3id.org/cm-pharme/2.0/IdentifierAssignment,identifier_assignment,admitted,"Source label/code or identifier lexical value never becomes semantic identity"
+located_in,M031,https://w3id.org/cm-pharme/2.0/locatedIn,facility,admitted,"Physical geography only; regulatory jurisdiction must not be inferred"
