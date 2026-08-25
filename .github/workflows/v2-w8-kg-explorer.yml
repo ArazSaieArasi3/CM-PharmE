@@ -1,0 +1,46 @@
+name: V2 W8 KG Explorer
+
+on:
+  pull_request:
+    branches: [v2/research-program]
+    paths:
+      - 'v2/app/observatory/kg_explorer.py'
+      - 'v2/app/observatory/validate_kg_explorer.py'
+      - 'v2/app/observatory/fixtures/kg-explorer-fixture.csv'
+      - 'v2/research/w8/kg-explorer-mapping-freeze.csv'
+      - 'v2/research/w8/kg-explorer-v2-083-handoff.md'
+      - '.github/workflows/v2-w8-kg-explorer.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  kg-explorer-gate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout exact head
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Record exact commit
+        run: git rev-parse HEAD | tee kg-explorer-head-sha.txt
+      - name: Validate deterministic KG explorer contract
+        run: python v2/app/observatory/validate_kg_explorer.py | tee kg-explorer-validation.txt
+      - name: Render representative neighborhoods
+        run: |
+          python v2/app/observatory/kg_explorer.py N-PROD-001 > kg-product-neighborhood.json
+          python v2/app/observatory/kg_explorer.py N-ORG-001 > kg-organization-neighborhood.json
+      - name: Persist evaluation evidence
+        run: |
+          mkdir -p kg-explorer-evidence
+          cp kg-explorer-head-sha.txt kg-explorer-validation.txt kg-product-neighborhood.json kg-organization-neighborhood.json kg-explorer-evidence/
+          cp v2/app/observatory/fixtures/kg-explorer-fixture.csv kg-explorer-evidence/
+          cp v2/research/w8/kg-explorer-mapping-freeze.csv kg-explorer-evidence/
+          cp v2/research/w8/kg-explorer-v2-083-handoff.md kg-explorer-evidence/
+      - name: Upload KG explorer evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: v2-w8-kg-explorer-evidence
+          path: kg-explorer-evidence/
+          if-no-files-found: error

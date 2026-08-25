@@ -1,0 +1,11 @@
+mapping_id,semantic_iri,entity_kind,exposed_role,status,boundary
+M009,https://w3id.org/cm-pharme/2.0/Organization,class,node,direct,Organization identity remains distinct from Facility
+M010,https://w3id.org/cm-pharme/2.0/Facility,class,node,direct,Facility identity remains distinct from Organization
+M011,https://w3id.org/cm-pharme/2.0/FacilityOperation,class,relator_node,direct,Organization-Facility association is represented through its admitted relator
+M012,https://w3id.org/cm-pharme/2.0/PharmaceuticalSubstance,class,node,direct,Substance identity is not product identity
+M013,https://w3id.org/cm-pharme/2.0/MedicinalProduct,class,node,direct,Product identity remains distinct from presentation identity
+M014,https://w3id.org/cm-pharme/2.0/MedicinalProductPresentation,class,node,direct,Presentation/package identity remains distinct from product identity
+M015,https://w3id.org/cm-pharme/2.0/presentationOf,object_property,edge,direct,Only registered presentation-to-product traversal is admitted
+M016,https://w3id.org/cm-pharme/2.0/hasActiveSubstance,object_property,edge,bounded,W6 exposes only the primary-substance hook; no richer composition is inferred
+M031,https://w3id.org/cm-pharme/2.0/locatedIn,object_property,edge,direct,Physical geography only; not regulatory jurisdiction
+M021,https://w3id.org/cm-pharme/2.0/IdentifierAssignment,class,provenance_hook,direct,Source identifiers remain assignments rather than semantic identity

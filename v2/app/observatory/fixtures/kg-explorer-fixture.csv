@@ -1,0 +1,11 @@
+record_kind,record_id,semantic_type_or_edge,source_id,target_id,provenance_state,expected_visible
+node,N-PROD-001,https://w3id.org/cm-pharme/2.0/MedicinalProduct,,,source-backed,true
+node,N-PRES-001,https://w3id.org/cm-pharme/2.0/MedicinalProductPresentation,,,source-backed,true
+node,N-SUB-001,https://w3id.org/cm-pharme/2.0/PharmaceuticalSubstance,,,source-backed,true
+node,N-ORG-001,https://w3id.org/cm-pharme/2.0/Organization,,,source-backed,true
+node,N-FAC-001,https://w3id.org/cm-pharme/2.0/Facility,,,source-backed,true
+node,N-OP-001,https://w3id.org/cm-pharme/2.0/FacilityOperation,,,provenance-unavailable,true
+edge,E-PRES-PROD,https://w3id.org/cm-pharme/2.0/presentationOf,N-PRES-001,N-PROD-001,source-backed,true
+edge,E-PROD-SUB,https://w3id.org/cm-pharme/2.0/hasActiveSubstance,N-PROD-001,N-SUB-001,source-backed,true
+edge,E-ORG-OP,https://w3id.org/cm-pharme/2.0/participatesIn,N-ORG-001,N-OP-001,provenance-unavailable,false
+edge,E-OP-FAC,https://w3id.org/cm-pharme/2.0/mediates,N-OP-001,N-FAC-001,provenance-unavailable,false
