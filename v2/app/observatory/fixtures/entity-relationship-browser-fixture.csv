@@ -1,0 +1,7 @@
+case_id,task,semantic_id,semantic_type,mapping_id,predicate_iri,target_semantic_id,target_semantic_type,provenance_status,boundary_note
+F-T01P-01,T01,MED-TEST-001,MedicinalProduct,M013,,,PharmaceuticalSubstance,source-backed,MedicinalProduct remains distinct from Presentation
+F-T01R-01,T01,ORG-TEST-001,Organization,M009,,,Facility,provenance-unavailable,Organization remains distinct from Facility
+F-T01R-02,T01,FAC-TEST-001,Facility,M010,,,Organization,provenance-unavailable,Facility remains distinct from Organization
+F-T03A-01,T03,PRES-TEST-001,Presentation,M014,https://w3id.org/cm-pharme/2.0/presentationOf,MED-TEST-001,MedicinalProduct,source-backed,Registered M015 traversal only
+F-T03B-01,T03,MED-TEST-001,MedicinalProduct,M013,https://w3id.org/cm-pharme/2.0/hasActiveSubstance,SUB-TEST-001,PharmaceuticalSubstance,provenance-unavailable,Bounded primary-substance hook only
+F-T03C-01,T03,ORG-TEST-001,Organization,M009,https://w3id.org/cm-pharme/2.0/operatesFacility,FAC-TEST-001,Facility,provenance-unavailable,Organization-Facility link mediated by FacilityOperation
