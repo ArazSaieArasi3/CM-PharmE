@@ -1,0 +1,116 @@
+name: V2 W8 Bounded Analytics Dashboard
+
+on:
+  pull_request:
+    branches:
+      - v2/research-program
+    paths:
+      - 'v2/app/observatory/analytics_dashboard.py'
+      - 'v2/research/w8/analytics-dashboard-contract.md'
+      - 'v2/research/w8/analytics-dashboard-v2-083-handoff.md'
+      - 'v2/data/queries/sql-sparql-benchmarks.json'
+      - 'tools/v2_data/**'
+      - '.github/workflows/v2-w8-analytics-dashboard.yml'
+  push:
+    branches:
+      - 'v2/w8-analytics-dashboard'
+    paths:
+      - 'v2/app/observatory/analytics_dashboard.py'
+      - 'v2/research/w8/analytics-dashboard-contract.md'
+      - 'v2/research/w8/analytics-dashboard-v2-083-handoff.md'
+      - 'v2/data/queries/sql-sparql-benchmarks.json'
+      - 'tools/v2_data/**'
+      - '.github/workflows/v2-w8-analytics-dashboard.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-bounded-analytics:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    services:
+      postgres:
+        image: postgis/postgis:16-3.4
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: cmpe
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U postgres -d cmpe"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+    env:
+      DATABASE_URL: postgresql://postgres:postgres@localhost:5432/cmpe
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7.0.1
+
+      - name: Set up Python
+        uses: actions/setup-python@v7.0.0
+        with:
+          python-version: '3.12'
+
+      - name: Install pinned dependencies
+        run: >-
+          python -m pip install --disable-pip-version-check
+          'psycopg[binary]==3.2.9'
+          'rdflib==7.5.0'
+
+      - name: Bootstrap reference PostgreSQL/PostGIS realization
+        run: >-
+          python tools/v2_data/bootstrap_ingest.py
+          --reset
+          --report build/w8-v2-080/ingest-report.json
+
+      - name: Generate deterministic reference RDF/KG
+        run: >-
+          python tools/v2_data/export_kg.py
+          --output build/w8-v2-080/cm-pharme-v2-fixture-kg.ttl
+          --manifest build/w8-v2-080/kg-manifest.json
+
+      - name: Re-run frozen SQL/SPARQL benchmark suite
+        run: >-
+          python tools/v2_data/compare_sql_sparql.py
+          --kg build/w8-v2-080/cm-pharme-v2-fixture-kg.ttl
+          --report build/w8-v2-080/sql-sparql-equivalence.json
+
+      - name: Generate bounded analytics dashboard
+        run: >-
+          python v2/app/observatory/analytics_dashboard.py
+          --report build/w8-v2-080/sql-sparql-equivalence.json
+          --json-out build/w8-v2-080/bounded-analytics.json
+          --html-out build/w8-v2-080/bounded-analytics.html
+
+      - name: Record bounded analytics summary
+        if: always()
+        shell: bash
+        run: |
+          echo '## CM-PharmE V2-080 bounded analytics' >> "$GITHUB_STEP_SUMMARY"
+          if [ -f build/w8-v2-080/bounded-analytics.json ]; then
+            echo 'AN-08 / QREP-01..04 reproduced; see uploaded evidence.' >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo 'Bounded analytics evidence unavailable because execution failed before generation.' >> "$GITHUB_STEP_SUMMARY"
+          fi
+          echo 'This gate does not establish arbitrary SQL/SPARQL equivalence, market completeness, usability/effectiveness, predictive/causal performance, or AI novelty.' >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload V2-080 evidence
+        if: always()
+        uses: actions/upload-artifact@v7.0.1
+        with:
+          name: cm-pharme-v2-w8-v2-080-bounded-analytics-evidence
+          path: |
+            build/w8-v2-080/ingest-report.json
+            build/w8-v2-080/kg-manifest.json
+            build/w8-v2-080/sql-sparql-equivalence.json
+            build/w8-v2-080/bounded-analytics.json
+            build/w8-v2-080/bounded-analytics.html
+            v2/research/w8/analytics-dashboard-contract.md
+            v2/research/w8/analytics-dashboard-v2-083-handoff.md
+          if-no-files-found: warn
+          retention-days: 30
