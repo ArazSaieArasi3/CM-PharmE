@@ -55,10 +55,25 @@ publication_bindings:
     status: planned
 portfolio_integration:
   manifest: ".research/manifest.yaml"
+ci_execution_governance:
+  generic_policy: "ArazSaieArasi3/araz-research-portfolio/governance/ci-execution-governance.md"
+  semantic_profile: "ArazSaieArasi3/OGCM-RF/framework/semantic-ci-execution-profile.md"
+  adoption_status: conforming
+  automatic_workflows: [ontology-reasoner.yml]
+  authoritative_gates:
+    - "ontology-reasoner.yml workflow_dispatch / exact candidate semantic validation"
+  semantic_source_paths:
+    - "ontology/**"
+    - "tools/ontology/**"
+    - "evaluation/**"
+  expensive_gate_policy: "single comprehensive path-scoped semantic workflow; formal gates preserved"
+  evidence_binding: "SHA-bound"
+  deviations:
+    - "One comprehensive automatic workflow is retained because the validation stages share one coherent build/evidence package."
 adoption:
   deviations: []
   deferred_capabilities:
     - "Formal OGCM-RF conformance assessment"
     - "v2 semantic release decision"
-  last_reviewed: "2026-08-22"
-  notes: "Publication bindings distinguish conference history, current journal manuscript and future v2 research."
+  last_reviewed: "2026-08-27"
+  notes: "Publication bindings distinguish conference history, current journal manuscript and future v2 research. CI governance keeps the existing single comprehensive semantic workflow rather than creating redundant orchestration."
