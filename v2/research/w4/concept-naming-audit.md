@@ -25,7 +25,7 @@ The 87-element Gate-D conceptual inventory is preserved exactly. This work norma
 - Canonical concept labels materially refined: **19**
 - Previously identified CamelCase-style multiword `rdfs:label` values normalized for human readability: **50**
 - Concepts split/merged: **0**
-- Open semantic split decision after this audit: **1** (`Reimbursement and Utilization Observation Result`)
+- Open semantic split decisions after this audit: **0** for CM-PharmE 2.0
 
 ## Canonical label changes
 | Stable V2 IRI local name | Previous human-facing label | Canonical human-facing label | Handling |
@@ -46,7 +46,7 @@ The 87-element Gate-D conceptual inventory is preserved exactly. This work norma
 | `AlternativeMedicineAssignment` | Alternative Medicine Assignment | Alternative Medicinal Product Assignment | terminology aligned with product layer |
 | `LeadTimeObservationResult` | Lead-Time Observation Result | Lead Time Observation Result | punctuation normalization |
 | `PayerFundingOrganizationRole` | Payer / Funding Organization Role | Healthcare Financing Organization | umbrella retained; payer/funder kept as altLabels |
-| `ReimbursementUtilisationObservationResult` | Reimbursement / Utilisation Observation Result | Reimbursement and Utilization Observation Result | wording only; split question remains open |
+| `ReimbursementUtilisationObservationResult` | Reimbursement / Utilisation Observation Result | Reimbursement and Utilization Observation Result | umbrella retained for V2; no split |
 | `AssetAtRisk` | Asset-at-Risk | Asset at Risk | punctuation normalization |
 | `DigitalInformationSystemComponent` | Digital / Information System Component | Digital System Component | cohesive canonical phrase |
 
@@ -55,10 +55,18 @@ The 87-element Gate-D conceptual inventory is preserved exactly. This work norma
 Resolved for V2 labeling. The existing IRI and `<<Role>>` stereotype remain unchanged. `Labeler` is retained as an alternative/source-facing label. No conceptual split is introduced.
 
 ### Healthcare Financing Organization
-Resolved provisionally as a single umbrella role so the 87-element Gate-D inventory remains stable. `Payer Organization` and `Funding Organization` are retained as alternative labels. If later evidence shows materially different dependence or identity commitments, a separate split decision is required.
+Resolved as a single umbrella role for CM-PharmE 2.0 so the 87-element Gate-D inventory remains stable. `Payer Organization` and `Funding Organization` are retained as alternative labels. If a later ontology version gains evidence for materially different dependence or identity commitments, a separate split decision may be proposed.
 
 ### Reimbursement and Utilization Observation Result
-Only the human-facing wording is normalized in this work item. Whether reimbursement and utilization observations should be represented as two separate subkinds is **not** decided here because that would change the conceptual inventory and may affect mappings/evaluation. This requires human conceptual review.
+Resolved for CM-PharmE 2.0 as a single umbrella `<<Subkind>>`. The concept is **not split** into separate reimbursement and utilization result classes in V2.
+
+Rationale:
+- admitted Market Access evidence and current mappings do not require a split to satisfy the present ontology scope;
+- the existing umbrella concept supports the current competency-query and cross-representation commitments;
+- a split would propagate into OWL/SHACL, mappings, evaluation baselines, W8 views, and manuscript traceability without a demonstrated need;
+- this is a conservative evidence-bounded modeling decision, not a claim that reimbursement and utilization are universally identical phenomena.
+
+A future split can only be introduced in a later ontology version through an evidence-backed design decision with explicit downstream migration analysis.
 
 ## Formalization boundary
 The ontology continues to use stable IRIs such as `cmpe:ManufacturerRole`, `cmpe:PayerFundingOrganizationRole`, and `cmpe:ReimbursementUtilisationObservationResult`. Human-facing `rdfs:label` values are presentation/communication artifacts and do not redefine the underlying semantic identity.
