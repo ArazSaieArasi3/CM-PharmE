@@ -7,31 +7,31 @@
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
-cmpe:GeographicFeature a owl:Class ; rdfs:label "GeographicFeature"@en ; cmmeta:ontoumlStereotype "Kind" ; cmmeta:conceptualModule "x-infra" ; cmmeta:conceptualModelVersion "Gate-D-2026-08-19" .
-cmpe:AdministrativeRegion a owl:Class ; rdfs:subClassOf cmpe:GeographicFeature ; rdfs:label "AdministrativeRegion"@en ; cmmeta:ontoumlStereotype "Subkind" ; cmmeta:conceptualModule "x-infra" ; cmmeta:conceptualModelVersion "Gate-D-2026-08-19" .
+cmpe:GeographicFeature a owl:Class ; rdfs:label "Geographic Feature"@en ; cmmeta:ontoumlStereotype "Kind" ; cmmeta:conceptualModule "x-infra" ; cmmeta:conceptualModelVersion "Gate-D-2026-08-19" .
+cmpe:AdministrativeRegion a owl:Class ; rdfs:subClassOf cmpe:GeographicFeature ; rdfs:label "Administrative Region"@en ; cmmeta:ontoumlStereotype "Subkind" ; cmmeta:conceptualModule "x-infra" ; cmmeta:conceptualModelVersion "Gate-D-2026-08-19" .
 cmpe:Country a owl:Class ; rdfs:subClassOf cmpe:GeographicFeature ; rdfs:label "Country"@en ; cmmeta:ontoumlStereotype "Subkind" ; cmmeta:conceptualModule "x-infra" ; cmmeta:conceptualModelVersion "Gate-D-2026-08-19" .
-cmpe:GeospatialPosition a rdfs:Datatype ; rdfs:label "GeospatialPosition"@en ; cmmeta:ontoumlStereotype "Datatype" ; cmmeta:conceptualModule "x-infra" ; cmmeta:conceptualModelVersion "Gate-D-2026-08-19" .
+cmpe:GeospatialPosition a rdfs:Datatype ; rdfs:label "Geospatial Position"@en ; cmmeta:ontoumlStereotype "Datatype" ; cmmeta:conceptualModule "x-infra" ; cmmeta:conceptualModelVersion "Gate-D-2026-08-19" .
 cmpe:Address a rdfs:Datatype ; rdfs:label "Address"@en ; cmmeta:ontoumlStereotype "Datatype" ; cmmeta:conceptualModule "x-infra" ; cmmeta:conceptualModelVersion "Gate-D-2026-08-19" .
-cmpe:TimeInterval a rdfs:Datatype ; rdfs:label "TimeInterval"@en ; cmmeta:ontoumlStereotype "Datatype" ; cmmeta:conceptualModule "x-infra" ; cmmeta:conceptualModelVersion "Gate-D-2026-08-19" .
-cmpe:ReportingPeriod a rdfs:Datatype ; rdfs:label "ReportingPeriod"@en ; cmmeta:ontoumlStereotype "Datatype" ; cmmeta:conceptualModule "x-infra" ; cmmeta:conceptualModelVersion "Gate-D-2026-08-19" .
-cmpe:DataSourceResource a owl:Class ; rdfs:label "DataSourceResource"@en ; cmmeta:ontoumlStereotype "Kind" ; cmmeta:conceptualModule "x-infra" ; cmmeta:conceptualModelVersion "Gate-D-2026-08-19" .
+cmpe:TimeInterval a rdfs:Datatype ; rdfs:label "Time Interval"@en ; cmmeta:ontoumlStereotype "Datatype" ; cmmeta:conceptualModule "x-infra" ; cmmeta:conceptualModelVersion "Gate-D-2026-08-19" .
+cmpe:ReportingPeriod a rdfs:Datatype ; rdfs:label "Reporting Period"@en ; cmmeta:ontoumlStereotype "Datatype" ; cmmeta:conceptualModule "x-infra" ; cmmeta:conceptualModelVersion "Gate-D-2026-08-19" .
+cmpe:DataSourceResource a owl:Class ; rdfs:label "Data Source"@en ; skos:altLabel "Data Source Resource"@en ; cmmeta:ontoumlStereotype "Kind" ; cmmeta:conceptualModule "x-infra" ; cmmeta:conceptualModelVersion "Gate-D-2026-08-19" .
 cmpe:Dataset a owl:Class ; rdfs:label "Dataset"@en ; cmmeta:ontoumlStereotype "Kind" ; cmmeta:conceptualModule "x-infra" ; cmmeta:conceptualModelVersion "Gate-D-2026-08-19" .
-cmpe:DatasetRelease a owl:Class ; rdfs:label "DatasetRelease"@en ; cmmeta:ontoumlStereotype "Kind" ; cmmeta:conceptualModule "x-infra" ; cmmeta:conceptualModelVersion "Gate-D-2026-08-19" .
-cmpe:SourceRecord a owl:Class ; rdfs:label "SourceRecord"@en ; cmmeta:ontoumlStereotype "Kind" ; cmmeta:conceptualModule "x-infra" ; cmmeta:conceptualModelVersion "Gate-D-2026-08-19" .
+cmpe:DatasetRelease a owl:Class ; rdfs:label "Dataset Release"@en ; cmmeta:ontoumlStereotype "Kind" ; cmmeta:conceptualModule "x-infra" ; cmmeta:conceptualModelVersion "Gate-D-2026-08-19" .
+cmpe:SourceRecord a owl:Class ; rdfs:label "Source Record"@en ; cmmeta:ontoumlStereotype "Kind" ; cmmeta:conceptualModule "x-infra" ; cmmeta:conceptualModelVersion "Gate-D-2026-08-19" .
 cmpe:Assertion a owl:Class ; rdfs:label "Assertion"@en ; cmmeta:ontoumlStereotype "Kind" ; cmmeta:conceptualModule "x-infra" ; cmmeta:conceptualModelVersion "Gate-D-2026-08-19" .
-cmpe:ObservationActivity a owl:Class ; rdfs:label "ObservationActivity"@en ; cmmeta:ontoumlStereotype "Event" ; cmmeta:conceptualModule "x-infra" ; cmmeta:conceptualModelVersion "Gate-D-2026-08-19" .
-cmpe:ObservationResult a owl:Class ; rdfs:label "ObservationResult"@en ; cmmeta:ontoumlStereotype "Kind" ; cmmeta:conceptualModule "x-infra" ; cmmeta:conceptualModelVersion "Gate-D-2026-08-19" .
-cmpe:MeasureValue a rdfs:Datatype ; rdfs:label "MeasureValue"@en ; cmmeta:ontoumlStereotype "Datatype" ; cmmeta:conceptualModule "x-infra" ; cmmeta:conceptualModelVersion "Gate-D-2026-08-19" .
-cmpe:EvidenceItem a owl:Class ; rdfs:label "EvidenceItem"@en ; cmmeta:ontoumlStereotype "RoleMixin" ; cmmeta:conceptualModule "x-infra" ; cmmeta:conceptualModelVersion "Gate-D-2026-08-19" .
-cmpe:EvidenceSupport a owl:Class ; rdfs:label "EvidenceSupport"@en ; cmmeta:ontoumlStereotype "Relator" ; cmmeta:conceptualModule "x-infra" ; cmmeta:conceptualModelVersion "Gate-D-2026-08-19" .
-cmpe:MappingAssertion a owl:Class ; rdfs:subClassOf cmpe:Assertion ; rdfs:label "MappingAssertion"@en ; cmmeta:ontoumlStereotype "Subkind" ; cmmeta:conceptualModule "x-infra" ; cmmeta:conceptualModelVersion "Gate-D-2026-08-19" .
-cmpe:ProvenanceActivity a owl:Class ; rdfs:label "ProvenanceActivity"@en ; cmmeta:ontoumlStereotype "Event" ; cmmeta:conceptualModule "x-infra" ; cmmeta:conceptualModelVersion "Gate-D-2026-08-19" .
-cmpe:DataQualityFinding a owl:Class ; rdfs:subClassOf cmpe:Assertion ; rdfs:label "DataQualityFinding"@en ; cmmeta:ontoumlStereotype "Subkind" ; cmmeta:conceptualModule "x-infra" ; cmmeta:conceptualModelVersion "Gate-D-2026-08-19" .
-cmpe:IdentifierValue a rdfs:Datatype ; rdfs:label "IdentifierValue"@en ; cmmeta:ontoumlStereotype "Datatype" ; cmmeta:conceptualModule "x-infra" ; cmmeta:conceptualModelVersion "Gate-D-2026-08-19" .
-cmpe:IdentifierScheme a owl:Class ; rdfs:label "IdentifierScheme"@en ; cmmeta:ontoumlStereotype "Kind" ; cmmeta:conceptualModule "x-infra" ; cmmeta:conceptualModelVersion "Gate-D-2026-08-19" .
-cmpe:IdentifierAssignment a owl:Class ; rdfs:label "IdentifierAssignment"@en ; cmmeta:ontoumlStereotype "Relator" ; cmmeta:conceptualModule "x-infra" ; cmmeta:conceptualModelVersion "Gate-D-2026-08-19" .
-cmpe:EntityMatchAssertion a owl:Class ; rdfs:subClassOf cmpe:Assertion ; rdfs:label "EntityMatchAssertion"@en ; cmmeta:ontoumlStereotype "Subkind" ; cmmeta:conceptualModule "x-infra" ; cmmeta:conceptualModelVersion "Gate-D-2026-08-19" .
-cmpe:MatchConfidence a owl:Class ; rdfs:label "MatchConfidence"@en ; cmmeta:ontoumlStereotype "Quality" ; cmmeta:conceptualModule "x-infra" ; cmmeta:conceptualModelVersion "Gate-D-2026-08-19" .
+cmpe:ObservationActivity a owl:Class ; rdfs:label "Observation Activity"@en ; cmmeta:ontoumlStereotype "Event" ; cmmeta:conceptualModule "x-infra" ; cmmeta:conceptualModelVersion "Gate-D-2026-08-19" .
+cmpe:ObservationResult a owl:Class ; rdfs:label "Observation Result"@en ; cmmeta:ontoumlStereotype "Kind" ; cmmeta:conceptualModule "x-infra" ; cmmeta:conceptualModelVersion "Gate-D-2026-08-19" .
+cmpe:MeasureValue a rdfs:Datatype ; rdfs:label "Measure Value"@en ; cmmeta:ontoumlStereotype "Datatype" ; cmmeta:conceptualModule "x-infra" ; cmmeta:conceptualModelVersion "Gate-D-2026-08-19" .
+cmpe:EvidenceItem a owl:Class ; rdfs:label "Evidence Item"@en ; cmmeta:ontoumlStereotype "RoleMixin" ; cmmeta:conceptualModule "x-infra" ; cmmeta:conceptualModelVersion "Gate-D-2026-08-19" .
+cmpe:EvidenceSupport a owl:Class ; rdfs:label "Evidence Support"@en ; cmmeta:ontoumlStereotype "Relator" ; cmmeta:conceptualModule "x-infra" ; cmmeta:conceptualModelVersion "Gate-D-2026-08-19" .
+cmpe:MappingAssertion a owl:Class ; rdfs:subClassOf cmpe:Assertion ; rdfs:label "Mapping Assertion"@en ; cmmeta:ontoumlStereotype "Subkind" ; cmmeta:conceptualModule "x-infra" ; cmmeta:conceptualModelVersion "Gate-D-2026-08-19" .
+cmpe:ProvenanceActivity a owl:Class ; rdfs:label "Provenance Activity"@en ; cmmeta:ontoumlStereotype "Event" ; cmmeta:conceptualModule "x-infra" ; cmmeta:conceptualModelVersion "Gate-D-2026-08-19" .
+cmpe:DataQualityFinding a owl:Class ; rdfs:subClassOf cmpe:Assertion ; rdfs:label "Data Quality Finding"@en ; cmmeta:ontoumlStereotype "Subkind" ; cmmeta:conceptualModule "x-infra" ; cmmeta:conceptualModelVersion "Gate-D-2026-08-19" .
+cmpe:IdentifierValue a rdfs:Datatype ; rdfs:label "Identifier Value"@en ; cmmeta:ontoumlStereotype "Datatype" ; cmmeta:conceptualModule "x-infra" ; cmmeta:conceptualModelVersion "Gate-D-2026-08-19" .
+cmpe:IdentifierScheme a owl:Class ; rdfs:label "Identifier Scheme"@en ; cmmeta:ontoumlStereotype "Kind" ; cmmeta:conceptualModule "x-infra" ; cmmeta:conceptualModelVersion "Gate-D-2026-08-19" .
+cmpe:IdentifierAssignment a owl:Class ; rdfs:label "Identifier Assignment"@en ; cmmeta:ontoumlStereotype "Relator" ; cmmeta:conceptualModule "x-infra" ; cmmeta:conceptualModelVersion "Gate-D-2026-08-19" .
+cmpe:EntityMatchAssertion a owl:Class ; rdfs:subClassOf cmpe:Assertion ; rdfs:label "Entity Match Assertion"@en ; cmmeta:ontoumlStereotype "Subkind" ; cmmeta:conceptualModule "x-infra" ; cmmeta:conceptualModelVersion "Gate-D-2026-08-19" .
+cmpe:MatchConfidence a owl:Class ; rdfs:label "Match Confidence"@en ; cmmeta:ontoumlStereotype "Quality" ; cmmeta:conceptualModule "x-infra" ; cmmeta:conceptualModelVersion "Gate-D-2026-08-19" .
 
 cmpe:GeographicFeature owl:disjointWith cmpe:RegulatoryJurisdiction .
 cmpe:Facility owl:disjointWith cmpe:GeographicFeature .
