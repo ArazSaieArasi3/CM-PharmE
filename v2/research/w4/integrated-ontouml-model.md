@@ -3,7 +3,7 @@
 ## Status
 Gate D **APPROVED**. This is the authoritative W4 conceptual specification used as the semantic baseline for W5 formalization.
 
-Canonical domain naming is governed by `domain-taxonomy.md`. The domain-name normalization does not alter the 87-element Gate-D inventory, OntoUML stereotypes, identity/dependence commitments, relation patterns, or formal ontology semantics.
+Canonical domain naming is governed by `domain-taxonomy.md`. Canonical human-facing concept naming is governed by `concept-naming-audit.md`. These naming normalizations do not alter the 87-element Gate-D inventory, OntoUML stereotypes, identity/dependence commitments, relation patterns, or formal ontology semantics. Stable V2 IRIs remain unchanged.
 
 ## 1. Core package — 32 named types
 
@@ -12,19 +12,19 @@ Canonical domain naming is governed by `domain-taxonomy.md`. The domain-name nor
 |---|---|---|
 | Organization | `<<Kind>>` | Social/institutional identity provider. |
 | Ecosystem Participant | `<<RoleMixin>>` | Anti-rigid participation pattern spanning multiple bearer identities. |
-| Regulatory Authority Role | `<<Role>>` | Role of Organization. |
-| Manufacturer Role | `<<Role>>` | Role of Organization. |
-| Importer Role | `<<Role>>` | Role of Organization. |
-| Product-Responsible / Labeler Role | `<<Role>>` | Role of Organization. |
-| Wholesale Distributor Role | `<<Role>>` | Role of Organization. |
-| Third-Party Logistics Provider Role | `<<Role>>` | Role of Organization. |
+| Regulatory Authority | `<<Role>>` | Contextual role of Organization. |
+| Manufacturer | `<<Role>>` | Contextual role of Organization. |
+| Importer | `<<Role>>` | Contextual role of Organization. |
+| Product Responsible Organization | `<<Role>>` | Contextual role of Organization; `Labeler` retained as a source-facing alternative label. |
+| Wholesale Distributor | `<<Role>>` | Contextual role of Organization. |
+| Third-Party Logistics Provider | `<<Role>>` | Contextual role of Organization. |
 
 ### Facility Operations
 | Type | Stereotype | Commitment |
 |---|---|---|
 | Facility | `<<Kind>>` | Physical operational identity provider. |
-| Manufacturing Site Role | `<<Role>>` | Role of Facility. |
-| Distribution Site Role | `<<Role>>` | Role of Facility. |
+| Manufacturing Site | `<<Role>>` | Contextual role of Facility. |
+| Distribution Site | `<<Role>>` | Contextual role of Facility. |
 | Facility Operation | `<<Relator>>` | Grounds Organization↔Facility operation/responsibility. |
 
 ### Regulatory Governance
@@ -52,7 +52,7 @@ Canonical domain naming is governed by `domain-taxonomy.md`. The domain-name nor
 | Type | Stereotype | Commitment |
 |---|---|---|
 | Manufacturing Activity | `<<Event>>` | Manufacturing/processing occurrence. |
-| Distribution / Logistics Activity | `<<Event>>` | Distribution/handling/storage/logistics occurrence. |
+| Pharmaceutical Logistics Activity | `<<Event>>` | Distribution/handling/storage/logistics occurrence. |
 | Medicine Shortage Situation | `<<Situation>>` | Temporally/contextually bounded shortage state/configuration. |
 | Supply Capacity | `<<Mode>>` | Disposition/capacity inhering in an Organization or Facility. |
 
@@ -79,7 +79,7 @@ Canonical domain naming is governed by `domain-taxonomy.md`. The domain-name nor
 ### Evidence Traceability
 | Type | Stereotype |
 |---|---|
-| Data Source Resource | information-object `<<Kind>>` |
+| Data Source | information-object `<<Kind>>` |
 | Dataset | information-object `<<Kind>>` |
 | Dataset Release | information-object `<<Kind>>` |
 | Source Record | information-object `<<Kind>>` |
@@ -110,24 +110,24 @@ Canonical domain naming is governed by `domain-taxonomy.md`. The domain-name nor
 
 ### Supply Resilience
 - Contextual Medicine Classification Assignment — `<<Relator>>`
-- Essential Medicine Classification — `<<Subkind>>` of Contextual Medicine Classification Assignment
-- Critical Medicine Classification — `<<Subkind>>` of Contextual Medicine Classification Assignment
-- Alternative Medicinal Product Role — `<<Role>>` of Medicinal Product/Presentation
-- Alternative Medicine Assignment — `<<Relator>>`
+- Essential Medicine Classification Assignment — `<<Subkind>>` of Contextual Medicine Classification Assignment
+- Critical Medicine Classification Assignment — `<<Subkind>>` of Contextual Medicine Classification Assignment
+- Alternative Medicinal Product — `<<Role>>` of Medicinal Product/Presentation
+- Alternative Medicinal Product Assignment — `<<Relator>>`
 - Supply Dependency — `<<Relator>>`
 - Disruption Event — `<<Event>>`
 - Inventory Observation Result — `<<Subkind>>` of Observation Result
 - Procurement Activity — `<<Event>>`
-- Lead-Time Observation Result — `<<Subkind>>` of Observation Result
+- Lead Time Observation Result — `<<Subkind>>` of Observation Result
 - Stockout Situation — `<<Situation>>`
 
 ### Market Access
-- Payer / Funding Organization Role — `<<Role>>` of Organization
-- Reimbursement / Utilisation Observation Result — `<<Subkind>>` of Observation Result
+- Healthcare Financing Organization — `<<Role>>` of Organization; current umbrella label retaining payer/funder source terminology as alternative labels
+- Reimbursement and Utilization Observation Result — `<<Subkind>>` of Observation Result; conceptual split question remains open for human decision
 - Diagnosis Classification Reference — information-object `<<Kind>>`
 
 ### Risk Management
-- Asset-at-Risk — `<<RoleMixin>>`
+- Asset at Risk — `<<RoleMixin>>`
 - Risk Assessment Activity — `<<Event>>`
 - Vulnerability — `<<Mode>>`
 - Risk Treatment Plan — information/normative-object `<<Kind>>`
@@ -145,7 +145,7 @@ Canonical domain naming is governed by `domain-taxonomy.md`. The domain-name nor
 - Service Offering Specification — information-object `<<Kind>>`
 
 ### Digital Systems
-- Digital / Information System Component — `<<Kind>>`
+- Digital System Component — `<<Kind>>`
 
 ### Clinical Care
 - Clinical Care Participant — `<<RoleMixin>>`
@@ -154,17 +154,17 @@ Canonical domain naming is governed by `domain-taxonomy.md`. The domain-name nor
 
 ### Organization role family
 `Ecosystem Participant <<RoleMixin>>` generalizes role semantics across distinct bearer identities. Organization-specific specializations inherit identity from Organization:
-- Regulatory Authority Role
-- Manufacturer Role
-- Importer Role
-- Product-Responsible / Labeler Role
-- Wholesale Distributor Role
-- Third-Party Logistics Provider Role
-- Payer / Funding Organization Role (extension)
+- Regulatory Authority
+- Manufacturer
+- Importer
+- Product Responsible Organization
+- Wholesale Distributor
+- Third-Party Logistics Provider
+- Healthcare Financing Organization (extension)
 
 Facility-specific specializations inherit identity from Facility:
-- Manufacturing Site Role
-- Distribution Site Role
+- Manufacturing Site
+- Distribution Site
 
 The RoleMixin itself is abstract and cannot be instantiated without a concrete bearer identity.
 
@@ -187,13 +187,13 @@ No disjointness between the two subkinds is asserted at W4 because source/refere
 - Demand Observation Result
 - Supply Capacity Observation Result
 - Inventory Observation Result (extension)
-- Lead-Time Observation Result (extension)
-- Reimbursement / Utilisation Observation Result (extension)
+- Lead Time Observation Result (extension)
+- Reimbursement and Utilization Observation Result (extension)
 
 ### Contextual classification family
 `Contextual Medicine Classification Assignment <<Relator>>`
-- Essential Medicine Classification `<<Subkind>>`
-- Critical Medicine Classification `<<Subkind>>`
+- Essential Medicine Classification Assignment `<<Subkind>>`
+- Critical Medicine Classification Assignment `<<Subkind>>`
 
 ## 5. Core relation patterns
 
@@ -219,7 +219,7 @@ No disjointness between the two subkinds is asserted at W4 because source/refere
 | result has value | value relation | Observation Result → Measure Value |
 
 ## 6. X-INFRA relation patterns
-- Data Source Resource maintains/publishes Dataset.
+- Data Source maintains/publishes Dataset.
 - Dataset has Dataset Release.
 - Dataset Release contains Source Record.
 - Source Record supports Assertion through Evidence Support.
@@ -256,3 +256,6 @@ These distinctions are primary W4 quality controls and remain frozen unless a re
 
 ## 9. W5 formalization contract
 W5 must preserve the W4 identity and dependency structure while translating it into OWL/SHACL artifacts. Formalization may optimize OWL expressivity, but any semantic loss, such as RoleMixin/Relator distinctions not directly expressible in OWL DL, must be documented through annotations, SHACL, or companion model metadata rather than silently discarded.
+
+## 10. Naming boundary
+This normalization affects human-facing canonical labels only. Stable V2 IRIs such as `cmpe:ManufacturerRole`, `cmpe:PayerFundingOrganizationRole`, and `cmpe:ReimbursementUtilisationObservationResult` remain unchanged to protect formal traceability across OWL, SHACL, RDB/KG mappings, CQs, evaluation evidence, and reproducibility artifacts.
