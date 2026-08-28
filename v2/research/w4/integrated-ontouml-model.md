@@ -1,11 +1,13 @@
 # W4 Integrated OntoUML Conceptual Model Specification
 
 ## Status
-Gate-D candidate conceptual model. This is the authoritative W4 specification for W5 formalization; it is not yet the OWL release.
+Gate D **APPROVED**. This is the authoritative W4 conceptual specification used as the semantic baseline for W5 formalization.
+
+Canonical domain naming is governed by `domain-taxonomy.md`. The domain-name normalization does not alter the 87-element Gate-D inventory, OntoUML stereotypes, identity/dependence commitments, relation patterns, or formal ontology semantics.
 
 ## 1. Core package — 32 named types
 
-### Organization and contextual roles
+### Ecosystem Organization
 | Type | Stereotype | Identity / dependence commitment |
 |---|---|---|
 | Organization | `<<Kind>>` | Social/institutional identity provider. |
@@ -17,18 +19,22 @@ Gate-D candidate conceptual model. This is the authoritative W4 specification fo
 | Wholesale Distributor Role | `<<Role>>` | Role of Organization. |
 | Third-Party Logistics Provider Role | `<<Role>>` | Role of Organization. |
 
-### Facility and regulatory context
+### Facility Operations
 | Type | Stereotype | Commitment |
 |---|---|---|
 | Facility | `<<Kind>>` | Physical operational identity provider. |
 | Manufacturing Site Role | `<<Role>>` | Role of Facility. |
 | Distribution Site Role | `<<Role>>` | Role of Facility. |
 | Facility Operation | `<<Relator>>` | Grounds Organization↔Facility operation/responsibility. |
+
+### Regulatory Governance
+| Type | Stereotype | Commitment |
+|---|---|---|
 | Establishment Registration | `<<Relator>>` | Grounds registered-entity/authority/jurisdiction context. |
 | Regulatory Authorization | `<<Relator>>` | Grounds authorization/license relation. |
 | Regulatory Jurisdiction | `<<Kind>>` | Social/legal scope entity. |
 
-### Product layer
+### Pharmaceutical Product
 | Type | Stereotype | Commitment |
 |---|---|---|
 | Medicinal Product | `<<Kind>>` | Product identity layer represented across regulatory/access sources. |
@@ -42,20 +48,24 @@ Gate-D candidate conceptual model. This is the authoritative W4 specification fo
 | Product Classification Assignment | `<<Relator>>` | Product/Substance↔classification contextual assignment. |
 | Market Listing | `<<Relator>>` | Product Presentation↔responsibility/source/jurisdiction/time listing context. |
 
-### Activities, shortage and supply evidence
+### Supply Operations
 | Type | Stereotype | Commitment |
 |---|---|---|
 | Manufacturing Activity | `<<Event>>` | Manufacturing/processing occurrence. |
 | Distribution / Logistics Activity | `<<Event>>` | Distribution/handling/storage/logistics occurrence. |
 | Medicine Shortage Situation | `<<Situation>>` | Temporally/contextually bounded shortage state/configuration. |
 | Supply Capacity | `<<Mode>>` | Disposition/capacity inhering in an Organization or Facility. |
+
+### Ecosystem Observation
+| Type | Stereotype | Commitment |
+|---|---|---|
 | Availability Observation Result | `<<Subkind>>` of Observation Result | Persistent evidence result about availability. |
 | Demand Observation Result | `<<Subkind>>` of Observation Result | Persistent evidence result about demand/consumption. |
 | Supply Capacity Observation Result | `<<Subkind>>` of Observation Result | Evidence result about Supply Capacity. |
 
 ## 2. Cross-cutting infrastructure package — 25 named types
 
-### Geography and time
+### Spatiotemporal Context
 | Type | Stereotype |
 |---|---|
 | Geographic Feature | `<<Kind>>` |
@@ -66,7 +76,7 @@ Gate-D candidate conceptual model. This is the authoritative W4 specification fo
 | Time Interval | `<<Datatype>>` |
 | Reporting Period | `<<Datatype>>` |
 
-### Evidence and provenance
+### Evidence Traceability
 | Type | Stereotype |
 |---|---|
 | Data Source Resource | information-object `<<Kind>>` |
@@ -83,7 +93,7 @@ Gate-D candidate conceptual model. This is the authoritative W4 specification fo
 | Provenance Activity | `<<Event>>` |
 | Data Quality Finding | `<<Subkind>>` of Assertion |
 
-### Identity and matching
+### Entity Identity
 | Type | Stereotype |
 |---|---|
 | Identifier Value | `<<Datatype>>` |
@@ -94,11 +104,11 @@ Gate-D candidate conceptual model. This is the authoritative W4 specification fo
 
 ## 3. Modular extension package — 30 named types
 
-### Regulatory extension
+### Regulatory Policy
 - Regulatory Requirement — information/normative-object `<<Kind>>`
 - Regulatory Oversight — `<<Relator>>`
 
-### Policy / resilience / supply extension
+### Supply Resilience
 - Contextual Medicine Classification Assignment — `<<Relator>>`
 - Essential Medicine Classification — `<<Subkind>>` of Contextual Medicine Classification Assignment
 - Critical Medicine Classification — `<<Subkind>>` of Contextual Medicine Classification Assignment
@@ -111,31 +121,33 @@ Gate-D candidate conceptual model. This is the authoritative W4 specification fo
 - Lead-Time Observation Result — `<<Subkind>>` of Observation Result
 - Stockout Situation — `<<Situation>>`
 
-### Market Access extension
+### Market Access
 - Payer / Funding Organization Role — `<<Role>>` of Organization
 - Reimbursement / Utilisation Observation Result — `<<Subkind>>` of Observation Result
 - Diagnosis Classification Reference — information-object `<<Kind>>`
 
-### Risk & Resilience adapter extension
+### Risk Management
 - Asset-at-Risk — `<<RoleMixin>>`
 - Risk Assessment Activity — `<<Event>>`
 - Vulnerability — `<<Mode>>`
 - Risk Treatment Plan — information/normative-object `<<Kind>>`
 - Risk Treatment Activity — `<<Event>>`
 
-### Safety extension
+### Pharmacovigilance
 - Pharmacovigilance Requirement — information/normative-object `<<Kind>>`
 - Adverse Event Reporting Activity — `<<Event>>`
 - Post-Market Surveillance Activity — `<<Event>>`
 
-### Business Architecture / partnership extension
+### Business Architecture
 - Business Architecture View — information-object `<<Kind>>`
 - Enterprise Capability — `<<Mode>>`
 - Strategic Partnership Agreement — `<<Relator>>`
 - Service Offering Specification — information-object `<<Kind>>`
 
-### Digital / Clinical extensions
+### Digital Systems
 - Digital / Information System Component — `<<Kind>>`
+
+### Clinical Care
 - Clinical Care Participant — `<<RoleMixin>>`
 
 ## 4. Generalization structure
@@ -231,9 +243,9 @@ The model explicitly distinguishes:
 - Medicine Shortage Situation ≠ regulatory Source Record about the shortage.
 - Supply Capacity ≠ Supply Capacity Observation Result.
 - Risk ≠ Medicine Shortage Situation.
-- BA View ≠ Core ontology identity.
+- Business Architecture View ≠ Core ontology identity.
 
-These distinctions are primary W4 quality controls and should be preserved in W5 unless a recorded design decision revises them.
+These distinctions are primary W4 quality controls and remain frozen unless a recorded design decision revises them.
 
 ## 8. Deferred from Gate D
 - Clinical Care Pathway / Activity Pattern.
@@ -243,4 +255,4 @@ These distinctions are primary W4 quality controls and should be preserved in W5
 - technology-specific blockchain/EHR/telemedicine/AI system classes as Core.
 
 ## 9. W5 formalization contract
-W5 must preserve the W4 identity and dependency structure while translating it into OWL/SHACL artifacts. Formalization may optimize OWL expressivity, but any semantic loss (e.g., RoleMixin/Relator distinctions not directly expressible in OWL DL) must be documented through annotations, SHACL or companion model metadata rather than silently discarded.
+W5 must preserve the W4 identity and dependency structure while translating it into OWL/SHACL artifacts. Formalization may optimize OWL expressivity, but any semantic loss, such as RoleMixin/Relator distinctions not directly expressible in OWL DL, must be documented through annotations, SHACL, or companion model metadata rather than silently discarded.
