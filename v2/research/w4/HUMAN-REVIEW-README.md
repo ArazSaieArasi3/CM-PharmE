@@ -5,6 +5,7 @@ This is the V2-only entry point for human conceptual review before public Pages 
 ## Primary review artifact
 - [87-concept provenance and V1→V2 evidence matrix](human-review-concept-provenance-matrix.md)
 - [Provenance gap register and claim-boundary control surface](human-review-provenance-gap-register.md)
+- [Risk-first 19-concept review queue](human-review-high-risk-queue.md)
 - [17-domain visual ontology package](visual-ontology-package.md)
 - [Final integrated OntoUML conceptual specification](integrated-ontouml-model.md)
 - [Concept naming audit](concept-naming-audit.md)
@@ -20,9 +21,13 @@ This is the V2-only entry point for human conceptual review before public Pages 
 - [W7 held-out first-pass mapping](../../evaluation/results/e8-heldout-first-pass-mapping.csv)
 
 ## Review sequence
-Review one canonical domain at a time. For each concept inspect: definition → OntoUML stereotype → V1 lineage → dataset/official-source evidence → literature/ontology support → held-out evidence → formal IRI.
+Start with the risk-first queue so the highest-consequence foundational, migration, risk/resilience, held-out, and legacy-extension rows are inspected before the full matrix. Then review the remaining concepts one canonical domain at a time.
+
+For each concept inspect: definition → OntoUML stereotype → V1 lineage → dataset/official-source evidence → literature/ontology support → held-out evidence → formal IRI.
 
 Before assigning a disposition, use the provenance gap register to separate row-level evidence gaps (`G1`–`G9`) from genuine semantic defects. Record one of: APPROVE, APPROVE WITH WORDING CHANGE, REVISE SEMANTICS, SPLIT/MERGE, MOVE DOMAIN/MODULE, or DEFER.
+
+The risk-first queue is prioritization only. Its 19 rows are not pre-judged as defects and the other 68 concepts are not implicitly approved.
 
 Any semantic change after Gate D should become a V2 design-decision issue before OWL/SHACL is changed.
 
