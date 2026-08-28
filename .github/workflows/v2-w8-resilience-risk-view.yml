@@ -1,0 +1,61 @@
+name: V2 W8 Resilience Risk View
+
+on:
+  workflow_dispatch:
+  pull_request:
+    branches: [v2/research-program]
+    paths:
+      - 'v2/evaluation/protocol/e12-resilience-scenario-registry.json'
+      - 'v2/evaluation/protocol/e12-resilience-scenarios.ttl'
+      - 'v2/ontology/source/modules/**'
+      - 'tools/v2_evaluation/e12_resilience_scenarios.py'
+      - 'tools/v2_observatory/render_resilience_risk_view.py'
+      - 'v2/research/w8/resilience-risk-view-contract.md'
+      - '.github/workflows/v2-w8-resilience-risk-view.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: v2-w8-resilience-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  reproduce-w8-c5:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned evaluator dependency
+        run: python -m pip install 'rdflib==7.1.4'
+      - name: Re-run frozen W7-E12 evaluator and render W8 C5
+        run: |
+          python tools/v2_observatory/render_resilience_risk_view.py \
+            --json-output v2/application/observatory/generated/resilience-risk-view.json \
+            --html-output v2/application/observatory/generated/resilience-risk-view.html
+      - name: Assert bounded generated contract
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p = Path('v2/application/observatory/generated/resilience-risk-view.json')
+          d = json.loads(p.read_text())
+          assert d['scenario_count'] == 5
+          assert d['all_queries_reproduced'] is True
+          assert d['all_provenance_reproduced'] is True
+          assert d['ontology_goalpost_changes'] == 0
+          assert d['missing_evidence_sensitivity']['interpretation'] == 'INSUFFICIENT_EVIDENCE_NOT_RESILIENCE'
+          assert len(d['retained_extension_gaps']) == 3
+          assert [s['scenario_id'] for s in d['scenarios']] == ['RES-01','RES-02','RES-03','RES-04','RES-05']
+          assert d['scenarios'][3]['expected_representability'] == 'PARTIAL'
+          print('bounded W8 C5 contract PASS')
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: v2-w8-resilience-risk-view
+          path: |
+            v2/application/observatory/generated/resilience-risk-view.json
+            v2/application/observatory/generated/resilience-risk-view.html
+          if-no-files-found: error
