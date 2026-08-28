@@ -3,37 +3,38 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
-cmpe:RegulatoryRequirement a owl:Class ; rdfs:label "RegulatoryRequirement"@en ; cmmeta:ontoumlStereotype "Kind" ; cmmeta:conceptualModule "extension" .
-cmpe:RegulatoryOversight a owl:Class ; rdfs:label "RegulatoryOversight"@en ; cmmeta:ontoumlStereotype "Relator" ; cmmeta:conceptualModule "extension" .
-cmpe:ContextualMedicineClassificationAssignment a owl:Class ; rdfs:label "ContextualMedicineClassificationAssignment"@en ; cmmeta:ontoumlStereotype "Relator" ; cmmeta:conceptualModule "extension" .
-cmpe:EssentialMedicineClassification a owl:Class ; rdfs:subClassOf cmpe:ContextualMedicineClassificationAssignment ; rdfs:label "EssentialMedicineClassification"@en ; cmmeta:ontoumlStereotype "Subkind" ; cmmeta:conceptualModule "extension" .
-cmpe:CriticalMedicineClassification a owl:Class ; rdfs:subClassOf cmpe:ContextualMedicineClassificationAssignment ; rdfs:label "CriticalMedicineClassification"@en ; cmmeta:ontoumlStereotype "Subkind" ; cmmeta:conceptualModule "extension" .
-cmpe:AlternativeMedicinalProductRole a owl:Class ; rdfs:subClassOf cmpe:MedicinalProduct, cmpe:EcosystemParticipant ; rdfs:label "AlternativeMedicinalProductRole"@en ; cmmeta:ontoumlStereotype "Role" ; cmmeta:conceptualModule "extension" .
-cmpe:AlternativeMedicineAssignment a owl:Class ; rdfs:label "AlternativeMedicineAssignment"@en ; cmmeta:ontoumlStereotype "Relator" ; cmmeta:conceptualModule "extension" .
-cmpe:SupplyDependency a owl:Class ; rdfs:label "SupplyDependency"@en ; cmmeta:ontoumlStereotype "Relator" ; cmmeta:conceptualModule "extension" .
-cmpe:DisruptionEvent a owl:Class ; rdfs:label "DisruptionEvent"@en ; cmmeta:ontoumlStereotype "Event" ; cmmeta:conceptualModule "extension" .
-cmpe:InventoryObservationResult a owl:Class ; rdfs:subClassOf cmpe:ObservationResult ; rdfs:label "InventoryObservationResult"@en ; cmmeta:ontoumlStereotype "Subkind" ; cmmeta:conceptualModule "extension" .
-cmpe:ProcurementActivity a owl:Class ; rdfs:label "ProcurementActivity"@en ; cmmeta:ontoumlStereotype "Event" ; cmmeta:conceptualModule "extension" .
-cmpe:LeadTimeObservationResult a owl:Class ; rdfs:subClassOf cmpe:ObservationResult ; rdfs:label "LeadTimeObservationResult"@en ; cmmeta:ontoumlStereotype "Subkind" ; cmmeta:conceptualModule "extension" .
-cmpe:StockoutSituation a owl:Class ; rdfs:label "StockoutSituation"@en ; cmmeta:ontoumlStereotype "Situation" ; cmmeta:conceptualModule "extension" .
-cmpe:PayerFundingOrganizationRole a owl:Class ; rdfs:subClassOf cmpe:Organization, cmpe:EcosystemParticipant ; rdfs:label "PayerFundingOrganizationRole"@en ; cmmeta:ontoumlStereotype "Role" ; cmmeta:conceptualModule "extension" .
-cmpe:ReimbursementUtilisationObservationResult a owl:Class ; rdfs:subClassOf cmpe:ObservationResult ; rdfs:label "ReimbursementUtilisationObservationResult"@en ; cmmeta:ontoumlStereotype "Subkind" ; cmmeta:conceptualModule "extension" .
-cmpe:DiagnosisClassificationReference a owl:Class ; rdfs:label "DiagnosisClassificationReference"@en ; cmmeta:ontoumlStereotype "Kind" ; cmmeta:conceptualModule "extension" .
-cmpe:AssetAtRisk a owl:Class ; rdfs:label "AssetAtRisk"@en ; cmmeta:ontoumlStereotype "RoleMixin" ; cmmeta:conceptualModule "extension" .
-cmpe:RiskAssessmentActivity a owl:Class ; rdfs:label "RiskAssessmentActivity"@en ; cmmeta:ontoumlStereotype "Event" ; cmmeta:conceptualModule "extension" .
+cmpe:RegulatoryRequirement a owl:Class ; rdfs:label "Regulatory Requirement"@en ; cmmeta:ontoumlStereotype "Kind" ; cmmeta:conceptualModule "extension" .
+cmpe:RegulatoryOversight a owl:Class ; rdfs:label "Regulatory Oversight"@en ; cmmeta:ontoumlStereotype "Relator" ; cmmeta:conceptualModule "extension" .
+cmpe:ContextualMedicineClassificationAssignment a owl:Class ; rdfs:label "Contextual Medicine Classification Assignment"@en ; cmmeta:ontoumlStereotype "Relator" ; cmmeta:conceptualModule "extension" .
+cmpe:EssentialMedicineClassification a owl:Class ; rdfs:subClassOf cmpe:ContextualMedicineClassificationAssignment ; rdfs:label "Essential Medicine Classification Assignment"@en ; skos:altLabel "Essential Medicine Classification"@en ; cmmeta:ontoumlStereotype "Subkind" ; cmmeta:conceptualModule "extension" .
+cmpe:CriticalMedicineClassification a owl:Class ; rdfs:subClassOf cmpe:ContextualMedicineClassificationAssignment ; rdfs:label "Critical Medicine Classification Assignment"@en ; skos:altLabel "Critical Medicine Classification"@en ; cmmeta:ontoumlStereotype "Subkind" ; cmmeta:conceptualModule "extension" .
+cmpe:AlternativeMedicinalProductRole a owl:Class ; rdfs:subClassOf cmpe:MedicinalProduct, cmpe:EcosystemParticipant ; rdfs:label "Alternative Medicinal Product"@en ; skos:altLabel "Alternative Medicinal Product Role"@en ; cmmeta:ontoumlStereotype "Role" ; cmmeta:conceptualModule "extension" .
+cmpe:AlternativeMedicineAssignment a owl:Class ; rdfs:label "Alternative Medicinal Product Assignment"@en ; skos:altLabel "Alternative Medicine Assignment"@en ; cmmeta:ontoumlStereotype "Relator" ; cmmeta:conceptualModule "extension" .
+cmpe:SupplyDependency a owl:Class ; rdfs:label "Supply Dependency"@en ; cmmeta:ontoumlStereotype "Relator" ; cmmeta:conceptualModule "extension" .
+cmpe:DisruptionEvent a owl:Class ; rdfs:label "Disruption Event"@en ; cmmeta:ontoumlStereotype "Event" ; cmmeta:conceptualModule "extension" .
+cmpe:InventoryObservationResult a owl:Class ; rdfs:subClassOf cmpe:ObservationResult ; rdfs:label "Inventory Observation Result"@en ; cmmeta:ontoumlStereotype "Subkind" ; cmmeta:conceptualModule "extension" .
+cmpe:ProcurementActivity a owl:Class ; rdfs:label "Procurement Activity"@en ; cmmeta:ontoumlStereotype "Event" ; cmmeta:conceptualModule "extension" .
+cmpe:LeadTimeObservationResult a owl:Class ; rdfs:subClassOf cmpe:ObservationResult ; rdfs:label "Lead Time Observation Result"@en ; skos:altLabel "Lead-Time Observation Result"@en ; cmmeta:ontoumlStereotype "Subkind" ; cmmeta:conceptualModule "extension" .
+cmpe:StockoutSituation a owl:Class ; rdfs:label "Stockout Situation"@en ; cmmeta:ontoumlStereotype "Situation" ; cmmeta:conceptualModule "extension" .
+cmpe:PayerFundingOrganizationRole a owl:Class ; rdfs:subClassOf cmpe:Organization, cmpe:EcosystemParticipant ; rdfs:label "Healthcare Financing Organization"@en ; skos:altLabel "Payer Organization"@en, "Funding Organization"@en, "Payer / Funding Organization Role"@en ; cmmeta:ontoumlStereotype "Role" ; cmmeta:conceptualModule "extension" .
+cmpe:ReimbursementUtilisationObservationResult a owl:Class ; rdfs:subClassOf cmpe:ObservationResult ; rdfs:label "Reimbursement and Utilization Observation Result"@en ; skos:altLabel "Reimbursement / Utilisation Observation Result"@en ; cmmeta:ontoumlStereotype "Subkind" ; cmmeta:conceptualModule "extension" .
+cmpe:DiagnosisClassificationReference a owl:Class ; rdfs:label "Diagnosis Classification Reference"@en ; cmmeta:ontoumlStereotype "Kind" ; cmmeta:conceptualModule "extension" .
+cmpe:AssetAtRisk a owl:Class ; rdfs:label "Asset at Risk"@en ; skos:altLabel "Asset-at-Risk"@en ; cmmeta:ontoumlStereotype "RoleMixin" ; cmmeta:conceptualModule "extension" .
+cmpe:RiskAssessmentActivity a owl:Class ; rdfs:label "Risk Assessment Activity"@en ; cmmeta:ontoumlStereotype "Event" ; cmmeta:conceptualModule "extension" .
 cmpe:Vulnerability a owl:Class ; rdfs:label "Vulnerability"@en ; cmmeta:ontoumlStereotype "Mode" ; cmmeta:conceptualModule "extension" .
-cmpe:RiskTreatmentPlan a owl:Class ; rdfs:label "RiskTreatmentPlan"@en ; cmmeta:ontoumlStereotype "Kind" ; cmmeta:conceptualModule "extension" .
-cmpe:RiskTreatmentActivity a owl:Class ; rdfs:label "RiskTreatmentActivity"@en ; cmmeta:ontoumlStereotype "Event" ; cmmeta:conceptualModule "extension" .
-cmpe:PharmacovigilanceRequirement a owl:Class ; rdfs:label "PharmacovigilanceRequirement"@en ; cmmeta:ontoumlStereotype "Kind" ; cmmeta:conceptualModule "extension" .
-cmpe:AdverseEventReportingActivity a owl:Class ; rdfs:label "AdverseEventReportingActivity"@en ; cmmeta:ontoumlStereotype "Event" ; cmmeta:conceptualModule "extension" .
-cmpe:PostMarketSurveillanceActivity a owl:Class ; rdfs:label "PostMarketSurveillanceActivity"@en ; cmmeta:ontoumlStereotype "Event" ; cmmeta:conceptualModule "extension" .
-cmpe:BusinessArchitectureView a owl:Class ; rdfs:label "BusinessArchitectureView"@en ; cmmeta:ontoumlStereotype "Kind" ; cmmeta:conceptualModule "extension" .
-cmpe:EnterpriseCapability a owl:Class ; rdfs:label "EnterpriseCapability"@en ; cmmeta:ontoumlStereotype "Mode" ; cmmeta:conceptualModule "extension" .
-cmpe:StrategicPartnershipAgreement a owl:Class ; rdfs:label "StrategicPartnershipAgreement"@en ; cmmeta:ontoumlStereotype "Relator" ; cmmeta:conceptualModule "extension" .
-cmpe:ServiceOfferingSpecification a owl:Class ; rdfs:label "ServiceOfferingSpecification"@en ; cmmeta:ontoumlStereotype "Kind" ; cmmeta:conceptualModule "extension" .
-cmpe:DigitalInformationSystemComponent a owl:Class ; rdfs:label "DigitalInformationSystemComponent"@en ; cmmeta:ontoumlStereotype "Kind" ; cmmeta:conceptualModule "extension" .
-cmpe:ClinicalCareParticipant a owl:Class ; rdfs:label "ClinicalCareParticipant"@en ; cmmeta:ontoumlStereotype "RoleMixin" ; cmmeta:conceptualModule "extension" .
+cmpe:RiskTreatmentPlan a owl:Class ; rdfs:label "Risk Treatment Plan"@en ; cmmeta:ontoumlStereotype "Kind" ; cmmeta:conceptualModule "extension" .
+cmpe:RiskTreatmentActivity a owl:Class ; rdfs:label "Risk Treatment Activity"@en ; cmmeta:ontoumlStereotype "Event" ; cmmeta:conceptualModule "extension" .
+cmpe:PharmacovigilanceRequirement a owl:Class ; rdfs:label "Pharmacovigilance Requirement"@en ; cmmeta:ontoumlStereotype "Kind" ; cmmeta:conceptualModule "extension" .
+cmpe:AdverseEventReportingActivity a owl:Class ; rdfs:label "Adverse Event Reporting Activity"@en ; cmmeta:ontoumlStereotype "Event" ; cmmeta:conceptualModule "extension" .
+cmpe:PostMarketSurveillanceActivity a owl:Class ; rdfs:label "Post-Market Surveillance Activity"@en ; cmmeta:ontoumlStereotype "Event" ; cmmeta:conceptualModule "extension" .
+cmpe:BusinessArchitectureView a owl:Class ; rdfs:label "Business Architecture View"@en ; cmmeta:ontoumlStereotype "Kind" ; cmmeta:conceptualModule "extension" .
+cmpe:EnterpriseCapability a owl:Class ; rdfs:label "Enterprise Capability"@en ; cmmeta:ontoumlStereotype "Mode" ; cmmeta:conceptualModule "extension" .
+cmpe:StrategicPartnershipAgreement a owl:Class ; rdfs:label "Strategic Partnership Agreement"@en ; cmmeta:ontoumlStereotype "Relator" ; cmmeta:conceptualModule "extension" .
+cmpe:ServiceOfferingSpecification a owl:Class ; rdfs:label "Service Offering Specification"@en ; cmmeta:ontoumlStereotype "Kind" ; cmmeta:conceptualModule "extension" .
+cmpe:DigitalInformationSystemComponent a owl:Class ; rdfs:label "Digital System Component"@en ; skos:altLabel "Digital / Information System Component"@en ; cmmeta:ontoumlStereotype "Kind" ; cmmeta:conceptualModule "extension" .
+cmpe:ClinicalCareParticipant a owl:Class ; rdfs:label "Clinical Care Participant"@en ; cmmeta:ontoumlStereotype "RoleMixin" ; cmmeta:conceptualModule "extension" .
 
 cmpe:contextClassificationProduct a owl:ObjectProperty ; rdfs:domain cmpe:ContextualMedicineClassificationAssignment ; rdfs:range cmpe:MedicinalProduct .
 cmpe:contextClassificationEntry a owl:ObjectProperty ; rdfs:domain cmpe:ContextualMedicineClassificationAssignment ; rdfs:range cmpe:ClassificationEntry .
