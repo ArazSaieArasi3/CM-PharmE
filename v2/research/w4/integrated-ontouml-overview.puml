@@ -6,18 +6,18 @@ skinparam classAttributeIconSize 0
 package "CORE — Ecosystem Organization" {
   abstract class "Ecosystem Participant" as EcosystemParticipant <<RoleMixin>>
   class Organization <<Kind>>
-  class "Regulatory Authority Role" as RegAuthorityRole <<Role>>
-  class "Manufacturer Role" as ManufacturerRole <<Role>>
-  class "Importer Role" as ImporterRole <<Role>>
-  class "Product-Responsible / Labeler Role" as LabelerRole <<Role>>
-  class "Wholesale Distributor Role" as WDDRole <<Role>>
-  class "3PL Provider Role" as TPLRole <<Role>>
+  class "Regulatory Authority" as RegAuthorityRole <<Role>>
+  class Manufacturer as ManufacturerRole <<Role>>
+  class Importer as ImporterRole <<Role>>
+  class "Product Responsible Organization" as LabelerRole <<Role>>
+  class "Wholesale Distributor" as WDDRole <<Role>>
+  class "Third-Party Logistics Provider" as TPLRole <<Role>>
 }
 
 package "CORE — Facility Operations" {
   class Facility <<Kind>>
-  class "Manufacturing Site Role" as MfgSiteRole <<Role>>
-  class "Distribution Site Role" as DistSiteRole <<Role>>
+  class "Manufacturing Site" as MfgSiteRole <<Role>>
+  class "Distribution Site" as DistSiteRole <<Role>>
   class "Facility Operation" as FacilityOperation <<Relator>>
 }
 
@@ -42,7 +42,7 @@ package "CORE — Pharmaceutical Product" {
 
 package "CORE — Supply Operations" {
   class "Manufacturing Activity" as MfgActivity <<Event>>
-  class "Distribution / Logistics Activity" as DistActivity <<Event>>
+  class "Pharmaceutical Logistics Activity" as DistActivity <<Event>>
   class "Medicine Shortage Situation" as Shortage <<Situation>>
   class "Supply Capacity" as SupplyCapacity <<Mode>>
 }
@@ -64,7 +64,7 @@ package "X-INFRA — Spatiotemporal Context" {
 }
 
 package "X-INFRA — Evidence Traceability" {
-  class "Data Source Resource" as DataSource <<Kind>>
+  class "Data Source" as DataSource <<Kind>>
   class Dataset <<Kind>>
   class "Dataset Release" as DatasetRelease <<Kind>>
   class "Source Record" as SourceRecord <<Kind>>
@@ -94,26 +94,26 @@ package "EXT — Regulatory Policy" {
 
 package "EXT — Supply Resilience" {
   class "Contextual Medicine Classification Assignment" as ContextClass <<Relator>>
-  class "Essential Medicine Classification" as EssentialClass <<Subkind>>
-  class "Critical Medicine Classification" as CriticalClass <<Subkind>>
-  class "Alternative Medicinal Product Role" as AlternativeRole <<Role>>
-  class "Alternative Medicine Assignment" as AlternativeAssignment <<Relator>>
+  class "Essential Medicine Classification Assignment" as EssentialClass <<Subkind>>
+  class "Critical Medicine Classification Assignment" as CriticalClass <<Subkind>>
+  class "Alternative Medicinal Product" as AlternativeRole <<Role>>
+  class "Alternative Medicinal Product Assignment" as AlternativeAssignment <<Relator>>
   class "Supply Dependency" as SupplyDependency <<Relator>>
   class "Disruption Event" as Disruption <<Event>>
   class "Inventory Observation Result" as InventoryResult <<Subkind>>
   class "Procurement Activity" as ProcurementActivity <<Event>>
-  class "Lead-Time Observation Result" as LeadTimeResult <<Subkind>>
+  class "Lead Time Observation Result" as LeadTimeResult <<Subkind>>
   class "Stockout Situation" as Stockout <<Situation>>
 }
 
 package "EXT — Market Access" {
-  class "Payer / Funding Organization Role" as PayerRole <<Role>>
-  class "Reimbursement / Utilisation Observation Result" as ReimbursementResult <<Subkind>>
+  class "Healthcare Financing Organization" as PayerRole <<Role>>
+  class "Reimbursement and Utilization Observation Result" as ReimbursementResult <<Subkind>>
   class "Diagnosis Classification Reference" as DiagnosisReference <<Kind>>
 }
 
 package "EXT — Risk Management" {
-  abstract class "Asset-at-Risk" as AssetAtRisk <<RoleMixin>>
+  abstract class "Asset at Risk" as AssetAtRisk <<RoleMixin>>
   class "Risk Assessment Activity" as RiskAssessment <<Event>>
   class Vulnerability <<Mode>>
   class "Risk Treatment Plan" as RiskPlan <<Kind>>
@@ -134,7 +134,7 @@ package "EXT — Business Architecture" {
 }
 
 package "EXT — Digital Systems" {
-  class "Digital / Information System Component" as DigitalComponent <<Kind>>
+  class "Digital System Component" as DigitalComponent <<Kind>>
 }
 
 package "EXT — Clinical Care" {
