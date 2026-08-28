@@ -123,7 +123,7 @@ Canonical domain naming is governed by `domain-taxonomy.md`. Canonical human-fac
 
 ### Market Access
 - Healthcare Financing Organization — `<<Role>>` of Organization; current umbrella label retaining payer/funder source terminology as alternative labels
-- Reimbursement and Utilization Observation Result — `<<Subkind>>` of Observation Result; conceptual split question remains open for human decision
+- Reimbursement and Utilization Observation Result — `<<Subkind>>` of Observation Result; retained as a single umbrella concept for CM-PharmE 2.0
 - Diagnosis Classification Reference — information-object `<<Kind>>`
 
 ### Risk Management
