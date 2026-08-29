@@ -8,6 +8,7 @@ This is the V2-only entry point for human conceptual review before public Pages 
 - [Risk-first 19-concept review queue](human-review-high-risk-queue.md)
 - [P0 bounded evidence packets — 6 highest-consequence rows](human-review-p0-evidence-packets.md)
 - [P1 bounded evidence packets — 10 material evidence/foundational/held-out rows](human-review-p1-evidence-packets.md)
+- [P2 bounded evidence packets — 3 legacy/extension migration rows](human-review-p2-evidence-packets.md)
 - [17-domain visual ontology package](visual-ontology-package.md)
 - [Final integrated OntoUML conceptual specification](integrated-ontouml-model.md)
 - [Concept naming audit](concept-naming-audit.md)
@@ -23,7 +24,7 @@ This is the V2-only entry point for human conceptual review before public Pages 
 - [W7 held-out first-pass mapping](../../evaluation/results/e8-heldout-first-pass-mapping.csv)
 
 ## Review sequence
-Start with the risk-first queue so the highest-consequence foundational, migration, risk/resilience, held-out, and legacy-extension rows are inspected before the full matrix. For P0 and P1, use the bounded evidence packets to inspect what repository evidence supports, what remains unproven, the exact author question, and the safe pre-review claim boundary. Then review the remaining concepts one canonical domain at a time.
+Start with the risk-first queue so the highest-consequence foundational, migration, risk/resilience, held-out, and legacy-extension rows are inspected before the full matrix. For all P0/P1/P2 rows, use the bounded evidence packets to inspect what repository evidence supports, what remains unproven, the exact author question, and the safe pre-review claim boundary. Then review the remaining concepts one canonical domain at a time.
 
 For each concept inspect: definition → OntoUML stereotype → V1 lineage → dataset/official-source evidence → literature/ontology support → held-out evidence → formal IRI.
 
