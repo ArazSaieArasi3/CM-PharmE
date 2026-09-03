@@ -9,6 +9,7 @@ This is the V2-only entry point for human conceptual review before public Pages 
 - [P0 bounded evidence packets — 6 highest-consequence rows](human-review-p0-evidence-packets.md)
 - [P1 bounded evidence packets — 10 material evidence/foundational/held-out rows](human-review-p1-evidence-packets.md)
 - [P2 bounded evidence packets — 3 legacy/extension migration rows](human-review-p2-evidence-packets.md)
+- [Human review disposition log](human-review-disposition-log.md)
 - [17-domain visual ontology package](visual-ontology-package.md)
 - [Final integrated OntoUML conceptual specification](integrated-ontouml-model.md)
 - [Concept naming audit](concept-naming-audit.md)
@@ -24,13 +25,13 @@ This is the V2-only entry point for human conceptual review before public Pages 
 - [W7 held-out first-pass mapping](../../evaluation/results/e8-heldout-first-pass-mapping.csv)
 
 ## Review sequence
-Start with the risk-first queue so the highest-consequence foundational, migration, risk/resilience, held-out, and legacy-extension rows are inspected before the full matrix. For all P0/P1/P2 rows, use the bounded evidence packets to inspect what repository evidence supports, what remains unproven, the exact author question, and the safe pre-review claim boundary. Then review the remaining concepts one canonical domain at a time.
+Start with the risk-first queue so the highest-consequence foundational, migration, risk/resilience, held-out, and legacy-extension rows are inspected before the full matrix. For all P0/P1/P2 rows, use the bounded evidence packets to inspect what repository evidence supports, what remains unproven, the exact author question, and the safe pre-review claim boundary. Record each real author/reviewer decision in the disposition log. Then review the remaining concepts one canonical domain at a time.
 
 For each concept inspect: definition → OntoUML stereotype → V1 lineage → dataset/official-source evidence → literature/ontology support → held-out evidence → formal IRI.
 
 Before assigning a disposition, use the provenance gap register to separate row-level evidence gaps (`G1`–`G9`) from genuine semantic defects. Record one of: APPROVE, APPROVE WITH WORDING CHANGE, REVISE SEMANTICS, SPLIT/MERGE, MOVE DOMAIN/MODULE, or DEFER.
 
-The risk-first queue and evidence packets are prioritization/review aids only. Their rows are not pre-approved, and the other 68 concepts are not implicitly approved.
+The risk-first queue and evidence packets are prioritization/review aids only. Their rows are not pre-approved, and the other 68 concepts are not implicitly approved. The disposition log starts empty and must only contain decisions from actual review activity.
 
 Any semantic change after Gate D should become a V2 design-decision issue before OWL/SHACL is changed.
 
