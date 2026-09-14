@@ -29,7 +29,7 @@ This is the ordered human-review entry point for CM-PharmE 2.0. It is a review p
 | 3 | Domain Diagrams | 17 diagrams | Ready | Inspect per-domain concept/relationship structure | [Open](../research/w4/visual-ontology-package.md) |
 | 4 | Concept Catalog | 87 concepts | Ready | Prioritize concept review | [Open](concepts/index.md) |
 | 5 | Concept Provenance Matrix | 87 concepts | Ready | Review V1 lineage, datasets, external support and evidence gaps | [Open](../research/w4/human-review-concept-provenance-matrix.md) |
-| 6 | Concept Evidence Passports | 8/87 instantiated | In progress | Deep review of instantiated concepts | [Open passport registry](concepts/passports/index.md) |
+| 6 | Concept Evidence Passports | 15/87 instantiated | In progress | Deep review of instantiated concepts | [Open passport registry](concepts/passports/index.md) |
 | 7 | Relation Catalog | All relations | Planned | Review source/target/direction/evidence | [#173 Phase 2](https://github.com/ArazSaieArasi3/CM-PharmE/issues/173) |
 | 8 | Version Evolution Package | V1→V2 | Partial | Review justified continuity and justified change | Existing W0/W4 migration artifacts; HORP package pending |
 | 9 | Evaluation Diagnostic Report | E1–E13 | Partial | Diagnose warnings, gaps and claim boundaries | W7 evidence; HORP diagnostic projection pending |
