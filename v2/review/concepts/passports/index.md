@@ -3,7 +3,7 @@ artifact_type: concept_evidence_passport_registry
 ontology_id: CM-PharmE
 ontology_version: 2.0.0-alpha.1
 review_status: active
-passport_count: 8
+passport_count: 15
 planned_passport_count: 87
 ---
 
@@ -11,23 +11,30 @@ planned_passport_count: 87
 
 This registry instantiates Phase 2 of #173 using the canonical OGCM-RF Concept Evidence Passport pattern. Passports are review projections over governed V2 evidence; they do not create new semantic authority or imply human approval.
 
-## Current instantiated batch — Ecosystem Organization
+## Instantiated coverage
 
-| # | Concept | Stereotype | Review status | Passport |
-|---:|---|---|---|---|
-| 1 | Organization | Kind | Pending | [Open](001-organization.md) |
-| 2 | Ecosystem Participant | RoleMixin | Pending | [Open](002-ecosystem-participant.md) |
-| 3 | Regulatory Authority | Role | Pending | [Open](003-regulatory-authority.md) |
-| 4 | Manufacturer | Role | Pending | [Open](004-manufacturer.md) |
-| 5 | Importer | Role | Pending | [Open](005-importer.md) |
-| 6 | Product Responsible Organization | Role | Pending | [Open](006-product-responsible-organization.md) |
-| 7 | Wholesale Distributor | Role | Pending | [Open](007-wholesale-distributor.md) |
-| 8 | Third-Party Logistics Provider | Role | Pending | [Open](008-third-party-logistics-provider.md) |
+| # | Concept | Domain | Stereotype | Review status | Passport |
+|---:|---|---|---|---|---|
+| 1 | Organization | Ecosystem Organization | Kind | Pending | [Open](001-organization.md) |
+| 2 | Ecosystem Participant | Ecosystem Organization | RoleMixin | Pending | [Open](002-ecosystem-participant.md) |
+| 3 | Regulatory Authority | Ecosystem Organization | Role | Pending | [Open](003-regulatory-authority.md) |
+| 4 | Manufacturer | Ecosystem Organization | Role | Pending | [Open](004-manufacturer.md) |
+| 5 | Importer | Ecosystem Organization | Role | Pending | [Open](005-importer.md) |
+| 6 | Product Responsible Organization | Ecosystem Organization | Role | Pending | [Open](006-product-responsible-organization.md) |
+| 7 | Wholesale Distributor | Ecosystem Organization | Role | Pending | [Open](007-wholesale-distributor.md) |
+| 8 | Third-Party Logistics Provider | Ecosystem Organization | Role | Pending | [Open](008-third-party-logistics-provider.md) |
+| 9 | Facility | Facility Operations | Kind | Pending | [Open](009-facility.md) |
+| 10 | Manufacturing Site | Facility Operations | Role | Pending | [Open](010-manufacturing-site.md) |
+| 11 | Distribution Site | Facility Operations | Role | Pending | [Open](011-distribution-site.md) |
+| 12 | Facility Operation | Facility Operations | Relator | Pending | [Open](012-facility-operation.md) |
+| 13 | Establishment Registration | Regulatory Governance | Relator | Pending | [Open](013-establishment-registration.md) |
+| 14 | Regulatory Authorization | Regulatory Governance | Relator | Pending | [Open](014-regulatory-authorization.md) |
+| 15 | Regulatory Jurisdiction | Regulatory Governance | Kind | Pending | [Open](015-regulatory-jurisdiction.md) |
 
 ## Coverage
-- Instantiated: **8/87** concepts.
-- Domain coverage in this batch: **Ecosystem Organization 8/8**.
-- Remaining: **79** passports across the other 16 domains.
+- Instantiated: **15/87** concepts.
+- Complete domains: **Ecosystem Organization 8/8; Facility Operations 4/4; Regulatory Governance 3/3**.
+- Remaining: **72** passports across the other 14 domains.
 
 ## Evidence discipline
 Each passport inherits its registered definition, stereotype, V1 lineage, dataset evidence, held-out evidence, support codes and IRI from the governed V2 provenance matrix. Missing concept-level external definitions are left as evidence gaps rather than inferred.
