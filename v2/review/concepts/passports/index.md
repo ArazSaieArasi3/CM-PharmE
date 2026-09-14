@@ -3,7 +3,7 @@ artifact_type: concept_evidence_passport_registry
 ontology_id: CM-PharmE
 ontology_version: 2.0.0-alpha.1
 review_status: active
-passport_count: 15
+passport_count: 25
 planned_passport_count: 87
 ---
 
@@ -30,11 +30,21 @@ This registry instantiates Phase 2 of #173 using the canonical OGCM-RF Concept E
 | 13 | Establishment Registration | Regulatory Governance | Relator | Pending | [Open](013-establishment-registration.md) |
 | 14 | Regulatory Authorization | Regulatory Governance | Relator | Pending | [Open](014-regulatory-authorization.md) |
 | 15 | Regulatory Jurisdiction | Regulatory Governance | Kind | Pending | [Open](015-regulatory-jurisdiction.md) |
+| 16 | Medicinal Product | Pharmaceutical Product | Kind | Pending | [Open](016-medicinal-product.md) |
+| 17 | Pharmaceutical Substance | Pharmaceutical Product | Kind | Pending | [Open](017-pharmaceutical-substance.md) |
+| 18 | Medicinal Product Presentation | Pharmaceutical Product | Kind | Pending | [Open](018-medicinal-product-presentation.md) |
+| 19 | Dosage Form Specification | Pharmaceutical Product | Kind | Pending | [Open](019-dosage-form-specification.md) |
+| 20 | Strength | Pharmaceutical Product | Quality | Pending | [Open](020-strength.md) |
+| 21 | Package Configuration | Pharmaceutical Product | Kind | Pending | [Open](021-package-configuration.md) |
+| 22 | Product Classification Scheme | Pharmaceutical Product | Kind | Pending | [Open](022-product-classification-scheme.md) |
+| 23 | Classification Entry | Pharmaceutical Product | Kind | Pending | [Open](023-classification-entry.md) |
+| 24 | Product Classification Assignment | Pharmaceutical Product | Relator | Pending | [Open](024-product-classification-assignment.md) |
+| 25 | Market Listing | Pharmaceutical Product | Relator | Pending | [Open](025-market-listing.md) |
 
 ## Coverage
-- Instantiated: **15/87** concepts.
-- Complete domains: **Ecosystem Organization 8/8; Facility Operations 4/4; Regulatory Governance 3/3**.
-- Remaining: **72** passports across the other 14 domains.
+- Instantiated: **25/87** concepts.
+- Complete domains: **Ecosystem Organization 8/8; Facility Operations 4/4; Regulatory Governance 3/3; Pharmaceutical Product 10/10**.
+- Remaining: **62** passports across the other 13 domains.
 
 ## Evidence discipline
 Each passport inherits its registered definition, stereotype, V1 lineage, dataset evidence, held-out evidence, support codes and IRI from the governed V2 provenance matrix. Missing concept-level external definitions are left as evidence gaps rather than inferred.
