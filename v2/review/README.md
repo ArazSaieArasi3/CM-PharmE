@@ -29,7 +29,7 @@ This is the ordered human-review entry point for CM-PharmE 2.0. It is a review p
 | 3 | Domain Diagrams | 17 diagrams | Ready | Inspect per-domain concept/relationship structure | [Open](../research/w4/visual-ontology-package.md) |
 | 4 | Concept Catalog | 87 concepts | Ready | Prioritize concept review | [Open](concepts/index.md) |
 | 5 | Concept Provenance Matrix | 87 concepts | Ready | Review V1 lineage, datasets, external support and evidence gaps | [Open](../research/w4/human-review-concept-provenance-matrix.md) |
-| 6 | Concept Evidence Passports | Per concept | Planned | Deep review of selected concepts | [#173 Phase 2](https://github.com/ArazSaieArasi3/CM-PharmE/issues/173) |
+| 6 | Concept Evidence Passports | 8/87 instantiated | In progress | Deep review of instantiated concepts | [Open passport registry](concepts/passports/index.md) |
 | 7 | Relation Catalog | All relations | Planned | Review source/target/direction/evidence | [#173 Phase 2](https://github.com/ArazSaieArasi3/CM-PharmE/issues/173) |
 | 8 | Version Evolution Package | V1→V2 | Partial | Review justified continuity and justified change | Existing W0/W4 migration artifacts; HORP package pending |
 | 9 | Evaluation Diagnostic Report | E1–E13 | Partial | Diagnose warnings, gaps and claim boundaries | W7 evidence; HORP diagnostic projection pending |
@@ -40,7 +40,7 @@ This is the ordered human-review entry point for CM-PharmE 2.0. It is a review p
 1. Inspect the Whole-Ontology Simple View.
 2. Review the 17-domain catalog and per-domain diagrams.
 3. Use the Concept Catalog to select a domain/concept for deep review.
-4. For each selected concept, cross-check the existing provenance matrix until Concept Evidence Passports are generated.
+4. Open an instantiated Concept Evidence Passport where available; otherwise cross-check the provenance matrix until the remaining passports are generated.
 5. Record semantic feedback before any semantic change is applied.
 
 ## Human-review dispositions
