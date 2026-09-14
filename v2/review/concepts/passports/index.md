@@ -3,7 +3,7 @@ artifact_type: concept_evidence_passport_registry
 ontology_id: CM-PharmE
 ontology_version: 2.0.0-alpha.1
 review_status: active
-passport_count: 25
+passport_count: 29
 planned_passport_count: 87
 ---
 
@@ -40,11 +40,15 @@ This registry instantiates Phase 2 of #173 using the canonical OGCM-RF Concept E
 | 23 | Classification Entry | Pharmaceutical Product | Kind | Pending | [Open](023-classification-entry.md) |
 | 24 | Product Classification Assignment | Pharmaceutical Product | Relator | Pending | [Open](024-product-classification-assignment.md) |
 | 25 | Market Listing | Pharmaceutical Product | Relator | Pending | [Open](025-market-listing.md) |
+| 26 | Manufacturing Activity | Supply Operations | Event | Pending | [Open](026-manufacturing-activity.md) |
+| 27 | Pharmaceutical Logistics Activity | Supply Operations | Event | Pending | [Open](027-pharmaceutical-logistics-activity.md) |
+| 28 | Medicine Shortage Situation | Supply Operations | Situation | Pending | [Open](028-medicine-shortage-situation.md) |
+| 29 | Supply Capacity | Supply Operations | Mode | Pending | [Open](029-supply-capacity.md) |
 
 ## Coverage
-- Instantiated: **25/87** concepts.
-- Complete domains: **Ecosystem Organization 8/8; Facility Operations 4/4; Regulatory Governance 3/3; Pharmaceutical Product 10/10**.
-- Remaining: **62** passports across the other 13 domains.
+- Instantiated: **29/87** concepts.
+- Complete domains: **Ecosystem Organization 8/8; Facility Operations 4/4; Regulatory Governance 3/3; Pharmaceutical Product 10/10; Supply Operations 4/4**.
+- Remaining: **58** passports across the other 12 domains.
 
 ## Evidence discipline
 Each passport inherits its registered definition, stereotype, V1 lineage, dataset evidence, held-out evidence, support codes and IRI from the governed V2 provenance matrix. Missing concept-level external definitions are left as evidence gaps rather than inferred.
