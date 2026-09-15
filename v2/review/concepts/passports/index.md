@@ -3,7 +3,7 @@ artifact_type: concept_evidence_passport_registry
 ontology_id: CM-PharmE
 ontology_version: 2.0.0-alpha.1
 review_status: active
-passport_count: 29
+passport_count: 32
 planned_passport_count: 87
 ---
 
@@ -44,11 +44,14 @@ This registry instantiates Phase 2 of #173 using the canonical OGCM-RF Concept E
 | 27 | Pharmaceutical Logistics Activity | Supply Operations | Event | Pending | [Open](027-pharmaceutical-logistics-activity.md) |
 | 28 | Medicine Shortage Situation | Supply Operations | Situation | Pending | [Open](028-medicine-shortage-situation.md) |
 | 29 | Supply Capacity | Supply Operations | Mode | Pending | [Open](029-supply-capacity.md) |
+| 30 | Availability Observation Result | Ecosystem Observation | Subkind | Pending | [Open](030-availability-observation-result.md) |
+| 31 | Demand Observation Result | Ecosystem Observation | Subkind | Pending | [Open](031-demand-observation-result.md) |
+| 32 | Supply Capacity Observation Result | Ecosystem Observation | Subkind | Pending | [Open](032-supply-capacity-observation-result.md) |
 
 ## Coverage
-- Instantiated: **29/87** concepts.
-- Complete domains: **Ecosystem Organization 8/8; Facility Operations 4/4; Regulatory Governance 3/3; Pharmaceutical Product 10/10; Supply Operations 4/4**.
-- Remaining: **58** passports across the other 12 domains.
+- Instantiated: **32/87** concepts.
+- Complete domains: **Ecosystem Organization 8/8; Facility Operations 4/4; Regulatory Governance 3/3; Pharmaceutical Product 10/10; Supply Operations 4/4; Ecosystem Observation 3/3**.
+- Remaining: **55** passports across the other 11 domains.
 
 ## Evidence discipline
 Each passport inherits its registered definition, stereotype, V1 lineage, dataset evidence, held-out evidence, support codes and IRI from the governed V2 provenance matrix. Missing concept-level external definitions are left as evidence gaps rather than inferred.
