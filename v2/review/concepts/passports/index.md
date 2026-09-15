@@ -3,7 +3,7 @@ artifact_type: concept_evidence_passport_registry
 ontology_id: CM-PharmE
 ontology_version: 2.0.0-alpha.1
 review_status: active
-passport_count: 73
+passport_count: 78
 planned_passport_count: 87
 ---
 
@@ -88,11 +88,16 @@ This registry instantiates Phase 2 of #173 using the canonical OGCM-RF Concept E
 | 71 | Healthcare Financing Organization | Market Access | Role | Pending | [Open](071-healthcare-financing-organization.md) |
 | 72 | Reimbursement and Utilization Observation Result | Market Access | Subkind | Pending | [Open](072-reimbursement-and-utilization-observation-result.md) |
 | 73 | Diagnosis Classification Reference | Market Access | Kind | Pending | [Open](073-diagnosis-classification-reference.md) |
+| 74 | Asset at Risk | Risk Management | RoleMixin | Pending | [Open](074-asset-at-risk.md) |
+| 75 | Risk Assessment Activity | Risk Management | Event | Pending | [Open](075-risk-assessment-activity.md) |
+| 76 | Vulnerability | Risk Management | Mode | Pending | [Open](076-vulnerability.md) |
+| 77 | Risk Treatment Plan | Risk Management | Kind | Pending | [Open](077-risk-treatment-plan.md) |
+| 78 | Risk Treatment Activity | Risk Management | Event | Pending | [Open](078-risk-treatment-activity.md) |
 
 ## Coverage
-- Instantiated: **73/87** concepts.
-- Complete domains: **Ecosystem Organization 8/8; Facility Operations 4/4; Regulatory Governance 3/3; Pharmaceutical Product 10/10; Supply Operations 4/4; Ecosystem Observation 3/3; Spatiotemporal Context 7/7; Evidence Traceability 13/13; Entity Identity 5/5; Regulatory Policy 2/2; Supply Resilience 11/11; Market Access 3/3**.
-- Remaining: **14** passports across the unfinished domains.
+- Instantiated: **78/87** concepts.
+- Complete domains: **Ecosystem Organization 8/8; Facility Operations 4/4; Regulatory Governance 3/3; Pharmaceutical Product 10/10; Supply Operations 4/4; Ecosystem Observation 3/3; Spatiotemporal Context 7/7; Evidence Traceability 13/13; Entity Identity 5/5; Regulatory Policy 2/2; Supply Resilience 11/11; Market Access 3/3; Risk Management 5/5**.
+- Remaining: **9** passports across the unfinished domains.
 
 ## Evidence discipline
 Each passport inherits its registered definition, stereotype, V1 lineage, dataset evidence, held-out evidence, support codes and IRI from the governed V2 provenance matrix. Missing concept-level external definitions are left as evidence gaps rather than inferred.
