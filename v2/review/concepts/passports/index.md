@@ -3,7 +3,7 @@ artifact_type: concept_evidence_passport_registry
 ontology_id: CM-PharmE
 ontology_version: 2.0.0-alpha.1
 review_status: active
-passport_count: 52
+passport_count: 55
 planned_passport_count: 87
 ---
 
@@ -67,11 +67,15 @@ This registry instantiates Phase 2 of #173 using the canonical OGCM-RF Concept E
 | 50 | Mapping Assertion | Evidence Traceability | Subkind | Pending | [Open](050-mapping-assertion.md) |
 | 51 | Provenance Activity | Evidence Traceability | Event | Pending | [Open](051-provenance-activity.md) |
 | 52 | Data Quality Finding | Evidence Traceability | Subkind | Pending | [Open](052-data-quality-finding.md) |
+| 53 | Identifier Value | Entity Identity | Datatype | Pending | [Open](053-identifier-value.md) |
+| 54 | Identifier Scheme | Entity Identity | Kind | Pending | [Open](054-identifier-scheme.md) |
+| 55 | Identifier Assignment | Entity Identity | Relator | Pending | [Open](055-identifier-assignment.md) |
 
 ## Coverage
-- Instantiated: **52/87** concepts.
+- Instantiated: **55/87** concepts.
 - Complete domains: **Ecosystem Organization 8/8; Facility Operations 4/4; Regulatory Governance 3/3; Pharmaceutical Product 10/10; Supply Operations 4/4; Ecosystem Observation 3/3; Spatiotemporal Context 7/7; Evidence Traceability 13/13**.
-- Remaining: **35** passports across the other 9 domains.
+- Entity Identity: **3/5** instantiated; C056–C057 remain.
+- Remaining: **32** passports across the unfinished domains.
 
 ## Evidence discipline
 Each passport inherits its registered definition, stereotype, V1 lineage, dataset evidence, held-out evidence, support codes and IRI from the governed V2 provenance matrix. Missing concept-level external definitions are left as evidence gaps rather than inferred.
