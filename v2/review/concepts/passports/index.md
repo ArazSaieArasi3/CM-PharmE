@@ -3,7 +3,7 @@ artifact_type: concept_evidence_passport_registry
 ontology_id: CM-PharmE
 ontology_version: 2.0.0-alpha.1
 review_status: active
-passport_count: 39
+passport_count: 52
 planned_passport_count: 87
 ---
 
@@ -54,11 +54,24 @@ This registry instantiates Phase 2 of #173 using the canonical OGCM-RF Concept E
 | 37 | Address | Spatiotemporal Context | Datatype | Pending | [Open](037-address.md) |
 | 38 | Time Interval | Spatiotemporal Context | Datatype | Pending | [Open](038-time-interval.md) |
 | 39 | Reporting Period | Spatiotemporal Context | Datatype | Pending | [Open](039-reporting-period.md) |
+| 40 | Data Source | Evidence Traceability | Kind | Pending | [Open](040-data-source.md) |
+| 41 | Dataset | Evidence Traceability | Kind | Pending | [Open](041-dataset.md) |
+| 42 | Dataset Release | Evidence Traceability | Kind | Pending | [Open](042-dataset-release.md) |
+| 43 | Source Record | Evidence Traceability | Kind | Pending | [Open](043-source-record.md) |
+| 44 | Assertion | Evidence Traceability | Kind | Pending | [Open](044-assertion.md) |
+| 45 | Observation Activity | Evidence Traceability | Event | Pending | [Open](045-observation-activity.md) |
+| 46 | Observation Result | Evidence Traceability | Kind | Pending | [Open](046-observation-result.md) |
+| 47 | Measure Value | Evidence Traceability | Datatype | Pending | [Open](047-measure-value.md) |
+| 48 | Evidence Item | Evidence Traceability | RoleMixin | Pending | [Open](048-evidence-item.md) |
+| 49 | Evidence Support | Evidence Traceability | Relator | Pending | [Open](049-evidence-support.md) |
+| 50 | Mapping Assertion | Evidence Traceability | Subkind | Pending | [Open](050-mapping-assertion.md) |
+| 51 | Provenance Activity | Evidence Traceability | Event | Pending | [Open](051-provenance-activity.md) |
+| 52 | Data Quality Finding | Evidence Traceability | Subkind | Pending | [Open](052-data-quality-finding.md) |
 
 ## Coverage
-- Instantiated: **39/87** concepts.
-- Complete domains: **Ecosystem Organization 8/8; Facility Operations 4/4; Regulatory Governance 3/3; Pharmaceutical Product 10/10; Supply Operations 4/4; Ecosystem Observation 3/3; Spatiotemporal Context 7/7**.
-- Remaining: **48** passports across the other 10 domains.
+- Instantiated: **52/87** concepts.
+- Complete domains: **Ecosystem Organization 8/8; Facility Operations 4/4; Regulatory Governance 3/3; Pharmaceutical Product 10/10; Supply Operations 4/4; Ecosystem Observation 3/3; Spatiotemporal Context 7/7; Evidence Traceability 13/13**.
+- Remaining: **35** passports across the other 9 domains.
 
 ## Evidence discipline
 Each passport inherits its registered definition, stereotype, V1 lineage, dataset evidence, held-out evidence, support codes and IRI from the governed V2 provenance matrix. Missing concept-level external definitions are left as evidence gaps rather than inferred.
