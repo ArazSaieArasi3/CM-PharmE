@@ -3,7 +3,7 @@ artifact_type: concept_evidence_passport_registry
 ontology_id: CM-PharmE
 ontology_version: 2.0.0-alpha.1
 review_status: active
-passport_count: 59
+passport_count: 70
 planned_passport_count: 87
 ---
 
@@ -74,11 +74,22 @@ This registry instantiates Phase 2 of #173 using the canonical OGCM-RF Concept E
 | 57 | Match Confidence | Entity Identity | Quality | Pending | [Open](057-match-confidence.md) |
 | 58 | Regulatory Requirement | Regulatory Policy | Kind | Pending | [Open](058-regulatory-requirement.md) |
 | 59 | Regulatory Oversight | Regulatory Policy | Relator | Pending | [Open](059-regulatory-oversight.md) |
+| 60 | Contextual Medicine Classification Assignment | Supply Resilience | Relator | Pending | [Open](060-contextual-medicine-classification-assignment.md) |
+| 61 | Essential Medicine Classification Assignment | Supply Resilience | Subkind | Pending | [Open](061-essential-medicine-classification-assignment.md) |
+| 62 | Critical Medicine Classification Assignment | Supply Resilience | Subkind | Pending | [Open](062-critical-medicine-classification-assignment.md) |
+| 63 | Alternative Medicinal Product | Supply Resilience | Role | Pending | [Open](063-alternative-medicinal-product.md) |
+| 64 | Alternative Medicinal Product Assignment | Supply Resilience | Relator | Pending | [Open](064-alternative-medicinal-product-assignment.md) |
+| 65 | Supply Dependency | Supply Resilience | Relator | Pending | [Open](065-supply-dependency.md) |
+| 66 | Disruption Event | Supply Resilience | Event | Pending | [Open](066-disruption-event.md) |
+| 67 | Inventory Observation Result | Supply Resilience | Subkind | Pending | [Open](067-inventory-observation-result.md) |
+| 68 | Procurement Activity | Supply Resilience | Event | Pending | [Open](068-procurement-activity.md) |
+| 69 | Lead Time Observation Result | Supply Resilience | Subkind | Pending | [Open](069-lead-time-observation-result.md) |
+| 70 | Stockout Situation | Supply Resilience | Situation | Pending | [Open](070-stockout-situation.md) |
 
 ## Coverage
-- Instantiated: **59/87** concepts.
-- Complete domains: **Ecosystem Organization 8/8; Facility Operations 4/4; Regulatory Governance 3/3; Pharmaceutical Product 10/10; Supply Operations 4/4; Ecosystem Observation 3/3; Spatiotemporal Context 7/7; Evidence Traceability 13/13; Entity Identity 5/5; Regulatory Policy 2/2**.
-- Remaining: **28** passports across the unfinished domains.
+- Instantiated: **70/87** concepts.
+- Complete domains: **Ecosystem Organization 8/8; Facility Operations 4/4; Regulatory Governance 3/3; Pharmaceutical Product 10/10; Supply Operations 4/4; Ecosystem Observation 3/3; Spatiotemporal Context 7/7; Evidence Traceability 13/13; Entity Identity 5/5; Regulatory Policy 2/2; Supply Resilience 11/11**.
+- Remaining: **17** passports across the unfinished domains.
 
 ## Evidence discipline
 Each passport inherits its registered definition, stereotype, V1 lineage, dataset evidence, held-out evidence, support codes and IRI from the governed V2 provenance matrix. Missing concept-level external definitions are left as evidence gaps rather than inferred.
