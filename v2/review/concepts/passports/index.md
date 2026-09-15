@@ -3,7 +3,7 @@ artifact_type: concept_evidence_passport_registry
 ontology_id: CM-PharmE
 ontology_version: 2.0.0-alpha.1
 review_status: active
-passport_count: 57
+passport_count: 59
 planned_passport_count: 87
 ---
 
@@ -72,11 +72,13 @@ This registry instantiates Phase 2 of #173 using the canonical OGCM-RF Concept E
 | 55 | Identifier Assignment | Entity Identity | Relator | Pending | [Open](055-identifier-assignment.md) |
 | 56 | Entity Match Assertion | Entity Identity | Subkind | Pending | [Open](056-entity-match-assertion.md) |
 | 57 | Match Confidence | Entity Identity | Quality | Pending | [Open](057-match-confidence.md) |
+| 58 | Regulatory Requirement | Regulatory Policy | Kind | Pending | [Open](058-regulatory-requirement.md) |
+| 59 | Regulatory Oversight | Regulatory Policy | Relator | Pending | [Open](059-regulatory-oversight.md) |
 
 ## Coverage
-- Instantiated: **57/87** concepts.
-- Complete domains: **Ecosystem Organization 8/8; Facility Operations 4/4; Regulatory Governance 3/3; Pharmaceutical Product 10/10; Supply Operations 4/4; Ecosystem Observation 3/3; Spatiotemporal Context 7/7; Evidence Traceability 13/13; Entity Identity 5/5**.
-- Remaining: **30** passports across the unfinished domains.
+- Instantiated: **59/87** concepts.
+- Complete domains: **Ecosystem Organization 8/8; Facility Operations 4/4; Regulatory Governance 3/3; Pharmaceutical Product 10/10; Supply Operations 4/4; Ecosystem Observation 3/3; Spatiotemporal Context 7/7; Evidence Traceability 13/13; Entity Identity 5/5; Regulatory Policy 2/2**.
+- Remaining: **28** passports across the unfinished domains.
 
 ## Evidence discipline
 Each passport inherits its registered definition, stereotype, V1 lineage, dataset evidence, held-out evidence, support codes and IRI from the governed V2 provenance matrix. Missing concept-level external definitions are left as evidence gaps rather than inferred.
