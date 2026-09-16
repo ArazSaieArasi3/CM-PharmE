@@ -30,7 +30,7 @@ This is the ordered human-review entry point for CM-PharmE 2.0. It is a review p
 | 4 | Concept Catalog | 87 concepts | Ready | Prioritize concept review | [Open](concepts/index.md) |
 | 5 | Concept Provenance Matrix | 87 concepts | Ready | Review V1 lineage, datasets, external support and evidence gaps | [Open](../research/w4/human-review-concept-provenance-matrix.md) |
 | 6 | Concept Evidence Passports | 87/87 instantiated | Ready | Deep review of any concept | [Open passport registry](concepts/passports/index.md) |
-| 7 | Relation Catalog | All relations | Planned | Review source/target/direction/evidence | [#173 Phase 2](https://github.com/ArazSaieArasi3/CM-PharmE/issues/173) |
+| 7 | Relation Catalog | 52 V2 OWL object properties | Ready | Review source/target/direction/evidence and unconstrained endpoints | [Open](relations/index.md) |
 | 8 | Version Evolution Package | V1→V2 | Partial | Review justified continuity and justified change | Existing W0/W4 migration artifacts; HORP package pending |
 | 9 | Evaluation Diagnostic Report | E1–E13 | Partial | Diagnose warnings, gaps and claim boundaries | W7 evidence; HORP diagnostic projection pending |
 | 10 | Human Findings | Author feedback | Active | Record findings and convert accepted findings to issues | [#159](https://github.com/ArazSaieArasi3/CM-PharmE/issues/159) / future HRF records |
@@ -40,9 +40,10 @@ This is the ordered human-review entry point for CM-PharmE 2.0. It is a review p
 1. Inspect the Whole-Ontology Simple View.
 2. Review the 17-domain catalog and per-domain diagrams.
 3. Use the Concept Catalog to select a domain/concept for deep review.
-4. Open any Concept Evidence Passport for evidence-level review; all 87 concept passports are now instantiated.
-5. Record semantic feedback before any semantic change is applied.
-6. Continue Phase 2 by instantiating the relation catalog and relation-review records.
+4. Open any Concept Evidence Passport for evidence-level review; all 87 concept passports are instantiated.
+5. Use the Relation Catalog to inspect the 52 formal V2 object properties; prioritize unconstrained endpoints without inferring missing semantics.
+6. Record semantic feedback before any semantic change is applied.
+7. Continue Phase 2 with per-relation review records, then the V1→V2 evolution and E1–E13 diagnostic packages.
 
 ## Human-review dispositions
 `APPROVE / APPROVE_WITH_WORDING_CHANGE / REVISE_SEMANTICS / RE_STEREOTYPE / SPLIT / MERGE / MOVE_DOMAIN_MODULE / DEFER / REJECT`
