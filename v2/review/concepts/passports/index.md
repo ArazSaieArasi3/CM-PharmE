@@ -3,10 +3,9 @@ artifact_type: concept_evidence_passport_registry
 ontology_id: CM-PharmE
 ontology_version: 2.0.0-alpha.1
 review_status: active
-passport_count: 85
+passport_count: 87
 planned_passport_count: 87
 ---
-
 # CM-PharmE 2.0 — Concept Evidence Passport Registry
 
 This registry instantiates Phase 2 of #173 using the canonical OGCM-RF Concept Evidence Passport pattern. Passports are review projections over governed V2 evidence; they do not create new semantic authority or imply human approval.
@@ -100,11 +99,13 @@ This registry instantiates Phase 2 of #173 using the canonical OGCM-RF Concept E
 | 83 | Enterprise Capability | Business Architecture | Mode | Pending | [Open](083-enterprise-capability.md) |
 | 84 | Strategic Partnership Agreement | Business Architecture | Relator | Pending | [Open](084-strategic-partnership-agreement.md) |
 | 85 | Service Offering Specification | Business Architecture | Kind | Pending | [Open](085-service-offering-specification.md) |
+| 86 | Digital System Component | Digital Systems | Kind | Pending | [Open](086-digital-system-component.md) |
+| 87 | Clinical Care Participant | Clinical Care | RoleMixin | Pending | [Open](087-clinical-care-participant.md) |
 
 ## Coverage
-- Instantiated: **85/87** concepts.
-- Complete domains: **Ecosystem Organization 8/8; Facility Operations 4/4; Regulatory Governance 3/3; Pharmaceutical Product 10/10; Supply Operations 4/4; Ecosystem Observation 3/3; Spatiotemporal Context 7/7; Evidence Traceability 13/13; Entity Identity 5/5; Regulatory Policy 2/2; Supply Resilience 11/11; Market Access 3/3; Risk Management 5/5; Pharmacovigilance 3/3; Business Architecture 4/4**.
-- Remaining: **2** passports across the unfinished domains.
+- Instantiated: **87/87** concepts.
+- Complete domains: **Ecosystem Organization 8/8; Facility Operations 4/4; Regulatory Governance 3/3; Pharmaceutical Product 10/10; Supply Operations 4/4; Ecosystem Observation 3/3; Spatiotemporal Context 7/7; Evidence Traceability 13/13; Entity Identity 5/5; Regulatory Policy 2/2; Supply Resilience 11/11; Market Access 3/3; Risk Management 5/5; Pharmacovigilance 3/3; Business Architecture 4/4; Digital Systems 1/1; Clinical Care 1/1**.
+- Remaining: **0** concept passports. Relation review and the remaining Phase 2 HORP artifacts are tracked separately under #173.
 
 ## Evidence discipline
 Each passport inherits its registered definition, stereotype, V1 lineage, dataset evidence, held-out evidence, support codes and IRI from the governed V2 provenance matrix. Missing concept-level external definitions are left as evidence gaps rather than inferred.
