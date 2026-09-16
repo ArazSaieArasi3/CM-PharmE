@@ -32,7 +32,7 @@ This is the ordered human-review entry point for CM-PharmE 2.0. It is a review p
 | 6 | Concept Evidence Passports | 87/87 instantiated | Ready | Deep review of any concept | [Open passport registry](concepts/passports/index.md) |
 | 7 | Relation Catalog + review records | 52/52 V2 OWL object properties | Ready | Review source/target/direction/evidence and semantic questions | [Open catalog](relations/index.md) / [Open review records](relations/review-records.md) |
 | 8 | Version Evolution Package | 39 V1 concepts + relation families → V2 | Ready | Review justified continuity, change, modularization and novelty | [Open](version-evolution.md) |
-| 9 | Evaluation Diagnostic Report | E1–E13 | Partial | Diagnose warnings, gaps and claim boundaries | W7 evidence; HORP diagnostic projection pending |
+| 9 | Evaluation Diagnostic Report | E1–E13 | Ready | Diagnose warnings, gaps, gates and claim boundaries | [Open](evaluation-diagnostic.md) |
 | 10 | Human Findings | Author feedback | Active | Record findings and convert accepted findings to issues | [#159](https://github.com/ArazSaieArasi3/CM-PharmE/issues/159) / future HRF records |
 | 11 | Release Candidate Re-review | Whole V2 | Pending | Final human sign-off | Later Gate H |
 
@@ -41,8 +41,9 @@ This is the ordered human-review entry point for CM-PharmE 2.0. It is a review p
 2. Use the 87 Concept Evidence Passports for concept-level evidence review.
 3. Use the Relation Catalog and 52 relation-review records for relation-level review; no missing semantics should be inferred from unconstrained OWL endpoints.
 4. Review the V1→V2 Version Evolution Package to verify continuity, justified change and novelty boundaries.
-5. Record semantic feedback before any semantic change is applied.
-6. Continue Phase 2 with the E1–E13 diagnostic package and structured HRF/re-review workflow.
+5. Use the E1–E13 Evaluation Diagnostic Report to review warnings, evidence gates and claim boundaries without upgrading repository evidence statuses.
+6. Record semantic feedback before any semantic change is applied.
+7. Continue Phase 2 with the structured HRF/re-review workflow.
 
 ## Human-review dispositions
 `APPROVE / APPROVE_WITH_WORDING_CHANGE / REVISE_SEMANTICS / RE_STEREOTYPE / SPLIT / MERGE / MOVE_DOMAIN_MODULE / DEFER / REJECT`
