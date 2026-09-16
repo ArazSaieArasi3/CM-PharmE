@@ -3,7 +3,7 @@ artifact_type: concept_evidence_passport_registry
 ontology_id: CM-PharmE
 ontology_version: 2.0.0-alpha.1
 review_status: active
-passport_count: 78
+passport_count: 81
 planned_passport_count: 87
 ---
 
@@ -93,11 +93,14 @@ This registry instantiates Phase 2 of #173 using the canonical OGCM-RF Concept E
 | 76 | Vulnerability | Risk Management | Mode | Pending | [Open](076-vulnerability.md) |
 | 77 | Risk Treatment Plan | Risk Management | Kind | Pending | [Open](077-risk-treatment-plan.md) |
 | 78 | Risk Treatment Activity | Risk Management | Event | Pending | [Open](078-risk-treatment-activity.md) |
+| 79 | Pharmacovigilance Requirement | Pharmacovigilance | Kind | Pending | [Open](079-pharmacovigilance-requirement.md) |
+| 80 | Adverse Event Reporting Activity | Pharmacovigilance | Event | Pending | [Open](080-adverse-event-reporting-activity.md) |
+| 81 | Post-Market Surveillance Activity | Pharmacovigilance | Event | Pending | [Open](081-post-market-surveillance-activity.md) |
 
 ## Coverage
-- Instantiated: **78/87** concepts.
-- Complete domains: **Ecosystem Organization 8/8; Facility Operations 4/4; Regulatory Governance 3/3; Pharmaceutical Product 10/10; Supply Operations 4/4; Ecosystem Observation 3/3; Spatiotemporal Context 7/7; Evidence Traceability 13/13; Entity Identity 5/5; Regulatory Policy 2/2; Supply Resilience 11/11; Market Access 3/3; Risk Management 5/5**.
-- Remaining: **9** passports across the unfinished domains.
+- Instantiated: **81/87** concepts.
+- Complete domains: **Ecosystem Organization 8/8; Facility Operations 4/4; Regulatory Governance 3/3; Pharmaceutical Product 10/10; Supply Operations 4/4; Ecosystem Observation 3/3; Spatiotemporal Context 7/7; Evidence Traceability 13/13; Entity Identity 5/5; Regulatory Policy 2/2; Supply Resilience 11/11; Market Access 3/3; Risk Management 5/5; Pharmacovigilance 3/3**.
+- Remaining: **6** passports across the unfinished domains.
 
 ## Evidence discipline
 Each passport inherits its registered definition, stereotype, V1 lineage, dataset evidence, held-out evidence, support codes and IRI from the governed V2 provenance matrix. Missing concept-level external definitions are left as evidence gaps rather than inferred.
