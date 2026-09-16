@@ -4,23 +4,18 @@ ontology_id: CM-PharmE
 ontology_version: 2.0.0-alpha.1
 review_candidate: RC-V2-HORP-01
 review_status: pending_author_review
-relation_projection_count: 53
+relation_projection_count: 52
 ---
 
 # CM-PharmE 2.0 — Relation Review Catalog
 
 This catalog is the HORP relation-review projection for CM-PharmE V2. It is generated from the authoritative Gate-D/W5 relation patterns and OWL object-property declarations. It does **not** introduce, approve, normalize, or repair ontology semantics. Missing OWL domain/range constraints are shown as `unspecified` rather than inferred.
 
-## Review protocol
 For each relation, review **source/domain → relation → target/range**, direction, OntoUML treatment where explicitly governed by W4, evidence/lineage, and any missing formal constraint. Human disposition remains `Pending` until an author records a HORP decision.
 
-Authoritative anchors:
-- [`v2/research/w4/integrated-ontouml-model.md`](../../research/w4/integrated-ontouml-model.md) — Gate-D conceptual relation patterns.
-- [`10-core.ttl`](../../ontology/source/modules/10-core.ttl) — Core OWL object properties.
-- [`20-xinfra.ttl`](../../ontology/source/modules/20-xinfra.ttl) — Cross-cutting infrastructure OWL object properties.
-- [`30-extensions.ttl`](../../ontology/source/modules/30-extensions.ttl) — Extension OWL object properties.
+Authoritative anchors: [`integrated-ontouml-model.md`](../../research/w4/integrated-ontouml-model.md), [`10-core.ttl`](../../ontology/source/modules/10-core.ttl), [`20-xinfra.ttl`](../../ontology/source/modules/20-xinfra.ttl), and [`30-extensions.ttl`](../../ontology/source/modules/30-extensions.ttl).
 
-## Core relations — 27
+## Core relations — 26
 
 | # | Property | Domain/source in OWL | Range/target in OWL | W4 treatment / review note | Status |
 |---:|---|---|---|---|---|
@@ -50,9 +45,6 @@ Authoritative anchors:
 | 24 | `capacityBearer` | Supply Capacity | unspecified | Characterization bearer; range review required | Pending |
 | 25 | `observationResultAbout` | Observation Result | unspecified | Aboutness; range review required | Pending |
 | 26 | `producesObservationResult` | Observation Activity | Observation Result | Event → information relation | Pending |
-| 27 | `hasActiveSubstance`/domain boundary | unspecified | Pharmaceutical Substance | Catalog retains OWL declaration exactly; source/domain constraint is intentionally not invented | Pending |
-
-> Note: row 27 is a review-control boundary marker for the explicitly unconstrained `hasActiveSubstance` source end, not a second OWL property. Therefore the unique Core OWL object-property count is **26**. The total unique catalog count below is **52**; the front-matter count will be reconciled after authoring review if an additional formal property is introduced. This explicit correction prevents a fabricated relation count.
 
 ## Cross-cutting infrastructure relations — 15
 
@@ -95,11 +87,11 @@ Authoritative anchors:
 - Cross-cutting infrastructure unique OWL object properties: **15**.
 - Extension unique OWL object properties: **11**.
 - Total unique OWL object properties projected for HORP review: **52**.
-- Datatype properties are intentionally excluded from this relation-review catalog.
+- Datatype properties are intentionally excluded.
 - `rdfs:subClassOf`, disjointness axioms and other class axioms are reviewed through concept/formal/evaluation surfaces, not counted as object properties here.
 
 ## Review-risk queue
-The first relation-review records should prioritize properties whose OWL source deliberately leaves an endpoint unconstrained: `registrationEntity`, `authorizationParty`, `hasActiveSubstance`, `classificationEntity`, `capacityBearer`, `observationResultAbout`, `usedSourceArtifact`, `identifierEntity`, `matchSubject`, `matchObject`, `locatedIn`, `dependencyDependent`, `dependencyProvider`, `disruptionAffects`, `riskAssessmentConcerns`, `riskTreatmentAddresses`, and `baViewRepresents`. These are **review targets, not defects**; HORP must not infer missing ranges/domains automatically.
+Prioritize properties whose OWL source deliberately leaves an endpoint unconstrained: `registrationEntity`, `authorizationParty`, `hasActiveSubstance`, `classificationEntity`, `capacityBearer`, `observationResultAbout`, `usedSourceArtifact`, `identifierEntity`, `matchSubject`, `matchObject`, `locatedIn`, `dependencyDependent`, `dependencyProvider`, `disruptionAffects`, `riskAssessmentConcerns`, `riskTreatmentAddresses`, and `baViewRepresents`. These are **review targets, not defects**; HORP must not infer missing ranges/domains automatically.
 
 ## Human disposition
 No relation in this catalog is semantically approved by catalog generation. Standard HORP dispositions apply only after author review.
