@@ -33,8 +33,9 @@ This is the ordered human-review entry point for CM-PharmE 2.0. It is a review p
 | 7 | Relation Catalog + review records | 52/52 V2 OWL object properties | Ready | Review source/target/direction/evidence and semantic questions | [Open catalog](relations/index.md) / [Open review records](relations/review-records.md) |
 | 8 | Version Evolution Package | 39 V1 concepts + relation families → V2 | Ready | Review justified continuity, change, modularization and novelty | [Open](version-evolution.md) |
 | 9 | Evaluation Diagnostic Report | E1–E13 | Ready | Diagnose warnings, gaps, gates and claim boundaries | [Open](evaluation-diagnostic.md) |
-| 10 | Human Findings | Author feedback | Active | Record findings and convert accepted findings to issues | [#159](https://github.com/ArazSaieArasi3/CM-PharmE/issues/159) / future HRF records |
-| 11 | Release Candidate Re-review | Whole V2 | Pending | Final human sign-off | Later Gate H |
+| 10 | Human Finding Register | Author/reviewer feedback | Ready | Record findings; link actionable findings to issues | [Open register](findings/index.md) / [HRF template](findings/HRF-TEMPLATE.md) |
+| 11 | Review Candidate Re-review | Focused semantic diff + retest | Ready as workflow; awaits real findings | Re-review implemented findings before closure | [Finding lifecycle](findings/index.md#finding-lifecycle) |
+| 12 | Semantic/release disposition | Whole V2 | Human Gate | Explicit author sign-off only | Later Gate H |
 
 ## Current priority
 1. Inspect the Whole-Ontology Simple View and 17-domain structure.
@@ -42,8 +43,8 @@ This is the ordered human-review entry point for CM-PharmE 2.0. It is a review p
 3. Use the Relation Catalog and 52 relation-review records for relation-level review; no missing semantics should be inferred from unconstrained OWL endpoints.
 4. Review the V1→V2 Version Evolution Package to verify continuity, justified change and novelty boundaries.
 5. Use the E1–E13 Evaluation Diagnostic Report to review warnings, evidence gates and claim boundaries without upgrading repository evidence statuses.
-6. Record semantic feedback before any semantic change is applied.
-7. Continue Phase 2 with the structured HRF/re-review workflow.
+6. Record each author/reviewer observation in the Human Review Finding Register before any semantic change is applied.
+7. For accepted findings, complete impact analysis, bounded implementation, affected validation, focused re-review and explicit human disposition before closure.
 
 ## Human-review dispositions
 `APPROVE / APPROVE_WITH_WORDING_CHANGE / REVISE_SEMANTICS / RE_STEREOTYPE / SPLIT / MERGE / MOVE_DOMAIN_MODULE / DEFER / REJECT`
