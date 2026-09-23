@@ -1,0 +1,32 @@
+name: Wiki Documentation CI
+
+on:
+  pull_request:
+    paths:
+      - 'wiki-src/**'
+      - 'tools/wiki/**'
+      - '.github/workflows/wiki-docs-ci.yml'
+  push:
+    branches:
+      - main
+    paths:
+      - 'wiki-src/**'
+      - 'tools/wiki/**'
+      - '.github/workflows/wiki-docs-ci.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-wiki-source:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate current Wiki source
+        run: python tools/wiki/validate_wiki_source.py
+      - name: Prove invalid documentation is rejected
+        run: python tools/wiki/validate_wiki_source.py --self-test
