@@ -1,0 +1,140 @@
+name: Publish CM-PharmE Wiki
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'wiki-src/**'
+      - 'tools/wiki/stage_wiki_publish.py'
+      - 'tools/wiki/verify_published_wiki.py'
+      - '.github/workflows/wiki-publish.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: cm-pharme-wiki-publish
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Validate source-controlled Wiki
+        run: |
+          python tools/wiki/validate_wiki_source.py
+          python tools/wiki/validate_wiki_source.py --self-test
+
+      - name: Configure ephemeral Git credentials
+        shell: bash
+        run: |
+          git config --global credential.helper store
+          printf 'https://x-access-token:%s@github.com\n' "$GH_TOKEN" > "$HOME/.git-credentials"
+
+      - name: Clone GitHub Wiki repository
+        id: clone
+        shell: bash
+        run: |
+          set -euo pipefail
+          WIKI_URL="https://github.com/${GITHUB_REPOSITORY}.wiki.git"
+          if ! git clone "$WIKI_URL" _published_wiki; then
+            echo "::error::GitHub Wiki repository could not be cloned. The Wiki may need one initial page created in the GitHub UI before its .wiki.git repository exists."
+            exit 21
+          fi
+
+      - name: Stage source-complete pages
+        run: |
+          python tools/wiki/stage_wiki_publish.py \
+            --source-root wiki-src \
+            --wiki-dir _published_wiki \
+            --source-repository "$GITHUB_REPOSITORY" \
+            --source-commit "$GITHUB_SHA"
+
+      - name: Commit and push Wiki
+        id: push
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd _published_wiki
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No Wiki content changes to commit."
+          else
+            git commit -m "Sync CM-PharmE Wiki from ${GITHUB_SHA}"
+            git push origin HEAD
+          fi
+          WIKI_SHA="$(git rev-parse HEAD)"
+          echo "wiki_sha=$WIKI_SHA" >> "$GITHUB_OUTPUT"
+          echo "Wiki commit: $WIKI_SHA"
+
+      - name: Verify rendered Wiki pages
+        run: |
+          python tools/wiki/verify_published_wiki.py \
+            --source-root wiki-src \
+            --repository "$GITHUB_REPOSITORY" \
+            --wiki-commit "${{ steps.push.outputs.wiki_sha }}" \
+            --report wiki-publish-verification.json
+
+      - name: Upload publication evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: wiki-publish-verification
+          path: |
+            wiki-publish-verification.json
+            _published_wiki/.cm-pharme-managed-pages.json
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Record successful publication in issue 218
+        shell: bash
+        run: |
+          WIKI_SHA="${{ steps.push.outputs.wiki_sha }}"
+          BODY=$(cat <<EOF
+          Automated GitHub Wiki publication succeeded.
+
+          - Source repository commit: \`$GITHUB_SHA\`
+          - Published Wiki commit: \`$WIKI_SHA\`
+          - Candidate Wiki baseline: \`WB-2026.09.1\`
+          - Source-controlled validation: PASS
+          - Rendered Wiki verification: PASS
+          - Publication workflow run: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID
+
+          The workflow synchronized only \`source-complete\` pages from \`wiki-src/\`, preserved a managed-page manifest, and verified the rendered Wiki URLs.
+          EOF
+          )
+          gh issue comment 218 --repo "$GITHUB_REPOSITORY" --body "$BODY"
+          gh issue close 218 --repo "$GITHUB_REPOSITORY" --reason completed
+
+      - name: Record Home/navigation publication in issue 203
+        shell: bash
+        run: |
+          BODY=$(cat <<EOF
+          Home and persistent navigation were published through the controlled Wiki publish workflow and the rendered Wiki verification passed.
+
+          - Source commit: \`$GITHUB_SHA\`
+          - Wiki commit: \`${{ steps.push.outputs.wiki_sha }}\`
+          - Workflow: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID
+          EOF
+          )
+          gh issue comment 203 --repo "$GITHUB_REPOSITORY" --body "$BODY"
+          gh issue close 203 --repo "$GITHUB_REPOSITORY" --reason completed
+
+      - name: Signal final QA readiness in issue 209
+        shell: bash
+        run: |
+          gh issue comment 209 --repo "$GITHUB_REPOSITORY" --body "Actual GitHub Wiki publication and rendered-page verification completed successfully in workflow run $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID. Final combined QA can now proceed."
