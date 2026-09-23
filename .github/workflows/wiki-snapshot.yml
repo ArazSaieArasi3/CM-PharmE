@@ -1,0 +1,50 @@
+name: Wiki Snapshot
+
+on:
+  workflow_dispatch:
+    inputs:
+      baseline:
+        description: Wiki baseline identifier
+        required: true
+        default: WB-2026.09.1
+  pull_request:
+    paths:
+      - 'wiki-src/**'
+      - 'tools/wiki/build_wiki_snapshot.py'
+      - '.github/workflows/wiki-snapshot.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Resolve baseline
+        id: baseline
+        shell: bash
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "value=${{ inputs.baseline }}" >> "$GITHUB_OUTPUT"
+          else
+            echo "value=WB-2026.09.1" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Build deterministic Wiki snapshot
+        run: python tools/wiki/build_wiki_snapshot.py build --baseline "${{ steps.baseline.outputs.value }}"
+      - name: Verify snapshot read-back
+        run: python tools/wiki/build_wiki_snapshot.py verify --archive "dist/wiki-${{ steps.baseline.outputs.value }}.zip"
+      - name: Upload snapshot artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: wiki-${{ steps.baseline.outputs.value }}
+          path: |
+            dist/wiki-${{ steps.baseline.outputs.value }}.zip
+            dist/wiki-${{ steps.baseline.outputs.value }}/ARCHIVE-MANIFEST.json
+          if-no-files-found: error
+          retention-days: 30
