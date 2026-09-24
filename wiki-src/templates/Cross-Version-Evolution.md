@@ -1,14 +1,8 @@
 # <V1 → V2 Evolution Topic>
 
-> **Page scope:** Cross-version  
-> **Documentation maturity:** <...>  
-> **V1 authority:** <main ref/path>  
-> **V2 authority:** <v2/research-program ref/path>  
-> **Last synchronized:** <...>  
-> **Related issues/PRs:** <...>  
-> **Evidence status:** <...>  
-> **Future refresh:** <#213/#214 where applicable>  
-> **Wiki baseline:** <...>
+> **Version scope:** Cross-version  
+> **Status:** <Stable-to-date / Evolving | other exact state>  
+> **Updated:** <YYYY-MM-DD>
 
 ## V1 baseline
 State what V1 established at its own evidence horizon.
@@ -17,16 +11,7 @@ State what V1 established at its own evidence horizon.
 Describe unresolved questions, evidence gaps or extension opportunities without retroactive overclaiming.
 
 ## Evolution mapping
-Classify changes as:
-- retained;
-- refined;
-- renamed;
-- split;
-- merged;
-- moved;
-- deprecated;
-- new;
-- unresolved/under review.
+Classify changes as retained, refined, renamed, split, merged, moved, deprecated, new or unresolved/under review.
 
 ## Semantic versus packaging change
 Separate changes in meaning from names, files, modules or presentation.
@@ -39,3 +24,21 @@ Distinguish continuity, methodological/architectural evolution and genuinely new
 
 ## Comparison limitations
 Do not claim quantitative improvement without comparable denominators.
+
+---
+
+<details>
+<summary>Documentation record</summary>
+
+- **Page scope:** Cross-version
+- **Documentation maturity:** <...>
+- **V1 authority:** <main ref/path>
+- **V2 authority:** <v2/research-program ref/path>
+- **Last synchronized:** <...>
+- **Last synchronized ref:** <V1/V2 refs>
+- **Related issues/PRs:** <...>
+- **Evidence status:** <...>
+- **Future refresh:** <#213/#214 where applicable>
+- **Wiki baseline:** <...>
+
+</details>
