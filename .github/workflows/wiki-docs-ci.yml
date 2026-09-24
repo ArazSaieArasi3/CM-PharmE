@@ -23,6 +23,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Checkout V2 ontology authority
+        uses: actions/checkout@v4
+        with:
+          ref: v2/research-program
+          path: _v2_authority
+          fetch-depth: 1
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
@@ -40,6 +46,12 @@ jobs:
         run: python tools/wiki/check_documentation_profiles.py
       - name: Validate diagram artifacts
         run: python tools/wiki/check_diagrams.py
+      - name: Validate V2 ontology diagram suite
+        run: python tools/wiki/check_v2_ontology_diagram_suite.py
+      - name: Revalidate V2 ontology diagrams against authority
+        run: |
+          python tools/wiki/generate_v2_ontology_diagrams.py --authority-root _v2_authority
+          git diff --exit-code -- wiki-src/diagrams wiki-src/ontology-reference/ontology-diagram-coverage.csv wiki-src/ontology-reference/ontology-diagram-coverage.json wiki-src/ontology-reference/ontology-diagram-semantic-review.md wiki-src/pages/V2-Module-*.md
       - name: Validate ontology reference coverage
         run: python tools/wiki/check_ontology_reference.py
       - name: Upload navigation report
