@@ -36,6 +36,8 @@ jobs:
         run: python tools/wiki/check_navigation.py --output wiki-navigation-report.json
       - name: Validate progressive metadata contract
         run: python tools/wiki/check_metadata_contract.py
+      - name: Validate documentation profile separation
+        run: python tools/wiki/check_documentation_profiles.py
       - name: Upload navigation report
         uses: actions/upload-artifact@v4
         with:
