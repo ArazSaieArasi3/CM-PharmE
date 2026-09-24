@@ -12,43 +12,43 @@
 
 ## Development stages
 
-The V2 research program is organized as a staged progression from research framing through formalization, implementation, evaluation and application evidence. Internal workstream identifiers are retained only as secondary provenance.
+The V2 research program progresses from research framing through formalization, implementation, evaluation and application evidence.
 
-| Stage | Purpose | Current state | Internal reference |
-|---|---|---|---|
-| Research foundation | identity, scope, research framing | Complete | W0 |
-| Needs, uses and opportunities | requirements and use-case framing | Complete | W1 |
-| Data landscape | source portfolio and admission rules | Complete | W2 |
-| Concept discovery | evidence-driven candidate concepts/relations | Complete | W3 |
-| UFO/OntoUML conceptualization | foundational analysis and conceptual baseline | Complete | W4 |
-| Formal ontology development | OWL/SHACL realization | Complete | W5 |
-| Data and knowledge infrastructure | PostgreSQL/PostGIS, KG and mappings | Complete | W6 |
-| Evaluation | multi-family ontology/data/evidence assessment | 13/14; prospective expert evidence pending | W7 |
-| Observatory and demonstrators | research application surfaces and representative tasks | 7/8 by live child-issue state | W8 |
-| Manuscript and research release | integrated paper/release package | Active | Paper Track |
+| Stage | Purpose | Current state |
+|---|---|---|
+| Research foundation | identity, scope, research framing | Complete |
+| Needs, uses and opportunities | requirements and use-case framing | Complete |
+| Data landscape | source portfolio and admission rules | Complete |
+| Concept discovery | evidence-driven candidate concepts/relations | Complete |
+| UFO/OntoUML conceptualization | foundational analysis and conceptual baseline | Complete |
+| Formal ontology development | OWL/SHACL realization | Complete |
+| Data and knowledge infrastructure | PostgreSQL/PostGIS, KG and mappings | Complete |
+| Evaluation | multi-family ontology/data/evidence assessment | 13/14; prospective expert evidence pending |
+| Observatory and demonstrators | research application surfaces and representative tasks | 7/8 by live child-issue state |
+| Manuscript and research release | integrated paper/release package | Active |
 
 ## Research decision checkpoints
 
-Decision checkpoints are used to prevent implementation progress from being mistaken for scientific evidence. The descriptive decision name is primary; the internal identifier is retained for auditability.
+Decision checkpoints prevent implementation progress from being mistaken for scientific evidence.
 
-| Decision | Current state | Internal reference |
-|---|---|---|
-| Research identity and scope | Approved | Gate A |
-| Principal research use cases | Approved | Gate B |
-| Evidence/data admission and held-out design | Approved | Gate C |
-| Candidate concept inventory | Approved | Concept Inventory Gate |
-| Conceptual baseline | Approved | Gate D |
-| Formal ontology readiness | Approved | Formal Gate |
-| Representation architecture | Approved | Gate E |
-| Evidence sufficiency review | **Approved progression with bounded claim dispositions** | Gate F |
-| Demonstrator evaluation | Pending | Gate G |
-| Research release readiness | Pending | Gate H |
+| Decision | Current state |
+|---|---|
+| Research identity and scope | Approved |
+| Principal research use cases | Approved |
+| Evidence/data admission and held-out design | Approved |
+| Candidate concept inventory | Approved |
+| Conceptual baseline | Approved |
+| Formal ontology readiness | Approved |
+| Representation architecture | Approved |
+| Evidence sufficiency review | **Approved progression with bounded claim dispositions** |
+| Demonstrator evaluation | Pending |
+| Research release readiness | Pending |
 
 ## Conceptual baseline
 
 The current conceptual baseline establishes the identity and dependence commitments used for formalization and contains 87 modeled elements across Core, X-INFRA and Extensions.
 
-The corresponding internal decision record is Gate D. That record does not make later semantic review unnecessary; material reversals still require an explicit reviewed disposition.
+This baseline remains subject to explicit semantic review where a material revision is proposed; documentation does not itself authorize such a change.
 
 ## Evidence sufficiency review
 
@@ -59,13 +59,11 @@ The evidence sufficiency review allows the research to progress while preserving
 - geospatial demonstrator effectiveness and real-world entity-resolution performance remain deferred;
 - prospective expert evidence (E9) cannot be treated as complete.
 
-Internal provenance: this decision corresponds to Gate F.
-
 ## Current demonstrator status
 
 The application/demonstrator program has seven of eight current work items complete by live child-issue state: #169 is closed and #170 remains open.
 
-In the internal work plan this corresponds to W8 = **7/8**. Older parent-Epic prose that still reports 6/8 is stale and should not be used as the current Wiki status.
+Older parent-Epic prose that reports six of eight is stale and should not be used as the current Wiki status.
 
 ## Current research sequence
 
@@ -85,5 +83,41 @@ V2 research integrates on `v2/research-program`. The stable V1 `main` line remai
 ## Evidence
 
 - [V2 research program](https://github.com/ArazSaieArasi3/CM-PharmE/blob/v2/research-program/v2/research/README.md)
-- [Conceptual baseline decision — internal Gate D](https://github.com/ArazSaieArasi3/CM-PharmE/blob/v2/research-program/v2/research/w4/gate-d-conceptual-freeze.md)
-- [Evidence sufficiency decision — internal Gate F](https://github.com/ArazSaieArasi3/CM-PharmE/blob/v2/research-program/v2/research/w7/gate-f-claim-sufficiency-decision.md)
+- [Conceptual baseline decision record](https://github.com/ArazSaieArasi3/CM-PharmE/blob/v2/research-program/v2/research/w4/gate-d-conceptual-freeze.md)
+- [Evidence sufficiency decision record](https://github.com/ArazSaieArasi3/CM-PharmE/blob/v2/research-program/v2/research/w7/gate-f-claim-sufficiency-decision.md)
+
+<details>
+<summary>Internal research-control references</summary>
+
+These identifiers are retained for repository traceability and historical audit.
+
+### Stage identifiers
+
+| Reader-facing stage | Internal reference |
+|---|---|
+| Research foundation | W0 |
+| Needs, uses and opportunities | W1 |
+| Data landscape | W2 |
+| Concept discovery | W3 |
+| UFO/OntoUML conceptualization | W4 |
+| Formal ontology development | W5 |
+| Data and knowledge infrastructure | W6 |
+| Evaluation | W7 |
+| Observatory and demonstrators | W8 |
+
+### Decision identifiers
+
+| Reader-facing decision | Internal reference |
+|---|---|
+| Research identity and scope | Gate A |
+| Principal research use cases | Gate B |
+| Evidence/data admission and held-out design | Gate C |
+| Candidate concept inventory | Concept Inventory Gate |
+| Conceptual baseline | Gate D |
+| Formal ontology readiness | Formal Gate |
+| Representation architecture | Gate E |
+| Evidence sufficiency review | Gate F |
+| Demonstrator evaluation | Gate G |
+| Research release readiness | Gate H |
+
+</details>
