@@ -38,8 +38,6 @@ At this synchronization point:
 - integrated manuscript Draft 0 remains active (#171);
 - demonstrator evaluation and final research release readiness are not yet complete.
 
-Internal W0–W8 and Gate identifiers remain available in the detailed research/provenance pages, but they are not required to interpret the current research state.
-
 ## Conceptual baseline
 
 The current conceptual baseline contains:
@@ -47,8 +45,6 @@ The current conceptual baseline contains:
 - 25 X-INFRA;
 - 30 Extensions;
 - **87 total**.
-
-The corresponding internal conceptual-baseline decision is Gate D.
 
 Formal version `2.0.0-alpha.1` records:
 - 642 asserted triples;
