@@ -9,6 +9,12 @@ This is the exhaustive reader-facing reference projection for the current CM-Pha
 ## Purpose and scope
 Use this reference to discover modules, conceptual elements and formal properties, then follow the authoritative source links for semantic/evidence decisions. The reference does not replace the ontology source or semantic-review process.
 
+## Visual architecture
+
+![V2 ontology architecture](https://raw.githubusercontent.com/ArazSaieArasi3/CM-PharmE/main/wiki-src/diagrams/rendered/ontology/DGM-ONT-002--v2-ontology-architecture-core-x-infra-and-extensions.svg)
+
+See [[V2 Ontology Diagram Suite]] for the complete 10-diagram hierarchy and semantic/coverage notes.
+
 ## Architecture
 - **Conceptual elements:** 87
 - **OWL classes:** 81
