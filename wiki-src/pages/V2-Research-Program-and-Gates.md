@@ -4,6 +4,12 @@
 > **Status:** Stable-to-date / Evolving  
 > **Updated:** 2026-09-23
 
+## Visual research process
+
+![CM-PharmE 2.0 research process](https://raw.githubusercontent.com/ArazSaieArasi3/CM-PharmE/main/wiki-src/diagrams/rendered/process/DGM-PRC-003--v2-research-process.svg)
+
+**DGM-PRC-003** uses descriptive stage names and keeps E9, representative-task evaluation and final release readiness visibly pending. See [[Research Process and Evolution Diagrams]] for the full suite.
+
 ## Development stages
 
 The V2 research program progresses from research framing through formalization, implementation, evaluation and application evidence.
