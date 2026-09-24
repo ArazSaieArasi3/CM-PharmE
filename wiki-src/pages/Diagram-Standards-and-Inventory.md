@@ -29,12 +29,31 @@ The machine-readable inventory is `wiki-src/diagrams/manifest.json`.
 
 ## Initial notation samples
 
-- **DGM-ONT-001** — OntoUML-aware product/presentation/substance fragment.
-- **DGM-ERD-001** — Crow's Foot evidence/source relational fragment.
-- **DGM-ARC-001** — cross-representation data/query pipeline.
-- **DGM-EVO-001** — V1→V2 research-evolution lineage.
-
 These are intentionally small standard-demonstration diagrams. Complete ontology/database/KG/evaluation visuals are delivered by the later documentation issues.
+
+### DGM-ONT-001 — OntoUML-aware conceptual notation
+
+![DGM-ONT-001 illustrative ontology fragment](https://raw.githubusercontent.com/ArazSaieArasi3/CM-PharmE/main/wiki-src/diagrams/rendered/ontology/DGM-ONT-001--product-presentation-substance.svg)
+
+[Source](https://github.com/ArazSaieArasi3/CM-PharmE/blob/main/wiki-src/diagrams/source/ontology/DGM-ONT-001--product-presentation-substance.puml) · [SVG](https://github.com/ArazSaieArasi3/CM-PharmE/blob/main/wiki-src/diagrams/rendered/ontology/DGM-ONT-001--product-presentation-substance.svg)
+
+### DGM-ERD-001 — Crow's Foot relational notation
+
+![DGM-ERD-001 illustrative evidence ERD](https://raw.githubusercontent.com/ArazSaieArasi3/CM-PharmE/main/wiki-src/diagrams/rendered/erd/DGM-ERD-001--evidence-source-records.svg)
+
+[Source](https://github.com/ArazSaieArasi3/CM-PharmE/blob/main/wiki-src/diagrams/source/erd/DGM-ERD-001--evidence-source-records.mmd) · [SVG](https://github.com/ArazSaieArasi3/CM-PharmE/blob/main/wiki-src/diagrams/rendered/erd/DGM-ERD-001--evidence-source-records.svg)
+
+### DGM-ARC-001 — data/query architecture flow
+
+![DGM-ARC-001 illustrative cross-representation pipeline](https://raw.githubusercontent.com/ArazSaieArasi3/CM-PharmE/main/wiki-src/diagrams/rendered/architecture/DGM-ARC-001--cross-representation-pipeline.svg)
+
+[Source](https://github.com/ArazSaieArasi3/CM-PharmE/blob/main/wiki-src/diagrams/source/architecture/DGM-ARC-001--cross-representation-pipeline.mmd) · [SVG](https://github.com/ArazSaieArasi3/CM-PharmE/blob/main/wiki-src/diagrams/rendered/architecture/DGM-ARC-001--cross-representation-pipeline.svg)
+
+### DGM-EVO-001 — cross-version lineage
+
+![DGM-EVO-001 illustrative V1 to V2 research lineage](https://raw.githubusercontent.com/ArazSaieArasi3/CM-PharmE/main/wiki-src/diagrams/rendered/evolution/DGM-EVO-001--v1-v2-research-lineage.svg)
+
+[Source](https://github.com/ArazSaieArasi3/CM-PharmE/blob/main/wiki-src/diagrams/source/evolution/DGM-EVO-001--v1-v2-research-lineage.dot) · [SVG](https://github.com/ArazSaieArasi3/CM-PharmE/blob/main/wiki-src/diagrams/rendered/evolution/DGM-EVO-001--v1-v2-research-lineage.svg)
 
 ## Legacy assets
 
