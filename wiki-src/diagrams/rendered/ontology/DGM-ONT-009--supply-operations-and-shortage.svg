@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1130 1067" role="img" aria-labelledby="title desc">
+<title id="title">DGM-ONT-009 Supply Operations and Shortage</title>
+<desc id="desc">Explain supply activities, shortage situation, capacity and observation-result semantics with explicit shortage endpoints.</desc>
+<defs><marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z"/></marker><marker id="inherit" markerWidth="12" markerHeight="12" refX="10" refY="5" orient="auto"><path d="M0,0 L0,10 L10,5 z" fill="white" stroke="currentColor"/></marker><style>text{font-family:sans-serif}.node{fill:white;stroke:currentColor}.note{fill:white;stroke:currentColor;stroke-dasharray:5 4}.prot{stroke-dasharray:6 5}.dtype{stroke-dasharray:4 3}.relator{stroke-width:2}.edge-label{font-size:10px}</style></defs>
+<text x="182.5" y="34" text-anchor="middle" font-size="17" font-weight="bold">Supply activities /</text>
+<text x="182.5" y="53" text-anchor="middle" font-size="17" font-weight="bold">disposition</text>
+<text x="532.5" y="34" text-anchor="middle" font-size="17" font-weight="bold">Shortage situation</text>
+<text x="882.5" y="34" text-anchor="middle" font-size="17" font-weight="bold">Observation results /</text>
+<text x="882.5" y="53" text-anchor="middle" font-size="17" font-weight="bold">context</text>
+<line x1="532.5" y1="201.0" x2="532.5" y2="237.0" stroke="currentColor" marker-end="url(#arr)"/>
+<text class="edge-label" x="524.5" y="219.0" text-anchor="middle">shortageProduct</text>
+<line x1="532.5" y1="201.0" x2="532.5" y2="369.0" stroke="currentColor" marker-end="url(#arr)"/>
+<text class="edge-label" x="524.5" y="285.0" text-anchor="middle">shortagePresentation</text>
+<line x1="532.5" y1="201.0" x2="532.5" y2="501.0" stroke="currentColor" marker-end="url(#arr)"/>
+<text class="edge-label" x="524.5" y="351.0" text-anchor="middle">shortageJurisdiction</text>
+<line x1="182.5" y1="465.0" x2="182.5" y2="633.0" stroke="currentColor" marker-end="url(#arr)"/>
+<text class="edge-label" x="174.5" y="549.0" text-anchor="middle">capacityBearer</text>
+<line x1="882.5" y1="237.0" x2="882.5" y2="201.0" stroke="currentColor" marker-end="url(#inherit)"/>
+<line x1="882.5" y1="369.0" x2="882.5" y2="201.0" stroke="currentColor" marker-end="url(#inherit)"/>
+<line x1="882.5" y1="501.0" x2="882.5" y2="201.0" stroke="currentColor" marker-end="url(#inherit)"/>
+<line x1="882.5" y1="201.0" x2="882.5" y2="765.0" stroke="currentColor" marker-end="url(#arr)"/>
+<text class="edge-label" x="874.5" y="483.0" text-anchor="middle">observationResultAbout</text>
+<rect class="node" x="40" y="105" width="285" height="96" rx="12"/>
+<text x="182.5" y="129" text-anchor="middle" font-size="13" font-weight="bold">Manufacturing Activity</text>
+<text x="182.5" y="187" text-anchor="middle" font-size="11">«Event»</text>
+<rect class="node" x="40" y="237" width="285" height="96" rx="12"/>
+<text x="182.5" y="261" text-anchor="middle" font-size="13" font-weight="bold">Pharmaceutical Logistics</text>
+<text x="182.5" y="278" text-anchor="middle" font-size="13" font-weight="bold">Activity</text>
+<text x="182.5" y="319" text-anchor="middle" font-size="11">«Event»</text>
+<rect class="node" x="40" y="369" width="285" height="96" rx="5"/>
+<text x="182.5" y="393" text-anchor="middle" font-size="13" font-weight="bold">Supply Capacity</text>
+<text x="182.5" y="451" text-anchor="middle" font-size="11">«Mode»</text>
+<rect class="note" x="40" y="633" width="285" height="96" rx="5"/>
+<text x="182.5" y="657" text-anchor="middle" font-size="13" font-weight="bold">capacityBearer: range unspecified</text>
+<text x="182.5" y="715" text-anchor="middle" font-size="11">«constraint note»</text>
+<rect class="node" x="390" y="105" width="285" height="96" rx="12"/>
+<text x="532.5" y="129" text-anchor="middle" font-size="13" font-weight="bold">Medicine Shortage Situation</text>
+<text x="532.5" y="187" text-anchor="middle" font-size="11">«Situation»</text>
+<rect class="node" x="390" y="237" width="285" height="96" rx="5"/>
+<text x="532.5" y="261" text-anchor="middle" font-size="13" font-weight="bold">Medicinal Product</text>
+<text x="532.5" y="319" text-anchor="middle" font-size="11">«Kind»</text>
+<rect class="node" x="390" y="369" width="285" height="96" rx="5"/>
+<text x="532.5" y="393" text-anchor="middle" font-size="13" font-weight="bold">Medicinal Product Presentation</text>
+<text x="532.5" y="451" text-anchor="middle" font-size="11">«Kind»</text>
+<rect class="node" x="390" y="501" width="285" height="96" rx="5"/>
+<text x="532.5" y="525" text-anchor="middle" font-size="13" font-weight="bold">Regulatory Jurisdiction</text>
+<text x="532.5" y="583" text-anchor="middle" font-size="11">«Kind»</text>
+<rect class="node" x="740" y="105" width="285" height="96" rx="5"/>
+<text x="882.5" y="129" text-anchor="middle" font-size="13" font-weight="bold">Observation Result</text>
+<text x="882.5" y="187" text-anchor="middle" font-size="11">«Kind»</text>
+<rect class="node" x="740" y="237" width="285" height="96" rx="5"/>
+<text x="882.5" y="261" text-anchor="middle" font-size="13" font-weight="bold">Availability Observation Result</text>
+<text x="882.5" y="319" text-anchor="middle" font-size="11">«Subkind»</text>
+<rect class="node" x="740" y="369" width="285" height="96" rx="5"/>
+<text x="882.5" y="393" text-anchor="middle" font-size="13" font-weight="bold">Demand Observation Result</text>
+<text x="882.5" y="451" text-anchor="middle" font-size="11">«Subkind»</text>
+<rect class="node" x="740" y="501" width="285" height="96" rx="5"/>
+<text x="882.5" y="525" text-anchor="middle" font-size="13" font-weight="bold">Supply Capacity Observation</text>
+<text x="882.5" y="542" text-anchor="middle" font-size="13" font-weight="bold">Result</text>
+<text x="882.5" y="583" text-anchor="middle" font-size="11">«Subkind»</text>
+<rect class="note" x="740" y="765" width="285" height="96" rx="5"/>
+<text x="882.5" y="789" text-anchor="middle" font-size="13" font-weight="bold">observationResultAbout: range</text>
+<text x="882.5" y="806" text-anchor="middle" font-size="13" font-weight="bold">unspecified</text>
+<text x="882.5" y="847" text-anchor="middle" font-size="11">«constraint note»</text>
+<text x="40" y="981" font-size="11">Legend: stereotype text carries semantics; dashed boxes are notes/datatypes; thick borders mark Relators; hollow triangle = subClassOf.</text>
+<text x="40" y="1003" font-size="11">Dashed protected lines mean only registered inequality. No cardinality, equivalence or extra endpoint is implied by layout.</text>
+</svg>

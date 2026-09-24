@@ -1,0 +1,28 @@
+@startuml DGM_ONT_007
+hide methods
+hide fields
+skinparam classAttributeIconSize 0
+left to right direction
+class "Geographic Feature\n«Kind»" as GeographicFeature
+class "Administrative Region\n«Subkind»" as AdministrativeRegion
+class "Country\n«Subkind»" as Country
+class "Facility\n«Kind»" as Facility
+class "Regulatory Jurisdiction\n«Kind»" as RegulatoryJurisdiction
+note "locatedIn: domain unspecified" as GNOTE
+class "Geospatial Position\n«Datatype»" as GeospatialPosition
+class "Address\n«Datatype»" as Address
+class "Time Interval\n«Datatype»" as TimeInterval
+class "Reporting Period\n«Datatype»" as ReportingPeriod
+AdministrativeRegion --|> GeographicFeature : subClassOf
+Country --|> GeographicFeature : subClassOf
+GeographicFeature --> AdministrativeRegion : withinRegion
+GeographicFeature --> Country : withinCountry
+GNOTE --> GeographicFeature : locatedIn
+GeographicFeature .. RegulatoryJurisdiction : ≠ protected distinction
+Facility .. GeographicFeature : ≠ protected distinction
+legend left
+  Stereotypes are explicit textual semantics.
+  Dashed != lines = registered protected distinctions.
+  Endpoint-unspecified notes preserve absent OWL constraints.
+endlegend
+@enduml

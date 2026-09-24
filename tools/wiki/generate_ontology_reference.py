@@ -354,7 +354,7 @@ This is a structural relation example, not an instance-data claim.
 - Mapping authority: {code('v2/data/mappings/ontology-rdb-mapping.csv')}
 - Dataset→ontology evaluation: {code('v2/research/w7/e6-dataset-ontology-mapping-quality.md')}
 - Ontology↔RDB↔KG evaluation: {code('v2/research/w7/e10-ontology-rdb-kg-semantic-consistency.md')}
-- Ontology-specific diagram suite is governed separately by #235.
+- {wiki('V2 Ontology Diagram Suite')} — governed multi-level visual documentation for the current V2 baseline.
 
 ## Known boundaries
 - Current domain review state: **{d['review']}**.
@@ -617,6 +617,12 @@ This is the exhaustive reader-facing reference projection for the current CM-Pha
 
 ## Purpose and scope
 Use this reference to discover modules, conceptual elements and formal properties, then follow the authoritative source links for semantic/evidence decisions. The reference does not replace the ontology source or semantic-review process.
+
+## Visual architecture
+
+![V2 ontology architecture](https://raw.githubusercontent.com/ArazSaieArasi3/CM-PharmE/main/wiki-src/diagrams/rendered/ontology/DGM-ONT-002--v2-ontology-architecture-core-x-infra-and-extensions.svg)
+
+See {wiki('V2 Ontology Diagram Suite')} for the complete governed visual hierarchy.
 
 ## Architecture
 - **Conceptual elements:** 87

@@ -1,0 +1,38 @@
+@startuml DGM_ONT_005
+hide methods
+hide fields
+skinparam classAttributeIconSize 0
+left to right direction
+class "Medicinal Product\n«Kind»" as MedicinalProduct
+class "Pharmaceutical Substance\n«Kind»" as PharmaceuticalSubstance
+class "Medicinal Product Presentation\n«Kind»" as MedicinalProductPresentation
+class "Dosage Form Specification\n«Kind»" as DosageFormSpecification
+class "Strength\n«Quality»" as Strength
+class "Package Configuration\n«Kind»" as PackageConfiguration
+class "Product Classification Scheme\n«Kind»" as ProductClassificationScheme
+class "Classification Entry\n«Kind»" as ClassificationEntry
+class "Product Classification Assignment\n«Relator»" as ProductClassificationAssignment
+class "Market Listing\n«Relator»" as MarketListing
+class "Organization\n«Kind»" as Organization
+class "Regulatory Jurisdiction\n«Kind»" as RegulatoryJurisdiction
+note "hasActiveSubstance: domain unspecified" as PNOTE1
+note "classificationEntity: range unspecified" as PNOTE2
+MedicinalProductPresentation --> MedicinalProduct : presentationOf
+PNOTE1 --> PharmaceuticalSubstance : hasActiveSubstance
+MedicinalProductPresentation --> DosageFormSpecification : hasDosageForm
+MedicinalProductPresentation --> Strength : hasStrength
+MedicinalProductPresentation --> PackageConfiguration : hasPackageConfiguration
+ProductClassificationAssignment --> PNOTE2 : classificationEntity
+ProductClassificationAssignment --> ClassificationEntry : classificationEntry
+ClassificationEntry --> ProductClassificationScheme : entryInScheme
+MarketListing --> MedicinalProductPresentation : listingPresentation
+MarketListing --> Organization : listingResponsibleOrganization
+MarketListing --> RegulatoryJurisdiction : listingJurisdiction
+MedicinalProduct .. PharmaceuticalSubstance : ≠ protected distinction
+MedicinalProduct .. MedicinalProductPresentation : ≠ protected distinction
+legend left
+  Stereotypes are explicit textual semantics.
+  Dashed != lines = registered protected distinctions.
+  Endpoint-unspecified notes preserve absent OWL constraints.
+endlegend
+@enduml

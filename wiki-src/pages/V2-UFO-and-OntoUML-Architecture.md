@@ -2,13 +2,19 @@
 
 > **Version scope:** V2  
 > **Status:** Stable-to-date / Evolving  
-> **Updated:** 2026-09-23
+> **Updated:** 2026-09-24
+
+## Visual architecture
+
+![V2 ontology architecture](https://raw.githubusercontent.com/ArazSaieArasi3/CM-PharmE/main/wiki-src/diagrams/rendered/ontology/DGM-ONT-002--v2-ontology-architecture-core-x-infra-and-extensions.svg)
+
+**DGM-ONT-002** is an authoritative projection of the current 17-domain architecture across Core, X-INFRA and Extensions. See [[V2 Ontology Diagram Suite]] for the complete multi-level visual set.
 
 ## Foundational stance
 
 V2 makes UFO/OntoUML a first-class conceptualization method before OWL implementation. Identity, rigidity, dependence, relational entities, events/activities, modes and contextual roles are resolved conceptually rather than delegated to serialization.
 
-## Protected Gate-D commitments
+## Protected conceptual commitments
 
 The current baseline preserves distinctions including:
 - Organization vs Facility/Site vs Geographic Feature vs Regulatory Jurisdiction;
@@ -33,9 +39,9 @@ This is a deliberate evolution from V1, where business-architecture framing was 
 
 The project-native conceptual JSON and executable OntoUML checks are useful repository artifacts, but they are not claimed to be official OntoUML-tool export/certification.
 
-## Human review layer
+## Semantic review layer
 
-The Human Ontology Review Procedure adds:
+The governed semantic-review layer adds:
 - whole-ontology overview;
 - 17-domain navigation;
 - concept review catalog;
@@ -47,8 +53,8 @@ Review projections do not themselves change semantics.
 ## Evidence
 
 - [Integrated OntoUML model notes](https://github.com/ArazSaieArasi3/CM-PharmE/blob/v2/research-program/v2/research/w4/integrated-ontouml-model.md)
-- [Gate D](https://github.com/ArazSaieArasi3/CM-PharmE/blob/v2/research-program/v2/research/w4/gate-d-conceptual-freeze.md)
-- [Human review overview](https://github.com/ArazSaieArasi3/CM-PharmE/blob/v2/research-program/v2/review/ontology-overview.md)
+- [Conceptual freeze evidence](https://github.com/ArazSaieArasi3/CM-PharmE/blob/v2/research-program/v2/research/w4/gate-d-conceptual-freeze.md)
+- [Review overview](https://github.com/ArazSaieArasi3/CM-PharmE/blob/v2/research-program/v2/review/ontology-overview.md)
 - [Review control center](https://github.com/ArazSaieArasi3/CM-PharmE/blob/v2/research-program/v2/review/README.md)
 
 ---
@@ -61,7 +67,7 @@ Review projections do not themselves change semantics.
 - **Authoritative source:** Gate-D W4 conceptual artifacts and V2 review package
 - **Last synchronized:** 2026-09-23
 - **Last synchronized ref:** `1226b0a5484f8f5d3a8d214e0d0f52f066b88999`
-- **Related issues/PRs:** W4, #159, #173
+- **Related issues/PRs:** #159, #173, #235
 - **Evidence status:** Gate-D architecture frozen for current baseline; selected extension/human-review findings remain active
 - **Future refresh:** #213
 - **Wiki baseline:** WB-2026.09.1

@@ -1,0 +1,38 @@
+@startuml DGM_ONT_010
+hide methods
+hide fields
+skinparam classAttributeIconSize 0
+left to right direction
+class "Contextual Medicine Classification Assignment\n«Relator»" as ContextualMedicineClassificationAssignment
+class "Essential Medicine Classification Assignment\n«Subkind»" as EssentialMedicineClassification
+class "Critical Medicine Classification Assignment\n«Subkind»" as CriticalMedicineClassification
+class "Alternative Medicinal Product\n«Role»" as AlternativeMedicinalProductRole
+class "Alternative Medicinal Product Assignment\n«Relator»" as AlternativeMedicineAssignment
+class "Supply Dependency\n«Relator»" as SupplyDependency
+class "Disruption Event\n«Event»" as DisruptionEvent
+class "Inventory Observation Result\n«Subkind»" as InventoryObservationResult
+class "Procurement Activity\n«Event»" as ProcurementActivity
+class "Lead Time Observation Result\n«Subkind»" as LeadTimeObservationResult
+class "Stockout Situation\n«Situation»" as StockoutSituation
+class "Asset at Risk\n«RoleMixin»" as AssetAtRisk
+class "Risk Assessment Activity\n«Event»" as RiskAssessmentActivity
+class "Vulnerability\n«Mode»" as Vulnerability
+class "Risk Treatment Plan\n«Kind»" as RiskTreatmentPlan
+class "Risk Treatment Activity\n«Event»" as RiskTreatmentActivity
+note "dependencyDependent / dependencyProvider: ranges unspecified" as RNOTE1
+note "disruptionAffects: range unspecified" as RNOTE2
+note "riskAssessmentConcerns: range unspecified" as RNOTE3
+note "riskTreatmentAddresses: range unspecified" as RNOTE4
+note "No formal Supply Resilience ↔ Risk Management object property is asserted in the current baseline." as RNOTE5
+EssentialMedicineClassification --|> ContextualMedicineClassificationAssignment : subClassOf
+CriticalMedicineClassification --|> ContextualMedicineClassificationAssignment : subClassOf
+SupplyDependency --> RNOTE1 : dependency endpoints unspecified
+DisruptionEvent --> RNOTE2 : disruptionAffects
+RiskAssessmentActivity --> RNOTE3 : riskAssessmentConcerns
+RiskTreatmentActivity --> RNOTE4 : riskTreatmentAddresses
+legend left
+  Stereotypes are explicit textual semantics.
+  Dashed != lines = registered protected distinctions.
+  Endpoint-unspecified notes preserve absent OWL constraints.
+endlegend
+@enduml
