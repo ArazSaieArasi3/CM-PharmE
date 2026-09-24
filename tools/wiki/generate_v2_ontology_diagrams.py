@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import argparse, csv, html, json, re
+import argparse, csv, html, json, re, math, textwrap
 from pathlib import Path
 
 ROOT=Path(__file__).resolve().parents[2]
@@ -149,7 +149,7 @@ def specs(domains):
         edge("ManufacturingSiteRole","EcosystemParticipant","subClassOf","generalization"),
         edge("DistributionSiteRole","Facility","subClassOf","generalization"),
         edge("DistributionSiteRole","EcosystemParticipant","subClassOf","generalization"),
-        edge("Organization","Facility","operates «material; derived from FacilityOperation»","object","operates"),
+        edge("Organization","Facility","operates","object","operates"),
         edge("FacilityOperation","Organization","operationOrganization","object","operationOrganization"),
         edge("FacilityOperation","Facility","operationFacility","object","operationFacility"),
         edge("Organization","Facility","≠ protected distinction","protected"),
@@ -449,26 +449,81 @@ def puml(diag):
     return "\n".join(lines)+"\n"
 
 def svg(diag):
-    colw=330; nodew=270; nodeh=72; top=95; rowh=105; margin=35
+    colw=350
+    nodew=285
+    nodeh=96
+    top=105
+    rowh=132
+    margin=40
     maxcol=max(n["col"] for n in diag["nodes"])
     maxrow=max(n["row"] for n in diag["nodes"])
     width=margin*2+(maxcol+1)*colw
-    height=max(420,top+(maxrow+1)*rowh+150)
+    height=max(460,top+(maxrow+1)*rowh+170)
     pos={n["id"]:(margin+n["col"]*colw,top+n["row"]*rowh) for n in diag["nodes"]}
+    node_by_id={n["id"]:n for n in diag["nodes"]}
+
+    def wrapped(text, limit):
+        parts=textwrap.wrap(text, width=limit, break_long_words=False, break_on_hyphens=False)
+        if not parts: return [text]
+        if len(parts)>3:
+            parts=parts[:2]+[" ".join(parts[2:])]
+        return parts
+
+    def boundary_points(a,b,offset=0.0):
+        sx,sy=pos[a]; tx,ty=pos[b]
+        scx,scy=sx+nodew/2,sy+nodeh/2
+        tcx,tcy=tx+nodew/2,ty+nodeh/2
+        dx,dy=tcx-scx,tcy-scy
+        dist=math.hypot(dx,dy) or 1.0
+        ux,uy=dx/dist,dy/dist
+        px,py=-uy,ux
+        def hit(cx,cy,ux,uy):
+            vals=[]
+            if abs(ux)>1e-9: vals.append((nodew/2)/abs(ux))
+            if abs(uy)>1e-9: vals.append((nodeh/2)/abs(uy))
+            t=min(vals) if vals else 0
+            return cx+ux*t,cy+uy*t
+        x1,y1=hit(scx,scy,ux,uy)
+        x2,y2=hit(tcx,tcy,-ux,-uy)
+        return x1+px*offset,y1+py*offset,x2+px*offset,y2+py*offset,px,py
+
     out=[f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {width} {height}" role="img" aria-labelledby="title desc">',
          f'<title id="title">{html.escape(diag["id"]+" "+diag["title"])}</title>',
          f'<desc id="desc">{html.escape(diag["purpose"])}</desc>',
-         '<defs><marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z"/></marker><marker id="inherit" markerWidth="12" markerHeight="12" refX="10" refY="5" orient="auto"><path d="M0,0 L0,10 L10,5 z" fill="white" stroke="currentColor"/></marker><style>text{font-family:sans-serif}.node{fill:white;stroke:currentColor}.note{fill:white;stroke:currentColor;stroke-dasharray:5 4}.prot{stroke-dasharray:6 5}.dtype{stroke-dasharray:4 3}.relator{stroke-width:2}</style></defs>']
-    for i,c in enumerate(diag["columns"]):
-        out.append(f'<text x="{margin+i*colw+nodew/2}" y="42" text-anchor="middle" font-size="18" font-weight="bold">{html.escape(c)}</text>')
-    for e in diag["edges"]:
-        sx,sy=pos[e["source"]]; tx,ty=pos[e["target"]]
-        x1=sx+nodew/2; y1=sy+nodeh/2; x2=tx+nodew/2; y2=ty+nodeh/2
+         '<defs><marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z"/></marker><marker id="inherit" markerWidth="12" markerHeight="12" refX="10" refY="5" orient="auto"><path d="M0,0 L0,10 L10,5 z" fill="white" stroke="currentColor"/></marker><style>text{font-family:sans-serif}.node{fill:white;stroke:currentColor}.note{fill:white;stroke:currentColor;stroke-dasharray:5 4}.prot{stroke-dasharray:6 5}.dtype{stroke-dasharray:4 3}.relator{stroke-width:2}.edge-label{font-size:10px}</style></defs>']
+
+    for i,coltitle in enumerate(diag["columns"]):
+        parts=wrapped(coltitle,28)
+        for li,part in enumerate(parts):
+            out.append(f'<text x="{margin+i*colw+nodew/2}" y="{34+li*19}" text-anchor="middle" font-size="17" font-weight="bold">{html.escape(part)}</text>')
+
+    pair_groups={}
+    for idx,e in enumerate(diag["edges"]):
+        key=tuple(sorted([e["source"],e["target"]]))
+        pair_groups.setdefault(key,[]).append(idx)
+    offsets={}
+    for key,idxs in pair_groups.items():
+        if len(idxs)==1:
+            offsets[idxs[0]]=0
+        else:
+            center=(len(idxs)-1)/2
+            for j,idx in enumerate(idxs):
+                offsets[idx]=(j-center)*18
+
+    for idx,e in enumerate(diag["edges"]):
+        x1,y1,x2,y2,px,py=boundary_points(e["source"],e["target"],offsets.get(idx,0))
         cls=' class="prot"' if e["kind"]=="protected" else ""
         marker="" if e["kind"]=="protected" else (' marker-end="url(#inherit)"' if e["kind"]=="generalization" else ' marker-end="url(#arr)"')
-        out.append(f'<line{cls} x1="{x1}" y1="{y1}" x2="{x2}" y2="{y2}" stroke="currentColor"{marker}/>')
-        mx=(x1+x2)/2; my=(y1+y2)/2-6
-        out.append(f'<text x="{mx}" y="{my}" text-anchor="middle" font-size="11">{html.escape(e["label"])}</text>')
+        out.append(f'<line{cls} x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}" stroke="currentColor"{marker}/>')
+        if e["kind"]!="generalization":
+            mx=(x1+x2)/2+px*8
+            my=(y1+y2)/2+py*8
+            label=e["label"]
+            if e["kind"]=="protected": label="≠ protected"
+            parts=wrapped(label,26)
+            for li,part in enumerate(parts):
+                out.append(f'<text class="edge-label" x="{mx:.1f}" y="{my+li*13:.1f}" text-anchor="middle">{html.escape(part)}</text>')
+
     for n in diag["nodes"]:
         x,y=pos[n["id"]]
         cls="note" if n["kind"]=="note" else "node"
@@ -476,11 +531,17 @@ def svg(diag):
         if n["stereotype"]=="Relator": cls+=" relator"
         rx=12 if n["stereotype"] in {"Event","Situation"} else 5
         out.append(f'<rect class="{cls}" x="{x}" y="{y}" width="{nodew}" height="{nodeh}" rx="{rx}"/>')
-        out.append(f'<text x="{x+nodew/2}" y="{y+28}" text-anchor="middle" font-size="14" font-weight="bold">{html.escape(n["label"])}</text>')
-        out.append(f'<text x="{x+nodew/2}" y="{y+52}" text-anchor="middle" font-size="12">«{html.escape(n["stereotype"])}»</text>')
-    legend_y=height-80
-    out.append(f'<text x="{margin}" y="{legend_y}" font-size="12">Legend: stereotype text is semantic; dashed boxes denote notes/datatypes; thick border marks Relator; Event/Situation remain explicitly labeled.</text>')
-    out.append(f'<text x="{margin}" y="{legend_y+23}" font-size="12">Protected-distinction lines express only registered inequality constraints. No cardinality/equivalence is implied unless explicitly labeled.</text>')
+        parts=wrapped(n["label"],32 if n["kind"]!="note" else 36)
+        base=y+24 if len(parts)<=2 else y+18
+        for li,part in enumerate(parts):
+            out.append(f'<text x="{x+nodew/2}" y="{base+li*17}" text-anchor="middle" font-size="13" font-weight="bold">{html.escape(part)}</text>')
+        out.append(f'<text x="{x+nodew/2}" y="{y+nodeh-14}" text-anchor="middle" font-size="11">«{html.escape(n["stereotype"])}»</text>')
+
+    legend_y=height-86
+    legend1="Legend: stereotype text carries semantics; dashed boxes are notes/datatypes; thick borders mark Relators; hollow triangle = subClassOf."
+    legend2="Dashed protected lines mean only registered inequality. No cardinality, equivalence or extra endpoint is implied by layout."
+    out.append(f'<text x="{margin}" y="{legend_y}" font-size="11">{html.escape(legend1)}</text>')
+    out.append(f'<text x="{margin}" y="{legend_y+22}" font-size="11">{html.escape(legend2)}</text>')
     out.append('</svg>')
     return "\n".join(out)+"\n"
 
