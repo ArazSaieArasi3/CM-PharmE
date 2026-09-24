@@ -8,6 +8,7 @@ on:
       - 'wiki-src/**'
       - 'tools/wiki/stage_wiki_publish.py'
       - 'tools/wiki/verify_published_wiki.py'
+      - 'tools/wiki/build_wiki_snapshot.py'
       - '.github/workflows/wiki-publish.yml'
   workflow_dispatch:
 
@@ -38,6 +39,17 @@ jobs:
           python tools/wiki/validate_wiki_source.py
           python tools/wiki/validate_wiki_source.py --self-test
 
+      - name: Read baseline state
+        id: baseline
+        shell: bash
+        run: |
+          python - <<'PY' >> "$GITHUB_OUTPUT"
+          import json
+          x=json.load(open("wiki-src/baseline-manifest.json", encoding="utf-8"))
+          print("id=" + str(x.get("candidate_baseline_id","")))
+          print("declared=" + ("true" if x.get("declared") else "false"))
+          PY
+
       - name: Configure ephemeral Git credentials
         shell: bash
         run: |
@@ -45,15 +57,10 @@ jobs:
           printf 'https://x-access-token:%s@github.com\n' "$GH_TOKEN" > "$HOME/.git-credentials"
 
       - name: Clone GitHub Wiki repository
-        id: clone
         shell: bash
         run: |
           set -euo pipefail
-          WIKI_URL="https://github.com/${GITHUB_REPOSITORY}.wiki.git"
-          if ! git clone "$WIKI_URL" _published_wiki; then
-            echo "::error::GitHub Wiki repository could not be cloned. The Wiki may need one initial page created in the GitHub UI before its .wiki.git repository exists."
-            exit 21
-          fi
+          git clone "https://github.com/${GITHUB_REPOSITORY}.wiki.git" _published_wiki
 
       - name: Stage source-complete pages
         run: |
@@ -98,43 +105,70 @@ jobs:
             wiki-publish-verification.json
             _published_wiki/.cm-pharme-managed-pages.json
           if-no-files-found: error
+          include-hidden-files: true
           retention-days: 30
 
-      - name: Record successful publication in issue 218
+      - name: Build declared-baseline archive
+        if: steps.baseline.outputs.declared == 'true'
+        run: |
+          python tools/wiki/build_wiki_snapshot.py build \
+            --baseline "${{ steps.baseline.outputs.id }}" \
+            --wiki-commit "${{ steps.push.outputs.wiki_sha }}"
+          python tools/wiki/build_wiki_snapshot.py verify \
+            --archive "dist/wiki-${{ steps.baseline.outputs.id }}.zip" \
+            --wiki-commit "${{ steps.push.outputs.wiki_sha }}"
+          sha256sum "dist/wiki-${{ steps.baseline.outputs.id }}.zip" | tee final-wiki-archive-sha256.txt
+
+      - name: Upload declared-baseline archive
+        if: steps.baseline.outputs.declared == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: wiki-${{ steps.baseline.outputs.id }}-final
+          path: |
+            dist/wiki-${{ steps.baseline.outputs.id }}.zip
+            dist/wiki-${{ steps.baseline.outputs.id }}/ARCHIVE-MANIFEST.json
+            final-wiki-archive-sha256.txt
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Finalize QA issue
+        if: steps.baseline.outputs.declared == 'true'
         shell: bash
         run: |
-          WIKI_SHA="${{ steps.push.outputs.wiki_sha }}"
           BODY=$(cat <<EOF
-          Automated GitHub Wiki publication succeeded.
+          Final combined Wiki QA passed for ${{ steps.baseline.outputs.id }}.
 
-          - Source repository commit: \`$GITHUB_SHA\`
-          - Published Wiki commit: \`$WIKI_SHA\`
-          - Candidate Wiki baseline: \`WB-2026.09.1\`
-          - Source-controlled validation: PASS
-          - Rendered Wiki verification: PASS
-          - Publication workflow run: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID
-
-          The workflow synchronized only \`source-complete\` pages from \`wiki-src/\`, preserved a managed-page manifest, and verified the rendered Wiki URLs.
-          EOF
-          )
-          gh issue comment 218 --repo "$GITHUB_REPOSITORY" --body "$BODY"
-          gh issue close 218 --repo "$GITHUB_REPOSITORY" --reason completed
-
-      - name: Record Home/navigation publication in issue 203
-        shell: bash
-        run: |
-          BODY=$(cat <<EOF
-          Home and persistent navigation were published through the controlled Wiki publish workflow and the rendered Wiki verification passed.
-
-          - Source commit: \`$GITHUB_SHA\`
-          - Wiki commit: \`${{ steps.push.outputs.wiki_sha }}\`
+          - Source repository commit: $GITHUB_SHA
+          - Published Wiki commit: ${{ steps.push.outputs.wiki_sha }}
+          - Source validation: PASS
+          - Rendered verification: PASS
+          - Final archive build/read-back: PASS
+          - V2 status remains Stable-to-date / Evolving.
+          - Final QA report: wiki-src/qa/WB-2026.09.1-final-qa.md
           - Workflow: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID
+
+          Unresolved documentation-critical blockers: 0.
           EOF
           )
-          gh issue comment 203 --repo "$GITHUB_REPOSITORY" --body "$BODY"
-          gh issue close 203 --repo "$GITHUB_REPOSITORY" --reason completed
+          gh issue comment 209 --repo "$GITHUB_REPOSITORY" --body "$BODY"
+          gh issue close 209 --repo "$GITHUB_REPOSITORY" --reason completed
 
-      - name: Signal final QA readiness in issue 209
+      - name: Finalize archive issue
+        if: steps.baseline.outputs.declared == 'true'
         shell: bash
         run: |
-          gh issue comment 209 --repo "$GITHUB_REPOSITORY" --body "Actual GitHub Wiki publication and rendered-page verification completed successfully in workflow run $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID. Final combined QA can now proceed."
+          ARCHIVE_SHA="$(cut -d' ' -f1 final-wiki-archive-sha256.txt)"
+          BODY=$(cat <<EOF
+          Final reproducible Wiki archive completed for ${{ steps.baseline.outputs.id }}.
+
+          - Source repository commit: $GITHUB_SHA
+          - Exact published Wiki commit: ${{ steps.push.outputs.wiki_sha }}
+          - Archive SHA-256: $ARCHIVE_SHA
+          - Archive read-back verification: PASS
+          - Workflow/artifact evidence: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID
+
+          The archive records the exact source repository commit and exact published Wiki commit. This is a documentation snapshot, not a CM-PharmE semantic/model release or GitHub Release.
+          EOF
+          )
+          gh issue comment 217 --repo "$GITHUB_REPOSITORY" --body "$BODY"
+          gh issue close 217 --repo "$GITHUB_REPOSITORY" --reason completed
