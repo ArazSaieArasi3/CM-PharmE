@@ -107,9 +107,15 @@ def validate(root=WIKI, strict=False):
         for required in [
             "CM-PharmE 1.x",
             "CM-PharmE 2.0",
-            "V1 → V2 Evolution and Traceability",
-            "Evaluation, Validation, Assurance and Reproducibility",
-            "Documentation Governance",
+            "Research Guide",
+            "Ontology and Conceptual Model Guide",
+            "Data and Database Guide",
+            "Knowledge Graph and Queries Guide",
+            "Evaluation and Reproducibility Guide",
+            "Applications Guide",
+            "Publications and Citation Guide",
+            "Reference Guide",
+            "Documentation History and Governance",
         ]:
             if required not in ht:
                 errors.append(f"Home.md missing required navigation section: {required}")
