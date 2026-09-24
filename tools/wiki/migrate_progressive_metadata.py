@@ -115,7 +115,7 @@ def migrate_page(path, row):
     new_lines = lines[:start] + compact + lines[end:]
     body = "\n".join(new_lines).rstrip()
 
-    if not body.endswith("</details>"):
+    if "<summary>Documentation record</summary>" not in body:
         body += "\n\n---\n\n" + render_record(records)
     path.write_text(body + "\n", encoding="utf-8")
     return True, "migrated"
