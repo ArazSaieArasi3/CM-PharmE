@@ -6,7 +6,7 @@
 > **Last synchronized:** 2026-09-23  
 > **Last synchronized ref:** `1226b0a5484f8f5d3a8d214e0d0f52f066b88999`  
 > **Related issues/PRs:** #21–#24, #98, #159, #170, #171, #173  
-> **Evidence status:** Substantial stable baseline with explicit pending human/application/manuscript work  
+> **Evidence status:** Substantial stable baseline with explicit pending semantic-review, application and manuscript work  
 > **Future refresh:** #212, #213, #214  
 > **Wiki baseline:** WB-2026.09.1
 
@@ -26,25 +26,29 @@ V2 aims to:
 5. support reproducible cross-domain, geospatial and resilience-oriented analyses;
 6. evaluate the resulting infrastructure through prospectively defined evidence families.
 
-## Current program state
+## Current research state
 
 At this synchronization point:
-- W0–W6 are complete.
-- W7 computational/documentary evaluation is complete for E1–E8 and E10–E13.
-- E9 expert evaluation is protocol-frozen and operationally ready, but **0 real responses** exist.
-- Gate F is approved with bounded claim dispositions.
-- W8 is **7/8 complete** by live child-issue state; #169 is closed and #170 remains open.
-- Human ontology review remains active (#159, #173).
-- Integrated manuscript Draft 0 remains active (#171).
-- Gate G and Gate H are not final.
+- the research foundation, needs/use-case analysis, data landscape, concept discovery, conceptualization, formal ontology and data infrastructure stages are complete;
+- computational/documentary evaluation is complete for E1–E8 and E10–E13;
+- E9 prospective expert evaluation is protocol-frozen and operationally ready, but **0 real responses** exist;
+- the evidence sufficiency review is complete with bounded claim dispositions;
+- the Observatory/demonstrator work is **7/8 complete** by live child-issue state; #169 is closed and #170 remains open;
+- semantic review remains active (#159, #173);
+- integrated manuscript Draft 0 remains active (#171);
+- demonstrator evaluation and final research release readiness are not yet complete.
 
-## Approved conceptual/formal baseline
+Internal W0–W8 and Gate identifiers remain available in the detailed research/provenance pages, but they are not required to interpret the current research state.
 
-Gate D froze:
+## Conceptual baseline
+
+The current conceptual baseline contains:
 - 32 Core conceptual types/pattern elements;
 - 25 X-INFRA;
 - 30 Extensions;
 - **87 total**.
+
+The corresponding internal conceptual-baseline decision is Gate D.
 
 Formal version `2.0.0-alpha.1` records:
 - 642 asserted triples;
@@ -56,7 +60,7 @@ Formal version `2.0.0-alpha.1` records:
 
 ## Representation baseline
 
-W6 establishes a reference realization using:
+The current reference realization uses:
 - PostgreSQL/PostGIS;
 - ontology↔RDB mappings;
 - provenance and entity-match structures;
@@ -68,9 +72,9 @@ This is a research/reference realization, not a production-scale deployment clai
 
 ## Evaluation position
 
-V2 uses a multi-family evaluation program E1–E13. Most computational/documentary families are complete; E9 human evidence remains genuinely pending.
+V2 uses a multi-family evaluation program E1–E13. Most computational/documentary families are complete; E9 prospective expert evidence remains genuinely pending.
 
-See [[V2 Evaluation E1-E13]].
+See [[V2 Evaluation E1-E13|CM-PharmE 2.0 Evaluation Framework]].
 
 ## Relationship to V1
 
@@ -85,4 +89,4 @@ See [[V1 to V2 Research Evolution]] and [[Continuity Refinement and Novelty]].
 - [Evidence registry](https://github.com/ArazSaieArasi3/CM-PharmE/blob/v2/research-program/v2/research/evidence-registry.md)
 - [Formal ontology](https://github.com/ArazSaieArasi3/CM-PharmE/blob/v2/research-program/v2/ontology/README.md)
 - [Data layer](https://github.com/ArazSaieArasi3/CM-PharmE/blob/v2/research-program/v2/data/README.md)
-- [Human review control center](https://github.com/ArazSaieArasi3/CM-PharmE/blob/v2/research-program/v2/review/README.md)
+- [Semantic review control center — repository path retains historical naming](https://github.com/ArazSaieArasi3/CM-PharmE/blob/v2/research-program/v2/review/README.md)
