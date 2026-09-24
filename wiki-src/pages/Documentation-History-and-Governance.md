@@ -13,6 +13,9 @@ Use this section to understand how the Wiki is **versioned, authored, synchroniz
 - [[Wiki Versioning and Lifecycle]]
 - [[Wiki Update Register]]
 
+## Documentation architecture
+- [[Documentation Profiles]]
+
 ## Authoring and quality controls
 - [[Wiki Authoring Standard]]
 - [[Wiki QA and Coverage]]
