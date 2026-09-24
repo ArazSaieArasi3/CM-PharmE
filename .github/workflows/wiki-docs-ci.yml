@@ -46,6 +46,8 @@ jobs:
         run: python tools/wiki/check_documentation_profiles.py
       - name: Validate diagram artifacts
         run: python tools/wiki/check_diagrams.py
+      - name: Validate cache-busted diagram image URLs
+        run: python tools/wiki/sync_diagram_image_urls.py --check
       - name: Validate V2 ontology diagram suite
         run: python tools/wiki/check_v2_ontology_diagram_suite.py
       - name: Revalidate V2 ontology diagrams against authority
