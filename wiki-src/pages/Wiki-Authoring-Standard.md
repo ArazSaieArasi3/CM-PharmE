@@ -109,14 +109,30 @@ For an external reference include enough context to identify it: author/organiza
 
 ## Diagrams and images
 
-Every non-decorative diagram/image should have:
-- caption;
-- version scope;
-- source/provenance;
-- generation/source file when available;
-- note if illustrative rather than authoritative.
+Diagrams are governed documentation artifacts. The complete policy is maintained in `wiki-src/diagrams/STYLE-GUIDE.md` and the reader-facing [[Diagram Standards and Inventory]] page.
 
-A diagram must not visually imply stronger semantics than its source model.
+Every non-decorative diagram/image must have:
+- title and purpose;
+- version scope;
+- explicit notation;
+- source/provenance;
+- version-controlled editable source;
+- SVG or equivalent publication artifact;
+- authoritative / authoritative projection / illustrative status;
+- generation method/tool;
+- checked ref / last updated;
+- caption and accessible alt text;
+- related Wiki page(s).
+
+Notation must match the documentation problem:
+- ontology/conceptual model → OntoUML/UFO-aware or explicitly defined ontology notation;
+- relational model → Crow's Foot ERD / relational notation;
+- data/query pipeline → data-flow/architecture notation;
+- software/application architecture → C4 where appropriate;
+- research/evaluation process → process/activity notation;
+- cross-version change → lineage/evolution notation.
+
+C4 must not be used as ontology notation. ERD must not substitute for conceptual ontology semantics. A diagram must not visually imply stronger semantics than its authoritative source.
 
 ## Pending and deferred work
 

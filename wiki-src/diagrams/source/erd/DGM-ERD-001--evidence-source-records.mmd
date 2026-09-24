@@ -1,0 +1,18 @@
+erDiagram
+    DATASET ||--o{ DATASET_RELEASE : has_release
+    DATASET_RELEASE ||--o{ SOURCE_RECORD : contains
+
+    DATASET {
+      uuid dataset_id PK
+      text canonical_name
+    }
+    DATASET_RELEASE {
+      uuid release_id PK
+      uuid dataset_id FK
+      text version_label
+    }
+    SOURCE_RECORD {
+      uuid source_record_id PK
+      uuid release_id FK
+      text source_key
+    }

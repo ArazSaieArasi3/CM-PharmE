@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 360" role="img" aria-labelledby="title desc">
+<title id="title">DGM-ONT-001 Ontology notation example</title>
+<desc id="desc">Illustrative V2 ontology fragment distinguishing Medicinal Product, Medicinal Product Presentation and Pharmaceutical Substance.</desc>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z"/></marker></defs>
+<rect x="40" y="110" width="220" height="90" rx="8" fill="none" stroke="currentColor"/>
+<text x="150" y="140" text-anchor="middle" font-size="18">Medicinal Product</text>
+<text x="150" y="168" text-anchor="middle" font-size="14">«Kind»</text>
+<rect x="340" y="110" width="240" height="90" rx="8" fill="none" stroke="currentColor"/>
+<text x="460" y="140" text-anchor="middle" font-size="18">Medicinal Product</text>
+<text x="460" y="164" text-anchor="middle" font-size="18">Presentation</text>
+<text x="460" y="188" text-anchor="middle" font-size="14">«Kind»</text>
+<rect x="660" y="110" width="200" height="90" rx="8" fill="none" stroke="currentColor"/>
+<text x="760" y="140" text-anchor="middle" font-size="18">Pharmaceutical</text>
+<text x="760" y="164" text-anchor="middle" font-size="18">Substance</text>
+<text x="760" y="188" text-anchor="middle" font-size="14">«Kind»</text>
+<line x1="340" y1="145" x2="260" y2="145" stroke="currentColor" marker-end="url(#arrow)"/>
+<text x="300" y="132" text-anchor="middle" font-size="14">presentationOf</text>
+<line x1="580" y1="170" x2="660" y2="170" stroke="currentColor" marker-end="url(#arrow)"/>
+<text x="620" y="157" text-anchor="middle" font-size="14">hasActiveSubstance</text>
+<text x="40" y="300" font-size="14">Legend: «Kind» denotes an identity-bearing entity type; labeled arrows denote semantic relations.</text>
+</svg>

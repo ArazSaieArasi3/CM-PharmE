@@ -1,0 +1,8 @@
+flowchart LR
+    A[Admitted source data] --> B[PostgreSQL / PostGIS]
+    B --> C[Ontology-RDB mapping registry]
+    C --> D[Deterministic RDF / KG]
+    B --> E[SQL benchmark]
+    D --> F[SPARQL benchmark]
+    E --> G[Paired result check]
+    F --> G

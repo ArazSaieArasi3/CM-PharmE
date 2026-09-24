@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 360" role="img" aria-labelledby="title desc">
+<title id="title">DGM-ERD-001 Relational notation example</title>
+<desc id="desc">Illustrative Crow's Foot ERD for Dataset, DatasetRelease and SourceRecord.</desc>
+<defs><marker id="arr" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z"/></marker></defs>
+<g font-family="sans-serif" fill="none" stroke="currentColor">
+<rect x="40" y="70" width="240" height="170" rx="6"/><rect x="370" y="70" width="240" height="170" rx="6"/><rect x="700" y="70" width="240" height="170" rx="6"/>
+<line x1="40" y1="115" x2="280" y2="115"/><line x1="370" y1="115" x2="610" y2="115"/><line x1="700" y1="115" x2="940" y2="115"/>
+<line x1="280" y1="155" x2="370" y2="155"/><line x1="610" y1="155" x2="700" y2="155"/>
+</g>
+<g font-family="sans-serif" font-size="15">
+<text x="160" y="99" text-anchor="middle" font-weight="bold">DATASET</text>
+<text x="55" y="140">PK dataset_id</text><text x="55" y="170">canonical_name</text>
+<text x="490" y="99" text-anchor="middle" font-weight="bold">DATASET_RELEASE</text>
+<text x="385" y="140">PK release_id</text><text x="385" y="170">FK dataset_id</text><text x="385" y="200">version_label</text>
+<text x="820" y="99" text-anchor="middle" font-weight="bold">SOURCE_RECORD</text>
+<text x="715" y="140">PK source_record_id</text><text x="715" y="170">FK release_id</text><text x="715" y="200">source_key</text>
+<text x="325" y="140" text-anchor="middle">1 : many</text><text x="655" y="140" text-anchor="middle">1 : many</text>
+<text x="40" y="310">Crow's Foot semantics are expressed here textually in the sample; production ERDs must use unambiguous cardinality glyphs or labels.</text>
+</g>
+</svg>

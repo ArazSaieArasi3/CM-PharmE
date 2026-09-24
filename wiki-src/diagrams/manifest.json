@@ -1,0 +1,132 @@
+{
+  "schema_version": 1,
+  "standard_issue": 232,
+  "root": "wiki-src/diagrams",
+  "diagrams": [
+    {
+      "id": "DGM-ONT-001",
+      "title": "Ontology notation example — product, presentation and substance",
+      "purpose": "Demonstrate OntoUML/UFO-aware stereotype and relation labeling for a small V2 conceptual fragment.",
+      "version_scope": "V2",
+      "notation": "OntoUML/UFO-aware conceptual notation",
+      "artifact_status": "Illustrative",
+      "source_path": "wiki-src/diagrams/source/ontology/DGM-ONT-001--product-presentation-substance.puml",
+      "rendered_path": "wiki-src/diagrams/rendered/ontology/DGM-ONT-001--product-presentation-substance.svg",
+      "generation_method": "PlantUML-compatible source; SVG baseline committed with the sample. Future automated export must pin renderer version.",
+      "authoritative_source": "v2/research/w4/integrated-ontouml-overview.puml on v2/research-program",
+      "last_updated": "2026-09-24",
+      "checked_ref": "v2/research-program@1226b0a5484f8f5d3a8d214e0d0f52f066b88999",
+      "related_pages": [
+        "V2 UFO and OntoUML Architecture",
+        "Ontology and Conceptual Model Guide"
+      ],
+      "legend_required": true,
+      "alt_text": "Illustrative V2 ontology fragment distinguishing Medicinal Product, Medicinal Product Presentation and Pharmaceutical Substance with labeled presentationOf and hasActiveSubstance relations.",
+      "caption": "DGM-ONT-001 — illustrative OntoUML-aware fragment; semantic authority remains the V2 conceptual/formal artifacts."
+    },
+    {
+      "id": "DGM-ERD-001",
+      "title": "Relational notation example — evidence and source records",
+      "purpose": "Demonstrate Crow's Foot ERD conventions for a small relational evidence/provenance fragment.",
+      "version_scope": "V2",
+      "notation": "Crow's Foot ERD",
+      "artifact_status": "Illustrative",
+      "source_path": "wiki-src/diagrams/source/erd/DGM-ERD-001--evidence-source-records.mmd",
+      "rendered_path": "wiki-src/diagrams/rendered/erd/DGM-ERD-001--evidence-source-records.svg",
+      "generation_method": "Mermaid ER source; SVG baseline committed with the sample. Future automated export must pin Mermaid CLI version.",
+      "authoritative_source": "V2 relational schema and ontology↔RDB mapping artifacts",
+      "last_updated": "2026-09-24",
+      "checked_ref": "v2/research-program@1226b0a5484f8f5d3a8d214e0d0f52f066b88999",
+      "related_pages": [
+        "V2 Data Infrastructure",
+        "Data and Database Guide"
+      ],
+      "legend_required": true,
+      "alt_text": "Illustrative Crow's Foot ERD showing Dataset, DatasetRelease and SourceRecord with one-to-many relationships.",
+      "caption": "DGM-ERD-001 — relational notation example only; database schema remains authoritative."
+    },
+    {
+      "id": "DGM-ARC-001",
+      "title": "Cross-representation data and query pipeline",
+      "purpose": "Demonstrate data-flow/architecture notation from source data through relational realization and RDF/KG to paired query evidence.",
+      "version_scope": "V2",
+      "notation": "Data-flow / architecture flow",
+      "artifact_status": "Illustrative",
+      "source_path": "wiki-src/diagrams/source/architecture/DGM-ARC-001--cross-representation-pipeline.mmd",
+      "rendered_path": "wiki-src/diagrams/rendered/architecture/DGM-ARC-001--cross-representation-pipeline.svg",
+      "generation_method": "Mermaid flowchart source; SVG baseline committed with the sample.",
+      "authoritative_source": "V2 data-infrastructure and E10 cross-representation evidence",
+      "last_updated": "2026-09-24",
+      "checked_ref": "v2/research-program@1226b0a5484f8f5d3a8d214e0d0f52f066b88999",
+      "related_pages": [
+        "V2 Data Infrastructure",
+        "Knowledge Graph and Queries Guide",
+        "CM-PharmE 2.0 Evaluation Framework"
+      ],
+      "legend_required": false,
+      "alt_text": "Illustrative V2 data pipeline from admitted source data to PostgreSQL/PostGIS, deterministic RDF knowledge graph and paired SQL/SPARQL checks.",
+      "caption": "DGM-ARC-001 — illustrative cross-representation pipeline."
+    },
+    {
+      "id": "DGM-EVO-001",
+      "title": "V1 to V2 research-evolution lineage",
+      "purpose": "Demonstrate lineage notation for research evolution without implying that chronology alone proves improvement.",
+      "version_scope": "Cross-version",
+      "notation": "Lineage / evolution graph",
+      "artifact_status": "Illustrative",
+      "source_path": "wiki-src/diagrams/source/evolution/DGM-EVO-001--v1-v2-research-lineage.dot",
+      "rendered_path": "wiki-src/diagrams/rendered/evolution/DGM-EVO-001--v1-v2-research-lineage.svg",
+      "generation_method": "Graphviz DOT source; SVG baseline committed with the sample.",
+      "authoritative_source": "V1 and V2 research/evolution documentation",
+      "last_updated": "2026-09-24",
+      "checked_ref": "V1: main; V2: v2/research-program@1226b0a5484f8f5d3a8d214e0d0f52f066b88999",
+      "related_pages": [
+        "V1 to V2 Research Evolution",
+        "Research Guide"
+      ],
+      "legend_required": false,
+      "alt_text": "Illustrative lineage from the V1 ecosystem conceptual baseline through data grounding, modular ontology, cross-representation realization and multi-family evaluation in V2.",
+      "caption": "DGM-EVO-001 — research lineage; arrows mean documented evolution, not quantitative superiority."
+    }
+  ],
+  "legacy_inventory": [
+    {
+      "id": "LEG-V1-001",
+      "title": "CM-PharmE 1.0 integrated model",
+      "version_scope": "V1",
+      "status": "grandfathered-source-present",
+      "source_path": "models/CM-PharmE-1.0/CM-PharmE-1.0.drawio",
+      "rendered_path": "models/CM-PharmE-1.0/CM-PharmE-1.0.png",
+      "note": "Editable draw.io source and PNG publication artifact exist on main; retain as frozen V1 provenance."
+    },
+    {
+      "id": "LEG-V1-002",
+      "title": "CM-PharmE 1.0 domain overview",
+      "version_scope": "V1",
+      "status": "grandfathered-source-missing",
+      "source_path": null,
+      "rendered_path": "models/CM-PharmE-1.0/Domains of CM-PharmE-1.0.png",
+      "note": "Legacy publication image currently has no separately identified editable source; do not use this as the pattern for new diagrams."
+    },
+    {
+      "id": "LEG-V1-003",
+      "title": "CM-PharmE 1.0 release model copy",
+      "version_scope": "V1",
+      "status": "archived-release-copy",
+      "source_path": "releases/v1.0.0/model/CM-PharmE-1.0.drawio",
+      "rendered_path": "releases/v1.0.0/model/CM-PharmE-1.0.png",
+      "note": "Release-packaged copy of the frozen V1 model."
+    },
+    {
+      "id": "LEG-V2-001",
+      "title": "Integrated OntoUML overview source",
+      "version_scope": "V2",
+      "status": "source-on-v2-branch-not-wiki-published",
+      "source_path": "v2/research/w4/integrated-ontouml-overview.puml",
+      "rendered_path": null,
+      "source_branch": "v2/research-program",
+      "checked_ref": "1226b0a5484f8f5d3a8d214e0d0f52f066b88999",
+      "note": "Existing V2 PlantUML source; later ontology-visual work should create a governed publication projection under #233."
+    }
+  ]
+}
