@@ -1,0 +1,43 @@
+name: Wiki Diagram Cache-Busting Migration
+
+on:
+  push:
+    branches:
+      - wiki/diagram-cache-busting-2026-09
+    paths:
+      - 'tools/wiki/sync_diagram_image_urls.py'
+      - '.github/workflows/wiki-diagram-cache-busting.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ github.token }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Synchronize governed diagram image URLs
+        run: python tools/wiki/sync_diagram_image_urls.py
+      - name: Validate synchronized URLs
+        run: python tools/wiki/sync_diagram_image_urls.py --check
+      - name: Commit synchronized Wiki pages
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add wiki-src/pages
+          if git diff --cached --quiet; then
+            echo "No image URL changes to commit."
+            exit 0
+          fi
+          git commit -m "Wiki diagrams: cache-bust governed SVG image embeds"
+          git pull --rebase origin wiki/diagram-cache-busting-2026-09
+          git push origin HEAD:wiki/diagram-cache-busting-2026-09
