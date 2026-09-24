@@ -1,13 +1,8 @@
 # Relation Index
 
-> **Page scope:** Cross-version  
-> **Documentation maturity:** Stable-to-date / Evolving  
-> **Authoritative inventories:** V1 relation catalog; V2 W4 relation-pattern specification  
-> **Last synchronized:** 2026-09-23  
-> **Related issues:** #159, #173, #208  
-> **Evidence status:** V1 40-relation registry complete; V2 relation-pattern baseline stable while final human-review relation catalog is pending  
-> **Future refresh:** #213  
-> **Wiki baseline:** WB-2026.09.1
+> **Version scope:** Cross-version  
+> **Status:** Stable-to-date / Evolving  
+> **Updated:** 2026-09-23
 
 ## V1 canonical relations
 
@@ -89,3 +84,21 @@ A complete human-reviewed one-row-per-V1-relation → V2-relation disposition is
 - [V2 W3 migration matrix](https://github.com/ArazSaieArasi3/CM-PharmE/blob/v2/research-program/v2/research/w3/v1-v2-migration-matrix.md)
 - [V2 relation patterns](https://github.com/ArazSaieArasi3/CM-PharmE/blob/v2/research-program/v2/research/w4/relator-material-patterns.md)
 - [V2 integrated model](https://github.com/ArazSaieArasi3/CM-PharmE/blob/v2/research-program/v2/research/w4/integrated-ontouml-model.md)
+
+---
+
+<details>
+<summary>Documentation record</summary>
+
+- **Page scope:** Cross-version
+- **Documentation maturity:** Stable-to-date / Evolving
+- **Authoritative inventories:** V1 relation catalog; V2 W4 relation-pattern specification
+- **Last synchronized:** 2026-09-23
+- **Related issues:** #159, #173, #208
+- **Evidence status:** V1 40-relation registry complete; V2 relation-pattern baseline stable while final human-review relation catalog is pending
+- **Future refresh:** #213
+- **Wiki baseline:** WB-2026.09.1
+- **Authoritative source:** V1: main; V2: v2/research-program
+- **Last synchronized ref:** V1: main; V2: v2/research-program
+
+</details>

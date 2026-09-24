@@ -1,13 +1,8 @@
 # Dataset and Source Index
 
-> **Page scope:** Primarily V2, with cross-version research context  
-> **Documentation maturity:** Stable-to-date / Evolving  
-> **Authoritative sources:** V2 source portfolio, source manifest and concept-provenance matrix  
-> **Last synchronized:** 2026-09-23  
-> **Related issues:** W2/W3, #208  
-> **Evidence status:** Research-source registry; execution/ingestion status varies by source  
-> **Future refresh:** #214  
-> **Wiki baseline:** WB-2026.09.1
+> **Version scope:** Primarily V2, with cross-version research context  
+> **Status:** Stable-to-date / Evolving  
+> **Updated:** 2026-09-23
 
 ## Research source families
 
@@ -50,3 +45,21 @@ H1–H3 were reserved from Core discovery and used later for bounded generalizab
 ## Related pages
 
 [[V2 Dataset Landscape and Provenance]] · [[V1 to V2 Evidence and Provenance]]
+
+---
+
+<details>
+<summary>Documentation record</summary>
+
+- **Page scope:** Primarily V2, with cross-version research context
+- **Documentation maturity:** Stable-to-date / Evolving
+- **Authoritative sources:** V2 source portfolio, source manifest and concept-provenance matrix
+- **Last synchronized:** 2026-09-23
+- **Related issues:** W2/W3, #208
+- **Evidence status:** Research-source registry; execution/ingestion status varies by source
+- **Future refresh:** #214
+- **Wiki baseline:** WB-2026.09.1
+- **Authoritative source:** V1: main; V2: v2/research-program
+- **Last synchronized ref:** V1: main; V2: v2/research-program
+
+</details>

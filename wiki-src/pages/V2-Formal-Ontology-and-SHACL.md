@@ -1,14 +1,8 @@
 # V2 Formal Ontology and SHACL
 
-> **Page scope:** V2  
-> **Documentation maturity:** Stable-to-date / Evolving  
-> **Authoritative source:** V2 W5 ontology and validation artifacts  
-> **Last synchronized:** 2026-09-23  
-> **Last synchronized ref:** `1226b0a5484f8f5d3a8d214e0d0f52f066b88999`  
-> **Related issues/PRs:** W5, E1/E2/E5/E13 evidence families  
-> **Evidence status:** Formal baseline complete for current V2 alpha baseline  
-> **Future refresh:** #213/#214 if semantic/final-release changes occur  
-> **Wiki baseline:** WB-2026.09.1
+> **Version scope:** V2  
+> **Status:** Stable-to-date / Evolving  
+> **Updated:** 2026-09-23
 
 ## Formal baseline
 
@@ -58,3 +52,20 @@ Mapping hints do not automatically establish external-standard conformance.
 - [W5 closure](https://github.com/ArazSaieArasi3/CM-PharmE/blob/v2/research-program/v2/research/w5/W5-CLOSURE.md)
 - [Formal baseline](https://github.com/ArazSaieArasi3/CM-PharmE/blob/v2/research-program/v2/ontology/baseline/formal-baseline.json)
 - [SHACL shapes](https://github.com/ArazSaieArasi3/CM-PharmE/blob/v2/research-program/v2/ontology/shapes/cm-pharme-v2.shacl.ttl)
+
+---
+
+<details>
+<summary>Documentation record</summary>
+
+- **Page scope:** V2
+- **Documentation maturity:** Stable-to-date / Evolving
+- **Authoritative source:** V2 W5 ontology and validation artifacts
+- **Last synchronized:** 2026-09-23
+- **Last synchronized ref:** `1226b0a5484f8f5d3a8d214e0d0f52f066b88999`
+- **Related issues/PRs:** W5, E1/E2/E5/E13 evidence families
+- **Evidence status:** Formal baseline complete for current V2 alpha baseline
+- **Future refresh:** #213/#214 if semantic/final-release changes occur
+- **Wiki baseline:** WB-2026.09.1
+
+</details>

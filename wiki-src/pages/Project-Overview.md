@@ -1,15 +1,8 @@
 # Project Overview
 
-> **Page scope:** Cross-version  
-> **Documentation maturity:** Stable-to-date / Evolving  
-> **Authoritative sources:** `main` and `v2/research-program`  
-> **Last synchronized:** 2026-09-23  
-> **V1 ref:** `5099888668d35f798e4759e3534e707ed906db24`  
-> **V2 ref:** `1226b0a5484f8f5d3a8d214e0d0f52f066b88999`  
-> **Related issues:** #202–#217  
-> **Evidence status:** Orientation/synthesis page  
-> **Future refresh:** #212, #213, #214  
-> **Wiki baseline:** WB-2026.09.1
+> **Version scope:** Cross-version  
+> **Status:** Stable-to-date / Evolving  
+> **Updated:** 2026-09-23
 
 ## What is CM-PharmE?
 
@@ -43,3 +36,23 @@ The Wiki presents a coherent research story while preserving:
 - [[V1 to V2 Research Evolution]]
 - [[Evaluation and Assurance]]
 - [[Current Status and Limitations]]
+
+---
+
+<details>
+<summary>Documentation record</summary>
+
+- **Page scope:** Cross-version
+- **Documentation maturity:** Stable-to-date / Evolving
+- **Authoritative sources:** `main` and `v2/research-program`
+- **Last synchronized:** 2026-09-23
+- **V1 ref:** `5099888668d35f798e4759e3534e707ed906db24`
+- **V2 ref:** `1226b0a5484f8f5d3a8d214e0d0f52f066b88999`
+- **Related issues:** #202–#217
+- **Evidence status:** Orientation/synthesis page
+- **Future refresh:** #212, #213, #214
+- **Wiki baseline:** WB-2026.09.1
+- **Authoritative source:** V1: main; V2: v2/research-program
+- **Last synchronized ref:** V1: main; V2: v2/research-program
+
+</details>

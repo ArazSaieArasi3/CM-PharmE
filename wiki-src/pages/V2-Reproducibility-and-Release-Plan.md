@@ -1,14 +1,8 @@
 # V2 Reproducibility and Release Plan
 
-> **Page scope:** V2  
-> **Documentation maturity:** Stable-to-date / Evolving  
-> **Authoritative source:** E13 reproducibility evidence, V2 paper/release program  
-> **Last synchronized:** 2026-09-23  
-> **Last synchronized ref:** `1226b0a5484f8f5d3a8d214e0d0f52f066b88999`  
-> **Related issues/PRs:** #23, #102, #171, #214, #217  
-> **Evidence status:** Computational reproducibility established for current evaluated scope; final research release/DOI not yet frozen  
-> **Future refresh:** #214  
-> **Wiki baseline:** WB-2026.09.1
+> **Version scope:** V2  
+> **Status:** Stable-to-date / Evolving  
+> **Updated:** 2026-09-23
 
 ## E13 reproducibility evidence
 
@@ -59,3 +53,20 @@ At final freeze:
 - [E13 report](https://github.com/ArazSaieArasi3/CM-PharmE/blob/v2/research-program/v2/research/w7/e13-reproducibility-independent-rebuild.md)
 - [E13 manuscript evidence](https://github.com/ArazSaieArasi3/CM-PharmE/blob/v2/research-program/v2/manuscript/w7-e13-reproducibility-evidence.md)
 - [Paper/release program](https://github.com/ArazSaieArasi3/CM-PharmE/blob/v2/research-program/v2/research/README.md)
+
+---
+
+<details>
+<summary>Documentation record</summary>
+
+- **Page scope:** V2
+- **Documentation maturity:** Stable-to-date / Evolving
+- **Authoritative source:** E13 reproducibility evidence, V2 paper/release program
+- **Last synchronized:** 2026-09-23
+- **Last synchronized ref:** `1226b0a5484f8f5d3a8d214e0d0f52f066b88999`
+- **Related issues/PRs:** #23, #102, #171, #214, #217
+- **Evidence status:** Computational reproducibility established for current evaluated scope; final research release/DOI not yet frozen
+- **Future refresh:** #214
+- **Wiki baseline:** WB-2026.09.1
+
+</details>

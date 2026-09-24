@@ -1,14 +1,8 @@
 # V1 Conceptual Model
 
-> **Page scope:** V1  
-> **Documentation maturity:** Stable  
-> **Authoritative source:** V1 model artifacts and normalized catalogs on `main`  
-> **Last synchronized:** 2026-09-23  
-> **Last synchronized ref:** `5099888668d35f798e4759e3534e707ed906db24`  
-> **Related issues/PRs:** V1 model normalization and semantic-engineering closure  
-> **Evidence status:** Stable conceptual baseline with explicit review flags  
-> **Future refresh:** No silent semantic changes; any future evolution belongs to governed later versions  
-> **Wiki baseline:** WB-2026.09.1
+> **Version scope:** V1  
+> **Status:** Stable  
+> **Updated:** 2026-09-23
 
 ## Baseline
 
@@ -75,3 +69,20 @@ These flags are inputs to later semantic evolution, not grounds for retroactivel
 ## Related pages
 
 [[V1 Concepts]] · [[V1 Relations]] · [[V1 Domain Architecture]] · [[V1 Formal Ontology]]
+
+---
+
+<details>
+<summary>Documentation record</summary>
+
+- **Page scope:** V1
+- **Documentation maturity:** Stable
+- **Authoritative source:** V1 model artifacts and normalized catalogs on `main`
+- **Last synchronized:** 2026-09-23
+- **Last synchronized ref:** `5099888668d35f798e4759e3534e707ed906db24`
+- **Related issues/PRs:** V1 model normalization and semantic-engineering closure
+- **Evidence status:** Stable conceptual baseline with explicit review flags
+- **Future refresh:** No silent semantic changes; any future evolution belongs to governed later versions
+- **Wiki baseline:** WB-2026.09.1
+
+</details>

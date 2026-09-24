@@ -1,10 +1,8 @@
 # Ontology and Conceptual Model Guide
 
-> **Page scope:** Cross-version  
-> **Documentation maturity:** Stable-to-date / Evolving  
-> **Last synchronized:** 2026-09-24  
-> **Related issues/PRs:** #228, #230  
-> **Wiki baseline:** WB-2026.09.1
+> **Version scope:** Cross-version  
+> **Status:** Stable-to-date / Evolving  
+> **Updated:** 2026-09-24
 
 Use this section to understand the **conceptual commitments, UFO/OntoUML architecture, formal ontology and cross-version semantic evolution**.
 
@@ -33,3 +31,20 @@ Use this section to understand the **conceptual commitments, UFO/OntoUML archite
 
 ### Suggested path for an ontology engineer
 **V2 UFO/OntoUML Architecture → V2 Formal Ontology and SHACL → Concept Index → Relation Index → Semantic Review**
+
+---
+
+<details>
+<summary>Documentation record</summary>
+
+- **Page scope:** Cross-version
+- **Documentation maturity:** Stable-to-date / Evolving
+- **Last synchronized:** 2026-09-24
+- **Related issues/PRs:** #228, #230
+- **Wiki baseline:** WB-2026.09.1
+- **Authoritative source:** V1: main; V2: v2/research-program
+- **Last synchronized ref:** V1: main; V2: v2/research-program
+- **Evidence status:** Documentation/navigation page; substantive evidence remains in linked authoritative artifacts
+- **Future refresh:** See #211–#214 as applicable
+
+</details>

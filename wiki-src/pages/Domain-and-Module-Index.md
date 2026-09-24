@@ -1,13 +1,8 @@
 # Domain and Module Index
 
-> **Page scope:** Cross-version  
-> **Documentation maturity:** Stable-to-date / Evolving  
-> **Authoritative sources:** V1 domain catalog; V2 canonical domain taxonomy  
-> **Last synchronized:** 2026-09-23  
-> **Related issues:** #154, #208  
-> **Evidence status:** Complete V1/V2 domain discoverability for current baselines  
-> **Future refresh:** #213 if V2 placement changes  
-> **Wiki baseline:** WB-2026.09.1
+> **Version scope:** Cross-version  
+> **Status:** Stable-to-date / Evolving  
+> **Updated:** 2026-09-23
 
 ## V1 modeling domains
 
@@ -67,3 +62,21 @@ The counts are architecture descriptors, not quality scores.
 ## Related pages
 
 [[V1 to V2 Domain Evolution]] · [[Concept Index]]
+
+---
+
+<details>
+<summary>Documentation record</summary>
+
+- **Page scope:** Cross-version
+- **Documentation maturity:** Stable-to-date / Evolving
+- **Authoritative sources:** V1 domain catalog; V2 canonical domain taxonomy
+- **Last synchronized:** 2026-09-23
+- **Related issues:** #154, #208
+- **Evidence status:** Complete V1/V2 domain discoverability for current baselines
+- **Future refresh:** #213 if V2 placement changes
+- **Wiki baseline:** WB-2026.09.1
+- **Authoritative source:** V1: main; V2: v2/research-program
+- **Last synchronized ref:** V1: main; V2: v2/research-program
+
+</details>

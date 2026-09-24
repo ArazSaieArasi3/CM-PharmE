@@ -1,14 +1,8 @@
 # CM-PharmE 2.0 Research Method and Development
 
-> **Page scope:** V2  
-> **Documentation maturity:** Stable-to-date / Evolving  
-> **Authoritative source:** V2 research program and live issue/PR state  
-> **Last synchronized:** 2026-09-23  
-> **Last synchronized ref:** `1226b0a5484f8f5d3a8d214e0d0f52f066b88999`  
-> **Related issues/PRs:** #21–#24, #98, #104, #159, #169, #170, #171, #173  
-> **Evidence status:** Research stages through evidence sufficiency review are stable-to-date; demonstrator evaluation and research release readiness remain pending  
-> **Future refresh:** #212 and #214  
-> **Wiki baseline:** WB-2026.09.1
+> **Version scope:** V2  
+> **Status:** Stable-to-date / Evolving  
+> **Updated:** 2026-09-23
 
 ## Development stages
 
@@ -119,5 +113,22 @@ These identifiers are retained for repository traceability and historical audit.
 | Evidence sufficiency review | Gate F |
 | Demonstrator evaluation | Gate G |
 | Research release readiness | Gate H |
+
+</details>
+
+---
+
+<details>
+<summary>Documentation record</summary>
+
+- **Page scope:** V2
+- **Documentation maturity:** Stable-to-date / Evolving
+- **Authoritative source:** V2 research program and live issue/PR state
+- **Last synchronized:** 2026-09-23
+- **Last synchronized ref:** `1226b0a5484f8f5d3a8d214e0d0f52f066b88999`
+- **Related issues/PRs:** #21–#24, #98, #104, #159, #169, #170, #171, #173
+- **Evidence status:** Research stages through evidence sufficiency review are stable-to-date; demonstrator evaluation and research release readiness remain pending
+- **Future refresh:** #212 and #214
+- **Wiki baseline:** WB-2026.09.1
 
 </details>

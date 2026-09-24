@@ -1,13 +1,8 @@
 # Reproducibility Guide
 
-> **Page scope:** Cross-version  
-> **Documentation maturity:** Stable-to-date / Evolving  
-> **Authoritative sources:** V1 build/validation assets; V2 E13/W5/W6/W7 reproducibility assets  
-> **Last synchronized:** 2026-09-23  
-> **Related issues/PRs:** V1 engineering closure; V2 #102, #207, #217  
-> **Evidence status:** Repository-level computational reproducibility documented for selected V1/V2 scopes  
-> **Future refresh:** #214 and #217  
-> **Wiki baseline:** WB-2026.09.1
+> **Version scope:** Cross-version  
+> **Status:** Stable-to-date / Evolving  
+> **Updated:** 2026-09-23
 
 ## What reproducibility means here
 
@@ -85,3 +80,21 @@ A Wiki source commit is not a substitute for a research model release, and a Wik
 ## Related pages
 
 [[V1 Reproducibility]] · [[V2 Reproducibility and Release Plan]] · [[Wiki Versioning and Lifecycle]]
+
+---
+
+<details>
+<summary>Documentation record</summary>
+
+- **Page scope:** Cross-version
+- **Documentation maturity:** Stable-to-date / Evolving
+- **Authoritative sources:** V1 build/validation assets; V2 E13/W5/W6/W7 reproducibility assets
+- **Last synchronized:** 2026-09-23
+- **Related issues/PRs:** V1 engineering closure; V2 #102, #207, #217
+- **Evidence status:** Repository-level computational reproducibility documented for selected V1/V2 scopes
+- **Future refresh:** #214 and #217
+- **Wiki baseline:** WB-2026.09.1
+- **Authoritative source:** V1: main; V2: v2/research-program
+- **Last synchronized ref:** V1: main; V2: v2/research-program
+
+</details>

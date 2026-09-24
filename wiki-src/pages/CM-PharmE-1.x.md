@@ -1,14 +1,8 @@
 # CM-PharmE 1.x
 
-> **Page scope:** V1  
-> **Documentation maturity:** Stable  
-> **Authoritative source:** `main`  
-> **Last synchronized:** 2026-09-23  
-> **Last synchronized ref:** `5099888668d35f798e4759e3534e707ed906db24` for the selected V1 evidence baseline  
-> **Related issues/PRs:** #8 and the completed V1 engineering/evaluation program  
-> **Evidence status:** Stable published/repository-supported baseline  
-> **Future refresh:** Only if a V1 correction/release governance decision is made  
-> **Wiki baseline:** WB-2026.09.1
+> **Version scope:** V1  
+> **Status:** Stable  
+> **Updated:** 2026-09-23
 
 ## Purpose
 
@@ -71,3 +65,20 @@ See [[V1 Limitations and Boundaries]].
 - [Evaluation](https://github.com/ArazSaieArasi3/CM-PharmE/blob/main/docs/evaluations/index.md)
 - [Ontology](https://github.com/ArazSaieArasi3/CM-PharmE/blob/main/ontology/README.md)
 - [Publications](https://github.com/ArazSaieArasi3/CM-PharmE/blob/main/publications/README.md)
+
+---
+
+<details>
+<summary>Documentation record</summary>
+
+- **Page scope:** V1
+- **Documentation maturity:** Stable
+- **Authoritative source:** `main`
+- **Last synchronized:** 2026-09-23
+- **Last synchronized ref:** `5099888668d35f798e4759e3534e707ed906db24` for the selected V1 evidence baseline
+- **Related issues/PRs:** #8 and the completed V1 engineering/evaluation program
+- **Evidence status:** Stable published/repository-supported baseline
+- **Future refresh:** Only if a V1 correction/release governance decision is made
+- **Wiki baseline:** WB-2026.09.1
+
+</details>

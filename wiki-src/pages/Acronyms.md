@@ -1,10 +1,8 @@
 # Acronyms
 
-> **Page scope:** Version-neutral / Cross-version  
-> **Documentation maturity:** Stable-to-date / Evolving  
-> **Last synchronized:** 2026-09-23  
-> **Related issues:** #208  
-> **Wiki baseline:** WB-2026.09.1
+> **Version scope:** Version-neutral / Cross-version  
+> **Status:** Stable-to-date / Evolving  
+> **Updated:** 2026-09-23
 
 | Acronym | Expansion / meaning |
 |---|---|
@@ -44,3 +42,20 @@
 ## Usage rule
 
 Use the expanded form at first occurrence on a substantive Wiki page unless the acronym is universally obvious in the immediate context. Do not invent an expansion when the repository does not define one.
+
+---
+
+<details>
+<summary>Documentation record</summary>
+
+- **Page scope:** Version-neutral / Cross-version
+- **Documentation maturity:** Stable-to-date / Evolving
+- **Last synchronized:** 2026-09-23
+- **Related issues:** #208
+- **Wiki baseline:** WB-2026.09.1
+- **Authoritative source:** V1: main; V2: v2/research-program
+- **Last synchronized ref:** V1: main; V2: v2/research-program
+- **Evidence status:** Documentation/navigation page; substantive evidence remains in linked authoritative artifacts
+- **Future refresh:** See #211–#214 as applicable
+
+</details>

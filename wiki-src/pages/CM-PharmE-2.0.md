@@ -1,14 +1,8 @@
 # CM-PharmE 2.0
 
-> **Page scope:** V2  
-> **Documentation maturity:** Stable-to-date / Evolving  
-> **Authoritative source:** `v2/research-program`  
-> **Last synchronized:** 2026-09-23  
-> **Last synchronized ref:** `1226b0a5484f8f5d3a8d214e0d0f52f066b88999`  
-> **Related issues/PRs:** #21–#24, #98, #159, #170, #171, #173  
-> **Evidence status:** Substantial stable baseline with explicit pending semantic-review, application and manuscript work  
-> **Future refresh:** #212, #213, #214  
-> **Wiki baseline:** WB-2026.09.1
+> **Version scope:** V2  
+> **Status:** Stable-to-date / Evolving  
+> **Updated:** 2026-09-23
 
 ## Research identity
 
@@ -86,3 +80,20 @@ See [[V1 to V2 Research Evolution]] and [[Continuity Refinement and Novelty]].
 - [Formal ontology](https://github.com/ArazSaieArasi3/CM-PharmE/blob/v2/research-program/v2/ontology/README.md)
 - [Data layer](https://github.com/ArazSaieArasi3/CM-PharmE/blob/v2/research-program/v2/data/README.md)
 - [Semantic review control center — repository path retains historical naming](https://github.com/ArazSaieArasi3/CM-PharmE/blob/v2/research-program/v2/review/README.md)
+
+---
+
+<details>
+<summary>Documentation record</summary>
+
+- **Page scope:** V2
+- **Documentation maturity:** Stable-to-date / Evolving
+- **Authoritative source:** `v2/research-program`
+- **Last synchronized:** 2026-09-23
+- **Last synchronized ref:** `1226b0a5484f8f5d3a8d214e0d0f52f066b88999`
+- **Related issues/PRs:** #21–#24, #98, #159, #170, #171, #173
+- **Evidence status:** Substantial stable baseline with explicit pending semantic-review, application and manuscript work
+- **Future refresh:** #212, #213, #214
+- **Wiki baseline:** WB-2026.09.1
+
+</details>

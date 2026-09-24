@@ -1,14 +1,8 @@
 # V2 UFO and OntoUML Architecture
 
-> **Page scope:** V2  
-> **Documentation maturity:** Stable-to-date / Evolving  
-> **Authoritative source:** Gate-D W4 conceptual artifacts and V2 review package  
-> **Last synchronized:** 2026-09-23  
-> **Last synchronized ref:** `1226b0a5484f8f5d3a8d214e0d0f52f066b88999`  
-> **Related issues/PRs:** W4, #159, #173  
-> **Evidence status:** Gate-D architecture frozen for current baseline; selected extension/human-review findings remain active  
-> **Future refresh:** #213  
-> **Wiki baseline:** WB-2026.09.1
+> **Version scope:** V2  
+> **Status:** Stable-to-date / Evolving  
+> **Updated:** 2026-09-23
 
 ## Foundational stance
 
@@ -56,3 +50,20 @@ Review projections do not themselves change semantics.
 - [Gate D](https://github.com/ArazSaieArasi3/CM-PharmE/blob/v2/research-program/v2/research/w4/gate-d-conceptual-freeze.md)
 - [Human review overview](https://github.com/ArazSaieArasi3/CM-PharmE/blob/v2/research-program/v2/review/ontology-overview.md)
 - [Review control center](https://github.com/ArazSaieArasi3/CM-PharmE/blob/v2/research-program/v2/review/README.md)
+
+---
+
+<details>
+<summary>Documentation record</summary>
+
+- **Page scope:** V2
+- **Documentation maturity:** Stable-to-date / Evolving
+- **Authoritative source:** Gate-D W4 conceptual artifacts and V2 review package
+- **Last synchronized:** 2026-09-23
+- **Last synchronized ref:** `1226b0a5484f8f5d3a8d214e0d0f52f066b88999`
+- **Related issues/PRs:** W4, #159, #173
+- **Evidence status:** Gate-D architecture frozen for current baseline; selected extension/human-review findings remain active
+- **Future refresh:** #213
+- **Wiki baseline:** WB-2026.09.1
+
+</details>

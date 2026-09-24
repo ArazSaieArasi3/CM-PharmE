@@ -1,13 +1,8 @@
 # Evidence Scope and Supported Claims
 
-> **Page scope:** V2  
-> **Documentation maturity:** Stable-to-date / Evolving  
-> **Authoritative source:** V2 research decision records, live issues and claim-evidence register  
-> **Last synchronized:** 2026-09-23  
-> **Related issues/PRs:** #24, #98, #104, #170, #171, #212, #214  
-> **Evidence status:** Early/mid-program decisions are resolved; demonstrator evaluation and final research release readiness remain pending  
-> **Future refresh:** #212 and #214  
-> **Wiki baseline:** WB-2026.09.1
+> **Version scope:** V2  
+> **Status:** Stable-to-date / Evolving  
+> **Updated:** 2026-09-23
 
 ## Why research decision checkpoints exist
 
@@ -101,5 +96,22 @@ If a parent Epic is stale, live child issues/PRs and current decision artifacts 
 | Evidence sufficiency review | Gate F |
 | Demonstrator evaluation | Gate G |
 | Research release readiness | Gate H |
+
+</details>
+
+---
+
+<details>
+<summary>Documentation record</summary>
+
+- **Page scope:** V2
+- **Documentation maturity:** Stable-to-date / Evolving
+- **Authoritative source:** V2 research decision records, live issues and claim-evidence register
+- **Last synchronized:** 2026-09-23
+- **Related issues/PRs:** #24, #98, #104, #170, #171, #212, #214
+- **Evidence status:** Early/mid-program decisions are resolved; demonstrator evaluation and final research release readiness remain pending
+- **Future refresh:** #212 and #214
+- **Wiki baseline:** WB-2026.09.1
+- **Last synchronized ref:** v2/research-program (see linked authoritative V2 artifacts)
 
 </details>

@@ -1,14 +1,8 @@
 # V1 Relations
 
-> **Page scope:** V1  
-> **Documentation maturity:** Stable  
-> **Authoritative source:** `main/catalog/relations.yaml`, relation docs and mappings  
-> **Last synchronized:** 2026-09-23  
-> **Last synchronized ref:** `5099888668d35f798e4759e3534e707ed906db24`  
-> **Related issues/PRs:** V1 model normalization/formalization  
-> **Evidence status:** 40 canonical semantic relations  
-> **Future refresh:** Frozen V1; V2 changes documented separately  
-> **Wiki baseline:** WB-2026.09.1
+> **Version scope:** V1  
+> **Status:** Stable  
+> **Updated:** 2026-09-23
 
 ## Inventory
 
@@ -48,3 +42,20 @@ Examples include mediation-direction ambiguity around Strategic Partnership Agre
 ## Cross-version note
 
 V2 may refine directionality, mediation patterns, modular placement or relation semantics. Those changes belong in [[V1 to V2 Relation Migration]] rather than being retroactively applied to V1.
+
+---
+
+<details>
+<summary>Documentation record</summary>
+
+- **Page scope:** V1
+- **Documentation maturity:** Stable
+- **Authoritative source:** `main/catalog/relations.yaml`, relation docs and mappings
+- **Last synchronized:** 2026-09-23
+- **Last synchronized ref:** `5099888668d35f798e4759e3534e707ed906db24`
+- **Related issues/PRs:** V1 model normalization/formalization
+- **Evidence status:** 40 canonical semantic relations
+- **Future refresh:** Frozen V1; V2 changes documented separately
+- **Wiki baseline:** WB-2026.09.1
+
+</details>

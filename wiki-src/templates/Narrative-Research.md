@@ -1,14 +1,8 @@
 # <Page Title>
 
-> **Page scope:** <V1 | V2 | Cross-version | Version-neutral>  
-> **Documentation maturity:** <Stable | Stable-to-date / Evolving | Candidate | Frozen | Pending>  
-> **Authoritative source:** <branch/path/ref>  
-> **Last synchronized:** <YYYY-MM-DD>  
-> **Last synchronized ref:** <commit/tag/ref>  
-> **Related issues/PRs:** <#...>  
-> **Evidence status:** <supported / bounded / pending>  
-> **Future refresh:** <#... or none>  
-> **Wiki baseline:** <WB-... when declared>
+> **Version scope:** <V1 | V2 | Cross-version | Version-neutral>  
+> **Status:** <Stable | Stable-to-date / Evolving | Pending>  
+> **Updated:** <YYYY-MM-DD>
 
 ## Purpose
 Explain the research question, role and scope of this page.
@@ -30,3 +24,20 @@ State what the evidence does not establish.
 
 ## Related pages
 Add bidirectional Wiki navigation.
+
+---
+
+<details>
+<summary>Documentation record</summary>
+
+- **Page scope:** <V1 | V2 | Cross-version | Version-neutral>
+- **Documentation maturity:** <...>
+- **Authoritative source:** <branch/path/ref>
+- **Last synchronized:** <YYYY-MM-DD>
+- **Last synchronized ref:** <commit/tag/ref>
+- **Related issues/PRs:** <#...>
+- **Evidence status:** <supported / bounded / pending>
+- **Future refresh:** <#... or none>
+- **Wiki baseline:** <WB-...>
+
+</details>

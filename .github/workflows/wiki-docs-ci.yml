@@ -34,6 +34,8 @@ jobs:
         run: python tools/wiki/check_reader_vocabulary.py
       - name: Validate navigation depth and orphan pages
         run: python tools/wiki/check_navigation.py --output wiki-navigation-report.json
+      - name: Validate progressive metadata contract
+        run: python tools/wiki/check_metadata_contract.py
       - name: Upload navigation report
         uses: actions/upload-artifact@v4
         with:

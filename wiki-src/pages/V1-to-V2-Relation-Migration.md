@@ -1,14 +1,8 @@
 # V1 to V2 Relation Migration
 
-> **Page scope:** Cross-version  
-> **Documentation maturity:** Stable-to-date / Evolving  
-> **V1 authority:** V1 relation catalog and mappings on `main`  
-> **V2 authority:** W3 relation-migration policy and W4 relation-pattern specification  
-> **Last synchronized:** 2026-09-23  
-> **Related issues/PRs:** #159, #173, #206  
-> **Evidence status:** Stable relation-family migration and V2 relation-pattern evidence; exhaustive per-relation V1→V2 disposition remains a human-review dependency  
-> **Future refresh:** #213  
-> **Wiki baseline:** WB-2026.09.1
+> **Version scope:** Cross-version  
+> **Status:** Stable-to-date / Evolving  
+> **Updated:** 2026-09-23
 
 ## V1 baseline
 
@@ -85,3 +79,22 @@ This gap is intentional and must be resolved through the Human Ontology Review r
 - [W3 migration matrix](https://github.com/ArazSaieArasi3/CM-PharmE/blob/v2/research-program/v2/research/w3/v1-v2-migration-matrix.md)
 - [W4 relator/material patterns](https://github.com/ArazSaieArasi3/CM-PharmE/blob/v2/research-program/v2/research/w4/relator-material-patterns.md)
 - [Integrated OntoUML model](https://github.com/ArazSaieArasi3/CM-PharmE/blob/v2/research-program/v2/research/w4/integrated-ontouml-model.md)
+
+---
+
+<details>
+<summary>Documentation record</summary>
+
+- **Page scope:** Cross-version
+- **Documentation maturity:** Stable-to-date / Evolving
+- **V1 authority:** V1 relation catalog and mappings on `main`
+- **V2 authority:** W3 relation-migration policy and W4 relation-pattern specification
+- **Last synchronized:** 2026-09-23
+- **Related issues/PRs:** #159, #173, #206
+- **Evidence status:** Stable relation-family migration and V2 relation-pattern evidence; exhaustive per-relation V1→V2 disposition remains a human-review dependency
+- **Future refresh:** #213
+- **Wiki baseline:** WB-2026.09.1
+- **Authoritative source:** V1: main; V2: v2/research-program
+- **Last synchronized ref:** V1: main; V2: v2/research-program
+
+</details>

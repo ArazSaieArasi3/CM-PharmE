@@ -1,13 +1,8 @@
 # Citation and Reuse
 
-> **Page scope:** Cross-version  
-> **Documentation maturity:** Stable-to-date / Evolving  
-> **Authoritative source:** `CITATION.cff`, publication records and version/release documentation  
-> **Last synchronized:** 2026-09-23  
-> **Related issues:** #208, #214, #217  
-> **Evidence status:** V1 citation metadata available; V2 final citation/release metadata pending  
-> **Future refresh:** #214/#217  
-> **Wiki baseline:** WB-2026.09.1
+> **Version scope:** Cross-version  
+> **Status:** Stable-to-date / Evolving  
+> **Updated:** 2026-09-23
 
 ## Citation principle
 
@@ -64,3 +59,20 @@ Reuse should preserve:
 - [[Publications]]
 - [[Version and Release Index]]
 - [[Reproducibility Guide]]
+
+---
+
+<details>
+<summary>Documentation record</summary>
+
+- **Page scope:** Cross-version
+- **Documentation maturity:** Stable-to-date / Evolving
+- **Authoritative source:** `CITATION.cff`, publication records and version/release documentation
+- **Last synchronized:** 2026-09-23
+- **Related issues:** #208, #214, #217
+- **Evidence status:** V1 citation metadata available; V2 final citation/release metadata pending
+- **Future refresh:** #214/#217
+- **Wiki baseline:** WB-2026.09.1
+- **Last synchronized ref:** V1: main; V2: v2/research-program
+
+</details>

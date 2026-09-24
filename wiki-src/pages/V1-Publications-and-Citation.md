@@ -1,14 +1,8 @@
 # V1 Publications and Citation
 
-> **Page scope:** V1  
-> **Documentation maturity:** Stable  
-> **Authoritative source:** `main/publications/`, `CITATION.cff` and V1 version records  
-> **Last synchronized:** 2026-09-23  
-> **Last synchronized ref:** `5099888668d35f798e4759e3534e707ed906db24`  
-> **Related issues/PRs:** V1 publication/repository traceability lineage  
-> **Evidence status:** Conference publication published; journal manuscript status represented only as supported by current repository record  
-> **Future refresh:** Update only when bibliographic/publication status changes with evidence  
-> **Wiki baseline:** WB-2026.09.1
+> **Version scope:** V1  
+> **Status:** Stable  
+> **Updated:** 2026-09-23
 
 ## Publication lineage
 
@@ -57,3 +51,20 @@ DOI, publication/acceptance status, dates and indexing information should be sta
 - [Publication registry](https://github.com/ArazSaieArasi3/CM-PharmE/blob/main/publications/README.md)
 - [Publication-to-repository traceability](https://github.com/ArazSaieArasi3/CM-PharmE/blob/main/docs/research/publication-to-repository-traceability.md)
 - [V1 version record](https://github.com/ArazSaieArasi3/CM-PharmE/blob/main/docs/versions/v1.0.0.md)
+
+---
+
+<details>
+<summary>Documentation record</summary>
+
+- **Page scope:** V1
+- **Documentation maturity:** Stable
+- **Authoritative source:** `main/publications/`, `CITATION.cff` and V1 version records
+- **Last synchronized:** 2026-09-23
+- **Last synchronized ref:** `5099888668d35f798e4759e3534e707ed906db24`
+- **Related issues/PRs:** V1 publication/repository traceability lineage
+- **Evidence status:** Conference publication published; journal manuscript status represented only as supported by current repository record
+- **Future refresh:** Update only when bibliographic/publication status changes with evidence
+- **Wiki baseline:** WB-2026.09.1
+
+</details>

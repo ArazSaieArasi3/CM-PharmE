@@ -1,16 +1,8 @@
 # V1 to V2 Research Evolution
 
-> **Page scope:** Cross-version  
-> **Documentation maturity:** Stable-to-date / Evolving  
-> **V1 authority:** `main`  
-> **V2 authority:** `v2/research-program`  
-> **Last synchronized:** 2026-09-23  
-> **V1 ref:** current stable V1 documentation baseline on `main`  
-> **V2 ref:** `1226b0a5484f8f5d3a8d214e0d0f52f066b88999`  
-> **Related issues/PRs:** #159, #173, #206  
-> **Evidence status:** Stable cross-version narrative; semantic-review-dependent details remain refreshable  
-> **Future refresh:** #213 and #214  
-> **Wiki baseline:** WB-2026.09.1
+> **Version scope:** Cross-version  
+> **Status:** Stable-to-date / Evolving  
+> **Updated:** 2026-09-23
 
 ## Purpose
 
@@ -133,3 +125,24 @@ Chronological evolution is not evidence that V2 is universally “better” than
 ## Related pages
 
 [[V1 to V2 Concept Migration]] · [[V1 to V2 Relation Migration]] · [[V1 to V2 Domain Evolution]] · [[V1 to V2 Evidence and Provenance]] · [[Continuity Refinement and Novelty]] · [[Cross-Version Comparison Limits]]
+
+---
+
+<details>
+<summary>Documentation record</summary>
+
+- **Page scope:** Cross-version
+- **Documentation maturity:** Stable-to-date / Evolving
+- **V1 authority:** `main`
+- **V2 authority:** `v2/research-program`
+- **Last synchronized:** 2026-09-23
+- **V1 ref:** current stable V1 documentation baseline on `main`
+- **V2 ref:** `1226b0a5484f8f5d3a8d214e0d0f52f066b88999`
+- **Related issues/PRs:** #159, #173, #206
+- **Evidence status:** Stable cross-version narrative; semantic-review-dependent details remain refreshable
+- **Future refresh:** #213 and #214
+- **Wiki baseline:** WB-2026.09.1
+- **Authoritative source:** V1: main; V2: v2/research-program
+- **Last synchronized ref:** V1: main; V2: v2/research-program
+
+</details>

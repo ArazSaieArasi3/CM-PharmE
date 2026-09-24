@@ -1,14 +1,8 @@
 # <Evaluation Family / Evidence Page>
 
-> **Page scope:** <V1 | V2>  
-> **Documentation maturity:** <...>  
-> **Authoritative source:** <...>  
-> **Last synchronized:** <...>  
-> **Last synchronized ref:** <...>  
-> **Related issues/PRs/runs:** <...>  
-> **Evidence status:** <PASS / PASS WITH WARNING / pending / other exact state>  
-> **Future refresh:** <...>  
-> **Wiki baseline:** <...>
+> **Version scope:** <V1 | V2 | Cross-version>  
+> **Status:** <exact evidence/documentation state>  
+> **Updated:** <YYYY-MM-DD>
 
 ## Evaluation purpose
 What question does this evaluation family answer?
@@ -35,4 +29,21 @@ Provide commands/workflows/artifacts required to inspect or reproduce the result
 Link exact repository artifacts, issue/PR and run references.
 
 ## Related pages
-Cross-link claims, gates and model/data pages.
+Cross-link claims and model/data pages.
+
+---
+
+<details>
+<summary>Documentation record</summary>
+
+- **Page scope:** <V1 | V2 | Cross-version>
+- **Documentation maturity:** <...>
+- **Authoritative source:** <...>
+- **Last synchronized:** <...>
+- **Last synchronized ref:** <...>
+- **Related issues/PRs/runs:** <...>
+- **Evidence status:** <PASS / PASS WITH WARNING / pending / other exact state>
+- **Future refresh:** <...>
+- **Wiki baseline:** <...>
+
+</details>

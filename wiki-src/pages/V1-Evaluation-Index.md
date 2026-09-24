@@ -1,13 +1,8 @@
 # V1 Evaluation Index
 
-> **Page scope:** V1  
-> **Documentation maturity:** Stable  
-> **Authoritative source:** `main/docs/evaluations/` and `main/evaluation/`  
-> **Last synchronized:** 2026-09-23  
-> **Related issues/PRs:** V1 evaluation and semantic-engineering closure  
-> **Evidence status:** Stable V1 evidence navigation  
-> **Future refresh:** None unless V1 evidence is formally corrected  
-> **Wiki baseline:** WB-2026.09.1
+> **Version scope:** V1  
+> **Status:** Stable  
+> **Updated:** 2026-09-23
 
 ## Evidence map
 
@@ -62,3 +57,20 @@ Do not convert V1's nine layers into a single quality score. Do not generalize a
 ## Related pages
 
 [[V1 Evaluation and Evidence]] · [[V1 Reproducibility]] · [[Evaluation and Assurance]]
+
+---
+
+<details>
+<summary>Documentation record</summary>
+
+- **Page scope:** V1
+- **Documentation maturity:** Stable
+- **Authoritative source:** `main/docs/evaluations/` and `main/evaluation/`
+- **Last synchronized:** 2026-09-23
+- **Related issues/PRs:** V1 evaluation and semantic-engineering closure
+- **Evidence status:** Stable V1 evidence navigation
+- **Future refresh:** None unless V1 evidence is formally corrected
+- **Wiki baseline:** WB-2026.09.1
+- **Last synchronized ref:** main (see linked authoritative V1 artifacts)
+
+</details>

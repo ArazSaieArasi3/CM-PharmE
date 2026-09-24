@@ -1,13 +1,8 @@
 # Applications and Boundaries
 
-> **Page scope:** Cross-version  
-> **Documentation maturity:** Stable-to-date / Evolving  
-> **Authoritative sources:** V1 research boundaries and V2 W8 application evidence  
-> **Last synchronized:** 2026-09-23  
-> **Related issues/PRs:** #22, #169, #170  
-> **Evidence status:** Application pathways/demonstrators with explicit non-claims  
-> **Future refresh:** #212 and #214  
-> **Wiki baseline:** WB-2026.09.1
+> **Version scope:** Cross-version  
+> **Status:** Stable-to-date / Evolving  
+> **Updated:** 2026-09-23
 
 ## Application role in CM-PharmE
 
@@ -57,3 +52,21 @@ It does not by itself support:
 W8 is 7/8 complete by live issue state. Representative-task evaluation remains open (#170), so Gate G has not yet frozen manuscript-facing application scope.
 
 See [[V2 Observatory and Demonstrators]] and [[Representative Task Evaluation]].
+
+---
+
+<details>
+<summary>Documentation record</summary>
+
+- **Page scope:** Cross-version
+- **Documentation maturity:** Stable-to-date / Evolving
+- **Authoritative sources:** V1 research boundaries and V2 W8 application evidence
+- **Last synchronized:** 2026-09-23
+- **Related issues/PRs:** #22, #169, #170
+- **Evidence status:** Application pathways/demonstrators with explicit non-claims
+- **Future refresh:** #212 and #214
+- **Wiki baseline:** WB-2026.09.1
+- **Authoritative source:** V1: main; V2: v2/research-program
+- **Last synchronized ref:** V1: main; V2: v2/research-program
+
+</details>

@@ -1,14 +1,8 @@
 # V2 Dataset Landscape and Provenance
 
-> **Page scope:** V2  
-> **Documentation maturity:** Stable-to-date / Evolving  
-> **Authoritative source:** V2 W2/W3 source manifests, mappings and evidence registry  
-> **Last synchronized:** 2026-09-23  
-> **Last synchronized ref:** `1226b0a5484f8f5d3a8d214e0d0f52f066b88999`  
-> **Related issues/PRs:** W2/W3 program and E6–E8 evaluation lineage  
-> **Evidence status:** Data-grounding/evidence discipline established; full external ingestion is not claimed  
-> **Future refresh:** #213/#214 where semantic/evidence decisions change  
-> **Wiki baseline:** WB-2026.09.1
+> **Version scope:** V2  
+> **Status:** Stable-to-date / Evolving  
+> **Updated:** 2026-09-23
 
 ## Data strategy
 
@@ -81,3 +75,20 @@ The reference data pipeline uses deterministic schema-faithful fixtures for repr
 - [Mapping documentation](https://github.com/ArazSaieArasi3/CM-PharmE/blob/v2/research-program/v2/data/mappings/README.md)
 - [Evidence registry](https://github.com/ArazSaieArasi3/CM-PharmE/blob/v2/research-program/v2/research/evidence-registry.md)
 - [Held-out source manifest](https://github.com/ArazSaieArasi3/CM-PharmE/blob/v2/research-program/v2/evaluation/heldout/e8-heldout-source-manifest.json)
+
+---
+
+<details>
+<summary>Documentation record</summary>
+
+- **Page scope:** V2
+- **Documentation maturity:** Stable-to-date / Evolving
+- **Authoritative source:** V2 W2/W3 source manifests, mappings and evidence registry
+- **Last synchronized:** 2026-09-23
+- **Last synchronized ref:** `1226b0a5484f8f5d3a8d214e0d0f52f066b88999`
+- **Related issues/PRs:** W2/W3 program and E6–E8 evaluation lineage
+- **Evidence status:** Data-grounding/evidence discipline established; full external ingestion is not claimed
+- **Future refresh:** #213/#214 where semantic/evidence decisions change
+- **Wiki baseline:** WB-2026.09.1
+
+</details>

@@ -1,14 +1,8 @@
 # V2 Observatory and Demonstrators
 
-> **Page scope:** V2  
-> **Documentation maturity:** Stable-to-date / Evolving  
-> **Authoritative source:** V2 W8 artifacts and live issue state  
-> **Last synchronized:** 2026-09-23  
-> **Last synchronized ref:** `1226b0a5484f8f5d3a8d214e0d0f52f066b88999`  
-> **Related issues/PRs:** #22, #143, #145, #147, #149, #151, #153, #169, #170  
-> **Evidence status:** 7/8 W8 work items complete; representative-task evaluation incomplete  
-> **Future refresh:** #212  
-> **Wiki baseline:** WB-2026.09.1
+> **Version scope:** V2  
+> **Status:** Stable-to-date / Evolving  
+> **Updated:** 2026-09-23
 
 ## Purpose
 
@@ -71,3 +65,20 @@ Multi-tenancy, enterprise auth, commercial feeds, predictive risk engines, opera
 - [Representative task suite](https://github.com/ArazSaieArasi3/CM-PharmE/blob/v2/research-program/v2/app/observatory/representative-task-suite.md)
 - [Current merged task results](https://github.com/ArazSaieArasi3/CM-PharmE/blob/v2/research-program/v2/app/observatory/representative-task-results.md)
 - [Semantic search](https://github.com/ArazSaieArasi3/CM-PharmE/blob/v2/research-program/v2/app/observatory/semantic_search.py)
+
+---
+
+<details>
+<summary>Documentation record</summary>
+
+- **Page scope:** V2
+- **Documentation maturity:** Stable-to-date / Evolving
+- **Authoritative source:** V2 W8 artifacts and live issue state
+- **Last synchronized:** 2026-09-23
+- **Last synchronized ref:** `1226b0a5484f8f5d3a8d214e0d0f52f066b88999`
+- **Related issues/PRs:** #22, #143, #145, #147, #149, #151, #153, #169, #170
+- **Evidence status:** 7/8 W8 work items complete; representative-task evaluation incomplete
+- **Future refresh:** #212
+- **Wiki baseline:** WB-2026.09.1
+
+</details>
