@@ -638,6 +638,15 @@ def main():
       "This checklist validates diagram-to-baseline correspondence. It does not constitute semantic approval of concepts or relations still pending author/human review."
     ]
     (covdir/"ontology-diagram-semantic-review.md").write_text("\n".join(checklist)+"\n",encoding="utf-8")
+
+    # Replace the pre-#235 module placeholder with the actual reader-facing suite link.
+    for page in sorted((WIKI/"pages").glob("V2-Module-*.md")):
+        text=page.read_text(encoding="utf-8")
+        old="- Ontology-specific diagram suite is governed separately by #235."
+        new="- [[V2 Ontology Diagram Suite]] — governed multi-level visual documentation for the current V2 baseline."
+        if old in text:
+            page.write_text(text.replace(old,new),encoding="utf-8")
+
     print(json.dumps(summary,indent=2,sort_keys=True))
 
 if __name__=="__main__":
