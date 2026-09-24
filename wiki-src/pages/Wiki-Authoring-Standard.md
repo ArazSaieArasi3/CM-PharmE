@@ -1,7 +1,7 @@
 # Wiki Authoring Standard
 
 > **Page scope:** Version-neutral governance  
-> **Documentation maturity:** Candidate policy  
+> **Documentation maturity:** Stable governance policy  
 > **Last synchronized:** 2026-09-23  
 > **Related issues:** #202, #203, #204–#208, #215, #216
 

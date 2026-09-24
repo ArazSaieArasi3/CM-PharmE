@@ -8,7 +8,7 @@
 > **Related issues/PRs:** #21, #98, #103, #104  
 > **Evidence status:** E1–E8 and E10–E13 complete; E9 readiness only  
 > **Future refresh:** #214 when E9/final release is dispositioned  
-> **Wiki baseline:** WB-2026.09.1 Candidate
+> **Wiki baseline:** WB-2026.09.1
 
 ## Evaluation matrix
 

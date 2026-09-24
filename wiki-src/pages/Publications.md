@@ -7,7 +7,7 @@
 > **Related issues:** V1 publication lineage; V2 #23/#171; #208  
 > **Evidence status:** Publication status is recorded only where supported  
 > **Future refresh:** #214 and any verified V1 publication-status change  
-> **Wiki baseline:** WB-2026.09.1 Candidate
+> **Wiki baseline:** WB-2026.09.1
 
 ## V1 scholarly lineage
 

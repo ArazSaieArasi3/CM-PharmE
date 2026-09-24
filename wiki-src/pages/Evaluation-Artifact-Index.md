@@ -7,7 +7,7 @@
 > **Related issues:** #98, #103, #104, #208  
 > **Evidence status:** Major evaluation artifacts indexed; live E9/Gate G dependencies remain visible  
 > **Future refresh:** #212/#214  
-> **Wiki baseline:** WB-2026.09.1 Candidate
+> **Wiki baseline:** WB-2026.09.1
 
 ## V1 evaluation artifacts
 

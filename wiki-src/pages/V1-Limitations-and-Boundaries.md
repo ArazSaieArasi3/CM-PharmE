@@ -8,7 +8,7 @@
 > **Related issues/PRs:** V1 evaluation and semantic-engineering closure  
 > **Evidence status:** Explicit limitation register  
 > **Future refresh:** None unless V1 record is formally corrected  
-> **Wiki baseline:** WB-2026.09.1 Candidate
+> **Wiki baseline:** WB-2026.09.1
 
 ## Why limitations are first-class documentation
 

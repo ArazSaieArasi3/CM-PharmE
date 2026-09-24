@@ -8,7 +8,7 @@
 > **Related issues/PRs:** V1 evaluation/engineering closure  
 > **Evidence status:** Layered; PASS, PARTIAL and CONDITIONAL states preserved  
 > **Future refresh:** Only under explicit V1 correction/evolution governance  
-> **Wiki baseline:** WB-2026.09.1 Candidate
+> **Wiki baseline:** WB-2026.09.1
 
 ## Evaluation architecture
 

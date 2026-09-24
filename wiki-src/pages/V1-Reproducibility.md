@@ -8,7 +8,7 @@
 > **Related issues/PRs:** V1 engineering/reproducibility closure  
 > **Evidence status:** Repository-level reproducibility for supported computational checks  
 > **Future refresh:** None unless V1 build evidence is corrected  
-> **Wiki baseline:** WB-2026.09.1 Candidate
+> **Wiki baseline:** WB-2026.09.1
 
 ## Reproducibility objective
 

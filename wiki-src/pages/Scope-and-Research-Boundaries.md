@@ -1,13 +1,13 @@
 # Scope and Research Boundaries
 
 > **Page scope:** Cross-version  
-> **Documentation maturity:** Candidate  
+> **Documentation maturity:** Stable-to-date / Evolving  
 > **Authoritative sources:** `main` and `v2/research-program`  
 > **Last synchronized:** 2026-09-23  
 > **Related issues/PRs:** #202, #204, #205, #206, #207  
 > **Evidence status:** Cross-version interpretation boundary  
 > **Future refresh:** #212, #213, #214  
-> **Wiki baseline:** WB-2026.09.1 Candidate
+> **Wiki baseline:** WB-2026.09.1
 
 ## Overall scope
 

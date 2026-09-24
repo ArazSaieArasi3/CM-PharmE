@@ -7,7 +7,7 @@
 > **Related issues:** #159, #173, #208  
 > **Evidence status:** V1 complete; V2 87-concept Gate-D inventory complete with human review active  
 > **Future refresh:** #213  
-> **Wiki baseline:** WB-2026.09.1 Candidate
+> **Wiki baseline:** WB-2026.09.1
 
 ## Coverage
 

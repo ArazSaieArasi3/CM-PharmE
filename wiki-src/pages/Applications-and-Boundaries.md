@@ -1,13 +1,13 @@
 # Applications and Boundaries
 
 > **Page scope:** Cross-version  
-> **Documentation maturity:** Candidate  
+> **Documentation maturity:** Stable-to-date / Evolving  
 > **Authoritative sources:** V1 research boundaries and V2 W8 application evidence  
 > **Last synchronized:** 2026-09-23  
 > **Related issues/PRs:** #22, #169, #170  
 > **Evidence status:** Application pathways/demonstrators with explicit non-claims  
 > **Future refresh:** #212 and #214  
-> **Wiki baseline:** WB-2026.09.1 Candidate
+> **Wiki baseline:** WB-2026.09.1
 
 ## Application role in CM-PharmE
 

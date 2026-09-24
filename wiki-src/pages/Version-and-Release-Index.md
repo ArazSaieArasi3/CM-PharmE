@@ -7,7 +7,7 @@
 > **Related issues:** #23, #210, #214, #217  
 > **Evidence status:** V1 semantic baseline stable; V2 formal alpha baseline active; no formal GitHub Release currently published  
 > **Future refresh:** #214/#217  
-> **Wiki baseline:** WB-2026.09.1 Candidate
+> **Wiki baseline:** WB-2026.09.1
 
 ## Distinct version identifiers
 

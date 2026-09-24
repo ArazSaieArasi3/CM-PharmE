@@ -1,7 +1,7 @@
 # Current Status and Limitations
 
 > **Page scope:** Cross-version  
-> **Documentation maturity:** Candidate  
+> **Documentation maturity:** Stable-to-date / Evolving  
 > **Authoritative sources:** `main` and `v2/research-program`  
 > **Last synchronized:** 2026-09-23  
 > **V1 ref:** `5099888668d35f798e4759e3534e707ed906db24`  
@@ -9,7 +9,7 @@
 > **Related issues:** #21–#24, #98, #103, #159, #170, #171, #173, #202–#217  
 > **Evidence status:** Mixed; version-specific status below  
 > **Future refresh:** #212, #213, #214  
-> **Wiki baseline:** WB-2026.09.1 Candidate
+> **Wiki baseline:** WB-2026.09.1
 
 ## V1
 
@@ -28,9 +28,9 @@ At this synchronization point:
 
 These statements must be refreshed from live issue/PR state before any declared Wiki baseline.
 
-## Documentation limitations
+## Documentation baseline status
 
-This source package is not yet a declared QA-clean Wiki baseline. It is a candidate foundation. Publication to the GitHub Wiki surface, complete V1/V2 page population, automated QA and snapshot archiving are still required.
+WB-2026.09.1 is the current QA-approved documentation baseline. The controlled publication workflow has published the source-complete page set to the GitHub Wiki and verified the rendered surface. V2 remains **Stable-to-date / Evolving**, so later research changes must flow through the governed refresh checkpoints rather than silently changing this baseline.
 
 ## Research non-claims
 

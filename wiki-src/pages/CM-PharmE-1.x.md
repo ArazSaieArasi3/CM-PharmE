@@ -8,7 +8,7 @@
 > **Related issues/PRs:** #8 and the completed V1 engineering/evaluation program  
 > **Evidence status:** Stable published/repository-supported baseline  
 > **Future refresh:** Only if a V1 correction/release governance decision is made  
-> **Wiki baseline:** WB-2026.09.1 Candidate
+> **Wiki baseline:** WB-2026.09.1
 
 ## Purpose
 

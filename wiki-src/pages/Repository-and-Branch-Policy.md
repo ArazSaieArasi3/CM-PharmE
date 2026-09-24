@@ -1,7 +1,7 @@
 # Repository and Branch Policy
 
 > **Page scope:** Version-neutral governance  
-> **Documentation maturity:** Candidate  
+> **Documentation maturity:** Stable  
 > **Last synchronized:** 2026-09-23  
 > **Related issues:** #202, #210, #215  
 > **Evidence status:** Repository/documentation governance

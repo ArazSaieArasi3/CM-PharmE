@@ -8,7 +8,7 @@
 > **Related issues/PRs:** #21–#24, #98, #104, #159, #169, #170, #171, #173  
 > **Evidence status:** Gates A–F complete; Gate G/H pending  
 > **Future refresh:** #212 and #214  
-> **Wiki baseline:** WB-2026.09.1 Candidate
+> **Wiki baseline:** WB-2026.09.1
 
 ## Wave model
 

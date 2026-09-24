@@ -8,7 +8,7 @@
 > **Related issues/PRs:** W2/W3 program and E6–E8 evaluation lineage  
 > **Evidence status:** Data-grounding/evidence discipline established; full external ingestion is not claimed  
 > **Future refresh:** #213/#214 where semantic/evidence decisions change  
-> **Wiki baseline:** WB-2026.09.1 Candidate
+> **Wiki baseline:** WB-2026.09.1
 
 ## Data strategy
 

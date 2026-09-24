@@ -8,7 +8,7 @@
 > **Related issues/PRs:** #159, #173, PR #174  
 > **Evidence status:** Phase 1 review infrastructure complete; Phase 2 active  
 > **Future refresh:** #213  
-> **Wiki baseline:** WB-2026.09.1 Candidate
+> **Wiki baseline:** WB-2026.09.1
 
 ## Purpose
 

@@ -7,7 +7,7 @@
 > **Related issues:** #208  
 > **Evidence status:** Navigation index; repository artifacts remain authoritative  
 > **Future refresh:** #214  
-> **Wiki baseline:** WB-2026.09.1 Candidate
+> **Wiki baseline:** WB-2026.09.1
 
 ## V1 / shared repository areas
 

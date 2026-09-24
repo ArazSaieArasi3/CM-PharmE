@@ -15,14 +15,14 @@ GitHub Wiki content is maintained in a separate Git repository. Keeping the auth
 
 ## Current documentation status
 
-- Candidate Wiki baseline: **WB-2026.09.1**
-- Candidate maturity: **Candidate**
+- Current Wiki baseline: **WB-2026.09.1**
+- Documentation maturity: **Stable current baseline**
 - V1 documentation maturity: **Stable**
 - V2 documentation maturity: **Stable-to-date / Evolving**
 - V1 source ref inspected: `main@5099888668d35f798e4759e3534e707ed906db24`
 - V2 source ref inspected: `v2/research-program@1226b0a5484f8f5d3a8d214e0d0f52f066b88999`
 - Formal repository Release at foundation check: **none**
-- Wiki publication state: **source-controlled draft; GitHub Wiki publication still requires synchronization**
+- Wiki publication state: **published through the controlled Wiki synchronization workflow; rendered verification passed**
 
 ## Publication model
 

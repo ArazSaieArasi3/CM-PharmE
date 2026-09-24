@@ -8,7 +8,7 @@
 > **Related issues/PRs:** #159, #173, #206  
 > **Evidence status:** All 39 V1 concepts have W3 migration dispositions; final V2 human review is still active  
 > **Future refresh:** #213  
-> **Wiki baseline:** WB-2026.09.1 Candidate
+> **Wiki baseline:** WB-2026.09.1
 
 ## Migration vocabulary
 

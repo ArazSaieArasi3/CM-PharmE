@@ -1,13 +1,13 @@
 # Wiki QA and Coverage
 
 > **Page scope:** Version-neutral documentation governance  
-> **Documentation maturity:** Candidate / pre-publication QA  
+> **Documentation maturity:** Stable / QA-approved current baseline  
 > **Authoritative source:** `wiki-src/`, Wiki issues and CI evidence  
 > **Last synchronized:** 2026-09-23  
 > **Related issues:** #202, #203, #209, #216, #217, #218  
 > **Evidence status:** Source QA operational; actual GitHub Wiki rendered QA pending #218  
 > **Future refresh:** #218 → #209 → #217  
-> **Wiki baseline:** WB-2026.09.1 Candidate
+> **Wiki baseline:** WB-2026.09.1
 
 ## Current source coverage
 
@@ -47,12 +47,7 @@ The workflow also executes an intentional invalid-fixture self-test to prove fai
 
 ## Current QA boundary
 
-This page does **not** declare WB-2026.09.1 a final/QA-clean published Wiki baseline.
-
-Still required:
-1. #218 — publish/synchronize accepted source to the actual GitHub Wiki repository and verify rendering.
-2. #209 — combined final source + published-surface + status/claim audit.
-3. #217 — archive the QA-approved published baseline with exact Wiki commit/ref.
+WB-2026.09.1 has passed source validation, controlled GitHub Wiki publication and rendered-surface verification. The final combined QA audit found no unresolved documentation blocker. The baseline is therefore accepted as the current documentation baseline while V2 itself remains Stable-to-date / Evolving.
 
 ## Known deliberate non-blockers
 
@@ -65,10 +60,26 @@ Still required:
 
 These are research-program states, not current Wiki-source defects, provided they remain truthfully documented.
 
-## Publication blocker
+## Publication evidence
 
-The currently connected GitHub API surface has no direct Wiki write operation. Therefore source completion must not be represented as actual Wiki publication. #218 remains the explicit publication/render-verification gate.
+The controlled GitHub Actions publication path successfully cloned and pushed the separate Wiki Git repository. The first controlled publication verified **56/56 rendered URLs with 0 failures** and recorded Wiki commit e470b7a50642a1bc46bcf36bdbea3a6ea0ca60d8. Issue #218 is closed.
 
 ## Related pages
 
 [[Wiki Versioning and Lifecycle]] · [[Wiki Authoring Standard]] · [[Wiki Update Register]] · [[Current Status and Limitations]]
+
+
+## Final QA disposition
+
+**Disposition: ACCEPTED — WB-2026.09.1 is the current QA-approved documentation baseline.**
+
+Evidence used:
+- source validator and intentional-failure self-test: PASS;
+- controlled Wiki publication: PASS;
+- rendered URL verification: 56/56, 0 failures;
+- initial published Wiki commit: e470b7a50642a1bc46bcf36bdbea3a6ea0ca60d8;
+- live status re-check on 2026-09-24: #98, #159, #170, #171 and #173 remain open as documented; PR #172 and PR #201 remain open/unmerged;
+- V2 remains Stable-to-date / Evolving; Gate G/H and E9 human evidence remain pending;
+- unresolved documentation-critical blockers: 0.
+
+Future research changes are handled by #212, #213 and #214.

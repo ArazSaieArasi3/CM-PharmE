@@ -8,7 +8,7 @@
 > **Related issues/PRs:** V1 publication/repository traceability lineage  
 > **Evidence status:** Conference publication published; journal manuscript status represented only as supported by current repository record  
 > **Future refresh:** Update only when bibliographic/publication status changes with evidence  
-> **Wiki baseline:** WB-2026.09.1 Candidate
+> **Wiki baseline:** WB-2026.09.1
 
 ## Publication lineage
 

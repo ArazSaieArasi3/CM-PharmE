@@ -8,7 +8,7 @@
 > **Related issues/PRs:** #154, #159, #173, #206  
 > **Evidence status:** V1 five-domain and current V2 17-domain taxonomies are stable at their selected baselines  
 > **Future refresh:** #213 if human review changes domain placement  
-> **Wiki baseline:** WB-2026.09.1 Candidate
+> **Wiki baseline:** WB-2026.09.1
 
 ## V1 architecture
 

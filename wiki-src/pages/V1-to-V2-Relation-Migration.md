@@ -8,7 +8,7 @@
 > **Related issues/PRs:** #159, #173, #206  
 > **Evidence status:** Stable relation-family migration and V2 relation-pattern evidence; exhaustive per-relation V1→V2 disposition remains a human-review dependency  
 > **Future refresh:** #213  
-> **Wiki baseline:** WB-2026.09.1 Candidate
+> **Wiki baseline:** WB-2026.09.1
 
 ## V1 baseline
 

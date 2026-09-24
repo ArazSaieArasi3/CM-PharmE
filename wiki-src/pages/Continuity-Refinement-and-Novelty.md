@@ -8,7 +8,7 @@
 > **Related issues/PRs:** #159, #171, #206  
 > **Evidence status:** Evidence-bounded novelty interpretation  
 > **Future refresh:** #213 and #214  
-> **Wiki baseline:** WB-2026.09.1 Candidate
+> **Wiki baseline:** WB-2026.09.1
 
 ## Why this distinction matters
 

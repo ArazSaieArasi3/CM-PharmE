@@ -4,7 +4,7 @@
 > **Documentation maturity:** Stable-to-date / Evolving  
 > **Last synchronized:** 2026-09-23  
 > **Related issues:** #208  
-> **Wiki baseline:** WB-2026.09.1 Candidate
+> **Wiki baseline:** WB-2026.09.1
 
 | Acronym | Expansion / meaning |
 |---|---|

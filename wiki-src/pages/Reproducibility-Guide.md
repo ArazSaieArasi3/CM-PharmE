@@ -7,7 +7,7 @@
 > **Related issues/PRs:** V1 engineering closure; V2 #102, #207, #217  
 > **Evidence status:** Repository-level computational reproducibility documented for selected V1/V2 scopes  
 > **Future refresh:** #214 and #217  
-> **Wiki baseline:** WB-2026.09.1 Candidate
+> **Wiki baseline:** WB-2026.09.1
 
 ## What reproducibility means here
 

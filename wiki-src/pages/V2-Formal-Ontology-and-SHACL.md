@@ -8,7 +8,7 @@
 > **Related issues/PRs:** W5, E1/E2/E5/E13 evidence families  
 > **Evidence status:** Formal baseline complete for current V2 alpha baseline  
 > **Future refresh:** #213/#214 if semantic/final-release changes occur  
-> **Wiki baseline:** WB-2026.09.1 Candidate
+> **Wiki baseline:** WB-2026.09.1
 
 ## Formal baseline
 

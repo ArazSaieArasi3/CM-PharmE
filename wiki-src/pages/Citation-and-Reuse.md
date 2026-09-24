@@ -7,7 +7,7 @@
 > **Related issues:** #208, #214, #217  
 > **Evidence status:** V1 citation metadata available; V2 final citation/release metadata pending  
 > **Future refresh:** #214/#217  
-> **Wiki baseline:** WB-2026.09.1 Candidate
+> **Wiki baseline:** WB-2026.09.1
 
 ## Citation principle
 

@@ -1,7 +1,7 @@
 # Project Overview
 
 > **Page scope:** Cross-version  
-> **Documentation maturity:** Candidate  
+> **Documentation maturity:** Stable-to-date / Evolving  
 > **Authoritative sources:** `main` and `v2/research-program`  
 > **Last synchronized:** 2026-09-23  
 > **V1 ref:** `5099888668d35f798e4759e3534e707ed906db24`  
@@ -9,7 +9,7 @@
 > **Related issues:** #202–#217  
 > **Evidence status:** Orientation/synthesis page  
 > **Future refresh:** #212, #213, #214  
-> **Wiki baseline:** WB-2026.09.1 Candidate
+> **Wiki baseline:** WB-2026.09.1
 
 ## What is CM-PharmE?
 

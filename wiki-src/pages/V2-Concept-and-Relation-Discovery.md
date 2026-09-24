@@ -8,7 +8,7 @@
 > **Related issues/PRs:** W3/W4 program, #159, #173  
 > **Evidence status:** Gate-D baseline stable; concept-level human provenance review still active  
 > **Future refresh:** #213  
-> **Wiki baseline:** WB-2026.09.1 Candidate
+> **Wiki baseline:** WB-2026.09.1
 
 ## Discovery principle
 

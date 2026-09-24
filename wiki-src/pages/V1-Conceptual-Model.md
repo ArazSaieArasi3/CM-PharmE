@@ -8,7 +8,7 @@
 > **Related issues/PRs:** V1 model normalization and semantic-engineering closure  
 > **Evidence status:** Stable conceptual baseline with explicit review flags  
 > **Future refresh:** No silent semantic changes; any future evolution belongs to governed later versions  
-> **Wiki baseline:** WB-2026.09.1 Candidate
+> **Wiki baseline:** WB-2026.09.1
 
 ## Baseline
 

@@ -7,7 +7,7 @@
 > **Related issues/PRs:** V1 evaluation lineage; #21, #98, #103, #104, #207  
 > **Evidence status:** Version-specific evidence preserved; V2 E9 remains pending  
 > **Future refresh:** #212, #213, #214  
-> **Wiki baseline:** WB-2026.09.1 Candidate
+> **Wiki baseline:** WB-2026.09.1
 
 ## Assurance principle
 

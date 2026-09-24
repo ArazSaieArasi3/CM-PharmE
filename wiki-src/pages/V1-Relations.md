@@ -8,7 +8,7 @@
 > **Related issues/PRs:** V1 model normalization/formalization  
 > **Evidence status:** 40 canonical semantic relations  
 > **Future refresh:** Frozen V1; V2 changes documented separately  
-> **Wiki baseline:** WB-2026.09.1 Candidate
+> **Wiki baseline:** WB-2026.09.1
 
 ## Inventory
 

@@ -8,7 +8,7 @@
 > **Related issues/PRs:** V1 model normalization  
 > **Evidence status:** 39 canonical concepts  
 > **Future refresh:** V1 remains frozen; migration is documented separately  
-> **Wiki baseline:** WB-2026.09.1 Candidate
+> **Wiki baseline:** WB-2026.09.1
 
 ## Inventory
 

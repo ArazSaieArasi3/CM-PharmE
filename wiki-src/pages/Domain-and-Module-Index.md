@@ -7,7 +7,7 @@
 > **Related issues:** #154, #208  
 > **Evidence status:** Complete V1/V2 domain discoverability for current baselines  
 > **Future refresh:** #213 if V2 placement changes  
-> **Wiki baseline:** WB-2026.09.1 Candidate
+> **Wiki baseline:** WB-2026.09.1
 
 ## V1 modeling domains
 

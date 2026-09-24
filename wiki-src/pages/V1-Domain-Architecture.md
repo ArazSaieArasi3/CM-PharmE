@@ -8,7 +8,7 @@
 > **Related issues/PRs:** V1 domain normalization/evaluation lineage  
 > **Evidence status:** Stable V1 architecture  
 > **Future refresh:** None planned for frozen V1 baseline  
-> **Wiki baseline:** WB-2026.09.1 Candidate
+> **Wiki baseline:** WB-2026.09.1
 
 ## Five-domain architecture
 

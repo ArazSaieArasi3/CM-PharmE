@@ -8,7 +8,7 @@
 > **Related issues/PRs:** #21–#24, #98, #159, #170, #171, #173  
 > **Evidence status:** Substantial stable baseline with explicit pending human/application/manuscript work  
 > **Future refresh:** #212, #213, #214  
-> **Wiki baseline:** WB-2026.09.1 Candidate
+> **Wiki baseline:** WB-2026.09.1
 
 ## Research identity
 

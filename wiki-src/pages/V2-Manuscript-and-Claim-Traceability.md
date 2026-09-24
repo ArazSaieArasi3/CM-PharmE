@@ -8,7 +8,7 @@
 > **Related issues/PRs:** #23, #98, #104, #170, #171, PR #172  
 > **Evidence status:** Evidence ledger and bounded claim dispositions established; integrated manuscript/final release still active  
 > **Future refresh:** #212 and #214  
-> **Wiki baseline:** WB-2026.09.1 Candidate
+> **Wiki baseline:** WB-2026.09.1
 
 ## Evidence-led manuscript rule
 

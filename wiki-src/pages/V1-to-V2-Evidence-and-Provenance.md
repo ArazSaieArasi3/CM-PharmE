@@ -8,7 +8,7 @@
 > **Related issues/PRs:** #95–#104, #159, #173, #206  
 > **Evidence status:** Stable evidence-strategy comparison; final human-review evidence still evolving  
 > **Future refresh:** #213 and #214  
-> **Wiki baseline:** WB-2026.09.1 Candidate
+> **Wiki baseline:** WB-2026.09.1
 
 ## V1 evidence strategy
 

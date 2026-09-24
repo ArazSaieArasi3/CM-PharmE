@@ -7,7 +7,7 @@
 > **Related issues/PRs:** #24, #98, #104, #170, #171, #212, #214  
 > **Evidence status:** Gates A–F resolved; Gate G/H pending  
 > **Future refresh:** #212 and #214  
-> **Wiki baseline:** WB-2026.09.1 Candidate
+> **Wiki baseline:** WB-2026.09.1
 
 ## Why gates exist
 

@@ -7,7 +7,7 @@
 > **Related issues:** #208  
 > **Evidence status:** Controlled reader-facing terminology; semantic definitions remain version-specific where applicable  
 > **Future refresh:** #213/#214  
-> **Wiki baseline:** WB-2026.09.1 Candidate
+> **Wiki baseline:** WB-2026.09.1
 
 | Term | Reader-facing meaning in CM-PharmE | Version note |
 |---|---|---|

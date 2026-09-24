@@ -7,7 +7,7 @@
 > **Related issues:** W2/W3, #208  
 > **Evidence status:** Research-source registry; execution/ingestion status varies by source  
 > **Future refresh:** #214  
-> **Wiki baseline:** WB-2026.09.1 Candidate
+> **Wiki baseline:** WB-2026.09.1
 
 ## Research source families
 

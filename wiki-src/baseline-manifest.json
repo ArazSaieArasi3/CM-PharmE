@@ -1,21 +1,42 @@
 {
   "candidate_baseline_id": "WB-2026.09.1",
-  "declared": false,
-  "maturity": "Candidate",
   "created_date": "2026-09-23",
-  "wiki_publication_state": "source-controlled draft; direct GitHub Wiki synchronization pending",
+  "declared": true,
+  "declared_date": "2026-09-24",
+  "governance_issues": [
+    202,
+    203,
+    210,
+    211,
+    215,
+    216,
+    217
+  ],
+  "initial_controlled_publication": {
+    "failures": 0,
+    "rendered_urls_expected": 56,
+    "rendered_urls_verified": 56,
+    "source_commit": "d8251c9adb0b485b811e03269f19d18963ccf473",
+    "wiki_commit": "e470b7a50642a1bc46bcf36bdbea3a6ea0ca60d8",
+    "workflow_run": "35885115760"
+  },
+  "mandatory_future_refresh_issues": [
+    212,
+    213,
+    214
+  ],
+  "maturity": "Stable",
+  "qa_issue": 209,
+  "repository_release_state_checked_2026_09_23": "No GitHub Releases published",
   "v1": {
-    "documentation_status": "Stable",
     "branch": "main",
-    "commit": "5099888668d35f798e4759e3534e707ed906db24"
+    "commit": "5099888668d35f798e4759e3534e707ed906db24",
+    "documentation_status": "Stable"
   },
   "v2": {
-    "documentation_status": "Stable-to-date / Evolving",
     "branch": "v2/research-program",
-    "commit": "1226b0a5484f8f5d3a8d214e0d0f52f066b88999"
+    "commit": "1226b0a5484f8f5d3a8d214e0d0f52f066b88999",
+    "documentation_status": "Stable-to-date / Evolving"
   },
-  "repository_release_state_checked_2026_09_23": "No GitHub Releases published",
-  "governance_issues": [202, 203, 210, 211, 215, 216, 217],
-  "mandatory_future_refresh_issues": [212, 213, 214],
-  "qa_issue": 209
+  "wiki_publication_state": "published and rendered-verified; declaration synchronization controlled by wiki-publish workflow"
 }

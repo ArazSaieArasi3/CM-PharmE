@@ -7,7 +7,7 @@
 > **Related issues/PRs:** V1 evaluation and semantic-engineering closure  
 > **Evidence status:** Stable V1 evidence navigation  
 > **Future refresh:** None unless V1 evidence is formally corrected  
-> **Wiki baseline:** WB-2026.09.1 Candidate
+> **Wiki baseline:** WB-2026.09.1
 
 ## Evidence map
 

@@ -8,7 +8,7 @@
 > **Related issues/PRs:** W6, E10, E13  
 > **Evidence status:** Reference realization complete; production/full-ingestion claims explicitly excluded  
 > **Future refresh:** #214 if final release architecture changes  
-> **Wiki baseline:** WB-2026.09.1 Candidate
+> **Wiki baseline:** WB-2026.09.1
 
 ## Representation architecture
 

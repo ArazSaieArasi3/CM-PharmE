@@ -8,7 +8,7 @@
 > **Related issues/PRs:** #23, #102, #171, #214, #217  
 > **Evidence status:** Computational reproducibility established for current evaluated scope; final research release/DOI not yet frozen  
 > **Future refresh:** #214  
-> **Wiki baseline:** WB-2026.09.1 Candidate
+> **Wiki baseline:** WB-2026.09.1
 
 ## E13 reproducibility evidence
 

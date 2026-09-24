@@ -7,7 +7,7 @@
 > **Related issues/PRs:** #104, #159, #206  
 > **Evidence status:** Mandatory interpretation boundary  
 > **Future refresh:** #213 and #214  
-> **Wiki baseline:** WB-2026.09.1 Candidate
+> **Wiki baseline:** WB-2026.09.1
 
 ## Purpose
 

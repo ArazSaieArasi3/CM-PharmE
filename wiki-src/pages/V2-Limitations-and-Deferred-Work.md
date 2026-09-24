@@ -8,7 +8,7 @@
 > **Related issues/PRs:** #98, #159, #170, #171, #173  
 > **Evidence status:** Explicit bounded limitation/deferred-work register  
 > **Future refresh:** #212, #213, #214  
-> **Wiki baseline:** WB-2026.09.1 Candidate
+> **Wiki baseline:** WB-2026.09.1
 
 ## Persistent limitations
 

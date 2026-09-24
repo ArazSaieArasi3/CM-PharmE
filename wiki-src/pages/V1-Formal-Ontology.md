@@ -8,7 +8,7 @@
 > **Related issues/PRs:** V1 semantic-engineering closure  
 > **Evidence status:** Repository-executed formal/validation evidence with explicit profile boundary  
 > **Future refresh:** No semantic change unless a governed later release is declared  
-> **Wiki baseline:** WB-2026.09.1 Candidate
+> **Wiki baseline:** WB-2026.09.1
 
 ## Historical versus canonical formal source
 

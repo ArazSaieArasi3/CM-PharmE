@@ -10,7 +10,7 @@
 > **Related issues/PRs:** #159, #173, #206  
 > **Evidence status:** Stable cross-version narrative; human-review-dependent details remain refreshable  
 > **Future refresh:** #213 and #214  
-> **Wiki baseline:** WB-2026.09.1 Candidate
+> **Wiki baseline:** WB-2026.09.1
 
 ## Purpose
 

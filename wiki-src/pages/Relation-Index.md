@@ -7,7 +7,7 @@
 > **Related issues:** #159, #173, #208  
 > **Evidence status:** V1 40-relation registry complete; V2 relation-pattern baseline stable while final human-review relation catalog is pending  
 > **Future refresh:** #213  
-> **Wiki baseline:** WB-2026.09.1 Candidate
+> **Wiki baseline:** WB-2026.09.1
 
 ## V1 canonical relations
 

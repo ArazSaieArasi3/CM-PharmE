@@ -1,7 +1,7 @@
 # Wiki Versioning and Lifecycle
 
 > **Page scope:** Version-neutral governance  
-> **Documentation maturity:** Candidate policy  
+> **Documentation maturity:** Stable governance policy  
 > **Authoritative documentation source:** `wiki-src/`  
 > **Last synchronized:** 2026-09-23  
 > **V1 source:** `main@5099888668d35f798e4759e3534e707ed906db24`  
@@ -24,7 +24,7 @@ where:
 - `YYYY.MM` is the synchronization month;
 - `N` is the sequence of declared baselines in that month.
 
-The initial source-controlled candidate is **WB-2026.09.1**. It must not be described as a frozen or final Wiki baseline until the required QA gate has passed.
+The first declared current documentation baseline is **WB-2026.09.1**. It passed the required source, publication and rendered-surface QA gates. This declaration freezes the documentation snapshot only; it does **not** declare CM-PharmE 2.0 final or frozen.
 
 ## Documentation maturity states
 

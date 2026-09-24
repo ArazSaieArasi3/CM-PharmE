@@ -8,7 +8,7 @@
 > **Related issues/PRs:** V1 research/evaluation closure lineage  
 > **Evidence status:** Supported by repository methodology and publication traceability  
 > **Future refresh:** None planned unless V1 evidence is formally corrected  
-> **Wiki baseline:** WB-2026.09.1 Candidate
+> **Wiki baseline:** WB-2026.09.1
 
 ## Method overview
 

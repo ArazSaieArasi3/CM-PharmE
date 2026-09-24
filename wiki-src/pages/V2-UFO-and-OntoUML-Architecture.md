@@ -8,7 +8,7 @@
 > **Related issues/PRs:** W4, #159, #173  
 > **Evidence status:** Gate-D architecture frozen for current baseline; selected extension/human-review findings remain active  
 > **Future refresh:** #213  
-> **Wiki baseline:** WB-2026.09.1 Candidate
+> **Wiki baseline:** WB-2026.09.1
 
 ## Foundational stance
 

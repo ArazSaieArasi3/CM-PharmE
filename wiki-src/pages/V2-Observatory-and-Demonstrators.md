@@ -8,7 +8,7 @@
 > **Related issues/PRs:** #22, #143, #145, #147, #149, #151, #153, #169, #170  
 > **Evidence status:** 7/8 W8 work items complete; representative-task evaluation incomplete  
 > **Future refresh:** #212  
-> **Wiki baseline:** WB-2026.09.1 Candidate
+> **Wiki baseline:** WB-2026.09.1
 
 ## Purpose
 
