@@ -25,6 +25,11 @@ This property connects a modeled entity to a literal value under the explicit fo
 ## Structural example
 No complete domain→range structural example is asserted because at least one endpoint is formally unspecified.
 
+## Related implementation, mappings and evaluation context
+- [[V2 Data Infrastructure]]
+- [[V2 Evaluation E1-E13|CM-PharmE 2.0 Evaluation Framework]]
+- Mapping authority: `v2/data/mappings/ontology-rdb-mapping.csv`
+
 ## Review boundary
 - No inverse semantics are inferred.
 - Missing domain/range constraints remain unspecified.

@@ -53,6 +53,15 @@ This is a structural relation example, not an instance-data claim.
 - [[V2 Formal Ontology and SHACL]]
 - [[V2 Human Ontology Review|CM-PharmE 2.0 Semantic Review]]
 
+## Related implementation, mappings and visual/evaluation context
+- [[V2 Data Infrastructure]]
+- [[V2 Evaluation E1-E13|CM-PharmE 2.0 Evaluation Framework]]
+- [[Diagram Standards and Inventory]]
+- Mapping authority: `v2/data/mappings/ontology-rdb-mapping.csv`
+- Dataset→ontology evaluation: `v2/research/w7/e6-dataset-ontology-mapping-quality.md`
+- Ontology↔RDB↔KG evaluation: `v2/research/w7/e10-ontology-rdb-kg-semantic-consistency.md`
+- Ontology-specific diagram suite is governed separately by #235.
+
 ## Known boundaries
 - Current domain review state: **Pending**.
 - Generated reference does not constitute human/author semantic approval.

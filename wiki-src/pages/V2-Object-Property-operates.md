@@ -29,6 +29,12 @@ Material, derived from Facility Operation
 ## Structural example
 [[V2 Concept C001 Organization|Organization]] — `operates` → [[V2 Concept C009 Facility|Facility]]
 
+## Related implementation, mappings and evaluation context
+- [[V2 Data Infrastructure]]
+- [[V2 Evaluation E1-E13|CM-PharmE 2.0 Evaluation Framework]]
+- Mapping authority: `v2/data/mappings/ontology-rdb-mapping.csv`
+- Relation/data realization remains bounded to registered mappings.
+
 ## Review boundary
 - **Review state:** Pending
 - Unspecified endpoints are review targets, not automatically defects.

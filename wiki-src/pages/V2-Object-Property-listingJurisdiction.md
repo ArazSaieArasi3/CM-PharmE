@@ -28,6 +28,12 @@ Relator participant
 ## Structural example
 [[V2 Concept C025 Market Listing|MarketListing]] — `listingJurisdiction` → [[V2 Concept C015 Regulatory Jurisdiction|RegulatoryJurisdiction]]
 
+## Related implementation, mappings and evaluation context
+- [[V2 Data Infrastructure]]
+- [[V2 Evaluation E1-E13|CM-PharmE 2.0 Evaluation Framework]]
+- Mapping authority: `v2/data/mappings/ontology-rdb-mapping.csv`
+- Relation/data realization remains bounded to registered mappings.
+
 ## Review boundary
 - **Review state:** Pending
 - Unspecified endpoints are review targets, not automatically defects.

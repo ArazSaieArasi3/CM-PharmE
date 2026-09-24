@@ -216,6 +216,15 @@ See [[V1 to V2 Research Evolution]], [[V1 to V2 Concept Migration]] and [[V1 to 
 | [[V2 Datatype Property validFrom|`validFrom`]] | unspecified | xsd:dateTime |
 | [[V2 Datatype Property validTo|`validTo`]] | unspecified | xsd:dateTime |
 
+## Related implementation, mappings, diagrams and evaluation
+- [[V2 Data Infrastructure]]
+- [[V2 Evaluation E1-E13|CM-PharmE 2.0 Evaluation Framework]]
+- [[Diagram Standards and Inventory]]
+- mapping registry: `v2/data/mappings/ontology-rdb-mapping.csv`
+- mapping-quality evidence: `v2/research/w7/e6-dataset-ontology-mapping-quality.md`
+- cross-representation evidence: `v2/research/w7/e10-ontology-rdb-kg-semantic-consistency.md`
+- ontology diagram-suite work: #235
+
 ## Generated vs curated boundary
 The exhaustive tables/pages are generated for discoverability and coverage. Curated interpretation remains in [[V2 UFO and OntoUML Architecture]], [[V2 Formal Ontology and SHACL]], [[V2 Human Ontology Review|CM-PharmE 2.0 Semantic Review]] and cross-version research pages.
 

@@ -52,6 +52,13 @@ Protected conceptual distinction(s): `SupplyCapacityObservationResult ≠ Supply
 
 A source record, identifier or label should not be treated as this domain entity unless the governing ontology/evidence relation explicitly supports that interpretation.
 
+## Related implementation, mappings and visual/evaluation context
+- [[V2 Data Infrastructure]]
+- [[V2 Evaluation E1-E13|CM-PharmE 2.0 Evaluation Framework]]
+- [[Diagram Standards and Inventory]]
+- Mapping authority: `v2/data/mappings/ontology-rdb-mapping.csv`
+- Concept/data mapping evidence remains governed by the mapping registry and E6/E10 artifacts; this generated page does not infer a direct table mapping.
+
 ## Review state
 - **Passport review state:** pending
 - **Evidence status:** registered_not_human_approved

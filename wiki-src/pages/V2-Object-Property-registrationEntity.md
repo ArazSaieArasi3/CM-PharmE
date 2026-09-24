@@ -28,6 +28,12 @@ Registered-entity participant; range review required
 ## Structural example
 No complete domain→range structural example is asserted because at least one endpoint is formally unspecified.
 
+## Related implementation, mappings and evaluation context
+- [[V2 Data Infrastructure]]
+- [[V2 Evaluation E1-E13|CM-PharmE 2.0 Evaluation Framework]]
+- Mapping authority: `v2/data/mappings/ontology-rdb-mapping.csv`
+- Relation/data realization remains bounded to registered mappings.
+
 ## Review boundary
 - **Review state:** Pending
 - Unspecified endpoints are review targets, not automatically defects.
