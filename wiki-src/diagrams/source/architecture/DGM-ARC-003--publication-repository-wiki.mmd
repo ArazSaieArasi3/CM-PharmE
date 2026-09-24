@@ -1,0 +1,13 @@
+flowchart LR
+  PUB["Research publications / manuscripts"]
+  REP["GitHub repository\nsemantic, data, evaluation artifacts"]
+  WIKI["GitHub Wiki\nhuman-readable explanatory projection"]
+  REL["Version / release / DOI records"]
+  EVA["Evidence & reproducibility artifacts"]
+
+  REP --> WIKI
+  REP --> EVA
+  EVA --> PUB
+  PUB --> REL
+  REP --> REL
+  WIKI -.->|"links; does not replace authority"| REP
