@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import argparse, hashlib, json, os, subprocess, sys, zipfile
+import argparse, hashlib, json, subprocess, sys, zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -24,9 +24,12 @@ def collect_files():
         p = WIKI / rel
         if p.exists():
             selected.append(p)
+    qa = WIKI / "qa"
+    if qa.exists():
+        selected.extend(sorted(qa.glob("*.md")))
     return selected
 
-def build(baseline):
+def build(baseline, wiki_commit=None):
     out = DIST / f"wiki-{baseline}"
     out.mkdir(parents=True, exist_ok=True)
     entries = []
@@ -46,7 +49,7 @@ def build(baseline):
         "declared": baseline_meta.get("declared"),
         "publication_state": baseline_meta.get("wiki_publication_state"),
         "source_repository_commit": git_head(),
-        "published_wiki_commit": None,
+        "published_wiki_commit": wiki_commit,
         "files": entries,
     }
     manifest_data = (json.dumps(manifest, indent=2, sort_keys=True) + "\n").encode()
@@ -54,18 +57,23 @@ def build(baseline):
 
     zip_path = DIST / f"wiki-{baseline}.zip"
     with zipfile.ZipFile(zip_path, "w", compression=zipfile.ZIP_DEFLATED, compresslevel=9) as z:
-        all_files = sorted([p for p in out.rglob("*") if p.is_file()])
-        for p in all_files:
+        for p in sorted([p for p in out.rglob("*") if p.is_file()]):
             rel = p.relative_to(out).as_posix()
             data = p.read_bytes()
             info = zipfile.ZipInfo(rel, FIXED_ZIP_TIME)
             info.compress_type = zipfile.ZIP_DEFLATED
             info.external_attr = 0o644 << 16
             z.writestr(info, data)
-    print(json.dumps({"archive": str(zip_path), "files": len(entries), "sha256": sha256_bytes(zip_path.read_bytes())}))
+
+    print(json.dumps({
+        "archive": str(zip_path),
+        "files": len(entries),
+        "sha256": sha256_bytes(zip_path.read_bytes()),
+        "published_wiki_commit": wiki_commit
+    }))
     return 0
 
-def verify(archive):
+def verify(archive, expected_wiki_commit=None):
     archive = Path(archive)
     with zipfile.ZipFile(archive, "r") as z:
         names = set(z.namelist())
@@ -73,6 +81,8 @@ def verify(archive):
             raise SystemExit("VERIFY FAIL: ARCHIVE-MANIFEST.json missing")
         manifest = json.loads(z.read("ARCHIVE-MANIFEST.json"))
         failures = []
+        if expected_wiki_commit and manifest.get("published_wiki_commit") != expected_wiki_commit:
+            failures.append("published Wiki commit does not match expected value")
         for item in manifest["files"]:
             path = item["path"]
             if path not in names:
@@ -85,7 +95,12 @@ def verify(archive):
             for f in failures:
                 print("ERROR:", f)
             raise SystemExit(f"VERIFY FAIL: {len(failures)} problem(s)")
-        print(json.dumps({"verified": True, "files": len(manifest["files"]), "wiki_baseline": manifest["wiki_baseline"]}))
+        print(json.dumps({
+            "verified": True,
+            "files": len(manifest["files"]),
+            "wiki_baseline": manifest["wiki_baseline"],
+            "published_wiki_commit": manifest.get("published_wiki_commit")
+        }))
     return 0
 
 def main():
@@ -93,12 +108,14 @@ def main():
     sub = ap.add_subparsers(dest="cmd", required=True)
     b = sub.add_parser("build")
     b.add_argument("--baseline", required=True)
+    b.add_argument("--wiki-commit")
     v = sub.add_parser("verify")
     v.add_argument("--archive", required=True)
+    v.add_argument("--wiki-commit")
     args = ap.parse_args()
     if args.cmd == "build":
-        return build(args.baseline)
-    return verify(args.archive)
+        return build(args.baseline, args.wiki_commit)
+    return verify(args.archive, args.wiki_commit)
 
 if __name__ == "__main__":
     sys.exit(main())
