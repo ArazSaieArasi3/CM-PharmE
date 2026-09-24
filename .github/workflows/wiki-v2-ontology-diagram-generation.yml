@@ -1,0 +1,55 @@
+name: Wiki V2 Ontology Diagram Generation
+
+on:
+  push:
+    branches:
+      - wiki/v2-ontology-diagram-suite-2026-09
+    paths:
+      - 'tools/wiki/generate_v2_ontology_diagrams.py'
+      - '.github/workflows/wiki-v2-ontology-diagram-generation.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: cm-pharme-wiki-v2-ontology-diagrams
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout documentation branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ github.token }}
+      - name: Checkout V2 authority
+        uses: actions/checkout@v4
+        with:
+          ref: v2/research-program
+          path: _v2_authority
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Generate semantic-validated ontology diagrams
+        run: python tools/wiki/generate_v2_ontology_diagrams.py --authority-root _v2_authority
+      - name: Validate diagram artifacts
+        run: python tools/wiki/check_diagrams.py
+      - name: Validate ontology reference coverage
+        run: python tools/wiki/check_ontology_reference.py
+      - name: Commit generated ontology diagram suite
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add wiki-src/diagrams wiki-src/ontology-reference
+          if git diff --cached --quiet; then
+            echo "No generated changes to commit."
+            exit 0
+          fi
+          git commit -m "Wiki ontology visuals: generate V2 diagram suite"
+          git push origin HEAD:wiki/v2-ontology-diagram-suite-2026-09
