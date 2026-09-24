@@ -180,3 +180,19 @@ Before considering a page complete:
 - [ ] diagrams have provenance/captions;
 - [ ] relevant index/navigation links are bidirectional;
 - [ ] update register impact has been considered.
+
+
+## Generated ontology reference
+
+Exhaustive V2 module/concept/property reference pages are **generated projections**, not semantic authorities.
+
+Rules:
+- generated pages must identify the V2 authority ref;
+- conceptual counts and formal OWL counts must remain distinct;
+- missing OWL domain/range constraints remain `unspecified`;
+- generated pages may expose registered evidence and review state but may not approve semantics;
+- curated explanatory pages remain responsible for interpretation, evolution and evidential boundaries;
+- semantic changes flow through #213 and trigger regeneration rather than direct leaf-page editing;
+- `tools/wiki/check_ontology_reference.py` must pass before publication.
+
+Canonical architecture and authority rules live under `wiki-src/ontology-reference/`.
