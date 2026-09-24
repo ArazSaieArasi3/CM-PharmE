@@ -1,13 +1,8 @@
 # Publications
 
-> **Page scope:** Cross-version  
-> **Documentation maturity:** Stable-to-date / Evolving  
-> **Authoritative source:** `publications/` registry and supported bibliographic records  
-> **Last synchronized:** 2026-09-23  
-> **Related issues:** V1 publication lineage; V2 #23/#171; #208  
-> **Evidence status:** Publication status is recorded only where supported  
-> **Future refresh:** #214 and any verified V1 publication-status change  
-> **Wiki baseline:** WB-2026.09.1
+> **Version scope:** Cross-version  
+> **Status:** Stable-to-date / Evolving  
+> **Updated:** 2026-09-23
 
 ## V1 scholarly lineage
 
@@ -55,3 +50,20 @@ Only record them when supported by the publication/publisher record.
 
 - [Publication registry](https://github.com/ArazSaieArasi3/CM-PharmE/blob/main/publications/README.md)
 - [Publication-to-repository traceability](https://github.com/ArazSaieArasi3/CM-PharmE/blob/main/docs/research/publication-to-repository-traceability.md)
+
+---
+
+<details>
+<summary>Documentation record</summary>
+
+- **Page scope:** Cross-version
+- **Documentation maturity:** Stable-to-date / Evolving
+- **Authoritative source:** `publications/` registry and supported bibliographic records
+- **Last synchronized:** 2026-09-23
+- **Related issues:** V1 publication lineage; V2 #23/#171; #208
+- **Evidence status:** Publication status is recorded only where supported
+- **Future refresh:** #214 and any verified V1 publication-status change
+- **Wiki baseline:** WB-2026.09.1
+- **Last synchronized ref:** V1: main; V2: v2/research-program
+
+</details>

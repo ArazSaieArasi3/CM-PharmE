@@ -1,14 +1,8 @@
 # CM-PharmE 2.0 Semantic Review
 
-> **Page scope:** V2  
-> **Documentation maturity:** Semantic review in progress / Stable-to-date infrastructure  
-> **Authoritative source:** `v2/review/` and review issues #159/#173  
-> **Last synchronized:** 2026-09-23  
-> **Last synchronized ref:** `1226b0a5484f8f5d3a8d214e0d0f52f066b88999`  
-> **Related issues/PRs:** #159, #173, PR #174  
-> **Evidence status:** Phase 1 review infrastructure complete; Phase 2 active  
-> **Future refresh:** #213  
-> **Wiki baseline:** WB-2026.09.1
+> **Version scope:** V2  
+> **Status:** Semantic review in progress / Stable-to-date infrastructure  
+> **Updated:** 2026-09-23
 
 ## Purpose
 
@@ -62,3 +56,20 @@ Review documentation may propose or record findings, but a semantic change becom
 - [Domain review index](https://github.com/ArazSaieArasi3/CM-PharmE/blob/v2/research-program/v2/review/domains/index.md)
 - [Concept review index](https://github.com/ArazSaieArasi3/CM-PharmE/blob/v2/research-program/v2/review/concepts/index.md)
 - [Concept provenance matrix](https://github.com/ArazSaieArasi3/CM-PharmE/blob/v2/research-program/v2/research/w4/human-review-concept-provenance-matrix.md)
+
+---
+
+<details>
+<summary>Documentation record</summary>
+
+- **Page scope:** V2
+- **Documentation maturity:** Semantic review in progress / Stable-to-date infrastructure
+- **Authoritative source:** `v2/review/` and review issues #159/#173
+- **Last synchronized:** 2026-09-23
+- **Last synchronized ref:** `1226b0a5484f8f5d3a8d214e0d0f52f066b88999`
+- **Related issues/PRs:** #159, #173, PR #174
+- **Evidence status:** Phase 1 review infrastructure complete; Phase 2 active
+- **Future refresh:** #213
+- **Wiki baseline:** WB-2026.09.1
+
+</details>

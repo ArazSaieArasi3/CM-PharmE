@@ -1,13 +1,8 @@
 # Repository Artifact Index
 
-> **Page scope:** Cross-version  
-> **Documentation maturity:** Stable-to-date / Evolving  
-> **Authoritative source:** CM-PharmE repository structure on `main` and `v2/research-program`  
-> **Last synchronized:** 2026-09-23  
-> **Related issues:** #208  
-> **Evidence status:** Navigation index; repository artifacts remain authoritative  
-> **Future refresh:** #214  
-> **Wiki baseline:** WB-2026.09.1
+> **Version scope:** Cross-version  
+> **Status:** Stable-to-date / Evolving  
+> **Updated:** 2026-09-23
 
 ## V1 / shared repository areas
 
@@ -52,3 +47,20 @@ Wiki pages synthesize and navigate these artifacts. They do not replace the sema
 - V2 evolving research evidence: `v2/research-program`.
 
 Use exact commit refs in reproducibility/claim audits where practical.
+
+---
+
+<details>
+<summary>Documentation record</summary>
+
+- **Page scope:** Cross-version
+- **Documentation maturity:** Stable-to-date / Evolving
+- **Authoritative source:** CM-PharmE repository structure on `main` and `v2/research-program`
+- **Last synchronized:** 2026-09-23
+- **Related issues:** #208
+- **Evidence status:** Navigation index; repository artifacts remain authoritative
+- **Future refresh:** #214
+- **Wiki baseline:** WB-2026.09.1
+- **Last synchronized ref:** V1: main; V2: v2/research-program
+
+</details>

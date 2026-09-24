@@ -1,14 +1,8 @@
 # V1 Research Design and Evidence Review
 
-> **Page scope:** V1  
-> **Documentation maturity:** Stable  
-> **Authoritative source:** `main` methodology and publication evidence  
-> **Last synchronized:** 2026-09-23  
-> **Last synchronized ref:** `5099888668d35f798e4759e3534e707ed906db24`  
-> **Related issues/PRs:** V1 research/evaluation closure lineage  
-> **Evidence status:** Supported by repository methodology and publication traceability  
-> **Future refresh:** None planned unless V1 evidence is formally corrected  
-> **Wiki baseline:** WB-2026.09.1
+> **Version scope:** V1  
+> **Status:** Stable  
+> **Updated:** 2026-09-23
 
 ## Method overview
 
@@ -81,3 +75,20 @@ The research aligns its completed activities to DSRM logic: problem identificati
 ## Interpretation boundary
 
 The V1 method supports a disciplined conceptual-model development process. It does not establish universal pharmaceutical-domain completeness, empirical implementation effectiveness or conformance to every external standard.
+
+---
+
+<details>
+<summary>Documentation record</summary>
+
+- **Page scope:** V1
+- **Documentation maturity:** Stable
+- **Authoritative source:** `main` methodology and publication evidence
+- **Last synchronized:** 2026-09-23
+- **Last synchronized ref:** `5099888668d35f798e4759e3534e707ed906db24`
+- **Related issues/PRs:** V1 research/evaluation closure lineage
+- **Evidence status:** Supported by repository methodology and publication traceability
+- **Future refresh:** None planned unless V1 evidence is formally corrected
+- **Wiki baseline:** WB-2026.09.1
+
+</details>

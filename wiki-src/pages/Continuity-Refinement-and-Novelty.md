@@ -1,14 +1,8 @@
 # Continuity Refinement and Novelty
 
-> **Page scope:** Cross-version  
-> **Documentation maturity:** Stable-to-date / Evolving  
-> **V1 authority:** stable V1 research/model artifacts  
-> **V2 authority:** W3/W4 migration, V2 research canvas and Gate-F evidence  
-> **Last synchronized:** 2026-09-23  
-> **Related issues/PRs:** #159, #171, #206  
-> **Evidence status:** Evidence-bounded novelty interpretation  
-> **Future refresh:** #213 and #214  
-> **Wiki baseline:** WB-2026.09.1
+> **Version scope:** Cross-version  
+> **Status:** Stable-to-date / Evolving  
+> **Updated:** 2026-09-23
 
 ## Why this distinction matters
 
@@ -81,3 +75,22 @@ Do not claim:
 - [W3 migration matrix](https://github.com/ArazSaieArasi3/CM-PharmE/blob/v2/research-program/v2/research/w3/v1-v2-migration-matrix.md)
 - [V2 research canvas](https://github.com/ArazSaieArasi3/CM-PharmE/blob/v2/research-program/v2/research/research-canvas.md)
 - [Gate F](https://github.com/ArazSaieArasi3/CM-PharmE/blob/v2/research-program/v2/research/w7/gate-f-claim-sufficiency-decision.md)
+
+---
+
+<details>
+<summary>Documentation record</summary>
+
+- **Page scope:** Cross-version
+- **Documentation maturity:** Stable-to-date / Evolving
+- **V1 authority:** stable V1 research/model artifacts
+- **V2 authority:** W3/W4 migration, V2 research canvas and Gate-F evidence
+- **Last synchronized:** 2026-09-23
+- **Related issues/PRs:** #159, #171, #206
+- **Evidence status:** Evidence-bounded novelty interpretation
+- **Future refresh:** #213 and #214
+- **Wiki baseline:** WB-2026.09.1
+- **Authoritative source:** V1: main; V2: v2/research-program
+- **Last synchronized ref:** V1: main; V2: v2/research-program
+
+</details>

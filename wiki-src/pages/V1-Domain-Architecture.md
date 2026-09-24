@@ -1,14 +1,8 @@
 # V1 Domain Architecture
 
-> **Page scope:** V1  
-> **Documentation maturity:** Stable  
-> **Authoritative source:** `main/docs/domains/` and V1 catalogs/mappings  
-> **Last synchronized:** 2026-09-23  
-> **Last synchronized ref:** `5099888668d35f798e4759e3534e707ed906db24`  
-> **Related issues/PRs:** V1 domain normalization/evaluation lineage  
-> **Evidence status:** Stable V1 architecture  
-> **Future refresh:** None planned for frozen V1 baseline  
-> **Wiki baseline:** WB-2026.09.1
+> **Version scope:** V1  
+> **Status:** Stable  
+> **Updated:** 2026-09-23
 
 ## Five-domain architecture
 
@@ -61,3 +55,20 @@ These domains are conceptual-modeling domains. They are **not** automatically DD
 V2 does not automatically preserve this five-domain decomposition as its Core architecture. The V1 domains remain important historical and analytical anchors, while V2 re-evaluates modular structure from new evidence and UFO/OntoUML analysis.
 
 See [[V1 to V2 Domain Evolution]].
+
+---
+
+<details>
+<summary>Documentation record</summary>
+
+- **Page scope:** V1
+- **Documentation maturity:** Stable
+- **Authoritative source:** `main/docs/domains/` and V1 catalogs/mappings
+- **Last synchronized:** 2026-09-23
+- **Last synchronized ref:** `5099888668d35f798e4759e3534e707ed906db24`
+- **Related issues/PRs:** V1 domain normalization/evaluation lineage
+- **Evidence status:** Stable V1 architecture
+- **Future refresh:** None planned for frozen V1 baseline
+- **Wiki baseline:** WB-2026.09.1
+
+</details>

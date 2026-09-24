@@ -1,14 +1,8 @@
 # V1 Evaluation and Evidence
 
-> **Page scope:** V1  
-> **Documentation maturity:** Stable  
-> **Authoritative source:** `main/docs/evaluations/` and `main/evaluation/`  
-> **Last synchronized:** 2026-09-23  
-> **Last synchronized ref:** `5099888668d35f798e4759e3534e707ed906db24`  
-> **Related issues/PRs:** V1 evaluation/engineering closure  
-> **Evidence status:** Layered; PASS, PARTIAL and CONDITIONAL states preserved  
-> **Future refresh:** Only under explicit V1 correction/evolution governance  
-> **Wiki baseline:** WB-2026.09.1
+> **Version scope:** V1  
+> **Status:** Stable  
+> **Updated:** 2026-09-23
 
 ## Evaluation architecture
 
@@ -60,3 +54,20 @@ Evaluation results support specific procedures and artifacts. They do not establ
 ## Related pages
 
 [[V1 Reproducibility]] · [[Evaluation and Assurance]]
+
+---
+
+<details>
+<summary>Documentation record</summary>
+
+- **Page scope:** V1
+- **Documentation maturity:** Stable
+- **Authoritative source:** `main/docs/evaluations/` and `main/evaluation/`
+- **Last synchronized:** 2026-09-23
+- **Last synchronized ref:** `5099888668d35f798e4759e3534e707ed906db24`
+- **Related issues/PRs:** V1 evaluation/engineering closure
+- **Evidence status:** Layered; PASS, PARTIAL and CONDITIONAL states preserved
+- **Future refresh:** Only under explicit V1 correction/evolution governance
+- **Wiki baseline:** WB-2026.09.1
+
+</details>

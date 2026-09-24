@@ -1,14 +1,8 @@
 # V1 Limitations and Boundaries
 
-> **Page scope:** V1  
-> **Documentation maturity:** Stable  
-> **Authoritative source:** V1 evaluation, version and research-boundary records on `main`  
-> **Last synchronized:** 2026-09-23  
-> **Last synchronized ref:** `5099888668d35f798e4759e3534e707ed906db24`  
-> **Related issues/PRs:** V1 evaluation and semantic-engineering closure  
-> **Evidence status:** Explicit limitation register  
-> **Future refresh:** None unless V1 record is formally corrected  
-> **Wiki baseline:** WB-2026.09.1
+> **Version scope:** V1  
+> **Status:** Stable  
+> **Updated:** 2026-09-23
 
 ## Why limitations are first-class documentation
 
@@ -59,3 +53,20 @@ See [[V1 to V2 Research Evolution]] and [[Cross-Version Comparison Limits]].
 - [Applications and boundaries](https://github.com/ArazSaieArasi3/CM-PharmE/blob/main/docs/research/applications-and-boundaries.md)
 - [Evaluation index](https://github.com/ArazSaieArasi3/CM-PharmE/blob/main/docs/evaluations/index.md)
 - [V1 version record](https://github.com/ArazSaieArasi3/CM-PharmE/blob/main/docs/versions/v1.0.0.md)
+
+---
+
+<details>
+<summary>Documentation record</summary>
+
+- **Page scope:** V1
+- **Documentation maturity:** Stable
+- **Authoritative source:** V1 evaluation, version and research-boundary records on `main`
+- **Last synchronized:** 2026-09-23
+- **Last synchronized ref:** `5099888668d35f798e4759e3534e707ed906db24`
+- **Related issues/PRs:** V1 evaluation and semantic-engineering closure
+- **Evidence status:** Explicit limitation register
+- **Future refresh:** None unless V1 record is formally corrected
+- **Wiki baseline:** WB-2026.09.1
+
+</details>

@@ -1,14 +1,8 @@
 # V2 Data Infrastructure
 
-> **Page scope:** V2  
-> **Documentation maturity:** Stable-to-date / Evolving  
-> **Authoritative source:** V2 W6 data/representation artifacts  
-> **Last synchronized:** 2026-09-23  
-> **Last synchronized ref:** `1226b0a5484f8f5d3a8d214e0d0f52f066b88999`  
-> **Related issues/PRs:** W6, E10, E13  
-> **Evidence status:** Reference realization complete; production/full-ingestion claims explicitly excluded  
-> **Future refresh:** #214 if final release architecture changes  
-> **Wiki baseline:** WB-2026.09.1
+> **Version scope:** V2  
+> **Status:** Stable-to-date / Evolving  
+> **Updated:** 2026-09-23
 
 ## Representation architecture
 
@@ -66,3 +60,20 @@ W6 does **not** establish:
 - [Relational schema](https://github.com/ArazSaieArasi3/CM-PharmE/blob/v2/research-program/v2/data/db/schema.sql)
 - [Ontology-RDB mappings](https://github.com/ArazSaieArasi3/CM-PharmE/blob/v2/research-program/v2/data/mappings/ontology-rdb-mapping.csv)
 - [OpenAPI contract](https://github.com/ArazSaieArasi3/CM-PharmE/blob/v2/research-program/v2/data/api/openapi.yaml)
+
+---
+
+<details>
+<summary>Documentation record</summary>
+
+- **Page scope:** V2
+- **Documentation maturity:** Stable-to-date / Evolving
+- **Authoritative source:** V2 W6 data/representation artifacts
+- **Last synchronized:** 2026-09-23
+- **Last synchronized ref:** `1226b0a5484f8f5d3a8d214e0d0f52f066b88999`
+- **Related issues/PRs:** W6, E10, E13
+- **Evidence status:** Reference realization complete; production/full-ingestion claims explicitly excluded
+- **Future refresh:** #214 if final release architecture changes
+- **Wiki baseline:** WB-2026.09.1
+
+</details>

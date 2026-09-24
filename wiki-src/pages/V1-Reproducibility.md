@@ -1,14 +1,8 @@
 # V1 Reproducibility
 
-> **Page scope:** V1  
-> **Documentation maturity:** Stable  
-> **Authoritative source:** V1 build/validation/CI artifacts on `main`  
-> **Last synchronized:** 2026-09-23  
-> **Last synchronized ref:** `5099888668d35f798e4759e3534e707ed906db24`  
-> **Related issues/PRs:** V1 engineering/reproducibility closure  
-> **Evidence status:** Repository-level reproducibility for supported computational checks  
-> **Future refresh:** None unless V1 build evidence is corrected  
-> **Wiki baseline:** WB-2026.09.1
+> **Version scope:** V1  
+> **Status:** Stable  
+> **Updated:** 2026-09-23
 
 ## Reproducibility objective
 
@@ -48,3 +42,20 @@ It does **not** by itself mean:
 ## Reuse discipline
 
 When citing or reusing V1, identify the semantic/model release and, where reproducibility matters, the repository ref or release artifact used.
+
+---
+
+<details>
+<summary>Documentation record</summary>
+
+- **Page scope:** V1
+- **Documentation maturity:** Stable
+- **Authoritative source:** V1 build/validation/CI artifacts on `main`
+- **Last synchronized:** 2026-09-23
+- **Last synchronized ref:** `5099888668d35f798e4759e3534e707ed906db24`
+- **Related issues/PRs:** V1 engineering/reproducibility closure
+- **Evidence status:** Repository-level reproducibility for supported computational checks
+- **Future refresh:** None unless V1 build evidence is corrected
+- **Wiki baseline:** WB-2026.09.1
+
+</details>

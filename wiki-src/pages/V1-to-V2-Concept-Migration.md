@@ -1,14 +1,8 @@
 # V1 to V2 Concept Migration
 
-> **Page scope:** Cross-version  
-> **Documentation maturity:** Stable-to-date / Evolving  
-> **V1 authority:** `main/catalog/concepts.yaml`  
-> **V2 authority:** V2 W3/W4 migration and provenance artifacts  
-> **Last synchronized:** 2026-09-23  
-> **Related issues/PRs:** #159, #173, #206  
-> **Evidence status:** All 39 V1 concepts have W3 migration dispositions; final V2 human review is still active  
-> **Future refresh:** #213  
-> **Wiki baseline:** WB-2026.09.1
+> **Version scope:** Cross-version  
+> **Status:** Stable-to-date / Evolving  
+> **Updated:** 2026-09-23
 
 ## Migration vocabulary
 
@@ -116,3 +110,22 @@ The 87-concept baseline is under domain-by-domain human review. Any approved sem
 - [W3→W4 transformation ledger](https://github.com/ArazSaieArasi3/CM-PharmE/blob/v2/research-program/v2/research/w4/w3-w4-transformation-ledger.md)
 - [V2 concept provenance matrix](https://github.com/ArazSaieArasi3/CM-PharmE/blob/v2/research-program/v2/research/w4/human-review-concept-provenance-matrix.md)
 - [V2 concept review catalog](https://github.com/ArazSaieArasi3/CM-PharmE/blob/v2/research-program/v2/review/concepts/index.md)
+
+---
+
+<details>
+<summary>Documentation record</summary>
+
+- **Page scope:** Cross-version
+- **Documentation maturity:** Stable-to-date / Evolving
+- **V1 authority:** `main/catalog/concepts.yaml`
+- **V2 authority:** V2 W3/W4 migration and provenance artifacts
+- **Last synchronized:** 2026-09-23
+- **Related issues/PRs:** #159, #173, #206
+- **Evidence status:** All 39 V1 concepts have W3 migration dispositions; final V2 human review is still active
+- **Future refresh:** #213
+- **Wiki baseline:** WB-2026.09.1
+- **Authoritative source:** V1: main; V2: v2/research-program
+- **Last synchronized ref:** V1: main; V2: v2/research-program
+
+</details>

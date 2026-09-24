@@ -1,14 +1,8 @@
 # V1 to V2 Evidence and Provenance
 
-> **Page scope:** Cross-version  
-> **Documentation maturity:** Stable-to-date / Evolving  
-> **V1 authority:** V1 methodology/evaluation/provenance artifacts  
-> **V2 authority:** V2 dataset, mapping, provenance and held-out artifacts  
-> **Last synchronized:** 2026-09-23  
-> **Related issues/PRs:** #95–#104, #159, #173, #206  
-> **Evidence status:** Stable evidence-strategy comparison; final human-review evidence still evolving  
-> **Future refresh:** #213 and #214  
-> **Wiki baseline:** WB-2026.09.1
+> **Version scope:** Cross-version  
+> **Status:** Stable-to-date / Evolving  
+> **Updated:** 2026-09-23
 
 ## V1 evidence strategy
 
@@ -118,3 +112,22 @@ V2's stronger provenance infrastructure should not be used to claim that V1 lack
 - [V2 source-field mapping](https://github.com/ArazSaieArasi3/CM-PharmE/blob/v2/research-program/v2/data/mappings/source-field-ontology-mapping.csv)
 - [V2 evidence registry](https://github.com/ArazSaieArasi3/CM-PharmE/blob/v2/research-program/v2/research/evidence-registry.md)
 - [V2 concept provenance matrix](https://github.com/ArazSaieArasi3/CM-PharmE/blob/v2/research-program/v2/research/w4/human-review-concept-provenance-matrix.md)
+
+---
+
+<details>
+<summary>Documentation record</summary>
+
+- **Page scope:** Cross-version
+- **Documentation maturity:** Stable-to-date / Evolving
+- **V1 authority:** V1 methodology/evaluation/provenance artifacts
+- **V2 authority:** V2 dataset, mapping, provenance and held-out artifacts
+- **Last synchronized:** 2026-09-23
+- **Related issues/PRs:** #95–#104, #159, #173, #206
+- **Evidence status:** Stable evidence-strategy comparison; final human-review evidence still evolving
+- **Future refresh:** #213 and #214
+- **Wiki baseline:** WB-2026.09.1
+- **Authoritative source:** V1: main; V2: v2/research-program
+- **Last synchronized ref:** V1: main; V2: v2/research-program
+
+</details>

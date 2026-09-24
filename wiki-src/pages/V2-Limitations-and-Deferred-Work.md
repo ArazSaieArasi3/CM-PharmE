@@ -1,14 +1,8 @@
 # V2 Limitations and Deferred Work
 
-> **Page scope:** V2  
-> **Documentation maturity:** Stable-to-date / Evolving  
-> **Authoritative source:** V2 Gate-F, W7/W8 and manuscript limitation records  
-> **Last synchronized:** 2026-09-23  
-> **Last synchronized ref:** `1226b0a5484f8f5d3a8d214e0d0f52f066b88999`  
-> **Related issues/PRs:** #98, #159, #170, #171, #173  
-> **Evidence status:** Explicit bounded limitation/deferred-work register  
-> **Future refresh:** #212, #213, #214  
-> **Wiki baseline:** WB-2026.09.1
+> **Version scope:** V2  
+> **Status:** Stable-to-date / Evolving  
+> **Updated:** 2026-09-23
 
 ## Persistent limitations
 
@@ -64,3 +58,20 @@ Deferred/future work includes:
 - [Integrated W7 evidence matrix](https://github.com/ArazSaieArasi3/CM-PharmE/blob/v2/research-program/v2/research/w7/integrated-evaluation-evidence-matrix.md)
 - [Gate F](https://github.com/ArazSaieArasi3/CM-PharmE/blob/v2/research-program/v2/research/w7/gate-f-claim-sufficiency-decision.md)
 - [Current representative-task results](https://github.com/ArazSaieArasi3/CM-PharmE/blob/v2/research-program/v2/app/observatory/representative-task-results.md)
+
+---
+
+<details>
+<summary>Documentation record</summary>
+
+- **Page scope:** V2
+- **Documentation maturity:** Stable-to-date / Evolving
+- **Authoritative source:** V2 Gate-F, W7/W8 and manuscript limitation records
+- **Last synchronized:** 2026-09-23
+- **Last synchronized ref:** `1226b0a5484f8f5d3a8d214e0d0f52f066b88999`
+- **Related issues/PRs:** #98, #159, #170, #171, #173
+- **Evidence status:** Explicit bounded limitation/deferred-work register
+- **Future refresh:** #212, #213, #214
+- **Wiki baseline:** WB-2026.09.1
+
+</details>

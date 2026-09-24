@@ -1,14 +1,8 @@
 # V1 to V2 Domain Evolution
 
-> **Page scope:** Cross-version  
-> **Documentation maturity:** Stable-to-date / Evolving  
-> **V1 authority:** `main/docs/domains/`  
-> **V2 authority:** V2 canonical domain taxonomy  
-> **Last synchronized:** 2026-09-23  
-> **Related issues/PRs:** #154, #159, #173, #206  
-> **Evidence status:** V1 five-domain and current V2 17-domain taxonomies are stable at their selected baselines  
-> **Future refresh:** #213 if human review changes domain placement  
-> **Wiki baseline:** WB-2026.09.1
+> **Version scope:** Cross-version  
+> **Status:** Stable-to-date / Evolving  
+> **Updated:** 2026-09-23
 
 ## V1 architecture
 
@@ -82,3 +76,22 @@ The change from five domains to 17 domains should be described as architectural 
 - [V1 domain index](https://github.com/ArazSaieArasi3/CM-PharmE/blob/main/docs/domains/index.md)
 - [V2 canonical domain taxonomy](https://github.com/ArazSaieArasi3/CM-PharmE/blob/v2/research-program/v2/research/w4/domain-taxonomy.md)
 - [V2 integrated conceptual model](https://github.com/ArazSaieArasi3/CM-PharmE/blob/v2/research-program/v2/research/w4/integrated-ontouml-model.md)
+
+---
+
+<details>
+<summary>Documentation record</summary>
+
+- **Page scope:** Cross-version
+- **Documentation maturity:** Stable-to-date / Evolving
+- **V1 authority:** `main/docs/domains/`
+- **V2 authority:** V2 canonical domain taxonomy
+- **Last synchronized:** 2026-09-23
+- **Related issues/PRs:** #154, #159, #173, #206
+- **Evidence status:** V1 five-domain and current V2 17-domain taxonomies are stable at their selected baselines
+- **Future refresh:** #213 if human review changes domain placement
+- **Wiki baseline:** WB-2026.09.1
+- **Authoritative source:** V1: main; V2: v2/research-program
+- **Last synchronized ref:** V1: main; V2: v2/research-program
+
+</details>

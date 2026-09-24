@@ -1,14 +1,8 @@
 # CM-PharmE 2.0 Evaluation Framework
 
-> **Page scope:** V2  
-> **Documentation maturity:** Stable-to-date / Evolving  
-> **Authoritative source:** V2 evaluation artifacts and live E9 status  
-> **Last synchronized:** 2026-09-23  
-> **Last synchronized ref:** `1226b0a5484f8f5d3a8d214e0d0f52f066b88999`  
-> **Related issues/PRs:** #21, #98, #103, #104  
-> **Evidence status:** E1–E8 and E10–E13 complete; E9 readiness only  
-> **Future refresh:** #214 when prospective expert evidence/final release is dispositioned  
-> **Wiki baseline:** WB-2026.09.1
+> **Version scope:** V2  
+> **Status:** Stable-to-date / Evolving  
+> **Updated:** 2026-09-23
 
 ## Evaluation matrix
 
@@ -61,3 +55,20 @@ Internal provenance: this review corresponds to Gate F.
 - [Evidence sufficiency decision — internal Gate F](https://github.com/ArazSaieArasi3/CM-PharmE/blob/v2/research-program/v2/research/w7/gate-f-claim-sufficiency-decision.md)
 - [Evidence status register](https://github.com/ArazSaieArasi3/CM-PharmE/blob/v2/research-program/v2/evaluation/results/w7-evidence-status.csv)
 - [E9 protocol](https://github.com/ArazSaieArasi3/CM-PharmE/blob/v2/research-program/v2/research/w7/e9-expert-evaluation-protocol.md)
+
+---
+
+<details>
+<summary>Documentation record</summary>
+
+- **Page scope:** V2
+- **Documentation maturity:** Stable-to-date / Evolving
+- **Authoritative source:** V2 evaluation artifacts and live E9 status
+- **Last synchronized:** 2026-09-23
+- **Last synchronized ref:** `1226b0a5484f8f5d3a8d214e0d0f52f066b88999`
+- **Related issues/PRs:** #21, #98, #103, #104
+- **Evidence status:** E1–E8 and E10–E13 complete; E9 readiness only
+- **Future refresh:** #214 when prospective expert evidence/final release is dispositioned
+- **Wiki baseline:** WB-2026.09.1
+
+</details>

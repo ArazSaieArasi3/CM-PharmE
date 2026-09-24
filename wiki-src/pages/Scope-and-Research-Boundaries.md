@@ -1,13 +1,8 @@
 # Scope and Research Boundaries
 
-> **Page scope:** Cross-version  
-> **Documentation maturity:** Stable-to-date / Evolving  
-> **Authoritative sources:** `main` and `v2/research-program`  
-> **Last synchronized:** 2026-09-23  
-> **Related issues/PRs:** #202, #204, #205, #206, #207  
-> **Evidence status:** Cross-version interpretation boundary  
-> **Future refresh:** #212, #213, #214  
-> **Wiki baseline:** WB-2026.09.1
+> **Version scope:** Cross-version  
+> **Status:** Stable-to-date / Evolving  
+> **Updated:** 2026-09-23
 
 ## Overall scope
 
@@ -48,3 +43,21 @@ Unless dedicated evidence is available, the project does not claim:
 ## Reading rule
 
 Every claim should be interpreted at the scope of its own version, evidence family, dataset/fixture and evaluation protocol.
+
+---
+
+<details>
+<summary>Documentation record</summary>
+
+- **Page scope:** Cross-version
+- **Documentation maturity:** Stable-to-date / Evolving
+- **Authoritative sources:** `main` and `v2/research-program`
+- **Last synchronized:** 2026-09-23
+- **Related issues/PRs:** #202, #204, #205, #206, #207
+- **Evidence status:** Cross-version interpretation boundary
+- **Future refresh:** #212, #213, #214
+- **Wiki baseline:** WB-2026.09.1
+- **Authoritative source:** V1: main; V2: v2/research-program
+- **Last synchronized ref:** V1: main; V2: v2/research-program
+
+</details>

@@ -1,10 +1,8 @@
 # Knowledge Graph and Queries Guide
 
-> **Page scope:** V2  
-> **Documentation maturity:** Stable-to-date / Evolving  
-> **Last synchronized:** 2026-09-24  
-> **Related issues/PRs:** #228, #230  
-> **Wiki baseline:** WB-2026.09.1
+> **Version scope:** V2  
+> **Status:** Stable-to-date / Evolving  
+> **Updated:** 2026-09-24
 
 Use this section to understand how CM-PharmE semantics are carried across **OWL/SHACL, relational storage, RDF/KG generation and SQL/SPARQL evaluation**.
 
@@ -26,3 +24,20 @@ The current Wiki explains the reference architecture and evidence. Dedicated que
 
 ### Suggested path for a KG/query user
 **V2 Formal Ontology and SHACL → V2 Data Infrastructure → Evaluation Framework → Reproducibility Guide**
+
+---
+
+<details>
+<summary>Documentation record</summary>
+
+- **Page scope:** V2
+- **Documentation maturity:** Stable-to-date / Evolving
+- **Last synchronized:** 2026-09-24
+- **Related issues/PRs:** #228, #230
+- **Wiki baseline:** WB-2026.09.1
+- **Authoritative source:** v2/research-program
+- **Last synchronized ref:** v2/research-program (see linked authoritative V2 artifacts)
+- **Evidence status:** Documentation/navigation page; substantive evidence remains in linked authoritative artifacts
+- **Future refresh:** See #211–#214 as applicable
+
+</details>

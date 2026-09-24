@@ -1,13 +1,8 @@
 # Concept Index
 
-> **Page scope:** Cross-version  
-> **Documentation maturity:** Stable-to-date / Evolving  
-> **Authoritative inventories:** V1 `catalog/concepts.yaml`; V2 `v2/review/concepts/index.md`  
-> **Last synchronized:** 2026-09-23  
-> **Related issues:** #159, #173, #208  
-> **Evidence status:** V1 complete; V2 87-concept Gate-D inventory complete with human review active  
-> **Future refresh:** #213  
-> **Wiki baseline:** WB-2026.09.1
+> **Version scope:** Cross-version  
+> **Status:** Stable-to-date / Evolving  
+> **Updated:** 2026-09-23
 
 ## Coverage
 
@@ -160,3 +155,21 @@ Use [[V1 to V2 Concept Migration]] for predecessor/migration interpretation. A s
 - [V1 concept catalog](https://github.com/ArazSaieArasi3/CM-PharmE/blob/main/catalog/concepts.yaml)
 - [V2 concept review catalog](https://github.com/ArazSaieArasi3/CM-PharmE/blob/v2/research-program/v2/review/concepts/index.md)
 - [V2 concept provenance matrix](https://github.com/ArazSaieArasi3/CM-PharmE/blob/v2/research-program/v2/research/w4/human-review-concept-provenance-matrix.md)
+
+---
+
+<details>
+<summary>Documentation record</summary>
+
+- **Page scope:** Cross-version
+- **Documentation maturity:** Stable-to-date / Evolving
+- **Authoritative inventories:** V1 `catalog/concepts.yaml`; V2 `v2/review/concepts/index.md`
+- **Last synchronized:** 2026-09-23
+- **Related issues:** #159, #173, #208
+- **Evidence status:** V1 complete; V2 87-concept Gate-D inventory complete with human review active
+- **Future refresh:** #213
+- **Wiki baseline:** WB-2026.09.1
+- **Authoritative source:** V1: main; V2: v2/research-program
+- **Last synchronized ref:** V1: main; V2: v2/research-program
+
+</details>

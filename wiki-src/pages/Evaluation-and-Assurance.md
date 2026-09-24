@@ -1,13 +1,8 @@
 # Evaluation and Assurance
 
-> **Page scope:** Cross-version  
-> **Documentation maturity:** Stable-to-date / Evolving  
-> **Authoritative sources:** V1 evaluation artifacts on `main`; V2 W7/Gate evidence on `v2/research-program`  
-> **Last synchronized:** 2026-09-23  
-> **Related issues/PRs:** V1 evaluation lineage; #21, #98, #103, #104, #207  
-> **Evidence status:** Version-specific evidence preserved; V2 E9 remains pending  
-> **Future refresh:** #212, #213, #214  
-> **Wiki baseline:** WB-2026.09.1
+> **Version scope:** Cross-version  
+> **Status:** Stable-to-date / Evolving  
+> **Updated:** 2026-09-23
 
 ## Assurance principle
 
@@ -87,3 +82,21 @@ See [[Reproducibility Guide]].
 - [V1 machine-readable evaluation assets](https://github.com/ArazSaieArasi3/CM-PharmE/blob/main/evaluation/README.md)
 - [V2 integrated W7 matrix](https://github.com/ArazSaieArasi3/CM-PharmE/blob/v2/research-program/v2/research/w7/integrated-evaluation-evidence-matrix.md)
 - [V2 claim-evidence traceability](https://github.com/ArazSaieArasi3/CM-PharmE/blob/v2/research-program/v2/evaluation/results/w7-claim-evidence-traceability.csv)
+
+---
+
+<details>
+<summary>Documentation record</summary>
+
+- **Page scope:** Cross-version
+- **Documentation maturity:** Stable-to-date / Evolving
+- **Authoritative sources:** V1 evaluation artifacts on `main`; V2 W7/Gate evidence on `v2/research-program`
+- **Last synchronized:** 2026-09-23
+- **Related issues/PRs:** V1 evaluation lineage; #21, #98, #103, #104, #207
+- **Evidence status:** Version-specific evidence preserved; V2 E9 remains pending
+- **Future refresh:** #212, #213, #214
+- **Wiki baseline:** WB-2026.09.1
+- **Authoritative source:** V1: main; V2: v2/research-program
+- **Last synchronized ref:** V1: main; V2: v2/research-program
+
+</details>

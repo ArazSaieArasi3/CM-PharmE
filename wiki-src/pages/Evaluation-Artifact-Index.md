@@ -1,13 +1,8 @@
 # Evaluation Artifact Index
 
-> **Page scope:** Cross-version  
-> **Documentation maturity:** Stable-to-date / Evolving  
-> **Authoritative sources:** V1 evaluation tree and V2 E1–E13 evaluation tree  
-> **Last synchronized:** 2026-09-23  
-> **Related issues:** #98, #103, #104, #208  
-> **Evidence status:** Major evaluation artifacts indexed; live E9/Gate G dependencies remain visible  
-> **Future refresh:** #212/#214  
-> **Wiki baseline:** WB-2026.09.1
+> **Version scope:** Cross-version  
+> **Status:** Stable-to-date / Evolving  
+> **Updated:** 2026-09-23
 
 ## V1 evaluation artifacts
 
@@ -63,3 +58,21 @@ A protocol is not a result; a result is not a universal claim; a PASS label must
 ## Related pages
 
 [[Evaluation and Assurance]] · [[V2 Evaluation E1-E13]] · [[Gate and Claim Dispositions]] · [[Reproducibility Guide]]
+
+---
+
+<details>
+<summary>Documentation record</summary>
+
+- **Page scope:** Cross-version
+- **Documentation maturity:** Stable-to-date / Evolving
+- **Authoritative sources:** V1 evaluation tree and V2 E1–E13 evaluation tree
+- **Last synchronized:** 2026-09-23
+- **Related issues:** #98, #103, #104, #208
+- **Evidence status:** Major evaluation artifacts indexed; live E9/Gate G dependencies remain visible
+- **Future refresh:** #212/#214
+- **Wiki baseline:** WB-2026.09.1
+- **Authoritative source:** V1: main; V2: v2/research-program
+- **Last synchronized ref:** V1: main; V2: v2/research-program
+
+</details>

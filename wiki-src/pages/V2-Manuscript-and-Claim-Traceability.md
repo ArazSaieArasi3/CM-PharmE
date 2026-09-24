@@ -1,14 +1,8 @@
 # V2 Manuscript and Claim Traceability
 
-> **Page scope:** V2  
-> **Documentation maturity:** Stable-to-date / Evolving  
-> **Authoritative source:** V2 manuscript evidence ledger, claim register and live paper-track issues  
-> **Last synchronized:** 2026-09-23  
-> **Last synchronized ref:** `1226b0a5484f8f5d3a8d214e0d0f52f066b88999`  
-> **Related issues/PRs:** #23, #98, #104, #170, #171, PR #172  
-> **Evidence status:** Evidence ledger and bounded claim dispositions established; integrated manuscript/final release still active  
-> **Future refresh:** #212 and #214  
-> **Wiki baseline:** WB-2026.09.1
+> **Version scope:** V2  
+> **Status:** Stable-to-date / Evolving  
+> **Updated:** 2026-09-23
 
 ## Evidence-led manuscript rule
 
@@ -61,3 +55,20 @@ A strong manuscript claim should be auditable through:
 - [W7 claim-evidence traceability](https://github.com/ArazSaieArasi3/CM-PharmE/blob/v2/research-program/v2/evaluation/results/w7-claim-evidence-traceability.csv)
 - [Gate F decision](https://github.com/ArazSaieArasi3/CM-PharmE/blob/v2/research-program/v2/research/w7/gate-f-claim-sufficiency-decision.md)
 - [Integrated evaluation synthesis](https://github.com/ArazSaieArasi3/CM-PharmE/blob/v2/research-program/v2/manuscript/w7-integrated-evaluation-synthesis.md)
+
+---
+
+<details>
+<summary>Documentation record</summary>
+
+- **Page scope:** V2
+- **Documentation maturity:** Stable-to-date / Evolving
+- **Authoritative source:** V2 manuscript evidence ledger, claim register and live paper-track issues
+- **Last synchronized:** 2026-09-23
+- **Last synchronized ref:** `1226b0a5484f8f5d3a8d214e0d0f52f066b88999`
+- **Related issues/PRs:** #23, #98, #104, #170, #171, PR #172
+- **Evidence status:** Evidence ledger and bounded claim dispositions established; integrated manuscript/final release still active
+- **Future refresh:** #212 and #214
+- **Wiki baseline:** WB-2026.09.1
+
+</details>
