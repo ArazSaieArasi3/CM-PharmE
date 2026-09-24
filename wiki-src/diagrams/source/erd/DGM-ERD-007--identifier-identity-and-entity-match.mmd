@@ -1,0 +1,42 @@
+erDiagram
+    source_record ||--o{ entity_match_assertion : "source_record_a_id"
+    source_record ||--o{ entity_match_assertion : "source_record_b_id"
+    identifier_scheme ||--o{ identifier_assignment : "identifier_scheme_id"
+    source_record o|--o{ identifier_assignment : "source_record_id"
+    source_record {
+      BIGSERIAL source_record_id PK
+      BIGINT dataset_release_id FK
+      BIGINT transformation_run_id FK
+      BIGINT row_number
+      CHAR_64_ source_hash
+      JSONB raw_key
+      TEXT ontology_iri
+    }
+    entity_match_assertion {
+      BIGSERIAL entity_match_assertion_id PK
+      TEXT public_id
+      BIGINT source_record_a_id FK
+      BIGINT source_record_b_id FK
+      TEXT matched_entity_type
+      TEXT matched_public_id
+      TEXT method
+      NUMERIC_5_4_ confidence
+      TEXT status
+      TEXT ontology_iri
+    }
+    identifier_scheme {
+      BIGSERIAL identifier_scheme_id PK
+      TEXT public_id
+      TEXT scheme_name
+      TEXT ontology_iri
+    }
+    identifier_assignment {
+      BIGSERIAL identifier_assignment_id PK
+      TEXT public_id
+      BIGINT identifier_scheme_id FK
+      TEXT entity_type
+      TEXT entity_public_id
+      TEXT lexical_value
+      BIGINT source_record_id FK
+      TEXT ontology_iri
+    }

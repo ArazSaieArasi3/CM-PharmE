@@ -1,0 +1,169 @@
+table,column,type,primary_key,foreign_key,nullable,unique,default,check,ontology_mapping
+dataset,dataset_id,BIGSERIAL,True,,False,False,,,https://w3id.org/cm-pharme/2.0/Dataset
+dataset,public_id,TEXT,False,,False,True,,,https://w3id.org/cm-pharme/2.0/Dataset
+dataset,title,TEXT,False,,False,False,,,https://w3id.org/cm-pharme/2.0/Dataset
+dataset,doi,TEXT,False,,True,False,,,https://w3id.org/cm-pharme/2.0/Dataset
+dataset,source_role,TEXT,False,,False,False,,"source_role IN ('primary','secondary','authoritative','conditional','fixture')",https://w3id.org/cm-pharme/2.0/Dataset
+dataset,license_note,TEXT,False,,True,False,,,https://w3id.org/cm-pharme/2.0/Dataset
+dataset,ontology_iri,TEXT,False,,False,False,'https://w3id.org/cm-pharme/2.0/Dataset',,https://w3id.org/cm-pharme/2.0/Dataset
+dataset_release,dataset_release_id,BIGSERIAL,True,,False,False,,,https://w3id.org/cm-pharme/2.0/DatasetRelease
+dataset_release,dataset_id,BIGINT,False,dataset.dataset_id,False,False,,,https://w3id.org/cm-pharme/2.0/DatasetRelease
+dataset_release,public_id,TEXT,False,,False,True,,,https://w3id.org/cm-pharme/2.0/DatasetRelease
+dataset_release,release_label,TEXT,False,,False,False,,,https://w3id.org/cm-pharme/2.0/DatasetRelease
+dataset_release,source_filename,TEXT,False,,True,False,,,https://w3id.org/cm-pharme/2.0/DatasetRelease
+dataset_release,retrieved_at,TIMESTAMPTZ,False,,True,False,,,https://w3id.org/cm-pharme/2.0/DatasetRelease
+dataset_release,ontology_iri,TEXT,False,,False,False,'https://w3id.org/cm-pharme/2.0/DatasetRelease',,https://w3id.org/cm-pharme/2.0/DatasetRelease
+transformation_run,transformation_run_id,BIGSERIAL,True,,False,False,,,https://w3id.org/cm-pharme/2.0/ProvenanceActivity
+transformation_run,public_id,TEXT,False,,False,True,,,https://w3id.org/cm-pharme/2.0/ProvenanceActivity
+transformation_run,adapter_name,TEXT,False,,False,False,,,https://w3id.org/cm-pharme/2.0/ProvenanceActivity
+transformation_run,adapter_version,TEXT,False,,False,False,,,https://w3id.org/cm-pharme/2.0/ProvenanceActivity
+transformation_run,started_at,TIMESTAMPTZ,False,,False,False,now(),,https://w3id.org/cm-pharme/2.0/ProvenanceActivity
+transformation_run,completed_at,TIMESTAMPTZ,False,,True,False,,,https://w3id.org/cm-pharme/2.0/ProvenanceActivity
+transformation_run,status,TEXT,False,,False,False,,"status IN ('running','completed','failed')",https://w3id.org/cm-pharme/2.0/ProvenanceActivity
+transformation_run,ontology_iri,TEXT,False,,False,False,'https://w3id.org/cm-pharme/2.0/ProvenanceActivity',,https://w3id.org/cm-pharme/2.0/ProvenanceActivity
+source_record,source_record_id,BIGSERIAL,True,,False,False,,,https://w3id.org/cm-pharme/2.0/SourceRecord
+source_record,dataset_release_id,BIGINT,False,dataset_release.dataset_release_id,False,False,,,https://w3id.org/cm-pharme/2.0/SourceRecord
+source_record,transformation_run_id,BIGINT,False,transformation_run.transformation_run_id,True,False,,,https://w3id.org/cm-pharme/2.0/SourceRecord
+source_record,row_number,BIGINT,False,,False,False,,,https://w3id.org/cm-pharme/2.0/SourceRecord
+source_record,source_hash,CHAR(64),False,,False,False,,,https://w3id.org/cm-pharme/2.0/SourceRecord
+source_record,raw_key,JSONB,False,,False,False,'{}'::jsonb,,https://w3id.org/cm-pharme/2.0/SourceRecord
+source_record,ontology_iri,TEXT,False,,False,False,'https://w3id.org/cm-pharme/2.0/SourceRecord',,https://w3id.org/cm-pharme/2.0/SourceRecord
+geography,geography_id,BIGSERIAL,True,,False,False,,,https://w3id.org/cm-pharme/2.0/AdministrativeRegion; https://w3id.org/cm-pharme/2.0/Country; https://w3id.org/cm-pharme/2.0/GeographicFeature
+geography,public_id,TEXT,False,,False,True,,,https://w3id.org/cm-pharme/2.0/AdministrativeRegion; https://w3id.org/cm-pharme/2.0/Country; https://w3id.org/cm-pharme/2.0/GeographicFeature
+geography,geography_type,TEXT,False,,False,False,,"geography_type IN ('country','administrative_region','other')",https://w3id.org/cm-pharme/2.0/AdministrativeRegion; https://w3id.org/cm-pharme/2.0/Country; https://w3id.org/cm-pharme/2.0/GeographicFeature
+geography,canonical_name,TEXT,False,,False,False,,,https://w3id.org/cm-pharme/2.0/AdministrativeRegion; https://w3id.org/cm-pharme/2.0/Country; https://w3id.org/cm-pharme/2.0/GeographicFeature
+geography,country_code,CHAR(2),False,,True,False,,,https://w3id.org/cm-pharme/2.0/AdministrativeRegion; https://w3id.org/cm-pharme/2.0/Country; https://w3id.org/cm-pharme/2.0/GeographicFeature
+geography,source_region_code,TEXT,False,,True,False,,,https://w3id.org/cm-pharme/2.0/AdministrativeRegion; https://w3id.org/cm-pharme/2.0/Country; https://w3id.org/cm-pharme/2.0/GeographicFeature
+geography,geonames_id,BIGINT,False,,True,False,,,https://w3id.org/cm-pharme/2.0/AdministrativeRegion; https://w3id.org/cm-pharme/2.0/Country; https://w3id.org/cm-pharme/2.0/GeographicFeature
+geography,geom,"geometry(Geometry,4326)",False,,True,False,,,https://w3id.org/cm-pharme/2.0/AdministrativeRegion; https://w3id.org/cm-pharme/2.0/Country; https://w3id.org/cm-pharme/2.0/GeographicFeature
+geography,ontology_iri,TEXT,False,,False,False,,,https://w3id.org/cm-pharme/2.0/AdministrativeRegion; https://w3id.org/cm-pharme/2.0/Country; https://w3id.org/cm-pharme/2.0/GeographicFeature
+geography_alias,geography_alias_id,BIGSERIAL,True,,False,False,,,
+geography_alias,geography_id,BIGINT,False,geography.geography_id,False,False,,,
+geography_alias,source_system,TEXT,False,,False,False,,,
+geography_alias,source_value,TEXT,False,,False,False,,,
+geography_alias,normalized_value,TEXT,False,,False,False,,,
+geography_alias,resolution_method,TEXT,False,,False,False,,,
+geography_alias,confidence,"NUMERIC(5,4)",False,,False,False,,confidence >= 0 AND confidence <= 1,
+geography_alias,source_record_id,BIGINT,False,source_record.source_record_id,True,False,,,
+regulatory_jurisdiction,regulatory_jurisdiction_id,BIGSERIAL,True,,False,False,,,https://w3id.org/cm-pharme/2.0/RegulatoryJurisdiction
+regulatory_jurisdiction,public_id,TEXT,False,,False,True,,,https://w3id.org/cm-pharme/2.0/RegulatoryJurisdiction
+regulatory_jurisdiction,name,TEXT,False,,False,False,,,https://w3id.org/cm-pharme/2.0/RegulatoryJurisdiction
+regulatory_jurisdiction,geography_id,BIGINT,False,geography.geography_id,True,False,,,https://w3id.org/cm-pharme/2.0/RegulatoryJurisdiction
+regulatory_jurisdiction,ontology_iri,TEXT,False,,False,False,'https://w3id.org/cm-pharme/2.0/RegulatoryJurisdiction',,https://w3id.org/cm-pharme/2.0/RegulatoryJurisdiction
+organization,organization_id,BIGSERIAL,True,,False,False,,,https://w3id.org/cm-pharme/2.0/Organization
+organization,public_id,TEXT,False,,False,True,,,https://w3id.org/cm-pharme/2.0/Organization
+organization,preferred_name,TEXT,False,,False,False,,,https://w3id.org/cm-pharme/2.0/Organization
+organization,ontology_iri,TEXT,False,,False,False,'https://w3id.org/cm-pharme/2.0/Organization',,https://w3id.org/cm-pharme/2.0/Organization
+facility,facility_id,BIGSERIAL,True,,False,False,,,https://w3id.org/cm-pharme/2.0/Facility; https://w3id.org/cm-pharme/2.0/locatedIn
+facility,public_id,TEXT,False,,False,True,,,https://w3id.org/cm-pharme/2.0/Facility; https://w3id.org/cm-pharme/2.0/locatedIn
+facility,preferred_name,TEXT,False,,False,False,,,https://w3id.org/cm-pharme/2.0/Facility; https://w3id.org/cm-pharme/2.0/locatedIn
+facility,geography_id,BIGINT,False,geography.geography_id,True,False,,,https://w3id.org/cm-pharme/2.0/Facility; https://w3id.org/cm-pharme/2.0/locatedIn
+facility,ontology_iri,TEXT,False,,False,False,'https://w3id.org/cm-pharme/2.0/Facility',,https://w3id.org/cm-pharme/2.0/Facility; https://w3id.org/cm-pharme/2.0/locatedIn
+facility_operation,facility_operation_id,BIGSERIAL,True,,False,False,,,https://w3id.org/cm-pharme/2.0/FacilityOperation; https://w3id.org/cm-pharme/2.0/validFrom; https://w3id.org/cm-pharme/2.0/validTo
+facility_operation,public_id,TEXT,False,,False,True,,,https://w3id.org/cm-pharme/2.0/FacilityOperation; https://w3id.org/cm-pharme/2.0/validFrom; https://w3id.org/cm-pharme/2.0/validTo
+facility_operation,organization_id,BIGINT,False,organization.organization_id,False,False,,,https://w3id.org/cm-pharme/2.0/FacilityOperation; https://w3id.org/cm-pharme/2.0/validFrom; https://w3id.org/cm-pharme/2.0/validTo
+facility_operation,facility_id,BIGINT,False,facility.facility_id,False,False,,,https://w3id.org/cm-pharme/2.0/FacilityOperation; https://w3id.org/cm-pharme/2.0/validFrom; https://w3id.org/cm-pharme/2.0/validTo
+facility_operation,valid_from,DATE,False,,True,False,,,https://w3id.org/cm-pharme/2.0/FacilityOperation; https://w3id.org/cm-pharme/2.0/validFrom; https://w3id.org/cm-pharme/2.0/validTo
+facility_operation,valid_to,DATE,False,,True,False,,,https://w3id.org/cm-pharme/2.0/FacilityOperation; https://w3id.org/cm-pharme/2.0/validFrom; https://w3id.org/cm-pharme/2.0/validTo
+facility_operation,ontology_iri,TEXT,False,,False,False,'https://w3id.org/cm-pharme/2.0/FacilityOperation',,https://w3id.org/cm-pharme/2.0/FacilityOperation; https://w3id.org/cm-pharme/2.0/validFrom; https://w3id.org/cm-pharme/2.0/validTo
+pharmaceutical_substance,substance_id,BIGSERIAL,True,,False,False,,,https://w3id.org/cm-pharme/2.0/PharmaceuticalSubstance
+pharmaceutical_substance,public_id,TEXT,False,,False,True,,,https://w3id.org/cm-pharme/2.0/PharmaceuticalSubstance
+pharmaceutical_substance,preferred_name,TEXT,False,,False,False,,,https://w3id.org/cm-pharme/2.0/PharmaceuticalSubstance
+pharmaceutical_substance,source_code,TEXT,False,,True,False,,,https://w3id.org/cm-pharme/2.0/PharmaceuticalSubstance
+pharmaceutical_substance,ontology_iri,TEXT,False,,False,False,'https://w3id.org/cm-pharme/2.0/PharmaceuticalSubstance',,https://w3id.org/cm-pharme/2.0/PharmaceuticalSubstance
+medicinal_product,medicinal_product_id,BIGSERIAL,True,,False,False,,,https://w3id.org/cm-pharme/2.0/MedicinalProduct; https://w3id.org/cm-pharme/2.0/hasActiveSubstance
+medicinal_product,public_id,TEXT,False,,False,True,,,https://w3id.org/cm-pharme/2.0/MedicinalProduct; https://w3id.org/cm-pharme/2.0/hasActiveSubstance
+medicinal_product,preferred_name,TEXT,False,,False,False,,,https://w3id.org/cm-pharme/2.0/MedicinalProduct; https://w3id.org/cm-pharme/2.0/hasActiveSubstance
+medicinal_product,primary_substance_id,BIGINT,False,pharmaceutical_substance.substance_id,True,False,,,https://w3id.org/cm-pharme/2.0/MedicinalProduct; https://w3id.org/cm-pharme/2.0/hasActiveSubstance
+medicinal_product,ontology_iri,TEXT,False,,False,False,'https://w3id.org/cm-pharme/2.0/MedicinalProduct',,https://w3id.org/cm-pharme/2.0/MedicinalProduct; https://w3id.org/cm-pharme/2.0/hasActiveSubstance
+product_presentation,product_presentation_id,BIGSERIAL,True,,False,False,,,https://w3id.org/cm-pharme/2.0/MedicinalProductPresentation; https://w3id.org/cm-pharme/2.0/presentationOf
+product_presentation,public_id,TEXT,False,,False,True,,,https://w3id.org/cm-pharme/2.0/MedicinalProductPresentation; https://w3id.org/cm-pharme/2.0/presentationOf
+product_presentation,medicinal_product_id,BIGINT,False,medicinal_product.medicinal_product_id,False,False,,,https://w3id.org/cm-pharme/2.0/MedicinalProductPresentation; https://w3id.org/cm-pharme/2.0/presentationOf
+product_presentation,packaging,TEXT,False,,True,False,,,https://w3id.org/cm-pharme/2.0/MedicinalProductPresentation; https://w3id.org/cm-pharme/2.0/presentationOf
+product_presentation,concentration,TEXT,False,,True,False,,,https://w3id.org/cm-pharme/2.0/MedicinalProductPresentation; https://w3id.org/cm-pharme/2.0/presentationOf
+product_presentation,num_in_pack,NUMERIC,False,,True,False,,,https://w3id.org/cm-pharme/2.0/MedicinalProductPresentation; https://w3id.org/cm-pharme/2.0/presentationOf
+product_presentation,ontology_iri,TEXT,False,,False,False,'https://w3id.org/cm-pharme/2.0/MedicinalProductPresentation',,https://w3id.org/cm-pharme/2.0/MedicinalProductPresentation; https://w3id.org/cm-pharme/2.0/presentationOf
+identifier_scheme,identifier_scheme_id,BIGSERIAL,True,,False,False,,,https://w3id.org/cm-pharme/2.0/IdentifierScheme
+identifier_scheme,public_id,TEXT,False,,False,True,,,https://w3id.org/cm-pharme/2.0/IdentifierScheme
+identifier_scheme,scheme_name,TEXT,False,,False,False,,,https://w3id.org/cm-pharme/2.0/IdentifierScheme
+identifier_scheme,ontology_iri,TEXT,False,,False,False,'https://w3id.org/cm-pharme/2.0/IdentifierScheme',,https://w3id.org/cm-pharme/2.0/IdentifierScheme
+identifier_assignment,identifier_assignment_id,BIGSERIAL,True,,False,False,,,https://w3id.org/cm-pharme/2.0/IdentifierAssignment; https://w3id.org/cm-pharme/2.0/identifierLexicalValue
+identifier_assignment,public_id,TEXT,False,,False,True,,,https://w3id.org/cm-pharme/2.0/IdentifierAssignment; https://w3id.org/cm-pharme/2.0/identifierLexicalValue
+identifier_assignment,identifier_scheme_id,BIGINT,False,identifier_scheme.identifier_scheme_id,False,False,,,https://w3id.org/cm-pharme/2.0/IdentifierAssignment; https://w3id.org/cm-pharme/2.0/identifierLexicalValue
+identifier_assignment,entity_type,TEXT,False,,False,False,,"entity_type IN ('organization','facility','medicinal_product','product_presentation','substance','geography')",https://w3id.org/cm-pharme/2.0/IdentifierAssignment; https://w3id.org/cm-pharme/2.0/identifierLexicalValue
+identifier_assignment,entity_public_id,TEXT,False,,False,False,,,https://w3id.org/cm-pharme/2.0/IdentifierAssignment; https://w3id.org/cm-pharme/2.0/identifierLexicalValue
+identifier_assignment,lexical_value,TEXT,False,,False,False,,,https://w3id.org/cm-pharme/2.0/IdentifierAssignment; https://w3id.org/cm-pharme/2.0/identifierLexicalValue
+identifier_assignment,source_record_id,BIGINT,False,source_record.source_record_id,True,False,,,https://w3id.org/cm-pharme/2.0/IdentifierAssignment; https://w3id.org/cm-pharme/2.0/identifierLexicalValue
+identifier_assignment,ontology_iri,TEXT,False,,False,False,'https://w3id.org/cm-pharme/2.0/IdentifierAssignment',,https://w3id.org/cm-pharme/2.0/IdentifierAssignment; https://w3id.org/cm-pharme/2.0/identifierLexicalValue
+product_classification_scheme,classification_scheme_id,BIGSERIAL,True,,False,False,,,https://w3id.org/cm-pharme/2.0/ProductClassificationScheme
+product_classification_scheme,public_id,TEXT,False,,False,True,,,https://w3id.org/cm-pharme/2.0/ProductClassificationScheme
+product_classification_scheme,scheme_name,TEXT,False,,False,False,,,https://w3id.org/cm-pharme/2.0/ProductClassificationScheme
+product_classification_scheme,ontology_iri,TEXT,False,,False,False,'https://w3id.org/cm-pharme/2.0/ProductClassificationScheme',,https://w3id.org/cm-pharme/2.0/ProductClassificationScheme
+classification_entry,classification_entry_id,BIGSERIAL,True,,False,False,,,https://w3id.org/cm-pharme/2.0/ClassificationEntry
+classification_entry,classification_scheme_id,BIGINT,False,product_classification_scheme.classification_scheme_id,False,False,,,https://w3id.org/cm-pharme/2.0/ClassificationEntry
+classification_entry,public_id,TEXT,False,,False,True,,,https://w3id.org/cm-pharme/2.0/ClassificationEntry
+classification_entry,code,TEXT,False,,False,False,,,https://w3id.org/cm-pharme/2.0/ClassificationEntry
+classification_entry,label,TEXT,False,,True,False,,,https://w3id.org/cm-pharme/2.0/ClassificationEntry
+classification_entry,ontology_iri,TEXT,False,,False,False,'https://w3id.org/cm-pharme/2.0/ClassificationEntry',,https://w3id.org/cm-pharme/2.0/ClassificationEntry
+product_classification_assignment,product_classification_assignment_id,BIGSERIAL,True,,False,False,,,https://w3id.org/cm-pharme/2.0/ProductClassificationAssignment
+product_classification_assignment,public_id,TEXT,False,,False,True,,,https://w3id.org/cm-pharme/2.0/ProductClassificationAssignment
+product_classification_assignment,medicinal_product_id,BIGINT,False,medicinal_product.medicinal_product_id,False,False,,,https://w3id.org/cm-pharme/2.0/ProductClassificationAssignment
+product_classification_assignment,classification_entry_id,BIGINT,False,classification_entry.classification_entry_id,False,False,,,https://w3id.org/cm-pharme/2.0/ProductClassificationAssignment
+product_classification_assignment,source_record_id,BIGINT,False,source_record.source_record_id,True,False,,,https://w3id.org/cm-pharme/2.0/ProductClassificationAssignment
+product_classification_assignment,ontology_iri,TEXT,False,,False,False,'https://w3id.org/cm-pharme/2.0/ProductClassificationAssignment',,https://w3id.org/cm-pharme/2.0/ProductClassificationAssignment
+diagnosis_reference,diagnosis_reference_id,BIGSERIAL,True,,False,False,,,https://w3id.org/cm-pharme/2.0/DiagnosisClassificationReference
+diagnosis_reference,public_id,TEXT,False,,False,True,,,https://w3id.org/cm-pharme/2.0/DiagnosisClassificationReference
+diagnosis_reference,scheme,TEXT,False,,False,False,'ICD-10',,https://w3id.org/cm-pharme/2.0/DiagnosisClassificationReference
+diagnosis_reference,code,TEXT,False,,False,False,,,https://w3id.org/cm-pharme/2.0/DiagnosisClassificationReference
+diagnosis_reference,label,TEXT,False,,True,False,,,https://w3id.org/cm-pharme/2.0/DiagnosisClassificationReference
+diagnosis_reference,ontology_iri,TEXT,False,,False,False,'https://w3id.org/cm-pharme/2.0/DiagnosisClassificationReference',,https://w3id.org/cm-pharme/2.0/DiagnosisClassificationReference
+assertion,assertion_id,BIGSERIAL,True,,False,False,,,https://w3id.org/cm-pharme/2.0/Assertion
+assertion,public_id,TEXT,False,,False,True,,,https://w3id.org/cm-pharme/2.0/Assertion
+assertion,assertion_type,TEXT,False,,False,False,,,https://w3id.org/cm-pharme/2.0/Assertion
+assertion,subject_public_id,TEXT,False,,False,False,,,https://w3id.org/cm-pharme/2.0/Assertion
+assertion,predicate_key,TEXT,False,,False,False,,,https://w3id.org/cm-pharme/2.0/Assertion
+assertion,object_lexical,TEXT,False,,True,False,,,https://w3id.org/cm-pharme/2.0/Assertion
+assertion,object_public_id,TEXT,False,,True,False,,,https://w3id.org/cm-pharme/2.0/Assertion
+assertion,ontology_iri,TEXT,False,,False,False,'https://w3id.org/cm-pharme/2.0/Assertion',,https://w3id.org/cm-pharme/2.0/Assertion
+evidence_support,evidence_support_id,BIGSERIAL,True,,False,False,,,https://w3id.org/cm-pharme/2.0/EvidenceSupport
+evidence_support,public_id,TEXT,False,,False,True,,,https://w3id.org/cm-pharme/2.0/EvidenceSupport
+evidence_support,source_record_id,BIGINT,False,source_record.source_record_id,False,False,,,https://w3id.org/cm-pharme/2.0/EvidenceSupport
+evidence_support,assertion_id,BIGINT,False,assertion.assertion_id,False,False,,,https://w3id.org/cm-pharme/2.0/EvidenceSupport
+evidence_support,ontology_iri,TEXT,False,,False,False,'https://w3id.org/cm-pharme/2.0/EvidenceSupport',,https://w3id.org/cm-pharme/2.0/EvidenceSupport
+observation_result,observation_result_id,BIGSERIAL,True,,False,False,,,https://w3id.org/cm-pharme/2.0/ObservationResult; https://w3id.org/cm-pharme/2.0/ReimbursementUtilisationObservationResult; https://w3id.org/cm-pharme/2.0/observationResultAbout
+observation_result,public_id,TEXT,False,,False,True,,,https://w3id.org/cm-pharme/2.0/ObservationResult; https://w3id.org/cm-pharme/2.0/ReimbursementUtilisationObservationResult; https://w3id.org/cm-pharme/2.0/observationResultAbout
+observation_result,observation_kind,TEXT,False,,False,False,,"observation_kind IN ('availability','demand','supply_capacity','inventory','lead_time','reimbursement_utilisation')",https://w3id.org/cm-pharme/2.0/ObservationResult; https://w3id.org/cm-pharme/2.0/ReimbursementUtilisationObservationResult; https://w3id.org/cm-pharme/2.0/observationResultAbout
+observation_result,product_presentation_id,BIGINT,False,product_presentation.product_presentation_id,True,False,,,https://w3id.org/cm-pharme/2.0/ObservationResult; https://w3id.org/cm-pharme/2.0/ReimbursementUtilisationObservationResult; https://w3id.org/cm-pharme/2.0/observationResultAbout
+observation_result,facility_id,BIGINT,False,facility.facility_id,True,False,,,https://w3id.org/cm-pharme/2.0/ObservationResult; https://w3id.org/cm-pharme/2.0/ReimbursementUtilisationObservationResult; https://w3id.org/cm-pharme/2.0/observationResultAbout
+observation_result,geography_id,BIGINT,False,geography.geography_id,True,False,,,https://w3id.org/cm-pharme/2.0/ObservationResult; https://w3id.org/cm-pharme/2.0/ReimbursementUtilisationObservationResult; https://w3id.org/cm-pharme/2.0/observationResultAbout
+observation_result,diagnosis_reference_id,BIGINT,False,diagnosis_reference.diagnosis_reference_id,True,False,,,https://w3id.org/cm-pharme/2.0/ObservationResult; https://w3id.org/cm-pharme/2.0/ReimbursementUtilisationObservationResult; https://w3id.org/cm-pharme/2.0/observationResultAbout
+observation_result,reporting_period,DATE,False,,False,False,,,https://w3id.org/cm-pharme/2.0/ObservationResult; https://w3id.org/cm-pharme/2.0/ReimbursementUtilisationObservationResult; https://w3id.org/cm-pharme/2.0/observationResultAbout
+observation_result,reporting_part,TEXT,False,,True,False,,,https://w3id.org/cm-pharme/2.0/ObservationResult; https://w3id.org/cm-pharme/2.0/ReimbursementUtilisationObservationResult; https://w3id.org/cm-pharme/2.0/observationResultAbout
+observation_result,patient_count,NUMERIC,False,,True,False,,,https://w3id.org/cm-pharme/2.0/ObservationResult; https://w3id.org/cm-pharme/2.0/ReimbursementUtilisationObservationResult; https://w3id.org/cm-pharme/2.0/observationResultAbout
+observation_result,package_count,NUMERIC,False,,True,False,,,https://w3id.org/cm-pharme/2.0/ObservationResult; https://w3id.org/cm-pharme/2.0/ReimbursementUtilisationObservationResult; https://w3id.org/cm-pharme/2.0/observationResultAbout
+observation_result,cost_original,NUMERIC,False,,True,False,,,https://w3id.org/cm-pharme/2.0/ObservationResult; https://w3id.org/cm-pharme/2.0/ReimbursementUtilisationObservationResult; https://w3id.org/cm-pharme/2.0/observationResultAbout
+observation_result,currency,CHAR(3),False,,True,False,,,https://w3id.org/cm-pharme/2.0/ObservationResult; https://w3id.org/cm-pharme/2.0/ReimbursementUtilisationObservationResult; https://w3id.org/cm-pharme/2.0/observationResultAbout
+observation_result,cost_bgn,NUMERIC,False,,True,False,,,https://w3id.org/cm-pharme/2.0/ObservationResult; https://w3id.org/cm-pharme/2.0/ReimbursementUtilisationObservationResult; https://w3id.org/cm-pharme/2.0/observationResultAbout
+observation_result,cost_eur,NUMERIC,False,,True,False,,,https://w3id.org/cm-pharme/2.0/ObservationResult; https://w3id.org/cm-pharme/2.0/ReimbursementUtilisationObservationResult; https://w3id.org/cm-pharme/2.0/observationResultAbout
+observation_result,source_record_id,BIGINT,False,source_record.source_record_id,False,False,,,https://w3id.org/cm-pharme/2.0/ObservationResult; https://w3id.org/cm-pharme/2.0/ReimbursementUtilisationObservationResult; https://w3id.org/cm-pharme/2.0/observationResultAbout
+observation_result,assertion_id,BIGINT,False,assertion.assertion_id,False,False,,,https://w3id.org/cm-pharme/2.0/ObservationResult; https://w3id.org/cm-pharme/2.0/ReimbursementUtilisationObservationResult; https://w3id.org/cm-pharme/2.0/observationResultAbout
+observation_result,ontology_iri,TEXT,False,,False,False,'https://w3id.org/cm-pharme/2.0/ReimbursementUtilisationObservationResult',,https://w3id.org/cm-pharme/2.0/ObservationResult; https://w3id.org/cm-pharme/2.0/ReimbursementUtilisationObservationResult; https://w3id.org/cm-pharme/2.0/observationResultAbout
+entity_match_assertion,entity_match_assertion_id,BIGSERIAL,True,,False,False,,,https://w3id.org/cm-pharme/2.0/EntityMatchAssertion; https://w3id.org/cm-pharme/2.0/MatchConfidence
+entity_match_assertion,public_id,TEXT,False,,False,True,,,https://w3id.org/cm-pharme/2.0/EntityMatchAssertion; https://w3id.org/cm-pharme/2.0/MatchConfidence
+entity_match_assertion,source_record_a_id,BIGINT,False,source_record.source_record_id,False,False,,,https://w3id.org/cm-pharme/2.0/EntityMatchAssertion; https://w3id.org/cm-pharme/2.0/MatchConfidence
+entity_match_assertion,source_record_b_id,BIGINT,False,source_record.source_record_id,False,False,,,https://w3id.org/cm-pharme/2.0/EntityMatchAssertion; https://w3id.org/cm-pharme/2.0/MatchConfidence
+entity_match_assertion,matched_entity_type,TEXT,False,,False,False,,,https://w3id.org/cm-pharme/2.0/EntityMatchAssertion; https://w3id.org/cm-pharme/2.0/MatchConfidence
+entity_match_assertion,matched_public_id,TEXT,False,,False,False,,,https://w3id.org/cm-pharme/2.0/EntityMatchAssertion; https://w3id.org/cm-pharme/2.0/MatchConfidence
+entity_match_assertion,method,TEXT,False,,False,False,,,https://w3id.org/cm-pharme/2.0/EntityMatchAssertion; https://w3id.org/cm-pharme/2.0/MatchConfidence
+entity_match_assertion,confidence,"NUMERIC(5,4)",False,,False,False,,confidence >= 0 AND confidence <= 1,https://w3id.org/cm-pharme/2.0/EntityMatchAssertion; https://w3id.org/cm-pharme/2.0/MatchConfidence
+entity_match_assertion,status,TEXT,False,,False,False,,"status IN ('accepted','ambiguous','rejected')",https://w3id.org/cm-pharme/2.0/EntityMatchAssertion; https://w3id.org/cm-pharme/2.0/MatchConfidence
+entity_match_assertion,ontology_iri,TEXT,False,,False,False,'https://w3id.org/cm-pharme/2.0/EntityMatchAssertion',,https://w3id.org/cm-pharme/2.0/EntityMatchAssertion; https://w3id.org/cm-pharme/2.0/MatchConfidence
+medicine_shortage_situation,shortage_id,BIGSERIAL,True,,False,False,,,https://w3id.org/cm-pharme/2.0/MedicineShortageSituation
+medicine_shortage_situation,public_id,TEXT,False,,False,True,,,https://w3id.org/cm-pharme/2.0/MedicineShortageSituation
+medicine_shortage_situation,medicinal_product_id,BIGINT,False,medicinal_product.medicinal_product_id,True,False,,,https://w3id.org/cm-pharme/2.0/MedicineShortageSituation
+medicine_shortage_situation,product_presentation_id,BIGINT,False,product_presentation.product_presentation_id,True,False,,,https://w3id.org/cm-pharme/2.0/MedicineShortageSituation
+medicine_shortage_situation,regulatory_jurisdiction_id,BIGINT,False,regulatory_jurisdiction.regulatory_jurisdiction_id,True,False,,,https://w3id.org/cm-pharme/2.0/MedicineShortageSituation
+medicine_shortage_situation,starts_on,DATE,False,,True,False,,,https://w3id.org/cm-pharme/2.0/MedicineShortageSituation
+medicine_shortage_situation,ends_on,DATE,False,,True,False,,,https://w3id.org/cm-pharme/2.0/MedicineShortageSituation
+medicine_shortage_situation,source_record_id,BIGINT,False,source_record.source_record_id,True,False,,,https://w3id.org/cm-pharme/2.0/MedicineShortageSituation
+medicine_shortage_situation,ontology_iri,TEXT,False,,False,False,'https://w3id.org/cm-pharme/2.0/MedicineShortageSituation',,https://w3id.org/cm-pharme/2.0/MedicineShortageSituation

@@ -1,0 +1,2112 @@
+{
+  "authority_ref": "v2/research-program@1226b0a5484f8f5d3a8d214e0d0f52f066b88999",
+  "check_count": 11,
+  "column_count": 168,
+  "errors": [],
+  "explicit_index_count": 5,
+  "foreign_key_count": 31,
+  "geometry_columns": [
+    {
+      "column": "geom",
+      "table": "geography",
+      "type": "geometry(Geometry,4326)"
+    }
+  ],
+  "issue": 236,
+  "postgis_enabled": true,
+  "schema_sha256_note": "Git blob/source ref is authoritative; publication tooling records Git refs rather than inventing a content digest here.",
+  "table_count": 24,
+  "tables": {
+    "assertion": {
+      "checks": [],
+      "columns": [
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "assertion_id",
+          "not_null": true,
+          "pk": true,
+          "type": "BIGSERIAL",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "public_id",
+          "not_null": true,
+          "pk": false,
+          "type": "TEXT",
+          "unique": true
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "assertion_type",
+          "not_null": true,
+          "pk": false,
+          "type": "TEXT",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "subject_public_id",
+          "not_null": true,
+          "pk": false,
+          "type": "TEXT",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "predicate_key",
+          "not_null": true,
+          "pk": false,
+          "type": "TEXT",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "object_lexical",
+          "not_null": false,
+          "pk": false,
+          "type": "TEXT",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "object_public_id",
+          "not_null": false,
+          "pk": false,
+          "type": "TEXT",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": "'https://w3id.org/cm-pharme/2.0/Assertion'",
+          "fk": null,
+          "name": "ontology_iri",
+          "not_null": true,
+          "pk": false,
+          "type": "TEXT",
+          "unique": false
+        }
+      ],
+      "indexes": [],
+      "name": "assertion",
+      "unique": []
+    },
+    "classification_entry": {
+      "checks": [],
+      "columns": [
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "classification_entry_id",
+          "not_null": true,
+          "pk": true,
+          "type": "BIGSERIAL",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": {
+            "column": "classification_scheme_id",
+            "table": "product_classification_scheme"
+          },
+          "name": "classification_scheme_id",
+          "not_null": true,
+          "pk": false,
+          "type": "BIGINT",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "public_id",
+          "not_null": true,
+          "pk": false,
+          "type": "TEXT",
+          "unique": true
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "code",
+          "not_null": true,
+          "pk": false,
+          "type": "TEXT",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "label",
+          "not_null": false,
+          "pk": false,
+          "type": "TEXT",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": "'https://w3id.org/cm-pharme/2.0/ClassificationEntry'",
+          "fk": null,
+          "name": "ontology_iri",
+          "not_null": true,
+          "pk": false,
+          "type": "TEXT",
+          "unique": false
+        }
+      ],
+      "indexes": [],
+      "name": "classification_entry",
+      "unique": [
+        [
+          "classification_scheme_id",
+          "code"
+        ]
+      ]
+    },
+    "dataset": {
+      "checks": [],
+      "columns": [
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "dataset_id",
+          "not_null": true,
+          "pk": true,
+          "type": "BIGSERIAL",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "public_id",
+          "not_null": true,
+          "pk": false,
+          "type": "TEXT",
+          "unique": true
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "title",
+          "not_null": true,
+          "pk": false,
+          "type": "TEXT",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "doi",
+          "not_null": false,
+          "pk": false,
+          "type": "TEXT",
+          "unique": false
+        },
+        {
+          "check": "source_role IN ('primary','secondary','authoritative','conditional','fixture')",
+          "default": null,
+          "fk": null,
+          "name": "source_role",
+          "not_null": true,
+          "pk": false,
+          "type": "TEXT",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "license_note",
+          "not_null": false,
+          "pk": false,
+          "type": "TEXT",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": "'https://w3id.org/cm-pharme/2.0/Dataset'",
+          "fk": null,
+          "name": "ontology_iri",
+          "not_null": true,
+          "pk": false,
+          "type": "TEXT",
+          "unique": false
+        }
+      ],
+      "indexes": [],
+      "name": "dataset",
+      "unique": []
+    },
+    "dataset_release": {
+      "checks": [],
+      "columns": [
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "dataset_release_id",
+          "not_null": true,
+          "pk": true,
+          "type": "BIGSERIAL",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": {
+            "column": "dataset_id",
+            "table": "dataset"
+          },
+          "name": "dataset_id",
+          "not_null": true,
+          "pk": false,
+          "type": "BIGINT",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "public_id",
+          "not_null": true,
+          "pk": false,
+          "type": "TEXT",
+          "unique": true
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "release_label",
+          "not_null": true,
+          "pk": false,
+          "type": "TEXT",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "source_filename",
+          "not_null": false,
+          "pk": false,
+          "type": "TEXT",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "retrieved_at",
+          "not_null": false,
+          "pk": false,
+          "type": "TIMESTAMPTZ",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": "'https://w3id.org/cm-pharme/2.0/DatasetRelease'",
+          "fk": null,
+          "name": "ontology_iri",
+          "not_null": true,
+          "pk": false,
+          "type": "TEXT",
+          "unique": false
+        }
+      ],
+      "indexes": [],
+      "name": "dataset_release",
+      "unique": []
+    },
+    "diagnosis_reference": {
+      "checks": [],
+      "columns": [
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "diagnosis_reference_id",
+          "not_null": true,
+          "pk": true,
+          "type": "BIGSERIAL",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "public_id",
+          "not_null": true,
+          "pk": false,
+          "type": "TEXT",
+          "unique": true
+        },
+        {
+          "check": null,
+          "default": "'ICD-10'",
+          "fk": null,
+          "name": "scheme",
+          "not_null": true,
+          "pk": false,
+          "type": "TEXT",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "code",
+          "not_null": true,
+          "pk": false,
+          "type": "TEXT",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "label",
+          "not_null": false,
+          "pk": false,
+          "type": "TEXT",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": "'https://w3id.org/cm-pharme/2.0/DiagnosisClassificationReference'",
+          "fk": null,
+          "name": "ontology_iri",
+          "not_null": true,
+          "pk": false,
+          "type": "TEXT",
+          "unique": false
+        }
+      ],
+      "indexes": [],
+      "name": "diagnosis_reference",
+      "unique": [
+        [
+          "scheme",
+          "code"
+        ]
+      ]
+    },
+    "entity_match_assertion": {
+      "checks": [
+        "source_record_a_id <> source_record_b_id"
+      ],
+      "columns": [
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "entity_match_assertion_id",
+          "not_null": true,
+          "pk": true,
+          "type": "BIGSERIAL",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "public_id",
+          "not_null": true,
+          "pk": false,
+          "type": "TEXT",
+          "unique": true
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": {
+            "column": "source_record_id",
+            "table": "source_record"
+          },
+          "name": "source_record_a_id",
+          "not_null": true,
+          "pk": false,
+          "type": "BIGINT",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": {
+            "column": "source_record_id",
+            "table": "source_record"
+          },
+          "name": "source_record_b_id",
+          "not_null": true,
+          "pk": false,
+          "type": "BIGINT",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "matched_entity_type",
+          "not_null": true,
+          "pk": false,
+          "type": "TEXT",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "matched_public_id",
+          "not_null": true,
+          "pk": false,
+          "type": "TEXT",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "method",
+          "not_null": true,
+          "pk": false,
+          "type": "TEXT",
+          "unique": false
+        },
+        {
+          "check": "confidence >= 0 AND confidence <= 1",
+          "default": null,
+          "fk": null,
+          "name": "confidence",
+          "not_null": true,
+          "pk": false,
+          "type": "NUMERIC(5,4)",
+          "unique": false
+        },
+        {
+          "check": "status IN ('accepted','ambiguous','rejected')",
+          "default": null,
+          "fk": null,
+          "name": "status",
+          "not_null": true,
+          "pk": false,
+          "type": "TEXT",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": "'https://w3id.org/cm-pharme/2.0/EntityMatchAssertion'",
+          "fk": null,
+          "name": "ontology_iri",
+          "not_null": true,
+          "pk": false,
+          "type": "TEXT",
+          "unique": false
+        }
+      ],
+      "indexes": [],
+      "name": "entity_match_assertion",
+      "unique": []
+    },
+    "evidence_support": {
+      "checks": [],
+      "columns": [
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "evidence_support_id",
+          "not_null": true,
+          "pk": true,
+          "type": "BIGSERIAL",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "public_id",
+          "not_null": true,
+          "pk": false,
+          "type": "TEXT",
+          "unique": true
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": {
+            "column": "source_record_id",
+            "table": "source_record"
+          },
+          "name": "source_record_id",
+          "not_null": true,
+          "pk": false,
+          "type": "BIGINT",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": {
+            "column": "assertion_id",
+            "table": "assertion"
+          },
+          "name": "assertion_id",
+          "not_null": true,
+          "pk": false,
+          "type": "BIGINT",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": "'https://w3id.org/cm-pharme/2.0/EvidenceSupport'",
+          "fk": null,
+          "name": "ontology_iri",
+          "not_null": true,
+          "pk": false,
+          "type": "TEXT",
+          "unique": false
+        }
+      ],
+      "indexes": [],
+      "name": "evidence_support",
+      "unique": [
+        [
+          "source_record_id",
+          "assertion_id"
+        ]
+      ]
+    },
+    "facility": {
+      "checks": [],
+      "columns": [
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "facility_id",
+          "not_null": true,
+          "pk": true,
+          "type": "BIGSERIAL",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "public_id",
+          "not_null": true,
+          "pk": false,
+          "type": "TEXT",
+          "unique": true
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "preferred_name",
+          "not_null": true,
+          "pk": false,
+          "type": "TEXT",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": {
+            "column": "geography_id",
+            "table": "geography"
+          },
+          "name": "geography_id",
+          "not_null": false,
+          "pk": false,
+          "type": "BIGINT",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": "'https://w3id.org/cm-pharme/2.0/Facility'",
+          "fk": null,
+          "name": "ontology_iri",
+          "not_null": true,
+          "pk": false,
+          "type": "TEXT",
+          "unique": false
+        }
+      ],
+      "indexes": [],
+      "name": "facility",
+      "unique": []
+    },
+    "facility_operation": {
+      "checks": [
+        "valid_to IS NULL OR valid_from IS NULL OR valid_to >= valid_from"
+      ],
+      "columns": [
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "facility_operation_id",
+          "not_null": true,
+          "pk": true,
+          "type": "BIGSERIAL",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "public_id",
+          "not_null": true,
+          "pk": false,
+          "type": "TEXT",
+          "unique": true
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": {
+            "column": "organization_id",
+            "table": "organization"
+          },
+          "name": "organization_id",
+          "not_null": true,
+          "pk": false,
+          "type": "BIGINT",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": {
+            "column": "facility_id",
+            "table": "facility"
+          },
+          "name": "facility_id",
+          "not_null": true,
+          "pk": false,
+          "type": "BIGINT",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "valid_from",
+          "not_null": false,
+          "pk": false,
+          "type": "DATE",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "valid_to",
+          "not_null": false,
+          "pk": false,
+          "type": "DATE",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": "'https://w3id.org/cm-pharme/2.0/FacilityOperation'",
+          "fk": null,
+          "name": "ontology_iri",
+          "not_null": true,
+          "pk": false,
+          "type": "TEXT",
+          "unique": false
+        }
+      ],
+      "indexes": [],
+      "name": "facility_operation",
+      "unique": []
+    },
+    "geography": {
+      "checks": [],
+      "columns": [
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "geography_id",
+          "not_null": true,
+          "pk": true,
+          "type": "BIGSERIAL",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "public_id",
+          "not_null": true,
+          "pk": false,
+          "type": "TEXT",
+          "unique": true
+        },
+        {
+          "check": "geography_type IN ('country','administrative_region','other')",
+          "default": null,
+          "fk": null,
+          "name": "geography_type",
+          "not_null": true,
+          "pk": false,
+          "type": "TEXT",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "canonical_name",
+          "not_null": true,
+          "pk": false,
+          "type": "TEXT",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "country_code",
+          "not_null": false,
+          "pk": false,
+          "type": "CHAR(2)",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "source_region_code",
+          "not_null": false,
+          "pk": false,
+          "type": "TEXT",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "geonames_id",
+          "not_null": false,
+          "pk": false,
+          "type": "BIGINT",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "geom",
+          "not_null": false,
+          "pk": false,
+          "type": "geometry(Geometry,4326)",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "ontology_iri",
+          "not_null": true,
+          "pk": false,
+          "type": "TEXT",
+          "unique": false
+        }
+      ],
+      "indexes": [
+        {
+          "columns": "geom",
+          "method": "GIST",
+          "name": "geography_geom_gix",
+          "where": null
+        },
+        {
+          "columns": "geonames_id",
+          "method": "btree(default)",
+          "name": "geography_geonames_idx",
+          "where": "geonames_id IS NOT NULL"
+        }
+      ],
+      "name": "geography",
+      "unique": []
+    },
+    "geography_alias": {
+      "checks": [],
+      "columns": [
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "geography_alias_id",
+          "not_null": true,
+          "pk": true,
+          "type": "BIGSERIAL",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": {
+            "column": "geography_id",
+            "table": "geography"
+          },
+          "name": "geography_id",
+          "not_null": true,
+          "pk": false,
+          "type": "BIGINT",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "source_system",
+          "not_null": true,
+          "pk": false,
+          "type": "TEXT",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "source_value",
+          "not_null": true,
+          "pk": false,
+          "type": "TEXT",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "normalized_value",
+          "not_null": true,
+          "pk": false,
+          "type": "TEXT",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "resolution_method",
+          "not_null": true,
+          "pk": false,
+          "type": "TEXT",
+          "unique": false
+        },
+        {
+          "check": "confidence >= 0 AND confidence <= 1",
+          "default": null,
+          "fk": null,
+          "name": "confidence",
+          "not_null": true,
+          "pk": false,
+          "type": "NUMERIC(5,4)",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": {
+            "column": "source_record_id",
+            "table": "source_record"
+          },
+          "name": "source_record_id",
+          "not_null": false,
+          "pk": false,
+          "type": "BIGINT",
+          "unique": false
+        }
+      ],
+      "indexes": [],
+      "name": "geography_alias",
+      "unique": [
+        [
+          "source_system",
+          "source_value"
+        ]
+      ]
+    },
+    "identifier_assignment": {
+      "checks": [],
+      "columns": [
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "identifier_assignment_id",
+          "not_null": true,
+          "pk": true,
+          "type": "BIGSERIAL",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "public_id",
+          "not_null": true,
+          "pk": false,
+          "type": "TEXT",
+          "unique": true
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": {
+            "column": "identifier_scheme_id",
+            "table": "identifier_scheme"
+          },
+          "name": "identifier_scheme_id",
+          "not_null": true,
+          "pk": false,
+          "type": "BIGINT",
+          "unique": false
+        },
+        {
+          "check": "entity_type IN ('organization','facility','medicinal_product','product_presentation','substance','geography')",
+          "default": null,
+          "fk": null,
+          "name": "entity_type",
+          "not_null": true,
+          "pk": false,
+          "type": "TEXT",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "entity_public_id",
+          "not_null": true,
+          "pk": false,
+          "type": "TEXT",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "lexical_value",
+          "not_null": true,
+          "pk": false,
+          "type": "TEXT",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": {
+            "column": "source_record_id",
+            "table": "source_record"
+          },
+          "name": "source_record_id",
+          "not_null": false,
+          "pk": false,
+          "type": "BIGINT",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": "'https://w3id.org/cm-pharme/2.0/IdentifierAssignment'",
+          "fk": null,
+          "name": "ontology_iri",
+          "not_null": true,
+          "pk": false,
+          "type": "TEXT",
+          "unique": false
+        }
+      ],
+      "indexes": [],
+      "name": "identifier_assignment",
+      "unique": [
+        [
+          "identifier_scheme_id",
+          "lexical_value",
+          "entity_type",
+          "entity_public_id"
+        ]
+      ]
+    },
+    "identifier_scheme": {
+      "checks": [],
+      "columns": [
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "identifier_scheme_id",
+          "not_null": true,
+          "pk": true,
+          "type": "BIGSERIAL",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "public_id",
+          "not_null": true,
+          "pk": false,
+          "type": "TEXT",
+          "unique": true
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "scheme_name",
+          "not_null": true,
+          "pk": false,
+          "type": "TEXT",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": "'https://w3id.org/cm-pharme/2.0/IdentifierScheme'",
+          "fk": null,
+          "name": "ontology_iri",
+          "not_null": true,
+          "pk": false,
+          "type": "TEXT",
+          "unique": false
+        }
+      ],
+      "indexes": [],
+      "name": "identifier_scheme",
+      "unique": []
+    },
+    "medicinal_product": {
+      "checks": [],
+      "columns": [
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "medicinal_product_id",
+          "not_null": true,
+          "pk": true,
+          "type": "BIGSERIAL",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "public_id",
+          "not_null": true,
+          "pk": false,
+          "type": "TEXT",
+          "unique": true
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "preferred_name",
+          "not_null": true,
+          "pk": false,
+          "type": "TEXT",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": {
+            "column": "substance_id",
+            "table": "pharmaceutical_substance"
+          },
+          "name": "primary_substance_id",
+          "not_null": false,
+          "pk": false,
+          "type": "BIGINT",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": "'https://w3id.org/cm-pharme/2.0/MedicinalProduct'",
+          "fk": null,
+          "name": "ontology_iri",
+          "not_null": true,
+          "pk": false,
+          "type": "TEXT",
+          "unique": false
+        }
+      ],
+      "indexes": [],
+      "name": "medicinal_product",
+      "unique": []
+    },
+    "medicine_shortage_situation": {
+      "checks": [
+        "ends_on IS NULL OR starts_on IS NULL OR ends_on >= starts_on"
+      ],
+      "columns": [
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "shortage_id",
+          "not_null": true,
+          "pk": true,
+          "type": "BIGSERIAL",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "public_id",
+          "not_null": true,
+          "pk": false,
+          "type": "TEXT",
+          "unique": true
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": {
+            "column": "medicinal_product_id",
+            "table": "medicinal_product"
+          },
+          "name": "medicinal_product_id",
+          "not_null": false,
+          "pk": false,
+          "type": "BIGINT",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": {
+            "column": "product_presentation_id",
+            "table": "product_presentation"
+          },
+          "name": "product_presentation_id",
+          "not_null": false,
+          "pk": false,
+          "type": "BIGINT",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": {
+            "column": "regulatory_jurisdiction_id",
+            "table": "regulatory_jurisdiction"
+          },
+          "name": "regulatory_jurisdiction_id",
+          "not_null": false,
+          "pk": false,
+          "type": "BIGINT",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "starts_on",
+          "not_null": false,
+          "pk": false,
+          "type": "DATE",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "ends_on",
+          "not_null": false,
+          "pk": false,
+          "type": "DATE",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": {
+            "column": "source_record_id",
+            "table": "source_record"
+          },
+          "name": "source_record_id",
+          "not_null": false,
+          "pk": false,
+          "type": "BIGINT",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": "'https://w3id.org/cm-pharme/2.0/MedicineShortageSituation'",
+          "fk": null,
+          "name": "ontology_iri",
+          "not_null": true,
+          "pk": false,
+          "type": "TEXT",
+          "unique": false
+        }
+      ],
+      "indexes": [],
+      "name": "medicine_shortage_situation",
+      "unique": []
+    },
+    "observation_result": {
+      "checks": [],
+      "columns": [
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "observation_result_id",
+          "not_null": true,
+          "pk": true,
+          "type": "BIGSERIAL",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "public_id",
+          "not_null": true,
+          "pk": false,
+          "type": "TEXT",
+          "unique": true
+        },
+        {
+          "check": "observation_kind IN ('availability','demand','supply_capacity','inventory','lead_time','reimbursement_utilisation')",
+          "default": null,
+          "fk": null,
+          "name": "observation_kind",
+          "not_null": true,
+          "pk": false,
+          "type": "TEXT",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": {
+            "column": "product_presentation_id",
+            "table": "product_presentation"
+          },
+          "name": "product_presentation_id",
+          "not_null": false,
+          "pk": false,
+          "type": "BIGINT",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": {
+            "column": "facility_id",
+            "table": "facility"
+          },
+          "name": "facility_id",
+          "not_null": false,
+          "pk": false,
+          "type": "BIGINT",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": {
+            "column": "geography_id",
+            "table": "geography"
+          },
+          "name": "geography_id",
+          "not_null": false,
+          "pk": false,
+          "type": "BIGINT",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": {
+            "column": "diagnosis_reference_id",
+            "table": "diagnosis_reference"
+          },
+          "name": "diagnosis_reference_id",
+          "not_null": false,
+          "pk": false,
+          "type": "BIGINT",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "reporting_period",
+          "not_null": true,
+          "pk": false,
+          "type": "DATE",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "reporting_part",
+          "not_null": false,
+          "pk": false,
+          "type": "TEXT",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "patient_count",
+          "not_null": false,
+          "pk": false,
+          "type": "NUMERIC",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "package_count",
+          "not_null": false,
+          "pk": false,
+          "type": "NUMERIC",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "cost_original",
+          "not_null": false,
+          "pk": false,
+          "type": "NUMERIC",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "currency",
+          "not_null": false,
+          "pk": false,
+          "type": "CHAR(3)",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "cost_bgn",
+          "not_null": false,
+          "pk": false,
+          "type": "NUMERIC",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "cost_eur",
+          "not_null": false,
+          "pk": false,
+          "type": "NUMERIC",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": {
+            "column": "source_record_id",
+            "table": "source_record"
+          },
+          "name": "source_record_id",
+          "not_null": true,
+          "pk": false,
+          "type": "BIGINT",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": {
+            "column": "assertion_id",
+            "table": "assertion"
+          },
+          "name": "assertion_id",
+          "not_null": true,
+          "pk": false,
+          "type": "BIGINT",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": "'https://w3id.org/cm-pharme/2.0/ReimbursementUtilisationObservationResult'",
+          "fk": null,
+          "name": "ontology_iri",
+          "not_null": true,
+          "pk": false,
+          "type": "TEXT",
+          "unique": false
+        }
+      ],
+      "indexes": [
+        {
+          "columns": "reporting_period",
+          "method": "btree(default)",
+          "name": "observation_period_idx",
+          "where": null
+        },
+        {
+          "columns": "geography_id",
+          "method": "btree(default)",
+          "name": "observation_geo_idx",
+          "where": null
+        },
+        {
+          "columns": "product_presentation_id",
+          "method": "btree(default)",
+          "name": "observation_presentation_idx",
+          "where": null
+        }
+      ],
+      "name": "observation_result",
+      "unique": []
+    },
+    "organization": {
+      "checks": [],
+      "columns": [
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "organization_id",
+          "not_null": true,
+          "pk": true,
+          "type": "BIGSERIAL",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "public_id",
+          "not_null": true,
+          "pk": false,
+          "type": "TEXT",
+          "unique": true
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "preferred_name",
+          "not_null": true,
+          "pk": false,
+          "type": "TEXT",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": "'https://w3id.org/cm-pharme/2.0/Organization'",
+          "fk": null,
+          "name": "ontology_iri",
+          "not_null": true,
+          "pk": false,
+          "type": "TEXT",
+          "unique": false
+        }
+      ],
+      "indexes": [],
+      "name": "organization",
+      "unique": []
+    },
+    "pharmaceutical_substance": {
+      "checks": [],
+      "columns": [
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "substance_id",
+          "not_null": true,
+          "pk": true,
+          "type": "BIGSERIAL",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "public_id",
+          "not_null": true,
+          "pk": false,
+          "type": "TEXT",
+          "unique": true
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "preferred_name",
+          "not_null": true,
+          "pk": false,
+          "type": "TEXT",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "source_code",
+          "not_null": false,
+          "pk": false,
+          "type": "TEXT",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": "'https://w3id.org/cm-pharme/2.0/PharmaceuticalSubstance'",
+          "fk": null,
+          "name": "ontology_iri",
+          "not_null": true,
+          "pk": false,
+          "type": "TEXT",
+          "unique": false
+        }
+      ],
+      "indexes": [],
+      "name": "pharmaceutical_substance",
+      "unique": []
+    },
+    "product_classification_assignment": {
+      "checks": [],
+      "columns": [
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "product_classification_assignment_id",
+          "not_null": true,
+          "pk": true,
+          "type": "BIGSERIAL",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "public_id",
+          "not_null": true,
+          "pk": false,
+          "type": "TEXT",
+          "unique": true
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": {
+            "column": "medicinal_product_id",
+            "table": "medicinal_product"
+          },
+          "name": "medicinal_product_id",
+          "not_null": true,
+          "pk": false,
+          "type": "BIGINT",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": {
+            "column": "classification_entry_id",
+            "table": "classification_entry"
+          },
+          "name": "classification_entry_id",
+          "not_null": true,
+          "pk": false,
+          "type": "BIGINT",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": {
+            "column": "source_record_id",
+            "table": "source_record"
+          },
+          "name": "source_record_id",
+          "not_null": false,
+          "pk": false,
+          "type": "BIGINT",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": "'https://w3id.org/cm-pharme/2.0/ProductClassificationAssignment'",
+          "fk": null,
+          "name": "ontology_iri",
+          "not_null": true,
+          "pk": false,
+          "type": "TEXT",
+          "unique": false
+        }
+      ],
+      "indexes": [],
+      "name": "product_classification_assignment",
+      "unique": [
+        [
+          "medicinal_product_id",
+          "classification_entry_id"
+        ]
+      ]
+    },
+    "product_classification_scheme": {
+      "checks": [],
+      "columns": [
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "classification_scheme_id",
+          "not_null": true,
+          "pk": true,
+          "type": "BIGSERIAL",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "public_id",
+          "not_null": true,
+          "pk": false,
+          "type": "TEXT",
+          "unique": true
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "scheme_name",
+          "not_null": true,
+          "pk": false,
+          "type": "TEXT",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": "'https://w3id.org/cm-pharme/2.0/ProductClassificationScheme'",
+          "fk": null,
+          "name": "ontology_iri",
+          "not_null": true,
+          "pk": false,
+          "type": "TEXT",
+          "unique": false
+        }
+      ],
+      "indexes": [],
+      "name": "product_classification_scheme",
+      "unique": []
+    },
+    "product_presentation": {
+      "checks": [],
+      "columns": [
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "product_presentation_id",
+          "not_null": true,
+          "pk": true,
+          "type": "BIGSERIAL",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "public_id",
+          "not_null": true,
+          "pk": false,
+          "type": "TEXT",
+          "unique": true
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": {
+            "column": "medicinal_product_id",
+            "table": "medicinal_product"
+          },
+          "name": "medicinal_product_id",
+          "not_null": true,
+          "pk": false,
+          "type": "BIGINT",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "packaging",
+          "not_null": false,
+          "pk": false,
+          "type": "TEXT",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "concentration",
+          "not_null": false,
+          "pk": false,
+          "type": "TEXT",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "num_in_pack",
+          "not_null": false,
+          "pk": false,
+          "type": "NUMERIC",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": "'https://w3id.org/cm-pharme/2.0/MedicinalProductPresentation'",
+          "fk": null,
+          "name": "ontology_iri",
+          "not_null": true,
+          "pk": false,
+          "type": "TEXT",
+          "unique": false
+        }
+      ],
+      "indexes": [],
+      "name": "product_presentation",
+      "unique": []
+    },
+    "regulatory_jurisdiction": {
+      "checks": [],
+      "columns": [
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "regulatory_jurisdiction_id",
+          "not_null": true,
+          "pk": true,
+          "type": "BIGSERIAL",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "public_id",
+          "not_null": true,
+          "pk": false,
+          "type": "TEXT",
+          "unique": true
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "name",
+          "not_null": true,
+          "pk": false,
+          "type": "TEXT",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": {
+            "column": "geography_id",
+            "table": "geography"
+          },
+          "name": "geography_id",
+          "not_null": false,
+          "pk": false,
+          "type": "BIGINT",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": "'https://w3id.org/cm-pharme/2.0/RegulatoryJurisdiction'",
+          "fk": null,
+          "name": "ontology_iri",
+          "not_null": true,
+          "pk": false,
+          "type": "TEXT",
+          "unique": false
+        }
+      ],
+      "indexes": [],
+      "name": "regulatory_jurisdiction",
+      "unique": []
+    },
+    "source_record": {
+      "checks": [],
+      "columns": [
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "source_record_id",
+          "not_null": true,
+          "pk": true,
+          "type": "BIGSERIAL",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": {
+            "column": "dataset_release_id",
+            "table": "dataset_release"
+          },
+          "name": "dataset_release_id",
+          "not_null": true,
+          "pk": false,
+          "type": "BIGINT",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": {
+            "column": "transformation_run_id",
+            "table": "transformation_run"
+          },
+          "name": "transformation_run_id",
+          "not_null": false,
+          "pk": false,
+          "type": "BIGINT",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "row_number",
+          "not_null": true,
+          "pk": false,
+          "type": "BIGINT",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "source_hash",
+          "not_null": true,
+          "pk": false,
+          "type": "CHAR(64)",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": "'{}'::jsonb",
+          "fk": null,
+          "name": "raw_key",
+          "not_null": true,
+          "pk": false,
+          "type": "JSONB",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": "'https://w3id.org/cm-pharme/2.0/SourceRecord'",
+          "fk": null,
+          "name": "ontology_iri",
+          "not_null": true,
+          "pk": false,
+          "type": "TEXT",
+          "unique": false
+        }
+      ],
+      "indexes": [],
+      "name": "source_record",
+      "unique": [
+        [
+          "dataset_release_id",
+          "row_number",
+          "source_hash"
+        ]
+      ]
+    },
+    "transformation_run": {
+      "checks": [],
+      "columns": [
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "transformation_run_id",
+          "not_null": true,
+          "pk": true,
+          "type": "BIGSERIAL",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "public_id",
+          "not_null": true,
+          "pk": false,
+          "type": "TEXT",
+          "unique": true
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "adapter_name",
+          "not_null": true,
+          "pk": false,
+          "type": "TEXT",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "adapter_version",
+          "not_null": true,
+          "pk": false,
+          "type": "TEXT",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": "now()",
+          "fk": null,
+          "name": "started_at",
+          "not_null": true,
+          "pk": false,
+          "type": "TIMESTAMPTZ",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": null,
+          "fk": null,
+          "name": "completed_at",
+          "not_null": false,
+          "pk": false,
+          "type": "TIMESTAMPTZ",
+          "unique": false
+        },
+        {
+          "check": "status IN ('running','completed','failed')",
+          "default": null,
+          "fk": null,
+          "name": "status",
+          "not_null": true,
+          "pk": false,
+          "type": "TEXT",
+          "unique": false
+        },
+        {
+          "check": null,
+          "default": "'https://w3id.org/cm-pharme/2.0/ProvenanceActivity'",
+          "fk": null,
+          "name": "ontology_iri",
+          "not_null": true,
+          "pk": false,
+          "type": "TEXT",
+          "unique": false
+        }
+      ],
+      "indexes": [],
+      "name": "transformation_run",
+      "unique": []
+    }
+  },
+  "unique_constraint_count": 29,
+  "view_count": 4,
+  "views": [
+    {
+      "name": "v_product_presentations",
+      "query": "SELECT pp.public_id AS presentation_id, mp.public_id AS product_id, mp.preferred_name AS product_name, ps.public_id AS substance_id, ps.preferred_name AS substance_name, pp.packaging, pp.concentration, pp.num_in_pack, ia.lexical_value AS nhif_code FROM product_presentation pp JOIN medicinal_product mp ON mp.medicinal_product_id = pp.medicinal_product_id LEFT JOIN pharmaceutical_substance ps ON ps.substance_id = mp.primary_substance_id LEFT JOIN identifier_assignment ia ON ia.entity_type = 'product_presentation' AND ia.entity_public_id = pp.public_id LEFT JOIN identifier_scheme ids ON ids.identifier_scheme_id = ia.identifier_scheme_id WHERE ids.scheme_name = 'NHIF product code' OR ids.scheme_name IS NULL",
+      "tables": [
+        "identifier_assignment",
+        "identifier_scheme",
+        "medicinal_product",
+        "pharmaceutical_substance",
+        "product_presentation"
+      ]
+    },
+    {
+      "name": "v_observations",
+      "query": "SELECT o.public_id AS observation_id, o.observation_kind, pp.public_id AS presentation_id, mp.public_id AS product_id, f.public_id AS facility_id, g.public_id AS geography_id, g.canonical_name AS geography_name, d.code AS diagnosis_code, o.reporting_period, o.reporting_part, o.patient_count, o.package_count, o.cost_original, o.currency, o.cost_bgn, o.cost_eur, sr.source_hash, dr.public_id AS dataset_release_id, ds.public_id AS dataset_id FROM observation_result o LEFT JOIN product_presentation pp ON pp.product_presentation_id = o.product_presentation_id LEFT JOIN medicinal_product mp ON mp.medicinal_product_id = pp.medicinal_product_id LEFT JOIN facility f ON f.facility_id = o.facility_id LEFT JOIN geography g ON g.geography_id = o.geography_id LEFT JOIN diagnosis_reference d ON d.diagnosis_reference_id = o.diagnosis_reference_id JOIN source_record sr ON sr.source_record_id = o.source_record_id JOIN dataset_release dr ON dr.dataset_release_id = sr.dataset_release_id JOIN dataset ds ON ds.dataset_id = dr.dataset_id",
+      "tables": [
+        "dataset",
+        "dataset_release",
+        "diagnosis_reference",
+        "facility",
+        "geography",
+        "medicinal_product",
+        "observation_result",
+        "product_presentation",
+        "source_record"
+      ]
+    },
+    {
+      "name": "v_provenance_lineage",
+      "query": "SELECT a.public_id AS assertion_id, a.subject_public_id, a.predicate_key, a.object_lexical, a.object_public_id, es.public_id AS evidence_support_id, sr.source_record_id, sr.source_hash, sr.row_number, dr.public_id AS dataset_release_id, ds.public_id AS dataset_id, ds.doi, tr.public_id AS transformation_run_id, tr.adapter_name, tr.adapter_version FROM assertion a JOIN evidence_support es ON es.assertion_id = a.assertion_id JOIN source_record sr ON sr.source_record_id = es.source_record_id JOIN dataset_release dr ON dr.dataset_release_id = sr.dataset_release_id JOIN dataset ds ON ds.dataset_id = dr.dataset_id LEFT JOIN transformation_run tr ON tr.transformation_run_id = sr.transformation_run_id",
+      "tables": [
+        "assertion",
+        "dataset",
+        "dataset_release",
+        "evidence_support",
+        "source_record",
+        "transformation_run"
+      ]
+    },
+    {
+      "name": "v_entity_matches",
+      "query": "SELECT ema.public_id AS match_id, ema.matched_entity_type, ema.matched_public_id, ema.method, ema.confidence, ema.status, a.source_hash AS source_hash_a, b.source_hash AS source_hash_b FROM entity_match_assertion ema JOIN source_record a ON a.source_record_id = ema.source_record_a_id JOIN source_record b ON b.source_record_id = ema.source_record_b_id",
+      "tables": [
+        "entity_match_assertion",
+        "source_record"
+      ]
+    }
+  ]
+}

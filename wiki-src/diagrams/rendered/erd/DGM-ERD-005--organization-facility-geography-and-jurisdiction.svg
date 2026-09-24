@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 745 998" role="img" aria-labelledby="title desc">
+<title id="title">DGM-ERD-005 Organization, Facility, Geography and Jurisdiction</title>
+<desc id="desc">Show organization/facility identities, geographic normalization and regulatory-jurisdiction separation.</desc>
+<defs><marker id="fk" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z"/></marker><style>text{font-family:sans-serif}.box{fill:white;stroke:currentColor}.fk{stroke-dasharray:4 3}.head{font-weight:bold}</style></defs>
+<line class="fk" x1="400" y1="207.0" x2="345" y2="216.0" stroke="currentColor" marker-end="url(#fk)"/>
+<text x="372.5" y="207.5" text-anchor="middle" font-size="9">geography_id · 1 → 1</text>
+<line class="fk" x1="190.0" y1="402" x2="190.0" y2="332" stroke="currentColor" marker-end="url(#fk)"/>
+<text x="190.0" y="363.0" text-anchor="middle" font-size="9">geography_id · 0..1 → 1</text>
+<line class="fk" x1="190.0" y1="632" x2="190.0" y2="332" stroke="currentColor" marker-end="url(#fk)"/>
+<text x="190.0" y="478.0" text-anchor="middle" font-size="9">geography_id · 0..1 → 1</text>
+<line class="fk" x1="555.0" y1="632" x2="555.0" y2="544" stroke="currentColor" marker-end="url(#fk)"/>
+<text x="555.0" y="584.0" text-anchor="middle" font-size="9">organization_id · 1 → 1</text>
+<line class="fk" x1="400" y1="730.0" x2="345" y2="712.0" stroke="currentColor" marker-end="url(#fk)"/>
+<text x="372.5" y="717.0" text-anchor="middle" font-size="9">facility_id · 1 → 1</text>
+<rect class="box" x="35" y="100" width="310" height="232" rx="6"/>
+<text class="head" x="190.0" y="122" text-anchor="middle" font-size="14">geography</text>
+<line x1="35" y1="134" x2="345" y2="134" stroke="currentColor"/>
+<text x="45" y="154" font-size="10">[PK] geography_id : BIGSERIAL</text>
+<text x="45" y="172" font-size="10">public_id : TEXT</text>
+<text x="45" y="190" font-size="10">geography_type : TEXT</text>
+<text x="45" y="208" font-size="10">canonical_name : TEXT</text>
+<text x="45" y="226" font-size="10">country_code : CHAR(2)</text>
+<text x="45" y="244" font-size="10">source_region_code : TEXT</text>
+<text x="45" y="262" font-size="10">geonames_id : BIGINT</text>
+<text x="45" y="280" font-size="10">geom : geometry(Geometry,4326)</text>
+<text x="45" y="298" font-size="10">ontology_iri : TEXT</text>
+<rect class="box" x="400" y="100" width="310" height="214" rx="6"/>
+<text class="head" x="555.0" y="122" text-anchor="middle" font-size="14">geography_alias</text>
+<line x1="400" y1="134" x2="710" y2="134" stroke="currentColor"/>
+<text x="410" y="154" font-size="10">[PK] geography_alias_id : BIGSERIAL</text>
+<text x="410" y="172" font-size="10">[FK] geography_id : BIGINT</text>
+<text x="410" y="190" font-size="10">source_system : TEXT</text>
+<text x="410" y="208" font-size="10">source_value : TEXT</text>
+<text x="410" y="226" font-size="10">normalized_value : TEXT</text>
+<text x="410" y="244" font-size="10">resolution_method : TEXT</text>
+<text x="410" y="262" font-size="10">confidence : NUMERIC(5,4)</text>
+<text x="410" y="280" font-size="10">[FK] source_record_id : BIGINT</text>
+<rect class="box" x="35" y="402" width="310" height="160" rx="6"/>
+<text class="head" x="190.0" y="424" text-anchor="middle" font-size="14">regulatory_jurisdiction</text>
+<line x1="35" y1="436" x2="345" y2="436" stroke="currentColor"/>
+<text x="45" y="456" font-size="10">[PK] regulatory_jurisdiction_id : BIGSERIAL</text>
+<text x="45" y="474" font-size="10">public_id : TEXT</text>
+<text x="45" y="492" font-size="10">name : TEXT</text>
+<text x="45" y="510" font-size="10">[FK] geography_id : BIGINT</text>
+<text x="45" y="528" font-size="10">ontology_iri : TEXT</text>
+<rect class="box" x="400" y="402" width="310" height="142" rx="6"/>
+<text class="head" x="555.0" y="424" text-anchor="middle" font-size="14">organization</text>
+<line x1="400" y1="436" x2="710" y2="436" stroke="currentColor"/>
+<text x="410" y="456" font-size="10">[PK] organization_id : BIGSERIAL</text>
+<text x="410" y="474" font-size="10">public_id : TEXT</text>
+<text x="410" y="492" font-size="10">preferred_name : TEXT</text>
+<text x="410" y="510" font-size="10">ontology_iri : TEXT</text>
+<rect class="box" x="35" y="632" width="310" height="160" rx="6"/>
+<text class="head" x="190.0" y="654" text-anchor="middle" font-size="14">facility</text>
+<line x1="35" y1="666" x2="345" y2="666" stroke="currentColor"/>
+<text x="45" y="686" font-size="10">[PK] facility_id : BIGSERIAL</text>
+<text x="45" y="704" font-size="10">public_id : TEXT</text>
+<text x="45" y="722" font-size="10">preferred_name : TEXT</text>
+<text x="45" y="740" font-size="10">[FK] geography_id : BIGINT</text>
+<text x="45" y="758" font-size="10">ontology_iri : TEXT</text>
+<rect class="box" x="400" y="632" width="310" height="196" rx="6"/>
+<text class="head" x="555.0" y="654" text-anchor="middle" font-size="14">facility_operation</text>
+<line x1="400" y1="666" x2="710" y2="666" stroke="currentColor"/>
+<text x="410" y="686" font-size="10">[PK] facility_operation_id : BIGSERIAL</text>
+<text x="410" y="704" font-size="10">public_id : TEXT</text>
+<text x="410" y="722" font-size="10">[FK] organization_id : BIGINT</text>
+<text x="410" y="740" font-size="10">[FK] facility_id : BIGINT</text>
+<text x="410" y="758" font-size="10">valid_from : DATE</text>
+<text x="410" y="776" font-size="10">valid_to : DATE</text>
+<text x="410" y="794" font-size="10">ontology_iri : TEXT</text>
+<text x="35" y="953" font-size="10">Crow&apos;s-foot semantics are expressed by FK direction/cardinality labels: each child FK points to its parent; nullable FKs permit 0..1 parent. Parent-side child multiplicity is 0..* unless constrained otherwise.</text>
+</svg>

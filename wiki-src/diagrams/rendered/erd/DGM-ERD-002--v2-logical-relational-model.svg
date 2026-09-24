@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1110 1048" role="img" aria-labelledby="title desc">
+<title id="title">DGM-ERD-002 V2 logical relational model</title>
+<desc id="desc">Logical model of major implemented subject areas and identities.</desc>
+<defs><marker id="fk" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z"/></marker><style>text{font-family:sans-serif}.box{fill:white;stroke:currentColor}.fk{stroke-dasharray:4 3}.head{font-weight:bold}</style></defs>
+<line class="fk" x1="400" y1="171.0" x2="345" y2="171.0" stroke="currentColor" marker-end="url(#fk)"/>
+<text x="372.5" y="167.0" text-anchor="middle" font-size="9">dataset_id · 1 → 1</text>
+<line class="fk" x1="765" y1="171.0" x2="710" y2="171.0" stroke="currentColor" marker-end="url(#fk)"/>
+<text x="737.5" y="167.0" text-anchor="middle" font-size="9">dataset_release_id · 1 → 1</text>
+<line class="fk" x1="765" y1="383.0" x2="345" y2="383.0" stroke="currentColor" marker-end="url(#fk)"/>
+<text x="555.0" y="379.0" text-anchor="middle" font-size="9">geography_id · 0..1 → 1</text>
+<line class="fk" x1="400" y1="595.0" x2="345" y2="595.0" stroke="currentColor" marker-end="url(#fk)"/>
+<text x="372.5" y="591.0" text-anchor="middle" font-size="9">medicinal_product_id · 1 → 1</text>
+<line class="fk" x1="920.0" y1="524" x2="920.0" y2="242" stroke="currentColor" marker-end="url(#fk)"/>
+<text x="920.0" y="379.0" text-anchor="middle" font-size="9">source_record_id · 0..1 → 1</text>
+<line class="fk" x1="555.0" y1="736" x2="555.0" y2="666" stroke="currentColor" marker-end="url(#fk)"/>
+<text x="555.0" y="697.0" text-anchor="middle" font-size="9">product_presentation_id · 0..1 → 1</text>
+<line class="fk" x1="555.0" y1="736" x2="920.0" y2="454" stroke="currentColor" marker-end="url(#fk)"/>
+<text x="737.5" y="591.0" text-anchor="middle" font-size="9">facility_id · 0..1 → 1</text>
+<line class="fk" x1="555.0" y1="736" x2="190.0" y2="454" stroke="currentColor" marker-end="url(#fk)"/>
+<text x="372.5" y="591.0" text-anchor="middle" font-size="9">geography_id · 0..1 → 1</text>
+<line class="fk" x1="555.0" y1="736" x2="920.0" y2="242" stroke="currentColor" marker-end="url(#fk)"/>
+<text x="737.5" y="485.0" text-anchor="middle" font-size="9">source_record_id · 1 → 1</text>
+<line class="fk" x1="400" y1="807.0" x2="345" y2="807.0" stroke="currentColor" marker-end="url(#fk)"/>
+<text x="372.5" y="803.0" text-anchor="middle" font-size="9">assertion_id · 1 → 1</text>
+<line class="fk" x1="765" y1="807.0" x2="345" y2="595.0" stroke="currentColor" marker-end="url(#fk)"/>
+<text x="555.0" y="697.0" text-anchor="middle" font-size="9">medicinal_product_id · 0..1 → 1</text>
+<line class="fk" x1="765" y1="807.0" x2="710" y2="595.0" stroke="currentColor" marker-end="url(#fk)"/>
+<text x="737.5" y="697.0" text-anchor="middle" font-size="9">product_presentation_id · 0..1 → 1</text>
+<line class="fk" x1="920.0" y1="736" x2="920.0" y2="242" stroke="currentColor" marker-end="url(#fk)"/>
+<text x="920.0" y="485.0" text-anchor="middle" font-size="9">source_record_id · 0..1 → 1</text>
+<rect class="box" x="35" y="100" width="310" height="142" rx="6"/>
+<text class="head" x="190.0" y="122" text-anchor="middle" font-size="14">dataset</text>
+<line x1="35" y1="134" x2="345" y2="134" stroke="currentColor"/>
+<text x="45" y="154" font-size="10">[PK] dataset_id : BIGSERIAL</text>
+<text x="45" y="172" font-size="10">public_id : TEXT</text>
+<text x="45" y="190" font-size="10">title : TEXT</text>
+<text x="45" y="208" font-size="10">doi : TEXT</text>
+<rect class="box" x="400" y="100" width="310" height="142" rx="6"/>
+<text class="head" x="555.0" y="122" text-anchor="middle" font-size="14">dataset_release</text>
+<line x1="400" y1="134" x2="710" y2="134" stroke="currentColor"/>
+<text x="410" y="154" font-size="10">[PK] dataset_release_id : BIGSERIAL</text>
+<text x="410" y="172" font-size="10">[FK] dataset_id : BIGINT</text>
+<text x="410" y="190" font-size="10">public_id : TEXT</text>
+<text x="410" y="208" font-size="10">release_label : TEXT</text>
+<rect class="box" x="765" y="100" width="310" height="142" rx="6"/>
+<text class="head" x="920.0" y="122" text-anchor="middle" font-size="14">source_record</text>
+<line x1="765" y1="134" x2="1075" y2="134" stroke="currentColor"/>
+<text x="775" y="154" font-size="10">[PK] source_record_id : BIGSERIAL</text>
+<text x="775" y="172" font-size="10">[FK] dataset_release_id : BIGINT</text>
+<text x="775" y="190" font-size="10">[FK] transformation_run_id : BIGINT</text>
+<text x="775" y="208" font-size="10">row_number : BIGINT</text>
+<rect class="box" x="35" y="312" width="310" height="142" rx="6"/>
+<text class="head" x="190.0" y="334" text-anchor="middle" font-size="14">geography</text>
+<line x1="35" y1="346" x2="345" y2="346" stroke="currentColor"/>
+<text x="45" y="366" font-size="10">[PK] geography_id : BIGSERIAL</text>
+<text x="45" y="384" font-size="10">public_id : TEXT</text>
+<text x="45" y="402" font-size="10">geography_type : TEXT</text>
+<text x="45" y="420" font-size="10">canonical_name : TEXT</text>
+<rect class="box" x="400" y="312" width="310" height="142" rx="6"/>
+<text class="head" x="555.0" y="334" text-anchor="middle" font-size="14">organization</text>
+<line x1="400" y1="346" x2="710" y2="346" stroke="currentColor"/>
+<text x="410" y="366" font-size="10">[PK] organization_id : BIGSERIAL</text>
+<text x="410" y="384" font-size="10">public_id : TEXT</text>
+<text x="410" y="402" font-size="10">preferred_name : TEXT</text>
+<text x="410" y="420" font-size="10">ontology_iri : TEXT</text>
+<rect class="box" x="765" y="312" width="310" height="142" rx="6"/>
+<text class="head" x="920.0" y="334" text-anchor="middle" font-size="14">facility</text>
+<line x1="765" y1="346" x2="1075" y2="346" stroke="currentColor"/>
+<text x="775" y="366" font-size="10">[PK] facility_id : BIGSERIAL</text>
+<text x="775" y="384" font-size="10">public_id : TEXT</text>
+<text x="775" y="402" font-size="10">preferred_name : TEXT</text>
+<text x="775" y="420" font-size="10">[FK] geography_id : BIGINT</text>
+<rect class="box" x="35" y="524" width="310" height="142" rx="6"/>
+<text class="head" x="190.0" y="546" text-anchor="middle" font-size="14">medicinal_product</text>
+<line x1="35" y1="558" x2="345" y2="558" stroke="currentColor"/>
+<text x="45" y="578" font-size="10">[PK] medicinal_product_id : BIGSERIAL</text>
+<text x="45" y="596" font-size="10">public_id : TEXT</text>
+<text x="45" y="614" font-size="10">preferred_name : TEXT</text>
+<text x="45" y="632" font-size="10">[FK] primary_substance_id : BIGINT</text>
+<rect class="box" x="400" y="524" width="310" height="142" rx="6"/>
+<text class="head" x="555.0" y="546" text-anchor="middle" font-size="14">product_presentation</text>
+<line x1="400" y1="558" x2="710" y2="558" stroke="currentColor"/>
+<text x="410" y="578" font-size="10">[PK] product_presentation_id : BIGSERIAL</text>
+<text x="410" y="596" font-size="10">public_id : TEXT</text>
+<text x="410" y="614" font-size="10">[FK] medicinal_product_id : BIGINT</text>
+<text x="410" y="632" font-size="10">packaging : TEXT</text>
+<rect class="box" x="765" y="524" width="310" height="142" rx="6"/>
+<text class="head" x="920.0" y="546" text-anchor="middle" font-size="14">identifier_assignment</text>
+<line x1="765" y1="558" x2="1075" y2="558" stroke="currentColor"/>
+<text x="775" y="578" font-size="10">[PK] identifier_assignment_id : BIGSERIAL</text>
+<text x="775" y="596" font-size="10">public_id : TEXT</text>
+<text x="775" y="614" font-size="10">[FK] identifier_scheme_id : BIGINT</text>
+<text x="775" y="632" font-size="10">entity_type : TEXT</text>
+<rect class="box" x="35" y="736" width="310" height="142" rx="6"/>
+<text class="head" x="190.0" y="758" text-anchor="middle" font-size="14">assertion</text>
+<line x1="35" y1="770" x2="345" y2="770" stroke="currentColor"/>
+<text x="45" y="790" font-size="10">[PK] assertion_id : BIGSERIAL</text>
+<text x="45" y="808" font-size="10">public_id : TEXT</text>
+<text x="45" y="826" font-size="10">assertion_type : TEXT</text>
+<text x="45" y="844" font-size="10">subject_public_id : TEXT</text>
+<rect class="box" x="400" y="736" width="310" height="142" rx="6"/>
+<text class="head" x="555.0" y="758" text-anchor="middle" font-size="14">observation_result</text>
+<line x1="400" y1="770" x2="710" y2="770" stroke="currentColor"/>
+<text x="410" y="790" font-size="10">[PK] observation_result_id : BIGSERIAL</text>
+<text x="410" y="808" font-size="10">public_id : TEXT</text>
+<text x="410" y="826" font-size="10">observation_kind : TEXT</text>
+<text x="410" y="844" font-size="10">[FK] product_presentation_id : BIGINT</text>
+<rect class="box" x="765" y="736" width="310" height="142" rx="6"/>
+<text class="head" x="920.0" y="758" text-anchor="middle" font-size="14">medicine_shortage_situation</text>
+<line x1="765" y1="770" x2="1075" y2="770" stroke="currentColor"/>
+<text x="775" y="790" font-size="10">[PK] shortage_id : BIGSERIAL</text>
+<text x="775" y="808" font-size="10">public_id : TEXT</text>
+<text x="775" y="826" font-size="10">[FK] medicinal_product_id : BIGINT</text>
+<text x="775" y="844" font-size="10">[FK] product_presentation_id : BIGINT</text>
+<text x="35" y="1003" font-size="10">Crow&apos;s-foot semantics are expressed by FK direction/cardinality labels: each child FK points to its parent; nullable FKs permit 0..1 parent. Parent-side child multiplicity is 0..* unless constrained otherwise.</text>
+</svg>

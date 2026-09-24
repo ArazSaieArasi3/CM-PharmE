@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 745 1034" role="img" aria-labelledby="title desc">
+<title id="title">DGM-ERD-010 Shortage and Implemented Resilience-Related Data</title>
+<desc id="desc">Show the implemented shortage realization. Dedicated SupplyDependency, Vulnerability and risk-treatment tables are not present in the current schema.</desc>
+<defs><marker id="fk" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z"/></marker><style>text{font-family:sans-serif}.box{fill:white;stroke:currentColor}.fk{stroke-dasharray:4 3}.head{font-weight:bold}</style></defs>
+<line class="fk" x1="345" y1="216.0" x2="400" y2="180.0" stroke="currentColor" marker-end="url(#fk)"/>
+<text x="372.5" y="194.0" text-anchor="middle" font-size="9">medicinal_product_id · 0..1 → 1</text>
+<line class="fk" x1="190.0" y1="332" x2="190.0" y2="402" stroke="currentColor" marker-end="url(#fk)"/>
+<text x="190.0" y="363.0" text-anchor="middle" font-size="9">product_presentation_id · 0..1 → 1</text>
+<line class="fk" x1="345" y1="216.0" x2="400" y2="482.0" stroke="currentColor" marker-end="url(#fk)"/>
+<text x="372.5" y="345.0" text-anchor="middle" font-size="9">regulatory_jurisdiction_id · 0..1 → 1</text>
+<line class="fk" x1="190.0" y1="332" x2="190.0" y2="668" stroke="currentColor" marker-end="url(#fk)"/>
+<text x="190.0" y="496.0" text-anchor="middle" font-size="9">source_record_id · 0..1 → 1</text>
+<line class="fk" x1="345" y1="500.0" x2="400" y2="180.0" stroke="currentColor" marker-end="url(#fk)"/>
+<text x="372.5" y="336.0" text-anchor="middle" font-size="9">medicinal_product_id · 1 → 1</text>
+<rect class="box" x="35" y="100" width="310" height="232" rx="6"/>
+<text class="head" x="190.0" y="122" text-anchor="middle" font-size="14">medicine_shortage_situation</text>
+<line x1="35" y1="134" x2="345" y2="134" stroke="currentColor"/>
+<text x="45" y="154" font-size="10">[PK] shortage_id : BIGSERIAL</text>
+<text x="45" y="172" font-size="10">public_id : TEXT</text>
+<text x="45" y="190" font-size="10">[FK] medicinal_product_id : BIGINT</text>
+<text x="45" y="208" font-size="10">[FK] product_presentation_id : BIGINT</text>
+<text x="45" y="226" font-size="10">[FK] regulatory_jurisdiction_id : BIGINT</text>
+<text x="45" y="244" font-size="10">starts_on : DATE</text>
+<text x="45" y="262" font-size="10">ends_on : DATE</text>
+<text x="45" y="280" font-size="10">[FK] source_record_id : BIGINT</text>
+<text x="45" y="298" font-size="10">ontology_iri : TEXT</text>
+<rect class="box" x="400" y="100" width="310" height="160" rx="6"/>
+<text class="head" x="555.0" y="122" text-anchor="middle" font-size="14">medicinal_product</text>
+<line x1="400" y1="134" x2="710" y2="134" stroke="currentColor"/>
+<text x="410" y="154" font-size="10">[PK] medicinal_product_id : BIGSERIAL</text>
+<text x="410" y="172" font-size="10">public_id : TEXT</text>
+<text x="410" y="190" font-size="10">preferred_name : TEXT</text>
+<text x="410" y="208" font-size="10">[FK] primary_substance_id : BIGINT</text>
+<text x="410" y="226" font-size="10">ontology_iri : TEXT</text>
+<rect class="box" x="35" y="402" width="310" height="196" rx="6"/>
+<text class="head" x="190.0" y="424" text-anchor="middle" font-size="14">product_presentation</text>
+<line x1="35" y1="436" x2="345" y2="436" stroke="currentColor"/>
+<text x="45" y="456" font-size="10">[PK] product_presentation_id : BIGSERIAL</text>
+<text x="45" y="474" font-size="10">public_id : TEXT</text>
+<text x="45" y="492" font-size="10">[FK] medicinal_product_id : BIGINT</text>
+<text x="45" y="510" font-size="10">packaging : TEXT</text>
+<text x="45" y="528" font-size="10">concentration : TEXT</text>
+<text x="45" y="546" font-size="10">num_in_pack : NUMERIC</text>
+<text x="45" y="564" font-size="10">ontology_iri : TEXT</text>
+<rect class="box" x="400" y="402" width="310" height="160" rx="6"/>
+<text class="head" x="555.0" y="424" text-anchor="middle" font-size="14">regulatory_jurisdiction</text>
+<line x1="400" y1="436" x2="710" y2="436" stroke="currentColor"/>
+<text x="410" y="456" font-size="10">[PK] regulatory_jurisdiction_id : BIGSERIAL</text>
+<text x="410" y="474" font-size="10">public_id : TEXT</text>
+<text x="410" y="492" font-size="10">name : TEXT</text>
+<text x="410" y="510" font-size="10">[FK] geography_id : BIGINT</text>
+<text x="410" y="528" font-size="10">ontology_iri : TEXT</text>
+<rect class="box" x="35" y="668" width="310" height="196" rx="6"/>
+<text class="head" x="190.0" y="690" text-anchor="middle" font-size="14">source_record</text>
+<line x1="35" y1="702" x2="345" y2="702" stroke="currentColor"/>
+<text x="45" y="722" font-size="10">[PK] source_record_id : BIGSERIAL</text>
+<text x="45" y="740" font-size="10">[FK] dataset_release_id : BIGINT</text>
+<text x="45" y="758" font-size="10">[FK] transformation_run_id : BIGINT</text>
+<text x="45" y="776" font-size="10">row_number : BIGINT</text>
+<text x="45" y="794" font-size="10">source_hash : CHAR(64)</text>
+<text x="45" y="812" font-size="10">raw_key : JSONB</text>
+<text x="45" y="830" font-size="10">ontology_iri : TEXT</text>
+<text x="35" y="989" font-size="10">Crow&apos;s-foot semantics are expressed by FK direction/cardinality labels: each child FK points to its parent; nullable FKs permit 0..1 parent. Parent-side child multiplicity is 0..* unless constrained otherwise.</text>
+</svg>

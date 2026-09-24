@@ -1,0 +1,51 @@
+erDiagram
+    medicinal_product ||--o{ product_presentation : "medicinal_product_id"
+    medicinal_product ||--o{ product_classification_assignment : "medicinal_product_id"
+    classification_entry ||--o{ product_classification_assignment : "classification_entry_id"
+    pharmaceutical_substance o|--o{ medicinal_product : "primary_substance_id"
+    product_classification_scheme ||--o{ classification_entry : "classification_scheme_id"
+    product_presentation {
+      BIGSERIAL product_presentation_id PK
+      TEXT public_id
+      BIGINT medicinal_product_id FK
+      TEXT packaging
+      TEXT concentration
+      NUMERIC num_in_pack
+      TEXT ontology_iri
+    }
+    product_classification_assignment {
+      BIGSERIAL product_classification_assignment_id PK
+      TEXT public_id
+      BIGINT medicinal_product_id FK
+      BIGINT classification_entry_id FK
+      BIGINT source_record_id FK
+      TEXT ontology_iri
+    }
+    pharmaceutical_substance {
+      BIGSERIAL substance_id PK
+      TEXT public_id
+      TEXT preferred_name
+      TEXT source_code
+      TEXT ontology_iri
+    }
+    medicinal_product {
+      BIGSERIAL medicinal_product_id PK
+      TEXT public_id
+      TEXT preferred_name
+      BIGINT primary_substance_id FK
+      TEXT ontology_iri
+    }
+    classification_entry {
+      BIGSERIAL classification_entry_id PK
+      BIGINT classification_scheme_id FK
+      TEXT public_id
+      TEXT code
+      TEXT label
+      TEXT ontology_iri
+    }
+    product_classification_scheme {
+      BIGSERIAL classification_scheme_id PK
+      TEXT public_id
+      TEXT scheme_name
+      TEXT ontology_iri
+    }

@@ -1,0 +1,56 @@
+erDiagram
+    geography ||--o{ geography_alias : "geography_id"
+    geography o|--o{ regulatory_jurisdiction : "geography_id"
+    geography o|--o{ facility : "geography_id"
+    organization ||--o{ facility_operation : "organization_id"
+    facility ||--o{ facility_operation : "facility_id"
+    geography_alias {
+      BIGSERIAL geography_alias_id PK
+      BIGINT geography_id FK
+      TEXT source_system
+      TEXT source_value
+      TEXT normalized_value
+      TEXT resolution_method
+      NUMERIC_5_4_ confidence
+      BIGINT source_record_id FK
+    }
+    organization {
+      BIGSERIAL organization_id PK
+      TEXT public_id
+      TEXT preferred_name
+      TEXT ontology_iri
+    }
+    regulatory_jurisdiction {
+      BIGSERIAL regulatory_jurisdiction_id PK
+      TEXT public_id
+      TEXT name
+      BIGINT geography_id FK
+      TEXT ontology_iri
+    }
+    facility {
+      BIGSERIAL facility_id PK
+      TEXT public_id
+      TEXT preferred_name
+      BIGINT geography_id FK
+      TEXT ontology_iri
+    }
+    facility_operation {
+      BIGSERIAL facility_operation_id PK
+      TEXT public_id
+      BIGINT organization_id FK
+      BIGINT facility_id FK
+      DATE valid_from
+      DATE valid_to
+      TEXT ontology_iri
+    }
+    geography {
+      BIGSERIAL geography_id PK
+      TEXT public_id
+      TEXT geography_type
+      TEXT canonical_name
+      CHAR_2_ country_code
+      TEXT source_region_code
+      BIGINT geonames_id
+      geometry_Geometry_4326_ geom
+      TEXT ontology_iri
+    }

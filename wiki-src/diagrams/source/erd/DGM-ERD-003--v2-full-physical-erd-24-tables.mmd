@@ -1,0 +1,248 @@
+erDiagram
+    product_presentation o|--o{ observation_result : "product_presentation_id"
+    facility o|--o{ observation_result : "facility_id"
+    geography o|--o{ observation_result : "geography_id"
+    diagnosis_reference o|--o{ observation_result : "diagnosis_reference_id"
+    source_record ||--o{ observation_result : "source_record_id"
+    assertion ||--o{ observation_result : "assertion_id"
+    dataset ||--o{ dataset_release : "dataset_id"
+    geography ||--o{ geography_alias : "geography_id"
+    source_record o|--o{ geography_alias : "source_record_id"
+    medicinal_product ||--o{ product_presentation : "medicinal_product_id"
+    identifier_scheme ||--o{ identifier_assignment : "identifier_scheme_id"
+    source_record o|--o{ identifier_assignment : "source_record_id"
+    source_record ||--o{ entity_match_assertion : "source_record_a_id"
+    source_record ||--o{ entity_match_assertion : "source_record_b_id"
+    organization ||--o{ facility_operation : "organization_id"
+    facility ||--o{ facility_operation : "facility_id"
+    source_record ||--o{ evidence_support : "source_record_id"
+    assertion ||--o{ evidence_support : "assertion_id"
+    medicinal_product ||--o{ product_classification_assignment : "medicinal_product_id"
+    classification_entry ||--o{ product_classification_assignment : "classification_entry_id"
+    source_record o|--o{ product_classification_assignment : "source_record_id"
+    dataset_release ||--o{ source_record : "dataset_release_id"
+    transformation_run o|--o{ source_record : "transformation_run_id"
+    product_classification_scheme ||--o{ classification_entry : "classification_scheme_id"
+    geography o|--o{ regulatory_jurisdiction : "geography_id"
+    geography o|--o{ facility : "geography_id"
+    medicinal_product o|--o{ medicine_shortage_situation : "medicinal_product_id"
+    product_presentation o|--o{ medicine_shortage_situation : "product_presentation_id"
+    regulatory_jurisdiction o|--o{ medicine_shortage_situation : "regulatory_jurisdiction_id"
+    source_record o|--o{ medicine_shortage_situation : "source_record_id"
+    pharmaceutical_substance o|--o{ medicinal_product : "primary_substance_id"
+    observation_result {
+      BIGSERIAL observation_result_id PK
+      TEXT public_id
+      TEXT observation_kind
+      BIGINT product_presentation_id FK
+      BIGINT facility_id FK
+      BIGINT geography_id FK
+      BIGINT diagnosis_reference_id FK
+      DATE reporting_period
+      TEXT reporting_part
+      NUMERIC patient_count
+      NUMERIC package_count
+      NUMERIC cost_original
+      CHAR_3_ currency
+      NUMERIC cost_bgn
+      NUMERIC cost_eur
+      BIGINT source_record_id FK
+      BIGINT assertion_id FK
+      TEXT ontology_iri
+    }
+    identifier_scheme {
+      BIGSERIAL identifier_scheme_id PK
+      TEXT public_id
+      TEXT scheme_name
+      TEXT ontology_iri
+    }
+    dataset_release {
+      BIGSERIAL dataset_release_id PK
+      BIGINT dataset_id FK
+      TEXT public_id
+      TEXT release_label
+      TEXT source_filename
+      TIMESTAMPTZ retrieved_at
+      TEXT ontology_iri
+    }
+    geography_alias {
+      BIGSERIAL geography_alias_id PK
+      BIGINT geography_id FK
+      TEXT source_system
+      TEXT source_value
+      TEXT normalized_value
+      TEXT resolution_method
+      NUMERIC_5_4_ confidence
+      BIGINT source_record_id FK
+    }
+    product_presentation {
+      BIGSERIAL product_presentation_id PK
+      TEXT public_id
+      BIGINT medicinal_product_id FK
+      TEXT packaging
+      TEXT concentration
+      NUMERIC num_in_pack
+      TEXT ontology_iri
+    }
+    identifier_assignment {
+      BIGSERIAL identifier_assignment_id PK
+      TEXT public_id
+      BIGINT identifier_scheme_id FK
+      TEXT entity_type
+      TEXT entity_public_id
+      TEXT lexical_value
+      BIGINT source_record_id FK
+      TEXT ontology_iri
+    }
+    geography {
+      BIGSERIAL geography_id PK
+      TEXT public_id
+      TEXT geography_type
+      TEXT canonical_name
+      CHAR_2_ country_code
+      TEXT source_region_code
+      BIGINT geonames_id
+      geometry_Geometry_4326_ geom
+      TEXT ontology_iri
+    }
+    entity_match_assertion {
+      BIGSERIAL entity_match_assertion_id PK
+      TEXT public_id
+      BIGINT source_record_a_id FK
+      BIGINT source_record_b_id FK
+      TEXT matched_entity_type
+      TEXT matched_public_id
+      TEXT method
+      NUMERIC_5_4_ confidence
+      TEXT status
+      TEXT ontology_iri
+    }
+    facility_operation {
+      BIGSERIAL facility_operation_id PK
+      TEXT public_id
+      BIGINT organization_id FK
+      BIGINT facility_id FK
+      DATE valid_from
+      DATE valid_to
+      TEXT ontology_iri
+    }
+    evidence_support {
+      BIGSERIAL evidence_support_id PK
+      TEXT public_id
+      BIGINT source_record_id FK
+      BIGINT assertion_id FK
+      TEXT ontology_iri
+    }
+    dataset {
+      BIGSERIAL dataset_id PK
+      TEXT public_id
+      TEXT title
+      TEXT doi
+      TEXT source_role
+      TEXT license_note
+      TEXT ontology_iri
+    }
+    product_classification_assignment {
+      BIGSERIAL product_classification_assignment_id PK
+      TEXT public_id
+      BIGINT medicinal_product_id FK
+      BIGINT classification_entry_id FK
+      BIGINT source_record_id FK
+      TEXT ontology_iri
+    }
+    assertion {
+      BIGSERIAL assertion_id PK
+      TEXT public_id
+      TEXT assertion_type
+      TEXT subject_public_id
+      TEXT predicate_key
+      TEXT object_lexical
+      TEXT object_public_id
+      TEXT ontology_iri
+    }
+    pharmaceutical_substance {
+      BIGSERIAL substance_id PK
+      TEXT public_id
+      TEXT preferred_name
+      TEXT source_code
+      TEXT ontology_iri
+    }
+    source_record {
+      BIGSERIAL source_record_id PK
+      BIGINT dataset_release_id FK
+      BIGINT transformation_run_id FK
+      BIGINT row_number
+      CHAR_64_ source_hash
+      JSONB raw_key
+      TEXT ontology_iri
+    }
+    classification_entry {
+      BIGSERIAL classification_entry_id PK
+      BIGINT classification_scheme_id FK
+      TEXT public_id
+      TEXT code
+      TEXT label
+      TEXT ontology_iri
+    }
+    regulatory_jurisdiction {
+      BIGSERIAL regulatory_jurisdiction_id PK
+      TEXT public_id
+      TEXT name
+      BIGINT geography_id FK
+      TEXT ontology_iri
+    }
+    organization {
+      BIGSERIAL organization_id PK
+      TEXT public_id
+      TEXT preferred_name
+      TEXT ontology_iri
+    }
+    facility {
+      BIGSERIAL facility_id PK
+      TEXT public_id
+      TEXT preferred_name
+      BIGINT geography_id FK
+      TEXT ontology_iri
+    }
+    medicine_shortage_situation {
+      BIGSERIAL shortage_id PK
+      TEXT public_id
+      BIGINT medicinal_product_id FK
+      BIGINT product_presentation_id FK
+      BIGINT regulatory_jurisdiction_id FK
+      DATE starts_on
+      DATE ends_on
+      BIGINT source_record_id FK
+      TEXT ontology_iri
+    }
+    transformation_run {
+      BIGSERIAL transformation_run_id PK
+      TEXT public_id
+      TEXT adapter_name
+      TEXT adapter_version
+      TIMESTAMPTZ started_at
+      TIMESTAMPTZ completed_at
+      TEXT status
+      TEXT ontology_iri
+    }
+    medicinal_product {
+      BIGSERIAL medicinal_product_id PK
+      TEXT public_id
+      TEXT preferred_name
+      BIGINT primary_substance_id FK
+      TEXT ontology_iri
+    }
+    diagnosis_reference {
+      BIGSERIAL diagnosis_reference_id PK
+      TEXT public_id
+      TEXT scheme
+      TEXT code
+      TEXT label
+      TEXT ontology_iri
+    }
+    product_classification_scheme {
+      BIGSERIAL classification_scheme_id PK
+      TEXT public_id
+      TEXT scheme_name
+      TEXT ontology_iri
+    }

@@ -16,6 +16,8 @@
 
 **Data & Database**
 - [[Data and Database Guide]]
+- [[V2 Database Reference]]
+- [[V2 Database ERD Suite]]
 
 **Knowledge Graph & Queries**
 - [[Knowledge Graph and Queries Guide]]

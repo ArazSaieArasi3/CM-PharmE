@@ -1,0 +1,60 @@
+erDiagram
+    source_record ||--o{ evidence_support : "source_record_id"
+    assertion ||--o{ evidence_support : "assertion_id"
+    dataset_release ||--o{ source_record : "dataset_release_id"
+    transformation_run o|--o{ source_record : "transformation_run_id"
+    dataset ||--o{ dataset_release : "dataset_id"
+    evidence_support {
+      BIGSERIAL evidence_support_id PK
+      TEXT public_id
+      BIGINT source_record_id FK
+      BIGINT assertion_id FK
+      TEXT ontology_iri
+    }
+    dataset {
+      BIGSERIAL dataset_id PK
+      TEXT public_id
+      TEXT title
+      TEXT doi
+      TEXT source_role
+      TEXT license_note
+      TEXT ontology_iri
+    }
+    assertion {
+      BIGSERIAL assertion_id PK
+      TEXT public_id
+      TEXT assertion_type
+      TEXT subject_public_id
+      TEXT predicate_key
+      TEXT object_lexical
+      TEXT object_public_id
+      TEXT ontology_iri
+    }
+    source_record {
+      BIGSERIAL source_record_id PK
+      BIGINT dataset_release_id FK
+      BIGINT transformation_run_id FK
+      BIGINT row_number
+      CHAR_64_ source_hash
+      JSONB raw_key
+      TEXT ontology_iri
+    }
+    transformation_run {
+      BIGSERIAL transformation_run_id PK
+      TEXT public_id
+      TEXT adapter_name
+      TEXT adapter_version
+      TIMESTAMPTZ started_at
+      TIMESTAMPTZ completed_at
+      TEXT status
+      TEXT ontology_iri
+    }
+    dataset_release {
+      BIGSERIAL dataset_release_id PK
+      BIGINT dataset_id FK
+      TEXT public_id
+      TEXT release_label
+      TEXT source_filename
+      TIMESTAMPTZ retrieved_at
+      TEXT ontology_iri
+    }

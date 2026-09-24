@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 745 944" role="img" aria-labelledby="title desc">
+<title id="title">DGM-ERD-006 Product, Substance, Presentation and Classification</title>
+<desc id="desc">Show product/substance/presentation identity and product-classification realization.</desc>
+<defs><marker id="fk" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z"/></marker><style>text{font-family:sans-serif}.box{fill:white;stroke:currentColor}.fk{stroke-dasharray:4 3}.head{font-weight:bold}</style></defs>
+<line class="fk" x1="400" y1="180.0" x2="345" y2="180.0" stroke="currentColor" marker-end="url(#fk)"/>
+<text x="372.5" y="176.0" text-anchor="middle" font-size="9">primary_substance_id · 0..1 → 1</text>
+<line class="fk" x1="345" y1="428.0" x2="400" y2="180.0" stroke="currentColor" marker-end="url(#fk)"/>
+<text x="372.5" y="300.0" text-anchor="middle" font-size="9">medicinal_product_id · 1 → 1</text>
+<line class="fk" x1="345" y1="685.0" x2="400" y2="401.0" stroke="currentColor" marker-end="url(#fk)"/>
+<text x="372.5" y="539.0" text-anchor="middle" font-size="9">classification_scheme_id · 1 → 1</text>
+<line class="fk" x1="555.0" y1="596" x2="555.0" y2="260" stroke="currentColor" marker-end="url(#fk)"/>
+<text x="555.0" y="424.0" text-anchor="middle" font-size="9">medicinal_product_id · 1 → 1</text>
+<line class="fk" x1="400" y1="685.0" x2="345" y2="685.0" stroke="currentColor" marker-end="url(#fk)"/>
+<text x="372.5" y="681.0" text-anchor="middle" font-size="9">classification_entry_id · 1 → 1</text>
+<rect class="box" x="35" y="100" width="310" height="160" rx="6"/>
+<text class="head" x="190.0" y="122" text-anchor="middle" font-size="14">pharmaceutical_substance</text>
+<line x1="35" y1="134" x2="345" y2="134" stroke="currentColor"/>
+<text x="45" y="154" font-size="10">[PK] substance_id : BIGSERIAL</text>
+<text x="45" y="172" font-size="10">public_id : TEXT</text>
+<text x="45" y="190" font-size="10">preferred_name : TEXT</text>
+<text x="45" y="208" font-size="10">source_code : TEXT</text>
+<text x="45" y="226" font-size="10">ontology_iri : TEXT</text>
+<rect class="box" x="400" y="100" width="310" height="160" rx="6"/>
+<text class="head" x="555.0" y="122" text-anchor="middle" font-size="14">medicinal_product</text>
+<line x1="400" y1="134" x2="710" y2="134" stroke="currentColor"/>
+<text x="410" y="154" font-size="10">[PK] medicinal_product_id : BIGSERIAL</text>
+<text x="410" y="172" font-size="10">public_id : TEXT</text>
+<text x="410" y="190" font-size="10">preferred_name : TEXT</text>
+<text x="410" y="208" font-size="10">[FK] primary_substance_id : BIGINT</text>
+<text x="410" y="226" font-size="10">ontology_iri : TEXT</text>
+<rect class="box" x="35" y="330" width="310" height="196" rx="6"/>
+<text class="head" x="190.0" y="352" text-anchor="middle" font-size="14">product_presentation</text>
+<line x1="35" y1="364" x2="345" y2="364" stroke="currentColor"/>
+<text x="45" y="384" font-size="10">[PK] product_presentation_id : BIGSERIAL</text>
+<text x="45" y="402" font-size="10">public_id : TEXT</text>
+<text x="45" y="420" font-size="10">[FK] medicinal_product_id : BIGINT</text>
+<text x="45" y="438" font-size="10">packaging : TEXT</text>
+<text x="45" y="456" font-size="10">concentration : TEXT</text>
+<text x="45" y="474" font-size="10">num_in_pack : NUMERIC</text>
+<text x="45" y="492" font-size="10">ontology_iri : TEXT</text>
+<rect class="box" x="400" y="330" width="310" height="142" rx="6"/>
+<text class="head" x="555.0" y="352" text-anchor="middle" font-size="14">product_classification_scheme</text>
+<line x1="400" y1="364" x2="710" y2="364" stroke="currentColor"/>
+<text x="410" y="384" font-size="10">[PK] classification_scheme_id : BIGSERIAL</text>
+<text x="410" y="402" font-size="10">public_id : TEXT</text>
+<text x="410" y="420" font-size="10">scheme_name : TEXT</text>
+<text x="410" y="438" font-size="10">ontology_iri : TEXT</text>
+<rect class="box" x="35" y="596" width="310" height="178" rx="6"/>
+<text class="head" x="190.0" y="618" text-anchor="middle" font-size="14">classification_entry</text>
+<line x1="35" y1="630" x2="345" y2="630" stroke="currentColor"/>
+<text x="45" y="650" font-size="10">[PK] classification_entry_id : BIGSERIAL</text>
+<text x="45" y="668" font-size="10">[FK] classification_scheme_id : BIGINT</text>
+<text x="45" y="686" font-size="10">public_id : TEXT</text>
+<text x="45" y="704" font-size="10">code : TEXT</text>
+<text x="45" y="722" font-size="10">label : TEXT</text>
+<text x="45" y="740" font-size="10">ontology_iri : TEXT</text>
+<rect class="box" x="400" y="596" width="310" height="178" rx="6"/>
+<text class="head" x="555.0" y="618" text-anchor="middle" font-size="14">product_classification_assignment</text>
+<line x1="400" y1="630" x2="710" y2="630" stroke="currentColor"/>
+<text x="410" y="650" font-size="10">[PK] product_classification_assignment_i...</text>
+<text x="410" y="668" font-size="10">public_id : TEXT</text>
+<text x="410" y="686" font-size="10">[FK] medicinal_product_id : BIGINT</text>
+<text x="410" y="704" font-size="10">[FK] classification_entry_id : BIGINT</text>
+<text x="410" y="722" font-size="10">[FK] source_record_id : BIGINT</text>
+<text x="410" y="740" font-size="10">ontology_iri : TEXT</text>
+<text x="35" y="899" font-size="10">Crow&apos;s-foot semantics are expressed by FK direction/cardinality labels: each child FK points to its parent; nullable FKs permit 0..1 parent. Parent-side child multiplicity is 0..* unless constrained otherwise.</text>
+</svg>

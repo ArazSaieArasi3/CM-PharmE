@@ -1,0 +1,10 @@
+diagram_id,title,tables,internal_fks,table_list
+DGM-ERD-002,V2 logical relational model,12,13,dataset; dataset_release; source_record; geography; organization; facility; medicinal_product; product_presentation; identifier_assignment; assertion; observation_result; medicine_shortage_situation
+DGM-ERD-003,V2 full physical ERD — 24 tables,24,31,dataset; dataset_release; transformation_run; source_record; geography; geography_alias; regulatory_jurisdiction; organization; facility; facility_operation; pharmaceutical_substance; medicinal_product; product_presentation; identifier_scheme; identifier_assignment; product_classification_scheme; classification_entry; product_classification_assignment; diagnosis_reference; assertion; evidence_support; observation_result; entity_match_assertion; medicine_shortage_situation
+DGM-ERD-004,"Dataset, Release, Source and Transformation",4,3,dataset; dataset_release; transformation_run; source_record
+DGM-ERD-005,"Organization, Facility, Geography and Jurisdiction",6,5,geography; geography_alias; regulatory_jurisdiction; organization; facility; facility_operation
+DGM-ERD-006,"Product, Substance, Presentation and Classification",6,5,pharmaceutical_substance; medicinal_product; product_presentation; product_classification_scheme; classification_entry; product_classification_assignment
+DGM-ERD-007,"Identifier, Identity and Entity Match",4,4,identifier_scheme; identifier_assignment; entity_match_assertion; source_record
+DGM-ERD-008,"Assertion, Evidence and Provenance",6,5,dataset; dataset_release; transformation_run; source_record; assertion; evidence_support
+DGM-ERD-009,Observation,7,7,observation_result; product_presentation; facility; geography; diagnosis_reference; source_record; assertion
+DGM-ERD-010,Shortage and Implemented Resilience-Related Data,5,5,medicine_shortage_situation; medicinal_product; product_presentation; regulatory_jurisdiction; source_record

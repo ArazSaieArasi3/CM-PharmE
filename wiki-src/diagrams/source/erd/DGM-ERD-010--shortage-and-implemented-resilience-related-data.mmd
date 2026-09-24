@@ -1,0 +1,49 @@
+erDiagram
+    medicinal_product ||--o{ product_presentation : "medicinal_product_id"
+    medicinal_product o|--o{ medicine_shortage_situation : "medicinal_product_id"
+    product_presentation o|--o{ medicine_shortage_situation : "product_presentation_id"
+    regulatory_jurisdiction o|--o{ medicine_shortage_situation : "regulatory_jurisdiction_id"
+    source_record o|--o{ medicine_shortage_situation : "source_record_id"
+    regulatory_jurisdiction {
+      BIGSERIAL regulatory_jurisdiction_id PK
+      TEXT public_id
+      TEXT name
+      BIGINT geography_id FK
+      TEXT ontology_iri
+    }
+    product_presentation {
+      BIGSERIAL product_presentation_id PK
+      TEXT public_id
+      BIGINT medicinal_product_id FK
+      TEXT packaging
+      TEXT concentration
+      NUMERIC num_in_pack
+      TEXT ontology_iri
+    }
+    medicine_shortage_situation {
+      BIGSERIAL shortage_id PK
+      TEXT public_id
+      BIGINT medicinal_product_id FK
+      BIGINT product_presentation_id FK
+      BIGINT regulatory_jurisdiction_id FK
+      DATE starts_on
+      DATE ends_on
+      BIGINT source_record_id FK
+      TEXT ontology_iri
+    }
+    source_record {
+      BIGSERIAL source_record_id PK
+      BIGINT dataset_release_id FK
+      BIGINT transformation_run_id FK
+      BIGINT row_number
+      CHAR_64_ source_hash
+      JSONB raw_key
+      TEXT ontology_iri
+    }
+    medicinal_product {
+      BIGSERIAL medicinal_product_id PK
+      TEXT public_id
+      TEXT preferred_name
+      BIGINT primary_substance_id FK
+      TEXT ontology_iri
+    }

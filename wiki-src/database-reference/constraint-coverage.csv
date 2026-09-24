@@ -1,0 +1,47 @@
+kind,table,detail
+CHECK,dataset,"source_role IN ('primary','secondary','authoritative','conditional','fixture')"
+CHECK,transformation_run,"status IN ('running','completed','failed')"
+CHECK,geography,"geography_type IN ('country','administrative_region','other')"
+CHECK,geography_alias,confidence >= 0 AND confidence <= 1
+CHECK,facility_operation,valid_to IS NULL OR valid_from IS NULL OR valid_to >= valid_from
+CHECK,identifier_assignment,"entity_type IN ('organization','facility','medicinal_product','product_presentation','substance','geography')"
+CHECK,observation_result,"observation_kind IN ('availability','demand','supply_capacity','inventory','lead_time','reimbursement_utilisation')"
+CHECK,entity_match_assertion,confidence >= 0 AND confidence <= 1
+CHECK,entity_match_assertion,"status IN ('accepted','ambiguous','rejected')"
+CHECK,entity_match_assertion,source_record_a_id <> source_record_b_id
+CHECK,medicine_shortage_situation,ends_on IS NULL OR starts_on IS NULL OR ends_on >= starts_on
+UNIQUE,dataset,public_id
+UNIQUE,dataset_release,public_id
+UNIQUE,transformation_run,public_id
+UNIQUE,source_record,"dataset_release_id, row_number, source_hash"
+UNIQUE,geography,public_id
+UNIQUE,geography_alias,"source_system, source_value"
+UNIQUE,regulatory_jurisdiction,public_id
+UNIQUE,organization,public_id
+UNIQUE,facility,public_id
+UNIQUE,facility_operation,public_id
+UNIQUE,pharmaceutical_substance,public_id
+UNIQUE,medicinal_product,public_id
+UNIQUE,product_presentation,public_id
+UNIQUE,identifier_scheme,public_id
+UNIQUE,identifier_assignment,public_id
+UNIQUE,identifier_assignment,"identifier_scheme_id, lexical_value, entity_type, entity_public_id"
+UNIQUE,product_classification_scheme,public_id
+UNIQUE,classification_entry,public_id
+UNIQUE,classification_entry,"classification_scheme_id, code"
+UNIQUE,product_classification_assignment,public_id
+UNIQUE,product_classification_assignment,"medicinal_product_id, classification_entry_id"
+UNIQUE,diagnosis_reference,public_id
+UNIQUE,diagnosis_reference,"scheme, code"
+UNIQUE,assertion,public_id
+UNIQUE,evidence_support,public_id
+UNIQUE,evidence_support,"source_record_id, assertion_id"
+UNIQUE,observation_result,public_id
+UNIQUE,entity_match_assertion,public_id
+UNIQUE,medicine_shortage_situation,public_id
+INDEX,geography,geography_geom_gix / GIST / geom
+INDEX,geography,geography_geonames_idx / btree(default) / geonames_id WHERE geonames_id IS NOT NULL
+INDEX,observation_result,observation_period_idx / btree(default) / reporting_period
+INDEX,observation_result,observation_geo_idx / btree(default) / geography_id
+INDEX,observation_result,observation_presentation_idx / btree(default) / product_presentation_id
+POSTGIS,geography,"geom / geometry(Geometry,4326)"
