@@ -10,6 +10,7 @@ WIKI = ROOT / "wiki-src"
 PAGES = WIKI / "pages"
 INVENTORY = WIKI / "page-inventory.csv"
 REPORT = WIKI / "quality" / "metadata-migration-report.json"
+MIGRATION_REVISION = 2
 
 COMPACT_CLASSES = {
     "Narrative / Navigation",
