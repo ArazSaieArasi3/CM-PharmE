@@ -70,11 +70,17 @@ def main():
                 errors.append(f"{path.name}: internal-process terminology exposed in canonical H1: '{title}'")
                 break
 
+    short_aliases = {
+        "V2 Research Program and Gates": {"CM-PharmE 2.0 Research Method and Development", "Research Method and Development"},
+        "V2 Evaluation E1-E13": {"CM-PharmE 2.0 Evaluation Framework", "Evaluation Framework"},
+        "V2 Human Ontology Review": {"CM-PharmE 2.0 Semantic Review", "Semantic Review"},
+        "Gate and Claim Dispositions": {"Evidence Scope and Supported Claims"},
+    }
     for nav_name in ["Home.md", "_Sidebar.md"]:
         nav = dict(visible_links(PAGES / nav_name))
-        for target, label in EXPECTED_ALIASES.items():
-            if nav.get(target) != label and not (nav_name == "_Sidebar.md" and target == "V2 Research Program and Gates" and nav.get(target) == "Research Method and Development") and not (nav_name == "_Sidebar.md" and target == "V2 Evaluation E1-E13" and nav.get(target) == "Evaluation Framework") and not (nav_name == "_Sidebar.md" and target == "V2 Human Ontology Review" and nav.get(target) == "Semantic Review") and not (nav_name == "_Sidebar.md" and target == "Gate and Claim Dispositions" and nav.get(target) == "Evidence Scope and Supported Claims"):
-                errors.append(f"{nav_name}: target [[{target}]] lacks approved reader-facing alias; got '{nav.get(target)}'")
+        for target, allowed in short_aliases.items():
+            if target in nav and nav[target] not in allowed:
+                errors.append(f"{nav_name}: target [[{target}]] uses non-reader-facing label '{nav[target]}'")
 
     standard = (PAGES / "Wiki-Authoring-Standard.md").read_text(encoding="utf-8")
     if "reader-facing-terminology.md" not in standard:
