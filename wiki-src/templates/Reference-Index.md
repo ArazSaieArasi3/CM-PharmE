@@ -1,12 +1,8 @@
 # <Reference Index Title>
 
-> **Page scope:** <V1 | V2 | Cross-version | Version-neutral>  
-> **Documentation maturity:** <...>  
-> **Authoritative inventory source:** <...>  
-> **Last synchronized:** <...>  
-> **Last synchronized ref:** <...>  
-> **Related issues:** <...>  
-> **Wiki baseline:** <...>
+> **Version scope:** <V1 | V2 | Cross-version | Version-neutral>  
+> **Status:** <...>  
+> **Updated:** <YYYY-MM-DD>
 
 ## Index
 
@@ -23,3 +19,20 @@
 
 ## Coverage
 Report total entries and any known unresolved gaps.
+
+---
+
+<details>
+<summary>Documentation record</summary>
+
+- **Page scope:** <V1 | V2 | Cross-version | Version-neutral>
+- **Documentation maturity:** <...>
+- **Authoritative source:** <inventory source>
+- **Last synchronized:** <...>
+- **Last synchronized ref:** <...>
+- **Related issues/PRs:** <...>
+- **Evidence status:** <reference/navigation projection>
+- **Future refresh:** <...>
+- **Wiki baseline:** <...>
+
+</details>
