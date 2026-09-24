@@ -123,6 +123,18 @@ The project intentionally prefers a stable light documentation canvas over brows
 
 The mechanical contract is enforced by `tools/wiki/check_diagrams.py`. Existing governed SVGs are normalized by `tools/wiki/normalize_diagram_theme.py`.
 
+### Cache-safe embedding
+
+GitHub Wiki pages must not embed governed SVGs using only a branch-floating raw URL. Browsers and intermediary caches can retain an older SVG after the repository file changes.
+
+Every governed raw-image embed appends a content-derived query key:
+
+`?sha=<first-12-hex-of-SHA256>`
+
+The key is generated from the committed SVG bytes by `tools/wiki/sync_diagram_image_urls.py`. When a diagram changes, its URL changes automatically, forcing a fresh fetch while keeping the canonical repository path stable.
+
+CI runs `sync_diagram_image_urls.py --check` and rejects stale or unversioned governed diagram embeds.
+
 ## 8. Styling rules
 
 - Styling is secondary to notation semantics.

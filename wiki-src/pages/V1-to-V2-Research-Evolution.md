@@ -10,7 +10,7 @@ CM-PharmE 2.0 is best understood as a controlled research evolution from CM-Phar
 
 ## Visual evolution map
 
-![V1 to V2 research evolution](https://raw.githubusercontent.com/ArazSaieArasi3/CM-PharmE/main/wiki-src/diagrams/rendered/evolution/DGM-EVO-002--v1-v2-research-evolution.svg)
+![V1 to V2 research evolution](https://raw.githubusercontent.com/ArazSaieArasi3/CM-PharmE/main/wiki-src/diagrams/rendered/evolution/DGM-EVO-002--v1-v2-research-evolution.svg?sha=44efdd70c9da)
 
 **DGM-EVO-002** summarizes continuity, refinement and extension without implying like-for-like quantitative superiority. See [[Research Process and Evolution Diagrams]] for the full visual suite and provenance.
 
