@@ -55,7 +55,7 @@ This is a structural relation example, not an instance-data claim.
 - Mapping authority: `v2/data/mappings/ontology-rdb-mapping.csv`
 - Dataset→ontology evaluation: `v2/research/w7/e6-dataset-ontology-mapping-quality.md`
 - Ontology↔RDB↔KG evaluation: `v2/research/w7/e10-ontology-rdb-kg-semantic-consistency.md`
-- Ontology-specific diagram suite is governed separately by #235.
+- [[V2 Ontology Diagram Suite]] — governed multi-level visual documentation for the current V2 baseline.
 
 ## Known boundaries
 - Current domain review state: **Pending**.
