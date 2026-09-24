@@ -11,28 +11,43 @@ This standard defines the mandatory structure and evidence discipline for CM-Pha
 
 ## Mandatory metadata contract
 
-Every substantive page must state, in a compact header or equivalent structured section:
+Reader-facing pages use progressive disclosure.
 
-1. **Page scope:** V1 / V2 / Cross-version / Version-neutral.
-2. **Documentation maturity:** Stable / Stable-to-date-Evolving / Candidate / Frozen / Pending as applicable.
-3. **Authoritative source branch/ref.**
-4. **Last synchronized date.**
-5. **Last synchronized commit/ref when available.**
-6. **Related issue(s)/PR(s).**
-7. **Evidence status.**
-8. **Known pending refresh checkpoint(s), when applicable.**
-9. **Wiki baseline identifier, once declared.**
+### Compact reader header
 
-Index-only pages may use a shorter header only when the linked entries themselves carry the required version/evidence information.
+Normal Narrative, Navigation, Concept/Model, Evaluation, Evolution and Reference pages expose only:
+
+1. **Version scope** — V1 / V2 / Cross-version / Version-neutral.
+2. **Status** — the truthful documentation/evidence maturity.
+3. **Updated** — last synchronization date.
+
+### Documentation record
+
+The complete operational provenance moves to a collapsible **Documentation record** near the end of the page. It must retain or provide:
+- Page scope;
+- Documentation maturity;
+- authoritative source branch/ref;
+- last synchronized date;
+- last synchronized commit/ref when available;
+- related issue(s)/PR(s);
+- evidence status;
+- pending refresh checkpoint(s), when applicable;
+- Wiki baseline identifier.
+
+Status/Governance and Status/Changelog pages may retain expanded metadata at the top because operational state is their subject.
+
+The canonical progressive-disclosure policy is maintained at `wiki-src/editorial/progressive-metadata-contract.md`. Metadata must be relocated, not discarded.
 
 ## Page classes
 
 Use one of these page classes:
+- Narrative / Navigation
 - Narrative / Research
 - Concept / Domain / Model
 - Evaluation / Evidence
 - Cross-Version Evolution
 - Reference / Index
+- Status / Governance
 - Status / Changelog
 
 Templates are maintained under `wiki-src/templates/`.
@@ -137,7 +152,8 @@ When a page is renamed:
 ## Authoring checklist
 
 Before considering a page complete:
-- [ ] metadata is present;
+- [ ] compact header or governance metadata is present;
+- [ ] full Documentation record/provenance is present for reader-facing pages;
 - [ ] version scope is correct;
 - [ ] source ref is correct;
 - [ ] claims are evidence-linked;
