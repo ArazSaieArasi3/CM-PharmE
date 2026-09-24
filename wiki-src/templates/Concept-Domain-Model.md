@@ -1,14 +1,8 @@
 # <Concept / Domain / Model Title>
 
-> **Page scope:** <V1 | V2 | Cross-version>  
-> **Documentation maturity:** <...>  
-> **Authoritative source:** <...>  
-> **Last synchronized:** <...>  
-> **Last synchronized ref:** <...>  
-> **Related issues/PRs:** <...>  
-> **Evidence status:** <...>  
-> **Future refresh:** <...>  
-> **Wiki baseline:** <...>
+> **Version scope:** <V1 | V2 | Cross-version>  
+> **Status:** <...>  
+> **Updated:** <YYYY-MM-DD>
 
 ## Definition / intent
 Provide a readable explanation without redefining the authoritative semantics.
@@ -26,7 +20,24 @@ Link to concept passports, mappings, literature/data evidence or formal source.
 For version-sensitive material, state V1/V2 continuity, refinement or change.
 
 ## Known review status
-Record human-review or semantic-decision state.
+Record semantic-review or decision state.
 
 ## Related pages
 Add indexes and neighboring concepts/domains.
+
+---
+
+<details>
+<summary>Documentation record</summary>
+
+- **Page scope:** <V1 | V2 | Cross-version>
+- **Documentation maturity:** <...>
+- **Authoritative source:** <...>
+- **Last synchronized:** <...>
+- **Last synchronized ref:** <...>
+- **Related issues/PRs:** <...>
+- **Evidence status:** <...>
+- **Future refresh:** <...>
+- **Wiki baseline:** <...>
+
+</details>
