@@ -28,6 +28,22 @@ def page_file_for(row):
 def validate_text_metadata(path, text, errors):
     if path.name in {"Home.md", "_Sidebar.md"}:
         return
+
+    # Reader-facing pages may use the progressive-disclosure contract:
+    # three compact header fields plus a complete Documentation record.
+    if "**Version scope:**" in text:
+        for marker in ["Version scope:", "Status:", "Updated:"]:
+            if marker not in text:
+                errors.append(f"{path}: missing compact metadata marker '{marker}'")
+        if "<summary>Documentation record</summary>" not in text:
+            errors.append(f"{path}: compact metadata requires a Documentation record")
+        for marker in REQUIRED_META:
+            if marker not in text:
+                errors.append(f"{path}: Documentation record missing required provenance marker '{marker}'")
+        return
+
+    # Governance/status pages and not-yet-migrated pages retain the legacy
+    # expanded header during the controlled transition.
     for marker in REQUIRED_META:
         if marker not in text:
             errors.append(f"{path}: missing required metadata marker '{marker}'")
