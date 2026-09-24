@@ -1,0 +1,32 @@
+name: Wiki Quality Audit
+
+on:
+  pull_request:
+    paths:
+      - 'wiki-src/quality/**'
+      - 'tools/wiki/audit_wiki_quality.py'
+      - '.github/workflows/wiki-quality-audit.yml'
+      - 'wiki-src/pages/**'
+      - 'wiki-src/page-inventory.csv'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate frozen rubric and collect baseline metrics
+        run: python tools/wiki/audit_wiki_quality.py --validate --output wiki-quality-metrics.json
+      - name: Upload audit metrics
+        uses: actions/upload-artifact@v4
+        with:
+          name: wiki-quality-metrics
+          path: wiki-quality-metrics.json
+          if-no-files-found: error
+          retention-days: 30

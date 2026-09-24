@@ -1,0 +1,439 @@
+{
+  "rubric_id": "CMPE-WIKI-QUALITY-1.0",
+  "frozen_date": "2026-09-24",
+  "status": "FROZEN_FOR_WIKI_17",
+  "final_target": {
+    "quantitative": 90,
+    "qualitative": 90
+  },
+  "change_policy": "Weights, criteria, scoring anchors and evidence rules must not be silently changed during #228. Any correction requires a new rubric version and documented impact analysis; #244 must score against v1.0 unless an approved correction explicitly supersedes it.",
+  "quantitative": {
+    "total_weight": 100,
+    "criteria": [
+      {
+        "id": "Q1",
+        "name": "Wiki architecture coverage",
+        "weight": 12,
+        "subcriteria": [
+          [
+            "version-aware Home and Start Here",
+            2
+          ],
+          [
+            "research documentation family",
+            2
+          ],
+          [
+            "conceptual model and ontology family",
+            2
+          ],
+          [
+            "data/database/KG family",
+            2
+          ],
+          [
+            "evaluation and reproducibility family",
+            2
+          ],
+          [
+            "applications/publications/reference family",
+            2
+          ]
+        ]
+      },
+      {
+        "id": "Q2",
+        "name": "Content and reference depth",
+        "weight": 8,
+        "subcriteria": [
+          [
+            "V1 explanatory depth",
+            1
+          ],
+          [
+            "V2 explanatory depth",
+            1
+          ],
+          [
+            "cross-version evolution depth",
+            1
+          ],
+          [
+            "ontology module/reference depth",
+            1
+          ],
+          [
+            "property/reference depth",
+            1
+          ],
+          [
+            "database table/reference depth",
+            1
+          ],
+          [
+            "worked examples",
+            1
+          ],
+          [
+            "tutorial/how-to depth",
+            1
+          ]
+        ]
+      },
+      {
+        "id": "Q3",
+        "name": "Concept and relation reference coverage",
+        "weight": 12,
+        "subcriteria": [
+          [
+            "V1 concept registry discoverability",
+            2
+          ],
+          [
+            "V1 relation registry discoverability",
+            2
+          ],
+          [
+            "V2 87-element discoverability",
+            3
+          ],
+          [
+            "V2 module-level reference coverage",
+            2
+          ],
+          [
+            "OWL class/property reference coverage",
+            2
+          ],
+          [
+            "V1-to-V2 concept migration coverage",
+            1
+          ]
+        ]
+      },
+      {
+        "id": "Q4",
+        "name": "Database and data-model documentation",
+        "weight": 10,
+        "subcriteria": [
+          [
+            "database overview and scope",
+            2
+          ],
+          [
+            "logical ERD",
+            2
+          ],
+          [
+            "physical ERD",
+            2
+          ],
+          [
+            "complete table/field reference",
+            2
+          ],
+          [
+            "ontology-RDB mapping documentation",
+            1
+          ],
+          [
+            "provenance/data-flow documentation",
+            1
+          ]
+        ]
+      },
+      {
+        "id": "Q5",
+        "name": "Evaluation and reproducibility coverage",
+        "weight": 8,
+        "subcriteria": [
+          [
+            "V1 evaluation coverage",
+            2
+          ],
+          [
+            "V2 evaluation-family coverage",
+            3
+          ],
+          [
+            "reproducibility coverage",
+            2
+          ],
+          [
+            "supported-claim/limitation coverage",
+            1
+          ]
+        ]
+      },
+      {
+        "id": "Q6",
+        "name": "Version and evolution traceability",
+        "weight": 8,
+        "subcriteria": [
+          [
+            "V1/V2 status separation",
+            2
+          ],
+          [
+            "V1-to-V2 evolution package",
+            3
+          ],
+          [
+            "Wiki lifecycle/baseline traceability",
+            2
+          ],
+          [
+            "version/citation distinction",
+            1
+          ]
+        ]
+      },
+      {
+        "id": "Q7",
+        "name": "Diagram and visual coverage",
+        "weight": 12,
+        "subcriteria": [
+          [
+            "research/evolution diagrams",
+            2
+          ],
+          [
+            "ontology diagrams",
+            3
+          ],
+          [
+            "ERD/database diagrams",
+            3
+          ],
+          [
+            "data/KG/mapping diagrams",
+            2
+          ],
+          [
+            "evaluation/reproducibility diagrams",
+            1
+          ],
+          [
+            "formal diagram standard",
+            1
+          ]
+        ]
+      },
+      {
+        "id": "Q8",
+        "name": "Navigation and cross-linking",
+        "weight": 8,
+        "subcriteria": [
+          [
+            "Home and Sidebar coherence",
+            2
+          ],
+          [
+            "major subjects within two meaningful steps",
+            2
+          ],
+          [
+            "cross-page links",
+            2
+          ],
+          [
+            "no required orphan pages",
+            1
+          ],
+          [
+            "reader-journey paths",
+            1
+          ]
+        ]
+      },
+      {
+        "id": "Q9",
+        "name": "Evidence and source traceability",
+        "weight": 8,
+        "subcriteria": [
+          [
+            "authoritative source refs",
+            2
+          ],
+          [
+            "version/status metadata",
+            2
+          ],
+          [
+            "evidence/artifact links",
+            2
+          ],
+          [
+            "limitations/pending state visibility",
+            1
+          ],
+          [
+            "update/changelog traceability",
+            1
+          ]
+        ]
+      },
+      {
+        "id": "Q10",
+        "name": "Tutorials, examples and how-to coverage",
+        "weight": 6,
+        "subcriteria": [
+          [
+            "ontology exploration guide",
+            1
+          ],
+          [
+            "build/validation guide",
+            1
+          ],
+          [
+            "database/bootstrap guide",
+            1
+          ],
+          [
+            "SQL/SPARQL/query guide",
+            1
+          ],
+          [
+            "evidence/provenance trace example",
+            1
+          ],
+          [
+            "citation/reuse practical guide",
+            1
+          ]
+        ]
+      },
+      {
+        "id": "Q11",
+        "name": "Publication and citation coverage",
+        "weight": 4,
+        "subcriteria": [
+          [
+            "publication lineage/status",
+            2
+          ],
+          [
+            "citation/version/reuse guidance",
+            2
+          ]
+        ]
+      },
+      {
+        "id": "Q12",
+        "name": "QA and lifecycle automation",
+        "weight": 4,
+        "subcriteria": [
+          [
+            "source validation",
+            1
+          ],
+          [
+            "actual Wiki publish/render verification",
+            1
+          ],
+          [
+            "reproducible snapshot/archive",
+            1
+          ],
+          [
+            "baseline/update lifecycle controls",
+            1
+          ]
+        ]
+      }
+    ]
+  },
+  "qualitative": {
+    "total_weight": 100,
+    "rating_scale": {
+      "0": "absent/unacceptable",
+      "1": "weak",
+      "2": "partial",
+      "3": "adequate",
+      "4": "strong",
+      "5": "exemplary"
+    },
+    "formula": "criterion_score = weight * rating / 5; total = sum criterion_score",
+    "criteria": [
+      {
+        "id": "L1",
+        "name": "Reader orientation",
+        "weight": 10
+      },
+      {
+        "id": "L2",
+        "name": "Natural professional editorial voice",
+        "weight": 8
+      },
+      {
+        "id": "L3",
+        "name": "Separation of reader-facing documentation from internal process",
+        "weight": 10
+      },
+      {
+        "id": "L4",
+        "name": "Findability and information architecture",
+        "weight": 10
+      },
+      {
+        "id": "L5",
+        "name": "Scientific and semantic rigor",
+        "weight": 12
+      },
+      {
+        "id": "L6",
+        "name": "Research-narrative coherence",
+        "weight": 10
+      },
+      {
+        "id": "L7",
+        "name": "Ontology documentation quality",
+        "weight": 10
+      },
+      {
+        "id": "L8",
+        "name": "Database documentation quality",
+        "weight": 8
+      },
+      {
+        "id": "L9",
+        "name": "Visual communication quality",
+        "weight": 8
+      },
+      {
+        "id": "L10",
+        "name": "Progressive disclosure and scannability",
+        "weight": 5
+      },
+      {
+        "id": "L11",
+        "name": "Maintainability and governance",
+        "weight": 5
+      },
+      {
+        "id": "L12",
+        "name": "Documentation-profile separation",
+        "weight": 4
+      }
+    ],
+    "evidence_rules": [
+      "Ratings must cite concrete pages/artifacts and observed patterns.",
+      "A 5 requires complete and consistently executed evidence.",
+      "A 4 is strong with bounded non-critical gaps.",
+      "A 3 is adequate with material improvement opportunity.",
+      "A 2 is partial and reader value is materially constrained.",
+      "A 1 is weak/minimal; 0 is absent.",
+      "Visual quality cannot score above 1 if no reader-facing diagrams are embedded.",
+      "Scientific rigor may not be reduced to raise editorial/readability scores."
+    ]
+  },
+  "anti_gaming_rules": [
+    "Page count and word count are descriptive metrics, not quality by themselves.",
+    "The same artifact must not be counted as full evidence for unrelated criteria without a stated reason.",
+    "Diagram quantity cannot substitute for diagram correctness, notation or readability.",
+    "Generated reference pages count only when linked, usable and subordinate to the authoritative semantic source.",
+    "Pending/future work cannot receive completion points.",
+    "A source-only artifact does not receive published/rendered completion credit where publication is part of the criterion."
+  ]
+}
