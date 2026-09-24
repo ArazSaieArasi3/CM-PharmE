@@ -1,0 +1,11 @@
+flowchart LR
+  E["Admitted evidence\nliterature, datasets, authoritative sources"]
+  C["Concept / relation discovery"]
+  U["UFO / OntoUML conceptualization"]
+  O["OWL / SHACL formalization"]
+  R["Relational + RDF/KG realization"]
+  Q["Evaluation families E1–E13"]
+  S["Supported / bounded / deferred claims"]
+
+  E --> C --> U --> O --> R --> Q --> S
+  Q -.-> P["E9 real expert evidence pending"]
