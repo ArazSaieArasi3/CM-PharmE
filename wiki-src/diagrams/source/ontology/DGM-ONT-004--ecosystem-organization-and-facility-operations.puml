@@ -31,7 +31,7 @@ ManufacturingSiteRole --|> Facility : subClassOf
 ManufacturingSiteRole --|> EcosystemParticipant : subClassOf
 DistributionSiteRole --|> Facility : subClassOf
 DistributionSiteRole --|> EcosystemParticipant : subClassOf
-Organization --> Facility : operates «material; derived from FacilityOperation»
+Organization --> Facility : operates
 FacilityOperation --> Organization : operationOrganization
 FacilityOperation --> Facility : operationFacility
 Organization .. Facility : ≠ protected distinction
