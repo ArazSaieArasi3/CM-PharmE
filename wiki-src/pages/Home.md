@@ -116,9 +116,9 @@ CM-PharmE 2.0 is an active research line. The Wiki documents stable work complet
 
 V2 documentation remains intentionally open to controlled updates.
 
-- **Demonstrator-evaluation refresh (#212):** synchronize the Wiki after representative-task/application-scope evidence stabilizes. Internal program reference: W8 / Gate G.
+- **Demonstrator-evaluation refresh (#212):** synchronize the Wiki after representative-task and application-scope evidence stabilizes.
 - **Semantic-review refresh (#213):** synchronize approved ontology changes and evidence after the current semantic review reaches a stable disposition.
-- **Research-release refresh (#214):** freeze the final V2 Wiki only when the manuscript/research release reaches its explicit final readiness decision. Internal program reference: Gate H.
+- **Research-release refresh (#214):** freeze the final V2 Wiki only when the manuscript/research release reaches its explicit final readiness decision.
 
 ## Source-of-truth rule
 
