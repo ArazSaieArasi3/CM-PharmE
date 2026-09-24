@@ -1,0 +1,13 @@
+digraph G {
+  rankdir=LR;
+  node [shape=box];
+  V1 [label="V1 ecosystem conceptual baseline"];
+  D [label="V2 multi-source data grounding"];
+  M [label="V2 modular ontology architecture"];
+  X [label="V2 ontology-RDB-KG realization"];
+  E [label="V2 multi-family evaluation"];
+  V1 -> D [label="evolves through"];
+  D -> M [label="supports"];
+  M -> X [label="realized as"];
+  X -> E [label="evaluated by"];
+}
