@@ -1,0 +1,16 @@
+digraph G {
+  rankdir=LR;
+  V1 [label="V1\nEcosystem conceptual baseline"];
+  E [label="Evidence strategy\nreview + multi-source data"];
+  M [label="Model architecture\n5 domains → modular Core/X-INFRA/Extensions"];
+  F [label="Formalization\nconceptual → OWL/SHACL"];
+  D [label="Representation\nontology + RDB + RDF/KG"];
+  Q [label="Evaluation\nlayered V1 → prospective multi-family V2"];
+  A [label="Applications\nillustrative pathways → bounded demonstrators"];
+  V1 -> E [label="retains & extends"];
+  E -> M [label="refines"];
+  M -> F [label="deepens"];
+  F -> D [label="realizes"];
+  D -> Q [label="evaluates"];
+  Q -> A [label="supports"];
+}
