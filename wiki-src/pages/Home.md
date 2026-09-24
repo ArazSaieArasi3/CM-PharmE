@@ -21,6 +21,17 @@ Choose the path closest to what you want to understand:
 - **Look up concepts, relations, datasets or artifacts:** [[Reference Guide]]
 - **Inspect documentation history and governance:** [[Documentation History and Governance]]
 
+## Documentation profiles
+
+CM-PharmE currently uses two documentation profiles:
+
+- **Research / Ontology — primary:** research method, conceptual model, ontology, evaluation, evolution and publications.
+- **Data / Engineering — supporting:** datasets, provenance, PostgreSQL/PostGIS, ontology mappings, RDF/KG and query architecture.
+
+**Software / Product** and **Business** profiles are not currently declared. The Observatory remains a research demonstrator, and the Business Architecture ontology extension is not a business-model documentation program.
+
+→ [[Documentation Profiles]]
+
 ## Version shortcuts
 
 ### CM-PharmE 1.x — Stable
