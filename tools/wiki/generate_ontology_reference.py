@@ -347,6 +347,15 @@ This is a structural relation example, not an instance-data claim.
 - {wiki('V2 Formal Ontology and SHACL')}
 - {wiki('V2 Human Ontology Review','CM-PharmE 2.0 Semantic Review')}
 
+## Related implementation, mappings and visual/evaluation context
+- {wiki('V2 Data Infrastructure')}
+- {wiki('V2 Evaluation E1-E13','CM-PharmE 2.0 Evaluation Framework')}
+- {wiki('Diagram Standards and Inventory')}
+- Mapping authority: {code('v2/data/mappings/ontology-rdb-mapping.csv')}
+- Dataset→ontology evaluation: {code('v2/research/w7/e6-dataset-ontology-mapping-quality.md')}
+- Ontology↔RDB↔KG evaluation: {code('v2/research/w7/e10-ontology-rdb-kg-semantic-consistency.md')}
+- Ontology-specific diagram suite is governed separately by #235.
+
 ## Known boundaries
 - Current domain review state: **{d['review']}**.
 - Generated reference does not constitute human/author semantic approval.
@@ -442,6 +451,13 @@ This is a structural example grounded in explicit formal endpoints, not an insta
 
 A source record, identifier or label should not be treated as this domain entity unless the governing ontology/evidence relation explicitly supports that interpretation.
 
+## Related implementation, mappings and visual/evaluation context
+- {wiki('V2 Data Infrastructure')}
+- {wiki('V2 Evaluation E1-E13','CM-PharmE 2.0 Evaluation Framework')}
+- {wiki('Diagram Standards and Inventory')}
+- Mapping authority: {code('v2/data/mappings/ontology-rdb-mapping.csv')}
+- Concept/data mapping evidence remains governed by the mapping registry and E6/E10 artifacts; this generated page does not infer a direct table mapping.
+
 ## Review state
 - **Passport review state:** {c['review_status']}
 - **Evidence status:** {c['evidence_status']}
@@ -502,6 +518,12 @@ Pending status remains pending until the governed semantic review records a disp
 ## Structural example
 {example}
 
+## Related implementation, mappings and evaluation context
+- {wiki('V2 Data Infrastructure')}
+- {wiki('V2 Evaluation E1-E13','CM-PharmE 2.0 Evaluation Framework')}
+- Mapping authority: {code('v2/data/mappings/ontology-rdb-mapping.csv')}
+- Relation/data realization remains bounded to registered mappings.
+
 ## Review boundary
 - **Review state:** {rr['status']}
 - Unspecified endpoints are review targets, not automatically defects.
@@ -550,6 +572,11 @@ This property connects a modeled entity to a literal value under the explicit fo
 
 ## Structural example
 {example}
+
+## Related implementation, mappings and evaluation context
+- {wiki('V2 Data Infrastructure')}
+- {wiki('V2 Evaluation E1-E13','CM-PharmE 2.0 Evaluation Framework')}
+- Mapping authority: {code('v2/data/mappings/ontology-rdb-mapping.csv')}
 
 ## Review boundary
 - No inverse semantics are inferred.
@@ -632,6 +659,15 @@ See {wiki('V1 to V2 Research Evolution')}, {wiki('V1 to V2 Concept Migration')} 
 
 ## Datatype-property reference — 5 properties
 {chr(10).join(dp_lines)}
+
+## Related implementation, mappings, diagrams and evaluation
+- {wiki('V2 Data Infrastructure')}
+- {wiki('V2 Evaluation E1-E13','CM-PharmE 2.0 Evaluation Framework')}
+- {wiki('Diagram Standards and Inventory')}
+- mapping registry: {code('v2/data/mappings/ontology-rdb-mapping.csv')}
+- mapping-quality evidence: {code('v2/research/w7/e6-dataset-ontology-mapping-quality.md')}
+- cross-representation evidence: {code('v2/research/w7/e10-ontology-rdb-kg-semantic-consistency.md')}
+- ontology diagram-suite work: #235
 
 ## Generated vs curated boundary
 The exhaustive tables/pages are generated for discoverability and coverage. Curated interpretation remains in {wiki('V2 UFO and OntoUML Architecture')}, {wiki('V2 Formal Ontology and SHACL')}, {wiki('V2 Human Ontology Review','CM-PharmE 2.0 Semantic Review')} and cross-version research pages.
