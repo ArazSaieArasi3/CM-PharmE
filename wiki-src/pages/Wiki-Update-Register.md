@@ -2,13 +2,15 @@
 
 > **Page scope:** Version-neutral governance  
 > **Documentation maturity:** Stable  
-> **Last synchronized:** 2026-09-23  
+> **Last synchronized:** 2026-09-24  
 > **Related issues:** #202, #210, #211, #212, #213, #214, #217
 
 This register records material CM-PharmE Wiki synchronization events.
 
 | Date | Candidate/Baseline | Pages / area | Trigger | V1 ref | V2 ref | Impact class | Evidence/status change | Follow-up |
 |---|---|---|---|---|---|---|---|---|
+| 2026-09-24 | WB-2026.09.1 | Exhaustive V2 ontology reference: 17 modules, 87 concepts, 52 object properties, 5 datatype properties | #234 | V1 semantic content unchanged | v2/research-program@1226b0a5484f8f5d3a8d214e0d0f52f066b88999 | Documentation-only / generated ontology reference | 162 reference pages; 87 conceptual elements reconciled to 81 OWL classes + 6 datatypes; 0 blocking coverage gaps | #213 semantic refresh; #235 visual suite |
+| 2026-09-24 | WB-2026.09.1 | V2 ontology diagram suite: 10 governed diagrams + 17 module cross-links | #235 | V1 semantic content unchanged | v2/research-program@1226b0a5484f8f5d3a8d214e0d0f52f066b88999 | Documentation-only / ontology visualization | 10/10 families; 17/17 domains at module level; 70 unique concept nodes; 39 object properties; 0 semantic-validation errors | #213 semantic refresh; #214 final freeze |
 | 2026-09-24 | WB-2026.09.1 | Six research/evolution diagrams + companion page + V1/V2/evolution embeds | #233 | V1 method/status unchanged | V2 status rechecked: E9 pending, demonstrator 7/8, task evaluation/release readiness pending | Documentation-only / research visualization | Research landscape, V1/V2 processes, V1→V2 lineage, evidence trace and publication/repository/Wiki relationships visualized | #212/#213/#214 future status refreshes; #234–#237 deeper ontology/data visuals |
 | 2026-09-24 | WB-2026.09.1 | Diagram standard, manifest, four sample notation artifacts, authoring/CI rules | #232 | V1 semantic content unchanged; legacy diagram assets inventoried | V2 semantic content unchanged; current PlantUML source inventoried | Documentation-only / visual standard | Formal notation selection, source→SVG artifact contract, accessibility and staleness rules established | #233–#235 ontology/research visuals; #236 ERD; #237 KG/data-flow visuals |
 | 2026-09-24 | WB-2026.09.1 | Documentation profile model, Home profile declaration, Documentation Profiles page | #242 | V1 semantic content unchanged | V2 semantic content unchanged | Documentation-only / profile architecture | Research/Ontology declared primary; Data/Engineering supporting; Software/Product and Business explicitly not declared | #243 / OGCM-RF#45–#50 generalization |
