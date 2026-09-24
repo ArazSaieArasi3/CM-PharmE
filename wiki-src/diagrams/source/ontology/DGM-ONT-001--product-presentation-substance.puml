@@ -1,0 +1,17 @@
+@startuml DGM_ONT_001
+hide methods
+hide fields
+skinparam classAttributeIconSize 0
+
+class "Medicinal Product" as Product <<Kind>>
+class "Medicinal Product Presentation" as Presentation <<Kind>>
+class "Pharmaceutical Substance" as Substance <<Kind>>
+
+Presentation --> Product : presentationOf
+Presentation --> Substance : hasActiveSubstance
+
+legend left
+  <<Kind>> = identity-bearing entity type
+  Arrow labels = explicit semantic relations
+endlegend
+@enduml
