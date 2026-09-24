@@ -1,41 +1,42 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 1067" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 1067" role="img" aria-labelledby="title desc" data-theme-safe="true" style="color:#24292f;background:#ffffff">
 <title id="title">DGM-ONT-003 V2 Core ontology overview</title>
 <desc id="desc">Provide a readable six-module overview of the 32-concept Core and selected explicit cross-domain relation spans.</desc>
-<defs><marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z"/></marker><marker id="inherit" markerWidth="12" markerHeight="12" refX="10" refY="5" orient="auto"><path d="M0,0 L0,10 L10,5 z" fill="white" stroke="currentColor"/></marker><style>text{font-family:sans-serif}.node{fill:white;stroke:currentColor}.note{fill:white;stroke:currentColor;stroke-dasharray:5 4}.prot{stroke-dasharray:6 5}.dtype{stroke-dasharray:4 3}.relator{stroke-width:2}.edge-label{font-size:10px}</style></defs>
+<rect id="diagram-background" x="0" y="0" width="100%" height="100%" fill="#ffffff" stroke="none" pointer-events="none" />
+<defs><marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" /></marker><marker id="inherit" markerWidth="12" markerHeight="12" refX="10" refY="5" orient="auto"><path d="M0,0 L0,10 L10,5 z" fill="white" stroke="currentColor" /></marker><style>text{font-family:sans-serif}.node{fill:white;stroke:currentColor}.note{fill:white;stroke:currentColor;stroke-dasharray:5 4}.prot{stroke-dasharray:6 5}.dtype{stroke-dasharray:4 3}.relator{stroke-width:2}.edge-label{font-size:10px}</style></defs>
 <text x="182.5" y="34" text-anchor="middle" font-size="17" font-weight="bold">Core modules</text>
 <text x="532.5" y="34" text-anchor="middle" font-size="17" font-weight="bold">Selected explicit</text>
 <text x="532.5" y="53" text-anchor="middle" font-size="17" font-weight="bold">cross-domain spans</text>
-<rect class="node" x="40" y="105" width="285" height="96" rx="5"/>
+<rect class="node" x="40" y="105" width="285" height="96" rx="5" />
 <text x="182.5" y="129" text-anchor="middle" font-size="13" font-weight="bold">Ecosystem Organization</text>
 <text x="182.5" y="187" text-anchor="middle" font-size="11">«module · Core · 8 concepts»</text>
-<rect class="node" x="40" y="237" width="285" height="96" rx="5"/>
+<rect class="node" x="40" y="237" width="285" height="96" rx="5" />
 <text x="182.5" y="261" text-anchor="middle" font-size="13" font-weight="bold">Facility Operations</text>
 <text x="182.5" y="319" text-anchor="middle" font-size="11">«module · Core · 4 concepts»</text>
-<rect class="node" x="40" y="369" width="285" height="96" rx="5"/>
+<rect class="node" x="40" y="369" width="285" height="96" rx="5" />
 <text x="182.5" y="393" text-anchor="middle" font-size="13" font-weight="bold">Regulatory Governance</text>
 <text x="182.5" y="451" text-anchor="middle" font-size="11">«module · Core · 3 concepts»</text>
-<rect class="node" x="40" y="501" width="285" height="96" rx="5"/>
+<rect class="node" x="40" y="501" width="285" height="96" rx="5" />
 <text x="182.5" y="525" text-anchor="middle" font-size="13" font-weight="bold">Pharmaceutical Product</text>
 <text x="182.5" y="583" text-anchor="middle" font-size="11">«module · Core · 10 concepts»</text>
-<rect class="node" x="40" y="633" width="285" height="96" rx="5"/>
+<rect class="node" x="40" y="633" width="285" height="96" rx="5" />
 <text x="182.5" y="657" text-anchor="middle" font-size="13" font-weight="bold">Supply Operations</text>
 <text x="182.5" y="715" text-anchor="middle" font-size="11">«module · Core · 4 concepts»</text>
-<rect class="node" x="40" y="765" width="285" height="96" rx="5"/>
+<rect class="node" x="40" y="765" width="285" height="96" rx="5" />
 <text x="182.5" y="789" text-anchor="middle" font-size="13" font-weight="bold">Ecosystem Observation</text>
 <text x="182.5" y="847" text-anchor="middle" font-size="11">«module · Core · 3 concepts»</text>
-<rect class="note" x="390" y="105" width="285" height="96" rx="5"/>
+<rect class="note" x="390" y="105" width="285" height="96" rx="5" />
 <text x="532.5" y="129" text-anchor="middle" font-size="13" font-weight="bold">operates: Organization → Facility</text>
 <text x="532.5" y="187" text-anchor="middle" font-size="11">«constraint note»</text>
-<rect class="note" x="390" y="237" width="285" height="96" rx="5"/>
+<rect class="note" x="390" y="237" width="285" height="96" rx="5" />
 <text x="532.5" y="261" text-anchor="middle" font-size="13" font-weight="bold">listingJurisdiction: MarketListing →</text>
 <text x="532.5" y="278" text-anchor="middle" font-size="13" font-weight="bold">RegulatoryJurisdiction</text>
 <text x="532.5" y="319" text-anchor="middle" font-size="11">«constraint note»</text>
-<rect class="note" x="390" y="369" width="285" height="96" rx="5"/>
+<rect class="note" x="390" y="369" width="285" height="96" rx="5" />
 <text x="532.5" y="387" text-anchor="middle" font-size="13" font-weight="bold">shortageProduct:</text>
 <text x="532.5" y="404" text-anchor="middle" font-size="13" font-weight="bold">MedicineShortageSituation →</text>
 <text x="532.5" y="421" text-anchor="middle" font-size="13" font-weight="bold">MedicinalProduct</text>
 <text x="532.5" y="451" text-anchor="middle" font-size="11">«constraint note»</text>
-<rect class="note" x="390" y="501" width="285" height="96" rx="5"/>
+<rect class="note" x="390" y="501" width="285" height="96" rx="5" />
 <text x="532.5" y="519" text-anchor="middle" font-size="13" font-weight="bold">producesObservationResult:</text>
 <text x="532.5" y="536" text-anchor="middle" font-size="13" font-weight="bold">ObservationActivity →</text>
 <text x="532.5" y="553" text-anchor="middle" font-size="13" font-weight="bold">ObservationResult</text>
