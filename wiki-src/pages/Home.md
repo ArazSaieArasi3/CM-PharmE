@@ -13,11 +13,11 @@ CM-PharmE is a versioned, ontology-grounded research program for modeling and in
 
 ## Where should I start?
 
-- **Research and methodology:** start with the project overview, V1 research design, then V1→V2 Research Evolution.
-- **Ontology and conceptual modeling:** start with the V1 Model, then V2 Conceptual Architecture, UFO/OntoUML and Formal Ontology.
-- **Data and engineering:** start with V2 Data Infrastructure, Provenance, RDB/KG realization and API boundary.
-- **Evaluation and reproducibility:** start with Evaluation & Assurance, then the V1 evidence index and V2 E1–E13 matrix.
-- **Applications and demonstrators:** start with the V2 Observatory and Representative Tasks page.
+- **Research and methodology:** start with [[Project Overview]], then the V1 research design and [[V1 to V2 Research Evolution]].
+- **Ontology and conceptual modeling:** start with [[V1 Conceptual Model]], then the V2 conceptual architecture, UFO/OntoUML and formal ontology pages.
+- **Data and engineering:** start with [[V2 Data Infrastructure]], then provenance, relational/KG realization and query/API documentation.
+- **Evaluation and reproducibility:** start with [[Evaluation and Assurance]], then the V1 evidence index and [[V2 Evaluation E1-E13|CM-PharmE 2.0 Evaluation Framework]].
+- **Applications and demonstrators:** start with [[V2 Observatory and Demonstrators]] and the representative-task material.
 
 ## 1. Project Overview
 
@@ -49,14 +49,14 @@ CM-PharmE 1.x is the stable/public evidence baseline documented from `main`.
 CM-PharmE 2.0 is an active research line. The Wiki documents stable work completed to date while keeping pending work visibly pending.
 
 - [[CM-PharmE 2.0]]
-- [[V2 Research Program and Gates]]
+- [[V2 Research Program and Gates|CM-PharmE 2.0 Research Method and Development]]
 - [[V2 Dataset Landscape and Provenance]]
 - [[V2 Concept and Relation Discovery]]
 - [[V2 UFO and OntoUML Architecture]]
 - [[V2 Formal Ontology and SHACL]]
 - [[V2 Data Infrastructure]]
-- [[V2 Evaluation E1-E13]]
-- [[V2 Human Ontology Review]]
+- [[V2 Evaluation E1-E13|CM-PharmE 2.0 Evaluation Framework]]
+- [[V2 Human Ontology Review|CM-PharmE 2.0 Semantic Review]]
 - [[V2 Observatory and Demonstrators]]
 - [[V2 Manuscript and Claim Traceability]]
 - [[V2 Limitations and Deferred Work]]
@@ -76,8 +76,8 @@ CM-PharmE 2.0 is an active research line. The Wiki documents stable work complet
 
 - [[Evaluation and Assurance]]
 - [[V1 Evaluation Index]]
-- [[V2 Evaluation E1-E13]]
-- [[Gate and Claim Dispositions]]
+- [[V2 Evaluation E1-E13|CM-PharmE 2.0 Evaluation Framework]]
+- [[Gate and Claim Dispositions|Evidence Scope and Supported Claims]]
 - [[Reproducibility Guide]]
 
 ## 5. Applications and Demonstrators
@@ -112,13 +112,13 @@ CM-PharmE 2.0 is an active research line. The Wiki documents stable work complet
 - [[Wiki Update Register]]
 - [[Wiki QA and Coverage]]
 
-## 9. Current Synchronization Checkpoints
+## 9. Current synchronization checkpoints
 
 V2 documentation remains intentionally open to controlled updates.
 
-- **#212:** refresh after W8 / Gate G stabilization.
-- **#213:** refresh after human ontology review and semantic stabilization.
-- **#214:** final V2 Wiki freeze at final manuscript/research release disposition.
+- **Demonstrator-evaluation refresh (#212):** synchronize the Wiki after representative-task/application-scope evidence stabilizes. Internal program reference: W8 / Gate G.
+- **Semantic-review refresh (#213):** synchronize approved ontology changes and evidence after the current semantic review reaches a stable disposition.
+- **Research-release refresh (#214):** freeze the final V2 Wiki only when the manuscript/research release reaches its explicit final readiness decision. Internal program reference: Gate H.
 
 ## Source-of-truth rule
 
