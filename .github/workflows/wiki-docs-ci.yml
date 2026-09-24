@@ -40,6 +40,8 @@ jobs:
         run: python tools/wiki/check_documentation_profiles.py
       - name: Validate diagram artifacts
         run: python tools/wiki/check_diagrams.py
+      - name: Validate ontology reference coverage
+        run: python tools/wiki/check_ontology_reference.py
       - name: Upload navigation report
         uses: actions/upload-artifact@v4
         with:
