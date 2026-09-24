@@ -12,6 +12,7 @@
 
 **Conceptual Model & Ontology**
 - [[Ontology and Conceptual Model Guide]]
+- [[V2 Ontology Reference]]
 
 **Data & Database**
 - [[Data and Database Guide]]

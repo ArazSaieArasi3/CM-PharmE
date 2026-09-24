@@ -13,6 +13,9 @@ Use this section to understand the **conceptual commitments, UFO/OntoUML archite
 - [[V1 Relations]]
 - [[V1 Formal Ontology]]
 
+## V2 exhaustive reference
+- [[V2 Ontology Reference]] — 17 modules, 87 conceptual elements, 52 object properties and 5 datatype properties.
+
 ## V2 conceptual and formal architecture
 - [[V2 Concept and Relation Discovery]]
 - [[V2 UFO and OntoUML Architecture]]
