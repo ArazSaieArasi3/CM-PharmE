@@ -1,0 +1,51 @@
+name: Declare Wiki Baseline
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'tools/wiki/declare_wiki_baseline.py'
+      - '.github/workflows/wiki-declare-baseline.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: cm-pharme-wiki-declare
+  cancel-in-progress: false
+
+jobs:
+  declare:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ github.token }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Declare WB-2026.09.1
+        run: python tools/wiki/declare_wiki_baseline.py
+
+      - name: Validate declared source
+        run: |
+          python tools/wiki/validate_wiki_source.py
+          python tools/wiki/validate_wiki_source.py --self-test
+
+      - name: Commit declaration
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add wiki-src
+          if git diff --cached --quiet; then
+            echo "No declaration changes to commit."
+            exit 0
+          fi
+          git commit -m "Wiki: declare WB-2026.09.1 current QA-approved baseline"
+          git push origin HEAD:main
