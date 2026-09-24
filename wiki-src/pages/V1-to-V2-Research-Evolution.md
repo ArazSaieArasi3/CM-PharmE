@@ -121,15 +121,13 @@ Chronological evolution is not evidence that V2 is universally “better” than
 - V2 is not yet final;
 - E9 expert evidence and final demonstrator-evaluation evidence remain incomplete.
 
-Internal provenance for the application checkpoint is retained under the W8/Gate G controls.
-
 ## Evidence
 
 - [V1 research method](https://github.com/ArazSaieArasi3/CM-PharmE/blob/main/docs/methodology/research-and-model-development.md)
 - [V1 version record](https://github.com/ArazSaieArasi3/CM-PharmE/blob/main/docs/versions/v1.0.0.md)
 - [V2 research canvas](https://github.com/ArazSaieArasi3/CM-PharmE/blob/v2/research-program/v2/research/research-canvas.md)
 - [V1→V2 migration matrix](https://github.com/ArazSaieArasi3/CM-PharmE/blob/v2/research-program/v2/research/w3/v1-v2-migration-matrix.md)
-- [Conceptual baseline decision — internal Gate D](https://github.com/ArazSaieArasi3/CM-PharmE/blob/v2/research-program/v2/research/w4/gate-d-conceptual-freeze.md)
+- [Conceptual baseline decision record](https://github.com/ArazSaieArasi3/CM-PharmE/blob/v2/research-program/v2/research/w4/gate-d-conceptual-freeze.md)
 - [V2 concept provenance matrix](https://github.com/ArazSaieArasi3/CM-PharmE/blob/v2/research-program/v2/research/w4/human-review-concept-provenance-matrix.md)
 
 ## Related pages
