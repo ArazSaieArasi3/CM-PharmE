@@ -3,6 +3,8 @@ import json
 from pathlib import Path
 from xml.etree import ElementTree as ET
 
+ET.register_namespace("", "http://www.w3.org/2000/svg")
+
 ROOT=Path(__file__).resolve().parents[2]
 MANIFEST=ROOT/"wiki-src"/"diagrams"/"manifest.json"
 
