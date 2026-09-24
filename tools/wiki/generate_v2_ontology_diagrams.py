@@ -487,9 +487,10 @@ def svg(diag):
         x2,y2=hit(tcx,tcy,-ux,-uy)
         return x1+px*offset,y1+py*offset,x2+px*offset,y2+py*offset,px,py
 
-    out=[f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {width} {height}" role="img" aria-labelledby="title desc">',
+    out=[f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {width} {height}" role="img" aria-labelledby="title desc" data-theme-safe="true" style="color:#24292f;background:#ffffff">',
          f'<title id="title">{html.escape(diag["id"]+" "+diag["title"])}</title>',
          f'<desc id="desc">{html.escape(diag["purpose"])}</desc>',
+         '<rect id="diagram-background" x="0" y="0" width="100%" height="100%" fill="#ffffff" stroke="none" pointer-events="none"/>',
          '<defs><marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z"/></marker><marker id="inherit" markerWidth="12" markerHeight="12" refX="10" refY="5" orient="auto"><path d="M0,0 L0,10 L10,5 z" fill="white" stroke="currentColor"/></marker><style>text{font-family:sans-serif}.node{fill:white;stroke:currentColor}.note{fill:white;stroke:currentColor;stroke-dasharray:5 4}.prot{stroke-dasharray:6 5}.dtype{stroke-dasharray:4 3}.relator{stroke-width:2}.edge-label{font-size:10px}</style></defs>']
 
     for i,coltitle in enumerate(diag["columns"]):
