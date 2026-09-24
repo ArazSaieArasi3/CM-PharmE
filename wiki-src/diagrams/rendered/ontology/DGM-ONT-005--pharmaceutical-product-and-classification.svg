@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1060 875" role="img" aria-labelledby="title desc">
+<title id="title">DGM-ONT-005 Pharmaceutical Product and Classification</title>
+<desc id="desc">Explain product, presentation, substance, specification, classification and listing semantics with explicit formal endpoints.</desc>
+<defs><marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z"/></marker><marker id="inherit" markerWidth="12" markerHeight="12" refX="10" refY="5" orient="auto"><path d="M0,0 L0,10 L10,5 z" fill="white" stroke="currentColor"/></marker><style>text{font-family:sans-serif}.node{fill:white;stroke:currentColor}.note{fill:white;stroke:currentColor;stroke-dasharray:5 4}.prot{stroke-dasharray:6 5}.dtype{stroke-dasharray:4 3}.relator{stroke-width:2}</style></defs>
+<text x="170.0" y="42" text-anchor="middle" font-size="18" font-weight="bold">Product identity</text>
+<text x="500.0" y="42" text-anchor="middle" font-size="18" font-weight="bold">Classification</text>
+<text x="830.0" y="42" text-anchor="middle" font-size="18" font-weight="bold">Listing / constraints</text>
+<line x1="170.0" y1="341.0" x2="170.0" y2="131.0" stroke="currentColor" marker-end="url(#arr)"/>
+<text x="170.0" y="230.0" text-anchor="middle" font-size="11">presentationOf</text>
+<line x1="830.0" y1="551.0" x2="170.0" y2="236.0" stroke="currentColor" marker-end="url(#arr)"/>
+<text x="500.0" y="387.5" text-anchor="middle" font-size="11">hasActiveSubstance</text>
+<line x1="170.0" y1="341.0" x2="170.0" y2="446.0" stroke="currentColor" marker-end="url(#arr)"/>
+<text x="170.0" y="387.5" text-anchor="middle" font-size="11">hasDosageForm</text>
+<line x1="170.0" y1="341.0" x2="170.0" y2="551.0" stroke="currentColor" marker-end="url(#arr)"/>
+<text x="170.0" y="440.0" text-anchor="middle" font-size="11">hasStrength</text>
+<line x1="170.0" y1="341.0" x2="170.0" y2="656.0" stroke="currentColor" marker-end="url(#arr)"/>
+<text x="170.0" y="492.5" text-anchor="middle" font-size="11">hasPackageConfiguration</text>
+<line x1="500.0" y1="341.0" x2="830.0" y2="656.0" stroke="currentColor" marker-end="url(#arr)"/>
+<text x="665.0" y="492.5" text-anchor="middle" font-size="11">classificationEntity</text>
+<line x1="500.0" y1="341.0" x2="500.0" y2="236.0" stroke="currentColor" marker-end="url(#arr)"/>
+<text x="500.0" y="282.5" text-anchor="middle" font-size="11">classificationEntry</text>
+<line x1="500.0" y1="236.0" x2="500.0" y2="131.0" stroke="currentColor" marker-end="url(#arr)"/>
+<text x="500.0" y="177.5" text-anchor="middle" font-size="11">entryInScheme</text>
+<line x1="830.0" y1="131.0" x2="170.0" y2="341.0" stroke="currentColor" marker-end="url(#arr)"/>
+<text x="500.0" y="230.0" text-anchor="middle" font-size="11">listingPresentation</text>
+<line x1="830.0" y1="131.0" x2="830.0" y2="236.0" stroke="currentColor" marker-end="url(#arr)"/>
+<text x="830.0" y="177.5" text-anchor="middle" font-size="11">listingResponsibleOrganization</text>
+<line x1="830.0" y1="131.0" x2="830.0" y2="341.0" stroke="currentColor" marker-end="url(#arr)"/>
+<text x="830.0" y="230.0" text-anchor="middle" font-size="11">listingJurisdiction</text>
+<line class="prot" x1="170.0" y1="131.0" x2="170.0" y2="236.0" stroke="currentColor"/>
+<text x="170.0" y="177.5" text-anchor="middle" font-size="11">≠ protected distinction</text>
+<line class="prot" x1="170.0" y1="131.0" x2="170.0" y2="341.0" stroke="currentColor"/>
+<text x="170.0" y="230.0" text-anchor="middle" font-size="11">≠ protected distinction</text>
+<rect class="node" x="35" y="95" width="270" height="72" rx="5"/>
+<text x="170.0" y="123" text-anchor="middle" font-size="14" font-weight="bold">Medicinal Product</text>
+<text x="170.0" y="147" text-anchor="middle" font-size="12">«Kind»</text>
+<rect class="node" x="35" y="200" width="270" height="72" rx="5"/>
+<text x="170.0" y="228" text-anchor="middle" font-size="14" font-weight="bold">Pharmaceutical Substance</text>
+<text x="170.0" y="252" text-anchor="middle" font-size="12">«Kind»</text>
+<rect class="node" x="35" y="305" width="270" height="72" rx="5"/>
+<text x="170.0" y="333" text-anchor="middle" font-size="14" font-weight="bold">Medicinal Product Presentation</text>
+<text x="170.0" y="357" text-anchor="middle" font-size="12">«Kind»</text>
+<rect class="node" x="35" y="410" width="270" height="72" rx="5"/>
+<text x="170.0" y="438" text-anchor="middle" font-size="14" font-weight="bold">Dosage Form Specification</text>
+<text x="170.0" y="462" text-anchor="middle" font-size="12">«Kind»</text>
+<rect class="node" x="35" y="515" width="270" height="72" rx="5"/>
+<text x="170.0" y="543" text-anchor="middle" font-size="14" font-weight="bold">Strength</text>
+<text x="170.0" y="567" text-anchor="middle" font-size="12">«Quality»</text>
+<rect class="node" x="35" y="620" width="270" height="72" rx="5"/>
+<text x="170.0" y="648" text-anchor="middle" font-size="14" font-weight="bold">Package Configuration</text>
+<text x="170.0" y="672" text-anchor="middle" font-size="12">«Kind»</text>
+<rect class="node" x="365" y="95" width="270" height="72" rx="5"/>
+<text x="500.0" y="123" text-anchor="middle" font-size="14" font-weight="bold">Product Classification Scheme</text>
+<text x="500.0" y="147" text-anchor="middle" font-size="12">«Kind»</text>
+<rect class="node" x="365" y="200" width="270" height="72" rx="5"/>
+<text x="500.0" y="228" text-anchor="middle" font-size="14" font-weight="bold">Classification Entry</text>
+<text x="500.0" y="252" text-anchor="middle" font-size="12">«Kind»</text>
+<rect class="node relator" x="365" y="305" width="270" height="72" rx="5"/>
+<text x="500.0" y="333" text-anchor="middle" font-size="14" font-weight="bold">Product Classification Assignment</text>
+<text x="500.0" y="357" text-anchor="middle" font-size="12">«Relator»</text>
+<rect class="node relator" x="695" y="95" width="270" height="72" rx="5"/>
+<text x="830.0" y="123" text-anchor="middle" font-size="14" font-weight="bold">Market Listing</text>
+<text x="830.0" y="147" text-anchor="middle" font-size="12">«Relator»</text>
+<rect class="node" x="695" y="200" width="270" height="72" rx="5"/>
+<text x="830.0" y="228" text-anchor="middle" font-size="14" font-weight="bold">Organization</text>
+<text x="830.0" y="252" text-anchor="middle" font-size="12">«Kind»</text>
+<rect class="node" x="695" y="305" width="270" height="72" rx="5"/>
+<text x="830.0" y="333" text-anchor="middle" font-size="14" font-weight="bold">Regulatory Jurisdiction</text>
+<text x="830.0" y="357" text-anchor="middle" font-size="12">«Kind»</text>
+<rect class="note" x="695" y="515" width="270" height="72" rx="5"/>
+<text x="830.0" y="543" text-anchor="middle" font-size="14" font-weight="bold">hasActiveSubstance: domain unspecified</text>
+<text x="830.0" y="567" text-anchor="middle" font-size="12">«constraint note»</text>
+<rect class="note" x="695" y="620" width="270" height="72" rx="5"/>
+<text x="830.0" y="648" text-anchor="middle" font-size="14" font-weight="bold">classificationEntity: range unspecified</text>
+<text x="830.0" y="672" text-anchor="middle" font-size="12">«constraint note»</text>
+<text x="35" y="795" font-size="12">Legend: stereotype text is semantic; dashed boxes denote notes/datatypes; thick border marks Relator; Event/Situation remain explicitly labeled.</text>
+<text x="35" y="818" font-size="12">Protected-distinction lines express only registered inequality constraints. No cardinality/equivalence is implied unless explicitly labeled.</text>
+</svg>

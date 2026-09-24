@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 730 875" role="img" aria-labelledby="title desc">
+<title id="title">DGM-ONT-003 V2 Core ontology overview</title>
+<desc id="desc">Provide a readable six-module overview of the 32-concept Core and selected explicit cross-domain relation spans.</desc>
+<defs><marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z"/></marker><marker id="inherit" markerWidth="12" markerHeight="12" refX="10" refY="5" orient="auto"><path d="M0,0 L0,10 L10,5 z" fill="white" stroke="currentColor"/></marker><style>text{font-family:sans-serif}.node{fill:white;stroke:currentColor}.note{fill:white;stroke:currentColor;stroke-dasharray:5 4}.prot{stroke-dasharray:6 5}.dtype{stroke-dasharray:4 3}.relator{stroke-width:2}</style></defs>
+<text x="170.0" y="42" text-anchor="middle" font-size="18" font-weight="bold">Core modules</text>
+<text x="500.0" y="42" text-anchor="middle" font-size="18" font-weight="bold">Selected explicit cross-domain spans</text>
+<rect class="node" x="35" y="95" width="270" height="72" rx="5"/>
+<text x="170.0" y="123" text-anchor="middle" font-size="14" font-weight="bold">Ecosystem Organization</text>
+<text x="170.0" y="147" text-anchor="middle" font-size="12">«module · Core · 8 concepts»</text>
+<rect class="node" x="35" y="200" width="270" height="72" rx="5"/>
+<text x="170.0" y="228" text-anchor="middle" font-size="14" font-weight="bold">Facility Operations</text>
+<text x="170.0" y="252" text-anchor="middle" font-size="12">«module · Core · 4 concepts»</text>
+<rect class="node" x="35" y="305" width="270" height="72" rx="5"/>
+<text x="170.0" y="333" text-anchor="middle" font-size="14" font-weight="bold">Regulatory Governance</text>
+<text x="170.0" y="357" text-anchor="middle" font-size="12">«module · Core · 3 concepts»</text>
+<rect class="node" x="35" y="410" width="270" height="72" rx="5"/>
+<text x="170.0" y="438" text-anchor="middle" font-size="14" font-weight="bold">Pharmaceutical Product</text>
+<text x="170.0" y="462" text-anchor="middle" font-size="12">«module · Core · 10 concepts»</text>
+<rect class="node" x="35" y="515" width="270" height="72" rx="5"/>
+<text x="170.0" y="543" text-anchor="middle" font-size="14" font-weight="bold">Supply Operations</text>
+<text x="170.0" y="567" text-anchor="middle" font-size="12">«module · Core · 4 concepts»</text>
+<rect class="node" x="35" y="620" width="270" height="72" rx="5"/>
+<text x="170.0" y="648" text-anchor="middle" font-size="14" font-weight="bold">Ecosystem Observation</text>
+<text x="170.0" y="672" text-anchor="middle" font-size="12">«module · Core · 3 concepts»</text>
+<rect class="note" x="365" y="95" width="270" height="72" rx="5"/>
+<text x="500.0" y="123" text-anchor="middle" font-size="14" font-weight="bold">operates: Organization → Facility</text>
+<text x="500.0" y="147" text-anchor="middle" font-size="12">«constraint note»</text>
+<rect class="note" x="365" y="200" width="270" height="72" rx="5"/>
+<text x="500.0" y="228" text-anchor="middle" font-size="14" font-weight="bold">listingJurisdiction: MarketListing → RegulatoryJurisdiction</text>
+<text x="500.0" y="252" text-anchor="middle" font-size="12">«constraint note»</text>
+<rect class="note" x="365" y="305" width="270" height="72" rx="5"/>
+<text x="500.0" y="333" text-anchor="middle" font-size="14" font-weight="bold">shortageProduct: MedicineShortageSituation → MedicinalProduct</text>
+<text x="500.0" y="357" text-anchor="middle" font-size="12">«constraint note»</text>
+<rect class="note" x="365" y="410" width="270" height="72" rx="5"/>
+<text x="500.0" y="438" text-anchor="middle" font-size="14" font-weight="bold">producesObservationResult: ObservationActivity → ObservationResult</text>
+<text x="500.0" y="462" text-anchor="middle" font-size="12">«constraint note»</text>
+<text x="35" y="795" font-size="12">Legend: stereotype text is semantic; dashed boxes denote notes/datatypes; thick border marks Relator; Event/Situation remain explicitly labeled.</text>
+<text x="35" y="818" font-size="12">Protected-distinction lines express only registered inequality constraints. No cardinality/equivalence is implied unless explicitly labeled.</text>
+</svg>

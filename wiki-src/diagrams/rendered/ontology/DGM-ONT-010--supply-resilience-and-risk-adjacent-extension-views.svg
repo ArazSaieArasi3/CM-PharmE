@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1060 1400" role="img" aria-labelledby="title desc">
+<title id="title">DGM-ONT-010 Supply Resilience and Risk — adjacent extension views</title>
+<desc id="desc">Show the Supply Resilience and Risk Management extensions together while explicitly avoiding an unsupported formal cross-domain relation.</desc>
+<defs><marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z"/></marker><marker id="inherit" markerWidth="12" markerHeight="12" refX="10" refY="5" orient="auto"><path d="M0,0 L0,10 L10,5 z" fill="white" stroke="currentColor"/></marker><style>text{font-family:sans-serif}.node{fill:white;stroke:currentColor}.note{fill:white;stroke:currentColor;stroke-dasharray:5 4}.prot{stroke-dasharray:6 5}.dtype{stroke-dasharray:4 3}.relator{stroke-width:2}</style></defs>
+<text x="170.0" y="42" text-anchor="middle" font-size="18" font-weight="bold">Supply Resilience</text>
+<text x="500.0" y="42" text-anchor="middle" font-size="18" font-weight="bold">Risk Management</text>
+<text x="830.0" y="42" text-anchor="middle" font-size="18" font-weight="bold">Formal boundary</text>
+<line x1="170.0" y1="236.0" x2="170.0" y2="131.0" stroke="currentColor" marker-end="url(#inherit)"/>
+<text x="170.0" y="177.5" text-anchor="middle" font-size="11">subClassOf</text>
+<line x1="170.0" y1="341.0" x2="170.0" y2="131.0" stroke="currentColor" marker-end="url(#inherit)"/>
+<text x="170.0" y="230.0" text-anchor="middle" font-size="11">subClassOf</text>
+<line x1="170.0" y1="656.0" x2="830.0" y2="131.0" stroke="currentColor" marker-end="url(#arr)"/>
+<text x="500.0" y="387.5" text-anchor="middle" font-size="11">dependency endpoints unspecified</text>
+<line x1="170.0" y1="761.0" x2="830.0" y2="236.0" stroke="currentColor" marker-end="url(#arr)"/>
+<text x="500.0" y="492.5" text-anchor="middle" font-size="11">disruptionAffects</text>
+<line x1="500.0" y1="236.0" x2="830.0" y2="341.0" stroke="currentColor" marker-end="url(#arr)"/>
+<text x="665.0" y="282.5" text-anchor="middle" font-size="11">riskAssessmentConcerns</text>
+<line x1="500.0" y1="551.0" x2="830.0" y2="446.0" stroke="currentColor" marker-end="url(#arr)"/>
+<text x="665.0" y="492.5" text-anchor="middle" font-size="11">riskTreatmentAddresses</text>
+<rect class="node relator" x="35" y="95" width="270" height="72" rx="5"/>
+<text x="170.0" y="123" text-anchor="middle" font-size="14" font-weight="bold">Contextual Medicine Classification Assignment</text>
+<text x="170.0" y="147" text-anchor="middle" font-size="12">«Relator»</text>
+<rect class="node" x="35" y="200" width="270" height="72" rx="5"/>
+<text x="170.0" y="228" text-anchor="middle" font-size="14" font-weight="bold">Essential Medicine Classification Assignment</text>
+<text x="170.0" y="252" text-anchor="middle" font-size="12">«Subkind»</text>
+<rect class="node" x="35" y="305" width="270" height="72" rx="5"/>
+<text x="170.0" y="333" text-anchor="middle" font-size="14" font-weight="bold">Critical Medicine Classification Assignment</text>
+<text x="170.0" y="357" text-anchor="middle" font-size="12">«Subkind»</text>
+<rect class="node" x="35" y="410" width="270" height="72" rx="5"/>
+<text x="170.0" y="438" text-anchor="middle" font-size="14" font-weight="bold">Alternative Medicinal Product</text>
+<text x="170.0" y="462" text-anchor="middle" font-size="12">«Role»</text>
+<rect class="node relator" x="35" y="515" width="270" height="72" rx="5"/>
+<text x="170.0" y="543" text-anchor="middle" font-size="14" font-weight="bold">Alternative Medicinal Product Assignment</text>
+<text x="170.0" y="567" text-anchor="middle" font-size="12">«Relator»</text>
+<rect class="node relator" x="35" y="620" width="270" height="72" rx="5"/>
+<text x="170.0" y="648" text-anchor="middle" font-size="14" font-weight="bold">Supply Dependency</text>
+<text x="170.0" y="672" text-anchor="middle" font-size="12">«Relator»</text>
+<rect class="node" x="35" y="725" width="270" height="72" rx="12"/>
+<text x="170.0" y="753" text-anchor="middle" font-size="14" font-weight="bold">Disruption Event</text>
+<text x="170.0" y="777" text-anchor="middle" font-size="12">«Event»</text>
+<rect class="node" x="35" y="830" width="270" height="72" rx="5"/>
+<text x="170.0" y="858" text-anchor="middle" font-size="14" font-weight="bold">Inventory Observation Result</text>
+<text x="170.0" y="882" text-anchor="middle" font-size="12">«Subkind»</text>
+<rect class="node" x="35" y="935" width="270" height="72" rx="12"/>
+<text x="170.0" y="963" text-anchor="middle" font-size="14" font-weight="bold">Procurement Activity</text>
+<text x="170.0" y="987" text-anchor="middle" font-size="12">«Event»</text>
+<rect class="node" x="35" y="1040" width="270" height="72" rx="5"/>
+<text x="170.0" y="1068" text-anchor="middle" font-size="14" font-weight="bold">Lead Time Observation Result</text>
+<text x="170.0" y="1092" text-anchor="middle" font-size="12">«Subkind»</text>
+<rect class="node" x="35" y="1145" width="270" height="72" rx="12"/>
+<text x="170.0" y="1173" text-anchor="middle" font-size="14" font-weight="bold">Stockout Situation</text>
+<text x="170.0" y="1197" text-anchor="middle" font-size="12">«Situation»</text>
+<rect class="node" x="365" y="95" width="270" height="72" rx="5"/>
+<text x="500.0" y="123" text-anchor="middle" font-size="14" font-weight="bold">Asset at Risk</text>
+<text x="500.0" y="147" text-anchor="middle" font-size="12">«RoleMixin»</text>
+<rect class="node" x="365" y="200" width="270" height="72" rx="12"/>
+<text x="500.0" y="228" text-anchor="middle" font-size="14" font-weight="bold">Risk Assessment Activity</text>
+<text x="500.0" y="252" text-anchor="middle" font-size="12">«Event»</text>
+<rect class="node" x="365" y="305" width="270" height="72" rx="5"/>
+<text x="500.0" y="333" text-anchor="middle" font-size="14" font-weight="bold">Vulnerability</text>
+<text x="500.0" y="357" text-anchor="middle" font-size="12">«Mode»</text>
+<rect class="node" x="365" y="410" width="270" height="72" rx="5"/>
+<text x="500.0" y="438" text-anchor="middle" font-size="14" font-weight="bold">Risk Treatment Plan</text>
+<text x="500.0" y="462" text-anchor="middle" font-size="12">«Kind»</text>
+<rect class="node" x="365" y="515" width="270" height="72" rx="12"/>
+<text x="500.0" y="543" text-anchor="middle" font-size="14" font-weight="bold">Risk Treatment Activity</text>
+<text x="500.0" y="567" text-anchor="middle" font-size="12">«Event»</text>
+<rect class="note" x="695" y="95" width="270" height="72" rx="5"/>
+<text x="830.0" y="123" text-anchor="middle" font-size="14" font-weight="bold">dependencyDependent / dependencyProvider: ranges unspecified</text>
+<text x="830.0" y="147" text-anchor="middle" font-size="12">«constraint note»</text>
+<rect class="note" x="695" y="200" width="270" height="72" rx="5"/>
+<text x="830.0" y="228" text-anchor="middle" font-size="14" font-weight="bold">disruptionAffects: range unspecified</text>
+<text x="830.0" y="252" text-anchor="middle" font-size="12">«constraint note»</text>
+<rect class="note" x="695" y="305" width="270" height="72" rx="5"/>
+<text x="830.0" y="333" text-anchor="middle" font-size="14" font-weight="bold">riskAssessmentConcerns: range unspecified</text>
+<text x="830.0" y="357" text-anchor="middle" font-size="12">«constraint note»</text>
+<rect class="note" x="695" y="410" width="270" height="72" rx="5"/>
+<text x="830.0" y="438" text-anchor="middle" font-size="14" font-weight="bold">riskTreatmentAddresses: range unspecified</text>
+<text x="830.0" y="462" text-anchor="middle" font-size="12">«constraint note»</text>
+<rect class="note" x="695" y="620" width="270" height="72" rx="5"/>
+<text x="830.0" y="648" text-anchor="middle" font-size="14" font-weight="bold">No formal Supply Resilience ↔ Risk Management object property is asserted in the current baseline.</text>
+<text x="830.0" y="672" text-anchor="middle" font-size="12">«constraint note»</text>
+<text x="35" y="1320" font-size="12">Legend: stereotype text is semantic; dashed boxes denote notes/datatypes; thick border marks Relator; Event/Situation remain explicitly labeled.</text>
+<text x="35" y="1343" font-size="12">Protected-distinction lines express only registered inequality constraints. No cardinality/equivalence is implied unless explicitly labeled.</text>
+</svg>

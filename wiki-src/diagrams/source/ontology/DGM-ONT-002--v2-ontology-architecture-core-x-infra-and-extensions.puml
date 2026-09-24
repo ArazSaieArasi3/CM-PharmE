@@ -1,0 +1,28 @@
+@startuml DGM_ONT_002
+hide methods
+hide fields
+skinparam classAttributeIconSize 0
+left to right direction
+class "Ecosystem Organization\n«module · Core · 8 concepts»" as M01 <<module>>
+class "Facility Operations\n«module · Core · 4 concepts»" as M02 <<module>>
+class "Regulatory Governance\n«module · Core · 3 concepts»" as M03 <<module>>
+class "Pharmaceutical Product\n«module · Core · 10 concepts»" as M04 <<module>>
+class "Supply Operations\n«module · Core · 4 concepts»" as M05 <<module>>
+class "Ecosystem Observation\n«module · Core · 3 concepts»" as M06 <<module>>
+class "Spatiotemporal Context\n«module · X-INFRA · 7 concepts»" as M07 <<module>>
+class "Evidence Traceability\n«module · X-INFRA · 13 concepts»" as M08 <<module>>
+class "Entity Identity\n«module · X-INFRA · 5 concepts»" as M09 <<module>>
+class "Regulatory Policy\n«module · Extension · 2 concepts»" as M10 <<module>>
+class "Supply Resilience\n«module · Extension · 11 concepts»" as M11 <<module>>
+class "Market Access\n«module · Extension · 3 concepts»" as M12 <<module>>
+class "Risk Management\n«module · Extension · 5 concepts»" as M13 <<module>>
+class "Pharmacovigilance\n«module · Extension · 3 concepts»" as M14 <<module>>
+class "Business Architecture\n«module · Extension · 4 concepts»" as M15 <<module>>
+class "Digital Systems\n«module · Extension · 1 concepts»" as M16 <<module>>
+class "Clinical Care\n«module · Extension · 1 concepts»" as M17 <<module>>
+legend left
+  Stereotypes are explicit textual semantics.
+  Dashed != lines = registered protected distinctions.
+  Endpoint-unspecified notes preserve absent OWL constraints.
+endlegend
+@enduml

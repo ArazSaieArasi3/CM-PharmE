@@ -1,0 +1,19 @@
+@startuml DGM_ONT_011
+hide methods
+hide fields
+skinparam classAttributeIconSize 0
+left to right direction
+class "Regulatory Policy\n«module · Extension · 2 concepts»" as E10 <<module>>
+class "Supply Resilience\n«module · Extension · 11 concepts»" as E11 <<module>>
+class "Market Access\n«module · Extension · 3 concepts»" as E12 <<module>>
+class "Risk Management\n«module · Extension · 5 concepts»" as E13 <<module>>
+class "Pharmacovigilance\n«module · Extension · 3 concepts»" as E14 <<module>>
+class "Business Architecture\n«module · Extension · 4 concepts»" as E15 <<module>>
+class "Digital Systems\n«module · Extension · 1 concepts»" as E16 <<module>>
+class "Clinical Care\n«module · Extension · 1 concepts»" as E17 <<module>>
+legend left
+  Stereotypes are explicit textual semantics.
+  Dashed != lines = registered protected distinctions.
+  Endpoint-unspecified notes preserve absent OWL constraints.
+endlegend
+@enduml

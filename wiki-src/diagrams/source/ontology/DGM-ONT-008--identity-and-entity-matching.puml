@@ -1,0 +1,26 @@
+@startuml DGM_ONT_008
+hide methods
+hide fields
+skinparam classAttributeIconSize 0
+left to right direction
+class "Identifier Value\n«Datatype»" as IdentifierValue
+class "Identifier Scheme\n«Kind»" as IdentifierScheme
+class "Identifier Assignment\n«Relator»" as IdentifierAssignment
+class "Assertion\n«Kind»" as Assertion
+class "Entity Match Assertion\n«Subkind»" as EntityMatchAssertion
+class "Match Confidence\n«Quality»" as MatchConfidence
+note "identifierEntity: range unspecified" as INOTE1
+note "matchSubject: range unspecified" as INOTE2
+note "matchObject: range unspecified" as INOTE3
+IdentifierAssignment --> IdentifierScheme : identifierScheme
+IdentifierAssignment --> INOTE1 : identifierEntity
+EntityMatchAssertion --|> Assertion : subClassOf
+EntityMatchAssertion --> INOTE2 : matchSubject
+EntityMatchAssertion --> INOTE3 : matchObject
+EntityMatchAssertion --> MatchConfidence : hasMatchConfidence
+legend left
+  Stereotypes are explicit textual semantics.
+  Dashed != lines = registered protected distinctions.
+  Endpoint-unspecified notes preserve absent OWL constraints.
+endlegend
+@enduml
