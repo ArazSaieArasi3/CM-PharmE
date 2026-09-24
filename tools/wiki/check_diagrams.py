@@ -76,6 +76,23 @@ def main():
             errors.append(f"{did}: rendered artifact root is not svg")
         if not root.attrib.get("viewBox"):
             errors.append(f"{did}: SVG missing viewBox")
+        if root.attrib.get("data-theme-safe") != "true":
+            errors.append(f"{did}: SVG missing data-theme-safe=true")
+        style = root.attrib.get("style","")
+        if "color:#24292f" not in style or "background:#ffffff" not in style:
+            errors.append(f"{did}: SVG root must pin foreground/background colors")
+
+        bg_nodes = [
+            child for child in root
+            if child.tag.split("}")[-1] == "rect"
+            and child.attrib.get("id") == "diagram-background"
+        ]
+        if not bg_nodes:
+            errors.append(f"{did}: SVG missing diagram-background canvas")
+        else:
+            bg = bg_nodes[0]
+            if bg.attrib.get("fill") != "#ffffff":
+                errors.append(f"{did}: diagram-background must use #ffffff fill")
 
         children = {child.tag.split("}")[-1] for child in root}
         if "title" not in children:
