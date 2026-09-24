@@ -30,3 +30,5 @@ jobs:
         run: python tools/wiki/validate_wiki_source.py
       - name: Prove invalid documentation is rejected
         run: python tools/wiki/validate_wiki_source.py --self-test
+      - name: Check reader-facing terminology
+        run: python tools/wiki/check_reader_vocabulary.py

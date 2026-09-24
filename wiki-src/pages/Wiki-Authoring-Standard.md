@@ -54,6 +54,20 @@ Templates are maintained under `wiki-src/templates/`.
 - Never describe V2 as final while its final freeze gate is unresolved.
 - Cross-version pages must distinguish continuity, refinement, renaming/repackaging, semantic change and genuinely new contribution.
 
+## Reader-facing terminology and provenance
+
+Reader-facing documentation should use descriptive scientific/technical language first. Internal workstream, Gate, issue, PR, branch and review-control identifiers are retained as provenance, not as vocabulary a reader must learn before understanding the project.
+
+Required practice:
+- use descriptive research-stage names before W0–W8 identifiers;
+- use descriptive decision names before Gate A–H identifiers;
+- use **Semantic Review** or **Ontology Review** as the public-facing review label unless the fact of human/expert review is itself methodologically important;
+- keep exact historical/internal names when linking repository artifacts whose canonical filenames/titles contain them;
+- place internal identifiers in provenance/history, parenthetical audit notes or technical-reference columns;
+- do not remove a limitation, warning, pending state or evidence link merely to simplify prose.
+
+The canonical terminology policy is maintained at `wiki-src/editorial/reader-facing-terminology.md`.
+
 ## Evidence discipline
 
 A claim-bearing paragraph must be traceable to authoritative repository evidence, a publication, or a clearly identified external source.
@@ -94,12 +108,14 @@ A diagram must not visually imply stronger semantics than its source model.
 Use controlled wording:
 - Stable in current V2 baseline
 - Stable-to-date / evolving
-- Under human review
+- Semantic review in progress
 - Evaluation pending
 - Implementation pending
 - Manuscript integration pending
 - Deferred / future work
-- Final/Frozen only after explicit final gate
+- Final/Frozen only after an explicit final research-release decision
+
+Internal Gate identifiers may be retained in provenance, but they should not be required to interpret these statuses.
 
 ## Duplication policy
 

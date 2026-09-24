@@ -8,7 +8,7 @@
 > **V1 ref:** current stable V1 documentation baseline on `main`  
 > **V2 ref:** `1226b0a5484f8f5d3a8d214e0d0f52f066b88999`  
 > **Related issues/PRs:** #159, #173, #206  
-> **Evidence status:** Stable cross-version narrative; human-review-dependent details remain refreshable  
+> **Evidence status:** Stable cross-version narrative; semantic-review-dependent details remain refreshable  
 > **Future refresh:** #213 and #214  
 > **Wiki baseline:** WB-2026.09.1
 
@@ -39,7 +39,7 @@ V2 responds to research opportunities that are materially different from simply 
 - first-class evidence, provenance, mapping and entity-resolution semantics;
 - explicit ontology↔RDB↔KG realization;
 - more prospective, multi-family evaluation;
-- dedicated human ontology review;
+- dedicated semantic review of concepts, relations and evidence;
 - bounded research demonstrators.
 
 ## Research progression
@@ -59,7 +59,7 @@ V2 does not automatically preserve those five domains as its Core decomposition.
 - X-INFRA;
 - modular Extensions.
 
-The current V2 human-facing taxonomy contains 17 domains/modules.
+The current V2 taxonomy contains 17 domains/modules.
 
 ### 3. From broad ecosystem concepts to explicit identity/context distinctions
 
@@ -83,9 +83,9 @@ V2 retains formal OWL/SHACL work and additionally realizes selected semantics th
 
 ### 5. From layered evaluation to prospective multi-family evaluation
 
-V1 evaluation provides valuable structural, logical, semantic, CQ, data/application and reproducibility evidence.
+V1 evaluation provides valuable structural, logical, semantic, competency-question, data/application and reproducibility evidence.
 
-V2 prospectively freezes E1–E13 evaluation families, includes held-out evidence, cross-representation checks, resilience scenarios and an explicit expert-evaluation protocol. E9 human results remain pending and must not be inferred.
+V2 prospectively defines E1–E13 evaluation families, includes held-out evidence, cross-representation checks, resilience scenarios and an explicit expert-evaluation protocol. E9 real expert results remain pending and must not be inferred.
 
 ### 6. From application pathways to bounded demonstrators
 
@@ -119,7 +119,7 @@ Chronological evolution is not evidence that V2 is universally “better” than
 - their evaluation programs differ;
 - their concept counts measure different model granularities;
 - V2 is not yet final;
-- E9 human evidence and final W8/Gate G evidence remain incomplete.
+- E9 expert evidence and final demonstrator-evaluation evidence remain incomplete.
 
 ## Evidence
 
@@ -127,8 +127,8 @@ Chronological evolution is not evidence that V2 is universally “better” than
 - [V1 version record](https://github.com/ArazSaieArasi3/CM-PharmE/blob/main/docs/versions/v1.0.0.md)
 - [V2 research canvas](https://github.com/ArazSaieArasi3/CM-PharmE/blob/v2/research-program/v2/research/research-canvas.md)
 - [V1→V2 migration matrix](https://github.com/ArazSaieArasi3/CM-PharmE/blob/v2/research-program/v2/research/w3/v1-v2-migration-matrix.md)
-- [Gate D](https://github.com/ArazSaieArasi3/CM-PharmE/blob/v2/research-program/v2/research/w4/gate-d-conceptual-freeze.md)
-- [V2 human-review provenance matrix](https://github.com/ArazSaieArasi3/CM-PharmE/blob/v2/research-program/v2/research/w4/human-review-concept-provenance-matrix.md)
+- [Conceptual baseline decision record](https://github.com/ArazSaieArasi3/CM-PharmE/blob/v2/research-program/v2/research/w4/gate-d-conceptual-freeze.md)
+- [V2 concept provenance matrix](https://github.com/ArazSaieArasi3/CM-PharmE/blob/v2/research-program/v2/research/w4/human-review-concept-provenance-matrix.md)
 
 ## Related pages
 

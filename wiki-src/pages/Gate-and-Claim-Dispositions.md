@@ -1,36 +1,36 @@
-# Gate and Claim Dispositions
+# Evidence Scope and Supported Claims
 
 > **Page scope:** V2  
 > **Documentation maturity:** Stable-to-date / Evolving  
-> **Authoritative source:** V2 gate decisions, live issues and claim-evidence register  
+> **Authoritative source:** V2 research decision records, live issues and claim-evidence register  
 > **Last synchronized:** 2026-09-23  
 > **Related issues/PRs:** #24, #98, #104, #170, #171, #212, #214  
-> **Evidence status:** Gates A–F resolved; Gate G/H pending  
+> **Evidence status:** Early/mid-program decisions are resolved; demonstrator evaluation and final research release readiness remain pending  
 > **Future refresh:** #212 and #214  
 > **Wiki baseline:** WB-2026.09.1
 
-## Why gates exist
+## Why research decision checkpoints exist
 
-V2 gates prevent implementation progress from silently becoming scientific claim inflation. A gate records whether the evidence is sufficient to proceed and what wording/boundaries remain mandatory.
+V2 uses explicit research decision checkpoints to prevent implementation progress from silently becoming scientific claim inflation. A checkpoint records whether the evidence is sufficient to proceed and what wording or evidential boundary remains mandatory.
 
-## Current gate state
+## Current decision state
 
-| Gate | Purpose | Current state |
-|---|---|---|
-| A | V2 identity and scope | Approved |
-| B | primary article use cases | Approved |
-| C | admitted/held-out datasets | Approved |
-| Concept Inventory | discovery baseline | Approved |
-| D | conceptual model freeze | Approved |
-| Formal Gate | OWL/SHACL formal baseline | Approved |
-| E | representation architecture | Approved |
-| F | claim-evidence sufficiency | **Approved progression with bounded claim dispositions** |
-| G | demonstrator/manuscript-facing application scope | Pending |
-| H | target journal / manuscript / research-release freeze | Pending |
+| Decision | Current state |
+|---|---|
+| Research identity and scope | Approved |
+| Principal research use cases | Approved |
+| Evidence/data admission and held-out design | Approved |
+| Candidate concept inventory | Approved |
+| Conceptual baseline | Approved |
+| Formal ontology readiness | Approved |
+| Representation architecture | Approved |
+| Evidence sufficiency review | **Approved progression with bounded claim dispositions** |
+| Demonstrator evaluation | Pending |
+| Research release readiness | Pending |
 
-## Gate F
+## Evidence sufficiency review
 
-Gate F does not state that every candidate claim is fully supported. It explicitly differentiates claim dispositions.
+The evidence sufficiency review does not state that every candidate claim is fully supported. It explicitly differentiates claim dispositions.
 
 ### Narrowed
 - C-01: V2 may describe qualitative/design expansion and source-semantic coverage, but not a like-for-like percentage improvement over V1.
@@ -56,32 +56,50 @@ Examples include:
 - real-world entity-resolution performance;
 - unsupported AI performance/novelty.
 
-## E9 dependency
+## Prospective expert-evaluation dependency
 
-E9 is not “passed by readiness.” It remains incomplete until real eligible expert responses are collected and analyzed under the frozen protocol.
+E9 remains incomplete until real eligible expert responses are collected and analyzed under the frozen protocol.
 
-The current status is:
+Current state:
 - protocol frozen;
 - 27/27 readiness checks PASS;
 - 23-item instrument;
 - **0 real responses**;
 - **0 admissible expert-result claims**.
 
-## Gate G
+## Demonstrator evaluation
 
-Gate G must use the completed representative-task evidence from #170. Missing/partial/failed tasks must remain visible. Gate G cannot infer usability/production effectiveness merely from implementation existence.
+The final demonstrator decision must use the completed representative-task evidence from #170. Missing, partial or failed tasks must remain visible. Implementation existence is not evidence of usability or production effectiveness.
 
-## Gate H
+## Research release readiness
 
-Gate H is the final manuscript/research-release freeze. It requires final traceability and a truthful disposition for remaining dependencies, including E9.
+The final research-release decision requires final traceability and a truthful disposition for remaining dependencies, including E9.
 
 ## Authoritative evidence
 
-- [Gate D decision](https://github.com/ArazSaieArasi3/CM-PharmE/blob/v2/research-program/v2/research/w4/gate-d-conceptual-freeze.md)
-- [Gate F decision](https://github.com/ArazSaieArasi3/CM-PharmE/blob/v2/research-program/v2/research/w7/gate-f-claim-sufficiency-decision.md)
+- [Conceptual baseline decision record](https://github.com/ArazSaieArasi3/CM-PharmE/blob/v2/research-program/v2/research/w4/gate-d-conceptual-freeze.md)
+- [Evidence sufficiency decision record](https://github.com/ArazSaieArasi3/CM-PharmE/blob/v2/research-program/v2/research/w7/gate-f-claim-sufficiency-decision.md)
 - [Claim-evidence traceability](https://github.com/ArazSaieArasi3/CM-PharmE/blob/v2/research-program/v2/evaluation/results/w7-claim-evidence-traceability.csv)
 - [Representative-task results](https://github.com/ArazSaieArasi3/CM-PharmE/blob/v2/research-program/v2/app/observatory/representative-task-results.md)
 
 ## Status-resolution rule
 
 If a parent Epic is stale, live child issues/PRs and current decision artifacts take precedence for Wiki status.
+
+<details>
+<summary>Internal research-control references</summary>
+
+| Reader-facing decision | Internal reference |
+|---|---|
+| Research identity and scope | Gate A |
+| Principal research use cases | Gate B |
+| Evidence/data admission and held-out design | Gate C |
+| Candidate concept inventory | Concept Inventory Gate |
+| Conceptual baseline | Gate D |
+| Formal ontology readiness | Formal Gate |
+| Representation architecture | Gate E |
+| Evidence sufficiency review | Gate F |
+| Demonstrator evaluation | Gate G |
+| Research release readiness | Gate H |
+
+</details>

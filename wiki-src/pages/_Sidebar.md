@@ -15,13 +15,13 @@
 
 **CM-PharmE 2.0**
 - [[CM-PharmE 2.0]]
-- [[V2 Research Program and Gates]]
+- [[V2 Research Program and Gates|Research Method and Development]]
 - [[V2 Concept and Relation Discovery]]
 - [[V2 UFO and OntoUML Architecture]]
 - [[V2 Formal Ontology and SHACL]]
 - [[V2 Data Infrastructure]]
-- [[V2 Evaluation E1-E13]]
-- [[V2 Human Ontology Review]]
+- [[V2 Evaluation E1-E13|Evaluation Framework]]
+- [[V2 Human Ontology Review|Semantic Review]]
 - [[V2 Observatory and Demonstrators]]
 
 **Evolution**
@@ -32,7 +32,7 @@
 
 **Evidence**
 - [[Evaluation and Assurance]]
-- [[Gate and Claim Dispositions]]
+- [[Gate and Claim Dispositions|Evidence Scope and Supported Claims]]
 - [[Reproducibility Guide]]
 
 **Reference**
