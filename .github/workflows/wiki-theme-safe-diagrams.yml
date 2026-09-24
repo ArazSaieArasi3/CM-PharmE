@@ -40,6 +40,8 @@ jobs:
         run: python tools/wiki/generate_v2_ontology_diagrams.py --authority-root _v2_authority
       - name: Normalize all governed SVGs
         run: python tools/wiki/normalize_diagram_theme.py
+      - name: Synchronize cache-busted Wiki image URLs
+        run: python tools/wiki/sync_diagram_image_urls.py
       - name: Validate diagram artifact contract
         run: python tools/wiki/check_diagrams.py
       - name: Validate V2 ontology diagram suite
@@ -50,7 +52,7 @@ jobs:
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add wiki-src/diagrams wiki-src/ontology-reference wiki-src/pages/V2-Module-*.md
+          git add wiki-src/diagrams wiki-src/ontology-reference wiki-src/pages
           if git diff --cached --quiet; then
             echo "No diagram changes to commit."
             exit 0
