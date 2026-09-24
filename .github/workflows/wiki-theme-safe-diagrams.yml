@@ -58,4 +58,5 @@ jobs:
             exit 0
           fi
           git commit -m "Wiki diagrams: make governed SVGs browser and dark-mode safe"
+          git pull --rebase origin wiki/theme-safe-diagrams-and-db-2026-09
           git push origin HEAD:wiki/theme-safe-diagrams-and-db-2026-09
