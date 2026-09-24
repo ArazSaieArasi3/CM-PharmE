@@ -1,0 +1,16 @@
+flowchart LR
+  V1["CM-PharmE 1.x\nStable research baseline"]
+  V2["CM-PharmE 2.0\nStable-to-date / Evolving"]
+  E["Evidence & data grounding"]
+  C["Conceptualization\nUFO / OntoUML"]
+  F["Formal ontology\nOWL / SHACL"]
+  D["Data realization\nRDB / KG"]
+  Q["Evaluation & assurance"]
+  A["Research demonstrators"]
+  P["Manuscript / release"]
+
+  V1 -->|"research evolution"| V2
+  V2 --> E --> C --> F --> D --> Q --> A --> P
+  Q -.->|"E9 prospective expert evidence pending"| Q
+  A -.->|"representative-task evaluation pending"| A
+  P -.->|"final release readiness pending"| P

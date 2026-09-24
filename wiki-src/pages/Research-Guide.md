@@ -6,6 +6,9 @@
 
 Use this section to understand **why CM-PharmE exists, how each version was developed, and how the research evolved from V1 to V2**.
 
+## Visual overview
+- [[Research Process and Evolution Diagrams]] — six diagrams covering the whole program, V1/V2 methods, evolution, evidence trace and publication/repository/Wiki relationships.
+
 ## Start here
 - [[Project Overview]]
 - [[Scope and Research Boundaries]]
