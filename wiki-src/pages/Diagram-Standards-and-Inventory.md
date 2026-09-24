@@ -3,7 +3,7 @@
 > **Page scope:** Version-neutral governance  
 > **Documentation maturity:** Stable diagram policy  
 > **Last synchronized:** 2026-09-24  
-> **Related issues:** #228, #232  
+> **Related issues:** #228, #232, #235  
 > **Wiki baseline:** WB-2026.09.1
 
 Diagrams in CM-PharmE are documentation/semantic artifacts, not decoration. Different questions require different notations.
@@ -54,6 +54,11 @@ These are intentionally small standard-demonstration diagrams. Complete ontology
 ![DGM-EVO-001 illustrative V1 to V2 research lineage](https://raw.githubusercontent.com/ArazSaieArasi3/CM-PharmE/main/wiki-src/diagrams/rendered/evolution/DGM-EVO-001--v1-v2-research-lineage.svg)
 
 [Source](https://github.com/ArazSaieArasi3/CM-PharmE/blob/main/wiki-src/diagrams/source/evolution/DGM-EVO-001--v1-v2-research-lineage.dot) · [SVG](https://github.com/ArazSaieArasi3/CM-PharmE/blob/main/wiki-src/diagrams/rendered/evolution/DGM-EVO-001--v1-v2-research-lineage.svg)
+
+## Governed ontology suite
+
+- [[V2 Ontology Diagram Suite]] — 10 semantic-validated V2 ontology diagrams covering all 17 domains at module level and selected thematic concept/relation views.
+- Coverage and semantic-review evidence: `wiki-src/ontology-reference/ontology-diagram-coverage.*` and `ontology-diagram-semantic-review.md`.
 
 ## Legacy assets
 
