@@ -6,7 +6,7 @@
 
 ## Visual research process
 
-![CM-PharmE 1.x research process](https://raw.githubusercontent.com/ArazSaieArasi3/CM-PharmE/main/wiki-src/diagrams/rendered/process/DGM-PRC-002--v1-research-process.svg)
+![CM-PharmE 1.x research process](https://raw.githubusercontent.com/ArazSaieArasi3/CM-PharmE/main/wiki-src/diagrams/rendered/process/DGM-PRC-002--v1-research-process.svg?sha=012f315202c0)
 
 **DGM-PRC-002** summarizes the V1 research-to-model pathway. Detailed evidence and method remain authoritative in the linked V1 artifacts.
 

@@ -6,7 +6,7 @@
 
 ## Visual architecture
 
-![V2 ontology architecture](https://raw.githubusercontent.com/ArazSaieArasi3/CM-PharmE/main/wiki-src/diagrams/rendered/ontology/DGM-ONT-002--v2-ontology-architecture-core-x-infra-and-extensions.svg)
+![V2 ontology architecture](https://raw.githubusercontent.com/ArazSaieArasi3/CM-PharmE/main/wiki-src/diagrams/rendered/ontology/DGM-ONT-002--v2-ontology-architecture-core-x-infra-and-extensions.svg?sha=57f52a9a4974)
 
 **DGM-ONT-002** is an authoritative projection of the current 17-domain architecture across Core, X-INFRA and Extensions. See [[V2 Ontology Diagram Suite]] for the complete multi-level visual set.
 

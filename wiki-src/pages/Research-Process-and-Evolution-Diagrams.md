@@ -8,7 +8,7 @@ This visual suite explains the CM-PharmE research journey without requiring a re
 
 ## 1. CM-PharmE research landscape — DGM-PRC-001
 
-![CM-PharmE research landscape](https://raw.githubusercontent.com/ArazSaieArasi3/CM-PharmE/main/wiki-src/diagrams/rendered/process/DGM-PRC-001--research-landscape.svg)
+![CM-PharmE research landscape](https://raw.githubusercontent.com/ArazSaieArasi3/CM-PharmE/main/wiki-src/diagrams/rendered/process/DGM-PRC-001--research-landscape.svg?sha=0e5e64e903e4)
 
 The landscape connects the stable V1 research baseline with the evolving V2 research program. V2 progresses through evidence/data grounding, conceptualization, formalization, data realization, evaluation and demonstrators. Prospective expert evidence, representative-task completion and final release readiness remain pending.
 
@@ -16,7 +16,7 @@ The landscape connects the stable V1 research baseline with the evolving V2 rese
 
 ## 2. CM-PharmE 1.x research process — DGM-PRC-002
 
-![CM-PharmE 1.x research process](https://raw.githubusercontent.com/ArazSaieArasi3/CM-PharmE/main/wiki-src/diagrams/rendered/process/DGM-PRC-002--v1-research-process.svg)
+![CM-PharmE 1.x research process](https://raw.githubusercontent.com/ArazSaieArasi3/CM-PharmE/main/wiki-src/diagrams/rendered/process/DGM-PRC-002--v1-research-process.svg?sha=012f315202c0)
 
 V1 begins with ecosystem problem framing and evidence review, proceeds through thematic synthesis and UFO/OntoUML conceptual modeling, and then through formal ontology engineering, evaluation and research publication. The diagram summarizes the method; detailed methodological and evaluation evidence remains on the V1 research/evidence pages.
 
@@ -24,7 +24,7 @@ V1 begins with ecosystem problem framing and evidence review, proceeds through t
 
 ## 3. CM-PharmE 2.0 research process — DGM-PRC-003
 
-![CM-PharmE 2.0 research process](https://raw.githubusercontent.com/ArazSaieArasi3/CM-PharmE/main/wiki-src/diagrams/rendered/process/DGM-PRC-003--v2-research-process.svg)
+![CM-PharmE 2.0 research process](https://raw.githubusercontent.com/ArazSaieArasi3/CM-PharmE/main/wiki-src/diagrams/rendered/process/DGM-PRC-003--v2-research-process.svg?sha=cd50c90bc157)
 
 V2 uses descriptive stage names rather than internal Wave/Gate language. The current state is explicit: evaluation is **13/14 complete** because E9 has **0 real expert responses**; demonstrator work is **7/8 complete** because representative-task evaluation remains open; manuscript/research-release work is active rather than final.
 
@@ -32,7 +32,7 @@ V2 uses descriptive stage names rather than internal Wave/Gate language. The cur
 
 ## 4. V1→V2 research evolution — DGM-EVO-002
 
-![V1 to V2 research evolution](https://raw.githubusercontent.com/ArazSaieArasi3/CM-PharmE/main/wiki-src/diagrams/rendered/evolution/DGM-EVO-002--v1-v2-research-evolution.svg)
+![V1 to V2 research evolution](https://raw.githubusercontent.com/ArazSaieArasi3/CM-PharmE/main/wiki-src/diagrams/rendered/evolution/DGM-EVO-002--v1-v2-research-evolution.svg?sha=44efdd70c9da)
 
 The lineage highlights research continuity and extension: stronger data grounding, modular ontology architecture, deeper formalization, ontology↔RDB↔KG realization, prospective multi-family evaluation and bounded demonstrators. The arrows mean documented evolution, **not** quantitative superiority.
 
@@ -40,7 +40,7 @@ The lineage highlights research continuity and extension: stronger data groundin
 
 ## 5. Evidence→conceptualization→formalization→data→evaluation trace — DGM-ARC-002
 
-![Evidence to evaluation trace](https://raw.githubusercontent.com/ArazSaieArasi3/CM-PharmE/main/wiki-src/diagrams/rendered/architecture/DGM-ARC-002--evidence-to-evaluation-trace.svg)
+![Evidence to evaluation trace](https://raw.githubusercontent.com/ArazSaieArasi3/CM-PharmE/main/wiki-src/diagrams/rendered/architecture/DGM-ARC-002--evidence-to-evaluation-trace.svg?sha=c7190377a4f2)
 
 V2 does not treat source data as ontology truth. Evidence supports concept/relation discovery, conceptual commitments are analyzed through UFO/OntoUML, formalized through OWL/SHACL, realized in relational/RDF forms, and then evaluated before claims are described as supported, bounded or deferred. E9 remains explicitly pending.
 
@@ -48,7 +48,7 @@ V2 does not treat source data as ontology truth. Evidence supports concept/relat
 
 ## 6. Publication↔repository↔Wiki relationship — DGM-ARC-003
 
-![Publication repository Wiki relationship](https://raw.githubusercontent.com/ArazSaieArasi3/CM-PharmE/main/wiki-src/diagrams/rendered/architecture/DGM-ARC-003--publication-repository-wiki.svg)
+![Publication repository Wiki relationship](https://raw.githubusercontent.com/ArazSaieArasi3/CM-PharmE/main/wiki-src/diagrams/rendered/architecture/DGM-ARC-003--publication-repository-wiki.svg?sha=d89cc799dc95)
 
 The GitHub repository carries semantic, data and evaluation authority. Research publications interpret supported contributions; evidence/reproducibility artifacts support those claims; the Wiki provides a human-readable explanatory projection; version/release/DOI records identify frozen or citable states. The Wiki does not replace the underlying authority.
 

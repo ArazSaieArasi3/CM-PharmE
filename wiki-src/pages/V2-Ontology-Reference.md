@@ -11,7 +11,7 @@ Use this reference to discover modules, conceptual elements and formal propertie
 
 ## Visual architecture
 
-![V2 ontology architecture](https://raw.githubusercontent.com/ArazSaieArasi3/CM-PharmE/main/wiki-src/diagrams/rendered/ontology/DGM-ONT-002--v2-ontology-architecture-core-x-infra-and-extensions.svg)
+![V2 ontology architecture](https://raw.githubusercontent.com/ArazSaieArasi3/CM-PharmE/main/wiki-src/diagrams/rendered/ontology/DGM-ONT-002--v2-ontology-architecture-core-x-infra-and-extensions.svg?sha=57f52a9a4974)
 
 See [[V2 Ontology Diagram Suite]] for the complete 10-diagram hierarchy and semantic/coverage notes.
 
