@@ -108,6 +108,21 @@ SVG requirements:
 
 PNG may be retained for legacy/grandfathered artifacts, but new diagrams should prefer SVG.
 
+## 7A. Browser/theme-safe rendering
+
+GitHub Wiki may be viewed in light or dark mode and browsers/extensions can apply different dark-mode policies. Governed SVGs must therefore render consistently without inheriting page colors.
+
+Required for every governed SVG:
+- an internal white canvas (`#ffffff`) covering the complete viewBox;
+- explicit root foreground color `#24292f`;
+- `data-theme-safe="true"` on the SVG root;
+- no reliance on the embedding page's `currentColor` without the root color being pinned;
+- no transparent-canvas assumption for headings, relation labels or legends.
+
+The project intentionally prefers a stable light documentation canvas over browser-dependent adaptive theming. This makes Chrome, Edge, GitHub Light/Dark and forced-dark configurations render the diagram as one self-contained visual artifact.
+
+The mechanical contract is enforced by `tools/wiki/check_diagrams.py`. Existing governed SVGs are normalized by `tools/wiki/normalize_diagram_theme.py`.
+
 ## 8. Styling rules
 
 - Styling is secondary to notation semantics.
