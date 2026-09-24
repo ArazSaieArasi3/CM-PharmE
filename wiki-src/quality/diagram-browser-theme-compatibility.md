@@ -57,3 +57,27 @@ The diagram itself should now look the same in:
 - other browsers that display the SVG without destructive image filters.
 
 A browser extension or experimental forced-dark feature may still transform the entire image, but because foreground and background are now inside the same SVG, they should transform together and remain legible.
+
+
+## Cache-staleness follow-up
+
+The browser/theme-safe SVG migration solved rendering inheritance, but the Chrome-versus-Edge report exposed a second, independent risk: a browser may continue displaying an older raw SVG when the Wiki embeds a branch-floating `raw/.../main/...svg` URL.
+
+The current repository copy of DGM-ONT-002 was already theme-safe while Chrome still showed the older appearance, which is consistent with stale image caching.
+
+### Cache-safe fix
+Governed SVG embeds now use a content-derived query key:
+
+`?sha=<first-12-hex-of-SHA256>`
+
+Migration workflow `36015549446`:
+- governed SVG assets covered: **20**
+- stale/unversioned governed image URLs corrected: **25**
+- Wiki pages updated: **8**
+- post-migration URL validation: **PASS**
+
+`tools/wiki/sync_diagram_image_urls.py` computes the digest from the committed SVG bytes. A changed SVG therefore receives a changed embed URL and browsers/CDNs fetch a fresh asset.
+
+Permanent CI runs the same tool in `--check` mode and fails if a governed diagram embed is missing the correct content hash.
+
+The documentation fix therefore does not depend on asking readers to clear cache, switch browsers, or disable Dark Mode.
