@@ -8,6 +8,12 @@
 
 CM-PharmE 2.0 is best understood as a controlled research evolution from CM-PharmE 1.x rather than as an unrelated replacement or a claim that V1 was “wrong.” V1 established the initial ecosystem-level conceptual foundation. V2 changes the research design where new evidence, modeling requirements and evaluation goals justify doing so.
 
+## Visual evolution map
+
+![V1 to V2 research evolution](https://raw.githubusercontent.com/ArazSaieArasi3/CM-PharmE/main/wiki-src/diagrams/rendered/evolution/DGM-EVO-002--v1-v2-research-evolution.svg)
+
+**DGM-EVO-002** summarizes continuity, refinement and extension without implying like-for-like quantitative superiority. See [[Research Process and Evolution Diagrams]] for the full visual suite and provenance.
+
 ## What V1 established
 
 V1 contributed:
