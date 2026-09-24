@@ -33,25 +33,25 @@ These are intentionally small standard-demonstration diagrams. Complete ontology
 
 ### DGM-ONT-001 — OntoUML-aware conceptual notation
 
-![DGM-ONT-001 illustrative ontology fragment](https://raw.githubusercontent.com/ArazSaieArasi3/CM-PharmE/main/wiki-src/diagrams/rendered/ontology/DGM-ONT-001--product-presentation-substance.svg)
+![DGM-ONT-001 illustrative ontology fragment](https://raw.githubusercontent.com/ArazSaieArasi3/CM-PharmE/main/wiki-src/diagrams/rendered/ontology/DGM-ONT-001--product-presentation-substance.svg?sha=2c07c28e7a6b)
 
 [Source](https://github.com/ArazSaieArasi3/CM-PharmE/blob/main/wiki-src/diagrams/source/ontology/DGM-ONT-001--product-presentation-substance.puml) · [SVG](https://github.com/ArazSaieArasi3/CM-PharmE/blob/main/wiki-src/diagrams/rendered/ontology/DGM-ONT-001--product-presentation-substance.svg)
 
 ### DGM-ERD-001 — Crow's Foot relational notation
 
-![DGM-ERD-001 illustrative evidence ERD](https://raw.githubusercontent.com/ArazSaieArasi3/CM-PharmE/main/wiki-src/diagrams/rendered/erd/DGM-ERD-001--evidence-source-records.svg)
+![DGM-ERD-001 illustrative evidence ERD](https://raw.githubusercontent.com/ArazSaieArasi3/CM-PharmE/main/wiki-src/diagrams/rendered/erd/DGM-ERD-001--evidence-source-records.svg?sha=bb4069c6d59c)
 
 [Source](https://github.com/ArazSaieArasi3/CM-PharmE/blob/main/wiki-src/diagrams/source/erd/DGM-ERD-001--evidence-source-records.mmd) · [SVG](https://github.com/ArazSaieArasi3/CM-PharmE/blob/main/wiki-src/diagrams/rendered/erd/DGM-ERD-001--evidence-source-records.svg)
 
 ### DGM-ARC-001 — data/query architecture flow
 
-![DGM-ARC-001 illustrative cross-representation pipeline](https://raw.githubusercontent.com/ArazSaieArasi3/CM-PharmE/main/wiki-src/diagrams/rendered/architecture/DGM-ARC-001--cross-representation-pipeline.svg)
+![DGM-ARC-001 illustrative cross-representation pipeline](https://raw.githubusercontent.com/ArazSaieArasi3/CM-PharmE/main/wiki-src/diagrams/rendered/architecture/DGM-ARC-001--cross-representation-pipeline.svg?sha=4bfc59598971)
 
 [Source](https://github.com/ArazSaieArasi3/CM-PharmE/blob/main/wiki-src/diagrams/source/architecture/DGM-ARC-001--cross-representation-pipeline.mmd) · [SVG](https://github.com/ArazSaieArasi3/CM-PharmE/blob/main/wiki-src/diagrams/rendered/architecture/DGM-ARC-001--cross-representation-pipeline.svg)
 
 ### DGM-EVO-001 — cross-version lineage
 
-![DGM-EVO-001 illustrative V1 to V2 research lineage](https://raw.githubusercontent.com/ArazSaieArasi3/CM-PharmE/main/wiki-src/diagrams/rendered/evolution/DGM-EVO-001--v1-v2-research-lineage.svg)
+![DGM-EVO-001 illustrative V1 to V2 research lineage](https://raw.githubusercontent.com/ArazSaieArasi3/CM-PharmE/main/wiki-src/diagrams/rendered/evolution/DGM-EVO-001--v1-v2-research-lineage.svg?sha=780b410fea2f)
 
 [Source](https://github.com/ArazSaieArasi3/CM-PharmE/blob/main/wiki-src/diagrams/source/evolution/DGM-EVO-001--v1-v2-research-lineage.dot) · [SVG](https://github.com/ArazSaieArasi3/CM-PharmE/blob/main/wiki-src/diagrams/rendered/evolution/DGM-EVO-001--v1-v2-research-lineage.svg)
 

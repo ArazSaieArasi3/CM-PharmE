@@ -32,7 +32,7 @@ The hierarchy is intentional:
 
 ## 1. V2 ontology architecture — Core, X-INFRA and Extensions — DGM-ONT-002
 
-![DGM-ONT-002 V2 ontology architecture — Core, X-INFRA and Extensions](https://raw.githubusercontent.com/ArazSaieArasi3/CM-PharmE/main/wiki-src/diagrams/rendered/ontology/DGM-ONT-002--v2-ontology-architecture-core-x-infra-and-extensions.svg)
+![DGM-ONT-002 V2 ontology architecture — Core, X-INFRA and Extensions](https://raw.githubusercontent.com/ArazSaieArasi3/CM-PharmE/main/wiki-src/diagrams/rendered/ontology/DGM-ONT-002--v2-ontology-architecture-core-x-infra-and-extensions.svg?sha=57f52a9a4974)
 
 **Artifact status:** Authoritative projection. Top-level architecture of all 17 domains across Core, X-INFRA and Extensions. Placement is architectural grouping, not an object-property assertion.
 
@@ -40,7 +40,7 @@ The hierarchy is intentional:
 
 ## 2. V2 Core ontology overview — DGM-ONT-003
 
-![DGM-ONT-003 V2 Core ontology overview](https://raw.githubusercontent.com/ArazSaieArasi3/CM-PharmE/main/wiki-src/diagrams/rendered/ontology/DGM-ONT-003--v2-core-ontology-overview.svg)
+![DGM-ONT-003 V2 Core ontology overview](https://raw.githubusercontent.com/ArazSaieArasi3/CM-PharmE/main/wiki-src/diagrams/rendered/ontology/DGM-ONT-003--v2-core-ontology-overview.svg?sha=22baaead8666)
 
 **Artifact status:** Illustrative. Readable six-module Core overview with selected explicit relation spans stated as notes. It deliberately avoids a 32-node all-in-one graph.
 
@@ -48,7 +48,7 @@ The hierarchy is intentional:
 
 ## 3. Ecosystem Organization and Facility Operations — DGM-ONT-004
 
-![DGM-ONT-004 Ecosystem Organization and Facility Operations](https://raw.githubusercontent.com/ArazSaieArasi3/CM-PharmE/main/wiki-src/diagrams/rendered/ontology/DGM-ONT-004--ecosystem-organization-and-facility-operations.svg)
+![DGM-ONT-004 Ecosystem Organization and Facility Operations](https://raw.githubusercontent.com/ArazSaieArasi3/CM-PharmE/main/wiki-src/diagrams/rendered/ontology/DGM-ONT-004--ecosystem-organization-and-facility-operations.svg?sha=4aefd32bc2a8)
 
 **Artifact status:** Authoritative projection. Shows organization/facility identity, contextual roles, the FacilityOperation relator, explicit generalizations, `operates`, and the protected Organization ≠ Facility distinction.
 
@@ -56,7 +56,7 @@ The hierarchy is intentional:
 
 ## 4. Pharmaceutical Product and Classification — DGM-ONT-005
 
-![DGM-ONT-005 Pharmaceutical Product and Classification](https://raw.githubusercontent.com/ArazSaieArasi3/CM-PharmE/main/wiki-src/diagrams/rendered/ontology/DGM-ONT-005--pharmaceutical-product-and-classification.svg)
+![DGM-ONT-005 Pharmaceutical Product and Classification](https://raw.githubusercontent.com/ArazSaieArasi3/CM-PharmE/main/wiki-src/diagrams/rendered/ontology/DGM-ONT-005--pharmaceutical-product-and-classification.svg?sha=312bbc49d459)
 
 **Artifact status:** Authoritative projection. Shows product, presentation, substance, dosage/strength/package, classification and listing structures. Formally unspecified endpoints remain note boxes.
 
@@ -64,7 +64,7 @@ The hierarchy is intentional:
 
 ## 5. Evidence and Provenance — DGM-ONT-006
 
-![DGM-ONT-006 Evidence and Provenance](https://raw.githubusercontent.com/ArazSaieArasi3/CM-PharmE/main/wiki-src/diagrams/rendered/ontology/DGM-ONT-006--evidence-and-provenance.svg)
+![DGM-ONT-006 Evidence and Provenance](https://raw.githubusercontent.com/ArazSaieArasi3/CM-PharmE/main/wiki-src/diagrams/rendered/ontology/DGM-ONT-006--evidence-and-provenance.svg?sha=ff767d56ba68)
 
 **Artifact status:** Authoritative projection. Shows source→dataset→release→record lineage, evidence support, assertions, observations and provenance without treating EvidenceItem as a relation that is not formally asserted.
 
@@ -72,7 +72,7 @@ The hierarchy is intentional:
 
 ## 6. Geography, Jurisdiction and Time — DGM-ONT-007
 
-![DGM-ONT-007 Geography, Jurisdiction and Time](https://raw.githubusercontent.com/ArazSaieArasi3/CM-PharmE/main/wiki-src/diagrams/rendered/ontology/DGM-ONT-007--geography-jurisdiction-and-time.svg)
+![DGM-ONT-007 Geography, Jurisdiction and Time](https://raw.githubusercontent.com/ArazSaieArasi3/CM-PharmE/main/wiki-src/diagrams/rendered/ontology/DGM-ONT-007--geography-jurisdiction-and-time.svg?sha=15d06eac9c43)
 
 **Artifact status:** Authoritative projection. Separates geographic identity from regulatory jurisdiction and preserves the Facility ≠ GeographicFeature and GeographicFeature ≠ RegulatoryJurisdiction distinctions.
 
@@ -80,7 +80,7 @@ The hierarchy is intentional:
 
 ## 7. Identity and Entity Matching — DGM-ONT-008
 
-![DGM-ONT-008 Identity and Entity Matching](https://raw.githubusercontent.com/ArazSaieArasi3/CM-PharmE/main/wiki-src/diagrams/rendered/ontology/DGM-ONT-008--identity-and-entity-matching.svg)
+![DGM-ONT-008 Identity and Entity Matching](https://raw.githubusercontent.com/ArazSaieArasi3/CM-PharmE/main/wiki-src/diagrams/rendered/ontology/DGM-ONT-008--identity-and-entity-matching.svg?sha=3344cb365666)
 
 **Artifact status:** Authoritative projection. Shows identifier assignment and entity-match assertions while preserving the unspecified identifier/match endpoints.
 
@@ -88,7 +88,7 @@ The hierarchy is intentional:
 
 ## 8. Supply Operations and Shortage — DGM-ONT-009
 
-![DGM-ONT-009 Supply Operations and Shortage](https://raw.githubusercontent.com/ArazSaieArasi3/CM-PharmE/main/wiki-src/diagrams/rendered/ontology/DGM-ONT-009--supply-operations-and-shortage.svg)
+![DGM-ONT-009 Supply Operations and Shortage](https://raw.githubusercontent.com/ArazSaieArasi3/CM-PharmE/main/wiki-src/diagrams/rendered/ontology/DGM-ONT-009--supply-operations-and-shortage.svg?sha=969480137e94)
 
 **Artifact status:** Authoritative projection. Shows shortage-product/presentation/jurisdiction relations, supply capacity and observation-result hierarchy with unspecified bearer/aboutness endpoints retained.
 
@@ -96,7 +96,7 @@ The hierarchy is intentional:
 
 ## 9. Supply Resilience and Risk — adjacent extension views — DGM-ONT-010
 
-![DGM-ONT-010 Supply Resilience and Risk — adjacent extension views](https://raw.githubusercontent.com/ArazSaieArasi3/CM-PharmE/main/wiki-src/diagrams/rendered/ontology/DGM-ONT-010--supply-resilience-and-risk-adjacent-extension-views.svg)
+![DGM-ONT-010 Supply Resilience and Risk — adjacent extension views](https://raw.githubusercontent.com/ArazSaieArasi3/CM-PharmE/main/wiki-src/diagrams/rendered/ontology/DGM-ONT-010--supply-resilience-and-risk-adjacent-extension-views.svg?sha=252fad41328b)
 
 **Artifact status:** Authoritative projection. Places Supply Resilience and Risk Management side by side but explicitly states that the current formal baseline asserts no cross-domain object property between them.
 
@@ -104,7 +104,7 @@ The hierarchy is intentional:
 
 ## 10. V2 extension landscape — DGM-ONT-011
 
-![DGM-ONT-011 V2 extension landscape](https://raw.githubusercontent.com/ArazSaieArasi3/CM-PharmE/main/wiki-src/diagrams/rendered/ontology/DGM-ONT-011--v2-extension-landscape.svg)
+![DGM-ONT-011 V2 extension landscape](https://raw.githubusercontent.com/ArazSaieArasi3/CM-PharmE/main/wiki-src/diagrams/rendered/ontology/DGM-ONT-011--v2-extension-landscape.svg?sha=b3f7e648569c)
 
 **Artifact status:** Authoritative projection. Summarizes all eight extension domains and counts without creating an unreadable entity-level extension graph.
 
