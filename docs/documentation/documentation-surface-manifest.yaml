@@ -1,0 +1,201 @@
+documentation_surface_schema_version: "1.0"
+
+repository:
+  name: "ArazSaieArasi3/CM-PharmE"
+  research_id: "CM-PharmE"
+  documentation_profile_ref: "ArazSaieArasi3/OGCM-RF#71"
+
+semantic_source:
+  roots:
+    - "ontology/"
+    - "v2/ontology/"
+  conceptual_model:
+    - "v2/ontouml/cm-pharme-v2.conceptual-model.json"
+  ontology_sources:
+    - "ontology/source/modules/"
+    - "v2/ontology/source/modules/"
+  constraint_sources:
+    - "ontology/distributions/shapes/"
+    - "v2/ontology/shapes/"
+  registries:
+    - "docs/documentation/ontology-version-registry.json"
+  evidence_sources:
+    - "evaluation/"
+    - "v2/evaluation/"
+    - "v2/research/"
+  evaluation_sources:
+    - "docs/evaluations/"
+    - "v2/evaluation/results/"
+    - "v2/research/w7/"
+  decision_records:
+    - "docs/"
+    - "v2/research/"
+  lineage_records:
+    - "docs/versions/"
+    - "v2/review/version-evolution.md"
+  release_manifests:
+    - "releases/"
+    - "v2/ontology/baseline/"
+
+wiki:
+  curated_source_root: "wiki-src/"
+  published_url: "https://github.com/ArazSaieArasi3/CM-PharmE/wiki"
+  primary_roles:
+    - research_narrative
+    - ontology_explanation
+    - formalization_explanation
+    - evaluation_interpretation
+    - diagrams
+    - tutorials
+    - publication_and_citation
+  required_backlinks_to_pages: true
+  required_source_links: true
+
+pages:
+  enabled: false
+  provider: "github-pages"
+  published_root: ""
+  version_registry: "docs/documentation/ontology-version-registry.json"
+  versioned_root: "ontology/"
+  generated_outputs:
+    - id: "v1-formal-ontology-reference"
+      adapter: "widoco"
+      source_ref: "main@595ea30a66644c1b130b6c1a781dc7afbd7ba284"
+      ontology_input: "registry:v1.documentation_input"
+      adapter_version: "TBD-PINNED-BEFORE-R1"
+      config: "TBD-PAGES-04"
+      output_path: "ontology/v1.0.0/"
+      status: "candidate"
+      features:
+        webvowl: true
+        provenance: true
+        changelog: true
+        downloads: true
+    - id: "v2-current-formal-ontology-reference"
+      adapter: "widoco"
+      source_ref: "v2/research-program@1226b0a5484f8f5d3a8d214e0d0f52f066b88999"
+      ontology_input: "registry:v2.documentation_input"
+      adapter_version: "TBD-PINNED-BEFORE-R1"
+      config: "TBD-PAGES-04"
+      output_path: "ontology/v2/current/"
+      status: "development"
+      features:
+        webvowl: true
+        provenance: true
+        changelog: true
+        downloads: true
+
+allocation:
+  - artifact_family: "canonical_conceptual_model"
+    canonical_owner: "semantic_source"
+    wiki_role: "curated_explanation"
+    pages_role: "optional_rendered_projection"
+    duplication_policy: "projection_only"
+  - artifact_family: "formal_ontology_source"
+    canonical_owner: "semantic_source"
+    wiki_role: "explain_and_link"
+    pages_role: "generated_exhaustive_reference"
+    duplication_policy: "projection_only"
+  - artifact_family: "constraints_shacl"
+    canonical_owner: "semantic_source"
+    wiki_role: "explain_role_and_boundary"
+    pages_role: "generated_reference_when_useful"
+    duplication_policy: "projection_only"
+  - artifact_family: "research_evidence_and_evaluation"
+    canonical_owner: "evidential_source"
+    wiki_role: "interpret_results_and_limitations"
+    pages_role: "generated_reports_only_when_governed"
+    duplication_policy: "summary_only"
+  - artifact_family: "research_journey_and_rationale"
+    canonical_owner: "curated_documentation"
+    wiki_role: "primary_reader_facing_location"
+    pages_role: "link_back_to_wiki"
+    duplication_policy: "link_only"
+  - artifact_family: "exhaustive_class_property_reference"
+    canonical_owner: "semantic_source"
+    wiki_role: "selected_curated_explanation_or_bridge"
+    pages_role: "primary_generated_location"
+    duplication_policy: "projection_only"
+  - artifact_family: "webvowl_interactive_exploration"
+    canonical_owner: "semantic_source"
+    wiki_role: "explain_and_link"
+    pages_role: "primary_interactive_location"
+    duplication_policy: "projection_only"
+  - artifact_family: "governed_diagram_sources"
+    canonical_owner: "semantic_source"
+    wiki_role: "primary_explanatory_use"
+    pages_role: "optional_gallery_or_high_resolution"
+    duplication_policy: "projection_only"
+  - artifact_family: "serializations_and_downloads"
+    canonical_owner: "semantic_source"
+    wiki_role: "link_and_explain"
+    pages_role: "primary_download_surface"
+    duplication_policy: "projection_only"
+  - artifact_family: "citation_and_reuse_guidance"
+    canonical_owner: "curated_documentation"
+    wiki_role: "primary_human_guidance"
+    pages_role: "generated_metadata_plus_link_back"
+    duplication_policy: "summary_only"
+
+cross_links:
+  wiki_to_pages:
+    - "formal ontology reference"
+    - "interactive WebVOWL exploration"
+    - "versioned serializations/downloads"
+  pages_to_wiki:
+    - "research Wiki"
+    - "ontology explanation"
+    - "evaluation and limitations"
+    - "citation guidance"
+  pages_to_source:
+    - "exact version semantic source/ref"
+    - "canonical ontology modules"
+    - "release/baseline evidence"
+  wiki_to_source:
+    - "semantic source"
+    - "evidential source"
+    - "exact version refs where claim-bearing"
+
+versioning:
+  current_is_mutable_alias: true
+  stable_version_paths_immutable: true
+  release_bound_requires_exact_source_ref: true
+  historical_overwrite_prohibited: true
+  registry_path: "docs/documentation/ontology-version-registry.json"
+  future_version_onboarding: "registry_entry_only_then_common_pipeline"
+
+publication:
+  build_trigger_policy: "semantic_or_pages_relevant"
+  rendered_verification_required: true
+  deployment_evidence_path: "docs/documentation/pages-publication-evidence/"
+  content_negotiation:
+    required: false
+    provided_by_pages: false
+    external_infrastructure: null
+  public_surface_classification:
+    visibility: "public"
+    forbidden_content:
+      - secrets
+      - credentials
+      - private_expert_response_payloads
+      - restricted_or_unpublished_source_data
+      - private_personal_data
+    allow_only_governed_public_artifacts: true
+
+verification:
+  allocation_complete: true
+  no_competing_semantic_authority: true
+  generated_outputs_bound_to_exact_ref: true
+  wiki_pages_source_links_checked: false
+  pages_backlinks_checked: false
+  version_paths_checked: false
+  rendered_pages_checked: false
+  sensitive_content_reviewed: false
+
+summary:
+  result: "CONDITIONAL_PASS"
+  blockers:
+    - "GitHub Pages is not enabled/deployed yet."
+    - "WIDOCO/WebVOWL adapter versions and config are not yet pinned."
+    - "URL collision, immutable-history and hypothetical V3 onboarding tests remain for #268."
+  notes: "Architecture/source allocation is frozen for implementation; publication verification remains downstream."

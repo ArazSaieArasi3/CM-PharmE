@@ -1,0 +1,107 @@
+{
+  "registry_schema_version": "1.0",
+  "repository": "ArazSaieArasi3/CM-PharmE",
+  "authority_model": "Semantic Source defines; Wiki explains; Pages exposes generated/exhaustive reference.",
+  "lifecycle_states": [
+    "evolving",
+    "candidate",
+    "stable",
+    "frozen",
+    "historical"
+  ],
+  "path_policy": {
+    "root": "ontology/",
+    "mutable_alias_kind": "current",
+    "stable_version_paths_immutable": true,
+    "historical_overwrite_prohibited": true,
+    "release_bound_requires_exact_source_ref": true
+  },
+  "versions": [
+    {
+      "id": "v1",
+      "version_family": "CM-PharmE 1.x",
+      "reader_label": "CM-PharmE 1.0",
+      "lifecycle_state": "stable",
+      "semantic_release": "v1.0.0",
+      "semantic_source_ref": "main@595ea30a66644c1b130b6c1a781dc7afbd7ba284",
+      "semantic_source_paths": [
+        "ontology/source/modules/"
+      ],
+      "assembly_rule": "Use the governed V1 ontology build/assembly pipeline from canonical source modules; generated distributions are derived artifacts, not authoring authority.",
+      "documentation_input": {
+        "kind": "deterministic_assembled_ontology",
+        "source_family": "ontology/source/modules/",
+        "build_contract_issue": 269,
+        "resolved_artifact": null,
+        "fingerprint": null
+      },
+      "generated_reference_enabled": true,
+      "webvowl_enabled": true,
+      "immutable_version_path": "ontology/v1.0.0/",
+      "current_path": null,
+      "documentation_baseline_binding": null,
+      "citation_status": "citable_after_R1_verification",
+      "supersedes": null,
+      "superseded_by": "v2",
+      "public_status_label": "Stable V1 semantic baseline; Pages reference pending R1 verification."
+    },
+    {
+      "id": "v2",
+      "version_family": "CM-PharmE 2.x",
+      "reader_label": "CM-PharmE 2.0",
+      "lifecycle_state": "evolving",
+      "semantic_release": null,
+      "semantic_source_ref": "v2/research-program@1226b0a5484f8f5d3a8d214e0d0f52f066b88999",
+      "semantic_source_paths": [
+        "v2/ontology/source/modules/00-metadata.ttl",
+        "v2/ontology/source/modules/10-core.ttl",
+        "v2/ontology/source/modules/20-xinfra.ttl",
+        "v2/ontology/source/modules/25-gate-d-disjointness.ttl",
+        "v2/ontology/source/modules/30-extensions.ttl",
+        "v2/ontology/source/modules/40-mappings.ttl"
+      ],
+      "assembly_rule": "Use the governed V2 formal build from the registered module set at the exact source ref. Do not infer a frozen V2.0.0 release from documentation publication.",
+      "documentation_input": {
+        "kind": "deterministic_assembled_ontology",
+        "source_family": "v2/ontology/source/modules/",
+        "build_contract_issue": 269,
+        "resolved_artifact": null,
+        "fingerprint": null
+      },
+      "generated_reference_enabled": true,
+      "webvowl_enabled": true,
+      "immutable_version_path": null,
+      "current_path": "ontology/v2/current/",
+      "documentation_baseline_binding": null,
+      "citation_status": "evolving_not_release_bound",
+      "supersedes": "v1",
+      "superseded_by": null,
+      "public_status_label": "Stable-to-date / Evolving; not frozen or final."
+    }
+  ],
+  "future_version_contract": {
+    "minimum_id_pattern": "vN",
+    "onboarding_mechanism": "add_registry_entry_then_common_pipeline",
+    "copied_workflow_allowed": false,
+    "fictional_or_unreleased_scientific_content_must_not_be_published": true,
+    "required_fields": [
+      "id",
+      "version_family",
+      "reader_label",
+      "lifecycle_state",
+      "semantic_source_ref",
+      "semantic_source_paths",
+      "assembly_rule",
+      "documentation_input",
+      "generated_reference_enabled",
+      "webvowl_enabled",
+      "immutable_version_path",
+      "current_path",
+      "documentation_baseline_binding",
+      "citation_status",
+      "supersedes",
+      "superseded_by",
+      "public_status_label"
+    ]
+  }
+}
