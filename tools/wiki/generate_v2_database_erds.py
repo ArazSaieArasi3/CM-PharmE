@@ -229,7 +229,7 @@ def main():
         manifest["diagrams"].append({
           "id":d["id"],"title":d["title"],"purpose":d["purpose"],
           "version_scope":"V2",
-          "notation":"Crow's Foot ERD / relational schema projection",
+          "notation":"Crow's Foot ERD",
           "artifact_status":"Authoritative projection",
           "source_path":d["source_path"],"rendered_path":d["rendered_path"],
           "generation_method":"Project-native deterministic generator parses v2/data/db/schema.sql and emits Mermaid ER source plus governed SVG.",
