@@ -1,0 +1,14 @@
+%% DGM-ARC-008 — API / query boundary
+flowchart LR
+  A[Consumer / research client] --> B[Read-only OpenAPI contract]
+  B --> C[/v1/meta]
+  B --> D[/v1/presentations]
+  B --> E[/v1/observations]
+  B --> F[/v1/geographies]
+  B --> G[/v1/provenance/records/{source_hash}]
+  C --> H[Reference RDB/KG]
+  D --> H
+  E --> H
+  F --> H
+  G --> H
+  H --> I[No production deployment claim]

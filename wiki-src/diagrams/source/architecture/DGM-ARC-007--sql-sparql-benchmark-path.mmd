@@ -1,0 +1,11 @@
+%% DGM-ARC-007 — SQL ↔ SPARQL benchmark path
+flowchart LR
+  A[Frozen benchmark registry] --> B[SQL query]
+  A --> C[SPARQL query]
+  D[Reference RDB] --> B
+  E[Generated KG] --> C
+  B --> F[Canonicalize SQL result]
+  C --> G[Canonicalize SPARQL result]
+  F --> H[Paired result comparison]
+  G --> H
+  H --> I[4/4 PASS]

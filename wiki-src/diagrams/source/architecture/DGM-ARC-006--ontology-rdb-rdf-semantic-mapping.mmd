@@ -1,0 +1,10 @@
+%% DGM-ARC-006 — Ontology ↔ RDB ↔ RDF/KG semantic mapping
+flowchart LR
+  A[OWL/SHACL semantic authority] --> B[36-entry ontology↔RDB registry]
+  B --> C[PostgreSQL/PostGIS realization]
+  B --> D[Deterministic RDF projection rules]
+  C --> D
+  D --> E[RDF/KG instance graph]
+  E --> F[Semantic consistency checks]
+  C --> F
+  G[Non-direct mappings<br/>bounded / polymorphic / projection / deferred] --> F

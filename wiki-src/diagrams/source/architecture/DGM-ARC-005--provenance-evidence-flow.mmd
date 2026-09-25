@@ -1,0 +1,12 @@
+%% DGM-ARC-005 — Provenance / evidence flow
+flowchart LR
+  A[Dataset] --> B[DatasetRelease]
+  B --> C[SourceRecord]
+  D[TransformationRun] --> C
+  C --> E[EvidenceSupport]
+  F[Assertion] --> E
+  C --> G[ObservationResult]
+  F --> G
+  C --> H[EntityMatchAssertion]
+  I[Second SourceRecord] --> H
+  H --> J[Accepted / Ambiguous / Rejected]
