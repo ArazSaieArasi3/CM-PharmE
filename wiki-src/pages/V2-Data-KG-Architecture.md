@@ -8,7 +8,7 @@ This page connects the data path that is otherwise distributed across source con
 
 ## End-to-end representation path
 
-![DGM-ARC-004 Source transformation RDB KG pipeline](https://raw.githubusercontent.com/ArazSaieArasi3/CM-PharmE/main/wiki-src/diagrams/rendered/architecture/DGM-ARC-004--source-transformation-rdb-kg-pipeline.svg?sha=af0897ace992)
+![DGM-ARC-004 Source transformation RDB KG pipeline](https://raw.githubusercontent.com/ArazSaieArasi3/CM-PharmE/main/wiki-src/diagrams/rendered/architecture/DGM-ARC-004--source-transformation-rdb-kg-pipeline.svg?sha=6c2ef51be63a)
 
 **DGM-ARC-004** shows the governed path:
 
