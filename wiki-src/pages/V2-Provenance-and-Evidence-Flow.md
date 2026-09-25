@@ -6,7 +6,7 @@
 
 CM-PharmE keeps **source lineage**, **assertion support**, **domain observations** and **entity-match assertions** separate so that provenance and uncertainty remain inspectable.
 
-![DGM-ARC-005 Provenance evidence flow](https://raw.githubusercontent.com/ArazSaieArasi3/CM-PharmE/main/wiki-src/diagrams/rendered/architecture/DGM-ARC-005--provenance-evidence-flow.svg?sha=5ffa2749e9e8)
+![DGM-ARC-005 Provenance evidence flow](https://raw.githubusercontent.com/ArazSaieArasi3/CM-PharmE/main/wiki-src/diagrams/rendered/architecture/DGM-ARC-005--provenance-evidence-flow.svg?sha=23919e73af3e)
 
 ## Primary lineage
 
