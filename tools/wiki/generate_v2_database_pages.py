@@ -432,7 +432,13 @@ The following values are illustrative only and are not empirical records.
     }
     for row in rows236:
         row[5]=existing_publication_status.get(row[0],row[5])
-    kept=[header]+[row for row in all_rows[1:] if len(row)<7 or row[6]!="236"]
+    owned_page_names={row[0] for row in rows236}
+    kept=[
+        header
+    ]+[
+        row for row in all_rows[1:]
+        if not (len(row)>=7 and row[6]=="236" and row[0] in owned_page_names)
+    ]
     with INVENTORY.open("w",encoding="utf-8",newline="") as fh:
         csv.writer(fh).writerows(kept+rows236)
 
