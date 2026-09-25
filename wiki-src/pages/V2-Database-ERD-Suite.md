@@ -16,7 +16,7 @@ This suite documents the implemented V2 PostgreSQL/PostGIS reference schema at l
 
 ## 1. V2 logical relational model — DGM-ERD-002
 
-![DGM-ERD-002 V2 logical relational model](https://raw.githubusercontent.com/ArazSaieArasi3/CM-PharmE/main/wiki-src/diagrams/rendered/erd/DGM-ERD-002--v2-logical-relational-model.svg?sha=89f91d81f02e)
+![DGM-ERD-002 V2 logical relational model](https://raw.githubusercontent.com/ArazSaieArasi3/CM-PharmE/main/wiki-src/diagrams/rendered/erd/DGM-ERD-002--v2-logical-relational-model.svg?sha=d5ae71259bf5)
 
 Logical reader view of the principal V2 relational entities and implemented foreign-key structure.
 
@@ -25,7 +25,7 @@ Rendered SVG: `wiki-src/diagrams/rendered/erd/DGM-ERD-002--v2-logical-relational
 
 ## 2. V2 full physical ERD — 24 tables — DGM-ERD-003
 
-![DGM-ERD-003 V2 full physical ERD — 24 tables](https://raw.githubusercontent.com/ArazSaieArasi3/CM-PharmE/main/wiki-src/diagrams/rendered/erd/DGM-ERD-003--v2-full-physical-erd-24-tables.svg?sha=a53b8218ecf6)
+![DGM-ERD-003 V2 full physical ERD — 24 tables](https://raw.githubusercontent.com/ArazSaieArasi3/CM-PharmE/main/wiki-src/diagrams/rendered/erd/DGM-ERD-003--v2-full-physical-erd-24-tables.svg?sha=3249c374ff65)
 
 Full physical ERD covering all 24 implemented base tables and every declared foreign key.
 
@@ -34,7 +34,7 @@ Rendered SVG: `wiki-src/diagrams/rendered/erd/DGM-ERD-003--v2-full-physical-erd-
 
 ## 3. Dataset / Release / Source / Transformation — DGM-ERD-004
 
-![DGM-ERD-004 Dataset / Release / Source / Transformation](https://raw.githubusercontent.com/ArazSaieArasi3/CM-PharmE/main/wiki-src/diagrams/rendered/erd/DGM-ERD-004--dataset-release-source-transformation.svg?sha=c3e707f03eb5)
+![DGM-ERD-004 Dataset / Release / Source / Transformation](https://raw.githubusercontent.com/ArazSaieArasi3/CM-PharmE/main/wiki-src/diagrams/rendered/erd/DGM-ERD-004--dataset-release-source-transformation.svg?sha=0caa8269c9f0)
 
 Readable subject-area ERD generated from the implemented V2 reference schema.
 
@@ -43,7 +43,7 @@ Rendered SVG: `wiki-src/diagrams/rendered/erd/DGM-ERD-004--dataset-release-sourc
 
 ## 4. Organization / Facility / Geography / Jurisdiction — DGM-ERD-005
 
-![DGM-ERD-005 Organization / Facility / Geography / Jurisdiction](https://raw.githubusercontent.com/ArazSaieArasi3/CM-PharmE/main/wiki-src/diagrams/rendered/erd/DGM-ERD-005--organization-facility-geography-jurisdiction.svg?sha=5fefa93534d1)
+![DGM-ERD-005 Organization / Facility / Geography / Jurisdiction](https://raw.githubusercontent.com/ArazSaieArasi3/CM-PharmE/main/wiki-src/diagrams/rendered/erd/DGM-ERD-005--organization-facility-geography-jurisdiction.svg?sha=92279fae275c)
 
 Readable subject-area ERD generated from the implemented V2 reference schema.
 
@@ -52,7 +52,7 @@ Rendered SVG: `wiki-src/diagrams/rendered/erd/DGM-ERD-005--organization-facility
 
 ## 5. Product / Substance / Presentation / Classification — DGM-ERD-006
 
-![DGM-ERD-006 Product / Substance / Presentation / Classification](https://raw.githubusercontent.com/ArazSaieArasi3/CM-PharmE/main/wiki-src/diagrams/rendered/erd/DGM-ERD-006--product-substance-presentation-classification.svg?sha=fa2ae25b2c29)
+![DGM-ERD-006 Product / Substance / Presentation / Classification](https://raw.githubusercontent.com/ArazSaieArasi3/CM-PharmE/main/wiki-src/diagrams/rendered/erd/DGM-ERD-006--product-substance-presentation-classification.svg?sha=b2ccab78b7d4)
 
 Readable subject-area ERD generated from the implemented V2 reference schema.
 
@@ -61,7 +61,7 @@ Rendered SVG: `wiki-src/diagrams/rendered/erd/DGM-ERD-006--product-substance-pre
 
 ## 6. Identifier / Identity / Entity Match — DGM-ERD-007
 
-![DGM-ERD-007 Identifier / Identity / Entity Match](https://raw.githubusercontent.com/ArazSaieArasi3/CM-PharmE/main/wiki-src/diagrams/rendered/erd/DGM-ERD-007--identifier-identity-entity-match.svg?sha=44309d9175ea)
+![DGM-ERD-007 Identifier / Identity / Entity Match](https://raw.githubusercontent.com/ArazSaieArasi3/CM-PharmE/main/wiki-src/diagrams/rendered/erd/DGM-ERD-007--identifier-identity-entity-match.svg?sha=ee7cf463182a)
 
 Readable subject-area ERD generated from the implemented V2 reference schema.
 
@@ -70,7 +70,7 @@ Rendered SVG: `wiki-src/diagrams/rendered/erd/DGM-ERD-007--identifier-identity-e
 
 ## 7. Assertion / Evidence / Provenance — DGM-ERD-008
 
-![DGM-ERD-008 Assertion / Evidence / Provenance](https://raw.githubusercontent.com/ArazSaieArasi3/CM-PharmE/main/wiki-src/diagrams/rendered/erd/DGM-ERD-008--assertion-evidence-provenance.svg?sha=f6f61676e0b4)
+![DGM-ERD-008 Assertion / Evidence / Provenance](https://raw.githubusercontent.com/ArazSaieArasi3/CM-PharmE/main/wiki-src/diagrams/rendered/erd/DGM-ERD-008--assertion-evidence-provenance.svg?sha=55dc2d6657ec)
 
 Readable subject-area ERD generated from the implemented V2 reference schema.
 
@@ -79,7 +79,7 @@ Rendered SVG: `wiki-src/diagrams/rendered/erd/DGM-ERD-008--assertion-evidence-pr
 
 ## 8. Observation — DGM-ERD-009
 
-![DGM-ERD-009 Observation](https://raw.githubusercontent.com/ArazSaieArasi3/CM-PharmE/main/wiki-src/diagrams/rendered/erd/DGM-ERD-009--observation.svg?sha=89f7c43c53e7)
+![DGM-ERD-009 Observation](https://raw.githubusercontent.com/ArazSaieArasi3/CM-PharmE/main/wiki-src/diagrams/rendered/erd/DGM-ERD-009--observation.svg?sha=d3bc1b57c35c)
 
 Readable subject-area ERD generated from the implemented V2 reference schema.
 
@@ -88,7 +88,7 @@ Rendered SVG: `wiki-src/diagrams/rendered/erd/DGM-ERD-009--observation.svg`
 
 ## 9. Shortage / Resilience-related implemented representation — DGM-ERD-010
 
-![DGM-ERD-010 Shortage / Resilience-related implemented representation](https://raw.githubusercontent.com/ArazSaieArasi3/CM-PharmE/main/wiki-src/diagrams/rendered/erd/DGM-ERD-010--shortage-resilience-related-implemented-representation.svg?sha=5ab43533d93f)
+![DGM-ERD-010 Shortage / Resilience-related implemented representation](https://raw.githubusercontent.com/ArazSaieArasi3/CM-PharmE/main/wiki-src/diagrams/rendered/erd/DGM-ERD-010--shortage-resilience-related-implemented-representation.svg?sha=4bd288cbcc20)
 
 Readable subject-area ERD generated from the implemented V2 reference schema.
 
