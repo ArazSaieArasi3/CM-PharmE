@@ -421,13 +421,28 @@ The following values are illustrative only and are not empirical records.
            "Structural coverage does not imply production readiness or complete ontology mapping."]
     (DBREF/"COVERAGE.md").write_text("\n".join(lines)+"\n",encoding="utf-8")
 
-    # Inventory: replace #236 rows.
+    # Inventory: replace #236 rows while preserving publication lifecycle state.
     with INVENTORY.open(encoding="utf-8-sig",newline="") as fh:
         all_rows=list(csv.reader(fh))
     header=all_rows[0]
-    kept=[header]+[row for row in all_rows[1:] if len(row)<7 or row[6]!="236"]
+    existing_publication_status={
+        row[0]:row[5]
+        for row in all_rows[1:]
+        if len(row)>=7 and row[6]=="236"
+    }
+    for row in rows236:
+        row[5]=existing_publication_status.get(row[0],row[5])
+    owned_page_names={row[0] for row in rows236}
+    non_236=[
+        row for row in all_rows[1:]
+        if len(row)<7 or row[6]!="236"
+    ]
+    extra_236=[
+        row for row in all_rows[1:]
+        if len(row)>=7 and row[6]=="236" and row[0] not in owned_page_names
+    ]
     with INVENTORY.open("w",encoding="utf-8",newline="") as fh:
-        csv.writer(fh).writerows(kept+rows236)
+        csv.writer(fh).writerows([header]+non_236+rows236+extra_236)
 
     # Navigation.
     home=PAGES/"Home.md"
