@@ -1,0 +1,10 @@
+%% DGM-ARC-004 — Source → transformation → RDB → KG pipeline
+flowchart LR
+  A[Source contract / fixture] --> B[Dataset + DatasetRelease]
+  B --> C[TransformationRun]
+  C --> D[SourceRecord<br/>source_hash + raw_key]
+  D --> E[Normalized PostgreSQL/PostGIS entities]
+  E --> F[Ontology↔RDB mapping registry]
+  F --> G[Deterministic RDF ABox / KG]
+  E --> H[SQL query path]
+  G --> I[SPARQL query path]
