@@ -82,6 +82,9 @@ The following values are illustrative only and are not empirical records.
 | `facility_id` | `<facility.facility_id>` |
 | `geography_id` | `<geography.geography_id>` |
 | `diagnosis_reference_id` | `<diagnosis_reference.diagnosis_reference_id>` |
+| `reporting_period` | `2026-01-01` |
+| `source_record_id` | `<source_record.source_record_id>` |
+| `assertion_id` | `<assertion.assertion_id>` |
 
 ## Common join paths
 - Child to parent: `observation_result.product_presentation_id` = `product_presentation.product_presentation_id`.

@@ -69,6 +69,7 @@ The following values are illustrative only and are not empirical records.
 | `matched_public_id` | `example` |
 | `confidence` | `0.9500` |
 | `status` | `accepted` |
+| `ontology_iri` | `https://w3id.org/cm-pharme/2.0/Example` |
 
 ## Common join paths
 - Child to parent: `entity_match_assertion.source_record_a_id` = `source_record.source_record_id`.
