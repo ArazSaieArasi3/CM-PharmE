@@ -1,0 +1,289 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/ArazSaieArasi3/CM-PharmE/blob/main/docs/documentation/ontology-version-registry.schema.json",
+  "title": "CM-PharmE Ontology Pages Version Registry",
+  "type": "object",
+  "required": [
+    "registry_schema_version",
+    "repository",
+    "authority_model",
+    "lifecycle_states",
+    "path_policy",
+    "versions",
+    "future_version_contract"
+  ],
+  "properties": {
+    "registry_schema_version": {
+      "const": "1.0"
+    },
+    "repository": {
+      "const": "ArazSaieArasi3/CM-PharmE"
+    },
+    "authority_model": {
+      "type": "string",
+      "minLength": 1
+    },
+    "lifecycle_states": {
+      "type": "array",
+      "minItems": 5,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "evolving",
+          "candidate",
+          "stable",
+          "frozen",
+          "historical"
+        ]
+      }
+    },
+    "path_policy": {
+      "type": "object",
+      "required": [
+        "root",
+        "mutable_alias_kind",
+        "stable_version_paths_immutable",
+        "historical_overwrite_prohibited",
+        "release_bound_requires_exact_source_ref"
+      ],
+      "properties": {
+        "root": {
+          "type": "string",
+          "minLength": 1
+        },
+        "mutable_alias_kind": {
+          "const": "current"
+        },
+        "stable_version_paths_immutable": {
+          "const": true
+        },
+        "historical_overwrite_prohibited": {
+          "const": true
+        },
+        "release_bound_requires_exact_source_ref": {
+          "const": true
+        }
+      },
+      "additionalProperties": true
+    },
+    "versions": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "version_family",
+          "reader_label",
+          "lifecycle_state",
+          "semantic_source_ref",
+          "semantic_source_paths",
+          "assembly_rule",
+          "documentation_input",
+          "generated_reference_enabled",
+          "webvowl_enabled",
+          "immutable_version_path",
+          "current_path",
+          "documentation_baseline_binding",
+          "citation_status",
+          "supersedes",
+          "superseded_by",
+          "public_status_label"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^v[0-9]+$"
+          },
+          "version_family": {
+            "type": "string",
+            "minLength": 1
+          },
+          "reader_label": {
+            "type": "string",
+            "minLength": 1
+          },
+          "lifecycle_state": {
+            "enum": [
+              "evolving",
+              "candidate",
+              "stable",
+              "frozen",
+              "historical"
+            ]
+          },
+          "semantic_source_ref": {
+            "type": "string",
+            "pattern": "^.+@[0-9a-f]{40}$"
+          },
+          "semantic_source_paths": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "assembly_rule": {
+            "type": "string",
+            "minLength": 1
+          },
+          "documentation_input": {
+            "type": "object",
+            "required": [
+              "kind",
+              "source_family",
+              "build_contract_issue",
+              "resolved_artifact",
+              "fingerprint"
+            ],
+            "properties": {
+              "kind": {
+                "const": "deterministic_assembled_ontology"
+              },
+              "source_family": {
+                "type": "string",
+                "minLength": 1
+              },
+              "build_contract_issue": {
+                "const": 269
+              },
+              "resolved_artifact": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "fingerprint": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            },
+            "additionalProperties": false
+          },
+          "generated_reference_enabled": {
+            "type": "boolean"
+          },
+          "webvowl_enabled": {
+            "type": "boolean"
+          },
+          "immutable_version_path": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "current_path": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "documentation_baseline_binding": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "citation_status": {
+            "type": "string",
+            "minLength": 1
+          },
+          "supersedes": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "superseded_by": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "public_status_label": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "lifecycle_state": {
+                  "enum": [
+                    "stable",
+                    "frozen",
+                    "historical"
+                  ]
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "immutable_version_path": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "lifecycle_state": {
+                  "const": "evolving"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "current_path": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            }
+          }
+        ],
+        "additionalProperties": false
+      }
+    },
+    "future_version_contract": {
+      "type": "object",
+      "required": [
+        "minimum_id_pattern",
+        "onboarding_mechanism",
+        "copied_workflow_allowed",
+        "fictional_or_unreleased_scientific_content_must_not_be_published",
+        "required_fields"
+      ],
+      "properties": {
+        "minimum_id_pattern": {
+          "const": "vN"
+        },
+        "onboarding_mechanism": {
+          "const": "add_registry_entry_then_common_pipeline"
+        },
+        "copied_workflow_allowed": {
+          "const": false
+        },
+        "fictional_or_unreleased_scientific_content_must_not_be_published": {
+          "const": true
+        },
+        "required_fields": {
+          "type": "array",
+          "minItems": 10,
+          "uniqueItems": true,
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
