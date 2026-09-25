@@ -6,7 +6,7 @@
 
 The V2 OpenAPI artifact is a **bounded read-only research contract** over the reference database/KG. It documents an intended interface; it is not proof that a production service is deployed or available.
 
-![DGM-ARC-008 API query boundary](https://raw.githubusercontent.com/ArazSaieArasi3/CM-PharmE/main/wiki-src/diagrams/rendered/architecture/DGM-ARC-008--api-query-boundary.svg?sha=6cb63d393069)
+![DGM-ARC-008 API query boundary](https://raw.githubusercontent.com/ArazSaieArasi3/CM-PharmE/main/wiki-src/diagrams/rendered/architecture/DGM-ARC-008--api-query-boundary.svg?sha=0d4bb0ffa636)
 
 ## Contracted endpoints
 
