@@ -111,7 +111,18 @@ def physical_svg(diagram_id,title,tables,selected,physical=False):
       '<text x="40" y="62" font-family="sans-serif" font-size="11" fill="#57606a">Generated from schema.sql. Arrow direction: FK table to referenced table. PK/FK/UK denote physical-schema roles.</text>'
     ]
 
-    for edge in foreign_key_edges(tables,selected):
+    edges=foreign_key_edges(tables,selected)
+    pair_groups={}
+    for idx,edge in enumerate(edges):
+        key=(edge["child"],edge["ref_table"])
+        pair_groups.setdefault(key,[]).append(idx)
+    offsets={}
+    for key,idxs in pair_groups.items():
+        center=(len(idxs)-1)/2
+        for j,idx in enumerate(idxs):
+            offsets[idx]=(j-center)*18
+
+    for idx,edge in enumerate(edges):
         child=edge["child"]; parent=edge["ref_table"]
         if child not in pos or parent not in pos:
             continue
@@ -119,8 +130,14 @@ def physical_svg(diagram_id,title,tables,selected,physical=False):
         px,py,ph=pos[parent]
         x1=cx+box_w/2; y1=cy+ch/2
         x2=px+box_w/2; y2=py+ph/2
+        dx=x2-x1; dy=y2-y1
+        dist=(dx*dx+dy*dy)**0.5 or 1.0
+        perp_x=-dy/dist; perp_y=dx/dist
+        off=offsets.get(idx,0)
+        x1+=perp_x*off; y1+=perp_y*off
+        x2+=perp_x*off; y2+=perp_y*off
         out.append('<line x1="%.1f" y1="%.1f" x2="%.1f" y2="%.1f" stroke="#8c959f" stroke-width="1.1" marker-end="url(#fkarr)"/>'%(x1,y1,x2,y2))
-        mx=(x1+x2)/2; my=(y1+y2)/2
+        mx=(x1+x2)/2+perp_x*5; my=(y1+y2)/2+perp_y*5
         out.append('<text x="%.1f" y="%.1f" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#57606a">%s</text>'%(mx,my-4,html.escape(edge["column"])))
 
     for name in selected:
