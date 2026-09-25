@@ -112,7 +112,7 @@ def important_columns(table):
             selected.append(col)
         if len(selected)>=7:
             break
-    return selected[:7]
+    return selected[:10]
 
 def record(source,evidence):
     return """
