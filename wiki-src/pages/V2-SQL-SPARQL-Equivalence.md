@@ -6,7 +6,7 @@
 
 CM-PharmE uses a frozen set of paired SQL and SPARQL questions to test whether selected answers are preserved across the relational and RDF representations.
 
-![DGM-ARC-007 SQL SPARQL benchmark path](https://raw.githubusercontent.com/ArazSaieArasi3/CM-PharmE/main/wiki-src/diagrams/rendered/architecture/DGM-ARC-007--sql-sparql-benchmark-path.svg?sha=b6e63e7c645e)
+![DGM-ARC-007 SQL SPARQL benchmark path](https://raw.githubusercontent.com/ArazSaieArasi3/CM-PharmE/main/wiki-src/diagrams/rendered/architecture/DGM-ARC-007--sql-sparql-benchmark-path.svg?sha=5b478dcebfbe)
 
 ## Benchmark registry
 
