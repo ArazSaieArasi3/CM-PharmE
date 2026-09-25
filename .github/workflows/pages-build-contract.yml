@@ -1,0 +1,23 @@
+name: Pages Build Contract
+
+on:
+  pull_request:
+    paths:
+      - "docs/documentation/ontology-version-registry.json"
+      - "docs/documentation/ontology-documentation-build-contract.json"
+      - "docs/documentation/ontology-documentation-build-contract.schema.json"
+      - "tools/pages/validate_documentation_build_contract.py"
+      - ".github/workflows/pages-build-contract.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Validate ontology documentation build contract
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate build contract against version registry
+        run: python tools/pages/validate_documentation_build_contract.py
