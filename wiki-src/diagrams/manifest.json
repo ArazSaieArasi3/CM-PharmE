@@ -69,6 +69,116 @@
       "caption": "DGM-ARC-003 — publication/repository/Wiki relationship; the Wiki explains and links but does not replace authoritative artifacts."
     },
     {
+      "id": "DGM-ARC-004",
+      "title": "Source → transformation → RDB → KG pipeline",
+      "purpose": "Document the implemented V2 path from admitted source contracts/fixtures through provenance-aware relational realization and mapping registry to deterministic RDF/KG.",
+      "version_scope": "V2",
+      "notation": "Data-flow / architecture flow",
+      "artifact_status": "Authoritative projection",
+      "source_path": "wiki-src/diagrams/source/architecture/DGM-ARC-004--source-transformation-rdb-kg-pipeline.mmd",
+      "rendered_path": "wiki-src/diagrams/rendered/architecture/DGM-ARC-004--source-transformation-rdb-kg-pipeline.svg",
+      "generation_method": "Mermaid flowchart source with governed theme-safe SVG publication artifact.",
+      "authoritative_source": "V2 W6 data infrastructure, mapping registry, KG exporter and W7 E10 evidence",
+      "last_updated": "2026-09-25",
+      "checked_ref": "v2/research-program@1226b0a5484f8f5d3a8d214e0d0f52f066b88999",
+      "related_pages": [
+        "V2 Data and KG Architecture",
+        "V2 End-to-End Data Trace",
+        "V2 Data Infrastructure"
+      ],
+      "legend_required": false,
+      "alt_text": "End-to-end V2 reference path from source contract or fixture through Dataset and DatasetRelease, TransformationRun, SourceRecord, PostgreSQL/PostGIS, mapping registry and deterministic RDF/KG.",
+      "caption": "DGM-ARC-004 — implemented V2 source→transformation→RDB→KG reference path."
+    },
+    {
+      "id": "DGM-ARC-005",
+      "title": "Provenance and evidence flow",
+      "purpose": "Show explicit lineage and evidence structures while keeping SourceRecord, Assertion, ObservationResult and EntityMatchAssertion semantically distinct.",
+      "version_scope": "V2",
+      "notation": "Data-flow / architecture flow",
+      "artifact_status": "Authoritative projection",
+      "source_path": "wiki-src/diagrams/source/architecture/DGM-ARC-005--provenance-evidence-flow.mmd",
+      "rendered_path": "wiki-src/diagrams/rendered/architecture/DGM-ARC-005--provenance-evidence-flow.svg",
+      "generation_method": "Mermaid flowchart source with governed theme-safe SVG publication artifact.",
+      "authoritative_source": "V2 PostgreSQL/PostGIS schema, views, bootstrap ingestion and KG export",
+      "last_updated": "2026-09-25",
+      "checked_ref": "v2/research-program@1226b0a5484f8f5d3a8d214e0d0f52f066b88999",
+      "related_pages": [
+        "V2 Provenance and Evidence Flow",
+        "V2 End-to-End Data Trace",
+        "V2 Database Reference"
+      ],
+      "legend_required": false,
+      "alt_text": "Provenance flow distinguishing Dataset, DatasetRelease, SourceRecord, EvidenceSupport, Assertion, ObservationResult and auditable EntityMatchAssertion.",
+      "caption": "DGM-ARC-005 — provenance/evidence flow with entity-match assertion boundary."
+    },
+    {
+      "id": "DGM-ARC-006",
+      "title": "Ontology ↔ RDB ↔ RDF/KG semantic mapping",
+      "purpose": "Explain how OWL/SHACL semantic authority is realized through the 36-entry ontology-to-RDB mapping registry and deterministic RDF projection, including explicit non-direct mappings.",
+      "version_scope": "V2",
+      "notation": "Data-flow / architecture flow",
+      "artifact_status": "Authoritative projection",
+      "source_path": "wiki-src/diagrams/source/architecture/DGM-ARC-006--ontology-rdb-rdf-semantic-mapping.mmd",
+      "rendered_path": "wiki-src/diagrams/rendered/architecture/DGM-ARC-006--ontology-rdb-rdf-semantic-mapping.svg",
+      "generation_method": "Mermaid flowchart source with governed theme-safe SVG publication artifact.",
+      "authoritative_source": "V2 ontology↔RDB mapping registry and W7 E10 representation-consistency evidence",
+      "last_updated": "2026-09-25",
+      "checked_ref": "v2/research-program@1226b0a5484f8f5d3a8d214e0d0f52f066b88999",
+      "related_pages": [
+        "V2 Ontology RDB RDF Mapping",
+        "V2 Ontology Reference",
+        "V2 KG Generation and Query"
+      ],
+      "legend_required": false,
+      "alt_text": "Mapping architecture from OWL/SHACL semantic authority through the ontology-RDB registry, PostgreSQL/PostGIS and deterministic RDF/KG with explicit non-direct mapping boundaries.",
+      "caption": "DGM-ARC-006 — ontology↔RDB↔RDF/KG mapping architecture."
+    },
+    {
+      "id": "DGM-ARC-007",
+      "title": "SQL ↔ SPARQL benchmark path",
+      "purpose": "Document the frozen paired-query path used to compare selected relational and RDF/KG answers and make the 4/4 evidence boundary explicit.",
+      "version_scope": "V2",
+      "notation": "Data-flow / architecture flow",
+      "artifact_status": "Authoritative projection",
+      "source_path": "wiki-src/diagrams/source/architecture/DGM-ARC-007--sql-sparql-benchmark-path.mmd",
+      "rendered_path": "wiki-src/diagrams/rendered/architecture/DGM-ARC-007--sql-sparql-benchmark-path.svg",
+      "generation_method": "Mermaid flowchart source with governed theme-safe SVG publication artifact.",
+      "authoritative_source": "V2 SQL↔SPARQL benchmark registry, comparison tool and W7 E10 evidence",
+      "last_updated": "2026-09-25",
+      "checked_ref": "v2/research-program@1226b0a5484f8f5d3a8d214e0d0f52f066b88999",
+      "related_pages": [
+        "V2 SQL SPARQL Equivalence",
+        "V2 KG Generation and Query",
+        "V2 Evaluation E1-E13"
+      ],
+      "legend_required": false,
+      "alt_text": "Frozen benchmark registry branching into SQL over the reference RDB and SPARQL over the generated KG, canonicalizing results and comparing four paired questions.",
+      "caption": "DGM-ARC-007 — bounded SQL↔SPARQL paired-result benchmark path."
+    },
+    {
+      "id": "DGM-ARC-008",
+      "title": "API and query boundary",
+      "purpose": "Show the bounded read-only OpenAPI research contract over the reference data/KG realization without implying production deployment.",
+      "version_scope": "V2",
+      "notation": "Data-flow / architecture flow",
+      "artifact_status": "Authoritative projection",
+      "source_path": "wiki-src/diagrams/source/architecture/DGM-ARC-008--api-query-boundary.mmd",
+      "rendered_path": "wiki-src/diagrams/rendered/architecture/DGM-ARC-008--api-query-boundary.svg",
+      "generation_method": "Mermaid flowchart source with governed theme-safe SVG publication artifact.",
+      "authoritative_source": "V2 OpenAPI 3.1 contract and W6 data infrastructure",
+      "last_updated": "2026-09-25",
+      "checked_ref": "v2/research-program@1226b0a5484f8f5d3a8d214e0d0f52f066b88999",
+      "related_pages": [
+        "V2 API and Query Boundary",
+        "V2 Data and KG Architecture",
+        "V2 End-to-End Data Trace"
+      ],
+      "legend_required": false,
+      "alt_text": "Research client through read-only OpenAPI endpoints for metadata, presentations, observations, geographies and provenance into the reference RDB/KG, with an explicit non-production boundary.",
+      "caption": "DGM-ARC-008 — bounded read-only API/query boundary."
+    },
+    {
       "id": "DGM-ERD-001",
       "title": "Relational notation example — evidence and source records",
       "purpose": "Demonstrate Crow's Foot ERD conventions for a small relational evidence/provenance fragment.",
