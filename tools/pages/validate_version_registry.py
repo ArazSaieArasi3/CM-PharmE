@@ -1,9 +1,5 @@
 #!/usr/bin/env python3
-"""Validate and resolve the CM-PharmE multi-version Pages registry.
-
-This is intentionally stdlib-only so the registry contract can be checked
-before the heavier Pages/WIDOCO toolchain is introduced.
-"""
+"""Validate and resolve the CM-PharmE multi-version Pages registry."""
 from __future__ import annotations
 
 import argparse
@@ -24,6 +20,7 @@ REQUIRED = {
     "citation_status", "supersedes", "superseded_by", "public_status_label",
 }
 LIFECYCLES = {"evolving", "candidate", "stable", "frozen", "historical"}
+IMMUTABLE_STATES = {"stable", "frozen", "historical"}
 
 
 def load_registry(path: Path) -> dict:
@@ -85,7 +82,7 @@ def validate(data: dict) -> list[str]:
 
         immutable = version.get("immutable_version_path")
         current = version.get("current_path")
-        if lifecycle in {"stable", "frozen", "historical"} and not immutable:
+        if lifecycle in IMMUTABLE_STATES and not immutable:
             errors.append(f"{vid}: stable/frozen/historical version requires immutable_version_path")
         if lifecycle == "evolving" and not current:
             errors.append(f"{vid}: evolving version requires current_path")
@@ -115,6 +112,26 @@ def validate(data: dict) -> list[str]:
     return errors
 
 
+def validate_against_baseline(current: dict, baseline: dict) -> list[str]:
+    """Reject silent mutation of stable/frozen/historical version identity."""
+    errors: list[str] = []
+    current_by_id = {v["id"]: v for v in current.get("versions", [])}
+    for old in baseline.get("versions", []):
+        if old.get("lifecycle_state") not in IMMUTABLE_STATES:
+            continue
+        vid = old["id"]
+        new = current_by_id.get(vid)
+        if new is None:
+            errors.append(f"{vid}: immutable historical/stable entry cannot be removed")
+            continue
+        for field in ("immutable_version_path", "semantic_source_ref"):
+            if new.get(field) != old.get(field):
+                errors.append(
+                    f"{vid}: immutable {field} changed from {old.get(field)!r} to {new.get(field)!r}"
+                )
+    return errors
+
+
 def resolve(data: dict, version_id: str) -> dict:
     for version in data["versions"]:
         if version["id"] == version_id:
@@ -139,11 +156,14 @@ def resolve(data: dict, version_id: str) -> dict:
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--registry", type=Path, default=DEFAULT_REGISTRY)
+    parser.add_argument("--baseline", type=Path, default=None)
     parser.add_argument("--resolve", metavar="VERSION_ID")
     args = parser.parse_args()
 
     data = load_registry(args.registry)
     errors = validate(data)
+    if args.baseline:
+        errors.extend(validate_against_baseline(data, load_registry(args.baseline)))
     if errors:
         for error in errors:
             print(f"ERROR: {error}", file=sys.stderr)
@@ -156,7 +176,7 @@ def main() -> int:
             print(f"ERROR: unknown version id: {args.resolve}", file=sys.stderr)
             return 2
     else:
-        print(f"PASS: {len(data['versions'])} version entries; no route collisions; exact source refs present.")
+        print(f"PASS: {len(data['versions'])} version entries; no route collisions; immutable-history guard passed.")
     return 0
 
 
