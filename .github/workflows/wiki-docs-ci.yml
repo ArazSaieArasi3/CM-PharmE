@@ -53,10 +53,19 @@ jobs:
       - name: Revalidate V2 ontology diagrams against authority
         run: |
           python tools/wiki/generate_v2_ontology_diagrams.py --authority-root _v2_authority
-          python tools/wiki/normalize_diagram_theme.py
+          python tools/wiki/normalize_diagram_theme.py --category ontology
           git diff --exit-code -- wiki-src/diagrams wiki-src/ontology-reference/ontology-diagram-coverage.csv wiki-src/ontology-reference/ontology-diagram-coverage.json wiki-src/ontology-reference/ontology-diagram-semantic-review.md wiki-src/pages/V2-Module-*.md
       - name: Validate ontology reference coverage
         run: python tools/wiki/check_ontology_reference.py
+      - name: Revalidate V2 database documentation against authority
+        run: |
+          python tools/wiki/generate_v2_database_pages.py --authority-root _v2_authority
+          python tools/wiki/generate_v2_database_erds.py --authority-root _v2_authority
+          python tools/wiki/sync_diagram_image_urls.py
+      - name: Validate V2 database documentation coverage
+        run: python tools/wiki/check_v2_database_docs.py
+      - name: Require zero database-documentation regeneration diff
+        run: git diff --exit-code -- wiki-src
       - name: Upload navigation report
         uses: actions/upload-artifact@v4
         with:

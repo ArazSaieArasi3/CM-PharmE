@@ -1,0 +1,179 @@
+{
+  "schema_version": 1,
+  "issue": 236,
+  "tables": {
+    "dataset": {
+      "purpose": "Dataset/source identity and source-role metadata.",
+      "provenance": "Source provenance root."
+    },
+    "dataset_release": {
+      "purpose": "A versioned/retrieved release of a Dataset.",
+      "provenance": "Version/retrieval-level provenance."
+    },
+    "transformation_run": {
+      "purpose": "Auditable ingestion/transformation execution represented as provenance activity.",
+      "provenance": "Processing provenance and adapter/version trace."
+    },
+    "source_record": {
+      "purpose": "Row-level admitted source record with deterministic content fingerprint and optional transformation provenance.",
+      "provenance": "Row-level evidence/provenance anchor."
+    },
+    "geography": {
+      "purpose": "Canonical geographic feature store, including supported country/administrative-region types and PostGIS geometry.",
+      "provenance": "Canonical geography used by provenance-linked observations and facilities."
+    },
+    "geography_alias": {
+      "purpose": "Source-system geographic aliases and auditable normalization/resolution decisions.",
+      "provenance": "Records source alias, resolution method, confidence and optional SourceRecord."
+    },
+    "regulatory_jurisdiction": {
+      "purpose": "Regulatory jurisdiction kept semantically distinct from physical geography.",
+      "provenance": "No dedicated source-record FK; provenance follows linked ingestion/mapping context."
+    },
+    "organization": {
+      "purpose": "Canonical organization identity.",
+      "provenance": "Canonical entity; source provenance follows identifiers/assertions/mappings where created."
+    },
+    "facility": {
+      "purpose": "Canonical physical/operational facility identity with optional physical geography.",
+      "provenance": "Canonical entity; source provenance follows identifiers/observations/mappings where created."
+    },
+    "facility_operation": {
+      "purpose": "Associative/relator table linking an Organization and Facility with optional validity interval.",
+      "provenance": "Temporal relational implementation; no direct source-record FK."
+    },
+    "pharmaceutical_substance": {
+      "purpose": "Canonical pharmaceutical-substance identity layer.",
+      "provenance": "Source-normalized identity layer; strong identity claims remain bounded by mapping evidence."
+    },
+    "medicinal_product": {
+      "purpose": "Canonical medicinal-product identity with a bounded primary-substance implementation hook.",
+      "provenance": "Source-normalized identity with mapping/evidence trace through downstream assertions and records."
+    },
+    "product_presentation": {
+      "purpose": "Presentation/package-level medicinal-product identity and retained source presentation attributes.",
+      "provenance": "Source-derived presentation identity used by identifiers and observations."
+    },
+    "identifier_scheme": {
+      "purpose": "Identifier namespace/scheme definition.",
+      "provenance": "Scheme metadata; assignment provenance is stored in identifier_assignment."
+    },
+    "identifier_assignment": {
+      "purpose": "Scheme-scoped identifier assignment to a supported canonical entity; identifier value is not entity identity.",
+      "provenance": "Optional SourceRecord provenance for identifier assignment."
+    },
+    "product_classification_scheme": {
+      "purpose": "Classification scheme such as ATC.",
+      "provenance": "Scheme metadata; assignment provenance is stored separately."
+    },
+    "classification_entry": {
+      "purpose": "Code/label entry within a product-classification scheme.",
+      "provenance": "Classification vocabulary entry; source-specific assignment provenance is separate."
+    },
+    "product_classification_assignment": {
+      "purpose": "Provenance-aware assignment of a medicinal product to a classification entry.",
+      "provenance": "Optional SourceRecord provenance for classification assignment."
+    },
+    "diagnosis_reference": {
+      "purpose": "Diagnosis-classification reference retained for market-access/reimbursement observations.",
+      "provenance": "Linked through provenance-bearing observation_result rows."
+    },
+    "assertion": {
+      "purpose": "Canonical auditable assertion/evidence target.",
+      "provenance": "Evidence target linked to SourceRecord through evidence_support and observations."
+    },
+    "evidence_support": {
+      "purpose": "Relator linking a SourceRecord to an Assertion.",
+      "provenance": "Direct evidence relation between SourceRecord and Assertion."
+    },
+    "observation_result": {
+      "purpose": "Aggregate observation/result representation used by implemented source adapters; includes provenance and contextual hooks.",
+      "provenance": "Required SourceRecord + Assertion provenance."
+    },
+    "entity_match_assertion": {
+      "purpose": "Auditable cross-source match assertion with method, confidence and disposition.",
+      "provenance": "Match provenance via two SourceRecord references."
+    },
+    "medicine_shortage_situation": {
+      "purpose": "Contextual medicine-shortage situation linked to product/presentation/jurisdiction and optional source provenance.",
+      "provenance": "Optional SourceRecord provenance."
+    }
+  },
+  "subject_areas": {
+    "dataset-provenance": {
+      "title": "Dataset / Release / Source / Transformation",
+      "tables": [
+        "dataset",
+        "dataset_release",
+        "transformation_run",
+        "source_record"
+      ]
+    },
+    "organization-geography": {
+      "title": "Organization / Facility / Geography / Jurisdiction",
+      "tables": [
+        "geography",
+        "geography_alias",
+        "regulatory_jurisdiction",
+        "organization",
+        "facility",
+        "facility_operation"
+      ]
+    },
+    "product-classification": {
+      "title": "Product / Substance / Presentation / Classification",
+      "tables": [
+        "pharmaceutical_substance",
+        "medicinal_product",
+        "product_presentation",
+        "product_classification_scheme",
+        "classification_entry",
+        "product_classification_assignment"
+      ]
+    },
+    "identity-matching": {
+      "title": "Identifier / Identity / Entity Match",
+      "tables": [
+        "identifier_scheme",
+        "identifier_assignment",
+        "entity_match_assertion",
+        "source_record"
+      ]
+    },
+    "assertion-evidence": {
+      "title": "Assertion / Evidence / Provenance",
+      "tables": [
+        "dataset",
+        "dataset_release",
+        "transformation_run",
+        "source_record",
+        "assertion",
+        "evidence_support"
+      ]
+    },
+    "observation": {
+      "title": "Observation",
+      "tables": [
+        "observation_result",
+        "product_presentation",
+        "medicinal_product",
+        "facility",
+        "geography",
+        "diagnosis_reference",
+        "source_record",
+        "assertion"
+      ]
+    },
+    "shortage-resilience": {
+      "title": "Shortage / Resilience-related implemented representation",
+      "tables": [
+        "medicine_shortage_situation",
+        "medicinal_product",
+        "product_presentation",
+        "regulatory_jurisdiction",
+        "source_record",
+        "observation_result"
+      ]
+    }
+  }
+}

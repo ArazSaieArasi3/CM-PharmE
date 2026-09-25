@@ -599,7 +599,8 @@ def main():
           "alt_text":d["purpose"],
           "caption":d["id"]+" — "+d["title"]+". "+("Authoritative projection of the checked V2 baseline." if d["status"]=="Authoritative projection" else "Illustrative reader projection; authority remains in V2 sources.")
         })
-    manifest_path.write_text(json.dumps(manifest,indent=2)+"\n",encoding="utf-8")
+    manifest["diagrams"]=sorted(manifest["diagrams"],key=lambda x:x["id"])
+    manifest_path.write_text(json.dumps(manifest,indent=2,ensure_ascii=False)+"\n",encoding="utf-8")
 
     covdir=WIKI/"ontology-reference"
     with (covdir/"ontology-diagram-coverage.csv").open("w",encoding="utf-8",newline="") as fh:

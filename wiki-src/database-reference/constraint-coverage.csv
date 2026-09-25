@@ -1,0 +1,46 @@
+table,kind,definition,documented
+dataset,UNIQUE,public_id,yes
+dataset,CHECK,"source_role IN ('primary','secondary','authoritative','conditional','fixture')",yes
+dataset_release,UNIQUE,public_id,yes
+transformation_run,UNIQUE,public_id,yes
+transformation_run,CHECK,"status IN ('running','completed','failed')",yes
+source_record,UNIQUE,"dataset_release_id, row_number, source_hash",yes
+geography,UNIQUE,public_id,yes
+geography,CHECK,"geography_type IN ('country','administrative_region','other')",yes
+geography,INDEX,geography_geom_gix GIST(geom),yes
+geography,INDEX,geography_geonames_idx BTREE(geonames_id) WHERE geonames_id IS NOT NULL,yes
+geography_alias,UNIQUE,"source_system, source_value",yes
+geography_alias,CHECK,confidence >= 0 AND confidence <= 1,yes
+regulatory_jurisdiction,UNIQUE,public_id,yes
+organization,UNIQUE,public_id,yes
+facility,UNIQUE,public_id,yes
+facility_operation,UNIQUE,public_id,yes
+facility_operation,CHECK,valid_to IS NULL OR valid_from IS NULL OR valid_to >= valid_from,yes
+pharmaceutical_substance,UNIQUE,public_id,yes
+medicinal_product,UNIQUE,public_id,yes
+product_presentation,UNIQUE,public_id,yes
+identifier_scheme,UNIQUE,public_id,yes
+identifier_assignment,UNIQUE,public_id,yes
+identifier_assignment,UNIQUE,"identifier_scheme_id, lexical_value, entity_type, entity_public_id",yes
+identifier_assignment,CHECK,"entity_type IN ('organization','facility','medicinal_product','product_presentation','substance','geography')",yes
+product_classification_scheme,UNIQUE,public_id,yes
+classification_entry,UNIQUE,public_id,yes
+classification_entry,UNIQUE,"classification_scheme_id, code",yes
+product_classification_assignment,UNIQUE,public_id,yes
+product_classification_assignment,UNIQUE,"medicinal_product_id, classification_entry_id",yes
+diagnosis_reference,UNIQUE,public_id,yes
+diagnosis_reference,UNIQUE,"scheme, code",yes
+assertion,UNIQUE,public_id,yes
+evidence_support,UNIQUE,public_id,yes
+evidence_support,UNIQUE,"source_record_id, assertion_id",yes
+observation_result,UNIQUE,public_id,yes
+observation_result,CHECK,"observation_kind IN ('availability','demand','supply_capacity','inventory','lead_time','reimbursement_utilisation')",yes
+observation_result,INDEX,observation_period_idx BTREE(reporting_period),yes
+observation_result,INDEX,observation_geo_idx BTREE(geography_id),yes
+observation_result,INDEX,observation_presentation_idx BTREE(product_presentation_id),yes
+entity_match_assertion,UNIQUE,public_id,yes
+entity_match_assertion,CHECK,confidence >= 0 AND confidence <= 1,yes
+entity_match_assertion,CHECK,"status IN ('accepted','ambiguous','rejected')",yes
+entity_match_assertion,CHECK,source_record_a_id <> source_record_b_id,yes
+medicine_shortage_situation,UNIQUE,public_id,yes
+medicine_shortage_situation,CHECK,ends_on IS NULL OR starts_on IS NULL OR ends_on >= starts_on,yes

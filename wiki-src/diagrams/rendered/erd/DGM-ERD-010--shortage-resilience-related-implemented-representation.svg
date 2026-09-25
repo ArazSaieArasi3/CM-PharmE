@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1090 772" role="img" aria-labelledby="title desc" data-theme-safe="true" style="color:#24292f;background:#ffffff">
+<title id="title">DGM-ERD-010 Shortage / Resilience-related implemented representation</title>
+<desc id="desc">ERD generated from the authoritative CM-PharmE V2 PostgreSQL/PostGIS schema.</desc>
+<rect id="diagram-background" x="0" y="0" width="100%" height="100%" fill="#ffffff" stroke="none" pointer-events="none"/>
+<defs><marker id="fkarr" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#57606a"/></marker></defs>
+<text x="545.0" y="32" text-anchor="middle" font-family="sans-serif" font-size="20" font-weight="bold" fill="#24292f">Shortage / Resilience-related implemented representation</text>
+<text x="40" y="62" font-family="sans-serif" font-size="11" fill="#57606a">Generated from schema.sql. Arrow direction: FK table to referenced table. PK/FK/UK denote physical-schema roles.</text>
+<line x1="895.0" y1="209.0" x2="545.0" y2="191.0" stroke="#8c959f" stroke-width="1.1" marker-end="url(#fkarr)"/>
+<text x="720.3" y="191.0" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#57606a">medicinal_product_id</text>
+<line x1="895.0" y1="494.0" x2="895.0" y2="209.0" stroke="#8c959f" stroke-width="1.1" marker-end="url(#fkarr)"/>
+<text x="900.0" y="347.5" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#57606a">product_presentation_id</text>
+<line x1="895.0" y1="494.0" x2="545.0" y2="485.0" stroke="#8c959f" stroke-width="1.1" marker-end="url(#fkarr)"/>
+<text x="720.1" y="480.5" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#57606a">source_record_id</text>
+<line x1="195.0" y1="218.0" x2="545.0" y2="191.0" stroke="#8c959f" stroke-width="1.1" marker-end="url(#fkarr)"/>
+<text x="370.4" y="205.5" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#57606a">medicinal_product_id</text>
+<line x1="195.0" y1="218.0" x2="895.0" y2="209.0" stroke="#8c959f" stroke-width="1.1" marker-end="url(#fkarr)"/>
+<text x="545.1" y="214.5" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#57606a">product_presentation_id</text>
+<line x1="195.0" y1="218.0" x2="195.0" y2="467.0" stroke="#8c959f" stroke-width="1.1" marker-end="url(#fkarr)"/>
+<text x="190.0" y="338.5" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#57606a">regulatory_jurisdiction_id</text>
+<line x1="195.0" y1="218.0" x2="545.0" y2="485.0" stroke="#8c959f" stroke-width="1.1" marker-end="url(#fkarr)"/>
+<text x="367.0" y="351.5" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#57606a">source_record_id</text>
+<rect x="40" y="105" width="310" height="226" rx="5" fill="#ffffff" stroke="#24292f" stroke-width="1.3"/>
+<rect x="40" y="105" width="310" height="38" rx="5" fill="#f6f8fa" stroke="#24292f" stroke-width="1.3"/>
+<text x="195.0" y="130" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="bold" fill="#24292f">medicine_shortage_situation</text>
+<text x="50" y="163" font-family="monospace" font-size="10" fill="#24292f">[PK] shortage_id : BIGSERIAL</text>
+<text x="50" y="181" font-family="monospace" font-size="10" fill="#24292f">[UK] public_id : TEXT</text>
+<text x="50" y="199" font-family="monospace" font-size="10" fill="#24292f">[FK] medicinal_product_id : BIGINT</text>
+<text x="50" y="217" font-family="monospace" font-size="10" fill="#24292f">[FK] product_presentation_id : BIGINT</text>
+<text x="50" y="235" font-family="monospace" font-size="10" fill="#24292f">[FK] regulatory_jurisdiction_id : BIGINT</text>
+<text x="50" y="253" font-family="monospace" font-size="10" fill="#24292f">[FK] source_record_id : BIGINT</text>
+<text x="50" y="271" font-family="monospace" font-size="10" fill="#24292f">ontology_iri : TEXT</text>
+<text x="50" y="289" font-family="monospace" font-size="10" fill="#24292f">starts_on : DATE</text>
+<rect x="390" y="105" width="310" height="172" rx="5" fill="#ffffff" stroke="#24292f" stroke-width="1.3"/>
+<rect x="390" y="105" width="310" height="38" rx="5" fill="#f6f8fa" stroke="#24292f" stroke-width="1.3"/>
+<text x="545.0" y="130" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="bold" fill="#24292f">medicinal_product</text>
+<text x="400" y="163" font-family="monospace" font-size="10" fill="#24292f">[PK] medicinal_product_id : BIGSERIAL</text>
+<text x="400" y="181" font-family="monospace" font-size="10" fill="#24292f">[UK] public_id : TEXT</text>
+<text x="400" y="199" font-family="monospace" font-size="10" fill="#24292f">preferred_name : TEXT</text>
+<text x="400" y="217" font-family="monospace" font-size="10" fill="#24292f">[FK] primary_substance_id : BIGINT</text>
+<text x="400" y="235" font-family="monospace" font-size="10" fill="#24292f">ontology_iri : TEXT</text>
+<rect x="740" y="105" width="310" height="208" rx="5" fill="#ffffff" stroke="#24292f" stroke-width="1.3"/>
+<rect x="740" y="105" width="310" height="38" rx="5" fill="#f6f8fa" stroke="#24292f" stroke-width="1.3"/>
+<text x="895.0" y="130" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="bold" fill="#24292f">product_presentation</text>
+<text x="750" y="163" font-family="monospace" font-size="10" fill="#24292f">[PK] product_presentation_id : BIGSERIAL</text>
+<text x="750" y="181" font-family="monospace" font-size="10" fill="#24292f">[UK] public_id : TEXT</text>
+<text x="750" y="199" font-family="monospace" font-size="10" fill="#24292f">[FK] medicinal_product_id : BIGINT</text>
+<text x="750" y="217" font-family="monospace" font-size="10" fill="#24292f">ontology_iri : TEXT</text>
+<text x="750" y="235" font-family="monospace" font-size="10" fill="#24292f">packaging : TEXT</text>
+<text x="750" y="253" font-family="monospace" font-size="10" fill="#24292f">concentration : TEXT</text>
+<text x="750" y="271" font-family="monospace" font-size="10" fill="#24292f">num_in_pack : NUMERIC</text>
+<rect x="40" y="381" width="310" height="172" rx="5" fill="#ffffff" stroke="#24292f" stroke-width="1.3"/>
+<rect x="40" y="381" width="310" height="38" rx="5" fill="#f6f8fa" stroke="#24292f" stroke-width="1.3"/>
+<text x="195.0" y="406" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="bold" fill="#24292f">regulatory_jurisdiction</text>
+<text x="50" y="439" font-family="monospace" font-size="10" fill="#24292f">[PK] regulatory_jurisdiction_id : BIGSERIAL</text>
+<text x="50" y="457" font-family="monospace" font-size="10" fill="#24292f">[UK] public_id : TEXT</text>
+<text x="50" y="475" font-family="monospace" font-size="10" fill="#24292f">[FK] geography_id : BIGINT</text>
+<text x="50" y="493" font-family="monospace" font-size="10" fill="#24292f">ontology_iri : TEXT</text>
+<text x="50" y="511" font-family="monospace" font-size="10" fill="#24292f">name : TEXT</text>
+<rect x="390" y="381" width="310" height="208" rx="5" fill="#ffffff" stroke="#24292f" stroke-width="1.3"/>
+<rect x="390" y="381" width="310" height="38" rx="5" fill="#f6f8fa" stroke="#24292f" stroke-width="1.3"/>
+<text x="545.0" y="406" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="bold" fill="#24292f">source_record</text>
+<text x="400" y="439" font-family="monospace" font-size="10" fill="#24292f">[PK] source_record_id : BIGSERIAL</text>
+<text x="400" y="457" font-family="monospace" font-size="10" fill="#24292f">[FK] dataset_release_id : BIGINT</text>
+<text x="400" y="475" font-family="monospace" font-size="10" fill="#24292f">[FK] transformation_run_id : BIGINT</text>
+<text x="400" y="493" font-family="monospace" font-size="10" fill="#24292f">source_hash : CHAR(64)</text>
+<text x="400" y="511" font-family="monospace" font-size="10" fill="#24292f">ontology_iri : TEXT</text>
+<text x="400" y="529" font-family="monospace" font-size="10" fill="#24292f">row_number : BIGINT</text>
+<text x="400" y="547" font-family="monospace" font-size="10" fill="#24292f">raw_key : JSONB</text>
+<rect x="740" y="381" width="310" height="226" rx="5" fill="#ffffff" stroke="#24292f" stroke-width="1.3"/>
+<rect x="740" y="381" width="310" height="38" rx="5" fill="#f6f8fa" stroke="#24292f" stroke-width="1.3"/>
+<text x="895.0" y="406" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="bold" fill="#24292f">observation_result</text>
+<text x="750" y="439" font-family="monospace" font-size="10" fill="#24292f">[PK] observation_result_id : BIGSERIAL</text>
+<text x="750" y="457" font-family="monospace" font-size="10" fill="#24292f">[UK] public_id : TEXT</text>
+<text x="750" y="475" font-family="monospace" font-size="10" fill="#24292f">observation_kind : TEXT</text>
+<text x="750" y="493" font-family="monospace" font-size="10" fill="#24292f">[FK] product_presentation_id : BIGINT</text>
+<text x="750" y="511" font-family="monospace" font-size="10" fill="#24292f">[FK] facility_id : BIGINT</text>
+<text x="750" y="529" font-family="monospace" font-size="10" fill="#24292f">[FK] geography_id : BIGINT</text>
+<text x="750" y="547" font-family="monospace" font-size="10" fill="#24292f">[FK] diagnosis_reference_id : BIGINT</text>
+<text x="750" y="565" font-family="monospace" font-size="10" fill="#24292f">reporting_period : DATE</text>
+<text x="40" y="724" font-family="sans-serif" font-size="11" fill="#57606a">Reference implementation only. schema.sql remains authoritative; ontology semantics are not inferred from ERD layout.</text>
+</svg>

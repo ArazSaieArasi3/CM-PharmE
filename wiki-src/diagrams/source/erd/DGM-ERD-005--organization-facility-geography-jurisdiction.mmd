@@ -1,0 +1,56 @@
+%% DGM-ERD-005 — Organization / Facility / Geography / Jurisdiction
+erDiagram
+  GEOGRAPHY {
+    BIGSERIAL geography_id PK
+    TEXT public_id UK
+    TEXT geography_type
+    TEXT canonical_name
+    TEXT ontology_iri
+    CHAR_2_ country_code
+    TEXT source_region_code
+    BIGINT geonames_id
+  }
+  GEOGRAPHY_ALIAS {
+    BIGSERIAL geography_alias_id PK
+    BIGINT geography_id FK
+    NUMERIC_5_4_ confidence
+    BIGINT source_record_id FK
+    TEXT source_system
+    TEXT source_value
+    TEXT normalized_value
+    TEXT resolution_method
+  }
+  REGULATORY_JURISDICTION {
+    BIGSERIAL regulatory_jurisdiction_id PK
+    TEXT public_id UK
+    BIGINT geography_id FK
+    TEXT ontology_iri
+    TEXT name
+  }
+  ORGANIZATION {
+    BIGSERIAL organization_id PK
+    TEXT public_id UK
+    TEXT preferred_name
+    TEXT ontology_iri
+  }
+  FACILITY {
+    BIGSERIAL facility_id PK
+    TEXT public_id UK
+    TEXT preferred_name
+    BIGINT geography_id FK
+    TEXT ontology_iri
+  }
+  FACILITY_OPERATION {
+    BIGSERIAL facility_operation_id PK
+    TEXT public_id UK
+    BIGINT organization_id FK
+    BIGINT facility_id FK
+    TEXT ontology_iri
+    DATE valid_from
+    DATE valid_to
+  }
+  GEOGRAPHY ||--o{ GEOGRAPHY_ALIAS : "geography_id"
+  GEOGRAPHY o|--o{ REGULATORY_JURISDICTION : "geography_id"
+  GEOGRAPHY o|--o{ FACILITY : "geography_id"
+  ORGANIZATION ||--o{ FACILITY_OPERATION : "organization_id"
+  FACILITY ||--o{ FACILITY_OPERATION : "facility_id"

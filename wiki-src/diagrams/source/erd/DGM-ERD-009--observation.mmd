@@ -1,0 +1,80 @@
+%% DGM-ERD-009 — Observation
+erDiagram
+  OBSERVATION_RESULT {
+    BIGSERIAL observation_result_id PK
+    TEXT public_id UK
+    TEXT observation_kind
+    BIGINT product_presentation_id FK
+    BIGINT facility_id FK
+    BIGINT geography_id FK
+    BIGINT diagnosis_reference_id FK
+    DATE reporting_period
+  }
+  PRODUCT_PRESENTATION {
+    BIGSERIAL product_presentation_id PK
+    TEXT public_id UK
+    BIGINT medicinal_product_id FK
+    TEXT ontology_iri
+    TEXT packaging
+    TEXT concentration
+    NUMERIC num_in_pack
+  }
+  MEDICINAL_PRODUCT {
+    BIGSERIAL medicinal_product_id PK
+    TEXT public_id UK
+    TEXT preferred_name
+    BIGINT primary_substance_id FK
+    TEXT ontology_iri
+  }
+  FACILITY {
+    BIGSERIAL facility_id PK
+    TEXT public_id UK
+    TEXT preferred_name
+    BIGINT geography_id FK
+    TEXT ontology_iri
+  }
+  GEOGRAPHY {
+    BIGSERIAL geography_id PK
+    TEXT public_id UK
+    TEXT geography_type
+    TEXT canonical_name
+    TEXT ontology_iri
+    CHAR_2_ country_code
+    TEXT source_region_code
+    BIGINT geonames_id
+  }
+  DIAGNOSIS_REFERENCE {
+    BIGSERIAL diagnosis_reference_id PK
+    TEXT public_id UK
+    TEXT ontology_iri
+    TEXT scheme
+    TEXT code
+    TEXT label
+  }
+  SOURCE_RECORD {
+    BIGSERIAL source_record_id PK
+    BIGINT dataset_release_id FK
+    BIGINT transformation_run_id FK
+    CHAR_64_ source_hash
+    TEXT ontology_iri
+    BIGINT row_number
+    JSONB raw_key
+  }
+  ASSERTION {
+    BIGSERIAL assertion_id PK
+    TEXT public_id UK
+    TEXT predicate_key
+    TEXT ontology_iri
+    TEXT assertion_type
+    TEXT subject_public_id
+    TEXT object_lexical
+    TEXT object_public_id
+  }
+  GEOGRAPHY o|--o{ FACILITY : "geography_id"
+  MEDICINAL_PRODUCT ||--o{ PRODUCT_PRESENTATION : "medicinal_product_id"
+  PRODUCT_PRESENTATION o|--o{ OBSERVATION_RESULT : "product_presentation_id"
+  FACILITY o|--o{ OBSERVATION_RESULT : "facility_id"
+  GEOGRAPHY o|--o{ OBSERVATION_RESULT : "geography_id"
+  DIAGNOSIS_REFERENCE o|--o{ OBSERVATION_RESULT : "diagnosis_reference_id"
+  SOURCE_RECORD ||--o{ OBSERVATION_RESULT : "source_record_id"
+  ASSERTION ||--o{ OBSERVATION_RESULT : "assertion_id"

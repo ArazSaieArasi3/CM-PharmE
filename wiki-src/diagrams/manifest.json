@@ -4,48 +4,6 @@
   "root": "wiki-src/diagrams",
   "diagrams": [
     {
-      "id": "DGM-ONT-001",
-      "title": "Ontology notation example \u2014 product, presentation and substance",
-      "purpose": "Demonstrate OntoUML/UFO-aware stereotype and relation labeling for a small V2 conceptual fragment.",
-      "version_scope": "V2",
-      "notation": "OntoUML/UFO-aware conceptual notation",
-      "artifact_status": "Illustrative",
-      "source_path": "wiki-src/diagrams/source/ontology/DGM-ONT-001--product-presentation-substance.puml",
-      "rendered_path": "wiki-src/diagrams/rendered/ontology/DGM-ONT-001--product-presentation-substance.svg",
-      "generation_method": "PlantUML-compatible source; SVG baseline committed with the sample. Future automated export must pin renderer version.",
-      "authoritative_source": "v2/research/w4/integrated-ontouml-overview.puml on v2/research-program",
-      "last_updated": "2026-09-24",
-      "checked_ref": "v2/research-program@1226b0a5484f8f5d3a8d214e0d0f52f066b88999",
-      "related_pages": [
-        "V2 UFO and OntoUML Architecture",
-        "Ontology and Conceptual Model Guide"
-      ],
-      "legend_required": true,
-      "alt_text": "Illustrative V2 ontology fragment distinguishing Medicinal Product, Medicinal Product Presentation and Pharmaceutical Substance with labeled presentationOf and hasActiveSubstance relations.",
-      "caption": "DGM-ONT-001 \u2014 illustrative OntoUML-aware fragment; semantic authority remains the V2 conceptual/formal artifacts."
-    },
-    {
-      "id": "DGM-ERD-001",
-      "title": "Relational notation example \u2014 evidence and source records",
-      "purpose": "Demonstrate Crow's Foot ERD conventions for a small relational evidence/provenance fragment.",
-      "version_scope": "V2",
-      "notation": "Crow's Foot ERD",
-      "artifact_status": "Illustrative",
-      "source_path": "wiki-src/diagrams/source/erd/DGM-ERD-001--evidence-source-records.mmd",
-      "rendered_path": "wiki-src/diagrams/rendered/erd/DGM-ERD-001--evidence-source-records.svg",
-      "generation_method": "Mermaid ER source; SVG baseline committed with the sample. Future automated export must pin Mermaid CLI version.",
-      "authoritative_source": "V2 relational schema and ontology\u2194RDB mapping artifacts",
-      "last_updated": "2026-09-24",
-      "checked_ref": "v2/research-program@1226b0a5484f8f5d3a8d214e0d0f52f066b88999",
-      "related_pages": [
-        "V2 Data Infrastructure",
-        "Data and Database Guide"
-      ],
-      "legend_required": true,
-      "alt_text": "Illustrative Crow's Foot ERD showing Dataset, DatasetRelease and SourceRecord with one-to-many relationships.",
-      "caption": "DGM-ERD-001 \u2014 relational notation example only; database schema remains authoritative."
-    },
-    {
       "id": "DGM-ARC-001",
       "title": "Cross-representation data and query pipeline",
       "purpose": "Demonstrate data-flow/architecture notation from source data through relational realization and RDF/KG to paired query evidence.",
@@ -65,112 +23,7 @@
       ],
       "legend_required": false,
       "alt_text": "Illustrative V2 data pipeline from admitted source data to PostgreSQL/PostGIS, deterministic RDF knowledge graph and paired SQL/SPARQL checks.",
-      "caption": "DGM-ARC-001 \u2014 illustrative cross-representation pipeline."
-    },
-    {
-      "id": "DGM-EVO-001",
-      "title": "V1 to V2 research-evolution lineage",
-      "purpose": "Demonstrate lineage notation for research evolution without implying that chronology alone proves improvement.",
-      "version_scope": "Cross-version",
-      "notation": "Lineage / evolution graph",
-      "artifact_status": "Illustrative",
-      "source_path": "wiki-src/diagrams/source/evolution/DGM-EVO-001--v1-v2-research-lineage.dot",
-      "rendered_path": "wiki-src/diagrams/rendered/evolution/DGM-EVO-001--v1-v2-research-lineage.svg",
-      "generation_method": "Graphviz DOT source; SVG baseline committed with the sample.",
-      "authoritative_source": "V1 and V2 research/evolution documentation",
-      "last_updated": "2026-09-24",
-      "checked_ref": "V1: main; V2: v2/research-program@1226b0a5484f8f5d3a8d214e0d0f52f066b88999",
-      "related_pages": [
-        "V1 to V2 Research Evolution",
-        "Research Guide"
-      ],
-      "legend_required": false,
-      "alt_text": "Illustrative lineage from the V1 ecosystem conceptual baseline through data grounding, modular ontology, cross-representation realization and multi-family evaluation in V2.",
-      "caption": "DGM-EVO-001 \u2014 research lineage; arrows mean documented evolution, not quantitative superiority."
-    },
-    {
-      "id": "DGM-PRC-001",
-      "title": "CM-PharmE research landscape",
-      "purpose": "Provide a whole-program view linking the stable V1 baseline to the evolving V2 research path without foregrounding internal workflow codes.",
-      "version_scope": "Cross-version",
-      "notation": "Process/activity/flow",
-      "artifact_status": "Illustrative",
-      "source_path": "wiki-src/diagrams/source/process/DGM-PRC-001--research-landscape.mmd",
-      "rendered_path": "wiki-src/diagrams/rendered/process/DGM-PRC-001--research-landscape.svg",
-      "generation_method": "Mermaid flowchart source; governed SVG publication artifact committed.",
-      "authoritative_source": "V1 stable documentation plus current V2 research/status artifacts",
-      "last_updated": "2026-09-24",
-      "checked_ref": "V1: main stable baseline; V2: v2/research-program@1226b0a5484f8f5d3a8d214e0d0f52f066b88999",
-      "related_pages": [
-        "Research Process and Evolution Diagrams",
-        "Research Guide"
-      ],
-      "legend_required": false,
-      "alt_text": "Whole-program research landscape connecting stable CM-PharmE 1.x with evolving V2 evidence grounding, conceptualization, formalization, data realization, evaluation, demonstrators and manuscript/release work, with pending work marked.",
-      "caption": "DGM-PRC-001 \u2014 CM-PharmE research landscape; V2 remains evolving and pending work is shown explicitly."
-    },
-    {
-      "id": "DGM-PRC-002",
-      "title": "CM-PharmE 1.x research process",
-      "purpose": "Explain the V1 research process from problem framing through evidence review, conceptual modeling, formalization, evaluation and publication.",
-      "version_scope": "V1",
-      "notation": "Process/activity/flow",
-      "artifact_status": "Illustrative",
-      "source_path": "wiki-src/diagrams/source/process/DGM-PRC-002--v1-research-process.mmd",
-      "rendered_path": "wiki-src/diagrams/rendered/process/DGM-PRC-002--v1-research-process.svg",
-      "generation_method": "Mermaid flowchart source; governed SVG publication artifact committed.",
-      "authoritative_source": "V1 research-method, model, evaluation and publication artifacts on main",
-      "last_updated": "2026-09-24",
-      "checked_ref": "main stable V1 baseline",
-      "related_pages": [
-        "Research Process and Evolution Diagrams",
-        "V1 Research Design and Evidence Review"
-      ],
-      "legend_required": false,
-      "alt_text": "V1 research process from ecosystem problem and scope through PRISMA-guided evidence review, thematic synthesis, UFO/OntoUML conceptual modeling, formal ontology, evaluation and research outputs.",
-      "caption": "DGM-PRC-002 \u2014 CM-PharmE 1.x research process."
-    },
-    {
-      "id": "DGM-PRC-003",
-      "title": "CM-PharmE 2.0 research process",
-      "purpose": "Explain the current V2 research stages using descriptive names while keeping unfinished expert, demonstrator and release work visibly pending.",
-      "version_scope": "V2",
-      "notation": "Process/activity/flow",
-      "artifact_status": "Illustrative",
-      "source_path": "wiki-src/diagrams/source/process/DGM-PRC-003--v2-research-process.mmd",
-      "rendered_path": "wiki-src/diagrams/rendered/process/DGM-PRC-003--v2-research-process.svg",
-      "generation_method": "Mermaid flowchart source; governed SVG publication artifact committed.",
-      "authoritative_source": "Current V2 research program and live issues #98/#170/#171/#159/#173",
-      "last_updated": "2026-09-24",
-      "checked_ref": "v2/research-program@1226b0a5484f8f5d3a8d214e0d0f52f066b88999; live issue state checked 2026-09-24",
-      "related_pages": [
-        "Research Process and Evolution Diagrams",
-        "CM-PharmE 2.0 Research Method and Development"
-      ],
-      "legend_required": false,
-      "alt_text": "V2 descriptive research stages from foundation through needs, data, discovery, conceptualization, formal ontology, data and knowledge infrastructure, evaluation, demonstrators and manuscript/release; evaluation is 13 of 14 complete, demonstrators 7 of 8 complete, and final dependencies are pending.",
-      "caption": "DGM-PRC-003 \u2014 current CM-PharmE 2.0 research process; V2 is not final."
-    },
-    {
-      "id": "DGM-EVO-002",
-      "title": "CM-PharmE V1 to V2 research evolution",
-      "purpose": "Visualize continuity, refinement and architectural/methodological extension from V1 to V2 without treating chronology as evidence of superiority.",
-      "version_scope": "Cross-version",
-      "notation": "Lineage / evolution graph",
-      "artifact_status": "Illustrative",
-      "source_path": "wiki-src/diagrams/source/evolution/DGM-EVO-002--v1-v2-research-evolution.dot",
-      "rendered_path": "wiki-src/diagrams/rendered/evolution/DGM-EVO-002--v1-v2-research-evolution.svg",
-      "generation_method": "Graphviz DOT source; governed SVG publication artifact committed.",
-      "authoritative_source": "V1\u2192V2 research-evolution and migration evidence",
-      "last_updated": "2026-09-24",
-      "checked_ref": "V1: main; V2: v2/research-program@1226b0a5484f8f5d3a8d214e0d0f52f066b88999",
-      "related_pages": [
-        "Research Process and Evolution Diagrams",
-        "V1 to V2 Research Evolution"
-      ],
-      "legend_required": false,
-      "alt_text": "Research lineage from the V1 ecosystem conceptual baseline to V2 multi-source evidence grounding, modular ontology architecture, deeper formalization, ontology-RDB-KG realization, multi-family evaluation and bounded demonstrators.",
-      "caption": "DGM-EVO-002 \u2014 V1\u2192V2 research evolution; lineage does not imply like-for-like quantitative superiority."
+      "caption": "DGM-ARC-001 — illustrative cross-representation pipeline."
     },
     {
       "id": "DGM-ARC-002",
@@ -191,7 +44,7 @@
       ],
       "legend_required": false,
       "alt_text": "Trace from admitted literature, datasets and authoritative sources through concept and relation discovery, UFO/OntoUML conceptualization, OWL/SHACL formalization, relational and RDF/KG realization, evaluation E1 to E13 and supported, bounded or deferred claims; E9 remains pending.",
-      "caption": "DGM-ARC-002 \u2014 evidence\u2192conceptualization\u2192formalization\u2192data\u2192evaluation trace."
+      "caption": "DGM-ARC-002 — evidence→conceptualization→formalization→data→evaluation trace."
     },
     {
       "id": "DGM-ARC-003",
@@ -213,11 +66,293 @@
       ],
       "legend_required": false,
       "alt_text": "Relationship among research publications, the GitHub repository as semantic/data/evaluation authority, evidence and reproducibility artifacts, the GitHub Wiki explanatory projection, and version/release/DOI records.",
-      "caption": "DGM-ARC-003 \u2014 publication/repository/Wiki relationship; the Wiki explains and links but does not replace authoritative artifacts."
+      "caption": "DGM-ARC-003 — publication/repository/Wiki relationship; the Wiki explains and links but does not replace authoritative artifacts."
+    },
+    {
+      "id": "DGM-ERD-001",
+      "title": "Relational notation example — evidence and source records",
+      "purpose": "Demonstrate Crow's Foot ERD conventions for a small relational evidence/provenance fragment.",
+      "version_scope": "V2",
+      "notation": "Crow's Foot ERD",
+      "artifact_status": "Illustrative",
+      "source_path": "wiki-src/diagrams/source/erd/DGM-ERD-001--evidence-source-records.mmd",
+      "rendered_path": "wiki-src/diagrams/rendered/erd/DGM-ERD-001--evidence-source-records.svg",
+      "generation_method": "Mermaid ER source; SVG baseline committed with the sample. Future automated export must pin Mermaid CLI version.",
+      "authoritative_source": "V2 relational schema and ontology↔RDB mapping artifacts",
+      "last_updated": "2026-09-24",
+      "checked_ref": "v2/research-program@1226b0a5484f8f5d3a8d214e0d0f52f066b88999",
+      "related_pages": [
+        "V2 Data Infrastructure",
+        "Data and Database Guide"
+      ],
+      "legend_required": true,
+      "alt_text": "Illustrative Crow's Foot ERD showing Dataset, DatasetRelease and SourceRecord with one-to-many relationships.",
+      "caption": "DGM-ERD-001 — relational notation example only; database schema remains authoritative."
+    },
+    {
+      "id": "DGM-ERD-002",
+      "title": "V2 logical relational model",
+      "purpose": "Logical reader view of the principal V2 relational entities and implemented foreign-key structure.",
+      "version_scope": "V2",
+      "notation": "Crow's Foot ERD",
+      "artifact_status": "Authoritative projection",
+      "source_path": "wiki-src/diagrams/source/erd/DGM-ERD-002--v2-logical-relational-model.mmd",
+      "rendered_path": "wiki-src/diagrams/rendered/erd/DGM-ERD-002--v2-logical-relational-model.svg",
+      "generation_method": "Project-native deterministic generator parses v2/data/db/schema.sql and emits Mermaid ER source plus governed SVG.",
+      "authoritative_source": "v2/data/db/schema.sql",
+      "last_updated": "2026-09-25",
+      "checked_ref": "v2/research-program@1226b0a5484f8f5d3a8d214e0d0f52f066b88999",
+      "related_pages": [
+        "V2 Database Reference",
+        "V2 Database ERD Suite",
+        "V2 Data Infrastructure"
+      ],
+      "legend_required": true,
+      "alt_text": "Logical reader view of the principal V2 relational entities and implemented foreign-key structure.",
+      "caption": "DGM-ERD-002 — V2 logical relational model. Generated from the checked V2 reference schema; reference implementation only."
+    },
+    {
+      "id": "DGM-ERD-003",
+      "title": "V2 full physical ERD — 24 tables",
+      "purpose": "Full physical ERD covering all 24 implemented base tables and every declared foreign key.",
+      "version_scope": "V2",
+      "notation": "Crow's Foot ERD",
+      "artifact_status": "Authoritative projection",
+      "source_path": "wiki-src/diagrams/source/erd/DGM-ERD-003--v2-full-physical-erd-24-tables.mmd",
+      "rendered_path": "wiki-src/diagrams/rendered/erd/DGM-ERD-003--v2-full-physical-erd-24-tables.svg",
+      "generation_method": "Project-native deterministic generator parses v2/data/db/schema.sql and emits Mermaid ER source plus governed SVG.",
+      "authoritative_source": "v2/data/db/schema.sql",
+      "last_updated": "2026-09-25",
+      "checked_ref": "v2/research-program@1226b0a5484f8f5d3a8d214e0d0f52f066b88999",
+      "related_pages": [
+        "V2 Database Reference",
+        "V2 Database ERD Suite",
+        "V2 Data Infrastructure"
+      ],
+      "legend_required": true,
+      "alt_text": "Full physical ERD covering all 24 implemented base tables and every declared foreign key.",
+      "caption": "DGM-ERD-003 — V2 full physical ERD — 24 tables. Generated from the checked V2 reference schema; reference implementation only."
+    },
+    {
+      "id": "DGM-ERD-004",
+      "title": "Dataset / Release / Source / Transformation",
+      "purpose": "Readable subject-area ERD generated from the implemented V2 reference schema.",
+      "version_scope": "V2",
+      "notation": "Crow's Foot ERD",
+      "artifact_status": "Authoritative projection",
+      "source_path": "wiki-src/diagrams/source/erd/DGM-ERD-004--dataset-release-source-transformation.mmd",
+      "rendered_path": "wiki-src/diagrams/rendered/erd/DGM-ERD-004--dataset-release-source-transformation.svg",
+      "generation_method": "Project-native deterministic generator parses v2/data/db/schema.sql and emits Mermaid ER source plus governed SVG.",
+      "authoritative_source": "v2/data/db/schema.sql",
+      "last_updated": "2026-09-25",
+      "checked_ref": "v2/research-program@1226b0a5484f8f5d3a8d214e0d0f52f066b88999",
+      "related_pages": [
+        "V2 Database Reference",
+        "V2 Database ERD Suite",
+        "V2 Data Infrastructure"
+      ],
+      "legend_required": true,
+      "alt_text": "Readable subject-area ERD generated from the implemented V2 reference schema.",
+      "caption": "DGM-ERD-004 — Dataset / Release / Source / Transformation. Generated from the checked V2 reference schema; reference implementation only."
+    },
+    {
+      "id": "DGM-ERD-005",
+      "title": "Organization / Facility / Geography / Jurisdiction",
+      "purpose": "Readable subject-area ERD generated from the implemented V2 reference schema.",
+      "version_scope": "V2",
+      "notation": "Crow's Foot ERD",
+      "artifact_status": "Authoritative projection",
+      "source_path": "wiki-src/diagrams/source/erd/DGM-ERD-005--organization-facility-geography-jurisdiction.mmd",
+      "rendered_path": "wiki-src/diagrams/rendered/erd/DGM-ERD-005--organization-facility-geography-jurisdiction.svg",
+      "generation_method": "Project-native deterministic generator parses v2/data/db/schema.sql and emits Mermaid ER source plus governed SVG.",
+      "authoritative_source": "v2/data/db/schema.sql",
+      "last_updated": "2026-09-25",
+      "checked_ref": "v2/research-program@1226b0a5484f8f5d3a8d214e0d0f52f066b88999",
+      "related_pages": [
+        "V2 Database Reference",
+        "V2 Database ERD Suite",
+        "V2 Data Infrastructure"
+      ],
+      "legend_required": true,
+      "alt_text": "Readable subject-area ERD generated from the implemented V2 reference schema.",
+      "caption": "DGM-ERD-005 — Organization / Facility / Geography / Jurisdiction. Generated from the checked V2 reference schema; reference implementation only."
+    },
+    {
+      "id": "DGM-ERD-006",
+      "title": "Product / Substance / Presentation / Classification",
+      "purpose": "Readable subject-area ERD generated from the implemented V2 reference schema.",
+      "version_scope": "V2",
+      "notation": "Crow's Foot ERD",
+      "artifact_status": "Authoritative projection",
+      "source_path": "wiki-src/diagrams/source/erd/DGM-ERD-006--product-substance-presentation-classification.mmd",
+      "rendered_path": "wiki-src/diagrams/rendered/erd/DGM-ERD-006--product-substance-presentation-classification.svg",
+      "generation_method": "Project-native deterministic generator parses v2/data/db/schema.sql and emits Mermaid ER source plus governed SVG.",
+      "authoritative_source": "v2/data/db/schema.sql",
+      "last_updated": "2026-09-25",
+      "checked_ref": "v2/research-program@1226b0a5484f8f5d3a8d214e0d0f52f066b88999",
+      "related_pages": [
+        "V2 Database Reference",
+        "V2 Database ERD Suite",
+        "V2 Data Infrastructure"
+      ],
+      "legend_required": true,
+      "alt_text": "Readable subject-area ERD generated from the implemented V2 reference schema.",
+      "caption": "DGM-ERD-006 — Product / Substance / Presentation / Classification. Generated from the checked V2 reference schema; reference implementation only."
+    },
+    {
+      "id": "DGM-ERD-007",
+      "title": "Identifier / Identity / Entity Match",
+      "purpose": "Readable subject-area ERD generated from the implemented V2 reference schema.",
+      "version_scope": "V2",
+      "notation": "Crow's Foot ERD",
+      "artifact_status": "Authoritative projection",
+      "source_path": "wiki-src/diagrams/source/erd/DGM-ERD-007--identifier-identity-entity-match.mmd",
+      "rendered_path": "wiki-src/diagrams/rendered/erd/DGM-ERD-007--identifier-identity-entity-match.svg",
+      "generation_method": "Project-native deterministic generator parses v2/data/db/schema.sql and emits Mermaid ER source plus governed SVG.",
+      "authoritative_source": "v2/data/db/schema.sql",
+      "last_updated": "2026-09-25",
+      "checked_ref": "v2/research-program@1226b0a5484f8f5d3a8d214e0d0f52f066b88999",
+      "related_pages": [
+        "V2 Database Reference",
+        "V2 Database ERD Suite",
+        "V2 Data Infrastructure"
+      ],
+      "legend_required": true,
+      "alt_text": "Readable subject-area ERD generated from the implemented V2 reference schema.",
+      "caption": "DGM-ERD-007 — Identifier / Identity / Entity Match. Generated from the checked V2 reference schema; reference implementation only."
+    },
+    {
+      "id": "DGM-ERD-008",
+      "title": "Assertion / Evidence / Provenance",
+      "purpose": "Readable subject-area ERD generated from the implemented V2 reference schema.",
+      "version_scope": "V2",
+      "notation": "Crow's Foot ERD",
+      "artifact_status": "Authoritative projection",
+      "source_path": "wiki-src/diagrams/source/erd/DGM-ERD-008--assertion-evidence-provenance.mmd",
+      "rendered_path": "wiki-src/diagrams/rendered/erd/DGM-ERD-008--assertion-evidence-provenance.svg",
+      "generation_method": "Project-native deterministic generator parses v2/data/db/schema.sql and emits Mermaid ER source plus governed SVG.",
+      "authoritative_source": "v2/data/db/schema.sql",
+      "last_updated": "2026-09-25",
+      "checked_ref": "v2/research-program@1226b0a5484f8f5d3a8d214e0d0f52f066b88999",
+      "related_pages": [
+        "V2 Database Reference",
+        "V2 Database ERD Suite",
+        "V2 Data Infrastructure"
+      ],
+      "legend_required": true,
+      "alt_text": "Readable subject-area ERD generated from the implemented V2 reference schema.",
+      "caption": "DGM-ERD-008 — Assertion / Evidence / Provenance. Generated from the checked V2 reference schema; reference implementation only."
+    },
+    {
+      "id": "DGM-ERD-009",
+      "title": "Observation",
+      "purpose": "Readable subject-area ERD generated from the implemented V2 reference schema.",
+      "version_scope": "V2",
+      "notation": "Crow's Foot ERD",
+      "artifact_status": "Authoritative projection",
+      "source_path": "wiki-src/diagrams/source/erd/DGM-ERD-009--observation.mmd",
+      "rendered_path": "wiki-src/diagrams/rendered/erd/DGM-ERD-009--observation.svg",
+      "generation_method": "Project-native deterministic generator parses v2/data/db/schema.sql and emits Mermaid ER source plus governed SVG.",
+      "authoritative_source": "v2/data/db/schema.sql",
+      "last_updated": "2026-09-25",
+      "checked_ref": "v2/research-program@1226b0a5484f8f5d3a8d214e0d0f52f066b88999",
+      "related_pages": [
+        "V2 Database Reference",
+        "V2 Database ERD Suite",
+        "V2 Data Infrastructure"
+      ],
+      "legend_required": true,
+      "alt_text": "Readable subject-area ERD generated from the implemented V2 reference schema.",
+      "caption": "DGM-ERD-009 — Observation. Generated from the checked V2 reference schema; reference implementation only."
+    },
+    {
+      "id": "DGM-ERD-010",
+      "title": "Shortage / Resilience-related implemented representation",
+      "purpose": "Readable subject-area ERD generated from the implemented V2 reference schema.",
+      "version_scope": "V2",
+      "notation": "Crow's Foot ERD",
+      "artifact_status": "Authoritative projection",
+      "source_path": "wiki-src/diagrams/source/erd/DGM-ERD-010--shortage-resilience-related-implemented-representation.mmd",
+      "rendered_path": "wiki-src/diagrams/rendered/erd/DGM-ERD-010--shortage-resilience-related-implemented-representation.svg",
+      "generation_method": "Project-native deterministic generator parses v2/data/db/schema.sql and emits Mermaid ER source plus governed SVG.",
+      "authoritative_source": "v2/data/db/schema.sql",
+      "last_updated": "2026-09-25",
+      "checked_ref": "v2/research-program@1226b0a5484f8f5d3a8d214e0d0f52f066b88999",
+      "related_pages": [
+        "V2 Database Reference",
+        "V2 Database ERD Suite",
+        "V2 Data Infrastructure"
+      ],
+      "legend_required": true,
+      "alt_text": "Readable subject-area ERD generated from the implemented V2 reference schema.",
+      "caption": "DGM-ERD-010 — Shortage / Resilience-related implemented representation. Generated from the checked V2 reference schema; reference implementation only."
+    },
+    {
+      "id": "DGM-EVO-001",
+      "title": "V1 to V2 research-evolution lineage",
+      "purpose": "Demonstrate lineage notation for research evolution without implying that chronology alone proves improvement.",
+      "version_scope": "Cross-version",
+      "notation": "Lineage / evolution graph",
+      "artifact_status": "Illustrative",
+      "source_path": "wiki-src/diagrams/source/evolution/DGM-EVO-001--v1-v2-research-lineage.dot",
+      "rendered_path": "wiki-src/diagrams/rendered/evolution/DGM-EVO-001--v1-v2-research-lineage.svg",
+      "generation_method": "Graphviz DOT source; SVG baseline committed with the sample.",
+      "authoritative_source": "V1 and V2 research/evolution documentation",
+      "last_updated": "2026-09-24",
+      "checked_ref": "V1: main; V2: v2/research-program@1226b0a5484f8f5d3a8d214e0d0f52f066b88999",
+      "related_pages": [
+        "V1 to V2 Research Evolution",
+        "Research Guide"
+      ],
+      "legend_required": false,
+      "alt_text": "Illustrative lineage from the V1 ecosystem conceptual baseline through data grounding, modular ontology, cross-representation realization and multi-family evaluation in V2.",
+      "caption": "DGM-EVO-001 — research lineage; arrows mean documented evolution, not quantitative superiority."
+    },
+    {
+      "id": "DGM-EVO-002",
+      "title": "CM-PharmE V1 to V2 research evolution",
+      "purpose": "Visualize continuity, refinement and architectural/methodological extension from V1 to V2 without treating chronology as evidence of superiority.",
+      "version_scope": "Cross-version",
+      "notation": "Lineage / evolution graph",
+      "artifact_status": "Illustrative",
+      "source_path": "wiki-src/diagrams/source/evolution/DGM-EVO-002--v1-v2-research-evolution.dot",
+      "rendered_path": "wiki-src/diagrams/rendered/evolution/DGM-EVO-002--v1-v2-research-evolution.svg",
+      "generation_method": "Graphviz DOT source; governed SVG publication artifact committed.",
+      "authoritative_source": "V1→V2 research-evolution and migration evidence",
+      "last_updated": "2026-09-24",
+      "checked_ref": "V1: main; V2: v2/research-program@1226b0a5484f8f5d3a8d214e0d0f52f066b88999",
+      "related_pages": [
+        "Research Process and Evolution Diagrams",
+        "V1 to V2 Research Evolution"
+      ],
+      "legend_required": false,
+      "alt_text": "Research lineage from the V1 ecosystem conceptual baseline to V2 multi-source evidence grounding, modular ontology architecture, deeper formalization, ontology-RDB-KG realization, multi-family evaluation and bounded demonstrators.",
+      "caption": "DGM-EVO-002 — V1→V2 research evolution; lineage does not imply like-for-like quantitative superiority."
+    },
+    {
+      "id": "DGM-ONT-001",
+      "title": "Ontology notation example — product, presentation and substance",
+      "purpose": "Demonstrate OntoUML/UFO-aware stereotype and relation labeling for a small V2 conceptual fragment.",
+      "version_scope": "V2",
+      "notation": "OntoUML/UFO-aware conceptual notation",
+      "artifact_status": "Illustrative",
+      "source_path": "wiki-src/diagrams/source/ontology/DGM-ONT-001--product-presentation-substance.puml",
+      "rendered_path": "wiki-src/diagrams/rendered/ontology/DGM-ONT-001--product-presentation-substance.svg",
+      "generation_method": "PlantUML-compatible source; SVG baseline committed with the sample. Future automated export must pin renderer version.",
+      "authoritative_source": "v2/research/w4/integrated-ontouml-overview.puml on v2/research-program",
+      "last_updated": "2026-09-24",
+      "checked_ref": "v2/research-program@1226b0a5484f8f5d3a8d214e0d0f52f066b88999",
+      "related_pages": [
+        "V2 UFO and OntoUML Architecture",
+        "Ontology and Conceptual Model Guide"
+      ],
+      "legend_required": true,
+      "alt_text": "Illustrative V2 ontology fragment distinguishing Medicinal Product, Medicinal Product Presentation and Pharmaceutical Substance with labeled presentationOf and hasActiveSubstance relations.",
+      "caption": "DGM-ONT-001 — illustrative OntoUML-aware fragment; semantic authority remains the V2 conceptual/formal artifacts."
     },
     {
       "id": "DGM-ONT-002",
-      "title": "V2 ontology architecture \u2014 Core, X-INFRA and Extensions",
+      "title": "V2 ontology architecture — Core, X-INFRA and Extensions",
       "purpose": "Show the 17-domain V2 ontology architecture across the three governed conceptual layers.",
       "version_scope": "V2",
       "notation": "OntoUML/UFO-aware conceptual notation",
@@ -235,7 +370,7 @@
       ],
       "legend_required": true,
       "alt_text": "Show the 17-domain V2 ontology architecture across the three governed conceptual layers.",
-      "caption": "DGM-ONT-002 \u2014 V2 ontology architecture \u2014 Core, X-INFRA and Extensions. Authoritative projection of the checked V2 baseline."
+      "caption": "DGM-ONT-002 — V2 ontology architecture — Core, X-INFRA and Extensions. Authoritative projection of the checked V2 baseline."
     },
     {
       "id": "DGM-ONT-003",
@@ -257,7 +392,7 @@
       ],
       "legend_required": true,
       "alt_text": "Provide a readable six-module overview of the 32-concept Core and selected explicit cross-domain relation spans.",
-      "caption": "DGM-ONT-003 \u2014 V2 Core ontology overview. Illustrative reader projection; authority remains in V2 sources."
+      "caption": "DGM-ONT-003 — V2 Core ontology overview. Illustrative reader projection; authority remains in V2 sources."
     },
     {
       "id": "DGM-ONT-004",
@@ -279,7 +414,7 @@
       ],
       "legend_required": true,
       "alt_text": "Explain organization/facility identity, contextual roles and the FacilityOperation relator without collapsing protected distinctions.",
-      "caption": "DGM-ONT-004 \u2014 Ecosystem Organization and Facility Operations. Authoritative projection of the checked V2 baseline."
+      "caption": "DGM-ONT-004 — Ecosystem Organization and Facility Operations. Authoritative projection of the checked V2 baseline."
     },
     {
       "id": "DGM-ONT-005",
@@ -301,7 +436,7 @@
       ],
       "legend_required": true,
       "alt_text": "Explain product, presentation, substance, specification, classification and listing semantics with explicit formal endpoints.",
-      "caption": "DGM-ONT-005 \u2014 Pharmaceutical Product and Classification. Authoritative projection of the checked V2 baseline."
+      "caption": "DGM-ONT-005 — Pharmaceutical Product and Classification. Authoritative projection of the checked V2 baseline."
     },
     {
       "id": "DGM-ONT-006",
@@ -323,7 +458,7 @@
       ],
       "legend_required": true,
       "alt_text": "Explain evidence-source, dataset/release/record, assertion, observation and provenance structures.",
-      "caption": "DGM-ONT-006 \u2014 Evidence and Provenance. Authoritative projection of the checked V2 baseline."
+      "caption": "DGM-ONT-006 — Evidence and Provenance. Authoritative projection of the checked V2 baseline."
     },
     {
       "id": "DGM-ONT-007",
@@ -345,7 +480,7 @@
       ],
       "legend_required": true,
       "alt_text": "Separate geographic identity, regulatory jurisdiction and temporal/data-value context while preserving protected distinctions.",
-      "caption": "DGM-ONT-007 \u2014 Geography, Jurisdiction and Time. Authoritative projection of the checked V2 baseline."
+      "caption": "DGM-ONT-007 — Geography, Jurisdiction and Time. Authoritative projection of the checked V2 baseline."
     },
     {
       "id": "DGM-ONT-008",
@@ -367,7 +502,7 @@
       ],
       "legend_required": true,
       "alt_text": "Explain identifier assignment and entity-match assertions without inventing the formally unspecified match/entity endpoints.",
-      "caption": "DGM-ONT-008 \u2014 Identity and Entity Matching. Authoritative projection of the checked V2 baseline."
+      "caption": "DGM-ONT-008 — Identity and Entity Matching. Authoritative projection of the checked V2 baseline."
     },
     {
       "id": "DGM-ONT-009",
@@ -389,11 +524,11 @@
       ],
       "legend_required": true,
       "alt_text": "Explain supply activities, shortage situation, capacity and observation-result semantics with explicit shortage endpoints.",
-      "caption": "DGM-ONT-009 \u2014 Supply Operations and Shortage. Authoritative projection of the checked V2 baseline."
+      "caption": "DGM-ONT-009 — Supply Operations and Shortage. Authoritative projection of the checked V2 baseline."
     },
     {
       "id": "DGM-ONT-010",
-      "title": "Supply Resilience and Risk \u2014 adjacent extension views",
+      "title": "Supply Resilience and Risk — adjacent extension views",
       "purpose": "Show the Supply Resilience and Risk Management extensions together while explicitly avoiding an unsupported formal cross-domain relation.",
       "version_scope": "V2",
       "notation": "OntoUML/UFO-aware conceptual notation",
@@ -411,7 +546,7 @@
       ],
       "legend_required": true,
       "alt_text": "Show the Supply Resilience and Risk Management extensions together while explicitly avoiding an unsupported formal cross-domain relation.",
-      "caption": "DGM-ONT-010 \u2014 Supply Resilience and Risk \u2014 adjacent extension views. Authoritative projection of the checked V2 baseline."
+      "caption": "DGM-ONT-010 — Supply Resilience and Risk — adjacent extension views. Authoritative projection of the checked V2 baseline."
     },
     {
       "id": "DGM-ONT-011",
@@ -433,7 +568,70 @@
       ],
       "legend_required": true,
       "alt_text": "Summarize all eight extension domains and their concept counts without turning the extension layer into one all-in-one entity graph.",
-      "caption": "DGM-ONT-011 \u2014 V2 extension landscape. Authoritative projection of the checked V2 baseline."
+      "caption": "DGM-ONT-011 — V2 extension landscape. Authoritative projection of the checked V2 baseline."
+    },
+    {
+      "id": "DGM-PRC-001",
+      "title": "CM-PharmE research landscape",
+      "purpose": "Provide a whole-program view linking the stable V1 baseline to the evolving V2 research path without foregrounding internal workflow codes.",
+      "version_scope": "Cross-version",
+      "notation": "Process/activity/flow",
+      "artifact_status": "Illustrative",
+      "source_path": "wiki-src/diagrams/source/process/DGM-PRC-001--research-landscape.mmd",
+      "rendered_path": "wiki-src/diagrams/rendered/process/DGM-PRC-001--research-landscape.svg",
+      "generation_method": "Mermaid flowchart source; governed SVG publication artifact committed.",
+      "authoritative_source": "V1 stable documentation plus current V2 research/status artifacts",
+      "last_updated": "2026-09-24",
+      "checked_ref": "V1: main stable baseline; V2: v2/research-program@1226b0a5484f8f5d3a8d214e0d0f52f066b88999",
+      "related_pages": [
+        "Research Process and Evolution Diagrams",
+        "Research Guide"
+      ],
+      "legend_required": false,
+      "alt_text": "Whole-program research landscape connecting stable CM-PharmE 1.x with evolving V2 evidence grounding, conceptualization, formalization, data realization, evaluation, demonstrators and manuscript/release work, with pending work marked.",
+      "caption": "DGM-PRC-001 — CM-PharmE research landscape; V2 remains evolving and pending work is shown explicitly."
+    },
+    {
+      "id": "DGM-PRC-002",
+      "title": "CM-PharmE 1.x research process",
+      "purpose": "Explain the V1 research process from problem framing through evidence review, conceptual modeling, formalization, evaluation and publication.",
+      "version_scope": "V1",
+      "notation": "Process/activity/flow",
+      "artifact_status": "Illustrative",
+      "source_path": "wiki-src/diagrams/source/process/DGM-PRC-002--v1-research-process.mmd",
+      "rendered_path": "wiki-src/diagrams/rendered/process/DGM-PRC-002--v1-research-process.svg",
+      "generation_method": "Mermaid flowchart source; governed SVG publication artifact committed.",
+      "authoritative_source": "V1 research-method, model, evaluation and publication artifacts on main",
+      "last_updated": "2026-09-24",
+      "checked_ref": "main stable V1 baseline",
+      "related_pages": [
+        "Research Process and Evolution Diagrams",
+        "V1 Research Design and Evidence Review"
+      ],
+      "legend_required": false,
+      "alt_text": "V1 research process from ecosystem problem and scope through PRISMA-guided evidence review, thematic synthesis, UFO/OntoUML conceptual modeling, formal ontology, evaluation and research outputs.",
+      "caption": "DGM-PRC-002 — CM-PharmE 1.x research process."
+    },
+    {
+      "id": "DGM-PRC-003",
+      "title": "CM-PharmE 2.0 research process",
+      "purpose": "Explain the current V2 research stages using descriptive names while keeping unfinished expert, demonstrator and release work visibly pending.",
+      "version_scope": "V2",
+      "notation": "Process/activity/flow",
+      "artifact_status": "Illustrative",
+      "source_path": "wiki-src/diagrams/source/process/DGM-PRC-003--v2-research-process.mmd",
+      "rendered_path": "wiki-src/diagrams/rendered/process/DGM-PRC-003--v2-research-process.svg",
+      "generation_method": "Mermaid flowchart source; governed SVG publication artifact committed.",
+      "authoritative_source": "Current V2 research program and live issues #98/#170/#171/#159/#173",
+      "last_updated": "2026-09-24",
+      "checked_ref": "v2/research-program@1226b0a5484f8f5d3a8d214e0d0f52f066b88999; live issue state checked 2026-09-24",
+      "related_pages": [
+        "Research Process and Evolution Diagrams",
+        "CM-PharmE 2.0 Research Method and Development"
+      ],
+      "legend_required": false,
+      "alt_text": "V2 descriptive research stages from foundation through needs, data, discovery, conceptualization, formal ontology, data and knowledge infrastructure, evaluation, demonstrators and manuscript/release; evaluation is 13 of 14 complete, demonstrators 7 of 8 complete, and final dependencies are pending.",
+      "caption": "DGM-PRC-003 — current CM-PharmE 2.0 research process; V2 is not final."
     }
   ],
   "legacy_inventory": [

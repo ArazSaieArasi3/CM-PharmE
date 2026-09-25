@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+import argparse
 import json
 from pathlib import Path
 from xml.etree import ElementTree as ET
@@ -45,10 +46,15 @@ def normalize(path: Path):
     path.write_text(out+"\n",encoding="utf-8")
 
 def main():
+    ap=argparse.ArgumentParser()
+    ap.add_argument("--category", default=None, help="Optional rendered-diagram category, e.g. ontology or erd")
+    args=ap.parse_args()
     data=json.loads(MANIFEST.read_text(encoding="utf-8"))
     paths=[]
     for d in data.get("diagrams",[]):
         p=ROOT/d["rendered_path"]
+        if args.category and ("/rendered/"+args.category+"/") not in d["rendered_path"]:
+            continue
         if p.suffix.lower()==".svg":
             paths.append(p)
     for p in paths:

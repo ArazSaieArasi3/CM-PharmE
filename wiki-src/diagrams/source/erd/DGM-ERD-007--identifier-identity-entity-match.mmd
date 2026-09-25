@@ -1,0 +1,41 @@
+%% DGM-ERD-007 — Identifier / Identity / Entity Match
+erDiagram
+  IDENTIFIER_SCHEME {
+    BIGSERIAL identifier_scheme_id PK
+    TEXT public_id UK
+    TEXT ontology_iri
+    TEXT scheme_name
+  }
+  IDENTIFIER_ASSIGNMENT {
+    BIGSERIAL identifier_assignment_id PK
+    TEXT public_id UK
+    BIGINT identifier_scheme_id FK
+    TEXT entity_type
+    BIGINT source_record_id FK
+    TEXT ontology_iri
+    TEXT entity_public_id
+    TEXT lexical_value
+  }
+  ENTITY_MATCH_ASSERTION {
+    BIGSERIAL entity_match_assertion_id PK
+    TEXT public_id UK
+    BIGINT source_record_a_id FK
+    BIGINT source_record_b_id FK
+    NUMERIC_5_4_ confidence
+    TEXT status
+    TEXT ontology_iri
+    TEXT matched_entity_type
+  }
+  SOURCE_RECORD {
+    BIGSERIAL source_record_id PK
+    BIGINT dataset_release_id FK
+    BIGINT transformation_run_id FK
+    CHAR_64_ source_hash
+    TEXT ontology_iri
+    BIGINT row_number
+    JSONB raw_key
+  }
+  IDENTIFIER_SCHEME ||--o{ IDENTIFIER_ASSIGNMENT : "identifier_scheme_id"
+  SOURCE_RECORD o|--o{ IDENTIFIER_ASSIGNMENT : "source_record_id"
+  SOURCE_RECORD ||--o{ ENTITY_MATCH_ASSERTION : "source_record_a_id"
+  SOURCE_RECORD ||--o{ ENTITY_MATCH_ASSERTION : "source_record_b_id"
