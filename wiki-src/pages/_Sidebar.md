@@ -34,3 +34,8 @@
 
 **Documentation**
 - [[Documentation History and Governance]]
+
+**Data & Database**
+- [[V2 Database Reference]]
+- [[V2 Database ERD Suite]]
+- [[V2 Database Data Dictionary]]

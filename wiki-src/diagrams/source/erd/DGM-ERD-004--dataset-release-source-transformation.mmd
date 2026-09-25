@@ -1,0 +1,42 @@
+%% DGM-ERD-004 — Dataset / Release / Source / Transformation
+erDiagram
+  DATASET {
+    BIGSERIAL dataset_id PK
+    TEXT public_id UK
+    TEXT ontology_iri
+    TEXT title
+    TEXT doi
+    TEXT source_role
+    TEXT license_note
+  }
+  DATASET_RELEASE {
+    BIGSERIAL dataset_release_id PK
+    BIGINT dataset_id FK
+    TEXT public_id UK
+    TEXT ontology_iri
+    TEXT release_label
+    TEXT source_filename
+    TIMESTAMPTZ retrieved_at
+  }
+  TRANSFORMATION_RUN {
+    BIGSERIAL transformation_run_id PK
+    TEXT public_id UK
+    TEXT status
+    TEXT ontology_iri
+    TEXT adapter_name
+    TEXT adapter_version
+    TIMESTAMPTZ started_at
+    TIMESTAMPTZ completed_at
+  }
+  SOURCE_RECORD {
+    BIGSERIAL source_record_id PK
+    BIGINT dataset_release_id FK
+    BIGINT transformation_run_id FK
+    CHAR_64_ source_hash
+    TEXT ontology_iri
+    BIGINT row_number
+    JSONB raw_key
+  }
+  DATASET ||--o{ DATASET_RELEASE : "dataset_id"
+  DATASET_RELEASE ||--o{ SOURCE_RECORD : "dataset_release_id"
+  TRANSFORMATION_RUN o|--o{ SOURCE_RECORD : "transformation_run_id"

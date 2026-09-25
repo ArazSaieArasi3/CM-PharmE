@@ -14,6 +14,7 @@ Choose the path closest to what you want to understand:
 - **Understand the research:** [[Research Guide]]
 - **Explore the conceptual model and ontology:** [[Ontology and Conceptual Model Guide]]
 - **Open the exhaustive V2 ontology reference:** [[V2 Ontology Reference]]
+- **Explore the V2 database reference:** [[V2 Database Reference]]
 - **Understand datasets and the relational database:** [[Data and Database Guide]]
 - **Follow the knowledge graph and query architecture:** [[Knowledge Graph and Queries Guide]]
 - **Inspect evaluation and reproducibility evidence:** [[Evaluation and Reproducibility Guide]]

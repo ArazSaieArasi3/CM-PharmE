@@ -2,7 +2,13 @@
 
 > **Version scope:** V2  
 > **Status:** Stable-to-date / Evolving  
-> **Updated:** 2026-09-23
+> **Updated:** 2026-09-25
+
+## Database documentation
+- [[V2 Database Reference]] — complete 24-table reference.
+- [[V2 Database ERD Suite]] — logical, physical and subject-area ERDs.
+- [[V2 Database Data Dictionary]] — field-level physical dictionary.
+- [[V2 Database Views]] — research/query views.
 
 ## Representation architecture
 

@@ -1,0 +1,249 @@
+%% DGM-ERD-003 — V2 full physical ERD — 24 tables
+erDiagram
+  DATASET {
+    BIGSERIAL dataset_id PK
+    TEXT public_id UK
+    TEXT title
+    TEXT doi
+    TEXT source_role
+    TEXT license_note
+    TEXT ontology_iri
+  }
+  DATASET_RELEASE {
+    BIGSERIAL dataset_release_id PK
+    BIGINT dataset_id FK
+    TEXT public_id UK
+    TEXT release_label
+    TEXT source_filename
+    TIMESTAMPTZ retrieved_at
+    TEXT ontology_iri
+  }
+  TRANSFORMATION_RUN {
+    BIGSERIAL transformation_run_id PK
+    TEXT public_id UK
+    TEXT adapter_name
+    TEXT adapter_version
+    TIMESTAMPTZ started_at
+    TIMESTAMPTZ completed_at
+    TEXT status
+    TEXT ontology_iri
+  }
+  SOURCE_RECORD {
+    BIGSERIAL source_record_id PK
+    BIGINT dataset_release_id FK
+    BIGINT transformation_run_id FK
+    BIGINT row_number
+    CHAR_64_ source_hash
+    JSONB raw_key
+    TEXT ontology_iri
+  }
+  GEOGRAPHY {
+    BIGSERIAL geography_id PK
+    TEXT public_id UK
+    TEXT geography_type
+    TEXT canonical_name
+    CHAR_2_ country_code
+    TEXT source_region_code
+    BIGINT geonames_id
+    geometry_Geometry_4326_ geom
+    TEXT ontology_iri
+  }
+  GEOGRAPHY_ALIAS {
+    BIGSERIAL geography_alias_id PK
+    BIGINT geography_id FK
+    TEXT source_system
+    TEXT source_value
+    TEXT normalized_value
+    TEXT resolution_method
+    NUMERIC_5_4_ confidence
+    BIGINT source_record_id FK
+  }
+  REGULATORY_JURISDICTION {
+    BIGSERIAL regulatory_jurisdiction_id PK
+    TEXT public_id UK
+    TEXT name
+    BIGINT geography_id FK
+    TEXT ontology_iri
+  }
+  ORGANIZATION {
+    BIGSERIAL organization_id PK
+    TEXT public_id UK
+    TEXT preferred_name
+    TEXT ontology_iri
+  }
+  FACILITY {
+    BIGSERIAL facility_id PK
+    TEXT public_id UK
+    TEXT preferred_name
+    BIGINT geography_id FK
+    TEXT ontology_iri
+  }
+  FACILITY_OPERATION {
+    BIGSERIAL facility_operation_id PK
+    TEXT public_id UK
+    BIGINT organization_id FK
+    BIGINT facility_id FK
+    DATE valid_from
+    DATE valid_to
+    TEXT ontology_iri
+  }
+  PHARMACEUTICAL_SUBSTANCE {
+    BIGSERIAL substance_id PK
+    TEXT public_id UK
+    TEXT preferred_name
+    TEXT source_code
+    TEXT ontology_iri
+  }
+  MEDICINAL_PRODUCT {
+    BIGSERIAL medicinal_product_id PK
+    TEXT public_id UK
+    TEXT preferred_name
+    BIGINT primary_substance_id FK
+    TEXT ontology_iri
+  }
+  PRODUCT_PRESENTATION {
+    BIGSERIAL product_presentation_id PK
+    TEXT public_id UK
+    BIGINT medicinal_product_id FK
+    TEXT packaging
+    TEXT concentration
+    NUMERIC num_in_pack
+    TEXT ontology_iri
+  }
+  IDENTIFIER_SCHEME {
+    BIGSERIAL identifier_scheme_id PK
+    TEXT public_id UK
+    TEXT scheme_name
+    TEXT ontology_iri
+  }
+  IDENTIFIER_ASSIGNMENT {
+    BIGSERIAL identifier_assignment_id PK
+    TEXT public_id UK
+    BIGINT identifier_scheme_id FK
+    TEXT entity_type
+    TEXT entity_public_id
+    TEXT lexical_value
+    BIGINT source_record_id FK
+    TEXT ontology_iri
+  }
+  PRODUCT_CLASSIFICATION_SCHEME {
+    BIGSERIAL classification_scheme_id PK
+    TEXT public_id UK
+    TEXT scheme_name
+    TEXT ontology_iri
+  }
+  CLASSIFICATION_ENTRY {
+    BIGSERIAL classification_entry_id PK
+    BIGINT classification_scheme_id FK
+    TEXT public_id UK
+    TEXT code
+    TEXT label
+    TEXT ontology_iri
+  }
+  PRODUCT_CLASSIFICATION_ASSIGNMENT {
+    BIGSERIAL product_classification_assignment_id PK
+    TEXT public_id UK
+    BIGINT medicinal_product_id FK
+    BIGINT classification_entry_id FK
+    BIGINT source_record_id FK
+    TEXT ontology_iri
+  }
+  DIAGNOSIS_REFERENCE {
+    BIGSERIAL diagnosis_reference_id PK
+    TEXT public_id UK
+    TEXT scheme
+    TEXT code
+    TEXT label
+    TEXT ontology_iri
+  }
+  ASSERTION {
+    BIGSERIAL assertion_id PK
+    TEXT public_id UK
+    TEXT assertion_type
+    TEXT subject_public_id
+    TEXT predicate_key
+    TEXT object_lexical
+    TEXT object_public_id
+    TEXT ontology_iri
+  }
+  EVIDENCE_SUPPORT {
+    BIGSERIAL evidence_support_id PK
+    TEXT public_id UK
+    BIGINT source_record_id FK
+    BIGINT assertion_id FK
+    TEXT ontology_iri
+  }
+  OBSERVATION_RESULT {
+    BIGSERIAL observation_result_id PK
+    TEXT public_id UK
+    TEXT observation_kind
+    BIGINT product_presentation_id FK
+    BIGINT facility_id FK
+    BIGINT geography_id FK
+    BIGINT diagnosis_reference_id FK
+    DATE reporting_period
+    TEXT reporting_part
+    NUMERIC patient_count
+    NUMERIC package_count
+    NUMERIC cost_original
+    CHAR_3_ currency
+    NUMERIC cost_bgn
+    NUMERIC cost_eur
+    BIGINT source_record_id FK
+    BIGINT assertion_id FK
+    TEXT ontology_iri
+  }
+  ENTITY_MATCH_ASSERTION {
+    BIGSERIAL entity_match_assertion_id PK
+    TEXT public_id UK
+    BIGINT source_record_a_id FK
+    BIGINT source_record_b_id FK
+    TEXT matched_entity_type
+    TEXT matched_public_id
+    TEXT method
+    NUMERIC_5_4_ confidence
+    TEXT status
+    TEXT ontology_iri
+  }
+  MEDICINE_SHORTAGE_SITUATION {
+    BIGSERIAL shortage_id PK
+    TEXT public_id UK
+    BIGINT medicinal_product_id FK
+    BIGINT product_presentation_id FK
+    BIGINT regulatory_jurisdiction_id FK
+    DATE starts_on
+    DATE ends_on
+    BIGINT source_record_id FK
+    TEXT ontology_iri
+  }
+  DATASET ||--o{ DATASET_RELEASE : "dataset_id"
+  DATASET_RELEASE ||--o{ SOURCE_RECORD : "dataset_release_id"
+  TRANSFORMATION_RUN o|--o{ SOURCE_RECORD : "transformation_run_id"
+  GEOGRAPHY ||--o{ GEOGRAPHY_ALIAS : "geography_id"
+  SOURCE_RECORD o|--o{ GEOGRAPHY_ALIAS : "source_record_id"
+  GEOGRAPHY o|--o{ REGULATORY_JURISDICTION : "geography_id"
+  GEOGRAPHY o|--o{ FACILITY : "geography_id"
+  ORGANIZATION ||--o{ FACILITY_OPERATION : "organization_id"
+  FACILITY ||--o{ FACILITY_OPERATION : "facility_id"
+  PHARMACEUTICAL_SUBSTANCE o|--o{ MEDICINAL_PRODUCT : "primary_substance_id"
+  MEDICINAL_PRODUCT ||--o{ PRODUCT_PRESENTATION : "medicinal_product_id"
+  IDENTIFIER_SCHEME ||--o{ IDENTIFIER_ASSIGNMENT : "identifier_scheme_id"
+  SOURCE_RECORD o|--o{ IDENTIFIER_ASSIGNMENT : "source_record_id"
+  PRODUCT_CLASSIFICATION_SCHEME ||--o{ CLASSIFICATION_ENTRY : "classification_scheme_id"
+  MEDICINAL_PRODUCT ||--o{ PRODUCT_CLASSIFICATION_ASSIGNMENT : "medicinal_product_id"
+  CLASSIFICATION_ENTRY ||--o{ PRODUCT_CLASSIFICATION_ASSIGNMENT : "classification_entry_id"
+  SOURCE_RECORD o|--o{ PRODUCT_CLASSIFICATION_ASSIGNMENT : "source_record_id"
+  SOURCE_RECORD ||--o{ EVIDENCE_SUPPORT : "source_record_id"
+  ASSERTION ||--o{ EVIDENCE_SUPPORT : "assertion_id"
+  PRODUCT_PRESENTATION o|--o{ OBSERVATION_RESULT : "product_presentation_id"
+  FACILITY o|--o{ OBSERVATION_RESULT : "facility_id"
+  GEOGRAPHY o|--o{ OBSERVATION_RESULT : "geography_id"
+  DIAGNOSIS_REFERENCE o|--o{ OBSERVATION_RESULT : "diagnosis_reference_id"
+  SOURCE_RECORD ||--o{ OBSERVATION_RESULT : "source_record_id"
+  ASSERTION ||--o{ OBSERVATION_RESULT : "assertion_id"
+  SOURCE_RECORD ||--o{ ENTITY_MATCH_ASSERTION : "source_record_a_id"
+  SOURCE_RECORD ||--o{ ENTITY_MATCH_ASSERTION : "source_record_b_id"
+  MEDICINAL_PRODUCT o|--o{ MEDICINE_SHORTAGE_SITUATION : "medicinal_product_id"
+  PRODUCT_PRESENTATION o|--o{ MEDICINE_SHORTAGE_SITUATION : "product_presentation_id"
+  REGULATORY_JURISDICTION o|--o{ MEDICINE_SHORTAGE_SITUATION : "regulatory_jurisdiction_id"
+  SOURCE_RECORD o|--o{ MEDICINE_SHORTAGE_SITUATION : "source_record_id"

@@ -1,0 +1,52 @@
+%% DGM-ERD-006 — Product / Substance / Presentation / Classification
+erDiagram
+  PHARMACEUTICAL_SUBSTANCE {
+    BIGSERIAL substance_id PK
+    TEXT public_id UK
+    TEXT preferred_name
+    TEXT ontology_iri
+    TEXT source_code
+  }
+  MEDICINAL_PRODUCT {
+    BIGSERIAL medicinal_product_id PK
+    TEXT public_id UK
+    TEXT preferred_name
+    BIGINT primary_substance_id FK
+    TEXT ontology_iri
+  }
+  PRODUCT_PRESENTATION {
+    BIGSERIAL product_presentation_id PK
+    TEXT public_id UK
+    BIGINT medicinal_product_id FK
+    TEXT ontology_iri
+    TEXT packaging
+    TEXT concentration
+    NUMERIC num_in_pack
+  }
+  PRODUCT_CLASSIFICATION_SCHEME {
+    BIGSERIAL classification_scheme_id PK
+    TEXT public_id UK
+    TEXT ontology_iri
+    TEXT scheme_name
+  }
+  CLASSIFICATION_ENTRY {
+    BIGSERIAL classification_entry_id PK
+    BIGINT classification_scheme_id FK
+    TEXT public_id UK
+    TEXT ontology_iri
+    TEXT code
+    TEXT label
+  }
+  PRODUCT_CLASSIFICATION_ASSIGNMENT {
+    BIGSERIAL product_classification_assignment_id PK
+    TEXT public_id UK
+    BIGINT medicinal_product_id FK
+    BIGINT classification_entry_id FK
+    BIGINT source_record_id FK
+    TEXT ontology_iri
+  }
+  PHARMACEUTICAL_SUBSTANCE o|--o{ MEDICINAL_PRODUCT : "primary_substance_id"
+  MEDICINAL_PRODUCT ||--o{ PRODUCT_PRESENTATION : "medicinal_product_id"
+  PRODUCT_CLASSIFICATION_SCHEME ||--o{ CLASSIFICATION_ENTRY : "classification_scheme_id"
+  MEDICINAL_PRODUCT ||--o{ PRODUCT_CLASSIFICATION_ASSIGNMENT : "medicinal_product_id"
+  CLASSIFICATION_ENTRY ||--o{ PRODUCT_CLASSIFICATION_ASSIGNMENT : "classification_entry_id"
