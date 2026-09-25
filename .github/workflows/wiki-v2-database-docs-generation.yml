@@ -1,0 +1,71 @@
+name: Wiki V2 Database Documentation Generation
+
+on:
+  push:
+    branches:
+      - wiki/v2-database-documentation-r2-2026-09
+    paths:
+      - 'tools/wiki/db_schema_model.py'
+      - 'tools/wiki/generate_v2_database_pages.py'
+      - 'tools/wiki/generate_v2_database_erds.py'
+      - 'tools/wiki/check_v2_database_docs.py'
+      - '.github/workflows/wiki-v2-database-docs-generation.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: cm-pharme-wiki-v2-database-docs
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout documentation branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ github.token }}
+      - name: Checkout V2 authority
+        uses: actions/checkout@v4
+        with:
+          ref: v2/research-program
+          path: _v2_authority
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Generate database pages and structural coverage
+        run: python tools/wiki/generate_v2_database_pages.py --authority-root _v2_authority
+      - name: Generate ERD suite
+        run: python tools/wiki/generate_v2_database_erds.py --authority-root _v2_authority
+      - name: Synchronize diagram image hashes
+        run: python tools/wiki/sync_diagram_image_urls.py
+      - name: Validate exhaustive database documentation
+        run: python tools/wiki/check_v2_database_docs.py
+      - name: Validate governed diagrams
+        run: python tools/wiki/check_diagrams.py
+      - name: Validate cache-safe image URLs
+        run: python tools/wiki/sync_diagram_image_urls.py --check
+      - name: Validate Wiki source
+        run: python tools/wiki/validate_wiki_source.py
+      - name: Validate navigation
+        run: python tools/wiki/check_navigation.py --output wiki-navigation-report.json
+      - name: Validate metadata
+        run: python tools/wiki/check_metadata_contract.py
+      - name: Commit generated database documentation
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add wiki-src tools/wiki/generate_v2_database_pages.py tools/wiki/generate_v2_database_erds.py tools/wiki/check_v2_database_docs.py
+          if git diff --cached --quiet; then
+            echo "No generated changes to commit."
+            exit 0
+          fi
+          git commit -m "Wiki database docs: generate exhaustive V2 database reference"
+          git pull --rebase origin wiki/v2-database-documentation-r2-2026-09
+          git push origin HEAD:wiki/v2-database-documentation-r2-2026-09
