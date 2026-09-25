@@ -258,7 +258,7 @@ def main():
           "caption":d["id"]+" — "+d["title"]+". Generated from the checked V2 reference schema; reference implementation only."
         })
     manifest["diagrams"]=sorted(manifest["diagrams"],key=lambda x:x["id"])
-    manifest_path.write_text(json.dumps(manifest,indent=2)+"\n",encoding="utf-8")
+    manifest_path.write_text(json.dumps(manifest,indent=2,ensure_ascii=False)+"\n",encoding="utf-8")
 
     # Coverage rows
     with (DBREF/"erd-coverage.csv").open("w",encoding="utf-8",newline="") as fh:
