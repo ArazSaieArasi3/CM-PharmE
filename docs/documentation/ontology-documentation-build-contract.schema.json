@@ -1,0 +1,217 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/ArazSaieArasi3/CM-PharmE/blob/main/docs/documentation/ontology-documentation-build-contract.schema.json",
+  "title": "CM-PharmE Ontology Documentation Build Contract",
+  "type": "object",
+  "required": [
+    "contract_schema_version",
+    "repository",
+    "purpose",
+    "policy",
+    "versions",
+    "future_version_contract"
+  ],
+  "properties": {
+    "contract_schema_version": {
+      "const": "1.0"
+    },
+    "repository": {
+      "const": "ArazSaieArasi3/CM-PharmE"
+    },
+    "purpose": {
+      "type": "string",
+      "minLength": 1
+    },
+    "policy": {
+      "type": "object",
+      "required": [
+        "arbitrary_ttl_input_prohibited",
+        "semantic_validation_failure_blocks_publication",
+        "generated_documentation_must_consume_resolved_artifact",
+        "generated_distributions_are_not_authoring_authority",
+        "version_specific_validation_boundaries_must_be_preserved"
+      ],
+      "properties": {
+        "arbitrary_ttl_input_prohibited": {
+          "const": true
+        },
+        "semantic_validation_failure_blocks_publication": {
+          "const": true
+        },
+        "generated_documentation_must_consume_resolved_artifact": {
+          "const": true
+        },
+        "generated_distributions_are_not_authoring_authority": {
+          "const": true
+        },
+        "version_specific_validation_boundaries_must_be_preserved": {
+          "const": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "versions": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "registry_version_id",
+          "lifecycle_state",
+          "semantic_source_ref",
+          "canonical_source_root",
+          "module_selection",
+          "build",
+          "expected_fingerprint",
+          "expected_inventory",
+          "validation_boundary"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^v[0-9]+$"
+          },
+          "registry_version_id": {
+            "type": "string",
+            "pattern": "^v[0-9]+$"
+          },
+          "lifecycle_state": {
+            "enum": [
+              "evolving",
+              "candidate",
+              "stable",
+              "frozen",
+              "historical"
+            ]
+          },
+          "semantic_source_ref": {
+            "type": "string",
+            "pattern": "^.+@[0-9a-f]{40}$"
+          },
+          "canonical_source_root": {
+            "type": "string",
+            "minLength": 1
+          },
+          "module_selection": {
+            "type": "object",
+            "required": [
+              "strategy",
+              "pattern",
+              "ordering"
+            ],
+            "additionalProperties": true
+          },
+          "build": {
+            "type": "object",
+            "required": [
+              "tool",
+              "command",
+              "output_root_contract",
+              "documentation_input_artifact",
+              "build_manifest"
+            ],
+            "properties": {
+              "tool": {
+                "type": "string",
+                "minLength": 1
+              },
+              "command": {
+                "type": "string",
+                "minLength": 1
+              },
+              "output_root_contract": {
+                "type": "string",
+                "minLength": 1
+              },
+              "documentation_input_artifact": {
+                "type": "string",
+                "minLength": 1
+              },
+              "build_manifest": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "additionalProperties": true
+          },
+          "expected_fingerprint": {
+            "type": "object",
+            "required": [
+              "algorithm",
+              "representation",
+              "value",
+              "authority"
+            ],
+            "properties": {
+              "algorithm": {
+                "const": "sha256"
+              },
+              "representation": {
+                "const": "canonical_ntriples"
+              },
+              "value": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{64}$"
+              },
+              "authority": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "additionalProperties": false
+          },
+          "expected_inventory": {
+            "type": "object",
+            "minProperties": 1
+          },
+          "validation_boundary": {
+            "type": "object",
+            "required": [
+              "required_before_pages",
+              "pages_status_label"
+            ],
+            "properties": {
+              "required_before_pages": {
+                "const": true
+              },
+              "pages_status_label": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "additionalProperties": true
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "future_version_contract": {
+      "type": "object",
+      "required": [
+        "onboarding",
+        "required_interface",
+        "copied_pages_workflow_allowed"
+      ],
+      "properties": {
+        "onboarding": {
+          "type": "string",
+          "minLength": 1
+        },
+        "required_interface": {
+          "type": "array",
+          "minItems": 5,
+          "uniqueItems": true,
+          "items": {
+            "type": "string"
+          }
+        },
+        "copied_pages_workflow_allowed": {
+          "const": false
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
