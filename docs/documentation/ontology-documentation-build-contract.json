@@ -1,0 +1,119 @@
+{
+  "contract_schema_version": "1.0",
+  "repository": "ArazSaieArasi3/CM-PharmE",
+  "purpose": "Govern deterministic ontology documentation inputs for Pages/WIDOCO/WebVOWL.",
+  "policy": {
+    "arbitrary_ttl_input_prohibited": true,
+    "semantic_validation_failure_blocks_publication": true,
+    "generated_documentation_must_consume_resolved_artifact": true,
+    "generated_distributions_are_not_authoring_authority": true,
+    "version_specific_validation_boundaries_must_be_preserved": true
+  },
+  "versions": [
+    {
+      "id": "v1",
+      "registry_version_id": "v1",
+      "lifecycle_state": "stable",
+      "semantic_source_ref": "main@595ea30a66644c1b130b6c1a781dc7afbd7ba284",
+      "canonical_source_root": "ontology/source/modules/",
+      "module_selection": {
+        "strategy": "recursive_sorted_glob",
+        "pattern": "**/*.ttl",
+        "ordering": "lexicographic_path_order"
+      },
+      "build": {
+        "tool": "tools/ontology/build.py",
+        "command": "python tools/ontology/build.py --output-root <OUTPUT_ROOT>",
+        "output_root_contract": "isolated temporary/build directory; never hand-edit generated output",
+        "documentation_input_artifact": "distributions/cm-pharme.ttl",
+        "build_manifest": "validation/build-manifest.json",
+        "checksum_manifest": "validation/SHA256SUMS.txt"
+      },
+      "expected_fingerprint": {
+        "algorithm": "sha256",
+        "representation": "canonical_ntriples",
+        "value": "cc823a8aff4d7e7818f8470f2dbad6ca8045ff92e5637fbf3503bc105170a83f",
+        "authority": "ontology/validation/b3-reference-fingerprints.json"
+      },
+      "expected_inventory": {
+        "canonical_triples": 1086,
+        "concept_classes": 39,
+        "stable_relation_records": 40,
+        "architectural_domains": 5,
+        "qualified_cardinality_restrictions": 42
+      },
+      "validation_boundary": {
+        "required_before_pages": true,
+        "structural_reference_status": "PASS",
+        "owl2dl_profile_status": "NOT_CLAIMED_AS_CONFORMANT",
+        "reasoner_note": "Current V1 documentation must preserve the recorded formal-profile hygiene boundary and must not convert it into OWL 2 DL conformance.",
+        "pages_status_label": "Stable V1 semantic baseline; generated reference subject to build/verification."
+      }
+    },
+    {
+      "id": "v2",
+      "registry_version_id": "v2",
+      "lifecycle_state": "evolving",
+      "semantic_source_ref": "v2/research-program@1226b0a5484f8f5d3a8d214e0d0f52f066b88999",
+      "canonical_source_root": "v2/ontology/source/modules/",
+      "module_selection": {
+        "strategy": "sorted_flat_glob",
+        "pattern": "*.ttl",
+        "ordering": "lexicographic_path_order",
+        "expected_modules": [
+          "v2/ontology/source/modules/00-metadata.ttl",
+          "v2/ontology/source/modules/10-core.ttl",
+          "v2/ontology/source/modules/20-xinfra.ttl",
+          "v2/ontology/source/modules/25-gate-d-disjointness.ttl",
+          "v2/ontology/source/modules/30-extensions.ttl",
+          "v2/ontology/source/modules/40-mappings.ttl"
+        ]
+      },
+      "build": {
+        "tool": "tools/v2_ontology/build_validate.py",
+        "command": "python tools/v2_ontology/build_validate.py --source-dir v2/ontology/source/modules --conceptual-model v2/ontouml/cm-pharme-v2.conceptual-model.json --baseline v2/ontology/baseline/formal-baseline.json --shapes v2/ontology/shapes/cm-pharme-v2.shacl.ttl --smoke-data v2/ontology/tests/formal-smoke.ttl --output-root <OUTPUT_ROOT>",
+        "output_root_contract": "isolated temporary/build directory; never hand-edit generated output",
+        "documentation_input_artifact": "distributions/cm-pharme-v2.ttl",
+        "build_manifest": "manifest.json",
+        "quality_report": "validation/quality-report.json"
+      },
+      "expected_fingerprint": {
+        "algorithm": "sha256",
+        "representation": "canonical_ntriples",
+        "value": "59ef47eeed732290736e60bfa1c6bf43a12d15df2f50cff931badb5938cc954a",
+        "authority": "v2/ontology/baseline/formal-baseline.json"
+      },
+      "expected_inventory": {
+        "canonical_triples": 642,
+        "conceptual_types": 87,
+        "owl_classes": 81,
+        "rdfs_datatypes": 6,
+        "object_properties": 52,
+        "datatype_properties": 5
+      },
+      "validation_boundary": {
+        "required_before_pages": true,
+        "repository_native_build_status": "PASS_ON_FROZEN_FORMAL_BASELINE",
+        "owl2dl_profile_status": "PASS_AT_RECORDED_FORMAL_BASELINE",
+        "hermit_status": "PASS_AT_RECORDED_FORMAL_BASELINE",
+        "research_lifecycle_status": "STABLE_TO_DATE_EVOLVING",
+        "pages_status_label": "Stable-to-date / Evolving; not frozen or final."
+      }
+    }
+  ],
+  "future_version_contract": {
+    "onboarding": "new registry entry plus new build-contract entry using the same interface",
+    "required_interface": [
+      "semantic_source_ref",
+      "canonical_source_root",
+      "module_selection",
+      "build.tool",
+      "build.command",
+      "build.documentation_input_artifact",
+      "build.build_manifest",
+      "expected_fingerprint",
+      "validation_boundary"
+    ],
+    "copied_pages_workflow_allowed": false
+  }
+}
