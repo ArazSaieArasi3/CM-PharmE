@@ -1,0 +1,39 @@
+name: Pages Registry Contract
+
+on:
+  pull_request:
+    paths:
+      - "docs/documentation/ontology-version-registry.json"
+      - "docs/documentation/ontology-version-registry.schema.json"
+      - "docs/documentation/documentation-surface-manifest.yaml"
+      - "tools/pages/validate_version_registry.py"
+      - "tools/pages/test_version_registry.py"
+      - "tools/pages/plan_pages_build.py"
+      - ".github/workflows/pages-registry-contract.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Validate multi-version registry contract
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate registry
+        run: python tools/pages/validate_version_registry.py
+
+      - name: Run V3/collision/immutable-history tests
+        run: python tools/pages/test_version_registry.py
+
+      - name: Resolve V1
+        run: python tools/pages/validate_version_registry.py --resolve v1
+
+      - name: Resolve V2
+        run: python tools/pages/validate_version_registry.py --resolve v2
+
+      - name: Generate common Pages build plan
+        run: python tools/pages/plan_pages_build.py
