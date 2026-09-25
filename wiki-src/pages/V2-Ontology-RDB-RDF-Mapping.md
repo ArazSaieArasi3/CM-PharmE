@@ -6,7 +6,7 @@
 
 The mapping registry is the explicit contract between selected ontology semantics and their relational realization. It prevents table/column structure from silently redefining ontology meaning.
 
-![DGM-ARC-006 Ontology RDB RDF semantic mapping](https://raw.githubusercontent.com/ArazSaieArasi3/CM-PharmE/main/wiki-src/diagrams/rendered/architecture/DGM-ARC-006--ontology-rdb-rdf-semantic-mapping.svg?sha=d7793dffb336)
+![DGM-ARC-006 Ontology RDB RDF semantic mapping](https://raw.githubusercontent.com/ArazSaieArasi3/CM-PharmE/main/wiki-src/diagrams/rendered/architecture/DGM-ARC-006--ontology-rdb-rdf-semantic-mapping.svg?sha=c6f2a63ee67d)
 
 ## Mapping registry purpose
 
