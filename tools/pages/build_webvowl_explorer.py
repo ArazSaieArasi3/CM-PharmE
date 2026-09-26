@@ -47,6 +47,17 @@ def main()->int:
     expected_route=route(rv)
     if vc["target_subpath"] != expected_route:
         print(f"ERROR: explorer route mismatch {vc['target_subpath']} != {expected_route}",file=sys.stderr); return 4
+
+    actual_frontend_tree=tree_digest(args.frontend_root)
+    expected_frontend_tree=cfg["webvowl"].get("expected_frontend_tree_sha256")
+    if not expected_frontend_tree or actual_frontend_tree != expected_frontend_tree:
+        print(f"ERROR: WebVOWL frontend tree drift {actual_frontend_tree} != {expected_frontend_tree}",file=sys.stderr); return 41
+
+    actual_vowl_sha=sha256_file(args.vowl_json)
+    expected_vowl_sha=vc.get("expected_vowl_json_sha256")
+    if not expected_vowl_sha or actual_vowl_sha != expected_vowl_sha:
+        print(f"ERROR: VOWL JSON drift for {args.version}: {actual_vowl_sha} != {expected_vowl_sha}",file=sys.stderr); return 42
+
     for p in (args.frontend_root/"index.html",args.frontend_root/"js/webvowl.js",args.frontend_root/"js/webvowl.app.js",args.vowl_json,args.ontology_input):
         if not p.is_file():
             print(f"ERROR: missing required input {p}",file=sys.stderr); return 5
@@ -91,6 +102,11 @@ def main()->int:
     if not isinstance(props,list):
         print("ERROR: VOWL property collection malformed",file=sys.stderr); return 9
 
+    expected_counts=vc.get("expected_vowl_projection_counts") or {}
+    actual_counts={"classes":len(classes),"properties":len(props)}
+    if expected_counts and actual_counts != expected_counts:
+        print(f"ERROR: VOWL projection counts drift for {args.version}: {actual_counts} != {expected_counts}",file=sys.stderr); return 43
+
     manifest={
       "schema_version":1,
       "version_id":args.version,
@@ -102,15 +118,15 @@ def main()->int:
       "explorer_route":"/"+vc["target_subpath"],
       "iframe_entry":"webvowl/index.html#cmpe",
       "vowl_data_path":"webvowl/data/"+vc["vowl_data_filename"],
-      "vowl_json_sha256":sha256_file(target_data),
+      "vowl_json_sha256":actual_vowl_sha,
       "ontology_input_sha256":sha256_file(args.ontology_input),
       "webvowl_version":cfg["webvowl"]["version"],
       "webvowl_source_commit":cfg["webvowl"]["exact_source_commit"],
       "owl2vowl_version":cfg["owl2vowl"]["version"],
       "owl2vowl_source_commit":cfg["owl2vowl"]["exact_source_commit"],
-      "frontend_tree_sha256_before_version_data":tree_digest(args.frontend_root),
+      "frontend_tree_sha256_before_version_data":actual_frontend_tree,
       "packaged_explorer_tree_sha256":tree_digest(web),
-      "vowl_counts":{"classes":len(classes),"properties":len(props)},
+      "vowl_counts":actual_counts,
       "bundled_dataset_count":len(list(data.glob("*.json"))),
       "ontology_selector_disabled":True,
       "generated_artifacts_are_authority":False,
