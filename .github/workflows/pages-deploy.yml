@@ -115,6 +115,20 @@ jobs:
           ref: 1226b0a5484f8f5d3a8d214e0d0f52f066b88999
           path: source-v2
 
+      - name: Checkout exact WebVOWL 1.1.7 source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          repository: VisualDataWeb/WebVOWL
+          ref: 28e7dd9540622e8cb723dc000824b5eef5ae775f
+          path: external/webvowl
+
+      - name: Checkout exact OWL2VOWL 0.3.7 source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          repository: VisualDataWeb/OWL2VOWL
+          ref: 2833ead00122ca252a0fd0e18c5e5b696d711d2c
+          path: external/owl2vowl
+
       - name: Set up Python
         uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
         with:
@@ -125,6 +139,11 @@ jobs:
         with:
           distribution: temurin
           java-version: "17"
+
+      - name: Set up Node 12 release-build runtime
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "12.22.12"
 
       - name: Install pinned semantic dependencies
         run: >-
@@ -176,8 +195,58 @@ jobs:
           python tools/pages/package_download_bundle.py             --version v1 --build-root build/input/v1             --source-ref main@595ea30a66644c1b130b6c1a781dc7afbd7ba284             --output-root build/site
           python tools/pages/package_download_bundle.py             --version v2 --build-root build/input/v2             --source-ref v2/research-program@1226b0a5484f8f5d3a8d214e0d0f52f066b88999             --output-root build/site
 
+      - name: Set up Java 8 converter runtime
+        uses: actions/setup-java@de7274f081f381c8f8158605e0321c36c376e2e6 # v6.0.1
+        with:
+          distribution: temurin
+          java-version: "8"
+
+      - name: Build and verify exact OWL2VOWL converter
+        shell: bash
+        run: |
+          set -euo pipefail
+          (cd external/owl2vowl && mvn -B package -P standalone-release -DskipTests)
+          python - <<'PY'
+          import hashlib, zipfile
+          from pathlib import Path
+          p=Path('external/owl2vowl/target/OWL2VOWL-0.3.7-shaded.jar')
+          h=hashlib.sha256()
+          with zipfile.ZipFile(p) as z:
+              for name in sorted(x for x in z.namelist() if not x.endswith('/')):
+                  h.update(name.encode()); h.update(b'\\0'); h.update(z.read(name)); h.update(b'\\n')
+          assert h.hexdigest() == 'f500951cdd4a0963fb80a96b974f463e8cfc84660f3b46ce802b14296e5e9aee', 'OWL2VOWL content drift'
+          PY
+
+      - name: Convert governed V1/V2 inputs
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p build/vowl
+          java -jar external/owl2vowl/target/OWL2VOWL-0.3.7-shaded.jar -file build/input/v1/distributions/cm-pharme.ttl -output build/vowl/v1.json
+          java -jar external/owl2vowl/target/OWL2VOWL-0.3.7-shaded.jar -file build/input/v2/distributions/cm-pharme-v2.ttl -output build/vowl/v2.json
+
+      - name: Build exact WebVOWL frontend
+        shell: bash
+        run: |
+          set -euo pipefail
+          (cd external/webvowl && npm install --ignore-scripts && npm run release)
+
+      - name: Package governed V1/V2 explorers
+        shell: bash
+        run: |
+          set -euo pipefail
+          python tools/pages/test_webvowl_v3_contract.py
+          python tools/pages/build_webvowl_explorer.py --version v1 --frontend-root external/webvowl/deploy --vowl-json build/vowl/v1.json --ontology-input build/input/v1/distributions/cm-pharme.ttl --source-ref main@595ea30a66644c1b130b6c1a781dc7afbd7ba284 --output-root build/site
+          python tools/pages/build_webvowl_explorer.py --version v2 --frontend-root external/webvowl/deploy --vowl-json build/vowl/v2.json --ontology-input build/input/v2/distributions/cm-pharme-v2.ttl --source-ref v2/research-program@1226b0a5484f8f5d3a8d214e0d0f52f066b88999 --output-root build/site
+
       - name: Build multi-version shell around governed artifacts
         run: python tools/pages/build_shell.py --output build/site
+
+      - name: Audit assembled WebVOWL explorers
+        run: >-
+          python tools/pages/test_webvowl_candidate.py
+          --site build/site
+          --output build/evidence/pages-272-webvowl-static-qa.json
 
       - name: Expose generated WIDOCO as directory entry points
         shell: bash

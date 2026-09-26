@@ -94,12 +94,22 @@ def main()->int:
         d=root/"downloads"
         for required in ("download-manifest.json","provenance.json","SHA256SUMS.txt"):
             if not (d/required).is_file(): errors.append(f"{v['id']}: missing download evidence {required}")
+        explorer=root/"explore"
+        for required in ("index.html","explorer-manifest.json","webvowl/index.html","webvowl/data/cmpe.json"):
+            if not (explorer/required).is_file(): errors.append(f"{v['id']}: missing explorer {required}")
+        if (explorer/"explorer-manifest.json").is_file():
+            e=load(explorer/"explorer-manifest.json")
+            if e.get("version_id")!=v["id"] or e.get("semantic_source_ref")!=v["semantic_source_ref"]:
+                errors.append(f"{v['id']}: explorer source/version binding mismatch")
+            if (explorer/"webvowl/data/cmpe.json").is_file() and e.get("vowl_json_sha256")!=sha256(explorer/"webvowl/data/cmpe.json"):
+                errors.append(f"{v['id']}: explorer dataset checksum mismatch")
         versions.append({
           "id":v["id"],"route":"/"+route+"/","lifecycle_state":v["lifecycle_state"],
           "semantic_source_ref":v["semantic_source_ref"],
           "documentation_fingerprint":v["documentation_input"]["fingerprint"],
           "reference_entry_sha256":sha256(ref/"index.html") if (ref/"index.html").is_file() else None,
           "download_manifest_sha256":sha256(d/"download-manifest.json") if (d/"download-manifest.json").is_file() else None,
+          "explorer_manifest_sha256":sha256(explorer/"explorer-manifest.json") if (explorer/"explorer-manifest.json").is_file() else None,
         })
 
     # Stable/current lifecycle safety.
@@ -128,7 +138,7 @@ def main()->int:
         "deploy_pages":policy["toolchain"]["deploy_pages"],
       },
       "public_deploy_enabled":policy["public_deploy_enabled"],
-      "webvowl_status":"DEFERRED_TO_ISSUE_272",
+      "webvowl_status":"ASSEMBLED_STATIC_QA_PASS" if not errors else "PREFLIGHT_FAILED",
       "rendered_public_verification_status":"DEFERRED_UNTIL_PUBLIC_DEPLOYMENT",
       "scanned_public_file_count":scanned,
       "versions":versions,
