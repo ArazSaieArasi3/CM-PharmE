@@ -7,6 +7,7 @@ on:
       - "docs/documentation/pages-271-widoco-adapter.md"
       - "pages-src/widoco/**"
       - "tools/pages/run_widoco.py"
+      - "tools/pages/audit_widoco_candidate.py"
       - ".github/workflows/pages-widoco-candidate.yml"
   workflow_dispatch:
 
@@ -106,12 +107,32 @@ jobs:
           --output build/pages-candidate/ontology/v2/current/reference
           --manifest-output build/evidence/v2-widoco.json
 
-      - name: Candidate smoke summary
+      - name: Audit V1 generated coverage and local links/assets
+        run: >-
+          python tools/pages/audit_widoco_candidate.py
+          --version v1
+          --ontology build/input/v1/distributions/cm-pharme.ttl
+          --candidate build/pages-candidate/ontology/v1.0.0/reference
+          --authority source-v1/ontology/validation/validation-report.json
+          --output build/evidence/v1-widoco-qa.json
+
+      - name: Audit V2 generated coverage and local links/assets
+        run: >-
+          python tools/pages/audit_widoco_candidate.py
+          --version v2
+          --ontology build/input/v2/distributions/cm-pharme-v2.ttl
+          --candidate build/pages-candidate/ontology/v2/current/reference
+          --authority docs/documentation/v2-current-pages-baseline.json
+          --output build/evidence/v2-widoco-qa.json
+
+      - name: Candidate QA summary
         shell: bash
         run: |
           set -euo pipefail
           cat build/evidence/v1-widoco.json
           cat build/evidence/v2-widoco.json
+          cat build/evidence/v1-widoco-qa.json
+          cat build/evidence/v2-widoco-qa.json
           test -s build/pages-candidate/ontology/v1.0.0/reference/cmpe-generation-manifest.json
           test -s build/pages-candidate/ontology/v2/current/reference/cmpe-generation-manifest.json
 

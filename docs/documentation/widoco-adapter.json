@@ -17,20 +17,23 @@
     "webvowl": false,
     "oops": false,
     "htaccess": false,
-    "manual_generated_html_edits_prohibited": true
+    "manual_generated_html_edits_prohibited": true,
+    "deterministic_html_link_normalization": true
   },
   "versions": {
     "v1": {
       "config": "pages-src/widoco/v1.properties",
       "intro": "pages-src/widoco/v1-intro.html",
       "target_subpath": "ontology/v1.0.0/reference/",
-      "source_ref": "main@595ea30a66644c1b130b6c1a781dc7afbd7ba284"
+      "source_ref": "main@595ea30a66644c1b130b6c1a781dc7afbd7ba284",
+      "semantic_namespace": "https://w3id.org/cm-pharme/"
     },
     "v2": {
       "config": "pages-src/widoco/v2.properties",
       "intro": "pages-src/widoco/v2-intro.html",
       "target_subpath": "ontology/v2/current/reference/",
-      "source_ref": "v2/research-program@1226b0a5484f8f5d3a8d214e0d0f52f066b88999"
+      "source_ref": "v2/research-program@1226b0a5484f8f5d3a8d214e0d0f52f066b88999",
+      "semantic_namespace": "https://w3id.org/cm-pharme/2.0/"
     }
   },
   "boundaries": [

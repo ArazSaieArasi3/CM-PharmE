@@ -8,7 +8,11 @@ import json
 import subprocess
 import sys
 import shutil
+import re
 from pathlib import Path
+from urllib.parse import urljoin, urlsplit
+
+from rdflib import Graph, URIRef
 
 ROOT = Path(__file__).resolve().parents[2]
 ADAPTER = ROOT / "docs/documentation/widoco-adapter.json"
@@ -21,6 +25,48 @@ def sha256(path: Path) -> str:
         for chunk in iter(lambda:f.read(1024*1024), b""):
             h.update(chunk)
     return h.hexdigest()
+
+
+LINK_ATTR_RE = re.compile(r"(?P<prefix>\b(?:href|src)=[\"'])(?P<value>[^\"']+)(?P<quote>[\"'])", re.I)
+
+
+def normalize_generated_html(root: Path, ontology: Path, semantic_namespace: str) -> dict:
+    """Apply deterministic adapter compatibility fixes; never hand-edit output."""
+    g=Graph()
+    g.parse(ontology, format="turtle")
+    semantic_iris={str(term) for triple in g for term in triple if isinstance(term, URIRef)}
+    changed=0
+    semantic_absolutized=0
+    slash_normalized=0
+
+    def rewrite_match(match):
+        nonlocal changed, semantic_absolutized, slash_normalized
+        original=match.group("value")
+        value=original.replace("\\", "/")
+        if value != original:
+            slash_normalized += 1
+        parts=urlsplit(value)
+        if not parts.scheme and not parts.netloc and value and not value.startswith(("#","/")):
+            absolute=urljoin(semantic_namespace, value)
+            if absolute in semantic_iris:
+                value=absolute
+                semantic_absolutized += 1
+        if value != original:
+            changed += 1
+        return match.group("prefix") + value + match.group("quote")
+
+    for html_file in sorted(root.rglob("*.html")):
+        text=html_file.read_text(encoding="utf-8", errors="replace")
+        normalized=LINK_ATTR_RE.sub(rewrite_match, text)
+        if normalized != text:
+            html_file.write_text(normalized, encoding="utf-8")
+
+    return {
+        "changed_link_attributes": changed,
+        "semantic_iri_links_absolutized": semantic_absolutized,
+        "backslash_links_normalized": slash_normalized,
+        "policy": "deterministic adapter post-processing only; manual generated HTML edits remain prohibited",
+    }
 
 
 def main() -> int:
@@ -91,6 +137,8 @@ def main() -> int:
         print(f"ERROR: WIDOCO produced no index page (exit={proc.returncode})", file=sys.stderr)
         return 8
 
+    normalization=normalize_generated_html(args.output, args.ontology, cfg["semantic_namespace"])
+
     marker=reg["semantic_source_ref"]
     html=(args.output/entry).read_text(encoding="utf-8",errors="replace")
     if marker not in html:
@@ -115,6 +163,7 @@ def main() -> int:
         "entry_page":entry,
         "generated_file_count":sum(1 for p in args.output.rglob("*") if p.is_file()),
         "manual_generated_html_edits_prohibited":adapter["invocation"]["manual_generated_html_edits_prohibited"],
+        "adapter_html_normalization":normalization,
         "webvowl_enabled":adapter["invocation"]["webvowl"],
         "oops_enabled":adapter["invocation"]["oops"],
         "generation_result":"PASS"
