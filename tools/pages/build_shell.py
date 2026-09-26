@@ -153,6 +153,30 @@ def version_card(output_root: Path, from_file: Path, version: dict) -> str:
 """
 
 
+def explorer_body(version: dict, version_root: Path) -> str | None:
+    path = version_root / "explore" / "explorer-manifest.json"
+    if not path.is_file():
+        return None
+    manifest = json.loads(path.read_text(encoding="utf-8"))
+    if manifest.get("semantic_source_ref") != version["semantic_source_ref"]:
+        raise ValueError(f"{version['id']}: explorer manifest source-ref mismatch")
+    return f"""
+<p class="eyebrow">{esc(version["reader_label"])}</p>
+<h1>Interactive exploration</h1>
+<p>{lifecycle_badge(version)} {esc(version["public_status_label"])}</p>
+<div class="notice"><strong>Interactive exploration boundary:</strong> WebVOWL is a visualization projection, not the complete logical/formal specification.</div>
+<dl class="metadata">
+  <dt>Exact semantic source ref</dt><dd><code>{esc(manifest["semantic_source_ref"])}</code></dd>
+  <dt>WebVOWL</dt><dd>{esc(manifest["webvowl_version"])}</dd>
+  <dt>OWL2VOWL</dt><dd>{esc(manifest["owl2vowl_version"])}</dd>
+  <dt>Dataset</dt><dd><code>{esc(manifest["vowl_json_sha256"])}</code></dd>
+</dl>
+<p><a href="../reference/">Formal reference</a> · <a href="{esc(WIKI_URL)}">Research Wiki</a> · <a href="{esc(exact_source_url(version))}">Exact semantic source</a></p>
+<p class="fallback"><strong>Non-interactive fallback:</strong> use the <a href="../reference/">Formal reference</a> if interactive visualization is unavailable or unsuitable.</p>
+<iframe class="explorer-frame" title="{esc(version["reader_label"])} interactive WebVOWL explorer" src="{esc(manifest["iframe_entry"])}"></iframe>
+"""
+
+
 def download_body(version: dict, version_root: Path) -> str | None:
     bundle = version_root / "downloads"
     manifest_path = bundle / "download-manifest.json"
@@ -315,7 +339,9 @@ def build(registry_path: Path, output_root: Path, css_path: Path) -> dict:
         for slug, label, note in VERSION_SUBROUTES:
             subfile = version_root / slug / "index.html"
             special = None
-            if slug == "downloads":
+            if slug == "explore":
+                special = explorer_body(version, version_root)
+            elif slug == "downloads":
                 special = download_body(version, version_root)
             elif slug == "provenance":
                 special = provenance_body(version, version_root)

@@ -42,3 +42,9 @@ code { overflow-wrap: anywhere; }
   .metadata dd { margin-bottom: .7rem; }
   main { padding-top: 1.5rem; }
 }
+
+.explorer-frame { width: 100%; min-height: 72vh; border: 1px solid var(--line); border-radius: .75rem; background: var(--surface); }
+.fallback { font-size: .95rem; color: var(--muted); }
+@media (max-width: 720px) {
+  .explorer-frame { min-height: 66vh; }
+}

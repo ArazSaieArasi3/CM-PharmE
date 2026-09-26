@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "issue": 272,
+  "authority_statement": "WebVOWL is an interactive exploration projection, not the canonical logical/formal specification.",
+  "webvowl": {
+    "version": "1.1.7",
+    "repository": "VisualDataWeb/WebVOWL",
+    "exact_source_commit": "28e7dd9540622e8cb723dc000824b5eef5ae775f",
+    "release_tag": "v1.1.7",
+    "node_version": "12.22.12",
+    "build_command": "npm install --ignore-scripts && npm run release",
+    "expected_frontend_tree_sha256": "94a74bead0c5b4ab1be4d069dea48837016eee2bee88ecdec1c9396610e2705c"
+  },
+  "owl2vowl": {
+    "version": "0.3.7",
+    "repository": "VisualDataWeb/OWL2VOWL",
+    "exact_source_commit": "2833ead00122ca252a0fd0e18c5e5b696d711d2c",
+    "release_tag": "0.3.7",
+    "java_version": "8",
+    "build_command": "mvn -B package -P standalone-release -DskipTests",
+    "jar_path": "target/OWL2VOWL-0.3.7-shaded.jar",
+    "expected_shaded_jar_content_sha256": "f500951cdd4a0963fb80a96b974f463e8cfc84660f3b46ce802b14296e5e9aee",
+    "raw_jar_sha256_reproducible": false,
+    "reproducibility_basis": "sorted ZIP entry names plus uncompressed entry bytes; ZIP metadata/timestamps excluded"
+  },
+  "versions": {
+    "v1": {
+      "semantic_source_ref": "main@595ea30a66644c1b130b6c1a781dc7afbd7ba284",
+      "target_subpath": "ontology/v1.0.0/explore/",
+      "vowl_data_filename": "cmpe.json",
+      "expected_vowl_json_sha256": "c45fa53aab846a1bf4a2c73d1cb4d21f3b0011810c124ad4b952a36ae33c5b2f",
+      "expected_vowl_projection_counts": {
+        "classes": 44,
+        "properties": 42
+      }
+    },
+    "v2": {
+      "semantic_source_ref": "v2/research-program@1226b0a5484f8f5d3a8d214e0d0f52f066b88999",
+      "target_subpath": "ontology/v2/current/explore/",
+      "vowl_data_filename": "cmpe.json",
+      "expected_vowl_json_sha256": "70f7cd6e6853bb98d85afce2a5a22aca14987b18e71356355257a7c9ff5f6de4",
+      "expected_vowl_projection_counts": {
+        "classes": 102,
+        "properties": 110
+      }
+    }
+  },
+  "integration": {
+    "iframe_subpath": "webvowl/index.html#cmpe",
+    "ontology_selector_disabled": true,
+    "bundled_sample_ontologies_removed": true,
+    "source_switching_from_ui_prohibited": true,
+    "formal_reference_fallback_required": true,
+    "wiki_link_required": true,
+    "exact_source_ref_required": true,
+    "v3_registry_pattern_required_before_closure": true,
+    "public_browser_verification_deferred_to_issue": 275
+  },
+  "limitations": [
+    "WebVOWL/VOWL is a visualization projection and is not a complete representation of OWL semantics.",
+    "The static Pages integration uses preconverted VOWL JSON; no runtime OWL2VOWL conversion service is exposed.",
+    "Public browser console/load/search/zoom verification remains a deployment-stage requirement."
+  ]
+}
