@@ -2,11 +2,21 @@
 
 > **Version scope:** V2  
 > **Status:** Stable-to-date / Evolving  
-> **Updated:** 2026-09-23
+> **Updated:** 2026-09-26
 
 ## Formal baseline
 
 Current formal development version: **2.0.0-alpha.1**
+
+## Public generated surfaces
+
+- [Open generated V2 current formal reference](https://arazsaiearasi3.github.io/CM-PharmE/ontology/v2/current/reference/) — exhaustive generated reference for the registered current source ref.
+- [Explore V2 current interactively with WebVOWL](https://arazsaiearasi3.github.io/CM-PharmE/ontology/v2/current/explore/) — visualization aid, not the complete logical specification.
+- [Download governed V2 current serializations](https://arazsaiearasi3.github.io/CM-PharmE/ontology/v2/current/downloads/) — checksum/provenance-bound generated artifacts.
+- [View exact V2 semantic source](https://github.com/ArazSaieArasi3/CM-PharmE/tree/1226b0a5484f8f5d3a8d214e0d0f52f066b88999) — semantic authority.
+
+The `/ontology/v2/current/` Pages route is explicitly **evolving** and must not be cited as if it were a frozen V2.0.0 release.
+
 
 Key metrics:
 - 642 asserted triples;
