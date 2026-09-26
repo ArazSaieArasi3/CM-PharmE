@@ -6,6 +6,9 @@ on:
       - "docs/documentation/download-bundle-contract.json"
       - "docs/documentation/pages-273-download-contract.md"
       - "tools/pages/package_download_bundle.py"
+      - "tools/pages/test_download_contract.py"
+      - "tools/pages/test_download_integration.py"
+      - "tools/pages/build_shell.py"
       - ".github/workflows/pages-download-bundle.yml"
   workflow_dispatch:
 
@@ -72,13 +75,16 @@ jobs:
           --source-ref v2/research-program@1226b0a5484f8f5d3a8d214e0d0f52f066b88999
           --output build/evidence/v2-input.json
 
+      - name: Validate download contract, V3 dry run and collision guard
+        run: python tools/pages/test_download_contract.py
+
       - name: Package and verify V1 downloads
         run: >-
           python tools/pages/package_download_bundle.py
           --version v1
           --build-root build/input/v1
           --source-ref main@595ea30a66644c1b130b6c1a781dc7afbd7ba284
-          --output-root build/pages-downloads
+          --output-root build/pages-candidate
 
       - name: Package and verify V2 downloads
         run: >-
@@ -86,14 +92,14 @@ jobs:
           --version v2
           --build-root build/input/v2
           --source-ref v2/research-program@1226b0a5484f8f5d3a8d214e0d0f52f066b88999
-          --output-root build/pages-downloads
+          --output-root build/pages-candidate
 
       - name: Verify version isolation and mandatory files
         shell: bash
         run: |
           set -euo pipefail
-          v1=build/pages-downloads/ontology/v1.0.0/downloads
-          v2=build/pages-downloads/ontology/v2/current/downloads
+          v1=build/pages-candidate/ontology/v1.0.0/downloads
+          v2=build/pages-candidate/ontology/v2/current/downloads
           test -d "$v1"
           test -d "$v2"
           test "$v1" != "$v2"
@@ -107,16 +113,35 @@ jobs:
           grep -q '"lifecycle_state": "evolving"' "$v2/download-manifest.json"
           grep -q 'Stable-to-date / Evolving' "$v2/download-manifest.json"
 
+      - name: Negative test — refuse silent V1 bundle overwrite
+        shell: bash
+        run: |
+          set +e
+          python tools/pages/package_download_bundle.py \
+            --version v1 \
+            --build-root build/input/v1 \
+            --source-ref main@595ea30a66644c1b130b6c1a781dc7afbd7ba284 \
+            --output-root build/pages-candidate
+          status=$?
+          set -e
+          test "$status" -ne 0
+
       - name: Show manifests
         run: |
-          cat build/pages-downloads/ontology/v1.0.0/downloads/download-manifest.json
-          cat build/pages-downloads/ontology/v2/current/downloads/download-manifest.json
+          cat build/pages-candidate/ontology/v1.0.0/downloads/download-manifest.json
+          cat build/pages-candidate/ontology/v2/current/downloads/download-manifest.json
 
-      - name: Upload verified download bundles
+      - name: Build shell around verified bundles
+        run: python tools/pages/build_shell.py --output build/pages-candidate
+
+      - name: Audit assembled download pages and sample downloads
+        run: python tools/pages/test_download_integration.py --site build/pages-candidate
+
+      - name: Upload verified assembled Pages candidate
         uses: actions/upload-artifact@v4
         with:
-          name: cm-pharme-pages-download-bundles
+          name: cm-pharme-pages-download-integration
           path: |
-            build/pages-downloads/
+            build/pages-candidate/
             build/evidence/
           if-no-files-found: error

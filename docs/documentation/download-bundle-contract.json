@@ -18,7 +18,8 @@
     "verify_graph_isomorphism": true,
     "verify_checksums": true,
     "manual_copy_or_edit_prohibited": true,
-    "generic_latest_route_prohibited": true
+    "generic_latest_route_prohibited": true,
+    "evolution_boundary_required": true
   },
   "versions": {
     "v1": {
@@ -30,6 +31,11 @@
         "rdfxml_rdf": "distributions/cm-pharme.rdf",
         "jsonld": "distributions/cm-pharme.jsonld",
         "canonical_ntriples": "distributions/cm-pharme.nt"
+      },
+      "evolution": {
+        "repository_changelog": "CHANGELOG.md",
+        "curated_wiki_page": "V1-to-V2-Research-Evolution",
+        "generated_changelog_replaces_curated_evolution": false
       }
     },
     "v2": {
@@ -41,11 +47,22 @@
         "rdfxml_rdf": "distributions/cm-pharme-v2.rdf",
         "jsonld": "distributions/cm-pharme-v2.jsonld",
         "canonical_ntriples": "distributions/cm-pharme-v2.nt"
+      },
+      "evolution": {
+        "repository_changelog": "CHANGELOG.md",
+        "curated_wiki_page": "V1-to-V2-Research-Evolution",
+        "generated_changelog_replaces_curated_evolution": false
       }
     }
   },
   "future_version_contract": {
     "onboarding": "add version-registry entry plus one download-bundle contract entry; reuse common packager/workflow",
-    "copied_workflow_allowed": false
+    "copied_workflow_allowed": false,
+    "required_entry_fields": [
+      "source_ref",
+      "target_subpath",
+      "files",
+      "evolution"
+    ]
   }
 }

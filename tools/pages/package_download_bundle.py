@@ -68,11 +68,14 @@ def main() -> int:
     p.add_argument("--build-root", type=Path, required=True)
     p.add_argument("--source-ref", required=True)
     p.add_argument("--output-root", type=Path, required=True)
+    p.add_argument("--registry", type=Path, default=REGISTRY)
+    p.add_argument("--build-contract", type=Path, default=BUILD_CONTRACT)
+    p.add_argument("--download-contract", type=Path, default=DOWNLOAD_CONTRACT)
     args = p.parse_args()
 
-    registry = load_json(REGISTRY)
-    builds = load_json(BUILD_CONTRACT)
-    downloads = load_json(DOWNLOAD_CONTRACT)
+    registry = load_json(args.registry)
+    builds = load_json(args.build_contract)
+    downloads = load_json(args.download_contract)
 
     rv = next((v for v in registry["versions"] if v["id"] == args.version), None)
     bv = next((v for v in builds["versions"] if v["id"] == args.version), None)
@@ -156,6 +159,11 @@ def main() -> int:
         "citation_guidance_path": "/" + route + "citation/",
         "research_wiki_url": WIKI_URL,
         "repository_url": REPO_URL,
+        "evolution": {
+            "repository_changelog_url": REPO_URL + "/blob/main/CHANGELOG.md",
+            "curated_evolution_wiki_url": WIKI_URL + "/V1-to-V2-Research-Evolution",
+            "boundary": "The repository changelog is a technical/generated evolution aid and does not replace the curated research-evolution narrative in the Wiki."
+        },
         "generated_artifacts_are_authority": False,
         "generated_artifacts_label": "Generated publication artifacts derived from governed semantic source.",
         "artifacts": artifacts,

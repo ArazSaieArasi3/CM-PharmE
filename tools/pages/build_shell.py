@@ -153,6 +153,60 @@ def version_card(output_root: Path, from_file: Path, version: dict) -> str:
 """
 
 
+def download_body(version: dict, version_root: Path) -> str | None:
+    bundle = version_root / "downloads"
+    manifest_path = bundle / "download-manifest.json"
+    if not manifest_path.is_file():
+        return None
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    if manifest.get("semantic_source_ref") != version["semantic_source_ref"]:
+        raise ValueError(f"{version['id']}: download manifest source-ref mismatch")
+    items = "".join(
+        f'<li><a href="{esc(item["filename"])}">{esc(item["filename"])}</a> '
+        f'— <code>sha256:{esc(item["sha256"])}</code></li>'
+        for item in manifest["artifacts"]
+    )
+    evolution = manifest.get("evolution", {})
+    return f"""
+<p class="eyebrow">{esc(version["reader_label"])}</p>
+<h1>Downloads & serializations</h1>
+<p>{lifecycle_badge(version)} {esc(version["public_status_label"])}</p>
+<div class="notice"><strong>Generated-artifact boundary:</strong> these files are derived publication artifacts. Canonical semantic source remains authoritative.</div>
+<h2>Verified serializations</h2>
+<ul>{items}</ul>
+<h2>Verification & provenance</h2>
+<ul>
+  <li><a href="download-manifest.json">Download manifest</a></li>
+  <li><a href="provenance.json">Provenance manifest</a></li>
+  <li><a href="SHA256SUMS.txt">SHA-256 checksums</a></li>
+</ul>
+<h2>Evolution & changelog</h2>
+<p><a href="{esc(evolution.get("repository_changelog_url", REPO_URL + "/blob/main/CHANGELOG.md"))}">Repository changelog</a> ·
+<a href="{esc(evolution.get("curated_evolution_wiki_url", WIKI_URL))}">Curated research evolution</a></p>
+<p><strong>Boundary:</strong> {esc(evolution.get("boundary", "The repository changelog is a technical evolution aid and does not replace the curated research-evolution narrative in the Wiki."))}</p>
+"""
+
+
+def provenance_body(version: dict, version_root: Path) -> str | None:
+    path = version_root / "downloads" / "provenance.json"
+    if not path.is_file():
+        return None
+    provenance = json.loads(path.read_text(encoding="utf-8"))
+    return f"""
+<p class="eyebrow">{esc(version["reader_label"])}</p>
+<h1>Provenance & build metadata</h1>
+<p>{lifecycle_badge(version)} {esc(version["public_status_label"])}</p>
+<div class="notice"><strong>Authority boundary:</strong> provenance describes the generated Pages bundle; it does not redefine ontology semantics.</div>
+<dl class="metadata">
+  <dt>Exact semantic source</dt><dd><code>{esc(provenance["semantic_source_ref"])}</code></dd>
+  <dt>Build tool</dt><dd><code>{esc(provenance["build_tool"])}</code></dd>
+  <dt>Canonical graph fingerprint</dt><dd><code>{esc(provenance["canonical_graph_fingerprint_sha256"])}</code></dd>
+  <dt>Governed input SHA-256</dt><dd><code>{esc(provenance["governed_documentation_input_sha256"])}</code></dd>
+</dl>
+<p><a href="../downloads/provenance.json">Machine-readable provenance</a> · <a href="../downloads/download-manifest.json">Download manifest</a></p>
+"""
+
+
 def build(registry_path: Path, output_root: Path, css_path: Path) -> dict:
     registry = read_registry(registry_path)
     routes = validate_routes(registry)
@@ -260,18 +314,26 @@ def build(registry_path: Path, output_root: Path, css_path: Path) -> dict:
 
         for slug, label, note in VERSION_SUBROUTES:
             subfile = version_root / slug / "index.html"
-            write_page(
-                output_root,
-                f"{route}/{slug}/index.html",
-                f"{version['reader_label']} — {label}",
-                f"""
+            special = None
+            if slug == "downloads":
+                special = download_body(version, version_root)
+            elif slug == "provenance":
+                special = provenance_body(version, version_root)
+            body = special or f"""
 <p class="eyebrow">{esc(version["reader_label"])}</p>
 <h1>{esc(label)}</h1>
 <p>{lifecycle_badge(version)} {esc(version["public_status_label"])}</p>
 <div class="notice">{esc(note)}</div>
+"""
+            body += f"""
 <p><a class="back-link" href="{esc(rel_href(subfile, root_path))}">Back to version overview</a></p>
 <p><a href="{esc(exact_source_url(version))}">Exact semantic source</a> · <a href="{esc(WIKI_URL)}">Research Wiki</a></p>
-""",
+"""
+            write_page(
+                output_root,
+                f"{route}/{slug}/index.html",
+                f"{version['reader_label']} — {label}",
+                body,
                 version_root=version_root,
             )
             inventory.append({"route": f"/{route}/{slug}/", "kind": slug, "version_id": version["id"]})
