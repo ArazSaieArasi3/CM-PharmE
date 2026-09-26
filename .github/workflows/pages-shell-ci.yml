@@ -1,0 +1,34 @@
+name: Pages Shell CI
+
+on:
+  pull_request:
+    paths:
+      - "pages-src/**"
+      - "tools/pages/build_shell.py"
+      - "tools/pages/test_shell.py"
+      - "docs/documentation/ontology-version-registry.json"
+      - "docs/documentation/pages-270-information-architecture.md"
+      - ".github/workflows/pages-shell-ci.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  shell:
+    name: Build and audit multi-version Pages shell
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build static Pages shell
+        run: python tools/pages/build_shell.py --output build/pages-shell
+      - name: Run shell acceptance tests
+        run: python tools/pages/test_shell.py
+      - name: Show route inventory
+        run: cat build/pages-shell/route-inventory.json
+      - name: Upload deployable shell artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: cm-pharme-pages-shell
+          path: build/pages-shell/
+          if-no-files-found: error
