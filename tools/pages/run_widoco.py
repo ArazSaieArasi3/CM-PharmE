@@ -7,6 +7,7 @@ import hashlib
 import json
 import subprocess
 import sys
+import shutil
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -66,6 +67,20 @@ def main() -> int:
     log=args.manifest_output.parent / f"widoco-{args.version}.log"
     log.parent.mkdir(parents=True,exist_ok=True)
     log.write_text(proc.stdout,encoding="utf-8")
+
+    # WIDOCO places slash-namespace ontologies under <out>/doc/. Normalize the
+    # generated tree to the governed Pages target without editing generated HTML.
+    nested=args.output/"doc"
+    direct_has_index=any((args.output/c).is_file() for c in ("index-en.html","index.html"))
+    nested_has_index=any((nested/c).is_file() for c in ("index-en.html","index.html"))
+    if not direct_has_index and nested_has_index:
+        for child in list(nested.iterdir()):
+            target=args.output/child.name
+            if target.exists():
+                print(f"ERROR: cannot normalize WIDOCO doc/ output; target exists: {target}", file=sys.stderr)
+                return 8
+            shutil.move(str(child), str(target))
+        nested.rmdir()
 
     entry=None
     for candidate in ("index-en.html","index.html"):
