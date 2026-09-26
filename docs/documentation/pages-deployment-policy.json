@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "issue": 275,
+  "public_deploy_enabled": false,
+  "deployment_source": "github-actions",
+  "deployment_environment": "github-pages",
+  "candidate_artifact_name": "github-pages",
+  "relevant_main_paths": [
+    "ontology/source/**",
+    "ontology/validation/**",
+    "tools/ontology/**",
+    "docs/documentation/**",
+    "pages-src/**",
+    "tools/pages/**",
+    ".github/workflows/pages-*.yml",
+    "CHANGELOG.md"
+  ],
+  "excluded_examples": [
+    "README.md",
+    "LICENSE",
+    "wiki-src/pages/ordinary-prose-only.md",
+    ".github/ISSUE_TEMPLATE/example.md"
+  ],
+  "v2_trigger_bridge": {
+    "workflow_name": "CM-PharmE 2.0 Formal Ontology CI",
+    "branch_pattern": "v2/**",
+    "rule": "A successful V2 semantic-CI completion may request a Pages candidate build only when its head SHA already equals the V2 exact source SHA in the main-branch version registry. Otherwise Pages waits for the governed registry update on main."
+  },
+  "deployment_guards": {
+    "manual_dispatch_only_until_public_enablement": true,
+    "require_main_branch": true,
+    "require_public_deploy_enabled_true": true,
+    "build_job_separate_from_deploy_job": true,
+    "semantic_failure_blocks_artifact": true,
+    "stable_path_overwrite_guard_required": true,
+    "rendered_verification_required_after_public_deploy": true
+  },
+  "toolchain": {
+    "checkout": {
+      "version": "v7.0.1",
+      "sha": "3d3c42e5aac5ba805825da76410c181273ba90b1"
+    },
+    "setup_python": {
+      "version": "v7.0.0",
+      "sha": "5fda3b95a4ea91299a34e894583c3862153e4b97"
+    },
+    "setup_java": {
+      "version": "v6.0.1",
+      "sha": "de7274f081f381c8f8158605e0321c36c376e2e6"
+    },
+    "configure_pages": {
+      "version": "v6.0.0",
+      "sha": "45bfe0192ca1faeb007ade9deae92b16b8254a0d"
+    },
+    "upload_pages_artifact": {
+      "version": "v5.0.0",
+      "sha": "fc324d3547104276b827a68afc52ff2a11cc49c9"
+    },
+    "deploy_pages": {
+      "version": "v5.0.1",
+      "sha": "368f82528645a54fb793d4d04e342629a3f51346"
+    },
+    "widoco": {
+      "version": "1.4.25",
+      "jar_sha256": "be57a270fffb91e55810fa308717e704a44e2e7c027a3d68125a49da6c8b4e2b"
+    }
+  }
+}
