@@ -63,6 +63,8 @@ def verify(base: str) -> dict:
             assert page.get_by_role("link", name="Formal reference").count() >= 1
             frame = page.frame_locator("iframe.explorer-frame")
             frame.locator("#graph svg .nodeContainer .node").first.wait_for(timeout=90000)
+            frame.locator("#loading-info").wait_for(state="hidden", timeout=120000)
+            frame.locator("#graph svg .nodeContainer .node").first.wait_for(state="visible", timeout=30000)
             node_count = frame.locator("#graph svg .nodeContainer .node").count()
             assert node_count > 0, f"{version['id']}: graph contains no nodes"
             search = frame.locator("#search-input-text")
@@ -75,7 +77,7 @@ def verify(base: str) -> dict:
             zoom.dispatch_event("mouseup")
             assert frame.locator("#graph svg .nodeContainer .node").count() > 0
             page.screenshot(path=f"public-{version['id']}-explore.png", full_page=True)
-            results.append({"version": version["id"], "url": explore, "source_ref": version["semantic_source_ref"], "dataset_sha256": manifest["vowl_json_sha256"], "graph_nodes": node_count, "search_results": search_results, "zoom_interaction": "PASS", "screenshot": f"public-{version['id']}-explore.png"})
+            results.append({"version": version["id"], "url": explore, "source_ref": version["semantic_source_ref"], "dataset_sha256": manifest["vowl_json_sha256"], "graph_nodes": node_count, "render_complete": True, "search_results": search_results, "zoom_interaction": "PASS", "screenshot": f"public-{version['id']}-explore.png"})
             context.close()
         browser.close()
     assert results[0]["dataset_sha256"] != results[1]["dataset_sha256"], "version datasets identical"
