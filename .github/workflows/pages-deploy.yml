@@ -357,6 +357,9 @@ jobs:
           --base-url https://arazsaiearasi3.github.io/CM-PharmE/
           --output public-verification.json
 
+      - name: Prove verifier rejects an intentionally invalid public surface
+        run: python tools/pages/test_public_verification_failure_contract.py
+
       - name: Preserve rendered verification evidence
         if: always()
         uses: actions/upload-artifact@v4
