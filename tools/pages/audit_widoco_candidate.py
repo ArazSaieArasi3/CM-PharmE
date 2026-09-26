@@ -49,6 +49,16 @@ def inventory(g: Graph) -> dict[str, set[str]]:
     }
 
 
+def canonical_inventory(version: str, inv: dict[str, set[str]]) -> dict[str, set[str]]:
+    if version == "v1":
+        return {
+            "classes": {iri for iri in inv["classes"] if iri.startswith("https://w3id.org/cm-pharme/concept/")},
+            "object_properties": {iri for iri in inv["object_properties"] if iri.startswith("https://w3id.org/cm-pharme/relation/")},
+            "datatype_properties": set(inv["datatype_properties"]),
+        }
+    return {kind: set(values) for kind, values in inv.items()}
+
+
 def expected_counts(version: str, authority: dict) -> tuple[dict[str, int | None], dict[str, str]]:
     if version == "v1":
         ec = authority["expected_counts"]
@@ -189,12 +199,13 @@ def main() -> int:
 
     g = load_graph(args.ontology)
     inv = inventory(g)
+    canonical = canonical_inventory(args.version, inv)
     authority = json.loads(args.authority.read_text(encoding="utf-8"))
     expected, sources = expected_counts(args.version, authority)
 
     count_checks = {}
     count_failures = []
-    for kind, entities in inv.items():
+    for kind, entities in canonical.items():
         actual = len(entities)
         exp = expected[kind]
         status = "PASS"
@@ -234,6 +245,15 @@ def main() -> int:
         "candidate_root": str(args.candidate),
         "entry_page": str(entry.relative_to(args.candidate)),
         "inventory_reconciliation": count_checks,
+        "full_formal_inventory": {
+            kind: {
+                "all_declared": len(inv[kind]),
+                "canonical_research_inventory": len(canonical[kind]),
+                "helper_or_meta_entities": len(inv[kind] - canonical[kind]),
+                "helper_or_meta_iris": sorted(inv[kind] - canonical[kind]),
+            }
+            for kind in inv
+        },
         "generated_reference_coverage": coverage,
         "link_asset_audit": {
             "html_file_count": len(list(args.candidate.rglob("*.html"))),
@@ -244,6 +264,7 @@ def main() -> int:
         },
         "overall": "PASS" if not count_failures and not missing_all and not broken else "FAIL",
         "notes": [
+            "V1 canonical research inventory is namespace-scoped: concept/* classes and relation/* object properties. Meta/helper OWL entities remain visible and are separately reported rather than counted as canonical research concepts/relations.",
             "V1 datatype-property count is not promoted to a frozen authority when the exact-ref V1 validation report does not independently declare one.",
             "Coverage means every governed OWL class/object-property/datatype-property IRI is present in the generated WIDOCO entry page.",
             "External HTTP(S) links are out of scope for this local candidate integrity audit; public rendered external-link checks belong to #275.",
