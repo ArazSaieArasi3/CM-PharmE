@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "contract_name": "CM-PharmE Pages download bundle",
+  "authority_model": "Generated downloads are derived publication artifacts; canonical semantic source remains authoritative.",
+  "common": {
+    "required_serialization_roles": [
+      "turtle",
+      "rdfxml_owl",
+      "rdfxml_rdf",
+      "jsonld",
+      "canonical_ntriples"
+    ],
+    "required_bundle_files": [
+      "download-manifest.json",
+      "provenance.json",
+      "SHA256SUMS.txt"
+    ],
+    "verify_graph_isomorphism": true,
+    "verify_checksums": true,
+    "manual_copy_or_edit_prohibited": true,
+    "generic_latest_route_prohibited": true
+  },
+  "versions": {
+    "v1": {
+      "source_ref": "main@595ea30a66644c1b130b6c1a781dc7afbd7ba284",
+      "target_subpath": "ontology/v1.0.0/downloads/",
+      "files": {
+        "turtle": "distributions/cm-pharme.ttl",
+        "rdfxml_owl": "distributions/cm-pharme.owl",
+        "rdfxml_rdf": "distributions/cm-pharme.rdf",
+        "jsonld": "distributions/cm-pharme.jsonld",
+        "canonical_ntriples": "distributions/cm-pharme.nt"
+      }
+    },
+    "v2": {
+      "source_ref": "v2/research-program@1226b0a5484f8f5d3a8d214e0d0f52f066b88999",
+      "target_subpath": "ontology/v2/current/downloads/",
+      "files": {
+        "turtle": "distributions/cm-pharme-v2.ttl",
+        "rdfxml_owl": "distributions/cm-pharme-v2.owl",
+        "rdfxml_rdf": "distributions/cm-pharme-v2.rdf",
+        "jsonld": "distributions/cm-pharme-v2.jsonld",
+        "canonical_ntriples": "distributions/cm-pharme-v2.nt"
+      }
+    }
+  },
+  "future_version_contract": {
+    "onboarding": "add version-registry entry plus one download-bundle contract entry; reuse common packager/workflow",
+    "copied_workflow_allowed": false
+  }
+}
