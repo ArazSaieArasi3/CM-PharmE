@@ -19,7 +19,9 @@
     "java_version": "8",
     "build_command": "mvn -B package -P standalone-release -DskipTests",
     "jar_path": "target/OWL2VOWL-0.3.7-shaded.jar",
-    "expected_shaded_jar_sha256": "b8c5c6227b258634bcfd0bfda6e334b78ebedc839a0b79c25537acef4da5e607"
+    "expected_shaded_jar_content_sha256": null,
+    "raw_jar_sha256_reproducible": false,
+    "reproducibility_basis": "sorted ZIP entry names plus uncompressed entry bytes; ZIP metadata/timestamps excluded"
   },
   "versions": {
     "v1": {
