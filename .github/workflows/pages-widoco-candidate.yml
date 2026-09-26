@@ -1,0 +1,125 @@
+name: Pages WIDOCO Candidate
+
+on:
+  pull_request:
+    paths:
+      - "docs/documentation/widoco-adapter.json"
+      - "docs/documentation/pages-271-widoco-adapter.md"
+      - "pages-src/widoco/**"
+      - "tools/pages/run_widoco.py"
+      - ".github/workflows/pages-widoco-candidate.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  generate:
+    name: Generate governed V1/V2 WIDOCO candidates
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - name: Checkout adapter branch
+        uses: actions/checkout@v4
+
+      - name: Checkout exact V1 source
+        uses: actions/checkout@v4
+        with:
+          ref: 595ea30a66644c1b130b6c1a781dc7afbd7ba284
+          path: source-v1
+
+      - name: Checkout exact V2 current source
+        uses: actions/checkout@v4
+        with:
+          ref: 1226b0a5484f8f5d3a8d214e0d0f52f066b88999
+          path: source-v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Set up Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Install pinned semantic build dependencies
+        run: >-
+          python -m pip install --disable-pip-version-check
+          'rdflib==7.5.0'
+          'pyshacl==0.31.0'
+
+      - name: Download and verify pinned WIDOCO
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p build/tools
+          curl --fail --location --silent --show-error             "https://github.com/dgarijo/Widoco/releases/download/v1.4.25/widoco-1.4.25-jar-with-dependencies_JDK-17.jar"             --output build/tools/widoco.jar
+          echo "be57a270fffb91e55810fa308717e704a44e2e7c027a3d68125a49da6c8b4e2b  build/tools/widoco.jar" | sha256sum --check --strict
+          java -jar build/tools/widoco.jar --version
+
+      - name: Rebuild governed V1 documentation input
+        run: >-
+          bash -lc 'cd source-v1 &&
+          python tools/ontology/build.py --output-root "$GITHUB_WORKSPACE/build/input/v1"'
+
+      - name: Gate V1 documentation input
+        run: >-
+          python tools/pages/resolve_documentation_input.py
+          --version v1
+          --build-root build/input/v1
+          --source-ref main@595ea30a66644c1b130b6c1a781dc7afbd7ba284
+          --output build/evidence/v1-input.json
+
+      - name: Rebuild governed V2 current documentation input
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd source-v2
+          python tools/v2_ontology/build_validate.py             --source-dir v2/ontology/source/modules             --conceptual-model v2/ontouml/cm-pharme-v2.conceptual-model.json             --baseline "$GITHUB_WORKSPACE/docs/documentation/v2-current-pages-baseline.json"             --shapes v2/ontology/shapes/cm-pharme-v2.shacl.ttl             --smoke-data v2/ontology/tests/formal-smoke.ttl             --output-root "$GITHUB_WORKSPACE/build/input/v2"             --require-shacl
+
+      - name: Gate V2 documentation input
+        run: >-
+          python tools/pages/resolve_documentation_input.py
+          --version v2
+          --build-root build/input/v2
+          --source-ref v2/research-program@1226b0a5484f8f5d3a8d214e0d0f52f066b88999
+          --output build/evidence/v2-input.json
+
+      - name: Generate V1 WIDOCO reference candidate
+        run: >-
+          python tools/pages/run_widoco.py
+          --version v1
+          --jar build/tools/widoco.jar
+          --ontology build/input/v1/distributions/cm-pharme.ttl
+          --output build/pages-candidate/ontology/v1.0.0/reference
+          --manifest-output build/evidence/v1-widoco.json
+
+      - name: Generate V2 WIDOCO reference candidate
+        run: >-
+          python tools/pages/run_widoco.py
+          --version v2
+          --jar build/tools/widoco.jar
+          --ontology build/input/v2/distributions/cm-pharme-v2.ttl
+          --output build/pages-candidate/ontology/v2/current/reference
+          --manifest-output build/evidence/v2-widoco.json
+
+      - name: Candidate smoke summary
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat build/evidence/v1-widoco.json
+          cat build/evidence/v2-widoco.json
+          test -s build/pages-candidate/ontology/v1.0.0/reference/cmpe-generation-manifest.json
+          test -s build/pages-candidate/ontology/v2/current/reference/cmpe-generation-manifest.json
+
+      - name: Upload WIDOCO reference candidates
+        uses: actions/upload-artifact@v4
+        with:
+          name: cm-pharme-widoco-candidates
+          path: |
+            build/pages-candidate/
+            build/evidence/
+          if-no-files-found: error

@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "adapter": "widoco",
+  "adapter_version": "1.4.25",
+  "release_tag": "v1.4.25",
+  "java_runtime": "17",
+  "release_asset": {
+    "name": "widoco-1.4.25-jar-with-dependencies_JDK-17.jar",
+    "url": "https://github.com/dgarijo/Widoco/releases/download/v1.4.25/widoco-1.4.25-jar-with-dependencies_JDK-17.jar",
+    "sha256": "be57a270fffb91e55810fa308717e704a44e2e7c027a3d68125a49da6c8b4e2b"
+  },
+  "invocation": {
+    "rewrite_all": true,
+    "include_annotation_properties": true,
+    "no_placeholder_text": true,
+    "unite_sections": true,
+    "webvowl": false,
+    "oops": false,
+    "htaccess": false,
+    "manual_generated_html_edits_prohibited": true
+  },
+  "versions": {
+    "v1": {
+      "config": "pages-src/widoco/v1.properties",
+      "intro": "pages-src/widoco/v1-intro.html",
+      "target_subpath": "ontology/v1.0.0/reference/",
+      "source_ref": "main@595ea30a66644c1b130b6c1a781dc7afbd7ba284"
+    },
+    "v2": {
+      "config": "pages-src/widoco/v2.properties",
+      "intro": "pages-src/widoco/v2-intro.html",
+      "target_subpath": "ontology/v2/current/reference/",
+      "source_ref": "v2/research-program@1226b0a5484f8f5d3a8d214e0d0f52f066b88999"
+    }
+  },
+  "boundaries": [
+    "WIDOCO output is generated reference/projection, not semantic authority.",
+    "WebVOWL is intentionally deferred to #272.",
+    "OOPS is intentionally excluded from this reference-generation slice.",
+    "GitHub Pages is static hosting; no .htaccess/content-negotiation claim is made."
+  ]
+}
