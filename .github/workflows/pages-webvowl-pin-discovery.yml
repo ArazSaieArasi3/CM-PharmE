@@ -1,0 +1,33 @@
+name: WebVOWL Pin Discovery
+
+on:
+  push:
+    branches:
+      - pages/272-webvowl-static
+    paths:
+      - ".github/workflows/pages-webvowl-pin-discovery.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  resolve:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Pull exact WebVOWL frontend release tag and report digest
+        shell: bash
+        run: |
+          set -euo pipefail
+          image="ghcr.io/visualdataweb/webvowl-frontend:1.1.7"
+          docker pull "$image"
+          docker image inspect "$image" --format '{{json .RepoDigests}}'
+          id="$(docker create "$image")"
+          mkdir -p extracted
+          docker cp "$id:/usr/local/tomcat/webapps/ROOT/." extracted/
+          docker rm "$id"
+          find extracted -type f -print0 | sort -z | xargs -0 sha256sum > WEBVOWL-FILES-SHA256.txt
+          sha256sum WEBVOWL-FILES-SHA256.txt
+          test -s extracted/index.html
+          test -s extracted/js/webvowl.app.js
+          test -s extracted/js/webvowl.js
