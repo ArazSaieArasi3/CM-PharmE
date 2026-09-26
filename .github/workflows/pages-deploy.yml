@@ -213,7 +213,7 @@ jobs:
           h=hashlib.sha256()
           with zipfile.ZipFile(p) as z:
               for name in sorted(x for x in z.namelist() if not x.endswith('/')):
-                  h.update(name.encode()); h.update(b'\0'); h.update(z.read(name)); h.update(b'\n')
+                  h.update(name.encode()); h.update(b'\\0'); h.update(z.read(name)); h.update(b'\\n')
           assert h.hexdigest() == 'f500951cdd4a0963fb80a96b974f463e8cfc84660f3b46ce802b14296e5e9aee', 'OWL2VOWL content drift'
           PY
 
