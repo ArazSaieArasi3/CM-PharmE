@@ -65,3 +65,11 @@ The first successful governed candidate run established and this contract now en
 The VOWL counts are **converter projection counts**, not replacements for the governed ontology inventory counts.
 
 WebVOWL 1.1.7 is a legacy frontend with semver-ranged npm dependencies and no lockfile in the upstream release. Therefore the exact source commit alone is not treated as sufficient reproducibility evidence: the expected built frontend-tree digest is also enforced. Any future dependency-resolution drift fails the build instead of silently changing published explorer assets.
+
+## Converter content identity
+
+A second exact-source rebuild established the metadata-independent OWL2VOWL 0.3.7 shaded-JAR **content digest**:
+
+`f500951cdd4a0963fb80a96b974f463e8cfc84660f3b46ce802b14296e5e9aee`
+
+This digest is computed from sorted ZIP entry names plus uncompressed entry bytes. It is now enforced in CI. Raw JAR bytes are intentionally not used as the identity because archive timestamps vary without changing executable content.
