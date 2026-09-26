@@ -1,0 +1,122 @@
+name: Pages Download Bundle
+
+on:
+  pull_request:
+    paths:
+      - "docs/documentation/download-bundle-contract.json"
+      - "docs/documentation/pages-273-download-contract.md"
+      - "tools/pages/package_download_bundle.py"
+      - ".github/workflows/pages-download-bundle.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  bundle:
+    name: Build and verify V1/V2 download bundles
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - name: Checkout publication branch
+        uses: actions/checkout@v4
+
+      - name: Checkout exact V1 source
+        uses: actions/checkout@v4
+        with:
+          ref: 595ea30a66644c1b130b6c1a781dc7afbd7ba284
+          path: source-v1
+
+      - name: Checkout exact V2 source
+        uses: actions/checkout@v4
+        with:
+          ref: 1226b0a5484f8f5d3a8d214e0d0f52f066b88999
+          path: source-v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install pinned semantic dependencies
+        run: >-
+          python -m pip install --disable-pip-version-check
+          'rdflib==7.5.0'
+          'pyshacl==0.31.0'
+
+      - name: Rebuild governed V1
+        run: >-
+          bash -lc 'cd source-v1 &&
+          python tools/ontology/build.py --output-root "$GITHUB_WORKSPACE/build/input/v1"'
+
+      - name: Gate V1 input
+        run: >-
+          python tools/pages/resolve_documentation_input.py
+          --version v1
+          --build-root build/input/v1
+          --source-ref main@595ea30a66644c1b130b6c1a781dc7afbd7ba284
+          --output build/evidence/v1-input.json
+
+      - name: Rebuild governed V2
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd source-v2
+          python tools/v2_ontology/build_validate.py             --source-dir v2/ontology/source/modules             --conceptual-model v2/ontouml/cm-pharme-v2.conceptual-model.json             --baseline "$GITHUB_WORKSPACE/docs/documentation/v2-current-pages-baseline.json"             --shapes v2/ontology/shapes/cm-pharme-v2.shacl.ttl             --smoke-data v2/ontology/tests/formal-smoke.ttl             --output-root "$GITHUB_WORKSPACE/build/input/v2"             --require-shacl
+
+      - name: Gate V2 input
+        run: >-
+          python tools/pages/resolve_documentation_input.py
+          --version v2
+          --build-root build/input/v2
+          --source-ref v2/research-program@1226b0a5484f8f5d3a8d214e0d0f52f066b88999
+          --output build/evidence/v2-input.json
+
+      - name: Package and verify V1 downloads
+        run: >-
+          python tools/pages/package_download_bundle.py
+          --version v1
+          --build-root build/input/v1
+          --source-ref main@595ea30a66644c1b130b6c1a781dc7afbd7ba284
+          --output-root build/pages-downloads
+
+      - name: Package and verify V2 downloads
+        run: >-
+          python tools/pages/package_download_bundle.py
+          --version v2
+          --build-root build/input/v2
+          --source-ref v2/research-program@1226b0a5484f8f5d3a8d214e0d0f52f066b88999
+          --output-root build/pages-downloads
+
+      - name: Verify version isolation and mandatory files
+        shell: bash
+        run: |
+          set -euo pipefail
+          v1=build/pages-downloads/ontology/v1.0.0/downloads
+          v2=build/pages-downloads/ontology/v2/current/downloads
+          test -d "$v1"
+          test -d "$v2"
+          test "$v1" != "$v2"
+          for dir in "$v1" "$v2"; do
+            test -s "$dir/download-manifest.json"
+            test -s "$dir/provenance.json"
+            test -s "$dir/SHA256SUMS.txt"
+            test "$(find "$dir" -maxdepth 1 -type f | wc -l)" -eq 8
+          done
+          grep -q '"lifecycle_state": "stable"' "$v1/download-manifest.json"
+          grep -q '"lifecycle_state": "evolving"' "$v2/download-manifest.json"
+          grep -q 'Stable-to-date / Evolving' "$v2/download-manifest.json"
+
+      - name: Show manifests
+        run: |
+          cat build/pages-downloads/ontology/v1.0.0/downloads/download-manifest.json
+          cat build/pages-downloads/ontology/v2/current/downloads/download-manifest.json
+
+      - name: Upload verified download bundles
+        uses: actions/upload-artifact@v4
+        with:
+          name: cm-pharme-pages-download-bundles
+          path: |
+            build/pages-downloads/
+            build/evidence/
+          if-no-files-found: error
