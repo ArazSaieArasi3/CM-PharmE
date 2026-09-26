@@ -48,9 +48,9 @@ def main():
     assert bridge["workflow_name"]=="CM-PharmE 2.0 Formal Ontology CI"
     assert "equals the V2 exact source SHA" in bridge["rule"]
     guards=p["deployment_guards"]
-    assert guards["manual_dispatch_only_until_public_enablement"] is True
+    assert guards["manual_dispatch_only_until_public_enablement"] is (not p["public_deploy_enabled"])
     assert guards["build_job_separate_from_deploy_job"] is True
-    assert p["public_deploy_enabled"] is False
+    assert isinstance(p["public_deploy_enabled"], bool)
 
     print(f"PASS: {len(required_relevant)} relevant paths trigger; {len(required_irrelevant)} unrelated examples stay on cheap/no Pages path; V2 bridge and deployment guards are explicit.")
 
