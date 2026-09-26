@@ -248,6 +248,9 @@ jobs:
       - name: Build multi-version shell around governed artifacts
         run: python tools/pages/build_shell.py --output build/site
 
+      - name: Audit closed-loop cross-surface navigation
+        run: python tools/pages/test_cross_surface_navigation.py
+
       - name: Audit assembled WebVOWL explorers
         run: >-
           python tools/pages/test_webvowl_candidate.py
