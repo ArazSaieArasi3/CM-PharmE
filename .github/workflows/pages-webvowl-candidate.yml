@@ -1,0 +1,165 @@
+name: Pages WebVOWL Candidate
+
+on:
+  pull_request:
+    paths:
+      - "docs/documentation/webvowl-adapter.json"
+      - "docs/documentation/pages-272-webvowl.md"
+      - "tools/pages/build_webvowl_explorer.py"
+      - "tools/pages/test_webvowl_candidate.py"
+      - "tools/pages/build_shell.py"
+      - "pages-src/site.css"
+      - ".github/workflows/pages-webvowl-candidate.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  candidate:
+    name: Build governed V1/V2 WebVOWL candidates
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - name: Checkout CM-PharmE publication branch
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Checkout exact V1 semantic source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          ref: 595ea30a66644c1b130b6c1a781dc7afbd7ba284
+          path: source-v1
+
+      - name: Checkout exact V2 semantic source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          ref: 1226b0a5484f8f5d3a8d214e0d0f52f066b88999
+          path: source-v2
+
+      - name: Checkout exact WebVOWL 1.1.7 source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          repository: VisualDataWeb/WebVOWL
+          ref: 28e7dd9540622e8cb723dc000824b5eef5ae775f
+          path: external/webvowl
+
+      - name: Checkout exact OWL2VOWL 0.3.7 source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          repository: VisualDataWeb/OWL2VOWL
+          ref: 2833ead00122ca252a0fd0e18c5e5b696d711d2c
+          path: external/owl2vowl
+
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.12"
+
+      - name: Set up Node 12 release-build runtime
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "12.22.12"
+
+      - name: Set up Java 8 converter runtime
+        uses: actions/setup-java@de7274f081f381c8f8158605e0321c36c376e2e6 # v6.0.1
+        with:
+          distribution: temurin
+          java-version: "8"
+
+      - name: Install pinned semantic Python dependencies
+        run: >-
+          python -m pip install --disable-pip-version-check
+          'rdflib==7.5.0'
+          'pyshacl==0.31.0'
+
+      - name: Rebuild and gate governed V1 input
+        shell: bash
+        run: |
+          set -euo pipefail
+          (cd source-v1 && python tools/ontology/build.py --output-root "$GITHUB_WORKSPACE/build/input/v1")
+          python tools/pages/resolve_documentation_input.py             --version v1             --build-root build/input/v1             --source-ref main@595ea30a66644c1b130b6c1a781dc7afbd7ba284             --output build/evidence/v1-input.json
+
+      - name: Rebuild and gate governed V2 input
+        shell: bash
+        run: |
+          set -euo pipefail
+          (cd source-v2 && python tools/v2_ontology/build_validate.py             --source-dir v2/ontology/source/modules             --conceptual-model v2/ontouml/cm-pharme-v2.conceptual-model.json             --baseline "$GITHUB_WORKSPACE/docs/documentation/v2-current-pages-baseline.json"             --shapes v2/ontology/shapes/cm-pharme-v2.shacl.ttl             --smoke-data v2/ontology/tests/formal-smoke.ttl             --output-root "$GITHUB_WORKSPACE/build/input/v2"             --require-shacl)
+          python tools/pages/resolve_documentation_input.py             --version v2             --build-root build/input/v2             --source-ref v2/research-program@1226b0a5484f8f5d3a8d214e0d0f52f066b88999             --output build/evidence/v2-input.json
+
+      - name: Build exact OWL2VOWL 0.3.7 converter
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd external/owl2vowl
+          mvn -B package -P standalone-release -DskipTests
+          test -s target/OWL2VOWL-0.3.7-shaded.jar
+          sha256sum target/OWL2VOWL-0.3.7-shaded.jar
+
+      - name: Convert governed V1/V2 inputs to VOWL JSON
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p build/vowl
+          java -jar external/owl2vowl/target/OWL2VOWL-0.3.7-shaded.jar             -file build/input/v1/distributions/cm-pharme.ttl             -output build/vowl/v1.json
+          java -jar external/owl2vowl/target/OWL2VOWL-0.3.7-shaded.jar             -file build/input/v2/distributions/cm-pharme-v2.ttl             -output build/vowl/v2.json
+          python -m json.tool build/vowl/v1.json > /dev/null
+          python -m json.tool build/vowl/v2.json > /dev/null
+          sha256sum build/vowl/v1.json build/vowl/v2.json
+
+      - name: Build exact WebVOWL 1.1.7 frontend
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd external/webvowl
+          node --version
+          npm --version
+          npm install --ignore-scripts
+          npm run release
+          test -s deploy/index.html
+          test -s deploy/js/webvowl.js
+          test -s deploy/js/webvowl.app.js
+
+      - name: Package governed V1 explorer
+        run: >-
+          python tools/pages/build_webvowl_explorer.py
+          --version v1
+          --frontend-root external/webvowl/deploy
+          --vowl-json build/vowl/v1.json
+          --ontology-input build/input/v1/distributions/cm-pharme.ttl
+          --source-ref main@595ea30a66644c1b130b6c1a781dc7afbd7ba284
+          --output-root build/site
+
+      - name: Package governed V2 explorer
+        run: >-
+          python tools/pages/build_webvowl_explorer.py
+          --version v2
+          --frontend-root external/webvowl/deploy
+          --vowl-json build/vowl/v2.json
+          --ontology-input build/input/v2/distributions/cm-pharme-v2.ttl
+          --source-ref v2/research-program@1226b0a5484f8f5d3a8d214e0d0f52f066b88999
+          --output-root build/site
+
+      - name: Build Pages shell around explorers
+        run: python tools/pages/build_shell.py --output build/site
+
+      - name: Audit version isolation, context and static assets
+        run: >-
+          python tools/pages/test_webvowl_candidate.py
+          --site build/site
+          --output build/evidence/pages-272-webvowl-static-qa.json
+
+      - name: Show explorer manifests
+        run: |
+          cat build/site/ontology/v1.0.0/explore/explorer-manifest.json
+          cat build/site/ontology/v2/current/explore/explorer-manifest.json
+          cat build/evidence/pages-272-webvowl-static-qa.json
+
+      - name: Upload WebVOWL candidate
+        uses: actions/upload-artifact@v4
+        with:
+          name: cm-pharme-webvowl-candidate
+          path: |
+            build/site/
+            build/evidence/
+            build/vowl/
+          if-no-files-found: error
