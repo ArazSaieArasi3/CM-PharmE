@@ -1,0 +1,166 @@
+name: Pages Rebuild Evidence
+
+on:
+  pull_request:
+    paths:
+      - "docs/documentation/ontology-version-registry.json"
+      - "docs/documentation/ontology-documentation-build-contract.json"
+      - "tools/pages/resolve_documentation_input.py"
+      - "tools/pages/verify_v2_annotation_only_evolution.py"
+      - "docs/documentation/v2-current-pages-baseline.json"
+      - ".github/workflows/pages-rebuild-evidence.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  reproducibility:
+    name: Rebuild V1 and V2 twice from exact refs
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout contract branch
+        uses: actions/checkout@v4
+
+      - name: Checkout exact V1 semantic source
+        uses: actions/checkout@v4
+        with:
+          ref: 595ea30a66644c1b130b6c1a781dc7afbd7ba284
+          path: source-v1
+
+      - name: Checkout exact V2 semantic source
+        uses: actions/checkout@v4
+        with:
+          ref: 1226b0a5484f8f5d3a8d214e0d0f52f066b88999
+          path: source-v2
+
+      - name: Checkout frozen W5 source snapshot
+        uses: actions/checkout@v4
+        with:
+          ref: 952d6a42f8c1d92d6f2d3d2e78e76847dc9ed8b4
+          path: source-v2-w5
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install pinned semantic dependencies
+        run: >-
+          python -m pip install --disable-pip-version-check
+          'rdflib==7.5.0'
+          'pyshacl==0.31.0'
+
+      - name: Rebuild V1 twice
+        shell: bash
+        run: |
+          set -euo pipefail
+          (cd source-v1 && python tools/ontology/build.py --output-root "$GITHUB_WORKSPACE/evidence/v1-a")
+          (cd source-v1 && python tools/ontology/build.py --output-root "$GITHUB_WORKSPACE/evidence/v1-b")
+
+      - name: Verify V1 deterministic documentation input
+        shell: bash
+        run: |
+          set -euo pipefail
+          cmp --silent evidence/v1-a/distributions/cm-pharme.ttl evidence/v1-b/distributions/cm-pharme.ttl
+          cmp --silent evidence/v1-a/validation/build-manifest.json evidence/v1-b/validation/build-manifest.json
+          python tools/pages/resolve_documentation_input.py             --version v1             --build-root evidence/v1-a             --source-ref main@595ea30a66644c1b130b6c1a781dc7afbd7ba284             --output evidence/v1-a/pages-input-evidence.json
+          python tools/pages/resolve_documentation_input.py             --version v1             --build-root evidence/v1-b             --source-ref main@595ea30a66644c1b130b6c1a781dc7afbd7ba284             --output evidence/v1-b/pages-input-evidence.json
+          cmp --silent evidence/v1-a/pages-input-evidence.json evidence/v1-b/pages-input-evidence.json
+
+      - name: Verify V2 current drift is annotation-only relative to frozen W5
+        run: >-
+          python tools/pages/verify_v2_annotation_only_evolution.py
+          --w5-dir source-v2-w5/v2/ontology/source/modules
+          --current-dir source-v2/v2/ontology/source/modules
+          --output evidence/v2-annotation-equivalence.json
+
+      - name: Rebuild V2 twice
+        shell: bash
+        run: |
+          set -euo pipefail
+          (cd source-v2 && python tools/v2_ontology/build_validate.py \
+            --source-dir v2/ontology/source/modules \
+            --conceptual-model v2/ontouml/cm-pharme-v2.conceptual-model.json \
+            --baseline "$GITHUB_WORKSPACE/docs/documentation/v2-current-pages-baseline.json" \
+            --shapes v2/ontology/shapes/cm-pharme-v2.shacl.ttl \
+            --smoke-data v2/ontology/tests/formal-smoke.ttl \
+            --output-root "$GITHUB_WORKSPACE/evidence/v2-a" \
+            --require-shacl)
+          (cd source-v2 && python tools/v2_ontology/build_validate.py \
+            --source-dir v2/ontology/source/modules \
+            --conceptual-model v2/ontouml/cm-pharme-v2.conceptual-model.json \
+            --baseline "$GITHUB_WORKSPACE/docs/documentation/v2-current-pages-baseline.json" \
+            --shapes v2/ontology/shapes/cm-pharme-v2.shacl.ttl \
+            --smoke-data v2/ontology/tests/formal-smoke.ttl \
+            --output-root "$GITHUB_WORKSPACE/evidence/v2-b" \
+            --require-shacl)
+
+      - name: Verify V2 deterministic documentation input
+        shell: bash
+        run: |
+          set -euo pipefail
+          cmp --silent evidence/v2-a/distributions/cm-pharme-v2.ttl evidence/v2-b/distributions/cm-pharme-v2.ttl
+          cmp --silent evidence/v2-a/distributions/cm-pharme-v2.nt evidence/v2-b/distributions/cm-pharme-v2.nt
+          cmp --silent evidence/v2-a/manifest.json evidence/v2-b/manifest.json
+          python tools/pages/resolve_documentation_input.py             --version v2             --build-root evidence/v2-a             --source-ref v2/research-program@1226b0a5484f8f5d3a8d214e0d0f52f066b88999             --output evidence/v2-a/pages-input-evidence.json
+          python tools/pages/resolve_documentation_input.py             --version v2             --build-root evidence/v2-b             --source-ref v2/research-program@1226b0a5484f8f5d3a8d214e0d0f52f066b88999             --output evidence/v2-b/pages-input-evidence.json
+          cmp --silent evidence/v2-a/pages-input-evidence.json evidence/v2-b/pages-input-evidence.json
+
+      - name: Negative test — fingerprint mismatch blocks publication
+        shell: bash
+        run: |
+          set -euo pipefail
+          cp -a evidence/v1-a evidence/v1-tampered
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p = Path("evidence/v1-tampered/validation/build-manifest.json")
+          d = json.loads(p.read_text())
+          d["source_graph_sha256_canonical_nt"] = "0" * 64
+          p.write_text(json.dumps(d, indent=2, sort_keys=True) + "\n")
+          PY
+          set +e
+          python tools/pages/resolve_documentation_input.py             --version v1             --build-root evidence/v1-tampered             --source-ref main@595ea30a66644c1b130b6c1a781dc7afbd7ba284
+          status=$?
+          set -e
+          test "$status" -ne 0
+
+      - name: Record reproducibility evidence
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          out = {
+              "schema_version": 1,
+              "result": "PASS",
+              "v1": json.loads(Path("evidence/v1-a/pages-input-evidence.json").read_text()),
+              "v2": json.loads(Path("evidence/v2-a/pages-input-evidence.json").read_text()),
+              "two_run_determinism": {
+                  "v1_documentation_input_byte_identical": True,
+                  "v1_manifest_byte_identical": True,
+                  "v2_documentation_input_byte_identical": True,
+                  "v2_canonical_nt_byte_identical": True,
+                  "v2_manifest_byte_identical": True
+              },
+              "negative_publication_block_test": "PASS"
+          }
+          Path("evidence/pages-269-rebuild-evidence.json").write_text(
+              json.dumps(out, indent=2, sort_keys=True) + "\n"
+          )
+          print(Path("evidence/pages-269-rebuild-evidence.json").read_text())
+          PY
+
+      - name: Upload #269 rebuild evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: pages-269-rebuild-evidence
+          path: |
+            evidence/pages-269-rebuild-evidence.json
+            evidence/v1-a/pages-input-evidence.json
+            evidence/v2-a/pages-input-evidence.json
+            evidence/v2-annotation-equivalence.json
+          if-no-files-found: error

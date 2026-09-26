@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "baseline_kind": "pages-current-documentation-snapshot",
+  "version_id": "v2",
+  "lifecycle_state": "evolving",
+  "semantic_source_ref": "v2/research-program@1226b0a5484f8f5d3a8d214e0d0f52f066b88999",
+  "conceptual_type_count": 87,
+  "expected_owl_classes": 81,
+  "expected_rdfs_datatypes": 6,
+  "expected_object_properties": 52,
+  "expected_datatype_properties": 5,
+  "canonical_graph_sha256": "302a5f70db30701608712a2c346f6a5b4bbc72b4cb9c7a921ed6e38bbebd341f",
+  "historical_w5": {
+    "source_ref": "952d6a42f8c1d92d6f2d3d2e78e76847dc9ed8b4",
+    "canonical_graph_sha256": "59ef47eeed732290736e60bfa1c6bf43a12d15df2f50cff931badb5938cc954a",
+    "evidence_run_id": 32566080703,
+    "immutable": true
+  },
+  "transition": {
+    "consolidation_commit": "4bebc04cfdbbdf71ee08f90bb52922e5e4fcb0c9",
+    "declared_change_kind": "human-facing naming/altLabel normalization",
+    "ignored_for_equivalence": [
+      "http://www.w3.org/2000/01/rdf-schema#label",
+      "http://www.w3.org/2004/02/skos/core#altLabel"
+    ],
+    "annotation_only_equivalence_must_pass": true
+  },
+  "note": "This Pages-current snapshot does not replace or rewrite the frozen W5 formal baseline. It binds the evolving documentation projection to the exact current V2 source after governed naming consolidation.",
+  "expected_triples": 664,
+  "reproducibility_evidence": {
+    "workflow_run_id": 36216054591,
+    "artifact_id": 10897046917,
+    "artifact_digest": "sha256:4db48de9607396a811459197db58bc51bca10a4a2fa12106252691e24c955c31",
+    "current_documentation_input_sha256": "62ef410cd5fb9ddaad75c383e45b7c05157504406d62e4845f790df12c6c66ab",
+    "current_build_manifest_sha256": "debb289a2aa0b49e565fa8654371f4892f5acbe4071a36903b5ec16a59beb89b",
+    "two_run_determinism": true,
+    "annotation_only_equivalence_to_w5": true,
+    "negative_publication_block_test": "PASS"
+  }
+}

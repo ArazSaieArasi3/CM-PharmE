@@ -47,7 +47,9 @@
         "structural_reference_status": "PASS",
         "owl2dl_profile_status": "NOT_CLAIMED_AS_CONFORMANT",
         "reasoner_note": "Current V1 documentation must preserve the recorded formal-profile hygiene boundary and must not convert it into OWL 2 DL conformance.",
-        "pages_status_label": "Stable V1 semantic baseline; generated reference subject to build/verification."
+        "pages_status_label": "Stable V1 semantic baseline; generated reference subject to build/verification.",
+        "current_documentation_input_sha256": "2af1080243c6010facac17edd247161894ad4273f232dc79bd355a2fbfe8e6a3",
+        "current_build_manifest_sha256": "bcb582ba694a17e11a951082e977abdbdc3926c539fe6ae342555b68ad6343f3"
       }
     },
     {
@@ -71,7 +73,7 @@
       },
       "build": {
         "tool": "tools/v2_ontology/build_validate.py",
-        "command": "python tools/v2_ontology/build_validate.py --source-dir v2/ontology/source/modules --conceptual-model v2/ontouml/cm-pharme-v2.conceptual-model.json --baseline v2/ontology/baseline/formal-baseline.json --shapes v2/ontology/shapes/cm-pharme-v2.shacl.ttl --smoke-data v2/ontology/tests/formal-smoke.ttl --output-root <OUTPUT_ROOT>",
+        "command": "python tools/v2_ontology/build_validate.py --source-dir v2/ontology/source/modules --conceptual-model v2/ontouml/cm-pharme-v2.conceptual-model.json --baseline <PAGES_CURRENT_BASELINE> --shapes v2/ontology/shapes/cm-pharme-v2.shacl.ttl --smoke-data v2/ontology/tests/formal-smoke.ttl --output-root <OUTPUT_ROOT>",
         "output_root_contract": "isolated temporary/build directory; never hand-edit generated output",
         "documentation_input_artifact": "distributions/cm-pharme-v2.ttl",
         "build_manifest": "manifest.json",
@@ -80,16 +82,16 @@
       "expected_fingerprint": {
         "algorithm": "sha256",
         "representation": "canonical_ntriples",
-        "value": "59ef47eeed732290736e60bfa1c6bf43a12d15df2f50cff931badb5938cc954a",
-        "authority": "v2/ontology/baseline/formal-baseline.json"
+        "value": "302a5f70db30701608712a2c346f6a5b4bbc72b4cb9c7a921ed6e38bbebd341f",
+        "authority": "docs/documentation/v2-current-pages-baseline.json"
       },
       "expected_inventory": {
-        "canonical_triples": 642,
         "conceptual_types": 87,
         "owl_classes": 81,
         "rdfs_datatypes": 6,
         "object_properties": 52,
-        "datatype_properties": 5
+        "datatype_properties": 5,
+        "canonical_triples": 664
       },
       "validation_boundary": {
         "required_before_pages": true,
@@ -97,7 +99,18 @@
         "owl2dl_profile_status": "PASS_AT_RECORDED_FORMAL_BASELINE",
         "hermit_status": "PASS_AT_RECORDED_FORMAL_BASELINE",
         "research_lifecycle_status": "STABLE_TO_DATE_EVOLVING",
-        "pages_status_label": "Stable-to-date / Evolving; not frozen or final."
+        "pages_status_label": "Stable-to-date / Evolving; not frozen or final.",
+        "historical_w5_source_ref": "952d6a42f8c1d92d6f2d3d2e78e76847dc9ed8b4",
+        "historical_w5_canonical_graph_sha256": "59ef47eeed732290736e60bfa1c6bf43a12d15df2f50cff931badb5938cc954a",
+        "current_pages_snapshot_sha256": "302a5f70db30701608712a2c346f6a5b4bbc72b4cb9c7a921ed6e38bbebd341f",
+        "annotation_only_equivalence_required": true,
+        "annotation_only_equivalence_ignored_predicates": [
+          "rdfs:label",
+          "skos:altLabel"
+        ],
+        "annotation_only_equivalence_result": "PASS",
+        "current_documentation_input_sha256": "62ef410cd5fb9ddaad75c383e45b7c05157504406d62e4845f790df12c6c66ab",
+        "current_build_manifest_sha256": "debb289a2aa0b49e565fa8654371f4892f5acbe4071a36903b5ec16a59beb89b"
       }
     }
   ],
