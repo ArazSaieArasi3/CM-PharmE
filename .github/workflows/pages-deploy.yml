@@ -248,9 +248,6 @@ jobs:
       - name: Build multi-version shell around governed artifacts
         run: python tools/pages/build_shell.py --output build/site
 
-      - name: Audit closed-loop cross-surface navigation
-        run: python tools/pages/test_cross_surface_navigation.py
-
       - name: Audit assembled WebVOWL explorers
         run: >-
           python tools/pages/test_webvowl_candidate.py
@@ -267,6 +264,9 @@ jobs:
             cp "$ref/index-en.html" "$ref/index.html"
           done
           touch build/site/.nojekyll
+
+      - name: Audit final closed-loop cross-surface navigation
+        run: python tools/pages/test_cross_surface_navigation.py
 
       - name: Run download/traceability audits on assembled site
         shell: bash
