@@ -8,6 +8,7 @@ on:
       - "tools/pages/package_download_bundle.py"
       - "tools/pages/test_download_contract.py"
       - "tools/pages/test_download_integration.py"
+      - "tools/pages/audit_download_closure.py"
       - "tools/pages/build_shell.py"
       - ".github/workflows/pages-download-bundle.yml"
   workflow_dispatch:
@@ -136,6 +137,12 @@ jobs:
 
       - name: Audit assembled download pages and sample downloads
         run: python tools/pages/test_download_integration.py --site build/pages-candidate
+
+      - name: Final #273 URL/path and traceability audit
+        run: >-
+          python tools/pages/audit_download_closure.py
+          --site build/pages-candidate
+          --output build/evidence/pages-273-final-audit.json
 
       - name: Upload verified assembled Pages candidate
         uses: actions/upload-artifact@v4
