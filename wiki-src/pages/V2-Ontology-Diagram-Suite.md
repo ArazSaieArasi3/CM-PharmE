@@ -2,9 +2,14 @@
 
 > **Version scope:** V2  
 > **Status:** Stable-to-date / Evolving; semantic review pending  
-> **Updated:** 2026-09-24
+> **Updated:** 2026-09-26
 
 This suite is the visual companion to [[V2 Ontology Reference]]. It explains the current V2 conceptual/formal baseline at several levels without requiring readers to reconstruct structure from OWL/Turtle or large reference tables.
+
+## Curated diagrams versus interactive exploration
+
+Use this suite when you need **curated, semantically reviewed visual views** with explicit modeling notes and protected distinctions. Use [V2 WebVOWL](https://arazsaiearasi3.github.io/CM-PharmE/ontology/v2/current/explore/) when you need interactive graph navigation, search and zoom. Use the [generated V2 formal reference](https://arazsaiearasi3.github.io/CM-PharmE/ontology/v2/current/reference/) for exhaustive formal lookup. None of these generated/visual surfaces replaces the [exact V2 semantic source](https://github.com/ArazSaieArasi3/CM-PharmE/tree/1226b0a5484f8f5d3a8d214e0d0f52f066b88999).
+
 
 The diagrams are governed by [[Diagram Standards and Inventory]] and were checked against `v2/research-program@1226b0a5484f8f5d3a8d214e0d0f52f066b88999`.
 

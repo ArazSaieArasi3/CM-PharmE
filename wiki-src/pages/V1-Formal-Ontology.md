@@ -2,13 +2,21 @@
 
 > **Version scope:** V1  
 > **Status:** Stable  
-> **Updated:** 2026-09-23
+> **Updated:** 2026-09-26
 
 ## Historical versus canonical formal source
 
 The historical OWL/RDF/XML export bundled with `v1.0.0` is preserved unchanged for provenance. It is not treated as the cleaned canonical ontology source.
 
 The maintained canonical formal source is the modular Turtle under `ontology/source/modules/`.
+
+## Public generated surfaces
+
+- [Open generated V1 formal reference](https://arazsaiearasi3.github.io/CM-PharmE/ontology/v1.0.0/reference/) — exhaustive generated reference.
+- [Explore V1 interactively with WebVOWL](https://arazsaiearasi3.github.io/CM-PharmE/ontology/v1.0.0/explore/) — visualization aid, not the complete logical specification.
+- [Download governed V1 serializations](https://arazsaiearasi3.github.io/CM-PharmE/ontology/v1.0.0/downloads/) — checksum/provenance-bound generated artifacts.
+- [View exact V1 semantic source](https://github.com/ArazSaieArasi3/CM-PharmE/tree/595ea30a66644c1b130b6c1a781dc7afbd7ba284) — semantic authority.
+
 
 ## Current formal-engineering capabilities
 

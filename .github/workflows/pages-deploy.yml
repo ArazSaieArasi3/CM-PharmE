@@ -265,6 +265,9 @@ jobs:
           done
           touch build/site/.nojekyll
 
+      - name: Audit final closed-loop cross-surface navigation
+        run: python tools/pages/test_cross_surface_navigation.py
+
       - name: Run download/traceability audits on assembled site
         shell: bash
         run: |

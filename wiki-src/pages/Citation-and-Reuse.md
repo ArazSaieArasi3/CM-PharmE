@@ -2,7 +2,7 @@
 
 > **Version scope:** Cross-version  
 > **Status:** Stable-to-date / Evolving  
-> **Updated:** 2026-09-23
+> **Updated:** 2026-09-26
 
 ## Citation principle
 
@@ -12,6 +12,15 @@ When using CM-PharmE in research:
 3. record the repository ref or archived research package when reproducibility matters.
 
 The repository's machine-readable citation record is `CITATION.cff`.
+
+## Pages/documentation citation routes
+
+- V1 stable documentation route: [`/ontology/v1.0.0/`](https://arazsaiearasi3.github.io/CM-PharmE/ontology/v1.0.0/) — version-bound generated documentation for the stable V1 semantic baseline.
+- V2 current documentation route: [`/ontology/v2/current/`](https://arazsaiearasi3.github.io/CM-PharmE/ontology/v2/current/) — evolving convenience documentation route; **not** a frozen semantic release.
+- [Pages citation guidance](https://arazsaiearasi3.github.io/CM-PharmE/citation/) explains the documentation-surface boundary.
+
+A Pages/documentation baseline identifies generated documentation state; it does not by itself create a new ontology semantic release.
+
 
 ## Current V1 citation metadata
 
