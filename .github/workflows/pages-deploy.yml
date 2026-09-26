@@ -1,0 +1,253 @@
+name: Pages Deployment Candidate
+
+on:
+  pull_request:
+    paths:
+      - "ontology/source/**"
+      - "ontology/validation/**"
+      - "tools/ontology/**"
+      - "docs/documentation/**"
+      - "pages-src/**"
+      - "tools/pages/**"
+      - ".github/workflows/pages-*.yml"
+      - "CHANGELOG.md"
+  push:
+    branches:
+      - main
+    paths:
+      - "ontology/source/**"
+      - "ontology/validation/**"
+      - "tools/ontology/**"
+      - "docs/documentation/**"
+      - "pages-src/**"
+      - "tools/pages/**"
+      - ".github/workflows/pages-*.yml"
+      - "CHANGELOG.md"
+  workflow_run:
+    workflows:
+      - "CM-PharmE 2.0 Formal Ontology CI"
+    types:
+      - completed
+  workflow_dispatch:
+    inputs:
+      deploy:
+        description: "Attempt public GitHub Pages deployment after all build/preflight gates"
+        required: true
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: "cm-pharme-pages-${{ github.event_name }}-${{ github.ref || github.event.workflow_run.head_branch }}"
+  cancel-in-progress: true
+
+jobs:
+  classify:
+    name: Classify Pages build request
+    runs-on: ubuntu-latest
+    outputs:
+      should_build: ${{ steps.classify.outputs.should_build }}
+      v2_trigger_sha: ${{ steps.classify.outputs.v2_trigger_sha }}
+      stale_v2_registry: ${{ steps.classify.outputs.stale_v2_registry }}
+    steps:
+      - name: Checkout publication control plane
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Validate source-controlled trigger policy
+        run: python tools/pages/test_pages_trigger_policy.py
+
+      - name: Classify event
+        id: classify
+        shell: bash
+        run: |
+          set -euo pipefail
+          echo "should_build=true" >> "$GITHUB_OUTPUT"
+          echo "v2_trigger_sha=" >> "$GITHUB_OUTPUT"
+          echo "stale_v2_registry=false" >> "$GITHUB_OUTPUT"
+
+          if [ "${{ github.event_name }}" = "workflow_run" ]; then
+            if [ "${{ github.event.workflow_run.conclusion }}" != "success" ]; then
+              echo "should_build=false" >> "$GITHUB_OUTPUT"
+              exit 0
+            fi
+            case "${{ github.event.workflow_run.head_branch }}" in
+              v2/*) ;;
+              *) echo "should_build=false" >> "$GITHUB_OUTPUT"; exit 0 ;;
+            esac
+            triggered="${{ github.event.workflow_run.head_sha }}"
+            registered="$(python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path("docs/documentation/ontology-version-registry.json").read_text())
+          v=next(x for x in d["versions"] if x["id"]=="v2")
+          print(v["semantic_source_ref"].rsplit("@",1)[1])
+          PY
+          )"
+            echo "v2_trigger_sha=$triggered" >> "$GITHUB_OUTPUT"
+            if [ "$triggered" != "$registered" ]; then
+              echo "should_build=false" >> "$GITHUB_OUTPUT"
+              echo "stale_v2_registry=true" >> "$GITHUB_OUTPUT"
+              echo "V2 semantic CI passed at $triggered, but Pages registry is pinned to $registered. Waiting for governed registry update on main." >> "$GITHUB_STEP_SUMMARY"
+            fi
+          fi
+
+  build:
+    name: Build deploy-ready Pages artifact
+    needs: classify
+    if: needs.classify.outputs.should_build == 'true'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - name: Checkout publication branch
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Checkout exact V1 semantic source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          ref: 595ea30a66644c1b130b6c1a781dc7afbd7ba284
+          path: source-v1
+
+      - name: Checkout exact V2 semantic source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          ref: 1226b0a5484f8f5d3a8d214e0d0f52f066b88999
+          path: source-v2
+
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.12"
+
+      - name: Set up Java
+        uses: actions/setup-java@de7274f081f381c8f8158605e0321c36c376e2e6 # v6.0.1
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Install pinned semantic dependencies
+        run: >-
+          python -m pip install --disable-pip-version-check
+          'rdflib==7.5.0'
+          'pyshacl==0.31.0'
+
+      - name: Download and verify pinned WIDOCO
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p build/tools
+          curl --fail --location --silent --show-error             "https://github.com/dgarijo/Widoco/releases/download/v1.4.25/widoco-1.4.25-jar-with-dependencies_JDK-17.jar"             --output build/tools/widoco.jar
+          echo "be57a270fffb91e55810fa308717e704a44e2e7c027a3d68125a49da6c8b4e2b  build/tools/widoco.jar" | sha256sum --check --strict
+
+      - name: Rebuild and gate V1
+        shell: bash
+        run: |
+          set -euo pipefail
+          (cd source-v1 && python tools/ontology/build.py --output-root "$GITHUB_WORKSPACE/build/input/v1")
+          python tools/pages/resolve_documentation_input.py             --version v1             --build-root build/input/v1             --source-ref main@595ea30a66644c1b130b6c1a781dc7afbd7ba284             --output build/evidence/v1-input.json
+
+      - name: Rebuild and gate V2
+        shell: bash
+        run: |
+          set -euo pipefail
+          (cd source-v2 && python tools/v2_ontology/build_validate.py             --source-dir v2/ontology/source/modules             --conceptual-model v2/ontouml/cm-pharme-v2.conceptual-model.json             --baseline "$GITHUB_WORKSPACE/docs/documentation/v2-current-pages-baseline.json"             --shapes v2/ontology/shapes/cm-pharme-v2.shacl.ttl             --smoke-data v2/ontology/tests/formal-smoke.ttl             --output-root "$GITHUB_WORKSPACE/build/input/v2"             --require-shacl)
+          python tools/pages/resolve_documentation_input.py             --version v2             --build-root build/input/v2             --source-ref v2/research-program@1226b0a5484f8f5d3a8d214e0d0f52f066b88999             --output build/evidence/v2-input.json
+
+      - name: Generate WIDOCO V1/V2 reference
+        shell: bash
+        run: |
+          set -euo pipefail
+          python tools/pages/run_widoco.py             --version v1 --jar build/tools/widoco.jar             --ontology build/input/v1/distributions/cm-pharme.ttl             --output build/site/ontology/v1.0.0/reference             --manifest-output build/evidence/v1-widoco.json
+          python tools/pages/run_widoco.py             --version v2 --jar build/tools/widoco.jar             --ontology build/input/v2/distributions/cm-pharme-v2.ttl             --output build/site/ontology/v2/current/reference             --manifest-output build/evidence/v2-widoco.json
+
+      - name: Audit generated reference candidates
+        shell: bash
+        run: |
+          set -euo pipefail
+          python tools/pages/audit_widoco_candidate.py             --version v1             --ontology build/input/v1/distributions/cm-pharme.ttl             --candidate build/site/ontology/v1.0.0/reference             --authority source-v1/ontology/validation/validation-report.json             --output build/evidence/v1-widoco-qa.json
+          python tools/pages/audit_widoco_candidate.py             --version v2             --ontology build/input/v2/distributions/cm-pharme-v2.ttl             --candidate build/site/ontology/v2/current/reference             --authority docs/documentation/v2-current-pages-baseline.json             --output build/evidence/v2-widoco-qa.json
+
+      - name: Package governed V1/V2 downloads
+        shell: bash
+        run: |
+          set -euo pipefail
+          python tools/pages/test_download_contract.py
+          python tools/pages/package_download_bundle.py             --version v1 --build-root build/input/v1             --source-ref main@595ea30a66644c1b130b6c1a781dc7afbd7ba284             --output-root build/site
+          python tools/pages/package_download_bundle.py             --version v2 --build-root build/input/v2             --source-ref v2/research-program@1226b0a5484f8f5d3a8d214e0d0f52f066b88999             --output-root build/site
+
+      - name: Build multi-version shell around governed artifacts
+        run: python tools/pages/build_shell.py --output build/site
+
+      - name: Expose generated WIDOCO as directory entry points
+        shell: bash
+        run: |
+          set -euo pipefail
+          for ref in             build/site/ontology/v1.0.0/reference             build/site/ontology/v2/current/reference
+          do
+            test -s "$ref/index-en.html"
+            cp "$ref/index-en.html" "$ref/index.html"
+          done
+          touch build/site/.nojekyll
+
+      - name: Run download/traceability audits on assembled site
+        shell: bash
+        run: |
+          set -euo pipefail
+          python tools/pages/test_download_integration.py --site build/site
+          python tools/pages/audit_download_closure.py             --site build/site             --output build/evidence/pages-273-final-audit.json
+
+      - name: Deployment preflight
+        env:
+          V2_TRIGGER_SHA: ${{ needs.classify.outputs.v2_trigger_sha }}
+        run: >-
+          python tools/pages/preflight_deployment.py
+          --site build/site
+          --output build/site/pages-deployment-manifest.json
+          --build-sha "${{ github.sha }}"
+          --event-name "${{ github.event_name }}"
+          --v2-trigger-sha "$V2_TRIGGER_SHA"
+
+      - name: Upload deploy-ready Pages artifact
+        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+        with:
+          path: build/site
+
+  deploy:
+    name: Deploy approved Pages artifact
+    needs:
+      - classify
+      - build
+    if: >-
+      github.event_name == 'workflow_dispatch' &&
+      inputs.deploy == true &&
+      github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    steps:
+      - name: Checkout deployment policy
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Enforce source-controlled deployment authorization
+        shell: bash
+        run: |
+          enabled="$(python - <<'PY'
+          import json
+          from pathlib import Path
+          print(str(json.loads(Path("docs/documentation/pages-deployment-policy.json").read_text())["public_deploy_enabled"]).lower())
+          PY
+          )"
+          test "$enabled" = "true"
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1
