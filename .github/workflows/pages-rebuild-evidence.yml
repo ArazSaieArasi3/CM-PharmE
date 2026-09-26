@@ -6,6 +6,8 @@ on:
       - "docs/documentation/ontology-version-registry.json"
       - "docs/documentation/ontology-documentation-build-contract.json"
       - "tools/pages/resolve_documentation_input.py"
+      - "tools/pages/verify_v2_annotation_only_evolution.py"
+      - "docs/documentation/v2-current-pages-baseline.json"
       - ".github/workflows/pages-rebuild-evidence.yml"
   workflow_dispatch:
 
@@ -32,6 +34,12 @@ jobs:
         with:
           ref: 1226b0a5484f8f5d3a8d214e0d0f52f066b88999
           path: source-v2
+
+      - name: Checkout frozen W5 source snapshot
+        uses: actions/checkout@v4
+        with:
+          ref: 952d6a42f8c1d92d6f2d3d2e78e76847dc9ed8b4
+          path: source-v2-w5
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -61,12 +69,33 @@ jobs:
           python tools/pages/resolve_documentation_input.py             --version v1             --build-root evidence/v1-b             --source-ref main@595ea30a66644c1b130b6c1a781dc7afbd7ba284             --output evidence/v1-b/pages-input-evidence.json
           cmp --silent evidence/v1-a/pages-input-evidence.json evidence/v1-b/pages-input-evidence.json
 
+      - name: Verify V2 current drift is annotation-only relative to frozen W5
+        run: >-
+          python tools/pages/verify_v2_annotation_only_evolution.py
+          --w5-dir source-v2-w5/v2/ontology/source/modules
+          --current-dir source-v2/v2/ontology/source/modules
+          --output evidence/v2-annotation-equivalence.json
+
       - name: Rebuild V2 twice
         shell: bash
         run: |
           set -euo pipefail
-          (cd source-v2 && python tools/v2_ontology/build_validate.py             --source-dir v2/ontology/source/modules             --conceptual-model v2/ontouml/cm-pharme-v2.conceptual-model.json             --baseline v2/ontology/baseline/formal-baseline.json             --shapes v2/ontology/shapes/cm-pharme-v2.shacl.ttl             --smoke-data v2/ontology/tests/formal-smoke.ttl             --output-root "$GITHUB_WORKSPACE/evidence/v2-a"             --require-shacl)
-          (cd source-v2 && python tools/v2_ontology/build_validate.py             --source-dir v2/ontology/source/modules             --conceptual-model v2/ontouml/cm-pharme-v2.conceptual-model.json             --baseline v2/ontology/baseline/formal-baseline.json             --shapes v2/ontology/shapes/cm-pharme-v2.shacl.ttl             --smoke-data v2/ontology/tests/formal-smoke.ttl             --output-root "$GITHUB_WORKSPACE/evidence/v2-b"             --require-shacl)
+          (cd source-v2 && python tools/v2_ontology/build_validate.py \
+            --source-dir v2/ontology/source/modules \
+            --conceptual-model v2/ontouml/cm-pharme-v2.conceptual-model.json \
+            --baseline "$GITHUB_WORKSPACE/docs/documentation/v2-current-pages-baseline.json" \
+            --shapes v2/ontology/shapes/cm-pharme-v2.shacl.ttl \
+            --smoke-data v2/ontology/tests/formal-smoke.ttl \
+            --output-root "$GITHUB_WORKSPACE/evidence/v2-a" \
+            --require-shacl)
+          (cd source-v2 && python tools/v2_ontology/build_validate.py \
+            --source-dir v2/ontology/source/modules \
+            --conceptual-model v2/ontouml/cm-pharme-v2.conceptual-model.json \
+            --baseline "$GITHUB_WORKSPACE/docs/documentation/v2-current-pages-baseline.json" \
+            --shapes v2/ontology/shapes/cm-pharme-v2.shacl.ttl \
+            --smoke-data v2/ontology/tests/formal-smoke.ttl \
+            --output-root "$GITHUB_WORKSPACE/evidence/v2-b" \
+            --require-shacl)
 
       - name: Verify V2 deterministic documentation input
         shell: bash
@@ -133,4 +162,5 @@ jobs:
             evidence/pages-269-rebuild-evidence.json
             evidence/v1-a/pages-input-evidence.json
             evidence/v2-a/pages-input-evidence.json
+            evidence/v2-annotation-equivalence.json
           if-no-files-found: error
