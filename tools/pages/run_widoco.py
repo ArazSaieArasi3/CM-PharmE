@@ -42,7 +42,7 @@ def normalize_generated_html(root: Path, ontology: Path, semantic_namespace: str
     def rewrite_match(match):
         nonlocal changed, semantic_absolutized, slash_normalized
         original=match.group("value")
-        value=original.replace("\\\\", "/")
+        value=original.replace("\\", "/")
         if value != original:
             slash_normalized += 1
         parts=urlsplit(value)
