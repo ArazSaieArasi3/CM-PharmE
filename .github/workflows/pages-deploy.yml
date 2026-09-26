@@ -51,6 +51,7 @@ jobs:
       should_build: ${{ steps.classify.outputs.should_build }}
       v2_trigger_sha: ${{ steps.classify.outputs.v2_trigger_sha }}
       stale_v2_registry: ${{ steps.classify.outputs.stale_v2_registry }}
+      public_enabled: ${{ steps.classify.outputs.public_enabled }}
     steps:
       - name: Checkout publication control plane
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -66,6 +67,11 @@ jobs:
           echo "should_build=true" >> "$GITHUB_OUTPUT"
           echo "v2_trigger_sha=" >> "$GITHUB_OUTPUT"
           echo "stale_v2_registry=false" >> "$GITHUB_OUTPUT"
+          python - <<'PY' >> "$GITHUB_OUTPUT"
+          import json
+          from pathlib import Path
+          print('public_enabled='+str(json.loads(Path('docs/documentation/pages-deployment-policy.json').read_text())['public_deploy_enabled']).lower())
+          PY
 
           if [ "${{ github.event_name }}" = "workflow_run" ]; then
             if [ "${{ github.event.workflow_run.conclusion }}" != "success" ]; then
@@ -289,8 +295,9 @@ jobs:
       - classify
       - build
     if: >-
-      github.event_name == 'workflow_dispatch' &&
-      inputs.deploy == true &&
+      needs.classify.outputs.public_enabled == 'true' &&
+      (github.event_name == 'workflow_dispatch' && inputs.deploy == true ||
+       github.event_name == 'push') &&
       github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     environment:
@@ -321,3 +328,42 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1
+
+  verify-public:
+    name: Verify rendered public Pages and WebVOWL
+    needs: deploy
+    if: needs.deploy.result == 'success'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout verification contract
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.12"
+
+      - name: Install pinned browser tooling
+        run: |
+          python -m pip install --disable-pip-version-check 'playwright==1.55.0'
+          python -m playwright install --with-deps chromium
+
+      - name: Verify public V1/V2 routes and interactions
+        run: >-
+          python tools/pages/verify_public_pages.py
+          --base-url https://arazsaiearasi3.github.io/CM-PharmE/
+          --output public-verification.json
+
+      - name: Preserve rendered verification evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cm-pharme-public-verification
+          path: |
+            public-verification.json
+            public-v1-explore.png
+            public-v2-explore.png
+          if-no-files-found: warn

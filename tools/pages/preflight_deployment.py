@@ -43,8 +43,8 @@ def main()->int:
     errors=[]; warnings=[]
     if not (site/"index.html").is_file(): errors.append("missing top-level index.html")
     if not (site/".nojekyll").is_file(): errors.append("missing .nojekyll")
-    if policy["public_deploy_enabled"] is not False:
-        warnings.append("public deployment policy is already enabled; this preflight slice expected staged=false")
+    if not isinstance(policy["public_deploy_enabled"], bool):
+        errors.append("public deployment policy must be boolean")
 
     # V2 workflow bridge may only build a registered exact ref.
     if args.v2_trigger_sha:
