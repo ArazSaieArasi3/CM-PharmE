@@ -71,7 +71,7 @@
       },
       "build": {
         "tool": "tools/v2_ontology/build_validate.py",
-        "command": "python tools/v2_ontology/build_validate.py --source-dir v2/ontology/source/modules --conceptual-model v2/ontouml/cm-pharme-v2.conceptual-model.json --baseline v2/ontology/baseline/formal-baseline.json --shapes v2/ontology/shapes/cm-pharme-v2.shacl.ttl --smoke-data v2/ontology/tests/formal-smoke.ttl --output-root <OUTPUT_ROOT>",
+        "command": "python tools/v2_ontology/build_validate.py --source-dir v2/ontology/source/modules --conceptual-model v2/ontouml/cm-pharme-v2.conceptual-model.json --baseline <PAGES_CURRENT_BASELINE> --shapes v2/ontology/shapes/cm-pharme-v2.shacl.ttl --smoke-data v2/ontology/tests/formal-smoke.ttl --output-root <OUTPUT_ROOT>",
         "output_root_contract": "isolated temporary/build directory; never hand-edit generated output",
         "documentation_input_artifact": "distributions/cm-pharme-v2.ttl",
         "build_manifest": "manifest.json",
@@ -80,11 +80,10 @@
       "expected_fingerprint": {
         "algorithm": "sha256",
         "representation": "canonical_ntriples",
-        "value": "59ef47eeed732290736e60bfa1c6bf43a12d15df2f50cff931badb5938cc954a",
-        "authority": "v2/ontology/baseline/formal-baseline.json"
+        "value": "302a5f70db30701608712a2c346f6a5b4bbc72b4cb9c7a921ed6e38bbebd341f",
+        "authority": "docs/documentation/v2-current-pages-baseline.json"
       },
       "expected_inventory": {
-        "canonical_triples": 642,
         "conceptual_types": 87,
         "owl_classes": 81,
         "rdfs_datatypes": 6,
@@ -97,7 +96,15 @@
         "owl2dl_profile_status": "PASS_AT_RECORDED_FORMAL_BASELINE",
         "hermit_status": "PASS_AT_RECORDED_FORMAL_BASELINE",
         "research_lifecycle_status": "STABLE_TO_DATE_EVOLVING",
-        "pages_status_label": "Stable-to-date / Evolving; not frozen or final."
+        "pages_status_label": "Stable-to-date / Evolving; not frozen or final.",
+        "historical_w5_source_ref": "952d6a42f8c1d92d6f2d3d2e78e76847dc9ed8b4",
+        "historical_w5_canonical_graph_sha256": "59ef47eeed732290736e60bfa1c6bf43a12d15df2f50cff931badb5938cc954a",
+        "current_pages_snapshot_sha256": "302a5f70db30701608712a2c346f6a5b4bbc72b4cb9c7a921ed6e38bbebd341f",
+        "annotation_only_equivalence_required": true,
+        "annotation_only_equivalence_ignored_predicates": [
+          "rdfs:label",
+          "skos:altLabel"
+        ]
       }
     }
   ],
