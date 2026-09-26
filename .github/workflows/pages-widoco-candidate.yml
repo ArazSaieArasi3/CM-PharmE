@@ -8,6 +8,7 @@ on:
       - "pages-src/widoco/**"
       - "tools/pages/run_widoco.py"
       - "tools/pages/audit_widoco_candidate.py"
+      - "tools/pages/compare_widoco_regeneration.py"
       - ".github/workflows/pages-widoco-candidate.yml"
   workflow_dispatch:
 
@@ -125,6 +126,40 @@ jobs:
           --authority docs/documentation/v2-current-pages-baseline.json
           --output build/evidence/v2-widoco-qa.json
 
+      - name: Regenerate V1 independently for comparison
+        run: >-
+          python tools/pages/run_widoco.py
+          --version v1
+          --jar build/tools/widoco.jar
+          --ontology build/input/v1/distributions/cm-pharme.ttl
+          --output build/pages-repeat/ontology/v1.0.0/reference
+          --manifest-output build/evidence/v1-widoco-repeat.json
+
+      - name: Regenerate V2 independently for comparison
+        run: >-
+          python tools/pages/run_widoco.py
+          --version v2
+          --jar build/tools/widoco.jar
+          --ontology build/input/v2/distributions/cm-pharme-v2.ttl
+          --output build/pages-repeat/ontology/v2/current/reference
+          --manifest-output build/evidence/v2-widoco-repeat.json
+
+      - name: Compare V1 independent regenerations
+        run: >-
+          python tools/pages/compare_widoco_regeneration.py
+          --version v1
+          --first build/pages-candidate/ontology/v1.0.0/reference
+          --second build/pages-repeat/ontology/v1.0.0/reference
+          --output build/evidence/v1-widoco-determinism.json
+
+      - name: Compare V2 independent regenerations
+        run: >-
+          python tools/pages/compare_widoco_regeneration.py
+          --version v2
+          --first build/pages-candidate/ontology/v2/current/reference
+          --second build/pages-repeat/ontology/v2/current/reference
+          --output build/evidence/v2-widoco-determinism.json
+
       - name: Candidate QA summary
         shell: bash
         run: |
@@ -133,6 +168,8 @@ jobs:
           cat build/evidence/v2-widoco.json
           cat build/evidence/v1-widoco-qa.json
           cat build/evidence/v2-widoco-qa.json
+          cat build/evidence/v1-widoco-determinism.json
+          cat build/evidence/v2-widoco-determinism.json
           test -s build/pages-candidate/ontology/v1.0.0/reference/cmpe-generation-manifest.json
           test -s build/pages-candidate/ontology/v2/current/reference/cmpe-generation-manifest.json
 
@@ -142,5 +179,6 @@ jobs:
           name: cm-pharme-widoco-candidates
           path: |
             build/pages-candidate/
+            build/pages-repeat/
             build/evidence/
           if-no-files-found: error
