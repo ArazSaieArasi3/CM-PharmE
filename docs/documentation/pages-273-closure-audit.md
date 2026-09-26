@@ -46,3 +46,29 @@ A PASS for #273 means the generated/download publication layer is traceable and 
 - independent scientific replication has been established.
 
 Public rendered URL verification remains a separate R1 requirement under #275.
+
+## Accepted closure evidence
+
+Final CI run: `36235116132` — **PASS**  
+Assembled Pages candidate artifact: `10903708007`  
+Artifact digest: `sha256:911633a759dc00058111ea5a52c51b27e3965528bc3e5927956bb069838672db`
+
+Final executable acceptance summary:
+- every download registry-bound: PASS;
+- V1/V2 isolation: PASS;
+- checksums exposed and verified: PASS;
+- serialization equivalence verified: PASS;
+- generated artifacts non-authoritative: PASS;
+- changelog/evolution boundary preserved: PASS;
+- V2 evolving/non-frozen: PASS;
+- stable paths immutable: PASS;
+- machine metadata source/citation links complete: PASS;
+- future-version common-pattern contract: PASS.
+
+The final URL/path inventory contains **16 advertised public artifacts**:
+- 10 governed RDF serializations across V1/V2;
+- 2 download manifests;
+- 2 provenance manifests;
+- 2 checksum manifests.
+
+Final audit result: **PASS**, with `errors=[]`.
