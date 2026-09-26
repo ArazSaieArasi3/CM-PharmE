@@ -47,7 +47,9 @@
         "structural_reference_status": "PASS",
         "owl2dl_profile_status": "NOT_CLAIMED_AS_CONFORMANT",
         "reasoner_note": "Current V1 documentation must preserve the recorded formal-profile hygiene boundary and must not convert it into OWL 2 DL conformance.",
-        "pages_status_label": "Stable V1 semantic baseline; generated reference subject to build/verification."
+        "pages_status_label": "Stable V1 semantic baseline; generated reference subject to build/verification.",
+        "current_documentation_input_sha256": "2af1080243c6010facac17edd247161894ad4273f232dc79bd355a2fbfe8e6a3",
+        "current_build_manifest_sha256": "bcb582ba694a17e11a951082e977abdbdc3926c539fe6ae342555b68ad6343f3"
       }
     },
     {
@@ -88,7 +90,8 @@
         "owl_classes": 81,
         "rdfs_datatypes": 6,
         "object_properties": 52,
-        "datatype_properties": 5
+        "datatype_properties": 5,
+        "canonical_triples": 664
       },
       "validation_boundary": {
         "required_before_pages": true,
@@ -104,7 +107,10 @@
         "annotation_only_equivalence_ignored_predicates": [
           "rdfs:label",
           "skos:altLabel"
-        ]
+        ],
+        "annotation_only_equivalence_result": "PASS",
+        "current_documentation_input_sha256": "62ef410cd5fb9ddaad75c383e45b7c05157504406d62e4845f790df12c6c66ab",
+        "current_build_manifest_sha256": "debb289a2aa0b49e565fa8654371f4892f5acbe4071a36903b5ec16a59beb89b"
       }
     }
   ],
