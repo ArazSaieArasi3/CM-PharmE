@@ -52,3 +52,16 @@ This slice proves:
 - deployable static explorer candidate.
 
 Public browser rendering, console/CORS checks, and search/zoom interaction evidence remain for the deployment-stage #275 integration before #272 can close.
+
+## Slice 1 reproducibility pins
+
+The first successful governed candidate run established and this contract now enforces:
+
+- OWL2VOWL 0.3.7 shaded JAR SHA-256: `b8c5c6227b258634bcfd0bfda6e334b78ebedc839a0b79c25537acef4da5e607`;
+- WebVOWL 1.1.7 built frontend tree SHA-256: `94a74bead0c5b4ab1be4d069dea48837016eee2bee88ecdec1c9396610e2705c`;
+- V1 VOWL JSON SHA-256: `c45fa53aab846a1bf4a2c73d1cb4d21f3b0011810c124ad4b952a36ae33c5b2f`, projection counts 44 classes / 42 properties;
+- V2 VOWL JSON SHA-256: `70f7cd6e6853bb98d85afce2a5a22aca14987b18e71356355257a7c9ff5f6de4`, projection counts 102 classes / 110 properties.
+
+The VOWL counts are **converter projection counts**, not replacements for the governed ontology inventory counts.
+
+WebVOWL 1.1.7 is a legacy frontend with semver-ranged npm dependencies and no lockfile in the upstream release. Therefore the exact source commit alone is not treated as sufficient reproducibility evidence: the expected built frontend-tree digest is also enforced. Any future dependency-resolution drift fails the build instead of silently changing published explorer assets.
