@@ -41,6 +41,8 @@ The outer explorer page always shows:
 
 The formal-reference link is also the non-interactive accessibility fallback.
 
+The pinned legacy WebVOWL CSS contains an optional `http://fonts.googleapis.com` import. The adapter removes that import from the packaged copy. Its local/system font fallback avoids mixed-content errors on HTTPS Pages; the exact upstream frontend-tree digest is checked before this bounded transformation.
+
 ## Slice 1 acceptance
 
 This slice proves:

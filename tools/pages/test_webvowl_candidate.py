@@ -50,6 +50,9 @@ def main():
             if needle not in w: errors.append(f"{vid}: wrapper missing {needle}")
         ih=inner.read_text(encoding="utf-8",errors="replace") if inner.is_file() else ""
         if "cmpe-webvowl-route-lock" not in ih: errors.append(f"{vid}: inner route lock marker missing")
+        css=root/"webvowl/css/webvowl.app.css"
+        if css.is_file() and "http://fonts.googleapis.com" in css.read_text(encoding="utf-8"):
+            errors.append(f"{vid}: insecure external font import")
         datasets=list((root/"webvowl/data").glob("*.json"))
         if [p.name for p in datasets] != ["cmpe.json"]: errors.append(f"{vid}: sample/data leakage {[p.name for p in datasets]}")
         c1,b1=local_targets(root/"webvowl",inner) if inner.is_file() else (0,[])

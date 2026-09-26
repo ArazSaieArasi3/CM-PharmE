@@ -72,6 +72,15 @@ def main()->int:
         if item.is_dir(): shutil.copytree(item,dst)
         else: shutil.copy2(item,dst)
 
+    # The pinned legacy release imports an HTTP Google font. Remove the optional
+    # remote font so HTTPS Pages has no mixed-content request or network font dependency.
+    app_css=web/"css/webvowl.app.css"
+    css=app_css.read_text(encoding="utf-8")
+    insecure_font="@import url(http://fonts.googleapis.com/css?family=Open+Sans);"
+    if css.count(insecure_font)!=1:
+        print("ERROR: unexpected WebVOWL font import contract",file=sys.stderr); return 44
+    app_css.write_text(css.replace(insecure_font,"",1),encoding="utf-8")
+
     # Remove bundled sample ontologies. This route must contain only the governed dataset.
     data=web/"data"
     data.mkdir(parents=True,exist_ok=True)
