@@ -128,23 +128,24 @@ def local_target(root: Path, source: Path, raw: str) -> tuple[Path | None, str |
 
 
 def audit_links(root: Path) -> tuple[list[dict], list[dict]]:
+    root = root.resolve()
     docs = html_documents(root)
     broken: list[dict] = []
     checked: list[dict] = []
     for source, parser in docs.items():
         for attr, raw in parser.links:
             if raw.lower().startswith("javascript:"):
-                broken.append({"source": str(source.relative_to(root)), "target": raw, "reason": "javascript URI prohibited"})
+                broken.append({"source": str(source.relative_to(root.resolve())), "target": raw, "reason": "javascript URI prohibited"})
                 continue
             target, fragment, error = local_target(root, source, raw)
             if error:
-                broken.append({"source": str(source.relative_to(root)), "target": raw, "reason": error})
+                broken.append({"source": str(source.relative_to(root.resolve())), "target": raw, "reason": error})
                 continue
             if target is None:
                 continue
-            checked.append({"source": str(source.relative_to(root)), "target": raw})
+            checked.append({"source": str(source.relative_to(root.resolve())), "target": raw})
             if not target.exists():
-                broken.append({"source": str(source.relative_to(root)), "target": raw, "reason": "missing local target"})
+                broken.append({"source": str(source.relative_to(root.resolve())), "target": raw, "reason": "missing local target"})
                 continue
             if fragment and target.suffix.lower() in {".html", ".htm"}:
                 tparser = docs.get(target.resolve())
@@ -153,7 +154,7 @@ def audit_links(root: Path) -> tuple[list[dict], list[dict]]:
                     tparser.feed(target.read_text(encoding="utf-8", errors="replace"))
                     docs[target.resolve()] = tparser
                 if fragment not in tparser.ids:
-                    broken.append({"source": str(source.relative_to(root)), "target": raw, "reason": f"missing fragment #{fragment}"})
+                    broken.append({"source": str(source.relative_to(root.resolve())), "target": raw, "reason": f"missing fragment #{fragment}"})
 
     # CSS asset references.
     for css in sorted(root.rglob("*.css")):
@@ -169,11 +170,11 @@ def audit_links(root: Path) -> tuple[list[dict], list[dict]]:
             try:
                 target.relative_to(root.resolve())
             except ValueError:
-                broken.append({"source": str(css.relative_to(root)), "target": raw, "reason": "CSS asset escapes candidate root"})
+                broken.append({"source": str(css.relative_to(root.resolve())), "target": raw, "reason": "CSS asset escapes candidate root"})
                 continue
-            checked.append({"source": str(css.relative_to(root)), "target": raw})
+            checked.append({"source": str(css.relative_to(root.resolve())), "target": raw})
             if not target.exists():
-                broken.append({"source": str(css.relative_to(root)), "target": raw, "reason": "missing CSS asset"})
+                broken.append({"source": str(css.relative_to(root.resolve())), "target": raw, "reason": "missing CSS asset"})
     return checked, broken
 
 
