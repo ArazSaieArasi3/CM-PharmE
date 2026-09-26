@@ -7,6 +7,7 @@ on:
       - "docs/documentation/pages-272-webvowl.md"
       - "tools/pages/build_webvowl_explorer.py"
       - "tools/pages/test_webvowl_candidate.py"
+      - "tools/pages/test_webvowl_v3_contract.py"
       - "tools/pages/build_shell.py"
       - "pages-src/site.css"
       - ".github/workflows/pages-webvowl-candidate.yml"
@@ -23,6 +24,9 @@ jobs:
     steps:
       - name: Checkout CM-PharmE publication branch
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Guard future explorer onboarding and route isolation
+        run: python tools/pages/test_webvowl_v3_contract.py
 
       - name: Checkout exact V1 semantic source
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1

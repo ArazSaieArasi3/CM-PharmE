@@ -73,3 +73,7 @@ A second exact-source rebuild established the metadata-independent OWL2VOWL 0.3.
 `f500951cdd4a0963fb80a96b974f463e8cfc84660f3b46ce802b14296e5e9aee`
 
 This digest is computed from sorted ZIP entry names plus uncompressed entry bytes. It is now enforced in CI. Raw JAR bytes are intentionally not used as the identity because archive timestamps vary without changing executable content.
+
+## Hypothetical V3 onboarding guard
+
+`tools/pages/test_webvowl_v3_contract.py` creates a disposable V3 registry entry and adapter configuration. It proves that the shared packager can create an isolated V3 route, binds the manifest to its source and data checksum, rejects an overwrite or source-ref mismatch, and rejects a route collision. The synthetic input is confined to a temporary directory and is never added to the published registry or artifact. This test does not claim a scientific V3 ontology exists.
