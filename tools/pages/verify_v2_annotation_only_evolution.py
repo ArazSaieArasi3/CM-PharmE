@@ -38,6 +38,11 @@ def inventory(g: Graph) -> dict:
     }
 
 
+def render(triple: tuple) -> str:
+    s, p, o = triple
+    return f"{s.n3()} {p.n3()} {o.n3()} ."
+
+
 def main() -> int:
     p = argparse.ArgumentParser()
     p.add_argument("--w5-dir", type=Path, required=True)
@@ -60,6 +65,8 @@ def main() -> int:
         "current_inventory": inventory(cur),
         "non_annotation_added_triples": len(added),
         "non_annotation_removed_triples": len(removed),
+        "non_annotation_added_sample": sorted(render(t) for t in added)[:50],
+        "non_annotation_removed_sample": sorted(render(t) for t in removed)[:50],
         "interpretation": (
             "Current V2 differs from frozen W5 only in rdfs:label/skos:altLabel triples."
             if not added and not removed
