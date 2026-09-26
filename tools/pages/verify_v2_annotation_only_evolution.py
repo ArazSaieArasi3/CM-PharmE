@@ -7,6 +7,7 @@ import json
 from pathlib import Path
 
 from rdflib import Graph
+from rdflib.compare import isomorphic, to_canonical_graph
 from rdflib.namespace import RDF, RDFS, OWL, SKOS
 
 IGNORED = {RDFS.label, SKOS.altLabel}
@@ -22,8 +23,17 @@ def load(root: Path) -> Graph:
     return g
 
 
-def stripped(g: Graph) -> set[tuple]:
-    return {(s,p,o) for s,p,o in g if p not in IGNORED}
+def stripped_graph(g: Graph) -> Graph:
+    out = Graph()
+    for s, p, o in g:
+        if p not in IGNORED:
+            out.add((s, p, o))
+    return out
+
+
+def canonical_lines(g: Graph) -> list[str]:
+    cg = to_canonical_graph(g)
+    return sorted(f"{s.n3()} {p.n3()} {o.n3()} ." for s, p, o in cg)
 
 
 def inventory(g: Graph) -> dict:
@@ -38,11 +48,6 @@ def inventory(g: Graph) -> dict:
     }
 
 
-def render(triple: tuple) -> str:
-    s, p, o = triple
-    return f"{s.n3()} {p.n3()} {o.n3()} ."
-
-
 def main() -> int:
     p = argparse.ArgumentParser()
     p.add_argument("--w5-dir", type=Path, required=True)
@@ -52,24 +57,30 @@ def main() -> int:
 
     old = load(args.w5_dir)
     cur = load(args.current_dir)
-    old_core = stripped(old)
-    cur_core = stripped(cur)
-    added = cur_core - old_core
-    removed = old_core - cur_core
+    old_core = stripped_graph(old)
+    cur_core = stripped_graph(cur)
+
+    equivalent = isomorphic(old_core, cur_core)
+    old_lines = set(canonical_lines(old_core))
+    cur_lines = set(canonical_lines(cur_core))
+    added = sorted(cur_lines - old_lines)
+    removed = sorted(old_lines - cur_lines)
 
     report = {
         "schema_version": 1,
-        "result": "PASS" if not added and not removed else "FAIL",
+        "result": "PASS" if equivalent else "FAIL",
+        "comparison_method": "RDF graph isomorphism after removing governed label predicates",
         "ignored_predicates": sorted(str(x) for x in IGNORED),
         "w5_inventory": inventory(old),
         "current_inventory": inventory(cur),
+        "non_annotation_graph_isomorphic": bool(equivalent),
         "non_annotation_added_triples": len(added),
         "non_annotation_removed_triples": len(removed),
-        "non_annotation_added_sample": sorted(render(t) for t in added)[:50],
-        "non_annotation_removed_sample": sorted(render(t) for t in removed)[:50],
+        "non_annotation_added_sample": added[:50],
+        "non_annotation_removed_sample": removed[:50],
         "interpretation": (
-            "Current V2 differs from frozen W5 only in rdfs:label/skos:altLabel triples."
-            if not added and not removed
+            "Current V2 differs from frozen W5 only in rdfs:label/skos:altLabel triples; blank-node identity is compared isomorphically."
+            if equivalent
             else "Current V2 contains non-annotation graph changes relative to frozen W5."
         ),
     }
@@ -78,7 +89,7 @@ def main() -> int:
         args.output.parent.mkdir(parents=True, exist_ok=True)
         args.output.write_text(payload, encoding="utf-8")
     print(payload, end="")
-    return 0 if report["result"] == "PASS" else 1
+    return 0 if equivalent else 1
 
 
 if __name__ == "__main__":
