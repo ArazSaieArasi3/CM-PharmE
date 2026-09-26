@@ -48,12 +48,33 @@ The manifest/provenance pair exposes:
 - repository/source/Wiki/citation paths;
 - authority boundary.
 
+## Evolution/changelog boundary
+
+Each generated download manifest links to:
+- the repository-level `CHANGELOG.md` as a technical/generated evolution aid;
+- the curated Wiki research-evolution page.
+
+The manifest and rendered download page explicitly state that the repository changelog does **not** replace the curated research-evolution narrative.
+
+## Slice 2 integration contract
+
+When verified bundles already exist in a Pages candidate, the shell reads their machine-readable manifests and renders:
+- direct links to all five verified serializations;
+- per-file SHA-256 values;
+- manifest/provenance/checksum links;
+- lifecycle/source boundaries;
+- evolution/changelog links and boundary.
+
+When bundles are absent, the independent shell build retains its placeholder page, so #270 remains independently testable.
+
+Negative guards include:
+- a second write to a non-empty bundle path MUST fail;
+- a synthetic V3 contract must resolve to its own `/ontology/v3/current/downloads/` route through the same pattern;
+- a colliding V3/V2 route MUST be rejected by contract validation.
+
 ## Remaining #273 work
 
-This first slice does not close #273. Remaining bounded work:
-- generated evolution/changelog link and boundary;
-- shell/download-page integration;
-- V1/V2 isolation and overwrite negative tests;
-- future V3 manifest-pattern dry run;
-- sample download verification from assembled Pages candidate;
-- final URL/path inventory and closure audit.
+After this slice only final closure QA remains:
+- final assembled Pages URL/path inventory;
+- sample-download checksum/reparse verification from the assembled candidate;
+- final closure disposition against every #273 AC.
