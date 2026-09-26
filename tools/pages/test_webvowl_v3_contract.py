@@ -39,9 +39,11 @@ def main() -> None:
         registry["versions"].append(v3)
         frontend = root / "frontend"
         (frontend / "js").mkdir(parents=True)
+        (frontend / "css").mkdir(parents=True)
         (frontend / "index.html").write_text("<html><head></head><body></body></html>")
         (frontend / "js/webvowl.js").write_text("test")
         (frontend / "js/webvowl.app.js").write_text("test")
+        (frontend / "css/webvowl.app.css").write_text("@import url(http://fonts.googleapis.com/css?family=Open+Sans);body{font-family:sans-serif}")
         data = root / "synthetic.json"
         write_json(data, {"class": [{"id": "synthetic"}], "property": []})
         ontology = root / "synthetic.ttl"
@@ -67,6 +69,7 @@ def main() -> None:
             manifest = explorer.load(root / "site/ontology/v3.0.0/explore/explorer-manifest.json")
             assert manifest["version_id"] == "v3"
             assert manifest["vowl_json_sha256"] == explorer.sha256_file(data)
+            assert "http://fonts.googleapis.com" not in (root / "site/ontology/v3.0.0/explore/webvowl/css/webvowl.app.css").read_text()
             assert run_builder(args) == 6, "existing route was silently overwritten"
             assert run_builder(args[:args.index("--source-ref") + 1] + ["wrong@ref"] + args[args.index("--output-root"):]) == 3
             assert len(build_shell.validate_routes(registry)) > 0
