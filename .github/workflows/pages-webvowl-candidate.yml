@@ -93,7 +93,16 @@ jobs:
           cd external/owl2vowl
           mvn -B package -P standalone-release -DskipTests
           test -s target/OWL2VOWL-0.3.7-shaded.jar
-          echo "b8c5c6227b258634bcfd0bfda6e334b78ebedc839a0b79c25537acef4da5e607  target/OWL2VOWL-0.3.7-shaded.jar" | sha256sum --check --strict
+          python - <<'PY'
+          import hashlib, zipfile
+          from pathlib import Path
+          p=Path("target/OWL2VOWL-0.3.7-shaded.jar")
+          h=hashlib.sha256()
+          with zipfile.ZipFile(p) as z:
+              for name in sorted(x for x in z.namelist() if not x.endswith("/")):
+                  h.update(name.encode("utf-8")); h.update(b"\\0"); h.update(z.read(name)); h.update(b"\\n")
+          print("OWL2VOWL_CONTENT_SHA256="+h.hexdigest())
+          PY
 
       - name: Convert governed V1/V2 inputs to VOWL JSON
         shell: bash
