@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "issue": 275,
-  "public_deploy_enabled": true,
+  "public_deploy_enabled": false,
   "deployment_source": "github-actions",
   "deployment_environment": "github-pages",
   "candidate_artifact_name": "github-pages",
@@ -27,7 +27,7 @@
     "rule": "A successful V2 semantic-CI completion may request a Pages candidate build only when its head SHA already equals the V2 exact source SHA in the main-branch version registry. Otherwise Pages waits for the governed registry update on main."
   },
   "deployment_guards": {
-    "manual_dispatch_only_until_public_enablement": false,
+    "manual_dispatch_only_until_public_enablement": true,
     "require_main_branch": true,
     "require_public_deploy_enabled_true": true,
     "build_job_separate_from_deploy_job": true,
