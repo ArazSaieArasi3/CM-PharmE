@@ -27,7 +27,7 @@ def sha256(path: Path) -> str:
     return h.hexdigest()
 
 
-LINK_ATTR_RE = re.compile(r'(?P<prefix>\\b(?:href|src)=["\\\'])(?P<value>[^"\\\']+)(?P<quote>["\\\'])', re.I)
+LINK_ATTR_RE = re.compile(r"(?P<prefix>\b(?:href|src)=[\"'])(?P<value>[^\"']+)(?P<quote>[\"'])", re.I)
 
 
 def normalize_generated_html(root: Path, ontology: Path, semantic_namespace: str) -> dict:
