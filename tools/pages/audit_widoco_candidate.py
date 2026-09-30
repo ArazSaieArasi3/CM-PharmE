@@ -74,7 +74,7 @@ def expected_counts(version: str, authority: dict) -> tuple[dict[str, int | None
                 "datatype_properties": "No independently frozen V1 datatype-property count in the authoritative validation report; reconciled directly against the governed exact-ref ontology input and WIDOCO HTML.",
             },
         )
-    if version == "v2":
+    if all(k in authority for k in ("expected_owl_classes", "expected_object_properties", "expected_datatype_properties")):
         return (
             {
                 "classes": int(authority["expected_owl_classes"]),
@@ -190,7 +190,7 @@ def audit_links(root: Path) -> tuple[list[dict], list[dict]]:
 
 def main() -> int:
     p = argparse.ArgumentParser()
-    p.add_argument("--version", choices=["v1", "v2"], required=True)
+    p.add_argument("--version", required=True)
     p.add_argument("--ontology", type=Path, required=True)
     p.add_argument("--candidate", type=Path, required=True)
     p.add_argument("--authority", type=Path, required=True)

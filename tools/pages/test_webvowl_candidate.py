@@ -31,7 +31,8 @@ def local_targets(root:Path,html:Path):
 
 def main():
     ap=argparse.ArgumentParser(); ap.add_argument("--site",type=Path,required=True); ap.add_argument("--output",type=Path,required=True); args=ap.parse_args()
-    routes={"v1":"ontology/v1.0.0","v2":"ontology/v2/current"}
+    registry=json.loads((Path(__file__).resolve().parents[2]/"docs/documentation/ontology-version-registry.json").read_text())
+    routes={v["id"]:(v.get("immutable_version_path") or v["current_path"]).strip("/") for v in registry["versions"] if v["webvowl_enabled"]}
     reports={}; errors=[]; hashes={}
     for vid,route in routes.items():
         root=args.site/route/"explore"

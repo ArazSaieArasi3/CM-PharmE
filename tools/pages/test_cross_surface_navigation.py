@@ -66,9 +66,10 @@ def main() -> int:
 
         assert "Read curated" in explore
         assert "Exact semantic source" in explore
-        assert "Explore interactively" in reference
-        assert "View exact" in reference
-        assert f"{PAGES_BASE}/{route}/" in reference
+        if version["generated_reference_enabled"]:
+            assert "Explore interactively" in reference
+            assert "View exact" in reference
+            assert f"{PAGES_BASE}/{route}/" in reference
 
         other = [x for x in REGISTRY["versions"] if x["id"] != vid]
         for foreign in other:

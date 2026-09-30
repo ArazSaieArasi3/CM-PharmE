@@ -83,26 +83,28 @@ def main()->int:
             if not (root/required).is_file(): errors.append(f"{v['id']}: missing {route}/{required}")
         # The public reference route must serve actual WIDOCO output, not the shell placeholder.
         ref=root/"reference"
-        if not (ref/"index-en.html").is_file():
-            errors.append(f"{v['id']}: missing WIDOCO index-en.html")
-        elif sha256(ref/"index.html") != sha256(ref/"index-en.html"):
-            errors.append(f"{v['id']}: reference/index.html is not the deterministic alias of WIDOCO index-en.html")
-        else:
-            text=(ref/"index.html").read_text(encoding="utf-8",errors="replace")
-            if v["semantic_source_ref"] not in text: errors.append(f"{v['id']}: WIDOCO entry lacks exact source ref")
-            if "Generated reference projection" not in text: errors.append(f"{v['id']}: WIDOCO entry lacks non-authority boundary")
+        if v["generated_reference_enabled"]:
+            if not (ref/"index-en.html").is_file():
+                errors.append(f"{v['id']}: missing WIDOCO index-en.html")
+            elif sha256(ref/"index.html") != sha256(ref/"index-en.html"):
+                errors.append(f"{v['id']}: reference/index.html is not the deterministic alias of WIDOCO index-en.html")
+            else:
+                text=(ref/"index.html").read_text(encoding="utf-8",errors="replace")
+                if v["semantic_source_ref"] not in text: errors.append(f"{v['id']}: WIDOCO entry lacks exact source ref")
+                if "Generated reference projection" not in text: errors.append(f"{v['id']}: WIDOCO entry lacks non-authority boundary")
         d=root/"downloads"
         for required in ("download-manifest.json","provenance.json","SHA256SUMS.txt"):
             if not (d/required).is_file(): errors.append(f"{v['id']}: missing download evidence {required}")
         explorer=root/"explore"
-        for required in ("index.html","explorer-manifest.json","webvowl/index.html","webvowl/data/cmpe.json"):
-            if not (explorer/required).is_file(): errors.append(f"{v['id']}: missing explorer {required}")
-        if (explorer/"explorer-manifest.json").is_file():
-            e=load(explorer/"explorer-manifest.json")
-            if e.get("version_id")!=v["id"] or e.get("semantic_source_ref")!=v["semantic_source_ref"]:
-                errors.append(f"{v['id']}: explorer source/version binding mismatch")
-            if (explorer/"webvowl/data/cmpe.json").is_file() and e.get("vowl_json_sha256")!=sha256(explorer/"webvowl/data/cmpe.json"):
-                errors.append(f"{v['id']}: explorer dataset checksum mismatch")
+        if v["webvowl_enabled"]:
+            for required in ("index.html","explorer-manifest.json","webvowl/index.html","webvowl/data/cmpe.json"):
+                if not (explorer/required).is_file(): errors.append(f"{v['id']}: missing explorer {required}")
+            if (explorer/"explorer-manifest.json").is_file():
+                e=load(explorer/"explorer-manifest.json")
+                if e.get("version_id")!=v["id"] or e.get("semantic_source_ref")!=v["semantic_source_ref"]:
+                    errors.append(f"{v['id']}: explorer source/version binding mismatch")
+                if (explorer/"webvowl/data/cmpe.json").is_file() and e.get("vowl_json_sha256")!=sha256(explorer/"webvowl/data/cmpe.json"):
+                    errors.append(f"{v['id']}: explorer dataset checksum mismatch")
         versions.append({
           "id":v["id"],"route":"/"+route+"/","lifecycle_state":v["lifecycle_state"],
           "semantic_source_ref":v["semantic_source_ref"],

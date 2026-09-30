@@ -27,7 +27,8 @@
         "output_root_contract": "isolated temporary/build directory; never hand-edit generated output",
         "documentation_input_artifact": "distributions/cm-pharme.ttl",
         "build_manifest": "validation/build-manifest.json",
-        "checksum_manifest": "validation/SHA256SUMS.txt"
+        "checksum_manifest": "validation/SHA256SUMS.txt",
+        "reference_authority": "<SOURCE_ROOT>/ontology/validation/validation-report.json"
       },
       "expected_fingerprint": {
         "algorithm": "sha256",
@@ -73,11 +74,12 @@
       },
       "build": {
         "tool": "tools/v2_ontology/build_validate.py",
-        "command": "python tools/v2_ontology/build_validate.py --source-dir v2/ontology/source/modules --conceptual-model v2/ontouml/cm-pharme-v2.conceptual-model.json --baseline <PAGES_CURRENT_BASELINE> --shapes v2/ontology/shapes/cm-pharme-v2.shacl.ttl --smoke-data v2/ontology/tests/formal-smoke.ttl --output-root <OUTPUT_ROOT>",
+        "command": "python tools/v2_ontology/build_validate.py --source-dir v2/ontology/source/modules --conceptual-model v2/ontouml/cm-pharme-v2.conceptual-model.json --baseline <PAGES_CURRENT_BASELINE> --shapes v2/ontology/shapes/cm-pharme-v2.shacl.ttl --smoke-data v2/ontology/tests/formal-smoke.ttl --output-root <OUTPUT_ROOT> --require-shacl",
         "output_root_contract": "isolated temporary/build directory; never hand-edit generated output",
         "documentation_input_artifact": "distributions/cm-pharme-v2.ttl",
         "build_manifest": "manifest.json",
-        "quality_report": "validation/quality-report.json"
+        "quality_report": "validation/quality-report.json",
+        "reference_authority": "<PUBLICATION_ROOT>/docs/documentation/v2-current-pages-baseline.json"
       },
       "expected_fingerprint": {
         "algorithm": "sha256",
