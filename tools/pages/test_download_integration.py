@@ -17,7 +17,8 @@ class P(HTMLParser):
 
 def main():
     ap=argparse.ArgumentParser(); ap.add_argument("--site",type=Path,required=True); args=ap.parse_args()
-    versions=["ontology/v1.0.0","ontology/v2/current"]
+    registry=json.loads((Path(__file__).resolve().parents[2]/"docs/documentation/ontology-version-registry.json").read_text())
+    versions=[(v.get("immutable_version_path") or v["current_path"]).strip("/") for v in registry["versions"]]
     checked=0
     for route in versions:
         d=args.site/route/"downloads"

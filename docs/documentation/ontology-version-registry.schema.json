@@ -211,6 +211,12 @@
           "wiki_explanation_path": {
             "type": "string",
             "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$"
+          },
+          "semantic_release": {
+            "type": [
+              "string",
+              "null"
+            ]
           }
         },
         "allOf": [

@@ -43,15 +43,17 @@ def verify(base: str) -> dict:
             route = route.strip("/") + "/"
             root = urljoin(base, route)
             explore = urljoin(root, "explore/")
+            if version["generated_reference_enabled"]:
+                assert b"Generated reference projection" in fetch(urljoin(root, "reference/"))
+            assert b"download-manifest" in fetch(urljoin(root, "downloads/"))
+            if not version["webvowl_enabled"]:
+                continue
             manifest = json.loads(fetch(urljoin(explore, "explorer-manifest.json")))
             data = fetch(urljoin(explore, "webvowl/data/cmpe.json"))
             assert manifest["version_id"] == version["id"]
             assert manifest["semantic_source_ref"] == version["semantic_source_ref"]
             assert hashlib.sha256(data).hexdigest() == manifest["vowl_json_sha256"]
             assert manifest["bundled_dataset_count"] == 1
-            assert b"Generated reference projection" in fetch(urljoin(root, "reference/"))
-            assert b"download-manifest" in fetch(urljoin(root, "downloads/"))
-
             context = browser.new_context(viewport={"width": 1440, "height": 900})
             page = context.new_page()
             page.on("pageerror", lambda err, version=version: errors.append(f"{version['id']}: pageerror: {err}"))
@@ -80,7 +82,9 @@ def verify(base: str) -> dict:
             results.append({"version": version["id"], "url": explore, "source_ref": version["semantic_source_ref"], "dataset_sha256": manifest["vowl_json_sha256"], "graph_nodes": node_count, "render_complete": True, "search_results": search_results, "zoom_interaction": "PASS", "screenshot": f"public-{version['id']}-explore.png"})
             context.close()
         browser.close()
-    assert results[0]["dataset_sha256"] != results[1]["dataset_sha256"], "version datasets identical"
+    by_version = {r["version"]:r for r in results}
+    if "v1" in by_version and "v2" in by_version:
+        assert by_version["v1"]["dataset_sha256"] != by_version["v2"]["dataset_sha256"], "version datasets identical"
     assert not errors, "; ".join(errors)
     return {"result": "PASS", "base_url": base, "versions": results, "browser_errors": errors}
 
