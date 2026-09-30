@@ -109,6 +109,9 @@ jobs:
       - name: Checkout publication branch
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
+      - name: Verify frozen documentation baseline archive
+        run: python tools/pages/verify_baseline_archive.py
+
       - name: Validate common version plan and checkout exact semantic sources
         run: python tools/pages/run_version_pipeline.py checkout --output build/evidence/version-pipeline-plan.json
 

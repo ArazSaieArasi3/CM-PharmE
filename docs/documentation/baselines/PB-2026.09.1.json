@@ -1,0 +1,648 @@
+{
+  "archive_path": "docs/documentation/baselines/PB-2026.09.1.zip",
+  "archive_rebuild_readback": "PASS",
+  "archive_sha256": "b01b3cf3b22e1a2c6297f04309252c3e5eb321c829c9b86c67d801bea23788a7",
+  "archived_files": 180,
+  "authority_model": "Semantic Source defines; Wiki explains; Pages exposes generated/exhaustive reference.",
+  "baseline_id": "PB-2026.09.1",
+  "build_evidence_artifact": {
+    "id": 11081367138,
+    "sha256": "540272052d5648d54618e6cc6d708622448875e0fef595a1dae17ca38913ad7d"
+  },
+  "child_closure_evidence": [
+    {
+      "issue": 268,
+      "state": "closed",
+      "url": "https://github.com/ArazSaieArasi3/CM-PharmE/issues/268"
+    },
+    {
+      "issue": 269,
+      "state": "closed",
+      "url": "https://github.com/ArazSaieArasi3/CM-PharmE/issues/269"
+    },
+    {
+      "issue": 270,
+      "state": "closed",
+      "url": "https://github.com/ArazSaieArasi3/CM-PharmE/issues/270"
+    },
+    {
+      "issue": 271,
+      "state": "closed",
+      "url": "https://github.com/ArazSaieArasi3/CM-PharmE/issues/271"
+    },
+    {
+      "issue": 272,
+      "state": "closed",
+      "url": "https://github.com/ArazSaieArasi3/CM-PharmE/issues/272"
+    },
+    {
+      "issue": 273,
+      "state": "closed",
+      "url": "https://github.com/ArazSaieArasi3/CM-PharmE/issues/273"
+    },
+    {
+      "issue": 274,
+      "state": "closed",
+      "url": "https://github.com/ArazSaieArasi3/CM-PharmE/issues/274"
+    },
+    {
+      "issue": 275,
+      "state": "closed",
+      "url": "https://github.com/ArazSaieArasi3/CM-PharmE/issues/275"
+    },
+    {
+      "issue": 276,
+      "state": "closed",
+      "url": "https://github.com/ArazSaieArasi3/CM-PharmE/issues/276"
+    },
+    {
+      "issue": 277,
+      "state": "closed",
+      "url": "https://github.com/ArazSaieArasi3/CM-PharmE/issues/277"
+    }
+  ],
+  "coverage": {
+    "v1": {
+      "candidate_root": "/home/runner/work/CM-PharmE/CM-PharmE/build/site/ontology/v1.0.0/reference",
+      "entry_page": "index-en.html",
+      "full_formal_inventory": {
+        "classes": {
+          "all_declared": 42,
+          "canonical_research_inventory": 39,
+          "helper_or_meta_entities": 3,
+          "helper_or_meta_iris": [
+            "https://w3id.org/cm-pharme/meta/GeneralizationRecord",
+            "https://w3id.org/cm-pharme/meta/OntologicalStereotype",
+            "https://w3id.org/cm-pharme/meta/RelationStereotype"
+          ]
+        },
+        "datatype_properties": {
+          "all_declared": 0,
+          "canonical_research_inventory": 0,
+          "helper_or_meta_entities": 0,
+          "helper_or_meta_iris": []
+        },
+        "object_properties": {
+          "all_declared": 41,
+          "canonical_research_inventory": 39,
+          "helper_or_meta_entities": 2,
+          "helper_or_meta_iris": [
+            "https://w3id.org/cm-pharme/meta/sourceClass",
+            "https://w3id.org/cm-pharme/meta/targetClass"
+          ]
+        }
+      },
+      "generated_reference_coverage": {
+        "classes": {
+          "governed_input_entities": 42,
+          "missing_count": 0,
+          "missing_iris": [],
+          "represented_in_generated_entry": 42,
+          "status": "PASS"
+        },
+        "datatype_properties": {
+          "governed_input_entities": 0,
+          "missing_count": 0,
+          "missing_iris": [],
+          "represented_in_generated_entry": 0,
+          "status": "PASS"
+        },
+        "object_properties": {
+          "governed_input_entities": 41,
+          "missing_count": 0,
+          "missing_iris": [],
+          "represented_in_generated_entry": 41,
+          "status": "PASS"
+        }
+      },
+      "inventory_reconciliation": {
+        "classes": {
+          "actual_governed_input_count": 39,
+          "authority": "ontology/validation/validation-report.json::expected_counts.concept_class_count",
+          "expected_authoritative_count": 39,
+          "status": "PASS"
+        },
+        "datatype_properties": {
+          "actual_governed_input_count": 0,
+          "authority": "No independently frozen V1 datatype-property count in the authoritative validation report; reconciled directly against the governed exact-ref ontology input and WIDOCO HTML.",
+          "expected_authoritative_count": null,
+          "status": "PASS_WITH_DOCUMENTED_NON_FROZEN_COUNT"
+        },
+        "object_properties": {
+          "actual_governed_input_count": 39,
+          "authority": "ontology/validation/validation-report.json::expected_counts.relation_object_property_count",
+          "expected_authoritative_count": 39,
+          "status": "PASS"
+        }
+      },
+      "link_asset_audit": {
+        "broken_target_count": 0,
+        "broken_targets": [],
+        "html_file_count": 2,
+        "local_targets_checked": 675,
+        "status": "PASS"
+      },
+      "notes": [
+        "V1 canonical research inventory is namespace-scoped: concept/* classes and relation/* object properties. Meta/helper OWL entities remain visible and are separately reported rather than counted as canonical research concepts/relations.",
+        "V1 datatype-property count is not promoted to a frozen authority when the exact-ref V1 validation report does not independently declare one.",
+        "Coverage means every governed OWL class/object-property/datatype-property IRI is present in the generated WIDOCO entry page.",
+        "External HTTP(S) links are out of scope for this local candidate integrity audit; public rendered external-link checks belong to #275."
+      ],
+      "ontology_input": "/home/runner/work/CM-PharmE/CM-PharmE/build/input/v1/distributions/cm-pharme.ttl",
+      "overall": "PASS",
+      "schema_version": 1,
+      "version_id": "v1"
+    },
+    "v2": {
+      "candidate_root": "/home/runner/work/CM-PharmE/CM-PharmE/build/site/ontology/v2/current/reference",
+      "entry_page": "index-en.html",
+      "full_formal_inventory": {
+        "classes": {
+          "all_declared": 81,
+          "canonical_research_inventory": 81,
+          "helper_or_meta_entities": 0,
+          "helper_or_meta_iris": []
+        },
+        "datatype_properties": {
+          "all_declared": 5,
+          "canonical_research_inventory": 5,
+          "helper_or_meta_entities": 0,
+          "helper_or_meta_iris": []
+        },
+        "object_properties": {
+          "all_declared": 52,
+          "canonical_research_inventory": 52,
+          "helper_or_meta_entities": 0,
+          "helper_or_meta_iris": []
+        }
+      },
+      "generated_reference_coverage": {
+        "classes": {
+          "governed_input_entities": 81,
+          "missing_count": 0,
+          "missing_iris": [],
+          "represented_in_generated_entry": 81,
+          "status": "PASS"
+        },
+        "datatype_properties": {
+          "governed_input_entities": 5,
+          "missing_count": 0,
+          "missing_iris": [],
+          "represented_in_generated_entry": 5,
+          "status": "PASS"
+        },
+        "object_properties": {
+          "governed_input_entities": 52,
+          "missing_count": 0,
+          "missing_iris": [],
+          "represented_in_generated_entry": 52,
+          "status": "PASS"
+        }
+      },
+      "inventory_reconciliation": {
+        "classes": {
+          "actual_governed_input_count": 81,
+          "authority": "docs/documentation/v2-current-pages-baseline.json::expected_owl_classes",
+          "expected_authoritative_count": 81,
+          "status": "PASS"
+        },
+        "datatype_properties": {
+          "actual_governed_input_count": 5,
+          "authority": "docs/documentation/v2-current-pages-baseline.json::expected_datatype_properties",
+          "expected_authoritative_count": 5,
+          "status": "PASS"
+        },
+        "object_properties": {
+          "actual_governed_input_count": 52,
+          "authority": "docs/documentation/v2-current-pages-baseline.json::expected_object_properties",
+          "expected_authoritative_count": 52,
+          "status": "PASS"
+        }
+      },
+      "link_asset_audit": {
+        "broken_target_count": 0,
+        "broken_targets": [],
+        "html_file_count": 2,
+        "local_targets_checked": 928,
+        "status": "PASS"
+      },
+      "notes": [
+        "V1 canonical research inventory is namespace-scoped: concept/* classes and relation/* object properties. Meta/helper OWL entities remain visible and are separately reported rather than counted as canonical research concepts/relations.",
+        "V1 datatype-property count is not promoted to a frozen authority when the exact-ref V1 validation report does not independently declare one.",
+        "Coverage means every governed OWL class/object-property/datatype-property IRI is present in the generated WIDOCO entry page.",
+        "External HTTP(S) links are out of scope for this local candidate integrity audit; public rendered external-link checks belong to #275."
+      ],
+      "ontology_input": "/home/runner/work/CM-PharmE/CM-PharmE/build/input/v2/distributions/cm-pharme-v2.ttl",
+      "overall": "PASS",
+      "schema_version": 1,
+      "version_id": "v2"
+    }
+  },
+  "cross_surface_link_audit": {
+    "broken_cross_surface_links": 0,
+    "checked_surfaces": [
+      {
+        "required_links": [],
+        "result": "PASS",
+        "url": "https://arazsaiearasi3.github.io/CM-PharmE/citation/"
+      },
+      {
+        "required_links": [
+          "https://github.com/ArazSaieArasi3/CM-PharmE/tree/595ea30a66644c1b130b6c1a781dc7afbd7ba284",
+          "https://github.com/ArazSaieArasi3/CM-PharmE/wiki/V1-Formal-Ontology"
+        ],
+        "result": "PASS",
+        "url": "https://arazsaiearasi3.github.io/CM-PharmE/ontology/v1.0.0/"
+      },
+      {
+        "required_links": [
+          "https://github.com/ArazSaieArasi3/CM-PharmE/tree/595ea30a66644c1b130b6c1a781dc7afbd7ba284",
+          "https://github.com/ArazSaieArasi3/CM-PharmE/wiki/V1-Formal-Ontology"
+        ],
+        "result": "PASS",
+        "url": "https://arazsaiearasi3.github.io/CM-PharmE/ontology/v1.0.0/explore/"
+      },
+      {
+        "required_links": [
+          "https://github.com/ArazSaieArasi3/CM-PharmE/tree/595ea30a66644c1b130b6c1a781dc7afbd7ba284",
+          "https://github.com/ArazSaieArasi3/CM-PharmE/wiki/V1-Formal-Ontology"
+        ],
+        "result": "PASS",
+        "url": "https://arazsaiearasi3.github.io/CM-PharmE/ontology/v1.0.0/reference/"
+      },
+      {
+        "required_links": [
+          "https://github.com/ArazSaieArasi3/CM-PharmE/tree/1226b0a5484f8f5d3a8d214e0d0f52f066b88999",
+          "https://github.com/ArazSaieArasi3/CM-PharmE/wiki/V2-Formal-Ontology-and-SHACL"
+        ],
+        "result": "PASS",
+        "url": "https://arazsaiearasi3.github.io/CM-PharmE/ontology/v2/current/"
+      },
+      {
+        "required_links": [
+          "https://github.com/ArazSaieArasi3/CM-PharmE/tree/1226b0a5484f8f5d3a8d214e0d0f52f066b88999",
+          "https://github.com/ArazSaieArasi3/CM-PharmE/wiki/V2-Formal-Ontology-and-SHACL"
+        ],
+        "result": "PASS",
+        "url": "https://arazsaiearasi3.github.io/CM-PharmE/ontology/v2/current/explore/"
+      },
+      {
+        "required_links": [
+          "https://github.com/ArazSaieArasi3/CM-PharmE/tree/1226b0a5484f8f5d3a8d214e0d0f52f066b88999",
+          "https://github.com/ArazSaieArasi3/CM-PharmE/wiki/V2-Formal-Ontology-and-SHACL"
+        ],
+        "result": "PASS",
+        "url": "https://arazsaiearasi3.github.io/CM-PharmE/ontology/v2/current/reference/"
+      },
+      {
+        "required_links": [],
+        "result": "PASS",
+        "url": "https://github.com/ArazSaieArasi3/CM-PharmE/tree/1226b0a5484f8f5d3a8d214e0d0f52f066b88999"
+      },
+      {
+        "required_links": [],
+        "result": "PASS",
+        "url": "https://github.com/ArazSaieArasi3/CM-PharmE/tree/595ea30a66644c1b130b6c1a781dc7afbd7ba284"
+      },
+      {
+        "required_links": [
+          "https://arazsaiearasi3.github.io/CM-PharmE/citation/"
+        ],
+        "result": "PASS",
+        "url": "https://github.com/ArazSaieArasi3/CM-PharmE/wiki/Citation-and-Reuse"
+      },
+      {
+        "required_links": [
+          "https://arazsaiearasi3.github.io/CM-PharmE/ontology/v1.0.0/explore/",
+          "https://arazsaiearasi3.github.io/CM-PharmE/ontology/v1.0.0/reference/",
+          "https://arazsaiearasi3.github.io/CM-PharmE/ontology/v2/current/explore/",
+          "https://arazsaiearasi3.github.io/CM-PharmE/ontology/v2/current/reference/",
+          "https://github.com/ArazSaieArasi3/CM-PharmE/tree/1226b0a5484f8f5d3a8d214e0d0f52f066b88999",
+          "https://github.com/ArazSaieArasi3/CM-PharmE/tree/595ea30a66644c1b130b6c1a781dc7afbd7ba284"
+        ],
+        "result": "PASS",
+        "url": "https://github.com/ArazSaieArasi3/CM-PharmE/wiki/Ontology-and-Conceptual-Model-Guide"
+      },
+      {
+        "required_links": [],
+        "result": "PASS",
+        "url": "https://github.com/ArazSaieArasi3/CM-PharmE/wiki/Reference-Guide"
+      },
+      {
+        "required_links": [
+          "https://arazsaiearasi3.github.io/CM-PharmE/ontology/v1.0.0/downloads/",
+          "https://arazsaiearasi3.github.io/CM-PharmE/ontology/v1.0.0/explore/",
+          "https://arazsaiearasi3.github.io/CM-PharmE/ontology/v1.0.0/reference/",
+          "https://github.com/ArazSaieArasi3/CM-PharmE/tree/595ea30a66644c1b130b6c1a781dc7afbd7ba284"
+        ],
+        "result": "PASS",
+        "url": "https://github.com/ArazSaieArasi3/CM-PharmE/wiki/V1-Formal-Ontology"
+      },
+      {
+        "required_links": [
+          "https://arazsaiearasi3.github.io/CM-PharmE/ontology/v2/current/downloads/",
+          "https://arazsaiearasi3.github.io/CM-PharmE/ontology/v2/current/explore/",
+          "https://arazsaiearasi3.github.io/CM-PharmE/ontology/v2/current/reference/",
+          "https://github.com/ArazSaieArasi3/CM-PharmE/tree/1226b0a5484f8f5d3a8d214e0d0f52f066b88999"
+        ],
+        "result": "PASS",
+        "url": "https://github.com/ArazSaieArasi3/CM-PharmE/wiki/V2-Formal-Ontology-and-SHACL"
+      },
+      {
+        "required_links": [
+          "https://arazsaiearasi3.github.io/CM-PharmE/ontology/v2/current/explore/",
+          "https://arazsaiearasi3.github.io/CM-PharmE/ontology/v2/current/reference/",
+          "https://github.com/ArazSaieArasi3/CM-PharmE/tree/1226b0a5484f8f5d3a8d214e0d0f52f066b88999"
+        ],
+        "result": "PASS",
+        "url": "https://github.com/ArazSaieArasi3/CM-PharmE/wiki/V2-Ontology-Diagram-Suite"
+      },
+      {
+        "required_links": [
+          "https://arazsaiearasi3.github.io/CM-PharmE/ontology/v2/current/explore/",
+          "https://arazsaiearasi3.github.io/CM-PharmE/ontology/v2/current/reference/"
+        ],
+        "result": "PASS",
+        "url": "https://github.com/ArazSaieArasi3/CM-PharmE/wiki/V2-Ontology-Reference"
+      }
+    ],
+    "errors": [],
+    "issue": 274,
+    "reader_journeys": [
+      {
+        "explore": "https://arazsaiearasi3.github.io/CM-PharmE/ontology/v1.0.0/explore/",
+        "max_hops": 2,
+        "reference": "https://arazsaiearasi3.github.io/CM-PharmE/ontology/v1.0.0/reference/",
+        "source": "https://github.com/ArazSaieArasi3/CM-PharmE/tree/595ea30a66644c1b130b6c1a781dc7afbd7ba284",
+        "version": "v1",
+        "wiki": "https://github.com/ArazSaieArasi3/CM-PharmE/wiki/V1-Formal-Ontology"
+      },
+      {
+        "explore": "https://arazsaiearasi3.github.io/CM-PharmE/ontology/v2/current/explore/",
+        "max_hops": 2,
+        "reference": "https://arazsaiearasi3.github.io/CM-PharmE/ontology/v2/current/reference/",
+        "source": "https://github.com/ArazSaieArasi3/CM-PharmE/tree/1226b0a5484f8f5d3a8d214e0d0f52f066b88999",
+        "version": "v2",
+        "wiki": "https://github.com/ArazSaieArasi3/CM-PharmE/wiki/V2-Formal-Ontology-and-SHACL"
+      }
+    ],
+    "result": "PASS"
+  },
+  "decision": "PASS \u2014 DECLARE PB-2026.09.1",
+  "declaration_date": "2026-09-30",
+  "deployment_manifest": {
+    "authority_model": "Semantic Source defines; Wiki explains; Pages exposes generated/exhaustive reference.",
+    "build_commit_sha": "f41da9a633c69196676306fddd79e4408a3ac07d",
+    "deployment_policy_sha256": "8d4f046713d9effc54e725eb4a9acd1eaf7e02397eefccc5b72574842246fe1d",
+    "errors": [],
+    "event_name": "push",
+    "generator_versions": {
+      "configure_pages": {
+        "sha": "45bfe0192ca1faeb007ade9deae92b16b8254a0d",
+        "version": "v6.0.0"
+      },
+      "deploy_pages": {
+        "sha": "368f82528645a54fb793d4d04e342629a3f51346",
+        "version": "v5.0.1"
+      },
+      "upload_pages_artifact": {
+        "sha": "fc324d3547104276b827a68afc52ff2a11cc49c9",
+        "version": "v5.0.0"
+      },
+      "widoco": "1.4.25",
+      "widoco_jar_sha256": "be57a270fffb91e55810fa308717e704a44e2e7c027a3d68125a49da6c8b4e2b"
+    },
+    "issue": 275,
+    "public_deploy_enabled": true,
+    "rendered_public_verification_status": "DEFERRED_UNTIL_PUBLIC_DEPLOYMENT",
+    "result": "PASS",
+    "scanned_public_file_count": 102,
+    "schema_version": 1,
+    "version_registry_sha256": "cc6b5fd66b854a5fbea1da45ec9a753d331961875df05d75496f506d5395c12f",
+    "versions": [
+      {
+        "documentation_fingerprint": "cc823a8aff4d7e7818f8470f2dbad6ca8045ff92e5637fbf3503bc105170a83f",
+        "download_manifest_sha256": "3a206c77818e831d626a127c7abc1435108e9aa719b60a12b4336f8373204a12",
+        "explorer_manifest_sha256": "12171c70535571a4bfddfc1237e0b052c032d543eb3e181ca15e918e7fa3fc24",
+        "id": "v1",
+        "lifecycle_state": "stable",
+        "reference_entry_sha256": "7674fa8a90847ace4dadbcd98764e71f03f0094bcebaaf0cc0324fa5f43eca8d",
+        "route": "/ontology/v1.0.0/",
+        "semantic_source_ref": "main@595ea30a66644c1b130b6c1a781dc7afbd7ba284"
+      },
+      {
+        "documentation_fingerprint": "302a5f70db30701608712a2c346f6a5b4bbc72b4cb9c7a921ed6e38bbebd341f",
+        "download_manifest_sha256": "623935655dcead3842240420b25d29c10716619e0587594e7ae5c080948c40e7",
+        "explorer_manifest_sha256": "f1b6133e14bbc1346e66ee4bec3ab5bd66364b16297a1333ed378efb85f246f8",
+        "id": "v2",
+        "lifecycle_state": "evolving",
+        "reference_entry_sha256": "fe756ff4919f3078a65fac32ec76eb5ce85fc0427c67039c1d128170229569e1",
+        "route": "/ontology/v2/current/",
+        "semantic_source_ref": "v2/research-program@1226b0a5484f8f5d3a8d214e0d0f52f066b88999"
+      }
+    ],
+    "warnings": [],
+    "webvowl_status": "ASSEMBLED_STATIC_QA_PASS"
+  },
+  "future_version_proof": [
+    {
+      "after_tree_sha256": "9d7841168f78d9757070343074385f95b3e209bb641220238e5c37ffe1b8169f",
+      "before_tree_sha256": "9d7841168f78d9757070343074385f95b3e209bb641220238e5c37ffe1b8169f",
+      "changed_files": 0,
+      "file_count": 47,
+      "version": "v1"
+    },
+    {
+      "after_tree_sha256": "a8f0f63123d5544bd28b2315eac9d8c380b91a89482b0482581782f2eadc481b",
+      "before_tree_sha256": "a8f0f63123d5544bd28b2315eac9d8c380b91a89482b0482581782f2eadc481b",
+      "changed_files": 0,
+      "file_count": 47,
+      "version": "v2"
+    }
+  ],
+  "identity": "Pages/documentation baseline; not an ontology semantic or research release",
+  "limitations": [
+    "V2 current is evolving; use this archived snapshot for immutable documentation evidence.",
+    "WebVOWL is a visualization projection; its visible node count and collapsing filter do not establish formal entity coverage.",
+    "V1 recorded OWL-profile hygiene limitations remain; documentation publication does not establish OWL 2 DL conformance.",
+    "Semantic human review and expert evaluation remain pending in their research issues.",
+    "External semantic IRIs are identifiers, not a guarantee of deployed w3id redirects.",
+    "Future-version dry-run is architecture evidence only; no real V3 scientific content is claimed."
+  ],
+  "local_link_audit": {
+    "application_fragment_routes": [
+      {
+        "reason": "missing fragment #cmpe",
+        "source": "ontology/v1.0.0/explore/index.html",
+        "target": "webvowl/index.html#cmpe"
+      },
+      {
+        "reason": "missing fragment #opts=editorMode=true;#new_ontology1",
+        "source": "ontology/v1.0.0/explore/webvowl/index.html",
+        "target": "#opts=editorMode=true;#new_ontology1"
+      },
+      {
+        "reason": "missing fragment #cmpe",
+        "source": "ontology/v2/current/explore/index.html",
+        "target": "webvowl/index.html#cmpe"
+      },
+      {
+        "reason": "missing fragment #opts=editorMode=true;#new_ontology1",
+        "source": "ontology/v2/current/explore/webvowl/index.html",
+        "target": "#opts=editorMode=true;#new_ontology1"
+      }
+    ],
+    "broken_links": 0,
+    "checked_links_assets": 3406
+  },
+  "pages_artifact": {
+    "id": 11081571935,
+    "sha256": "5e4cef0a0302861ab00c17f7c7bcaeca1427c847bdb3fceb8e120f30fea04714"
+  },
+  "pages_workflow_run": 36679626350,
+  "public_exposure_review": {
+    "result": "PASS",
+    "scanned_files": 102,
+    "scope": "All exact published files scanned by mandatory deployment preflight; no symlinks or detected private-key/token/restricted-response markers. Only registered public semantic inputs are admitted."
+  },
+  "published_build_commit": "f41da9a633c69196676306fddd79e4408a3ac07d",
+  "published_url": "https://arazsaiearasi3.github.io/CM-PharmE/",
+  "published_wiki_commit": "9d6cbcb2fb53a61009062834422d02097080c00b",
+  "recording_commit": "Git commit containing docs/documentation/baselines/PB-2026.09.1.json; distinct from published_build_commit.",
+  "rendered_verification_artifact": {
+    "id": 11080809734,
+    "sha256": "d2308a59218c8fdb20597657f9a078a128be617c9ec544aace0c68b271a6bf21"
+  },
+  "route_inventory": {
+    "authority_model": "Semantic Source defines; Wiki explains; Pages exposes generated/exhaustive reference.",
+    "registry_sha256": "cc6b5fd66b854a5fbea1da45ec9a753d331961875df05d75496f506d5395c12f",
+    "routes": [
+      {
+        "kind": "landing",
+        "route": "/",
+        "version_id": null
+      },
+      {
+        "kind": "about",
+        "route": "/about/",
+        "version_id": null
+      },
+      {
+        "kind": "citation",
+        "route": "/citation/",
+        "version_id": null
+      },
+      {
+        "kind": "history",
+        "route": "/history/",
+        "version_id": null
+      },
+      {
+        "kind": "version_chooser",
+        "route": "/ontology/",
+        "version_id": null
+      },
+      {
+        "kind": "version_root",
+        "route": "/ontology/v1.0.0/",
+        "version_id": "v1"
+      },
+      {
+        "kind": "citation",
+        "route": "/ontology/v1.0.0/citation/",
+        "version_id": "v1"
+      },
+      {
+        "kind": "downloads",
+        "route": "/ontology/v1.0.0/downloads/",
+        "version_id": "v1"
+      },
+      {
+        "kind": "explore",
+        "route": "/ontology/v1.0.0/explore/",
+        "version_id": "v1"
+      },
+      {
+        "kind": "history",
+        "route": "/ontology/v1.0.0/history/",
+        "version_id": "v1"
+      },
+      {
+        "kind": "provenance",
+        "route": "/ontology/v1.0.0/provenance/",
+        "version_id": "v1"
+      },
+      {
+        "kind": "reference",
+        "route": "/ontology/v1.0.0/reference/",
+        "version_id": "v1"
+      },
+      {
+        "kind": "version_root",
+        "route": "/ontology/v2/current/",
+        "version_id": "v2"
+      },
+      {
+        "kind": "citation",
+        "route": "/ontology/v2/current/citation/",
+        "version_id": "v2"
+      },
+      {
+        "kind": "downloads",
+        "route": "/ontology/v2/current/downloads/",
+        "version_id": "v2"
+      },
+      {
+        "kind": "explore",
+        "route": "/ontology/v2/current/explore/",
+        "version_id": "v2"
+      },
+      {
+        "kind": "history",
+        "route": "/ontology/v2/current/history/",
+        "version_id": "v2"
+      },
+      {
+        "kind": "provenance",
+        "route": "/ontology/v2/current/provenance/",
+        "version_id": "v2"
+      },
+      {
+        "kind": "reference",
+        "route": "/ontology/v2/current/reference/",
+        "version_id": "v2"
+      }
+    ],
+    "schema_version": 1,
+    "version_routes": {
+      "ontology/v1.0.0": "v1",
+      "ontology/v2/current": "v2"
+    }
+  },
+  "wiki_disposition_audit": {
+    "candidate_pages": 171,
+    "changed_candidate_content": 0,
+    "errors": [],
+    "family_counts": {
+      "concept": 87,
+      "conceptual/evolution guide": 4,
+      "datatype property": 5,
+      "diagram suite": 1,
+      "formal guide": 2,
+      "module": 17,
+      "object property": 52,
+      "reader guide": 2,
+      "reference index": 1
+    },
+    "issue": 276,
+    "preserved_inbound_routes": 171,
+    "removed_pages": 0,
+    "result": "PASS"
+  },
+  "wiki_source_commit": "61025372bae686c4531a79c29231f7bedbf41431",
+  "wiki_verification_artifact": {
+    "id": 11081086651,
+    "sha256": "d8fc278ed58f55037598f894bdbc8eb71b6c03930a184f5e66896987a3c03aed"
+  },
+  "wiki_workflow_run": 36678938084
+}
