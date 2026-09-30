@@ -268,6 +268,9 @@ jobs:
       - name: Audit final closed-loop cross-surface navigation
         run: python tools/pages/test_cross_surface_navigation.py
 
+      - name: Audit retained Wiki reference dispositions
+        run: python tools/pages/audit_wiki_disposition.py
+
       - name: Run download/traceability audits on assembled site
         shell: bash
         run: |
@@ -363,6 +366,9 @@ jobs:
       - name: Prove verifier rejects an intentionally invalid public surface
         run: python tools/pages/test_public_verification_failure_contract.py
 
+      - name: Verify published Wiki and Pages reader journeys
+        run: python tools/pages/verify_cross_surface_public.py --output public-navigation.json
+
       - name: Preserve rendered verification evidence
         if: always()
         uses: actions/upload-artifact@v4
@@ -372,4 +378,5 @@ jobs:
             public-verification.json
             public-v1-explore.png
             public-v2-explore.png
+            public-navigation.json
           if-no-files-found: warn

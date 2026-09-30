@@ -1,6 +1,6 @@
 # Generated vs curated ontology documentation
 
-**Issue:** #234  
+**Issues:** #234, #276  
 **Decision:** generated reference is an aid and projection; curated interpretation remains the human-facing explanatory layer.
 
 ## Decision
@@ -39,7 +39,7 @@ A generic OWL documentation generator normally sees only part of that project-sp
 
 ## Current implementation choice
 
-Use a repository-native deterministic generator for the Wiki reference projection. Keep WIDOCO/LODE-style generation as an optional formal-reference/export experiment, especially useful for:
+Use a repository-native deterministic generator for the Wiki reference projection. WIDOCO is now adopted on version-specific public Pages routes after R1 verification. It provides the formal-reference projection, while the Wiki generator retains project-specific conceptual/review context. This allocation is useful for:
 - cross-checking formal entity coverage;
 - producing an alternate OWL-centric artifact;
 - future static reference hosting.
@@ -59,3 +59,7 @@ A generated-reference tool may be added later only if:
 3. it supports stable versioned output;
 4. it can coexist with project-specific provenance/review information;
 5. maintenance cost is lower than the benefit.
+
+## Post-Pages disposition
+
+The per-page #276 assessment retains concept/module/property pages for their project-specific evidence and review context. These are deterministic projections, not a second manually maintained ontology. The reference index and formal guides link to public WIDOCO and WebVOWL; existing Wiki routes and curated diagrams remain preserved. See `docs/documentation/pages-276-wiki-disposition.md` and its per-page JSON matrix in the source repository.
