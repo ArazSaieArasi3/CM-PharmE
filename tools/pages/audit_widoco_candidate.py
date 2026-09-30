@@ -190,7 +190,7 @@ def audit_links(root: Path) -> tuple[list[dict], list[dict]]:
 
 def main() -> int:
     p = argparse.ArgumentParser()
-    p.add_argument("--version", choices=["v1", "v2"], required=True)
+    p.add_argument("--version", required=True)
     p.add_argument("--ontology", type=Path, required=True)
     p.add_argument("--candidate", type=Path, required=True)
     p.add_argument("--authority", type=Path, required=True)
