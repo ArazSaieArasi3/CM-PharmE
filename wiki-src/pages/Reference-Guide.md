@@ -2,7 +2,7 @@
 
 > **Version scope:** Cross-version  
 > **Status:** Stable-to-date / Evolving  
-> **Updated:** 2026-09-24
+> **Updated:** 2026-09-26
 
 Use this section for fast lookup across **terminology, concepts, relations, domains/modules, datasets, evaluation artifacts and repository artifacts**.
 

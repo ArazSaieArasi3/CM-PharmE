@@ -17,6 +17,10 @@ DEFAULT_CSS = ROOT / "pages-src/site.css"
 REPO_URL = "https://github.com/ArazSaieArasi3/CM-PharmE"
 WIKI_URL = REPO_URL + "/wiki"
 
+
+def wiki_explanation_url(version: dict) -> str:
+    return f"{WIKI_URL}/{version['wiki_explanation_path']}"
+
 VERSION_SUBROUTES = (
     ("reference", "Formal reference", "Generated formal ontology reference will be populated by PAGES-04 / #271."),
     ("explore", "Interactive exploration", "Interactive WebVOWL exploration will be populated by PAGES-05 / #272."),
@@ -171,7 +175,7 @@ def explorer_body(version: dict, version_root: Path) -> str | None:
   <dt>OWL2VOWL</dt><dd>{esc(manifest["owl2vowl_version"])}</dd>
   <dt>Dataset</dt><dd><code>{esc(manifest["vowl_json_sha256"])}</code></dd>
 </dl>
-<p><a href="../reference/">Formal reference</a> · <a href="{esc(WIKI_URL)}">Research Wiki</a> · <a href="{esc(exact_source_url(version))}">Exact semantic source</a></p>
+<p><a href="../reference/">Formal reference</a> · <a href="{esc(wiki_explanation_url(version))}">Read curated explanation</a> · <a href="{esc(exact_source_url(version))}">Exact semantic source</a></p>
 <p class="fallback"><strong>Non-interactive fallback:</strong> use the <a href="../reference/">Formal reference</a> if interactive visualization is unavailable or unsuitable.</p>
 <iframe class="explorer-frame" title="{esc(version["reader_label"])} interactive WebVOWL explorer" src="{esc(manifest["iframe_entry"])}"></iframe>
 """
@@ -330,7 +334,7 @@ def build(registry_path: Path, output_root: Path, css_path: Path) -> dict:
 <p><a href="{esc(exact_source_url(version))}">Open exact source commit</a></p>
 <ul>{source_links}</ul>
 <h2>Research context</h2>
-<p><a href="{esc(WIKI_URL)}">Open the curated Research Wiki</a></p>
+<p><a href="{esc(wiki_explanation_url(version))}">Read curated version explanation</a> · <a href="{esc(WIKI_URL)}">Research Wiki home</a></p>
 """,
             version_root=version_root,
         )
@@ -353,7 +357,7 @@ def build(registry_path: Path, output_root: Path, css_path: Path) -> dict:
 """
             body += f"""
 <p><a class="back-link" href="{esc(rel_href(subfile, root_path))}">Back to version overview</a></p>
-<p><a href="{esc(exact_source_url(version))}">Exact semantic source</a> · <a href="{esc(WIKI_URL)}">Research Wiki</a></p>
+<p><a href="{esc(exact_source_url(version))}">Exact semantic source</a> · <a href="{esc(wiki_explanation_url(version))}">Read curated explanation</a> · <a href="{esc(WIKI_URL)}">Research Wiki home</a></p>
 """
             write_page(
                 output_root,

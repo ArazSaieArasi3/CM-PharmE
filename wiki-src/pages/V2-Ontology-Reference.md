@@ -2,12 +2,15 @@
 
 > **Version scope:** V2  
 > **Status:** Stable-to-date / Evolving; semantic review pending  
-> **Updated:** 2026-09-24
+> **Updated:** 2026-09-26
 
 This is the exhaustive reader-facing reference projection for the current CM-PharmE 2.0 conceptual/formal baseline. It combines curated navigation with deterministic entity references generated from the V2 authority at `v2/research-program@1226b0a5484f8f5d3a8d214e0d0f52f066b88999`.
 
 ## Purpose and scope
 Use this reference to discover modules, conceptual elements and formal properties, then follow the authoritative source links for semantic/evidence decisions. The reference does not replace the ontology source or semantic-review process.
+
+For generated formal HTML and interactive graph use the public Pages routes: [V2 formal reference](https://arazsaiearasi3.github.io/CM-PharmE/ontology/v2/current/reference/) · [V2 WebVOWL](https://arazsaiearasi3.github.io/CM-PharmE/ontology/v2/current/explore/) · [V2 downloads](https://arazsaiearasi3.github.io/CM-PharmE/ontology/v2/current/downloads/). The Wiki remains the curated explanation layer.
+
 
 ## Visual architecture
 

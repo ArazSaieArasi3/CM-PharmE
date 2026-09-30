@@ -88,6 +88,7 @@
           "citation_status",
           "supersedes",
           "superseded_by",
+          "wiki_explanation_path",
           "public_status_label"
         ],
         "properties": {
@@ -206,6 +207,10 @@
           "public_status_label": {
             "type": "string",
             "minLength": 1
+          },
+          "wiki_explanation_path": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$"
           }
         },
         "allOf": [
