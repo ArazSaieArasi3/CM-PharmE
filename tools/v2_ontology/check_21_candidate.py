@@ -19,7 +19,7 @@ def main() -> None:
         ontology.parse(path, format="turtle")
     shapes = Graph().parse(CANDIDATE / "review-constraints.ttl", format="turtle")
     result = {}
-    for scenario, expected, count in (("positive", True, 0), ("negative", False, 4)):
+    for scenario, expected, count in (("positive", True, 0), ("negative", False, 5)):
         data = Graph().parse(CANDIDATE / f"smoke-{scenario}.ttl", format="turtle")
         conforms, report, _ = validate(data, shacl_graph=shapes, ont_graph=ontology,
                                        inference="rdfs", abort_on_first=False)
