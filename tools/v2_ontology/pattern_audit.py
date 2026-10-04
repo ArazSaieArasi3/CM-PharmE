@@ -10,7 +10,7 @@ import json
 import re
 from collections import defaultdict
 from pathlib import Path
-from rdflib import Graph, Namespace, RDFS
+from rdflib import Graph, Namespace, OWL, RDF, RDFS, URIRef
 
 ROOT = Path(__file__).resolve().parents[2]
 PUML = ROOT / "v2/research/w4/integrated-ontouml-overview.puml"
@@ -110,6 +110,20 @@ def main() -> None:
         "alternative_role_subclass_of_medicinal_product":
             (CMPE.AlternativeMedicinalProductRole, RDFS.subClassOf, CMPE.MedicinalProduct) in formal,
     }
+    overlaps = []
+    for prop in formal.subjects(RDF.type, OWL.ObjectProperty):
+        for source in formal.objects(prop, RDFS.domain):
+            for target in formal.objects(prop, RDFS.range):
+                if isinstance(source, URIRef) and isinstance(target, URIRef) and (
+                    source == target or (target, RDFS.subClassOf, source) in formal or (source, RDFS.subClassOf, target) in formal
+                ):
+                    overlaps.append({"property": str(prop).rsplit("/", 1)[-1],
+                                     "domain": str(source).rsplit("/", 1)[-1],
+                                     "range": str(target).rsplit("/", 1)[-1]})
+    formal_only["bin_over_direct_overlap_triggers"] = sorted(overlaps, key=lambda x: x["property"])
+    formal_only["alternative_assignment_parallel_product_properties"] = sorted(
+        str(prop).rsplit("/", 1)[-1] for prop in formal.subjects(RDFS.domain, CMPE.AlternativeMedicineAssignment)
+        if (prop, RDFS.range, CMPE.MedicinalProduct) in formal)
     print(json.dumps({
         "status": "static trigger screen, not official OntoUML conformance",
         "baseline": baseline,
