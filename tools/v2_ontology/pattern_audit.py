@@ -15,11 +15,12 @@ from rdflib import Graph, Namespace, OWL, RDF, RDFS, URIRef
 ROOT = Path(__file__).resolve().parents[2]
 PUML = ROOT / "v2/research/w4/integrated-ontouml-overview.puml"
 PROJECTION = ROOT / "v2/research/w4/integrated-ontouml-review-projection.puml"
+CANDIDATE = ROOT / "v2/ontology/candidates/2.1.0-alpha.0-review/model-review.puml"
 MODULES = ROOT / "v2/ontology/source/modules"
 CMPE = Namespace("https://w3id.org/cm-pharme/2.0/")
 
 CLASS = re.compile(r'^\s*(abstract )?class\s+(?:"[^"]+"|(\w+))(?:\s+as\s+(\w+))?\s+<<([^>]+)>>')
-EDGE = re.compile(r'^\s*(\w+)\s+(<\|--|-->|--)\s+(\w+)(?:\s*:\s*(.*))?$')
+EDGE = re.compile(r'^\s*(\w+)(?:\s+"[^"]+")?\s+(<\|--|-->|--)\s+(?:"[^"]+"\s+)?(\w+)(?:\s*:\s*(.*))?$')
 PACKAGE = re.compile(r'^package "([^"]+)"')
 
 
@@ -101,6 +102,7 @@ def analyze(model: dict) -> dict:
 def main() -> None:
     baseline = analyze(parse(PUML))
     projection = analyze(parse(PROJECTION))
+    candidate = analyze(parse(CANDIDATE))
     formal = Graph()
     for module in sorted(MODULES.glob("*.ttl")):
         formal.parse(module, format="turtle")
@@ -128,6 +130,7 @@ def main() -> None:
         "status": "static trigger screen, not official OntoUML conformance",
         "baseline": baseline,
         "corrected_projection": projection,
+        "review_candidate_diagram": candidate,
         "formal_cross_projection_checks": formal_only,
         "limitations": [
             "Multiplicity, generalization-set, read-only and existential-dependence meta-properties are unavailable in W4 PlantUML.",
