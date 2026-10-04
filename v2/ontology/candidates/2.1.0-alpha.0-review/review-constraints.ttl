@@ -1,0 +1,17 @@
+@prefix cmpe: <https://w3id.org/cm-pharme/2.1/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Review-only instance constraints for the five new candidate properties.
+cmpe:VulnerabilityShape a sh:NodeShape ; sh:targetClass cmpe:Vulnerability ;
+  sh:property [ sh:path cmpe:vulnerabilityBearer ; sh:minCount 1 ; sh:maxCount 1 ; sh:class cmpe:AssetAtRisk ] .
+
+cmpe:EnterpriseCapabilityShape a sh:NodeShape ; sh:targetClass cmpe:EnterpriseCapability ;
+  sh:property [ sh:path cmpe:capabilityBearer ; sh:minCount 1 ; sh:maxCount 1 ; sh:class cmpe:Organization ] .
+
+cmpe:RegulatoryOversightShape a sh:NodeShape ; sh:targetClass cmpe:RegulatoryOversight ;
+  sh:property [ sh:path cmpe:oversightAuthorityRole ; sh:minCount 1 ; sh:class cmpe:RegulatoryAuthorityRole ; sh:disjoint cmpe:oversightGovernedEntity ] ;
+  sh:property [ sh:path cmpe:oversightGovernedEntity ; sh:minCount 1 ] .
+
+cmpe:StrategicPartnershipAgreementShape a sh:NodeShape ; sh:targetClass cmpe:StrategicPartnershipAgreement ;
+  sh:property [ sh:path cmpe:partnershipParticipant ; sh:minCount 2 ; sh:class cmpe:Organization ] .
