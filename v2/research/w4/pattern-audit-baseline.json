@@ -512,7 +512,23 @@
   },
   "formal_cross_projection_checks": {
     "alternative_role_subclass_of_ecosystem_participant": true,
-    "alternative_role_subclass_of_medicinal_product": true
+    "alternative_role_subclass_of_medicinal_product": true,
+    "bin_over_direct_overlap_triggers": [
+      {
+        "property": "withinCountry",
+        "domain": "GeographicFeature",
+        "range": "Country"
+      },
+      {
+        "property": "withinRegion",
+        "domain": "GeographicFeature",
+        "range": "AdministrativeRegion"
+      }
+    ],
+    "alternative_assignment_parallel_product_properties": [
+      "alternativeForProduct",
+      "alternativeProduct"
+    ]
   },
   "limitations": [
     "Multiplicity, generalization-set, read-only and existential-dependence meta-properties are unavailable in W4 PlantUML.",
