@@ -49,8 +49,8 @@ cmpe:matchSubject a owl:ObjectProperty ; rdfs:domain cmpe:EntityMatchAssertion .
 cmpe:matchObject a owl:ObjectProperty ; rdfs:domain cmpe:EntityMatchAssertion .
 cmpe:hasMatchConfidence a owl:ObjectProperty ; rdfs:domain cmpe:EntityMatchAssertion ; rdfs:range cmpe:MatchConfidence .
 cmpe:locatedIn a owl:ObjectProperty ; rdfs:range cmpe:GeographicFeature .
-cmpe:withinRegion a owl:ObjectProperty ; rdfs:domain cmpe:GeographicFeature ; rdfs:range cmpe:AdministrativeRegion .
-cmpe:withinCountry a owl:ObjectProperty ; rdfs:domain cmpe:GeographicFeature ; rdfs:range cmpe:Country .
+cmpe:withinRegion a owl:ObjectProperty, owl:IrreflexiveProperty ; rdfs:domain cmpe:GeographicFeature ; rdfs:range cmpe:AdministrativeRegion .
+cmpe:withinCountry a owl:ObjectProperty, owl:IrreflexiveProperty ; rdfs:domain cmpe:GeographicFeature ; rdfs:range cmpe:Country .
 cmpe:identifierLexicalValue a owl:DatatypeProperty ; rdfs:domain cmpe:IdentifierAssignment ; rdfs:range xsd:string .
 cmpe:measureNumericValue a owl:DatatypeProperty ; rdfs:domain cmpe:ObservationResult ; rdfs:range xsd:decimal .
 cmpe:measureUnitLabel a owl:DatatypeProperty ; rdfs:domain cmpe:ObservationResult ; rdfs:range xsd:string .
