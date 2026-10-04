@@ -15,3 +15,7 @@ cmpe:RegulatoryOversightShape a sh:NodeShape ; sh:targetClass cmpe:RegulatoryOve
 
 cmpe:StrategicPartnershipAgreementShape a sh:NodeShape ; sh:targetClass cmpe:StrategicPartnershipAgreement ;
   sh:property [ sh:path cmpe:partnershipParticipant ; sh:minCount 2 ; sh:class cmpe:Organization ] .
+
+cmpe:AlternativeMedicineAssignmentShape a sh:NodeShape ; sh:targetClass cmpe:AlternativeMedicineAssignment ;
+  sh:property [ sh:path cmpe:alternativeProduct ; sh:minCount 1 ; sh:class cmpe:MedicinalProduct ; sh:disjoint cmpe:alternativeForProduct ] ;
+  sh:property [ sh:path cmpe:alternativeForProduct ; sh:minCount 1 ; sh:class cmpe:MedicinalProduct ] .
