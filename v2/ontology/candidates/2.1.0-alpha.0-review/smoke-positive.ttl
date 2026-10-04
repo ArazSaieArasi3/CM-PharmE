@@ -9,3 +9,6 @@ ex:org2 a cmpe:Organization .
 ex:capability a cmpe:EnterpriseCapability ; cmpe:capabilityBearer ex:org2 .
 ex:oversight a cmpe:RegulatoryOversight ; cmpe:oversightAuthorityRole ex:org1 ; cmpe:oversightGovernedEntity ex:org2 .
 ex:partnership a cmpe:StrategicPartnershipAgreement ; cmpe:partnershipParticipant ex:org1, ex:org2 .
+ex:product1 a cmpe:MedicinalProduct .
+ex:product2 a cmpe:MedicinalProduct .
+ex:alternativeAssignment a cmpe:AlternativeMedicineAssignment ; cmpe:alternativeProduct ex:product2 ; cmpe:alternativeForProduct ex:product1 .
