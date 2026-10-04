@@ -7,3 +7,5 @@ ex:capability a cmpe:EnterpriseCapability ; cmpe:capabilityBearer ex:org1, ex:wr
 ex:wrong a cmpe:MedicinalProduct .
 ex:oversight a cmpe:RegulatoryOversight ; cmpe:oversightAuthorityRole ex:org1 ; cmpe:oversightGovernedEntity ex:org1 .
 ex:partnership a cmpe:StrategicPartnershipAgreement ; cmpe:partnershipParticipant ex:org1 .
+ex:product1 a cmpe:MedicinalProduct .
+ex:alternativeAssignment a cmpe:AlternativeMedicineAssignment ; cmpe:alternativeProduct ex:product1 ; cmpe:alternativeForProduct ex:product1 .
