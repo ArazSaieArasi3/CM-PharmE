@@ -25,8 +25,8 @@ Official constraints underlying the checks: Relators require mediation with mini
 
 | Anti-pattern | Static result | Evidence / action |
 |---|---|---|
-| BinOver | Undetermined | Association-end bounds and specialization/subsetting metadata absent. |
-| DecInt | Undetermined | Decisive intensional/dependence constraints absent from W4 serialization. |
+| **BinOver** | **Two W5 direct-overlap triggers** | `GeographicFeature→AdministrativeRegion` (`withinRegion`) and `GeographicFeature→Country` (`withinCountry`): a feature could be its own container. Candidate makes both properties irreflexive; assess other binary meta-properties in the native model. |
+| DecInt | No proved exact occurrence | Some Roles have a Kind plus an abstract RoleMixin parent; concrete-parent and covering-set metadata needed for the catalogue's exact condition. |
 | DepPhase | No applicable Phase | No `Phase` in 87-element inventory. |
 | FreeRole | No exact drawn trigger; dependence open | No Role→Role subtype chain is drawn; ten concrete roles still lack OWL existential grounding. |
 | GSRig | Undetermined | No explicit generalization-set membership to test mixed rigidity. |
@@ -37,16 +37,16 @@ Official constraints underlying the checks: Relators require mediation with mini
 | MixRig | No rigid descendent of a RoleMixin found in W4 | Candidate also removes the incorrect Product-role actor inheritance in W5. |
 | MultDep | Undetermined | Several entities participate in multiple Relators; their dependency conditions must be compared before calling this redundant. |
 | PartOver | No typed part-whole pattern drawn | Requires mereology and multiplicities to decide. |
-| RelComp | Undetermined | Completeness of Relator mediation and material derivation is not encoded in native metadata. |
-| RelOver | Undetermined | Requires relation identity and overlapping ends. |
+| RelComp | Undetermined | Relation-composition constraints require two typed associations and lower/upper association-end multiplicities. |
+| RelOver | Possible overlap in AlternativeMedicineAssignment | `alternativeProduct` and `alternativeForProduct` both target Product; overlapping ends and upper bounds need review. Candidate SHACL requires distinct products for the two positions. |
 | **RelRig** | **12 rigid-end mediation triggers** | Examples: FacilityOperation→Organization/Facility, ClassAssignment→Product/ClassificationEntry, EvidenceSupport→Assertion. Some are legitimate optional participation in a Relator; decide role subtypes, read-only mediation or alternative relation per case. No blanket pass. |
 | RelSpec | Undetermined | EvidenceSupport→EvidenceItem versus →SourceRecord may require a documented subsetting/role specialization; no relation-generalization metadata. |
-| RepRel | Undetermined | Compare repeated participant relations and derived material edges individually; W5 properties alone are insufficient. |
+| RepRel | Undetermined | Number of repeat Relator instances for the same participants, possibly at different times, requires relator-end upper bounds and a uniqueness rule. |
 | UndefFormal | Undetermined | Aboutness and other context arrows need derivation/quality basis or retyping; avoid generic formal links. |
 | UndefPhase | No applicable Phase | No `Phase` stereotype in the registry. |
 | WholeOver | No typed part-whole pattern drawn | Cannot evaluate unrepresented whole-overlap constraints. |
 
-`RelRig` is a **trigger, not an automatic logical inconsistency**: its catalogue advises role-subtype refactoring when mediation is optional for a rigid Kind. The `FreeRole` and `UndefFormal` entries also require semantic evidence, not a count alone. The old W4 manual anti-pattern review's unqualified “no critical/high semantic defect” conclusion is consequently **too strong for this expanded catalogue-wide screen**; it remains a historical Gate-D decision, not a current all-clear.
+`RelRig` is a **trigger, not an automatic logical inconsistency**: its catalogue advises role-subtype refactoring when mediation is optional for a rigid Kind. `BinOver` likewise asks for explicit binary properties (such as irreflexivity) where end types overlap; `RelOver` asks whether the same participant can fill multiple mediation positions. The `FreeRole` and `UndefFormal` entries require semantic evidence, not a count alone. The old W4 manual anti-pattern review's unqualified “no critical/high semantic defect” conclusion is consequently **too strong for this expanded catalogue-wide screen**; it remains a historical Gate-D decision, not a current all-clear.
 
 ## Domain-by-domain disposition
 
@@ -60,11 +60,11 @@ All 87 concepts in all 17 domains were included. `Review` means an explicit deci
 | Core — Pharmaceutical Product | 10 | Classification and listing mediate rigid Product/Entry/Presentation; Strength bearer is explicit. | Review RelRig cases; preserve three identities. |
 | Core — Supply Operations | 4 | Capacity Mode has a bearer proxy, but polymorphic end and situation timing need rules. | Review bearer and temporal constraints. |
 | Core — Ecosystem Observation | 3 | Subkinds of ObservationResult, separate from phenomenon. | Preserve distinction; qualify aboutness. |
-| X-INFRA — Spatiotemporal Context | 7 | Four unattached datatypes in W4 are values, not orphan domain classes. | Map through values, not false mediations. |
+| X-INFRA — Spatiotemporal Context | 7 | Four unattached datatypes are values; `withinRegion` and `withinCountry` have BinOver overlap triggers in W5. | Map values appropriately; candidate forbids self-containment. |
 | X-INFRA — Evidence Traceability | 13 | EvidenceItem lacks concrete Role subtypes; EvidenceSupport→SourceRecord exists in W5. | Review evidence bearers and Assertion RelRig. |
 | X-INFRA — Entity Identity | 5 | IdentifierValue was incorrectly drawn as mediated; identifierEntity has no universal range. | Value edge corrected in candidate; bearer role open. |
 | Extension — Regulatory Policy | 2 | Oversight has only one drawn mediation; W5 had no participant properties. | Candidate adds two properties; distinct participants/typing open. |
-| Extension — Supply Resilience | 11 | Product RoleMixin mismatch in W5; ContextClass links absent from W4; dependency participants rigid. | Mismatch removed and contextual links drawn in candidate; review supply cases. |
+| Extension — Supply Resilience | 11 | Product RoleMixin mismatch, ContextClass links omitted, and overlapping alternative-product positions. | Candidate corrects inheritance, draws links and enforces distinct alternatives in SHACL; review RelRig cases. |
 | Extension — Market Access | 3 | Payer role dependence and isolated diagnosis reference. | Require source-backed context link. |
 | Extension — Risk Management | 5 | AssetAtRisk has no concrete Role subtype; Vulnerability bearer missing in W5. | Candidate adds bearer property; bearer role remains open. |
 | Extension — Pharmacovigilance | 3 | Reporting/Surveillance Events relate to requirements; event versus case boundary. | Retain module, review task data before new case type. |
@@ -84,19 +84,21 @@ The separate [2.1.0-alpha.0-review candidate](../../ontology/candidates/2.1.0-al
 | Add `partnershipParticipant` | Represent at least two distinct Organization participants. | OWL qualified min 2 and candidate SHACL min 2; verify agreement semantics with author. |
 | Recast `IdentifierValue` diagram edge as a value relation | Datatype values are not individuals mediated by a Relator. | The polymorphic identified-bearer mediation remains a blocking conceptual decision. |
 | Show both W5 contextual-classification links and existing source-record evidence mediation | Repair omissions in the W4 visualization. | No new dataset evidence or retrospective W7 result change. |
+| Declare `withinRegion` and `withinCountry` irreflexive | Explicitly prohibit self-containment exposed by two BinOver triggers. | Other binary properties (including transitivity and asymmetry) still require scope-specific decisions. |
+| Require distinct reference and alternative products in candidate SHACL | The same product cannot be its own alternative within one assignment. | The two roles and their upper bounds need review for RelOver. |
 
-**Candidate quantity:** 87 conceptual elements (81 classes, six datatypes), **57** object properties versus 52 in 2.0; no concept added or removed yet. There are five new candidate properties, one removed subclass axiom, three new OWL cardinality restrictions and four focused SHACL node shapes. This is a provisional implementation, not a released improvement score.
+**Candidate quantity:** 87 conceptual elements (81 classes, six datatypes), **57** object properties versus 52 in 2.0; no concept added or removed yet. There are five new candidate properties, one removed subclass axiom, three new OWL cardinality restrictions, two irreflexivity axioms and five focused SHACL node shapes. This is a provisional implementation, not a released improvement score.
 
 ## Verification performed and limits
 
 - Baseline W7-E3 rerun: **17 checks, zero blocking failures, three warnings**, reproducing the frozen result. It is not reused as a candidate 2.1 certification because its role-grounding list hard-codes the product role as an EcosystemParticipant.
 - Candidate six Turtle modules parsed; **81/81 classes and 6/6 datatypes** retain matching conceptual stereotype annotations; eight protected distinction pairs remain explicit. New candidate restrictions and properties were checked structurally. A local HermiT classification through Owlready2 found **zero unsatisfiable named classes**; this is not an OWL 2 DL profile report or multi-reasoner agreement.
-- Candidate SHACL smoke: positive data **0 violations**; intentionally negative data **4 violations** (missing Mode bearer, excess Capability bearers, same Authority/Governed oversight value, one-party Partnership). These tests cover the *new* constraints, not the entire 2.0 mapping/KG.
+- Candidate SHACL smoke: positive data **0 violations**; intentionally negative data **5 violations** (missing Mode bearer, excess Capability bearers, same Authority/Governed oversight value, one-party Partnership, and self-alternative Product). These tests cover the *new* constraints, not the entire 2.0 mapping/KG.
 - Native OntoUML JSON schema validation, official-tool anti-pattern detection, exhaustive Relation meta-properties, full 2.1 OWL/SHACL/CQ/mapping/E2–E13 regression, and a rendered diagram inspection are **not yet complete**. Therefore **zero OntoUML anti-patterns cannot presently be certified**.
 
 ## Human-review gates before a 2.1 release
 
-1. **G1, semantics:** decide the 12 RelRig triggers one by one (legitimate rigid participation with read-only end versus new anti-rigid role), type and constrain the identified entity and oversight governed participant, and decide evidence/asset/clinical RoleMixin concrete bearers. Record source, definition, counterexample, cardinalities and rejection condition for each in #159/#173.
+1. **G1, semantics:** decide the 12 RelRig triggers one by one (legitimate rigid participation with read-only end versus new anti-rigid role), confirm the two BinOver guards and alternative-product RelOver treatment, type and constrain the identified entity and oversight governed participant, and decide evidence/asset/clinical RoleMixin concrete bearers. Record source, definition, counterexample, cardinalities and rejection condition for each in #159/#173/#306.
 2. **G2, source and scope:** decide C03–C14 from the connectivity register and whether isolated Digital Systems, Clinical Care and Service Offering types stay as documented optional extensions. Discover new concepts only where an admitted source or competency question requires them; no expansion merely to connect the graph.
 3. **G3, native model:** build official OntoUML JSON with relation stereotypes, meta-properties, multiplicities and generalization sets; run the official schema/validator and a tool-supported anti-pattern catalogue review. Resolve every finding with accepted refactoring or a documented justified exception.
 4. **G4, formal/evidence regression:** run OWL 2 DL profile and two reasoners, all baseline and candidate SHACL/CQs, source mappings, held-out boundaries, figure/Wiki/manuscript traceability and the claim ledger. Record before/after separately; do not overwrite frozen W7 first-pass results.
