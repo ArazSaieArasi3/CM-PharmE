@@ -42,6 +42,10 @@ def generate() -> None:
             content = content.replace('"2026-08-19"^^xsd:date', '"2026-10-04"^^xsd:date')
         if source.name in {"10-core.ttl", "20-xinfra.ttl"}:
             content = content.replace('"Gate-D-2026-08-19"', '"2.1.0-alpha.0-review"')
+        if source.name == "20-xinfra.ttl":
+            for name in ("withinRegion", "withinCountry"):
+                content = once(content, f"cmpe:{name} a owl:ObjectProperty ;",
+                               f"cmpe:{name} a owl:ObjectProperty, owl:IrreflexiveProperty ;")
         if source.name == "30-extensions.ttl":
             content = once(content,
                 "cmpe:AlternativeMedicinalProductRole a owl:Class ; rdfs:subClassOf cmpe:MedicinalProduct, cmpe:EcosystemParticipant ;",
@@ -131,6 +135,9 @@ def validate() -> dict:
             raise ValueError(f"Property range missing: {property_name}")
         if not range_ and any(g.objects(prop, RDFS.range)):
             raise ValueError(f"Do not invent a universal governed entity range: {property_name}")
+    for name in ("withinRegion", "withinCountry"):
+        if (CMPE[name], RDF.type, OWL.IrreflexiveProperty) not in g:
+            raise ValueError(f"Missing BinOver self-containment guard: {name}")
     for concept, prop, bound, filler, value in (
         ("Vulnerability", "vulnerabilityBearer", OWL.qualifiedCardinality, "AssetAtRisk", 1),
         ("EnterpriseCapability", "capabilityBearer", OWL.qualifiedCardinality, "Organization", 1),
