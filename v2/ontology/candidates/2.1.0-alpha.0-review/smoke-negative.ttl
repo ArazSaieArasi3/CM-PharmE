@@ -1,0 +1,9 @@
+@prefix cmpe: <https://w3id.org/cm-pharme/2.1/> .
+@prefix ex: <urn:cmpe:review:> .
+
+ex:org1 a cmpe:Organization, cmpe:RegulatoryAuthorityRole .
+ex:vulnerability a cmpe:Vulnerability .
+ex:capability a cmpe:EnterpriseCapability ; cmpe:capabilityBearer ex:org1, ex:wrong .
+ex:wrong a cmpe:MedicinalProduct .
+ex:oversight a cmpe:RegulatoryOversight ; cmpe:oversightAuthorityRole ex:org1 ; cmpe:oversightGovernedEntity ex:org1 .
+ex:partnership a cmpe:StrategicPartnershipAgreement ; cmpe:partnershipParticipant ex:org1 .
