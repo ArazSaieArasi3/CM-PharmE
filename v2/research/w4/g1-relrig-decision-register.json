@@ -1,0 +1,98 @@
+{
+  "gate": "G1 semantic review",
+  "basis": "2.1.0-alpha.0-review candidate diagram; proposals are not author decisions",
+  "status": "PROPOSED_NOT_APPROVED",
+  "multiplicity_policy": "unknown unless explicitly established; no source-table foreign key is a conceptual cardinality",
+  "cases": [
+    {
+      "id": "RR-01", "relator": "FacilityOperation", "rigid_end": "Organization", "domain": "Facility Operations", "w4_pattern": "R1", "w3_relations": ["V2R-002"], "candidate_property": "operationOrganization",
+      "proposal": "Introduce an anti-rigid operator/responsible-organization Role inheriting Organization identity; mediate the Role while preserving Organization as Kind.",
+      "counterexample": "An Organization exists before it operates this Facility and may cease operation without losing identity.",
+      "decision_needed": "Is the operation truth-maker dependent on a current operator, and is one or more operator required per operation interval? Define both association-end bounds and role grounding."
+    },
+    {
+      "id": "RR-02", "relator": "FacilityOperation", "rigid_end": "Facility", "domain": "Facility Operations", "w4_pattern": "R1", "w3_relations": ["V2R-002"], "candidate_property": "operationFacility",
+      "proposal": "Introduce an anti-rigid operated-facility Role inheriting Facility identity if mediation is optional for Facility.",
+      "counterexample": "A physical Facility may exist while temporarily not operated by an Organization.",
+      "decision_needed": "Can an operation instance concern several facilities or sequential facilities? Specify cardinality, temporal scope, and the mediated facility role."
+    },
+    {
+      "id": "RR-03", "relator": "Registration", "rigid_end": "Facility", "domain": "Regulatory Governance", "w4_pattern": "R2", "w3_relations": ["V2R-010"], "candidate_property": "registrationEntity",
+      "proposal": "Model a contextual registered-facility Role where the registration actually concerns a Facility; retain Organization as a separate possible regulated bearer.",
+      "counterexample": "An unregistered Facility remains a Facility; a source record may register an Organization instead.",
+      "decision_needed": "Resolve source-specific Facility versus Organization scope, regulated role, jurisdiction and end bounds; distinguish registration relator from registration record."
+    },
+    {
+      "id": "RR-04", "relator": "ClassAssignment", "rigid_end": "Product", "domain": "Pharmaceutical Product", "w4_pattern": "R5", "w3_relations": ["V2R-017"], "candidate_property": "classificationEntity",
+      "proposal": "Use an anti-rigid classified-entity Role if the assignment is the contextual dependence; keep Product and Substance identities distinct.",
+      "counterexample": "A Product or Substance can exist without this particular ATC/source classification assignment.",
+      "decision_needed": "Decide whether both Product and Substance are admitted, whether each assignment classifies exactly one bearer, and how the Role or justified read-only rigid end is represented."
+    },
+    {
+      "id": "RR-05", "relator": "ClassAssignment", "rigid_end": "ClassEntry", "domain": "Pharmaceutical Product", "w4_pattern": "R5", "w3_relations": ["V2R-017"], "candidate_property": "classificationEntry",
+      "proposal": "Treat the ClassificationEntry link as a reference if W4's 'references' wording is intentional; do not erase the relator's two-distinct-participant obligation.",
+      "counterexample": "A ClassificationEntry remains in its scheme even when no Product is assigned to it.",
+      "decision_needed": "Choose mediation with a justified relationally dependent Entry Role versus reference; if reference, identify the second mediated individual or revise the Relator pattern."
+    },
+    {
+      "id": "RR-06", "relator": "MarketListing", "rigid_end": "Presentation", "domain": "Pharmaceutical Product", "w4_pattern": "R6", "w3_relations": ["V2R-018", "V2R-019"], "candidate_property": "listingPresentation",
+      "proposal": "Use a contextual listed-presentation Role inheriting Presentation identity; keep source-defined listing status as a contextual value.",
+      "counterexample": "A Presentation can be unlisted or listed only in a different jurisdiction or interval.",
+      "decision_needed": "Determine whether a labeler is always a mediated second party or only sometimes related; specify jurisdiction/time and lower bounds without inventing a labeler."
+    },
+    {
+      "id": "RR-07", "relator": "EvidenceSupport", "rigid_end": "Assertion", "domain": "Evidence Traceability", "w4_pattern": "R11", "w3_relations": ["V2R-059", "V2R-062"], "candidate_property": "evidenceAssertion",
+      "proposal": "Use a supported-assertion Role or justify a read-only rigid end; support participation never means that the assertion is true.",
+      "counterexample": "An Assertion can exist without a supporting EvidenceSupport and can be later challenged or retracted.",
+      "decision_needed": "Define target Assertion/Mapping/Match scope, support direction, source-to-assertion counts, and whether the end is read-only or an anti-rigid role."
+    },
+    {
+      "id": "RR-08", "relator": "IdAssignment", "rigid_end": "IdScheme", "domain": "Entity Identity", "w4_pattern": "R10", "w3_relations": ["V2R-066", "V2R-067"], "candidate_property": "identifierScheme",
+      "proposal": "Represent IdentifierScheme as a reference if W4's 'references' is intentional; IdentifierValue remains a literal, never a mediated individual.",
+      "counterexample": "An IdentifierScheme can be defined before any particular entity receives an identifier.",
+      "decision_needed": "Identify a second distinct mediated individual after changing Scheme to reference, or revise the assignment as a different ontological pattern; resolve polymorphic bearer, issuer, validity and end bounds."
+    },
+    {
+      "id": "RR-09", "relator": "AlternativeAssignment", "rigid_end": "Product", "domain": "Supply Resilience", "w4_pattern": "R8", "w3_relations": ["V2R-023"], "candidate_property": "alternativeForProduct",
+      "proposal": "Use a contextual reference/affected-product Role inheriting Product identity; the distinct alternative-product Role already has Product identity.",
+      "counterexample": "A Product may be a reference in one shortage context and unrelated to any alternative assignment in another.",
+      "decision_needed": "Confirm direction, Product versus Presentation scope, distinct relata and each end's bounds; preserve the no-self-alternative guard."
+    },
+    {
+      "id": "RR-10", "relator": "SupplyDependency", "rigid_end": "Organization", "domain": "Supply Resilience", "w4_pattern": "R9", "w3_relations": ["V2R-028"], "candidate_property": "dependencyDependent",
+      "proposal": "Use source-bounded dependent/provider Roles with an explicit identity-bearing specialization; do not infer an Organization from the untyped W5 property.",
+      "counterexample": "An Organization may be a dependent, provider, both in different contexts, or neither; the dependent may instead be a Product, Facility or Activity.",
+      "decision_needed": "Choose direction-specific role bearers and admissible types, time/context and bounds using actual source evidence; C1 is conditional and does not establish a complete network."
+    },
+    {
+      "id": "RR-11", "relator": "SupplyDependency", "rigid_end": "Facility", "domain": "Supply Resilience", "w4_pattern": "R9", "w3_relations": ["V2R-028"], "candidate_property": "dependencyProvider",
+      "proposal": "Use a provider/source-facility Role only where a Facility is actually a relatum; keep Product and Organization as other possibilities.",
+      "counterexample": "A dependency may connect two Products or two Organizations without any Facility, while a Facility may exist without being a supply source.",
+      "decision_needed": "Confirm that the current diagram's Organization–Facility pairing is merely illustrative, not a required pair; decide roles, participant distinctness and bounds."
+    },
+    {
+      "id": "RR-12", "relator": "Partnership", "rigid_end": "Organization", "domain": "Business Architecture", "w4_pattern": "R14", "w3_relations": ["V2R-078"], "candidate_property": "partnershipParticipant",
+      "proposal": "Prefer a PartnerOrganization Role for each participating Organization; retain the candidate two-distinct-participants rule provisionally in the optional extension.",
+      "counterexample": "An Organization can exist without a partnership; one Organization appearing twice does not establish a two-party agreement.",
+      "decision_needed": "Approve or reject Partnership-as-Relator and the two-distinct-Organization lower bound with independent evidence beyond V1/W1 lineage; settle role and agreement identity."
+    },
+    {
+      "id": "RR-13", "relator": "EvidenceSupport", "rigid_end": "SourceRecord", "domain": "Evidence Traceability", "w4_pattern": "R11", "w3_relations": ["V2R-059", "V2R-062"], "candidate_property": "evidenceRecord",
+      "proposal": "Examine whether SourceRecord fills an EvidenceItem Role or is only a source/provenance reference; remove redundant direct mediation if it repeats the evidence-item position.",
+      "counterexample": "A SourceRecord may exist in a registry but not support this particular Assertion; two edges to the same record must not count as two individuals.",
+      "decision_needed": "Choose typed EvidenceItem role bearers and whether record and evidence positions may coincide; specify distinct participants and support provenance."
+    },
+    {
+      "id": "RR-14", "relator": "ContextClass", "rigid_end": "Product", "domain": "Supply Resilience", "w4_pattern": "R7", "w3_relations": ["V2R-021", "V2R-022"], "candidate_property": "contextClassificationProduct",
+      "proposal": "Use an anti-rigid contextually-classified-entity Role where needed; preserve independent Product/Substance identity and the list/version context.",
+      "counterexample": "A Product outside a specific essential/critical list is still a Product; a source may classify a Substance instead.",
+      "decision_needed": "Resolve Product/Substance range mismatch between W4 and candidate OWL, scope of Essential versus Critical assignments and end bounds."
+    },
+    {
+      "id": "RR-15", "relator": "ContextClass", "rigid_end": "ClassEntry", "domain": "Supply Resilience", "w4_pattern": "R7", "w3_relations": ["V2R-021", "V2R-022"], "candidate_property": "contextClassificationEntry",
+      "proposal": "Treat ClassificationEntry as a list/version reference if it is an independently maintained entry; test whether an actual classification assignment still has two mediated relata.",
+      "counterexample": "An entry can remain in a list even when no local Product participates in this assignment.",
+      "decision_needed": "Decide whether Entry is a mediated Role, a reference, or a context object of a different assignment pattern; add no cardinality without its domain rationale."
+    }
+  ]
+}
