@@ -1,0 +1,32 @@
+@prefix cmmeta: <https://w3id.org/cm-pharme/2.1/meta/> .
+@prefix cmpe: <https://w3id.org/cm-pharme/2.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+cmpe:ClinicalCareParticipant a owl:Class ;
+    rdfs:label "Clinical Care Participant"@en ;
+    cmmeta:conceptualModule "extension" ;
+    cmmeta:ontoumlStereotype "RoleMixin" .
+
+cmpe:Vulnerability a owl:Class ;
+    rdfs:label "Vulnerability"@en ;
+    rdfs:comment "Risk-extension concept intended for later explicit alignment review against UFO-grounded risk reference ontologies such as COVER/ROSE; no owl:equivalentClass assertion is made in W5."@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onClass cmpe:AssetAtRisk ;
+            owl:onProperty cmpe:vulnerabilityBearer ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ;
+    cmmeta:conceptualModule "extension" ;
+    cmmeta:ontoumlStereotype "Mode" .
+
+cmpe:vulnerabilityBearer a owl:ObjectProperty ;
+    rdfs:domain cmpe:Vulnerability ;
+    rdfs:range cmpe:AssetAtRisk .
+
+cmpe:AssetAtRisk a owl:Class ;
+    rdfs:label "Asset at Risk"@en ;
+    skos:altLabel "Asset-at-Risk"@en ;
+    cmmeta:conceptualModule "extension" ;
+    cmmeta:ontoumlStereotype "RoleMixin" .
+
