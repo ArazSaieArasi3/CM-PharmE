@@ -1,0 +1,193 @@
+{
+  "connection_register_rows": 15,
+  "already_implemented": 4,
+  "new_scoped_items": 5,
+  "deferred_items": 6,
+  "new_object_properties": 6,
+  "bridge_tests": [
+    {
+      "property": "observationAboutProduct",
+      "case": "valid",
+      "expected_conforms": true,
+      "conforms": true,
+      "passed": true
+    },
+    {
+      "property": "observationAboutProduct",
+      "case": "wrong_subject",
+      "expected_conforms": false,
+      "conforms": false,
+      "passed": true
+    },
+    {
+      "property": "observationAboutProduct",
+      "case": "wrong_target",
+      "expected_conforms": false,
+      "conforms": false,
+      "passed": true
+    },
+    {
+      "property": "observationAboutProduct",
+      "case": "multiple_targets",
+      "expected_conforms": true,
+      "conforms": true,
+      "passed": true
+    },
+    {
+      "property": "observationAboutPresentation",
+      "case": "valid",
+      "expected_conforms": true,
+      "conforms": true,
+      "passed": true
+    },
+    {
+      "property": "observationAboutPresentation",
+      "case": "wrong_subject",
+      "expected_conforms": false,
+      "conforms": false,
+      "passed": true
+    },
+    {
+      "property": "observationAboutPresentation",
+      "case": "wrong_target",
+      "expected_conforms": false,
+      "conforms": false,
+      "passed": true
+    },
+    {
+      "property": "observationAboutPresentation",
+      "case": "multiple_targets",
+      "expected_conforms": true,
+      "conforms": true,
+      "passed": true
+    },
+    {
+      "property": "assertionAboutProduct",
+      "case": "valid",
+      "expected_conforms": true,
+      "conforms": true,
+      "passed": true
+    },
+    {
+      "property": "assertionAboutProduct",
+      "case": "wrong_subject",
+      "expected_conforms": false,
+      "conforms": false,
+      "passed": true
+    },
+    {
+      "property": "assertionAboutProduct",
+      "case": "wrong_target",
+      "expected_conforms": false,
+      "conforms": false,
+      "passed": true
+    },
+    {
+      "property": "assertionAboutProduct",
+      "case": "multiple_targets",
+      "expected_conforms": true,
+      "conforms": true,
+      "passed": true
+    },
+    {
+      "property": "riskAssessmentConcernsDependency",
+      "case": "valid",
+      "expected_conforms": true,
+      "conforms": true,
+      "passed": true
+    },
+    {
+      "property": "riskAssessmentConcernsDependency",
+      "case": "wrong_subject",
+      "expected_conforms": false,
+      "conforms": false,
+      "passed": true
+    },
+    {
+      "property": "riskAssessmentConcernsDependency",
+      "case": "wrong_target",
+      "expected_conforms": false,
+      "conforms": false,
+      "passed": true
+    },
+    {
+      "property": "riskAssessmentConcernsDependency",
+      "case": "multiple_targets",
+      "expected_conforms": true,
+      "conforms": true,
+      "passed": true
+    },
+    {
+      "property": "disruptionAffectsDependency",
+      "case": "valid",
+      "expected_conforms": true,
+      "conforms": true,
+      "passed": true
+    },
+    {
+      "property": "disruptionAffectsDependency",
+      "case": "wrong_subject",
+      "expected_conforms": false,
+      "conforms": false,
+      "passed": true
+    },
+    {
+      "property": "disruptionAffectsDependency",
+      "case": "wrong_target",
+      "expected_conforms": false,
+      "conforms": false,
+      "passed": true
+    },
+    {
+      "property": "disruptionAffectsDependency",
+      "case": "multiple_targets",
+      "expected_conforms": true,
+      "conforms": true,
+      "passed": true
+    },
+    {
+      "property": "reimbursementDiagnosisContext",
+      "case": "valid",
+      "expected_conforms": true,
+      "conforms": true,
+      "passed": true
+    },
+    {
+      "property": "reimbursementDiagnosisContext",
+      "case": "wrong_subject",
+      "expected_conforms": false,
+      "conforms": false,
+      "passed": true
+    },
+    {
+      "property": "reimbursementDiagnosisContext",
+      "case": "wrong_target",
+      "expected_conforms": false,
+      "conforms": false,
+      "passed": true
+    },
+    {
+      "property": "reimbursementDiagnosisContext",
+      "case": "multiple_targets",
+      "expected_conforms": true,
+      "conforms": true,
+      "passed": true
+    }
+  ],
+  "bridge_tests_passed": 24,
+  "g1_regression_passed": 120,
+  "nhif_projection": {
+    "input_kind": "Existing schema-faithful synthetic fixtures; not downloaded NHIF rows",
+    "source_rows": 7,
+    "metric_observations": 21,
+    "typed_connection_assertions": 42,
+    "sql_sparql_exact_match": true,
+    "shacl_conforms": true,
+    "source_rows_preserved": 7,
+    "patient_individuals_created": 0,
+    "frozen_w6_projection_modified": false
+  },
+  "held_out_used": false,
+  "official_anti_pattern_engine": "NOT_RUN",
+  "status": "G2 bounded technical disposition complete; six evidence/scope deferrals and G3 semantics remain open"
+}

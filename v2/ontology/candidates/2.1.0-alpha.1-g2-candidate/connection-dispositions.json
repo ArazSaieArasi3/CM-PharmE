@@ -1,0 +1,226 @@
+{
+  "source_revision": "17219243186df6b86056cfeeb906de2d9862c8c9",
+  "rows": [
+    {
+      "id": "C01",
+      "source": "EvidenceSupport",
+      "target": "SourceRecord",
+      "relation": "evidenceRecord",
+      "ontouml_treatment": "mediation",
+      "status": "documented_missing_from_overview",
+      "evidence": "W5 20-xinfra.ttl; W4 integrated-ontouml-model section 6",
+      "review_note": "Show the existing record-to-assertion evidence bridge; support does not establish truth",
+      "g2_status": "ALREADY_IMPLEMENTED_G1",
+      "g2_rationale": "Evidence specialization is a subset, not a second relatum.",
+      "implemented_properties": [],
+      "authority": "Technical disposition within user-authorized candidate work; not new expert sign-off"
+    },
+    {
+      "id": "C02",
+      "source": "ContextClass",
+      "target": "Product",
+      "relation": "contextClassificationProduct",
+      "ontouml_treatment": "mediation",
+      "status": "documented_missing_from_overview",
+      "evidence": "W5 30-extensions.ttl; W4 relator-material-patterns R7",
+      "review_note": "Show the existing context-specific product assignment",
+      "g2_status": "ALREADY_IMPLEMENTED_G1",
+      "g2_rationale": "Contextual assignment specializes general classification; product alias retained.",
+      "implemented_properties": [],
+      "authority": "Technical disposition within user-authorized candidate work; not new expert sign-off"
+    },
+    {
+      "id": "C03",
+      "source": "ObservationResult",
+      "target": "Product",
+      "relation": "observationResultAbout",
+      "ontouml_treatment": "formal/aboutness",
+      "status": "candidate_requires_review",
+      "evidence": "W3 V2R-044 and V2R-045; W4 integrated-ontouml-model section 5",
+      "review_note": "Type the relevant result subfamilies and preserve observed phenomenon versus result distinction",
+      "g2_status": "IMPLEMENTED_SCOPED",
+      "g2_rationale": "W4 section 5 and V2R-044/045; separate Product and Presentation aboutness specializations.",
+      "implemented_properties": [
+        "observationAboutProduct",
+        "observationAboutPresentation"
+      ],
+      "authority": "Technical disposition within user-authorized candidate work; not new expert sign-off"
+    },
+    {
+      "id": "C04",
+      "source": "Assertion",
+      "target": "Product",
+      "relation": "assertionAboutEntity",
+      "ontouml_treatment": "formal/aboutness",
+      "status": "candidate_requires_review",
+      "evidence": "W3 V2R-060; W4 evidence traceability",
+      "review_note": "Product is an example target; full admissible target union and assertion semantics need author review",
+      "g2_status": "IMPLEMENTED_SCOPED",
+      "g2_rationale": "V2R-060 and W4 evidence pattern; product-specific aboutness only. Other targets remain uncommitted.",
+      "implemented_properties": [
+        "assertionAboutProduct"
+      ],
+      "authority": "Technical disposition within user-authorized candidate work; not new expert sign-off"
+    },
+    {
+      "id": "C05",
+      "source": "IdAssignment",
+      "target": "Product",
+      "relation": "identifierEntity",
+      "ontouml_treatment": "mediation",
+      "status": "candidate_requires_review",
+      "evidence": "W3 V2R-066; W5 identifierEntity has no range",
+      "review_note": "Product is one possible identified entity; do not assert universal product-only range",
+      "g2_status": "ALREADY_IMPLEMENTED_G1",
+      "g2_rationale": "Polymorphic identified bearers and used scheme roles; no product-only global range.",
+      "implemented_properties": [],
+      "authority": "Technical disposition within user-authorized candidate work; not new expert sign-off"
+    },
+    {
+      "id": "C06",
+      "source": "RiskAssessment",
+      "target": "SupplyDependency",
+      "relation": "riskAssessmentConcerns",
+      "ontouml_treatment": "participation/aboutness",
+      "status": "candidate_requires_review",
+      "evidence": "W4 risk-resilience-extension example; W3 V2R-073",
+      "review_note": "Specify actual assessment target and evidence; not a prediction claim",
+      "g2_status": "IMPLEMENTED_SCOPED",
+      "g2_rationale": "W4 risk extension example explicitly evaluates dependencies; does not reactivate deferred asset/vulnerability classes.",
+      "implemented_properties": [
+        "riskAssessmentConcernsDependency"
+      ],
+      "authority": "Technical disposition within user-authorized candidate work; not new expert sign-off"
+    },
+    {
+      "id": "C07",
+      "source": "AEReporting",
+      "target": "Product",
+      "relation": "reportConcernsProduct",
+      "ontouml_treatment": "participation/aboutness",
+      "status": "candidate_requires_review",
+      "evidence": "W3 V2R-075; optional S3 safety extension",
+      "review_note": "Conditional on safety source; reporting activity is not the adverse event case",
+      "g2_status": "DEFER_SOURCE_ACTIVATION",
+      "g2_rationale": "V2R-075 is conditional on optional S3; no frozen safety mapping or admitted case data.",
+      "implemented_properties": [],
+      "authority": "Technical disposition within user-authorized candidate work; not new expert sign-off"
+    },
+    {
+      "id": "C08",
+      "source": "Disruption",
+      "target": "SupplyDependency",
+      "relation": "disruptionAffects",
+      "ontouml_treatment": "participation/impact",
+      "status": "candidate_requires_review",
+      "evidence": "W3 V2R-030; W4 risk-resilience-extension",
+      "review_note": "Keep impact distinct from an inferred causal effect",
+      "g2_status": "IMPLEMENTED_SCOPED",
+      "g2_rationale": "V2R-030 and W4 risk extension explicitly permit dependency impact; causal inference prohibited.",
+      "implemented_properties": [
+        "disruptionAffectsDependency"
+      ],
+      "authority": "Technical disposition within user-authorized candidate work; not new expert sign-off"
+    },
+    {
+      "id": "C09",
+      "source": "ProcurementActivity",
+      "target": "Organization",
+      "relation": "procurementParty",
+      "ontouml_treatment": "participation",
+      "status": "candidate_requires_review",
+      "evidence": "W3 V2R-032; conditional C1 source",
+      "review_note": "Buyer/provider roles and additional product/site participants need separate decisions",
+      "g2_status": "DEFER_SOURCE_ACTIVATION",
+      "g2_rationale": "C1 procurement requires documented buyer/provider and product/site grain; no admitted row-level mapping in current manifest.",
+      "implemented_properties": [],
+      "authority": "Technical disposition within user-authorized candidate work; not new expert sign-off"
+    },
+    {
+      "id": "C10",
+      "source": "Stockout",
+      "target": "Presentation",
+      "relation": "stockoutConcernsPresentation",
+      "ontouml_treatment": "situation involvement",
+      "status": "candidate_requires_review",
+      "evidence": "W3 V2R-035; W4 event-to-situation decision",
+      "review_note": "Confirm product granularity and site/time context; do not equate stockout with shortage",
+      "g2_status": "DEFER_SOURCE_ACTIVATION",
+      "g2_rationale": "C1 stockout requires product/presentation granularity plus facility/time evidence; shortage is not a substitute.",
+      "implemented_properties": [],
+      "authority": "Technical disposition within user-authorized candidate work; not new expert sign-off"
+    },
+    {
+      "id": "C11",
+      "source": "DiagnosisReference",
+      "target": "ReimbursementResult",
+      "relation": "diagnosisContext",
+      "ontouml_treatment": "formal reference",
+      "status": "candidate_requires_review",
+      "evidence": "W3 V2R-071; NHIF P1/P2 schemas",
+      "review_note": "Confirm diagnosis classification granularity and aggregate observation scope",
+      "g2_status": "IMPLEMENTED_SCOPED",
+      "g2_rationale": "V2R-071; P1-F10/F11 and P2-F12/F13 explicitly retain diagnosis context in RDB. Candidate fixture RDF projection added.",
+      "implemented_properties": [
+        "reimbursementDiagnosisContext"
+      ],
+      "authority": "Technical disposition within user-authorized candidate work; not new expert sign-off"
+    },
+    {
+      "id": "C12",
+      "source": "DigitalComponent",
+      "target": "ObservationActivity",
+      "relation": "supportsObservation",
+      "ontouml_treatment": "participation/support",
+      "status": "candidate_requires_review",
+      "evidence": "W3 V2R-079; V1 lineage",
+      "review_note": "Only if the component has a demonstrated role in the admitted use cases",
+      "g2_status": "DEFER_USE_CASE_EVIDENCE",
+      "g2_rationale": "V1 lineage alone does not establish an actual digital component supporting an admitted observation.",
+      "implemented_properties": [],
+      "authority": "Technical disposition within user-authorized candidate work; not new expert sign-off"
+    },
+    {
+      "id": "C13",
+      "source": "ServiceSpec",
+      "target": "Organization",
+      "relation": "serviceOfferingBy",
+      "ontouml_treatment": "formal/context",
+      "status": "defer_pending_evidence",
+      "evidence": "W1/V1 business-architecture lineage",
+      "review_note": "No source-backed offerer/service specification commitment established for current article",
+      "g2_status": "DEFER_USE_CASE_EVIDENCE",
+      "g2_rationale": "Optional service-offering view has no admitted offerer/service commitment.",
+      "implemented_properties": [],
+      "authority": "Technical disposition within user-authorized candidate work; not new expert sign-off"
+    },
+    {
+      "id": "C14",
+      "source": "ClinicalParticipant",
+      "target": "Organization",
+      "relation": "clinicalParticipantContext",
+      "ontouml_treatment": "undetermined",
+      "status": "defer_pending_evidence",
+      "evidence": "W3 V2R-080; W7 H1 extension pressure",
+      "review_note": "Do not attach clinical roles to Organization merely for graph connectivity; require bearer and care activity pattern",
+      "g2_status": "DEFER_APPROVED_G1",
+      "g2_rationale": "Clinical role remains deferred; no Organization-only bearer assumption or held-out-source mining.",
+      "implemented_properties": [],
+      "authority": "Technical disposition within user-authorized candidate work; not new expert sign-off"
+    },
+    {
+      "id": "C15",
+      "source": "ProvActivity",
+      "target": "Assertion",
+      "relation": "generatedAssertion",
+      "ontouml_treatment": "participation/generation",
+      "status": "documented_missing_from_overview",
+      "evidence": "W5 20-xinfra.ttl; W4 integrated-ontouml-model section 6",
+      "review_note": "Show existing provenance activity generating an assertion",
+      "g2_status": "ALREADY_IMPLEMENTED_G1",
+      "g2_rationale": "Existing provenance generation link retained unchanged.",
+      "implemented_properties": [],
+      "authority": "Technical disposition within user-authorized candidate work; not new expert sign-off"
+    }
+  ]
+}
