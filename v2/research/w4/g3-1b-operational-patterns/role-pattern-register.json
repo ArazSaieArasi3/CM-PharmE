@@ -1,0 +1,323 @@
+{
+  "scope": "Six operational roles; proposed refinement, not approved ontology axioms",
+  "roles": [
+    {
+      "role": "ManufacturerRole",
+      "identity_provider": "Organization",
+      "scope": "manufacturing",
+      "evidence_anchors": [
+        "V2C-004; V2R-024/025",
+        "W4 R3/R4",
+        "W4 events-situations-observations.md"
+      ],
+      "authorization": {
+        "reuse": "RegulatoryAuthorization",
+        "target_parent": "AuthorizedOrganizationRole",
+        "definition": "Authorized bearer with an explicit matching activity/use scope, jurisdiction and effective interval.",
+        "implies_responsibility": false,
+        "implies_occurrence": false
+      },
+      "responsibility": {
+        "proposed_relator": "ManufacturingResponsibility",
+        "stereotype": "Relator",
+        "bearer_role": "ManufacturerRole",
+        "counterpart_role": "ManufacturingResponsibilitySubjectRole",
+        "counterpart_identity": "MedicinalProduct",
+        "mediations": [
+          {
+            "target": "ManufacturerRole",
+            "per_relator": "1",
+            "relators_per_current_role": "1..*"
+          },
+          {
+            "target": "ManufacturingResponsibilitySubjectRole",
+            "per_relator": "1",
+            "relators_per_current_role": "1..*"
+          }
+        ],
+        "distinct_individuals": 2,
+        "role_definition": "Bearer participates in at least one effective, scope-matching responsibility/site-use context at t.",
+        "profile_boundary": "One responsibility assignment per bearer-counterpart-scope episode; multi-party source instruments decompose into linked assignments only when independently evidenced.",
+        "role_loss": "When the last effective matching responsibility episode ends; bearer identity survives.",
+        "relator_identity": "Independent constituting responsibility episode, not the evidence row ID or only the pair of participants."
+      },
+      "occurrence": {
+        "event_type": "ManufacturingActivity",
+        "relationship": "participation; not mediation",
+        "requires": "Specific occurrence evidence and bounded interval; event participation is a separate historical claim.",
+        "implies_license": false,
+        "implies_ongoing_responsibility": false
+      },
+      "recommendation": "Define the inherited role by responsibility/site use; use scoped Authorized roles for permission and event participation for occurrence. This refines the previous umbrella proposal.",
+      "temporal_policy": "Half-open [start,end); null end only for explicitly open-ended responsibility/authorization. Unknown dates are quarantined, not invented.",
+      "human_approval": "NOT_RECORDED",
+      "active_ontology_change": false,
+      "status": "DESIGNED_AND_LAB_TESTED_NOT_INTEGRATED"
+    },
+    {
+      "role": "ManufacturingSiteRole",
+      "identity_provider": "Facility",
+      "scope": "manufacturing_site",
+      "evidence_anchors": [
+        "V2C-011; V2R-003/024",
+        "W4 R3/R4",
+        "W4 events-situations-observations.md"
+      ],
+      "authorization": {
+        "reuse": "RegulatoryAuthorization",
+        "target_parent": "AuthorizedFacilityRole",
+        "definition": "Authorized bearer with an explicit matching activity/use scope, jurisdiction and effective interval.",
+        "implies_responsibility": false,
+        "implies_occurrence": false
+      },
+      "responsibility": {
+        "proposed_relator": "ManufacturingSiteUse",
+        "stereotype": "Relator",
+        "bearer_role": "ManufacturingSiteRole",
+        "counterpart_role": "AssigningManufacturingSiteUseOrganizationRole",
+        "counterpart_identity": "Organization",
+        "mediations": [
+          {
+            "target": "ManufacturingSiteRole",
+            "per_relator": "1",
+            "relators_per_current_role": "1..*"
+          },
+          {
+            "target": "AssigningManufacturingSiteUseOrganizationRole",
+            "per_relator": "1",
+            "relators_per_current_role": "1..*"
+          }
+        ],
+        "distinct_individuals": 2,
+        "role_definition": "Bearer participates in at least one effective, scope-matching responsibility/site-use context at t.",
+        "profile_boundary": "One responsibility assignment per bearer-counterpart-scope episode; multi-party source instruments decompose into linked assignments only when independently evidenced.",
+        "role_loss": "When the last effective matching responsibility episode ends; bearer identity survives.",
+        "relator_identity": "Independent constituting responsibility episode, not the evidence row ID or only the pair of participants."
+      },
+      "occurrence": {
+        "event_type": "ManufacturingActivity",
+        "relationship": "participation; not mediation",
+        "requires": "Specific occurrence evidence and bounded interval; event participation is a separate historical claim.",
+        "implies_license": false,
+        "implies_ongoing_responsibility": false
+      },
+      "recommendation": "Define the inherited role by responsibility/site use; use scoped Authorized roles for permission and event participation for occurrence. This refines the previous umbrella proposal.",
+      "temporal_policy": "Half-open [start,end); null end only for explicitly open-ended responsibility/authorization. Unknown dates are quarantined, not invented.",
+      "human_approval": "NOT_RECORDED",
+      "active_ontology_change": false,
+      "status": "DESIGNED_AND_LAB_TESTED_NOT_INTEGRATED"
+    },
+    {
+      "role": "ImporterRole",
+      "identity_provider": "Organization",
+      "scope": "import",
+      "evidence_anchors": [
+        "V2C-005; V2R-008",
+        "W4 R3/R4",
+        "W4 events-situations-observations.md"
+      ],
+      "authorization": {
+        "reuse": "RegulatoryAuthorization",
+        "target_parent": "AuthorizedOrganizationRole",
+        "definition": "Authorized bearer with an explicit matching activity/use scope, jurisdiction and effective interval.",
+        "implies_responsibility": false,
+        "implies_occurrence": false
+      },
+      "responsibility": {
+        "proposed_relator": "ImportResponsibility",
+        "stereotype": "Relator",
+        "bearer_role": "ImporterRole",
+        "counterpart_role": "ImportResponsibilitySubjectRole",
+        "counterpart_identity": "MedicinalProduct",
+        "mediations": [
+          {
+            "target": "ImporterRole",
+            "per_relator": "1",
+            "relators_per_current_role": "1..*"
+          },
+          {
+            "target": "ImportResponsibilitySubjectRole",
+            "per_relator": "1",
+            "relators_per_current_role": "1..*"
+          }
+        ],
+        "distinct_individuals": 2,
+        "role_definition": "Bearer participates in at least one effective, scope-matching responsibility/site-use context at t.",
+        "profile_boundary": "One responsibility assignment per bearer-counterpart-scope episode; multi-party source instruments decompose into linked assignments only when independently evidenced.",
+        "role_loss": "When the last effective matching responsibility episode ends; bearer identity survives.",
+        "relator_identity": "Independent constituting responsibility episode, not the evidence row ID or only the pair of participants."
+      },
+      "occurrence": {
+        "event_type": "ImportActivity (proposed; not active)",
+        "relationship": "participation; not mediation",
+        "requires": "Specific occurrence evidence and bounded interval; event participation is a separate historical claim.",
+        "implies_license": false,
+        "implies_ongoing_responsibility": false
+      },
+      "recommendation": "Define the inherited role by responsibility/site use; use scoped Authorized roles for permission and event participation for occurrence. This refines the previous umbrella proposal.",
+      "temporal_policy": "Half-open [start,end); null end only for explicitly open-ended responsibility/authorization. Unknown dates are quarantined, not invented.",
+      "human_approval": "NOT_RECORDED",
+      "active_ontology_change": false,
+      "status": "DESIGNED_AND_LAB_TESTED_NOT_INTEGRATED"
+    },
+    {
+      "role": "WholesaleDistributorRole",
+      "identity_provider": "Organization",
+      "scope": "wholesale",
+      "evidence_anchors": [
+        "V2C-007; V2R-026",
+        "W4 R3/R4",
+        "W4 events-situations-observations.md"
+      ],
+      "authorization": {
+        "reuse": "RegulatoryAuthorization",
+        "target_parent": "AuthorizedOrganizationRole",
+        "definition": "Authorized bearer with an explicit matching activity/use scope, jurisdiction and effective interval.",
+        "implies_responsibility": false,
+        "implies_occurrence": false
+      },
+      "responsibility": {
+        "proposed_relator": "WholesaleResponsibility",
+        "stereotype": "Relator",
+        "bearer_role": "WholesaleDistributorRole",
+        "counterpart_role": "WholesaleResponsibilitySubjectRole",
+        "counterpart_identity": "MedicinalProduct",
+        "mediations": [
+          {
+            "target": "WholesaleDistributorRole",
+            "per_relator": "1",
+            "relators_per_current_role": "1..*"
+          },
+          {
+            "target": "WholesaleResponsibilitySubjectRole",
+            "per_relator": "1",
+            "relators_per_current_role": "1..*"
+          }
+        ],
+        "distinct_individuals": 2,
+        "role_definition": "Bearer participates in at least one effective, scope-matching responsibility/site-use context at t.",
+        "profile_boundary": "One responsibility assignment per bearer-counterpart-scope episode; multi-party source instruments decompose into linked assignments only when independently evidenced.",
+        "role_loss": "When the last effective matching responsibility episode ends; bearer identity survives.",
+        "relator_identity": "Independent constituting responsibility episode, not the evidence row ID or only the pair of participants."
+      },
+      "occurrence": {
+        "event_type": "DistributionLogisticsActivity with wholesale scope",
+        "relationship": "participation; not mediation",
+        "requires": "Specific occurrence evidence and bounded interval; event participation is a separate historical claim.",
+        "implies_license": false,
+        "implies_ongoing_responsibility": false
+      },
+      "recommendation": "Define the inherited role by responsibility/site use; use scoped Authorized roles for permission and event participation for occurrence. This refines the previous umbrella proposal.",
+      "temporal_policy": "Half-open [start,end); null end only for explicitly open-ended responsibility/authorization. Unknown dates are quarantined, not invented.",
+      "human_approval": "NOT_RECORDED",
+      "active_ontology_change": false,
+      "status": "DESIGNED_AND_LAB_TESTED_NOT_INTEGRATED"
+    },
+    {
+      "role": "ThirdPartyLogisticsProviderRole",
+      "identity_provider": "Organization",
+      "scope": "third_party_logistics",
+      "evidence_anchors": [
+        "V2C-008; V2R-026",
+        "W4 R3/R4",
+        "W4 events-situations-observations.md"
+      ],
+      "authorization": {
+        "reuse": "RegulatoryAuthorization",
+        "target_parent": "AuthorizedOrganizationRole",
+        "definition": "Authorized bearer with an explicit matching activity/use scope, jurisdiction and effective interval.",
+        "implies_responsibility": false,
+        "implies_occurrence": false
+      },
+      "responsibility": {
+        "proposed_relator": "LogisticsServiceCommitment",
+        "stereotype": "Relator",
+        "bearer_role": "ThirdPartyLogisticsProviderRole",
+        "counterpart_role": "CommissioningLogisticsClientRole",
+        "counterpart_identity": "Organization",
+        "mediations": [
+          {
+            "target": "ThirdPartyLogisticsProviderRole",
+            "per_relator": "1",
+            "relators_per_current_role": "1..*"
+          },
+          {
+            "target": "CommissioningLogisticsClientRole",
+            "per_relator": "1",
+            "relators_per_current_role": "1..*"
+          }
+        ],
+        "distinct_individuals": 2,
+        "role_definition": "Bearer participates in at least one effective, scope-matching responsibility/site-use context at t.",
+        "profile_boundary": "One responsibility assignment per bearer-counterpart-scope episode; multi-party source instruments decompose into linked assignments only when independently evidenced.",
+        "role_loss": "When the last effective matching responsibility episode ends; bearer identity survives.",
+        "relator_identity": "Independent constituting responsibility episode, not the evidence row ID or only the pair of participants."
+      },
+      "occurrence": {
+        "event_type": "DistributionLogisticsActivity with 3PL scope",
+        "relationship": "participation; not mediation",
+        "requires": "Specific occurrence evidence and bounded interval; event participation is a separate historical claim.",
+        "implies_license": false,
+        "implies_ongoing_responsibility": false
+      },
+      "recommendation": "Define the inherited role by responsibility/site use; use scoped Authorized roles for permission and event participation for occurrence. This refines the previous umbrella proposal.",
+      "temporal_policy": "Half-open [start,end); null end only for explicitly open-ended responsibility/authorization. Unknown dates are quarantined, not invented.",
+      "human_approval": "NOT_RECORDED",
+      "active_ontology_change": false,
+      "status": "DESIGNED_AND_LAB_TESTED_NOT_INTEGRATED"
+    },
+    {
+      "role": "DistributionSiteRole",
+      "identity_provider": "Facility",
+      "scope": "distribution_site",
+      "evidence_anchors": [
+        "V2C-012; V2R-004/026",
+        "W4 R3/R4",
+        "W4 events-situations-observations.md"
+      ],
+      "authorization": {
+        "reuse": "RegulatoryAuthorization",
+        "target_parent": "AuthorizedFacilityRole",
+        "definition": "Authorized bearer with an explicit matching activity/use scope, jurisdiction and effective interval.",
+        "implies_responsibility": false,
+        "implies_occurrence": false
+      },
+      "responsibility": {
+        "proposed_relator": "DistributionSiteUse",
+        "stereotype": "Relator",
+        "bearer_role": "DistributionSiteRole",
+        "counterpart_role": "AssigningDistributionSiteUseOrganizationRole",
+        "counterpart_identity": "Organization",
+        "mediations": [
+          {
+            "target": "DistributionSiteRole",
+            "per_relator": "1",
+            "relators_per_current_role": "1..*"
+          },
+          {
+            "target": "AssigningDistributionSiteUseOrganizationRole",
+            "per_relator": "1",
+            "relators_per_current_role": "1..*"
+          }
+        ],
+        "distinct_individuals": 2,
+        "role_definition": "Bearer participates in at least one effective, scope-matching responsibility/site-use context at t.",
+        "profile_boundary": "One responsibility assignment per bearer-counterpart-scope episode; multi-party source instruments decompose into linked assignments only when independently evidenced.",
+        "role_loss": "When the last effective matching responsibility episode ends; bearer identity survives.",
+        "relator_identity": "Independent constituting responsibility episode, not the evidence row ID or only the pair of participants."
+      },
+      "occurrence": {
+        "event_type": "DistributionLogisticsActivity",
+        "relationship": "participation; not mediation",
+        "requires": "Specific occurrence evidence and bounded interval; event participation is a separate historical claim.",
+        "implies_license": false,
+        "implies_ongoing_responsibility": false
+      },
+      "recommendation": "Define the inherited role by responsibility/site use; use scoped Authorized roles for permission and event participation for occurrence. This refines the previous umbrella proposal.",
+      "temporal_policy": "Half-open [start,end); null end only for explicitly open-ended responsibility/authorization. Unknown dates are quarantined, not invented.",
+      "human_approval": "NOT_RECORDED",
+      "active_ontology_change": false,
+      "status": "DESIGNED_AND_LAB_TESTED_NOT_INTEGRATED"
+    }
+  ]
+}
