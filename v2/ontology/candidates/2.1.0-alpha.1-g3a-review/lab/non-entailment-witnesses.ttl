@@ -1,0 +1,75 @@
+@prefix ns1: <https://w3id.org/cm-pharme/2.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+<https://example.org/g3-role-counterexample/broad-responsibility-not-necessarily-listed> a [ a owl:Class ;
+            owl:complementOf ns1:ListingResponsibleOrganizationRole ],
+        ns1:ProductResponsibleLabelerRole .
+
+<https://example.org/g3-role-counterexample/generic-license-not-3pl-context> a ns1:RegulatoryAuthorization ;
+    ns1:authorizationParty <https://example.org/g3-role-counterexample/generic-license-not-3pl> .
+
+<https://example.org/g3-role-counterexample/generic-license-not-import-scope-context> a ns1:RegulatoryAuthorization ;
+    ns1:authorizationParty <https://example.org/g3-role-counterexample/generic-license-not-import-scope> .
+
+<https://example.org/g3-role-counterexample/generic-license-not-wholesale-context> a ns1:RegulatoryAuthorization ;
+    ns1:authorizationParty <https://example.org/g3-role-counterexample/generic-license-not-wholesale> .
+
+<https://example.org/g3-role-counterexample/generic-site-license-not-distribution-use-context> a ns1:RegulatoryAuthorization ;
+    ns1:authorizationParty <https://example.org/g3-role-counterexample/generic-site-license-not-distribution-use> .
+
+<https://example.org/g3-role-counterexample/labeler-not-manufacturer> a [ a owl:Class ;
+            owl:complementOf ns1:ManufacturerRole ],
+        ns1:ListingResponsibleOrganizationRole .
+
+<https://example.org/g3-role-counterexample/listing-responsibility-not-payment> a [ a owl:Class ;
+            owl:complementOf ns1:PayerFundingOrganizationRole ],
+        ns1:ListingResponsibleOrganizationRole .
+
+<https://example.org/g3-role-counterexample/operated-site-not-manufacturing-site-context> a ns1:FacilityOperation ;
+    ns1:operationFacility <https://example.org/g3-role-counterexample/operated-site-not-manufacturing-site> .
+
+<https://example.org/g3-role-counterexample/operator-not-manufacturer-context> a ns1:FacilityOperation ;
+    ns1:operationOrganization <https://example.org/g3-role-counterexample/operator-not-manufacturer> .
+
+<https://example.org/g3-role-counterexample/organization-not-authority> a [ a owl:Class ;
+            owl:complementOf ns1:RegulatoryAuthorityRole ],
+        ns1:Organization .
+
+<https://example.org/g3-role-counterexample/registered-site-not-manufacturing-site-context> a ns1:EstablishmentRegistration ;
+    ns1:registrationEntity <https://example.org/g3-role-counterexample/registered-site-not-manufacturing-site> .
+
+<https://example.org/g3-role-counterexample/registration-not-manufacture-context> a ns1:EstablishmentRegistration ;
+    ns1:registrationEntity <https://example.org/g3-role-counterexample/registration-not-manufacture> .
+
+<https://example.org/g3-role-counterexample/generic-license-not-3pl> a [ a owl:Class ;
+            owl:complementOf ns1:ThirdPartyLogisticsProviderRole ],
+        ns1:Organization .
+
+<https://example.org/g3-role-counterexample/generic-license-not-import-scope> a [ a owl:Class ;
+            owl:complementOf ns1:ImporterRole ],
+        ns1:Organization .
+
+<https://example.org/g3-role-counterexample/generic-license-not-wholesale> a [ a owl:Class ;
+            owl:complementOf ns1:WholesaleDistributorRole ],
+        ns1:Organization .
+
+<https://example.org/g3-role-counterexample/generic-site-license-not-distribution-use> a [ a owl:Class ;
+            owl:complementOf ns1:DistributionSiteRole ],
+        ns1:Facility .
+
+<https://example.org/g3-role-counterexample/operated-site-not-manufacturing-site> a [ a owl:Class ;
+            owl:complementOf ns1:ManufacturingSiteRole ],
+        ns1:Facility .
+
+<https://example.org/g3-role-counterexample/operator-not-manufacturer> a [ a owl:Class ;
+            owl:complementOf ns1:ManufacturerRole ],
+        ns1:Organization .
+
+<https://example.org/g3-role-counterexample/registered-site-not-manufacturing-site> a [ a owl:Class ;
+            owl:complementOf ns1:ManufacturingSiteRole ],
+        ns1:Facility .
+
+<https://example.org/g3-role-counterexample/registration-not-manufacture> a [ a owl:Class ;
+            owl:complementOf ns1:ManufacturerRole ],
+        ns1:Organization .
+
