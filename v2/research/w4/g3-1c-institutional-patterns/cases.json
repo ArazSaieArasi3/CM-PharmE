@@ -1,0 +1,3067 @@
+[
+  {
+    "id": "mandate/effective_without_any_exercise_or_payment",
+    "records": [
+      {
+        "id": "mandate",
+        "episode_key": "mandate",
+        "profile": "mandate",
+        "holder": "org",
+        "counterpart": "org2",
+        "evidence": "mandate",
+        "scope": "regulatory_mandate",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      }
+    ],
+    "observed_claims": [],
+    "day": 20,
+    "jurisdiction": "LAB",
+    "expected_roles": [
+      "RegulatoryAuthorityRole"
+    ],
+    "expected_error_contains": null,
+    "actual_roles": [
+      "RegulatoryAuthorityRole"
+    ],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "mandate/before_start",
+    "records": [
+      {
+        "id": "mandate",
+        "episode_key": "mandate",
+        "profile": "mandate",
+        "holder": "org",
+        "counterpart": "org2",
+        "evidence": "mandate",
+        "scope": "regulatory_mandate",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      }
+    ],
+    "observed_claims": [],
+    "day": 9,
+    "jurisdiction": "LAB",
+    "expected_roles": [],
+    "expected_error_contains": null,
+    "actual_roles": [],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "mandate/inclusive_start",
+    "records": [
+      {
+        "id": "mandate",
+        "episode_key": "mandate",
+        "profile": "mandate",
+        "holder": "org",
+        "counterpart": "org2",
+        "evidence": "mandate",
+        "scope": "regulatory_mandate",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      }
+    ],
+    "observed_claims": [],
+    "day": 10,
+    "jurisdiction": "LAB",
+    "expected_roles": [
+      "RegulatoryAuthorityRole"
+    ],
+    "expected_error_contains": null,
+    "actual_roles": [
+      "RegulatoryAuthorityRole"
+    ],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "mandate/exclusive_end",
+    "records": [
+      {
+        "id": "mandate",
+        "episode_key": "mandate",
+        "profile": "mandate",
+        "holder": "org",
+        "counterpart": "org2",
+        "evidence": "mandate",
+        "scope": "regulatory_mandate",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      }
+    ],
+    "observed_claims": [],
+    "day": 30,
+    "jurisdiction": "LAB",
+    "expected_roles": [],
+    "expected_error_contains": null,
+    "actual_roles": [],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "mandate/other_jurisdiction",
+    "records": [
+      {
+        "id": "mandate",
+        "episode_key": "mandate",
+        "profile": "mandate",
+        "holder": "org",
+        "counterpart": "org2",
+        "evidence": "mandate",
+        "scope": "regulatory_mandate",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      }
+    ],
+    "observed_claims": [],
+    "day": 20,
+    "jurisdiction": "OTHER",
+    "expected_roles": [],
+    "expected_error_contains": null,
+    "actual_roles": [],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "mandate/other_scope",
+    "records": [
+      {
+        "id": "mandate",
+        "episode_key": "mandate",
+        "profile": "mandate",
+        "holder": "org",
+        "counterpart": "org2",
+        "evidence": "mandate",
+        "scope": "unrelated",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      }
+    ],
+    "observed_claims": [],
+    "day": 20,
+    "jurisdiction": "LAB",
+    "expected_roles": [],
+    "expected_error_contains": null,
+    "actual_roles": [],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "mandate/open_ended",
+    "records": [
+      {
+        "id": "mandate",
+        "episode_key": "mandate",
+        "profile": "mandate",
+        "holder": "org",
+        "counterpart": "org2",
+        "evidence": "mandate",
+        "scope": "regulatory_mandate",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": null
+      }
+    ],
+    "observed_claims": [],
+    "day": 99,
+    "jurisdiction": "LAB",
+    "expected_roles": [
+      "RegulatoryAuthorityRole"
+    ],
+    "expected_error_contains": null,
+    "actual_roles": [
+      "RegulatoryAuthorityRole"
+    ],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "mandate/renewed",
+    "records": [
+      {
+        "id": "mandate",
+        "episode_key": "mandate",
+        "profile": "mandate",
+        "holder": "org",
+        "counterpart": "org2",
+        "evidence": "mandate",
+        "scope": "regulatory_mandate",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      },
+      {
+        "id": "renewal",
+        "episode_key": "renewal",
+        "profile": "mandate",
+        "holder": "org",
+        "counterpart": "org2",
+        "evidence": "mandate",
+        "scope": "regulatory_mandate",
+        "jurisdiction": "LAB",
+        "start_day": 30,
+        "end_day": 50
+      }
+    ],
+    "observed_claims": [],
+    "day": 30,
+    "jurisdiction": "LAB",
+    "expected_roles": [
+      "RegulatoryAuthorityRole"
+    ],
+    "expected_error_contains": null,
+    "actual_roles": [
+      "RegulatoryAuthorityRole"
+    ],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "mandate/one_context_ends_other_survives",
+    "records": [
+      {
+        "id": "mandate",
+        "episode_key": "mandate",
+        "profile": "mandate",
+        "holder": "org",
+        "counterpart": "org2",
+        "evidence": "mandate",
+        "scope": "regulatory_mandate",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      },
+      {
+        "id": "overlap",
+        "episode_key": "overlap",
+        "profile": "mandate",
+        "holder": "org",
+        "counterpart": "org2",
+        "evidence": "mandate",
+        "scope": "regulatory_mandate",
+        "jurisdiction": "LAB",
+        "start_day": 25,
+        "end_day": 50
+      }
+    ],
+    "observed_claims": [],
+    "day": 30,
+    "jurisdiction": "LAB",
+    "expected_roles": [
+      "RegulatoryAuthorityRole"
+    ],
+    "expected_error_contains": null,
+    "actual_roles": [
+      "RegulatoryAuthorityRole"
+    ],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "mandate/all_contexts_end",
+    "records": [
+      {
+        "id": "mandate",
+        "episode_key": "mandate",
+        "profile": "mandate",
+        "holder": "org",
+        "counterpart": "org2",
+        "evidence": "mandate",
+        "scope": "regulatory_mandate",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      },
+      {
+        "id": "overlap",
+        "episode_key": "overlap",
+        "profile": "mandate",
+        "holder": "org",
+        "counterpart": "org2",
+        "evidence": "mandate",
+        "scope": "regulatory_mandate",
+        "jurisdiction": "LAB",
+        "start_day": 25,
+        "end_day": 50
+      }
+    ],
+    "observed_claims": [],
+    "day": 50,
+    "jurisdiction": "LAB",
+    "expected_roles": [],
+    "expected_error_contains": null,
+    "actual_roles": [],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "mandate/same_parties_independent_episode",
+    "records": [
+      {
+        "id": "mandate",
+        "episode_key": "mandate",
+        "profile": "mandate",
+        "holder": "org",
+        "counterpart": "org2",
+        "evidence": "mandate",
+        "scope": "regulatory_mandate",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      },
+      {
+        "id": "independent",
+        "episode_key": "independent",
+        "profile": "mandate",
+        "holder": "org",
+        "counterpart": "org2",
+        "evidence": "mandate",
+        "scope": "regulatory_mandate",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      }
+    ],
+    "observed_claims": [],
+    "day": 20,
+    "jurisdiction": "LAB",
+    "expected_roles": [
+      "RegulatoryAuthorityRole"
+    ],
+    "expected_error_contains": null,
+    "actual_roles": [
+      "RegulatoryAuthorityRole"
+    ],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "mandate/duplicate_episode",
+    "records": [
+      {
+        "id": "mandate",
+        "episode_key": "mandate",
+        "profile": "mandate",
+        "holder": "org",
+        "counterpart": "org2",
+        "evidence": "mandate",
+        "scope": "regulatory_mandate",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      },
+      {
+        "id": "copy",
+        "episode_key": "mandate",
+        "profile": "mandate",
+        "holder": "org",
+        "counterpart": "org2",
+        "evidence": "mandate",
+        "scope": "regulatory_mandate",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      }
+    ],
+    "observed_claims": [],
+    "day": 20,
+    "jurisdiction": "LAB",
+    "expected_roles": [],
+    "expected_error_contains": "UNIQUE constraint failed",
+    "actual_roles": [],
+    "error": "UNIQUE constraint failed: episode.profile, episode.episode_key",
+    "passed": true
+  },
+  {
+    "id": "mandate/wrong_bearer",
+    "records": [
+      {
+        "id": "mandate",
+        "episode_key": "mandate",
+        "profile": "mandate",
+        "holder": "site",
+        "counterpart": "org2",
+        "evidence": "mandate",
+        "scope": "regulatory_mandate",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      }
+    ],
+    "observed_claims": [],
+    "day": 20,
+    "jurisdiction": "LAB",
+    "expected_roles": [],
+    "expected_error_contains": "holder_identity",
+    "actual_roles": [],
+    "error": "holder_identity",
+    "passed": true
+  },
+  {
+    "id": "mandate/wrong_counterpart",
+    "records": [
+      {
+        "id": "mandate",
+        "episode_key": "mandate",
+        "profile": "mandate",
+        "holder": "org",
+        "counterpart": "site",
+        "evidence": "mandate",
+        "scope": "regulatory_mandate",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      }
+    ],
+    "observed_claims": [],
+    "day": 20,
+    "jurisdiction": "LAB",
+    "expected_roles": [],
+    "expected_error_contains": "counterpart_identity",
+    "actual_roles": [],
+    "error": "counterpart_identity",
+    "passed": true
+  },
+  {
+    "id": "mandate/missing_counterpart",
+    "records": [
+      {
+        "id": "mandate",
+        "episode_key": "mandate",
+        "profile": "mandate",
+        "holder": "org",
+        "counterpart": null,
+        "evidence": "mandate",
+        "scope": "regulatory_mandate",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      }
+    ],
+    "observed_claims": [],
+    "day": 20,
+    "jurisdiction": "LAB",
+    "expected_roles": [],
+    "expected_error_contains": "NOT NULL constraint failed",
+    "actual_roles": [],
+    "error": "NOT NULL constraint failed: episode.counterpart",
+    "passed": true
+  },
+  {
+    "id": "mandate/self_relator",
+    "records": [
+      {
+        "id": "mandate",
+        "episode_key": "mandate",
+        "profile": "mandate",
+        "holder": "org",
+        "counterpart": "org",
+        "evidence": "mandate",
+        "scope": "regulatory_mandate",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      }
+    ],
+    "observed_claims": [],
+    "day": 20,
+    "jurisdiction": "LAB",
+    "expected_roles": [],
+    "expected_error_contains": "holder<>counterpart",
+    "actual_roles": [],
+    "error": "CHECK constraint failed: holder<>counterpart",
+    "passed": true
+  },
+  {
+    "id": "mandate/aggregate_is_not_commitment",
+    "records": [
+      {
+        "id": "mandate",
+        "episode_key": "mandate",
+        "profile": "mandate",
+        "holder": "org",
+        "counterpart": "org2",
+        "evidence": "aggregate",
+        "scope": "regulatory_mandate",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      }
+    ],
+    "observed_claims": [],
+    "day": 20,
+    "jurisdiction": "LAB",
+    "expected_roles": [],
+    "expected_error_contains": "evidence_boundary",
+    "actual_roles": [],
+    "error": "evidence_boundary",
+    "passed": true
+  },
+  {
+    "id": "mandate/label_is_not_commitment",
+    "records": [
+      {
+        "id": "mandate",
+        "episode_key": "mandate",
+        "profile": "mandate",
+        "holder": "org",
+        "counterpart": "org2",
+        "evidence": "generic",
+        "scope": "regulatory_mandate",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      }
+    ],
+    "observed_claims": [],
+    "day": 20,
+    "jurisdiction": "LAB",
+    "expected_roles": [],
+    "expected_error_contains": "evidence_boundary",
+    "actual_roles": [],
+    "error": "evidence_boundary",
+    "passed": true
+  },
+  {
+    "id": "mandate/unknown_start",
+    "records": [
+      {
+        "id": "mandate",
+        "episode_key": "mandate",
+        "profile": "mandate",
+        "holder": "org",
+        "counterpart": "org2",
+        "evidence": "mandate",
+        "scope": "regulatory_mandate",
+        "jurisdiction": "LAB",
+        "start_day": null,
+        "end_day": 30
+      }
+    ],
+    "observed_claims": [],
+    "day": 20,
+    "jurisdiction": "LAB",
+    "expected_roles": [],
+    "expected_error_contains": "NOT NULL constraint failed",
+    "actual_roles": [],
+    "error": "NOT NULL constraint failed: episode.start_day",
+    "passed": true
+  },
+  {
+    "id": "mandate/reversed_interval",
+    "records": [
+      {
+        "id": "mandate",
+        "episode_key": "mandate",
+        "profile": "mandate",
+        "holder": "org",
+        "counterpart": "org2",
+        "evidence": "mandate",
+        "scope": "regulatory_mandate",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 9
+      }
+    ],
+    "observed_claims": [],
+    "day": 20,
+    "jurisdiction": "LAB",
+    "expected_roles": [],
+    "expected_error_contains": "CHECK constraint failed",
+    "actual_roles": [],
+    "error": "CHECK constraint failed: end_day IS NULL OR (typeof(end_day)='integer' AND end_day>start_day)",
+    "passed": true
+  },
+  {
+    "id": "mandate/missing_evidence",
+    "records": [
+      {
+        "id": "mandate",
+        "episode_key": "mandate",
+        "profile": "mandate",
+        "holder": "org",
+        "counterpart": "org2",
+        "evidence": "missing",
+        "scope": "regulatory_mandate",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      }
+    ],
+    "observed_claims": [],
+    "day": 20,
+    "jurisdiction": "LAB",
+    "expected_roles": [],
+    "expected_error_contains": "FOREIGN KEY constraint failed",
+    "actual_roles": [],
+    "error": "FOREIGN KEY constraint failed",
+    "passed": true
+  },
+  {
+    "id": "mandate/empty_jurisdiction",
+    "records": [
+      {
+        "id": "mandate",
+        "episode_key": "mandate",
+        "profile": "mandate",
+        "holder": "org",
+        "counterpart": "org2",
+        "evidence": "mandate",
+        "scope": "regulatory_mandate",
+        "jurisdiction": " ",
+        "start_day": 10,
+        "end_day": 30
+      }
+    ],
+    "observed_claims": [],
+    "day": 20,
+    "jurisdiction": "LAB",
+    "expected_roles": [],
+    "expected_error_contains": "CHECK constraint failed",
+    "actual_roles": [],
+    "error": "CHECK constraint failed: length(trim(jurisdiction))>0",
+    "passed": true
+  },
+  {
+    "id": "mandate/unrelated_observation_does_not_change_role",
+    "records": [
+      {
+        "id": "mandate",
+        "episode_key": "mandate",
+        "profile": "mandate",
+        "holder": "org",
+        "counterpart": "org2",
+        "evidence": "mandate",
+        "scope": "regulatory_mandate",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      }
+    ],
+    "observed_claims": [
+      "aggregate_published",
+      "payment_observed",
+      "authorization_issued"
+    ],
+    "day": 20,
+    "jurisdiction": "LAB",
+    "expected_roles": [
+      "RegulatoryAuthorityRole"
+    ],
+    "expected_error_contains": null,
+    "actual_roles": [
+      "RegulatoryAuthorityRole"
+    ],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "label_responsibility/effective_without_any_exercise_or_payment",
+    "records": [
+      {
+        "id": "label_responsibility",
+        "episode_key": "label_responsibility",
+        "profile": "label_responsibility",
+        "holder": "org",
+        "counterpart": "product",
+        "evidence": "label_responsibility",
+        "scope": "product_label_responsibility",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      }
+    ],
+    "observed_claims": [],
+    "day": 20,
+    "jurisdiction": "LAB",
+    "expected_roles": [
+      "ProductResponsibleLabelerRole"
+    ],
+    "expected_error_contains": null,
+    "actual_roles": [
+      "ProductResponsibleLabelerRole"
+    ],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "label_responsibility/before_start",
+    "records": [
+      {
+        "id": "label_responsibility",
+        "episode_key": "label_responsibility",
+        "profile": "label_responsibility",
+        "holder": "org",
+        "counterpart": "product",
+        "evidence": "label_responsibility",
+        "scope": "product_label_responsibility",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      }
+    ],
+    "observed_claims": [],
+    "day": 9,
+    "jurisdiction": "LAB",
+    "expected_roles": [],
+    "expected_error_contains": null,
+    "actual_roles": [],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "label_responsibility/inclusive_start",
+    "records": [
+      {
+        "id": "label_responsibility",
+        "episode_key": "label_responsibility",
+        "profile": "label_responsibility",
+        "holder": "org",
+        "counterpart": "product",
+        "evidence": "label_responsibility",
+        "scope": "product_label_responsibility",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      }
+    ],
+    "observed_claims": [],
+    "day": 10,
+    "jurisdiction": "LAB",
+    "expected_roles": [
+      "ProductResponsibleLabelerRole"
+    ],
+    "expected_error_contains": null,
+    "actual_roles": [
+      "ProductResponsibleLabelerRole"
+    ],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "label_responsibility/exclusive_end",
+    "records": [
+      {
+        "id": "label_responsibility",
+        "episode_key": "label_responsibility",
+        "profile": "label_responsibility",
+        "holder": "org",
+        "counterpart": "product",
+        "evidence": "label_responsibility",
+        "scope": "product_label_responsibility",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      }
+    ],
+    "observed_claims": [],
+    "day": 30,
+    "jurisdiction": "LAB",
+    "expected_roles": [],
+    "expected_error_contains": null,
+    "actual_roles": [],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "label_responsibility/other_jurisdiction",
+    "records": [
+      {
+        "id": "label_responsibility",
+        "episode_key": "label_responsibility",
+        "profile": "label_responsibility",
+        "holder": "org",
+        "counterpart": "product",
+        "evidence": "label_responsibility",
+        "scope": "product_label_responsibility",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      }
+    ],
+    "observed_claims": [],
+    "day": 20,
+    "jurisdiction": "OTHER",
+    "expected_roles": [],
+    "expected_error_contains": null,
+    "actual_roles": [],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "label_responsibility/other_scope",
+    "records": [
+      {
+        "id": "label_responsibility",
+        "episode_key": "label_responsibility",
+        "profile": "label_responsibility",
+        "holder": "org",
+        "counterpart": "product",
+        "evidence": "label_responsibility",
+        "scope": "unrelated",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      }
+    ],
+    "observed_claims": [],
+    "day": 20,
+    "jurisdiction": "LAB",
+    "expected_roles": [],
+    "expected_error_contains": null,
+    "actual_roles": [],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "label_responsibility/open_ended",
+    "records": [
+      {
+        "id": "label_responsibility",
+        "episode_key": "label_responsibility",
+        "profile": "label_responsibility",
+        "holder": "org",
+        "counterpart": "product",
+        "evidence": "label_responsibility",
+        "scope": "product_label_responsibility",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": null
+      }
+    ],
+    "observed_claims": [],
+    "day": 99,
+    "jurisdiction": "LAB",
+    "expected_roles": [
+      "ProductResponsibleLabelerRole"
+    ],
+    "expected_error_contains": null,
+    "actual_roles": [
+      "ProductResponsibleLabelerRole"
+    ],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "label_responsibility/renewed",
+    "records": [
+      {
+        "id": "label_responsibility",
+        "episode_key": "label_responsibility",
+        "profile": "label_responsibility",
+        "holder": "org",
+        "counterpart": "product",
+        "evidence": "label_responsibility",
+        "scope": "product_label_responsibility",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      },
+      {
+        "id": "renewal",
+        "episode_key": "renewal",
+        "profile": "label_responsibility",
+        "holder": "org",
+        "counterpart": "product",
+        "evidence": "label_responsibility",
+        "scope": "product_label_responsibility",
+        "jurisdiction": "LAB",
+        "start_day": 30,
+        "end_day": 50
+      }
+    ],
+    "observed_claims": [],
+    "day": 30,
+    "jurisdiction": "LAB",
+    "expected_roles": [
+      "ProductResponsibleLabelerRole"
+    ],
+    "expected_error_contains": null,
+    "actual_roles": [
+      "ProductResponsibleLabelerRole"
+    ],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "label_responsibility/one_context_ends_other_survives",
+    "records": [
+      {
+        "id": "label_responsibility",
+        "episode_key": "label_responsibility",
+        "profile": "label_responsibility",
+        "holder": "org",
+        "counterpart": "product",
+        "evidence": "label_responsibility",
+        "scope": "product_label_responsibility",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      },
+      {
+        "id": "overlap",
+        "episode_key": "overlap",
+        "profile": "label_responsibility",
+        "holder": "org",
+        "counterpart": "product",
+        "evidence": "label_responsibility",
+        "scope": "product_label_responsibility",
+        "jurisdiction": "LAB",
+        "start_day": 25,
+        "end_day": 50
+      }
+    ],
+    "observed_claims": [],
+    "day": 30,
+    "jurisdiction": "LAB",
+    "expected_roles": [
+      "ProductResponsibleLabelerRole"
+    ],
+    "expected_error_contains": null,
+    "actual_roles": [
+      "ProductResponsibleLabelerRole"
+    ],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "label_responsibility/all_contexts_end",
+    "records": [
+      {
+        "id": "label_responsibility",
+        "episode_key": "label_responsibility",
+        "profile": "label_responsibility",
+        "holder": "org",
+        "counterpart": "product",
+        "evidence": "label_responsibility",
+        "scope": "product_label_responsibility",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      },
+      {
+        "id": "overlap",
+        "episode_key": "overlap",
+        "profile": "label_responsibility",
+        "holder": "org",
+        "counterpart": "product",
+        "evidence": "label_responsibility",
+        "scope": "product_label_responsibility",
+        "jurisdiction": "LAB",
+        "start_day": 25,
+        "end_day": 50
+      }
+    ],
+    "observed_claims": [],
+    "day": 50,
+    "jurisdiction": "LAB",
+    "expected_roles": [],
+    "expected_error_contains": null,
+    "actual_roles": [],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "label_responsibility/same_parties_independent_episode",
+    "records": [
+      {
+        "id": "label_responsibility",
+        "episode_key": "label_responsibility",
+        "profile": "label_responsibility",
+        "holder": "org",
+        "counterpart": "product",
+        "evidence": "label_responsibility",
+        "scope": "product_label_responsibility",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      },
+      {
+        "id": "independent",
+        "episode_key": "independent",
+        "profile": "label_responsibility",
+        "holder": "org",
+        "counterpart": "product",
+        "evidence": "label_responsibility",
+        "scope": "product_label_responsibility",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      }
+    ],
+    "observed_claims": [],
+    "day": 20,
+    "jurisdiction": "LAB",
+    "expected_roles": [
+      "ProductResponsibleLabelerRole"
+    ],
+    "expected_error_contains": null,
+    "actual_roles": [
+      "ProductResponsibleLabelerRole"
+    ],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "label_responsibility/duplicate_episode",
+    "records": [
+      {
+        "id": "label_responsibility",
+        "episode_key": "label_responsibility",
+        "profile": "label_responsibility",
+        "holder": "org",
+        "counterpart": "product",
+        "evidence": "label_responsibility",
+        "scope": "product_label_responsibility",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      },
+      {
+        "id": "copy",
+        "episode_key": "label_responsibility",
+        "profile": "label_responsibility",
+        "holder": "org",
+        "counterpart": "product",
+        "evidence": "label_responsibility",
+        "scope": "product_label_responsibility",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      }
+    ],
+    "observed_claims": [],
+    "day": 20,
+    "jurisdiction": "LAB",
+    "expected_roles": [],
+    "expected_error_contains": "UNIQUE constraint failed",
+    "actual_roles": [],
+    "error": "UNIQUE constraint failed: episode.profile, episode.episode_key",
+    "passed": true
+  },
+  {
+    "id": "label_responsibility/wrong_bearer",
+    "records": [
+      {
+        "id": "label_responsibility",
+        "episode_key": "label_responsibility",
+        "profile": "label_responsibility",
+        "holder": "site",
+        "counterpart": "product",
+        "evidence": "label_responsibility",
+        "scope": "product_label_responsibility",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      }
+    ],
+    "observed_claims": [],
+    "day": 20,
+    "jurisdiction": "LAB",
+    "expected_roles": [],
+    "expected_error_contains": "holder_identity",
+    "actual_roles": [],
+    "error": "holder_identity",
+    "passed": true
+  },
+  {
+    "id": "label_responsibility/wrong_counterpart",
+    "records": [
+      {
+        "id": "label_responsibility",
+        "episode_key": "label_responsibility",
+        "profile": "label_responsibility",
+        "holder": "org",
+        "counterpart": "site",
+        "evidence": "label_responsibility",
+        "scope": "product_label_responsibility",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      }
+    ],
+    "observed_claims": [],
+    "day": 20,
+    "jurisdiction": "LAB",
+    "expected_roles": [],
+    "expected_error_contains": "counterpart_identity",
+    "actual_roles": [],
+    "error": "counterpart_identity",
+    "passed": true
+  },
+  {
+    "id": "label_responsibility/missing_counterpart",
+    "records": [
+      {
+        "id": "label_responsibility",
+        "episode_key": "label_responsibility",
+        "profile": "label_responsibility",
+        "holder": "org",
+        "counterpart": null,
+        "evidence": "label_responsibility",
+        "scope": "product_label_responsibility",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      }
+    ],
+    "observed_claims": [],
+    "day": 20,
+    "jurisdiction": "LAB",
+    "expected_roles": [],
+    "expected_error_contains": "NOT NULL constraint failed",
+    "actual_roles": [],
+    "error": "NOT NULL constraint failed: episode.counterpart",
+    "passed": true
+  },
+  {
+    "id": "label_responsibility/self_relator",
+    "records": [
+      {
+        "id": "label_responsibility",
+        "episode_key": "label_responsibility",
+        "profile": "label_responsibility",
+        "holder": "org",
+        "counterpart": "org",
+        "evidence": "label_responsibility",
+        "scope": "product_label_responsibility",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      }
+    ],
+    "observed_claims": [],
+    "day": 20,
+    "jurisdiction": "LAB",
+    "expected_roles": [],
+    "expected_error_contains": "counterpart_identity",
+    "actual_roles": [],
+    "error": "counterpart_identity",
+    "passed": true
+  },
+  {
+    "id": "label_responsibility/aggregate_is_not_commitment",
+    "records": [
+      {
+        "id": "label_responsibility",
+        "episode_key": "label_responsibility",
+        "profile": "label_responsibility",
+        "holder": "org",
+        "counterpart": "product",
+        "evidence": "aggregate",
+        "scope": "product_label_responsibility",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      }
+    ],
+    "observed_claims": [],
+    "day": 20,
+    "jurisdiction": "LAB",
+    "expected_roles": [],
+    "expected_error_contains": "evidence_boundary",
+    "actual_roles": [],
+    "error": "evidence_boundary",
+    "passed": true
+  },
+  {
+    "id": "label_responsibility/label_is_not_commitment",
+    "records": [
+      {
+        "id": "label_responsibility",
+        "episode_key": "label_responsibility",
+        "profile": "label_responsibility",
+        "holder": "org",
+        "counterpart": "product",
+        "evidence": "generic",
+        "scope": "product_label_responsibility",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      }
+    ],
+    "observed_claims": [],
+    "day": 20,
+    "jurisdiction": "LAB",
+    "expected_roles": [],
+    "expected_error_contains": "evidence_boundary",
+    "actual_roles": [],
+    "error": "evidence_boundary",
+    "passed": true
+  },
+  {
+    "id": "label_responsibility/unknown_start",
+    "records": [
+      {
+        "id": "label_responsibility",
+        "episode_key": "label_responsibility",
+        "profile": "label_responsibility",
+        "holder": "org",
+        "counterpart": "product",
+        "evidence": "label_responsibility",
+        "scope": "product_label_responsibility",
+        "jurisdiction": "LAB",
+        "start_day": null,
+        "end_day": 30
+      }
+    ],
+    "observed_claims": [],
+    "day": 20,
+    "jurisdiction": "LAB",
+    "expected_roles": [],
+    "expected_error_contains": "NOT NULL constraint failed",
+    "actual_roles": [],
+    "error": "NOT NULL constraint failed: episode.start_day",
+    "passed": true
+  },
+  {
+    "id": "label_responsibility/reversed_interval",
+    "records": [
+      {
+        "id": "label_responsibility",
+        "episode_key": "label_responsibility",
+        "profile": "label_responsibility",
+        "holder": "org",
+        "counterpart": "product",
+        "evidence": "label_responsibility",
+        "scope": "product_label_responsibility",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 9
+      }
+    ],
+    "observed_claims": [],
+    "day": 20,
+    "jurisdiction": "LAB",
+    "expected_roles": [],
+    "expected_error_contains": "CHECK constraint failed",
+    "actual_roles": [],
+    "error": "CHECK constraint failed: end_day IS NULL OR (typeof(end_day)='integer' AND end_day>start_day)",
+    "passed": true
+  },
+  {
+    "id": "label_responsibility/missing_evidence",
+    "records": [
+      {
+        "id": "label_responsibility",
+        "episode_key": "label_responsibility",
+        "profile": "label_responsibility",
+        "holder": "org",
+        "counterpart": "product",
+        "evidence": "missing",
+        "scope": "product_label_responsibility",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      }
+    ],
+    "observed_claims": [],
+    "day": 20,
+    "jurisdiction": "LAB",
+    "expected_roles": [],
+    "expected_error_contains": "FOREIGN KEY constraint failed",
+    "actual_roles": [],
+    "error": "FOREIGN KEY constraint failed",
+    "passed": true
+  },
+  {
+    "id": "label_responsibility/empty_jurisdiction",
+    "records": [
+      {
+        "id": "label_responsibility",
+        "episode_key": "label_responsibility",
+        "profile": "label_responsibility",
+        "holder": "org",
+        "counterpart": "product",
+        "evidence": "label_responsibility",
+        "scope": "product_label_responsibility",
+        "jurisdiction": " ",
+        "start_day": 10,
+        "end_day": 30
+      }
+    ],
+    "observed_claims": [],
+    "day": 20,
+    "jurisdiction": "LAB",
+    "expected_roles": [],
+    "expected_error_contains": "CHECK constraint failed",
+    "actual_roles": [],
+    "error": "CHECK constraint failed: length(trim(jurisdiction))>0",
+    "passed": true
+  },
+  {
+    "id": "label_responsibility/unrelated_observation_does_not_change_role",
+    "records": [
+      {
+        "id": "label_responsibility",
+        "episode_key": "label_responsibility",
+        "profile": "label_responsibility",
+        "holder": "org",
+        "counterpart": "product",
+        "evidence": "label_responsibility",
+        "scope": "product_label_responsibility",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      }
+    ],
+    "observed_claims": [
+      "aggregate_published",
+      "payment_observed",
+      "authorization_issued"
+    ],
+    "day": 20,
+    "jurisdiction": "LAB",
+    "expected_roles": [
+      "ProductResponsibleLabelerRole"
+    ],
+    "expected_error_contains": null,
+    "actual_roles": [
+      "ProductResponsibleLabelerRole"
+    ],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "listing/effective_without_any_exercise_or_payment",
+    "records": [
+      {
+        "id": "listing",
+        "episode_key": "listing",
+        "profile": "listing",
+        "holder": "org",
+        "counterpart": "presentation",
+        "evidence": "listing",
+        "scope": "market_listing",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      }
+    ],
+    "observed_claims": [],
+    "day": 20,
+    "jurisdiction": "LAB",
+    "expected_roles": [
+      "ProductResponsibleLabelerRole"
+    ],
+    "expected_error_contains": null,
+    "actual_roles": [
+      "ProductResponsibleLabelerRole"
+    ],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "listing/before_start",
+    "records": [
+      {
+        "id": "listing",
+        "episode_key": "listing",
+        "profile": "listing",
+        "holder": "org",
+        "counterpart": "presentation",
+        "evidence": "listing",
+        "scope": "market_listing",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      }
+    ],
+    "observed_claims": [],
+    "day": 9,
+    "jurisdiction": "LAB",
+    "expected_roles": [],
+    "expected_error_contains": null,
+    "actual_roles": [],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "listing/inclusive_start",
+    "records": [
+      {
+        "id": "listing",
+        "episode_key": "listing",
+        "profile": "listing",
+        "holder": "org",
+        "counterpart": "presentation",
+        "evidence": "listing",
+        "scope": "market_listing",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      }
+    ],
+    "observed_claims": [],
+    "day": 10,
+    "jurisdiction": "LAB",
+    "expected_roles": [
+      "ProductResponsibleLabelerRole"
+    ],
+    "expected_error_contains": null,
+    "actual_roles": [
+      "ProductResponsibleLabelerRole"
+    ],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "listing/exclusive_end",
+    "records": [
+      {
+        "id": "listing",
+        "episode_key": "listing",
+        "profile": "listing",
+        "holder": "org",
+        "counterpart": "presentation",
+        "evidence": "listing",
+        "scope": "market_listing",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      }
+    ],
+    "observed_claims": [],
+    "day": 30,
+    "jurisdiction": "LAB",
+    "expected_roles": [],
+    "expected_error_contains": null,
+    "actual_roles": [],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "listing/other_jurisdiction",
+    "records": [
+      {
+        "id": "listing",
+        "episode_key": "listing",
+        "profile": "listing",
+        "holder": "org",
+        "counterpart": "presentation",
+        "evidence": "listing",
+        "scope": "market_listing",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      }
+    ],
+    "observed_claims": [],
+    "day": 20,
+    "jurisdiction": "OTHER",
+    "expected_roles": [],
+    "expected_error_contains": null,
+    "actual_roles": [],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "listing/other_scope",
+    "records": [
+      {
+        "id": "listing",
+        "episode_key": "listing",
+        "profile": "listing",
+        "holder": "org",
+        "counterpart": "presentation",
+        "evidence": "listing",
+        "scope": "unrelated",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      }
+    ],
+    "observed_claims": [],
+    "day": 20,
+    "jurisdiction": "LAB",
+    "expected_roles": [],
+    "expected_error_contains": null,
+    "actual_roles": [],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "listing/open_ended",
+    "records": [
+      {
+        "id": "listing",
+        "episode_key": "listing",
+        "profile": "listing",
+        "holder": "org",
+        "counterpart": "presentation",
+        "evidence": "listing",
+        "scope": "market_listing",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": null
+      }
+    ],
+    "observed_claims": [],
+    "day": 99,
+    "jurisdiction": "LAB",
+    "expected_roles": [
+      "ProductResponsibleLabelerRole"
+    ],
+    "expected_error_contains": null,
+    "actual_roles": [
+      "ProductResponsibleLabelerRole"
+    ],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "listing/renewed",
+    "records": [
+      {
+        "id": "listing",
+        "episode_key": "listing",
+        "profile": "listing",
+        "holder": "org",
+        "counterpart": "presentation",
+        "evidence": "listing",
+        "scope": "market_listing",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      },
+      {
+        "id": "renewal",
+        "episode_key": "renewal",
+        "profile": "listing",
+        "holder": "org",
+        "counterpart": "presentation",
+        "evidence": "listing",
+        "scope": "market_listing",
+        "jurisdiction": "LAB",
+        "start_day": 30,
+        "end_day": 50
+      }
+    ],
+    "observed_claims": [],
+    "day": 30,
+    "jurisdiction": "LAB",
+    "expected_roles": [
+      "ProductResponsibleLabelerRole"
+    ],
+    "expected_error_contains": null,
+    "actual_roles": [
+      "ProductResponsibleLabelerRole"
+    ],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "listing/one_context_ends_other_survives",
+    "records": [
+      {
+        "id": "listing",
+        "episode_key": "listing",
+        "profile": "listing",
+        "holder": "org",
+        "counterpart": "presentation",
+        "evidence": "listing",
+        "scope": "market_listing",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      },
+      {
+        "id": "overlap",
+        "episode_key": "overlap",
+        "profile": "listing",
+        "holder": "org",
+        "counterpart": "presentation",
+        "evidence": "listing",
+        "scope": "market_listing",
+        "jurisdiction": "LAB",
+        "start_day": 25,
+        "end_day": 50
+      }
+    ],
+    "observed_claims": [],
+    "day": 30,
+    "jurisdiction": "LAB",
+    "expected_roles": [
+      "ProductResponsibleLabelerRole"
+    ],
+    "expected_error_contains": null,
+    "actual_roles": [
+      "ProductResponsibleLabelerRole"
+    ],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "listing/all_contexts_end",
+    "records": [
+      {
+        "id": "listing",
+        "episode_key": "listing",
+        "profile": "listing",
+        "holder": "org",
+        "counterpart": "presentation",
+        "evidence": "listing",
+        "scope": "market_listing",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      },
+      {
+        "id": "overlap",
+        "episode_key": "overlap",
+        "profile": "listing",
+        "holder": "org",
+        "counterpart": "presentation",
+        "evidence": "listing",
+        "scope": "market_listing",
+        "jurisdiction": "LAB",
+        "start_day": 25,
+        "end_day": 50
+      }
+    ],
+    "observed_claims": [],
+    "day": 50,
+    "jurisdiction": "LAB",
+    "expected_roles": [],
+    "expected_error_contains": null,
+    "actual_roles": [],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "listing/same_parties_independent_episode",
+    "records": [
+      {
+        "id": "listing",
+        "episode_key": "listing",
+        "profile": "listing",
+        "holder": "org",
+        "counterpart": "presentation",
+        "evidence": "listing",
+        "scope": "market_listing",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      },
+      {
+        "id": "independent",
+        "episode_key": "independent",
+        "profile": "listing",
+        "holder": "org",
+        "counterpart": "presentation",
+        "evidence": "listing",
+        "scope": "market_listing",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      }
+    ],
+    "observed_claims": [],
+    "day": 20,
+    "jurisdiction": "LAB",
+    "expected_roles": [
+      "ProductResponsibleLabelerRole"
+    ],
+    "expected_error_contains": null,
+    "actual_roles": [
+      "ProductResponsibleLabelerRole"
+    ],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "listing/duplicate_episode",
+    "records": [
+      {
+        "id": "listing",
+        "episode_key": "listing",
+        "profile": "listing",
+        "holder": "org",
+        "counterpart": "presentation",
+        "evidence": "listing",
+        "scope": "market_listing",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      },
+      {
+        "id": "copy",
+        "episode_key": "listing",
+        "profile": "listing",
+        "holder": "org",
+        "counterpart": "presentation",
+        "evidence": "listing",
+        "scope": "market_listing",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      }
+    ],
+    "observed_claims": [],
+    "day": 20,
+    "jurisdiction": "LAB",
+    "expected_roles": [],
+    "expected_error_contains": "UNIQUE constraint failed",
+    "actual_roles": [],
+    "error": "UNIQUE constraint failed: episode.profile, episode.episode_key",
+    "passed": true
+  },
+  {
+    "id": "listing/wrong_bearer",
+    "records": [
+      {
+        "id": "listing",
+        "episode_key": "listing",
+        "profile": "listing",
+        "holder": "site",
+        "counterpart": "presentation",
+        "evidence": "listing",
+        "scope": "market_listing",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      }
+    ],
+    "observed_claims": [],
+    "day": 20,
+    "jurisdiction": "LAB",
+    "expected_roles": [],
+    "expected_error_contains": "holder_identity",
+    "actual_roles": [],
+    "error": "holder_identity",
+    "passed": true
+  },
+  {
+    "id": "listing/wrong_counterpart",
+    "records": [
+      {
+        "id": "listing",
+        "episode_key": "listing",
+        "profile": "listing",
+        "holder": "org",
+        "counterpart": "site",
+        "evidence": "listing",
+        "scope": "market_listing",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      }
+    ],
+    "observed_claims": [],
+    "day": 20,
+    "jurisdiction": "LAB",
+    "expected_roles": [],
+    "expected_error_contains": "counterpart_identity",
+    "actual_roles": [],
+    "error": "counterpart_identity",
+    "passed": true
+  },
+  {
+    "id": "listing/missing_counterpart",
+    "records": [
+      {
+        "id": "listing",
+        "episode_key": "listing",
+        "profile": "listing",
+        "holder": "org",
+        "counterpart": null,
+        "evidence": "listing",
+        "scope": "market_listing",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      }
+    ],
+    "observed_claims": [],
+    "day": 20,
+    "jurisdiction": "LAB",
+    "expected_roles": [],
+    "expected_error_contains": "NOT NULL constraint failed",
+    "actual_roles": [],
+    "error": "NOT NULL constraint failed: episode.counterpart",
+    "passed": true
+  },
+  {
+    "id": "listing/self_relator",
+    "records": [
+      {
+        "id": "listing",
+        "episode_key": "listing",
+        "profile": "listing",
+        "holder": "org",
+        "counterpart": "org",
+        "evidence": "listing",
+        "scope": "market_listing",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      }
+    ],
+    "observed_claims": [],
+    "day": 20,
+    "jurisdiction": "LAB",
+    "expected_roles": [],
+    "expected_error_contains": "counterpart_identity",
+    "actual_roles": [],
+    "error": "counterpart_identity",
+    "passed": true
+  },
+  {
+    "id": "listing/aggregate_is_not_commitment",
+    "records": [
+      {
+        "id": "listing",
+        "episode_key": "listing",
+        "profile": "listing",
+        "holder": "org",
+        "counterpart": "presentation",
+        "evidence": "aggregate",
+        "scope": "market_listing",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      }
+    ],
+    "observed_claims": [],
+    "day": 20,
+    "jurisdiction": "LAB",
+    "expected_roles": [],
+    "expected_error_contains": "evidence_boundary",
+    "actual_roles": [],
+    "error": "evidence_boundary",
+    "passed": true
+  },
+  {
+    "id": "listing/label_is_not_commitment",
+    "records": [
+      {
+        "id": "listing",
+        "episode_key": "listing",
+        "profile": "listing",
+        "holder": "org",
+        "counterpart": "presentation",
+        "evidence": "generic",
+        "scope": "market_listing",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      }
+    ],
+    "observed_claims": [],
+    "day": 20,
+    "jurisdiction": "LAB",
+    "expected_roles": [],
+    "expected_error_contains": "evidence_boundary",
+    "actual_roles": [],
+    "error": "evidence_boundary",
+    "passed": true
+  },
+  {
+    "id": "listing/unknown_start",
+    "records": [
+      {
+        "id": "listing",
+        "episode_key": "listing",
+        "profile": "listing",
+        "holder": "org",
+        "counterpart": "presentation",
+        "evidence": "listing",
+        "scope": "market_listing",
+        "jurisdiction": "LAB",
+        "start_day": null,
+        "end_day": 30
+      }
+    ],
+    "observed_claims": [],
+    "day": 20,
+    "jurisdiction": "LAB",
+    "expected_roles": [],
+    "expected_error_contains": "NOT NULL constraint failed",
+    "actual_roles": [],
+    "error": "NOT NULL constraint failed: episode.start_day",
+    "passed": true
+  },
+  {
+    "id": "listing/reversed_interval",
+    "records": [
+      {
+        "id": "listing",
+        "episode_key": "listing",
+        "profile": "listing",
+        "holder": "org",
+        "counterpart": "presentation",
+        "evidence": "listing",
+        "scope": "market_listing",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 9
+      }
+    ],
+    "observed_claims": [],
+    "day": 20,
+    "jurisdiction": "LAB",
+    "expected_roles": [],
+    "expected_error_contains": "CHECK constraint failed",
+    "actual_roles": [],
+    "error": "CHECK constraint failed: end_day IS NULL OR (typeof(end_day)='integer' AND end_day>start_day)",
+    "passed": true
+  },
+  {
+    "id": "listing/missing_evidence",
+    "records": [
+      {
+        "id": "listing",
+        "episode_key": "listing",
+        "profile": "listing",
+        "holder": "org",
+        "counterpart": "presentation",
+        "evidence": "missing",
+        "scope": "market_listing",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      }
+    ],
+    "observed_claims": [],
+    "day": 20,
+    "jurisdiction": "LAB",
+    "expected_roles": [],
+    "expected_error_contains": "FOREIGN KEY constraint failed",
+    "actual_roles": [],
+    "error": "FOREIGN KEY constraint failed",
+    "passed": true
+  },
+  {
+    "id": "listing/empty_jurisdiction",
+    "records": [
+      {
+        "id": "listing",
+        "episode_key": "listing",
+        "profile": "listing",
+        "holder": "org",
+        "counterpart": "presentation",
+        "evidence": "listing",
+        "scope": "market_listing",
+        "jurisdiction": " ",
+        "start_day": 10,
+        "end_day": 30
+      }
+    ],
+    "observed_claims": [],
+    "day": 20,
+    "jurisdiction": "LAB",
+    "expected_roles": [],
+    "expected_error_contains": "CHECK constraint failed",
+    "actual_roles": [],
+    "error": "CHECK constraint failed: length(trim(jurisdiction))>0",
+    "passed": true
+  },
+  {
+    "id": "listing/unrelated_observation_does_not_change_role",
+    "records": [
+      {
+        "id": "listing",
+        "episode_key": "listing",
+        "profile": "listing",
+        "holder": "org",
+        "counterpart": "presentation",
+        "evidence": "listing",
+        "scope": "market_listing",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      }
+    ],
+    "observed_claims": [
+      "aggregate_published",
+      "payment_observed",
+      "authorization_issued"
+    ],
+    "day": 20,
+    "jurisdiction": "LAB",
+    "expected_roles": [
+      "ProductResponsibleLabelerRole"
+    ],
+    "expected_error_contains": null,
+    "actual_roles": [
+      "ProductResponsibleLabelerRole"
+    ],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "funding/effective_without_any_exercise_or_payment",
+    "records": [
+      {
+        "id": "funding",
+        "episode_key": "funding",
+        "profile": "funding",
+        "holder": "org",
+        "counterpart": "org2",
+        "evidence": "funding",
+        "scope": "institutional_funding",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      }
+    ],
+    "observed_claims": [],
+    "day": 20,
+    "jurisdiction": "LAB",
+    "expected_roles": [
+      "PayerFundingOrganizationRole"
+    ],
+    "expected_error_contains": null,
+    "actual_roles": [
+      "PayerFundingOrganizationRole"
+    ],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "funding/before_start",
+    "records": [
+      {
+        "id": "funding",
+        "episode_key": "funding",
+        "profile": "funding",
+        "holder": "org",
+        "counterpart": "org2",
+        "evidence": "funding",
+        "scope": "institutional_funding",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      }
+    ],
+    "observed_claims": [],
+    "day": 9,
+    "jurisdiction": "LAB",
+    "expected_roles": [],
+    "expected_error_contains": null,
+    "actual_roles": [],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "funding/inclusive_start",
+    "records": [
+      {
+        "id": "funding",
+        "episode_key": "funding",
+        "profile": "funding",
+        "holder": "org",
+        "counterpart": "org2",
+        "evidence": "funding",
+        "scope": "institutional_funding",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      }
+    ],
+    "observed_claims": [],
+    "day": 10,
+    "jurisdiction": "LAB",
+    "expected_roles": [
+      "PayerFundingOrganizationRole"
+    ],
+    "expected_error_contains": null,
+    "actual_roles": [
+      "PayerFundingOrganizationRole"
+    ],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "funding/exclusive_end",
+    "records": [
+      {
+        "id": "funding",
+        "episode_key": "funding",
+        "profile": "funding",
+        "holder": "org",
+        "counterpart": "org2",
+        "evidence": "funding",
+        "scope": "institutional_funding",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      }
+    ],
+    "observed_claims": [],
+    "day": 30,
+    "jurisdiction": "LAB",
+    "expected_roles": [],
+    "expected_error_contains": null,
+    "actual_roles": [],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "funding/other_jurisdiction",
+    "records": [
+      {
+        "id": "funding",
+        "episode_key": "funding",
+        "profile": "funding",
+        "holder": "org",
+        "counterpart": "org2",
+        "evidence": "funding",
+        "scope": "institutional_funding",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      }
+    ],
+    "observed_claims": [],
+    "day": 20,
+    "jurisdiction": "OTHER",
+    "expected_roles": [],
+    "expected_error_contains": null,
+    "actual_roles": [],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "funding/other_scope",
+    "records": [
+      {
+        "id": "funding",
+        "episode_key": "funding",
+        "profile": "funding",
+        "holder": "org",
+        "counterpart": "org2",
+        "evidence": "funding",
+        "scope": "unrelated",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      }
+    ],
+    "observed_claims": [],
+    "day": 20,
+    "jurisdiction": "LAB",
+    "expected_roles": [],
+    "expected_error_contains": null,
+    "actual_roles": [],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "funding/open_ended",
+    "records": [
+      {
+        "id": "funding",
+        "episode_key": "funding",
+        "profile": "funding",
+        "holder": "org",
+        "counterpart": "org2",
+        "evidence": "funding",
+        "scope": "institutional_funding",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": null
+      }
+    ],
+    "observed_claims": [],
+    "day": 99,
+    "jurisdiction": "LAB",
+    "expected_roles": [
+      "PayerFundingOrganizationRole"
+    ],
+    "expected_error_contains": null,
+    "actual_roles": [
+      "PayerFundingOrganizationRole"
+    ],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "funding/renewed",
+    "records": [
+      {
+        "id": "funding",
+        "episode_key": "funding",
+        "profile": "funding",
+        "holder": "org",
+        "counterpart": "org2",
+        "evidence": "funding",
+        "scope": "institutional_funding",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      },
+      {
+        "id": "renewal",
+        "episode_key": "renewal",
+        "profile": "funding",
+        "holder": "org",
+        "counterpart": "org2",
+        "evidence": "funding",
+        "scope": "institutional_funding",
+        "jurisdiction": "LAB",
+        "start_day": 30,
+        "end_day": 50
+      }
+    ],
+    "observed_claims": [],
+    "day": 30,
+    "jurisdiction": "LAB",
+    "expected_roles": [
+      "PayerFundingOrganizationRole"
+    ],
+    "expected_error_contains": null,
+    "actual_roles": [
+      "PayerFundingOrganizationRole"
+    ],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "funding/one_context_ends_other_survives",
+    "records": [
+      {
+        "id": "funding",
+        "episode_key": "funding",
+        "profile": "funding",
+        "holder": "org",
+        "counterpart": "org2",
+        "evidence": "funding",
+        "scope": "institutional_funding",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      },
+      {
+        "id": "overlap",
+        "episode_key": "overlap",
+        "profile": "funding",
+        "holder": "org",
+        "counterpart": "org2",
+        "evidence": "funding",
+        "scope": "institutional_funding",
+        "jurisdiction": "LAB",
+        "start_day": 25,
+        "end_day": 50
+      }
+    ],
+    "observed_claims": [],
+    "day": 30,
+    "jurisdiction": "LAB",
+    "expected_roles": [
+      "PayerFundingOrganizationRole"
+    ],
+    "expected_error_contains": null,
+    "actual_roles": [
+      "PayerFundingOrganizationRole"
+    ],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "funding/all_contexts_end",
+    "records": [
+      {
+        "id": "funding",
+        "episode_key": "funding",
+        "profile": "funding",
+        "holder": "org",
+        "counterpart": "org2",
+        "evidence": "funding",
+        "scope": "institutional_funding",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      },
+      {
+        "id": "overlap",
+        "episode_key": "overlap",
+        "profile": "funding",
+        "holder": "org",
+        "counterpart": "org2",
+        "evidence": "funding",
+        "scope": "institutional_funding",
+        "jurisdiction": "LAB",
+        "start_day": 25,
+        "end_day": 50
+      }
+    ],
+    "observed_claims": [],
+    "day": 50,
+    "jurisdiction": "LAB",
+    "expected_roles": [],
+    "expected_error_contains": null,
+    "actual_roles": [],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "funding/same_parties_independent_episode",
+    "records": [
+      {
+        "id": "funding",
+        "episode_key": "funding",
+        "profile": "funding",
+        "holder": "org",
+        "counterpart": "org2",
+        "evidence": "funding",
+        "scope": "institutional_funding",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      },
+      {
+        "id": "independent",
+        "episode_key": "independent",
+        "profile": "funding",
+        "holder": "org",
+        "counterpart": "org2",
+        "evidence": "funding",
+        "scope": "institutional_funding",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      }
+    ],
+    "observed_claims": [],
+    "day": 20,
+    "jurisdiction": "LAB",
+    "expected_roles": [
+      "PayerFundingOrganizationRole"
+    ],
+    "expected_error_contains": null,
+    "actual_roles": [
+      "PayerFundingOrganizationRole"
+    ],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "funding/duplicate_episode",
+    "records": [
+      {
+        "id": "funding",
+        "episode_key": "funding",
+        "profile": "funding",
+        "holder": "org",
+        "counterpart": "org2",
+        "evidence": "funding",
+        "scope": "institutional_funding",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      },
+      {
+        "id": "copy",
+        "episode_key": "funding",
+        "profile": "funding",
+        "holder": "org",
+        "counterpart": "org2",
+        "evidence": "funding",
+        "scope": "institutional_funding",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      }
+    ],
+    "observed_claims": [],
+    "day": 20,
+    "jurisdiction": "LAB",
+    "expected_roles": [],
+    "expected_error_contains": "UNIQUE constraint failed",
+    "actual_roles": [],
+    "error": "UNIQUE constraint failed: episode.profile, episode.episode_key",
+    "passed": true
+  },
+  {
+    "id": "funding/wrong_bearer",
+    "records": [
+      {
+        "id": "funding",
+        "episode_key": "funding",
+        "profile": "funding",
+        "holder": "site",
+        "counterpart": "org2",
+        "evidence": "funding",
+        "scope": "institutional_funding",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      }
+    ],
+    "observed_claims": [],
+    "day": 20,
+    "jurisdiction": "LAB",
+    "expected_roles": [],
+    "expected_error_contains": "holder_identity",
+    "actual_roles": [],
+    "error": "holder_identity",
+    "passed": true
+  },
+  {
+    "id": "funding/wrong_counterpart",
+    "records": [
+      {
+        "id": "funding",
+        "episode_key": "funding",
+        "profile": "funding",
+        "holder": "org",
+        "counterpart": "site",
+        "evidence": "funding",
+        "scope": "institutional_funding",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      }
+    ],
+    "observed_claims": [],
+    "day": 20,
+    "jurisdiction": "LAB",
+    "expected_roles": [],
+    "expected_error_contains": "counterpart_identity",
+    "actual_roles": [],
+    "error": "counterpart_identity",
+    "passed": true
+  },
+  {
+    "id": "funding/missing_counterpart",
+    "records": [
+      {
+        "id": "funding",
+        "episode_key": "funding",
+        "profile": "funding",
+        "holder": "org",
+        "counterpart": null,
+        "evidence": "funding",
+        "scope": "institutional_funding",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      }
+    ],
+    "observed_claims": [],
+    "day": 20,
+    "jurisdiction": "LAB",
+    "expected_roles": [],
+    "expected_error_contains": "NOT NULL constraint failed",
+    "actual_roles": [],
+    "error": "NOT NULL constraint failed: episode.counterpart",
+    "passed": true
+  },
+  {
+    "id": "funding/self_relator",
+    "records": [
+      {
+        "id": "funding",
+        "episode_key": "funding",
+        "profile": "funding",
+        "holder": "org",
+        "counterpart": "org",
+        "evidence": "funding",
+        "scope": "institutional_funding",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      }
+    ],
+    "observed_claims": [],
+    "day": 20,
+    "jurisdiction": "LAB",
+    "expected_roles": [],
+    "expected_error_contains": "holder<>counterpart",
+    "actual_roles": [],
+    "error": "CHECK constraint failed: holder<>counterpart",
+    "passed": true
+  },
+  {
+    "id": "funding/aggregate_is_not_commitment",
+    "records": [
+      {
+        "id": "funding",
+        "episode_key": "funding",
+        "profile": "funding",
+        "holder": "org",
+        "counterpart": "org2",
+        "evidence": "aggregate",
+        "scope": "institutional_funding",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      }
+    ],
+    "observed_claims": [],
+    "day": 20,
+    "jurisdiction": "LAB",
+    "expected_roles": [],
+    "expected_error_contains": "evidence_boundary",
+    "actual_roles": [],
+    "error": "evidence_boundary",
+    "passed": true
+  },
+  {
+    "id": "funding/label_is_not_commitment",
+    "records": [
+      {
+        "id": "funding",
+        "episode_key": "funding",
+        "profile": "funding",
+        "holder": "org",
+        "counterpart": "org2",
+        "evidence": "generic",
+        "scope": "institutional_funding",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      }
+    ],
+    "observed_claims": [],
+    "day": 20,
+    "jurisdiction": "LAB",
+    "expected_roles": [],
+    "expected_error_contains": "evidence_boundary",
+    "actual_roles": [],
+    "error": "evidence_boundary",
+    "passed": true
+  },
+  {
+    "id": "funding/unknown_start",
+    "records": [
+      {
+        "id": "funding",
+        "episode_key": "funding",
+        "profile": "funding",
+        "holder": "org",
+        "counterpart": "org2",
+        "evidence": "funding",
+        "scope": "institutional_funding",
+        "jurisdiction": "LAB",
+        "start_day": null,
+        "end_day": 30
+      }
+    ],
+    "observed_claims": [],
+    "day": 20,
+    "jurisdiction": "LAB",
+    "expected_roles": [],
+    "expected_error_contains": "NOT NULL constraint failed",
+    "actual_roles": [],
+    "error": "NOT NULL constraint failed: episode.start_day",
+    "passed": true
+  },
+  {
+    "id": "funding/reversed_interval",
+    "records": [
+      {
+        "id": "funding",
+        "episode_key": "funding",
+        "profile": "funding",
+        "holder": "org",
+        "counterpart": "org2",
+        "evidence": "funding",
+        "scope": "institutional_funding",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 9
+      }
+    ],
+    "observed_claims": [],
+    "day": 20,
+    "jurisdiction": "LAB",
+    "expected_roles": [],
+    "expected_error_contains": "CHECK constraint failed",
+    "actual_roles": [],
+    "error": "CHECK constraint failed: end_day IS NULL OR (typeof(end_day)='integer' AND end_day>start_day)",
+    "passed": true
+  },
+  {
+    "id": "funding/missing_evidence",
+    "records": [
+      {
+        "id": "funding",
+        "episode_key": "funding",
+        "profile": "funding",
+        "holder": "org",
+        "counterpart": "org2",
+        "evidence": "missing",
+        "scope": "institutional_funding",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      }
+    ],
+    "observed_claims": [],
+    "day": 20,
+    "jurisdiction": "LAB",
+    "expected_roles": [],
+    "expected_error_contains": "FOREIGN KEY constraint failed",
+    "actual_roles": [],
+    "error": "FOREIGN KEY constraint failed",
+    "passed": true
+  },
+  {
+    "id": "funding/empty_jurisdiction",
+    "records": [
+      {
+        "id": "funding",
+        "episode_key": "funding",
+        "profile": "funding",
+        "holder": "org",
+        "counterpart": "org2",
+        "evidence": "funding",
+        "scope": "institutional_funding",
+        "jurisdiction": " ",
+        "start_day": 10,
+        "end_day": 30
+      }
+    ],
+    "observed_claims": [],
+    "day": 20,
+    "jurisdiction": "LAB",
+    "expected_roles": [],
+    "expected_error_contains": "CHECK constraint failed",
+    "actual_roles": [],
+    "error": "CHECK constraint failed: length(trim(jurisdiction))>0",
+    "passed": true
+  },
+  {
+    "id": "funding/unrelated_observation_does_not_change_role",
+    "records": [
+      {
+        "id": "funding",
+        "episode_key": "funding",
+        "profile": "funding",
+        "holder": "org",
+        "counterpart": "org2",
+        "evidence": "funding",
+        "scope": "institutional_funding",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      }
+    ],
+    "observed_claims": [
+      "aggregate_published",
+      "payment_observed",
+      "authorization_issued"
+    ],
+    "day": 20,
+    "jurisdiction": "LAB",
+    "expected_roles": [
+      "PayerFundingOrganizationRole"
+    ],
+    "expected_error_contains": null,
+    "actual_roles": [
+      "PayerFundingOrganizationRole"
+    ],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "product/listing_and_commitment_overlap",
+    "records": [
+      {
+        "id": "listing",
+        "episode_key": "listing",
+        "profile": "listing",
+        "holder": "org",
+        "counterpart": "presentation",
+        "evidence": "listing",
+        "scope": "market_listing",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      },
+      {
+        "id": "label_responsibility",
+        "episode_key": "label_responsibility",
+        "profile": "label_responsibility",
+        "holder": "org",
+        "counterpart": "product",
+        "evidence": "label_responsibility",
+        "scope": "product_label_responsibility",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      }
+    ],
+    "observed_claims": [],
+    "day": 20,
+    "jurisdiction": "LAB",
+    "expected_roles": [
+      "ProductResponsibleLabelerRole"
+    ],
+    "expected_error_contains": null,
+    "actual_roles": [
+      "ProductResponsibleLabelerRole"
+    ],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "product/expired_listing_but_live_responsibility",
+    "records": [
+      {
+        "id": "listing",
+        "episode_key": "listing",
+        "profile": "listing",
+        "holder": "org",
+        "counterpart": "presentation",
+        "evidence": "listing",
+        "scope": "market_listing",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 20
+      },
+      {
+        "id": "label_responsibility",
+        "episode_key": "label_responsibility",
+        "profile": "label_responsibility",
+        "holder": "org",
+        "counterpart": "product",
+        "evidence": "label_responsibility",
+        "scope": "product_label_responsibility",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      }
+    ],
+    "observed_claims": [],
+    "day": 20,
+    "jurisdiction": "LAB",
+    "expected_roles": [
+      "ProductResponsibleLabelerRole"
+    ],
+    "expected_error_contains": null,
+    "actual_roles": [
+      "ProductResponsibleLabelerRole"
+    ],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "product/expired_responsibility_but_live_listing",
+    "records": [
+      {
+        "id": "label_responsibility",
+        "episode_key": "label_responsibility",
+        "profile": "label_responsibility",
+        "holder": "org",
+        "counterpart": "product",
+        "evidence": "label_responsibility",
+        "scope": "product_label_responsibility",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 20
+      },
+      {
+        "id": "listing",
+        "episode_key": "listing",
+        "profile": "listing",
+        "holder": "org",
+        "counterpart": "presentation",
+        "evidence": "listing",
+        "scope": "market_listing",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      }
+    ],
+    "observed_claims": [],
+    "day": 20,
+    "jurisdiction": "LAB",
+    "expected_roles": [
+      "ProductResponsibleLabelerRole"
+    ],
+    "expected_error_contains": null,
+    "actual_roles": [
+      "ProductResponsibleLabelerRole"
+    ],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "product/neither_route",
+    "records": [],
+    "observed_claims": [],
+    "day": 20,
+    "jurisdiction": "LAB",
+    "expected_roles": [],
+    "expected_error_contains": null,
+    "actual_roles": [],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "observation_only/authorization_issued",
+    "records": [],
+    "observed_claims": [
+      "authorization_issued"
+    ],
+    "day": 20,
+    "jurisdiction": "LAB",
+    "expected_roles": [],
+    "expected_error_contains": null,
+    "actual_roles": [],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "observation_only/payment_observed",
+    "records": [],
+    "observed_claims": [
+      "payment_observed"
+    ],
+    "day": 20,
+    "jurisdiction": "LAB",
+    "expected_roles": [],
+    "expected_error_contains": null,
+    "actual_roles": [],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "observation_only/aggregate_published",
+    "records": [],
+    "observed_claims": [
+      "aggregate_published"
+    ],
+    "day": 20,
+    "jurisdiction": "LAB",
+    "expected_roles": [],
+    "expected_error_contains": null,
+    "actual_roles": [],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "observation_only/label_string",
+    "records": [],
+    "observed_claims": [
+      "label_string"
+    ],
+    "day": 20,
+    "jurisdiction": "LAB",
+    "expected_roles": [],
+    "expected_error_contains": null,
+    "actual_roles": [],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "observation_only/manufacturing_observed",
+    "records": [],
+    "observed_claims": [
+      "manufacturing_observed"
+    ],
+    "day": 20,
+    "jurisdiction": "LAB",
+    "expected_roles": [],
+    "expected_error_contains": null,
+    "actual_roles": [],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "authority/grantor_need_not_hold_same_mandate",
+    "records": [
+      {
+        "id": "mandate",
+        "episode_key": "mandate",
+        "profile": "mandate",
+        "holder": "org",
+        "counterpart": "org2",
+        "evidence": "mandate",
+        "scope": "regulatory_mandate",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      }
+    ],
+    "observed_claims": [],
+    "day": 20,
+    "jurisdiction": "LAB",
+    "expected_roles": [
+      "RegulatoryAuthorityRole"
+    ],
+    "expected_error_contains": null,
+    "actual_roles": [
+      "RegulatoryAuthorityRole"
+    ],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "all_three_roles_may_overlap",
+    "records": [
+      {
+        "id": "mandate",
+        "episode_key": "mandate",
+        "profile": "mandate",
+        "holder": "org",
+        "counterpart": "org2",
+        "evidence": "mandate",
+        "scope": "regulatory_mandate",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      },
+      {
+        "id": "label_responsibility",
+        "episode_key": "label_responsibility",
+        "profile": "label_responsibility",
+        "holder": "org",
+        "counterpart": "product",
+        "evidence": "label_responsibility",
+        "scope": "product_label_responsibility",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      },
+      {
+        "id": "funding",
+        "episode_key": "funding",
+        "profile": "funding",
+        "holder": "org",
+        "counterpart": "org2",
+        "evidence": "funding",
+        "scope": "institutional_funding",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      }
+    ],
+    "observed_claims": [],
+    "day": 20,
+    "jurisdiction": "LAB",
+    "expected_roles": [
+      "PayerFundingOrganizationRole",
+      "ProductResponsibleLabelerRole",
+      "RegulatoryAuthorityRole"
+    ],
+    "expected_error_contains": null,
+    "actual_roles": [
+      "PayerFundingOrganizationRole",
+      "ProductResponsibleLabelerRole",
+      "RegulatoryAuthorityRole"
+    ],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "observations_do_not_revive_expired_mandate",
+    "records": [
+      {
+        "id": "mandate",
+        "episode_key": "mandate",
+        "profile": "mandate",
+        "holder": "org",
+        "counterpart": "org2",
+        "evidence": "mandate",
+        "scope": "regulatory_mandate",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      }
+    ],
+    "observed_claims": [
+      "authorization_issued"
+    ],
+    "day": 30,
+    "jurisdiction": "LAB",
+    "expected_roles": [],
+    "expected_error_contains": null,
+    "actual_roles": [],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "funding/commitment_not_license_or_label",
+    "records": [
+      {
+        "id": "funding",
+        "episode_key": "funding",
+        "profile": "funding",
+        "holder": "org",
+        "counterpart": "org2",
+        "evidence": "funding",
+        "scope": "institutional_funding",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      }
+    ],
+    "observed_claims": [],
+    "day": 20,
+    "jurisdiction": "LAB",
+    "expected_roles": [
+      "PayerFundingOrganizationRole"
+    ],
+    "expected_error_contains": null,
+    "actual_roles": [
+      "PayerFundingOrganizationRole"
+    ],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "listing/product_is_not_presentation",
+    "records": [
+      {
+        "id": "listing",
+        "episode_key": "listing",
+        "profile": "listing",
+        "holder": "org",
+        "counterpart": "product",
+        "evidence": "listing",
+        "scope": "market_listing",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      }
+    ],
+    "observed_claims": [],
+    "day": 20,
+    "jurisdiction": "LAB",
+    "expected_roles": [],
+    "expected_error_contains": "counterpart_identity",
+    "actual_roles": [],
+    "error": "counterpart_identity",
+    "passed": true
+  },
+  {
+    "id": "label/presentation_requires_explicit_mapping",
+    "records": [
+      {
+        "id": "label_responsibility",
+        "episode_key": "label_responsibility",
+        "profile": "label_responsibility",
+        "holder": "org",
+        "counterpart": "presentation",
+        "evidence": "label_responsibility",
+        "scope": "product_label_responsibility",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30
+      }
+    ],
+    "observed_claims": [],
+    "day": 20,
+    "jurisdiction": "LAB",
+    "expected_roles": [],
+    "expected_error_contains": "counterpart_identity",
+    "actual_roles": [],
+    "error": "counterpart_identity",
+    "passed": true
+  }
+]
