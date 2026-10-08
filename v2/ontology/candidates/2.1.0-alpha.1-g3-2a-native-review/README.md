@@ -31,7 +31,7 @@ The three multiplicity fields remain unspecified on these child associations. Th
 | `PENDING_PARENT_SEMANTICS` | 4 | Subsetting a parent with unresolved stereotype must be handled parent-first |
 | `RETAIN_PRIOR_MATERIAL_PENDING_AUDIT` | 1 | Existing `operates` material derivation and scoped participant roles require checking |
 
-Thus 42/42 records are inventoried, **3/42 have a stereotype-only change**, and **39/42 remain open for full disposition**. The current native inventory is 42 mediations, 38 untyped binary relations and one material relation; the 18 G3d new mediations are part of those 42 typed mediations. Concept and property counts, named-class connectivity (15 components, 14 isolates) and OWL semantics did not change.
+Thus 42/42 records are inventoried, **3/42 have a stereotype-only change**, **39/42 still lack a resolved stereotype decision**, and all 42 require further work for complete disposition (including the three child-association multiplicities). The current native inventory is 42 mediations, 38 untyped binary relations and one material relation; the 18 G3d new mediations are part of those 42 typed mediations. Concept and property counts, named-class connectivity (15 components, 14 isolates) and OWL semantics did not change.
 
 ## Checks performed and limits
 
