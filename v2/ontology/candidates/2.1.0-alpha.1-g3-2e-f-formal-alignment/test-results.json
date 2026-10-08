@@ -1,0 +1,105 @@
+{
+  "rdflib_version": "7.6.0",
+  "owl_triples_base": 1588,
+  "owl_triples_candidate": 1599,
+  "shacl_triples_base": 655,
+  "shacl_triples_candidate": 678,
+  "cases": [
+    {
+      "name": "Turtle OWL parsed",
+      "pass": true
+    },
+    {
+      "name": "Turtle SHACL parsed",
+      "pass": true
+    },
+    {
+      "name": "Subproperty points to broad active substance",
+      "pass": true
+    },
+    {
+      "name": "Product domain and substance range",
+      "pass": true
+    },
+    {
+      "name": "Confidence exactly one assertion OWL restriction",
+      "pass": true
+    },
+    {
+      "name": "OWL preserves no universal confidence for assertions",
+      "pass": true
+    },
+    {
+      "name": "Three new SHACL shapes",
+      "pass": true
+    },
+    {
+      "name": "Valid product, capacity and confidence; unscored assertion allowed",
+      "pass": true
+    },
+    {
+      "name": "Presentation cannot use Product relation",
+      "pass": true
+    },
+    {
+      "name": "Untyped substance rejected",
+      "pass": true
+    },
+    {
+      "name": "Capability with two bearers rejected",
+      "pass": true
+    },
+    {
+      "name": "Capability with no bearer rejected",
+      "pass": true
+    },
+    {
+      "name": "Confidence with two bearers rejected",
+      "pass": true
+    },
+    {
+      "name": "Confidence with no bearer rejected",
+      "pass": true
+    },
+    {
+      "name": "Operation snapshot positive",
+      "pass": true
+    },
+    {
+      "name": "Operation snapshot expired",
+      "pass": true
+    },
+    {
+      "name": "Operation snapshot future",
+      "pass": true
+    },
+    {
+      "name": "Operation snapshot absent start",
+      "pass": true
+    },
+    {
+      "name": "Operation snapshot ambiguous start rejected",
+      "pass": true
+    },
+    {
+      "name": "Operation snapshot ambiguous end rejected",
+      "pass": true
+    },
+    {
+      "name": "Operation snapshot second facility rejected",
+      "pass": true
+    },
+    {
+      "name": "Operation snapshot role absent",
+      "pass": true
+    },
+    {
+      "name": "Operation snapshot different relators do not cross join",
+      "pass": true
+    }
+  ],
+  "pass_count": 23,
+  "case_count": 23,
+  "all_pass": true,
+  "scope": "RDFLib Turtle parse, graph checks and manually evaluated constraints equivalent to the three new SHACL shapes; NOT pySHACL or OWL DL reasoner."
+}
