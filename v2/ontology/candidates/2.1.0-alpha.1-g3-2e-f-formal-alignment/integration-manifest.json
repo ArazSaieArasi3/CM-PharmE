@@ -1,0 +1,55 @@
+{
+  "schema": "cm-pharme.g3-2e-f.integration.v1",
+  "as_of": "2026-10-08 Asia/Tehran",
+  "source_owl": "v2/ontology/candidates/2.1.0-alpha.1-g3d-candidate/active.ttl",
+  "source_shapes": "v2/ontology/candidates/2.1.0-alpha.1-g3d-candidate/constraints.ttl",
+  "source_native": "v2/ontology/candidates/2.1.0-alpha.1-g3-2e-e-native-integration/ontouml.json",
+  "bounded_delta": [
+    {
+      "name": "productHasActiveSubstance",
+      "owl": "domain MedicinalProduct, range PharmaceuticalSubstance, subPropertyOf hasActiveSubstance",
+      "shacl": "subject Product, not Presentation; values Substance; no min or max",
+      "evidence": "M016 Product primary_substance_id source hook",
+      "limitations": "No unapproved Presentation route, global substance existence or composition"
+    },
+    {
+      "name": "hasMatchConfidence",
+      "owl": "MatchConfidence inverse hasMatchConfidence exactly one EntityMatchAssertion",
+      "shacl": "Quality inverse bearer min=max=1",
+      "limitations": "Unscored EntityMatchAssertion allowed; Characterization conformance unresolved"
+    },
+    {
+      "name": "capabilityBearer",
+      "owl": "Existing EnterpriseCapability qualifiedCardinality exactly one Organization retained",
+      "shacl": "EnterpriseCapability bearer min=max=1, Organization optional",
+      "limitations": "No global Organization Characterization; Mode conformance unresolved"
+    },
+    {
+      "name": "operates",
+      "owl": "No property chain or atemporal materialization",
+      "query": "Timestamp-bound same-relator SELECT with role and base types, unique facility, unique validity interval; returns relator provenance",
+      "limitations": "Only explicit role and validity witnesses; skipped if interval absent; no materialization"
+    }
+  ],
+  "triples": {
+    "owl_before": 1588,
+    "owl_after": 1599,
+    "shapes_before": 655,
+    "shapes_after": 678
+  },
+  "validation": {
+    "rdflib_cases": 23,
+    "passed": 23,
+    "pyshacl_executed": false,
+    "hermit_pellet_executed_on_candidate": false,
+    "full_baseline_regression_executed": false
+  },
+  "open_gates": [
+    "SupplyCapacity exactly-one-of-Organization-or-Facility bearer",
+    "Official OntoUML parser and anti-pattern review",
+    "Full OWL DL reasoner and pySHACL run against integrated candidate",
+    "hasStrength characterization existential alignment and source completeness",
+    "29 pending relation dispositions and 14 isolate connector proposals",
+    "Real dataset migration and final scientific acceptance"
+  ]
+}
