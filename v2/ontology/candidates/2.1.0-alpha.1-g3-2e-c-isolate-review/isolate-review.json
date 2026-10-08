@@ -1,0 +1,241 @@
+{
+  "schema": "cm-pharme.g3-2e-c.isolates.v1",
+  "as_of": "2026-10-08",
+  "branch": "v2/connectivity-audit-2-1-candidate",
+  "baseline_candidate": "2.1.0-alpha.1-g3d-candidate",
+  "metric": "Named class graph: named subclass edges and named domain-range object-property edges; no datatypes, existential restrictions, anonymous unions or inferred semantics",
+  "records": [
+    {
+      "name": "AdverseEventReportingActivity",
+      "stereotype": "event",
+      "module": "PHARMACOVIGILANCE",
+      "review_status": "SOURCE_CONDITIONAL",
+      "candidate_relation": "reportConcernsProduct",
+      "candidate_target": "MedicinalProduct",
+      "truthmaker_required": "An actual safety report explicitly identifies the product and the reporting activity; S3 records must distinguish the reporting event from an adverse-event case.",
+      "positive_witness_design": "A timestamped submitted report concerning a named Product.",
+      "negative_acceptance_condition": "A product listing or safety requirement alone cannot instantiate a reporting event.",
+      "source_anchors": [
+        "v2/research/w4/events-situations-observations.md",
+        "v2/research/w4/connection-candidates.csv"
+      ],
+      "native_candidate_change_authorized": false,
+      "review_note": "W4 conceptual evidence only; instance/source gate and scientific author disposition still required. No relation asserted in this packet."
+    },
+    {
+      "name": "BusinessArchitectureView",
+      "stereotype": "kind",
+      "module": "OPTIONAL_BA",
+      "review_status": "OPTIONAL_SOURCE_CONDITIONAL",
+      "candidate_relation": "baViewRepresents (type a scoped end)",
+      "candidate_target": "Organization",
+      "truthmaker_required": "A concrete BA view maps a named Organization or activity; retain one directional optional module dependency.",
+      "positive_witness_design": "A versioned architecture view explicitly depicts an Organization.",
+      "negative_acceptance_condition": "The mere presence of an Organization cannot entail a BA view or Core dependency.",
+      "source_anchors": [
+        "v2/research/w4/business-architecture-view.md"
+      ],
+      "native_candidate_change_authorized": false,
+      "review_note": "W4 conceptual evidence only; instance/source gate and scientific author disposition still required. No relation asserted in this packet."
+    },
+    {
+      "name": "DigitalInformationSystemComponent",
+      "stereotype": "kind",
+      "module": "OPTIONAL_DIGITAL",
+      "review_status": "SOURCE_CONDITIONAL",
+      "candidate_relation": "supportsObservationActivity",
+      "candidate_target": "ObservationActivity",
+      "truthmaker_required": "A system component is documented as supporting a specific observation process, with scope and provenance (C12).",
+      "positive_witness_design": "A deployed reporting component supports a documented ObservationActivity.",
+      "negative_acceptance_condition": "A component inventory alone does not imply an observation or universal support.",
+      "source_anchors": [
+        "v2/research/w4/connection-candidates.csv",
+        "v2/research/w4/integrated-ontouml-model.md"
+      ],
+      "native_candidate_change_authorized": false,
+      "review_note": "W4 conceptual evidence only; instance/source gate and scientific author disposition still required. No relation asserted in this packet."
+    },
+    {
+      "name": "DistributionLogisticsActivity",
+      "stereotype": "event",
+      "module": "CORE_EVENT",
+      "review_status": "W4_PATTERN_READY_SOURCE_GATE",
+      "candidate_relation": "logisticsAtSite",
+      "candidate_target": "DistributionSiteRole",
+      "truthmaker_required": "Evidence of an actual time-bounded handling, storage or distribution activity at the site, distinct from registration.",
+      "positive_witness_design": "A dated warehouse movement event at a distribution site.",
+      "negative_acceptance_condition": "Distributor registration alone cannot create a logistics event.",
+      "source_anchors": [
+        "v2/research/w4/events-situations-observations.md"
+      ],
+      "native_candidate_change_authorized": false,
+      "review_note": "W4 conceptual evidence only; instance/source gate and scientific author disposition still required. No relation asserted in this packet."
+    },
+    {
+      "name": "ManufacturingActivity",
+      "stereotype": "event",
+      "module": "CORE_EVENT",
+      "review_status": "W4_PATTERN_READY_SOURCE_GATE",
+      "candidate_relation": "manufacturingAtSite",
+      "candidate_target": "ManufacturingSiteRole",
+      "truthmaker_required": "Evidence of an actual time-bounded production activity at the site, distinct from site authorization.",
+      "positive_witness_design": "A dated batch manufacture at an identified site.",
+      "negative_acceptance_condition": "An establishment registration alone cannot create a manufacturing event.",
+      "source_anchors": [
+        "v2/research/w4/events-situations-observations.md"
+      ],
+      "native_candidate_change_authorized": false,
+      "review_note": "W4 conceptual evidence only; instance/source gate and scientific author disposition still required. No relation asserted in this packet."
+    },
+    {
+      "name": "PharmacovigilanceRequirement",
+      "stereotype": "kind",
+      "module": "REGULATORY_POLICY",
+      "review_status": "SOURCE_CONDITIONAL",
+      "candidate_relation": "requirementAppliesInJurisdiction",
+      "candidate_target": "RegulatoryJurisdiction",
+      "truthmaker_required": "An authoritative requirement text with version, jurisdiction and effective period supports the normative scope.",
+      "positive_witness_design": "A versioned legal requirement explicitly applies in a Jurisdiction.",
+      "negative_acceptance_condition": "A report record or optional safety activity cannot by itself establish a legal duty.",
+      "source_anchors": [
+        "v2/research/w4/integrated-ontouml-model.md",
+        "v2/research/w4/events-situations-observations.md"
+      ],
+      "native_candidate_change_authorized": false,
+      "review_note": "W4 conceptual evidence only; instance/source gate and scientific author disposition still required. No relation asserted in this packet."
+    },
+    {
+      "name": "PostMarketSurveillanceActivity",
+      "stereotype": "event",
+      "module": "PHARMACOVIGILANCE",
+      "review_status": "SOURCE_CONDITIONAL",
+      "candidate_relation": "surveillanceProducesResult",
+      "candidate_target": "ObservationResult",
+      "truthmaker_required": "Evidence of an actual surveillance activity and its output; a result without process trace is retained only as a result.",
+      "positive_witness_design": "A dated surveillance process produces a linked observation result.",
+      "negative_acceptance_condition": "An ingested aggregate observation cannot imply an unrecorded surveillance event.",
+      "source_anchors": [
+        "v2/research/w4/events-situations-observations.md"
+      ],
+      "native_candidate_change_authorized": false,
+      "review_note": "W4 conceptual evidence only; instance/source gate and scientific author disposition still required. No relation asserted in this packet."
+    },
+    {
+      "name": "ProcurementActivity",
+      "stereotype": "event",
+      "module": "SUPPLY_EVENT",
+      "review_status": "SOURCE_CONDITIONAL",
+      "candidate_relation": "procurementBuyer",
+      "candidate_target": "Organization",
+      "truthmaker_required": "A documented transaction or procurement event identifies the buyer; further Product/Facility participants only when C1 evidence supports them.",
+      "positive_witness_design": "A dated purchase order identifies the procuring Organization.",
+      "negative_acceptance_condition": "Registration, supplier role or product listing alone cannot instantiate a procurement event.",
+      "source_anchors": [
+        "v2/research/w4/events-situations-observations.md",
+        "v2/research/w4/connection-candidates.csv"
+      ],
+      "native_candidate_change_authorized": false,
+      "review_note": "W4 conceptual evidence only; instance/source gate and scientific author disposition still required. No relation asserted in this packet."
+    },
+    {
+      "name": "RegulatoryRequirement",
+      "stereotype": "kind",
+      "module": "REGULATORY_POLICY",
+      "review_status": "SOURCE_CONDITIONAL",
+      "candidate_relation": "requirementAppliesInJurisdiction",
+      "candidate_target": "RegulatoryJurisdiction",
+      "truthmaker_required": "Authoritative normative source identifies jurisdiction and temporal validity; authorization is modeled separately.",
+      "positive_witness_design": "A dated regulation states the competent Jurisdiction.",
+      "negative_acceptance_condition": "A regulatory data record alone does not authorize a party or make all activities mandatory.",
+      "source_anchors": [
+        "v2/research/w4/integrated-ontouml-model.md"
+      ],
+      "native_candidate_change_authorized": false,
+      "review_note": "W4 conceptual evidence only; instance/source gate and scientific author disposition still required. No relation asserted in this packet."
+    },
+    {
+      "name": "RiskTreatmentActivity",
+      "stereotype": "event",
+      "module": "RISK_RESILIENCE",
+      "review_status": "W4_PATTERN_READY_SOURCE_GATE",
+      "candidate_relation": "executesRiskTreatmentPlan",
+      "candidate_target": "RiskTreatmentPlan",
+      "truthmaker_required": "Evidence of a performed mitigation event referencing a specific plan; target of broad riskTreatmentAddresses may be typed to SupplyDependency only with separate evidence.",
+      "positive_witness_design": "An executed alternative-supply action cites its plan and completion time.",
+      "negative_acceptance_condition": "A drafted plan alone cannot entail an executed treatment activity.",
+      "source_anchors": [
+        "v2/research/w4/risk-resilience-extension.md",
+        "v2/research/w4/events-situations-observations.md"
+      ],
+      "native_candidate_change_authorized": false,
+      "review_note": "W4 conceptual evidence only; instance/source gate and scientific author disposition still required. No relation asserted in this packet."
+    },
+    {
+      "name": "RiskTreatmentPlan",
+      "stereotype": "kind",
+      "module": "RISK_RESILIENCE",
+      "review_status": "W4_PATTERN_READY_SOURCE_GATE",
+      "candidate_relation": "planAddressesDependency",
+      "candidate_target": "SupplyDependency",
+      "truthmaker_required": "A plan explicitly specifies a dependency as treatment target; an optional execution link to RiskTreatmentActivity requires actual performance.",
+      "positive_witness_design": "A signed plan describes mitigation of a named SupplyDependency.",
+      "negative_acceptance_condition": "A planned action does not entail its execution or a quantitative risk score.",
+      "source_anchors": [
+        "v2/research/w4/risk-resilience-extension.md"
+      ],
+      "native_candidate_change_authorized": false,
+      "review_note": "W4 conceptual evidence only; instance/source gate and scientific author disposition still required. No relation asserted in this packet."
+    },
+    {
+      "name": "ServiceOfferingSpecification",
+      "stereotype": "kind",
+      "module": "OPTIONAL_BA",
+      "review_status": "DEFER_OPTIONAL",
+      "candidate_relation": "referencesOfferedActivity",
+      "candidate_target": "ManufacturingActivity",
+      "truthmaker_required": "A concrete offering specification with identified provider, offered activity and commitment is required; current W4 leaves it optional.",
+      "positive_witness_design": "A published specification names the offered activity and responsible provider.",
+      "negative_acceptance_condition": "Generic BA vocabulary without an actual offering cannot justify a connection; an optional isolate may remain.",
+      "source_anchors": [
+        "v2/research/w4/business-architecture-view.md",
+        "v2/research/w4/connection-candidates.csv"
+      ],
+      "native_candidate_change_authorized": false,
+      "review_note": "W4 conceptual evidence only; instance/source gate and scientific author disposition still required. No relation asserted in this packet."
+    },
+    {
+      "name": "StockoutSituation",
+      "stereotype": "situation",
+      "module": "SUPPLY_RESILIENCE",
+      "review_status": "W4_PATTERN_READY_SOURCE_GATE",
+      "candidate_relation": "stockoutAtFacility",
+      "candidate_target": "Facility",
+      "truthmaker_required": "A local inventory state at a Facility with a Product or Presentation and interval; C10 presentation link requires that exact grain.",
+      "positive_witness_design": "A facility inventory report records an unavailable Presentation for a dated interval.",
+      "negative_acceptance_condition": "A national MedicineShortageSituation or an inventory result without local evidence cannot imply StockoutSituation.",
+      "source_anchors": [
+        "v2/research/w4/events-situations-observations.md",
+        "v2/research/w4/connection-candidates.csv"
+      ],
+      "native_candidate_change_authorized": false,
+      "review_note": "W4 conceptual evidence only; instance/source gate and scientific author disposition still required. No relation asserted in this packet."
+    },
+    {
+      "name": "SupplyCapacity",
+      "stereotype": "mode",
+      "module": "SUPPLY_RESILIENCE",
+      "review_status": "W4_PATTERN_READY_SOURCE_GATE",
+      "candidate_relation": "capacityBearer (type role-specific bearer)",
+      "candidate_target": "Facility",
+      "truthmaker_required": "A capacity Mode inheres in exactly one eligible bearer at a time, with capacity context; a measured SupplyCapacityObservationResult remains distinct. Select Organization or Facility by witnessed bearer type, without blanket Characterization.",
+      "positive_witness_design": "A facility has an explicitly described production capacity mode at a specified time.",
+      "negative_acceptance_condition": "A capacity measurement alone cannot prove the mode or force every Facility to have it.",
+      "source_anchors": [
+        "v2/research/w4/events-situations-observations.md",
+        "v2/research/w4/risk-resilience-extension.md"
+      ],
+      "native_candidate_change_authorized": false,
+      "review_note": "W4 conceptual evidence only; instance/source gate and scientific author disposition still required. No relation asserted in this packet."
+    }
+  ]
+}
