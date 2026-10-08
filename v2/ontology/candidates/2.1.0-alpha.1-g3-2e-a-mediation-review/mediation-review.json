@@ -1,0 +1,36 @@
+{
+  "source_revision": "04c611514d18c270bd647dedf8328bc03be32326",
+  "review_depth": "detailed design, author pending",
+  "records": [
+    {
+      "child": "contextClassificationEntry",
+      "parent": "classificationEntry",
+      "truthmaker": "ContextualMedicineClassificationAssignment specifies an AppliedClassificationEntryRole under a list/scheme/version/jurisdiction context.",
+      "temporal": "Assignment interval and source list version; do not merge two different contextual assignments.",
+      "positive": "An explicit contextClassificationEntry(r,e) with contextual assignment r and AppliedClassificationEntryRole e also entails classificationEntry(r,e).",
+      "negative": "A generic classificationEntry(r,e) alone does not entail contextClassificationEntry(r,e); same lexical classification code is insufficient.",
+      "cardinality": "Parent classificationEntry is exactly one entry per ProductClassificationAssignment; child inherits upper bound 1 via subproperty, but child minimum is NOT entailed. No new child lower bound until author decides whether all contextual assignments use this specific child edge.",
+      "domain_source": "v2/research/w4/relator-material-patterns.md"
+    },
+    {
+      "child": "contextClassificationProduct",
+      "parent": "classificationEntity",
+      "truthmaker": "ContextualMedicineClassificationAssignment relates a ClassifiedMedicinalProductRole when the classified entity is specifically a Product.",
+      "temporal": "Assignment/list/jurisdiction context applies; product identity does not imply global critical/essential status.",
+      "positive": "An explicit contextClassificationProduct(r,p) with Product role p entails generic classificationEntity(r,p).",
+      "negative": "A contextual assignment with a PharmaceuticalSubstance subject is valid in inherited contract and must not be forced to have a Product child edge.",
+      "cardinality": "Parent classificationEntity exactly one ClassifiedEntity; child at most one through parent, optional when classified entity is Substance. No min1 Product edge.",
+      "domain_source": "v2/research/w4/relator-material-patterns.md"
+    },
+    {
+      "child": "evidenceRecord",
+      "parent": "evidenceItem",
+      "truthmaker": "EvidenceSupport mediates a SourceRecord that bears EvidenceSourceRecordRole and an Assertion through its separate claim mediation.",
+      "temporal": "Source release/provenance and support validity can differ; a SourceRecord is not itself the claim.",
+      "positive": "Explicit evidenceRecord(r,s) with SourceRecord role s entails evidenceItem(r,s).",
+      "negative": "An EvidenceSupport whose evidence is an ObservationResult remains valid; the parent evidenceItem edge does not entail evidenceRecord.",
+      "cardinality": "Parent EvidenceSupport has exactly one EvidenceItem and exactly one supported assertion; child record is optional and inherits upper bound one. No min1 SourceRecord edge.",
+      "domain_source": "v2/research/w4/relator-material-patterns.md"
+    }
+  ]
+}
