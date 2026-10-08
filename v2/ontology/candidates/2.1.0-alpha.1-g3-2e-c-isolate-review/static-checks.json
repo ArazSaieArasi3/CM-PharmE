@@ -1,0 +1,66 @@
+{
+  "baseline": {
+    "metric": "Named class graph: named subclass edges and named domain-range object-property edges; no datatypes, existential restrictions, anonymous unions or inferred semantics",
+    "classes": 138,
+    "components": 15,
+    "largest_component": 124,
+    "isolates": [
+      "AdverseEventReportingActivity",
+      "BusinessArchitectureView",
+      "DigitalInformationSystemComponent",
+      "DistributionLogisticsActivity",
+      "ManufacturingActivity",
+      "PharmacovigilanceRequirement",
+      "PostMarketSurveillanceActivity",
+      "ProcurementActivity",
+      "RegulatoryRequirement",
+      "RiskTreatmentActivity",
+      "RiskTreatmentPlan",
+      "ServiceOfferingSpecification",
+      "StockoutSituation",
+      "SupplyCapacity"
+    ]
+  },
+  "reviewed_count": 14,
+  "missing_isolates": [],
+  "unexpected_records": [],
+  "missing_targets": [],
+  "status_counts": {
+    "SOURCE_CONDITIONAL": 6,
+    "OPTIONAL_SOURCE_CONDITIONAL": 1,
+    "W4_PATTERN_READY_SOURCE_GATE": 6,
+    "DEFER_OPTIONAL": 1
+  },
+  "broad_untyped_native_properties": [
+    {
+      "id": "rel-baViewRepresents",
+      "source": "BusinessArchitectureView",
+      "target": null
+    },
+    {
+      "id": "rel-capacityBearer",
+      "source": "SupplyCapacity",
+      "target": null
+    },
+    {
+      "id": "rel-riskTreatmentAddresses",
+      "source": "RiskTreatmentActivity",
+      "target": null
+    }
+  ],
+  "ontology_edit_performed": false,
+  "official_antipattern_run": false,
+  "real_data_migration": false,
+  "approval_status": {
+    "approved_bounded": 13,
+    "remaining_relation_review": 29,
+    "isolate_proposals_unapproved": 14
+  },
+  "g3_progress": {
+    "stages_closed": 2,
+    "total_stages": 5,
+    "deliverable_packages_closed": 2,
+    "total_packages": 7,
+    "remaining_atomic_turns": 8
+  }
+}
