@@ -1,0 +1,1252 @@
+{
+  "source_commit": "336c3b7df02a93180970416a3ba1980cce5d2822",
+  "source_path": "v2/ontology/candidates/2.1.0-alpha.1-g3d-candidate/ontouml.json",
+  "scope": "native OntoUML review overlay only; OWL/SHACL and frozen baselines unchanged",
+  "records": [
+    {
+      "id": "rel-assertionAboutProduct",
+      "name": "assertionAboutProduct",
+      "source": {
+        "class": "Assertion",
+        "stereotype": "kind",
+        "multiplicity": "0..*",
+        "subsetted_end": null
+      },
+      "target": {
+        "class": "MedicinalProduct",
+        "stereotype": "kind",
+        "multiplicity": "0..*",
+        "subsetted_end": null
+      },
+      "prior_stereotype": null,
+      "candidate_stereotype": null,
+      "disposition": "PENDING_DOMAIN_SEMANTICS",
+      "rationale": "OWL domain/range alone does not justify a native OntoUML stereotype or complete multiplicities.",
+      "required_evidence": "Document relation truthmaker, identity/dependence, direction, temporal scope and negative instance.",
+      "review_depth": "DETAILED_DESIGN_REVIEW",
+      "g3_2d_review": {
+        "group": "evidence",
+        "truthmaker": "A claim explicitly identifies a Product.",
+        "allowed_ends": [
+          "Assertion",
+          "MedicinalProduct"
+        ],
+        "cardinality": "No new universal multiplicity; empirical source completeness is separate",
+        "temporal_scope": "Source/release/provenance version and time",
+        "negative_example": "A claim about a Presentation alone cannot be promoted to Product scope.",
+        "recommendation": "Retain untyped until author settles truthmaker and global constraints",
+        "author_disposition": "PENDING"
+      }
+    },
+    {
+      "id": "rel-authorizationJurisdiction",
+      "name": "authorizationJurisdiction",
+      "source": {
+        "class": "RegulatoryAuthorization",
+        "stereotype": "relator",
+        "multiplicity": null,
+        "subsetted_end": null
+      },
+      "target": {
+        "class": "RegulatoryJurisdiction",
+        "stereotype": "kind",
+        "multiplicity": null,
+        "subsetted_end": null
+      },
+      "prior_stereotype": null,
+      "candidate_stereotype": null,
+      "disposition": "PENDING_RELRIG_DISPOSITION",
+      "rationale": "Relator-to-rigid endpoint could trigger RelRig if typed as mediation; do not assume optional role dependence.",
+      "required_evidence": "Choose evidenced anti-rigid role or essential read-only dependency, then cardinality and lifecycle.",
+      "review_depth": "DETAILED_DESIGN_PROPOSAL",
+      "proposal": "SCOPE_REFERENCE_RETAIN_UNTYPED",
+      "negative_acceptance_condition": "A source-country field alone, or an authority office's physical address, cannot establish the authorization's legal jurisdiction."
+    },
+    {
+      "id": "rel-baViewRepresents",
+      "name": "baViewRepresents",
+      "source": {
+        "class": "BusinessArchitectureView",
+        "stereotype": "kind",
+        "multiplicity": null,
+        "subsetted_end": null
+      },
+      "target": {
+        "class": null,
+        "stereotype": null,
+        "multiplicity": null,
+        "subsetted_end": null
+      },
+      "prior_stereotype": null,
+      "candidate_stereotype": null,
+      "disposition": "PENDING_ENDPOINT_REFINEMENT",
+      "rationale": "At least one broad/untyped endpoint; no stereotype can be asserted safely from a domain-range link.",
+      "required_evidence": "Resolve exact endpoint type and identity, then relation semantics and multiplicities.",
+      "review_depth": "DETAILED_ENDPOINT_POLICY",
+      "proposal": "KEEP_BROAD_VIEW_REFERENCE",
+      "negative_acceptance_condition": "Do not infer that a view target acquires a new identity or that core depends on the optional BA module.",
+      "remaining_evidence": "Define a documented target family or qualified topic links if cross-family query need is approved."
+    },
+    {
+      "id": "rel-capabilityBearer",
+      "name": "capabilityBearer",
+      "source": {
+        "class": "EnterpriseCapability",
+        "stereotype": "mode",
+        "multiplicity": null,
+        "subsetted_end": null
+      },
+      "target": {
+        "class": "Organization",
+        "stereotype": "kind",
+        "multiplicity": null,
+        "subsetted_end": null
+      },
+      "prior_stereotype": null,
+      "candidate_stereotype": null,
+      "disposition": "PENDING_DOMAIN_SEMANTICS",
+      "rationale": "OWL domain/range alone does not justify a native OntoUML stereotype or complete multiplicities.",
+      "required_evidence": "Document relation truthmaker, identity/dependence, direction, temporal scope and negative instance.",
+      "review_depth": "DETAILED_DESIGN_REVIEW",
+      "g3_2d_review": {
+        "group": "organization/capability",
+        "truthmaker": "Capability is a Mode inhering in an Organization; source direction Mode→bearer reverses Characterization.",
+        "allowed_ends": [
+          "EnterpriseCapability",
+          "Organization"
+        ],
+        "cardinality": "No new universal multiplicity; empirical source completeness is separate",
+        "temporal_scope": "Bearer lifetime and capability assessment interval",
+        "negative_example": "One intrinsic Mode cannot inhere in two distinct Organizations.",
+        "recommendation": "Preserve Mode→bearer property; introduce inverse bearer→Mode only with explicit design and constraints",
+        "author_disposition": "PENDING"
+      }
+    },
+    {
+      "id": "rel-capacityBearer",
+      "name": "capacityBearer",
+      "source": {
+        "class": "SupplyCapacity",
+        "stereotype": "mode",
+        "multiplicity": null,
+        "subsetted_end": null
+      },
+      "target": {
+        "class": null,
+        "stereotype": null,
+        "multiplicity": null,
+        "subsetted_end": null
+      },
+      "prior_stereotype": null,
+      "candidate_stereotype": null,
+      "disposition": "PENDING_ENDPOINT_REFINEMENT",
+      "rationale": "At least one broad/untyped endpoint; no stereotype can be asserted safely from a domain-range link.",
+      "required_evidence": "Resolve exact endpoint type and identity, then relation semantics and multiplicities.",
+      "review_depth": "DETAILED_ENDPOINT_POLICY",
+      "proposal": "REFACTOR_DIRECTION_AND_BEARER_PATTERN",
+      "negative_acceptance_condition": "Do not infer capacity from an aggregate observation or assign the same intrinsic Mode to two different bearer individuals.",
+      "remaining_evidence": "Choose explicit inverse bearer→Mode characterization or scoped bearer roles; justify minimum/maximum and optional possession."
+    },
+    {
+      "id": "rel-containsSourceRecord",
+      "name": "containsSourceRecord",
+      "source": {
+        "class": "DatasetRelease",
+        "stereotype": "kind",
+        "multiplicity": null,
+        "subsetted_end": null
+      },
+      "target": {
+        "class": "SourceRecord",
+        "stereotype": "kind",
+        "multiplicity": null,
+        "subsetted_end": null
+      },
+      "prior_stereotype": null,
+      "candidate_stereotype": null,
+      "disposition": "PENDING_DOMAIN_SEMANTICS",
+      "rationale": "OWL domain/range alone does not justify a native OntoUML stereotype or complete multiplicities.",
+      "required_evidence": "Document relation truthmaker, identity/dependence, direction, temporal scope and negative instance.",
+      "review_depth": "DETAILED_DESIGN_REVIEW",
+      "g3_2d_review": {
+        "group": "source/provenance",
+        "truthmaker": "Release manifest/provenance assigns a SourceRecord to DatasetRelease.",
+        "allowed_ends": [
+          "DatasetRelease",
+          "SourceRecord"
+        ],
+        "cardinality": "No new universal multiplicity; empirical source completeness is separate",
+        "temporal_scope": "Source/release/provenance version and time",
+        "negative_example": "Occurrence in a different release is not membership here.",
+        "recommendation": "Retain untyped until author settles truthmaker and global constraints",
+        "author_disposition": "PENDING"
+      }
+    },
+    {
+      "id": "rel-contextClassificationEntry",
+      "name": "contextClassificationEntry",
+      "source": {
+        "class": "ContextualMedicineClassificationAssignment",
+        "stereotype": "subkind",
+        "multiplicity": null,
+        "subsetted_end": "end-classificationEntry-source"
+      },
+      "target": {
+        "class": "AppliedClassificationEntryRole",
+        "stereotype": "role",
+        "multiplicity": null,
+        "subsetted_end": "end-classificationEntry-target"
+      },
+      "prior_stereotype": null,
+      "candidate_stereotype": "mediation",
+      "disposition": "IMPLEMENTED_STEREOTYPE_ONLY",
+      "rationale": "Both ends subset the existing classificationEntry mediation; relator ancestry and anti-rigid target verified.",
+      "required_evidence": "Review multiplicities and concrete instance evidence before full disposition.",
+      "review_depth": "STEREOTYPE_ONLY_IMPLEMENTED"
+    },
+    {
+      "id": "rel-contextClassificationJurisdiction",
+      "name": "contextClassificationJurisdiction",
+      "source": {
+        "class": "ContextualMedicineClassificationAssignment",
+        "stereotype": "subkind",
+        "multiplicity": null,
+        "subsetted_end": null
+      },
+      "target": {
+        "class": "RegulatoryJurisdiction",
+        "stereotype": "kind",
+        "multiplicity": null,
+        "subsetted_end": null
+      },
+      "prior_stereotype": null,
+      "candidate_stereotype": null,
+      "disposition": "PENDING_DOMAIN_SEMANTICS",
+      "rationale": "OWL domain/range alone does not justify a native OntoUML stereotype or complete multiplicities.",
+      "required_evidence": "Document relation truthmaker, identity/dependence, direction, temporal scope and negative instance.",
+      "review_depth": "DETAILED_DESIGN_REVIEW",
+      "g3_2d_review": {
+        "group": "classification",
+        "truthmaker": "A specific Assignment references legal jurisdictional scope.",
+        "allowed_ends": [
+          "ContextualMedicineClassificationAssignment",
+          "RegulatoryJurisdiction"
+        ],
+        "cardinality": "No new universal multiplicity; empirical source completeness is separate",
+        "temporal_scope": "Scheme/assignment version and jurisdiction",
+        "negative_example": "Classification in J1 does not transfer to J2.",
+        "recommendation": "Retain untyped until author settles truthmaker and global constraints",
+        "author_disposition": "PENDING"
+      }
+    },
+    {
+      "id": "rel-contextClassificationProduct",
+      "name": "contextClassificationProduct",
+      "source": {
+        "class": "ContextualMedicineClassificationAssignment",
+        "stereotype": "subkind",
+        "multiplicity": null,
+        "subsetted_end": "end-classificationEntity-source"
+      },
+      "target": {
+        "class": "ClassifiedMedicinalProductRole",
+        "stereotype": "role",
+        "multiplicity": null,
+        "subsetted_end": "end-classificationEntity-target"
+      },
+      "prior_stereotype": null,
+      "candidate_stereotype": "mediation",
+      "disposition": "IMPLEMENTED_STEREOTYPE_ONLY",
+      "rationale": "Both ends subset the existing classificationEntity mediation; relator ancestry and anti-rigid target verified.",
+      "required_evidence": "Review multiplicities and concrete instance evidence before full disposition.",
+      "review_depth": "STEREOTYPE_ONLY_IMPLEMENTED"
+    },
+    {
+      "id": "rel-disruptionAffects",
+      "name": "disruptionAffects",
+      "source": {
+        "class": "DisruptionEvent",
+        "stereotype": "event",
+        "multiplicity": null,
+        "subsetted_end": null
+      },
+      "target": {
+        "class": null,
+        "stereotype": null,
+        "multiplicity": null,
+        "subsetted_end": null
+      },
+      "prior_stereotype": null,
+      "candidate_stereotype": null,
+      "disposition": "PENDING_ENDPOINT_REFINEMENT",
+      "rationale": "At least one broad/untyped endpoint; no stereotype can be asserted safely from a domain-range link.",
+      "required_evidence": "Resolve exact endpoint type and identity, then relation semantics and multiplicities.",
+      "review_depth": "DETAILED_ENDPOINT_POLICY",
+      "proposal": "KEEP_OPEN_GENERIC_PARENT",
+      "negative_acceptance_condition": "A co-reported shortage alone cannot establish a causal disruption or its target.",
+      "remaining_evidence": "Specify admitted target families and causal evidence before general OWL range or stereotype."
+    },
+    {
+      "id": "rel-disruptionAffectsDependency",
+      "name": "disruptionAffectsDependency",
+      "source": {
+        "class": "DisruptionEvent",
+        "stereotype": "event",
+        "multiplicity": "0..*",
+        "subsetted_end": "end-disruptionAffects-source"
+      },
+      "target": {
+        "class": "SupplyDependency",
+        "stereotype": "relator",
+        "multiplicity": "0..*",
+        "subsetted_end": "end-disruptionAffects-target"
+      },
+      "prior_stereotype": null,
+      "candidate_stereotype": null,
+      "disposition": "PENDING_PARENT_SEMANTICS",
+      "rationale": "Endpoint subsetting exists but parent relation stereotype is itself unresolved.",
+      "required_evidence": "Resolve parent relation meaning and stereotype before child; inspect multiplicity constraints.",
+      "review_depth": "DETAILED_DESIGN_PROPOSAL",
+      "proposal": "ABOUTNESS_OR_EFFECT_REVIEW_NO_STEREOTYPE",
+      "negative_acceptance_condition": "Temporal overlap between a disruption and a dependency, or a co-reported shortage, does not prove D affected S."
+    },
+    {
+      "id": "rel-entryInScheme",
+      "name": "entryInScheme",
+      "source": {
+        "class": "ClassificationEntry",
+        "stereotype": "kind",
+        "multiplicity": null,
+        "subsetted_end": null
+      },
+      "target": {
+        "class": "ProductClassificationScheme",
+        "stereotype": "kind",
+        "multiplicity": null,
+        "subsetted_end": null
+      },
+      "prior_stereotype": null,
+      "candidate_stereotype": null,
+      "disposition": "PENDING_DOMAIN_SEMANTICS",
+      "rationale": "OWL domain/range alone does not justify a native OntoUML stereotype or complete multiplicities.",
+      "required_evidence": "Document relation truthmaker, identity/dependence, direction, temporal scope and negative instance.",
+      "review_depth": "DETAILED_DESIGN_REVIEW",
+      "g3_2d_review": {
+        "group": "classification",
+        "truthmaker": "Scheme/version defines a ClassificationEntry.",
+        "allowed_ends": [
+          "ClassificationEntry",
+          "ProductClassificationScheme"
+        ],
+        "cardinality": "No new universal multiplicity; empirical source completeness is separate",
+        "temporal_scope": "Scheme/assignment version and jurisdiction",
+        "negative_example": "Equal code strings across schemes do not identify one entry.",
+        "recommendation": "Retain untyped until author settles truthmaker and global constraints",
+        "author_disposition": "PENDING"
+      }
+    },
+    {
+      "id": "rel-evidenceRecord",
+      "name": "evidenceRecord",
+      "source": {
+        "class": "EvidenceSupport",
+        "stereotype": "relator",
+        "multiplicity": null,
+        "subsetted_end": "end-evidenceItem-source"
+      },
+      "target": {
+        "class": "EvidenceSourceRecordRole",
+        "stereotype": "role",
+        "multiplicity": null,
+        "subsetted_end": "end-evidenceItem-target"
+      },
+      "prior_stereotype": null,
+      "candidate_stereotype": "mediation",
+      "disposition": "IMPLEMENTED_STEREOTYPE_ONLY",
+      "rationale": "Both ends subset the existing evidenceItem mediation; relator ancestry and anti-rigid target verified.",
+      "required_evidence": "Review multiplicities and concrete instance evidence before full disposition.",
+      "review_depth": "STEREOTYPE_ONLY_IMPLEMENTED"
+    },
+    {
+      "id": "rel-generatedAssertion",
+      "name": "generatedAssertion",
+      "source": {
+        "class": "ProvenanceActivity",
+        "stereotype": "event",
+        "multiplicity": null,
+        "subsetted_end": null
+      },
+      "target": {
+        "class": "Assertion",
+        "stereotype": "kind",
+        "multiplicity": null,
+        "subsetted_end": null
+      },
+      "prior_stereotype": null,
+      "candidate_stereotype": null,
+      "disposition": "PENDING_DOMAIN_SEMANTICS",
+      "rationale": "OWL domain/range alone does not justify a native OntoUML stereotype or complete multiplicities.",
+      "required_evidence": "Document relation truthmaker, identity/dependence, direction, temporal scope and negative instance.",
+      "review_depth": "DETAILED_DESIGN_REVIEW",
+      "g3_2d_review": {
+        "group": "source/provenance",
+        "truthmaker": "A ProvenanceActivity output trace names the Assertion.",
+        "allowed_ends": [
+          "ProvenanceActivity",
+          "Assertion"
+        ],
+        "cardinality": "No new universal multiplicity; empirical source completeness is separate",
+        "temporal_scope": "Source/release/provenance version and time",
+        "negative_example": "Reading an Assertion does not mean the activity generated it.",
+        "recommendation": "Retain untyped until author settles truthmaker and global constraints",
+        "author_disposition": "PENDING"
+      }
+    },
+    {
+      "id": "rel-hasActiveSubstance",
+      "name": "hasActiveSubstance",
+      "source": {
+        "class": null,
+        "stereotype": null,
+        "multiplicity": null,
+        "subsetted_end": null
+      },
+      "target": {
+        "class": "PharmaceuticalSubstance",
+        "stereotype": "kind",
+        "multiplicity": null,
+        "subsetted_end": null
+      },
+      "prior_stereotype": null,
+      "candidate_stereotype": null,
+      "disposition": "PENDING_ENDPOINT_REFINEMENT",
+      "rationale": "At least one broad/untyped endpoint; no stereotype can be asserted safely from a domain-range link.",
+      "required_evidence": "Resolve exact endpoint type and identity, then relation semantics and multiplicities.",
+      "review_depth": "DETAILED_ENDPOINT_POLICY",
+      "proposal": "SCOPED_PRODUCT_MAPPING_ONLY",
+      "negative_acceptance_condition": "Do not infer that a presentation using the parent relation is a MedicinalProduct; these Kinds are disjoint.",
+      "remaining_evidence": "Keep parent domain open; test separate Product and Presentation scoped patterns and composition cardinalities."
+    },
+    {
+      "id": "rel-hasDatasetRelease",
+      "name": "hasDatasetRelease",
+      "source": {
+        "class": "Dataset",
+        "stereotype": "kind",
+        "multiplicity": null,
+        "subsetted_end": null
+      },
+      "target": {
+        "class": "DatasetRelease",
+        "stereotype": "kind",
+        "multiplicity": null,
+        "subsetted_end": null
+      },
+      "prior_stereotype": null,
+      "candidate_stereotype": null,
+      "disposition": "PENDING_DOMAIN_SEMANTICS",
+      "rationale": "OWL domain/range alone does not justify a native OntoUML stereotype or complete multiplicities.",
+      "required_evidence": "Document relation truthmaker, identity/dependence, direction, temporal scope and negative instance.",
+      "review_depth": "DETAILED_DESIGN_REVIEW",
+      "g3_2d_review": {
+        "group": "source/provenance",
+        "truthmaker": "Release lineage names a Dataset and its DatasetRelease.",
+        "allowed_ends": [
+          "Dataset",
+          "DatasetRelease"
+        ],
+        "cardinality": "No new universal multiplicity; empirical source completeness is separate",
+        "temporal_scope": "Source/release/provenance version and time",
+        "negative_example": "Equal publication dates do not merge releases.",
+        "recommendation": "Retain untyped until author settles truthmaker and global constraints",
+        "author_disposition": "PENDING"
+      }
+    },
+    {
+      "id": "rel-hasDosageForm",
+      "name": "hasDosageForm",
+      "source": {
+        "class": "MedicinalProductPresentation",
+        "stereotype": "kind",
+        "multiplicity": null,
+        "subsetted_end": null
+      },
+      "target": {
+        "class": "DosageFormSpecification",
+        "stereotype": "kind",
+        "multiplicity": null,
+        "subsetted_end": null
+      },
+      "prior_stereotype": null,
+      "candidate_stereotype": null,
+      "disposition": "PENDING_DOMAIN_SEMANTICS",
+      "rationale": "OWL domain/range alone does not justify a native OntoUML stereotype or complete multiplicities.",
+      "required_evidence": "Document relation truthmaker, identity/dependence, direction, temporal scope and negative instance.",
+      "review_depth": "DETAILED_DESIGN_REVIEW",
+      "g3_2d_review": {
+        "group": "product structure",
+        "truthmaker": "Presentation specification refers to DosageFormSpecification.",
+        "allowed_ends": [
+          "MedicinalProductPresentation",
+          "DosageFormSpecification"
+        ],
+        "cardinality": "No new universal multiplicity; empirical source completeness is separate",
+        "temporal_scope": "Product/presentation specification version",
+        "negative_example": "A generic Product dosage label does not identify this Presentation's form.",
+        "recommendation": "Retain untyped until author settles truthmaker and global constraints",
+        "author_disposition": "PENDING"
+      }
+    },
+    {
+      "id": "rel-hasMatchConfidence",
+      "name": "hasMatchConfidence",
+      "source": {
+        "class": "EntityMatchAssertion",
+        "stereotype": "subkind",
+        "multiplicity": null,
+        "subsetted_end": null
+      },
+      "target": {
+        "class": "MatchConfidence",
+        "stereotype": "quality",
+        "multiplicity": null,
+        "subsetted_end": null
+      },
+      "prior_stereotype": null,
+      "candidate_stereotype": null,
+      "disposition": "PENDING_DOMAIN_SEMANTICS",
+      "rationale": "OWL domain/range alone does not justify a native OntoUML stereotype or complete multiplicities.",
+      "required_evidence": "Document relation truthmaker, identity/dependence, direction, temporal scope and negative instance.",
+      "review_depth": "DETAILED_DESIGN_REVIEW",
+      "g3_2d_review": {
+        "group": "source/provenance",
+        "truthmaker": "MatchConfidence is an intrinsic Quality of one EntityMatchAssertion; totality remains unresolved.",
+        "allowed_ends": [
+          "EntityMatchAssertion",
+          "MatchConfidence"
+        ],
+        "cardinality": "No new universal multiplicity; empirical source completeness is separate",
+        "temporal_scope": "Source/release/provenance version and time",
+        "negative_example": "One Quality individual cannot belong to two distinct Assertions.",
+        "recommendation": "Quality requires Characterization; decide totality and source coverage before native change",
+        "author_disposition": "PENDING"
+      }
+    },
+    {
+      "id": "rel-hasPackageConfiguration",
+      "name": "hasPackageConfiguration",
+      "source": {
+        "class": "MedicinalProductPresentation",
+        "stereotype": "kind",
+        "multiplicity": null,
+        "subsetted_end": null
+      },
+      "target": {
+        "class": "PackageConfiguration",
+        "stereotype": "kind",
+        "multiplicity": null,
+        "subsetted_end": null
+      },
+      "prior_stereotype": null,
+      "candidate_stereotype": null,
+      "disposition": "PENDING_DOMAIN_SEMANTICS",
+      "rationale": "OWL domain/range alone does not justify a native OntoUML stereotype or complete multiplicities.",
+      "required_evidence": "Document relation truthmaker, identity/dependence, direction, temporal scope and negative instance.",
+      "review_depth": "DETAILED_DESIGN_REVIEW",
+      "g3_2d_review": {
+        "group": "product structure",
+        "truthmaker": "Presentation specification references PackageConfiguration.",
+        "allowed_ends": [
+          "MedicinalProductPresentation",
+          "PackageConfiguration"
+        ],
+        "cardinality": "No new universal multiplicity; empirical source completeness is separate",
+        "temporal_scope": "Product/presentation specification version",
+        "negative_example": "A pack-size value is insufficient to identify a configuration.",
+        "recommendation": "Retain untyped until author settles truthmaker and global constraints",
+        "author_disposition": "PENDING"
+      }
+    },
+    {
+      "id": "rel-hasStrength",
+      "name": "hasStrength",
+      "source": {
+        "class": "MedicinalProductPresentation",
+        "stereotype": "kind",
+        "multiplicity": null,
+        "subsetted_end": null
+      },
+      "target": {
+        "class": "Strength",
+        "stereotype": "quality",
+        "multiplicity": null,
+        "subsetted_end": null
+      },
+      "prior_stereotype": null,
+      "candidate_stereotype": null,
+      "disposition": "IMPLEMENTED_NATIVE_CHARACTERIZATION_PENDING_FORMAL_ALIGNMENT",
+      "rationale": "OWL domain/range alone does not justify a native OntoUML stereotype or complete multiplicities.",
+      "required_evidence": "Document relation truthmaker, identity/dependence, direction, temporal scope and negative instance.",
+      "review_depth": "DETAILED_DESIGN_REVIEW",
+      "g3_2d_review": {
+        "group": "product structure",
+        "truthmaker": "W4 says Strength is the Quality characterizing ProductPresentation.",
+        "allowed_ends": [
+          "MedicinalProductPresentation",
+          "Strength"
+        ],
+        "cardinality": "bearer 1; Quality 1..* in native candidate",
+        "temporal_scope": "Product/presentation specification version",
+        "negative_example": "One Strength individual cannot belong to two distinct Presentations.",
+        "recommendation": "Native Characterization with W4 bearer→Quality direction; OWL/SHACL integration still required",
+        "author_disposition": "PENDING"
+      }
+    },
+    {
+      "id": "rel-listingJurisdiction",
+      "name": "listingJurisdiction",
+      "source": {
+        "class": "MarketListing",
+        "stereotype": "relator",
+        "multiplicity": null,
+        "subsetted_end": null
+      },
+      "target": {
+        "class": "RegulatoryJurisdiction",
+        "stereotype": "kind",
+        "multiplicity": null,
+        "subsetted_end": null
+      },
+      "prior_stereotype": null,
+      "candidate_stereotype": null,
+      "disposition": "PENDING_RELRIG_DISPOSITION",
+      "rationale": "Relator-to-rigid endpoint could trigger RelRig if typed as mediation; do not assume optional role dependence.",
+      "required_evidence": "Choose evidenced anti-rigid role or essential read-only dependency, then cardinality and lifecycle.",
+      "review_depth": "DETAILED_DESIGN_PROPOSAL",
+      "proposal": "SCOPE_REFERENCE_RETAIN_UNTYPED",
+      "negative_acceptance_condition": "Presence of P in a national source or the labeler's address alone cannot create a market listing for J."
+    },
+    {
+      "id": "rel-locatedIn",
+      "name": "locatedIn",
+      "source": {
+        "class": null,
+        "stereotype": null,
+        "multiplicity": null,
+        "subsetted_end": null
+      },
+      "target": {
+        "class": "GeographicFeature",
+        "stereotype": "kind",
+        "multiplicity": null,
+        "subsetted_end": null
+      },
+      "prior_stereotype": null,
+      "candidate_stereotype": null,
+      "disposition": "PENDING_ENDPOINT_REFINEMENT",
+      "rationale": "At least one broad/untyped endpoint; no stereotype can be asserted safely from a domain-range link.",
+      "required_evidence": "Resolve exact endpoint type and identity, then relation semantics and multiplicities.",
+      "review_depth": "DETAILED_ENDPOINT_POLICY",
+      "proposal": "SCOPED_FACILITY_MAPPING_ONLY",
+      "negative_acceptance_condition": "An organization's headquarters or a jurisdiction label must not be typed Facility via a global domain axiom.",
+      "remaining_evidence": "Preserve generic parent until all locatable entity families reviewed; use a scoped facility location contract."
+    },
+    {
+      "id": "rel-maintainsDataset",
+      "name": "maintainsDataset",
+      "source": {
+        "class": "DataSourceResource",
+        "stereotype": "kind",
+        "multiplicity": null,
+        "subsetted_end": null
+      },
+      "target": {
+        "class": "Dataset",
+        "stereotype": "kind",
+        "multiplicity": null,
+        "subsetted_end": null
+      },
+      "prior_stereotype": null,
+      "candidate_stereotype": null,
+      "disposition": "PENDING_DOMAIN_SEMANTICS",
+      "rationale": "OWL domain/range alone does not justify a native OntoUML stereotype or complete multiplicities.",
+      "required_evidence": "Document relation truthmaker, identity/dependence, direction, temporal scope and negative instance.",
+      "review_depth": "DETAILED_DESIGN_REVIEW",
+      "g3_2d_review": {
+        "group": "source/provenance",
+        "truthmaker": "Stewardship evidence identifies a DataSourceResource maintaining Dataset.",
+        "allowed_ends": [
+          "DataSourceResource",
+          "Dataset"
+        ],
+        "cardinality": "No new universal multiplicity; empirical source completeness is separate",
+        "temporal_scope": "Source/release/provenance version and time",
+        "negative_example": "Hosting a copy does not prove maintenance.",
+        "recommendation": "Retain untyped until author settles truthmaker and global constraints",
+        "author_disposition": "PENDING"
+      }
+    },
+    {
+      "id": "rel-matchObject",
+      "name": "matchObject",
+      "source": {
+        "class": "EntityMatchAssertion",
+        "stereotype": "subkind",
+        "multiplicity": null,
+        "subsetted_end": null
+      },
+      "target": {
+        "class": null,
+        "stereotype": null,
+        "multiplicity": null,
+        "subsetted_end": null
+      },
+      "prior_stereotype": null,
+      "candidate_stereotype": null,
+      "disposition": "PENDING_ENDPOINT_REFINEMENT",
+      "rationale": "At least one broad/untyped endpoint; no stereotype can be asserted safely from a domain-range link.",
+      "required_evidence": "Resolve exact endpoint type and identity, then relation semantics and multiplicities.",
+      "review_depth": "DETAILED_ENDPOINT_POLICY",
+      "proposal": "SAME_TYPE_POLICY_AS_MATCH_SUBJECT_PENDING",
+      "negative_acceptance_condition": "An ambiguous record pair is not an accepted real-world identity equality.",
+      "remaining_evidence": "Define whether subject/object are SourceRecord or a typed union, symmetrical admissibility, cardinality and identity constraints."
+    },
+    {
+      "id": "rel-matchSubject",
+      "name": "matchSubject",
+      "source": {
+        "class": "EntityMatchAssertion",
+        "stereotype": "subkind",
+        "multiplicity": null,
+        "subsetted_end": null
+      },
+      "target": {
+        "class": null,
+        "stereotype": null,
+        "multiplicity": null,
+        "subsetted_end": null
+      },
+      "prior_stereotype": null,
+      "candidate_stereotype": null,
+      "disposition": "PENDING_ENDPOINT_REFINEMENT",
+      "rationale": "At least one broad/untyped endpoint; no stereotype can be asserted safely from a domain-range link.",
+      "required_evidence": "Resolve exact endpoint type and identity, then relation semantics and multiplicities.",
+      "review_depth": "DETAILED_ENDPOINT_POLICY",
+      "proposal": "SAME_TYPE_POLICY_AS_MATCH_OBJECT_PENDING",
+      "negative_acceptance_condition": "A source identifier alone is not universal canonical entity identity.",
+      "remaining_evidence": "Define a common endpoint policy with matchObject, disjoint source-vs-entity layers and acceptable null/ambiguous status."
+    },
+    {
+      "id": "rel-observationAboutPresentation",
+      "name": "observationAboutPresentation",
+      "source": {
+        "class": "ObservationResult",
+        "stereotype": "kind",
+        "multiplicity": "0..*",
+        "subsetted_end": "end-observationResultAbout-source"
+      },
+      "target": {
+        "class": "MedicinalProductPresentation",
+        "stereotype": "kind",
+        "multiplicity": "0..*",
+        "subsetted_end": "end-observationResultAbout-target"
+      },
+      "prior_stereotype": null,
+      "candidate_stereotype": null,
+      "disposition": "PENDING_PARENT_SEMANTICS",
+      "rationale": "Endpoint subsetting exists but parent relation stereotype is itself unresolved.",
+      "required_evidence": "Resolve parent relation meaning and stereotype before child; inspect multiplicity constraints.",
+      "review_depth": "DETAILED_DESIGN_PROPOSAL",
+      "proposal": "INFORMATION_ABOUTNESS_REVIEW_NO_STEREOTYPE",
+      "negative_acceptance_condition": "A product-level code alone cannot be silently promoted to a particular presentation or patient observation."
+    },
+    {
+      "id": "rel-observationAboutProduct",
+      "name": "observationAboutProduct",
+      "source": {
+        "class": "ObservationResult",
+        "stereotype": "kind",
+        "multiplicity": "0..*",
+        "subsetted_end": "end-observationResultAbout-source"
+      },
+      "target": {
+        "class": "MedicinalProduct",
+        "stereotype": "kind",
+        "multiplicity": "0..*",
+        "subsetted_end": "end-observationResultAbout-target"
+      },
+      "prior_stereotype": null,
+      "candidate_stereotype": null,
+      "disposition": "PENDING_PARENT_SEMANTICS",
+      "rationale": "Endpoint subsetting exists but parent relation stereotype is itself unresolved.",
+      "required_evidence": "Resolve parent relation meaning and stereotype before child; inspect multiplicity constraints.",
+      "review_depth": "DETAILED_DESIGN_PROPOSAL",
+      "proposal": "INFORMATION_ABOUTNESS_REVIEW_NO_STEREOTYPE",
+      "negative_acceptance_condition": "A result keyed to only one package does not thereby describe every presentation or the product in all jurisdictions."
+    },
+    {
+      "id": "rel-observationResultAbout",
+      "name": "observationResultAbout",
+      "source": {
+        "class": "ObservationResult",
+        "stereotype": "kind",
+        "multiplicity": null,
+        "subsetted_end": null
+      },
+      "target": {
+        "class": null,
+        "stereotype": null,
+        "multiplicity": null,
+        "subsetted_end": null
+      },
+      "prior_stereotype": null,
+      "candidate_stereotype": null,
+      "disposition": "PENDING_ENDPOINT_REFINEMENT",
+      "rationale": "At least one broad/untyped endpoint; no stereotype can be asserted safely from a domain-range link.",
+      "required_evidence": "Resolve exact endpoint type and identity, then relation semantics and multiplicities.",
+      "review_depth": "DETAILED_ENDPOINT_POLICY",
+      "proposal": "KEEP_OPEN_ABOUTNESS_PARENT",
+      "negative_acceptance_condition": "An aggregate result does not create a patient individual, and a product link does not identify a presentation.",
+      "remaining_evidence": "Test all result subfamilies before a common range; preserve child target distinctions and resolve aboutness truthmaker."
+    },
+    {
+      "id": "rel-operates",
+      "name": "operates",
+      "source": {
+        "class": "Organization",
+        "stereotype": "kind",
+        "multiplicity": null,
+        "subsetted_end": null
+      },
+      "target": {
+        "class": "Facility",
+        "stereotype": "kind",
+        "multiplicity": null,
+        "subsetted_end": null
+      },
+      "prior_stereotype": "material",
+      "candidate_stereotype": "material",
+      "disposition": "RETAIN_MATERIAL_WITH_FIXTURE_SUPPORT_PENDING_FORMAL_RULE",
+      "rationale": "Existing derived material relation retained; derivation through a grounded operation context and endpoint scope need review.",
+      "required_evidence": "Document derivation rule, operation relator, participant roles and multiplicities.",
+      "review_depth": "DETAILED_DERIVATION_AUDIT",
+      "g3_2d_review": {
+        "truthmaker": "FacilityOperation relator mediates OperatingOrganizationRole and OperatedFacilityRole; both specialize Organization and Facility.",
+        "allowed_ends": [
+          "Organization",
+          "Facility"
+        ],
+        "cardinality": "Each FacilityOperation has >=1 operating organization and exactly 1 operated facility; do not infer global organization/facility limits.",
+        "temporal_scope": "For an operation relator r, derive operates(o,f,t) only when r valid at t and r mediates matching o and f; retain provenance of r.",
+        "negative_example": "An Organization and Facility co-occurring in a source record without FacilityOperation must not yield operates.",
+        "recommendation": "Keep native derived Material; implement explicit temporal derivation and provenance in a separate OWL/rule/SHACL integration, because current OWL is annotation-only.",
+        "author_disposition": "PENDING"
+      }
+    },
+    {
+      "id": "rel-presentationOf",
+      "name": "presentationOf",
+      "source": {
+        "class": "MedicinalProductPresentation",
+        "stereotype": "kind",
+        "multiplicity": null,
+        "subsetted_end": null
+      },
+      "target": {
+        "class": "MedicinalProduct",
+        "stereotype": "kind",
+        "multiplicity": null,
+        "subsetted_end": null
+      },
+      "prior_stereotype": null,
+      "candidate_stereotype": null,
+      "disposition": "PENDING_DOMAIN_SEMANTICS",
+      "rationale": "OWL domain/range alone does not justify a native OntoUML stereotype or complete multiplicities.",
+      "required_evidence": "Document relation truthmaker, identity/dependence, direction, temporal scope and negative instance.",
+      "review_depth": "DETAILED_DESIGN_REVIEW",
+      "g3_2d_review": {
+        "group": "product structure",
+        "truthmaker": "Product definition explicitly identifies the Presentation's Product.",
+        "allowed_ends": [
+          "MedicinalProductPresentation",
+          "MedicinalProduct"
+        ],
+        "cardinality": "No new universal multiplicity; empirical source completeness is separate",
+        "temporal_scope": "Product/presentation specification version",
+        "negative_example": "A Product source row alone does not instantiate a Presentation.",
+        "recommendation": "Retain untyped until author settles truthmaker and global constraints",
+        "author_disposition": "PENDING"
+      }
+    },
+    {
+      "id": "rel-producesObservationResult",
+      "name": "producesObservationResult",
+      "source": {
+        "class": "ObservationActivity",
+        "stereotype": "event",
+        "multiplicity": null,
+        "subsetted_end": null
+      },
+      "target": {
+        "class": "ObservationResult",
+        "stereotype": "kind",
+        "multiplicity": null,
+        "subsetted_end": null
+      },
+      "prior_stereotype": null,
+      "candidate_stereotype": null,
+      "disposition": "PENDING_DOMAIN_SEMANTICS",
+      "rationale": "OWL domain/range alone does not justify a native OntoUML stereotype or complete multiplicities.",
+      "required_evidence": "Document relation truthmaker, identity/dependence, direction, temporal scope and negative instance.",
+      "review_depth": "DETAILED_DESIGN_REVIEW",
+      "g3_2d_review": {
+        "group": "observation/shortage",
+        "truthmaker": "Provenance links an ObservationActivity to its generated Result.",
+        "allowed_ends": [
+          "ObservationActivity",
+          "ObservationResult"
+        ],
+        "cardinality": "No new universal multiplicity; empirical source completeness is separate",
+        "temporal_scope": "Situation/reporting interval distinct from source timestamp",
+        "negative_example": "An imported aggregate result does not entail a particular event.",
+        "recommendation": "Retain untyped until author settles truthmaker and global constraints",
+        "author_disposition": "PENDING"
+      }
+    },
+    {
+      "id": "rel-registrationJurisdiction",
+      "name": "registrationJurisdiction",
+      "source": {
+        "class": "EstablishmentRegistration",
+        "stereotype": "relator",
+        "multiplicity": null,
+        "subsetted_end": null
+      },
+      "target": {
+        "class": "RegulatoryJurisdiction",
+        "stereotype": "kind",
+        "multiplicity": null,
+        "subsetted_end": null
+      },
+      "prior_stereotype": null,
+      "candidate_stereotype": null,
+      "disposition": "PENDING_RELRIG_DISPOSITION",
+      "rationale": "Relator-to-rigid endpoint could trigger RelRig if typed as mediation; do not assume optional role dependence.",
+      "required_evidence": "Choose evidenced anti-rigid role or essential read-only dependency, then cardinality and lifecycle.",
+      "review_depth": "DETAILED_DESIGN_PROPOSAL",
+      "proposal": "SCOPE_REFERENCE_RETAIN_UNTYPED",
+      "negative_acceptance_condition": "The facility's geographic position alone cannot infer a registration in J."
+    },
+    {
+      "id": "rel-reimbursementDiagnosisContext",
+      "name": "reimbursementDiagnosisContext",
+      "source": {
+        "class": "ReimbursementUtilisationObservationResult",
+        "stereotype": "subkind",
+        "multiplicity": "0..*",
+        "subsetted_end": null
+      },
+      "target": {
+        "class": "DiagnosisClassificationReference",
+        "stereotype": "kind",
+        "multiplicity": "0..*",
+        "subsetted_end": null
+      },
+      "prior_stereotype": null,
+      "candidate_stereotype": null,
+      "disposition": "PENDING_DOMAIN_SEMANTICS",
+      "rationale": "OWL domain/range alone does not justify a native OntoUML stereotype or complete multiplicities.",
+      "required_evidence": "Document relation truthmaker, identity/dependence, direction, temporal scope and negative instance.",
+      "review_depth": "DETAILED_DESIGN_REVIEW",
+      "g3_2d_review": {
+        "group": "observation/shortage",
+        "truthmaker": "Aggregate source references a versioned DiagnosisClassificationReference.",
+        "allowed_ends": [
+          "ReimbursementUtilisationObservationResult",
+          "DiagnosisClassificationReference"
+        ],
+        "cardinality": "No new universal multiplicity; empirical source completeness is separate",
+        "temporal_scope": "Situation/reporting interval distinct from source timestamp",
+        "negative_example": "Counts do not instantiate patients or diagnoses.",
+        "recommendation": "Retain untyped until author settles truthmaker and global constraints",
+        "author_disposition": "PENDING"
+      }
+    },
+    {
+      "id": "rel-riskAssessmentConcerns",
+      "name": "riskAssessmentConcerns",
+      "source": {
+        "class": "RiskAssessmentActivity",
+        "stereotype": "event",
+        "multiplicity": null,
+        "subsetted_end": null
+      },
+      "target": {
+        "class": null,
+        "stereotype": null,
+        "multiplicity": null,
+        "subsetted_end": null
+      },
+      "prior_stereotype": null,
+      "candidate_stereotype": null,
+      "disposition": "PENDING_ENDPOINT_REFINEMENT",
+      "rationale": "At least one broad/untyped endpoint; no stereotype can be asserted safely from a domain-range link.",
+      "required_evidence": "Resolve exact endpoint type and identity, then relation semantics and multiplicities.",
+      "review_depth": "DETAILED_ENDPOINT_POLICY",
+      "proposal": "KEEP_OPEN_ASSESSMENT_PARENT",
+      "negative_acceptance_condition": "Mentioning an asset does not prove a vulnerability or quantified risk.",
+      "remaining_evidence": "Admit target families with assessment evidence; do not impose a deferred AssetAtRisk range."
+    },
+    {
+      "id": "rel-riskAssessmentConcernsDependency",
+      "name": "riskAssessmentConcernsDependency",
+      "source": {
+        "class": "RiskAssessmentActivity",
+        "stereotype": "event",
+        "multiplicity": "0..*",
+        "subsetted_end": "end-riskAssessmentConcerns-source"
+      },
+      "target": {
+        "class": "SupplyDependency",
+        "stereotype": "relator",
+        "multiplicity": "0..*",
+        "subsetted_end": "end-riskAssessmentConcerns-target"
+      },
+      "prior_stereotype": null,
+      "candidate_stereotype": null,
+      "disposition": "PENDING_PARENT_SEMANTICS",
+      "rationale": "Endpoint subsetting exists but parent relation stereotype is itself unresolved.",
+      "required_evidence": "Resolve parent relation meaning and stereotype before child; inspect multiplicity constraints.",
+      "review_depth": "DETAILED_DESIGN_PROPOSAL",
+      "proposal": "TOPIC_REFERENCE_REVIEW_NO_STEREOTYPE",
+      "negative_acceptance_condition": "Mentioning S in a document or observing a disruption does not prove a quantified risk or vulnerability of S."
+    },
+    {
+      "id": "rel-riskTreatmentAddresses",
+      "name": "riskTreatmentAddresses",
+      "source": {
+        "class": "RiskTreatmentActivity",
+        "stereotype": "event",
+        "multiplicity": null,
+        "subsetted_end": null
+      },
+      "target": {
+        "class": null,
+        "stereotype": null,
+        "multiplicity": null,
+        "subsetted_end": null
+      },
+      "prior_stereotype": null,
+      "candidate_stereotype": null,
+      "disposition": "PENDING_ENDPOINT_REFINEMENT",
+      "rationale": "At least one broad/untyped endpoint; no stereotype can be asserted safely from a domain-range link.",
+      "required_evidence": "Resolve exact endpoint type and identity, then relation semantics and multiplicities.",
+      "review_depth": "DETAILED_ENDPOINT_POLICY",
+      "proposal": "KEEP_OPEN_TREATMENT_TARGET",
+      "negative_acceptance_condition": "Do not claim that every treatment is effective, or that a target is necessarily a SupplyDependency.",
+      "remaining_evidence": "Define treatment plan/target semantics, evidence and direction before adding range or stereotype."
+    },
+    {
+      "id": "rel-shortageJurisdiction",
+      "name": "shortageJurisdiction",
+      "source": {
+        "class": "MedicineShortageSituation",
+        "stereotype": "situation",
+        "multiplicity": null,
+        "subsetted_end": null
+      },
+      "target": {
+        "class": "RegulatoryJurisdiction",
+        "stereotype": "kind",
+        "multiplicity": null,
+        "subsetted_end": null
+      },
+      "prior_stereotype": null,
+      "candidate_stereotype": null,
+      "disposition": "PENDING_DOMAIN_SEMANTICS",
+      "rationale": "OWL domain/range alone does not justify a native OntoUML stereotype or complete multiplicities.",
+      "required_evidence": "Document relation truthmaker, identity/dependence, direction, temporal scope and negative instance.",
+      "review_depth": "DETAILED_DESIGN_REVIEW",
+      "g3_2d_review": {
+        "group": "observation/shortage",
+        "truthmaker": "Source identifies a jurisdictionally bounded ShortageSituation.",
+        "allowed_ends": [
+          "MedicineShortageSituation",
+          "RegulatoryJurisdiction"
+        ],
+        "cardinality": "No new universal multiplicity; empirical source completeness is separate",
+        "temporal_scope": "Situation/reporting interval distinct from source timestamp",
+        "negative_example": "A J1 shortage does not imply a J2 shortage.",
+        "recommendation": "Retain untyped until author settles truthmaker and global constraints",
+        "author_disposition": "PENDING"
+      }
+    },
+    {
+      "id": "rel-shortagePresentation",
+      "name": "shortagePresentation",
+      "source": {
+        "class": "MedicineShortageSituation",
+        "stereotype": "situation",
+        "multiplicity": null,
+        "subsetted_end": null
+      },
+      "target": {
+        "class": "MedicinalProductPresentation",
+        "stereotype": "kind",
+        "multiplicity": null,
+        "subsetted_end": null
+      },
+      "prior_stereotype": null,
+      "candidate_stereotype": null,
+      "disposition": "PENDING_DOMAIN_SEMANTICS",
+      "rationale": "OWL domain/range alone does not justify a native OntoUML stereotype or complete multiplicities.",
+      "required_evidence": "Document relation truthmaker, identity/dependence, direction, temporal scope and negative instance.",
+      "review_depth": "DETAILED_DESIGN_REVIEW",
+      "g3_2d_review": {
+        "group": "observation/shortage",
+        "truthmaker": "Source identifies a particular presentation in a shortage.",
+        "allowed_ends": [
+          "MedicineShortageSituation",
+          "MedicinalProductPresentation"
+        ],
+        "cardinality": "No new universal multiplicity; empirical source completeness is separate",
+        "temporal_scope": "Situation/reporting interval distinct from source timestamp",
+        "negative_example": "Product-only report does not identify a package/presentation.",
+        "recommendation": "Retain untyped until author settles truthmaker and global constraints",
+        "author_disposition": "PENDING"
+      }
+    },
+    {
+      "id": "rel-shortageProduct",
+      "name": "shortageProduct",
+      "source": {
+        "class": "MedicineShortageSituation",
+        "stereotype": "situation",
+        "multiplicity": null,
+        "subsetted_end": null
+      },
+      "target": {
+        "class": "MedicinalProduct",
+        "stereotype": "kind",
+        "multiplicity": null,
+        "subsetted_end": null
+      },
+      "prior_stereotype": null,
+      "candidate_stereotype": null,
+      "disposition": "PENDING_DOMAIN_SEMANTICS",
+      "rationale": "OWL domain/range alone does not justify a native OntoUML stereotype or complete multiplicities.",
+      "required_evidence": "Document relation truthmaker, identity/dependence, direction, temporal scope and negative instance.",
+      "review_depth": "DETAILED_DESIGN_REVIEW",
+      "g3_2d_review": {
+        "group": "observation/shortage",
+        "truthmaker": "Source identifies the Product concerned by shortage.",
+        "allowed_ends": [
+          "MedicineShortageSituation",
+          "MedicinalProduct"
+        ],
+        "cardinality": "No new universal multiplicity; empirical source completeness is separate",
+        "temporal_scope": "Situation/reporting interval distinct from source timestamp",
+        "negative_example": "Presentation shortage does not establish shortage of all presentations.",
+        "recommendation": "Retain untyped until author settles truthmaker and global constraints",
+        "author_disposition": "PENDING"
+      }
+    },
+    {
+      "id": "rel-usedSourceArtifact",
+      "name": "usedSourceArtifact",
+      "source": {
+        "class": "ProvenanceActivity",
+        "stereotype": "event",
+        "multiplicity": null,
+        "subsetted_end": null
+      },
+      "target": {
+        "class": null,
+        "stereotype": null,
+        "multiplicity": null,
+        "subsetted_end": null
+      },
+      "prior_stereotype": null,
+      "candidate_stereotype": null,
+      "disposition": "PENDING_ENDPOINT_REFINEMENT",
+      "rationale": "At least one broad/untyped endpoint; no stereotype can be asserted safely from a domain-range link.",
+      "required_evidence": "Resolve exact endpoint type and identity, then relation semantics and multiplicities.",
+      "review_depth": "DETAILED_ENDPOINT_POLICY",
+      "proposal": "KEEP_OPEN_PROVENANCE_INPUT",
+      "negative_acceptance_condition": "A dataset name alone cannot fabricate a source record or complete provenance chain.",
+      "remaining_evidence": "Specify the admitted source-artifact abstraction or scoped subproperties for record/release/document; check PROV alignment."
+    },
+    {
+      "id": "rel-withinCountry",
+      "name": "withinCountry",
+      "source": {
+        "class": "GeographicFeature",
+        "stereotype": "kind",
+        "multiplicity": null,
+        "subsetted_end": null
+      },
+      "target": {
+        "class": "Country",
+        "stereotype": "subkind",
+        "multiplicity": null,
+        "subsetted_end": null
+      },
+      "prior_stereotype": null,
+      "candidate_stereotype": null,
+      "disposition": "PENDING_DOMAIN_SEMANTICS",
+      "rationale": "OWL domain/range alone does not justify a native OntoUML stereotype or complete multiplicities.",
+      "required_evidence": "Document relation truthmaker, identity/dependence, direction, temporal scope and negative instance.",
+      "review_depth": "DETAILED_DESIGN_REVIEW",
+      "g3_2d_review": {
+        "group": "space",
+        "truthmaker": "Geographic reference establishes feature containment in Country.",
+        "allowed_ends": [
+          "GeographicFeature",
+          "Country"
+        ],
+        "cardinality": "No new universal multiplicity; empirical source completeness is separate",
+        "temporal_scope": "Geographic boundary/reference version",
+        "negative_example": "Country cannot be within itself; Jurisdiction is distinct.",
+        "recommendation": "Retain untyped until author settles truthmaker and global constraints",
+        "author_disposition": "PENDING"
+      }
+    },
+    {
+      "id": "rel-withinRegion",
+      "name": "withinRegion",
+      "source": {
+        "class": "GeographicFeature",
+        "stereotype": "kind",
+        "multiplicity": null,
+        "subsetted_end": null
+      },
+      "target": {
+        "class": "AdministrativeRegion",
+        "stereotype": "subkind",
+        "multiplicity": null,
+        "subsetted_end": null
+      },
+      "prior_stereotype": null,
+      "candidate_stereotype": null,
+      "disposition": "PENDING_DOMAIN_SEMANTICS",
+      "rationale": "OWL domain/range alone does not justify a native OntoUML stereotype or complete multiplicities.",
+      "required_evidence": "Document relation truthmaker, identity/dependence, direction, temporal scope and negative instance.",
+      "review_depth": "DETAILED_DESIGN_REVIEW",
+      "g3_2d_review": {
+        "group": "space",
+        "truthmaker": "Geographic reference establishes feature containment in AdministrativeRegion.",
+        "allowed_ends": [
+          "GeographicFeature",
+          "AdministrativeRegion"
+        ],
+        "cardinality": "No new universal multiplicity; empirical source completeness is separate",
+        "temporal_scope": "Geographic boundary/reference version",
+        "negative_example": "Region cannot be within itself or inferred from postal label.",
+        "recommendation": "Retain untyped until author settles truthmaker and global constraints",
+        "author_disposition": "PENDING"
+      }
+    }
+  ],
+  "source_revision": "accb79534f43c940b2214ef74557b4e9de7e0ada",
+  "status": "G3-2d detailed design review 39/42; three G3-2a mediation-only edits still lack full semantic disposition; formal alignment and author review pending"
+}
