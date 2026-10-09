@@ -1,0 +1,158 @@
+@prefix cmpe: <https://w3id.org/cm-pharme/2.1/> .
+@prefix lab: <https://w3id.org/cm-pharme/experimental/four-domain/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+lab:assessmentScenario a owl:ObjectProperty ;
+    rdfs:domain cmpe:RiskAssessmentActivity ;
+    rdfs:range cmpe:Assertion .
+
+lab:atTime a owl:DatatypeProperty ;
+    rdfs:range xsd:dateTime .
+
+lab:capabilityRealizedIn a owl:ObjectProperty ;
+    rdfs:domain cmpe:EnterpriseCapability ;
+    rdfs:range cmpe:ManufacturingActivity .
+
+lab:causallyEstablished a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:range xsd:boolean .
+
+lab:citesSourceRecord a owl:ObjectProperty ;
+    rdfs:domain cmpe:Assertion ;
+    rdfs:range cmpe:SourceRecord .
+
+lab:componentVersion a owl:DatatypeProperty ;
+    rdfs:range xsd:string .
+
+lab:conclusion a owl:DatatypeProperty ;
+    rdfs:range xsd:string .
+
+lab:deploymentComponent a owl:ObjectProperty ;
+    rdfs:domain cmpe:SystemDeploymentActivity ;
+    rdfs:range cmpe:DigitalInformationSystemComponent .
+
+lab:deploymentOrganization a owl:ObjectProperty ;
+    rdfs:domain cmpe:SystemDeploymentActivity ;
+    rdfs:range cmpe:Organization .
+
+lab:digitalActivityDeployment a owl:ObjectProperty ;
+    rdfs:domain cmpe:ProvenanceActivity ;
+    rdfs:range cmpe:SystemDeploymentActivity .
+
+lab:digitalServiceActivity a owl:ObjectProperty ;
+    rdfs:domain cmpe:ServiceOfferingSpecification ;
+    rdfs:range cmpe:ProvenanceActivity .
+
+lab:digitalServiceComponent a owl:ObjectProperty ;
+    rdfs:domain cmpe:ServiceOfferingSpecification ;
+    rdfs:range cmpe:DigitalInformationSystemComponent .
+
+lab:implementsRiskPlan a owl:ObjectProperty ;
+    rdfs:domain cmpe:RiskTreatmentActivity ;
+    rdfs:range cmpe:RiskTreatmentPlan .
+
+lab:ontology a owl:Ontology ;
+    rdfs:comment "Review experiment only. No release or full OntoUML conformance claim." .
+
+lab:planRiskResult a owl:ObjectProperty ;
+    rdfs:domain cmpe:RiskTreatmentPlan ;
+    rdfs:range cmpe:Assertion .
+
+lab:profile a owl:DatatypeProperty ;
+    rdfs:range xsd:string .
+
+lab:pvRequirementJurisdiction a owl:ObjectProperty ;
+    rdfs:domain cmpe:PharmacovigilanceRequirement ;
+    rdfs:range cmpe:RegulatoryJurisdiction .
+
+lab:pvResultAssessment a owl:ObjectProperty ;
+    rdfs:domain cmpe:Assertion ;
+    rdfs:range cmpe:SignalAssessmentActivity .
+
+lab:pvResultSignal a owl:ObjectProperty ;
+    rdfs:domain cmpe:Assertion ;
+    rdfs:range cmpe:Assertion .
+
+lab:recordDigitalActivity a owl:ObjectProperty ;
+    rdfs:domain cmpe:SourceRecord ;
+    rdfs:range cmpe:ProvenanceActivity .
+
+lab:reportsRecord a owl:ObjectProperty ;
+    rdfs:domain cmpe:AdverseEventReportingActivity ;
+    rdfs:range cmpe:SourceRecord .
+
+lab:resultAssessment a owl:ObjectProperty ;
+    rdfs:domain cmpe:Assertion ;
+    rdfs:range cmpe:RiskAssessmentActivity .
+
+lab:reviewNewResult a owl:ObjectProperty ;
+    rdfs:domain cmpe:RiskReviewActivity ;
+    rdfs:range cmpe:Assertion .
+
+lab:reviewPriorResult a owl:ObjectProperty ;
+    rdfs:domain cmpe:RiskReviewActivity ;
+    rdfs:range cmpe:Assertion .
+
+lab:scenarioProduct a owl:ObjectProperty ;
+    rdfs:domain cmpe:Assertion ;
+    rdfs:range cmpe:MedicinalProduct .
+
+lab:serviceCapability a owl:ObjectProperty ;
+    rdfs:domain cmpe:ServiceOfferingSpecification ;
+    rdfs:range cmpe:EnterpriseCapability .
+
+lab:signalAssessmentTarget a owl:ObjectProperty ;
+    rdfs:domain cmpe:SignalAssessmentActivity ;
+    rdfs:range cmpe:Assertion .
+
+lab:signalProduct a owl:ObjectProperty ;
+    rdfs:domain cmpe:Assertion ;
+    rdfs:range cmpe:MedicinalProduct .
+
+lab:signalStatus a owl:DatatypeProperty ;
+    rdfs:range xsd:string .
+
+lab:signalSubstance a owl:ObjectProperty ;
+    rdfs:domain cmpe:Assertion ;
+    rdfs:range cmpe:PharmaceuticalSubstance .
+
+lab:surveillanceRequirement a owl:ObjectProperty ;
+    rdfs:domain cmpe:PostMarketSurveillanceActivity ;
+    rdfs:range cmpe:PharmacovigilanceRequirement .
+
+lab:surveillanceSource a owl:ObjectProperty ;
+    rdfs:domain cmpe:PostMarketSurveillanceActivity ;
+    rdfs:range cmpe:SourceRecord .
+
+lab:viewOrganization a owl:ObjectProperty ;
+    rdfs:domain cmpe:BusinessArchitectureView ;
+    rdfs:range cmpe:Organization ;
+    rdfs:subPropertyOf cmpe:baViewRepresents .
+
+lab:viewService a owl:ObjectProperty ;
+    rdfs:domain cmpe:BusinessArchitectureView ;
+    rdfs:range cmpe:ServiceOfferingSpecification .
+
+cmpe:AdverseEventReportingActivity owl:disjointWith cmpe:SourceRecord .
+
+cmpe:RiskTreatmentActivity owl:disjointWith cmpe:RiskTreatmentPlan .
+
+cmpe:BusinessArchitectureView owl:disjointWith cmpe:Organization .
+
+cmpe:DigitalInformationSystemComponent owl:disjointWith cmpe:SourceRecord .
+
+cmpe:RiskAssessmentActivity owl:disjointWith cmpe:Assertion .
+
+cmpe:RiskReviewActivity a owl:Class ;
+    rdfs:comment "An occurrence reviewing an earlier risk assessment/result. It need not repeat the assessment." ;
+    owl:disjointWith cmpe:Assertion .
+
+cmpe:SignalAssessmentActivity a owl:Class ;
+    rdfs:comment "An occurrence assessing a medicinal safety signal; separate from reporting and from assessment content." ;
+    owl:disjointWith cmpe:Assertion .
+
+cmpe:SystemDeploymentActivity a owl:Class ;
+    rdfs:comment "An actual installation/deployment of an identified component version in an organizational context. Not an ETL/provenance transformation." ;
+    owl:disjointWith cmpe:SourceRecord .

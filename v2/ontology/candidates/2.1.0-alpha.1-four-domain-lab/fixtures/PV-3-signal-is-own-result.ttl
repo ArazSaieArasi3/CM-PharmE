@@ -1,0 +1,42 @@
+@prefix c: <https://w3id.org/cm-pharme/2.1/> .
+@prefix l: <https://w3id.org/cm-pharme/experimental/four-domain/> .
+@prefix t: <urn:cmpe-lab:> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+t:jB a c:RegulatoryJurisdiction .
+
+t:reporting a c:AdverseEventReportingActivity ;
+    l:atTime "2026-10-01T10:00:00+00:00"^^xsd:dateTime ;
+    l:profile "safety-reporting" ;
+    l:reportsRecord t:report .
+
+t:surveillance a c:PostMarketSurveillanceActivity ;
+    l:profile "pv-surveillance" ;
+    l:surveillanceRequirement t:pvRule ;
+    l:surveillanceSource t:report .
+
+t:jA a c:RegulatoryJurisdiction .
+
+t:medicine a c:MedicinalProduct .
+
+t:pvRule a c:PharmacovigilanceRequirement ;
+    l:profile "pv-requirement" ;
+    l:pvRequirementJurisdiction t:jA .
+
+t:signal a c:Assertion ;
+    l:citesSourceRecord t:report ;
+    l:profile "safety-signal" ;
+    l:signalProduct t:medicine .
+
+t:signalAssessment a c:SignalAssessmentActivity ;
+    l:profile "signal-assessment" ;
+    l:signalAssessmentTarget t:signal .
+
+t:signalResult a c:Assertion ;
+    l:atTime "2026-10-02T10:00:00+00:00"^^xsd:dateTime ;
+    l:profile "signal-result" ;
+    l:pvResultAssessment t:signalAssessment ;
+    l:pvResultSignal t:signalResult ;
+    l:signalStatus "under-review" .
+
+t:report a c:SourceRecord .
