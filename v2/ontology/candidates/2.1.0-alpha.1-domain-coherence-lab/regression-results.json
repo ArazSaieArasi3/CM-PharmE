@@ -1,0 +1,1576 @@
+{
+  "cases": [
+    {
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/RM-1-positive.ttl",
+      "expected": true,
+      "conforms": true,
+      "violations": [],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/PV-1-positive.ttl",
+      "expected": true,
+      "conforms": true,
+      "violations": [],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/BA-1-positive.ttl",
+      "expected": true,
+      "conforms": true,
+      "violations": [],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/DS-1-positive.ttl",
+      "expected": true,
+      "conforms": true,
+      "violations": [],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/RM-2-boundary.ttl",
+      "expected": true,
+      "conforms": true,
+      "violations": [],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/PV-2-boundary.ttl",
+      "expected": true,
+      "conforms": true,
+      "violations": [],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/BA-2-boundary.ttl",
+      "expected": true,
+      "conforms": true,
+      "violations": [],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/DS-2-boundary.ttl",
+      "expected": true,
+      "conforms": true,
+      "violations": [],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/RM-3-missing-scenario-topic.ttl",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent",
+          "constraint": "https://w3id.org/cm-pharme/experimental/refinement/scenarioProduct-or-context-required"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/RM-3-missing-evidence.ttl",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/four-domain/citesSourceRecord",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent",
+          "constraint": ""
+        }
+      ],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/RM-3-dangling-plan-result.ttl",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/four-domain/planRiskResult",
+          "component": "http://www.w3.org/ns/shacl#ClassConstraintComponent",
+          "constraint": ""
+        }
+      ],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/RM-3-result-is-assessment.ttl",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent",
+          "constraint": "https://w3id.org/cm-pharme/experimental/four-domain/distinct-RiskAssessmentActivity-Assertion"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/RM-3-missing-review-predecessor.ttl",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/four-domain/reviewPriorResult",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent",
+          "constraint": ""
+        }
+      ],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/RM-3-backdated-revision.ttl",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent",
+          "constraint": "https://w3id.org/cm-pharme/experimental/four-domain/review-time-order"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/RM-3-dangling-executed-plan.ttl",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/four-domain/implementsRiskPlan",
+          "component": "http://www.w3.org/ns/shacl#ClassConstraintComponent",
+          "constraint": ""
+        }
+      ],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/PV-3-missing-target.ttl",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent",
+          "constraint": "https://w3id.org/cm-pharme/experimental/four-domain/signal-target-required"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/PV-3-missing-signal-source.ttl",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/four-domain/citesSourceRecord",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent",
+          "constraint": ""
+        }
+      ],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/PV-3-dangling-signal.ttl",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/four-domain/pvResultSignal",
+          "component": "http://www.w3.org/ns/shacl#ClassConstraintComponent",
+          "constraint": ""
+        },
+        {
+          "path": "",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent",
+          "constraint": "https://w3id.org/cm-pharme/experimental/four-domain/signal-result-agreement"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/PV-3-missing-result-time.ttl",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/four-domain/atTime",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent",
+          "constraint": ""
+        }
+      ],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/PV-3-missing-jurisdiction.ttl",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/four-domain/pvRequirementJurisdiction",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent",
+          "constraint": ""
+        }
+      ],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/PV-3-reporting-is-record.ttl",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent",
+          "constraint": "https://w3id.org/cm-pharme/experimental/four-domain/distinct-AdverseEventReportingActivity-SourceRecord"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/PV-3-signal-is-own-result.ttl",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent",
+          "constraint": "urn:cmpe-policy:NoSelfOrSameAsChain"
+        },
+        {
+          "path": "",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent",
+          "constraint": "https://w3id.org/cm-pharme/experimental/four-domain/signal-result-distinct"
+        },
+        {
+          "path": "",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent",
+          "constraint": "https://w3id.org/cm-pharme/experimental/four-domain/signal-result-agreement"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/PV-3-signal-result-alias.ttl",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent",
+          "constraint": "urn:cmpe-policy:NoSelfOrSameAsChain"
+        },
+        {
+          "path": "",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent",
+          "constraint": "https://w3id.org/cm-pharme/experimental/four-domain/signal-result-distinct"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/PV-3-result-assessment-target-disagreement.ttl",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent",
+          "constraint": "https://w3id.org/cm-pharme/experimental/four-domain/signal-result-agreement"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/BA-3-missing-capability-bearer.ttl",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/2.1/capabilityBearer",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent",
+          "constraint": ""
+        }
+      ],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/BA-3-service-without-capability.ttl",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/four-domain/serviceCapability",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent",
+          "constraint": ""
+        }
+      ],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/BA-3-view-is-organization.ttl",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent",
+          "constraint": "https://w3id.org/cm-pharme/experimental/four-domain/distinct-BusinessArchitectureView-Organization"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/BA-3-untyped-view-reference.ttl",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/four-domain/viewOrganization",
+          "component": "http://www.w3.org/ns/shacl#ClassConstraintComponent",
+          "constraint": ""
+        }
+      ],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/BA-3-one-partner-only.ttl",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/2.1/partnershipParticipant",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent",
+          "constraint": ""
+        },
+        {
+          "path": "na502285e25a84698a90c1439606dea9ab98",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent",
+          "constraint": ""
+        },
+        {
+          "path": "https://w3id.org/cm-pharme/2.1/partnershipParticipant",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent",
+          "constraint": ""
+        }
+      ],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/BA-3-known-partner-aliases.ttl",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent",
+          "constraint": "https://w3id.org/cm-pharme/experimental/four-domain/partners-not-known-aliases"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/DS-3-missing-version.ttl",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/four-domain/componentVersion",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent",
+          "constraint": ""
+        }
+      ],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/DS-3-missing-generating-activity.ttl",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/four-domain/recordDigitalActivity",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent",
+          "constraint": ""
+        }
+      ],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/DS-3-record-is-component.ttl",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent",
+          "constraint": "https://w3id.org/cm-pharme/experimental/four-domain/distinct-SourceRecord-DigitalInformationSystemComponent"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/DS-3-missing-deployment-time.ttl",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/four-domain/atTime",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent",
+          "constraint": ""
+        }
+      ],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/DS-3-deployment-after-use.ttl",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent",
+          "constraint": "https://w3id.org/cm-pharme/experimental/four-domain/deployment-before-use"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/DS-3-service-without-supported-activity.ttl",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/four-domain/digitalServiceActivity",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent",
+          "constraint": ""
+        }
+      ],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/ALL-1-combined-domains.ttl",
+      "expected": true,
+      "conforms": true,
+      "violations": [],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/REG-1-typed-capacity-preserved.ttl",
+      "expected": true,
+      "conforms": true,
+      "violations": [],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/REG-3-bearer-free-capacity-rejected.ttl",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "na502285e25a84698a90c1439606dea9ab138",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent",
+          "constraint": ""
+        },
+        {
+          "path": "",
+          "component": "http://www.w3.org/ns/shacl#XoneConstraintComponent",
+          "constraint": ""
+        }
+      ],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-RM-CONTEXT-positive.ttl",
+      "expected": true,
+      "conforms": true,
+      "violations": [],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-PV-CARRIER-positive.ttl",
+      "expected": true,
+      "conforms": true,
+      "violations": [],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-PV-ACTOR-positive.ttl",
+      "expected": true,
+      "conforms": true,
+      "violations": [],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-BA-SERVICE-positive.ttl",
+      "expected": true,
+      "conforms": true,
+      "violations": [],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-BA-COMMITMENT-positive.ttl",
+      "expected": true,
+      "conforms": true,
+      "violations": [],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-DS-PHARMA-positive.ttl",
+      "expected": true,
+      "conforms": true,
+      "violations": [],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-DS-RESPONSIBILITY-positive.ttl",
+      "expected": true,
+      "conforms": true,
+      "violations": [],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-PV-SURVEILLANCE-positive.ttl",
+      "expected": true,
+      "conforms": true,
+      "violations": [],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-RM-CONTEXT-boundary.ttl",
+      "expected": true,
+      "conforms": true,
+      "violations": [],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-PV-CARRIER-boundary.ttl",
+      "expected": true,
+      "conforms": true,
+      "violations": [],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-PV-ACTOR-boundary.ttl",
+      "expected": true,
+      "conforms": true,
+      "violations": [],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-BA-SERVICE-boundary.ttl",
+      "expected": true,
+      "conforms": true,
+      "violations": [],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-BA-COMMITMENT-boundary.ttl",
+      "expected": true,
+      "conforms": true,
+      "violations": [],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-DS-PHARMA-boundary.ttl",
+      "expected": true,
+      "conforms": true,
+      "violations": [],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-DS-RESPONSIBILITY-boundary.ttl",
+      "expected": true,
+      "conforms": true,
+      "violations": [],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-PV-SURVEILLANCE-boundary.ttl",
+      "expected": true,
+      "conforms": true,
+      "violations": [],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-RM-CONTEXT-dependency-boundary.ttl",
+      "expected": true,
+      "conforms": true,
+      "violations": [],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-RM-CONTEXT-missing-context.ttl",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent",
+          "constraint": "https://w3id.org/cm-pharme/experimental/refinement/scenarioProduct-or-context-required"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-RM-CONTEXT-untyped-facility.ttl",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/refinement/scenarioFacility",
+          "component": "http://www.w3.org/ns/shacl#ClassConstraintComponent",
+          "constraint": ""
+        }
+      ],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-PV-CARRIER-missing-claim.ttl",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/refinement/carrierClaim",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent",
+          "constraint": ""
+        }
+      ],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-PV-CARRIER-missing-claim-content.ttl",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/refinement/claimText",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent",
+          "constraint": ""
+        },
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/refinement/carrierClaim",
+          "component": "http://www.w3.org/ns/shacl#NodeConstraintComponent",
+          "constraint": ""
+        },
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/refinement/claimText",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent",
+          "constraint": ""
+        },
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/refinement/carrierClaim",
+          "component": "http://www.w3.org/ns/shacl#NodeConstraintComponent",
+          "constraint": ""
+        },
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/refinement/claimText",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent",
+          "constraint": ""
+        }
+      ],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-PV-CARRIER-carrier-as-claim.ttl",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent",
+          "constraint": "urn:cmpe-policy:CarrierNotOwnClaim"
+        },
+        {
+          "path": "",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent",
+          "constraint": "https://w3id.org/cm-pharme/experimental/refinement/carrier-not-claim"
+        },
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/refinement/carrierClaim",
+          "component": "http://www.w3.org/ns/shacl#NodeConstraintComponent",
+          "constraint": ""
+        },
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/refinement/claimText",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent",
+          "constraint": ""
+        }
+      ],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-PV-ACTOR-missing-actor.ttl",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/refinement/assessmentOrganization",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent",
+          "constraint": ""
+        }
+      ],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-PV-ACTOR-untyped-actor.ttl",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/refinement/assessmentOrganization",
+          "component": "http://www.w3.org/ns/shacl#ClassConstraintComponent",
+          "constraint": ""
+        }
+      ],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-BA-SERVICE-missing-pharma-context.ttl",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent",
+          "constraint": "https://w3id.org/cm-pharme/experimental/refinement/pharma-service-context"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-BA-SERVICE-untyped-product.ttl",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/refinement/serviceProduct",
+          "component": "http://www.w3.org/ns/shacl#ClassConstraintComponent",
+          "constraint": ""
+        }
+      ],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-BA-COMMITMENT-missing-commitment.ttl",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/refinement/agreementCommitment",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent",
+          "constraint": ""
+        }
+      ],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-BA-COMMITMENT-missing-source-evidence.ttl",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent",
+          "constraint": "https://w3id.org/cm-pharme/experimental/refinement/commitment-evidence-required"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-BA-COMMITMENT-outside-actor.ttl",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent",
+          "constraint": "https://w3id.org/cm-pharme/experimental/refinement/commitment-participant-agreement"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-DS-PHARMA-missing-manufacturing.ttl",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/four-domain/digitalServiceActivity",
+          "component": "http://www.w3.org/ns/shacl#NodeConstraintComponent",
+          "constraint": ""
+        },
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/refinement/supportsManufacturing",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent",
+          "constraint": ""
+        },
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/refinement/supportsManufacturing",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent",
+          "constraint": ""
+        }
+      ],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-DS-PHARMA-missing-manufactured-product.ttl",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/four-domain/digitalServiceActivity",
+          "component": "http://www.w3.org/ns/shacl#NodeConstraintComponent",
+          "constraint": ""
+        },
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/refinement/supportsManufacturing",
+          "component": "http://www.w3.org/ns/shacl#NodeConstraintComponent",
+          "constraint": ""
+        },
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/refinement/manufacturingProduct",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent",
+          "constraint": ""
+        },
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/refinement/supportsManufacturing",
+          "component": "http://www.w3.org/ns/shacl#NodeConstraintComponent",
+          "constraint": ""
+        },
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/refinement/manufacturingProduct",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent",
+          "constraint": ""
+        },
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/refinement/manufacturingProduct",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent",
+          "constraint": ""
+        }
+      ],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-DS-PHARMA-service-component-disagreement.ttl",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent",
+          "constraint": "https://w3id.org/cm-pharme/experimental/refinement/service-component-agreement"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-DS-RESPONSIBILITY-missing-responsibility.ttl",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/four-domain/digitalServiceActivity",
+          "component": "http://www.w3.org/ns/shacl#NodeConstraintComponent",
+          "constraint": ""
+        },
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/refinement/activityResponsibleOrganization",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent",
+          "constraint": ""
+        },
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/refinement/activityResponsibleOrganization",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent",
+          "constraint": ""
+        }
+      ],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-DS-RESPONSIBILITY-untyped-responsible-actor.ttl",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/four-domain/digitalServiceActivity",
+          "component": "http://www.w3.org/ns/shacl#NodeConstraintComponent",
+          "constraint": ""
+        },
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/refinement/activityResponsibleOrganization",
+          "component": "http://www.w3.org/ns/shacl#ClassConstraintComponent",
+          "constraint": ""
+        },
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/refinement/activityResponsibleOrganization",
+          "component": "http://www.w3.org/ns/shacl#ClassConstraintComponent",
+          "constraint": ""
+        }
+      ],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-PV-SURVEILLANCE-missing-source.ttl",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/four-domain/surveillanceSource",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent",
+          "constraint": ""
+        }
+      ],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-PV-SURVEILLANCE-untyped-source.ttl",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/four-domain/citesSourceRecord",
+          "component": "http://www.w3.org/ns/shacl#ClassConstraintComponent",
+          "constraint": ""
+        },
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/four-domain/reportsRecord",
+          "component": "http://www.w3.org/ns/shacl#ClassConstraintComponent",
+          "constraint": ""
+        },
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/four-domain/surveillanceSource",
+          "component": "http://www.w3.org/ns/shacl#ClassConstraintComponent",
+          "constraint": ""
+        }
+      ],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/COMBINED-all-refinements.ttl",
+      "expected": true,
+      "conforms": true,
+      "violations": [],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-content-event-policy/fixtures/untagged-distinct-result.ttl",
+      "expected": true,
+      "conforms": true,
+      "violations": [],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-content-event-policy/fixtures/untagged-self.ttl",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent",
+          "constraint": "urn:cmpe-policy:NoSelfOrSameAsChain"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-content-event-policy/fixtures/direct-alias.ttl",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent",
+          "constraint": "urn:cmpe-policy:NoSelfOrSameAsChain"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-content-event-policy/fixtures/reverse-alias.ttl",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent",
+          "constraint": "urn:cmpe-policy:NoSelfOrSameAsChain"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-content-event-policy/fixtures/mixed-three-link-alias.ttl",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent",
+          "constraint": "urn:cmpe-policy:NoSelfOrSameAsChain"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-content-event-policy/fixtures/unrelated-alias.ttl",
+      "expected": true,
+      "conforms": true,
+      "violations": [],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-content-event-policy/fixtures/shared-signal-two-assessments.ttl",
+      "expected": true,
+      "conforms": true,
+      "violations": [],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-content-event-policy/fixtures/cross-context-content-reuse.ttl",
+      "expected": true,
+      "conforms": true,
+      "violations": [],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-content-event-policy/fixtures/same-text-does-not-merge-claims.ttl",
+      "expected": true,
+      "conforms": true,
+      "violations": [],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-content-event-policy/fixtures/carrier-self-without-tag.ttl",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent",
+          "constraint": "urn:cmpe-policy:CarrierNotOwnClaim"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-content-event-policy/fixtures/carrier-alias-chain.ttl",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent",
+          "constraint": "urn:cmpe-policy:CarrierNotOwnClaim"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-content-event-policy/fixtures/distinct-carrier-and-claim.ttl",
+      "expected": true,
+      "conforms": true,
+      "violations": [],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-content-event-policy/fixtures/two-carriers-same-claim.ttl",
+      "expected": true,
+      "conforms": true,
+      "violations": [],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-registry-policy-lab/fixtures/registration-positive.ttl",
+      "expected": true,
+      "conforms": true,
+      "violations": [],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-registry-policy-lab/fixtures/listing-positive.ttl",
+      "expected": true,
+      "conforms": true,
+      "violations": [],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-registry-policy-lab/fixtures/organization-self-report-positive.ttl",
+      "expected": true,
+      "conforms": true,
+      "violations": [],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-registry-policy-lab/fixtures/provenance-positive.ttl",
+      "expected": true,
+      "conforms": true,
+      "violations": [],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-registry-policy-lab/fixtures/submission-positive.ttl",
+      "expected": true,
+      "conforms": true,
+      "violations": [],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-registry-policy-lab/fixtures/potential-shortage-positive.ttl",
+      "expected": true,
+      "conforms": true,
+      "violations": [],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-registry-policy-lab/fixtures/routine-scope-positive.ttl",
+      "expected": true,
+      "conforms": true,
+      "violations": [],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-registry-policy-lab/fixtures/preparedness-scope-positive.ttl",
+      "expected": true,
+      "conforms": true,
+      "violations": [],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-registry-policy-lab/fixtures/crisis-scope-positive.ttl",
+      "expected": true,
+      "conforms": true,
+      "violations": [],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-registry-policy-lab/fixtures/missing-inherited-authority-grounding.ttl",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "na502285e25a84698a90c1439606dea9ab126",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent",
+          "constraint": ""
+        }
+      ],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-registry-policy-lab/fixtures/registration-is-not-listing.ttl",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent",
+          "constraint": "https://w3id.org/cm-pharme/experimental/registry-policy/fact-kind-subject-agreement"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-registry-policy-lab/fixtures/registration-alone-cannot-support-approval.ttl",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent",
+          "constraint": "https://w3id.org/cm-pharme/experimental/registry-policy/approval-needs-independent-decision"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-registry-policy-lab/fixtures/listing-cannot-approve-itself.ttl",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent",
+          "constraint": "https://w3id.org/cm-pharme/experimental/registry-policy/approval-needs-independent-decision"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-registry-policy-lab/fixtures/missing-submitting-labeler.ttl",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "http://www.w3.org/ns/prov#wasAttributedTo",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent",
+          "constraint": ""
+        }
+      ],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-registry-policy-lab/fixtures/reversed-marketing-dates.ttl",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent",
+          "constraint": "https://w3id.org/cm-pharme/experimental/registry-policy/marketing-interval-order"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-registry-policy-lab/fixtures/record-subject-alias.ttl",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent",
+          "constraint": "https://w3id.org/cm-pharme/experimental/registry-policy/record-not-subject"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-registry-policy-lab/fixtures/payload-product-alias.ttl",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent",
+          "constraint": "https://w3id.org/cm-pharme/experimental/registry-policy/payload-not-product"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-registry-policy-lab/fixtures/missing-jurisdiction.ttl",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/registry-policy/jurisdiction",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent",
+          "constraint": ""
+        }
+      ],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-registry-policy-lab/fixtures/routine-NAP-overgeneralization.ttl",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent",
+          "constraint": "https://w3id.org/cm-pharme/experimental/registry-policy/routine-scope-guard"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-registry-policy-lab/fixtures/action-without-explicit-product-scope.ttl",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent",
+          "constraint": "https://w3id.org/cm-pharme/experimental/registry-policy/action-scope-required"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-registry-policy-lab/fixtures/missing-action-frequency.ttl",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/registry-policy/frequency",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent",
+          "constraint": ""
+        }
+      ],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-registry-policy-lab/fixtures/potential-claim-is-not-situation.ttl",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent",
+          "constraint": "https://w3id.org/cm-pharme/experimental/registry-policy/claim-not-situation"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-registry-policy-lab/fixtures/record-activity-alias.ttl",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent",
+          "constraint": "https://w3id.org/cm-pharme/experimental/registry-policy/record-not-generating-activity"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-registry-policy-lab/fixtures/attribution-does-not-replace-activity-association.ttl",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent",
+          "constraint": "https://w3id.org/cm-pharme/experimental/registry-policy/associated-actor-required"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-registry-policy-lab/fixtures/revision-missing-explicit-derivation.ttl",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent",
+          "constraint": "https://w3id.org/cm-pharme/experimental/registry-policy/revision-needs-lineage"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-registry-policy-lab/fixtures/revision-alias-chain.ttl",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent",
+          "constraint": "https://w3id.org/cm-pharme/experimental/registry-policy/revision-known-identity-collision"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-registry-policy-lab/fixtures/coincident-marketing-and-retrieval-allowed.ttl",
+      "expected": true,
+      "conforms": true,
+      "violations": [],
+      "pass": true
+    },
+    {
+      "source": "reporting-context/complete-context-positive",
+      "expected": true,
+      "conforms": true,
+      "violations": [],
+      "pass": true
+    },
+    {
+      "source": "reporting-context/ambiguous-context-role",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/reporting-context/contextRole",
+          "component": "http://www.w3.org/ns/shacl#MaxCountConstraintComponent",
+          "constraint": ""
+        }
+      ],
+      "pass": true
+    },
+    {
+      "source": "reporting-context/untyped-source-reference",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/reporting-context/specificationSource",
+          "component": "http://www.w3.org/ns/shacl#ClassConstraintComponent",
+          "constraint": ""
+        }
+      ],
+      "pass": true
+    },
+    {
+      "source": "reporting-context/presentation-product-mismatch",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent",
+          "constraint": "https://w3id.org/cm-pharme/experimental/reporting-context/presentation-product-agreement"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "source": "reporting-context/structured-claim-positive",
+      "expected": true,
+      "conforms": true,
+      "violations": [],
+      "pass": true
+    },
+    {
+      "source": "reporting-context/literal-subject",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/reporting-context/claimSubject",
+          "component": "http://www.w3.org/ns/shacl#NodeKindConstraintComponent",
+          "constraint": ""
+        }
+      ],
+      "pass": true
+    },
+    {
+      "source": "reporting-context/literal-resource-object",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/reporting-context/objectResource",
+          "component": "http://www.w3.org/ns/shacl#NodeKindConstraintComponent",
+          "constraint": ""
+        }
+      ],
+      "pass": true
+    },
+    {
+      "source": "reporting-context/resource-in-literal-slot",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/reporting-context/objectValue",
+          "component": "http://www.w3.org/ns/shacl#NodeKindConstraintComponent",
+          "constraint": ""
+        }
+      ],
+      "pass": true
+    },
+    {
+      "source": "reporting-context/claim-carrier-alias",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent",
+          "constraint": "urn:cmpe-policy:CarrierNotOwnClaim"
+        },
+        {
+          "path": "",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent",
+          "constraint": "https://w3id.org/cm-pharme/experimental/reporting-context/claim-not-carrier"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "source": "reporting-context/resource-and-literal-object",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent",
+          "constraint": "https://w3id.org/cm-pharme/experimental/reporting-context/one-object-kind"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "source": "reporting-context/no-claim-object",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent",
+          "constraint": "https://w3id.org/cm-pharme/experimental/reporting-context/one-object-kind"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "source": "reporting-context/claim-without-carrier",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "N77567eec55774e8ea6ef0cf2a0600d29",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent",
+          "constraint": ""
+        }
+      ],
+      "pass": true
+    },
+    {
+      "source": "reporting-context/predicate-is-not-anyURI",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/reporting-context/predicateIRI",
+          "component": "http://www.w3.org/ns/shacl#DatatypeConstraintComponent",
+          "constraint": ""
+        }
+      ],
+      "pass": true
+    },
+    {
+      "source": "reporting-context/missing-claim-origin",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/reporting-context/claimOrigin",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent",
+          "constraint": ""
+        }
+      ],
+      "pass": true
+    }
+  ],
+  "pass": 130,
+  "total": 130,
+  "combined_positive_graph_triples": 2878,
+  "combined_hermit": {
+    "consistent": true,
+    "unsatisfiable_named_classes": [],
+    "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+    "prov_profile": "two conflicting annotation-property declarations removed; raw source retained"
+  },
+  "old_real": {
+    "rows": 768,
+    "triples": 39272,
+    "shacl": {
+      "conforms": true,
+      "violations": []
+    },
+    "hermit": {
+      "consistent": true,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "prov_profile": "two conflicting annotation-property declarations removed; raw source retained"
+    }
+  },
+  "scope": "130 asserted-data admission expectations, combined positive HermiT and historical data non-regression; not full native or materialized C-contract validation."
+}

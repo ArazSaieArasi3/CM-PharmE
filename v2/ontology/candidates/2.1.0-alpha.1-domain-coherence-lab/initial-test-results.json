@@ -1,0 +1,525 @@
+{
+  "admission": [
+    {
+      "name": "logistics-positive",
+      "expected": true,
+      "conforms": true,
+      "violations": [],
+      "marker": null,
+      "pass": true
+    },
+    {
+      "name": "logistics-missing-logisticsProduct",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/coherence/logisticsProduct",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent",
+          "constraint": ""
+        }
+      ],
+      "marker": "logisticsProduct",
+      "pass": true
+    },
+    {
+      "name": "logistics-untyped-logisticsProduct",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/coherence/logisticsProduct",
+          "component": "http://www.w3.org/ns/shacl#ClassConstraintComponent",
+          "constraint": ""
+        }
+      ],
+      "marker": "logisticsProduct",
+      "pass": true
+    },
+    {
+      "name": "logistics-missing-logisticsFacility",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/coherence/logisticsFacility",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent",
+          "constraint": ""
+        }
+      ],
+      "marker": "logisticsFacility",
+      "pass": true
+    },
+    {
+      "name": "logistics-untyped-logisticsFacility",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/coherence/logisticsFacility",
+          "component": "http://www.w3.org/ns/shacl#ClassConstraintComponent",
+          "constraint": ""
+        }
+      ],
+      "marker": "logisticsFacility",
+      "pass": true
+    },
+    {
+      "name": "procurement-positive",
+      "expected": true,
+      "conforms": true,
+      "violations": [],
+      "marker": null,
+      "pass": true
+    },
+    {
+      "name": "procurement-missing-procurementProduct",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/coherence/procurementProduct",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent",
+          "constraint": ""
+        }
+      ],
+      "marker": "procurementProduct",
+      "pass": true
+    },
+    {
+      "name": "procurement-untyped-procurementProduct",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/coherence/procurementProduct",
+          "component": "http://www.w3.org/ns/shacl#ClassConstraintComponent",
+          "constraint": ""
+        }
+      ],
+      "marker": "procurementProduct",
+      "pass": true
+    },
+    {
+      "name": "procurement-missing-procurementOrganization",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/coherence/procurementOrganization",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent",
+          "constraint": ""
+        }
+      ],
+      "marker": "procurementOrganization",
+      "pass": true
+    },
+    {
+      "name": "procurement-untyped-procurementOrganization",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/coherence/procurementOrganization",
+          "component": "http://www.w3.org/ns/shacl#ClassConstraintComponent",
+          "constraint": ""
+        }
+      ],
+      "marker": "procurementOrganization",
+      "pass": true
+    },
+    {
+      "name": "stockout-positive",
+      "expected": true,
+      "conforms": true,
+      "violations": [],
+      "marker": null,
+      "pass": true
+    },
+    {
+      "name": "stockout-missing-stockoutProduct",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/coherence/stockoutProduct",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent",
+          "constraint": ""
+        }
+      ],
+      "marker": "stockoutProduct",
+      "pass": true
+    },
+    {
+      "name": "stockout-untyped-stockoutProduct",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/coherence/stockoutProduct",
+          "component": "http://www.w3.org/ns/shacl#ClassConstraintComponent",
+          "constraint": ""
+        }
+      ],
+      "marker": "stockoutProduct",
+      "pass": true
+    },
+    {
+      "name": "stockout-missing-stockoutFacility",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/coherence/stockoutFacility",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent",
+          "constraint": ""
+        }
+      ],
+      "marker": "stockoutFacility",
+      "pass": true
+    },
+    {
+      "name": "stockout-untyped-stockoutFacility",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/coherence/stockoutFacility",
+          "component": "http://www.w3.org/ns/shacl#ClassConstraintComponent",
+          "constraint": ""
+        }
+      ],
+      "marker": "stockoutFacility",
+      "pass": true
+    },
+    {
+      "name": "requirement-positive",
+      "expected": true,
+      "conforms": true,
+      "violations": [],
+      "marker": null,
+      "pass": true
+    },
+    {
+      "name": "requirement-missing-requirementSource",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/coherence/requirementSource",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent",
+          "constraint": ""
+        }
+      ],
+      "marker": "requirementSource",
+      "pass": true
+    },
+    {
+      "name": "requirement-untyped-requirementSource",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/coherence/requirementSource",
+          "component": "http://www.w3.org/ns/shacl#ClassConstraintComponent",
+          "constraint": ""
+        }
+      ],
+      "marker": "requirementSource",
+      "pass": true
+    },
+    {
+      "name": "requirement-missing-requirementJurisdiction",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/coherence/requirementJurisdiction",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent",
+          "constraint": ""
+        }
+      ],
+      "marker": "requirementJurisdiction",
+      "pass": true
+    },
+    {
+      "name": "requirement-untyped-requirementJurisdiction",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/coherence/requirementJurisdiction",
+          "component": "http://www.w3.org/ns/shacl#ClassConstraintComponent",
+          "constraint": ""
+        }
+      ],
+      "marker": "requirementJurisdiction",
+      "pass": true
+    },
+    {
+      "name": "capability-logistics-positive",
+      "expected": true,
+      "conforms": true,
+      "violations": [],
+      "marker": null,
+      "pass": true
+    },
+    {
+      "name": "capability-logistics-missing-capabilityRealizedInLogistics",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/coherence/capabilityRealizedInLogistics",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent",
+          "constraint": ""
+        }
+      ],
+      "marker": "capabilityRealizedInLogistics",
+      "pass": true
+    },
+    {
+      "name": "capability-logistics-untyped-capabilityRealizedInLogistics",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/coherence/capabilityRealizedInLogistics",
+          "component": "http://www.w3.org/ns/shacl#ClassConstraintComponent",
+          "constraint": ""
+        }
+      ],
+      "marker": "capabilityRealizedInLogistics",
+      "pass": true
+    },
+    {
+      "name": "digital-logistics-positive",
+      "expected": true,
+      "conforms": true,
+      "violations": [],
+      "marker": null,
+      "pass": true
+    },
+    {
+      "name": "digital-logistics-missing-supportsLogistics",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/coherence/supportsLogistics",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent",
+          "constraint": ""
+        }
+      ],
+      "marker": "supportsLogistics",
+      "pass": true
+    },
+    {
+      "name": "digital-logistics-untyped-supportsLogistics",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/coherence/supportsLogistics",
+          "component": "http://www.w3.org/ns/shacl#ClassConstraintComponent",
+          "constraint": ""
+        }
+      ],
+      "marker": "supportsLogistics",
+      "pass": true
+    },
+    {
+      "name": "BA-outsourced-logistics-service",
+      "expected": true,
+      "conforms": true,
+      "violations": [],
+      "marker": null,
+      "pass": true
+    },
+    {
+      "name": "DS-logistics-provenance",
+      "expected": true,
+      "conforms": true,
+      "violations": [],
+      "marker": null,
+      "pass": true
+    },
+    {
+      "name": "RM-original-positive-replay",
+      "expected": true,
+      "conforms": true,
+      "violations": [],
+      "marker": null,
+      "pass": true
+    },
+    {
+      "name": "PV-original-positive-replay",
+      "expected": true,
+      "conforms": true,
+      "violations": [],
+      "marker": null,
+      "pass": true
+    },
+    {
+      "name": "BA-original-positive-replay",
+      "expected": true,
+      "conforms": true,
+      "violations": [],
+      "marker": null,
+      "pass": true
+    },
+    {
+      "name": "DS-original-positive-replay",
+      "expected": true,
+      "conforms": true,
+      "violations": [],
+      "marker": null,
+      "pass": true
+    }
+  ],
+  "reasoner": [
+    {
+      "name": "local-stockout-does-not-imply-medicine-shortage",
+      "expected_consistent": true,
+      "consistent": true,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "prov_profile": "two conflicting annotation-property declarations removed; raw source retained",
+      "pass": true
+    },
+    {
+      "name": "procurement-does-not-imply-risk-treatment",
+      "expected_consistent": true,
+      "consistent": true,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "prov_profile": "two conflicting annotation-property declarations removed; raw source retained",
+      "pass": true
+    },
+    {
+      "name": "requirement-does-not-imply-authorization",
+      "expected_consistent": true,
+      "consistent": true,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "prov_profile": "two conflicting annotation-property declarations removed; raw source retained",
+      "pass": true
+    },
+    {
+      "name": "logistics-does-not-imply-manufacturing",
+      "expected_consistent": true,
+      "consistent": true,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "prov_profile": "two conflicting annotation-property declarations removed; raw source retained",
+      "pass": true
+    },
+    {
+      "name": "combined-new-positive-fixtures",
+      "expected_consistent": true,
+      "consistent": true,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "prov_profile": "two conflicting annotation-property declarations removed; raw source retained",
+      "pass": true
+    },
+    {
+      "name": "outsourcing-with-no-strategic-partnership-countermodel",
+      "expected_consistent": true,
+      "consistent": true,
+      "unsatisfiable_named_classes": [
+        "c:PartnerOrganizationRole",
+        "c:StrategicPartnershipAgreement"
+      ],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "prov_profile": "two conflicting annotation-property declarations removed; raw source retained",
+      "pass": false
+    },
+    {
+      "name": "digital-transformation-is-not-physical-logistics",
+      "expected_consistent": true,
+      "consistent": true,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "prov_profile": "two conflicting annotation-property declarations removed; raw source retained",
+      "pass": true
+    },
+    {
+      "name": "RM-plan-does-not-require-execution",
+      "expected_consistent": true,
+      "consistent": true,
+      "unsatisfiable_named_classes": [
+        "https://w3id.org/cm-pharme/2.1/RiskTreatmentActivity"
+      ],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "prov_profile": "two conflicting annotation-property declarations removed; raw source retained",
+      "pass": false
+    }
+  ],
+  "queries": [
+    {
+      "name": "logistics-retrievable-fields",
+      "actual": 2,
+      "expected": 2,
+      "pass": true
+    },
+    {
+      "name": "procurement-retrievable-fields",
+      "actual": 2,
+      "expected": 2,
+      "pass": true
+    },
+    {
+      "name": "stockout-retrievable-fields",
+      "actual": 2,
+      "expected": 2,
+      "pass": true
+    },
+    {
+      "name": "requirement-retrievable-fields",
+      "actual": 2,
+      "expected": 2,
+      "pass": true
+    },
+    {
+      "name": "capability-logistics-retrievable-fields",
+      "actual": 1,
+      "expected": 1,
+      "pass": true
+    },
+    {
+      "name": "digital-logistics-retrievable-fields",
+      "actual": 1,
+      "expected": 1,
+      "pass": true
+    },
+    {
+      "name": "BA-service-capability-bearer",
+      "actual": "urn:cmpe-coherence:bearer",
+      "expected": "urn:cmpe-coherence:bearer",
+      "pass": true
+    },
+    {
+      "name": "BA-no-strategic-agreement-asserted",
+      "actual": 0,
+      "expected": 0,
+      "pass": true
+    },
+    {
+      "name": "DS-record-to-logistics-path",
+      "actual": "urn:cmpe-coherence:logistics",
+      "expected": "urn:cmpe-coherence:logistics",
+      "pass": true
+    }
+  ],
+  "admission_pass": 32,
+  "admission_total": 32,
+  "reasoner_pass": 6,
+  "reasoner_total": 8,
+  "query_pass": 9,
+  "query_total": 9,
+  "limits": [
+    "New fixture data are synthetic. No statement of full native/UFO validity.",
+    "Ten optional native relations have pending stereotypes and universal bounds; profile min-counts are conditional data contracts."
+  ]
+}

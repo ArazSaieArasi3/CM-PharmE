@@ -1,0 +1,100 @@
+@prefix b: <https://w3id.org/cm-pharme/experimental/reporting-context/> .
+@prefix c: <https://w3id.org/cm-pharme/2.1/> .
+@prefix d: <https://w3id.org/cm-pharme/experimental/coherence/> .
+@prefix l: <https://w3id.org/cm-pharme/experimental/four-domain/> .
+@prefix r: <https://w3id.org/cm-pharme/experimental/refinement/> .
+@prefix t: <urn:cmpe-coherence:> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+t:contractCarrier a c:SourceRecord ;
+    r:carrierClaim t:contractClaim .
+
+t:digital-logistics a c:ProvenanceActivity ;
+    d:profile "digital-logistics" ;
+    d:supportsLogistics t:DistributionLogisticsActivity .
+
+t:procurement a c:ProcurementActivity ;
+    d:procurementOrganization t:Organization ;
+    d:procurementProduct t:MedicinalProduct ;
+    d:profile "procurement" .
+
+t:requirement a c:RegulatoryRequirement ;
+    d:profile "requirement" ;
+    d:requirementJurisdiction t:RegulatoryJurisdiction ;
+    d:requirementSource t:SourceRecord .
+
+t:stockout a c:StockoutSituation ;
+    d:profile "stockout" ;
+    d:stockoutFacility t:Facility ;
+    d:stockoutProduct t:MedicinalProduct .
+
+t:view a c:BusinessArchitectureView ;
+    l:viewOrganization t:bearer ;
+    l:viewService t:service .
+
+<urn:cmpe-lab:digitalService> a c:ServiceOfferingSpecification ;
+    l:digitalServiceActivity <urn:cmpe-lab:transform> ;
+    l:digitalServiceComponent <urn:cmpe-lab:component> ;
+    l:profile "digital-service" .
+
+<urn:cmpe-lab:record> a c:SourceRecord ;
+    l:profile "digital-record" ;
+    l:recordDigitalActivity <urn:cmpe-lab:transform> .
+
+t:Organization a c:Organization .
+
+t:RegulatoryJurisdiction a c:RegulatoryJurisdiction .
+
+t:SourceRecord a c:SourceRecord .
+
+t:capability-logistics a c:EnterpriseCapability ;
+    c:capabilityBearer t:bearer ;
+    d:capabilityRealizedInLogistics t:DistributionLogisticsActivity ;
+    d:profile "capability-logistics" .
+
+t:contractClaim a b:StructuredClaim ;
+    b:claimOrigin "synthetic" ;
+    b:claimSubject t:bearer ;
+    b:evidencePointer "synthetic:GDP-chapter-7-outsourcing-example" ;
+    b:objectResource t:customer ;
+    b:polarity "positive" ;
+    b:predicateIRI "https://w3id.org/cm-pharme/experimental/coherence/outsourcingCounterparty"^^xsd:anyURI .
+
+t:customer a c:Organization .
+
+t:logistics a c:DistributionLogisticsActivity ;
+    d:logisticsFacility t:Facility ;
+    d:logisticsProduct t:MedicinalProduct ;
+    d:profile "logistics" .
+
+t:product a c:MedicinalProduct .
+
+t:service a c:ServiceOfferingSpecification ;
+    l:serviceCapability t:capability-logistics ;
+    r:serviceProduct t:product .
+
+<urn:cmpe-lab:deployment> a c:SystemDeploymentActivity ;
+    l:atTime "2026-10-01T10:00:00+00:00"^^xsd:dateTime ;
+    l:componentVersion "1.0" ;
+    l:deploymentComponent <urn:cmpe-lab:component> ;
+    l:deploymentOrganization <urn:cmpe-lab:operator> ;
+    l:profile "deployment" .
+
+<urn:cmpe-lab:operator> a c:Organization .
+
+t:DistributionLogisticsActivity a c:DistributionLogisticsActivity .
+
+t:Facility a c:Facility .
+
+<urn:cmpe-lab:component> a c:DigitalInformationSystemComponent .
+
+<urn:cmpe-lab:transform> a c:ProvenanceActivity ;
+    d:profile "digital-logistics" ;
+    d:supportsLogistics t:logistics ;
+    l:atTime "2026-10-02T10:00:00+00:00"^^xsd:dateTime ;
+    l:digitalActivityDeployment <urn:cmpe-lab:deployment> ;
+    l:profile "digital-activity" .
+
+t:MedicinalProduct a c:MedicinalProduct .
+
+t:bearer a c:Organization .
