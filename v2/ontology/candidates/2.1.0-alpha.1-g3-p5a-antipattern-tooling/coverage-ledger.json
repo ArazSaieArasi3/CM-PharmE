@@ -1,0 +1,713 @@
+{
+  "scope": "G3-P5a official engine compatibility audit plus current-candidate bounded triggers; no complete 20-antipattern run and no zero-finding certificate",
+  "model": {
+    "sha256": "264d26d263e5fa25e432dc65dd6b0402bf274958c9d18c32be2d2583634deaca",
+    "elements": 536,
+    "classes_including_datatypes": 144,
+    "binary_relations": 86
+  },
+  "source_audit": {
+    "repository": "https://github.com/nemo-ufes/ontouml-lightweight-editor",
+    "checkout_commit": "42b926f6c2859dc87e49a96b8482eae28d02e7d5",
+    "processor": "br.ufes.inf.nemo.antipattern/src/br/ufes/inf/nemo/antipattern/MultipleModelProcesser.java",
+    "registered_detector_classes": [
+      "AssCycAntipattern",
+      "BinOverAntipattern",
+      "DecIntAntipattern",
+      "DepPhaseAntipattern",
+      "FreeRoleAntipattern",
+      "GSRigAntipattern",
+      "HetCollAntipattern",
+      "HomoFuncAntipattern",
+      "ImpAbsAntipattern",
+      "MixIdenAntipattern",
+      "MixRigAntipattern",
+      "MultiDepAntipattern",
+      "PartOverAntipattern",
+      "RelCompAntipattern",
+      "RelOverAntipattern",
+      "RelRigAntipattern",
+      "RelSpecAntipattern",
+      "RepRelAntipattern",
+      "UndefFormalAntipattern",
+      "UndefPhaseAntipattern",
+      "WholeOverAntipattern"
+    ],
+    "catalogue_code_alias": "MultDep is named MultiDep in archived Java",
+    "extra_registered_detector": "AssCyc (not one of the 20 catalogue items)",
+    "input_contract": ".refontouml XMI read via RefOntoUML.parser.OntoUMLParser(fileName)",
+    "candidate_contract": "flat ontouml-schema 1.0.2 JSON, 536 elements",
+    "conversion_verified": false,
+    "execution_result": "BLOCKED_FORMAT_AND_RUNTIME_COMPATIBILITY",
+    "reason": "Archived batch processor accepts legacy RefOntoUML EMF/XMI files, not ontouml-schema JSON; no semantics-preserving conversion and roundtrip have been validated. Counts from direct execution on the candidate therefore do not exist."
+  },
+  "official_modern_api_probe": {
+    "scope": "Official native parser/schema and public ontouml-js API probe; not an anti-pattern detector run",
+    "model_sha256": "264d26d263e5fa25e432dc65dd6b0402bf274958c9d18c32be2d2583634deaca",
+    "model_elements": 536,
+    "versions": {
+      "node": "v24.19.0",
+      "ontouml_js": "1.0.0",
+      "ontouml_schema": "1.0.2",
+      "ajv": "8.20.0"
+    },
+    "schema_valid": true,
+    "schema_errors": [],
+    "parser": {
+      "type": "Project16",
+      "classes": 144,
+      "id": "cm-pharme-g3-2d-native"
+    },
+    "parser_error": null,
+    "public_exports": 138,
+    "public_detector_like_exports": [],
+    "OntoumlVerification_exported": false,
+    "conclusion": "No full 20-pattern detector is exposed by this installed public ontouml-js API; absence of an export does not prove no other engine exists."
+  },
+  "bounded_comparison": {
+    "baseline_elements": 523,
+    "current_elements": 536,
+    "baseline_and_current_prefilter_counts_equal": true,
+    "changed_count_keys": [],
+    "structural_current": {
+      "ImpAbs_end_count": 10,
+      "RelComp_known_pairs": 0,
+      "RelComp_unknown_cardinality_pairs": 2,
+      "RelOver_potential_relators": 5
+    }
+  },
+  "entries": [
+    {
+      "pattern": "BinOver",
+      "catalogue_url": "https://ontouml.readthedocs.io/en/latest/anti-patterns/BinOver/index.html",
+      "archived_OLED_implementation": "br.ufes.inf.nemo.antipattern/src/br/ufes/inf/nemo/antipattern/binover/BinOverAntipattern.java",
+      "automated_20_pattern_engine": "NOT_EXECUTED_ON_THIS_JSON",
+      "semantic_disposition": "PENDING_HUMAN_REVIEW",
+      "bounded_prefilter": {
+        "probe": "BinOver_definite",
+        "candidate_count": 2,
+        "sample_witnesses": [
+          {
+            "id": "rel-withinCountry",
+            "name": "withinCountry",
+            "stereotype": null,
+            "source": "GeographicFeature",
+            "target": "Country",
+            "source_card": null,
+            "target_card": null,
+            "source_readonly": null,
+            "target_readonly": null,
+            "source_id": "end-withinCountry-source",
+            "target_id": "end-withinCountry-target"
+          },
+          {
+            "id": "rel-withinRegion",
+            "name": "withinRegion",
+            "stereotype": null,
+            "source": "GeographicFeature",
+            "target": "AdministrativeRegion",
+            "source_card": null,
+            "target_card": null,
+            "source_readonly": null,
+            "target_readonly": null,
+            "source_id": "end-withinRegion-source",
+            "target_id": "end-withinRegion-target"
+          }
+        ],
+        "domains_touched_by_probe": [
+          "Spatiotemporal Context"
+        ]
+      }
+    },
+    {
+      "pattern": "DecInt",
+      "catalogue_url": "https://ontouml.readthedocs.io/en/latest/anti-patterns/DecInt/index.html",
+      "archived_OLED_implementation": "br.ufes.inf.nemo.antipattern/src/br/ufes/inf/nemo/antipattern/decint/DecIntAntipattern.java",
+      "automated_20_pattern_engine": "NOT_EXECUTED_ON_THIS_JSON",
+      "semantic_disposition": "PENDING_HUMAN_REVIEW",
+      "bounded_prefilter": {
+        "probe": "DecInt_multiple_concrete_parents",
+        "candidate_count": 0,
+        "sample_witnesses": [],
+        "domains_touched_by_probe": []
+      }
+    },
+    {
+      "pattern": "DepPhase",
+      "catalogue_url": "https://ontouml.readthedocs.io/en/latest/anti-patterns/DepPhase/index.html",
+      "archived_OLED_implementation": "br.ufes.inf.nemo.antipattern/src/br/ufes/inf/nemo/antipattern/depphase/DepPhaseAntipattern.java",
+      "automated_20_pattern_engine": "NOT_EXECUTED_ON_THIS_JSON",
+      "semantic_disposition": "PENDING_HUMAN_REVIEW",
+      "bounded_prefilter": {
+        "probe": "DepPhase",
+        "candidate_count": 0,
+        "sample_witnesses": [],
+        "domains_touched_by_probe": []
+      }
+    },
+    {
+      "pattern": "FreeRole",
+      "catalogue_url": "https://ontouml.readthedocs.io/en/latest/anti-patterns/FreeRole/index.html",
+      "archived_OLED_implementation": "br.ufes.inf.nemo.antipattern/src/br/ufes/inf/nemo/antipattern/freerole/FreeRoleAntipattern.java",
+      "automated_20_pattern_engine": "NOT_EXECUTED_ON_THIS_JSON",
+      "semantic_disposition": "PENDING_HUMAN_REVIEW",
+      "bounded_prefilter": {
+        "probe": "FreeRole_direct_path",
+        "candidate_count": 0,
+        "sample_witnesses": [],
+        "domains_touched_by_probe": []
+      }
+    },
+    {
+      "pattern": "GSRig",
+      "catalogue_url": "https://ontouml.readthedocs.io/en/latest/anti-patterns/GSRig/index.html",
+      "archived_OLED_implementation": "br.ufes.inf.nemo.antipattern/src/br/ufes/inf/nemo/antipattern/GSRig/GSRigAntipattern.java",
+      "automated_20_pattern_engine": "NOT_EXECUTED_ON_THIS_JSON",
+      "semantic_disposition": "PENDING_HUMAN_REVIEW",
+      "bounded_prefilter": {
+        "probe": "GSRig",
+        "candidate_count": 0,
+        "sample_witnesses": [],
+        "domains_touched_by_probe": []
+      }
+    },
+    {
+      "pattern": "HetColl",
+      "catalogue_url": "https://ontouml.readthedocs.io/en/latest/anti-patterns/HetColl/index.html",
+      "archived_OLED_implementation": "br.ufes.inf.nemo.antipattern/src/br/ufes/inf/nemo/antipattern/hetcoll/HetCollAntipattern.java",
+      "automated_20_pattern_engine": "NOT_EXECUTED_ON_THIS_JSON",
+      "semantic_disposition": "PENDING_HUMAN_REVIEW",
+      "bounded_prefilter": {
+        "probe": "meronymic association inventory (necessary condition only)",
+        "candidate_count": null,
+        "underlying_meronymic_relations": 0,
+        "sample_witnesses": [],
+        "domains_touched_by_probe": []
+      }
+    },
+    {
+      "pattern": "HomoFunc",
+      "catalogue_url": "https://ontouml.readthedocs.io/en/latest/anti-patterns/HomoFunc/index.html",
+      "archived_OLED_implementation": "br.ufes.inf.nemo.antipattern/src/br/ufes/inf/nemo/antipattern/homofunc/HomoFuncAntipattern.java",
+      "automated_20_pattern_engine": "NOT_EXECUTED_ON_THIS_JSON",
+      "semantic_disposition": "PENDING_HUMAN_REVIEW",
+      "bounded_prefilter": {
+        "probe": "meronymic association inventory (necessary condition only)",
+        "candidate_count": null,
+        "underlying_meronymic_relations": 0,
+        "sample_witnesses": [],
+        "domains_touched_by_probe": []
+      }
+    },
+    {
+      "pattern": "ImpAbs",
+      "catalogue_url": "https://ontouml.readthedocs.io/en/latest/anti-patterns/ImpAbs/index.html",
+      "archived_OLED_implementation": "br.ufes.inf.nemo.antipattern/src/br/ufes/inf/nemo/antipattern/impabs/ImpAbsAntipattern.java",
+      "automated_20_pattern_engine": "NOT_EXECUTED_ON_THIS_JSON",
+      "semantic_disposition": "PENDING_HUMAN_REVIEW",
+      "bounded_prefilter": {
+        "probe": "ImpAbs",
+        "candidate_count": 10,
+        "sample_witnesses": [
+          {
+            "relation": "assertionAboutProduct",
+            "end": "source",
+            "class": "Assertion",
+            "subtype_count": 4
+          },
+          {
+            "relation": "assertionAboutProduct",
+            "end": "target",
+            "class": "MedicinalProduct",
+            "subtype_count": 10
+          },
+          {
+            "relation": "classificationEntity",
+            "end": "source",
+            "class": "ProductClassificationAssignment",
+            "subtype_count": 3
+          },
+          {
+            "relation": "classificationEntry",
+            "end": "source",
+            "class": "ProductClassificationAssignment",
+            "subtype_count": 3
+          },
+          {
+            "relation": "observationAboutPresentation",
+            "end": "source",
+            "class": "ObservationResult",
+            "subtype_count": 7
+          }
+        ],
+        "domains_touched_by_probe": [
+          "Evidence Traceability",
+          "Pharmaceutical Product"
+        ]
+      }
+    },
+    {
+      "pattern": "MixIden",
+      "catalogue_url": "https://ontouml.readthedocs.io/en/latest/anti-patterns/MixIden/index.html",
+      "archived_OLED_implementation": "br.ufes.inf.nemo.antipattern/src/br/ufes/inf/nemo/antipattern/mixiden/MixIdenAntipattern.java",
+      "automated_20_pattern_engine": "NOT_EXECUTED_ON_THIS_JSON",
+      "semantic_disposition": "PENDING_HUMAN_REVIEW",
+      "bounded_prefilter": {
+        "probe": "MixIden_precondition",
+        "candidate_count": 9,
+        "sample_witnesses": [
+          {
+            "non_sortal": "AuthorizedParty",
+            "children": [
+              "AuthorizedFacilityRole",
+              "AuthorizedOrganizationRole"
+            ]
+          },
+          {
+            "non_sortal": "ClassifiedEntity",
+            "children": [
+              "ClassifiedMedicinalProductRole",
+              "ClassifiedPharmaceuticalSubstanceRole"
+            ]
+          },
+          {
+            "non_sortal": "DependentEntity",
+            "children": [
+              "DependentFacilityRole",
+              "DependentMedicinalProductRole",
+              "DependentOrganizationRole"
+            ]
+          },
+          {
+            "non_sortal": "EcosystemParticipant",
+            "children": [
+              "DistributionSiteRole",
+              "ImporterRole",
+              "ManufacturerRole",
+              "ManufacturingSiteRole",
+              "PayerFundingOrganizationRole",
+              "ProductResponsibleLabelerRole",
+              "RegulatoryAuthorityRole",
+              "ThirdPartyLogisticsProviderRole",
+              "WholesaleDistributorRole"
+            ]
+          },
+          {
+            "non_sortal": "EvidenceItem",
+            "children": [
+              "EvidenceObservationResultRole",
+              "EvidenceSourceRecordRole"
+            ]
+          }
+        ],
+        "domains_touched_by_probe": [
+          "Ecosystem Organization",
+          "Entity Identity",
+          "Evidence Traceability",
+          "Pharmaceutical Product",
+          "Regulatory Governance",
+          "Regulatory Policy",
+          "Supply Resilience"
+        ]
+      }
+    },
+    {
+      "pattern": "MixRig",
+      "catalogue_url": "https://ontouml.readthedocs.io/en/latest/anti-patterns/MixRig/index.html",
+      "archived_OLED_implementation": "br.ufes.inf.nemo.antipattern/src/br/ufes/inf/nemo/antipattern/mixrig/MixRigAntipattern.java",
+      "automated_20_pattern_engine": "NOT_EXECUTED_ON_THIS_JSON",
+      "semantic_disposition": "PENDING_HUMAN_REVIEW",
+      "bounded_prefilter": {
+        "probe": "MixRig",
+        "candidate_count": 0,
+        "sample_witnesses": [],
+        "domains_touched_by_probe": []
+      }
+    },
+    {
+      "pattern": "MultDep",
+      "catalogue_url": "https://ontouml.readthedocs.io/en/latest/anti-patterns/MultDep/index.html",
+      "archived_OLED_implementation": "br.ufes.inf.nemo.antipattern/src/br/ufes/inf/nemo/antipattern/multidep/MultiDepAntipattern.java",
+      "automated_20_pattern_engine": "NOT_EXECUTED_ON_THIS_JSON",
+      "semantic_disposition": "PENDING_HUMAN_REVIEW",
+      "bounded_prefilter": {
+        "probe": "MultDep_direct",
+        "candidate_count": 0,
+        "sample_witnesses": [],
+        "domains_touched_by_probe": []
+      }
+    },
+    {
+      "pattern": "PartOver",
+      "catalogue_url": "https://ontouml.readthedocs.io/en/latest/anti-patterns/PartOver/index.html",
+      "archived_OLED_implementation": "br.ufes.inf.nemo.antipattern/src/br/ufes/inf/nemo/antipattern/partover/PartOverAntipattern.java",
+      "automated_20_pattern_engine": "NOT_EXECUTED_ON_THIS_JSON",
+      "semantic_disposition": "PENDING_HUMAN_REVIEW",
+      "bounded_prefilter": {
+        "probe": "meronymic association inventory (necessary condition only)",
+        "candidate_count": null,
+        "underlying_meronymic_relations": 0,
+        "sample_witnesses": [],
+        "domains_touched_by_probe": []
+      }
+    },
+    {
+      "pattern": "RelComp",
+      "catalogue_url": "https://ontouml.readthedocs.io/en/latest/anti-patterns/RelComp/index.html",
+      "archived_OLED_implementation": "br.ufes.inf.nemo.antipattern/src/br/ufes/inf/nemo/antipattern/relcomp/RelCompAntipattern.java",
+      "automated_20_pattern_engine": "NOT_EXECUTED_ON_THIS_JSON",
+      "semantic_disposition": "PENDING_HUMAN_REVIEW",
+      "bounded_prefilter": {
+        "probe": "bounded A/B association-composition precondition",
+        "candidate_count": 0,
+        "unknown_cardinality_structural_pairs": 2,
+        "sample_witnesses": [
+          {
+            "A": "withinCountry",
+            "A_source": "GeographicFeature",
+            "A_target": "Country",
+            "A_target_card": null,
+            "B": "withinRegion",
+            "B_source": "GeographicFeature",
+            "B_target": "AdministrativeRegion",
+            "same_side": [
+              "source"
+            ]
+          },
+          {
+            "A": "withinRegion",
+            "A_source": "GeographicFeature",
+            "A_target": "AdministrativeRegion",
+            "A_target_card": null,
+            "B": "withinCountry",
+            "B_source": "GeographicFeature",
+            "B_target": "Country",
+            "same_side": [
+              "source"
+            ]
+          }
+        ],
+        "domains_touched_by_probe": [
+          "Spatiotemporal Context"
+        ]
+      }
+    },
+    {
+      "pattern": "RelOver",
+      "catalogue_url": "https://ontouml.readthedocs.io/en/latest/anti-patterns/RelOver/index.html",
+      "archived_OLED_implementation": "br.ufes.inf.nemo.antipattern/src/br/ufes/inf/nemo/antipattern/relover/RelOverAntipattern.java",
+      "automated_20_pattern_engine": "NOT_EXECUTED_ON_THIS_JSON",
+      "semantic_disposition": "PENDING_HUMAN_REVIEW",
+      "bounded_prefilter": {
+        "probe": "potentially overlapping relator mediation pairs",
+        "candidate_count": 5,
+        "unknown_upper_sum_relators": 1,
+        "sample_witnesses": [
+          {
+            "relator": "AlternativeMedicineAssignment",
+            "mediations": [
+              {
+                "name": "alternativeForProduct",
+                "mediated_type": "ReferenceProductRole",
+                "mediated_end_card": "1"
+              },
+              {
+                "name": "alternativeProduct",
+                "mediated_type": "AlternativeMedicinalProductRole",
+                "mediated_end_card": "1"
+              }
+            ],
+            "overlapping_pairs": [
+              {
+                "left": "alternativeForProduct",
+                "left_type": "ReferenceProductRole",
+                "right": "alternativeProduct",
+                "right_type": "AlternativeMedicinalProductRole",
+                "basis": "possible_shared_ancestor_without_declared_disjointness"
+              }
+            ],
+            "known_upper_sum": 2,
+            "unknown_upper_mediations": [],
+            "upper_sum_gt_two": false,
+            "overlap_status": "potential only; individual co-instantiation and disjointness need semantic review"
+          },
+          {
+            "relator": "EvidenceSupport",
+            "mediations": [
+              {
+                "name": "evidenceAssertion",
+                "mediated_type": "SupportedAssertionRole",
+                "mediated_end_card": "1"
+              },
+              {
+                "name": "evidenceItem",
+                "mediated_type": "EvidenceItem",
+                "mediated_end_card": "1"
+              },
+              {
+                "name": "evidenceRecord",
+                "mediated_type": "EvidenceSourceRecordRole",
+                "mediated_end_card": null
+              }
+            ],
+            "overlapping_pairs": [
+              {
+                "left": "evidenceItem",
+                "left_type": "EvidenceItem",
+                "right": "evidenceRecord",
+                "right_type": "EvidenceSourceRecordRole",
+                "basis": "same_or_subtype"
+              }
+            ],
+            "known_upper_sum": 2,
+            "unknown_upper_mediations": [
+              "evidenceRecord"
+            ],
+            "upper_sum_gt_two": null,
+            "overlap_status": "potential only; individual co-instantiation and disjointness need semantic review"
+          },
+          {
+            "relator": "LogisticsServiceCommitment",
+            "mediations": [
+              {
+                "name": "logisticsServiceCommitmentHolder",
+                "mediated_type": "ThirdPartyLogisticsProviderRole",
+                "mediated_end_card": "1"
+              },
+              {
+                "name": "logisticsServiceCommitmentCounterpart",
+                "mediated_type": "CommissioningLogisticsClientRole",
+                "mediated_end_card": "1"
+              }
+            ],
+            "overlapping_pairs": [
+              {
+                "left": "logisticsServiceCommitmentHolder",
+                "left_type": "ThirdPartyLogisticsProviderRole",
+                "right": "logisticsServiceCommitmentCounterpart",
+                "right_type": "CommissioningLogisticsClientRole",
+                "basis": "possible_shared_ancestor_without_declared_disjointness"
+              }
+            ],
+            "known_upper_sum": 2,
+            "unknown_upper_mediations": [],
+            "upper_sum_gt_two": false,
+            "overlap_status": "potential only; individual co-instantiation and disjointness need semantic review"
+          },
+          {
+            "relator": "RegulatoryMandate",
+            "mediations": [
+              {
+                "name": "regulatoryMandateHolder",
+                "mediated_type": "RegulatoryAuthorityRole",
+                "mediated_end_card": "1"
+              },
+              {
+                "name": "regulatoryMandateCounterpart",
+                "mediated_type": "MandateConferringOrganizationRole",
+                "mediated_end_card": "1"
+              }
+            ],
+            "overlapping_pairs": [
+              {
+                "left": "regulatoryMandateHolder",
+                "left_type": "RegulatoryAuthorityRole",
+                "right": "regulatoryMandateCounterpart",
+                "right_type": "MandateConferringOrganizationRole",
+                "basis": "possible_shared_ancestor_without_declared_disjointness"
+              }
+            ],
+            "known_upper_sum": 2,
+            "unknown_upper_mediations": [],
+            "upper_sum_gt_two": false,
+            "overlap_status": "potential only; individual co-instantiation and disjointness need semantic review"
+          },
+          {
+            "relator": "InstitutionalFundingCommitment",
+            "mediations": [
+              {
+                "name": "institutionalFundingCommitmentHolder",
+                "mediated_type": "PayerFundingOrganizationRole",
+                "mediated_end_card": "1"
+              },
+              {
+                "name": "institutionalFundingCommitmentCounterpart",
+                "mediated_type": "InstitutionallyFundedOrganizationRole",
+                "mediated_end_card": "1"
+              }
+            ],
+            "overlapping_pairs": [
+              {
+                "left": "institutionalFundingCommitmentHolder",
+                "left_type": "PayerFundingOrganizationRole",
+                "right": "institutionalFundingCommitmentCounterpart",
+                "right_type": "InstitutionallyFundedOrganizationRole",
+                "basis": "possible_shared_ancestor_without_declared_disjointness"
+              }
+            ],
+            "known_upper_sum": 2,
+            "unknown_upper_mediations": [],
+            "upper_sum_gt_two": false,
+            "overlap_status": "potential only; individual co-instantiation and disjointness need semantic review"
+          }
+        ],
+        "domains_touched_by_probe": [
+          "Evidence Traceability",
+          "Market Access",
+          "Regulatory Policy",
+          "Supply Operations",
+          "Supply Resilience"
+        ]
+      }
+    },
+    {
+      "pattern": "RelRig",
+      "catalogue_url": "https://ontouml.readthedocs.io/en/latest/anti-patterns/RelRig/index.html",
+      "archived_OLED_implementation": "br.ufes.inf.nemo.antipattern/src/br/ufes/inf/nemo/antipattern/relrig/RelRigAntipattern.java",
+      "automated_20_pattern_engine": "NOT_EXECUTED_ON_THIS_JSON",
+      "semantic_disposition": "PENDING_HUMAN_REVIEW",
+      "bounded_prefilter": {
+        "probe": "RelRig_rigid_endpoint",
+        "candidate_count": 0,
+        "sample_witnesses": [],
+        "domains_touched_by_probe": []
+      }
+    },
+    {
+      "pattern": "RelSpec",
+      "catalogue_url": "https://ontouml.readthedocs.io/en/latest/anti-patterns/RelSpec/index.html",
+      "archived_OLED_implementation": "br.ufes.inf.nemo.antipattern/src/br/ufes/inf/nemo/antipattern/relspec/RelSpecAntipattern.java",
+      "automated_20_pattern_engine": "NOT_EXECUTED_ON_THIS_JSON",
+      "semantic_disposition": "PENDING_HUMAN_REVIEW",
+      "bounded_prefilter": {
+        "probe": "RelSpec_simple",
+        "candidate_count": 3,
+        "sample_witnesses": [
+          [
+            "classificationEntity",
+            "contextClassificationProduct"
+          ],
+          [
+            "classificationEntry",
+            "contextClassificationEntry"
+          ],
+          [
+            "evidenceItem",
+            "evidenceRecord"
+          ]
+        ],
+        "domains_touched_by_probe": [
+          "Evidence Traceability",
+          "Pharmaceutical Product",
+          "Supply Resilience"
+        ]
+      }
+    },
+    {
+      "pattern": "RepRel",
+      "catalogue_url": "https://ontouml.readthedocs.io/en/latest/anti-patterns/RepRel/index.html",
+      "archived_OLED_implementation": "br.ufes.inf.nemo.antipattern/src/br/ufes/inf/nemo/antipattern/reprel/RepRelAntipattern.java",
+      "automated_20_pattern_engine": "NOT_EXECUTED_ON_THIS_JSON",
+      "semantic_disposition": "PENDING_HUMAN_REVIEW",
+      "bounded_prefilter": {
+        "probe": "RepRel_direct",
+        "candidate_count": 19,
+        "sample_witnesses": [
+          {
+            "relator": "AlternativeMedicineAssignment",
+            "mediations": [
+              "alternativeForProduct",
+              "alternativeProduct"
+            ]
+          },
+          {
+            "relator": "EstablishmentRegistration",
+            "mediations": [
+              "registrationAuthority",
+              "registrationEntity"
+            ]
+          },
+          {
+            "relator": "EvidenceSupport",
+            "mediations": [
+              "evidenceAssertion",
+              "evidenceItem"
+            ]
+          },
+          {
+            "relator": "FacilityOperation",
+            "mediations": [
+              "operationFacility",
+              "operationOrganization"
+            ]
+          },
+          {
+            "relator": "IdentifierAssignment",
+            "mediations": [
+              "identifierEntity",
+              "identifierScheme"
+            ]
+          }
+        ],
+        "domains_touched_by_probe": [
+          "Entity Identity",
+          "Evidence Traceability",
+          "Facility Operations",
+          "Market Access",
+          "Pharmaceutical Product",
+          "Regulatory Governance",
+          "Regulatory Policy",
+          "Supply Operations",
+          "Supply Resilience"
+        ]
+      }
+    },
+    {
+      "pattern": "UndefFormal",
+      "catalogue_url": "https://ontouml.readthedocs.io/en/latest/anti-patterns/UndefFormal/index.html",
+      "archived_OLED_implementation": "br.ufes.inf.nemo.antipattern/src/br/ufes/inf/nemo/antipattern/undefformal/UndefFormalAntipattern.java",
+      "automated_20_pattern_engine": "NOT_EXECUTED_ON_THIS_JSON",
+      "semantic_disposition": "PENDING_HUMAN_REVIEW",
+      "bounded_prefilter": {
+        "probe": "UndefFormal",
+        "candidate_count": 0,
+        "sample_witnesses": [],
+        "domains_touched_by_probe": []
+      }
+    },
+    {
+      "pattern": "UndefPhase",
+      "catalogue_url": "https://ontouml.readthedocs.io/en/latest/anti-patterns/UndefPhase/index.html",
+      "archived_OLED_implementation": "br.ufes.inf.nemo.antipattern/src/br/ufes/inf/nemo/antipattern/undefphase/UndefPhaseAntipattern.java",
+      "automated_20_pattern_engine": "NOT_EXECUTED_ON_THIS_JSON",
+      "semantic_disposition": "PENDING_HUMAN_REVIEW",
+      "bounded_prefilter": {
+        "probe": "UndefPhase",
+        "candidate_count": 0,
+        "sample_witnesses": [],
+        "domains_touched_by_probe": []
+      }
+    },
+    {
+      "pattern": "WholeOver",
+      "catalogue_url": "https://ontouml.readthedocs.io/en/latest/anti-patterns/WholeOver/index.html",
+      "archived_OLED_implementation": "br.ufes.inf.nemo.antipattern/src/br/ufes/inf/nemo/antipattern/wholeover/WholeOverAntipattern.java",
+      "automated_20_pattern_engine": "NOT_EXECUTED_ON_THIS_JSON",
+      "semantic_disposition": "PENDING_HUMAN_REVIEW",
+      "bounded_prefilter": {
+        "probe": "meronymic association inventory (necessary condition only)",
+        "candidate_count": null,
+        "underlying_meronymic_relations": 0,
+        "sample_witnesses": [],
+        "domains_touched_by_probe": []
+      }
+    }
+  ],
+  "full_20_engine_executed": false,
+  "all_patterns_cleared": false,
+  "limitations": [
+    "A zero bounded trigger count only means this specific necessary-condition probe found no witness, not that the anti-pattern is absent.",
+    "The editorial domain allocations for 60 candidate roles and relators remain pending author review.",
+    "Findings across pattern families overlap; counts are not summed into an ontology quality score."
+  ]
+}
