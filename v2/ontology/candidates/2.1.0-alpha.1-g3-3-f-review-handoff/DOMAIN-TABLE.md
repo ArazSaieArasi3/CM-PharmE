@@ -1,0 +1,23 @@
+# 2.1 candidate — domains and concepts
+
+🟨 marks a named-class isolate; isolated titles appear first in each domain. This is the active 144-element candidate including six datatypes. The 60 added elements have provisional primary-domain allocations awaiting author review.
+
+| Domain | Concepts |
+|---|---|
+| Ecosystem Organization | Ecosystem Participant, Importer, Manufacturer, Organization, Product Responsible Organization, Regulatory Authority, Third-Party Logistics Provider, Wholesale Distributor |
+| Facility Operations | Distribution Site, Facility, Facility Operation, Manufacturing Site, Operated Facility Role, Operating Organization Role |
+| Regulatory Governance | Authorized Facility Role, Authorized Organization Role, Authorized Party, Authorizing Authority Role, Establishment Registration, Registered Facility Role, Registered Organization Role, Registered Party, Registering Authority Role, Regulatory Authorization, Regulatory Jurisdiction |
+| Pharmaceutical Product | Applied Classification Entry Role, Classification Entry, Classified Entity, Classified Medicinal Product Role, Classified Pharmaceutical Substance Role, Dosage Form Specification, Listed Presentation Role, Listing Responsible Organization Role, Market Listing, Medicinal Product, Medicinal Product Presentation, Package Configuration, Pharmaceutical Substance, Product Classification Assignment, Product Classification Scheme, Product Label Commitment Organization Role, Product Label Responsibility, Responsibility Subject Product Role, Strength |
+| Supply Operations | 🟨 **Manufacturing Activity**, 🟨 **Pharmaceutical Logistics Activity**, 🟨 **Supply Capacity**, Assigning Distribution Site Use Organization Role, Assigning Manufacturing Site Use Organization Role, Commissioning Logistics Client Role, Distribution Site Use, Import Responsibility, Import Responsibility Subject Role, Logistics Service Commitment, Manufacturing Responsibility, Manufacturing Responsibility Subject Role, Manufacturing Site Use, Medicine Shortage Situation, Wholesale Responsibility, Wholesale Responsibility Subject Role |
+| Ecosystem Observation | Availability Observation Result, Demand Observation Result, Supply Capacity Observation Result |
+| Spatiotemporal Context | Address, Administrative Region, Country, Geographic Feature, Geospatial Position, Reporting Period, Time Interval |
+| Evidence Traceability | Assertion, Data Quality Finding, Data Source, Dataset, Dataset Release, Evidence Item, Evidence Observation Result Role, Evidence Source Record Role, Evidence Support, Mapping Assertion, Measure Value, Observation Activity, Observation Result, Provenance Activity, Source Record, Supported Assertion Role |
+| Entity Identity | Entity Match Assertion, Identified Entity, Identified Facility Role, Identified Geographic Feature Role, Identified Medicinal Product Presentation Role, Identified Medicinal Product Role, Identified Organization Role, Identified Pharmaceutical Substance Role, Identifier Assignment, Identifier Scheme, Identifier Value, Match Confidence, Used Identifier Scheme Role |
+| Regulatory Policy | 🟨 **Regulatory Requirement**, Governed Entity, Governed Facility Role, Governed Organization Role, Mandate Conferring Organization Role, Oversight Authority Role, Regulatory Mandate, Regulatory Oversight |
+| Supply Resilience | 🟨 **Procurement Activity**, 🟨 **Stockout Situation**, Alternative Medicinal Product, Alternative Medicinal Product Assignment, Contextual Medicine Classification Assignment, Critical Medicine Classification Assignment, Dependent Entity, Dependent Facility Role, Dependent Medicinal Product Role, Dependent Organization Role, Disruption Event, Essential Medicine Classification Assignment, Inventory Observation Result, Lead Time Observation Result, Provider Entity, Provider Facility Role, Provider Medicinal Product Role, Provider Organization Role, Reference Product Role, Supply Dependency |
+| Market Access | Diagnosis Classification Reference, Healthcare Financing Organization, Institutional Funding Commitment, Institutionally Funded Organization Role, Reimbursement and Utilization Observation Result |
+| Risk Management | 🟨 **Risk Treatment Activity**, 🟨 **Risk Treatment Plan**, Risk Assessment Activity |
+| Pharmacovigilance | 🟨 **Adverse Event Reporting Activity**, 🟨 **Pharmacovigilance Requirement**, 🟨 **Post-Market Surveillance Activity** |
+| Business Architecture | 🟨 **Business Architecture View**, 🟨 **Service Offering Specification**, Enterprise Capability, Partner Organization Role, Strategic Partnership Agreement |
+| Digital Systems | 🟨 **Digital System Component** |
+| Clinical Care | — (deferred S-05) |
