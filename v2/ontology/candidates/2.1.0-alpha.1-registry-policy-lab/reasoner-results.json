@@ -1,0 +1,162 @@
+{
+  "cases": [
+    {
+      "name": "baseline-tbox-coherent",
+      "proposed_disjointness": false,
+      "requirements": [],
+      "expected_consistent": true,
+      "actual_consistent": true,
+      "unsatisfiable_named_classes": [],
+      "fixture": "reasoner-fixtures/baseline-tbox-coherent.ttl",
+      "pass": true
+    },
+    {
+      "name": "proposed-tbox-coherent",
+      "proposed_disjointness": true,
+      "requirements": [],
+      "expected_consistent": true,
+      "actual_consistent": true,
+      "unsatisfiable_named_classes": [],
+      "fixture": "reasoner-fixtures/proposed-tbox-coherent.ttl",
+      "pass": true
+    },
+    {
+      "name": "listing-fact-not-authorization-countermodel",
+      "proposed_disjointness": true,
+      "requirements": [
+        "B2-RG-03"
+      ],
+      "expected_consistent": true,
+      "actual_consistent": true,
+      "unsatisfiable_named_classes": [],
+      "fixture": "reasoner-fixtures/listing-fact-not-authorization-countermodel.ttl",
+      "pass": true
+    },
+    {
+      "name": "potential-claim-not-actual-situation-countermodel",
+      "proposed_disjointness": true,
+      "requirements": [
+        "B2-RP-02"
+      ],
+      "expected_consistent": true,
+      "actual_consistent": true,
+      "unsatisfiable_named_classes": [],
+      "fixture": "reasoner-fixtures/potential-claim-not-actual-situation-countermodel.ttl",
+      "pass": true
+    },
+    {
+      "name": "record-activity-alias-baseline",
+      "proposed_disjointness": false,
+      "requirements": [
+        "B2-DS-07"
+      ],
+      "expected_consistent": true,
+      "actual_consistent": true,
+      "unsatisfiable_named_classes": [],
+      "fixture": "reasoner-fixtures/record-activity-alias-baseline.ttl",
+      "pass": true
+    },
+    {
+      "name": "record-activity-alias-proposal",
+      "proposed_disjointness": true,
+      "requirements": [
+        "B2-DS-07"
+      ],
+      "expected_consistent": false,
+      "actual_consistent": false,
+      "unsatisfiable_named_classes": [],
+      "fixture": "reasoner-fixtures/record-activity-alias-proposal.ttl",
+      "pass": true
+    },
+    {
+      "name": "claim-situation-collision-baseline",
+      "proposed_disjointness": false,
+      "requirements": [
+        "B2-RP-02"
+      ],
+      "expected_consistent": true,
+      "actual_consistent": true,
+      "unsatisfiable_named_classes": [],
+      "fixture": "reasoner-fixtures/claim-situation-collision-baseline.ttl",
+      "pass": true
+    },
+    {
+      "name": "claim-situation-collision-proposal",
+      "proposed_disjointness": true,
+      "requirements": [
+        "B2-RP-02"
+      ],
+      "expected_consistent": false,
+      "actual_consistent": false,
+      "unsatisfiable_named_classes": [],
+      "fixture": "reasoner-fixtures/claim-situation-collision-proposal.ttl",
+      "pass": true
+    },
+    {
+      "name": "revision-with-explicit-distinct-versions",
+      "proposed_disjointness": true,
+      "requirements": [
+        "B2-DS-10"
+      ],
+      "expected_consistent": true,
+      "actual_consistent": true,
+      "unsatisfiable_named_classes": [],
+      "fixture": "reasoner-fixtures/revision-with-explicit-distinct-versions.ttl",
+      "pass": true
+    },
+    {
+      "name": "closeMatch-does-not-entail-PROV-Entity",
+      "proposed_disjointness": false,
+      "requirements": [
+        "B2-DS-07",
+        "B2-DS-08",
+        "B2-DS-09",
+        "B2-DS-10"
+      ],
+      "expected_consistent": true,
+      "actual_consistent": true,
+      "unsatisfiable_named_classes": [],
+      "fixture": "reasoner-fixtures/closeMatch-does-not-entail-PROV-Entity.ttl",
+      "pass": true
+    },
+    {
+      "name": "registration-fact-not-authorization-countermodel",
+      "proposed_disjointness": true,
+      "requirements": [
+        "B2-RG-02"
+      ],
+      "expected_consistent": true,
+      "actual_consistent": true,
+      "unsatisfiable_named_classes": [],
+      "fixture": "reasoner-fixtures/registration-fact-not-authorization-countermodel.ttl",
+      "pass": true
+    },
+    {
+      "name": "source-record-not-authorization-countermodel",
+      "proposed_disjointness": true,
+      "requirements": [
+        "B2-RG-02",
+        "B2-RG-03"
+      ],
+      "expected_consistent": true,
+      "actual_consistent": true,
+      "unsatisfiable_named_classes": [],
+      "fixture": "reasoner-fixtures/source-record-not-authorization-countermodel.ttl",
+      "pass": true
+    },
+    {
+      "name": "combined-positive-witness",
+      "proposed_disjointness": true,
+      "requirements": [],
+      "expected_consistent": true,
+      "actual_consistent": true,
+      "unsatisfiable_named_classes": [],
+      "fixture": "reasoner-fixtures/combined-positive-witness.ttl",
+      "pass": true
+    }
+  ],
+  "pass": 13,
+  "total": 13,
+  "scope": "Named-individual countermodels and two proposed disjointness axioms; no full OntoUML/PROV/legal applicability proof.",
+  "product_approval_limit": "Registration/listing facts need not be RegulatoryAuthorization instances. A complete medicinal-product approval model is still absent, so these cases do not prove all product-approval semantics."
+}

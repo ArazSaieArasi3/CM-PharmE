@@ -1,0 +1,631 @@
+{
+  "cases": [
+    {
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/RM-1-positive.ttl",
+      "expected": true,
+      "actual": true,
+      "marker": null,
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/PV-1-positive.ttl",
+      "expected": true,
+      "actual": true,
+      "marker": null,
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/BA-1-positive.ttl",
+      "expected": true,
+      "actual": true,
+      "marker": null,
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/DS-1-positive.ttl",
+      "expected": true,
+      "actual": true,
+      "marker": null,
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/RM-2-boundary.ttl",
+      "expected": true,
+      "actual": true,
+      "marker": null,
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/PV-2-boundary.ttl",
+      "expected": true,
+      "actual": true,
+      "marker": null,
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/BA-2-boundary.ttl",
+      "expected": true,
+      "actual": true,
+      "marker": null,
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/DS-2-boundary.ttl",
+      "expected": true,
+      "actual": true,
+      "marker": null,
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/RM-3-missing-scenario-topic.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "scenarioProduct",
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/RM-3-missing-evidence.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "citesSourceRecord",
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/RM-3-dangling-plan-result.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "planRiskResult",
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/RM-3-result-is-assessment.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "distinct-RiskAssessmentActivity",
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/RM-3-missing-review-predecessor.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "reviewPriorResult",
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/RM-3-backdated-revision.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "review-time-order",
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/RM-3-dangling-executed-plan.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "implementsRiskPlan",
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/PV-3-missing-target.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "signal-target-required",
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/PV-3-missing-signal-source.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "citesSourceRecord",
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/PV-3-dangling-signal.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "pvResultSignal",
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/PV-3-missing-result-time.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "atTime",
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/PV-3-missing-jurisdiction.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "pvRequirementJurisdiction",
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/PV-3-reporting-is-record.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "distinct-AdverseEventReportingActivity",
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/PV-3-signal-is-own-result.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "signal-result-distinct",
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/PV-3-signal-result-alias.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "signal-result-distinct",
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/PV-3-result-assessment-target-disagreement.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "signal-result-agreement",
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/BA-3-missing-capability-bearer.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "capabilityBearer",
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/BA-3-service-without-capability.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "serviceCapability",
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/BA-3-view-is-organization.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "distinct-BusinessArchitectureView",
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/BA-3-untyped-view-reference.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "viewOrganization",
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/BA-3-one-partner-only.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "partnershipParticipant",
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/BA-3-known-partner-aliases.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "partners-not-known-aliases",
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/DS-3-missing-version.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "componentVersion",
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/DS-3-missing-generating-activity.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "recordDigitalActivity",
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/DS-3-record-is-component.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "distinct-SourceRecord",
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/DS-3-missing-deployment-time.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "atTime",
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/DS-3-deployment-after-use.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "deployment-before-use",
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/DS-3-service-without-supported-activity.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "digitalServiceActivity",
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/ALL-1-combined-domains.ttl",
+      "expected": true,
+      "actual": true,
+      "marker": null,
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/REG-1-typed-capacity-preserved.ttl",
+      "expected": true,
+      "actual": true,
+      "marker": null,
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/REG-3-bearer-free-capacity-rejected.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": null,
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-RM-CONTEXT-positive.ttl",
+      "expected": true,
+      "actual": true,
+      "marker": null,
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-PV-CARRIER-positive.ttl",
+      "expected": true,
+      "actual": true,
+      "marker": null,
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-PV-ACTOR-positive.ttl",
+      "expected": true,
+      "actual": true,
+      "marker": null,
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-BA-SERVICE-positive.ttl",
+      "expected": true,
+      "actual": true,
+      "marker": null,
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-BA-COMMITMENT-positive.ttl",
+      "expected": true,
+      "actual": true,
+      "marker": null,
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-DS-PHARMA-positive.ttl",
+      "expected": true,
+      "actual": true,
+      "marker": null,
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-DS-RESPONSIBILITY-positive.ttl",
+      "expected": true,
+      "actual": true,
+      "marker": null,
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-PV-SURVEILLANCE-positive.ttl",
+      "expected": true,
+      "actual": true,
+      "marker": null,
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-RM-CONTEXT-boundary.ttl",
+      "expected": true,
+      "actual": true,
+      "marker": null,
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-PV-CARRIER-boundary.ttl",
+      "expected": true,
+      "actual": true,
+      "marker": null,
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-PV-ACTOR-boundary.ttl",
+      "expected": true,
+      "actual": true,
+      "marker": null,
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-BA-SERVICE-boundary.ttl",
+      "expected": true,
+      "actual": true,
+      "marker": null,
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-BA-COMMITMENT-boundary.ttl",
+      "expected": true,
+      "actual": true,
+      "marker": null,
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-DS-PHARMA-boundary.ttl",
+      "expected": true,
+      "actual": true,
+      "marker": null,
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-DS-RESPONSIBILITY-boundary.ttl",
+      "expected": true,
+      "actual": true,
+      "marker": null,
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-PV-SURVEILLANCE-boundary.ttl",
+      "expected": true,
+      "actual": true,
+      "marker": null,
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-RM-CONTEXT-dependency-boundary.ttl",
+      "expected": true,
+      "actual": true,
+      "marker": null,
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-RM-CONTEXT-missing-context.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "scenarioProduct-or-context-required",
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-RM-CONTEXT-untyped-facility.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "scenarioFacility",
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-PV-CARRIER-missing-claim.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "carrierClaim",
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-PV-CARRIER-missing-claim-content.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "carrierClaim",
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-PV-CARRIER-carrier-as-claim.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "carrier-not-claim",
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-PV-ACTOR-missing-actor.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "assessmentOrganization",
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-PV-ACTOR-untyped-actor.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "assessmentOrganization",
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-BA-SERVICE-missing-pharma-context.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "pharma-service-context",
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-BA-SERVICE-untyped-product.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "serviceProduct",
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-BA-COMMITMENT-missing-commitment.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "agreementCommitment",
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-BA-COMMITMENT-missing-source-evidence.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "commitment-evidence-required",
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-BA-COMMITMENT-outside-actor.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "commitment-participant-agreement",
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-DS-PHARMA-missing-manufacturing.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "supportsManufacturing",
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-DS-PHARMA-missing-manufactured-product.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "manufacturingProduct",
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-DS-PHARMA-service-component-disagreement.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "service-component-agreement",
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-DS-RESPONSIBILITY-missing-responsibility.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "activityResponsibleOrganization",
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-DS-RESPONSIBILITY-untyped-responsible-actor.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "activityResponsibleOrganization",
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-PV-SURVEILLANCE-missing-source.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "surveillanceSource",
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-PV-SURVEILLANCE-untyped-source.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "surveillanceSource",
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/COMBINED-all-refinements.ttl",
+      "expected": true,
+      "actual": true,
+      "marker": null,
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-content-event-policy/fixtures/untagged-distinct-result.ttl",
+      "expected": true,
+      "actual": true,
+      "marker": null,
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-content-event-policy/fixtures/untagged-self.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": null,
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-content-event-policy/fixtures/direct-alias.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": null,
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-content-event-policy/fixtures/reverse-alias.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": null,
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-content-event-policy/fixtures/mixed-three-link-alias.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": null,
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-content-event-policy/fixtures/unrelated-alias.ttl",
+      "expected": true,
+      "actual": true,
+      "marker": null,
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-content-event-policy/fixtures/shared-signal-two-assessments.ttl",
+      "expected": true,
+      "actual": true,
+      "marker": null,
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-content-event-policy/fixtures/cross-context-content-reuse.ttl",
+      "expected": true,
+      "actual": true,
+      "marker": null,
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-content-event-policy/fixtures/same-text-does-not-merge-claims.ttl",
+      "expected": true,
+      "actual": true,
+      "marker": null,
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-content-event-policy/fixtures/carrier-self-without-tag.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": null,
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-content-event-policy/fixtures/carrier-alias-chain.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": null,
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-content-event-policy/fixtures/distinct-carrier-and-claim.ttl",
+      "expected": true,
+      "actual": true,
+      "marker": null,
+      "pass": true
+    },
+    {
+      "source": "2.1.0-alpha.1-content-event-policy/fixtures/two-carriers-same-claim.ttl",
+      "expected": true,
+      "actual": true,
+      "marker": null,
+      "pass": true
+    }
+  ],
+  "pass": 89,
+  "total": 89,
+  "C_materialization_applied": false,
+  "C_regression_change_still_unaccepted": true
+}

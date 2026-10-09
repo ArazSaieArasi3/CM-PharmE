@@ -1,0 +1,705 @@
+{
+  "cases": [
+    {
+      "name": "registration-subject-query",
+      "requirements": [
+        "B2-RG-01"
+      ],
+      "polarity": "positive",
+      "operation": "query",
+      "args": {
+        "key": "registered-subject"
+      },
+      "expected": [
+        [
+          "urn:cmpe-registry-policy:facility"
+        ]
+      ],
+      "actual": [
+        [
+          "urn:cmpe-registry-policy:facility"
+        ]
+      ],
+      "fixture": "fixtures/registration-subject-query.ttl",
+      "pass": true
+    },
+    {
+      "name": "registration-does-not-create-listing-query",
+      "requirements": [
+        "B2-RG-01"
+      ],
+      "polarity": "negative",
+      "operation": "query",
+      "args": {
+        "key": "listed-subject"
+      },
+      "expected": [],
+      "actual": [],
+      "fixture": "fixtures/registration-does-not-create-listing-query.ttl",
+      "pass": true
+    },
+    {
+      "name": "registration-approval-unknown",
+      "requirements": [
+        "B2-RG-02"
+      ],
+      "polarity": "positive",
+      "operation": "approval",
+      "args": {},
+      "expected": "UNKNOWN",
+      "actual": "UNKNOWN",
+      "fixture": "fixtures/registration-approval-unknown.ttl",
+      "pass": true
+    },
+    {
+      "name": "NDC-approval-unknown",
+      "requirements": [
+        "B2-RG-03"
+      ],
+      "polarity": "positive",
+      "operation": "approval",
+      "args": {},
+      "expected": "UNKNOWN",
+      "actual": "UNKNOWN",
+      "fixture": "fixtures/NDC-approval-unknown.ttl",
+      "pass": true
+    },
+    {
+      "name": "listing-self-evidence-insufficient",
+      "requirements": [
+        "B2-RG-03"
+      ],
+      "polarity": "negative",
+      "operation": "approval",
+      "args": {},
+      "expected": "UNKNOWN",
+      "actual": "UNKNOWN",
+      "fixture": "fixtures/listing-self-evidence-insufficient.ttl",
+      "pass": true
+    },
+    {
+      "name": "independent-decision-available-not-verified",
+      "requirements": [
+        "B2-RG-02"
+      ],
+      "polarity": "boundary",
+      "operation": "approval",
+      "args": {},
+      "expected": "SOURCE_DECISION_AVAILABLE_NOT_VERIFIED",
+      "actual": "SOURCE_DECISION_AVAILABLE_NOT_VERIFIED",
+      "fixture": "fixtures/independent-decision-available-not-verified.ttl",
+      "pass": true
+    },
+    {
+      "name": "submitter-is-labeler",
+      "requirements": [
+        "B2-RG-04"
+      ],
+      "polarity": "positive",
+      "operation": "query",
+      "args": {
+        "key": "submitter"
+      },
+      "expected": [
+        [
+          "urn:cmpe-registry-policy:reporter"
+        ]
+      ],
+      "actual": [
+        [
+          "urn:cmpe-registry-policy:reporter"
+        ]
+      ],
+      "fixture": "fixtures/submitter-is-labeler.ttl",
+      "pass": true
+    },
+    {
+      "name": "absent-code-is-source-scoped",
+      "requirements": [
+        "B2-RG-05"
+      ],
+      "polarity": "negative",
+      "operation": "lookup",
+      "args": {
+        "key": "NOT-IN-RELEASE"
+      },
+      "expected": {
+        "source_result": "NOT_FOUND_IN_RELEASE",
+        "approval": "UNKNOWN"
+      },
+      "actual": {
+        "source_result": "NOT_FOUND_IN_RELEASE",
+        "approval": "UNKNOWN"
+      },
+      "fixture": "fixtures/absent-code-is-source-scoped.ttl",
+      "pass": true
+    },
+    {
+      "name": "present-code-does-not-establish-approval",
+      "requirements": [
+        "B2-RG-05"
+      ],
+      "polarity": "positive",
+      "operation": "lookup",
+      "args": {
+        "key": "SYNTHETIC-001"
+      },
+      "expected": {
+        "source_result": "FOUND",
+        "approval": "UNKNOWN"
+      },
+      "actual": {
+        "source_result": "FOUND",
+        "approval": "UNKNOWN"
+      },
+      "fixture": "fixtures/present-code-does-not-establish-approval.ttl",
+      "pass": true
+    },
+    {
+      "name": "marketing-window-before",
+      "requirements": [
+        "B2-RG-06"
+      ],
+      "polarity": "negative",
+      "operation": "window",
+      "args": {
+        "on_date": "2026-08-31"
+      },
+      "expected": "OUTSIDE_DECLARED_WINDOW",
+      "actual": "OUTSIDE_DECLARED_WINDOW",
+      "fixture": "fixtures/marketing-window-before.ttl",
+      "pass": true
+    },
+    {
+      "name": "marketing-window-start",
+      "requirements": [
+        "B2-RG-06"
+      ],
+      "polarity": "positive",
+      "operation": "window",
+      "args": {
+        "on_date": "2026-09-01"
+      },
+      "expected": "WITHIN_DECLARED_WINDOW",
+      "actual": "WITHIN_DECLARED_WINDOW",
+      "fixture": "fixtures/marketing-window-start.ttl",
+      "pass": true
+    },
+    {
+      "name": "marketing-window-end",
+      "requirements": [
+        "B2-RG-06"
+      ],
+      "polarity": "boundary",
+      "operation": "window",
+      "args": {
+        "on_date": "2026-11-01"
+      },
+      "expected": "OUTSIDE_DECLARED_WINDOW",
+      "actual": "OUTSIDE_DECLARED_WINDOW",
+      "fixture": "fixtures/marketing-window-end.ttl",
+      "pass": true
+    },
+    {
+      "name": "undeclared-marketing-end-is-unknown",
+      "requirements": [
+        "B2-RG-06"
+      ],
+      "polarity": "boundary",
+      "operation": "window",
+      "args": {
+        "on_date": "2026-10-01"
+      },
+      "expected": "UNKNOWN",
+      "actual": "UNKNOWN",
+      "fixture": "fixtures/undeclared-marketing-end-is-unknown.ttl",
+      "pass": true
+    },
+    {
+      "name": "self-report-organizational-subject",
+      "requirements": [
+        "B2-RG-07"
+      ],
+      "polarity": "positive",
+      "operation": "query",
+      "args": {
+        "key": "registered-subject"
+      },
+      "expected": [
+        [
+          "urn:cmpe-registry-policy:reporter"
+        ]
+      ],
+      "actual": [
+        [
+          "urn:cmpe-registry-policy:reporter"
+        ]
+      ],
+      "fixture": "fixtures/self-report-organizational-subject.ttl",
+      "pass": true
+    },
+    {
+      "name": "payload-to-product",
+      "requirements": [
+        "B2-RG-08"
+      ],
+      "polarity": "positive",
+      "operation": "query",
+      "args": {
+        "key": "represented-product"
+      },
+      "expected": [
+        [
+          "urn:cmpe-registry-policy:product"
+        ]
+      ],
+      "actual": [
+        [
+          "urn:cmpe-registry-policy:product"
+        ]
+      ],
+      "fixture": "fixtures/payload-to-product.ttl",
+      "pass": true
+    },
+    {
+      "name": "potential-report-status",
+      "requirements": [
+        "B2-RP-02"
+      ],
+      "polarity": "positive",
+      "operation": "query",
+      "args": {
+        "key": "source-asserted-shortage"
+      },
+      "expected": [
+        [
+          "potential"
+        ]
+      ],
+      "actual": [
+        [
+          "potential"
+        ]
+      ],
+      "fixture": "fixtures/potential-report-status.ttl",
+      "pass": true
+    },
+    {
+      "name": "potential-report-no-actual-instance",
+      "requirements": [
+        "B2-RP-02"
+      ],
+      "polarity": "negative",
+      "operation": "query",
+      "args": {
+        "key": "actual-shortage-instances"
+      },
+      "expected": [],
+      "actual": [],
+      "fixture": "fixtures/potential-report-no-actual-instance.ttl",
+      "pass": true
+    },
+    {
+      "name": "routine-MAH-CAP",
+      "requirements": [
+        "B2-RP-01",
+        "B2-RP-03"
+      ],
+      "polarity": "positive",
+      "operation": "applicability",
+      "args": {
+        "role": "MAH",
+        "route": "CAP"
+      },
+      "expected": "APPLICABLE_IN_PROFILE",
+      "actual": "APPLICABLE_IN_PROFILE",
+      "fixture": "fixtures/routine-MAH-CAP.ttl",
+      "pass": true
+    },
+    {
+      "name": "routine-NCA-excluded",
+      "requirements": [
+        "B2-RP-01"
+      ],
+      "polarity": "negative",
+      "operation": "applicability",
+      "args": {
+        "role": "NCA",
+        "route": "CAP"
+      },
+      "expected": "NOT_APPLICABLE_IN_PROFILE",
+      "actual": "NOT_APPLICABLE_IN_PROFILE",
+      "fixture": "fixtures/routine-NCA-excluded.ttl",
+      "pass": true
+    },
+    {
+      "name": "routine-NAP-excluded",
+      "requirements": [
+        "B2-RP-03"
+      ],
+      "polarity": "negative",
+      "operation": "applicability",
+      "args": {
+        "role": "MAH",
+        "route": "NAP"
+      },
+      "expected": "NOT_APPLICABLE_IN_PROFILE",
+      "actual": "NOT_APPLICABLE_IN_PROFILE",
+      "fixture": "fixtures/routine-NAP-excluded.ttl",
+      "pass": true
+    },
+    {
+      "name": "preparedness-NCA-NAP",
+      "requirements": [
+        "B2-RP-01",
+        "B2-RP-03"
+      ],
+      "polarity": "positive",
+      "operation": "applicability",
+      "args": {
+        "role": "NCA",
+        "route": "NAP"
+      },
+      "expected": "APPLICABLE_IN_PROFILE",
+      "actual": "APPLICABLE_IN_PROFILE",
+      "fixture": "fixtures/preparedness-NCA-NAP.ttl",
+      "pass": true
+    },
+    {
+      "name": "crisis-MAH-NAP",
+      "requirements": [
+        "B2-RP-03"
+      ],
+      "polarity": "positive",
+      "operation": "applicability",
+      "args": {
+        "role": "MAH",
+        "route": "NAP"
+      },
+      "expected": "APPLICABLE_IN_PROFILE",
+      "actual": "APPLICABLE_IN_PROFILE",
+      "fixture": "fixtures/crisis-MAH-NAP.ttl",
+      "pass": true
+    },
+    {
+      "name": "unselected-product",
+      "requirements": [
+        "B2-RP-03"
+      ],
+      "polarity": "negative",
+      "operation": "applicability",
+      "args": {
+        "role": "MAH",
+        "route": "CAP",
+        "product": "urn:cmpe-registry-policy:otherProduct"
+      },
+      "expected": "NOT_APPLICABLE_IN_PROFILE",
+      "actual": "NOT_APPLICABLE_IN_PROFILE",
+      "fixture": "fixtures/unselected-product.ttl",
+      "pass": true
+    },
+    {
+      "name": "wrong-jurisdiction",
+      "requirements": [
+        "B2-RP-01"
+      ],
+      "polarity": "negative",
+      "operation": "applicability",
+      "args": {
+        "role": "MAH",
+        "route": "CAP",
+        "jurisdiction": "urn:cmpe-registry-policy:otherJurisdiction"
+      },
+      "expected": "NOT_APPLICABLE_IN_PROFILE",
+      "actual": "NOT_APPLICABLE_IN_PROFILE",
+      "fixture": "fixtures/wrong-jurisdiction.ttl",
+      "pass": true
+    },
+    {
+      "name": "unknown-role",
+      "requirements": [
+        "B2-RP-01"
+      ],
+      "polarity": "boundary",
+      "operation": "applicability",
+      "args": {
+        "role": null,
+        "route": "CAP"
+      },
+      "expected": "UNKNOWN",
+      "actual": "UNKNOWN",
+      "fixture": "fixtures/unknown-role.ttl",
+      "pass": true
+    },
+    {
+      "name": "unknown-route",
+      "requirements": [
+        "B2-RP-03"
+      ],
+      "polarity": "boundary",
+      "operation": "applicability",
+      "args": {
+        "role": "MAH",
+        "route": null
+      },
+      "expected": "UNKNOWN",
+      "actual": "UNKNOWN",
+      "fixture": "fixtures/unknown-route.ttl",
+      "pass": true
+    },
+    {
+      "name": "expired-scope",
+      "requirements": [
+        "B2-RP-04"
+      ],
+      "polarity": "negative",
+      "operation": "applicability",
+      "args": {
+        "role": "MAH",
+        "route": "CAP",
+        "at": "2026-11-01T00:00:00Z"
+      },
+      "expected": "NOT_APPLICABLE_IN_PROFILE",
+      "actual": "NOT_APPLICABLE_IN_PROFILE",
+      "fixture": "fixtures/expired-scope.ttl",
+      "pass": true
+    },
+    {
+      "name": "wrong-scenario",
+      "requirements": [
+        "B2-RP-01"
+      ],
+      "polarity": "negative",
+      "operation": "applicability",
+      "args": {
+        "role": "MAH",
+        "route": "CAP",
+        "scenario": "crisis"
+      },
+      "expected": "NOT_APPLICABLE_IN_PROFILE",
+      "actual": "NOT_APPLICABLE_IN_PROFILE",
+      "fixture": "fixtures/wrong-scenario.ttl",
+      "pass": true
+    },
+    {
+      "name": "incomplete-scope-not-negative",
+      "requirements": [
+        "B2-RP-03"
+      ],
+      "polarity": "boundary",
+      "operation": "applicability",
+      "args": {
+        "role": "MAH",
+        "route": "CAP",
+        "product": "urn:cmpe-registry-policy:otherProduct"
+      },
+      "expected": "UNKNOWN",
+      "actual": "UNKNOWN",
+      "fixture": "fixtures/incomplete-scope-not-negative.ttl",
+      "pass": true
+    },
+    {
+      "name": "unannounced-action-unknown",
+      "requirements": [
+        "B2-RP-01"
+      ],
+      "polarity": "boundary",
+      "operation": "applicability",
+      "args": {
+        "role": "MAH",
+        "route": "CAP"
+      },
+      "expected": "UNKNOWN",
+      "actual": "UNKNOWN",
+      "fixture": "fixtures/unannounced-action-unknown.ttl",
+      "pass": true
+    },
+    {
+      "name": "timezone-not-assumed",
+      "requirements": [
+        "B2-RP-04"
+      ],
+      "polarity": "boundary",
+      "operation": "applicability",
+      "args": {
+        "role": "MAH",
+        "route": "CAP"
+      },
+      "expected": "UNKNOWN",
+      "actual": "UNKNOWN",
+      "fixture": "fixtures/timezone-not-assumed.ttl",
+      "pass": true
+    },
+    {
+      "name": "action-frequency-query",
+      "requirements": [
+        "B2-RP-04"
+      ],
+      "polarity": "positive",
+      "operation": "query",
+      "args": {
+        "key": "frequency"
+      },
+      "expected": [
+        [
+          "synthetic-action-specific-frequency"
+        ]
+      ],
+      "actual": [
+        [
+          "synthetic-action-specific-frequency"
+        ]
+      ],
+      "fixture": "fixtures/action-frequency-query.ttl",
+      "pass": true
+    },
+    {
+      "name": "frequency-not-hardcoded",
+      "requirements": [
+        "B2-RP-04"
+      ],
+      "polarity": "negative",
+      "operation": "query",
+      "args": {
+        "key": "frequency"
+      },
+      "expected": [
+        [
+          "synthetic-revised-frequency"
+        ]
+      ],
+      "actual": [
+        [
+          "synthetic-revised-frequency"
+        ]
+      ],
+      "fixture": "fixtures/frequency-not-hardcoded.ttl",
+      "pass": true
+    },
+    {
+      "name": "generation-query",
+      "requirements": [
+        "B2-DS-07"
+      ],
+      "polarity": "positive",
+      "operation": "query",
+      "args": {
+        "key": "generation"
+      },
+      "expected": [
+        [
+          "urn:cmpe-registry-policy:activity"
+        ]
+      ],
+      "actual": [
+        [
+          "urn:cmpe-registry-policy:activity"
+        ]
+      ],
+      "fixture": "fixtures/generation-query.ttl",
+      "pass": true
+    },
+    {
+      "name": "two-responsibilities-query",
+      "requirements": [
+        "B2-DS-08"
+      ],
+      "polarity": "positive",
+      "operation": "query",
+      "args": {
+        "key": "attribution-and-association"
+      },
+      "expected": [
+        [
+          "urn:cmpe-registry-policy:author",
+          "urn:cmpe-registry-policy:operator"
+        ]
+      ],
+      "actual": [
+        [
+          "urn:cmpe-registry-policy:author",
+          "urn:cmpe-registry-policy:operator"
+        ]
+      ],
+      "fixture": "fixtures/two-responsibilities-query.ttl",
+      "pass": true
+    },
+    {
+      "name": "derivation-query",
+      "requirements": [
+        "B2-DS-09"
+      ],
+      "polarity": "positive",
+      "operation": "query",
+      "args": {
+        "key": "derivation"
+      },
+      "expected": [
+        [
+          "urn:cmpe-registry-policy:previous"
+        ]
+      ],
+      "actual": [
+        [
+          "urn:cmpe-registry-policy:previous"
+        ]
+      ],
+      "fixture": "fixtures/derivation-query.ttl",
+      "pass": true
+    },
+    {
+      "name": "revision-query",
+      "requirements": [
+        "B2-DS-10"
+      ],
+      "polarity": "positive",
+      "operation": "query",
+      "args": {
+        "key": "revision"
+      },
+      "expected": [
+        [
+          "urn:cmpe-registry-policy:previous"
+        ]
+      ],
+      "actual": [
+        [
+          "urn:cmpe-registry-policy:previous"
+        ]
+      ],
+      "fixture": "fixtures/revision-query.ttl",
+      "pass": true
+    },
+    {
+      "name": "missing-lineage-not-invented",
+      "requirements": [
+        "B2-DS-09"
+      ],
+      "polarity": "negative",
+      "operation": "query",
+      "args": {
+        "key": "derivation"
+      },
+      "expected": [],
+      "actual": [],
+      "fixture": "fixtures/missing-lineage-not-invented.ttl",
+      "pass": true
+    }
+  ],
+  "pass": 38,
+  "total": 38,
+  "queries": {
+    "registered-subject": "SELECT ?subject WHERE { ?f a c:EstablishmentRegistration ; c:registrationEntity ?subject }",
+    "listed-subject": "SELECT ?subject WHERE { ?f a c:MarketListing ; c:listingPresentation ?subject }",
+    "submitter": "SELECT ?actor WHERE { t:record prov:wasAttributedTo ?actor }",
+    "generation": "SELECT ?activity WHERE { t:record l:recordDigitalActivity ?activity }",
+    "attribution-and-association": "SELECT ?author ?operator WHERE { t:record prov:wasAttributedTo ?author ; l:recordDigitalActivity ?a . ?a prov:wasAssociatedWith ?operator }",
+    "derivation": "SELECT ?source WHERE { t:record prov:wasDerivedFrom ?source }",
+    "revision": "SELECT ?source WHERE { t:record prov:wasRevisionOf ?source }",
+    "represented-product": "SELECT ?product WHERE { t:record r:carrierClaim/c:assertionAboutProduct ?product }",
+    "source-asserted-shortage": "SELECT ?status WHERE { t:claim p:shortageStatus ?status }",
+    "actual-shortage-instances": "SELECT ?s WHERE { ?s a c:MedicineShortageSituation }",
+    "frequency": "SELECT ?f WHERE { t:requirement p:frequency ?f }"
+  },
+  "semantic_limit": "Absence in SPARQL results is not global OWL non-entailment; selected HermiT countermodels are separate."
+}

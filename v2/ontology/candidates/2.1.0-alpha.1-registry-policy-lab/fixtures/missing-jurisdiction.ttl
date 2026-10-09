@@ -1,0 +1,16 @@
+@prefix c: <https://w3id.org/cm-pharme/2.1/> .
+@prefix p: <https://w3id.org/cm-pharme/experimental/registry-policy/> .
+@prefix t: <urn:cmpe-registry-policy:> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+t:jurisdiction a c:RegulatoryJurisdiction .
+
+t:requirement a c:RegulatoryRequirement ;
+    c:validFrom "2026-10-01T00:00:00+00:00"^^xsd:dateTime ;
+    c:validTo "2026-11-01T00:00:00+00:00"^^xsd:dateTime ;
+    p:actorRole "MAH" ;
+    p:authorizationRoute "CAP" ;
+    p:frequency "awareness-and-new-information" ;
+    p:profile "reporting-scope" ;
+    p:scenario "routine" ;
+    p:sourceVersion "synthetic-guidance-snapshot-1" .
