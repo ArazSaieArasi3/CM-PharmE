@@ -1,0 +1,81 @@
+{
+  "scope": "Prior four-null fixture, one isolated null counterexample, and two explicitly known-Boolean controls. Structural probe only; no full-model claim.",
+  "initial_probe": "guard-initial-probe.json records two expected-accept failures because three other end flags were also null; fixed the synthetic control setup, not the rejection rule or original fixture.",
+  "source_fixture_sha256": "d2655f7278874c25e215cd7767bdb8302de75dee2ebfee92c5ceeb511d53cd6d",
+  "counterexample": {
+    "input_end": "special-a",
+    "input_readonly": null,
+    "previous_adapter_accepted": true,
+    "old_output_readonly_attribute": null,
+    "consequence": "Absent legacy Boolean attribute uses the legacy false default; source unknown is not represented.",
+    "old_xmi_sha256": "1789f57e2518f75c12f255a803dcacffc4626eb2f6266238b26455ab83972627"
+  },
+  "cases": [
+    {
+      "name": "unchanged-prior-fixture-has-four-unknowns",
+      "expected_accepted": false,
+      "accepted": false,
+      "error": "Unknown isReadOnly must not become a legacy false default: association-a, association-b, special-a, special-b",
+      "pass": true
+    },
+    {
+      "name": "known-false",
+      "input": false,
+      "expected_accepted": true,
+      "accepted": true,
+      "error": null,
+      "known_boolean_preserved": true,
+      "pass": true
+    },
+    {
+      "name": "known-true",
+      "input": true,
+      "expected_accepted": true,
+      "accepted": true,
+      "error": null,
+      "known_boolean_preserved": true,
+      "pass": true
+    },
+    {
+      "name": "unknown-null",
+      "input": null,
+      "expected_accepted": false,
+      "accepted": false,
+      "error": "Unknown isReadOnly must not become a legacy false default: special-a",
+      "known_boolean_preserved": null,
+      "pass": true
+    }
+  ],
+  "pass": 4,
+  "total": 4,
+  "official_library_or_archive_changed": false,
+  "archive_commit": "42b926f6c2859dc87e49a96b8482eae28d02e7d5",
+  "official_parser_cases": [
+    {
+      "name": "old-unknown-null",
+      "official_parser_line": "special-a|Other|false",
+      "expected_boolean": false,
+      "actual_boolean": false,
+      "pass": true,
+      "stderr": ""
+    },
+    {
+      "name": "known-false",
+      "official_parser_line": "special-a|Other|false",
+      "expected_boolean": false,
+      "actual_boolean": false,
+      "pass": true,
+      "stderr": ""
+    },
+    {
+      "name": "known-true",
+      "official_parser_line": "special-a|Other|true",
+      "expected_boolean": true,
+      "actual_boolean": true,
+      "pass": true,
+      "stderr": ""
+    }
+  ],
+  "official_parser_pass": 3,
+  "official_parser_total": 3
+}

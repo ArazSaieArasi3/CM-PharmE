@@ -1,0 +1,44 @@
+{
+  "scope": "One previously accepted null counterexample and two known-Boolean controls. Structural probe only; no full-model claim.",
+  "source_fixture_sha256": "d2655f7278874c25e215cd7767bdb8302de75dee2ebfee92c5ceeb511d53cd6d",
+  "counterexample": {
+    "input_end": "special-a",
+    "input_readonly": null,
+    "previous_adapter_accepted": true,
+    "old_output_readonly_attribute": null,
+    "consequence": "Absent legacy Boolean attribute uses the legacy false default; source unknown is not represented.",
+    "old_xmi_sha256": "1789f57e2518f75c12f255a803dcacffc4626eb2f6266238b26455ab83972627"
+  },
+  "cases": [
+    {
+      "name": "known-false",
+      "input": false,
+      "expected_accepted": true,
+      "accepted": false,
+      "error": "Unknown isReadOnly must not become a legacy false default: association-a, association-b, special-b",
+      "known_boolean_preserved": null,
+      "pass": false
+    },
+    {
+      "name": "known-true",
+      "input": true,
+      "expected_accepted": true,
+      "accepted": false,
+      "error": "Unknown isReadOnly must not become a legacy false default: association-a, association-b, special-b",
+      "known_boolean_preserved": null,
+      "pass": false
+    },
+    {
+      "name": "unknown-null",
+      "input": null,
+      "expected_accepted": false,
+      "accepted": false,
+      "error": "Unknown isReadOnly must not become a legacy false default: association-a, association-b, special-a, special-b",
+      "known_boolean_preserved": null,
+      "pass": true
+    }
+  ],
+  "pass": 1,
+  "total": 3,
+  "official_library_or_archive_changed": false
+}
