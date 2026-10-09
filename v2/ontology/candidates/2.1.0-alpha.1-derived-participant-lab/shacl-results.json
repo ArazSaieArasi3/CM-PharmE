@@ -1,0 +1,442 @@
+{
+  "cases": [
+    {
+      "name": "context-product",
+      "variant": "A",
+      "materialized": true,
+      "expected": true,
+      "actual": true,
+      "marker": null,
+      "details": [],
+      "pass": true,
+      "fixture": "fixtures/context-product.ttl"
+    },
+    {
+      "name": "context-product",
+      "variant": "B",
+      "materialized": true,
+      "expected": true,
+      "actual": true,
+      "marker": null,
+      "details": [],
+      "pass": true,
+      "fixture": "fixtures/context-product.ttl"
+    },
+    {
+      "name": "context-product",
+      "variant": "C",
+      "materialized": true,
+      "expected": true,
+      "actual": true,
+      "marker": null,
+      "details": [],
+      "pass": true,
+      "fixture": "fixtures/context-product.ttl"
+    },
+    {
+      "name": "context-substance",
+      "variant": "A",
+      "materialized": true,
+      "expected": false,
+      "actual": false,
+      "marker": null,
+      "details": [
+        {
+          "path": "https://w3id.org/cm-pharme/2.1/contextClassificationProduct",
+          "constraint": "",
+          "shape": "urn:cmpe-participant-lab:contextClassificationProductCardinality"
+        }
+      ],
+      "pass": true,
+      "fixture": "fixtures/context-substance.ttl"
+    },
+    {
+      "name": "context-substance",
+      "variant": "B",
+      "materialized": true,
+      "expected": false,
+      "actual": false,
+      "marker": null,
+      "details": [
+        {
+          "path": "https://w3id.org/cm-pharme/2.1/contextClassificationProduct",
+          "constraint": "",
+          "shape": "urn:cmpe-participant-lab:contextClassificationProductCardinality"
+        }
+      ],
+      "pass": true,
+      "fixture": "fixtures/context-substance.ttl"
+    },
+    {
+      "name": "context-substance",
+      "variant": "C",
+      "materialized": true,
+      "expected": true,
+      "actual": true,
+      "marker": null,
+      "details": [],
+      "pass": true,
+      "fixture": "fixtures/context-substance.ttl"
+    },
+    {
+      "name": "generic-product-no-context",
+      "variant": "A",
+      "materialized": true,
+      "expected": true,
+      "actual": true,
+      "marker": null,
+      "details": [],
+      "pass": true,
+      "fixture": "fixtures/generic-product-no-context.ttl"
+    },
+    {
+      "name": "generic-product-no-context",
+      "variant": "B",
+      "materialized": true,
+      "expected": false,
+      "actual": false,
+      "marker": null,
+      "details": [
+        {
+          "path": "N0ef205dec52547a48e1be40242d52474",
+          "constraint": "",
+          "shape": "urn:cmpe-participant-lab:contextClassificationProductInverseCardinality"
+        },
+        {
+          "path": "Nbc83de504e03401a80d5d65c99147b6a",
+          "constraint": "",
+          "shape": "urn:cmpe-participant-lab:contextClassificationEntryInverseCardinality"
+        }
+      ],
+      "pass": true,
+      "fixture": "fixtures/generic-product-no-context.ttl"
+    },
+    {
+      "name": "generic-product-no-context",
+      "variant": "C",
+      "materialized": true,
+      "expected": true,
+      "actual": true,
+      "marker": null,
+      "details": [],
+      "pass": true,
+      "fixture": "fixtures/generic-product-no-context.ttl"
+    },
+    {
+      "name": "record-evidence",
+      "variant": "A",
+      "materialized": true,
+      "expected": true,
+      "actual": true,
+      "marker": null,
+      "details": [],
+      "pass": true,
+      "fixture": "fixtures/record-evidence.ttl"
+    },
+    {
+      "name": "record-evidence",
+      "variant": "B",
+      "materialized": true,
+      "expected": true,
+      "actual": true,
+      "marker": null,
+      "details": [],
+      "pass": true,
+      "fixture": "fixtures/record-evidence.ttl"
+    },
+    {
+      "name": "record-evidence",
+      "variant": "C",
+      "materialized": true,
+      "expected": true,
+      "actual": true,
+      "marker": null,
+      "details": [],
+      "pass": true,
+      "fixture": "fixtures/record-evidence.ttl"
+    },
+    {
+      "name": "nonrecord-evidence",
+      "variant": "A",
+      "materialized": true,
+      "expected": true,
+      "actual": true,
+      "marker": null,
+      "details": [],
+      "pass": true,
+      "fixture": "fixtures/nonrecord-evidence.ttl"
+    },
+    {
+      "name": "nonrecord-evidence",
+      "variant": "B",
+      "materialized": true,
+      "expected": false,
+      "actual": false,
+      "marker": null,
+      "details": [
+        {
+          "path": "https://w3id.org/cm-pharme/2.1/evidenceRecord",
+          "constraint": "",
+          "shape": "urn:cmpe-participant-lab:evidenceRecordCardinality"
+        }
+      ],
+      "pass": true,
+      "fixture": "fixtures/nonrecord-evidence.ttl"
+    },
+    {
+      "name": "nonrecord-evidence",
+      "variant": "C",
+      "materialized": true,
+      "expected": true,
+      "actual": true,
+      "marker": null,
+      "details": [],
+      "pass": true,
+      "fixture": "fixtures/nonrecord-evidence.ttl"
+    },
+    {
+      "name": "missing-entry",
+      "variant": "C",
+      "materialized": true,
+      "expected": false,
+      "actual": false,
+      "marker": "classificationEntry",
+      "details": [
+        {
+          "path": "n710cfdf2ff714163b1cb5c4dc6ddd1f2b6",
+          "constraint": "",
+          "shape": "n710cfdf2ff714163b1cb5c4dc6ddd1f2b5"
+        },
+        {
+          "path": "n710cfdf2ff714163b1cb5c4dc6ddd1f2b8",
+          "constraint": "",
+          "shape": "n710cfdf2ff714163b1cb5c4dc6ddd1f2b7"
+        },
+        {
+          "path": "https://w3id.org/cm-pharme/2.1/contextClassificationEntry",
+          "constraint": "",
+          "shape": "urn:cmpe-participant-lab:contextClassificationEntryCardinality"
+        },
+        {
+          "path": "https://w3id.org/cm-pharme/2.1/classificationEntry",
+          "constraint": "",
+          "shape": "n710cfdf2ff714163b1cb5c4dc6ddd1f2b103"
+        },
+        {
+          "path": "https://w3id.org/cm-pharme/2.1/classificationEntry",
+          "constraint": "",
+          "shape": "n710cfdf2ff714163b1cb5c4dc6ddd1f2b26"
+        }
+      ],
+      "pass": true,
+      "fixture": "fixtures/missing-entry.ttl"
+    },
+    {
+      "name": "stale-product-projection",
+      "variant": "C",
+      "materialized": true,
+      "expected": false,
+      "actual": false,
+      "marker": "contextClassificationProduct",
+      "details": [
+        {
+          "path": "n710cfdf2ff714163b1cb5c4dc6ddd1f2b21",
+          "constraint": "",
+          "shape": "n710cfdf2ff714163b1cb5c4dc6ddd1f2b20"
+        },
+        {
+          "path": "n710cfdf2ff714163b1cb5c4dc6ddd1f2b23",
+          "constraint": "",
+          "shape": "n710cfdf2ff714163b1cb5c4dc6ddd1f2b22"
+        },
+        {
+          "path": "https://w3id.org/cm-pharme/2.1/contextClassificationProduct",
+          "constraint": "",
+          "shape": "urn:cmpe-participant-lab:contextClassificationProductCardinality"
+        },
+        {
+          "path": "",
+          "constraint": "urn:cmpe-participant-lab:contextClassificationProductExactProjection",
+          "shape": "urn:cmpe-participant-lab:contextClassificationProductShape"
+        }
+      ],
+      "pass": true,
+      "fixture": "fixtures/stale-product-projection.ttl"
+    },
+    {
+      "name": "stale-record-projection",
+      "variant": "C",
+      "materialized": true,
+      "expected": false,
+      "actual": false,
+      "marker": "evidenceRecord",
+      "details": [
+        {
+          "path": "",
+          "constraint": "n710cfdf2ff714163b1cb5c4dc6ddd1f2b38",
+          "shape": "https://w3id.org/cm-pharme/2.1/EvidenceAliasShape"
+        },
+        {
+          "path": "",
+          "constraint": "n710cfdf2ff714163b1cb5c4dc6ddd1f2b37",
+          "shape": "https://w3id.org/cm-pharme/2.1/EvidenceAliasShape"
+        },
+        {
+          "path": "",
+          "constraint": "urn:cmpe-participant-lab:evidenceRecordExactProjection",
+          "shape": "urn:cmpe-participant-lab:evidenceRecordShape"
+        },
+        {
+          "path": "https://w3id.org/cm-pharme/2.1/evidenceRecord",
+          "constraint": "",
+          "shape": "urn:cmpe-participant-lab:evidenceRecordCardinality"
+        },
+        {
+          "path": "n710cfdf2ff714163b1cb5c4dc6ddd1f2b40",
+          "constraint": "",
+          "shape": "n710cfdf2ff714163b1cb5c4dc6ddd1f2b39"
+        }
+      ],
+      "pass": true,
+      "fixture": "fixtures/stale-record-projection.ttl"
+    },
+    {
+      "name": "eligible-product-projection-missing-before-materialization",
+      "variant": "C",
+      "materialized": false,
+      "expected": false,
+      "actual": false,
+      "marker": "ExactProjection",
+      "details": [
+        {
+          "path": "https://w3id.org/cm-pharme/2.1/contextClassificationEntry",
+          "constraint": "",
+          "shape": "urn:cmpe-participant-lab:contextClassificationEntryCardinality"
+        },
+        {
+          "path": "",
+          "constraint": "urn:cmpe-participant-lab:contextClassificationEntryExactProjection",
+          "shape": "urn:cmpe-participant-lab:contextClassificationEntryShape"
+        },
+        {
+          "path": "",
+          "constraint": "urn:cmpe-participant-lab:contextClassificationProductExactProjection",
+          "shape": "urn:cmpe-participant-lab:contextClassificationProductShape"
+        }
+      ],
+      "pass": true,
+      "fixture": "fixtures/eligible-product-projection-missing-before-materialization.ttl"
+    },
+    {
+      "name": "eligible-record-projection-missing-before-materialization",
+      "variant": "C",
+      "materialized": false,
+      "expected": false,
+      "actual": false,
+      "marker": "ExactProjection",
+      "details": [
+        {
+          "path": "",
+          "constraint": "urn:cmpe-participant-lab:evidenceRecordExactProjection",
+          "shape": "urn:cmpe-participant-lab:evidenceRecordShape"
+        }
+      ],
+      "pass": true,
+      "fixture": "fixtures/eligible-record-projection-missing-before-materialization.ttl"
+    },
+    {
+      "name": "shortcut-does-not-invent-parent-fact",
+      "variant": "C",
+      "materialized": true,
+      "expected": false,
+      "actual": false,
+      "marker": "evidenceItem",
+      "details": [
+        {
+          "path": "",
+          "constraint": "n710cfdf2ff714163b1cb5c4dc6ddd1f2b37",
+          "shape": "https://w3id.org/cm-pharme/2.1/EvidenceAliasShape"
+        },
+        {
+          "path": "",
+          "constraint": "n710cfdf2ff714163b1cb5c4dc6ddd1f2b38",
+          "shape": "https://w3id.org/cm-pharme/2.1/EvidenceAliasShape"
+        },
+        {
+          "path": "https://w3id.org/cm-pharme/2.1/evidenceItem",
+          "constraint": "",
+          "shape": "n710cfdf2ff714163b1cb5c4dc6ddd1f2b42"
+        },
+        {
+          "path": "",
+          "constraint": "urn:cmpe-participant-lab:evidenceRecordExactProjection",
+          "shape": "urn:cmpe-participant-lab:evidenceRecordShape"
+        },
+        {
+          "path": "n710cfdf2ff714163b1cb5c4dc6ddd1f2b40",
+          "constraint": "",
+          "shape": "n710cfdf2ff714163b1cb5c4dc6ddd1f2b39"
+        }
+      ],
+      "pass": true,
+      "fixture": "fixtures/shortcut-does-not-invent-parent-fact.ttl"
+    },
+    {
+      "name": "documented-partnership-primitive-record-suffices",
+      "variant": "C",
+      "materialized": true,
+      "expected": true,
+      "actual": true,
+      "marker": null,
+      "details": [],
+      "pass": true,
+      "fixture": "fixtures/documented-partnership-primitive-record-suffices.ttl"
+    },
+    {
+      "name": "documented-partnership-primitive-evidence-absent",
+      "variant": "C",
+      "materialized": true,
+      "expected": false,
+      "actual": false,
+      "marker": "commitment-evidence-required",
+      "details": [
+        {
+          "path": "https://w3id.org/cm-pharme/2.1/evidenceItem",
+          "constraint": "",
+          "shape": "n710cfdf2ff714163b1cb5c4dc6ddd1f2b42"
+        },
+        {
+          "path": "",
+          "constraint": "https://w3id.org/cm-pharme/experimental/refinement/commitment-evidence-required",
+          "shape": "https://w3id.org/cm-pharme/experimental/refinement/shape-documented-partnership"
+        },
+        {
+          "path": "n710cfdf2ff714163b1cb5c4dc6ddd1f2b40",
+          "constraint": "",
+          "shape": "n710cfdf2ff714163b1cb5c4dc6ddd1f2b39"
+        }
+      ],
+      "pass": true,
+      "fixture": "fixtures/documented-partnership-primitive-evidence-absent.ttl"
+    },
+    {
+      "name": "documented-partnership-unqualified-record-not-derived",
+      "variant": "C",
+      "materialized": true,
+      "expected": false,
+      "actual": false,
+      "marker": "commitment-evidence-required",
+      "details": [
+        {
+          "path": "",
+          "constraint": "https://w3id.org/cm-pharme/experimental/refinement/commitment-evidence-required",
+          "shape": "https://w3id.org/cm-pharme/experimental/refinement/shape-documented-partnership"
+        }
+      ],
+      "pass": true,
+      "fixture": "fixtures/documented-partnership-unqualified-record-not-derived.ttl"
+    }
+  ],
+  "pass": 24,
+  "total": 24
+}

@@ -1,0 +1,1016 @@
+{
+  "source_sha256": "fef3295149278bdf5a9c446f9699582a565d26fa2f52f76d90f593ba00e20989",
+  "status": "ISOLATED_UNACCEPTED_ALTERNATIVES",
+  "new_classes": 0,
+  "new_relations": 0,
+  "variants": [
+    {
+      "variant": "A-prior-cards",
+      "patch": [
+        {
+          "id": "end-contextClassificationEntry-source",
+          "field": "cardinality",
+          "before": null,
+          "after": "0..*",
+          "basis": "EXPERIMENTAL alternative; not author accepted"
+        },
+        {
+          "id": "end-contextClassificationEntry-target",
+          "field": "cardinality",
+          "before": null,
+          "after": "1",
+          "basis": "EXPERIMENTAL alternative; not author accepted"
+        },
+        {
+          "id": "end-contextClassificationEntry-source",
+          "field": "isReadOnly",
+          "before": null,
+          "after": false,
+          "basis": "Inverse participant population may change; proposal only"
+        },
+        {
+          "id": "end-contextClassificationEntry-target",
+          "field": "isReadOnly",
+          "before": null,
+          "after": true,
+          "basis": "Frozen participant identity hypothesis; proposal tested on bounded traces"
+        },
+        {
+          "id": "end-classificationEntry-target",
+          "field": "isReadOnly",
+          "before": false,
+          "after": true,
+          "basis": "Primary mediation profile requires immutable mediated end; proposal changes prior false"
+        },
+        {
+          "id": "end-contextClassificationProduct-source",
+          "field": "cardinality",
+          "before": null,
+          "after": "0..*",
+          "basis": "EXPERIMENTAL alternative; not author accepted"
+        },
+        {
+          "id": "end-contextClassificationProduct-target",
+          "field": "cardinality",
+          "before": null,
+          "after": "1",
+          "basis": "EXPERIMENTAL alternative; not author accepted"
+        },
+        {
+          "id": "end-contextClassificationProduct-source",
+          "field": "isReadOnly",
+          "before": null,
+          "after": false,
+          "basis": "Inverse participant population may change; proposal only"
+        },
+        {
+          "id": "end-contextClassificationProduct-target",
+          "field": "isReadOnly",
+          "before": null,
+          "after": true,
+          "basis": "Frozen participant identity hypothesis; proposal tested on bounded traces"
+        },
+        {
+          "id": "end-classificationEntity-target",
+          "field": "isReadOnly",
+          "before": false,
+          "after": true,
+          "basis": "Primary mediation profile requires immutable mediated end; proposal changes prior false"
+        },
+        {
+          "id": "end-evidenceRecord-source",
+          "field": "cardinality",
+          "before": null,
+          "after": "0..*",
+          "basis": "EXPERIMENTAL alternative; not author accepted"
+        },
+        {
+          "id": "end-evidenceRecord-target",
+          "field": "cardinality",
+          "before": null,
+          "after": "0..1",
+          "basis": "EXPERIMENTAL alternative; not author accepted"
+        },
+        {
+          "id": "end-evidenceRecord-source",
+          "field": "isReadOnly",
+          "before": null,
+          "after": false,
+          "basis": "Inverse participant population may change; proposal only"
+        },
+        {
+          "id": "end-evidenceRecord-target",
+          "field": "isReadOnly",
+          "before": null,
+          "after": true,
+          "basis": "Frozen participant identity hypothesis; proposal tested on bounded traces"
+        },
+        {
+          "id": "end-evidenceItem-target",
+          "field": "isReadOnly",
+          "before": false,
+          "after": true,
+          "basis": "Primary mediation profile requires immutable mediated end; proposal changes prior false"
+        }
+      ],
+      "native_schema_parser": {
+        "tool_versions": {
+          "node": "v24.19.0",
+          "ontouml_js": "1.0.0",
+          "ontouml_schema": "1.0.2",
+          "ajv": "8.17.1"
+        },
+        "schema_valid": true,
+        "schema_errors": [],
+        "official_parser": {
+          "type": "Project16",
+          "id": "cm-pharme-four-domain-refinement",
+          "classes": 147
+        },
+        "parser_error": null,
+        "pass": true
+      },
+      "bounded_subsetting": [
+        {
+          "end": "end-contextClassificationEntry-source",
+          "target": "end-classificationEntry-source",
+          "kind": "subsettedProperties",
+          "relation": "rel-contextClassificationEntry",
+          "reference": "PASS",
+          "source_type": "ContextualMedicineClassificationAssignment",
+          "target_type": "ProductClassificationAssignment",
+          "source_cardinality": "0..*",
+          "target_cardinality": "1..*",
+          "type_conformance": "PASS",
+          "context_conformance": "PASS",
+          "upper_bound": "PASS",
+          "different_names": "PASS",
+          "overall": "PASS"
+        },
+        {
+          "end": "end-contextClassificationEntry-target",
+          "target": "end-classificationEntry-target",
+          "kind": "subsettedProperties",
+          "relation": "rel-contextClassificationEntry",
+          "reference": "PASS",
+          "source_type": "AppliedClassificationEntryRole",
+          "target_type": "AppliedClassificationEntryRole",
+          "source_cardinality": "1",
+          "target_cardinality": "1",
+          "type_conformance": "PASS",
+          "context_conformance": "PASS",
+          "upper_bound": "PASS",
+          "different_names": "PASS",
+          "overall": "PASS"
+        },
+        {
+          "end": "end-contextClassificationProduct-source",
+          "target": "end-classificationEntity-source",
+          "kind": "subsettedProperties",
+          "relation": "rel-contextClassificationProduct",
+          "reference": "PASS",
+          "source_type": "ContextualMedicineClassificationAssignment",
+          "target_type": "ProductClassificationAssignment",
+          "source_cardinality": "0..*",
+          "target_cardinality": "1..*",
+          "type_conformance": "PASS",
+          "context_conformance": "PASS",
+          "upper_bound": "PASS",
+          "different_names": "PASS",
+          "overall": "PASS"
+        },
+        {
+          "end": "end-contextClassificationProduct-target",
+          "target": "end-classificationEntity-target",
+          "kind": "subsettedProperties",
+          "relation": "rel-contextClassificationProduct",
+          "reference": "PASS",
+          "source_type": "ClassifiedMedicinalProductRole",
+          "target_type": "ClassifiedEntity",
+          "source_cardinality": "1",
+          "target_cardinality": "1",
+          "type_conformance": "PASS",
+          "context_conformance": "PASS",
+          "upper_bound": "PASS",
+          "different_names": "PASS",
+          "overall": "PASS"
+        },
+        {
+          "end": "end-evidenceRecord-source",
+          "target": "end-evidenceItem-source",
+          "kind": "subsettedProperties",
+          "relation": "rel-evidenceRecord",
+          "reference": "PASS",
+          "source_type": "EvidenceSupport",
+          "target_type": "EvidenceSupport",
+          "source_cardinality": "0..*",
+          "target_cardinality": "1..*",
+          "type_conformance": "PASS",
+          "context_conformance": "PASS",
+          "upper_bound": "PASS",
+          "different_names": "PASS",
+          "overall": "PASS"
+        },
+        {
+          "end": "end-evidenceRecord-target",
+          "target": "end-evidenceItem-target",
+          "kind": "subsettedProperties",
+          "relation": "rel-evidenceRecord",
+          "reference": "PASS",
+          "source_type": "EvidenceSourceRecordRole",
+          "target_type": "EvidenceItem",
+          "source_cardinality": "0..1",
+          "target_cardinality": "1",
+          "type_conformance": "PASS",
+          "context_conformance": "PASS",
+          "upper_bound": "PASS",
+          "different_names": "PASS",
+          "overall": "PASS"
+        }
+      ],
+      "mediation_source_profile": [
+        {
+          "relation": "contextClassificationEntry",
+          "rules": {
+            "DependencyRelationshipConstraint1": false,
+            "MediationConstraint2": true,
+            "DependencyRelationshipConstraint2": true
+          },
+          "status": "FAIL"
+        },
+        {
+          "relation": "contextClassificationProduct",
+          "rules": {
+            "DependencyRelationshipConstraint1": false,
+            "MediationConstraint2": true,
+            "DependencyRelationshipConstraint2": true
+          },
+          "status": "FAIL"
+        },
+        {
+          "relation": "evidenceRecord",
+          "rules": {
+            "DependencyRelationshipConstraint1": false,
+            "MediationConstraint2": false,
+            "DependencyRelationshipConstraint2": true
+          },
+          "status": "FAIL"
+        }
+      ],
+      "full_candidate_validated": false,
+      "scientific_acceptance": false,
+      "fragments": [
+        {
+          "file": "fragments/A-prior-cards-contextClassificationEntry.json",
+          "included_ids": [
+            "AppliedClassificationEntryRole",
+            "ClassificationEntry",
+            "ContextualMedicineClassificationAssignment",
+            "ProductClassificationAssignment",
+            "cm-pharme-root",
+            "end-classificationEntry-source",
+            "end-classificationEntry-target",
+            "end-contextClassificationEntry-source",
+            "end-contextClassificationEntry-target",
+            "gen-AppliedClassificationEntryRole-ClassificationEntry",
+            "gen-ContextualMedicineClassificationAssignment-ProductClassificationAssignment",
+            "rel-classificationEntry",
+            "rel-contextClassificationEntry"
+          ],
+          "omission_scope": "Structural projection only: full original Notes, external relations and modern nature are not validated by legacy conversion."
+        },
+        {
+          "file": "fragments/A-prior-cards-contextClassificationProduct.json",
+          "included_ids": [
+            "ClassifiedEntity",
+            "ClassifiedMedicinalProductRole",
+            "ClassifiedPharmaceuticalSubstanceRole",
+            "ContextualMedicineClassificationAssignment",
+            "MedicinalProduct",
+            "PharmaceuticalSubstance",
+            "ProductClassificationAssignment",
+            "cm-pharme-root",
+            "end-classificationEntity-source",
+            "end-classificationEntity-target",
+            "end-contextClassificationProduct-source",
+            "end-contextClassificationProduct-target",
+            "gen-ClassifiedMedicinalProductRole-ClassifiedEntity",
+            "gen-ClassifiedMedicinalProductRole-MedicinalProduct",
+            "gen-ClassifiedPharmaceuticalSubstanceRole-ClassifiedEntity",
+            "gen-ClassifiedPharmaceuticalSubstanceRole-PharmaceuticalSubstance",
+            "gen-ContextualMedicineClassificationAssignment-ProductClassificationAssignment",
+            "gs-ClassifiedEntity",
+            "rel-classificationEntity",
+            "rel-contextClassificationProduct"
+          ],
+          "omission_scope": "Structural projection only: full original Notes, external relations and modern nature are not validated by legacy conversion."
+        },
+        {
+          "file": "fragments/A-prior-cards-evidenceRecord.json",
+          "included_ids": [
+            "EvidenceItem",
+            "EvidenceObservationResultRole",
+            "EvidenceSourceRecordRole",
+            "EvidenceSupport",
+            "ObservationResult",
+            "SourceRecord",
+            "cm-pharme-root",
+            "end-evidenceItem-source",
+            "end-evidenceItem-target",
+            "end-evidenceRecord-source",
+            "end-evidenceRecord-target",
+            "gen-EvidenceObservationResultRole-EvidenceItem",
+            "gen-EvidenceObservationResultRole-ObservationResult",
+            "gen-EvidenceSourceRecordRole-EvidenceItem",
+            "gen-EvidenceSourceRecordRole-SourceRecord",
+            "gs-EvidenceItem",
+            "rel-evidenceItem",
+            "rel-evidenceRecord"
+          ],
+          "omission_scope": "Structural projection only: full original Notes, external relations and modern nature are not validated by legacy conversion."
+        }
+      ]
+    },
+    {
+      "variant": "B-mandatory-mediations",
+      "patch": [
+        {
+          "id": "end-contextClassificationEntry-source",
+          "field": "cardinality",
+          "before": null,
+          "after": "1..*",
+          "basis": "EXPERIMENTAL alternative; not author accepted"
+        },
+        {
+          "id": "end-contextClassificationEntry-target",
+          "field": "cardinality",
+          "before": null,
+          "after": "1",
+          "basis": "EXPERIMENTAL alternative; not author accepted"
+        },
+        {
+          "id": "end-contextClassificationEntry-source",
+          "field": "isReadOnly",
+          "before": null,
+          "after": false,
+          "basis": "Inverse participant population may change; proposal only"
+        },
+        {
+          "id": "end-contextClassificationEntry-target",
+          "field": "isReadOnly",
+          "before": null,
+          "after": true,
+          "basis": "Frozen participant identity hypothesis; proposal tested on bounded traces"
+        },
+        {
+          "id": "end-classificationEntry-target",
+          "field": "isReadOnly",
+          "before": false,
+          "after": true,
+          "basis": "Primary mediation profile requires immutable mediated end; proposal changes prior false"
+        },
+        {
+          "id": "end-contextClassificationProduct-source",
+          "field": "cardinality",
+          "before": null,
+          "after": "1..*",
+          "basis": "EXPERIMENTAL alternative; not author accepted"
+        },
+        {
+          "id": "end-contextClassificationProduct-target",
+          "field": "cardinality",
+          "before": null,
+          "after": "1",
+          "basis": "EXPERIMENTAL alternative; not author accepted"
+        },
+        {
+          "id": "end-contextClassificationProduct-source",
+          "field": "isReadOnly",
+          "before": null,
+          "after": false,
+          "basis": "Inverse participant population may change; proposal only"
+        },
+        {
+          "id": "end-contextClassificationProduct-target",
+          "field": "isReadOnly",
+          "before": null,
+          "after": true,
+          "basis": "Frozen participant identity hypothesis; proposal tested on bounded traces"
+        },
+        {
+          "id": "end-classificationEntity-target",
+          "field": "isReadOnly",
+          "before": false,
+          "after": true,
+          "basis": "Primary mediation profile requires immutable mediated end; proposal changes prior false"
+        },
+        {
+          "id": "end-evidenceRecord-source",
+          "field": "cardinality",
+          "before": null,
+          "after": "1..*",
+          "basis": "EXPERIMENTAL alternative; not author accepted"
+        },
+        {
+          "id": "end-evidenceRecord-target",
+          "field": "cardinality",
+          "before": null,
+          "after": "1",
+          "basis": "EXPERIMENTAL alternative; not author accepted"
+        },
+        {
+          "id": "end-evidenceRecord-source",
+          "field": "isReadOnly",
+          "before": null,
+          "after": false,
+          "basis": "Inverse participant population may change; proposal only"
+        },
+        {
+          "id": "end-evidenceRecord-target",
+          "field": "isReadOnly",
+          "before": null,
+          "after": true,
+          "basis": "Frozen participant identity hypothesis; proposal tested on bounded traces"
+        },
+        {
+          "id": "end-evidenceItem-target",
+          "field": "isReadOnly",
+          "before": false,
+          "after": true,
+          "basis": "Primary mediation profile requires immutable mediated end; proposal changes prior false"
+        }
+      ],
+      "native_schema_parser": {
+        "tool_versions": {
+          "node": "v24.19.0",
+          "ontouml_js": "1.0.0",
+          "ontouml_schema": "1.0.2",
+          "ajv": "8.17.1"
+        },
+        "schema_valid": true,
+        "schema_errors": [],
+        "official_parser": {
+          "type": "Project16",
+          "id": "cm-pharme-four-domain-refinement",
+          "classes": 147
+        },
+        "parser_error": null,
+        "pass": true
+      },
+      "bounded_subsetting": [
+        {
+          "end": "end-contextClassificationEntry-source",
+          "target": "end-classificationEntry-source",
+          "kind": "subsettedProperties",
+          "relation": "rel-contextClassificationEntry",
+          "reference": "PASS",
+          "source_type": "ContextualMedicineClassificationAssignment",
+          "target_type": "ProductClassificationAssignment",
+          "source_cardinality": "1..*",
+          "target_cardinality": "1..*",
+          "type_conformance": "PASS",
+          "context_conformance": "PASS",
+          "upper_bound": "PASS",
+          "different_names": "PASS",
+          "overall": "PASS"
+        },
+        {
+          "end": "end-contextClassificationEntry-target",
+          "target": "end-classificationEntry-target",
+          "kind": "subsettedProperties",
+          "relation": "rel-contextClassificationEntry",
+          "reference": "PASS",
+          "source_type": "AppliedClassificationEntryRole",
+          "target_type": "AppliedClassificationEntryRole",
+          "source_cardinality": "1",
+          "target_cardinality": "1",
+          "type_conformance": "PASS",
+          "context_conformance": "PASS",
+          "upper_bound": "PASS",
+          "different_names": "PASS",
+          "overall": "PASS"
+        },
+        {
+          "end": "end-contextClassificationProduct-source",
+          "target": "end-classificationEntity-source",
+          "kind": "subsettedProperties",
+          "relation": "rel-contextClassificationProduct",
+          "reference": "PASS",
+          "source_type": "ContextualMedicineClassificationAssignment",
+          "target_type": "ProductClassificationAssignment",
+          "source_cardinality": "1..*",
+          "target_cardinality": "1..*",
+          "type_conformance": "PASS",
+          "context_conformance": "PASS",
+          "upper_bound": "PASS",
+          "different_names": "PASS",
+          "overall": "PASS"
+        },
+        {
+          "end": "end-contextClassificationProduct-target",
+          "target": "end-classificationEntity-target",
+          "kind": "subsettedProperties",
+          "relation": "rel-contextClassificationProduct",
+          "reference": "PASS",
+          "source_type": "ClassifiedMedicinalProductRole",
+          "target_type": "ClassifiedEntity",
+          "source_cardinality": "1",
+          "target_cardinality": "1",
+          "type_conformance": "PASS",
+          "context_conformance": "PASS",
+          "upper_bound": "PASS",
+          "different_names": "PASS",
+          "overall": "PASS"
+        },
+        {
+          "end": "end-evidenceRecord-source",
+          "target": "end-evidenceItem-source",
+          "kind": "subsettedProperties",
+          "relation": "rel-evidenceRecord",
+          "reference": "PASS",
+          "source_type": "EvidenceSupport",
+          "target_type": "EvidenceSupport",
+          "source_cardinality": "1..*",
+          "target_cardinality": "1..*",
+          "type_conformance": "PASS",
+          "context_conformance": "PASS",
+          "upper_bound": "PASS",
+          "different_names": "PASS",
+          "overall": "PASS"
+        },
+        {
+          "end": "end-evidenceRecord-target",
+          "target": "end-evidenceItem-target",
+          "kind": "subsettedProperties",
+          "relation": "rel-evidenceRecord",
+          "reference": "PASS",
+          "source_type": "EvidenceSourceRecordRole",
+          "target_type": "EvidenceItem",
+          "source_cardinality": "1",
+          "target_cardinality": "1",
+          "type_conformance": "PASS",
+          "context_conformance": "PASS",
+          "upper_bound": "PASS",
+          "different_names": "PASS",
+          "overall": "PASS"
+        }
+      ],
+      "mediation_source_profile": [
+        {
+          "relation": "contextClassificationEntry",
+          "rules": {
+            "DependencyRelationshipConstraint1": true,
+            "MediationConstraint2": true,
+            "DependencyRelationshipConstraint2": true
+          },
+          "status": "PASS"
+        },
+        {
+          "relation": "contextClassificationProduct",
+          "rules": {
+            "DependencyRelationshipConstraint1": true,
+            "MediationConstraint2": true,
+            "DependencyRelationshipConstraint2": true
+          },
+          "status": "PASS"
+        },
+        {
+          "relation": "evidenceRecord",
+          "rules": {
+            "DependencyRelationshipConstraint1": true,
+            "MediationConstraint2": true,
+            "DependencyRelationshipConstraint2": true
+          },
+          "status": "PASS"
+        }
+      ],
+      "full_candidate_validated": false,
+      "scientific_acceptance": false,
+      "fragments": [
+        {
+          "file": "fragments/B-mandatory-mediations-contextClassificationEntry.json",
+          "included_ids": [
+            "AppliedClassificationEntryRole",
+            "ClassificationEntry",
+            "ContextualMedicineClassificationAssignment",
+            "ProductClassificationAssignment",
+            "cm-pharme-root",
+            "end-classificationEntry-source",
+            "end-classificationEntry-target",
+            "end-contextClassificationEntry-source",
+            "end-contextClassificationEntry-target",
+            "gen-AppliedClassificationEntryRole-ClassificationEntry",
+            "gen-ContextualMedicineClassificationAssignment-ProductClassificationAssignment",
+            "rel-classificationEntry",
+            "rel-contextClassificationEntry"
+          ],
+          "omission_scope": "Structural projection only: full original Notes, external relations and modern nature are not validated by legacy conversion."
+        },
+        {
+          "file": "fragments/B-mandatory-mediations-contextClassificationProduct.json",
+          "included_ids": [
+            "ClassifiedEntity",
+            "ClassifiedMedicinalProductRole",
+            "ClassifiedPharmaceuticalSubstanceRole",
+            "ContextualMedicineClassificationAssignment",
+            "MedicinalProduct",
+            "PharmaceuticalSubstance",
+            "ProductClassificationAssignment",
+            "cm-pharme-root",
+            "end-classificationEntity-source",
+            "end-classificationEntity-target",
+            "end-contextClassificationProduct-source",
+            "end-contextClassificationProduct-target",
+            "gen-ClassifiedMedicinalProductRole-ClassifiedEntity",
+            "gen-ClassifiedMedicinalProductRole-MedicinalProduct",
+            "gen-ClassifiedPharmaceuticalSubstanceRole-ClassifiedEntity",
+            "gen-ClassifiedPharmaceuticalSubstanceRole-PharmaceuticalSubstance",
+            "gen-ContextualMedicineClassificationAssignment-ProductClassificationAssignment",
+            "gs-ClassifiedEntity",
+            "rel-classificationEntity",
+            "rel-contextClassificationProduct"
+          ],
+          "omission_scope": "Structural projection only: full original Notes, external relations and modern nature are not validated by legacy conversion."
+        },
+        {
+          "file": "fragments/B-mandatory-mediations-evidenceRecord.json",
+          "included_ids": [
+            "EvidenceItem",
+            "EvidenceObservationResultRole",
+            "EvidenceSourceRecordRole",
+            "EvidenceSupport",
+            "ObservationResult",
+            "SourceRecord",
+            "cm-pharme-root",
+            "end-evidenceItem-source",
+            "end-evidenceItem-target",
+            "end-evidenceRecord-source",
+            "end-evidenceRecord-target",
+            "gen-EvidenceObservationResultRole-EvidenceItem",
+            "gen-EvidenceObservationResultRole-ObservationResult",
+            "gen-EvidenceSourceRecordRole-EvidenceItem",
+            "gen-EvidenceSourceRecordRole-SourceRecord",
+            "gs-EvidenceItem",
+            "rel-evidenceItem",
+            "rel-evidenceRecord"
+          ],
+          "omission_scope": "Structural projection only: full original Notes, external relations and modern nature are not validated by legacy conversion."
+        }
+      ]
+    },
+    {
+      "variant": "C-derived-projections",
+      "patch": [
+        {
+          "id": "end-contextClassificationEntry-source",
+          "field": "cardinality",
+          "before": null,
+          "after": "0..*",
+          "basis": "EXPERIMENTAL alternative; not author accepted"
+        },
+        {
+          "id": "end-contextClassificationEntry-target",
+          "field": "cardinality",
+          "before": null,
+          "after": "1",
+          "basis": "EXPERIMENTAL alternative; not author accepted"
+        },
+        {
+          "id": "end-contextClassificationEntry-source",
+          "field": "isReadOnly",
+          "before": null,
+          "after": false,
+          "basis": "Inverse participant population may change; proposal only"
+        },
+        {
+          "id": "end-contextClassificationEntry-target",
+          "field": "isReadOnly",
+          "before": null,
+          "after": true,
+          "basis": "Frozen participant identity hypothesis; proposal tested on bounded traces"
+        },
+        {
+          "id": "end-classificationEntry-target",
+          "field": "isReadOnly",
+          "before": false,
+          "after": true,
+          "basis": "Primary mediation profile requires immutable mediated end; proposal changes prior false"
+        },
+        {
+          "id": "rel-contextClassificationEntry",
+          "field": "stereotype",
+          "before": "mediation",
+          "after": null,
+          "basis": "Derived typed association, classification unaccepted; not a primitive mediation"
+        },
+        {
+          "id": "rel-contextClassificationEntry",
+          "field": "isDerived",
+          "before": false,
+          "after": true,
+          "basis": "Explicit source/target-filtered projection of existing primitive mediation"
+        },
+        {
+          "id": "end-contextClassificationProduct-source",
+          "field": "cardinality",
+          "before": null,
+          "after": "0..*",
+          "basis": "EXPERIMENTAL alternative; not author accepted"
+        },
+        {
+          "id": "end-contextClassificationProduct-target",
+          "field": "cardinality",
+          "before": null,
+          "after": "0..1",
+          "basis": "EXPERIMENTAL alternative; not author accepted"
+        },
+        {
+          "id": "end-contextClassificationProduct-source",
+          "field": "isReadOnly",
+          "before": null,
+          "after": false,
+          "basis": "Inverse participant population may change; proposal only"
+        },
+        {
+          "id": "end-contextClassificationProduct-target",
+          "field": "isReadOnly",
+          "before": null,
+          "after": true,
+          "basis": "Frozen participant identity hypothesis; proposal tested on bounded traces"
+        },
+        {
+          "id": "end-classificationEntity-target",
+          "field": "isReadOnly",
+          "before": false,
+          "after": true,
+          "basis": "Primary mediation profile requires immutable mediated end; proposal changes prior false"
+        },
+        {
+          "id": "rel-contextClassificationProduct",
+          "field": "stereotype",
+          "before": "mediation",
+          "after": null,
+          "basis": "Derived typed association, classification unaccepted; not a primitive mediation"
+        },
+        {
+          "id": "rel-contextClassificationProduct",
+          "field": "isDerived",
+          "before": false,
+          "after": true,
+          "basis": "Explicit source/target-filtered projection of existing primitive mediation"
+        },
+        {
+          "id": "end-evidenceRecord-source",
+          "field": "cardinality",
+          "before": null,
+          "after": "0..*",
+          "basis": "EXPERIMENTAL alternative; not author accepted"
+        },
+        {
+          "id": "end-evidenceRecord-target",
+          "field": "cardinality",
+          "before": null,
+          "after": "0..1",
+          "basis": "EXPERIMENTAL alternative; not author accepted"
+        },
+        {
+          "id": "end-evidenceRecord-source",
+          "field": "isReadOnly",
+          "before": null,
+          "after": false,
+          "basis": "Inverse participant population may change; proposal only"
+        },
+        {
+          "id": "end-evidenceRecord-target",
+          "field": "isReadOnly",
+          "before": null,
+          "after": true,
+          "basis": "Frozen participant identity hypothesis; proposal tested on bounded traces"
+        },
+        {
+          "id": "end-evidenceItem-target",
+          "field": "isReadOnly",
+          "before": false,
+          "after": true,
+          "basis": "Primary mediation profile requires immutable mediated end; proposal changes prior false"
+        },
+        {
+          "id": "rel-evidenceRecord",
+          "field": "stereotype",
+          "before": "mediation",
+          "after": null,
+          "basis": "Derived typed association, classification unaccepted; not a primitive mediation"
+        },
+        {
+          "id": "rel-evidenceRecord",
+          "field": "isDerived",
+          "before": false,
+          "after": true,
+          "basis": "Explicit source/target-filtered projection of existing primitive mediation"
+        }
+      ],
+      "native_schema_parser": {
+        "tool_versions": {
+          "node": "v24.19.0",
+          "ontouml_js": "1.0.0",
+          "ontouml_schema": "1.0.2",
+          "ajv": "8.17.1"
+        },
+        "schema_valid": true,
+        "schema_errors": [],
+        "official_parser": {
+          "type": "Project16",
+          "id": "cm-pharme-four-domain-refinement",
+          "classes": 147
+        },
+        "parser_error": null,
+        "pass": true
+      },
+      "bounded_subsetting": [
+        {
+          "end": "end-contextClassificationEntry-source",
+          "target": "end-classificationEntry-source",
+          "kind": "subsettedProperties",
+          "relation": "rel-contextClassificationEntry",
+          "reference": "PASS",
+          "source_type": "ContextualMedicineClassificationAssignment",
+          "target_type": "ProductClassificationAssignment",
+          "source_cardinality": "0..*",
+          "target_cardinality": "1..*",
+          "type_conformance": "PASS",
+          "context_conformance": "PASS",
+          "upper_bound": "PASS",
+          "different_names": "PASS",
+          "overall": "PASS"
+        },
+        {
+          "end": "end-contextClassificationEntry-target",
+          "target": "end-classificationEntry-target",
+          "kind": "subsettedProperties",
+          "relation": "rel-contextClassificationEntry",
+          "reference": "PASS",
+          "source_type": "AppliedClassificationEntryRole",
+          "target_type": "AppliedClassificationEntryRole",
+          "source_cardinality": "1",
+          "target_cardinality": "1",
+          "type_conformance": "PASS",
+          "context_conformance": "PASS",
+          "upper_bound": "PASS",
+          "different_names": "PASS",
+          "overall": "PASS"
+        },
+        {
+          "end": "end-contextClassificationProduct-source",
+          "target": "end-classificationEntity-source",
+          "kind": "subsettedProperties",
+          "relation": "rel-contextClassificationProduct",
+          "reference": "PASS",
+          "source_type": "ContextualMedicineClassificationAssignment",
+          "target_type": "ProductClassificationAssignment",
+          "source_cardinality": "0..*",
+          "target_cardinality": "1..*",
+          "type_conformance": "PASS",
+          "context_conformance": "PASS",
+          "upper_bound": "PASS",
+          "different_names": "PASS",
+          "overall": "PASS"
+        },
+        {
+          "end": "end-contextClassificationProduct-target",
+          "target": "end-classificationEntity-target",
+          "kind": "subsettedProperties",
+          "relation": "rel-contextClassificationProduct",
+          "reference": "PASS",
+          "source_type": "ClassifiedMedicinalProductRole",
+          "target_type": "ClassifiedEntity",
+          "source_cardinality": "0..1",
+          "target_cardinality": "1",
+          "type_conformance": "PASS",
+          "context_conformance": "PASS",
+          "upper_bound": "PASS",
+          "different_names": "PASS",
+          "overall": "PASS"
+        },
+        {
+          "end": "end-evidenceRecord-source",
+          "target": "end-evidenceItem-source",
+          "kind": "subsettedProperties",
+          "relation": "rel-evidenceRecord",
+          "reference": "PASS",
+          "source_type": "EvidenceSupport",
+          "target_type": "EvidenceSupport",
+          "source_cardinality": "0..*",
+          "target_cardinality": "1..*",
+          "type_conformance": "PASS",
+          "context_conformance": "PASS",
+          "upper_bound": "PASS",
+          "different_names": "PASS",
+          "overall": "PASS"
+        },
+        {
+          "end": "end-evidenceRecord-target",
+          "target": "end-evidenceItem-target",
+          "kind": "subsettedProperties",
+          "relation": "rel-evidenceRecord",
+          "reference": "PASS",
+          "source_type": "EvidenceSourceRecordRole",
+          "target_type": "EvidenceItem",
+          "source_cardinality": "0..1",
+          "target_cardinality": "1",
+          "type_conformance": "PASS",
+          "context_conformance": "PASS",
+          "upper_bound": "PASS",
+          "different_names": "PASS",
+          "overall": "PASS"
+        }
+      ],
+      "mediation_source_profile": [
+        {
+          "relation": "contextClassificationEntry",
+          "status": "NOT_APPLICABLE_TO_DERIVED_ASSOCIATION"
+        },
+        {
+          "relation": "contextClassificationProduct",
+          "status": "NOT_APPLICABLE_TO_DERIVED_ASSOCIATION"
+        },
+        {
+          "relation": "evidenceRecord",
+          "status": "NOT_APPLICABLE_TO_DERIVED_ASSOCIATION"
+        }
+      ],
+      "full_candidate_validated": false,
+      "scientific_acceptance": false,
+      "fragments": [
+        {
+          "file": "fragments/C-derived-projections-contextClassificationEntry.json",
+          "included_ids": [
+            "AppliedClassificationEntryRole",
+            "ClassificationEntry",
+            "ContextualMedicineClassificationAssignment",
+            "ProductClassificationAssignment",
+            "cm-pharme-root",
+            "end-classificationEntry-source",
+            "end-classificationEntry-target",
+            "end-contextClassificationEntry-source",
+            "end-contextClassificationEntry-target",
+            "gen-AppliedClassificationEntryRole-ClassificationEntry",
+            "gen-ContextualMedicineClassificationAssignment-ProductClassificationAssignment",
+            "rel-classificationEntry",
+            "rel-contextClassificationEntry"
+          ],
+          "omission_scope": "Structural projection only: full original Notes, external relations and modern nature are not validated by legacy conversion."
+        },
+        {
+          "file": "fragments/C-derived-projections-contextClassificationProduct.json",
+          "included_ids": [
+            "ClassifiedEntity",
+            "ClassifiedMedicinalProductRole",
+            "ClassifiedPharmaceuticalSubstanceRole",
+            "ContextualMedicineClassificationAssignment",
+            "MedicinalProduct",
+            "PharmaceuticalSubstance",
+            "ProductClassificationAssignment",
+            "cm-pharme-root",
+            "end-classificationEntity-source",
+            "end-classificationEntity-target",
+            "end-contextClassificationProduct-source",
+            "end-contextClassificationProduct-target",
+            "gen-ClassifiedMedicinalProductRole-ClassifiedEntity",
+            "gen-ClassifiedMedicinalProductRole-MedicinalProduct",
+            "gen-ClassifiedPharmaceuticalSubstanceRole-ClassifiedEntity",
+            "gen-ClassifiedPharmaceuticalSubstanceRole-PharmaceuticalSubstance",
+            "gen-ContextualMedicineClassificationAssignment-ProductClassificationAssignment",
+            "gs-ClassifiedEntity",
+            "rel-classificationEntity",
+            "rel-contextClassificationProduct"
+          ],
+          "omission_scope": "Structural projection only: full original Notes, external relations and modern nature are not validated by legacy conversion."
+        },
+        {
+          "file": "fragments/C-derived-projections-evidenceRecord.json",
+          "included_ids": [
+            "EvidenceItem",
+            "EvidenceObservationResultRole",
+            "EvidenceSourceRecordRole",
+            "EvidenceSupport",
+            "ObservationResult",
+            "SourceRecord",
+            "cm-pharme-root",
+            "end-evidenceItem-source",
+            "end-evidenceItem-target",
+            "end-evidenceRecord-source",
+            "end-evidenceRecord-target",
+            "gen-EvidenceObservationResultRole-EvidenceItem",
+            "gen-EvidenceObservationResultRole-ObservationResult",
+            "gen-EvidenceSourceRecordRole-EvidenceItem",
+            "gen-EvidenceSourceRecordRole-SourceRecord",
+            "gs-EvidenceItem",
+            "rel-evidenceItem",
+            "rel-evidenceRecord"
+          ],
+          "omission_scope": "Structural projection only: full original Notes, external relations and modern nature are not validated by legacy conversion."
+        }
+      ]
+    }
+  ]
+}
