@@ -1,0 +1,19 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+
+<urn:cmpe-policy:CarrierClaimIdentityShape> a sh:NodeShape ;
+    sh:sparql <urn:cmpe-policy:CarrierNotOwnClaim> ;
+    sh:targetSubjectsOf <https://w3id.org/cm-pharme/experimental/refinement/carrierClaim> .
+
+<urn:cmpe-policy:ResultSignalIdentityShape> a sh:NodeShape ;
+    sh:sparql <urn:cmpe-policy:NoSelfOrSameAsChain> ;
+    sh:targetSubjectsOf <https://w3id.org/cm-pharme/experimental/four-domain/pvResultSignal> .
+
+<urn:cmpe-policy:CarrierNotOwnClaim> sh:message "A carrier must differ from its carried claim, including explicit sameAs aliases." ;
+    sh:select "SELECT $this ?value WHERE { $this <https://w3id.org/cm-pharme/experimental/refinement/carrierClaim> ?value . $this (<http://www.w3.org/2002/07/owl#sameAs>|^<http://www.w3.org/2002/07/owl#sameAs>)* ?value . }" .
+
+<urn:cmpe-policy:NoSelfOrSameAsChain> sh:message "An assessment result must differ from its target signal, including explicitly stated sameAs aliases." ;
+    sh:select """SELECT $this ?value WHERE {
+ $this <https://w3id.org/cm-pharme/experimental/four-domain/pvResultSignal> ?value .
+ $this (<http://www.w3.org/2002/07/owl#sameAs>|^<http://www.w3.org/2002/07/owl#sameAs>)* ?value .
+}""" .
+

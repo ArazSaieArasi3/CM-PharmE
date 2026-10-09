@@ -1,0 +1,118 @@
+[
+  {
+    "name": "untagged-distinct-result",
+    "expected_conforms": true,
+    "actual_conforms": true,
+    "violation_constraints": [],
+    "fixture": "fixtures/untagged-distinct-result.ttl",
+    "pass": true
+  },
+  {
+    "name": "untagged-self",
+    "expected_conforms": false,
+    "actual_conforms": false,
+    "violation_constraints": [
+      "urn:cmpe-policy:NoSelfOrSameAsChain"
+    ],
+    "fixture": "fixtures/untagged-self.ttl",
+    "pass": true
+  },
+  {
+    "name": "direct-alias",
+    "expected_conforms": false,
+    "actual_conforms": false,
+    "violation_constraints": [
+      "urn:cmpe-policy:NoSelfOrSameAsChain"
+    ],
+    "fixture": "fixtures/direct-alias.ttl",
+    "pass": true
+  },
+  {
+    "name": "reverse-alias",
+    "expected_conforms": false,
+    "actual_conforms": false,
+    "violation_constraints": [
+      "urn:cmpe-policy:NoSelfOrSameAsChain"
+    ],
+    "fixture": "fixtures/reverse-alias.ttl",
+    "pass": true
+  },
+  {
+    "name": "mixed-three-link-alias",
+    "expected_conforms": false,
+    "actual_conforms": false,
+    "violation_constraints": [
+      "urn:cmpe-policy:NoSelfOrSameAsChain"
+    ],
+    "fixture": "fixtures/mixed-three-link-alias.ttl",
+    "pass": true
+  },
+  {
+    "name": "unrelated-alias",
+    "expected_conforms": true,
+    "actual_conforms": true,
+    "violation_constraints": [],
+    "fixture": "fixtures/unrelated-alias.ttl",
+    "pass": true
+  },
+  {
+    "name": "shared-signal-two-assessments",
+    "expected_conforms": true,
+    "actual_conforms": true,
+    "violation_constraints": [],
+    "fixture": "fixtures/shared-signal-two-assessments.ttl",
+    "pass": true
+  },
+  {
+    "name": "cross-context-content-reuse",
+    "expected_conforms": true,
+    "actual_conforms": true,
+    "violation_constraints": [],
+    "fixture": "fixtures/cross-context-content-reuse.ttl",
+    "pass": true
+  },
+  {
+    "name": "same-text-does-not-merge-claims",
+    "expected_conforms": true,
+    "actual_conforms": true,
+    "violation_constraints": [],
+    "fixture": "fixtures/same-text-does-not-merge-claims.ttl",
+    "pass": true
+  },
+  {
+    "name": "carrier-self-without-tag",
+    "expected_conforms": false,
+    "actual_conforms": false,
+    "violation_constraints": [
+      "urn:cmpe-policy:CarrierNotOwnClaim"
+    ],
+    "fixture": "fixtures/carrier-self-without-tag.ttl",
+    "pass": true
+  },
+  {
+    "name": "carrier-alias-chain",
+    "expected_conforms": false,
+    "actual_conforms": false,
+    "violation_constraints": [
+      "urn:cmpe-policy:CarrierNotOwnClaim"
+    ],
+    "fixture": "fixtures/carrier-alias-chain.ttl",
+    "pass": true
+  },
+  {
+    "name": "distinct-carrier-and-claim",
+    "expected_conforms": true,
+    "actual_conforms": true,
+    "violation_constraints": [],
+    "fixture": "fixtures/distinct-carrier-and-claim.ttl",
+    "pass": true
+  },
+  {
+    "name": "two-carriers-same-claim",
+    "expected_conforms": true,
+    "actual_conforms": true,
+    "violation_constraints": [],
+    "fixture": "fixtures/two-carriers-same-claim.ttl",
+    "pass": true
+  }
+]
