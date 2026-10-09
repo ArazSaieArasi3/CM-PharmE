@@ -1,0 +1,543 @@
+{
+  "status": "13 local refinements, not 13 additional globally independent requirements",
+  "requirements": [
+    {
+      "id": "CL-01",
+      "statement": "Separate information carrier, structured claim and context/specification descriptions",
+      "related_prior_ids": [
+        "B2-RG-07"
+      ],
+      "mapping": "PARTIAL_REFINEMENT_NOT_REPLACEMENT",
+      "origin": "DESIGN_PROPOSAL_WITH_SOURCE_LINKS",
+      "tests": [
+        {
+          "kind": "admission",
+          "test": "structured-claim-positive",
+          "pass": true
+        },
+        {
+          "kind": "admission",
+          "test": "claim-carrier-alias",
+          "pass": true
+        },
+        {
+          "kind": "reasoner",
+          "test": "claim-carrier-identity-collision",
+          "pass": true
+        },
+        {
+          "kind": "reasoner",
+          "test": "specification-is-not-source-carrier",
+          "pass": true
+        }
+      ],
+      "source_extractions": [],
+      "accepted": false
+    },
+    {
+      "id": "CL-02",
+      "statement": "Represent claim content without materializing its described world-level statement",
+      "related_prior_ids": [
+        "B2-RG-03",
+        "B2-RP-02"
+      ],
+      "mapping": "PARTIAL_REFINEMENT_NOT_REPLACEMENT",
+      "origin": "DESIGN_PROPOSAL_WITH_SOURCE_LINKS",
+      "tests": [
+        {
+          "kind": "query",
+          "test": "positive-source-claim",
+          "pass": true
+        },
+        {
+          "kind": "admission",
+          "test": "literal-subject",
+          "pass": true
+        },
+        {
+          "kind": "admission",
+          "test": "literal-resource-object",
+          "pass": true
+        },
+        {
+          "kind": "admission",
+          "test": "resource-in-literal-slot",
+          "pass": true
+        },
+        {
+          "kind": "admission",
+          "test": "resource-and-literal-object",
+          "pass": true
+        },
+        {
+          "kind": "admission",
+          "test": "no-claim-object",
+          "pass": true
+        },
+        {
+          "kind": "admission",
+          "test": "predicate-is-not-anyURI",
+          "pass": true
+        },
+        {
+          "kind": "reasoner",
+          "test": "claim-does-not-assert-relation",
+          "pass": true
+        },
+        {
+          "kind": "reasoner",
+          "test": "claim-does-not-create-listing",
+          "pass": true
+        },
+        {
+          "kind": "reasoner",
+          "test": "type-claim-does-not-create-authorization",
+          "pass": true
+        }
+      ],
+      "source_extractions": [],
+      "accepted": false
+    },
+    {
+      "id": "CL-03",
+      "statement": "Preserve source denial and conflicting source claims without global truth negation",
+      "related_prior_ids": [
+        "B2-RG-07"
+      ],
+      "mapping": "PARTIAL_REFINEMENT_NOT_REPLACEMENT",
+      "origin": "DESIGN_PROPOSAL_WITH_SOURCE_LINKS",
+      "tests": [
+        {
+          "kind": "query",
+          "test": "conflicting-source-claims",
+          "pass": true
+        },
+        {
+          "kind": "query",
+          "test": "negative-source-claim",
+          "pass": true
+        },
+        {
+          "kind": "reasoner",
+          "test": "conflicting-claims-remain-logically-consistent",
+          "pass": true
+        },
+        {
+          "kind": "reasoner",
+          "test": "source-denial-is-not-negative-world-assertion",
+          "pass": true
+        }
+      ],
+      "source_extractions": [],
+      "accepted": false
+    },
+    {
+      "id": "CL-04",
+      "statement": "Do not turn missing slice evidence into world-level falsity",
+      "related_prior_ids": [
+        "B2-RG-05"
+      ],
+      "mapping": "PARTIAL_REFINEMENT_NOT_REPLACEMENT",
+      "origin": "DESIGN_PROPOSAL_WITH_SOURCE_LINKS",
+      "tests": [
+        {
+          "kind": "query",
+          "test": "absent-is-not-false",
+          "pass": true
+        },
+        {
+          "kind": "admission",
+          "test": "claim-without-carrier",
+          "pass": true
+        }
+      ],
+      "source_extractions": [],
+      "accepted": false
+    },
+    {
+      "id": "CL-05",
+      "statement": "Distinguish source field extraction from proposed ontology interpretation",
+      "related_prior_ids": [
+        "B2-RG-04",
+        "B2-RG-07"
+      ],
+      "mapping": "PARTIAL_REFINEMENT_NOT_REPLACEMENT",
+      "origin": "DESIGN_PROPOSAL_WITH_SOURCE_LINKS",
+      "tests": [
+        {
+          "kind": "query",
+          "test": "mapping-is-not-source-extraction",
+          "pass": true
+        },
+        {
+          "kind": "query",
+          "test": "conflicting-mapping-proposals",
+          "pass": true
+        },
+        {
+          "kind": "query",
+          "test": "mixed-origin-answer",
+          "pass": true
+        },
+        {
+          "kind": "query",
+          "test": "direct-source-extraction",
+          "pass": true
+        },
+        {
+          "kind": "admission",
+          "test": "missing-claim-origin",
+          "pass": true
+        }
+      ],
+      "source_extractions": [],
+      "accepted": false
+    },
+    {
+      "id": "CTX-01",
+      "statement": "Qualify context by actor role and declared portfolio",
+      "related_prior_ids": [
+        "B2-RP-01"
+      ],
+      "mapping": "PARTIAL_REFINEMENT_NOT_REPLACEMENT",
+      "origin": "DESIGN_PROPOSAL_WITH_SOURCE_LINKS",
+      "tests": [
+        {
+          "kind": "query",
+          "test": "complete-declared-match",
+          "pass": true
+        },
+        {
+          "kind": "query",
+          "test": "wrong-role",
+          "pass": true
+        },
+        {
+          "kind": "query",
+          "test": "missing-role",
+          "pass": true
+        },
+        {
+          "kind": "query",
+          "test": "missing-actor",
+          "pass": true
+        },
+        {
+          "kind": "query",
+          "test": "not-in-MAH-portfolio",
+          "pass": true
+        },
+        {
+          "kind": "query",
+          "test": "missing-portfolio",
+          "pass": true
+        },
+        {
+          "kind": "query",
+          "test": "NCA-does-not-need-MAH-portfolio",
+          "pass": true
+        },
+        {
+          "kind": "admission",
+          "test": "complete-context-positive",
+          "pass": true
+        },
+        {
+          "kind": "admission",
+          "test": "ambiguous-context-role",
+          "pass": true
+        },
+        {
+          "kind": "reasoner",
+          "test": "complete-synthetic-context",
+          "pass": true
+        }
+      ],
+      "source_extractions": [],
+      "accepted": false
+    },
+    {
+      "id": "CTX-02",
+      "statement": "Keep jurisdiction, product/presentation and marketing country coherent",
+      "related_prior_ids": [
+        "B2-RP-03"
+      ],
+      "mapping": "PARTIAL_REFINEMENT_NOT_REPLACEMENT",
+      "origin": "DESIGN_PROPOSAL_WITH_SOURCE_LINKS",
+      "tests": [
+        {
+          "kind": "query",
+          "test": "wrong-jurisdiction",
+          "pass": true
+        },
+        {
+          "kind": "query",
+          "test": "marketing-country-mismatch",
+          "pass": true
+        },
+        {
+          "kind": "admission",
+          "test": "presentation-product-mismatch",
+          "pass": true
+        }
+      ],
+      "source_extractions": [
+        "E02",
+        "E05"
+      ],
+      "accepted": false
+    },
+    {
+      "id": "CTX-03",
+      "statement": "Select scenario and authorisation-route tokens explicitly",
+      "related_prior_ids": [
+        "B2-RP-01",
+        "B2-RP-03"
+      ],
+      "mapping": "PARTIAL_REFINEMENT_NOT_REPLACEMENT",
+      "origin": "DESIGN_PROPOSAL_WITH_SOURCE_LINKS",
+      "tests": [
+        {
+          "kind": "query",
+          "test": "wrong-route",
+          "pass": true
+        },
+        {
+          "kind": "query",
+          "test": "wrong-scenario",
+          "pass": true
+        }
+      ],
+      "source_extractions": [],
+      "accepted": false
+    },
+    {
+      "id": "CTX-04",
+      "statement": "Require action-specific evidence for non-routine action matching",
+      "related_prior_ids": [
+        "B2-RP-03"
+      ],
+      "mapping": "PARTIAL_REFINEMENT_NOT_REPLACEMENT",
+      "origin": "DESIGN_PROPOSAL_WITH_SOURCE_LINKS",
+      "tests": [
+        {
+          "kind": "query",
+          "test": "missing-action-evidence",
+          "pass": true
+        },
+        {
+          "kind": "query",
+          "test": "launch-is-not-action",
+          "pass": true
+        },
+        {
+          "kind": "query",
+          "test": "guidance-is-not-action",
+          "pass": true
+        },
+        {
+          "kind": "query",
+          "test": "unannounced-action",
+          "pass": true
+        },
+        {
+          "kind": "query",
+          "test": "different-action",
+          "pass": true
+        },
+        {
+          "kind": "query",
+          "test": "routine-no-action-notice-required",
+          "pass": true
+        }
+      ],
+      "source_extractions": [
+        "E01"
+      ],
+      "accepted": false
+    },
+    {
+      "id": "CTX-05",
+      "statement": "Distinguish complete from incomplete product scope",
+      "related_prior_ids": [
+        "B2-RP-03"
+      ],
+      "mapping": "PARTIAL_REFINEMENT_NOT_REPLACEMENT",
+      "origin": "DESIGN_PROPOSAL_WITH_SOURCE_LINKS",
+      "tests": [
+        {
+          "kind": "query",
+          "test": "missing-product",
+          "pass": true
+        },
+        {
+          "kind": "query",
+          "test": "other-product-complete-list",
+          "pass": true
+        },
+        {
+          "kind": "query",
+          "test": "other-product-incomplete-list",
+          "pass": true
+        }
+      ],
+      "source_extractions": [
+        "E01"
+      ],
+      "accepted": false
+    },
+    {
+      "id": "CTX-06",
+      "statement": "Bind evaluation to a rule version/time and expose action-specific frequency",
+      "related_prior_ids": [
+        "B2-RP-04"
+      ],
+      "mapping": "PARTIAL_REFINEMENT_NOT_REPLACEMENT",
+      "origin": "DESIGN_PROPOSAL_WITH_SOURCE_LINKS",
+      "tests": [
+        {
+          "kind": "query",
+          "test": "missing-end",
+          "pass": true
+        },
+        {
+          "kind": "query",
+          "test": "missing-timezone",
+          "pass": true
+        },
+        {
+          "kind": "query",
+          "test": "expired-at-exclusive-end",
+          "pass": true
+        },
+        {
+          "kind": "query",
+          "test": "inclusive-start",
+          "pass": true
+        },
+        {
+          "kind": "query",
+          "test": "different-rule-version",
+          "pass": true
+        },
+        {
+          "kind": "query",
+          "test": "missing-version",
+          "pass": true
+        },
+        {
+          "kind": "query",
+          "test": "reversed-effective-interval",
+          "pass": true
+        },
+        {
+          "kind": "query",
+          "test": "frequency-not-hardcoded",
+          "pass": true
+        }
+      ],
+      "source_extractions": [
+        "E04"
+      ],
+      "accepted": false
+    },
+    {
+      "id": "CTX-07",
+      "statement": "Keep marketing prerequisites specific to submission flow",
+      "related_prior_ids": [
+        "B2-RP-03"
+      ],
+      "mapping": "PARTIAL_REFINEMENT_NOT_REPLACEMENT",
+      "origin": "DESIGN_PROPOSAL_WITH_SOURCE_LINKS",
+      "tests": [
+        {
+          "kind": "query",
+          "test": "wrong-submission-kind",
+          "pass": true
+        },
+        {
+          "kind": "query",
+          "test": "not-marketed-availability",
+          "pass": true
+        },
+        {
+          "kind": "query",
+          "test": "temporary-unavailability-admitted",
+          "pass": true
+        },
+        {
+          "kind": "query",
+          "test": "unknown-marketing-status",
+          "pass": true
+        },
+        {
+          "kind": "query",
+          "test": "manufacturing-independent-of-marketing",
+          "pass": true
+        },
+        {
+          "kind": "query",
+          "test": "alternative-therapies-independent-of-marketing",
+          "pass": true
+        }
+      ],
+      "source_extractions": [
+        "E02",
+        "E03",
+        "E05"
+      ],
+      "accepted": false
+    },
+    {
+      "id": "CTX-08",
+      "statement": "Return bounded match/unknown/error without certifying legal compliance or readiness",
+      "related_prior_ids": [
+        "B2-RP-01",
+        "B2-RP-02"
+      ],
+      "mapping": "PARTIAL_REFINEMENT_NOT_REPLACEMENT",
+      "origin": "DESIGN_PROPOSAL_WITH_SOURCE_LINKS",
+      "tests": [
+        {
+          "kind": "query",
+          "test": "unknown-record-selector-rejected",
+          "pass": true
+        },
+        {
+          "kind": "admission",
+          "test": "untyped-source-reference",
+          "pass": true
+        },
+        {
+          "kind": "reasoner",
+          "test": "combined-proposed-tbox",
+          "pass": true
+        },
+        {
+          "kind": "reasoner",
+          "test": "context-description-not-shortage-fact",
+          "pass": true
+        },
+        {
+          "kind": "reasoner",
+          "test": "scope-match-no-authorization",
+          "pass": true
+        },
+        {
+          "kind": "reasoner",
+          "test": "context-is-an-assertion-description",
+          "pass": true
+        }
+      ],
+      "source_extractions": [
+        "E06"
+      ],
+      "accepted": false
+    }
+  ],
+  "limits": [
+    "Presence of a linked test is not exhaustive requirement coverage.",
+    "NCA actor handling is synthetic design evidence; the real guide used here addresses MAHs.",
+    "No registration/approval/SPL requirement is declared complete."
+  ]
+}

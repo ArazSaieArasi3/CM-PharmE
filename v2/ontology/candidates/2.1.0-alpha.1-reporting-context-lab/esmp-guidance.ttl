@@ -1,0 +1,85 @@
+@prefix b: <https://w3id.org/cm-pharme/experimental/reporting-context/> .
+@prefix c: <https://w3id.org/cm-pharme/2.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+b:EMA-crisis-availability-1.4 a b:ReportingScopeSpecification ;
+    b:actionEvidenceKind "guidance" ;
+    b:actionState "unknown" ;
+    b:allowedRole "MAH" ;
+    b:allowedRoute "CAP",
+        "NAP" ;
+    b:evidencePointer "EMA guide v1.4 pp. 35,51" ;
+    b:marketingPolicy "require-marketed-status" ;
+    b:scenario "crisis" ;
+    b:scopeComplete false ;
+    b:scopeJurisdiction b:EU-EEA-declared ;
+    b:scopeMode "enumerated" ;
+    b:specificationSource b:EMA-guide-1.4-824d036a0cca ;
+    b:specificationVersion "EMA-MAH-1.4-2026-04-28" ;
+    b:submissionKind "availability" .
+
+b:EMA-preparedness-alternatives-1.4 a b:ReportingScopeSpecification ;
+    b:actionEvidenceKind "guidance" ;
+    b:actionState "unknown" ;
+    b:allowedRole "MAH" ;
+    b:allowedRoute "CAP",
+        "NAP" ;
+    b:evidencePointer "EMA guide v1.4 pp. 35" ;
+    b:marketingPolicy "not-a-condition" ;
+    b:scenario "preparedness" ;
+    b:scopeComplete false ;
+    b:scopeJurisdiction b:EU-EEA-declared ;
+    b:scopeMode "enumerated" ;
+    b:specificationSource b:EMA-guide-1.4-824d036a0cca ;
+    b:specificationVersion "EMA-MAH-1.4-2026-04-28" ;
+    b:submissionKind "alternative-therapies" .
+
+b:EMA-preparedness-availability-1.4 a b:ReportingScopeSpecification ;
+    b:actionEvidenceKind "guidance" ;
+    b:actionState "unknown" ;
+    b:allowedRole "MAH" ;
+    b:allowedRoute "CAP",
+        "NAP" ;
+    b:evidencePointer "EMA guide v1.4 pp. 35,51" ;
+    b:marketingPolicy "require-marketed-status" ;
+    b:scenario "preparedness" ;
+    b:scopeComplete false ;
+    b:scopeJurisdiction b:EU-EEA-declared ;
+    b:scopeMode "enumerated" ;
+    b:specificationSource b:EMA-guide-1.4-824d036a0cca ;
+    b:specificationVersion "EMA-MAH-1.4-2026-04-28" ;
+    b:submissionKind "availability" .
+
+b:EMA-preparedness-manufacturing-1.4 a b:ReportingScopeSpecification ;
+    b:actionEvidenceKind "guidance" ;
+    b:actionState "unknown" ;
+    b:allowedRole "MAH" ;
+    b:allowedRoute "CAP",
+        "NAP" ;
+    b:evidencePointer "EMA guide v1.4 pp. 35" ;
+    b:marketingPolicy "not-a-condition" ;
+    b:scenario "preparedness" ;
+    b:scopeComplete false ;
+    b:scopeJurisdiction b:EU-EEA-declared ;
+    b:scopeMode "enumerated" ;
+    b:specificationSource b:EMA-guide-1.4-824d036a0cca ;
+    b:specificationVersion "EMA-MAH-1.4-2026-04-28" ;
+    b:submissionKind "manufacturing" .
+
+b:EMA-routine-cap-1.4 a b:ReportingScopeSpecification ;
+    b:allowedRole "MAH" ;
+    b:allowedRoute "CAP" ;
+    b:evidencePointer "EMA guide v1.4 pp. 19,24" ;
+    b:marketingPolicy "require-marketed-status" ;
+    b:scenario "routine" ;
+    b:scopeJurisdiction b:EU-EEA-declared ;
+    b:scopeMode "all-declared-route-products" ;
+    b:specificationSource b:EMA-guide-1.4-824d036a0cca ;
+    b:specificationVersion "EMA-MAH-1.4-2026-04-28" ;
+    b:submissionKind "routine-shortage" .
+
+b:EMA-guide-1.4-824d036a0cca a c:SourceRecord ;
+    b:sourceSHA256 "824d036a0cca848a9cd3e33bd58d4a0df1351059798e3b6429621130ecb41405" ;
+    b:sourceURL "https://www.ema.europa.eu/system/files/documents/other/20260428_mah-user-guide_for-publication-en.pdf"^^xsd:anyURI .
+
+b:EU-EEA-declared a c:RegulatoryJurisdiction .

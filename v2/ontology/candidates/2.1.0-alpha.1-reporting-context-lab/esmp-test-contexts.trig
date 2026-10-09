@@ -1,0 +1,548 @@
+@prefix ns1: <https://w3id.org/cm-pharme/experimental/reporting-context/> .
+@prefix ns2: <https://w3id.org/cm-pharme/2.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<urn:esmp-guidance-test:preparedness-alternative-therapies> {
+    ns1:EMA-crisis-availability-1.4 a ns1:ReportingScopeSpecification ;
+        ns1:actionEvidenceKind "guidance" ;
+        ns1:actionState "unknown" ;
+        ns1:allowedRole "MAH" ;
+        ns1:allowedRoute "CAP",
+            "NAP" ;
+        ns1:evidencePointer "EMA guide v1.4 pp. 35,51" ;
+        ns1:marketingPolicy "require-marketed-status" ;
+        ns1:scenario "crisis" ;
+        ns1:scopeComplete false ;
+        ns1:scopeJurisdiction ns1:EU-EEA-declared ;
+        ns1:scopeMode "enumerated" ;
+        ns1:specificationSource ns1:EMA-guide-1.4-824d036a0cca ;
+        ns1:specificationVersion "EMA-MAH-1.4-2026-04-28" ;
+        ns1:submissionKind "availability" .
+
+    ns1:EMA-preparedness-alternatives-1.4 a ns1:ReportingScopeSpecification ;
+        ns1:actionEvidenceKind "guidance" ;
+        ns1:actionState "unknown" ;
+        ns1:allowedRole "MAH" ;
+        ns1:allowedRoute "CAP",
+            "NAP" ;
+        ns1:evidencePointer "EMA guide v1.4 pp. 35" ;
+        ns1:marketingPolicy "not-a-condition" ;
+        ns1:scenario "preparedness" ;
+        ns1:scopeComplete false ;
+        ns1:scopeJurisdiction ns1:EU-EEA-declared ;
+        ns1:scopeMode "enumerated" ;
+        ns1:specificationSource ns1:EMA-guide-1.4-824d036a0cca ;
+        ns1:specificationVersion "EMA-MAH-1.4-2026-04-28" ;
+        ns1:submissionKind "alternative-therapies" .
+
+    ns1:EMA-preparedness-availability-1.4 a ns1:ReportingScopeSpecification ;
+        ns1:actionEvidenceKind "guidance" ;
+        ns1:actionState "unknown" ;
+        ns1:allowedRole "MAH" ;
+        ns1:allowedRoute "CAP",
+            "NAP" ;
+        ns1:evidencePointer "EMA guide v1.4 pp. 35,51" ;
+        ns1:marketingPolicy "require-marketed-status" ;
+        ns1:scenario "preparedness" ;
+        ns1:scopeComplete false ;
+        ns1:scopeJurisdiction ns1:EU-EEA-declared ;
+        ns1:scopeMode "enumerated" ;
+        ns1:specificationSource ns1:EMA-guide-1.4-824d036a0cca ;
+        ns1:specificationVersion "EMA-MAH-1.4-2026-04-28" ;
+        ns1:submissionKind "availability" .
+
+    ns1:EMA-preparedness-manufacturing-1.4 a ns1:ReportingScopeSpecification ;
+        ns1:actionEvidenceKind "guidance" ;
+        ns1:actionState "unknown" ;
+        ns1:allowedRole "MAH" ;
+        ns1:allowedRoute "CAP",
+            "NAP" ;
+        ns1:evidencePointer "EMA guide v1.4 pp. 35" ;
+        ns1:marketingPolicy "not-a-condition" ;
+        ns1:scenario "preparedness" ;
+        ns1:scopeComplete false ;
+        ns1:scopeJurisdiction ns1:EU-EEA-declared ;
+        ns1:scopeMode "enumerated" ;
+        ns1:specificationSource ns1:EMA-guide-1.4-824d036a0cca ;
+        ns1:specificationVersion "EMA-MAH-1.4-2026-04-28" ;
+        ns1:submissionKind "manufacturing" .
+
+    ns1:EMA-routine-cap-1.4 a ns1:ReportingScopeSpecification ;
+        ns1:allowedRole "MAH" ;
+        ns1:allowedRoute "CAP" ;
+        ns1:evidencePointer "EMA guide v1.4 pp. 19,24" ;
+        ns1:marketingPolicy "require-marketed-status" ;
+        ns1:scenario "routine" ;
+        ns1:scopeJurisdiction ns1:EU-EEA-declared ;
+        ns1:scopeMode "all-declared-route-products" ;
+        ns1:specificationSource ns1:EMA-guide-1.4-824d036a0cca ;
+        ns1:specificationVersion "EMA-MAH-1.4-2026-04-28" ;
+        ns1:submissionKind "routine-shortage" .
+
+    <urn:cmpe-context:context> a ns1:ReportingContextDescription ;
+        ns1:contextActor <urn:cmpe-context:org> ;
+        ns1:contextCountry "DE" ;
+        ns1:contextJurisdiction ns1:EU-EEA-declared ;
+        ns1:contextPresentation <urn:cmpe-context:presentation> ;
+        ns1:contextProduct <urn:cmpe-context:product> ;
+        ns1:contextRole "MAH" ;
+        ns1:contextRoute "CAP" ;
+        ns1:contextVersion "EMA-MAH-1.4-2026-04-28" ;
+        ns1:evaluatedAt "2026-10-10T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:marketingCountry "DE" ;
+        ns1:marketingStatus "marketed" ;
+        ns1:portfolioRelationDeclared true ;
+        ns1:scenario "preparedness" ;
+        ns1:submissionKind "alternative-therapies" .
+
+    <urn:cmpe-context:jurisdiction> a ns2:RegulatoryJurisdiction .
+
+    <urn:cmpe-context:org> a ns2:Organization .
+
+    <urn:cmpe-context:presentation> a ns2:MedicinalProductPresentation ;
+        ns2:presentationOf <urn:cmpe-context:product> .
+
+    <urn:cmpe-context:product> a ns2:MedicinalProduct .
+
+    ns1:EMA-guide-1.4-824d036a0cca a ns2:SourceRecord ;
+        ns1:sourceSHA256 "824d036a0cca848a9cd3e33bd58d4a0df1351059798e3b6429621130ecb41405" ;
+        ns1:sourceURL "https://www.ema.europa.eu/system/files/documents/other/20260428_mah-user-guide_for-publication-en.pdf"^^xsd:anyURI .
+
+    ns1:EU-EEA-declared a ns2:RegulatoryJurisdiction .
+}
+
+<urn:esmp-guidance-test:crisis-availability> {
+    ns1:EMA-crisis-availability-1.4 a ns1:ReportingScopeSpecification ;
+        ns1:actionEvidenceKind "guidance" ;
+        ns1:actionState "unknown" ;
+        ns1:allowedRole "MAH" ;
+        ns1:allowedRoute "CAP",
+            "NAP" ;
+        ns1:evidencePointer "EMA guide v1.4 pp. 35,51" ;
+        ns1:marketingPolicy "require-marketed-status" ;
+        ns1:scenario "crisis" ;
+        ns1:scopeComplete false ;
+        ns1:scopeJurisdiction ns1:EU-EEA-declared ;
+        ns1:scopeMode "enumerated" ;
+        ns1:specificationSource ns1:EMA-guide-1.4-824d036a0cca ;
+        ns1:specificationVersion "EMA-MAH-1.4-2026-04-28" ;
+        ns1:submissionKind "availability" .
+
+    ns1:EMA-preparedness-alternatives-1.4 a ns1:ReportingScopeSpecification ;
+        ns1:actionEvidenceKind "guidance" ;
+        ns1:actionState "unknown" ;
+        ns1:allowedRole "MAH" ;
+        ns1:allowedRoute "CAP",
+            "NAP" ;
+        ns1:evidencePointer "EMA guide v1.4 pp. 35" ;
+        ns1:marketingPolicy "not-a-condition" ;
+        ns1:scenario "preparedness" ;
+        ns1:scopeComplete false ;
+        ns1:scopeJurisdiction ns1:EU-EEA-declared ;
+        ns1:scopeMode "enumerated" ;
+        ns1:specificationSource ns1:EMA-guide-1.4-824d036a0cca ;
+        ns1:specificationVersion "EMA-MAH-1.4-2026-04-28" ;
+        ns1:submissionKind "alternative-therapies" .
+
+    ns1:EMA-preparedness-availability-1.4 a ns1:ReportingScopeSpecification ;
+        ns1:actionEvidenceKind "guidance" ;
+        ns1:actionState "unknown" ;
+        ns1:allowedRole "MAH" ;
+        ns1:allowedRoute "CAP",
+            "NAP" ;
+        ns1:evidencePointer "EMA guide v1.4 pp. 35,51" ;
+        ns1:marketingPolicy "require-marketed-status" ;
+        ns1:scenario "preparedness" ;
+        ns1:scopeComplete false ;
+        ns1:scopeJurisdiction ns1:EU-EEA-declared ;
+        ns1:scopeMode "enumerated" ;
+        ns1:specificationSource ns1:EMA-guide-1.4-824d036a0cca ;
+        ns1:specificationVersion "EMA-MAH-1.4-2026-04-28" ;
+        ns1:submissionKind "availability" .
+
+    ns1:EMA-preparedness-manufacturing-1.4 a ns1:ReportingScopeSpecification ;
+        ns1:actionEvidenceKind "guidance" ;
+        ns1:actionState "unknown" ;
+        ns1:allowedRole "MAH" ;
+        ns1:allowedRoute "CAP",
+            "NAP" ;
+        ns1:evidencePointer "EMA guide v1.4 pp. 35" ;
+        ns1:marketingPolicy "not-a-condition" ;
+        ns1:scenario "preparedness" ;
+        ns1:scopeComplete false ;
+        ns1:scopeJurisdiction ns1:EU-EEA-declared ;
+        ns1:scopeMode "enumerated" ;
+        ns1:specificationSource ns1:EMA-guide-1.4-824d036a0cca ;
+        ns1:specificationVersion "EMA-MAH-1.4-2026-04-28" ;
+        ns1:submissionKind "manufacturing" .
+
+    ns1:EMA-routine-cap-1.4 a ns1:ReportingScopeSpecification ;
+        ns1:allowedRole "MAH" ;
+        ns1:allowedRoute "CAP" ;
+        ns1:evidencePointer "EMA guide v1.4 pp. 19,24" ;
+        ns1:marketingPolicy "require-marketed-status" ;
+        ns1:scenario "routine" ;
+        ns1:scopeJurisdiction ns1:EU-EEA-declared ;
+        ns1:scopeMode "all-declared-route-products" ;
+        ns1:specificationSource ns1:EMA-guide-1.4-824d036a0cca ;
+        ns1:specificationVersion "EMA-MAH-1.4-2026-04-28" ;
+        ns1:submissionKind "routine-shortage" .
+
+    <urn:cmpe-context:context> a ns1:ReportingContextDescription ;
+        ns1:contextActor <urn:cmpe-context:org> ;
+        ns1:contextCountry "DE" ;
+        ns1:contextJurisdiction ns1:EU-EEA-declared ;
+        ns1:contextPresentation <urn:cmpe-context:presentation> ;
+        ns1:contextProduct <urn:cmpe-context:product> ;
+        ns1:contextRole "MAH" ;
+        ns1:contextRoute "CAP" ;
+        ns1:contextVersion "EMA-MAH-1.4-2026-04-28" ;
+        ns1:evaluatedAt "2026-10-10T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:marketingCountry "DE" ;
+        ns1:marketingStatus "marketed" ;
+        ns1:portfolioRelationDeclared true ;
+        ns1:scenario "crisis" ;
+        ns1:submissionKind "availability" .
+
+    <urn:cmpe-context:jurisdiction> a ns2:RegulatoryJurisdiction .
+
+    <urn:cmpe-context:org> a ns2:Organization .
+
+    <urn:cmpe-context:presentation> a ns2:MedicinalProductPresentation ;
+        ns2:presentationOf <urn:cmpe-context:product> .
+
+    <urn:cmpe-context:product> a ns2:MedicinalProduct .
+
+    ns1:EMA-guide-1.4-824d036a0cca a ns2:SourceRecord ;
+        ns1:sourceSHA256 "824d036a0cca848a9cd3e33bd58d4a0df1351059798e3b6429621130ecb41405" ;
+        ns1:sourceURL "https://www.ema.europa.eu/system/files/documents/other/20260428_mah-user-guide_for-publication-en.pdf"^^xsd:anyURI .
+
+    ns1:EU-EEA-declared a ns2:RegulatoryJurisdiction .
+}
+
+<urn:esmp-guidance-test:preparedness-manufacturing> {
+    ns1:EMA-crisis-availability-1.4 a ns1:ReportingScopeSpecification ;
+        ns1:actionEvidenceKind "guidance" ;
+        ns1:actionState "unknown" ;
+        ns1:allowedRole "MAH" ;
+        ns1:allowedRoute "CAP",
+            "NAP" ;
+        ns1:evidencePointer "EMA guide v1.4 pp. 35,51" ;
+        ns1:marketingPolicy "require-marketed-status" ;
+        ns1:scenario "crisis" ;
+        ns1:scopeComplete false ;
+        ns1:scopeJurisdiction ns1:EU-EEA-declared ;
+        ns1:scopeMode "enumerated" ;
+        ns1:specificationSource ns1:EMA-guide-1.4-824d036a0cca ;
+        ns1:specificationVersion "EMA-MAH-1.4-2026-04-28" ;
+        ns1:submissionKind "availability" .
+
+    ns1:EMA-preparedness-alternatives-1.4 a ns1:ReportingScopeSpecification ;
+        ns1:actionEvidenceKind "guidance" ;
+        ns1:actionState "unknown" ;
+        ns1:allowedRole "MAH" ;
+        ns1:allowedRoute "CAP",
+            "NAP" ;
+        ns1:evidencePointer "EMA guide v1.4 pp. 35" ;
+        ns1:marketingPolicy "not-a-condition" ;
+        ns1:scenario "preparedness" ;
+        ns1:scopeComplete false ;
+        ns1:scopeJurisdiction ns1:EU-EEA-declared ;
+        ns1:scopeMode "enumerated" ;
+        ns1:specificationSource ns1:EMA-guide-1.4-824d036a0cca ;
+        ns1:specificationVersion "EMA-MAH-1.4-2026-04-28" ;
+        ns1:submissionKind "alternative-therapies" .
+
+    ns1:EMA-preparedness-availability-1.4 a ns1:ReportingScopeSpecification ;
+        ns1:actionEvidenceKind "guidance" ;
+        ns1:actionState "unknown" ;
+        ns1:allowedRole "MAH" ;
+        ns1:allowedRoute "CAP",
+            "NAP" ;
+        ns1:evidencePointer "EMA guide v1.4 pp. 35,51" ;
+        ns1:marketingPolicy "require-marketed-status" ;
+        ns1:scenario "preparedness" ;
+        ns1:scopeComplete false ;
+        ns1:scopeJurisdiction ns1:EU-EEA-declared ;
+        ns1:scopeMode "enumerated" ;
+        ns1:specificationSource ns1:EMA-guide-1.4-824d036a0cca ;
+        ns1:specificationVersion "EMA-MAH-1.4-2026-04-28" ;
+        ns1:submissionKind "availability" .
+
+    ns1:EMA-preparedness-manufacturing-1.4 a ns1:ReportingScopeSpecification ;
+        ns1:actionEvidenceKind "guidance" ;
+        ns1:actionState "unknown" ;
+        ns1:allowedRole "MAH" ;
+        ns1:allowedRoute "CAP",
+            "NAP" ;
+        ns1:evidencePointer "EMA guide v1.4 pp. 35" ;
+        ns1:marketingPolicy "not-a-condition" ;
+        ns1:scenario "preparedness" ;
+        ns1:scopeComplete false ;
+        ns1:scopeJurisdiction ns1:EU-EEA-declared ;
+        ns1:scopeMode "enumerated" ;
+        ns1:specificationSource ns1:EMA-guide-1.4-824d036a0cca ;
+        ns1:specificationVersion "EMA-MAH-1.4-2026-04-28" ;
+        ns1:submissionKind "manufacturing" .
+
+    ns1:EMA-routine-cap-1.4 a ns1:ReportingScopeSpecification ;
+        ns1:allowedRole "MAH" ;
+        ns1:allowedRoute "CAP" ;
+        ns1:evidencePointer "EMA guide v1.4 pp. 19,24" ;
+        ns1:marketingPolicy "require-marketed-status" ;
+        ns1:scenario "routine" ;
+        ns1:scopeJurisdiction ns1:EU-EEA-declared ;
+        ns1:scopeMode "all-declared-route-products" ;
+        ns1:specificationSource ns1:EMA-guide-1.4-824d036a0cca ;
+        ns1:specificationVersion "EMA-MAH-1.4-2026-04-28" ;
+        ns1:submissionKind "routine-shortage" .
+
+    <urn:cmpe-context:context> a ns1:ReportingContextDescription ;
+        ns1:contextActor <urn:cmpe-context:org> ;
+        ns1:contextCountry "DE" ;
+        ns1:contextJurisdiction ns1:EU-EEA-declared ;
+        ns1:contextPresentation <urn:cmpe-context:presentation> ;
+        ns1:contextProduct <urn:cmpe-context:product> ;
+        ns1:contextRole "MAH" ;
+        ns1:contextRoute "CAP" ;
+        ns1:contextVersion "EMA-MAH-1.4-2026-04-28" ;
+        ns1:evaluatedAt "2026-10-10T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:marketingCountry "DE" ;
+        ns1:marketingStatus "marketed" ;
+        ns1:portfolioRelationDeclared true ;
+        ns1:scenario "preparedness" ;
+        ns1:submissionKind "manufacturing" .
+
+    <urn:cmpe-context:jurisdiction> a ns2:RegulatoryJurisdiction .
+
+    <urn:cmpe-context:org> a ns2:Organization .
+
+    <urn:cmpe-context:presentation> a ns2:MedicinalProductPresentation ;
+        ns2:presentationOf <urn:cmpe-context:product> .
+
+    <urn:cmpe-context:product> a ns2:MedicinalProduct .
+
+    ns1:EMA-guide-1.4-824d036a0cca a ns2:SourceRecord ;
+        ns1:sourceSHA256 "824d036a0cca848a9cd3e33bd58d4a0df1351059798e3b6429621130ecb41405" ;
+        ns1:sourceURL "https://www.ema.europa.eu/system/files/documents/other/20260428_mah-user-guide_for-publication-en.pdf"^^xsd:anyURI .
+
+    ns1:EU-EEA-declared a ns2:RegulatoryJurisdiction .
+}
+
+<urn:esmp-guidance-test:routine-routine-shortage> {
+    ns1:EMA-crisis-availability-1.4 a ns1:ReportingScopeSpecification ;
+        ns1:actionEvidenceKind "guidance" ;
+        ns1:actionState "unknown" ;
+        ns1:allowedRole "MAH" ;
+        ns1:allowedRoute "CAP",
+            "NAP" ;
+        ns1:evidencePointer "EMA guide v1.4 pp. 35,51" ;
+        ns1:marketingPolicy "require-marketed-status" ;
+        ns1:scenario "crisis" ;
+        ns1:scopeComplete false ;
+        ns1:scopeJurisdiction ns1:EU-EEA-declared ;
+        ns1:scopeMode "enumerated" ;
+        ns1:specificationSource ns1:EMA-guide-1.4-824d036a0cca ;
+        ns1:specificationVersion "EMA-MAH-1.4-2026-04-28" ;
+        ns1:submissionKind "availability" .
+
+    ns1:EMA-preparedness-alternatives-1.4 a ns1:ReportingScopeSpecification ;
+        ns1:actionEvidenceKind "guidance" ;
+        ns1:actionState "unknown" ;
+        ns1:allowedRole "MAH" ;
+        ns1:allowedRoute "CAP",
+            "NAP" ;
+        ns1:evidencePointer "EMA guide v1.4 pp. 35" ;
+        ns1:marketingPolicy "not-a-condition" ;
+        ns1:scenario "preparedness" ;
+        ns1:scopeComplete false ;
+        ns1:scopeJurisdiction ns1:EU-EEA-declared ;
+        ns1:scopeMode "enumerated" ;
+        ns1:specificationSource ns1:EMA-guide-1.4-824d036a0cca ;
+        ns1:specificationVersion "EMA-MAH-1.4-2026-04-28" ;
+        ns1:submissionKind "alternative-therapies" .
+
+    ns1:EMA-preparedness-availability-1.4 a ns1:ReportingScopeSpecification ;
+        ns1:actionEvidenceKind "guidance" ;
+        ns1:actionState "unknown" ;
+        ns1:allowedRole "MAH" ;
+        ns1:allowedRoute "CAP",
+            "NAP" ;
+        ns1:evidencePointer "EMA guide v1.4 pp. 35,51" ;
+        ns1:marketingPolicy "require-marketed-status" ;
+        ns1:scenario "preparedness" ;
+        ns1:scopeComplete false ;
+        ns1:scopeJurisdiction ns1:EU-EEA-declared ;
+        ns1:scopeMode "enumerated" ;
+        ns1:specificationSource ns1:EMA-guide-1.4-824d036a0cca ;
+        ns1:specificationVersion "EMA-MAH-1.4-2026-04-28" ;
+        ns1:submissionKind "availability" .
+
+    ns1:EMA-preparedness-manufacturing-1.4 a ns1:ReportingScopeSpecification ;
+        ns1:actionEvidenceKind "guidance" ;
+        ns1:actionState "unknown" ;
+        ns1:allowedRole "MAH" ;
+        ns1:allowedRoute "CAP",
+            "NAP" ;
+        ns1:evidencePointer "EMA guide v1.4 pp. 35" ;
+        ns1:marketingPolicy "not-a-condition" ;
+        ns1:scenario "preparedness" ;
+        ns1:scopeComplete false ;
+        ns1:scopeJurisdiction ns1:EU-EEA-declared ;
+        ns1:scopeMode "enumerated" ;
+        ns1:specificationSource ns1:EMA-guide-1.4-824d036a0cca ;
+        ns1:specificationVersion "EMA-MAH-1.4-2026-04-28" ;
+        ns1:submissionKind "manufacturing" .
+
+    ns1:EMA-routine-cap-1.4 a ns1:ReportingScopeSpecification ;
+        ns1:allowedRole "MAH" ;
+        ns1:allowedRoute "CAP" ;
+        ns1:evidencePointer "EMA guide v1.4 pp. 19,24" ;
+        ns1:marketingPolicy "require-marketed-status" ;
+        ns1:scenario "routine" ;
+        ns1:scopeJurisdiction ns1:EU-EEA-declared ;
+        ns1:scopeMode "all-declared-route-products" ;
+        ns1:specificationSource ns1:EMA-guide-1.4-824d036a0cca ;
+        ns1:specificationVersion "EMA-MAH-1.4-2026-04-28" ;
+        ns1:submissionKind "routine-shortage" .
+
+    <urn:cmpe-context:context> a ns1:ReportingContextDescription ;
+        ns1:contextActor <urn:cmpe-context:org> ;
+        ns1:contextCountry "DE" ;
+        ns1:contextJurisdiction ns1:EU-EEA-declared ;
+        ns1:contextPresentation <urn:cmpe-context:presentation> ;
+        ns1:contextProduct <urn:cmpe-context:product> ;
+        ns1:contextRole "MAH" ;
+        ns1:contextRoute "CAP" ;
+        ns1:contextVersion "EMA-MAH-1.4-2026-04-28" ;
+        ns1:evaluatedAt "2026-10-10T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:marketingCountry "DE" ;
+        ns1:marketingStatus "marketed" ;
+        ns1:portfolioRelationDeclared true ;
+        ns1:scenario "routine" ;
+        ns1:submissionKind "routine-shortage" .
+
+    <urn:cmpe-context:jurisdiction> a ns2:RegulatoryJurisdiction .
+
+    <urn:cmpe-context:org> a ns2:Organization .
+
+    <urn:cmpe-context:presentation> a ns2:MedicinalProductPresentation ;
+        ns2:presentationOf <urn:cmpe-context:product> .
+
+    <urn:cmpe-context:product> a ns2:MedicinalProduct .
+
+    ns1:EMA-guide-1.4-824d036a0cca a ns2:SourceRecord ;
+        ns1:sourceSHA256 "824d036a0cca848a9cd3e33bd58d4a0df1351059798e3b6429621130ecb41405" ;
+        ns1:sourceURL "https://www.ema.europa.eu/system/files/documents/other/20260428_mah-user-guide_for-publication-en.pdf"^^xsd:anyURI .
+
+    ns1:EU-EEA-declared a ns2:RegulatoryJurisdiction .
+}
+
+<urn:esmp-guidance-test:preparedness-availability> {
+    ns1:EMA-crisis-availability-1.4 a ns1:ReportingScopeSpecification ;
+        ns1:actionEvidenceKind "guidance" ;
+        ns1:actionState "unknown" ;
+        ns1:allowedRole "MAH" ;
+        ns1:allowedRoute "CAP",
+            "NAP" ;
+        ns1:evidencePointer "EMA guide v1.4 pp. 35,51" ;
+        ns1:marketingPolicy "require-marketed-status" ;
+        ns1:scenario "crisis" ;
+        ns1:scopeComplete false ;
+        ns1:scopeJurisdiction ns1:EU-EEA-declared ;
+        ns1:scopeMode "enumerated" ;
+        ns1:specificationSource ns1:EMA-guide-1.4-824d036a0cca ;
+        ns1:specificationVersion "EMA-MAH-1.4-2026-04-28" ;
+        ns1:submissionKind "availability" .
+
+    ns1:EMA-preparedness-alternatives-1.4 a ns1:ReportingScopeSpecification ;
+        ns1:actionEvidenceKind "guidance" ;
+        ns1:actionState "unknown" ;
+        ns1:allowedRole "MAH" ;
+        ns1:allowedRoute "CAP",
+            "NAP" ;
+        ns1:evidencePointer "EMA guide v1.4 pp. 35" ;
+        ns1:marketingPolicy "not-a-condition" ;
+        ns1:scenario "preparedness" ;
+        ns1:scopeComplete false ;
+        ns1:scopeJurisdiction ns1:EU-EEA-declared ;
+        ns1:scopeMode "enumerated" ;
+        ns1:specificationSource ns1:EMA-guide-1.4-824d036a0cca ;
+        ns1:specificationVersion "EMA-MAH-1.4-2026-04-28" ;
+        ns1:submissionKind "alternative-therapies" .
+
+    ns1:EMA-preparedness-availability-1.4 a ns1:ReportingScopeSpecification ;
+        ns1:actionEvidenceKind "guidance" ;
+        ns1:actionState "unknown" ;
+        ns1:allowedRole "MAH" ;
+        ns1:allowedRoute "CAP",
+            "NAP" ;
+        ns1:evidencePointer "EMA guide v1.4 pp. 35,51" ;
+        ns1:marketingPolicy "require-marketed-status" ;
+        ns1:scenario "preparedness" ;
+        ns1:scopeComplete false ;
+        ns1:scopeJurisdiction ns1:EU-EEA-declared ;
+        ns1:scopeMode "enumerated" ;
+        ns1:specificationSource ns1:EMA-guide-1.4-824d036a0cca ;
+        ns1:specificationVersion "EMA-MAH-1.4-2026-04-28" ;
+        ns1:submissionKind "availability" .
+
+    ns1:EMA-preparedness-manufacturing-1.4 a ns1:ReportingScopeSpecification ;
+        ns1:actionEvidenceKind "guidance" ;
+        ns1:actionState "unknown" ;
+        ns1:allowedRole "MAH" ;
+        ns1:allowedRoute "CAP",
+            "NAP" ;
+        ns1:evidencePointer "EMA guide v1.4 pp. 35" ;
+        ns1:marketingPolicy "not-a-condition" ;
+        ns1:scenario "preparedness" ;
+        ns1:scopeComplete false ;
+        ns1:scopeJurisdiction ns1:EU-EEA-declared ;
+        ns1:scopeMode "enumerated" ;
+        ns1:specificationSource ns1:EMA-guide-1.4-824d036a0cca ;
+        ns1:specificationVersion "EMA-MAH-1.4-2026-04-28" ;
+        ns1:submissionKind "manufacturing" .
+
+    ns1:EMA-routine-cap-1.4 a ns1:ReportingScopeSpecification ;
+        ns1:allowedRole "MAH" ;
+        ns1:allowedRoute "CAP" ;
+        ns1:evidencePointer "EMA guide v1.4 pp. 19,24" ;
+        ns1:marketingPolicy "require-marketed-status" ;
+        ns1:scenario "routine" ;
+        ns1:scopeJurisdiction ns1:EU-EEA-declared ;
+        ns1:scopeMode "all-declared-route-products" ;
+        ns1:specificationSource ns1:EMA-guide-1.4-824d036a0cca ;
+        ns1:specificationVersion "EMA-MAH-1.4-2026-04-28" ;
+        ns1:submissionKind "routine-shortage" .
+
+    <urn:cmpe-context:context> a ns1:ReportingContextDescription ;
+        ns1:contextActor <urn:cmpe-context:org> ;
+        ns1:contextCountry "DE" ;
+        ns1:contextJurisdiction ns1:EU-EEA-declared ;
+        ns1:contextPresentation <urn:cmpe-context:presentation> ;
+        ns1:contextProduct <urn:cmpe-context:product> ;
+        ns1:contextRole "MAH" ;
+        ns1:contextRoute "CAP" ;
+        ns1:contextVersion "EMA-MAH-1.4-2026-04-28" ;
+        ns1:evaluatedAt "2026-10-10T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:marketingCountry "DE" ;
+        ns1:marketingStatus "marketed" ;
+        ns1:portfolioRelationDeclared true ;
+        ns1:scenario "preparedness" ;
+        ns1:submissionKind "availability" .
+
+    <urn:cmpe-context:jurisdiction> a ns2:RegulatoryJurisdiction .
+
+    <urn:cmpe-context:org> a ns2:Organization .
+
+    <urn:cmpe-context:presentation> a ns2:MedicinalProductPresentation ;
+        ns2:presentationOf <urn:cmpe-context:product> .
+
+    <urn:cmpe-context:product> a ns2:MedicinalProduct .
+
+    ns1:EMA-guide-1.4-824d036a0cca a ns2:SourceRecord ;
+        ns1:sourceSHA256 "824d036a0cca848a9cd3e33bd58d4a0df1351059798e3b6429621130ecb41405" ;
+        ns1:sourceURL "https://www.ema.europa.eu/system/files/documents/other/20260428_mah-user-guide_for-publication-en.pdf"^^xsd:anyURI .
+
+    ns1:EU-EEA-declared a ns2:RegulatoryJurisdiction .
+}
