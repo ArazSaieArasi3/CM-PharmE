@@ -1,0 +1,193 @@
+@prefix b: <https://w3id.org/cm-pharme/experimental/reporting-context/> .
+@prefix c: <https://w3id.org/cm-pharme/2.1/> .
+@prefix e: <https://w3id.org/cm-pharme/experimental/documentary-evidence/> .
+@prefix r: <https://w3id.org/cm-pharme/experimental/refinement/> .
+@prefix t: <urn:cmpe-evidence:> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+t:BA-MODERNA-SEC-2020 a c:SourceRecord ;
+    e:sourceDateKind "filing-date-not-extracted" ;
+    e:sourceID "BA-MODERNA-SEC-2020" ;
+    r:carrierClaim t:sec-affiliates,
+        t:sec-effective,
+        t:sec-made,
+        t:sec-missing-sow,
+        t:sec-party-lonza,
+        t:sec-party-moderna,
+        t:sec-party-sales,
+        t:sec-prior-date,
+        t:sec-redacted-template,
+        t:sec-signed,
+        t:sec-sow-scope,
+        t:sec-supersedes,
+        t:sec-work-order ;
+    b:sourceURL "https://www.sec.gov/Archives/edgar/data/1682852/000168285220000023/lonzamodernagltafullye.htm"^^xsd:anyURI .
+
+t:sec-affiliates a b:StructuredClaim ;
+    e:claimMode "assessment-content" ;
+    e:profile "documentary-witness" ;
+    e:timeLexical "UNKNOWN" ;
+    e:timePrecision "unspecified" ;
+    e:timeRole "not-established" ;
+    b:claimOrigin "source-extracted" ;
+    b:claimSubject t:affiliates ;
+    b:evidencePointer "BA-MODERNA-SEC-2020#Affiliates subsection" ;
+    b:objectValue "subject-to-agreement" ;
+    b:polarity "positive" ;
+    b:predicateIRI "https://w3id.org/cm-pharme/experimental/documentary-evidence/mayExecuteSOW"^^xsd:anyURI .
+
+t:sec-effective a b:StructuredClaim ;
+    e:claimMode "assessment-content" ;
+    e:profile "documentary-witness" ;
+    e:timeLexical "UNKNOWN" ;
+    e:timePrecision "unspecified" ;
+    e:timeRole "not-established" ;
+    b:claimOrigin "source-extracted" ;
+    b:claimSubject t:GLTA ;
+    b:evidencePointer "BA-MODERNA-SEC-2020#opening paragraph" ;
+    b:objectValue "2020-05-01" ;
+    b:polarity "positive" ;
+    b:predicateIRI "https://w3id.org/cm-pharme/experimental/documentary-evidence/statedEffectiveDate"^^xsd:anyURI .
+
+t:sec-made a b:StructuredClaim ;
+    e:claimMode "assessment-content" ;
+    e:profile "documentary-witness" ;
+    e:timeLexical "UNKNOWN" ;
+    e:timePrecision "unspecified" ;
+    e:timeRole "not-established" ;
+    b:claimOrigin "source-extracted" ;
+    b:claimSubject t:GLTA ;
+    b:evidencePointer "BA-MODERNA-SEC-2020#opening paragraph" ;
+    b:objectValue "2020-09-04" ;
+    b:polarity "positive" ;
+    b:predicateIRI "https://w3id.org/cm-pharme/experimental/documentary-evidence/statedMadeDate"^^xsd:anyURI .
+
+t:sec-missing-sow a b:StructuredClaim ;
+    e:claimMode "assessment-content" ;
+    e:profile "documentary-witness" ;
+    e:timeLexical "UNKNOWN" ;
+    e:timePrecision "unspecified" ;
+    e:timeRole "not-established" ;
+    b:claimOrigin "source-extracted" ;
+    b:claimSubject t:appendices-A1-A3 ;
+    b:evidencePointer "BA-MODERNA-SEC-2020#appendices A-1 A-2 A-3" ;
+    b:objectValue "to-be-attached" ;
+    b:polarity "positive" ;
+    b:predicateIRI "https://w3id.org/cm-pharme/experimental/documentary-evidence/availability"^^xsd:anyURI .
+
+t:sec-party-lonza a b:StructuredClaim ;
+    e:claimMode "assessment-content" ;
+    e:profile "documentary-witness" ;
+    e:timeLexical "UNKNOWN" ;
+    e:timePrecision "unspecified" ;
+    e:timeRole "not-established" ;
+    b:claimOrigin "source-extracted" ;
+    b:claimSubject t:GLTA ;
+    b:evidencePointer "BA-MODERNA-SEC-2020#signature block" ;
+    b:objectValue "Lonza Ltd." ;
+    b:polarity "positive" ;
+    b:predicateIRI "https://w3id.org/cm-pharme/experimental/documentary-evidence/signatureParty"^^xsd:anyURI .
+
+t:sec-party-moderna a b:StructuredClaim ;
+    e:claimMode "assessment-content" ;
+    e:profile "documentary-witness" ;
+    e:timeLexical "UNKNOWN" ;
+    e:timePrecision "unspecified" ;
+    e:timeRole "not-established" ;
+    b:claimOrigin "source-extracted" ;
+    b:claimSubject t:GLTA ;
+    b:evidencePointer "BA-MODERNA-SEC-2020#signature block" ;
+    b:objectValue "ModernaTX, Inc." ;
+    b:polarity "positive" ;
+    b:predicateIRI "https://w3id.org/cm-pharme/experimental/documentary-evidence/signatureParty"^^xsd:anyURI .
+
+t:sec-party-sales a b:StructuredClaim ;
+    e:claimMode "assessment-content" ;
+    e:profile "documentary-witness" ;
+    e:timeLexical "UNKNOWN" ;
+    e:timePrecision "unspecified" ;
+    e:timeRole "not-established" ;
+    b:claimOrigin "source-extracted" ;
+    b:claimSubject t:GLTA ;
+    b:evidencePointer "BA-MODERNA-SEC-2020#signature block" ;
+    b:objectValue "Lonza Sales Ltd." ;
+    b:polarity "positive" ;
+    b:predicateIRI "https://w3id.org/cm-pharme/experimental/documentary-evidence/signatureParty"^^xsd:anyURI .
+
+t:sec-prior-date a b:StructuredClaim ;
+    e:claimMode "assessment-content" ;
+    e:profile "documentary-witness" ;
+    e:timeLexical "UNKNOWN" ;
+    e:timePrecision "unspecified" ;
+    e:timeRole "not-established" ;
+    b:claimOrigin "source-extracted" ;
+    b:claimSubject t:SCA ;
+    b:evidencePointer "BA-MODERNA-SEC-2020#recital C" ;
+    b:objectValue "2020-04-30" ;
+    b:polarity "positive" ;
+    b:predicateIRI "https://w3id.org/cm-pharme/experimental/documentary-evidence/statedAgreementDate"^^xsd:anyURI .
+
+t:sec-redacted-template a b:StructuredClaim ;
+    e:claimMode "assessment-content" ;
+    e:profile "documentary-witness" ;
+    e:timeLexical "UNKNOWN" ;
+    e:timePrecision "unspecified" ;
+    e:timeRole "not-established" ;
+    b:claimOrigin "source-extracted" ;
+    b:claimSubject t:appendix-B ;
+    b:evidencePointer "BA-MODERNA-SEC-2020#appendix B" ;
+    b:objectValue "redacted" ;
+    b:polarity "positive" ;
+    b:predicateIRI "https://w3id.org/cm-pharme/experimental/documentary-evidence/availability"^^xsd:anyURI .
+
+t:sec-signed a b:StructuredClaim ;
+    e:claimMode "reported-occurrence" ;
+    e:profile "documentary-witness" ;
+    e:timeLexical "UNKNOWN" ;
+    e:timePrecision "unspecified" ;
+    e:timeRole "not-established" ;
+    b:claimOrigin "source-extracted" ;
+    b:claimSubject t:GLTA ;
+    b:evidencePointer "BA-MODERNA-SEC-2020#signature block" ;
+    b:objectValue "true" ;
+    b:polarity "positive" ;
+    b:predicateIRI "https://w3id.org/cm-pharme/experimental/documentary-evidence/executionSignaturesShown"^^xsd:anyURI .
+
+t:sec-sow-scope a b:StructuredClaim ;
+    e:claimMode "assessment-content" ;
+    e:profile "documentary-witness" ;
+    e:timeLexical "UNKNOWN" ;
+    e:timePrecision "unspecified" ;
+    e:timeRole "not-established" ;
+    b:claimOrigin "source-extracted" ;
+    b:claimSubject t:SOW ;
+    b:evidencePointer "BA-MODERNA-SEC-2020#definition Statement of Work" ;
+    b:objectValue "service-scope-timetable-fees" ;
+    b:polarity "positive" ;
+    b:predicateIRI "https://w3id.org/cm-pharme/experimental/documentary-evidence/specifies"^^xsd:anyURI .
+
+t:sec-supersedes a b:StructuredClaim ;
+    e:claimMode "assessment-content" ;
+    e:profile "documentary-witness" ;
+    e:timeLexical "UNKNOWN" ;
+    e:timePrecision "unspecified" ;
+    e:timeRole "not-established" ;
+    b:claimOrigin "source-extracted" ;
+    b:claimSubject t:GLTA ;
+    b:evidencePointer "BA-MODERNA-SEC-2020#Entire Agreement; Amendments" ;
+    b:objectValue "SCA" ;
+    b:polarity "positive" ;
+    b:predicateIRI "https://w3id.org/cm-pharme/experimental/documentary-evidence/supersedesNamedAgreement"^^xsd:anyURI .
+
+t:sec-work-order a b:StructuredClaim ;
+    e:claimMode "required" ;
+    e:profile "documentary-witness" ;
+    e:timeLexical "UNKNOWN" ;
+    e:timePrecision "unspecified" ;
+    e:timeRole "not-established" ;
+    b:claimOrigin "source-extracted" ;
+    b:claimSubject t:contract-parties ;
+    b:evidencePointer "BA-MODERNA-SEC-2020#Statement of Work subsection" ;
+    b:objectValue "required" ;
+    b:polarity "positive" ;
+    b:predicateIRI "https://w3id.org/cm-pharme/experimental/documentary-evidence/prepareAgreedWorkOrderBeforeWork"^^xsd:anyURI .

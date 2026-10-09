@@ -1,0 +1,81 @@
+{
+  "historical_fixtures_inspected": 83,
+  "new_target_intersections": [],
+  "interpretation": "Historical 83 fixture files were inspected for new shape targets, not re-executed; prior results are not counted anew. Existing shapes and source packages unchanged.",
+  "combined_triples": 1402,
+  "combined_admission": true,
+  "combined_reasoner": {
+    "consistent": true,
+    "unsatisfiable_named_classes": [],
+    "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+    "prov_profile": "two conflicting annotation-property declarations removed; raw source retained"
+  },
+  "profile_fit": [
+    {
+      "id": "DS-complete-deployment",
+      "expected_conforms": false,
+      "actual_conforms": false,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/four-domain/atTime",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent",
+          "constraint": ""
+        },
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/four-domain/componentVersion",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent",
+          "constraint": ""
+        },
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/four-domain/deploymentOrganization",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent",
+          "constraint": ""
+        }
+      ],
+      "unestablished_fields": [
+        "componentVersion: not in source; E2B(R3) is a message standard",
+        "deploymentOrganization: launching actor is not automatically technical operator",
+        "atTime: day known, exact time and timezone not known"
+      ],
+      "pass": true
+    },
+    {
+      "id": "BA-complete-commitment",
+      "expected_conforms": false,
+      "actual_conforms": false,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/refinement/agreementCommitment",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent",
+          "constraint": ""
+        }
+      ],
+      "unestablished_fields": [
+        "agreementCommitment: full documented commitment content not extracted",
+        "commitment evidence and exact participants not reconstructed as accepted facts"
+      ],
+      "pass": true
+    },
+    {
+      "id": "RM-original-product-profile",
+      "expected_conforms": false,
+      "actual_conforms": false,
+      "violations": [
+        {
+          "path": "",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent",
+          "constraint": "https://w3id.org/cm-pharme/experimental/refinement/scenarioProduct-or-context-required"
+        }
+      ],
+      "unestablished_fields": [
+        "scenarioProduct/scenarioFacility/scenarioDependency: family label list is not a single product, facility or dependency; use the separate proposed scope profile"
+      ],
+      "pass": true
+    }
+  ],
+  "new_classes": 0,
+  "new_domain_information_relations": 1,
+  "new_owned_classes": 0,
+  "native_changed": false,
+  "pass": true
+}

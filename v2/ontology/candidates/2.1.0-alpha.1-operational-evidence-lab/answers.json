@@ -1,0 +1,310 @@
+[
+  {
+    "id": "risk-review-reported",
+    "question": {
+      "subject": "sartan-review",
+      "predicate": "reviewConcluded",
+      "object": "true",
+      "mode": "reported-occurrence",
+      "source_cutoff": null
+    },
+    "answer": {
+      "status": "SOURCE_REPORTED_OCCURRENCE",
+      "claims": [
+        {
+          "claim": "urn:cmpe-evidence:rm-review",
+          "source": "RM-EMA-2020",
+          "mode": "reported-occurrence",
+          "origin": "source-extracted",
+          "polarity": "positive",
+          "time": "2019-01",
+          "precision": "month",
+          "role": "assessment-period"
+        }
+      ],
+      "world_fact_inferred": false
+    }
+  },
+  {
+    "id": "requirement-not-execution",
+    "question": {
+      "subject": "manufacturers",
+      "predicate": "riskEvaluationAndTesting",
+      "object": "required",
+      "mode": "reported-occurrence",
+      "source_cutoff": null
+    },
+    "answer": {
+      "status": "NOT_REPORTED_IN_SELECTED_MODE",
+      "claims": [],
+      "world_fact_inferred": false
+    }
+  },
+  {
+    "id": "requirement-preserved",
+    "question": {
+      "subject": "manufacturers",
+      "predicate": "riskEvaluationAndTesting",
+      "object": "required",
+      "mode": "required",
+      "source_cutoff": null
+    },
+    "answer": {
+      "status": "SOURCE_REPORTED_REQUIRED",
+      "claims": [
+        {
+          "claim": "urn:cmpe-evidence:rm-testing-required",
+          "source": "RM-EMA-2020",
+          "mode": "required",
+          "origin": "source-extracted",
+          "polarity": "positive",
+          "time": "UNKNOWN",
+          "precision": "unspecified",
+          "role": "not-established"
+        }
+      ],
+      "world_fact_inferred": false
+    }
+  },
+  {
+    "id": "batch-plan-preserved",
+    "question": {
+      "subject": "initial-batches",
+      "predicate": "manufactured",
+      "object": "true",
+      "mode": "planned",
+      "source_cutoff": "2020-05-01"
+    },
+    "answer": {
+      "status": "SOURCE_REPORTED_PLANNED",
+      "claims": [
+        {
+          "claim": "urn:cmpe-evidence:ba-batch-plan",
+          "source": "BA-LONZA-2020-05",
+          "mode": "planned",
+          "origin": "source-extracted",
+          "polarity": "positive",
+          "time": "2020-07",
+          "precision": "month",
+          "role": "planned-window"
+        }
+      ],
+      "world_fact_inferred": false
+    }
+  },
+  {
+    "id": "batch-plan-not-occurrence",
+    "question": {
+      "subject": "initial-batches",
+      "predicate": "manufactured",
+      "object": "true",
+      "mode": "reported-occurrence",
+      "source_cutoff": null
+    },
+    "answer": {
+      "status": "NOT_REPORTED_IN_SELECTED_MODE",
+      "claims": [],
+      "world_fact_inferred": false
+    }
+  },
+  {
+    "id": "transfer-complete-after-update",
+    "question": {
+      "subject": "technology-transfer",
+      "predicate": "transferCompleted",
+      "object": "true",
+      "mode": "reported-occurrence",
+      "source_cutoff": "2020-07-24"
+    },
+    "answer": {
+      "status": "SOURCE_REPORTED_OCCURRENCE",
+      "claims": [
+        {
+          "claim": "urn:cmpe-evidence:ba-transfer-complete",
+          "source": "BA-LONZA-2020-07",
+          "mode": "reported-occurrence",
+          "origin": "source-extracted",
+          "polarity": "positive",
+          "time": "2020-07-24",
+          "precision": "day",
+          "role": "event-upper-bound"
+        }
+      ],
+      "world_fact_inferred": false
+    }
+  },
+  {
+    "id": "no-future-report-leak",
+    "question": {
+      "subject": "technology-transfer",
+      "predicate": "transferCompleted",
+      "object": "true",
+      "mode": "reported-occurrence",
+      "source_cutoff": "2020-05-01"
+    },
+    "answer": {
+      "status": "NOT_REPORTED_IN_SELECTED_MODE",
+      "claims": [],
+      "world_fact_inferred": false
+    }
+  },
+  {
+    "id": "production-commenced",
+    "question": {
+      "subject": "Visp-production",
+      "predicate": "commenced",
+      "object": "true",
+      "mode": "reported-occurrence",
+      "source_cutoff": "2021-04-29"
+    },
+    "answer": {
+      "status": "SOURCE_REPORTED_OCCURRENCE",
+      "claims": [
+        {
+          "claim": "urn:cmpe-evidence:ba-production",
+          "source": "BA-LONZA-2021-04",
+          "mode": "reported-occurrence",
+          "origin": "source-extracted",
+          "polarity": "positive",
+          "time": "2021-04-29",
+          "precision": "day",
+          "role": "event-upper-bound"
+        }
+      ],
+      "world_fact_inferred": false
+    }
+  },
+  {
+    "id": "additional-lines-remain-plan",
+    "question": {
+      "subject": "additional-Visp-lines",
+      "predicate": "operationalCount",
+      "object": "3",
+      "mode": "reported-occurrence",
+      "source_cutoff": null
+    },
+    "answer": {
+      "status": "NOT_REPORTED_IN_SELECTED_MODE",
+      "claims": [],
+      "world_fact_inferred": false
+    }
+  },
+  {
+    "id": "launch-has-documentary-evidence",
+    "question": {
+      "subject": "EudraVigilance-launch",
+      "predicate": "launched",
+      "object": "true",
+      "mode": "reported-occurrence",
+      "source_cutoff": null
+    },
+    "answer": {
+      "status": "SOURCE_REPORTED_OCCURRENCE",
+      "claims": [
+        {
+          "claim": "urn:cmpe-evidence:ds-launch",
+          "source": "DS-EMA-LIVE",
+          "mode": "reported-occurrence",
+          "origin": "source-extracted",
+          "polarity": "positive",
+          "time": "UNKNOWN",
+          "precision": "unspecified",
+          "role": "not-established"
+        },
+        {
+          "claim": "urn:cmpe-evidence:ds-launch-date",
+          "source": "DS-EMA-TIMELINE",
+          "mode": "reported-occurrence",
+          "origin": "source-extracted",
+          "polarity": "positive",
+          "time": "2017-11-22",
+          "precision": "day",
+          "role": "event-date"
+        }
+      ],
+      "world_fact_inferred": false
+    }
+  },
+  {
+    "id": "build-version-not-invented",
+    "question": {
+      "subject": "EudraVigilance",
+      "predicate": "softwareBuild",
+      "object": "ICH-E2B-R3",
+      "mode": "reported-occurrence",
+      "source_cutoff": null
+    },
+    "answer": {
+      "status": "NOT_REPORTED_IN_SELECTED_MODE",
+      "claims": [],
+      "world_fact_inferred": false
+    }
+  },
+  {
+    "id": "standard-is-supported",
+    "question": {
+      "subject": "EudraVigilance",
+      "predicate": "messageStandard",
+      "object": "ICH-E2B-R3",
+      "mode": "reported-capability",
+      "source_cutoff": null
+    },
+    "answer": {
+      "status": "SOURCE_REPORTED_CAPABILITY",
+      "claims": [
+        {
+          "claim": "urn:cmpe-evidence:ds-standard",
+          "source": "DS-EMA-TIMELINE",
+          "mode": "reported-capability",
+          "origin": "source-extracted",
+          "polarity": "positive",
+          "time": "UNKNOWN",
+          "precision": "unspecified",
+          "role": "not-established"
+        }
+      ],
+      "world_fact_inferred": false
+    }
+  },
+  {
+    "id": "licence-report",
+    "question": {
+      "subject": "Visp-establishment-licence",
+      "predicate": "granted",
+      "object": "true",
+      "mode": "authorization-report",
+      "source_cutoff": null
+    },
+    "answer": {
+      "status": "SOURCE_REPORTED_AUTHORIZATION_REPORT",
+      "claims": [
+        {
+          "claim": "urn:cmpe-evidence:reg-grant",
+          "source": "REG-SWISSMEDIC-2021",
+          "mode": "authorization-report",
+          "origin": "source-extracted",
+          "polarity": "positive",
+          "time": "2021-03-15",
+          "precision": "day",
+          "role": "event-upper-bound"
+        }
+      ],
+      "world_fact_inferred": false
+    }
+  },
+  {
+    "id": "licence-not-marketing-approval",
+    "question": {
+      "subject": "Visp-establishment-licence",
+      "predicate": "productMarketingAuthorization",
+      "object": "true",
+      "mode": "authorization-report",
+      "source_cutoff": null
+    },
+    "answer": {
+      "status": "NOT_REPORTED_IN_SELECTED_MODE",
+      "claims": [],
+      "world_fact_inferred": false
+    }
+  }
+]

@@ -1,0 +1,8 @@
+@prefix c: <https://w3id.org/cm-pharme/2.1/> .
+@prefix e: <https://w3id.org/cm-pharme/experimental/documentary-evidence/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+e:scenarioScopeDescription a owl:ObjectProperty ;
+    rdfs:domain c:Assertion ;
+    rdfs:range c:Assertion .
