@@ -1,0 +1,116 @@
+{
+  "rows": [
+    {
+      "domain": "RM",
+      "concept": "RiskAssessmentActivity",
+      "sources": "RM-EMA-2020",
+      "supported": "Source reports a completed public review; month precision",
+      "remaining": "Company-level assessment inputs, scoring and organization-specific scenario absent"
+    },
+    {
+      "domain": "RM",
+      "concept": "RiskReviewActivity",
+      "sources": "RM-EMA-2020",
+      "supported": "Source describes revised limits and prior review; mapping proposed",
+      "remaining": "Exact review occurrence/time and formal predecessor/result identity unestablished"
+    },
+    {
+      "domain": "RM",
+      "concept": "RiskTreatmentPlan",
+      "sources": "RM-EMA-2020",
+      "supported": "Normative control expectations only",
+      "remaining": "No company-specific adopted treatment plan obtained"
+    },
+    {
+      "domain": "RM",
+      "concept": "RiskTreatmentActivity",
+      "sources": "RM-EMA-2020",
+      "supported": "No execution witness in this selected document",
+      "remaining": "Need actual implemented action and effectiveness evidence"
+    },
+    {
+      "domain": "PV",
+      "concept": "AdverseEventReportingActivity",
+      "sources": "Prior PRAC package; DS-EMA-LIVE",
+      "supported": "Reporting functionality and documentary safety recommendations",
+      "remaining": "No individual ICSR submission occurrence or message acquired"
+    },
+    {
+      "domain": "PV",
+      "concept": "PharmacovigilanceRequirement",
+      "sources": "Prior reporting-context package; DS-EMA-LIVE",
+      "supported": "Guidance/requirement descriptions; versioned source context",
+      "remaining": "Current obligation applicability and concrete operational reporting evidence"
+    },
+    {
+      "domain": "PV",
+      "concept": "PostMarketSurveillanceActivity",
+      "sources": "DS-EMA-LIVE",
+      "supported": "System supports safety analysis; does not prove a specific surveillance occurrence",
+      "remaining": "Actual surveillance process and responsible actor evidence"
+    },
+    {
+      "domain": "PV",
+      "concept": "SignalAssessmentActivity",
+      "sources": "Prior PRAC package",
+      "supported": "Three documentary recommendations and interpreted signal/result links",
+      "remaining": "Assessment occurrence/time and complete identity binding"
+    },
+    {
+      "domain": "BA",
+      "concept": "BusinessArchitectureView",
+      "sources": "This analytical crosswalk",
+      "supported": "Authored view, explicitly analyst-created",
+      "remaining": "No claim that an external company published this architecture view"
+    },
+    {
+      "domain": "BA",
+      "concept": "ServiceOfferingSpecification",
+      "sources": "BA-LONZA-2020-05; BA-MODERNA-SEC-2020",
+      "supported": "Manufacturing scope publicly described",
+      "remaining": "SOW definition inspected in SEC exhibit; actual work orders are missing/redacted"
+    },
+    {
+      "domain": "BA",
+      "concept": "EnterpriseCapability",
+      "sources": "BA-LONZA-2020-05; BA-LONZA-2021-04",
+      "supported": "Expertise reported; subsequent production separately reported",
+      "remaining": "Capability identity, quantitative capacity and temporal persistence not established"
+    },
+    {
+      "domain": "BA",
+      "concept": "PartnerOrganizationRole",
+      "sources": "BA-LONZA-2020-05; BA-MODERNA-SEC-2020",
+      "supported": "Two corporate labels in announcement; three legal signatory labels in SEC exhibit",
+      "remaining": "Registry identifiers and contextual participant sets remain unresolved"
+    },
+    {
+      "domain": "BA",
+      "concept": "StrategicPartnershipAgreement",
+      "sources": "BA-LONZA-2020-05; BA-LONZA-2020-07; BA-MODERNA-SEC-2020",
+      "supported": "Issuer reports plus public redacted executed GLTA; three-party commitment projection tested",
+      "remaining": "Unredacted terms and SOWs absent; SCA/GLTA identity and subset commitments need review"
+    },
+    {
+      "domain": "DS",
+      "concept": "DigitalInformationSystemComponent",
+      "sources": "DS-EMA-LIVE; DS-EMA-TIMELINE",
+      "supported": "Identified system and supported message standard",
+      "remaining": "System-to-component granularity and software build identifier unestablished"
+    },
+    {
+      "domain": "DS",
+      "concept": "SystemDeploymentActivity",
+      "sources": "DS-EMA-LIVE; DS-EMA-TIMELINE",
+      "supported": "Official launch report and historical day",
+      "remaining": "Exact instant, build version, technical operator and deployment log absent"
+    }
+  ],
+  "owned_concepts_reviewed": 15,
+  "count_is_not_empirical_coverage": true,
+  "rules": [
+    "A document mentioning a concept does not fully instantiate it",
+    "Publisher-self-report is distinguished from independent regulator evidence",
+    "Every listed gap remains open until its acceptance criterion is met"
+  ]
+}

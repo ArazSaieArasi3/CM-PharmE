@@ -1,0 +1,1622 @@
+@prefix c: <https://w3id.org/cm-pharme/2.1/> .
+@prefix l: <https://w3id.org/cm-pharme/experimental/four-domain/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix p: <https://w3id.org/cm-pharme/experimental/registry-policy/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix q: <https://w3id.org/cm-pharme/experimental/prov-target/> .
+@prefix r: <https://w3id.org/cm-pharme/experimental/refinement/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+q:regression-0-8366d93ca28acb5289c5 a c:RiskTreatmentPlan ;
+    l:planRiskResult q:regression-0-25b13d3c58fd928a8258 ;
+    l:profile "risk-plan" .
+
+q:regression-1-03b9bab755f3f4980467 a c:RegulatoryJurisdiction .
+
+q:regression-1-0c2ac501f5b80ac50a26 a c:PostMarketSurveillanceActivity ;
+    l:profile "pv-surveillance" ;
+    l:surveillanceRequirement q:regression-1-1d0463afc301fde5de90 ;
+    l:surveillanceSource q:regression-1-4b9f89642aafc1c72b40 .
+
+q:regression-1-f0e100087f11d210dbbd a c:Assertion ;
+    l:atTime "2026-10-02T10:00:00+00:00"^^xsd:dateTime ;
+    l:profile "signal-result" ;
+    l:pvResultAssessment q:regression-1-96a7a9efa659ed4b8370 ;
+    l:pvResultSignal q:regression-1-b3fe2ddb5043e21284dc ;
+    l:signalStatus "under-review" .
+
+q:regression-1-f443fb22c61bf060d8cc a c:AdverseEventReportingActivity ;
+    l:atTime "2026-10-01T10:00:00+00:00"^^xsd:dateTime ;
+    l:profile "safety-reporting" ;
+    l:reportsRecord q:regression-1-4b9f89642aafc1c72b40 .
+
+q:regression-2-10e1fbf26d4e5c5cf211 a c:BusinessArchitectureView ;
+    l:profile "ba-view" ;
+    l:viewOrganization q:regression-2-ee231f1bf250d99a65be ;
+    l:viewService q:regression-2-47381dac59bb866ce443 .
+
+q:regression-2-2ca97784dd8d0ef80afa a c:StrategicPartnershipAgreement ;
+    c:partnershipParticipant q:regression-2-227021f3ec839a58d101,
+        q:regression-2-ee231f1bf250d99a65be ;
+    l:profile "ba-partnership" .
+
+q:regression-3-3184afe4a48ccd6f6723 a c:ServiceOfferingSpecification ;
+    l:digitalServiceActivity q:regression-3-7a59cbf41f8cad1ca556 ;
+    l:digitalServiceComponent q:regression-3-68f4ef7a8f1730e1ced0 ;
+    l:profile "digital-service" .
+
+q:regression-3-3718485ce1e96834a8fd a c:SourceRecord ;
+    l:profile "digital-record" ;
+    l:recordDigitalActivity q:regression-3-7a59cbf41f8cad1ca556 .
+
+q:regression-36-03b9bab755f3f4980467 a c:RegulatoryJurisdiction .
+
+q:regression-36-0c2ac501f5b80ac50a26 a c:PostMarketSurveillanceActivity ;
+    l:profile "pv-surveillance" ;
+    l:surveillanceRequirement q:regression-36-1d0463afc301fde5de90 ;
+    l:surveillanceSource q:regression-36-4b9f89642aafc1c72b40 .
+
+q:regression-36-1847fe7ded7cdd142732 a c:Assertion ;
+    l:atTime "2026-10-03T10:00:00+00:00"^^xsd:dateTime ;
+    l:profile "signal-result" ;
+    l:pvResultAssessment q:regression-36-83b3fb3dec1cd448ca2f ;
+    l:pvResultSignal q:regression-36-b3fe2ddb5043e21284dc ;
+    l:signalStatus "refuted-at-this-time" .
+
+q:regression-36-2b13cf324cdc6c487635 a c:SourceRecord ;
+    l:profile "digital-record" ;
+    l:recordDigitalActivity q:regression-36-793c32b048ba6986ed59 .
+
+q:regression-36-2ca97784dd8d0ef80afa a c:StrategicPartnershipAgreement ;
+    c:partnershipParticipant q:regression-36-227021f3ec839a58d101,
+        q:regression-36-ee231f1bf250d99a65be ;
+    l:profile "ba-partnership" .
+
+q:regression-36-3184afe4a48ccd6f6723 a c:ServiceOfferingSpecification ;
+    l:digitalServiceActivity q:regression-36-7a59cbf41f8cad1ca556 ;
+    l:digitalServiceComponent q:regression-36-68f4ef7a8f1730e1ced0 ;
+    l:profile "digital-service" .
+
+q:regression-36-3718485ce1e96834a8fd a c:SourceRecord ;
+    l:profile "digital-record" ;
+    l:recordDigitalActivity q:regression-36-7a59cbf41f8cad1ca556 .
+
+q:regression-36-377bfc63f8e3e90f10fc a c:MedicinalProduct .
+
+q:regression-36-460555d476abd39c195e a c:RiskTreatmentActivity ;
+    l:atTime "2026-10-03T10:00:00+00:00"^^xsd:dateTime ;
+    l:implementsRiskPlan q:regression-36-8366d93ca28acb5289c5 ;
+    l:profile "risk-treatment" .
+
+q:regression-36-47381dac59bb866ce443 a c:ServiceOfferingSpecification ;
+    l:profile "ba-service" ;
+    l:serviceCapability q:regression-36-fbf45678e9b23d5eb52f .
+
+q:regression-36-52a75b983205d58d2f7a a c:AdverseEventReportingActivity ;
+    l:atTime "2026-10-03T10:00:00+00:00"^^xsd:dateTime ;
+    l:profile "safety-reporting" ;
+    l:reportsRecord q:regression-36-4b9f89642aafc1c72b40 .
+
+q:regression-36-714e63494ecfc76edf71 a c:Facility .
+
+q:regression-36-d09ff12992081e8f54f5 a c:RiskReviewActivity ;
+    l:atTime "2026-10-02T10:00:00+00:00"^^xsd:dateTime ;
+    l:profile "risk-review" ;
+    l:reviewNewResult q:regression-36-43c8541b1bc4445dd6f9 ;
+    l:reviewPriorResult q:regression-36-25b13d3c58fd928a8258 .
+
+q:regression-36-f0e100087f11d210dbbd a c:Assertion ;
+    l:atTime "2026-10-02T10:00:00+00:00"^^xsd:dateTime ;
+    l:profile "signal-result" ;
+    l:pvResultAssessment q:regression-36-96a7a9efa659ed4b8370 ;
+    l:pvResultSignal q:regression-36-b3fe2ddb5043e21284dc ;
+    l:signalStatus "under-review" .
+
+q:regression-36-f443fb22c61bf060d8cc a c:AdverseEventReportingActivity ;
+    l:atTime "2026-10-01T10:00:00+00:00"^^xsd:dateTime ;
+    l:profile "safety-reporting" ;
+    l:reportsRecord q:regression-36-4b9f89642aafc1c72b40 .
+
+q:regression-37-dfae70edc3f1b2d63778 a c:Organization ;
+    c:organizationHasSupplyCapacity q:regression-37-b533b1e70c34c4554bf4 .
+
+q:regression-39-8366d93ca28acb5289c5 a c:RiskTreatmentPlan ;
+    l:planRiskResult q:regression-39-25b13d3c58fd928a8258 ;
+    l:profile "risk-plan" .
+
+q:regression-4-460555d476abd39c195e a c:RiskTreatmentActivity ;
+    l:atTime "2026-10-03T10:00:00+00:00"^^xsd:dateTime ;
+    l:implementsRiskPlan q:regression-4-8366d93ca28acb5289c5 ;
+    l:profile "risk-treatment" .
+
+q:regression-4-d09ff12992081e8f54f5 a c:RiskReviewActivity ;
+    l:atTime "2026-10-02T10:00:00+00:00"^^xsd:dateTime ;
+    l:profile "risk-review" ;
+    l:reviewNewResult q:regression-4-43c8541b1bc4445dd6f9 ;
+    l:reviewPriorResult q:regression-4-25b13d3c58fd928a8258 .
+
+q:regression-40-03b9bab755f3f4980467 a c:RegulatoryJurisdiction .
+
+q:regression-40-0c2ac501f5b80ac50a26 a c:PostMarketSurveillanceActivity ;
+    l:profile "pv-surveillance" ;
+    l:surveillanceRequirement q:regression-40-1d0463afc301fde5de90 ;
+    l:surveillanceSource q:regression-40-4b9f89642aafc1c72b40 .
+
+q:regression-40-4a887a9912543dad8588 a c:AdverseEventReportingActivity ;
+    l:atTime "2026-10-03T10:00:00+00:00"^^xsd:dateTime ;
+    l:profile "safety-reporting" ;
+    l:reportsRecord q:regression-40-8f9297594f5eab648b41 .
+
+q:regression-40-f0e100087f11d210dbbd a c:Assertion ;
+    l:atTime "2026-10-02T10:00:00+00:00"^^xsd:dateTime ;
+    l:profile "signal-result" ;
+    l:pvResultAssessment q:regression-40-96a7a9efa659ed4b8370 ;
+    l:pvResultSignal q:regression-40-b3fe2ddb5043e21284dc ;
+    l:signalStatus "under-review" .
+
+q:regression-40-f443fb22c61bf060d8cc a c:AdverseEventReportingActivity ;
+    l:atTime "2026-10-01T10:00:00+00:00"^^xsd:dateTime ;
+    l:profile "safety-reporting" ;
+    l:reportsRecord q:regression-40-4b9f89642aafc1c72b40 .
+
+q:regression-41-03b9bab755f3f4980467 a c:RegulatoryJurisdiction .
+
+q:regression-41-0c2ac501f5b80ac50a26 a c:PostMarketSurveillanceActivity ;
+    l:profile "pv-surveillance" ;
+    l:surveillanceRequirement q:regression-41-1d0463afc301fde5de90 ;
+    l:surveillanceSource q:regression-41-4b9f89642aafc1c72b40 .
+
+q:regression-41-f0e100087f11d210dbbd a c:Assertion ;
+    l:atTime "2026-10-02T10:00:00+00:00"^^xsd:dateTime ;
+    l:profile "signal-result" ;
+    l:pvResultAssessment q:regression-41-96a7a9efa659ed4b8370 ;
+    l:pvResultSignal q:regression-41-b3fe2ddb5043e21284dc ;
+    l:signalStatus "under-review" .
+
+q:regression-41-f443fb22c61bf060d8cc a c:AdverseEventReportingActivity ;
+    l:atTime "2026-10-01T10:00:00+00:00"^^xsd:dateTime ;
+    l:profile "safety-reporting" ;
+    l:reportsRecord q:regression-41-4b9f89642aafc1c72b40 .
+
+q:regression-42-10e1fbf26d4e5c5cf211 a c:BusinessArchitectureView ;
+    l:profile "ba-view" ;
+    l:viewOrganization q:regression-42-ee231f1bf250d99a65be ;
+    l:viewService q:regression-42-47381dac59bb866ce443 .
+
+q:regression-42-2ca97784dd8d0ef80afa a c:StrategicPartnershipAgreement ;
+    c:partnershipParticipant q:regression-42-227021f3ec839a58d101,
+        q:regression-42-ee231f1bf250d99a65be ;
+    l:profile "ba-partnership" .
+
+q:regression-42-d27f82cc06de7dd60fe6 a c:Facility .
+
+q:regression-43-10e1fbf26d4e5c5cf211 a c:BusinessArchitectureView ;
+    l:profile "ba-view" ;
+    l:viewOrganization q:regression-43-ee231f1bf250d99a65be ;
+    l:viewService q:regression-43-47381dac59bb866ce443 .
+
+q:regression-43-16138e7639bbd178dc98 a c:EvidenceSupport ;
+    c:evidenceAssertion q:regression-43-236cc749348eae81b20e ;
+    c:evidenceItem q:regression-43-5855a2c8f2c88d16df98 ;
+    c:evidenceRecord q:regression-43-5855a2c8f2c88d16df98 .
+
+q:regression-43-2ca97784dd8d0ef80afa a c:StrategicPartnershipAgreement ;
+    c:partnershipParticipant q:regression-43-227021f3ec839a58d101,
+        q:regression-43-ee231f1bf250d99a65be ;
+    l:profile "ba-partnership",
+        "documented-partnership" ;
+    r:agreementCommitment q:regression-43-236cc749348eae81b20e .
+
+q:regression-44-3184afe4a48ccd6f6723 a c:ServiceOfferingSpecification ;
+    l:digitalServiceActivity q:regression-44-7a59cbf41f8cad1ca556 ;
+    l:digitalServiceComponent q:regression-44-68f4ef7a8f1730e1ced0 ;
+    l:profile "digital-service",
+        "manufacturing-digital-service" .
+
+q:regression-44-3718485ce1e96834a8fd a c:SourceRecord ;
+    l:profile "digital-record" ;
+    l:recordDigitalActivity q:regression-44-7a59cbf41f8cad1ca556 .
+
+q:regression-45-3184afe4a48ccd6f6723 a c:ServiceOfferingSpecification ;
+    l:digitalServiceActivity q:regression-45-7a59cbf41f8cad1ca556 ;
+    l:digitalServiceComponent q:regression-45-68f4ef7a8f1730e1ced0 ;
+    l:profile "digital-service",
+        "manufacturing-digital-service" .
+
+q:regression-45-3718485ce1e96834a8fd a c:SourceRecord ;
+    l:profile "digital-record" ;
+    l:recordDigitalActivity q:regression-45-7a59cbf41f8cad1ca556 .
+
+q:regression-46-03b9bab755f3f4980467 a c:RegulatoryJurisdiction .
+
+q:regression-46-0c2ac501f5b80ac50a26 a c:PostMarketSurveillanceActivity ;
+    l:profile "pv-surveillance" ;
+    l:surveillanceRequirement q:regression-46-1d0463afc301fde5de90 ;
+    l:surveillanceSource q:regression-46-4b9f89642aafc1c72b40 .
+
+q:regression-46-f0e100087f11d210dbbd a c:Assertion ;
+    l:atTime "2026-10-02T10:00:00+00:00"^^xsd:dateTime ;
+    l:profile "signal-result" ;
+    l:pvResultAssessment q:regression-46-96a7a9efa659ed4b8370 ;
+    l:pvResultSignal q:regression-46-b3fe2ddb5043e21284dc ;
+    l:signalStatus "under-review" .
+
+q:regression-46-f443fb22c61bf060d8cc a c:AdverseEventReportingActivity ;
+    l:atTime "2026-10-01T10:00:00+00:00"^^xsd:dateTime ;
+    l:profile "safety-reporting" ;
+    l:reportsRecord q:regression-46-4b9f89642aafc1c72b40 .
+
+q:regression-47-53125aa2d2d6009c0e55 a c:MedicinalProduct .
+
+q:regression-47-8366d93ca28acb5289c5 a c:RiskTreatmentPlan ;
+    l:planRiskResult q:regression-47-25b13d3c58fd928a8258 ;
+    l:profile "risk-plan" .
+
+q:regression-48-03b9bab755f3f4980467 a c:RegulatoryJurisdiction .
+
+q:regression-48-0c2ac501f5b80ac50a26 a c:PostMarketSurveillanceActivity ;
+    l:profile "pv-surveillance" ;
+    l:surveillanceRequirement q:regression-48-1d0463afc301fde5de90 ;
+    l:surveillanceSource q:regression-48-4b9f89642aafc1c72b40 .
+
+q:regression-48-4a887a9912543dad8588 a c:AdverseEventReportingActivity ;
+    l:atTime "2026-10-03T10:00:00+00:00"^^xsd:dateTime ;
+    l:profile "safety-reporting" ;
+    l:reportsRecord q:regression-48-8f9297594f5eab648b41 .
+
+q:regression-48-f0e100087f11d210dbbd a c:Assertion ;
+    l:atTime "2026-10-02T10:00:00+00:00"^^xsd:dateTime ;
+    l:profile "signal-result" ;
+    l:pvResultAssessment q:regression-48-96a7a9efa659ed4b8370 ;
+    l:pvResultSignal q:regression-48-b3fe2ddb5043e21284dc ;
+    l:signalStatus "under-review" .
+
+q:regression-48-f443fb22c61bf060d8cc a c:AdverseEventReportingActivity ;
+    l:atTime "2026-10-01T10:00:00+00:00"^^xsd:dateTime ;
+    l:profile "safety-reporting" ;
+    l:reportsRecord q:regression-48-4b9f89642aafc1c72b40 .
+
+q:regression-49-03b9bab755f3f4980467 a c:RegulatoryJurisdiction .
+
+q:regression-49-0c2ac501f5b80ac50a26 a c:PostMarketSurveillanceActivity ;
+    l:profile "pv-surveillance" ;
+    l:surveillanceRequirement q:regression-49-1d0463afc301fde5de90 ;
+    l:surveillanceSource q:regression-49-4b9f89642aafc1c72b40 .
+
+q:regression-49-1847fe7ded7cdd142732 a c:Assertion ;
+    l:atTime "2026-10-03T10:00:00+00:00"^^xsd:dateTime ;
+    l:profile "signal-result" ;
+    l:pvResultAssessment q:regression-49-83b3fb3dec1cd448ca2f ;
+    l:pvResultSignal q:regression-49-b3fe2ddb5043e21284dc ;
+    l:signalStatus "refuted-at-this-time" .
+
+q:regression-49-377bfc63f8e3e90f10fc a c:MedicinalProduct .
+
+q:regression-49-52a75b983205d58d2f7a a c:AdverseEventReportingActivity ;
+    l:atTime "2026-10-03T10:00:00+00:00"^^xsd:dateTime ;
+    l:profile "safety-reporting" ;
+    l:reportsRecord q:regression-49-4b9f89642aafc1c72b40 .
+
+q:regression-49-f0e100087f11d210dbbd a c:Assertion ;
+    l:atTime "2026-10-02T10:00:00+00:00"^^xsd:dateTime ;
+    l:profile "signal-result" ;
+    l:pvResultAssessment q:regression-49-96a7a9efa659ed4b8370 ;
+    l:pvResultSignal q:regression-49-b3fe2ddb5043e21284dc ;
+    l:signalStatus "under-review" .
+
+q:regression-49-f443fb22c61bf060d8cc a c:AdverseEventReportingActivity ;
+    l:atTime "2026-10-01T10:00:00+00:00"^^xsd:dateTime ;
+    l:profile "safety-reporting" ;
+    l:reportsRecord q:regression-49-4b9f89642aafc1c72b40 .
+
+q:regression-5-03b9bab755f3f4980467 a c:RegulatoryJurisdiction .
+
+q:regression-5-0c2ac501f5b80ac50a26 a c:PostMarketSurveillanceActivity ;
+    l:profile "pv-surveillance" ;
+    l:surveillanceRequirement q:regression-5-1d0463afc301fde5de90 ;
+    l:surveillanceSource q:regression-5-4b9f89642aafc1c72b40 .
+
+q:regression-5-1847fe7ded7cdd142732 a c:Assertion ;
+    l:atTime "2026-10-03T10:00:00+00:00"^^xsd:dateTime ;
+    l:profile "signal-result" ;
+    l:pvResultAssessment q:regression-5-83b3fb3dec1cd448ca2f ;
+    l:pvResultSignal q:regression-5-b3fe2ddb5043e21284dc ;
+    l:signalStatus "refuted-at-this-time" .
+
+q:regression-5-377bfc63f8e3e90f10fc a c:MedicinalProduct .
+
+q:regression-5-52a75b983205d58d2f7a a c:AdverseEventReportingActivity ;
+    l:atTime "2026-10-03T10:00:00+00:00"^^xsd:dateTime ;
+    l:profile "safety-reporting" ;
+    l:reportsRecord q:regression-5-4b9f89642aafc1c72b40 .
+
+q:regression-5-f0e100087f11d210dbbd a c:Assertion ;
+    l:atTime "2026-10-02T10:00:00+00:00"^^xsd:dateTime ;
+    l:profile "signal-result" ;
+    l:pvResultAssessment q:regression-5-96a7a9efa659ed4b8370 ;
+    l:pvResultSignal q:regression-5-b3fe2ddb5043e21284dc ;
+    l:signalStatus "under-review" .
+
+q:regression-5-f443fb22c61bf060d8cc a c:AdverseEventReportingActivity ;
+    l:atTime "2026-10-01T10:00:00+00:00"^^xsd:dateTime ;
+    l:profile "safety-reporting" ;
+    l:reportsRecord q:regression-5-4b9f89642aafc1c72b40 .
+
+q:regression-50-10e1fbf26d4e5c5cf211 a c:BusinessArchitectureView ;
+    l:profile "ba-view" ;
+    l:viewOrganization q:regression-50-ee231f1bf250d99a65be ;
+    l:viewService q:regression-50-47381dac59bb866ce443 .
+
+q:regression-50-2ca97784dd8d0ef80afa a c:StrategicPartnershipAgreement ;
+    c:partnershipParticipant q:regression-50-227021f3ec839a58d101,
+        q:regression-50-ee231f1bf250d99a65be ;
+    l:profile "ba-partnership" .
+
+q:regression-50-d1658c0650bf6d7a5f76 a c:MedicinalProduct .
+
+q:regression-51-187356c7eef273bbd288 a c:SourceRecord ;
+    r:carrierClaim q:regression-51-0a13ee3de3ddeb01fcc6 .
+
+q:regression-51-227021f3ec839a58d101 a c:Organization .
+
+q:regression-51-ee231f1bf250d99a65be a c:Organization .
+
+q:regression-52-2b13cf324cdc6c487635 a c:SourceRecord ;
+    l:profile "digital-record" ;
+    l:recordDigitalActivity q:regression-52-793c32b048ba6986ed59 .
+
+q:regression-52-3184afe4a48ccd6f6723 a c:ServiceOfferingSpecification ;
+    l:digitalServiceActivity q:regression-52-7a59cbf41f8cad1ca556 ;
+    l:digitalServiceComponent q:regression-52-68f4ef7a8f1730e1ced0 ;
+    l:profile "digital-service",
+        "manufacturing-digital-service" .
+
+q:regression-52-3718485ce1e96834a8fd a c:SourceRecord ;
+    l:profile "digital-record" ;
+    l:recordDigitalActivity q:regression-52-7a59cbf41f8cad1ca556 .
+
+q:regression-53-2b13cf324cdc6c487635 a c:SourceRecord ;
+    l:profile "digital-record" ;
+    l:recordDigitalActivity q:regression-53-793c32b048ba6986ed59 .
+
+q:regression-53-3184afe4a48ccd6f6723 a c:ServiceOfferingSpecification ;
+    l:digitalServiceActivity q:regression-53-7a59cbf41f8cad1ca556 ;
+    l:digitalServiceComponent q:regression-53-68f4ef7a8f1730e1ced0 ;
+    l:profile "digital-service",
+        "manufacturing-digital-service" .
+
+q:regression-53-3718485ce1e96834a8fd a c:SourceRecord ;
+    l:profile "digital-record" ;
+    l:recordDigitalActivity q:regression-53-7a59cbf41f8cad1ca556 .
+
+q:regression-54-03b9bab755f3f4980467 a c:RegulatoryJurisdiction .
+
+q:regression-54-0c2ac501f5b80ac50a26 a c:PostMarketSurveillanceActivity ;
+    l:profile "pv-surveillance" ;
+    l:surveillanceRequirement q:regression-54-1d0463afc301fde5de90 ;
+    l:surveillanceSource q:regression-54-4b9f89642aafc1c72b40 .
+
+q:regression-54-1847fe7ded7cdd142732 a c:Assertion ;
+    l:atTime "2026-10-03T10:00:00+00:00"^^xsd:dateTime ;
+    l:profile "signal-result" ;
+    l:pvResultAssessment q:regression-54-83b3fb3dec1cd448ca2f ;
+    l:pvResultSignal q:regression-54-b3fe2ddb5043e21284dc ;
+    l:signalStatus "refuted-at-this-time" .
+
+q:regression-54-377bfc63f8e3e90f10fc a c:MedicinalProduct .
+
+q:regression-54-52a75b983205d58d2f7a a c:AdverseEventReportingActivity ;
+    l:atTime "2026-10-03T10:00:00+00:00"^^xsd:dateTime ;
+    l:profile "safety-reporting" ;
+    l:reportsRecord q:regression-54-4b9f89642aafc1c72b40 .
+
+q:regression-54-f0e100087f11d210dbbd a c:Assertion ;
+    l:atTime "2026-10-02T10:00:00+00:00"^^xsd:dateTime ;
+    l:profile "signal-result" ;
+    l:pvResultAssessment q:regression-54-96a7a9efa659ed4b8370 ;
+    l:pvResultSignal q:regression-54-b3fe2ddb5043e21284dc ;
+    l:signalStatus "under-review" .
+
+q:regression-54-f443fb22c61bf060d8cc a c:AdverseEventReportingActivity ;
+    l:atTime "2026-10-01T10:00:00+00:00"^^xsd:dateTime ;
+    l:profile "safety-reporting" ;
+    l:reportsRecord q:regression-54-4b9f89642aafc1c72b40 .
+
+q:regression-55-53125aa2d2d6009c0e55 a c:MedicinalProduct .
+
+q:regression-55-8366d93ca28acb5289c5 a c:RiskTreatmentPlan ;
+    l:planRiskResult q:regression-55-25b13d3c58fd928a8258 ;
+    l:profile "risk-plan" .
+
+q:regression-6-2ca97784dd8d0ef80afa a c:StrategicPartnershipAgreement ;
+    c:partnershipParticipant q:regression-6-227021f3ec839a58d101,
+        q:regression-6-ee231f1bf250d99a65be ;
+    l:profile "ba-partnership" .
+
+q:regression-6-47381dac59bb866ce443 a c:ServiceOfferingSpecification ;
+    l:profile "ba-service" ;
+    l:serviceCapability q:regression-6-fbf45678e9b23d5eb52f .
+
+q:regression-6-53125aa2d2d6009c0e55 a c:MedicinalProduct .
+
+q:regression-6-714e63494ecfc76edf71 a c:Facility .
+
+q:regression-7-2b13cf324cdc6c487635 a c:SourceRecord ;
+    l:profile "digital-record" ;
+    l:recordDigitalActivity q:regression-7-793c32b048ba6986ed59 .
+
+q:regression-7-3184afe4a48ccd6f6723 a c:ServiceOfferingSpecification ;
+    l:digitalServiceActivity q:regression-7-7a59cbf41f8cad1ca556 ;
+    l:digitalServiceComponent q:regression-7-68f4ef7a8f1730e1ced0 ;
+    l:profile "digital-service" .
+
+q:regression-7-3718485ce1e96834a8fd a c:SourceRecord ;
+    l:profile "digital-record" ;
+    l:recordDigitalActivity q:regression-7-7a59cbf41f8cad1ca556 .
+
+q:regression-75-03b9bab755f3f4980467 a c:RegulatoryJurisdiction .
+
+q:regression-75-0c2ac501f5b80ac50a26 a c:PostMarketSurveillanceActivity ;
+    l:profile "pv-surveillance" ;
+    l:surveillanceRequirement q:regression-75-1d0463afc301fde5de90 ;
+    l:surveillanceSource q:regression-75-4b9f89642aafc1c72b40 .
+
+q:regression-75-10e1fbf26d4e5c5cf211 a c:BusinessArchitectureView ;
+    l:profile "ba-view" ;
+    l:viewOrganization q:regression-75-ee231f1bf250d99a65be ;
+    l:viewService q:regression-75-47381dac59bb866ce443 .
+
+q:regression-75-16138e7639bbd178dc98 a c:EvidenceSupport ;
+    c:evidenceAssertion q:regression-75-236cc749348eae81b20e ;
+    c:evidenceItem q:regression-75-5855a2c8f2c88d16df98 ;
+    c:evidenceRecord q:regression-75-5855a2c8f2c88d16df98 .
+
+q:regression-75-2ca97784dd8d0ef80afa a c:StrategicPartnershipAgreement ;
+    c:partnershipParticipant q:regression-75-227021f3ec839a58d101,
+        q:regression-75-ee231f1bf250d99a65be ;
+    l:profile "ba-partnership",
+        "documented-partnership" ;
+    r:agreementCommitment q:regression-75-236cc749348eae81b20e .
+
+q:regression-75-3184afe4a48ccd6f6723 a c:ServiceOfferingSpecification ;
+    l:digitalServiceActivity q:regression-75-7a59cbf41f8cad1ca556 ;
+    l:digitalServiceComponent q:regression-75-68f4ef7a8f1730e1ced0 ;
+    l:profile "digital-service",
+        "manufacturing-digital-service" .
+
+q:regression-75-3718485ce1e96834a8fd a c:SourceRecord ;
+    l:profile "digital-record" ;
+    l:recordDigitalActivity q:regression-75-7a59cbf41f8cad1ca556 .
+
+q:regression-75-4a887a9912543dad8588 a c:AdverseEventReportingActivity ;
+    l:atTime "2026-10-03T10:00:00+00:00"^^xsd:dateTime ;
+    l:profile "safety-reporting" ;
+    l:reportsRecord q:regression-75-8f9297594f5eab648b41 .
+
+q:regression-75-8366d93ca28acb5289c5 a c:RiskTreatmentPlan ;
+    l:planRiskResult q:regression-75-25b13d3c58fd928a8258 ;
+    l:profile "risk-plan" .
+
+q:regression-75-d27f82cc06de7dd60fe6 a c:Facility .
+
+q:regression-75-f0e100087f11d210dbbd a c:Assertion ;
+    l:atTime "2026-10-02T10:00:00+00:00"^^xsd:dateTime ;
+    l:profile "signal-result" ;
+    l:pvResultAssessment q:regression-75-96a7a9efa659ed4b8370 ;
+    l:pvResultSignal q:regression-75-b3fe2ddb5043e21284dc ;
+    l:signalStatus "under-review" .
+
+q:regression-75-f443fb22c61bf060d8cc a c:AdverseEventReportingActivity ;
+    l:atTime "2026-10-01T10:00:00+00:00"^^xsd:dateTime ;
+    l:profile "safety-reporting" ;
+    l:reportsRecord q:regression-75-4b9f89642aafc1c72b40 .
+
+q:regression-76-54a0ef08a8e3b3bfa72c l:pvResultSignal <urn:cmpe-policy:signal> .
+
+q:regression-81-54a0ef08a8e3b3bfa72c l:pvResultSignal <urn:cmpe-policy:signal> .
+
+q:regression-81-68f467683aec43ef2492 owl:sameAs <urn:cmpe-policy:y> .
+
+q:regression-82-54a0ef08a8e3b3bfa72c l:pvResultSignal <urn:cmpe-policy:signal> .
+
+q:regression-82-7181a815b28d72253354 l:pvResultSignal <urn:cmpe-policy:signal> .
+
+q:regression-84-54a0ef08a8e3b3bfa72c l:pvResultSignal q:regression-84-197585ab411e404ebb84 ;
+    r:claimText "same lexical string" .
+
+q:regression-87-ffde69672408b40b8873 r:carrierClaim <urn:cmpe-policy:claim> .
+
+q:regression-88-ff915938eee06faacdf5 r:carrierClaim <urn:cmpe-policy:claim> .
+
+q:regression-88-ffde69672408b40b8873 r:carrierClaim <urn:cmpe-policy:claim> .
+
+q:regression-89-4f5244fcae4ab1969d00 a c:RegulatoryMandate ;
+    c:regulatoryMandateCounterpart q:regression-89-ee11073c9f82f76ad2cf ;
+    c:regulatoryMandateHolder q:regression-89-82660051b4eeb17a2603 .
+
+q:regression-91-4f5244fcae4ab1969d00 a c:RegulatoryMandate ;
+    c:regulatoryMandateCounterpart q:regression-91-ee11073c9f82f76ad2cf ;
+    c:regulatoryMandateHolder q:regression-91-82660051b4eeb17a2603 .
+
+q:regression-92-d76d7d84fd7307eb70da a c:SourceRecord ;
+    owl:differentFrom q:regression-92-5c58ce6c0b34982f7570 ;
+    prov:wasAttributedTo q:regression-92-982397247f0978df0259 ;
+    prov:wasDerivedFrom q:regression-92-5c58ce6c0b34982f7570 ;
+    prov:wasRevisionOf q:regression-92-5c58ce6c0b34982f7570 ;
+    l:recordDigitalActivity q:regression-92-9b90742058f09d82cbee ;
+    p:profile "provenance-record" ;
+    p:version "2" .
+
+q:regression-93-d76d7d84fd7307eb70da a c:SourceRecord ;
+    owl:differentFrom q:regression-93-5c58ce6c0b34982f7570 ;
+    prov:wasAttributedTo q:regression-93-982397247f0978df0259 ;
+    prov:wasDerivedFrom q:regression-93-5c58ce6c0b34982f7570 ;
+    prov:wasRevisionOf q:regression-93-5c58ce6c0b34982f7570 ;
+    l:recordDigitalActivity q:regression-93-9b90742058f09d82cbee ;
+    r:carrierClaim q:regression-93-3e9d4077e8bd74a947a5 ;
+    p:payloadFormat "SPL" ;
+    p:profile "provenance-record",
+        "submission-record" ;
+    p:version "2" .
+
+q:regression-94-3e9d4077e8bd74a947a5 a c:Assertion ;
+    c:assertionAboutProduct q:regression-94-2e7e6965a56af385bb7b ;
+    p:profile "shortage-claim" ;
+    p:shortageStatus "potential" .
+
+q:regression-95-e7b7f01ddb1308373164 a c:RegulatoryRequirement ;
+    c:validFrom "2026-10-01T00:00:00+00:00"^^xsd:dateTime ;
+    c:validTo "2026-11-01T00:00:00+00:00"^^xsd:dateTime ;
+    p:actorRole "MAH" ;
+    p:authorizationRoute "CAP" ;
+    p:frequency "awareness-and-new-information" ;
+    p:jurisdiction q:regression-95-c9621a2cffe2d7b34044 ;
+    p:profile "reporting-scope" ;
+    p:scenario "routine" ;
+    p:sourceVersion "synthetic-guidance-snapshot-1" .
+
+q:regression-96-e7b7f01ddb1308373164 a c:RegulatoryRequirement ;
+    c:validFrom "2026-10-01T00:00:00+00:00"^^xsd:dateTime ;
+    c:validTo "2026-11-01T00:00:00+00:00"^^xsd:dateTime ;
+    p:actionAnnounced true ;
+    p:actorRole "MAH",
+        "NCA" ;
+    p:authorizationRoute "CAP",
+        "NAP" ;
+    p:frequency "synthetic-action-specific-frequency" ;
+    p:jurisdiction q:regression-96-c9621a2cffe2d7b34044 ;
+    p:profile "reporting-scope" ;
+    p:scenario "preparedness" ;
+    p:scopeComplete true ;
+    p:scopedProduct q:regression-96-2e7e6965a56af385bb7b ;
+    p:sourceVersion "synthetic-guidance-snapshot-1" .
+
+q:regression-97-e7b7f01ddb1308373164 a c:RegulatoryRequirement ;
+    c:validFrom "2026-10-01T00:00:00+00:00"^^xsd:dateTime ;
+    c:validTo "2026-11-01T00:00:00+00:00"^^xsd:dateTime ;
+    p:actionAnnounced true ;
+    p:actorRole "MAH",
+        "NCA" ;
+    p:authorizationRoute "CAP",
+        "NAP" ;
+    p:frequency "synthetic-action-specific-frequency" ;
+    p:jurisdiction q:regression-97-c9621a2cffe2d7b34044 ;
+    p:profile "reporting-scope" ;
+    p:scenario "crisis" ;
+    p:scopeComplete true ;
+    p:scopedProduct q:regression-97-2e7e6965a56af385bb7b ;
+    p:sourceVersion "synthetic-guidance-snapshot-1" .
+
+q:regression-0-25b13d3c58fd928a8258 a c:Assertion ;
+    l:atTime "2026-10-01T10:00:00+00:00"^^xsd:dateTime ;
+    l:citesSourceRecord q:regression-0-cc0854a9d9579514c29d ;
+    l:conclusion "review supply continuity" ;
+    l:profile "risk-result" ;
+    l:resultAssessment q:regression-0-fc97174edf22d2f93171 .
+
+q:regression-0-53125aa2d2d6009c0e55 a c:MedicinalProduct .
+
+q:regression-0-9cb6f4360a6d38478b67 a c:Assertion ;
+    l:profile "risk-scenario" ;
+    l:scenarioProduct q:regression-0-53125aa2d2d6009c0e55 .
+
+q:regression-0-cc0854a9d9579514c29d a c:SourceRecord .
+
+q:regression-0-fc97174edf22d2f93171 a c:RiskAssessmentActivity ;
+    l:assessmentScenario q:regression-0-9cb6f4360a6d38478b67 ;
+    l:profile "risk-assessment" .
+
+q:regression-1-1d0463afc301fde5de90 a c:PharmacovigilanceRequirement ;
+    l:profile "pv-requirement" ;
+    l:pvRequirementJurisdiction q:regression-1-50fbaae75d7ff51a6c65 .
+
+q:regression-1-377bfc63f8e3e90f10fc a c:MedicinalProduct .
+
+q:regression-1-50fbaae75d7ff51a6c65 a c:RegulatoryJurisdiction .
+
+q:regression-1-96a7a9efa659ed4b8370 a c:SignalAssessmentActivity ;
+    l:profile "signal-assessment" ;
+    l:signalAssessmentTarget q:regression-1-b3fe2ddb5043e21284dc .
+
+q:regression-115-2e7e6965a56af385bb7b a c:MedicinalProduct .
+
+q:regression-115-58cbd7e3f9e80d71c517 a c:DatasetRelease ;
+    c:containsSourceRecord q:regression-115-d76d7d84fd7307eb70da .
+
+q:regression-115-acd243a471ece4eb8e1d a c:MarketListing ;
+    c:listingJurisdiction q:regression-115-c9621a2cffe2d7b34044 ;
+    c:listingPresentation q:regression-115-547919411cf604ef52f0 ;
+    c:listingResponsibleOrganization q:regression-115-ec473526c24062760215 .
+
+q:regression-115-c9621a2cffe2d7b34044 a c:RegulatoryJurisdiction .
+
+q:regression-115-d76d7d84fd7307eb70da a c:SourceRecord ;
+    prov:wasAttributedTo q:regression-115-ec473526c24062760215 ;
+    p:approvalConclusion "unknown" ;
+    p:externalKey "SYNTHETIC-001" ;
+    p:marketingEnd "2026-11-01"^^xsd:date ;
+    p:marketingStart "2026-09-01"^^xsd:date ;
+    p:profile "registry-record" ;
+    p:recordKind "listing" ;
+    p:recordSubject q:regression-115-547919411cf604ef52f0 ;
+    p:release q:regression-115-58cbd7e3f9e80d71c517 ;
+    p:representsFact q:regression-115-acd243a471ece4eb8e1d ;
+    p:retrievedAt "2026-09-01T00:00:00+00:00"^^xsd:dateTime .
+
+q:regression-2-47381dac59bb866ce443 a c:ServiceOfferingSpecification ;
+    l:profile "ba-service" ;
+    l:serviceCapability q:regression-2-fbf45678e9b23d5eb52f .
+
+q:regression-2-fbf45678e9b23d5eb52f a c:EnterpriseCapability ;
+    c:capabilityBearer q:regression-2-ee231f1bf250d99a65be .
+
+q:regression-3-03aa1d76913466c73bd2 a c:SystemDeploymentActivity ;
+    l:atTime "2026-10-01T10:00:00+00:00"^^xsd:dateTime ;
+    l:componentVersion "1.0" ;
+    l:deploymentComponent q:regression-3-68f4ef7a8f1730e1ced0 ;
+    l:deploymentOrganization q:regression-3-e515e8e28a43201cf402 ;
+    l:profile "deployment" .
+
+q:regression-3-e515e8e28a43201cf402 a c:Organization .
+
+q:regression-36-03aa1d76913466c73bd2 a c:SystemDeploymentActivity ;
+    l:atTime "2026-10-01T10:00:00+00:00"^^xsd:dateTime ;
+    l:componentVersion "1.0" ;
+    l:deploymentComponent q:regression-36-68f4ef7a8f1730e1ced0 ;
+    l:deploymentOrganization q:regression-36-e515e8e28a43201cf402 ;
+    l:profile "deployment" .
+
+q:regression-36-1d0463afc301fde5de90 a c:PharmacovigilanceRequirement ;
+    l:profile "pv-requirement" ;
+    l:pvRequirementJurisdiction q:regression-36-50fbaae75d7ff51a6c65 .
+
+q:regression-36-2549b86e0e9c7fe0fe08 a c:Organization .
+
+q:regression-36-4049f210847ba596f61f a c:RiskAssessmentActivity ;
+    l:assessmentScenario q:regression-36-9cb6f4360a6d38478b67 ;
+    l:profile "risk-assessment" .
+
+q:regression-36-43c8541b1bc4445dd6f9 a c:Assertion ;
+    l:atTime "2026-10-02T10:00:00+00:00"^^xsd:dateTime ;
+    l:citesSourceRecord q:regression-36-cc0854a9d9579514c29d ;
+    l:conclusion "revised assessment" ;
+    l:profile "risk-result" ;
+    l:resultAssessment q:regression-36-4049f210847ba596f61f .
+
+q:regression-36-50fbaae75d7ff51a6c65 a c:RegulatoryJurisdiction .
+
+q:regression-36-53125aa2d2d6009c0e55 a c:MedicinalProduct .
+
+q:regression-36-793c32b048ba6986ed59 a c:ProvenanceActivity ;
+    l:atTime "2026-10-04T10:00:00+00:00"^^xsd:dateTime ;
+    l:digitalActivityDeployment q:regression-36-ddea062289d2373be65b ;
+    l:profile "digital-activity" .
+
+q:regression-36-8366d93ca28acb5289c5 a c:RiskTreatmentPlan ;
+    l:planRiskResult q:regression-36-25b13d3c58fd928a8258 ;
+    l:profile "risk-plan" .
+
+q:regression-36-83b3fb3dec1cd448ca2f a c:SignalAssessmentActivity ;
+    l:profile "signal-assessment" ;
+    l:signalAssessmentTarget q:regression-36-b3fe2ddb5043e21284dc .
+
+q:regression-36-96a7a9efa659ed4b8370 a c:SignalAssessmentActivity ;
+    l:profile "signal-assessment" ;
+    l:signalAssessmentTarget q:regression-36-b3fe2ddb5043e21284dc .
+
+q:regression-36-c7b6ee65d27f474a3334 a c:PharmaceuticalSubstance .
+
+q:regression-36-ddea062289d2373be65b a c:SystemDeploymentActivity ;
+    l:atTime "2026-10-03T10:00:00+00:00"^^xsd:dateTime ;
+    l:componentVersion "2.0" ;
+    l:deploymentComponent q:regression-36-68f4ef7a8f1730e1ced0 ;
+    l:deploymentOrganization q:regression-36-2549b86e0e9c7fe0fe08 ;
+    l:profile "deployment" .
+
+q:regression-36-e515e8e28a43201cf402 a c:Organization .
+
+q:regression-36-e60c5e4f22f47b6a55d3 a c:SourceRecord .
+
+q:regression-36-fbf45678e9b23d5eb52f a c:EnterpriseCapability ;
+    c:capabilityBearer q:regression-36-ee231f1bf250d99a65be .
+
+q:regression-36-fc97174edf22d2f93171 a c:RiskAssessmentActivity ;
+    l:assessmentScenario q:regression-36-9cb6f4360a6d38478b67 ;
+    l:profile "risk-assessment" .
+
+q:regression-37-b533b1e70c34c4554bf4 a c:SupplyCapacity .
+
+q:regression-39-25b13d3c58fd928a8258 a c:Assertion ;
+    l:atTime "2026-10-01T10:00:00+00:00"^^xsd:dateTime ;
+    l:citesSourceRecord q:regression-39-cc0854a9d9579514c29d ;
+    l:conclusion "review supply continuity" ;
+    l:profile "risk-result" ;
+    l:resultAssessment q:regression-39-fc97174edf22d2f93171 .
+
+q:regression-39-53125aa2d2d6009c0e55 a c:MedicinalProduct .
+
+q:regression-39-9cb6f4360a6d38478b67 a c:Assertion ;
+    l:profile "risk-scenario" ;
+    l:scenarioProduct q:regression-39-53125aa2d2d6009c0e55 .
+
+q:regression-39-cc0854a9d9579514c29d a c:SourceRecord .
+
+q:regression-39-fc97174edf22d2f93171 a c:RiskAssessmentActivity ;
+    l:assessmentScenario q:regression-39-9cb6f4360a6d38478b67 ;
+    l:profile "risk-assessment" .
+
+q:regression-4-4049f210847ba596f61f a c:RiskAssessmentActivity ;
+    l:assessmentScenario q:regression-4-9cb6f4360a6d38478b67 ;
+    l:profile "risk-assessment" .
+
+q:regression-4-43c8541b1bc4445dd6f9 a c:Assertion ;
+    l:atTime "2026-10-02T10:00:00+00:00"^^xsd:dateTime ;
+    l:citesSourceRecord q:regression-4-cc0854a9d9579514c29d ;
+    l:conclusion "revised assessment" ;
+    l:profile "risk-result" ;
+    l:resultAssessment q:regression-4-4049f210847ba596f61f .
+
+q:regression-4-53125aa2d2d6009c0e55 a c:MedicinalProduct .
+
+q:regression-4-8366d93ca28acb5289c5 a c:RiskTreatmentPlan ;
+    l:planRiskResult q:regression-4-25b13d3c58fd928a8258 ;
+    l:profile "risk-plan" .
+
+q:regression-4-fc97174edf22d2f93171 a c:RiskAssessmentActivity ;
+    l:assessmentScenario q:regression-4-9cb6f4360a6d38478b67 ;
+    l:profile "risk-assessment" .
+
+q:regression-40-1d0463afc301fde5de90 a c:PharmacovigilanceRequirement ;
+    l:profile "pv-requirement" ;
+    l:pvRequirementJurisdiction q:regression-40-50fbaae75d7ff51a6c65 .
+
+q:regression-40-377bfc63f8e3e90f10fc a c:MedicinalProduct .
+
+q:regression-40-50fbaae75d7ff51a6c65 a c:RegulatoryJurisdiction .
+
+q:regression-40-96a7a9efa659ed4b8370 a c:SignalAssessmentActivity ;
+    l:profile "signal-assessment" ;
+    l:signalAssessmentTarget q:regression-40-b3fe2ddb5043e21284dc .
+
+q:regression-41-1d0463afc301fde5de90 a c:PharmacovigilanceRequirement ;
+    l:profile "pv-requirement" ;
+    l:pvRequirementJurisdiction q:regression-41-50fbaae75d7ff51a6c65 .
+
+q:regression-41-377bfc63f8e3e90f10fc a c:MedicinalProduct .
+
+q:regression-41-50fbaae75d7ff51a6c65 a c:RegulatoryJurisdiction .
+
+q:regression-41-96a7a9efa659ed4b8370 a c:SignalAssessmentActivity ;
+    l:profile "attributed-signal-assessment",
+        "signal-assessment" ;
+    l:signalAssessmentTarget q:regression-41-b3fe2ddb5043e21284dc ;
+    r:assessmentOrganization q:regression-41-c7803a5c1635dcc95e29 .
+
+q:regression-41-c7803a5c1635dcc95e29 a c:Organization .
+
+q:regression-42-47381dac59bb866ce443 a c:ServiceOfferingSpecification ;
+    l:profile "ba-service",
+        "pharma-service" ;
+    l:serviceCapability q:regression-42-fbf45678e9b23d5eb52f ;
+    r:serviceProduct q:regression-42-d1658c0650bf6d7a5f76 .
+
+q:regression-42-d1658c0650bf6d7a5f76 a c:MedicinalProduct .
+
+q:regression-42-fbf45678e9b23d5eb52f a c:EnterpriseCapability ;
+    c:capabilityBearer q:regression-42-ee231f1bf250d99a65be .
+
+q:regression-43-47381dac59bb866ce443 a c:ServiceOfferingSpecification ;
+    l:profile "ba-service" ;
+    l:serviceCapability q:regression-43-fbf45678e9b23d5eb52f .
+
+q:regression-43-fbf45678e9b23d5eb52f a c:EnterpriseCapability ;
+    c:capabilityBearer q:regression-43-ee231f1bf250d99a65be .
+
+q:regression-44-03aa1d76913466c73bd2 a c:SystemDeploymentActivity ;
+    l:atTime "2026-10-01T10:00:00+00:00"^^xsd:dateTime ;
+    l:componentVersion "1.0" ;
+    l:deploymentComponent q:regression-44-68f4ef7a8f1730e1ced0 ;
+    l:deploymentOrganization q:regression-44-e515e8e28a43201cf402 ;
+    l:profile "deployment" .
+
+q:regression-44-1c043fc37e37a8165103 a c:Organization ;
+    owl:differentFrom q:regression-44-e515e8e28a43201cf402 .
+
+q:regression-44-90ff900b485b1b6d61b5 a c:MedicinalProduct .
+
+q:regression-44-a3a048c80ae862f2b60b a c:ManufacturingActivity ;
+    l:profile "manufacturing-context" ;
+    r:manufacturingFacility q:regression-44-dd6f75c0483a7895f82c ;
+    r:manufacturingProduct q:regression-44-90ff900b485b1b6d61b5 .
+
+q:regression-44-dd6f75c0483a7895f82c a c:Facility .
+
+q:regression-45-03aa1d76913466c73bd2 a c:SystemDeploymentActivity ;
+    l:atTime "2026-10-01T10:00:00+00:00"^^xsd:dateTime ;
+    l:componentVersion "1.0" ;
+    l:deploymentComponent q:regression-45-68f4ef7a8f1730e1ced0 ;
+    l:deploymentOrganization q:regression-45-e515e8e28a43201cf402 ;
+    l:profile "deployment" .
+
+q:regression-45-1c043fc37e37a8165103 a c:Organization ;
+    owl:differentFrom q:regression-45-e515e8e28a43201cf402 .
+
+q:regression-45-90ff900b485b1b6d61b5 a c:MedicinalProduct .
+
+q:regression-45-a3a048c80ae862f2b60b a c:ManufacturingActivity ;
+    l:profile "manufacturing-context" ;
+    r:manufacturingFacility q:regression-45-dd6f75c0483a7895f82c ;
+    r:manufacturingProduct q:regression-45-90ff900b485b1b6d61b5 .
+
+q:regression-45-dd6f75c0483a7895f82c a c:Facility .
+
+q:regression-46-1d0463afc301fde5de90 a c:PharmacovigilanceRequirement ;
+    l:profile "pv-requirement" ;
+    l:pvRequirementJurisdiction q:regression-46-50fbaae75d7ff51a6c65 .
+
+q:regression-46-377bfc63f8e3e90f10fc a c:MedicinalProduct .
+
+q:regression-46-50fbaae75d7ff51a6c65 a c:RegulatoryJurisdiction .
+
+q:regression-46-96a7a9efa659ed4b8370 a c:SignalAssessmentActivity ;
+    l:profile "signal-assessment" ;
+    l:signalAssessmentTarget q:regression-46-b3fe2ddb5043e21284dc .
+
+q:regression-47-25b13d3c58fd928a8258 a c:Assertion ;
+    l:atTime "2026-10-01T10:00:00+00:00"^^xsd:dateTime ;
+    l:citesSourceRecord q:regression-47-cc0854a9d9579514c29d ;
+    l:conclusion "review supply continuity" ;
+    l:profile "risk-result" ;
+    l:resultAssessment q:regression-47-fc97174edf22d2f93171 .
+
+q:regression-47-3ba4e70f3e4f1c493003 a c:Facility .
+
+q:regression-47-9cb6f4360a6d38478b67 a c:Assertion ;
+    l:profile "risk-scenario" ;
+    r:scenarioFacility q:regression-47-3ba4e70f3e4f1c493003 .
+
+q:regression-47-cc0854a9d9579514c29d a c:SourceRecord .
+
+q:regression-47-fc97174edf22d2f93171 a c:RiskAssessmentActivity ;
+    l:assessmentScenario q:regression-47-9cb6f4360a6d38478b67 ;
+    l:profile "risk-assessment" .
+
+q:regression-48-1d0463afc301fde5de90 a c:PharmacovigilanceRequirement ;
+    l:profile "pv-requirement" ;
+    l:pvRequirementJurisdiction q:regression-48-50fbaae75d7ff51a6c65 .
+
+q:regression-48-377bfc63f8e3e90f10fc a c:MedicinalProduct .
+
+q:regression-48-50fbaae75d7ff51a6c65 a c:RegulatoryJurisdiction .
+
+q:regression-48-6851fcadffe6d8b72914 a c:Assertion ;
+    owl:differentFrom q:regression-48-de822e8378e4b16216ca ;
+    l:profile "report-claim" ;
+    r:claimText "A source reports a suspected event; causation is unestablished." .
+
+q:regression-48-96a7a9efa659ed4b8370 a c:SignalAssessmentActivity ;
+    l:profile "signal-assessment" ;
+    l:signalAssessmentTarget q:regression-48-b3fe2ddb5043e21284dc .
+
+q:regression-49-1d0463afc301fde5de90 a c:PharmacovigilanceRequirement ;
+    l:profile "pv-requirement" ;
+    l:pvRequirementJurisdiction q:regression-49-50fbaae75d7ff51a6c65 .
+
+q:regression-49-50fbaae75d7ff51a6c65 a c:RegulatoryJurisdiction .
+
+q:regression-49-83b3fb3dec1cd448ca2f a c:SignalAssessmentActivity ;
+    l:profile "attributed-signal-assessment",
+        "signal-assessment" ;
+    l:signalAssessmentTarget q:regression-49-b3fe2ddb5043e21284dc ;
+    r:assessmentOrganization q:regression-49-f4461309d39cd796356f .
+
+q:regression-49-96a7a9efa659ed4b8370 a c:SignalAssessmentActivity ;
+    l:profile "attributed-signal-assessment",
+        "signal-assessment" ;
+    l:signalAssessmentTarget q:regression-49-b3fe2ddb5043e21284dc ;
+    r:assessmentOrganization q:regression-49-c7803a5c1635dcc95e29 .
+
+q:regression-49-c7803a5c1635dcc95e29 a c:Organization .
+
+q:regression-49-c7b6ee65d27f474a3334 a c:PharmaceuticalSubstance .
+
+q:regression-49-e60c5e4f22f47b6a55d3 a c:SourceRecord .
+
+q:regression-49-f4461309d39cd796356f a c:Organization .
+
+q:regression-5-1d0463afc301fde5de90 a c:PharmacovigilanceRequirement ;
+    l:profile "pv-requirement" ;
+    l:pvRequirementJurisdiction q:regression-5-50fbaae75d7ff51a6c65 .
+
+q:regression-5-50fbaae75d7ff51a6c65 a c:RegulatoryJurisdiction .
+
+q:regression-5-83b3fb3dec1cd448ca2f a c:SignalAssessmentActivity ;
+    l:profile "signal-assessment" ;
+    l:signalAssessmentTarget q:regression-5-b3fe2ddb5043e21284dc .
+
+q:regression-5-96a7a9efa659ed4b8370 a c:SignalAssessmentActivity ;
+    l:profile "signal-assessment" ;
+    l:signalAssessmentTarget q:regression-5-b3fe2ddb5043e21284dc .
+
+q:regression-5-c7b6ee65d27f474a3334 a c:PharmaceuticalSubstance .
+
+q:regression-5-e60c5e4f22f47b6a55d3 a c:SourceRecord .
+
+q:regression-50-47381dac59bb866ce443 a c:ServiceOfferingSpecification ;
+    l:profile "ba-service",
+        "pharma-service" ;
+    l:serviceCapability q:regression-50-fbf45678e9b23d5eb52f ;
+    r:serviceFacility q:regression-50-d27f82cc06de7dd60fe6 .
+
+q:regression-50-d27f82cc06de7dd60fe6 a c:Facility .
+
+q:regression-50-fbf45678e9b23d5eb52f a c:EnterpriseCapability ;
+    c:capabilityBearer q:regression-50-ee231f1bf250d99a65be .
+
+q:regression-51-0a13ee3de3ddeb01fcc6 a c:Assertion ;
+    r:claimText "Two organizations met; no agreement is asserted." .
+
+q:regression-52-03aa1d76913466c73bd2 a c:SystemDeploymentActivity ;
+    l:atTime "2026-10-01T10:00:00+00:00"^^xsd:dateTime ;
+    l:componentVersion "1.0" ;
+    l:deploymentComponent q:regression-52-68f4ef7a8f1730e1ced0 ;
+    l:deploymentOrganization q:regression-52-e515e8e28a43201cf402 ;
+    l:profile "deployment" .
+
+q:regression-52-2549b86e0e9c7fe0fe08 a c:Organization .
+
+q:regression-52-793c32b048ba6986ed59 a c:ProvenanceActivity ;
+    l:atTime "2026-10-04T10:00:00+00:00"^^xsd:dateTime ;
+    l:digitalActivityDeployment q:regression-52-ddea062289d2373be65b ;
+    l:profile "digital-activity",
+        "manufacturing-data-activity" ;
+    r:activityResponsibleOrganization q:regression-52-1c043fc37e37a8165103 ;
+    r:supportsManufacturing q:regression-52-a3a048c80ae862f2b60b .
+
+q:regression-52-90ff900b485b1b6d61b5 a c:MedicinalProduct .
+
+q:regression-52-dd6f75c0483a7895f82c a c:Facility .
+
+q:regression-52-ddea062289d2373be65b a c:SystemDeploymentActivity ;
+    l:atTime "2026-10-03T10:00:00+00:00"^^xsd:dateTime ;
+    l:componentVersion "2.0" ;
+    l:deploymentComponent q:regression-52-68f4ef7a8f1730e1ced0 ;
+    l:deploymentOrganization q:regression-52-2549b86e0e9c7fe0fe08 ;
+    l:profile "deployment" .
+
+q:regression-53-03aa1d76913466c73bd2 a c:SystemDeploymentActivity ;
+    l:atTime "2026-10-01T10:00:00+00:00"^^xsd:dateTime ;
+    l:componentVersion "1.0" ;
+    l:deploymentComponent q:regression-53-68f4ef7a8f1730e1ced0 ;
+    l:deploymentOrganization q:regression-53-e515e8e28a43201cf402 ;
+    l:profile "deployment" .
+
+q:regression-53-2549b86e0e9c7fe0fe08 a c:Organization .
+
+q:regression-53-793c32b048ba6986ed59 a c:ProvenanceActivity ;
+    l:atTime "2026-10-04T10:00:00+00:00"^^xsd:dateTime ;
+    l:digitalActivityDeployment q:regression-53-ddea062289d2373be65b ;
+    l:profile "digital-activity",
+        "manufacturing-data-activity" ;
+    r:activityResponsibleOrganization q:regression-53-1c043fc37e37a8165103 ;
+    r:supportsManufacturing q:regression-53-a3a048c80ae862f2b60b .
+
+q:regression-53-90ff900b485b1b6d61b5 a c:MedicinalProduct .
+
+q:regression-53-dd6f75c0483a7895f82c a c:Facility .
+
+q:regression-53-ddea062289d2373be65b a c:SystemDeploymentActivity ;
+    l:atTime "2026-10-03T10:00:00+00:00"^^xsd:dateTime ;
+    l:componentVersion "2.0" ;
+    l:deploymentComponent q:regression-53-68f4ef7a8f1730e1ced0 ;
+    l:deploymentOrganization q:regression-53-2549b86e0e9c7fe0fe08 ;
+    l:profile "deployment" .
+
+q:regression-54-1d0463afc301fde5de90 a c:PharmacovigilanceRequirement ;
+    l:profile "pv-requirement" ;
+    l:pvRequirementJurisdiction q:regression-54-50fbaae75d7ff51a6c65 .
+
+q:regression-54-50fbaae75d7ff51a6c65 a c:RegulatoryJurisdiction .
+
+q:regression-54-83b3fb3dec1cd448ca2f a c:SignalAssessmentActivity ;
+    l:profile "signal-assessment" ;
+    l:signalAssessmentTarget q:regression-54-b3fe2ddb5043e21284dc .
+
+q:regression-54-96a7a9efa659ed4b8370 a c:SignalAssessmentActivity ;
+    l:profile "signal-assessment" ;
+    l:signalAssessmentTarget q:regression-54-b3fe2ddb5043e21284dc .
+
+q:regression-54-c7b6ee65d27f474a3334 a c:PharmaceuticalSubstance .
+
+q:regression-54-e60c5e4f22f47b6a55d3 a c:SourceRecord .
+
+q:regression-55-25b13d3c58fd928a8258 a c:Assertion ;
+    l:atTime "2026-10-01T10:00:00+00:00"^^xsd:dateTime ;
+    l:citesSourceRecord q:regression-55-cc0854a9d9579514c29d ;
+    l:conclusion "review supply continuity" ;
+    l:profile "risk-result" ;
+    l:resultAssessment q:regression-55-fc97174edf22d2f93171 .
+
+q:regression-55-7b8ea245ad83d93074a1 a c:SupplyDependency ;
+    c:dependencyDependent q:regression-55-7f138d50387706aa1375 ;
+    c:dependencyProvider q:regression-55-cc1aaf30fc5e781c61e4 .
+
+q:regression-55-7f138d50387706aa1375 a c:DependentEntity .
+
+q:regression-55-9cb6f4360a6d38478b67 a c:Assertion ;
+    l:profile "risk-scenario" ;
+    r:scenarioDependency q:regression-55-7b8ea245ad83d93074a1 .
+
+q:regression-55-cc0854a9d9579514c29d a c:SourceRecord .
+
+q:regression-55-cc1aaf30fc5e781c61e4 a c:ProviderEntity .
+
+q:regression-55-fc97174edf22d2f93171 a c:RiskAssessmentActivity ;
+    l:assessmentScenario q:regression-55-9cb6f4360a6d38478b67 ;
+    l:profile "risk-assessment" .
+
+q:regression-6-fbf45678e9b23d5eb52f a c:EnterpriseCapability ;
+    c:capabilityBearer q:regression-6-ee231f1bf250d99a65be .
+
+q:regression-7-03aa1d76913466c73bd2 a c:SystemDeploymentActivity ;
+    l:atTime "2026-10-01T10:00:00+00:00"^^xsd:dateTime ;
+    l:componentVersion "1.0" ;
+    l:deploymentComponent q:regression-7-68f4ef7a8f1730e1ced0 ;
+    l:deploymentOrganization q:regression-7-e515e8e28a43201cf402 ;
+    l:profile "deployment" .
+
+q:regression-7-2549b86e0e9c7fe0fe08 a c:Organization .
+
+q:regression-7-793c32b048ba6986ed59 a c:ProvenanceActivity ;
+    l:atTime "2026-10-04T10:00:00+00:00"^^xsd:dateTime ;
+    l:digitalActivityDeployment q:regression-7-ddea062289d2373be65b ;
+    l:profile "digital-activity" .
+
+q:regression-7-ddea062289d2373be65b a c:SystemDeploymentActivity ;
+    l:atTime "2026-10-03T10:00:00+00:00"^^xsd:dateTime ;
+    l:componentVersion "2.0" ;
+    l:deploymentComponent q:regression-7-68f4ef7a8f1730e1ced0 ;
+    l:deploymentOrganization q:regression-7-2549b86e0e9c7fe0fe08 ;
+    l:profile "deployment" .
+
+q:regression-7-e515e8e28a43201cf402 a c:Organization .
+
+q:regression-75-03aa1d76913466c73bd2 a c:SystemDeploymentActivity ;
+    l:atTime "2026-10-01T10:00:00+00:00"^^xsd:dateTime ;
+    l:componentVersion "1.0" ;
+    l:deploymentComponent q:regression-75-68f4ef7a8f1730e1ced0 ;
+    l:deploymentOrganization q:regression-75-e515e8e28a43201cf402 ;
+    l:profile "deployment" .
+
+q:regression-75-1c043fc37e37a8165103 a c:Organization ;
+    owl:differentFrom q:regression-75-e515e8e28a43201cf402 .
+
+q:regression-75-1d0463afc301fde5de90 a c:PharmacovigilanceRequirement ;
+    l:profile "pv-requirement" ;
+    l:pvRequirementJurisdiction q:regression-75-50fbaae75d7ff51a6c65 .
+
+q:regression-75-25b13d3c58fd928a8258 a c:Assertion ;
+    l:atTime "2026-10-01T10:00:00+00:00"^^xsd:dateTime ;
+    l:citesSourceRecord q:regression-75-cc0854a9d9579514c29d ;
+    l:conclusion "review supply continuity" ;
+    l:profile "risk-result" ;
+    l:resultAssessment q:regression-75-fc97174edf22d2f93171 .
+
+q:regression-75-377bfc63f8e3e90f10fc a c:MedicinalProduct .
+
+q:regression-75-47381dac59bb866ce443 a c:ServiceOfferingSpecification ;
+    l:profile "ba-service",
+        "pharma-service" ;
+    l:serviceCapability q:regression-75-fbf45678e9b23d5eb52f ;
+    r:serviceProduct q:regression-75-d1658c0650bf6d7a5f76 .
+
+q:regression-75-50fbaae75d7ff51a6c65 a c:RegulatoryJurisdiction .
+
+q:regression-75-53125aa2d2d6009c0e55 a c:MedicinalProduct .
+
+q:regression-75-90ff900b485b1b6d61b5 a c:MedicinalProduct .
+
+q:regression-75-96a7a9efa659ed4b8370 a c:SignalAssessmentActivity ;
+    l:profile "attributed-signal-assessment",
+        "signal-assessment" ;
+    l:signalAssessmentTarget q:regression-75-b3fe2ddb5043e21284dc ;
+    r:assessmentOrganization q:regression-75-c7803a5c1635dcc95e29 .
+
+q:regression-75-9cb6f4360a6d38478b67 a c:Assertion ;
+    l:profile "risk-scenario" ;
+    l:scenarioProduct q:regression-75-53125aa2d2d6009c0e55 .
+
+q:regression-75-a3a048c80ae862f2b60b a c:ManufacturingActivity ;
+    l:profile "manufacturing-context" ;
+    r:manufacturingFacility q:regression-75-dd6f75c0483a7895f82c ;
+    r:manufacturingProduct q:regression-75-90ff900b485b1b6d61b5 .
+
+q:regression-75-c7803a5c1635dcc95e29 a c:Organization .
+
+q:regression-75-cc0854a9d9579514c29d a c:SourceRecord .
+
+q:regression-75-d1658c0650bf6d7a5f76 a c:MedicinalProduct .
+
+q:regression-75-dd6f75c0483a7895f82c a c:Facility .
+
+q:regression-75-fbf45678e9b23d5eb52f a c:EnterpriseCapability ;
+    c:capabilityBearer q:regression-75-ee231f1bf250d99a65be .
+
+q:regression-75-fc97174edf22d2f93171 a c:RiskAssessmentActivity ;
+    l:assessmentScenario q:regression-75-9cb6f4360a6d38478b67 ;
+    l:profile "risk-assessment" .
+
+q:regression-83-197585ab411e404ebb84 l:pvResultSignal q:regression-83-54a0ef08a8e3b3bfa72c .
+
+q:regression-83-54a0ef08a8e3b3bfa72c l:pvResultSignal q:regression-83-197585ab411e404ebb84 .
+
+q:regression-84-197585ab411e404ebb84 r:claimText "same lexical string" .
+
+q:regression-89-58cbd7e3f9e80d71c517 a c:DatasetRelease ;
+    c:containsSourceRecord q:regression-89-d76d7d84fd7307eb70da .
+
+q:regression-89-acd243a471ece4eb8e1d a c:EstablishmentRegistration ;
+    c:registrationAuthority q:regression-89-82660051b4eeb17a2603 ;
+    c:registrationEntity q:regression-89-4ca9fae1331ad4a2a07a ;
+    c:registrationJurisdiction q:regression-89-c9621a2cffe2d7b34044 .
+
+q:regression-89-c9621a2cffe2d7b34044 a c:RegulatoryJurisdiction .
+
+q:regression-89-d76d7d84fd7307eb70da a c:SourceRecord ;
+    prov:wasAttributedTo q:regression-89-ec473526c24062760215 ;
+    p:approvalConclusion "unknown" ;
+    p:externalKey "SYNTHETIC-001" ;
+    p:profile "registry-record" ;
+    p:recordKind "registration" ;
+    p:recordSubject q:regression-89-4ca9fae1331ad4a2a07a ;
+    p:release q:regression-89-58cbd7e3f9e80d71c517 ;
+    p:representsFact q:regression-89-acd243a471ece4eb8e1d ;
+    p:retrievedAt "2026-10-01T10:00:00+00:00"^^xsd:dateTime .
+
+q:regression-89-ec473526c24062760215 a c:Organization .
+
+q:regression-89-ee11073c9f82f76ad2cf a c:MandateConferringOrganizationRole,
+        c:Organization .
+
+q:regression-90-2e7e6965a56af385bb7b a c:MedicinalProduct .
+
+q:regression-90-58cbd7e3f9e80d71c517 a c:DatasetRelease ;
+    c:containsSourceRecord q:regression-90-d76d7d84fd7307eb70da .
+
+q:regression-90-acd243a471ece4eb8e1d a c:MarketListing ;
+    c:listingJurisdiction q:regression-90-c9621a2cffe2d7b34044 ;
+    c:listingPresentation q:regression-90-547919411cf604ef52f0 ;
+    c:listingResponsibleOrganization q:regression-90-ec473526c24062760215 .
+
+q:regression-90-c9621a2cffe2d7b34044 a c:RegulatoryJurisdiction .
+
+q:regression-90-d76d7d84fd7307eb70da a c:SourceRecord ;
+    prov:wasAttributedTo q:regression-90-ec473526c24062760215 ;
+    p:approvalConclusion "unknown" ;
+    p:externalKey "SYNTHETIC-001" ;
+    p:marketingEnd "2026-11-01"^^xsd:date ;
+    p:marketingStart "2026-09-01"^^xsd:date ;
+    p:profile "registry-record" ;
+    p:recordKind "listing" ;
+    p:recordSubject q:regression-90-547919411cf604ef52f0 ;
+    p:release q:regression-90-58cbd7e3f9e80d71c517 ;
+    p:representsFact q:regression-90-acd243a471ece4eb8e1d ;
+    p:retrievedAt "2026-10-01T10:00:00+00:00"^^xsd:dateTime .
+
+q:regression-91-58cbd7e3f9e80d71c517 a c:DatasetRelease ;
+    c:containsSourceRecord q:regression-91-d76d7d84fd7307eb70da .
+
+q:regression-91-acd243a471ece4eb8e1d a c:EstablishmentRegistration ;
+    c:registrationAuthority q:regression-91-82660051b4eeb17a2603 ;
+    c:registrationEntity q:regression-91-ec473526c24062760215 ;
+    c:registrationJurisdiction q:regression-91-c9621a2cffe2d7b34044 .
+
+q:regression-91-c9621a2cffe2d7b34044 a c:RegulatoryJurisdiction .
+
+q:regression-91-d76d7d84fd7307eb70da a c:SourceRecord ;
+    prov:wasAttributedTo q:regression-91-ec473526c24062760215 ;
+    p:approvalConclusion "unknown" ;
+    p:externalKey "SYNTHETIC-001" ;
+    p:profile "registry-record" ;
+    p:recordKind "registration" ;
+    p:recordSubject q:regression-91-ec473526c24062760215 ;
+    p:release q:regression-91-58cbd7e3f9e80d71c517 ;
+    p:representsFact q:regression-91-acd243a471ece4eb8e1d ;
+    p:retrievedAt "2026-10-01T10:00:00+00:00"^^xsd:dateTime .
+
+q:regression-91-ee11073c9f82f76ad2cf a c:MandateConferringOrganizationRole,
+        c:Organization .
+
+q:regression-92-982397247f0978df0259 a c:Organization .
+
+q:regression-92-9b90742058f09d82cbee a c:ProvenanceActivity ;
+    prov:wasAssociatedWith q:regression-92-c7632d2033c9903ce193 .
+
+q:regression-92-c7632d2033c9903ce193 a c:Organization .
+
+q:regression-93-2e7e6965a56af385bb7b a c:MedicinalProduct .
+
+q:regression-93-3e9d4077e8bd74a947a5 a c:Assertion ;
+    c:assertionAboutProduct q:regression-93-2e7e6965a56af385bb7b .
+
+q:regression-93-982397247f0978df0259 a c:Organization .
+
+q:regression-93-9b90742058f09d82cbee a c:ProvenanceActivity ;
+    prov:wasAssociatedWith q:regression-93-c7632d2033c9903ce193 .
+
+q:regression-93-c7632d2033c9903ce193 a c:Organization .
+
+q:regression-94-2e7e6965a56af385bb7b a c:MedicinalProduct .
+
+q:regression-95-c9621a2cffe2d7b34044 a c:RegulatoryJurisdiction .
+
+q:regression-96-2e7e6965a56af385bb7b a c:MedicinalProduct .
+
+q:regression-96-c9621a2cffe2d7b34044 a c:RegulatoryJurisdiction .
+
+q:regression-97-2e7e6965a56af385bb7b a c:MedicinalProduct .
+
+q:regression-97-c9621a2cffe2d7b34044 a c:RegulatoryJurisdiction .
+
+q:regression-1-b3fe2ddb5043e21284dc a c:Assertion ;
+    l:citesSourceRecord q:regression-1-4b9f89642aafc1c72b40 ;
+    l:profile "safety-signal" ;
+    l:signalProduct q:regression-1-377bfc63f8e3e90f10fc .
+
+q:regression-115-547919411cf604ef52f0 a c:ListedPresentationRole,
+        c:MedicinalProductPresentation ;
+    c:presentationOf q:regression-115-2e7e6965a56af385bb7b .
+
+q:regression-115-ec473526c24062760215 a c:ListingResponsibleOrganizationRole,
+        c:Organization .
+
+q:regression-2-227021f3ec839a58d101 a c:Organization,
+        c:PartnerOrganizationRole .
+
+q:regression-3-68f4ef7a8f1730e1ced0 a c:DigitalInformationSystemComponent .
+
+q:regression-3-7a59cbf41f8cad1ca556 a c:ProvenanceActivity ;
+    l:atTime "2026-10-02T10:00:00+00:00"^^xsd:dateTime ;
+    l:digitalActivityDeployment q:regression-3-03aa1d76913466c73bd2 ;
+    l:profile "digital-activity" .
+
+q:regression-36-227021f3ec839a58d101 a c:Organization,
+        c:PartnerOrganizationRole .
+
+q:regression-36-25b13d3c58fd928a8258 a c:Assertion ;
+    l:atTime "2026-10-01T10:00:00+00:00"^^xsd:dateTime ;
+    l:citesSourceRecord q:regression-36-cc0854a9d9579514c29d ;
+    l:conclusion "review supply continuity" ;
+    l:profile "risk-result" ;
+    l:resultAssessment q:regression-36-fc97174edf22d2f93171 .
+
+q:regression-36-7a59cbf41f8cad1ca556 a c:ProvenanceActivity ;
+    l:atTime "2026-10-02T10:00:00+00:00"^^xsd:dateTime ;
+    l:digitalActivityDeployment q:regression-36-03aa1d76913466c73bd2 ;
+    l:profile "digital-activity" .
+
+q:regression-36-9cb6f4360a6d38478b67 a c:Assertion ;
+    l:profile "risk-scenario" ;
+    l:scenarioProduct q:regression-36-53125aa2d2d6009c0e55 .
+
+q:regression-36-cc0854a9d9579514c29d a c:SourceRecord .
+
+q:regression-36-ee231f1bf250d99a65be a c:Organization,
+        c:PartnerOrganizationRole ;
+    owl:differentFrom q:regression-36-227021f3ec839a58d101 .
+
+q:regression-4-25b13d3c58fd928a8258 a c:Assertion ;
+    l:atTime "2026-10-01T10:00:00+00:00"^^xsd:dateTime ;
+    l:citesSourceRecord q:regression-4-cc0854a9d9579514c29d ;
+    l:conclusion "review supply continuity" ;
+    l:profile "risk-result" ;
+    l:resultAssessment q:regression-4-fc97174edf22d2f93171 .
+
+q:regression-4-9cb6f4360a6d38478b67 a c:Assertion ;
+    l:profile "risk-scenario" ;
+    l:scenarioProduct q:regression-4-53125aa2d2d6009c0e55 .
+
+q:regression-4-cc0854a9d9579514c29d a c:SourceRecord .
+
+q:regression-40-6851fcadffe6d8b72914 a c:Assertion ;
+    l:profile "report-claim" ;
+    r:claimText "A source reports a suspected event; causation is unestablished." .
+
+q:regression-40-8f9297594f5eab648b41 a c:SourceRecord ;
+    l:profile "report-carrier" ;
+    r:carrierClaim q:regression-40-6851fcadffe6d8b72914 ;
+    r:caseIdentifier "SYNTHETIC-CASE-1" ;
+    r:caseIdentifierScheme "synthetic-local-case-id-not-E2B-conformance" .
+
+q:regression-40-b3fe2ddb5043e21284dc a c:Assertion ;
+    l:citesSourceRecord q:regression-40-4b9f89642aafc1c72b40 ;
+    l:profile "safety-signal" ;
+    l:signalProduct q:regression-40-377bfc63f8e3e90f10fc .
+
+q:regression-41-b3fe2ddb5043e21284dc a c:Assertion ;
+    l:citesSourceRecord q:regression-41-4b9f89642aafc1c72b40 ;
+    l:profile "safety-signal" ;
+    l:signalProduct q:regression-41-377bfc63f8e3e90f10fc .
+
+q:regression-42-227021f3ec839a58d101 a c:Organization,
+        c:PartnerOrganizationRole .
+
+q:regression-43-236cc749348eae81b20e a c:Assertion,
+        c:SupportedAssertionRole ;
+    l:profile "commitment-assertion" ;
+    r:commitmentActor q:regression-43-227021f3ec839a58d101,
+        q:regression-43-ee231f1bf250d99a65be ;
+    r:commitmentText "Synthetic organizations commit to the stated joint service." .
+
+q:regression-43-5855a2c8f2c88d16df98 a c:EvidenceItem,
+        c:EvidenceSourceRecordRole,
+        c:SourceRecord .
+
+q:regression-44-68f4ef7a8f1730e1ced0 a c:DigitalInformationSystemComponent .
+
+q:regression-44-7a59cbf41f8cad1ca556 a c:ProvenanceActivity ;
+    l:atTime "2026-10-02T10:00:00+00:00"^^xsd:dateTime ;
+    l:digitalActivityDeployment q:regression-44-03aa1d76913466c73bd2 ;
+    l:profile "digital-activity",
+        "manufacturing-data-activity" ;
+    r:activityResponsibleOrganization q:regression-44-1c043fc37e37a8165103 ;
+    r:supportsManufacturing q:regression-44-a3a048c80ae862f2b60b .
+
+q:regression-44-e515e8e28a43201cf402 a c:Organization .
+
+q:regression-45-68f4ef7a8f1730e1ced0 a c:DigitalInformationSystemComponent .
+
+q:regression-45-7a59cbf41f8cad1ca556 a c:ProvenanceActivity ;
+    l:atTime "2026-10-02T10:00:00+00:00"^^xsd:dateTime ;
+    l:digitalActivityDeployment q:regression-45-03aa1d76913466c73bd2 ;
+    l:profile "digital-activity",
+        "manufacturing-data-activity" ;
+    r:activityResponsibleOrganization q:regression-45-1c043fc37e37a8165103 ;
+    r:supportsManufacturing q:regression-45-a3a048c80ae862f2b60b .
+
+q:regression-45-e515e8e28a43201cf402 a c:Organization .
+
+q:regression-46-b3fe2ddb5043e21284dc a c:Assertion ;
+    l:citesSourceRecord q:regression-46-4b9f89642aafc1c72b40 ;
+    l:profile "safety-signal" ;
+    l:signalProduct q:regression-46-377bfc63f8e3e90f10fc .
+
+q:regression-48-8f9297594f5eab648b41 a c:SourceRecord ;
+    l:profile "report-carrier" ;
+    r:carrierClaim q:regression-48-de822e8378e4b16216ca ;
+    r:caseIdentifier "SYNTHETIC-CASE-1" ;
+    r:caseIdentifierScheme "synthetic-local-case-id-not-E2B-conformance" .
+
+q:regression-48-b3fe2ddb5043e21284dc a c:Assertion ;
+    l:citesSourceRecord q:regression-48-4b9f89642aafc1c72b40 ;
+    l:profile "safety-signal" ;
+    l:signalProduct q:regression-48-377bfc63f8e3e90f10fc .
+
+q:regression-48-de822e8378e4b16216ca a c:Assertion ;
+    l:profile "report-claim" ;
+    r:claimText "Follow-up changes the reported clinical claim." .
+
+q:regression-50-227021f3ec839a58d101 a c:Organization,
+        c:PartnerOrganizationRole .
+
+q:regression-52-1c043fc37e37a8165103 a c:Organization ;
+    owl:differentFrom q:regression-52-e515e8e28a43201cf402 .
+
+q:regression-52-7a59cbf41f8cad1ca556 a c:ProvenanceActivity ;
+    l:atTime "2026-10-02T10:00:00+00:00"^^xsd:dateTime ;
+    l:digitalActivityDeployment q:regression-52-03aa1d76913466c73bd2 ;
+    l:profile "digital-activity",
+        "manufacturing-data-activity" ;
+    r:activityResponsibleOrganization q:regression-52-1c043fc37e37a8165103 ;
+    r:supportsManufacturing q:regression-52-a3a048c80ae862f2b60b .
+
+q:regression-52-a3a048c80ae862f2b60b a c:ManufacturingActivity ;
+    l:profile "manufacturing-context" ;
+    r:manufacturingFacility q:regression-52-dd6f75c0483a7895f82c ;
+    r:manufacturingProduct q:regression-52-90ff900b485b1b6d61b5 .
+
+q:regression-52-e515e8e28a43201cf402 a c:Organization .
+
+q:regression-53-1c043fc37e37a8165103 a c:Organization ;
+    owl:differentFrom q:regression-53-e515e8e28a43201cf402 .
+
+q:regression-53-7a59cbf41f8cad1ca556 a c:ProvenanceActivity ;
+    l:atTime "2026-10-02T10:00:00+00:00"^^xsd:dateTime ;
+    l:digitalActivityDeployment q:regression-53-03aa1d76913466c73bd2 ;
+    l:profile "digital-activity",
+        "manufacturing-data-activity" ;
+    r:activityResponsibleOrganization q:regression-53-1c043fc37e37a8165103 ;
+    r:supportsManufacturing q:regression-53-a3a048c80ae862f2b60b .
+
+q:regression-53-a3a048c80ae862f2b60b a c:ManufacturingActivity ;
+    l:profile "manufacturing-context" ;
+    r:manufacturingFacility q:regression-53-dd6f75c0483a7895f82c ;
+    r:manufacturingProduct q:regression-53-90ff900b485b1b6d61b5 .
+
+q:regression-53-e515e8e28a43201cf402 a c:Organization .
+
+q:regression-6-227021f3ec839a58d101 a c:Organization,
+        c:PartnerOrganizationRole .
+
+q:regression-6-ee231f1bf250d99a65be a c:Organization,
+        c:PartnerOrganizationRole ;
+    owl:differentFrom q:regression-6-227021f3ec839a58d101 .
+
+q:regression-7-7a59cbf41f8cad1ca556 a c:ProvenanceActivity ;
+    l:atTime "2026-10-02T10:00:00+00:00"^^xsd:dateTime ;
+    l:digitalActivityDeployment q:regression-7-03aa1d76913466c73bd2 ;
+    l:profile "digital-activity" .
+
+q:regression-75-236cc749348eae81b20e a c:Assertion,
+        c:SupportedAssertionRole ;
+    l:profile "commitment-assertion" ;
+    r:commitmentActor q:regression-75-227021f3ec839a58d101,
+        q:regression-75-ee231f1bf250d99a65be ;
+    r:commitmentText "Synthetic organizations commit to the stated joint service." .
+
+q:regression-75-5855a2c8f2c88d16df98 a c:EvidenceItem,
+        c:EvidenceSourceRecordRole,
+        c:SourceRecord .
+
+q:regression-75-6851fcadffe6d8b72914 a c:Assertion ;
+    l:profile "report-claim" ;
+    r:claimText "A source reports a suspected event; causation is unestablished." .
+
+q:regression-75-68f4ef7a8f1730e1ced0 a c:DigitalInformationSystemComponent .
+
+q:regression-75-7a59cbf41f8cad1ca556 a c:ProvenanceActivity ;
+    l:atTime "2026-10-02T10:00:00+00:00"^^xsd:dateTime ;
+    l:digitalActivityDeployment q:regression-75-03aa1d76913466c73bd2 ;
+    l:profile "digital-activity",
+        "manufacturing-data-activity" ;
+    r:activityResponsibleOrganization q:regression-75-1c043fc37e37a8165103 ;
+    r:supportsManufacturing q:regression-75-a3a048c80ae862f2b60b .
+
+q:regression-75-8f9297594f5eab648b41 a c:SourceRecord ;
+    l:profile "report-carrier" ;
+    r:carrierClaim q:regression-75-6851fcadffe6d8b72914 ;
+    r:caseIdentifier "SYNTHETIC-CASE-1" ;
+    r:caseIdentifierScheme "synthetic-local-case-id-not-E2B-conformance" .
+
+q:regression-75-b3fe2ddb5043e21284dc a c:Assertion ;
+    l:citesSourceRecord q:regression-75-4b9f89642aafc1c72b40 ;
+    l:profile "safety-signal" ;
+    l:signalProduct q:regression-75-377bfc63f8e3e90f10fc .
+
+q:regression-75-e515e8e28a43201cf402 a c:Organization .
+
+q:regression-89-4ca9fae1331ad4a2a07a a c:Facility,
+        c:RegisteredFacilityRole,
+        c:RegisteredParty .
+
+q:regression-89-82660051b4eeb17a2603 a c:Organization,
+        c:RegisteringAuthorityRole .
+
+q:regression-90-547919411cf604ef52f0 a c:ListedPresentationRole,
+        c:MedicinalProductPresentation ;
+    c:presentationOf q:regression-90-2e7e6965a56af385bb7b .
+
+q:regression-90-ec473526c24062760215 a c:ListingResponsibleOrganizationRole,
+        c:Organization .
+
+q:regression-91-82660051b4eeb17a2603 a c:Organization,
+        c:RegisteringAuthorityRole .
+
+q:regression-1-4b9f89642aafc1c72b40 a c:SourceRecord .
+
+q:regression-2-ee231f1bf250d99a65be a c:Organization,
+        c:PartnerOrganizationRole ;
+    owl:differentFrom q:regression-2-227021f3ec839a58d101 .
+
+q:regression-36-4b9f89642aafc1c72b40 a c:SourceRecord .
+
+q:regression-36-68f4ef7a8f1730e1ced0 a c:DigitalInformationSystemComponent .
+
+q:regression-40-4b9f89642aafc1c72b40 a c:SourceRecord ;
+    owl:differentFrom q:regression-40-8f9297594f5eab648b41 ;
+    l:profile "report-carrier" ;
+    r:carrierClaim q:regression-40-6851fcadffe6d8b72914 ;
+    r:caseIdentifier "SYNTHETIC-CASE-1" ;
+    r:caseIdentifierScheme "synthetic-local-case-id-not-E2B-conformance" .
+
+q:regression-41-4b9f89642aafc1c72b40 a c:SourceRecord .
+
+q:regression-42-ee231f1bf250d99a65be a c:Organization,
+        c:PartnerOrganizationRole ;
+    owl:differentFrom q:regression-42-227021f3ec839a58d101 .
+
+q:regression-43-227021f3ec839a58d101 a c:Organization,
+        c:PartnerOrganizationRole .
+
+q:regression-46-4b9f89642aafc1c72b40 a c:SourceRecord .
+
+q:regression-48-4b9f89642aafc1c72b40 a c:SourceRecord ;
+    owl:differentFrom q:regression-48-8f9297594f5eab648b41 ;
+    l:profile "report-carrier" ;
+    r:carrierClaim q:regression-48-6851fcadffe6d8b72914 ;
+    r:caseIdentifier "SYNTHETIC-CASE-1" ;
+    r:caseIdentifierScheme "synthetic-local-case-id-not-E2B-conformance" .
+
+q:regression-49-4b9f89642aafc1c72b40 a c:SourceRecord .
+
+q:regression-5-4b9f89642aafc1c72b40 a c:SourceRecord .
+
+q:regression-50-ee231f1bf250d99a65be a c:Organization,
+        c:PartnerOrganizationRole ;
+    owl:differentFrom q:regression-50-227021f3ec839a58d101 .
+
+q:regression-52-68f4ef7a8f1730e1ced0 a c:DigitalInformationSystemComponent .
+
+q:regression-53-68f4ef7a8f1730e1ced0 a c:DigitalInformationSystemComponent .
+
+q:regression-54-4b9f89642aafc1c72b40 a c:SourceRecord .
+
+q:regression-7-68f4ef7a8f1730e1ced0 a c:DigitalInformationSystemComponent .
+
+q:regression-75-227021f3ec839a58d101 a c:Organization,
+        c:PartnerOrganizationRole .
+
+q:regression-75-4b9f89642aafc1c72b40 a c:SourceRecord ;
+    owl:differentFrom q:regression-75-8f9297594f5eab648b41 ;
+    l:profile "report-carrier" ;
+    r:carrierClaim q:regression-75-6851fcadffe6d8b72914 ;
+    r:caseIdentifier "SYNTHETIC-CASE-1" ;
+    r:caseIdentifierScheme "synthetic-local-case-id-not-E2B-conformance" .
+
+q:regression-91-ec473526c24062760215 a c:Organization,
+        c:RegisteredOrganizationRole,
+        c:RegisteredParty .
+
+q:regression-92-5c58ce6c0b34982f7570 a c:SourceRecord ;
+    p:version "1" .
+
+q:regression-93-5c58ce6c0b34982f7570 a c:SourceRecord ;
+    p:version "1" .
+
+q:regression-36-b3fe2ddb5043e21284dc a c:Assertion ;
+    l:citesSourceRecord q:regression-36-e60c5e4f22f47b6a55d3 ;
+    l:profile "safety-signal" ;
+    l:signalSubstance q:regression-36-c7b6ee65d27f474a3334 .
+
+q:regression-43-ee231f1bf250d99a65be a c:Organization,
+        c:PartnerOrganizationRole ;
+    owl:differentFrom q:regression-43-227021f3ec839a58d101 .
+
+q:regression-49-b3fe2ddb5043e21284dc a c:Assertion ;
+    l:citesSourceRecord q:regression-49-e60c5e4f22f47b6a55d3 ;
+    l:profile "safety-signal" ;
+    l:signalSubstance q:regression-49-c7b6ee65d27f474a3334 .
+
+q:regression-5-b3fe2ddb5043e21284dc a c:Assertion ;
+    l:citesSourceRecord q:regression-5-e60c5e4f22f47b6a55d3 ;
+    l:profile "safety-signal" ;
+    l:signalSubstance q:regression-5-c7b6ee65d27f474a3334 .
+
+q:regression-54-b3fe2ddb5043e21284dc a c:Assertion ;
+    l:citesSourceRecord q:regression-54-e60c5e4f22f47b6a55d3 ;
+    l:profile "safety-signal" ;
+    l:signalSubstance q:regression-54-c7b6ee65d27f474a3334 .
+
+q:regression-75-ee231f1bf250d99a65be a c:Organization,
+        c:PartnerOrganizationRole ;
+    owl:differentFrom q:regression-75-227021f3ec839a58d101 .

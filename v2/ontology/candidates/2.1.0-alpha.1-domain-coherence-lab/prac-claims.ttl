@@ -1,0 +1,198 @@
+@prefix b: <https://w3id.org/cm-pharme/experimental/reporting-context/> .
+@prefix c: <https://w3id.org/cm-pharme/2.1/> .
+@prefix l: <https://w3id.org/cm-pharme/experimental/four-domain/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix r: <https://w3id.org/cm-pharme/experimental/refinement/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix t: <urn:cmpe-coherence:> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+t:20223-disposition a b:StructuredClaim ;
+    b:claimOrigin "source-extracted" ;
+    b:claimSubject t:PRAC-result-20223 ;
+    b:evidencePointer "EMA/PRAC/183502/2026#page=3" ;
+    b:objectValue "product-information-update-recommended" ;
+    b:polarity "positive" ;
+    b:predicateIRI "https://w3id.org/cm-pharme/experimental/coherence/disposition"^^xsd:anyURI .
+
+t:20223-epitt a b:StructuredClaim ;
+    b:claimOrigin "source-extracted" ;
+    b:claimSubject t:PRAC-signal-20223 ;
+    b:evidencePointer "EMA/PRAC/183502/2026#page=3" ;
+    b:objectValue "20223" ;
+    b:polarity "positive" ;
+    b:predicateIRI "https://w3id.org/cm-pharme/experimental/coherence/epitt"^^xsd:anyURI .
+
+t:20223-result-link a b:StructuredClaim ;
+    b:claimOrigin "mapping-interpretation" ;
+    b:claimSubject t:PRAC-result-20223 ;
+    b:evidencePointer "EMA/PRAC/183502/2026#page=3" ;
+    b:objectResource t:PRAC-signal-20223 ;
+    b:polarity "positive" ;
+    b:predicateIRI "https://w3id.org/cm-pharme/experimental/four-domain/pvResultSignal"^^xsd:anyURI .
+
+t:20223-signal a b:StructuredClaim ;
+    b:claimOrigin "source-extracted" ;
+    b:claimSubject t:PRAC-signal-20223 ;
+    b:evidencePointer "EMA/PRAC/183502/2026#page=3" ;
+    b:objectValue "DRESS" ;
+    b:polarity "positive" ;
+    b:predicateIRI "https://w3id.org/cm-pharme/experimental/coherence/signal"^^xsd:anyURI .
+
+t:20223-topic a b:StructuredClaim ;
+    b:claimOrigin "source-extracted" ;
+    b:claimSubject t:PRAC-signal-20223 ;
+    b:evidencePointer "EMA/PRAC/183502/2026#page=3" ;
+    b:objectValue "Oxacillin" ;
+    b:polarity "positive" ;
+    b:predicateIRI "https://w3id.org/cm-pharme/experimental/coherence/topic"^^xsd:anyURI .
+
+t:20223-topic-link a b:StructuredClaim ;
+    b:claimOrigin "mapping-interpretation" ;
+    b:claimSubject t:PRAC-signal-20223 ;
+    b:evidencePointer "EMA/PRAC/183502/2026#page=3" ;
+    b:objectResource t:substance-Oxacillin ;
+    b:polarity "positive" ;
+    b:predicateIRI "https://w3id.org/cm-pharme/experimental/four-domain/signalSubstance"^^xsd:anyURI .
+
+t:20300-disposition a b:StructuredClaim ;
+    b:claimOrigin "source-extracted" ;
+    b:claimSubject t:PRAC-result-20300 ;
+    b:evidencePointer "EMA/PRAC/183502/2026#page=6" ;
+    b:objectValue "no-action-at-this-stage" ;
+    b:polarity "positive" ;
+    b:predicateIRI "https://w3id.org/cm-pharme/experimental/coherence/disposition"^^xsd:anyURI .
+
+t:20300-epitt a b:StructuredClaim ;
+    b:claimOrigin "source-extracted" ;
+    b:claimSubject t:PRAC-signal-20300 ;
+    b:evidencePointer "EMA/PRAC/183502/2026#page=6" ;
+    b:objectValue "20300" ;
+    b:polarity "positive" ;
+    b:predicateIRI "https://w3id.org/cm-pharme/experimental/coherence/epitt"^^xsd:anyURI .
+
+t:20300-result-link a b:StructuredClaim ;
+    b:claimOrigin "mapping-interpretation" ;
+    b:claimSubject t:PRAC-result-20300 ;
+    b:evidencePointer "EMA/PRAC/183502/2026#page=6" ;
+    b:objectResource t:PRAC-signal-20300 ;
+    b:polarity "positive" ;
+    b:predicateIRI "https://w3id.org/cm-pharme/experimental/four-domain/pvResultSignal"^^xsd:anyURI .
+
+t:20300-signal a b:StructuredClaim ;
+    b:claimOrigin "source-extracted" ;
+    b:claimSubject t:PRAC-signal-20300 ;
+    b:evidencePointer "EMA/PRAC/183502/2026#page=6" ;
+    b:objectValue "Meningioma" ;
+    b:polarity "positive" ;
+    b:predicateIRI "https://w3id.org/cm-pharme/experimental/coherence/signal"^^xsd:anyURI .
+
+t:20300-topic a b:StructuredClaim ;
+    b:claimOrigin "source-extracted" ;
+    b:claimSubject t:PRAC-signal-20300 ;
+    b:evidencePointer "EMA/PRAC/183502/2026#page=6" ;
+    b:objectValue "Progestogens" ;
+    b:polarity "positive" ;
+    b:predicateIRI "https://w3id.org/cm-pharme/experimental/coherence/topic"^^xsd:anyURI .
+
+t:20308-disposition a b:StructuredClaim ;
+    b:claimOrigin "source-extracted" ;
+    b:claimSubject t:PRAC-result-20308 ;
+    b:evidencePointer "EMA/PRAC/183502/2026#page=5" ;
+    b:objectValue "additional-information-requested" ;
+    b:polarity "positive" ;
+    b:predicateIRI "https://w3id.org/cm-pharme/experimental/coherence/disposition"^^xsd:anyURI .
+
+t:20308-epitt a b:StructuredClaim ;
+    b:claimOrigin "source-extracted" ;
+    b:claimSubject t:PRAC-signal-20308 ;
+    b:evidencePointer "EMA/PRAC/183502/2026#page=5" ;
+    b:objectValue "20308" ;
+    b:polarity "positive" ;
+    b:predicateIRI "https://w3id.org/cm-pharme/experimental/coherence/epitt"^^xsd:anyURI .
+
+t:20308-result-link a b:StructuredClaim ;
+    b:claimOrigin "mapping-interpretation" ;
+    b:claimSubject t:PRAC-result-20308 ;
+    b:evidencePointer "EMA/PRAC/183502/2026#page=5" ;
+    b:objectResource t:PRAC-signal-20308 ;
+    b:polarity "positive" ;
+    b:predicateIRI "https://w3id.org/cm-pharme/experimental/four-domain/pvResultSignal"^^xsd:anyURI .
+
+t:20308-signal a b:StructuredClaim ;
+    b:claimOrigin "source-extracted" ;
+    b:claimSubject t:PRAC-signal-20308 ;
+    b:evidencePointer "EMA/PRAC/183502/2026#page=5" ;
+    b:objectValue "Fulminant hepatitis" ;
+    b:polarity "positive" ;
+    b:predicateIRI "https://w3id.org/cm-pharme/experimental/coherence/signal"^^xsd:anyURI .
+
+t:20308-topic a b:StructuredClaim ;
+    b:claimOrigin "source-extracted" ;
+    b:claimSubject t:PRAC-signal-20308 ;
+    b:evidencePointer "EMA/PRAC/183502/2026#page=5" ;
+    b:objectValue "Anakinra" ;
+    b:polarity "positive" ;
+    b:predicateIRI "https://w3id.org/cm-pharme/experimental/coherence/topic"^^xsd:anyURI .
+
+t:20308-topic-link a b:StructuredClaim ;
+    b:claimOrigin "mapping-interpretation" ;
+    b:claimSubject t:PRAC-signal-20308 ;
+    b:evidencePointer "EMA/PRAC/183502/2026#page=5" ;
+    b:objectResource t:substance-Anakinra ;
+    b:polarity "positive" ;
+    b:predicateIRI "https://w3id.org/cm-pharme/experimental/four-domain/signalSubstance"^^xsd:anyURI .
+
+t:substance-Anakinra a c:PharmaceuticalSubstance ;
+    rdfs:label "Anakinra" .
+
+t:substance-Oxacillin a c:PharmaceuticalSubstance ;
+    rdfs:label "Oxacillin" .
+
+t:PRAC-result-20223 a c:Assertion ;
+    l:citesSourceRecord t:PRAC-row-20223 .
+
+t:PRAC-result-20300 a c:Assertion ;
+    l:citesSourceRecord t:PRAC-row-20300 .
+
+t:PRAC-result-20308 a c:Assertion ;
+    l:citesSourceRecord t:PRAC-row-20308 .
+
+t:PRAC-row-20223 a c:SourceRecord ;
+    prov:wasDerivedFrom t:PRACDocument ;
+    r:carrierClaim t:20223-disposition,
+        t:20223-epitt,
+        t:20223-result-link,
+        t:20223-signal,
+        t:20223-topic,
+        t:20223-topic-link .
+
+t:PRAC-row-20300 a c:SourceRecord ;
+    prov:wasDerivedFrom t:PRACDocument ;
+    r:carrierClaim t:20300-disposition,
+        t:20300-epitt,
+        t:20300-result-link,
+        t:20300-signal,
+        t:20300-topic .
+
+t:PRAC-row-20308 a c:SourceRecord ;
+    prov:wasDerivedFrom t:PRACDocument ;
+    r:carrierClaim t:20308-disposition,
+        t:20308-epitt,
+        t:20308-result-link,
+        t:20308-signal,
+        t:20308-topic,
+        t:20308-topic-link .
+
+t:PRACDocument a c:SourceRecord ;
+    b:sourceSHA256 "f645702d0abbbae65654ba1fea63f450fbd2827a6657714b832e088d667c38d9" ;
+    b:sourceURL "https://www.ema.europa.eu/en/documents/prac-recommendation/prac-recommendations-signals-adopted-31-august-3-september-2026-prac-meeting_en.pdf"^^xsd:anyURI .
+
+t:PRAC-signal-20300 a c:Assertion ;
+    l:citesSourceRecord t:PRAC-row-20300 .
+
+t:PRAC-signal-20223 a c:Assertion ;
+    l:citesSourceRecord t:PRAC-row-20223 .
+
+t:PRAC-signal-20308 a c:Assertion ;
+    l:citesSourceRecord t:PRAC-row-20308 .

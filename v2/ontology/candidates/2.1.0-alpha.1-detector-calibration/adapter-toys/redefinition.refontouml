@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<RefOntoUML:Package xmlns:RefOntoUML="http://nemo.inf.ufes.br/ontouml/refontouml" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmi:version="2.0" xmi:id="_cmpe_cm-pharme-root" name="cm-pharme-root" visibility="public">
+  <packagedElement xsi:type="RefOntoUML:Kind" xmi:id="_cmpe_Parent" name="Parent" visibility="public" />
+  <packagedElement xsi:type="RefOntoUML:Kind" xmi:id="_cmpe_Other" name="Other" visibility="public" />
+  <packagedElement xsi:type="RefOntoUML:SubKind" xmi:id="_cmpe_Child0" name="Child0" visibility="public">
+    <generalization xmi:id="_cmpe_g0" general="_cmpe_Parent" />
+  </packagedElement>
+  <packagedElement xsi:type="RefOntoUML:SubKind" xmi:id="_cmpe_Child1" name="Child1" visibility="public">
+    <generalization xmi:id="_cmpe_g1" general="_cmpe_Parent" />
+  </packagedElement>
+  <packagedElement xsi:type="RefOntoUML:Association" xmi:id="_cmpe_association" name="association" visibility="public" memberEnd="_cmpe_association-a _cmpe_association-b">
+    <ownedEnd xmi:id="_cmpe_association-a" name="association-a" visibility="public" type="_cmpe_Other" association="_cmpe_association">
+      <upperValue xsi:type="RefOntoUML:LiteralUnlimitedNatural" xmi:id="_cmpe_association-a-upper" value="1" />
+      <lowerValue xsi:type="RefOntoUML:LiteralInteger" xmi:id="_cmpe_association-a-lower" value="0" />
+    </ownedEnd>
+    <ownedEnd xmi:id="_cmpe_association-b" name="association-b" visibility="public" type="_cmpe_Parent" association="_cmpe_association">
+      <upperValue xsi:type="RefOntoUML:LiteralUnlimitedNatural" xmi:id="_cmpe_association-b-upper" value="2" />
+      <lowerValue xsi:type="RefOntoUML:LiteralInteger" xmi:id="_cmpe_association-b-lower" value="0" />
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="RefOntoUML:Association" xmi:id="_cmpe_special" name="special" visibility="public" memberEnd="_cmpe_special-a _cmpe_special-b">
+    <ownedEnd xmi:id="_cmpe_special-a" name="special-a" visibility="public" type="_cmpe_Other" association="_cmpe_special" redefinedProperty="_cmpe_association-a">
+      <upperValue xsi:type="RefOntoUML:LiteralUnlimitedNatural" xmi:id="_cmpe_special-a-upper" value="1" />
+      <lowerValue xsi:type="RefOntoUML:LiteralInteger" xmi:id="_cmpe_special-a-lower" value="0" />
+    </ownedEnd>
+    <ownedEnd xmi:id="_cmpe_special-b" name="special-b" visibility="public" type="_cmpe_Child0" association="_cmpe_special" redefinedProperty="_cmpe_association-b">
+      <upperValue xsi:type="RefOntoUML:LiteralUnlimitedNatural" xmi:id="_cmpe_special-b-upper" value="2" />
+      <lowerValue xsi:type="RefOntoUML:LiteralInteger" xmi:id="_cmpe_special-b-lower" value="0" />
+    </ownedEnd>
+  </packagedElement>
+</RefOntoUML:Package>

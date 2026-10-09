@@ -1,0 +1,310 @@
+@prefix cmpe: <https://w3id.org/cm-pharme/2.1/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+cmpe:AlternativeMedicinalProductRoleDependenceShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:AlternativeMedicineAssignment ;
+            sh:minCount 1 ;
+            sh:path [ sh:inversePath cmpe:alternativeProduct ] ] ;
+    sh:targetClass cmpe:AlternativeMedicinalProductRole .
+
+cmpe:AlternativeMedicineAssignmentShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:ReferenceProductRole ;
+            sh:disjoint cmpe:alternativeProduct ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path cmpe:alternativeForProduct ],
+        [ sh:class cmpe:AlternativeMedicinalProductRole ;
+            sh:disjoint cmpe:alternativeForProduct ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path cmpe:alternativeProduct ] ;
+    sh:targetClass cmpe:AlternativeMedicineAssignment .
+
+cmpe:AppliedClassificationEntryRoleDependenceShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:ProductClassificationAssignment ;
+            sh:minCount 1 ;
+            sh:path [ sh:inversePath cmpe:classificationEntry ] ],
+        [ sh:minCount 1 ;
+            sh:path [ sh:inversePath cmpe:classificationEntry ] ] ;
+    sh:targetClass cmpe:AppliedClassificationEntryRole .
+
+cmpe:AssetAtRiskDeferredShape a sh:NodeShape ;
+    sh:in () ;
+    sh:targetClass cmpe:AssetAtRisk .
+
+cmpe:AuthorizedPartyDependenceShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:RegulatoryAuthorization ;
+            sh:minCount 1 ;
+            sh:path [ sh:inversePath cmpe:authorizationParty ] ] ;
+    sh:targetClass cmpe:AuthorizedParty .
+
+cmpe:AuthorizingAuthorityRoleDependenceShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:RegulatoryAuthorization ;
+            sh:minCount 1 ;
+            sh:path [ sh:inversePath cmpe:authorizationAuthority ] ] ;
+    sh:targetClass cmpe:AuthorizingAuthorityRole .
+
+cmpe:ClassifiedEntityDependenceShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:ProductClassificationAssignment ;
+            sh:minCount 1 ;
+            sh:path [ sh:inversePath cmpe:classificationEntity ] ],
+        [ sh:minCount 1 ;
+            sh:path [ sh:inversePath cmpe:classificationEntity ] ] ;
+    sh:targetClass cmpe:ClassifiedEntity .
+
+cmpe:ClinicalCareParticipantDeferredShape a sh:NodeShape ;
+    sh:in () ;
+    sh:targetClass cmpe:ClinicalCareParticipant .
+
+cmpe:ContextualMedicineClassificationAssignmentShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:AppliedClassificationEntryRole ;
+            sh:disjoint cmpe:classificationEntity ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path cmpe:classificationEntry ],
+        [ sh:class cmpe:ClassifiedEntity ;
+            sh:disjoint cmpe:classificationEntry ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path cmpe:classificationEntity ] ;
+    sh:targetClass cmpe:ContextualMedicineClassificationAssignment .
+
+cmpe:DependentEntityDependenceShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:SupplyDependency ;
+            sh:minCount 1 ;
+            sh:path [ sh:inversePath cmpe:dependencyDependent ] ] ;
+    sh:targetClass cmpe:DependentEntity .
+
+cmpe:EstablishmentRegistrationShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:RegisteredParty ;
+            sh:disjoint cmpe:registrationAuthority ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path cmpe:registrationEntity ],
+        [ sh:class cmpe:RegisteringAuthorityRole ;
+            sh:disjoint cmpe:registrationEntity ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path cmpe:registrationAuthority ] ;
+    sh:targetClass cmpe:EstablishmentRegistration .
+
+cmpe:EvidenceAliasShape a sh:NodeShape ;
+    sh:sparql [ sh:message "evidenceRecord must subset evidenceItem" ;
+            sh:select "SELECT $this WHERE { $this <https://w3id.org/cm-pharme/2.1/evidenceRecord> ?x . FILTER NOT EXISTS { $this <https://w3id.org/cm-pharme/2.1/evidenceItem> ?x } }" ] ;
+    sh:targetSubjectsOf cmpe:evidenceRecord .
+
+cmpe:EvidenceItemDependenceShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:EvidenceSupport ;
+            sh:minCount 1 ;
+            sh:path [ sh:inversePath cmpe:evidenceItem ] ] ;
+    sh:targetClass cmpe:EvidenceItem .
+
+cmpe:EvidenceSupportShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:SupportedAssertionRole ;
+            sh:disjoint cmpe:evidenceItem ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path cmpe:evidenceAssertion ],
+        [ sh:class cmpe:EvidenceItem ;
+            sh:disjoint cmpe:evidenceAssertion ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path cmpe:evidenceItem ] ;
+    sh:targetClass cmpe:EvidenceSupport .
+
+cmpe:FacilityOperationShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:OperatingOrganizationRole ;
+            sh:disjoint cmpe:operationFacility ;
+            sh:minCount 1 ;
+            sh:path cmpe:operationOrganization ],
+        [ sh:class cmpe:OperatedFacilityRole ;
+            sh:disjoint cmpe:operationOrganization ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path cmpe:operationFacility ] ;
+    sh:targetClass cmpe:FacilityOperation .
+
+cmpe:GeographyShape a sh:NodeShape ;
+    sh:sparql [ sh:message "Strict geographic containment cannot cycle" ;
+            sh:select "SELECT $this WHERE { $this (<https://w3id.org/cm-pharme/2.1/withinRegion>|<https://w3id.org/cm-pharme/2.1/withinCountry>)+ $this . }" ] ;
+    sh:targetSubjectsOf cmpe:withinCountry,
+        cmpe:withinRegion .
+
+cmpe:GovernedEntityDependenceShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:RegulatoryOversight ;
+            sh:minCount 1 ;
+            sh:path [ sh:inversePath cmpe:oversightGovernedEntity ] ] ;
+    sh:targetClass cmpe:GovernedEntity .
+
+cmpe:IdentifiedEntityDependenceShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:IdentifierAssignment ;
+            sh:minCount 1 ;
+            sh:path [ sh:inversePath cmpe:identifierEntity ] ] ;
+    sh:targetClass cmpe:IdentifiedEntity .
+
+cmpe:IdentifierAssignmentShape a sh:NodeShape ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path cmpe:identifierLexicalValue ],
+        [ sh:class cmpe:UsedIdentifierSchemeRole ;
+            sh:disjoint cmpe:identifierEntity ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path cmpe:identifierScheme ],
+        [ sh:class cmpe:IdentifiedEntity ;
+            sh:disjoint cmpe:identifierScheme ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path cmpe:identifierEntity ] ;
+    sh:targetClass cmpe:IdentifierAssignment .
+
+cmpe:ListedPresentationRoleDependenceShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:MarketListing ;
+            sh:minCount 1 ;
+            sh:path [ sh:inversePath cmpe:listingPresentation ] ] ;
+    sh:targetClass cmpe:ListedPresentationRole .
+
+cmpe:ListingResponsibleOrganizationRoleDependenceShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:MarketListing ;
+            sh:minCount 1 ;
+            sh:path [ sh:inversePath cmpe:listingResponsibleOrganization ] ] ;
+    sh:targetClass cmpe:ListingResponsibleOrganizationRole .
+
+cmpe:MarketListingShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:ListedPresentationRole ;
+            sh:disjoint cmpe:listingResponsibleOrganization ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path cmpe:listingPresentation ],
+        [ sh:class cmpe:ListingResponsibleOrganizationRole ;
+            sh:disjoint cmpe:listingPresentation ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path cmpe:listingResponsibleOrganization ] ;
+    sh:targetClass cmpe:MarketListing .
+
+cmpe:OperatedFacilityRoleDependenceShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:FacilityOperation ;
+            sh:minCount 1 ;
+            sh:path [ sh:inversePath cmpe:operationFacility ] ] ;
+    sh:targetClass cmpe:OperatedFacilityRole .
+
+cmpe:OperatingOrganizationRoleDependenceShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:FacilityOperation ;
+            sh:minCount 1 ;
+            sh:path [ sh:inversePath cmpe:operationOrganization ] ] ;
+    sh:targetClass cmpe:OperatingOrganizationRole .
+
+cmpe:OversightAuthorityRoleDependenceShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:RegulatoryOversight ;
+            sh:minCount 1 ;
+            sh:path [ sh:inversePath cmpe:oversightAuthorityRole ] ] ;
+    sh:targetClass cmpe:OversightAuthorityRole .
+
+cmpe:PartnerOrganizationRoleDependenceShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:StrategicPartnershipAgreement ;
+            sh:minCount 1 ;
+            sh:path [ sh:inversePath cmpe:partnershipParticipant ] ] ;
+    sh:targetClass cmpe:PartnerOrganizationRole .
+
+cmpe:ProductClassificationAssignmentShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:AppliedClassificationEntryRole ;
+            sh:disjoint cmpe:classificationEntity ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path cmpe:classificationEntry ],
+        [ sh:class cmpe:ClassifiedEntity ;
+            sh:disjoint cmpe:classificationEntry ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path cmpe:classificationEntity ] ;
+    sh:targetClass cmpe:ProductClassificationAssignment .
+
+cmpe:ProviderEntityDependenceShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:SupplyDependency ;
+            sh:minCount 1 ;
+            sh:path [ sh:inversePath cmpe:dependencyProvider ] ] ;
+    sh:targetClass cmpe:ProviderEntity .
+
+cmpe:ReferenceProductRoleDependenceShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:AlternativeMedicineAssignment ;
+            sh:minCount 1 ;
+            sh:path [ sh:inversePath cmpe:alternativeForProduct ] ] ;
+    sh:targetClass cmpe:ReferenceProductRole .
+
+cmpe:RegisteredPartyDependenceShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:EstablishmentRegistration ;
+            sh:minCount 1 ;
+            sh:path [ sh:inversePath cmpe:registrationEntity ] ] ;
+    sh:targetClass cmpe:RegisteredParty .
+
+cmpe:RegisteringAuthorityRoleDependenceShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:EstablishmentRegistration ;
+            sh:minCount 1 ;
+            sh:path [ sh:inversePath cmpe:registrationAuthority ] ] ;
+    sh:targetClass cmpe:RegisteringAuthorityRole .
+
+cmpe:RegulatoryAuthorizationShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:AuthorizedParty ;
+            sh:disjoint cmpe:authorizationAuthority ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path cmpe:authorizationParty ],
+        [ sh:class cmpe:AuthorizingAuthorityRole ;
+            sh:disjoint cmpe:authorizationParty ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path cmpe:authorizationAuthority ] ;
+    sh:targetClass cmpe:RegulatoryAuthorization .
+
+cmpe:RegulatoryOversightShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:GovernedEntity ;
+            sh:disjoint cmpe:oversightAuthorityRole ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path cmpe:oversightGovernedEntity ],
+        [ sh:class cmpe:OversightAuthorityRole ;
+            sh:disjoint cmpe:oversightGovernedEntity ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path cmpe:oversightAuthorityRole ] ;
+    sh:targetClass cmpe:RegulatoryOversight .
+
+cmpe:StrategicPartnershipAgreementShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:PartnerOrganizationRole ;
+            sh:minCount 2 ;
+            sh:path cmpe:partnershipParticipant ] ;
+    sh:targetClass cmpe:StrategicPartnershipAgreement .
+
+cmpe:SupplyDependencyShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:DependentEntity ;
+            sh:disjoint cmpe:dependencyProvider ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path cmpe:dependencyDependent ],
+        [ sh:class cmpe:ProviderEntity ;
+            sh:disjoint cmpe:dependencyDependent ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path cmpe:dependencyProvider ] ;
+    sh:targetClass cmpe:SupplyDependency .
+
+cmpe:SupportedAssertionRoleDependenceShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:EvidenceSupport ;
+            sh:minCount 1 ;
+            sh:path [ sh:inversePath cmpe:evidenceAssertion ] ] ;
+    sh:targetClass cmpe:SupportedAssertionRole .
+
+cmpe:UsedIdentifierSchemeRoleDependenceShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:IdentifierAssignment ;
+            sh:minCount 1 ;
+            sh:path [ sh:inversePath cmpe:identifierScheme ] ] ;
+    sh:targetClass cmpe:UsedIdentifierSchemeRole .
+
+cmpe:VulnerabilityDeferredShape a sh:NodeShape ;
+    sh:in () ;
+    sh:targetClass cmpe:Vulnerability .
+

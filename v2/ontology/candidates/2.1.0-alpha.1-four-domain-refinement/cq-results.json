@@ -1,0 +1,170 @@
+[
+  {
+    "requirement": "X-RM-CONTEXT",
+    "query": "PREFIX c: <https://w3id.org/cm-pharme/2.1/> PREFIX l: <https://w3id.org/cm-pharme/experimental/four-domain/> PREFIX r: <https://w3id.org/cm-pharme/experimental/refinement/> PREFIX t: <urn:cmpe-lab:> SELECT ?facility WHERE { t:assessment l:assessmentScenario/r:scenarioFacility ?facility }",
+    "expected": [
+      [
+        "urn:cmpe-lab:riskFacility"
+      ]
+    ],
+    "actual": [
+      [
+        "urn:cmpe-lab:riskFacility"
+      ]
+    ],
+    "pass": true
+  },
+  {
+    "requirement": "X-PV-CARRIER",
+    "query": "PREFIX c: <https://w3id.org/cm-pharme/2.1/> PREFIX l: <https://w3id.org/cm-pharme/experimental/four-domain/> PREFIX r: <https://w3id.org/cm-pharme/experimental/refinement/> PREFIX t: <urn:cmpe-lab:> SELECT ?record ?case ?claim WHERE { ?record r:caseIdentifier ?case ; r:carrierClaim ?claim }",
+    "expected": [
+      [
+        "urn:cmpe-lab:report",
+        "SYNTHETIC-CASE-1",
+        "urn:cmpe-lab:reportedClaim"
+      ],
+      [
+        "urn:cmpe-lab:reportCopy",
+        "SYNTHETIC-CASE-1",
+        "urn:cmpe-lab:updatedClaim"
+      ]
+    ],
+    "actual": [
+      [
+        "urn:cmpe-lab:report",
+        "SYNTHETIC-CASE-1",
+        "urn:cmpe-lab:reportedClaim"
+      ],
+      [
+        "urn:cmpe-lab:reportCopy",
+        "SYNTHETIC-CASE-1",
+        "urn:cmpe-lab:updatedClaim"
+      ]
+    ],
+    "pass": true
+  },
+  {
+    "requirement": "X-PV-ACTOR",
+    "query": "PREFIX c: <https://w3id.org/cm-pharme/2.1/> PREFIX l: <https://w3id.org/cm-pharme/experimental/four-domain/> PREFIX r: <https://w3id.org/cm-pharme/experimental/refinement/> PREFIX t: <urn:cmpe-lab:> SELECT ?org ?status ?time WHERE { ?result l:pvResultAssessment/r:assessmentOrganization ?org ; l:signalStatus ?status ; l:atTime ?time }",
+    "expected": [
+      [
+        "urn:cmpe-lab:assessorA",
+        "under-review",
+        "2026-10-02T10:00:00+00:00"
+      ],
+      [
+        "urn:cmpe-lab:assessorB",
+        "refuted-at-this-time",
+        "2026-10-03T10:00:00+00:00"
+      ]
+    ],
+    "actual": [
+      [
+        "urn:cmpe-lab:assessorA",
+        "under-review",
+        "2026-10-02T10:00:00+00:00"
+      ],
+      [
+        "urn:cmpe-lab:assessorB",
+        "refuted-at-this-time",
+        "2026-10-03T10:00:00+00:00"
+      ]
+    ],
+    "pass": true
+  },
+  {
+    "requirement": "X-BA-SERVICE",
+    "query": "PREFIX c: <https://w3id.org/cm-pharme/2.1/> PREFIX l: <https://w3id.org/cm-pharme/experimental/four-domain/> PREFIX r: <https://w3id.org/cm-pharme/experimental/refinement/> PREFIX t: <urn:cmpe-lab:> SELECT ?product ?capability WHERE { t:service r:serviceProduct ?product ; l:serviceCapability ?capability }",
+    "expected": [
+      [
+        "urn:cmpe-lab:serviceProduct",
+        "urn:cmpe-lab:cap"
+      ]
+    ],
+    "actual": [
+      [
+        "urn:cmpe-lab:serviceProduct",
+        "urn:cmpe-lab:cap"
+      ]
+    ],
+    "pass": true
+  },
+  {
+    "requirement": "X-BA-COMMITMENT",
+    "query": "PREFIX c: <https://w3id.org/cm-pharme/2.1/> PREFIX l: <https://w3id.org/cm-pharme/experimental/four-domain/> PREFIX r: <https://w3id.org/cm-pharme/experimental/refinement/> PREFIX t: <urn:cmpe-lab:> SELECT ?org ?source WHERE { t:agreement r:agreementCommitment ?claim . ?claim r:commitmentActor ?org . ?e c:evidenceAssertion ?claim ; c:evidenceRecord ?source }",
+    "expected": [
+      [
+        "urn:cmpe-lab:org",
+        "urn:cmpe-lab:commitmentRecord"
+      ],
+      [
+        "urn:cmpe-lab:org2",
+        "urn:cmpe-lab:commitmentRecord"
+      ]
+    ],
+    "actual": [
+      [
+        "urn:cmpe-lab:org",
+        "urn:cmpe-lab:commitmentRecord"
+      ],
+      [
+        "urn:cmpe-lab:org2",
+        "urn:cmpe-lab:commitmentRecord"
+      ]
+    ],
+    "pass": true
+  },
+  {
+    "requirement": "X-DS-PHARMA",
+    "query": "PREFIX c: <https://w3id.org/cm-pharme/2.1/> PREFIX l: <https://w3id.org/cm-pharme/experimental/four-domain/> PREFIX r: <https://w3id.org/cm-pharme/experimental/refinement/> PREFIX t: <urn:cmpe-lab:> SELECT ?manufacturing ?product ?facility WHERE { t:transform r:supportsManufacturing ?manufacturing . ?manufacturing r:manufacturingProduct ?product ; r:manufacturingFacility ?facility }",
+    "expected": [
+      [
+        "urn:cmpe-lab:manufacturing",
+        "urn:cmpe-lab:manufacturedProduct",
+        "urn:cmpe-lab:manufacturingSite"
+      ]
+    ],
+    "actual": [
+      [
+        "urn:cmpe-lab:manufacturing",
+        "urn:cmpe-lab:manufacturedProduct",
+        "urn:cmpe-lab:manufacturingSite"
+      ]
+    ],
+    "pass": true
+  },
+  {
+    "requirement": "X-DS-RESPONSIBILITY",
+    "query": "PREFIX c: <https://w3id.org/cm-pharme/2.1/> PREFIX l: <https://w3id.org/cm-pharme/experimental/four-domain/> PREFIX r: <https://w3id.org/cm-pharme/experimental/refinement/> PREFIX t: <urn:cmpe-lab:> SELECT ?responsible ?operator WHERE { t:transform r:activityResponsibleOrganization ?responsible ; l:digitalActivityDeployment/l:deploymentOrganization ?operator }",
+    "expected": [
+      [
+        "urn:cmpe-lab:processor",
+        "urn:cmpe-lab:operator"
+      ]
+    ],
+    "actual": [
+      [
+        "urn:cmpe-lab:processor",
+        "urn:cmpe-lab:operator"
+      ]
+    ],
+    "pass": true
+  },
+  {
+    "requirement": "X-PV-SURVEILLANCE",
+    "query": "PREFIX c: <https://w3id.org/cm-pharme/2.1/> PREFIX l: <https://w3id.org/cm-pharme/experimental/four-domain/> PREFIX r: <https://w3id.org/cm-pharme/experimental/refinement/> PREFIX t: <urn:cmpe-lab:> SELECT ?source ?requirement WHERE { t:surveillance l:surveillanceSource ?source ; l:surveillanceRequirement ?requirement }",
+    "expected": [
+      [
+        "urn:cmpe-lab:report",
+        "urn:cmpe-lab:pvRule"
+      ]
+    ],
+    "actual": [
+      [
+        "urn:cmpe-lab:report",
+        "urn:cmpe-lab:pvRule"
+      ]
+    ],
+    "pass": true
+  }
+]

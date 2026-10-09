@@ -1,0 +1,44 @@
+{
+  "as_of": "2026-10-08 Asia/Tehran",
+  "counting_rule": "Equal-count closure of named packages; partial work does not earn fractional percentage.",
+  "major_stages": {
+    "G1": "closed",
+    "G2": "closed",
+    "G3": "active",
+    "G4": "pending",
+    "G5": "pending",
+    "closed_percent": 40.0
+  },
+  "G3_packages": {
+    "P1_integrated_candidate": "closed",
+    "P2_42_first_reviews": "closed",
+    "P3_scientific_adjudication": "in progress",
+    "P4_approved_semantic_integration": "in progress",
+    "P5_official_OntoUML_validation": "in progress; G3-3-A and bounded G3-3-B completed with gates",
+    "P6_formal_empirical_validation": "pending",
+    "P7_candidate_gate": "pending",
+    "closed_count": 2,
+    "total": 7,
+    "closed_percent": 28.6
+  },
+  "G3_3_B_result": {
+    "nature_only_overlay": "142 proposed values, two Modes unresolved; legacy compatibility diagnostics 244 -> 2",
+    "official_20_antipattern_detector": "not executed",
+    "catalogue_triage": "20 entries inventoried with bounded structural prefilters; candidates remain to be scientifically adjudicated",
+    "archived_graph_validator": "13 implemented class rules on source-metadata-augmented graph; 2 missing-nature warnings and one path-count false positive",
+    "semantic_author_acceptance": "pending"
+  },
+  "next_exact_turn": "G3-3-B2: resolve Mode nature and bearer decisions; adjudicate BinOver 2, DecInt 1, RepRel 19 with witnesses and counterexamples, then explicitly retain open catalogue gaps.",
+  "bounded_turns_remaining": [
+    "G3-3-B2",
+    "G3-3-C OWL DL and SHACL engine validation",
+    "G3-3-D real-source migration",
+    "G3-3-E connectivity and isolate decisions",
+    "G3-3-F traceability, review packet and G4 handoff"
+  ],
+  "conditional_extra_turn": "If RelComp, RelOver, ImpAbs or full-catalogue detection cannot be resolved within B2, add a bounded P5 closure turn before any G3 package is marked closed.",
+  "human_gates": [
+    "29 relation dispositions and 14 isolate proposals; scientific decisions on Mode and candidate patterns",
+    "final scientific acceptance and release"
+  ]
+}

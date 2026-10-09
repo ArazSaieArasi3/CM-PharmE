@@ -1,0 +1,1293 @@
+{
+  "scope": "Current 2.1 candidate B2 native overlay: 144 classes including 6 datatypes; one primary human-facing domain per element.",
+  "domain_taxonomy": "17 W4 Gate-D canonical domain names; 87-row W4 index and native registry",
+  "mapping_limit": "84 present baseline IDs retain approved primary domains. The 60 added role/relator primary-domain allocations are editorial proposals for author review. Three Gate-D concepts deferred from the active candidate are not silently counted.",
+  "counts": {
+    "canonical_domains": 17,
+    "domains_with_active_concepts": 16,
+    "active_elements": 144,
+    "named_classes": 138,
+    "datatypes": 6,
+    "isolated_named_classes": 14,
+    "gate_d_carryovers": 84,
+    "candidate_additions_provisional_domain": 60,
+    "gate_d_deferred": 3
+  },
+  "deferred_not_in_active_candidate": {
+    "AssetAtRisk": "S-04",
+    "Vulnerability": "S-04",
+    "ClinicalCareParticipant": "S-05"
+  },
+  "domains": [
+    {
+      "domain": "Ecosystem Organization",
+      "count": 8,
+      "isolate_count": 0,
+      "concepts": [
+        {
+          "id": "EcosystemParticipant",
+          "title": "Ecosystem Participant",
+          "stereotype": "roleMixin",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "GATE_D_APPROVED",
+          "source": "W4 canonical 87-row index and registry"
+        },
+        {
+          "id": "ImporterRole",
+          "title": "Importer",
+          "stereotype": "role",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "GATE_D_APPROVED",
+          "source": "W4 canonical 87-row index and registry"
+        },
+        {
+          "id": "ManufacturerRole",
+          "title": "Manufacturer",
+          "stereotype": "role",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "GATE_D_APPROVED",
+          "source": "W4 canonical 87-row index and registry"
+        },
+        {
+          "id": "Organization",
+          "title": "Organization",
+          "stereotype": "kind",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "GATE_D_APPROVED",
+          "source": "W4 canonical 87-row index and registry"
+        },
+        {
+          "id": "ProductResponsibleLabelerRole",
+          "title": "Product Responsible Organization",
+          "stereotype": "role",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "GATE_D_APPROVED",
+          "source": "W4 canonical 87-row index and registry"
+        },
+        {
+          "id": "RegulatoryAuthorityRole",
+          "title": "Regulatory Authority",
+          "stereotype": "role",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "GATE_D_APPROVED",
+          "source": "W4 canonical 87-row index and registry"
+        },
+        {
+          "id": "ThirdPartyLogisticsProviderRole",
+          "title": "Third-Party Logistics Provider",
+          "stereotype": "role",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "GATE_D_APPROVED",
+          "source": "W4 canonical 87-row index and registry"
+        },
+        {
+          "id": "WholesaleDistributorRole",
+          "title": "Wholesale Distributor",
+          "stereotype": "role",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "GATE_D_APPROVED",
+          "source": "W4 canonical 87-row index and registry"
+        }
+      ]
+    },
+    {
+      "domain": "Facility Operations",
+      "count": 6,
+      "isolate_count": 0,
+      "concepts": [
+        {
+          "id": "DistributionSiteRole",
+          "title": "Distribution Site",
+          "stereotype": "role",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "GATE_D_APPROVED",
+          "source": "W4 canonical 87-row index and registry"
+        },
+        {
+          "id": "Facility",
+          "title": "Facility",
+          "stereotype": "kind",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "GATE_D_APPROVED",
+          "source": "W4 canonical 87-row index and registry"
+        },
+        {
+          "id": "FacilityOperation",
+          "title": "Facility Operation",
+          "stereotype": "relator",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "GATE_D_APPROVED",
+          "source": "W4 canonical 87-row index and registry"
+        },
+        {
+          "id": "ManufacturingSiteRole",
+          "title": "Manufacturing Site",
+          "stereotype": "role",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "GATE_D_APPROVED",
+          "source": "W4 canonical 87-row index and registry"
+        },
+        {
+          "id": "OperatedFacilityRole",
+          "title": "Operated Facility Role",
+          "stereotype": "role",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "CANDIDATE_ADDITION_EDITORIAL_REVIEW",
+          "source": "Candidate pattern, participants and conceptual anchor; primary domain requires author confirmation"
+        },
+        {
+          "id": "OperatingOrganizationRole",
+          "title": "Operating Organization Role",
+          "stereotype": "role",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "CANDIDATE_ADDITION_EDITORIAL_REVIEW",
+          "source": "Candidate pattern, participants and conceptual anchor; primary domain requires author confirmation"
+        }
+      ]
+    },
+    {
+      "domain": "Regulatory Governance",
+      "count": 11,
+      "isolate_count": 0,
+      "concepts": [
+        {
+          "id": "AuthorizedFacilityRole",
+          "title": "Authorized Facility Role",
+          "stereotype": "role",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "CANDIDATE_ADDITION_EDITORIAL_REVIEW",
+          "source": "Candidate pattern, participants and conceptual anchor; primary domain requires author confirmation"
+        },
+        {
+          "id": "AuthorizedOrganizationRole",
+          "title": "Authorized Organization Role",
+          "stereotype": "role",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "CANDIDATE_ADDITION_EDITORIAL_REVIEW",
+          "source": "Candidate pattern, participants and conceptual anchor; primary domain requires author confirmation"
+        },
+        {
+          "id": "AuthorizedParty",
+          "title": "Authorized Party",
+          "stereotype": "roleMixin",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "CANDIDATE_ADDITION_EDITORIAL_REVIEW",
+          "source": "Candidate pattern, participants and conceptual anchor; primary domain requires author confirmation"
+        },
+        {
+          "id": "AuthorizingAuthorityRole",
+          "title": "Authorizing Authority Role",
+          "stereotype": "role",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "CANDIDATE_ADDITION_EDITORIAL_REVIEW",
+          "source": "Candidate pattern, participants and conceptual anchor; primary domain requires author confirmation"
+        },
+        {
+          "id": "EstablishmentRegistration",
+          "title": "Establishment Registration",
+          "stereotype": "relator",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "GATE_D_APPROVED",
+          "source": "W4 canonical 87-row index and registry"
+        },
+        {
+          "id": "RegisteredFacilityRole",
+          "title": "Registered Facility Role",
+          "stereotype": "role",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "CANDIDATE_ADDITION_EDITORIAL_REVIEW",
+          "source": "Candidate pattern, participants and conceptual anchor; primary domain requires author confirmation"
+        },
+        {
+          "id": "RegisteredOrganizationRole",
+          "title": "Registered Organization Role",
+          "stereotype": "role",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "CANDIDATE_ADDITION_EDITORIAL_REVIEW",
+          "source": "Candidate pattern, participants and conceptual anchor; primary domain requires author confirmation"
+        },
+        {
+          "id": "RegisteredParty",
+          "title": "Registered Party",
+          "stereotype": "roleMixin",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "CANDIDATE_ADDITION_EDITORIAL_REVIEW",
+          "source": "Candidate pattern, participants and conceptual anchor; primary domain requires author confirmation"
+        },
+        {
+          "id": "RegisteringAuthorityRole",
+          "title": "Registering Authority Role",
+          "stereotype": "role",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "CANDIDATE_ADDITION_EDITORIAL_REVIEW",
+          "source": "Candidate pattern, participants and conceptual anchor; primary domain requires author confirmation"
+        },
+        {
+          "id": "RegulatoryAuthorization",
+          "title": "Regulatory Authorization",
+          "stereotype": "relator",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "GATE_D_APPROVED",
+          "source": "W4 canonical 87-row index and registry"
+        },
+        {
+          "id": "RegulatoryJurisdiction",
+          "title": "Regulatory Jurisdiction",
+          "stereotype": "kind",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "GATE_D_APPROVED",
+          "source": "W4 canonical 87-row index and registry"
+        }
+      ]
+    },
+    {
+      "domain": "Pharmaceutical Product",
+      "count": 19,
+      "isolate_count": 0,
+      "concepts": [
+        {
+          "id": "AppliedClassificationEntryRole",
+          "title": "Applied Classification Entry Role",
+          "stereotype": "role",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "CANDIDATE_ADDITION_EDITORIAL_REVIEW",
+          "source": "Candidate pattern, participants and conceptual anchor; primary domain requires author confirmation"
+        },
+        {
+          "id": "ClassificationEntry",
+          "title": "Classification Entry",
+          "stereotype": "kind",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "GATE_D_APPROVED",
+          "source": "W4 canonical 87-row index and registry"
+        },
+        {
+          "id": "ClassifiedEntity",
+          "title": "Classified Entity",
+          "stereotype": "roleMixin",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "CANDIDATE_ADDITION_EDITORIAL_REVIEW",
+          "source": "Candidate pattern, participants and conceptual anchor; primary domain requires author confirmation"
+        },
+        {
+          "id": "ClassifiedMedicinalProductRole",
+          "title": "Classified Medicinal Product Role",
+          "stereotype": "role",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "CANDIDATE_ADDITION_EDITORIAL_REVIEW",
+          "source": "Candidate pattern, participants and conceptual anchor; primary domain requires author confirmation"
+        },
+        {
+          "id": "ClassifiedPharmaceuticalSubstanceRole",
+          "title": "Classified Pharmaceutical Substance Role",
+          "stereotype": "role",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "CANDIDATE_ADDITION_EDITORIAL_REVIEW",
+          "source": "Candidate pattern, participants and conceptual anchor; primary domain requires author confirmation"
+        },
+        {
+          "id": "DosageFormSpecification",
+          "title": "Dosage Form Specification",
+          "stereotype": "kind",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "GATE_D_APPROVED",
+          "source": "W4 canonical 87-row index and registry"
+        },
+        {
+          "id": "ListedPresentationRole",
+          "title": "Listed Presentation Role",
+          "stereotype": "role",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "CANDIDATE_ADDITION_EDITORIAL_REVIEW",
+          "source": "Candidate pattern, participants and conceptual anchor; primary domain requires author confirmation"
+        },
+        {
+          "id": "ListingResponsibleOrganizationRole",
+          "title": "Listing Responsible Organization Role",
+          "stereotype": "role",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "CANDIDATE_ADDITION_EDITORIAL_REVIEW",
+          "source": "Candidate pattern, participants and conceptual anchor; primary domain requires author confirmation"
+        },
+        {
+          "id": "MarketListing",
+          "title": "Market Listing",
+          "stereotype": "relator",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "GATE_D_APPROVED",
+          "source": "W4 canonical 87-row index and registry"
+        },
+        {
+          "id": "MedicinalProduct",
+          "title": "Medicinal Product",
+          "stereotype": "kind",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "GATE_D_APPROVED",
+          "source": "W4 canonical 87-row index and registry"
+        },
+        {
+          "id": "MedicinalProductPresentation",
+          "title": "Medicinal Product Presentation",
+          "stereotype": "kind",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "GATE_D_APPROVED",
+          "source": "W4 canonical 87-row index and registry"
+        },
+        {
+          "id": "PackageConfiguration",
+          "title": "Package Configuration",
+          "stereotype": "kind",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "GATE_D_APPROVED",
+          "source": "W4 canonical 87-row index and registry"
+        },
+        {
+          "id": "PharmaceuticalSubstance",
+          "title": "Pharmaceutical Substance",
+          "stereotype": "kind",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "GATE_D_APPROVED",
+          "source": "W4 canonical 87-row index and registry"
+        },
+        {
+          "id": "ProductClassificationAssignment",
+          "title": "Product Classification Assignment",
+          "stereotype": "relator",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "GATE_D_APPROVED",
+          "source": "W4 canonical 87-row index and registry"
+        },
+        {
+          "id": "ProductClassificationScheme",
+          "title": "Product Classification Scheme",
+          "stereotype": "kind",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "GATE_D_APPROVED",
+          "source": "W4 canonical 87-row index and registry"
+        },
+        {
+          "id": "ProductLabelCommitmentOrganizationRole",
+          "title": "Product Label Commitment Organization Role",
+          "stereotype": "role",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "CANDIDATE_ADDITION_EDITORIAL_REVIEW",
+          "source": "Candidate pattern, participants and conceptual anchor; primary domain requires author confirmation"
+        },
+        {
+          "id": "ProductLabelResponsibility",
+          "title": "Product Label Responsibility",
+          "stereotype": "relator",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "CANDIDATE_ADDITION_EDITORIAL_REVIEW",
+          "source": "Candidate pattern, participants and conceptual anchor; primary domain requires author confirmation"
+        },
+        {
+          "id": "ResponsibilitySubjectProductRole",
+          "title": "Responsibility Subject Product Role",
+          "stereotype": "role",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "CANDIDATE_ADDITION_EDITORIAL_REVIEW",
+          "source": "Candidate pattern, participants and conceptual anchor; primary domain requires author confirmation"
+        },
+        {
+          "id": "Strength",
+          "title": "Strength",
+          "stereotype": "quality",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "GATE_D_APPROVED",
+          "source": "W4 canonical 87-row index and registry"
+        }
+      ]
+    },
+    {
+      "domain": "Supply Operations",
+      "count": 16,
+      "isolate_count": 3,
+      "concepts": [
+        {
+          "id": "ManufacturingActivity",
+          "title": "Manufacturing Activity",
+          "stereotype": "event",
+          "isolated_in_named_class_graph": true,
+          "domain_assignment": "GATE_D_APPROVED",
+          "source": "W4 canonical 87-row index and registry"
+        },
+        {
+          "id": "DistributionLogisticsActivity",
+          "title": "Pharmaceutical Logistics Activity",
+          "stereotype": "event",
+          "isolated_in_named_class_graph": true,
+          "domain_assignment": "GATE_D_APPROVED",
+          "source": "W4 canonical 87-row index and registry"
+        },
+        {
+          "id": "SupplyCapacity",
+          "title": "Supply Capacity",
+          "stereotype": "mode",
+          "isolated_in_named_class_graph": true,
+          "domain_assignment": "GATE_D_APPROVED",
+          "source": "W4 canonical 87-row index and registry"
+        },
+        {
+          "id": "AssigningDistributionSiteUseOrganizationRole",
+          "title": "Assigning Distribution Site Use Organization Role",
+          "stereotype": "role",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "CANDIDATE_ADDITION_EDITORIAL_REVIEW",
+          "source": "Candidate pattern, participants and conceptual anchor; primary domain requires author confirmation"
+        },
+        {
+          "id": "AssigningManufacturingSiteUseOrganizationRole",
+          "title": "Assigning Manufacturing Site Use Organization Role",
+          "stereotype": "role",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "CANDIDATE_ADDITION_EDITORIAL_REVIEW",
+          "source": "Candidate pattern, participants and conceptual anchor; primary domain requires author confirmation"
+        },
+        {
+          "id": "CommissioningLogisticsClientRole",
+          "title": "Commissioning Logistics Client Role",
+          "stereotype": "role",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "CANDIDATE_ADDITION_EDITORIAL_REVIEW",
+          "source": "Candidate pattern, participants and conceptual anchor; primary domain requires author confirmation"
+        },
+        {
+          "id": "DistributionSiteUse",
+          "title": "Distribution Site Use",
+          "stereotype": "relator",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "CANDIDATE_ADDITION_EDITORIAL_REVIEW",
+          "source": "Candidate pattern, participants and conceptual anchor; primary domain requires author confirmation"
+        },
+        {
+          "id": "ImportResponsibility",
+          "title": "Import Responsibility",
+          "stereotype": "relator",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "CANDIDATE_ADDITION_EDITORIAL_REVIEW",
+          "source": "Candidate pattern, participants and conceptual anchor; primary domain requires author confirmation"
+        },
+        {
+          "id": "ImportResponsibilitySubjectRole",
+          "title": "Import Responsibility Subject Role",
+          "stereotype": "role",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "CANDIDATE_ADDITION_EDITORIAL_REVIEW",
+          "source": "Candidate pattern, participants and conceptual anchor; primary domain requires author confirmation"
+        },
+        {
+          "id": "LogisticsServiceCommitment",
+          "title": "Logistics Service Commitment",
+          "stereotype": "relator",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "CANDIDATE_ADDITION_EDITORIAL_REVIEW",
+          "source": "Candidate pattern, participants and conceptual anchor; primary domain requires author confirmation"
+        },
+        {
+          "id": "ManufacturingResponsibility",
+          "title": "Manufacturing Responsibility",
+          "stereotype": "relator",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "CANDIDATE_ADDITION_EDITORIAL_REVIEW",
+          "source": "Candidate pattern, participants and conceptual anchor; primary domain requires author confirmation"
+        },
+        {
+          "id": "ManufacturingResponsibilitySubjectRole",
+          "title": "Manufacturing Responsibility Subject Role",
+          "stereotype": "role",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "CANDIDATE_ADDITION_EDITORIAL_REVIEW",
+          "source": "Candidate pattern, participants and conceptual anchor; primary domain requires author confirmation"
+        },
+        {
+          "id": "ManufacturingSiteUse",
+          "title": "Manufacturing Site Use",
+          "stereotype": "relator",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "CANDIDATE_ADDITION_EDITORIAL_REVIEW",
+          "source": "Candidate pattern, participants and conceptual anchor; primary domain requires author confirmation"
+        },
+        {
+          "id": "MedicineShortageSituation",
+          "title": "Medicine Shortage Situation",
+          "stereotype": "situation",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "GATE_D_APPROVED",
+          "source": "W4 canonical 87-row index and registry"
+        },
+        {
+          "id": "WholesaleResponsibility",
+          "title": "Wholesale Responsibility",
+          "stereotype": "relator",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "CANDIDATE_ADDITION_EDITORIAL_REVIEW",
+          "source": "Candidate pattern, participants and conceptual anchor; primary domain requires author confirmation"
+        },
+        {
+          "id": "WholesaleResponsibilitySubjectRole",
+          "title": "Wholesale Responsibility Subject Role",
+          "stereotype": "role",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "CANDIDATE_ADDITION_EDITORIAL_REVIEW",
+          "source": "Candidate pattern, participants and conceptual anchor; primary domain requires author confirmation"
+        }
+      ]
+    },
+    {
+      "domain": "Ecosystem Observation",
+      "count": 3,
+      "isolate_count": 0,
+      "concepts": [
+        {
+          "id": "AvailabilityObservationResult",
+          "title": "Availability Observation Result",
+          "stereotype": "subkind",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "GATE_D_APPROVED",
+          "source": "W4 canonical 87-row index and registry"
+        },
+        {
+          "id": "DemandObservationResult",
+          "title": "Demand Observation Result",
+          "stereotype": "subkind",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "GATE_D_APPROVED",
+          "source": "W4 canonical 87-row index and registry"
+        },
+        {
+          "id": "SupplyCapacityObservationResult",
+          "title": "Supply Capacity Observation Result",
+          "stereotype": "subkind",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "GATE_D_APPROVED",
+          "source": "W4 canonical 87-row index and registry"
+        }
+      ]
+    },
+    {
+      "domain": "Spatiotemporal Context",
+      "count": 7,
+      "isolate_count": 0,
+      "concepts": [
+        {
+          "id": "Address",
+          "title": "Address",
+          "stereotype": "datatype",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "GATE_D_APPROVED",
+          "source": "W4 canonical 87-row index and registry"
+        },
+        {
+          "id": "AdministrativeRegion",
+          "title": "Administrative Region",
+          "stereotype": "subkind",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "GATE_D_APPROVED",
+          "source": "W4 canonical 87-row index and registry"
+        },
+        {
+          "id": "Country",
+          "title": "Country",
+          "stereotype": "subkind",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "GATE_D_APPROVED",
+          "source": "W4 canonical 87-row index and registry"
+        },
+        {
+          "id": "GeographicFeature",
+          "title": "Geographic Feature",
+          "stereotype": "kind",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "GATE_D_APPROVED",
+          "source": "W4 canonical 87-row index and registry"
+        },
+        {
+          "id": "GeospatialPosition",
+          "title": "Geospatial Position",
+          "stereotype": "datatype",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "GATE_D_APPROVED",
+          "source": "W4 canonical 87-row index and registry"
+        },
+        {
+          "id": "ReportingPeriod",
+          "title": "Reporting Period",
+          "stereotype": "datatype",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "GATE_D_APPROVED",
+          "source": "W4 canonical 87-row index and registry"
+        },
+        {
+          "id": "TimeInterval",
+          "title": "Time Interval",
+          "stereotype": "datatype",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "GATE_D_APPROVED",
+          "source": "W4 canonical 87-row index and registry"
+        }
+      ]
+    },
+    {
+      "domain": "Evidence Traceability",
+      "count": 16,
+      "isolate_count": 0,
+      "concepts": [
+        {
+          "id": "Assertion",
+          "title": "Assertion",
+          "stereotype": "kind",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "GATE_D_APPROVED",
+          "source": "W4 canonical 87-row index and registry"
+        },
+        {
+          "id": "DataQualityFinding",
+          "title": "Data Quality Finding",
+          "stereotype": "subkind",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "GATE_D_APPROVED",
+          "source": "W4 canonical 87-row index and registry"
+        },
+        {
+          "id": "DataSourceResource",
+          "title": "Data Source",
+          "stereotype": "kind",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "GATE_D_APPROVED",
+          "source": "W4 canonical 87-row index and registry"
+        },
+        {
+          "id": "Dataset",
+          "title": "Dataset",
+          "stereotype": "kind",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "GATE_D_APPROVED",
+          "source": "W4 canonical 87-row index and registry"
+        },
+        {
+          "id": "DatasetRelease",
+          "title": "Dataset Release",
+          "stereotype": "kind",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "GATE_D_APPROVED",
+          "source": "W4 canonical 87-row index and registry"
+        },
+        {
+          "id": "EvidenceItem",
+          "title": "Evidence Item",
+          "stereotype": "roleMixin",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "GATE_D_APPROVED",
+          "source": "W4 canonical 87-row index and registry"
+        },
+        {
+          "id": "EvidenceObservationResultRole",
+          "title": "Evidence Observation Result Role",
+          "stereotype": "role",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "CANDIDATE_ADDITION_EDITORIAL_REVIEW",
+          "source": "Candidate pattern, participants and conceptual anchor; primary domain requires author confirmation"
+        },
+        {
+          "id": "EvidenceSourceRecordRole",
+          "title": "Evidence Source Record Role",
+          "stereotype": "role",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "CANDIDATE_ADDITION_EDITORIAL_REVIEW",
+          "source": "Candidate pattern, participants and conceptual anchor; primary domain requires author confirmation"
+        },
+        {
+          "id": "EvidenceSupport",
+          "title": "Evidence Support",
+          "stereotype": "relator",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "GATE_D_APPROVED",
+          "source": "W4 canonical 87-row index and registry"
+        },
+        {
+          "id": "MappingAssertion",
+          "title": "Mapping Assertion",
+          "stereotype": "subkind",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "GATE_D_APPROVED",
+          "source": "W4 canonical 87-row index and registry"
+        },
+        {
+          "id": "MeasureValue",
+          "title": "Measure Value",
+          "stereotype": "datatype",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "GATE_D_APPROVED",
+          "source": "W4 canonical 87-row index and registry"
+        },
+        {
+          "id": "ObservationActivity",
+          "title": "Observation Activity",
+          "stereotype": "event",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "GATE_D_APPROVED",
+          "source": "W4 canonical 87-row index and registry"
+        },
+        {
+          "id": "ObservationResult",
+          "title": "Observation Result",
+          "stereotype": "kind",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "GATE_D_APPROVED",
+          "source": "W4 canonical 87-row index and registry"
+        },
+        {
+          "id": "ProvenanceActivity",
+          "title": "Provenance Activity",
+          "stereotype": "event",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "GATE_D_APPROVED",
+          "source": "W4 canonical 87-row index and registry"
+        },
+        {
+          "id": "SourceRecord",
+          "title": "Source Record",
+          "stereotype": "kind",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "GATE_D_APPROVED",
+          "source": "W4 canonical 87-row index and registry"
+        },
+        {
+          "id": "SupportedAssertionRole",
+          "title": "Supported Assertion Role",
+          "stereotype": "role",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "CANDIDATE_ADDITION_EDITORIAL_REVIEW",
+          "source": "Candidate pattern, participants and conceptual anchor; primary domain requires author confirmation"
+        }
+      ]
+    },
+    {
+      "domain": "Entity Identity",
+      "count": 13,
+      "isolate_count": 0,
+      "concepts": [
+        {
+          "id": "EntityMatchAssertion",
+          "title": "Entity Match Assertion",
+          "stereotype": "subkind",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "GATE_D_APPROVED",
+          "source": "W4 canonical 87-row index and registry"
+        },
+        {
+          "id": "IdentifiedEntity",
+          "title": "Identified Entity",
+          "stereotype": "roleMixin",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "CANDIDATE_ADDITION_EDITORIAL_REVIEW",
+          "source": "Candidate pattern, participants and conceptual anchor; primary domain requires author confirmation"
+        },
+        {
+          "id": "IdentifiedFacilityRole",
+          "title": "Identified Facility Role",
+          "stereotype": "role",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "CANDIDATE_ADDITION_EDITORIAL_REVIEW",
+          "source": "Candidate pattern, participants and conceptual anchor; primary domain requires author confirmation"
+        },
+        {
+          "id": "IdentifiedGeographicFeatureRole",
+          "title": "Identified Geographic Feature Role",
+          "stereotype": "role",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "CANDIDATE_ADDITION_EDITORIAL_REVIEW",
+          "source": "Candidate pattern, participants and conceptual anchor; primary domain requires author confirmation"
+        },
+        {
+          "id": "IdentifiedMedicinalProductPresentationRole",
+          "title": "Identified Medicinal Product Presentation Role",
+          "stereotype": "role",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "CANDIDATE_ADDITION_EDITORIAL_REVIEW",
+          "source": "Candidate pattern, participants and conceptual anchor; primary domain requires author confirmation"
+        },
+        {
+          "id": "IdentifiedMedicinalProductRole",
+          "title": "Identified Medicinal Product Role",
+          "stereotype": "role",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "CANDIDATE_ADDITION_EDITORIAL_REVIEW",
+          "source": "Candidate pattern, participants and conceptual anchor; primary domain requires author confirmation"
+        },
+        {
+          "id": "IdentifiedOrganizationRole",
+          "title": "Identified Organization Role",
+          "stereotype": "role",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "CANDIDATE_ADDITION_EDITORIAL_REVIEW",
+          "source": "Candidate pattern, participants and conceptual anchor; primary domain requires author confirmation"
+        },
+        {
+          "id": "IdentifiedPharmaceuticalSubstanceRole",
+          "title": "Identified Pharmaceutical Substance Role",
+          "stereotype": "role",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "CANDIDATE_ADDITION_EDITORIAL_REVIEW",
+          "source": "Candidate pattern, participants and conceptual anchor; primary domain requires author confirmation"
+        },
+        {
+          "id": "IdentifierAssignment",
+          "title": "Identifier Assignment",
+          "stereotype": "relator",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "GATE_D_APPROVED",
+          "source": "W4 canonical 87-row index and registry"
+        },
+        {
+          "id": "IdentifierScheme",
+          "title": "Identifier Scheme",
+          "stereotype": "kind",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "GATE_D_APPROVED",
+          "source": "W4 canonical 87-row index and registry"
+        },
+        {
+          "id": "IdentifierValue",
+          "title": "Identifier Value",
+          "stereotype": "datatype",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "GATE_D_APPROVED",
+          "source": "W4 canonical 87-row index and registry"
+        },
+        {
+          "id": "MatchConfidence",
+          "title": "Match Confidence",
+          "stereotype": "quality",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "GATE_D_APPROVED",
+          "source": "W4 canonical 87-row index and registry"
+        },
+        {
+          "id": "UsedIdentifierSchemeRole",
+          "title": "Used Identifier Scheme Role",
+          "stereotype": "role",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "CANDIDATE_ADDITION_EDITORIAL_REVIEW",
+          "source": "Candidate pattern, participants and conceptual anchor; primary domain requires author confirmation"
+        }
+      ]
+    },
+    {
+      "domain": "Regulatory Policy",
+      "count": 8,
+      "isolate_count": 1,
+      "concepts": [
+        {
+          "id": "RegulatoryRequirement",
+          "title": "Regulatory Requirement",
+          "stereotype": "kind",
+          "isolated_in_named_class_graph": true,
+          "domain_assignment": "GATE_D_APPROVED",
+          "source": "W4 canonical 87-row index and registry"
+        },
+        {
+          "id": "GovernedEntity",
+          "title": "Governed Entity",
+          "stereotype": "roleMixin",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "CANDIDATE_ADDITION_EDITORIAL_REVIEW",
+          "source": "Candidate pattern, participants and conceptual anchor; primary domain requires author confirmation"
+        },
+        {
+          "id": "GovernedFacilityRole",
+          "title": "Governed Facility Role",
+          "stereotype": "role",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "CANDIDATE_ADDITION_EDITORIAL_REVIEW",
+          "source": "Candidate pattern, participants and conceptual anchor; primary domain requires author confirmation"
+        },
+        {
+          "id": "GovernedOrganizationRole",
+          "title": "Governed Organization Role",
+          "stereotype": "role",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "CANDIDATE_ADDITION_EDITORIAL_REVIEW",
+          "source": "Candidate pattern, participants and conceptual anchor; primary domain requires author confirmation"
+        },
+        {
+          "id": "MandateConferringOrganizationRole",
+          "title": "Mandate Conferring Organization Role",
+          "stereotype": "role",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "CANDIDATE_ADDITION_EDITORIAL_REVIEW",
+          "source": "Candidate pattern, participants and conceptual anchor; primary domain requires author confirmation"
+        },
+        {
+          "id": "OversightAuthorityRole",
+          "title": "Oversight Authority Role",
+          "stereotype": "role",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "CANDIDATE_ADDITION_EDITORIAL_REVIEW",
+          "source": "Candidate pattern, participants and conceptual anchor; primary domain requires author confirmation"
+        },
+        {
+          "id": "RegulatoryMandate",
+          "title": "Regulatory Mandate",
+          "stereotype": "relator",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "CANDIDATE_ADDITION_EDITORIAL_REVIEW",
+          "source": "Candidate pattern, participants and conceptual anchor; primary domain requires author confirmation"
+        },
+        {
+          "id": "RegulatoryOversight",
+          "title": "Regulatory Oversight",
+          "stereotype": "relator",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "GATE_D_APPROVED",
+          "source": "W4 canonical 87-row index and registry"
+        }
+      ]
+    },
+    {
+      "domain": "Supply Resilience",
+      "count": 20,
+      "isolate_count": 2,
+      "concepts": [
+        {
+          "id": "ProcurementActivity",
+          "title": "Procurement Activity",
+          "stereotype": "event",
+          "isolated_in_named_class_graph": true,
+          "domain_assignment": "GATE_D_APPROVED",
+          "source": "W4 canonical 87-row index and registry"
+        },
+        {
+          "id": "StockoutSituation",
+          "title": "Stockout Situation",
+          "stereotype": "situation",
+          "isolated_in_named_class_graph": true,
+          "domain_assignment": "GATE_D_APPROVED",
+          "source": "W4 canonical 87-row index and registry"
+        },
+        {
+          "id": "AlternativeMedicinalProductRole",
+          "title": "Alternative Medicinal Product",
+          "stereotype": "role",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "GATE_D_APPROVED",
+          "source": "W4 canonical 87-row index and registry"
+        },
+        {
+          "id": "AlternativeMedicineAssignment",
+          "title": "Alternative Medicinal Product Assignment",
+          "stereotype": "relator",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "GATE_D_APPROVED",
+          "source": "W4 canonical 87-row index and registry"
+        },
+        {
+          "id": "ContextualMedicineClassificationAssignment",
+          "title": "Contextual Medicine Classification Assignment",
+          "stereotype": "subkind",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "GATE_D_APPROVED",
+          "source": "W4 canonical 87-row index and registry"
+        },
+        {
+          "id": "CriticalMedicineClassification",
+          "title": "Critical Medicine Classification Assignment",
+          "stereotype": "subkind",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "GATE_D_APPROVED",
+          "source": "W4 canonical 87-row index and registry"
+        },
+        {
+          "id": "DependentEntity",
+          "title": "Dependent Entity",
+          "stereotype": "roleMixin",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "CANDIDATE_ADDITION_EDITORIAL_REVIEW",
+          "source": "Candidate pattern, participants and conceptual anchor; primary domain requires author confirmation"
+        },
+        {
+          "id": "DependentFacilityRole",
+          "title": "Dependent Facility Role",
+          "stereotype": "role",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "CANDIDATE_ADDITION_EDITORIAL_REVIEW",
+          "source": "Candidate pattern, participants and conceptual anchor; primary domain requires author confirmation"
+        },
+        {
+          "id": "DependentMedicinalProductRole",
+          "title": "Dependent Medicinal Product Role",
+          "stereotype": "role",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "CANDIDATE_ADDITION_EDITORIAL_REVIEW",
+          "source": "Candidate pattern, participants and conceptual anchor; primary domain requires author confirmation"
+        },
+        {
+          "id": "DependentOrganizationRole",
+          "title": "Dependent Organization Role",
+          "stereotype": "role",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "CANDIDATE_ADDITION_EDITORIAL_REVIEW",
+          "source": "Candidate pattern, participants and conceptual anchor; primary domain requires author confirmation"
+        },
+        {
+          "id": "DisruptionEvent",
+          "title": "Disruption Event",
+          "stereotype": "event",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "GATE_D_APPROVED",
+          "source": "W4 canonical 87-row index and registry"
+        },
+        {
+          "id": "EssentialMedicineClassification",
+          "title": "Essential Medicine Classification Assignment",
+          "stereotype": "subkind",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "GATE_D_APPROVED",
+          "source": "W4 canonical 87-row index and registry"
+        },
+        {
+          "id": "InventoryObservationResult",
+          "title": "Inventory Observation Result",
+          "stereotype": "subkind",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "GATE_D_APPROVED",
+          "source": "W4 canonical 87-row index and registry"
+        },
+        {
+          "id": "LeadTimeObservationResult",
+          "title": "Lead Time Observation Result",
+          "stereotype": "subkind",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "GATE_D_APPROVED",
+          "source": "W4 canonical 87-row index and registry"
+        },
+        {
+          "id": "ProviderEntity",
+          "title": "Provider Entity",
+          "stereotype": "roleMixin",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "CANDIDATE_ADDITION_EDITORIAL_REVIEW",
+          "source": "Candidate pattern, participants and conceptual anchor; primary domain requires author confirmation"
+        },
+        {
+          "id": "ProviderFacilityRole",
+          "title": "Provider Facility Role",
+          "stereotype": "role",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "CANDIDATE_ADDITION_EDITORIAL_REVIEW",
+          "source": "Candidate pattern, participants and conceptual anchor; primary domain requires author confirmation"
+        },
+        {
+          "id": "ProviderMedicinalProductRole",
+          "title": "Provider Medicinal Product Role",
+          "stereotype": "role",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "CANDIDATE_ADDITION_EDITORIAL_REVIEW",
+          "source": "Candidate pattern, participants and conceptual anchor; primary domain requires author confirmation"
+        },
+        {
+          "id": "ProviderOrganizationRole",
+          "title": "Provider Organization Role",
+          "stereotype": "role",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "CANDIDATE_ADDITION_EDITORIAL_REVIEW",
+          "source": "Candidate pattern, participants and conceptual anchor; primary domain requires author confirmation"
+        },
+        {
+          "id": "ReferenceProductRole",
+          "title": "Reference Product Role",
+          "stereotype": "role",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "CANDIDATE_ADDITION_EDITORIAL_REVIEW",
+          "source": "Candidate pattern, participants and conceptual anchor; primary domain requires author confirmation"
+        },
+        {
+          "id": "SupplyDependency",
+          "title": "Supply Dependency",
+          "stereotype": "relator",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "GATE_D_APPROVED",
+          "source": "W4 canonical 87-row index and registry"
+        }
+      ]
+    },
+    {
+      "domain": "Market Access",
+      "count": 5,
+      "isolate_count": 0,
+      "concepts": [
+        {
+          "id": "DiagnosisClassificationReference",
+          "title": "Diagnosis Classification Reference",
+          "stereotype": "kind",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "GATE_D_APPROVED",
+          "source": "W4 canonical 87-row index and registry"
+        },
+        {
+          "id": "PayerFundingOrganizationRole",
+          "title": "Healthcare Financing Organization",
+          "stereotype": "role",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "GATE_D_APPROVED",
+          "source": "W4 canonical 87-row index and registry"
+        },
+        {
+          "id": "InstitutionalFundingCommitment",
+          "title": "Institutional Funding Commitment",
+          "stereotype": "relator",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "CANDIDATE_ADDITION_EDITORIAL_REVIEW",
+          "source": "Candidate pattern, participants and conceptual anchor; primary domain requires author confirmation"
+        },
+        {
+          "id": "InstitutionallyFundedOrganizationRole",
+          "title": "Institutionally Funded Organization Role",
+          "stereotype": "role",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "CANDIDATE_ADDITION_EDITORIAL_REVIEW",
+          "source": "Candidate pattern, participants and conceptual anchor; primary domain requires author confirmation"
+        },
+        {
+          "id": "ReimbursementUtilisationObservationResult",
+          "title": "Reimbursement and Utilization Observation Result",
+          "stereotype": "subkind",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "GATE_D_APPROVED",
+          "source": "W4 canonical 87-row index and registry"
+        }
+      ]
+    },
+    {
+      "domain": "Risk Management",
+      "count": 3,
+      "isolate_count": 2,
+      "concepts": [
+        {
+          "id": "RiskTreatmentActivity",
+          "title": "Risk Treatment Activity",
+          "stereotype": "event",
+          "isolated_in_named_class_graph": true,
+          "domain_assignment": "GATE_D_APPROVED",
+          "source": "W4 canonical 87-row index and registry"
+        },
+        {
+          "id": "RiskTreatmentPlan",
+          "title": "Risk Treatment Plan",
+          "stereotype": "kind",
+          "isolated_in_named_class_graph": true,
+          "domain_assignment": "GATE_D_APPROVED",
+          "source": "W4 canonical 87-row index and registry"
+        },
+        {
+          "id": "RiskAssessmentActivity",
+          "title": "Risk Assessment Activity",
+          "stereotype": "event",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "GATE_D_APPROVED",
+          "source": "W4 canonical 87-row index and registry"
+        }
+      ]
+    },
+    {
+      "domain": "Pharmacovigilance",
+      "count": 3,
+      "isolate_count": 3,
+      "concepts": [
+        {
+          "id": "AdverseEventReportingActivity",
+          "title": "Adverse Event Reporting Activity",
+          "stereotype": "event",
+          "isolated_in_named_class_graph": true,
+          "domain_assignment": "GATE_D_APPROVED",
+          "source": "W4 canonical 87-row index and registry"
+        },
+        {
+          "id": "PharmacovigilanceRequirement",
+          "title": "Pharmacovigilance Requirement",
+          "stereotype": "kind",
+          "isolated_in_named_class_graph": true,
+          "domain_assignment": "GATE_D_APPROVED",
+          "source": "W4 canonical 87-row index and registry"
+        },
+        {
+          "id": "PostMarketSurveillanceActivity",
+          "title": "Post-Market Surveillance Activity",
+          "stereotype": "event",
+          "isolated_in_named_class_graph": true,
+          "domain_assignment": "GATE_D_APPROVED",
+          "source": "W4 canonical 87-row index and registry"
+        }
+      ]
+    },
+    {
+      "domain": "Business Architecture",
+      "count": 5,
+      "isolate_count": 2,
+      "concepts": [
+        {
+          "id": "BusinessArchitectureView",
+          "title": "Business Architecture View",
+          "stereotype": "kind",
+          "isolated_in_named_class_graph": true,
+          "domain_assignment": "GATE_D_APPROVED",
+          "source": "W4 canonical 87-row index and registry"
+        },
+        {
+          "id": "ServiceOfferingSpecification",
+          "title": "Service Offering Specification",
+          "stereotype": "kind",
+          "isolated_in_named_class_graph": true,
+          "domain_assignment": "GATE_D_APPROVED",
+          "source": "W4 canonical 87-row index and registry"
+        },
+        {
+          "id": "EnterpriseCapability",
+          "title": "Enterprise Capability",
+          "stereotype": "mode",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "GATE_D_APPROVED",
+          "source": "W4 canonical 87-row index and registry"
+        },
+        {
+          "id": "PartnerOrganizationRole",
+          "title": "Partner Organization Role",
+          "stereotype": "role",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "CANDIDATE_ADDITION_EDITORIAL_REVIEW",
+          "source": "Candidate pattern, participants and conceptual anchor; primary domain requires author confirmation"
+        },
+        {
+          "id": "StrategicPartnershipAgreement",
+          "title": "Strategic Partnership Agreement",
+          "stereotype": "relator",
+          "isolated_in_named_class_graph": false,
+          "domain_assignment": "GATE_D_APPROVED",
+          "source": "W4 canonical 87-row index and registry"
+        }
+      ]
+    },
+    {
+      "domain": "Digital Systems",
+      "count": 1,
+      "isolate_count": 1,
+      "concepts": [
+        {
+          "id": "DigitalInformationSystemComponent",
+          "title": "Digital System Component",
+          "stereotype": "kind",
+          "isolated_in_named_class_graph": true,
+          "domain_assignment": "GATE_D_APPROVED",
+          "source": "W4 canonical 87-row index and registry"
+        }
+      ]
+    },
+    {
+      "domain": "Clinical Care",
+      "count": 0,
+      "isolate_count": 0,
+      "concepts": []
+    }
+  ]
+}

@@ -1,0 +1,252 @@
+[
+  {
+    "id": "CQ-RM-01",
+    "query": "PREFIX c: <https://w3id.org/cm-pharme/2.1/> PREFIX l: <https://w3id.org/cm-pharme/experimental/four-domain/> PREFIX t: <urn:cmpe-lab:> SELECT ?scenario ?assessment ?product ?evidence WHERE { t:riskResult l:resultAssessment ?assessment ; l:citesSourceRecord ?evidence . ?assessment l:assessmentScenario ?scenario . ?scenario l:scenarioProduct ?product }",
+    "expected": [
+      [
+        "urn:cmpe-lab:scenario",
+        "urn:cmpe-lab:assessment",
+        "urn:cmpe-lab:product",
+        "urn:cmpe-lab:source"
+      ]
+    ],
+    "actual": [
+      [
+        "urn:cmpe-lab:scenario",
+        "urn:cmpe-lab:assessment",
+        "urn:cmpe-lab:product",
+        "urn:cmpe-lab:source"
+      ]
+    ],
+    "pass": true
+  },
+  {
+    "id": "CQ-RM-02",
+    "query": "PREFIX c: <https://w3id.org/cm-pharme/2.1/> PREFIX l: <https://w3id.org/cm-pharme/experimental/four-domain/> PREFIX t: <urn:cmpe-lab:> SELECT ?plan WHERE { ?plan l:planRiskResult t:riskResult . FILTER NOT EXISTS { ?a l:implementsRiskPlan ?plan } }",
+    "expected": [
+      [
+        "urn:cmpe-lab:plan"
+      ]
+    ],
+    "actual": [
+      [
+        "urn:cmpe-lab:plan"
+      ]
+    ],
+    "pass": true
+  },
+  {
+    "id": "CQ-RM-03",
+    "query": "PREFIX c: <https://w3id.org/cm-pharme/2.1/> PREFIX l: <https://w3id.org/cm-pharme/experimental/four-domain/> PREFIX t: <urn:cmpe-lab:> SELECT ?old ?new ?source ?conclusion WHERE { t:review l:reviewPriorResult ?old ; l:reviewNewResult ?new . ?new l:citesSourceRecord ?source ; l:conclusion ?conclusion }",
+    "expected": [
+      [
+        "urn:cmpe-lab:riskResult",
+        "urn:cmpe-lab:riskResult2",
+        "urn:cmpe-lab:source",
+        "revised assessment"
+      ]
+    ],
+    "actual": [
+      [
+        "urn:cmpe-lab:riskResult",
+        "urn:cmpe-lab:riskResult2",
+        "urn:cmpe-lab:source",
+        "revised assessment"
+      ]
+    ],
+    "pass": true
+  },
+  {
+    "id": "CQ-PV-01",
+    "query": "PREFIX c: <https://w3id.org/cm-pharme/2.1/> PREFIX l: <https://w3id.org/cm-pharme/experimental/four-domain/> PREFIX t: <urn:cmpe-lab:> SELECT ?target ?source WHERE { t:signal l:signalSubstance ?target ; l:citesSourceRecord ?source }",
+    "expected": [
+      [
+        "urn:cmpe-lab:substance",
+        "urn:cmpe-lab:study"
+      ]
+    ],
+    "actual": [
+      [
+        "urn:cmpe-lab:substance",
+        "urn:cmpe-lab:study"
+      ]
+    ],
+    "pass": true
+  },
+  {
+    "id": "CQ-PV-02",
+    "query": "PREFIX c: <https://w3id.org/cm-pharme/2.1/> PREFIX l: <https://w3id.org/cm-pharme/experimental/four-domain/> PREFIX t: <urn:cmpe-lab:> SELECT ?assessment ?status ?time WHERE { ?r l:pvResultSignal t:signal ; l:pvResultAssessment ?assessment ; l:signalStatus ?status ; l:atTime ?time }",
+    "expected": [
+      [
+        "urn:cmpe-lab:signalAssessment",
+        "under-review",
+        "2026-10-02T10:00:00+00:00"
+      ],
+      [
+        "urn:cmpe-lab:signalAssessment2",
+        "refuted-at-this-time",
+        "2026-10-03T10:00:00+00:00"
+      ]
+    ],
+    "actual": [
+      [
+        "urn:cmpe-lab:signalAssessment",
+        "under-review",
+        "2026-10-02T10:00:00+00:00"
+      ],
+      [
+        "urn:cmpe-lab:signalAssessment2",
+        "refuted-at-this-time",
+        "2026-10-03T10:00:00+00:00"
+      ]
+    ],
+    "pass": true
+  },
+  {
+    "id": "CQ-PV-03",
+    "query": "PREFIX c: <https://w3id.org/cm-pharme/2.1/> PREFIX l: <https://w3id.org/cm-pharme/experimental/four-domain/> PREFIX t: <urn:cmpe-lab:> SELECT ?activity ?requirement ?jurisdiction WHERE { ?activity l:surveillanceRequirement ?requirement . ?requirement l:pvRequirementJurisdiction ?jurisdiction }",
+    "expected": [
+      [
+        "urn:cmpe-lab:surveillance",
+        "urn:cmpe-lab:pvRule",
+        "urn:cmpe-lab:jA"
+      ]
+    ],
+    "actual": [
+      [
+        "urn:cmpe-lab:surveillance",
+        "urn:cmpe-lab:pvRule",
+        "urn:cmpe-lab:jA"
+      ]
+    ],
+    "pass": true
+  },
+  {
+    "id": "CQ-BA-01",
+    "query": "PREFIX c: <https://w3id.org/cm-pharme/2.1/> PREFIX l: <https://w3id.org/cm-pharme/experimental/four-domain/> PREFIX t: <urn:cmpe-lab:> SELECT ?org WHERE { t:cap c:capabilityBearer ?org . FILTER NOT EXISTS { t:cap l:capabilityRealizedIn ?x } }",
+    "expected": [
+      [
+        "urn:cmpe-lab:org"
+      ]
+    ],
+    "actual": [
+      [
+        "urn:cmpe-lab:org"
+      ]
+    ],
+    "pass": true
+  },
+  {
+    "id": "CQ-BA-02",
+    "query": "PREFIX c: <https://w3id.org/cm-pharme/2.1/> PREFIX l: <https://w3id.org/cm-pharme/experimental/four-domain/> PREFIX t: <urn:cmpe-lab:> SELECT ?cap WHERE { t:service l:serviceCapability ?cap }",
+    "expected": [
+      [
+        "urn:cmpe-lab:cap"
+      ]
+    ],
+    "actual": [
+      [
+        "urn:cmpe-lab:cap"
+      ]
+    ],
+    "pass": true
+  },
+  {
+    "id": "CQ-BA-03",
+    "query": "PREFIX c: <https://w3id.org/cm-pharme/2.1/> PREFIX l: <https://w3id.org/cm-pharme/experimental/four-domain/> PREFIX t: <urn:cmpe-lab:> SELECT ?artifact ?org WHERE { { ?artifact a c:BusinessArchitectureView ; l:viewOrganization ?org } UNION { ?artifact a c:StrategicPartnershipAgreement ; c:partnershipParticipant ?org } }",
+    "expected": [
+      [
+        "urn:cmpe-lab:agreement",
+        "urn:cmpe-lab:org"
+      ],
+      [
+        "urn:cmpe-lab:agreement",
+        "urn:cmpe-lab:org2"
+      ],
+      [
+        "urn:cmpe-lab:view",
+        "urn:cmpe-lab:org"
+      ]
+    ],
+    "actual": [
+      [
+        "urn:cmpe-lab:agreement",
+        "urn:cmpe-lab:org"
+      ],
+      [
+        "urn:cmpe-lab:agreement",
+        "urn:cmpe-lab:org2"
+      ],
+      [
+        "urn:cmpe-lab:view",
+        "urn:cmpe-lab:org"
+      ]
+    ],
+    "pass": true
+  },
+  {
+    "id": "CQ-DS-01",
+    "query": "PREFIX c: <https://w3id.org/cm-pharme/2.1/> PREFIX l: <https://w3id.org/cm-pharme/experimental/four-domain/> PREFIX t: <urn:cmpe-lab:> SELECT ?component ?version WHERE { t:record l:recordDigitalActivity/l:digitalActivityDeployment ?d . ?d l:deploymentComponent ?component ; l:componentVersion ?version }",
+    "expected": [
+      [
+        "urn:cmpe-lab:component",
+        "1.0"
+      ]
+    ],
+    "actual": [
+      [
+        "urn:cmpe-lab:component",
+        "1.0"
+      ]
+    ],
+    "pass": true
+  },
+  {
+    "id": "CQ-DS-02",
+    "query": "PREFIX c: <https://w3id.org/cm-pharme/2.1/> PREFIX l: <https://w3id.org/cm-pharme/experimental/four-domain/> PREFIX t: <urn:cmpe-lab:> SELECT ?activity ?component ?operator WHERE { t:record l:recordDigitalActivity ?activity . ?activity l:digitalActivityDeployment ?deployment . ?deployment l:deploymentComponent ?component ; l:deploymentOrganization ?operator }",
+    "expected": [
+      [
+        "urn:cmpe-lab:transform",
+        "urn:cmpe-lab:component",
+        "urn:cmpe-lab:operator"
+      ]
+    ],
+    "actual": [
+      [
+        "urn:cmpe-lab:transform",
+        "urn:cmpe-lab:component",
+        "urn:cmpe-lab:operator"
+      ]
+    ],
+    "pass": true
+  },
+  {
+    "id": "CQ-DS-03",
+    "query": "PREFIX c: <https://w3id.org/cm-pharme/2.1/> PREFIX l: <https://w3id.org/cm-pharme/experimental/four-domain/> PREFIX t: <urn:cmpe-lab:> SELECT ?org ?version ?time WHERE { ?d l:deploymentOrganization ?org ; l:componentVersion ?version ; l:atTime ?time }",
+    "expected": [
+      [
+        "urn:cmpe-lab:operator",
+        "1.0",
+        "2026-10-01T10:00:00+00:00"
+      ],
+      [
+        "urn:cmpe-lab:operator2",
+        "2.0",
+        "2026-10-03T10:00:00+00:00"
+      ]
+    ],
+    "actual": [
+      [
+        "urn:cmpe-lab:operator",
+        "1.0",
+        "2026-10-01T10:00:00+00:00"
+      ],
+      [
+        "urn:cmpe-lab:operator2",
+        "2.0",
+        "2026-10-03T10:00:00+00:00"
+      ]
+    ],
+    "pass": true
+  }
+]

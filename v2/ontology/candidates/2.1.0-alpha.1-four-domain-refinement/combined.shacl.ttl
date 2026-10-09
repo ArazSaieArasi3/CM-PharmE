@@ -1,0 +1,1207 @@
+@prefix cmpe: <https://w3id.org/cm-pharme/2.1/> .
+@prefix lab: <https://w3id.org/cm-pharme/experimental/four-domain/> .
+@prefix r: <https://w3id.org/cm-pharme/experimental/refinement/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+cmpe:AlternativeMedicinalProductRoleDependenceShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:AlternativeMedicineAssignment ;
+            sh:minCount 1 ;
+            sh:path [ sh:inversePath cmpe:alternativeProduct ] ] ;
+    sh:targetClass cmpe:AlternativeMedicinalProductRole .
+
+cmpe:AlternativeMedicineAssignmentShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:ReferenceProductRole ;
+            sh:disjoint cmpe:alternativeProduct ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path cmpe:alternativeForProduct ],
+        [ sh:class cmpe:AlternativeMedicinalProductRole ;
+            sh:disjoint cmpe:alternativeForProduct ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path cmpe:alternativeProduct ] ;
+    sh:targetClass cmpe:AlternativeMedicineAssignment .
+
+cmpe:AppliedClassificationEntryRoleDependenceShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:ProductClassificationAssignment ;
+            sh:minCount 1 ;
+            sh:path [ sh:inversePath cmpe:classificationEntry ] ],
+        [ sh:minCount 1 ;
+            sh:path [ sh:inversePath cmpe:classificationEntry ] ] ;
+    sh:targetClass cmpe:AppliedClassificationEntryRole .
+
+cmpe:AssetAtRiskDeferredShape a sh:NodeShape ;
+    sh:in () ;
+    sh:targetClass cmpe:AssetAtRisk .
+
+cmpe:AssigningDistributionSiteUseOrganizationRoleDependenceShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:DistributionSiteUse ;
+            sh:minCount 1 ;
+            sh:path [ sh:inversePath cmpe:distributionSiteUseCounterpart ] ] ;
+    sh:targetClass cmpe:AssigningDistributionSiteUseOrganizationRole .
+
+cmpe:AssigningManufacturingSiteUseOrganizationRoleDependenceShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:ManufacturingSiteUse ;
+            sh:minCount 1 ;
+            sh:path [ sh:inversePath cmpe:manufacturingSiteUseCounterpart ] ] ;
+    sh:targetClass cmpe:AssigningManufacturingSiteUseOrganizationRole .
+
+cmpe:AuthorizedPartyDependenceShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:RegulatoryAuthorization ;
+            sh:minCount 1 ;
+            sh:path [ sh:inversePath cmpe:authorizationParty ] ] ;
+    sh:targetClass cmpe:AuthorizedParty .
+
+cmpe:AuthorizingAuthorityRoleDependenceShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:RegulatoryAuthorization ;
+            sh:minCount 1 ;
+            sh:path [ sh:inversePath cmpe:authorizationAuthority ] ] ;
+    sh:targetClass cmpe:AuthorizingAuthorityRole .
+
+cmpe:CapacityDerivedQueryAdmissionShape a sh:NodeShape ;
+    sh:class cmpe:SupplyCapacity ;
+    sh:sparql [ sh:message "capacityBearer must be grounded in a typed primary Characterization" ;
+            sh:select """
+            PREFIX cmpe: <https://w3id.org/cm-pharme/2.1/>
+            SELECT $this WHERE {
+                $this cmpe:capacityBearer ?bearer .
+                FILTER NOT EXISTS { ?bearer cmpe:organizationHasSupplyCapacity $this }
+                FILTER NOT EXISTS { ?bearer cmpe:facilityHasSupplyCapacity $this }
+            }
+        """ ],
+        [ sh:message "capacityOrganizationBearer must reflect organizationHasSupplyCapacity" ;
+            sh:select """
+            PREFIX cmpe: <https://w3id.org/cm-pharme/2.1/>
+            SELECT $this WHERE {
+                $this cmpe:capacityOrganizationBearer ?bearer .
+                FILTER NOT EXISTS { ?bearer cmpe:organizationHasSupplyCapacity $this }
+            }
+        """ ],
+        [ sh:message "capacityFacilityBearer must reflect facilityHasSupplyCapacity" ;
+            sh:select """
+            PREFIX cmpe: <https://w3id.org/cm-pharme/2.1/>
+            SELECT $this WHERE {
+                $this cmpe:capacityFacilityBearer ?bearer .
+                FILTER NOT EXISTS { ?bearer cmpe:facilityHasSupplyCapacity $this }
+            }
+        """ ] ;
+    sh:targetSubjectsOf cmpe:capacityBearer,
+        cmpe:capacityFacilityBearer,
+        cmpe:capacityOrganizationBearer .
+
+cmpe:ClassifiedEntityDependenceShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:ProductClassificationAssignment ;
+            sh:minCount 1 ;
+            sh:path [ sh:inversePath cmpe:classificationEntity ] ],
+        [ sh:minCount 1 ;
+            sh:path [ sh:inversePath cmpe:classificationEntity ] ] ;
+    sh:targetClass cmpe:ClassifiedEntity .
+
+cmpe:ClinicalCareParticipantDeferredShape a sh:NodeShape ;
+    sh:in () ;
+    sh:targetClass cmpe:ClinicalCareParticipant .
+
+cmpe:CommissioningLogisticsClientRoleDependenceShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:LogisticsServiceCommitment ;
+            sh:minCount 1 ;
+            sh:path [ sh:inversePath cmpe:logisticsServiceCommitmentCounterpart ] ] ;
+    sh:targetClass cmpe:CommissioningLogisticsClientRole .
+
+cmpe:ContextualMedicineClassificationAssignmentShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:AppliedClassificationEntryRole ;
+            sh:disjoint cmpe:classificationEntity ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path cmpe:classificationEntry ],
+        [ sh:class cmpe:ClassifiedEntity ;
+            sh:disjoint cmpe:classificationEntry ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path cmpe:classificationEntity ] ;
+    sh:targetClass cmpe:ContextualMedicineClassificationAssignment .
+
+cmpe:DependentEntityDependenceShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:SupplyDependency ;
+            sh:minCount 1 ;
+            sh:path [ sh:inversePath cmpe:dependencyDependent ] ] ;
+    sh:targetClass cmpe:DependentEntity .
+
+cmpe:DistributionSiteRoleDependenceShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:DistributionSiteUse ;
+            sh:minCount 1 ;
+            sh:path [ sh:inversePath cmpe:distributionSiteUseHolder ] ] ;
+    sh:targetClass cmpe:DistributionSiteRole .
+
+cmpe:DistributionSiteUseShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:DistributionSiteRole ;
+            sh:disjoint cmpe:distributionSiteUseCounterpart ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path cmpe:distributionSiteUseHolder ],
+        [ sh:class cmpe:AssigningDistributionSiteUseOrganizationRole ;
+            sh:disjoint cmpe:distributionSiteUseHolder ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path cmpe:distributionSiteUseCounterpart ] ;
+    sh:targetClass cmpe:DistributionSiteUse .
+
+cmpe:EnterpriseCapabilityBearerShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:Organization ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path cmpe:capabilityBearer ] ;
+    sh:targetClass cmpe:EnterpriseCapability .
+
+cmpe:EstablishmentRegistrationShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:RegisteredParty ;
+            sh:disjoint cmpe:registrationAuthority ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path cmpe:registrationEntity ],
+        [ sh:class cmpe:RegisteringAuthorityRole ;
+            sh:disjoint cmpe:registrationEntity ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path cmpe:registrationAuthority ] ;
+    sh:targetClass cmpe:EstablishmentRegistration .
+
+cmpe:EvidenceAliasShape a sh:NodeShape ;
+    sh:sparql [ sh:message "evidenceRecord must subset evidenceItem" ;
+            sh:select "SELECT $this WHERE { $this <https://w3id.org/cm-pharme/2.1/evidenceRecord> ?x . FILTER NOT EXISTS { $this <https://w3id.org/cm-pharme/2.1/evidenceItem> ?x } }" ],
+        [ sh:message "evidenceRecord must subset evidenceItem" ;
+            sh:select "SELECT $this WHERE { $this <https://w3id.org/cm-pharme/2.1/evidenceRecord> ?x . FILTER NOT EXISTS { $this <https://w3id.org/cm-pharme/2.1/evidenceItem> ?x } }" ] ;
+    sh:targetSubjectsOf cmpe:evidenceRecord .
+
+cmpe:EvidenceItemDependenceShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:EvidenceSupport ;
+            sh:minCount 1 ;
+            sh:path [ sh:inversePath cmpe:evidenceItem ] ] ;
+    sh:targetClass cmpe:EvidenceItem .
+
+cmpe:EvidenceSupportShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:SupportedAssertionRole ;
+            sh:disjoint cmpe:evidenceItem ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path cmpe:evidenceAssertion ],
+        [ sh:class cmpe:EvidenceItem ;
+            sh:disjoint cmpe:evidenceAssertion ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path cmpe:evidenceItem ] ;
+    sh:targetClass cmpe:EvidenceSupport .
+
+cmpe:FacilityCapacitySubjectShape a sh:NodeShape ;
+    sh:class cmpe:Facility ;
+    sh:property [ sh:class cmpe:SupplyCapacity ;
+            sh:not [ sh:class cmpe:SupplyCapacityObservationResult ] ;
+            sh:path cmpe:facilityHasSupplyCapacity ] ;
+    sh:targetSubjectsOf cmpe:facilityHasSupplyCapacity .
+
+cmpe:FacilityOperationShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:OperatingOrganizationRole ;
+            sh:disjoint cmpe:operationFacility ;
+            sh:minCount 1 ;
+            sh:path cmpe:operationOrganization ],
+        [ sh:class cmpe:OperatedFacilityRole ;
+            sh:disjoint cmpe:operationOrganization ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path cmpe:operationFacility ] ;
+    sh:targetClass cmpe:FacilityOperation .
+
+cmpe:GeographyShape a sh:NodeShape ;
+    sh:sparql [ sh:message "Strict geographic containment cannot cycle" ;
+            sh:select "SELECT $this WHERE { $this (<https://w3id.org/cm-pharme/2.1/withinRegion>|<https://w3id.org/cm-pharme/2.1/withinCountry>)+ $this . }" ],
+        [ sh:message "Strict geographic containment cannot cycle" ;
+            sh:select "SELECT $this WHERE { $this (<https://w3id.org/cm-pharme/2.1/withinRegion>|<https://w3id.org/cm-pharme/2.1/withinCountry>)+ $this . }" ] ;
+    sh:targetSubjectsOf cmpe:withinCountry,
+        cmpe:withinRegion .
+
+cmpe:GovernedEntityDependenceShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:RegulatoryOversight ;
+            sh:minCount 1 ;
+            sh:path [ sh:inversePath cmpe:oversightGovernedEntity ] ] ;
+    sh:targetClass cmpe:GovernedEntity .
+
+cmpe:IdentifiedEntityDependenceShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:IdentifierAssignment ;
+            sh:minCount 1 ;
+            sh:path [ sh:inversePath cmpe:identifierEntity ] ] ;
+    sh:targetClass cmpe:IdentifiedEntity .
+
+cmpe:IdentifierAssignmentShape a sh:NodeShape ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path cmpe:identifierLexicalValue ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path cmpe:identifierLexicalValue ],
+        [ sh:class cmpe:UsedIdentifierSchemeRole ;
+            sh:disjoint cmpe:identifierEntity ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path cmpe:identifierScheme ],
+        [ sh:class cmpe:IdentifiedEntity ;
+            sh:disjoint cmpe:identifierScheme ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path cmpe:identifierEntity ] ;
+    sh:targetClass cmpe:IdentifierAssignment .
+
+cmpe:ImportResponsibilityShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:ImportResponsibilitySubjectRole ;
+            sh:disjoint cmpe:importResponsibilityHolder ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path cmpe:importResponsibilityCounterpart ],
+        [ sh:class cmpe:ImporterRole ;
+            sh:disjoint cmpe:importResponsibilityCounterpart ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path cmpe:importResponsibilityHolder ] ;
+    sh:targetClass cmpe:ImportResponsibility .
+
+cmpe:ImportResponsibilitySubjectRoleDependenceShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:ImportResponsibility ;
+            sh:minCount 1 ;
+            sh:path [ sh:inversePath cmpe:importResponsibilityCounterpart ] ] ;
+    sh:targetClass cmpe:ImportResponsibilitySubjectRole .
+
+cmpe:ImporterRoleDependenceShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:ImportResponsibility ;
+            sh:minCount 1 ;
+            sh:path [ sh:inversePath cmpe:importResponsibilityHolder ] ] ;
+    sh:targetClass cmpe:ImporterRole .
+
+cmpe:InstitutionalFundingCommitmentShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:InstitutionallyFundedOrganizationRole ;
+            sh:disjoint cmpe:institutionalFundingCommitmentHolder ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path cmpe:institutionalFundingCommitmentCounterpart ],
+        [ sh:class cmpe:PayerFundingOrganizationRole ;
+            sh:disjoint cmpe:institutionalFundingCommitmentCounterpart ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path cmpe:institutionalFundingCommitmentHolder ] ;
+    sh:targetClass cmpe:InstitutionalFundingCommitment .
+
+cmpe:InstitutionallyFundedOrganizationRoleDependenceShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:InstitutionalFundingCommitment ;
+            sh:minCount 1 ;
+            sh:path [ sh:inversePath cmpe:institutionalFundingCommitmentCounterpart ] ] ;
+    sh:targetClass cmpe:InstitutionallyFundedOrganizationRole .
+
+cmpe:ListedPresentationRoleDependenceShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:MarketListing ;
+            sh:minCount 1 ;
+            sh:path [ sh:inversePath cmpe:listingPresentation ] ] ;
+    sh:targetClass cmpe:ListedPresentationRole .
+
+cmpe:ListingResponsibleOrganizationRoleDependenceShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:MarketListing ;
+            sh:minCount 1 ;
+            sh:path [ sh:inversePath cmpe:listingResponsibleOrganization ] ] ;
+    sh:targetClass cmpe:ListingResponsibleOrganizationRole .
+
+cmpe:LogisticsServiceCommitmentShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:ThirdPartyLogisticsProviderRole ;
+            sh:disjoint cmpe:logisticsServiceCommitmentCounterpart ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path cmpe:logisticsServiceCommitmentHolder ],
+        [ sh:class cmpe:CommissioningLogisticsClientRole ;
+            sh:disjoint cmpe:logisticsServiceCommitmentHolder ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path cmpe:logisticsServiceCommitmentCounterpart ] ;
+    sh:targetClass cmpe:LogisticsServiceCommitment .
+
+cmpe:MandateConferringOrganizationRoleDependenceShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:RegulatoryMandate ;
+            sh:minCount 1 ;
+            sh:path [ sh:inversePath cmpe:regulatoryMandateCounterpart ] ] ;
+    sh:targetClass cmpe:MandateConferringOrganizationRole .
+
+cmpe:ManufacturerRoleDependenceShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:ManufacturingResponsibility ;
+            sh:minCount 1 ;
+            sh:path [ sh:inversePath cmpe:manufacturingResponsibilityHolder ] ] ;
+    sh:targetClass cmpe:ManufacturerRole .
+
+cmpe:ManufacturingResponsibilityShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:ManufacturerRole ;
+            sh:disjoint cmpe:manufacturingResponsibilityCounterpart ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path cmpe:manufacturingResponsibilityHolder ],
+        [ sh:class cmpe:ManufacturingResponsibilitySubjectRole ;
+            sh:disjoint cmpe:manufacturingResponsibilityHolder ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path cmpe:manufacturingResponsibilityCounterpart ] ;
+    sh:targetClass cmpe:ManufacturingResponsibility .
+
+cmpe:ManufacturingResponsibilitySubjectRoleDependenceShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:ManufacturingResponsibility ;
+            sh:minCount 1 ;
+            sh:path [ sh:inversePath cmpe:manufacturingResponsibilityCounterpart ] ] ;
+    sh:targetClass cmpe:ManufacturingResponsibilitySubjectRole .
+
+cmpe:ManufacturingSiteRoleDependenceShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:ManufacturingSiteUse ;
+            sh:minCount 1 ;
+            sh:path [ sh:inversePath cmpe:manufacturingSiteUseHolder ] ] ;
+    sh:targetClass cmpe:ManufacturingSiteRole .
+
+cmpe:ManufacturingSiteUseShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:AssigningManufacturingSiteUseOrganizationRole ;
+            sh:disjoint cmpe:manufacturingSiteUseHolder ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path cmpe:manufacturingSiteUseCounterpart ],
+        [ sh:class cmpe:ManufacturingSiteRole ;
+            sh:disjoint cmpe:manufacturingSiteUseCounterpart ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path cmpe:manufacturingSiteUseHolder ] ;
+    sh:targetClass cmpe:ManufacturingSiteUse .
+
+cmpe:MarketListingShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:ListedPresentationRole ;
+            sh:disjoint cmpe:listingResponsibleOrganization ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path cmpe:listingPresentation ],
+        [ sh:class cmpe:ListingResponsibleOrganizationRole ;
+            sh:disjoint cmpe:listingPresentation ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path cmpe:listingResponsibleOrganization ] ;
+    sh:targetClass cmpe:MarketListing .
+
+cmpe:MatchConfidenceBearerShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:EntityMatchAssertion ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path [ sh:inversePath cmpe:hasMatchConfidence ] ] ;
+    sh:targetClass cmpe:MatchConfidence .
+
+cmpe:OperatedFacilityRoleDependenceShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:FacilityOperation ;
+            sh:minCount 1 ;
+            sh:path [ sh:inversePath cmpe:operationFacility ] ] ;
+    sh:targetClass cmpe:OperatedFacilityRole .
+
+cmpe:OperatingOrganizationRoleDependenceShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:FacilityOperation ;
+            sh:minCount 1 ;
+            sh:path [ sh:inversePath cmpe:operationOrganization ] ] ;
+    sh:targetClass cmpe:OperatingOrganizationRole .
+
+cmpe:OrganizationCapacitySubjectShape a sh:NodeShape ;
+    sh:class cmpe:Organization ;
+    sh:property [ sh:class cmpe:SupplyCapacity ;
+            sh:not [ sh:class cmpe:SupplyCapacityObservationResult ] ;
+            sh:path cmpe:organizationHasSupplyCapacity ] ;
+    sh:targetSubjectsOf cmpe:organizationHasSupplyCapacity .
+
+cmpe:OversightAuthorityRoleDependenceShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:RegulatoryOversight ;
+            sh:minCount 1 ;
+            sh:path [ sh:inversePath cmpe:oversightAuthorityRole ] ] ;
+    sh:targetClass cmpe:OversightAuthorityRole .
+
+cmpe:PartnerOrganizationRoleDependenceShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:StrategicPartnershipAgreement ;
+            sh:minCount 1 ;
+            sh:path [ sh:inversePath cmpe:partnershipParticipant ] ] ;
+    sh:targetClass cmpe:PartnerOrganizationRole .
+
+cmpe:PayerFundingOrganizationRoleDependenceShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:InstitutionalFundingCommitment ;
+            sh:minCount 1 ;
+            sh:path [ sh:inversePath cmpe:institutionalFundingCommitmentHolder ] ] ;
+    sh:targetClass cmpe:PayerFundingOrganizationRole .
+
+cmpe:ProductActiveSubstanceAdmissionShape a sh:NodeShape ;
+    sh:class cmpe:MedicinalProduct ;
+    sh:not [ sh:class cmpe:MedicinalProductPresentation ] ;
+    sh:property [ sh:class cmpe:PharmaceuticalSubstance ;
+            sh:path cmpe:productHasActiveSubstance ] ;
+    sh:targetSubjectsOf cmpe:productHasActiveSubstance .
+
+cmpe:ProductClassificationAssignmentShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:AppliedClassificationEntryRole ;
+            sh:disjoint cmpe:classificationEntity ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path cmpe:classificationEntry ],
+        [ sh:class cmpe:ClassifiedEntity ;
+            sh:disjoint cmpe:classificationEntry ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path cmpe:classificationEntity ] ;
+    sh:targetClass cmpe:ProductClassificationAssignment .
+
+cmpe:ProductLabelCommitmentOrganizationRoleDependenceShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:ProductLabelResponsibility ;
+            sh:minCount 1 ;
+            sh:path [ sh:inversePath cmpe:productLabelResponsibilityHolder ] ] ;
+    sh:targetClass cmpe:ProductLabelCommitmentOrganizationRole .
+
+cmpe:ProductLabelResponsibilityShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:ResponsibilitySubjectProductRole ;
+            sh:disjoint cmpe:productLabelResponsibilityHolder ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path cmpe:productLabelResponsibilityCounterpart ],
+        [ sh:class cmpe:ProductLabelCommitmentOrganizationRole ;
+            sh:disjoint cmpe:productLabelResponsibilityCounterpart ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path cmpe:productLabelResponsibilityHolder ] ;
+    sh:targetClass cmpe:ProductLabelResponsibility .
+
+cmpe:ProductResponsibleLabelerRoleGroundingShape a sh:NodeShape ;
+    sh:or ( [ sh:property [ sh:class cmpe:MarketListing ;
+                        sh:minCount 1 ;
+                        sh:path [ sh:inversePath cmpe:listingResponsibleOrganization ] ] ] [ sh:property [ sh:class cmpe:ProductLabelResponsibility ;
+                        sh:minCount 1 ;
+                        sh:path [ sh:inversePath cmpe:productLabelResponsibilityHolder ] ] ] ) ;
+    sh:targetClass cmpe:ProductResponsibleLabelerRole .
+
+cmpe:ProviderEntityDependenceShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:SupplyDependency ;
+            sh:minCount 1 ;
+            sh:path [ sh:inversePath cmpe:dependencyProvider ] ] ;
+    sh:targetClass cmpe:ProviderEntity .
+
+cmpe:ReferenceProductRoleDependenceShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:AlternativeMedicineAssignment ;
+            sh:minCount 1 ;
+            sh:path [ sh:inversePath cmpe:alternativeForProduct ] ] ;
+    sh:targetClass cmpe:ReferenceProductRole .
+
+cmpe:RegisteredPartyDependenceShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:EstablishmentRegistration ;
+            sh:minCount 1 ;
+            sh:path [ sh:inversePath cmpe:registrationEntity ] ] ;
+    sh:targetClass cmpe:RegisteredParty .
+
+cmpe:RegisteringAuthorityRoleDependenceShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:EstablishmentRegistration ;
+            sh:minCount 1 ;
+            sh:path [ sh:inversePath cmpe:registrationAuthority ] ] ;
+    sh:targetClass cmpe:RegisteringAuthorityRole .
+
+cmpe:RegulatoryAuthorityRoleDependenceShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:RegulatoryMandate ;
+            sh:minCount 1 ;
+            sh:path [ sh:inversePath cmpe:regulatoryMandateHolder ] ] ;
+    sh:targetClass cmpe:RegulatoryAuthorityRole .
+
+cmpe:RegulatoryAuthorizationShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:AuthorizedParty ;
+            sh:disjoint cmpe:authorizationAuthority ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path cmpe:authorizationParty ],
+        [ sh:class cmpe:AuthorizingAuthorityRole ;
+            sh:disjoint cmpe:authorizationParty ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path cmpe:authorizationAuthority ] ;
+    sh:targetClass cmpe:RegulatoryAuthorization .
+
+cmpe:RegulatoryMandateShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:RegulatoryAuthorityRole ;
+            sh:disjoint cmpe:regulatoryMandateCounterpart ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path cmpe:regulatoryMandateHolder ],
+        [ sh:class cmpe:MandateConferringOrganizationRole ;
+            sh:disjoint cmpe:regulatoryMandateHolder ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path cmpe:regulatoryMandateCounterpart ] ;
+    sh:targetClass cmpe:RegulatoryMandate .
+
+cmpe:RegulatoryOversightShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:GovernedEntity ;
+            sh:disjoint cmpe:oversightAuthorityRole ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path cmpe:oversightGovernedEntity ],
+        [ sh:class cmpe:OversightAuthorityRole ;
+            sh:disjoint cmpe:oversightGovernedEntity ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path cmpe:oversightAuthorityRole ] ;
+    sh:targetClass cmpe:RegulatoryOversight .
+
+cmpe:ResponsibilitySubjectProductRoleDependenceShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:ProductLabelResponsibility ;
+            sh:minCount 1 ;
+            sh:path [ sh:inversePath cmpe:productLabelResponsibilityCounterpart ] ] ;
+    sh:targetClass cmpe:ResponsibilitySubjectProductRole .
+
+cmpe:StrategicPartnershipAgreementShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:PartnerOrganizationRole ;
+            sh:minCount 2 ;
+            sh:path cmpe:partnershipParticipant ] ;
+    sh:targetClass cmpe:StrategicPartnershipAgreement .
+
+cmpe:SupplyCapacityTypedBearerShape a sh:NodeShape ;
+    sh:not [ sh:class cmpe:SupplyCapacityObservationResult ] ;
+    sh:property [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path [ sh:alternativePath ( [ sh:inversePath cmpe:organizationHasSupplyCapacity ] [ sh:inversePath cmpe:facilityHasSupplyCapacity ] ) ] ;
+            sh:xone ( [ sh:class cmpe:Organization ] [ sh:class cmpe:Facility ] ) ] ;
+    sh:targetClass cmpe:SupplyCapacity ;
+    sh:xone ( [ sh:property [ sh:class cmpe:Organization ;
+                        sh:maxCount 1 ;
+                        sh:minCount 1 ;
+                        sh:path [ sh:inversePath cmpe:organizationHasSupplyCapacity ] ],
+                    [ sh:maxCount 0 ;
+                        sh:path [ sh:inversePath cmpe:facilityHasSupplyCapacity ] ] ] [ sh:property [ sh:class cmpe:Facility ;
+                        sh:maxCount 1 ;
+                        sh:minCount 1 ;
+                        sh:path [ sh:inversePath cmpe:facilityHasSupplyCapacity ] ],
+                    [ sh:maxCount 0 ;
+                        sh:path [ sh:inversePath cmpe:organizationHasSupplyCapacity ] ] ] ) .
+
+cmpe:SupplyDependencyShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:DependentEntity ;
+            sh:disjoint cmpe:dependencyProvider ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path cmpe:dependencyDependent ],
+        [ sh:class cmpe:ProviderEntity ;
+            sh:disjoint cmpe:dependencyDependent ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path cmpe:dependencyProvider ] ;
+    sh:targetClass cmpe:SupplyDependency .
+
+cmpe:SupportedAssertionRoleDependenceShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:EvidenceSupport ;
+            sh:minCount 1 ;
+            sh:path [ sh:inversePath cmpe:evidenceAssertion ] ] ;
+    sh:targetClass cmpe:SupportedAssertionRole .
+
+cmpe:ThirdPartyLogisticsProviderRoleDependenceShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:LogisticsServiceCommitment ;
+            sh:minCount 1 ;
+            sh:path [ sh:inversePath cmpe:logisticsServiceCommitmentHolder ] ] ;
+    sh:targetClass cmpe:ThirdPartyLogisticsProviderRole .
+
+cmpe:UsedIdentifierSchemeRoleDependenceShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:IdentifierAssignment ;
+            sh:minCount 1 ;
+            sh:path [ sh:inversePath cmpe:identifierScheme ] ] ;
+    sh:targetClass cmpe:UsedIdentifierSchemeRole .
+
+cmpe:VulnerabilityDeferredShape a sh:NodeShape ;
+    sh:in () ;
+    sh:targetClass cmpe:Vulnerability .
+
+cmpe:WholesaleDistributorRoleDependenceShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:WholesaleResponsibility ;
+            sh:minCount 1 ;
+            sh:path [ sh:inversePath cmpe:wholesaleResponsibilityHolder ] ] ;
+    sh:targetClass cmpe:WholesaleDistributorRole .
+
+cmpe:WholesaleResponsibilityShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:WholesaleDistributorRole ;
+            sh:disjoint cmpe:wholesaleResponsibilityCounterpart ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path cmpe:wholesaleResponsibilityHolder ],
+        [ sh:class cmpe:WholesaleResponsibilitySubjectRole ;
+            sh:disjoint cmpe:wholesaleResponsibilityHolder ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path cmpe:wholesaleResponsibilityCounterpart ] ;
+    sh:targetClass cmpe:WholesaleResponsibility .
+
+cmpe:WholesaleResponsibilitySubjectRoleDependenceShape a sh:NodeShape ;
+    sh:property [ sh:class cmpe:WholesaleResponsibility ;
+            sh:minCount 1 ;
+            sh:path [ sh:inversePath cmpe:wholesaleResponsibilityCounterpart ] ] ;
+    sh:targetClass cmpe:WholesaleResponsibilitySubjectRole .
+
+cmpe:assertionAboutProductShape a sh:NodeShape ;
+    sh:class cmpe:Assertion ;
+    sh:property [ sh:class cmpe:MedicinalProduct ;
+            sh:path cmpe:assertionAboutProduct ] ;
+    sh:targetSubjectsOf cmpe:assertionAboutProduct .
+
+cmpe:disruptionAffectsDependencyShape a sh:NodeShape ;
+    sh:class cmpe:DisruptionEvent ;
+    sh:property [ sh:class cmpe:SupplyDependency ;
+            sh:path cmpe:disruptionAffectsDependency ] ;
+    sh:targetSubjectsOf cmpe:disruptionAffectsDependency .
+
+cmpe:observationAboutPresentationShape a sh:NodeShape ;
+    sh:class cmpe:ObservationResult ;
+    sh:property [ sh:class cmpe:MedicinalProductPresentation ;
+            sh:path cmpe:observationAboutPresentation ] ;
+    sh:targetSubjectsOf cmpe:observationAboutPresentation .
+
+cmpe:observationAboutProductShape a sh:NodeShape ;
+    sh:class cmpe:ObservationResult ;
+    sh:property [ sh:class cmpe:MedicinalProduct ;
+            sh:path cmpe:observationAboutProduct ] ;
+    sh:targetSubjectsOf cmpe:observationAboutProduct .
+
+cmpe:reimbursementDiagnosisContextShape a sh:NodeShape ;
+    sh:class cmpe:ReimbursementUtilisationObservationResult ;
+    sh:property [ sh:class cmpe:DiagnosisClassificationReference ;
+            sh:path cmpe:reimbursementDiagnosisContext ] ;
+    sh:targetSubjectsOf cmpe:reimbursementDiagnosisContext .
+
+cmpe:riskAssessmentConcernsDependencyShape a sh:NodeShape ;
+    sh:class cmpe:RiskAssessmentActivity ;
+    sh:property [ sh:class cmpe:SupplyDependency ;
+            sh:path cmpe:riskAssessmentConcernsDependency ] ;
+    sh:targetSubjectsOf cmpe:riskAssessmentConcernsDependency .
+
+lab:shape-ba-partnership a sh:NodeShape ;
+    sh:class cmpe:StrategicPartnershipAgreement ;
+    sh:property lab:field-ba-partnership-c-partnershipParticipant ;
+    sh:sparql lab:partners-not-known-aliases ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select "SELECT ?this WHERE { ?this <https://w3id.org/cm-pharme/experimental/four-domain/profile> \"ba-partnership\" . }" ] .
+
+lab:shape-ba-service a sh:NodeShape ;
+    sh:class cmpe:ServiceOfferingSpecification ;
+    sh:property lab:field-ba-service-serviceCapability ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select "SELECT ?this WHERE { ?this <https://w3id.org/cm-pharme/experimental/four-domain/profile> \"ba-service\" . }" ] .
+
+lab:shape-ba-view a sh:NodeShape ;
+    sh:class cmpe:BusinessArchitectureView ;
+    sh:property lab:field-ba-view-viewOrganization,
+        lab:field-ba-view-viewService ;
+    sh:sparql lab:distinct-BusinessArchitectureView-Organization ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select "SELECT ?this WHERE { ?this <https://w3id.org/cm-pharme/experimental/four-domain/profile> \"ba-view\" . }" ] .
+
+lab:shape-deployment a sh:NodeShape ;
+    sh:class cmpe:SystemDeploymentActivity ;
+    sh:property lab:field-deployment-atTime,
+        lab:field-deployment-componentVersion,
+        lab:field-deployment-deploymentComponent,
+        lab:field-deployment-deploymentOrganization ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select "SELECT ?this WHERE { ?this <https://w3id.org/cm-pharme/experimental/four-domain/profile> \"deployment\" . }" ] .
+
+lab:shape-digital-activity a sh:NodeShape ;
+    sh:class cmpe:ProvenanceActivity ;
+    sh:property lab:field-digital-activity-atTime,
+        lab:field-digital-activity-digitalActivityDeployment ;
+    sh:sparql lab:deployment-before-use ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select "SELECT ?this WHERE { ?this <https://w3id.org/cm-pharme/experimental/four-domain/profile> \"digital-activity\" . }" ] .
+
+lab:shape-digital-record a sh:NodeShape ;
+    sh:class cmpe:SourceRecord ;
+    sh:property lab:field-digital-record-recordDigitalActivity ;
+    sh:sparql lab:distinct-SourceRecord-DigitalInformationSystemComponent ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select "SELECT ?this WHERE { ?this <https://w3id.org/cm-pharme/experimental/four-domain/profile> \"digital-record\" . }" ] .
+
+lab:shape-digital-service a sh:NodeShape ;
+    sh:class cmpe:ServiceOfferingSpecification ;
+    sh:property lab:field-digital-service-digitalServiceActivity,
+        lab:field-digital-service-digitalServiceComponent ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select "SELECT ?this WHERE { ?this <https://w3id.org/cm-pharme/experimental/four-domain/profile> \"digital-service\" . }" ] .
+
+lab:shape-pv-requirement a sh:NodeShape ;
+    sh:class cmpe:PharmacovigilanceRequirement ;
+    sh:property lab:field-pv-requirement-pvRequirementJurisdiction ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select "SELECT ?this WHERE { ?this <https://w3id.org/cm-pharme/experimental/four-domain/profile> \"pv-requirement\" . }" ] .
+
+lab:shape-pv-surveillance a sh:NodeShape ;
+    sh:class cmpe:PostMarketSurveillanceActivity ;
+    sh:property lab:field-pv-surveillance-surveillanceRequirement,
+        lab:field-pv-surveillance-surveillanceSource ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select "SELECT ?this WHERE { ?this <https://w3id.org/cm-pharme/experimental/four-domain/profile> \"pv-surveillance\" . }" ] .
+
+lab:shape-risk-assessment a sh:NodeShape ;
+    sh:class cmpe:RiskAssessmentActivity ;
+    sh:property lab:field-risk-assessment-assessmentScenario ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select "SELECT ?this WHERE { ?this <https://w3id.org/cm-pharme/experimental/four-domain/profile> \"risk-assessment\" . }" ] .
+
+lab:shape-risk-plan a sh:NodeShape ;
+    sh:class cmpe:RiskTreatmentPlan ;
+    sh:property lab:field-risk-plan-planRiskResult ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select "SELECT ?this WHERE { ?this <https://w3id.org/cm-pharme/experimental/four-domain/profile> \"risk-plan\" . }" ] .
+
+lab:shape-risk-result a sh:NodeShape ;
+    sh:class cmpe:Assertion ;
+    sh:property lab:field-risk-result-atTime,
+        lab:field-risk-result-citesSourceRecord,
+        lab:field-risk-result-conclusion,
+        lab:field-risk-result-resultAssessment ;
+    sh:sparql lab:distinct-RiskAssessmentActivity-Assertion ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select "SELECT ?this WHERE { ?this <https://w3id.org/cm-pharme/experimental/four-domain/profile> \"risk-result\" . }" ] .
+
+lab:shape-risk-review a sh:NodeShape ;
+    sh:class cmpe:RiskReviewActivity ;
+    sh:property lab:field-risk-review-atTime,
+        lab:field-risk-review-reviewNewResult,
+        lab:field-risk-review-reviewPriorResult ;
+    sh:sparql lab:review-time-order ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select "SELECT ?this WHERE { ?this <https://w3id.org/cm-pharme/experimental/four-domain/profile> \"risk-review\" . }" ] .
+
+lab:shape-risk-scenario a sh:NodeShape ;
+    sh:class cmpe:Assertion ;
+    sh:property lab:field-risk-scenario-scenarioProduct ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select "SELECT ?this WHERE { ?this <https://w3id.org/cm-pharme/experimental/four-domain/profile> \"risk-scenario\" . }" ] .
+
+lab:shape-risk-treatment a sh:NodeShape ;
+    sh:class cmpe:RiskTreatmentActivity ;
+    sh:property lab:field-risk-treatment-atTime,
+        lab:field-risk-treatment-implementsRiskPlan ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select "SELECT ?this WHERE { ?this <https://w3id.org/cm-pharme/experimental/four-domain/profile> \"risk-treatment\" . }" ] .
+
+lab:shape-safety-reporting a sh:NodeShape ;
+    sh:class cmpe:AdverseEventReportingActivity ;
+    sh:property lab:field-safety-reporting-atTime,
+        lab:field-safety-reporting-reportsRecord ;
+    sh:sparql lab:distinct-AdverseEventReportingActivity-SourceRecord ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select "SELECT ?this WHERE { ?this <https://w3id.org/cm-pharme/experimental/four-domain/profile> \"safety-reporting\" . }" ] .
+
+lab:shape-safety-signal a sh:NodeShape ;
+    sh:class cmpe:Assertion ;
+    sh:property lab:field-safety-signal-citesSourceRecord,
+        lab:field-safety-signal-signalProduct,
+        lab:field-safety-signal-signalSubstance ;
+    sh:sparql lab:signal-target-required ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select "SELECT ?this WHERE { ?this <https://w3id.org/cm-pharme/experimental/four-domain/profile> \"safety-signal\" . }" ] .
+
+lab:shape-signal-assessment a sh:NodeShape ;
+    sh:class cmpe:SignalAssessmentActivity ;
+    sh:property lab:field-signal-assessment-signalAssessmentTarget ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select "SELECT ?this WHERE { ?this <https://w3id.org/cm-pharme/experimental/four-domain/profile> \"signal-assessment\" . }" ] .
+
+lab:shape-signal-result a sh:NodeShape ;
+    sh:class cmpe:Assertion ;
+    sh:property lab:field-signal-result-atTime,
+        lab:field-signal-result-pvResultAssessment,
+        lab:field-signal-result-pvResultSignal,
+        lab:field-signal-result-signalStatus ;
+    sh:sparql lab:distinct-SignalAssessmentActivity-Assertion,
+        lab:signal-result-agreement,
+        lab:signal-result-distinct ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select "SELECT ?this WHERE { ?this <https://w3id.org/cm-pharme/experimental/four-domain/profile> \"signal-result\" . }" ] .
+
+r:shape-attributed-signal-assessment a sh:NodeShape ;
+    sh:class cmpe:SignalAssessmentActivity ;
+    sh:property r:field-attributed-signal-assessment-assessmentOrganization ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select "SELECT ?this WHERE { ?this <https://w3id.org/cm-pharme/experimental/four-domain/profile> \"attributed-signal-assessment\" }" ] .
+
+r:shape-documented-partnership a sh:NodeShape ;
+    sh:class cmpe:StrategicPartnershipAgreement ;
+    sh:property r:field-documented-partnership-agreementCommitment ;
+    sh:sparql r:commitment-evidence-required,
+        r:commitment-participant-agreement ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select "SELECT ?this WHERE { ?this <https://w3id.org/cm-pharme/experimental/four-domain/profile> \"documented-partnership\" }" ] .
+
+r:shape-manufacturing-digital-service a sh:NodeShape ;
+    sh:class cmpe:ServiceOfferingSpecification ;
+    sh:property r:field-manufacturing-digital-service-digitalServiceActivity ;
+    sh:sparql r:service-component-agreement ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select "SELECT ?this WHERE { ?this <https://w3id.org/cm-pharme/experimental/four-domain/profile> \"manufacturing-digital-service\" }" ] .
+
+r:shape-pharma-service a sh:NodeShape ;
+    sh:class cmpe:ServiceOfferingSpecification ;
+    sh:property r:field-pharma-service-serviceCapability,
+        r:field-pharma-service-serviceFacility,
+        r:field-pharma-service-serviceProduct ;
+    sh:sparql r:pharma-service-context ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select "SELECT ?this WHERE { ?this <https://w3id.org/cm-pharme/experimental/four-domain/profile> \"pharma-service\" }" ] .
+
+r:shape-report-carrier a sh:NodeShape ;
+    sh:class cmpe:SourceRecord ;
+    sh:property r:field-report-carrier-carrierClaim,
+        r:field-report-carrier-caseIdentifier,
+        r:field-report-carrier-caseIdentifierScheme ;
+    sh:sparql r:carrier-not-claim ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select "SELECT ?this WHERE { ?this <https://w3id.org/cm-pharme/experimental/four-domain/profile> \"report-carrier\" }" ] .
+
+r:shape-risk-scenario a sh:NodeShape ;
+    sh:class cmpe:Assertion ;
+    sh:property r:field-risk-scenario-scenarioDependency,
+        r:field-risk-scenario-scenarioFacility ;
+    sh:sparql r:scenarioProduct-or-context-required ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select "SELECT ?this WHERE { ?this <https://w3id.org/cm-pharme/experimental/four-domain/profile> \"risk-scenario\" }" ] .
+
+lab:deployment-before-use a sh:SPARQLConstraint ;
+    sh:message "A deployment must not postdate its use." ;
+    sh:select "SELECT $this WHERE { $this <https://w3id.org/cm-pharme/experimental/four-domain/digitalActivityDeployment> ?d ; <https://w3id.org/cm-pharme/experimental/four-domain/atTime> ?t . ?d <https://w3id.org/cm-pharme/experimental/four-domain/atTime> ?dt . FILTER(?dt > ?t) }" .
+
+lab:distinct-AdverseEventReportingActivity-SourceRecord a sh:SPARQLConstraint ;
+    sh:message "Content and real-world bearer/occurrence must not be the same node." ;
+    sh:select "SELECT $this WHERE { $this a <https://w3id.org/cm-pharme/2.1/AdverseEventReportingActivity> , <https://w3id.org/cm-pharme/2.1/SourceRecord> . }" .
+
+lab:distinct-BusinessArchitectureView-Organization a sh:SPARQLConstraint ;
+    sh:message "Content and real-world bearer/occurrence must not be the same node." ;
+    sh:select "SELECT $this WHERE { $this a <https://w3id.org/cm-pharme/2.1/BusinessArchitectureView> , <https://w3id.org/cm-pharme/2.1/Organization> . }" .
+
+lab:distinct-RiskAssessmentActivity-Assertion a sh:SPARQLConstraint ;
+    sh:message "Content and real-world bearer/occurrence must not be the same node." ;
+    sh:select "SELECT $this WHERE { $this a <https://w3id.org/cm-pharme/2.1/RiskAssessmentActivity> , <https://w3id.org/cm-pharme/2.1/Assertion> . }" .
+
+lab:distinct-SignalAssessmentActivity-Assertion a sh:SPARQLConstraint ;
+    sh:message "Content and real-world bearer/occurrence must not be the same node." ;
+    sh:select "SELECT $this WHERE { $this a <https://w3id.org/cm-pharme/2.1/SignalAssessmentActivity> , <https://w3id.org/cm-pharme/2.1/Assertion> . }" .
+
+lab:distinct-SourceRecord-DigitalInformationSystemComponent a sh:SPARQLConstraint ;
+    sh:message "Content and real-world bearer/occurrence must not be the same node." ;
+    sh:select "SELECT $this WHERE { $this a <https://w3id.org/cm-pharme/2.1/SourceRecord> , <https://w3id.org/cm-pharme/2.1/DigitalInformationSystemComponent> . }" .
+
+lab:field-ba-partnership-c-partnershipParticipant sh:class cmpe:PartnerOrganizationRole ;
+    sh:minCount 2 ;
+    sh:path cmpe:partnershipParticipant .
+
+lab:field-ba-service-serviceCapability sh:class cmpe:EnterpriseCapability ;
+    sh:minCount 1 ;
+    sh:path lab:serviceCapability .
+
+lab:field-ba-view-viewOrganization sh:class cmpe:Organization ;
+    sh:minCount 1 ;
+    sh:path lab:viewOrganization .
+
+lab:field-ba-view-viewService sh:class cmpe:ServiceOfferingSpecification ;
+    sh:minCount 0 ;
+    sh:path lab:viewService .
+
+lab:field-deployment-atTime sh:datatype xsd:dateTime ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:path lab:atTime .
+
+lab:field-deployment-componentVersion sh:datatype xsd:string ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:path lab:componentVersion .
+
+lab:field-deployment-deploymentComponent sh:class cmpe:DigitalInformationSystemComponent ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:path lab:deploymentComponent .
+
+lab:field-deployment-deploymentOrganization sh:class cmpe:Organization ;
+    sh:minCount 1 ;
+    sh:path lab:deploymentOrganization .
+
+lab:field-digital-activity-atTime sh:datatype xsd:dateTime ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:path lab:atTime .
+
+lab:field-digital-activity-digitalActivityDeployment sh:class cmpe:SystemDeploymentActivity ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:path lab:digitalActivityDeployment .
+
+lab:field-digital-record-recordDigitalActivity sh:class cmpe:ProvenanceActivity ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:path lab:recordDigitalActivity .
+
+lab:field-digital-service-digitalServiceActivity sh:class cmpe:ProvenanceActivity ;
+    sh:minCount 1 ;
+    sh:path lab:digitalServiceActivity .
+
+lab:field-digital-service-digitalServiceComponent sh:class cmpe:DigitalInformationSystemComponent ;
+    sh:minCount 1 ;
+    sh:path lab:digitalServiceComponent .
+
+lab:field-pv-requirement-pvRequirementJurisdiction sh:class cmpe:RegulatoryJurisdiction ;
+    sh:minCount 1 ;
+    sh:path lab:pvRequirementJurisdiction .
+
+lab:field-pv-surveillance-surveillanceRequirement sh:class cmpe:PharmacovigilanceRequirement ;
+    sh:minCount 1 ;
+    sh:path lab:surveillanceRequirement .
+
+lab:field-pv-surveillance-surveillanceSource sh:class cmpe:SourceRecord ;
+    sh:minCount 1 ;
+    sh:path lab:surveillanceSource .
+
+lab:field-risk-assessment-assessmentScenario sh:class cmpe:Assertion ;
+    sh:minCount 1 ;
+    sh:path lab:assessmentScenario .
+
+lab:field-risk-plan-planRiskResult sh:class cmpe:Assertion ;
+    sh:minCount 1 ;
+    sh:path lab:planRiskResult .
+
+lab:field-risk-result-atTime sh:datatype xsd:dateTime ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:path lab:atTime .
+
+lab:field-risk-result-citesSourceRecord sh:class cmpe:SourceRecord ;
+    sh:minCount 1 ;
+    sh:path lab:citesSourceRecord .
+
+lab:field-risk-result-conclusion sh:datatype xsd:string ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:path lab:conclusion .
+
+lab:field-risk-result-resultAssessment sh:class cmpe:RiskAssessmentActivity ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:path lab:resultAssessment .
+
+lab:field-risk-review-atTime sh:datatype xsd:dateTime ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:path lab:atTime .
+
+lab:field-risk-review-reviewNewResult sh:class cmpe:Assertion ;
+    sh:minCount 1 ;
+    sh:path lab:reviewNewResult .
+
+lab:field-risk-review-reviewPriorResult sh:class cmpe:Assertion ;
+    sh:minCount 1 ;
+    sh:path lab:reviewPriorResult .
+
+lab:field-risk-scenario-scenarioProduct sh:class cmpe:MedicinalProduct ;
+    sh:minCount 0 ;
+    sh:path lab:scenarioProduct .
+
+lab:field-risk-treatment-atTime sh:datatype xsd:dateTime ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:path lab:atTime .
+
+lab:field-risk-treatment-implementsRiskPlan sh:class cmpe:RiskTreatmentPlan ;
+    sh:minCount 1 ;
+    sh:path lab:implementsRiskPlan .
+
+lab:field-safety-reporting-atTime sh:datatype xsd:dateTime ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:path lab:atTime .
+
+lab:field-safety-reporting-reportsRecord sh:class cmpe:SourceRecord ;
+    sh:minCount 1 ;
+    sh:path lab:reportsRecord .
+
+lab:field-safety-signal-citesSourceRecord sh:class cmpe:SourceRecord ;
+    sh:minCount 1 ;
+    sh:path lab:citesSourceRecord .
+
+lab:field-safety-signal-signalProduct sh:class cmpe:MedicinalProduct ;
+    sh:minCount 0 ;
+    sh:path lab:signalProduct .
+
+lab:field-safety-signal-signalSubstance sh:class cmpe:PharmaceuticalSubstance ;
+    sh:minCount 0 ;
+    sh:path lab:signalSubstance .
+
+lab:field-signal-assessment-signalAssessmentTarget sh:class cmpe:Assertion ;
+    sh:minCount 1 ;
+    sh:path lab:signalAssessmentTarget .
+
+lab:field-signal-result-atTime sh:datatype xsd:dateTime ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:path lab:atTime .
+
+lab:field-signal-result-pvResultAssessment sh:class cmpe:SignalAssessmentActivity ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:path lab:pvResultAssessment .
+
+lab:field-signal-result-pvResultSignal sh:class cmpe:Assertion ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:path lab:pvResultSignal .
+
+lab:field-signal-result-signalStatus sh:datatype xsd:string ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:path lab:signalStatus .
+
+lab:partners-not-known-aliases a sh:SPARQLConstraint ;
+    sh:message "Two known aliases do not establish two distinct organizations." ;
+    sh:select "SELECT DISTINCT $this WHERE { $this <https://w3id.org/cm-pharme/2.1/partnershipParticipant> ?a, ?b . ?a <http://www.w3.org/2002/07/owl#sameAs> ?b . FILTER(?a != ?b) }" .
+
+lab:review-time-order a sh:SPARQLConstraint ;
+    sh:message "New result must not predate the prior result." ;
+    sh:select "SELECT $this WHERE { $this <https://w3id.org/cm-pharme/experimental/four-domain/reviewPriorResult> ?old ; <https://w3id.org/cm-pharme/experimental/four-domain/reviewNewResult> ?new . ?old <https://w3id.org/cm-pharme/experimental/four-domain/atTime> ?a . ?new <https://w3id.org/cm-pharme/experimental/four-domain/atTime> ?b . FILTER(?b <= ?a) }" .
+
+lab:signal-result-agreement a sh:SPARQLConstraint ;
+    sh:message "The recorded result and producing assessment must refer to the same signal." ;
+    sh:select "SELECT $this WHERE { $this <https://w3id.org/cm-pharme/experimental/four-domain/pvResultSignal> ?s ; <https://w3id.org/cm-pharme/experimental/four-domain/pvResultAssessment> ?a . FILTER NOT EXISTS { ?a <https://w3id.org/cm-pharme/experimental/four-domain/signalAssessmentTarget> ?s } }" .
+
+lab:signal-result-distinct a sh:SPARQLConstraint ;
+    sh:message "An assessment result must not be its own assessed signal or a known alias of it." ;
+    sh:select "SELECT $this WHERE { $this <https://w3id.org/cm-pharme/experimental/four-domain/pvResultSignal> ?s . FILTER($this = ?s || EXISTS { $this <http://www.w3.org/2002/07/owl#sameAs> ?s } || EXISTS { ?s <http://www.w3.org/2002/07/owl#sameAs> $this }) }" .
+
+lab:signal-target-required a sh:SPARQLConstraint ;
+    sh:message "A signal must name a product or substance." ;
+    sh:select "SELECT $this WHERE { FILTER NOT EXISTS { $this <https://w3id.org/cm-pharme/experimental/four-domain/signalProduct> ?p } FILTER NOT EXISTS { $this <https://w3id.org/cm-pharme/experimental/four-domain/signalSubstance> ?s } }" .
+
+r:carrier-not-claim a sh:SPARQLConstraint ;
+    sh:message "A carrier is not its own carried claim or a known alias of that claim." ;
+    sh:select "SELECT $this WHERE { $this <https://w3id.org/cm-pharme/experimental/refinement/carrierClaim> ?c . FILTER($this = ?c || EXISTS { $this <http://www.w3.org/2002/07/owl#sameAs> ?c } || EXISTS { ?c <http://www.w3.org/2002/07/owl#sameAs> $this }) }" .
+
+r:commitment-evidence-required a sh:SPARQLConstraint ;
+    sh:message "Commitment requires the existing EvidenceSupport/SourceRecord pattern." ;
+    sh:select "SELECT $this WHERE { $this <https://w3id.org/cm-pharme/experimental/refinement/agreementCommitment> ?c . FILTER NOT EXISTS { ?e a <https://w3id.org/cm-pharme/2.1/EvidenceSupport> ; <https://w3id.org/cm-pharme/2.1/evidenceAssertion> ?c ; <https://w3id.org/cm-pharme/2.1/evidenceRecord> ?s . ?c a <https://w3id.org/cm-pharme/2.1/SupportedAssertionRole> . ?s a <https://w3id.org/cm-pharme/2.1/SourceRecord> , <https://w3id.org/cm-pharme/2.1/EvidenceSourceRecordRole> . } }" .
+
+r:commitment-participant-agreement a sh:SPARQLConstraint ;
+    sh:message "The commitment actor set and agreement participant set must agree in this bounded admission profile." ;
+    sh:select "SELECT $this WHERE { $this <https://w3id.org/cm-pharme/experimental/refinement/agreementCommitment> ?c . { ?c <https://w3id.org/cm-pharme/experimental/refinement/commitmentActor> ?org . FILTER NOT EXISTS { $this <https://w3id.org/cm-pharme/2.1/partnershipParticipant> ?org } } UNION { $this <https://w3id.org/cm-pharme/2.1/partnershipParticipant> ?org . FILTER NOT EXISTS { ?c <https://w3id.org/cm-pharme/experimental/refinement/commitmentActor> ?org } } }" .
+
+r:field-attributed-signal-assessment-assessmentOrganization sh:class cmpe:Organization ;
+    sh:minCount 1 ;
+    sh:path r:assessmentOrganization .
+
+r:field-commitment-assertion-commitmentActor sh:class cmpe:Organization ;
+    sh:minCount 2 ;
+    sh:path r:commitmentActor .
+
+r:field-commitment-assertion-commitmentText sh:datatype xsd:string ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:path r:commitmentText .
+
+r:field-documented-partnership-agreementCommitment sh:class cmpe:Assertion ;
+    sh:minCount 1 ;
+    sh:node r:shape-commitment-assertion ;
+    sh:path r:agreementCommitment .
+
+r:field-manufacturing-context-manufacturingFacility sh:class cmpe:Facility ;
+    sh:minCount 1 ;
+    sh:path r:manufacturingFacility .
+
+r:field-manufacturing-context-manufacturingProduct sh:class cmpe:MedicinalProduct ;
+    sh:minCount 1 ;
+    sh:path r:manufacturingProduct .
+
+r:field-manufacturing-data-activity-activityResponsibleOrganization sh:class cmpe:Organization ;
+    sh:minCount 1 ;
+    sh:path r:activityResponsibleOrganization .
+
+r:field-manufacturing-data-activity-supportsManufacturing sh:class cmpe:ManufacturingActivity ;
+    sh:minCount 1 ;
+    sh:node r:shape-manufacturing-context ;
+    sh:path r:supportsManufacturing .
+
+r:field-manufacturing-digital-service-digitalServiceActivity sh:class cmpe:ProvenanceActivity ;
+    sh:minCount 1 ;
+    sh:node r:shape-manufacturing-data-activity ;
+    sh:path lab:digitalServiceActivity .
+
+r:field-pharma-service-serviceCapability sh:class cmpe:EnterpriseCapability ;
+    sh:minCount 1 ;
+    sh:path lab:serviceCapability .
+
+r:field-pharma-service-serviceFacility sh:class cmpe:Facility ;
+    sh:minCount 0 ;
+    sh:path r:serviceFacility .
+
+r:field-pharma-service-serviceProduct sh:class cmpe:MedicinalProduct ;
+    sh:minCount 0 ;
+    sh:path r:serviceProduct .
+
+r:field-report-carrier-carrierClaim sh:class cmpe:Assertion ;
+    sh:minCount 1 ;
+    sh:node r:shape-report-claim ;
+    sh:path r:carrierClaim .
+
+r:field-report-carrier-caseIdentifier sh:datatype xsd:string ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:path r:caseIdentifier .
+
+r:field-report-carrier-caseIdentifierScheme sh:datatype xsd:string ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:path r:caseIdentifierScheme .
+
+r:field-report-claim-claimText sh:datatype xsd:string ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:path r:claimText .
+
+r:field-risk-scenario-scenarioDependency sh:class cmpe:SupplyDependency ;
+    sh:minCount 0 ;
+    sh:path r:scenarioDependency .
+
+r:field-risk-scenario-scenarioFacility sh:class cmpe:Facility ;
+    sh:minCount 0 ;
+    sh:path r:scenarioFacility .
+
+r:pharma-service-context a sh:SPARQLConstraint ;
+    sh:message "A pharmaceutical service needs a product or facility context." ;
+    sh:select "SELECT $this WHERE { FILTER NOT EXISTS { $this <https://w3id.org/cm-pharme/experimental/refinement/serviceProduct> ?p } FILTER NOT EXISTS { $this <https://w3id.org/cm-pharme/experimental/refinement/serviceFacility> ?f } }" .
+
+r:scenarioProduct-or-context-required a sh:SPARQLConstraint ;
+    sh:message "A product, facility or dependency context is required." ;
+    sh:select "SELECT $this WHERE { FILTER NOT EXISTS { $this <https://w3id.org/cm-pharme/experimental/four-domain/scenarioProduct> ?p } FILTER NOT EXISTS { $this <https://w3id.org/cm-pharme/experimental/refinement/scenarioFacility> ?f } FILTER NOT EXISTS { $this <https://w3id.org/cm-pharme/experimental/refinement/scenarioDependency> ?d } }" .
+
+r:service-component-agreement a sh:SPARQLConstraint ;
+    sh:message "Every supported activity deployment component must be listed as a service component." ;
+    sh:select "SELECT $this WHERE { $this <https://w3id.org/cm-pharme/experimental/four-domain/digitalServiceActivity> ?a . ?a <https://w3id.org/cm-pharme/experimental/four-domain/digitalActivityDeployment>/<https://w3id.org/cm-pharme/experimental/four-domain/deploymentComponent> ?c . FILTER NOT EXISTS { $this <https://w3id.org/cm-pharme/experimental/four-domain/digitalServiceComponent> ?c } }" .
+
+r:shape-commitment-assertion a sh:NodeShape ;
+    sh:class cmpe:Assertion ;
+    sh:property r:field-commitment-assertion-commitmentActor,
+        r:field-commitment-assertion-commitmentText ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select "SELECT ?this WHERE { ?this <https://w3id.org/cm-pharme/experimental/four-domain/profile> \"commitment-assertion\" }" ] .
+
+r:shape-manufacturing-context a sh:NodeShape ;
+    sh:class cmpe:ManufacturingActivity ;
+    sh:property r:field-manufacturing-context-manufacturingFacility,
+        r:field-manufacturing-context-manufacturingProduct ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select "SELECT ?this WHERE { ?this <https://w3id.org/cm-pharme/experimental/four-domain/profile> \"manufacturing-context\" }" ] .
+
+r:shape-manufacturing-data-activity a sh:NodeShape ;
+    sh:class cmpe:ProvenanceActivity ;
+    sh:property r:field-manufacturing-data-activity-activityResponsibleOrganization,
+        r:field-manufacturing-data-activity-supportsManufacturing ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select "SELECT ?this WHERE { ?this <https://w3id.org/cm-pharme/experimental/four-domain/profile> \"manufacturing-data-activity\" }" ] .
+
+r:shape-report-claim a sh:NodeShape ;
+    sh:class cmpe:Assertion ;
+    sh:property r:field-report-claim-claimText ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select "SELECT ?this WHERE { ?this <https://w3id.org/cm-pharme/experimental/four-domain/profile> \"report-claim\" }" ] .

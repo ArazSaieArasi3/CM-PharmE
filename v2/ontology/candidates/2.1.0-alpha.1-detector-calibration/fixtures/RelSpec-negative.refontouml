@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<RefOntoUML:Package xmlns:RefOntoUML="http://nemo.inf.ufes.br/ontouml/refontouml" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmi:version="2.0" xmi:id="pkg" name="RelSpec-negative" visibility="public">
+  <packagedElement xsi:type="RefOntoUML:Kind" xmi:id="Person" name="Person" visibility="public" isAbstract="false" />
+  <packagedElement xsi:type="RefOntoUML:Kind" xmi:id="Product" name="Product" visibility="public" isAbstract="false" />
+  <packagedElement xsi:type="RefOntoUML:Role" xmi:id="Worker" name="Worker" visibility="public" isAbstract="false">
+    <generalization xmi:id="WorkerToPerson" general="Person" />
+  </packagedElement>
+  <packagedElement xsi:type="RefOntoUML:SubKind" xmi:id="Medicine" name="Medicine" visibility="public" isAbstract="false">
+    <generalization xmi:id="MedicineToProduct" general="Product" />
+  </packagedElement>
+  <packagedElement xsi:type="RefOntoUML:Association" xmi:id="general" name="general" visibility="public" memberEnd="generalA generalB">
+    <ownedEnd xmi:id="generalA" name="generalA" type="Person" association="general" aggregation="none" visibility="public">
+      <lowerValue xsi:type="RefOntoUML:LiteralInteger" xmi:id="generalAlower" value="0" />
+      <upperValue xsi:type="RefOntoUML:LiteralUnlimitedNatural" xmi:id="generalAupper" value="1" />
+    </ownedEnd>
+    <ownedEnd xmi:id="generalB" name="generalB" type="Product" association="general" aggregation="none" visibility="public">
+      <lowerValue xsi:type="RefOntoUML:LiteralInteger" xmi:id="generalBlower" value="0" />
+      <upperValue xsi:type="RefOntoUML:LiteralUnlimitedNatural" xmi:id="generalBupper" value="-1" />
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="RefOntoUML:Association" xmi:id="special" name="special" visibility="public" memberEnd="specialA specialB">
+    <ownedEnd xmi:id="specialA" name="specialA" type="Worker" association="special" aggregation="none" visibility="public" subsettedProperty="generalA">
+      <lowerValue xsi:type="RefOntoUML:LiteralInteger" xmi:id="specialAlower" value="0" />
+      <upperValue xsi:type="RefOntoUML:LiteralUnlimitedNatural" xmi:id="specialAupper" value="1" />
+    </ownedEnd>
+    <ownedEnd xmi:id="specialB" name="specialB" type="Medicine" association="special" aggregation="none" visibility="public" subsettedProperty="generalB">
+      <lowerValue xsi:type="RefOntoUML:LiteralInteger" xmi:id="specialBlower" value="0" />
+      <upperValue xsi:type="RefOntoUML:LiteralUnlimitedNatural" xmi:id="specialBupper" value="-1" />
+    </ownedEnd>
+  </packagedElement>
+</RefOntoUML:Package>

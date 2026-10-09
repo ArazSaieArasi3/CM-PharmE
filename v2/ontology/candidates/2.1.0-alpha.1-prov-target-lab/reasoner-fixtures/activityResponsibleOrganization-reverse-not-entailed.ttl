@@ -1,0 +1,11 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix r: <https://w3id.org/cm-pharme/experimental/refinement/> .
+@prefix t1: <urn:cmpe-prov-target:> .
+
+t1:x prov:wasAssociatedWith t1:y .
+
+[] a owl:NegativePropertyAssertion ;
+    owl:assertionProperty r:activityResponsibleOrganization ;
+    owl:sourceIndividual t1:x ;
+    owl:targetIndividual t1:y .

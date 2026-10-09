@@ -1,0 +1,45 @@
+{
+  "owlready2_version": "0.50",
+  "java": "openjdk version \"17.0.20\" 2026-07-21\nOpenJDK Runtime Environment (build 17.0.20+8-1-24.04-Ubuntu)\nOpenJDK 64-Bit Server VM (build 17.0.20+8-1-24.04-Ubuntu, mixed mode, sharing)\n",
+  "inputs": {
+    "schema-only.rdf": "04c288a5b54cb78845d73a3105eb6da37acaf17e051066537878f8a9081da0e3",
+    "reasoner-input.rdf": "f410218fa93e3deed4da93c39270c068b27f37a70e6507f206654592491672fe"
+  },
+  "reasoners": [
+    {
+      "engine": "HermiT",
+      "input": "schema-only.rdf",
+      "consistent": true,
+      "unsatisfiable_named_classes": [],
+      "status": "PASS"
+    },
+    {
+      "engine": "HermiT",
+      "input": "reasoner-input.rdf",
+      "consistent": true,
+      "unsatisfiable_named_classes": [],
+      "status": "PASS"
+    },
+    {
+      "engine": "Pellet 2.3.1 through OWLAPIv3",
+      "input": "schema-only.rdf",
+      "status": "PASS",
+      "details": "IN_OWL2_DL=true\nVIOLATIONS=0\nCONSISTENT=true\nUNSAT_CLASSES=0\n",
+      "stderr": ""
+    },
+    {
+      "engine": "Pellet 2.3.1 through OWLAPIv3",
+      "input": "reasoner-input.rdf",
+      "status": "PASS",
+      "details": "IN_OWL2_DL=true\nVIOLATIONS=0\nCONSISTENT=true\nUNSAT_CLASSES=0\n",
+      "stderr": ""
+    }
+  ],
+  "owl2_dl_profile": {
+    "status": "PASS",
+    "engine": "OWLAPI 3.4.3 bundled with Owlready2 0.50",
+    "scope": "schema and positive synthetic witnesses"
+  },
+  "execution_note": "Owlready2 Pellet/Jena wrapper initially could not start on Java 17 because its bundled Jena parser requires Java 25. Re-run uses the supported Pellet OWLAPIv3 loader directly; no jar patch and no ignored ontology axiom.",
+  "scope": "G3a schema plus retained G2 ABox and twelve explicit non-entailment countermodels; not full role grounding or official OntoUML detection."
+}

@@ -1,0 +1,1075 @@
+{
+  "version": "2.1.0-alpha.1-g3a-review",
+  "concepts": [
+    {
+      "id": "Address",
+      "iri": "https://w3id.org/cm-pharme/2.1/Address",
+      "stereotype": "Datatype",
+      "parents": [],
+      "origin": "inherited review candidate"
+    },
+    {
+      "id": "AdministrativeRegion",
+      "iri": "https://w3id.org/cm-pharme/2.1/AdministrativeRegion",
+      "stereotype": "Subkind",
+      "parents": [
+        "GeographicFeature"
+      ],
+      "origin": "inherited review candidate"
+    },
+    {
+      "id": "AdverseEventReportingActivity",
+      "iri": "https://w3id.org/cm-pharme/2.1/AdverseEventReportingActivity",
+      "stereotype": "Event",
+      "parents": [],
+      "origin": "inherited review candidate"
+    },
+    {
+      "id": "AlternativeMedicinalProductRole",
+      "iri": "https://w3id.org/cm-pharme/2.1/AlternativeMedicinalProductRole",
+      "stereotype": "Role",
+      "parents": [
+        "MedicinalProduct"
+      ],
+      "origin": "inherited review candidate"
+    },
+    {
+      "id": "AlternativeMedicineAssignment",
+      "iri": "https://w3id.org/cm-pharme/2.1/AlternativeMedicineAssignment",
+      "stereotype": "Relator",
+      "parents": [],
+      "origin": "inherited review candidate"
+    },
+    {
+      "id": "AppliedClassificationEntryRole",
+      "iri": "https://w3id.org/cm-pharme/2.1/AppliedClassificationEntryRole",
+      "stereotype": "Role",
+      "parents": [
+        "ClassificationEntry"
+      ],
+      "origin": "G1 approved refinement"
+    },
+    {
+      "id": "Assertion",
+      "iri": "https://w3id.org/cm-pharme/2.1/Assertion",
+      "stereotype": "Kind",
+      "parents": [],
+      "origin": "inherited review candidate"
+    },
+    {
+      "id": "AuthorizedFacilityRole",
+      "iri": "https://w3id.org/cm-pharme/2.1/AuthorizedFacilityRole",
+      "stereotype": "Role",
+      "parents": [
+        "Facility",
+        "AuthorizedParty"
+      ],
+      "origin": "G1 approved refinement"
+    },
+    {
+      "id": "AuthorizedOrganizationRole",
+      "iri": "https://w3id.org/cm-pharme/2.1/AuthorizedOrganizationRole",
+      "stereotype": "Role",
+      "parents": [
+        "Organization",
+        "AuthorizedParty"
+      ],
+      "origin": "G1 approved refinement"
+    },
+    {
+      "id": "AuthorizedParty",
+      "iri": "https://w3id.org/cm-pharme/2.1/AuthorizedParty",
+      "stereotype": "RoleMixin",
+      "parents": [],
+      "origin": "G1 approved refinement"
+    },
+    {
+      "id": "AuthorizingAuthorityRole",
+      "iri": "https://w3id.org/cm-pharme/2.1/AuthorizingAuthorityRole",
+      "stereotype": "Role",
+      "parents": [
+        "RegulatoryAuthorityRole"
+      ],
+      "origin": "G1 approved refinement"
+    },
+    {
+      "id": "AvailabilityObservationResult",
+      "iri": "https://w3id.org/cm-pharme/2.1/AvailabilityObservationResult",
+      "stereotype": "Subkind",
+      "parents": [
+        "ObservationResult"
+      ],
+      "origin": "inherited review candidate"
+    },
+    {
+      "id": "BusinessArchitectureView",
+      "iri": "https://w3id.org/cm-pharme/2.1/BusinessArchitectureView",
+      "stereotype": "Kind",
+      "parents": [],
+      "origin": "inherited review candidate"
+    },
+    {
+      "id": "ClassificationEntry",
+      "iri": "https://w3id.org/cm-pharme/2.1/ClassificationEntry",
+      "stereotype": "Kind",
+      "parents": [],
+      "origin": "inherited review candidate"
+    },
+    {
+      "id": "ClassifiedEntity",
+      "iri": "https://w3id.org/cm-pharme/2.1/ClassifiedEntity",
+      "stereotype": "RoleMixin",
+      "parents": [],
+      "origin": "G1 approved refinement"
+    },
+    {
+      "id": "ClassifiedMedicinalProductRole",
+      "iri": "https://w3id.org/cm-pharme/2.1/ClassifiedMedicinalProductRole",
+      "stereotype": "Role",
+      "parents": [
+        "MedicinalProduct",
+        "ClassifiedEntity"
+      ],
+      "origin": "G1 approved refinement"
+    },
+    {
+      "id": "ClassifiedPharmaceuticalSubstanceRole",
+      "iri": "https://w3id.org/cm-pharme/2.1/ClassifiedPharmaceuticalSubstanceRole",
+      "stereotype": "Role",
+      "parents": [
+        "PharmaceuticalSubstance",
+        "ClassifiedEntity"
+      ],
+      "origin": "G1 approved refinement"
+    },
+    {
+      "id": "ContextualMedicineClassificationAssignment",
+      "iri": "https://w3id.org/cm-pharme/2.1/ContextualMedicineClassificationAssignment",
+      "stereotype": "Subkind",
+      "parents": [
+        "ProductClassificationAssignment"
+      ],
+      "origin": "inherited review candidate"
+    },
+    {
+      "id": "Country",
+      "iri": "https://w3id.org/cm-pharme/2.1/Country",
+      "stereotype": "Subkind",
+      "parents": [
+        "GeographicFeature"
+      ],
+      "origin": "inherited review candidate"
+    },
+    {
+      "id": "CriticalMedicineClassification",
+      "iri": "https://w3id.org/cm-pharme/2.1/CriticalMedicineClassification",
+      "stereotype": "Subkind",
+      "parents": [
+        "ContextualMedicineClassificationAssignment"
+      ],
+      "origin": "inherited review candidate"
+    },
+    {
+      "id": "DataQualityFinding",
+      "iri": "https://w3id.org/cm-pharme/2.1/DataQualityFinding",
+      "stereotype": "Subkind",
+      "parents": [
+        "Assertion"
+      ],
+      "origin": "inherited review candidate"
+    },
+    {
+      "id": "DataSourceResource",
+      "iri": "https://w3id.org/cm-pharme/2.1/DataSourceResource",
+      "stereotype": "Kind",
+      "parents": [],
+      "origin": "inherited review candidate"
+    },
+    {
+      "id": "Dataset",
+      "iri": "https://w3id.org/cm-pharme/2.1/Dataset",
+      "stereotype": "Kind",
+      "parents": [],
+      "origin": "inherited review candidate"
+    },
+    {
+      "id": "DatasetRelease",
+      "iri": "https://w3id.org/cm-pharme/2.1/DatasetRelease",
+      "stereotype": "Kind",
+      "parents": [],
+      "origin": "inherited review candidate"
+    },
+    {
+      "id": "DemandObservationResult",
+      "iri": "https://w3id.org/cm-pharme/2.1/DemandObservationResult",
+      "stereotype": "Subkind",
+      "parents": [
+        "ObservationResult"
+      ],
+      "origin": "inherited review candidate"
+    },
+    {
+      "id": "DependentEntity",
+      "iri": "https://w3id.org/cm-pharme/2.1/DependentEntity",
+      "stereotype": "RoleMixin",
+      "parents": [],
+      "origin": "G1 approved refinement"
+    },
+    {
+      "id": "DependentFacilityRole",
+      "iri": "https://w3id.org/cm-pharme/2.1/DependentFacilityRole",
+      "stereotype": "Role",
+      "parents": [
+        "Facility",
+        "DependentEntity"
+      ],
+      "origin": "G1 approved refinement"
+    },
+    {
+      "id": "DependentMedicinalProductRole",
+      "iri": "https://w3id.org/cm-pharme/2.1/DependentMedicinalProductRole",
+      "stereotype": "Role",
+      "parents": [
+        "MedicinalProduct",
+        "DependentEntity"
+      ],
+      "origin": "G1 approved refinement"
+    },
+    {
+      "id": "DependentOrganizationRole",
+      "iri": "https://w3id.org/cm-pharme/2.1/DependentOrganizationRole",
+      "stereotype": "Role",
+      "parents": [
+        "Organization",
+        "DependentEntity"
+      ],
+      "origin": "G1 approved refinement"
+    },
+    {
+      "id": "DiagnosisClassificationReference",
+      "iri": "https://w3id.org/cm-pharme/2.1/DiagnosisClassificationReference",
+      "stereotype": "Kind",
+      "parents": [],
+      "origin": "inherited review candidate"
+    },
+    {
+      "id": "DigitalInformationSystemComponent",
+      "iri": "https://w3id.org/cm-pharme/2.1/DigitalInformationSystemComponent",
+      "stereotype": "Kind",
+      "parents": [],
+      "origin": "inherited review candidate"
+    },
+    {
+      "id": "DisruptionEvent",
+      "iri": "https://w3id.org/cm-pharme/2.1/DisruptionEvent",
+      "stereotype": "Event",
+      "parents": [],
+      "origin": "inherited review candidate"
+    },
+    {
+      "id": "DistributionLogisticsActivity",
+      "iri": "https://w3id.org/cm-pharme/2.1/DistributionLogisticsActivity",
+      "stereotype": "Event",
+      "parents": [],
+      "origin": "inherited review candidate"
+    },
+    {
+      "id": "DistributionSiteRole",
+      "iri": "https://w3id.org/cm-pharme/2.1/DistributionSiteRole",
+      "stereotype": "Role",
+      "parents": [
+        "Facility",
+        "EcosystemParticipant"
+      ],
+      "origin": "inherited review candidate"
+    },
+    {
+      "id": "DosageFormSpecification",
+      "iri": "https://w3id.org/cm-pharme/2.1/DosageFormSpecification",
+      "stereotype": "Kind",
+      "parents": [],
+      "origin": "inherited review candidate"
+    },
+    {
+      "id": "EcosystemParticipant",
+      "iri": "https://w3id.org/cm-pharme/2.1/EcosystemParticipant",
+      "stereotype": "RoleMixin",
+      "parents": [],
+      "origin": "inherited review candidate"
+    },
+    {
+      "id": "EnterpriseCapability",
+      "iri": "https://w3id.org/cm-pharme/2.1/EnterpriseCapability",
+      "stereotype": "Mode",
+      "parents": [],
+      "origin": "inherited review candidate"
+    },
+    {
+      "id": "EntityMatchAssertion",
+      "iri": "https://w3id.org/cm-pharme/2.1/EntityMatchAssertion",
+      "stereotype": "Subkind",
+      "parents": [
+        "Assertion"
+      ],
+      "origin": "inherited review candidate"
+    },
+    {
+      "id": "EssentialMedicineClassification",
+      "iri": "https://w3id.org/cm-pharme/2.1/EssentialMedicineClassification",
+      "stereotype": "Subkind",
+      "parents": [
+        "ContextualMedicineClassificationAssignment"
+      ],
+      "origin": "inherited review candidate"
+    },
+    {
+      "id": "EstablishmentRegistration",
+      "iri": "https://w3id.org/cm-pharme/2.1/EstablishmentRegistration",
+      "stereotype": "Relator",
+      "parents": [],
+      "origin": "inherited review candidate"
+    },
+    {
+      "id": "EvidenceItem",
+      "iri": "https://w3id.org/cm-pharme/2.1/EvidenceItem",
+      "stereotype": "RoleMixin",
+      "parents": [],
+      "origin": "inherited review candidate"
+    },
+    {
+      "id": "EvidenceObservationResultRole",
+      "iri": "https://w3id.org/cm-pharme/2.1/EvidenceObservationResultRole",
+      "stereotype": "Role",
+      "parents": [
+        "ObservationResult",
+        "EvidenceItem"
+      ],
+      "origin": "G1 approved refinement"
+    },
+    {
+      "id": "EvidenceSourceRecordRole",
+      "iri": "https://w3id.org/cm-pharme/2.1/EvidenceSourceRecordRole",
+      "stereotype": "Role",
+      "parents": [
+        "SourceRecord",
+        "EvidenceItem"
+      ],
+      "origin": "G1 approved refinement"
+    },
+    {
+      "id": "EvidenceSupport",
+      "iri": "https://w3id.org/cm-pharme/2.1/EvidenceSupport",
+      "stereotype": "Relator",
+      "parents": [],
+      "origin": "inherited review candidate"
+    },
+    {
+      "id": "Facility",
+      "iri": "https://w3id.org/cm-pharme/2.1/Facility",
+      "stereotype": "Kind",
+      "parents": [],
+      "origin": "inherited review candidate"
+    },
+    {
+      "id": "FacilityOperation",
+      "iri": "https://w3id.org/cm-pharme/2.1/FacilityOperation",
+      "stereotype": "Relator",
+      "parents": [],
+      "origin": "inherited review candidate"
+    },
+    {
+      "id": "GeographicFeature",
+      "iri": "https://w3id.org/cm-pharme/2.1/GeographicFeature",
+      "stereotype": "Kind",
+      "parents": [],
+      "origin": "inherited review candidate"
+    },
+    {
+      "id": "GeospatialPosition",
+      "iri": "https://w3id.org/cm-pharme/2.1/GeospatialPosition",
+      "stereotype": "Datatype",
+      "parents": [],
+      "origin": "inherited review candidate"
+    },
+    {
+      "id": "GovernedEntity",
+      "iri": "https://w3id.org/cm-pharme/2.1/GovernedEntity",
+      "stereotype": "RoleMixin",
+      "parents": [],
+      "origin": "G1 approved refinement"
+    },
+    {
+      "id": "GovernedFacilityRole",
+      "iri": "https://w3id.org/cm-pharme/2.1/GovernedFacilityRole",
+      "stereotype": "Role",
+      "parents": [
+        "Facility",
+        "GovernedEntity"
+      ],
+      "origin": "G1 approved refinement"
+    },
+    {
+      "id": "GovernedOrganizationRole",
+      "iri": "https://w3id.org/cm-pharme/2.1/GovernedOrganizationRole",
+      "stereotype": "Role",
+      "parents": [
+        "Organization",
+        "GovernedEntity"
+      ],
+      "origin": "G1 approved refinement"
+    },
+    {
+      "id": "IdentifiedEntity",
+      "iri": "https://w3id.org/cm-pharme/2.1/IdentifiedEntity",
+      "stereotype": "RoleMixin",
+      "parents": [],
+      "origin": "G1 approved refinement"
+    },
+    {
+      "id": "IdentifiedFacilityRole",
+      "iri": "https://w3id.org/cm-pharme/2.1/IdentifiedFacilityRole",
+      "stereotype": "Role",
+      "parents": [
+        "Facility",
+        "IdentifiedEntity"
+      ],
+      "origin": "G1 approved refinement"
+    },
+    {
+      "id": "IdentifiedGeographicFeatureRole",
+      "iri": "https://w3id.org/cm-pharme/2.1/IdentifiedGeographicFeatureRole",
+      "stereotype": "Role",
+      "parents": [
+        "GeographicFeature",
+        "IdentifiedEntity"
+      ],
+      "origin": "G1 approved refinement"
+    },
+    {
+      "id": "IdentifiedMedicinalProductPresentationRole",
+      "iri": "https://w3id.org/cm-pharme/2.1/IdentifiedMedicinalProductPresentationRole",
+      "stereotype": "Role",
+      "parents": [
+        "MedicinalProductPresentation",
+        "IdentifiedEntity"
+      ],
+      "origin": "G1 approved refinement"
+    },
+    {
+      "id": "IdentifiedMedicinalProductRole",
+      "iri": "https://w3id.org/cm-pharme/2.1/IdentifiedMedicinalProductRole",
+      "stereotype": "Role",
+      "parents": [
+        "MedicinalProduct",
+        "IdentifiedEntity"
+      ],
+      "origin": "G1 approved refinement"
+    },
+    {
+      "id": "IdentifiedOrganizationRole",
+      "iri": "https://w3id.org/cm-pharme/2.1/IdentifiedOrganizationRole",
+      "stereotype": "Role",
+      "parents": [
+        "Organization",
+        "IdentifiedEntity"
+      ],
+      "origin": "G1 approved refinement"
+    },
+    {
+      "id": "IdentifiedPharmaceuticalSubstanceRole",
+      "iri": "https://w3id.org/cm-pharme/2.1/IdentifiedPharmaceuticalSubstanceRole",
+      "stereotype": "Role",
+      "parents": [
+        "PharmaceuticalSubstance",
+        "IdentifiedEntity"
+      ],
+      "origin": "G1 approved refinement"
+    },
+    {
+      "id": "IdentifierAssignment",
+      "iri": "https://w3id.org/cm-pharme/2.1/IdentifierAssignment",
+      "stereotype": "Relator",
+      "parents": [],
+      "origin": "inherited review candidate"
+    },
+    {
+      "id": "IdentifierScheme",
+      "iri": "https://w3id.org/cm-pharme/2.1/IdentifierScheme",
+      "stereotype": "Kind",
+      "parents": [],
+      "origin": "inherited review candidate"
+    },
+    {
+      "id": "IdentifierValue",
+      "iri": "https://w3id.org/cm-pharme/2.1/IdentifierValue",
+      "stereotype": "Datatype",
+      "parents": [],
+      "origin": "inherited review candidate"
+    },
+    {
+      "id": "ImporterRole",
+      "iri": "https://w3id.org/cm-pharme/2.1/ImporterRole",
+      "stereotype": "Role",
+      "parents": [
+        "Organization",
+        "EcosystemParticipant"
+      ],
+      "origin": "inherited review candidate"
+    },
+    {
+      "id": "InventoryObservationResult",
+      "iri": "https://w3id.org/cm-pharme/2.1/InventoryObservationResult",
+      "stereotype": "Subkind",
+      "parents": [
+        "ObservationResult"
+      ],
+      "origin": "inherited review candidate"
+    },
+    {
+      "id": "LeadTimeObservationResult",
+      "iri": "https://w3id.org/cm-pharme/2.1/LeadTimeObservationResult",
+      "stereotype": "Subkind",
+      "parents": [
+        "ObservationResult"
+      ],
+      "origin": "inherited review candidate"
+    },
+    {
+      "id": "ListedPresentationRole",
+      "iri": "https://w3id.org/cm-pharme/2.1/ListedPresentationRole",
+      "stereotype": "Role",
+      "parents": [
+        "MedicinalProductPresentation"
+      ],
+      "origin": "G1 approved refinement"
+    },
+    {
+      "id": "ListingResponsibleOrganizationRole",
+      "iri": "https://w3id.org/cm-pharme/2.1/ListingResponsibleOrganizationRole",
+      "stereotype": "Role",
+      "parents": [
+        "Organization",
+        "ProductResponsibleLabelerRole"
+      ],
+      "origin": "G1 approved refinement"
+    },
+    {
+      "id": "ManufacturerRole",
+      "iri": "https://w3id.org/cm-pharme/2.1/ManufacturerRole",
+      "stereotype": "Role",
+      "parents": [
+        "Organization",
+        "EcosystemParticipant"
+      ],
+      "origin": "inherited review candidate"
+    },
+    {
+      "id": "ManufacturingActivity",
+      "iri": "https://w3id.org/cm-pharme/2.1/ManufacturingActivity",
+      "stereotype": "Event",
+      "parents": [],
+      "origin": "inherited review candidate"
+    },
+    {
+      "id": "ManufacturingSiteRole",
+      "iri": "https://w3id.org/cm-pharme/2.1/ManufacturingSiteRole",
+      "stereotype": "Role",
+      "parents": [
+        "Facility",
+        "EcosystemParticipant"
+      ],
+      "origin": "inherited review candidate"
+    },
+    {
+      "id": "MappingAssertion",
+      "iri": "https://w3id.org/cm-pharme/2.1/MappingAssertion",
+      "stereotype": "Subkind",
+      "parents": [
+        "Assertion"
+      ],
+      "origin": "inherited review candidate"
+    },
+    {
+      "id": "MarketListing",
+      "iri": "https://w3id.org/cm-pharme/2.1/MarketListing",
+      "stereotype": "Relator",
+      "parents": [],
+      "origin": "inherited review candidate"
+    },
+    {
+      "id": "MatchConfidence",
+      "iri": "https://w3id.org/cm-pharme/2.1/MatchConfidence",
+      "stereotype": "Quality",
+      "parents": [],
+      "origin": "inherited review candidate"
+    },
+    {
+      "id": "MeasureValue",
+      "iri": "https://w3id.org/cm-pharme/2.1/MeasureValue",
+      "stereotype": "Datatype",
+      "parents": [],
+      "origin": "inherited review candidate"
+    },
+    {
+      "id": "MedicinalProduct",
+      "iri": "https://w3id.org/cm-pharme/2.1/MedicinalProduct",
+      "stereotype": "Kind",
+      "parents": [],
+      "origin": "inherited review candidate"
+    },
+    {
+      "id": "MedicinalProductPresentation",
+      "iri": "https://w3id.org/cm-pharme/2.1/MedicinalProductPresentation",
+      "stereotype": "Kind",
+      "parents": [],
+      "origin": "inherited review candidate"
+    },
+    {
+      "id": "MedicineShortageSituation",
+      "iri": "https://w3id.org/cm-pharme/2.1/MedicineShortageSituation",
+      "stereotype": "Situation",
+      "parents": [],
+      "origin": "inherited review candidate"
+    },
+    {
+      "id": "ObservationActivity",
+      "iri": "https://w3id.org/cm-pharme/2.1/ObservationActivity",
+      "stereotype": "Event",
+      "parents": [],
+      "origin": "inherited review candidate"
+    },
+    {
+      "id": "ObservationResult",
+      "iri": "https://w3id.org/cm-pharme/2.1/ObservationResult",
+      "stereotype": "Kind",
+      "parents": [],
+      "origin": "inherited review candidate"
+    },
+    {
+      "id": "OperatedFacilityRole",
+      "iri": "https://w3id.org/cm-pharme/2.1/OperatedFacilityRole",
+      "stereotype": "Role",
+      "parents": [
+        "Facility"
+      ],
+      "origin": "G1 approved refinement"
+    },
+    {
+      "id": "OperatingOrganizationRole",
+      "iri": "https://w3id.org/cm-pharme/2.1/OperatingOrganizationRole",
+      "stereotype": "Role",
+      "parents": [
+        "Organization"
+      ],
+      "origin": "G1 approved refinement"
+    },
+    {
+      "id": "Organization",
+      "iri": "https://w3id.org/cm-pharme/2.1/Organization",
+      "stereotype": "Kind",
+      "parents": [],
+      "origin": "inherited review candidate"
+    },
+    {
+      "id": "OversightAuthorityRole",
+      "iri": "https://w3id.org/cm-pharme/2.1/OversightAuthorityRole",
+      "stereotype": "Role",
+      "parents": [
+        "RegulatoryAuthorityRole"
+      ],
+      "origin": "G1 approved refinement"
+    },
+    {
+      "id": "PackageConfiguration",
+      "iri": "https://w3id.org/cm-pharme/2.1/PackageConfiguration",
+      "stereotype": "Kind",
+      "parents": [],
+      "origin": "inherited review candidate"
+    },
+    {
+      "id": "PartnerOrganizationRole",
+      "iri": "https://w3id.org/cm-pharme/2.1/PartnerOrganizationRole",
+      "stereotype": "Role",
+      "parents": [
+        "Organization"
+      ],
+      "origin": "G1 approved refinement"
+    },
+    {
+      "id": "PayerFundingOrganizationRole",
+      "iri": "https://w3id.org/cm-pharme/2.1/PayerFundingOrganizationRole",
+      "stereotype": "Role",
+      "parents": [
+        "Organization",
+        "EcosystemParticipant"
+      ],
+      "origin": "inherited review candidate"
+    },
+    {
+      "id": "PharmaceuticalSubstance",
+      "iri": "https://w3id.org/cm-pharme/2.1/PharmaceuticalSubstance",
+      "stereotype": "Kind",
+      "parents": [],
+      "origin": "inherited review candidate"
+    },
+    {
+      "id": "PharmacovigilanceRequirement",
+      "iri": "https://w3id.org/cm-pharme/2.1/PharmacovigilanceRequirement",
+      "stereotype": "Kind",
+      "parents": [],
+      "origin": "inherited review candidate"
+    },
+    {
+      "id": "PostMarketSurveillanceActivity",
+      "iri": "https://w3id.org/cm-pharme/2.1/PostMarketSurveillanceActivity",
+      "stereotype": "Event",
+      "parents": [],
+      "origin": "inherited review candidate"
+    },
+    {
+      "id": "ProcurementActivity",
+      "iri": "https://w3id.org/cm-pharme/2.1/ProcurementActivity",
+      "stereotype": "Event",
+      "parents": [],
+      "origin": "inherited review candidate"
+    },
+    {
+      "id": "ProductClassificationAssignment",
+      "iri": "https://w3id.org/cm-pharme/2.1/ProductClassificationAssignment",
+      "stereotype": "Relator",
+      "parents": [],
+      "origin": "inherited review candidate"
+    },
+    {
+      "id": "ProductClassificationScheme",
+      "iri": "https://w3id.org/cm-pharme/2.1/ProductClassificationScheme",
+      "stereotype": "Kind",
+      "parents": [],
+      "origin": "inherited review candidate"
+    },
+    {
+      "id": "ProductResponsibleLabelerRole",
+      "iri": "https://w3id.org/cm-pharme/2.1/ProductResponsibleLabelerRole",
+      "stereotype": "Role",
+      "parents": [
+        "Organization",
+        "EcosystemParticipant"
+      ],
+      "origin": "inherited review candidate"
+    },
+    {
+      "id": "ProvenanceActivity",
+      "iri": "https://w3id.org/cm-pharme/2.1/ProvenanceActivity",
+      "stereotype": "Event",
+      "parents": [],
+      "origin": "inherited review candidate"
+    },
+    {
+      "id": "ProviderEntity",
+      "iri": "https://w3id.org/cm-pharme/2.1/ProviderEntity",
+      "stereotype": "RoleMixin",
+      "parents": [],
+      "origin": "G1 approved refinement"
+    },
+    {
+      "id": "ProviderFacilityRole",
+      "iri": "https://w3id.org/cm-pharme/2.1/ProviderFacilityRole",
+      "stereotype": "Role",
+      "parents": [
+        "Facility",
+        "ProviderEntity"
+      ],
+      "origin": "G1 approved refinement"
+    },
+    {
+      "id": "ProviderMedicinalProductRole",
+      "iri": "https://w3id.org/cm-pharme/2.1/ProviderMedicinalProductRole",
+      "stereotype": "Role",
+      "parents": [
+        "MedicinalProduct",
+        "ProviderEntity"
+      ],
+      "origin": "G1 approved refinement"
+    },
+    {
+      "id": "ProviderOrganizationRole",
+      "iri": "https://w3id.org/cm-pharme/2.1/ProviderOrganizationRole",
+      "stereotype": "Role",
+      "parents": [
+        "Organization",
+        "ProviderEntity"
+      ],
+      "origin": "G1 approved refinement"
+    },
+    {
+      "id": "ReferenceProductRole",
+      "iri": "https://w3id.org/cm-pharme/2.1/ReferenceProductRole",
+      "stereotype": "Role",
+      "parents": [
+        "MedicinalProduct"
+      ],
+      "origin": "G1 approved refinement"
+    },
+    {
+      "id": "RegisteredFacilityRole",
+      "iri": "https://w3id.org/cm-pharme/2.1/RegisteredFacilityRole",
+      "stereotype": "Role",
+      "parents": [
+        "Facility",
+        "RegisteredParty"
+      ],
+      "origin": "G1 approved refinement"
+    },
+    {
+      "id": "RegisteredOrganizationRole",
+      "iri": "https://w3id.org/cm-pharme/2.1/RegisteredOrganizationRole",
+      "stereotype": "Role",
+      "parents": [
+        "Organization",
+        "RegisteredParty"
+      ],
+      "origin": "G1 approved refinement"
+    },
+    {
+      "id": "RegisteredParty",
+      "iri": "https://w3id.org/cm-pharme/2.1/RegisteredParty",
+      "stereotype": "RoleMixin",
+      "parents": [],
+      "origin": "G1 approved refinement"
+    },
+    {
+      "id": "RegisteringAuthorityRole",
+      "iri": "https://w3id.org/cm-pharme/2.1/RegisteringAuthorityRole",
+      "stereotype": "Role",
+      "parents": [
+        "RegulatoryAuthorityRole"
+      ],
+      "origin": "G1 approved refinement"
+    },
+    {
+      "id": "RegulatoryAuthorityRole",
+      "iri": "https://w3id.org/cm-pharme/2.1/RegulatoryAuthorityRole",
+      "stereotype": "Role",
+      "parents": [
+        "Organization",
+        "EcosystemParticipant"
+      ],
+      "origin": "inherited review candidate"
+    },
+    {
+      "id": "RegulatoryAuthorization",
+      "iri": "https://w3id.org/cm-pharme/2.1/RegulatoryAuthorization",
+      "stereotype": "Relator",
+      "parents": [],
+      "origin": "inherited review candidate"
+    },
+    {
+      "id": "RegulatoryJurisdiction",
+      "iri": "https://w3id.org/cm-pharme/2.1/RegulatoryJurisdiction",
+      "stereotype": "Kind",
+      "parents": [],
+      "origin": "inherited review candidate"
+    },
+    {
+      "id": "RegulatoryOversight",
+      "iri": "https://w3id.org/cm-pharme/2.1/RegulatoryOversight",
+      "stereotype": "Relator",
+      "parents": [],
+      "origin": "inherited review candidate"
+    },
+    {
+      "id": "RegulatoryRequirement",
+      "iri": "https://w3id.org/cm-pharme/2.1/RegulatoryRequirement",
+      "stereotype": "Kind",
+      "parents": [],
+      "origin": "inherited review candidate"
+    },
+    {
+      "id": "ReimbursementUtilisationObservationResult",
+      "iri": "https://w3id.org/cm-pharme/2.1/ReimbursementUtilisationObservationResult",
+      "stereotype": "Subkind",
+      "parents": [
+        "ObservationResult"
+      ],
+      "origin": "inherited review candidate"
+    },
+    {
+      "id": "ReportingPeriod",
+      "iri": "https://w3id.org/cm-pharme/2.1/ReportingPeriod",
+      "stereotype": "Datatype",
+      "parents": [],
+      "origin": "inherited review candidate"
+    },
+    {
+      "id": "RiskAssessmentActivity",
+      "iri": "https://w3id.org/cm-pharme/2.1/RiskAssessmentActivity",
+      "stereotype": "Event",
+      "parents": [],
+      "origin": "inherited review candidate"
+    },
+    {
+      "id": "RiskTreatmentActivity",
+      "iri": "https://w3id.org/cm-pharme/2.1/RiskTreatmentActivity",
+      "stereotype": "Event",
+      "parents": [],
+      "origin": "inherited review candidate"
+    },
+    {
+      "id": "RiskTreatmentPlan",
+      "iri": "https://w3id.org/cm-pharme/2.1/RiskTreatmentPlan",
+      "stereotype": "Kind",
+      "parents": [],
+      "origin": "inherited review candidate"
+    },
+    {
+      "id": "ServiceOfferingSpecification",
+      "iri": "https://w3id.org/cm-pharme/2.1/ServiceOfferingSpecification",
+      "stereotype": "Kind",
+      "parents": [],
+      "origin": "inherited review candidate"
+    },
+    {
+      "id": "SourceRecord",
+      "iri": "https://w3id.org/cm-pharme/2.1/SourceRecord",
+      "stereotype": "Kind",
+      "parents": [],
+      "origin": "inherited review candidate"
+    },
+    {
+      "id": "StockoutSituation",
+      "iri": "https://w3id.org/cm-pharme/2.1/StockoutSituation",
+      "stereotype": "Situation",
+      "parents": [],
+      "origin": "inherited review candidate"
+    },
+    {
+      "id": "StrategicPartnershipAgreement",
+      "iri": "https://w3id.org/cm-pharme/2.1/StrategicPartnershipAgreement",
+      "stereotype": "Relator",
+      "parents": [],
+      "origin": "inherited review candidate"
+    },
+    {
+      "id": "Strength",
+      "iri": "https://w3id.org/cm-pharme/2.1/Strength",
+      "stereotype": "Quality",
+      "parents": [],
+      "origin": "inherited review candidate"
+    },
+    {
+      "id": "SupplyCapacity",
+      "iri": "https://w3id.org/cm-pharme/2.1/SupplyCapacity",
+      "stereotype": "Mode",
+      "parents": [],
+      "origin": "inherited review candidate"
+    },
+    {
+      "id": "SupplyCapacityObservationResult",
+      "iri": "https://w3id.org/cm-pharme/2.1/SupplyCapacityObservationResult",
+      "stereotype": "Subkind",
+      "parents": [
+        "ObservationResult"
+      ],
+      "origin": "inherited review candidate"
+    },
+    {
+      "id": "SupplyDependency",
+      "iri": "https://w3id.org/cm-pharme/2.1/SupplyDependency",
+      "stereotype": "Relator",
+      "parents": [],
+      "origin": "inherited review candidate"
+    },
+    {
+      "id": "SupportedAssertionRole",
+      "iri": "https://w3id.org/cm-pharme/2.1/SupportedAssertionRole",
+      "stereotype": "Role",
+      "parents": [
+        "Assertion"
+      ],
+      "origin": "G1 approved refinement"
+    },
+    {
+      "id": "ThirdPartyLogisticsProviderRole",
+      "iri": "https://w3id.org/cm-pharme/2.1/ThirdPartyLogisticsProviderRole",
+      "stereotype": "Role",
+      "parents": [
+        "Organization",
+        "EcosystemParticipant"
+      ],
+      "origin": "inherited review candidate"
+    },
+    {
+      "id": "TimeInterval",
+      "iri": "https://w3id.org/cm-pharme/2.1/TimeInterval",
+      "stereotype": "Datatype",
+      "parents": [],
+      "origin": "inherited review candidate"
+    },
+    {
+      "id": "UsedIdentifierSchemeRole",
+      "iri": "https://w3id.org/cm-pharme/2.1/UsedIdentifierSchemeRole",
+      "stereotype": "Role",
+      "parents": [
+        "IdentifierScheme"
+      ],
+      "origin": "G1 approved refinement"
+    },
+    {
+      "id": "WholesaleDistributorRole",
+      "iri": "https://w3id.org/cm-pharme/2.1/WholesaleDistributorRole",
+      "stereotype": "Role",
+      "parents": [
+        "Organization",
+        "EcosystemParticipant"
+      ],
+      "origin": "inherited review candidate"
+    }
+  ],
+  "protected_distinctions": [
+    [
+      "Organization",
+      "Facility"
+    ],
+    [
+      "Facility",
+      "GeographicFeature"
+    ],
+    [
+      "GeographicFeature",
+      "RegulatoryJurisdiction"
+    ],
+    [
+      "MedicinalProduct",
+      "PharmaceuticalSubstance"
+    ],
+    [
+      "MedicinalProduct",
+      "MedicinalProductPresentation"
+    ],
+    [
+      "ObservationActivity",
+      "ObservationResult"
+    ],
+    [
+      "MedicineShortageSituation",
+      "SourceRecord"
+    ],
+    [
+      "SupplyCapacity",
+      "SupplyCapacityObservationResult"
+    ]
+  ],
+  "deferred": {
+    "AssetAtRisk": "S-04",
+    "Vulnerability": "S-04",
+    "ClinicalCareParticipant": "S-05"
+  },
+  "g2_connections": [
+    "observationAboutProduct",
+    "observationAboutPresentation",
+    "assertionAboutProduct",
+    "riskAssessmentConcernsDependency",
+    "disruptionAffectsDependency",
+    "reimbursementDiagnosisContext"
+  ]
+}

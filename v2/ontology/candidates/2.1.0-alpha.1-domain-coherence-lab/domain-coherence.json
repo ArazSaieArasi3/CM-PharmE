@@ -1,0 +1,93 @@
+{
+  "modules": [
+    {
+      "id": "RM",
+      "name": "Risk Management",
+      "goal_fa": "ارزیابی، برنامهٔ رسیدگی و بازبینی ریسک کیفیت و تداوم عرضهٔ دارو",
+      "proposed_core_classes": [
+        "RiskAssessmentActivity",
+        "RiskTreatmentActivity",
+        "RiskTreatmentPlan",
+        "RiskReviewActivity"
+      ],
+      "core_count": 4,
+      "imports_are_not_counted_as_new_owned_classes": true,
+      "core_isolates_before": [],
+      "core_isolates_after": [],
+      "external_neighbors_before": 2,
+      "external_neighbors_after": 2,
+      "gain_fa": "ضدنمونه تأیید می‌کند وجود برنامه به معنی اجرای اقدام نیست؛ شمار اتصال‌های هسته در این اجرا تغییر نکرد.",
+      "remaining_fa": "شاهد واقعی ارزیابی/بازبینی، معنای نتیجه، اثربخشی اقدام و پذیرش مرز ریسک دارویی",
+      "recommendation": "RETAIN_FOR_MINIMUM_VIABLE_REVIEW",
+      "scientifically_accepted": false,
+      "removal_or_transfer_decided": false
+    },
+    {
+      "id": "PV",
+      "name": "Pharmacovigilance",
+      "goal_fa": "پیوند شاهد ایمنی، سیگنال و نتیجهٔ ارزیابیِ قابل‌ردیابی",
+      "proposed_core_classes": [
+        "AdverseEventReportingActivity",
+        "PharmacovigilanceRequirement",
+        "PostMarketSurveillanceActivity",
+        "SignalAssessmentActivity"
+      ],
+      "core_count": 4,
+      "imports_are_not_counted_as_new_owned_classes": true,
+      "core_isolates_before": [],
+      "core_isolates_after": [],
+      "external_neighbors_before": 4,
+      "external_neighbors_after": 4,
+      "gain_fa": "سه شاهد واقعی PRAC با نتایج متفاوت و تفکیک استخراج/تفسیر افزوده شد؛ هیچ علت یا رخداد بالینی ساخته نشد.",
+      "remaining_fa": "مدل گروه مواد، رخداد/زمان ارزیابی واقعی، ICSR، تعهدات نسخه‌دار و پذیرش هویت محتوا",
+      "recommendation": "RETAIN_FOR_MINIMUM_VIABLE_REVIEW",
+      "scientifically_accepted": false,
+      "removal_or_transfer_decided": false
+    },
+    {
+      "id": "BA",
+      "name": "Business Architecture",
+      "goal_fa": "توصیف قابلیت و خدمت دارویی و تعهدات همکاری در نمای تحلیلی",
+      "proposed_core_classes": [
+        "BusinessArchitectureView",
+        "ServiceOfferingSpecification",
+        "EnterpriseCapability",
+        "PartnerOrganizationRole",
+        "StrategicPartnershipAgreement"
+      ],
+      "core_count": 5,
+      "imports_are_not_counted_as_new_owned_classes": true,
+      "core_isolates_before": [],
+      "core_isolates_after": [],
+      "external_neighbors_before": 7,
+      "external_neighbors_after": 8,
+      "gain_fa": "تحقق قابلیت در لجستیک اضافه شد؛ برون‌سپاری عادی بدون مشارکت راهبردی و نقش شریک آزموده شد.",
+      "remaining_fa": "قرارداد واقعی، تفکیک تعهد/سند/رابطه، مالکیت قابلیت و پذیرش حد خدمت",
+      "recommendation": "RETAIN_FOR_MINIMUM_VIABLE_REVIEW",
+      "scientifically_accepted": false,
+      "removal_or_transfer_decided": false
+    },
+    {
+      "id": "DS",
+      "name": "Digital Systems",
+      "goal_fa": "توصیف جزء سامانه، استقرار و منشأ تولید یا تبدیل دادهٔ دارویی",
+      "proposed_core_classes": [
+        "DigitalInformationSystemComponent",
+        "SystemDeploymentActivity"
+      ],
+      "core_count": 2,
+      "imports_are_not_counted_as_new_owned_classes": true,
+      "core_isolates_before": [],
+      "core_isolates_after": [],
+      "external_neighbors_before": 3,
+      "external_neighbors_after": 3,
+      "gain_fa": "مسیر رکورد→تبدیل داده→لجستیک افزوده شد؛ فعالیت دیجیتال با فعالیت فیزیکی یکی نیست.",
+      "remaining_fa": "شاهد واقعی استقرار/عامل، مدیریت نسخه، تفویض مسئولیت و پذیرش نگاشت PROV",
+      "recommendation": "RETAIN_FOR_MINIMUM_VIABLE_REVIEW",
+      "scientifically_accepted": false,
+      "removal_or_transfer_decided": false
+    }
+  ],
+  "interpretation": "Zero core isolates was already true in the prior four-domain experiment. New evidence strengthens functional boundaries; it does not show a new connectivity gain for every domain. Core counts are proposed ownership counts, not a final all-domain inventory.",
+  "quality_judgement": "BOUNDED_FUNCTIONAL_EVIDENCE_IMPROVED; FULL_SEMANTIC_COHERENCE_NOT_ESTABLISHED"
+}

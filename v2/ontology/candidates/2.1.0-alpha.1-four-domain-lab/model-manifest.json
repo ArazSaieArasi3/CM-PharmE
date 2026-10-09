@@ -1,0 +1,565 @@
+{
+  "status": "EXPERIMENT_NOT_RELEASE",
+  "baseline_commit": "a99ea1dc5a88f07d92f2ede08ce365c0a7f258a3",
+  "baseline_sha256": {
+    "ontouml.json": "264d26d263e5fa25e432dc65dd6b0402bf274958c9d18c32be2d2583634deaca",
+    "active.ttl": "c62f0abb21df3aad36154ed6aa04ab0287bc7ce7a5fd6a04effc8cd338f6f304",
+    "constraints.ttl": "510a65519ae0534c48c98250134bc8a4b2b658dd571e185c030af112ef461229"
+  },
+  "new_classes": {
+    "RiskReviewActivity": [
+      "RM",
+      "An occurrence reviewing an earlier risk assessment/result. It need not repeat the assessment."
+    ],
+    "SignalAssessmentActivity": [
+      "PV",
+      "An occurrence assessing a medicinal safety signal; separate from reporting and from assessment content."
+    ],
+    "SystemDeploymentActivity": [
+      "DS",
+      "An actual installation/deployment of an identified component version in an organizational context. Not an ETL/provenance transformation."
+    ]
+  },
+  "new_relations": [
+    {
+      "name": "scenarioProduct",
+      "source": "Assertion",
+      "target": "MedicinalProduct",
+      "native_stereotype": "PENDING_P3",
+      "native_bounds": "0..* at both ends; profile restrictions are conditional"
+    },
+    {
+      "name": "assessmentScenario",
+      "source": "RiskAssessmentActivity",
+      "target": "Assertion",
+      "native_stereotype": "PENDING_P3",
+      "native_bounds": "0..* at both ends; profile restrictions are conditional"
+    },
+    {
+      "name": "resultAssessment",
+      "source": "Assertion",
+      "target": "RiskAssessmentActivity",
+      "native_stereotype": "PENDING_P3",
+      "native_bounds": "0..* at both ends; profile restrictions are conditional"
+    },
+    {
+      "name": "citesSourceRecord",
+      "source": "Assertion",
+      "target": "SourceRecord",
+      "native_stereotype": "PENDING_P3",
+      "native_bounds": "0..* at both ends; profile restrictions are conditional"
+    },
+    {
+      "name": "planRiskResult",
+      "source": "RiskTreatmentPlan",
+      "target": "Assertion",
+      "native_stereotype": "PENDING_P3",
+      "native_bounds": "0..* at both ends; profile restrictions are conditional"
+    },
+    {
+      "name": "implementsRiskPlan",
+      "source": "RiskTreatmentActivity",
+      "target": "RiskTreatmentPlan",
+      "native_stereotype": "PENDING_P3",
+      "native_bounds": "0..* at both ends; profile restrictions are conditional"
+    },
+    {
+      "name": "reviewPriorResult",
+      "source": "RiskReviewActivity",
+      "target": "Assertion",
+      "native_stereotype": "PENDING_P3",
+      "native_bounds": "0..* at both ends; profile restrictions are conditional"
+    },
+    {
+      "name": "reviewNewResult",
+      "source": "RiskReviewActivity",
+      "target": "Assertion",
+      "native_stereotype": "PENDING_P3",
+      "native_bounds": "0..* at both ends; profile restrictions are conditional"
+    },
+    {
+      "name": "reportsRecord",
+      "source": "AdverseEventReportingActivity",
+      "target": "SourceRecord",
+      "native_stereotype": "PENDING_P3",
+      "native_bounds": "0..* at both ends; profile restrictions are conditional"
+    },
+    {
+      "name": "signalProduct",
+      "source": "Assertion",
+      "target": "MedicinalProduct",
+      "native_stereotype": "PENDING_P3",
+      "native_bounds": "0..* at both ends; profile restrictions are conditional"
+    },
+    {
+      "name": "signalSubstance",
+      "source": "Assertion",
+      "target": "PharmaceuticalSubstance",
+      "native_stereotype": "PENDING_P3",
+      "native_bounds": "0..* at both ends; profile restrictions are conditional"
+    },
+    {
+      "name": "signalAssessmentTarget",
+      "source": "SignalAssessmentActivity",
+      "target": "Assertion",
+      "native_stereotype": "PENDING_P3",
+      "native_bounds": "0..* at both ends; profile restrictions are conditional"
+    },
+    {
+      "name": "pvResultSignal",
+      "source": "Assertion",
+      "target": "Assertion",
+      "native_stereotype": "PENDING_P3",
+      "native_bounds": "0..* at both ends; profile restrictions are conditional"
+    },
+    {
+      "name": "pvResultAssessment",
+      "source": "Assertion",
+      "target": "SignalAssessmentActivity",
+      "native_stereotype": "PENDING_P3",
+      "native_bounds": "0..* at both ends; profile restrictions are conditional"
+    },
+    {
+      "name": "pvRequirementJurisdiction",
+      "source": "PharmacovigilanceRequirement",
+      "target": "RegulatoryJurisdiction",
+      "native_stereotype": "PENDING_P3",
+      "native_bounds": "0..* at both ends; profile restrictions are conditional"
+    },
+    {
+      "name": "surveillanceRequirement",
+      "source": "PostMarketSurveillanceActivity",
+      "target": "PharmacovigilanceRequirement",
+      "native_stereotype": "PENDING_P3",
+      "native_bounds": "0..* at both ends; profile restrictions are conditional"
+    },
+    {
+      "name": "surveillanceSource",
+      "source": "PostMarketSurveillanceActivity",
+      "target": "SourceRecord",
+      "native_stereotype": "PENDING_P3",
+      "native_bounds": "0..* at both ends; profile restrictions are conditional"
+    },
+    {
+      "name": "serviceCapability",
+      "source": "ServiceOfferingSpecification",
+      "target": "EnterpriseCapability",
+      "native_stereotype": "PENDING_P3",
+      "native_bounds": "0..* at both ends; profile restrictions are conditional"
+    },
+    {
+      "name": "viewOrganization",
+      "source": "BusinessArchitectureView",
+      "target": "Organization",
+      "native_stereotype": "PENDING_P3",
+      "native_bounds": "0..* at both ends; profile restrictions are conditional"
+    },
+    {
+      "name": "viewService",
+      "source": "BusinessArchitectureView",
+      "target": "ServiceOfferingSpecification",
+      "native_stereotype": "PENDING_P3",
+      "native_bounds": "0..* at both ends; profile restrictions are conditional"
+    },
+    {
+      "name": "capabilityRealizedIn",
+      "source": "EnterpriseCapability",
+      "target": "ManufacturingActivity",
+      "native_stereotype": "PENDING_P3",
+      "native_bounds": "0..* at both ends; profile restrictions are conditional"
+    },
+    {
+      "name": "deploymentComponent",
+      "source": "SystemDeploymentActivity",
+      "target": "DigitalInformationSystemComponent",
+      "native_stereotype": "PENDING_P3",
+      "native_bounds": "0..* at both ends; profile restrictions are conditional"
+    },
+    {
+      "name": "deploymentOrganization",
+      "source": "SystemDeploymentActivity",
+      "target": "Organization",
+      "native_stereotype": "PENDING_P3",
+      "native_bounds": "0..* at both ends; profile restrictions are conditional"
+    },
+    {
+      "name": "digitalActivityDeployment",
+      "source": "ProvenanceActivity",
+      "target": "SystemDeploymentActivity",
+      "native_stereotype": "PENDING_P3",
+      "native_bounds": "0..* at both ends; profile restrictions are conditional"
+    },
+    {
+      "name": "recordDigitalActivity",
+      "source": "SourceRecord",
+      "target": "ProvenanceActivity",
+      "native_stereotype": "PENDING_P3",
+      "native_bounds": "0..* at both ends; profile restrictions are conditional"
+    },
+    {
+      "name": "digitalServiceComponent",
+      "source": "ServiceOfferingSpecification",
+      "target": "DigitalInformationSystemComponent",
+      "native_stereotype": "PENDING_P3",
+      "native_bounds": "0..* at both ends; profile restrictions are conditional"
+    },
+    {
+      "name": "digitalServiceActivity",
+      "source": "ServiceOfferingSpecification",
+      "target": "ProvenanceActivity",
+      "native_stereotype": "PENDING_P3",
+      "native_bounds": "0..* at both ends; profile restrictions are conditional"
+    }
+  ],
+  "profiles": {
+    "risk-scenario": {
+      "type": "Assertion",
+      "fields": [
+        [
+          "scenarioProduct",
+          "MedicinalProduct",
+          1,
+          null
+        ]
+      ]
+    },
+    "risk-assessment": {
+      "type": "RiskAssessmentActivity",
+      "fields": [
+        [
+          "assessmentScenario",
+          "Assertion",
+          1,
+          null
+        ]
+      ]
+    },
+    "risk-result": {
+      "type": "Assertion",
+      "fields": [
+        [
+          "resultAssessment",
+          "RiskAssessmentActivity",
+          1,
+          1
+        ],
+        [
+          "citesSourceRecord",
+          "SourceRecord",
+          1,
+          null
+        ],
+        [
+          "atTime",
+          "xsd:dateTime",
+          1,
+          1
+        ],
+        [
+          "conclusion",
+          "xsd:string",
+          1,
+          1
+        ]
+      ]
+    },
+    "risk-plan": {
+      "type": "RiskTreatmentPlan",
+      "fields": [
+        [
+          "planRiskResult",
+          "Assertion",
+          1,
+          null
+        ]
+      ]
+    },
+    "risk-treatment": {
+      "type": "RiskTreatmentActivity",
+      "fields": [
+        [
+          "implementsRiskPlan",
+          "RiskTreatmentPlan",
+          1,
+          null
+        ],
+        [
+          "atTime",
+          "xsd:dateTime",
+          1,
+          1
+        ]
+      ]
+    },
+    "risk-review": {
+      "type": "RiskReviewActivity",
+      "fields": [
+        [
+          "reviewPriorResult",
+          "Assertion",
+          1,
+          null
+        ],
+        [
+          "reviewNewResult",
+          "Assertion",
+          1,
+          null
+        ],
+        [
+          "atTime",
+          "xsd:dateTime",
+          1,
+          1
+        ]
+      ]
+    },
+    "safety-reporting": {
+      "type": "AdverseEventReportingActivity",
+      "fields": [
+        [
+          "reportsRecord",
+          "SourceRecord",
+          1,
+          null
+        ],
+        [
+          "atTime",
+          "xsd:dateTime",
+          1,
+          1
+        ]
+      ]
+    },
+    "safety-signal": {
+      "type": "Assertion",
+      "fields": [
+        [
+          "signalProduct",
+          "MedicinalProduct",
+          0,
+          null
+        ],
+        [
+          "signalSubstance",
+          "PharmaceuticalSubstance",
+          0,
+          null
+        ],
+        [
+          "citesSourceRecord",
+          "SourceRecord",
+          1,
+          null
+        ]
+      ]
+    },
+    "signal-assessment": {
+      "type": "SignalAssessmentActivity",
+      "fields": [
+        [
+          "signalAssessmentTarget",
+          "Assertion",
+          1,
+          null
+        ]
+      ]
+    },
+    "signal-result": {
+      "type": "Assertion",
+      "fields": [
+        [
+          "pvResultSignal",
+          "Assertion",
+          1,
+          1
+        ],
+        [
+          "pvResultAssessment",
+          "SignalAssessmentActivity",
+          1,
+          1
+        ],
+        [
+          "atTime",
+          "xsd:dateTime",
+          1,
+          1
+        ],
+        [
+          "signalStatus",
+          "xsd:string",
+          1,
+          1
+        ]
+      ]
+    },
+    "pv-requirement": {
+      "type": "PharmacovigilanceRequirement",
+      "fields": [
+        [
+          "pvRequirementJurisdiction",
+          "RegulatoryJurisdiction",
+          1,
+          null
+        ]
+      ]
+    },
+    "pv-surveillance": {
+      "type": "PostMarketSurveillanceActivity",
+      "fields": [
+        [
+          "surveillanceRequirement",
+          "PharmacovigilanceRequirement",
+          1,
+          null
+        ],
+        [
+          "surveillanceSource",
+          "SourceRecord",
+          1,
+          null
+        ]
+      ]
+    },
+    "ba-service": {
+      "type": "ServiceOfferingSpecification",
+      "fields": [
+        [
+          "serviceCapability",
+          "EnterpriseCapability",
+          1,
+          null
+        ]
+      ]
+    },
+    "ba-view": {
+      "type": "BusinessArchitectureView",
+      "fields": [
+        [
+          "viewOrganization",
+          "Organization",
+          1,
+          null
+        ],
+        [
+          "viewService",
+          "ServiceOfferingSpecification",
+          0,
+          null
+        ]
+      ]
+    },
+    "ba-partnership": {
+      "type": "StrategicPartnershipAgreement",
+      "fields": [
+        [
+          "c:partnershipParticipant",
+          "PartnerOrganizationRole",
+          2,
+          null
+        ]
+      ]
+    },
+    "deployment": {
+      "type": "SystemDeploymentActivity",
+      "fields": [
+        [
+          "deploymentComponent",
+          "DigitalInformationSystemComponent",
+          1,
+          1
+        ],
+        [
+          "deploymentOrganization",
+          "Organization",
+          1,
+          null
+        ],
+        [
+          "componentVersion",
+          "xsd:string",
+          1,
+          1
+        ],
+        [
+          "atTime",
+          "xsd:dateTime",
+          1,
+          1
+        ]
+      ]
+    },
+    "digital-activity": {
+      "type": "ProvenanceActivity",
+      "fields": [
+        [
+          "digitalActivityDeployment",
+          "SystemDeploymentActivity",
+          1,
+          1
+        ],
+        [
+          "atTime",
+          "xsd:dateTime",
+          1,
+          1
+        ]
+      ]
+    },
+    "digital-record": {
+      "type": "SourceRecord",
+      "fields": [
+        [
+          "recordDigitalActivity",
+          "ProvenanceActivity",
+          1,
+          1
+        ]
+      ]
+    },
+    "digital-service": {
+      "type": "ServiceOfferingSpecification",
+      "fields": [
+        [
+          "digitalServiceComponent",
+          "DigitalInformationSystemComponent",
+          1,
+          null
+        ],
+        [
+          "digitalServiceActivity",
+          "ProvenanceActivity",
+          1,
+          null
+        ]
+      ]
+    }
+  },
+  "new_native_elements": 84,
+  "native_total_elements": 620,
+  "new_datatype_fields": [
+    "profile",
+    "atTime",
+    "conclusion",
+    "signalStatus",
+    "componentVersion",
+    "causallyEstablished"
+  ],
+  "native_projection_limits": [
+    "The six experimental admission/provenance fields are not new conceptual datatypes; their profile constraints are in SHACL only.",
+    "Eight OWL disjointness experiments are not yet reflected as native generalization sets.",
+    "Association stereotypes are unresolved; native schema/parser pass cannot close P3/P5."
+  ],
+  "reuse_decisions": {
+    "RiskScenarioSpecification": "Assertion profile representing a scenario proposition; not an occurred Situation.",
+    "RiskAssessmentResult": "Assertion profile; use ObservationResult only when a measured result is actually evidenced.",
+    "SafetyReport": "SourceRecord report-carrier profile; identity of information content across distinct carriers remains open.",
+    "SafetySignal": "Assertion profile for an evidential hypothesis; not an actual adverse event.",
+    "SignalAssessmentResult": "Assertion profile with time/status and producing event.",
+    "DigitalServiceSpecification": "Existing ServiceOfferingSpecification; DS imports the BA service specification interface.",
+    "RiskReviewActivity": "New Event candidate; a review is not always a full reassessment.",
+    "SignalAssessmentActivity": "New Event candidate; do not equate assessment with reporting or restrict all assessments to post-market surveillance.",
+    "SystemDeploymentActivity": "New Event candidate; W3 defines ProvenanceActivity for transformation/ingestion, not arbitrary deployment."
+  }
+}

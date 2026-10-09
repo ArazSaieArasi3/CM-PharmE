@@ -13,14 +13,79 @@
       "role": "primary",
       "doi": "10.5281/zenodo.19160825",
       "record_url": "https://zenodo.org/records/19160825",
-      "file_contract": "nhif_outpatient_pharmacy_combined.csv",
+      "file_contract": "pharmacy_data_20260322_131416.csv",
       "license_note": "Zenodo record states CC BY 4.0 unless otherwise restricted by NHIF.",
       "unit_of_observation": "aggregated region-product-diagnosis-period-part reimbursement record",
-      "required_columns": ["region_num","region_name","atc_code","atc_name","nhif_code","market_name","packaging","concentration","num_in_pack","icd_code","icd_name","patients_num","pack_num","costs","period","part","currency","costs_bgn","costs_eur"],
+      "required_columns": [
+        "region_num",
+        "region_name",
+        "atc_code",
+        "atc_name",
+        "nhif_code",
+        "market_name",
+        "packaging",
+        "concentration",
+        "num_in_pack",
+        "icd_code",
+        "icd_name",
+        "patients_num",
+        "pack_num",
+        "costs",
+        "period",
+        "part",
+        "currency",
+        "costs_bgn",
+        "costs_eur"
+      ],
       "w6_adapter": "nhif-outpatient-v1",
       "ci_execution": "schema-faithful synthetic fixture",
       "full_dataset_ingested_in_ci": false,
-      "semantic_boundary": "patients_num is an aggregate count, not a unique-patient identifier"
+      "semantic_boundary": "patients_num is an aggregate count, not a unique-patient identifier",
+      "published_contract": {
+        "record_id": 19160825,
+        "checksum": "md5:b43fb62d3d44525de74f930f472d2f03",
+        "size_bytes": 1704038344,
+        "license_id": "cc-by-4.0",
+        "metadata_snapshot": "v2/data/sources/p1-contract-2026-10-09/zenodo-metadata-excerpt.json",
+        "checksum_scope": "publisher metadata; not a locally verified full-file digest"
+      },
+      "synthetic_fixture": {
+        "filename": "nhif_outpatient_fixture.csv",
+        "path": "v2/data/fixtures/nhif_outpatient_fixture.csv",
+        "sha256": "2d2d2db54efd78a26aed0b0da334c35b05c35c00ca4eb6ace0729c4a5c516af8",
+        "is_published_source": false
+      },
+      "legacy_filename_note": "nhif_outpatient_pharmacy_combined.csv is a stale name in the record description, not an accepted published-file alias.",
+      "attribution": {
+        "creators": [
+          {
+            "name": "Kostadinov, Kostadin",
+            "affiliation": "Medical University Plovdiv",
+            "orcid": "0000-0003-1414-8738"
+          },
+          {
+            "name": "Shopova, Margarita",
+            "affiliation": "D. A. Tsenov Academy of Economics",
+            "orcid": "0000-0002-4605-216X"
+          },
+          {
+            "name": "Petkov, Plamen",
+            "affiliation": "D. A. Tsenov Academy of Economics",
+            "orcid": "0000-0002-6271-4039"
+          },
+          {
+            "name": "Ovchinnikov, Evgeni",
+            "affiliation": "D. A. Tsenov Academy of Economics",
+            "orcid": "0000-0002-2327-5934"
+          },
+          {
+            "name": "Raycheva, Ralitsa",
+            "affiliation": "Medical University of Plovdiv, Center for Translational Neuroscience",
+            "orcid": "0000-0002-6417-5681"
+          }
+        ],
+        "underlying_source": "National Health Insurance Fund (NHIF), Bulgaria"
+      }
     },
     {
       "id": "P2-NHIF-INPATIENT",
@@ -30,7 +95,28 @@
       "file_contract": "inpatient_data_20260322_124904.csv",
       "license_note": "Zenodo record states CC BY 4.0 unless otherwise specified.",
       "unit_of_observation": "aggregated facility-product-diagnosis-month reimbursement record",
-      "required_columns": ["region_num","region_name","hospital_code","hospital_name","atc_code","atc_name","nhif_code","market_name","packaging","concentration","num_in_pack","icd_code","icd_name","patients_num","pack_num","costs","period","currency","costs_bgn","costs_eur"],
+      "required_columns": [
+        "region_num",
+        "region_name",
+        "hospital_code",
+        "hospital_name",
+        "atc_code",
+        "atc_name",
+        "nhif_code",
+        "market_name",
+        "packaging",
+        "concentration",
+        "num_in_pack",
+        "icd_code",
+        "icd_name",
+        "patients_num",
+        "pack_num",
+        "costs",
+        "period",
+        "currency",
+        "costs_bgn",
+        "costs_eur"
+      ],
       "w6_adapter": "nhif-inpatient-v1",
       "ci_execution": "schema-faithful synthetic fixture",
       "full_dataset_ingested_in_ci": false,

@@ -1,0 +1,319 @@
+{
+  "policy_status": "EXPERIMENTAL_UNACCEPTED",
+  "identity_key_precondition": "Already established relator identity across time; external record ID alone is insufficient.",
+  "scope": "Observed primitive participant slots, finite snapshots; no inference about unobserved times, relator creation, or modern nature.",
+  "cases": [
+    {
+      "name": "stable-product",
+      "input": {
+        "snapshots": [
+          {
+            "complete": true,
+            "relators": {
+              "relator-1": {
+                "classificationEntity": "p1"
+              }
+            }
+          },
+          {
+            "complete": true,
+            "relators": {
+              "relator-1": {
+                "classificationEntity": "p1"
+              }
+            }
+          }
+        ]
+      },
+      "expected": "PRESERVED",
+      "actual": "PRESERVED",
+      "pass": true
+    },
+    {
+      "name": "known-distinct-product-replacement",
+      "input": {
+        "snapshots": [
+          {
+            "complete": true,
+            "relators": {
+              "relator-1": {
+                "classificationEntity": "p1"
+              }
+            }
+          },
+          {
+            "complete": true,
+            "relators": {
+              "relator-1": {
+                "classificationEntity": "p2"
+              }
+            }
+          }
+        ],
+        "different_from": [
+          [
+            "p1",
+            "p2"
+          ]
+        ]
+      },
+      "expected": "VIOLATION",
+      "actual": "VIOLATION",
+      "pass": true
+    },
+    {
+      "name": "new-established-relator-identity",
+      "input": {
+        "snapshots": [
+          {
+            "complete": true,
+            "relators": {
+              "relator-1": {
+                "classificationEntity": "p1"
+              }
+            }
+          },
+          {
+            "complete": true,
+            "relators": {
+              "relator-2": {
+                "classificationEntity": "p2"
+              }
+            }
+          }
+        ]
+      },
+      "expected": "NO_COMPARABLE_IDENTITY",
+      "actual": "NO_COMPARABLE_IDENTITY",
+      "pass": true
+    },
+    {
+      "name": "incomplete-first-observation",
+      "input": {
+        "snapshots": [
+          {
+            "complete": false,
+            "relators": {
+              "relator-1": {
+                "classificationEntity": null
+              }
+            }
+          },
+          {
+            "complete": true,
+            "relators": {
+              "relator-1": {
+                "classificationEntity": "p1"
+              }
+            }
+          }
+        ]
+      },
+      "expected": "UNKNOWN",
+      "actual": "UNKNOWN",
+      "pass": true
+    },
+    {
+      "name": "explicit-sameAs-preserves-participant",
+      "input": {
+        "snapshots": [
+          {
+            "complete": true,
+            "relators": {
+              "relator-1": {
+                "classificationEntity": "p1"
+              }
+            }
+          },
+          {
+            "complete": true,
+            "relators": {
+              "relator-1": {
+                "classificationEntity": "alias"
+              }
+            }
+          }
+        ],
+        "same_as": [
+          [
+            "p1",
+            "alias"
+          ]
+        ]
+      },
+      "expected": "PRESERVED",
+      "actual": "PRESERVED",
+      "pass": true
+    },
+    {
+      "name": "different-IRIs-alone-unknown",
+      "input": {
+        "snapshots": [
+          {
+            "complete": true,
+            "relators": {
+              "relator-1": {
+                "classificationEntity": "p1"
+              }
+            }
+          },
+          {
+            "complete": true,
+            "relators": {
+              "relator-1": {
+                "classificationEntity": "p2"
+              }
+            }
+          }
+        ]
+      },
+      "expected": "UNKNOWN",
+      "actual": "UNKNOWN",
+      "pass": true
+    },
+    {
+      "name": "equal-registry-code-cannot-override-distinctness",
+      "input": {
+        "snapshots": [
+          {
+            "complete": true,
+            "relators": {
+              "relator-1": {
+                "classificationEntity": "p1"
+              }
+            }
+          },
+          {
+            "complete": true,
+            "relators": {
+              "relator-1": {
+                "classificationEntity": "p2"
+              }
+            }
+          }
+        ],
+        "different_from": [
+          [
+            "p1",
+            "p2"
+          ]
+        ],
+        "external_codes": {
+          "p1": "code-1",
+          "p2": "code-1"
+        }
+      },
+      "expected": "VIOLATION",
+      "actual": "VIOLATION",
+      "pass": true
+    },
+    {
+      "name": "classification-entry-change",
+      "input": {
+        "snapshots": [
+          {
+            "complete": true,
+            "relators": {
+              "relator-1": {
+                "classificationEntry": "entry1"
+              }
+            }
+          },
+          {
+            "complete": true,
+            "relators": {
+              "relator-1": {
+                "classificationEntry": "entry2"
+              }
+            }
+          }
+        ],
+        "different_from": [
+          [
+            "entry1",
+            "entry2"
+          ]
+        ]
+      },
+      "expected": "VIOLATION",
+      "actual": "VIOLATION",
+      "pass": true
+    },
+    {
+      "name": "evidence-record-alias-chain",
+      "input": {
+        "snapshots": [
+          {
+            "complete": true,
+            "relators": {
+              "relator-1": {
+                "evidenceItem": "record1"
+              }
+            }
+          },
+          {
+            "complete": true,
+            "relators": {
+              "relator-1": {
+                "evidenceItem": "record3"
+              }
+            }
+          }
+        ],
+        "same_as": [
+          [
+            "record1",
+            "record2"
+          ],
+          [
+            "record2",
+            "record3"
+          ]
+        ]
+      },
+      "expected": "PRESERVED",
+      "actual": "PRESERVED",
+      "pass": true
+    },
+    {
+      "name": "contradictory-identity-facts",
+      "input": {
+        "snapshots": [
+          {
+            "complete": true,
+            "relators": {
+              "relator-1": {
+                "classificationEntity": "p1"
+              }
+            }
+          },
+          {
+            "complete": true,
+            "relators": {
+              "relator-1": {
+                "classificationEntity": "p2"
+              }
+            }
+          }
+        ],
+        "same_as": [
+          [
+            "p1",
+            "p2"
+          ]
+        ],
+        "different_from": [
+          [
+            "p1",
+            "p2"
+          ]
+        ]
+      },
+      "expected": "INCONSISTENT_IDENTITY",
+      "actual": "INCONSISTENT_IDENTITY",
+      "pass": true
+    }
+  ],
+  "pass": 10,
+  "total": 10
+}

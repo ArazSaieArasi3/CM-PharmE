@@ -1,0 +1,97 @@
+{
+  "checks": [
+    {
+      "id": "source-family-without-fake-product",
+      "kind": "admission",
+      "actual": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "id": "missing-required-scope-link",
+      "kind": "admission",
+      "actual": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "id": "missing-scope-source",
+      "kind": "admission",
+      "actual": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "id": "wrong-entry-version",
+      "kind": "admission",
+      "actual": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "id": "scope-is-carrier",
+      "kind": "admission",
+      "actual": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "id": "missing-member-label",
+      "kind": "admission",
+      "actual": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "id": "five-included-source-labels",
+      "kind": "query",
+      "query": "SELECT ?label WHERE { <urn:cmpe-evidence:riskScenario> <https://w3id.org/cm-pharme/experimental/documentary-evidence/scenarioScopeDescription>/<https://w3id.org/cm-pharme/experimental/source-group/scopeEntry> ?entry . ?entry <https://w3id.org/cm-pharme/experimental/source-group/sourceLabel> ?label } ORDER BY ?label",
+      "actual": [
+        "candesartan",
+        "irbesartan",
+        "losartan",
+        "olmesartan",
+        "valsartan"
+      ],
+      "expected": [
+        "candesartan",
+        "irbesartan",
+        "losartan",
+        "olmesartan",
+        "valsartan"
+      ],
+      "pass": true
+    },
+    {
+      "id": "excluded-label-not-promoted",
+      "kind": "query",
+      "actual": false,
+      "expected": false,
+      "pass": true
+    }
+  ],
+  "passed": 8,
+  "total": 8,
+  "logical": [
+    {
+      "id": "full-positive",
+      "consistent": true,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "prov_profile": "two conflicting annotation-property declarations removed; raw source retained",
+      "pass": true
+    },
+    {
+      "id": "scope-not-single-product-countermodel",
+      "consistent": true,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "prov_profile": "two conflicting annotation-property declarations removed; raw source retained",
+      "pass": true
+    }
+  ],
+  "relation_proposal": "scenarioScopeDescription",
+  "new_owned_classes": 0,
+  "native_change": false,
+  "semantic_acceptance": false
+}

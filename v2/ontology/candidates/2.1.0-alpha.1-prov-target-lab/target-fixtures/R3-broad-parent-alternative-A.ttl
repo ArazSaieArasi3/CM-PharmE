@@ -1,0 +1,26 @@
+@prefix c: <https://w3id.org/cm-pharme/2.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix q: <https://w3id.org/cm-pharme/experimental/prov-target/> .
+@prefix r: <https://w3id.org/cm-pharme/experimental/refinement/> .
+
+q:R3 a q:TargetCase ;
+    q:claim q:R3-claim ;
+    q:evidenceKind "explicit-assessment-scope" ;
+    q:family "assessment" ;
+    q:source q:R3-event ;
+    q:sourceRecord q:R3-record ;
+    q:target q:R3-target ;
+    q:targetClass c:RiskTreatmentPlan .
+
+q:R3-event a c:RiskAssessmentActivity ;
+    c:riskAssessmentConcerns q:R3-target ;
+    q:assessmentOutput q:R3-claim .
+
+q:R3-record a c:SourceRecord ;
+    r:carrierClaim q:R3-claim .
+
+q:R3-target a [ a owl:Class ;
+            owl:complementOf c:SupplyDependency ],
+        c:RiskTreatmentPlan .
+
+q:R3-claim a c:Assertion .

@@ -1,0 +1,120 @@
+{
+  "design": "Purposive quota sample: three returned rows per five predefined strata; not random or representative. Duplicate product_id rows retained in source snapshots and deduplicated in projections.",
+  "strata": [
+    {
+      "stratum": "nda",
+      "query": "marketing_category:\"NDA\"",
+      "requested_url": "https://api.fda.gov/drug/ndc.json?search=marketing_category%3A%22NDA%22&limit=3",
+      "resolved_url": "https://api.fda.gov/drug/ndc.json?search=marketing_category%3A%22NDA%22&limit=3",
+      "retrieved_at": "2026-10-09T20:48:35.862202+00:00",
+      "file": "ndc-nda.json",
+      "sha256": "0a9659c74791c630306cf8abd10d068267c026b8d8544c1b145accbb61cf8cf1",
+      "bytes": 6756,
+      "rows": 3,
+      "status": 200,
+      "response_meta": {
+        "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+        "terms": "https://open.fda.gov/terms/",
+        "license": "https://open.fda.gov/license/",
+        "last_updated": "2026-10-09",
+        "results": {
+          "skip": 0,
+          "limit": 3,
+          "total": 7400
+        }
+      }
+    },
+    {
+      "stratum": "anda",
+      "query": "marketing_category:\"ANDA\"",
+      "requested_url": "https://api.fda.gov/drug/ndc.json?search=marketing_category%3A%22ANDA%22&limit=3",
+      "resolved_url": "https://api.fda.gov/drug/ndc.json?search=marketing_category%3A%22ANDA%22&limit=3",
+      "retrieved_at": "2026-10-09T20:48:42.409610+00:00",
+      "file": "ndc-anda.json",
+      "sha256": "4a35dddb8707bf1ee33aec7c146557bf062b898093294e730d989a6787031957",
+      "bytes": 5459,
+      "rows": 3,
+      "status": 200,
+      "response_meta": {
+        "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+        "terms": "https://open.fda.gov/terms/",
+        "license": "https://open.fda.gov/license/",
+        "last_updated": "2026-10-09",
+        "results": {
+          "skip": 0,
+          "limit": 3,
+          "total": 50822
+        }
+      }
+    },
+    {
+      "stratum": "otc",
+      "query": "marketing_category:\"OTC MONOGRAPH DRUG\"",
+      "requested_url": "https://api.fda.gov/drug/ndc.json?search=marketing_category%3A%22OTC+MONOGRAPH+DRUG%22&limit=3",
+      "resolved_url": "https://api.fda.gov/drug/ndc.json?search=marketing_category%3A%22OTC+MONOGRAPH+DRUG%22&limit=3",
+      "retrieved_at": "2026-10-09T20:48:49.007611+00:00",
+      "file": "ndc-otc.json",
+      "sha256": "0206d44883e6cb2b1c941195f485389fc4afdf1ad1074e160ce2e3684a3f2bda",
+      "bytes": 5311,
+      "rows": 3,
+      "status": 200,
+      "response_meta": {
+        "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+        "terms": "https://open.fda.gov/terms/",
+        "license": "https://open.fda.gov/license/",
+        "last_updated": "2026-10-09",
+        "results": {
+          "skip": 0,
+          "limit": 3,
+          "total": 36326
+        }
+      }
+    },
+    {
+      "stratum": "unapproved",
+      "query": "marketing_category:\"UNAPPROVED DRUG OTHER\"",
+      "requested_url": "https://api.fda.gov/drug/ndc.json?search=marketing_category%3A%22UNAPPROVED+DRUG+OTHER%22&limit=3",
+      "resolved_url": "https://api.fda.gov/drug/ndc.json?search=marketing_category%3A%22UNAPPROVED+DRUG+OTHER%22&limit=3",
+      "retrieved_at": "2026-10-09T20:48:55.589900+00:00",
+      "file": "ndc-unapproved.json",
+      "sha256": "3aca6e5234abb3235f440570360e039cd279e89ad16b27be3345acc7796c9683",
+      "bytes": 5378,
+      "rows": 3,
+      "status": 200,
+      "response_meta": {
+        "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+        "terms": "https://open.fda.gov/terms/",
+        "license": "https://open.fda.gov/license/",
+        "last_updated": "2026-10-09",
+        "results": {
+          "skip": 0,
+          "limit": 3,
+          "total": 2235
+        }
+      }
+    },
+    {
+      "stratum": "dated-end",
+      "query": "marketing_end_date:[19000101 TO 99991231]",
+      "requested_url": "https://api.fda.gov/drug/ndc.json?search=marketing_end_date%3A%5B19000101+TO+99991231%5D&limit=3",
+      "resolved_url": "https://api.fda.gov/drug/ndc.json?search=marketing_end_date%3A%5B19000101+TO+99991231%5D&limit=3",
+      "retrieved_at": "2026-10-09T20:47:33.802996+00:00",
+      "file": "ndc-dated-end.json",
+      "sha256": "464a400483035733794a7e410d672ca4f8360bdf2a7889a51f52213f6f5e27cd",
+      "bytes": 10656,
+      "rows": 3,
+      "status": 200,
+      "response_meta": {
+        "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+        "terms": "https://open.fda.gov/terms/",
+        "license": "https://open.fda.gov/license/",
+        "last_updated": "2026-10-09",
+        "results": {
+          "skip": 0,
+          "limit": 3,
+          "total": 3704
+        }
+      }
+    }
+  ]
+}

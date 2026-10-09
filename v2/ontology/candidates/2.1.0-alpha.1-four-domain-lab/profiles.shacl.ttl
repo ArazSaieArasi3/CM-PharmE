@@ -1,0 +1,360 @@
+@prefix cmpe: <https://w3id.org/cm-pharme/2.1/> .
+@prefix lab: <https://w3id.org/cm-pharme/experimental/four-domain/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+lab:shape-ba-partnership a sh:NodeShape ;
+    sh:class cmpe:StrategicPartnershipAgreement ;
+    sh:property lab:field-ba-partnership-c-partnershipParticipant ;
+    sh:sparql lab:partners-not-known-aliases ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select "SELECT ?this WHERE { ?this <https://w3id.org/cm-pharme/experimental/four-domain/profile> \"ba-partnership\" . }" ] .
+
+lab:shape-ba-service a sh:NodeShape ;
+    sh:class cmpe:ServiceOfferingSpecification ;
+    sh:property lab:field-ba-service-serviceCapability ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select "SELECT ?this WHERE { ?this <https://w3id.org/cm-pharme/experimental/four-domain/profile> \"ba-service\" . }" ] .
+
+lab:shape-ba-view a sh:NodeShape ;
+    sh:class cmpe:BusinessArchitectureView ;
+    sh:property lab:field-ba-view-viewOrganization,
+        lab:field-ba-view-viewService ;
+    sh:sparql lab:distinct-BusinessArchitectureView-Organization ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select "SELECT ?this WHERE { ?this <https://w3id.org/cm-pharme/experimental/four-domain/profile> \"ba-view\" . }" ] .
+
+lab:shape-deployment a sh:NodeShape ;
+    sh:class cmpe:SystemDeploymentActivity ;
+    sh:property lab:field-deployment-atTime,
+        lab:field-deployment-componentVersion,
+        lab:field-deployment-deploymentComponent,
+        lab:field-deployment-deploymentOrganization ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select "SELECT ?this WHERE { ?this <https://w3id.org/cm-pharme/experimental/four-domain/profile> \"deployment\" . }" ] .
+
+lab:shape-digital-activity a sh:NodeShape ;
+    sh:class cmpe:ProvenanceActivity ;
+    sh:property lab:field-digital-activity-atTime,
+        lab:field-digital-activity-digitalActivityDeployment ;
+    sh:sparql lab:deployment-before-use ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select "SELECT ?this WHERE { ?this <https://w3id.org/cm-pharme/experimental/four-domain/profile> \"digital-activity\" . }" ] .
+
+lab:shape-digital-record a sh:NodeShape ;
+    sh:class cmpe:SourceRecord ;
+    sh:property lab:field-digital-record-recordDigitalActivity ;
+    sh:sparql lab:distinct-SourceRecord-DigitalInformationSystemComponent ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select "SELECT ?this WHERE { ?this <https://w3id.org/cm-pharme/experimental/four-domain/profile> \"digital-record\" . }" ] .
+
+lab:shape-digital-service a sh:NodeShape ;
+    sh:class cmpe:ServiceOfferingSpecification ;
+    sh:property lab:field-digital-service-digitalServiceActivity,
+        lab:field-digital-service-digitalServiceComponent ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select "SELECT ?this WHERE { ?this <https://w3id.org/cm-pharme/experimental/four-domain/profile> \"digital-service\" . }" ] .
+
+lab:shape-pv-requirement a sh:NodeShape ;
+    sh:class cmpe:PharmacovigilanceRequirement ;
+    sh:property lab:field-pv-requirement-pvRequirementJurisdiction ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select "SELECT ?this WHERE { ?this <https://w3id.org/cm-pharme/experimental/four-domain/profile> \"pv-requirement\" . }" ] .
+
+lab:shape-pv-surveillance a sh:NodeShape ;
+    sh:class cmpe:PostMarketSurveillanceActivity ;
+    sh:property lab:field-pv-surveillance-surveillanceRequirement,
+        lab:field-pv-surveillance-surveillanceSource ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select "SELECT ?this WHERE { ?this <https://w3id.org/cm-pharme/experimental/four-domain/profile> \"pv-surveillance\" . }" ] .
+
+lab:shape-risk-assessment a sh:NodeShape ;
+    sh:class cmpe:RiskAssessmentActivity ;
+    sh:property lab:field-risk-assessment-assessmentScenario ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select "SELECT ?this WHERE { ?this <https://w3id.org/cm-pharme/experimental/four-domain/profile> \"risk-assessment\" . }" ] .
+
+lab:shape-risk-plan a sh:NodeShape ;
+    sh:class cmpe:RiskTreatmentPlan ;
+    sh:property lab:field-risk-plan-planRiskResult ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select "SELECT ?this WHERE { ?this <https://w3id.org/cm-pharme/experimental/four-domain/profile> \"risk-plan\" . }" ] .
+
+lab:shape-risk-result a sh:NodeShape ;
+    sh:class cmpe:Assertion ;
+    sh:property lab:field-risk-result-atTime,
+        lab:field-risk-result-citesSourceRecord,
+        lab:field-risk-result-conclusion,
+        lab:field-risk-result-resultAssessment ;
+    sh:sparql lab:distinct-RiskAssessmentActivity-Assertion ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select "SELECT ?this WHERE { ?this <https://w3id.org/cm-pharme/experimental/four-domain/profile> \"risk-result\" . }" ] .
+
+lab:shape-risk-review a sh:NodeShape ;
+    sh:class cmpe:RiskReviewActivity ;
+    sh:property lab:field-risk-review-atTime,
+        lab:field-risk-review-reviewNewResult,
+        lab:field-risk-review-reviewPriorResult ;
+    sh:sparql lab:review-time-order ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select "SELECT ?this WHERE { ?this <https://w3id.org/cm-pharme/experimental/four-domain/profile> \"risk-review\" . }" ] .
+
+lab:shape-risk-scenario a sh:NodeShape ;
+    sh:class cmpe:Assertion ;
+    sh:property lab:field-risk-scenario-scenarioProduct ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select "SELECT ?this WHERE { ?this <https://w3id.org/cm-pharme/experimental/four-domain/profile> \"risk-scenario\" . }" ] .
+
+lab:shape-risk-treatment a sh:NodeShape ;
+    sh:class cmpe:RiskTreatmentActivity ;
+    sh:property lab:field-risk-treatment-atTime,
+        lab:field-risk-treatment-implementsRiskPlan ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select "SELECT ?this WHERE { ?this <https://w3id.org/cm-pharme/experimental/four-domain/profile> \"risk-treatment\" . }" ] .
+
+lab:shape-safety-reporting a sh:NodeShape ;
+    sh:class cmpe:AdverseEventReportingActivity ;
+    sh:property lab:field-safety-reporting-atTime,
+        lab:field-safety-reporting-reportsRecord ;
+    sh:sparql lab:distinct-AdverseEventReportingActivity-SourceRecord ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select "SELECT ?this WHERE { ?this <https://w3id.org/cm-pharme/experimental/four-domain/profile> \"safety-reporting\" . }" ] .
+
+lab:shape-safety-signal a sh:NodeShape ;
+    sh:class cmpe:Assertion ;
+    sh:property lab:field-safety-signal-citesSourceRecord,
+        lab:field-safety-signal-signalProduct,
+        lab:field-safety-signal-signalSubstance ;
+    sh:sparql lab:signal-target-required ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select "SELECT ?this WHERE { ?this <https://w3id.org/cm-pharme/experimental/four-domain/profile> \"safety-signal\" . }" ] .
+
+lab:shape-signal-assessment a sh:NodeShape ;
+    sh:class cmpe:SignalAssessmentActivity ;
+    sh:property lab:field-signal-assessment-signalAssessmentTarget ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select "SELECT ?this WHERE { ?this <https://w3id.org/cm-pharme/experimental/four-domain/profile> \"signal-assessment\" . }" ] .
+
+lab:shape-signal-result a sh:NodeShape ;
+    sh:class cmpe:Assertion ;
+    sh:property lab:field-signal-result-atTime,
+        lab:field-signal-result-pvResultAssessment,
+        lab:field-signal-result-pvResultSignal,
+        lab:field-signal-result-signalStatus ;
+    sh:sparql lab:distinct-SignalAssessmentActivity-Assertion,
+        lab:signal-result-agreement,
+        lab:signal-result-distinct ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select "SELECT ?this WHERE { ?this <https://w3id.org/cm-pharme/experimental/four-domain/profile> \"signal-result\" . }" ] .
+
+lab:deployment-before-use a sh:SPARQLConstraint ;
+    sh:message "A deployment must not postdate its use." ;
+    sh:select "SELECT $this WHERE { $this <https://w3id.org/cm-pharme/experimental/four-domain/digitalActivityDeployment> ?d ; <https://w3id.org/cm-pharme/experimental/four-domain/atTime> ?t . ?d <https://w3id.org/cm-pharme/experimental/four-domain/atTime> ?dt . FILTER(?dt > ?t) }" .
+
+lab:distinct-AdverseEventReportingActivity-SourceRecord a sh:SPARQLConstraint ;
+    sh:message "Content and real-world bearer/occurrence must not be the same node." ;
+    sh:select "SELECT $this WHERE { $this a <https://w3id.org/cm-pharme/2.1/AdverseEventReportingActivity> , <https://w3id.org/cm-pharme/2.1/SourceRecord> . }" .
+
+lab:distinct-BusinessArchitectureView-Organization a sh:SPARQLConstraint ;
+    sh:message "Content and real-world bearer/occurrence must not be the same node." ;
+    sh:select "SELECT $this WHERE { $this a <https://w3id.org/cm-pharme/2.1/BusinessArchitectureView> , <https://w3id.org/cm-pharme/2.1/Organization> . }" .
+
+lab:distinct-RiskAssessmentActivity-Assertion a sh:SPARQLConstraint ;
+    sh:message "Content and real-world bearer/occurrence must not be the same node." ;
+    sh:select "SELECT $this WHERE { $this a <https://w3id.org/cm-pharme/2.1/RiskAssessmentActivity> , <https://w3id.org/cm-pharme/2.1/Assertion> . }" .
+
+lab:distinct-SignalAssessmentActivity-Assertion a sh:SPARQLConstraint ;
+    sh:message "Content and real-world bearer/occurrence must not be the same node." ;
+    sh:select "SELECT $this WHERE { $this a <https://w3id.org/cm-pharme/2.1/SignalAssessmentActivity> , <https://w3id.org/cm-pharme/2.1/Assertion> . }" .
+
+lab:distinct-SourceRecord-DigitalInformationSystemComponent a sh:SPARQLConstraint ;
+    sh:message "Content and real-world bearer/occurrence must not be the same node." ;
+    sh:select "SELECT $this WHERE { $this a <https://w3id.org/cm-pharme/2.1/SourceRecord> , <https://w3id.org/cm-pharme/2.1/DigitalInformationSystemComponent> . }" .
+
+lab:field-ba-partnership-c-partnershipParticipant sh:class cmpe:PartnerOrganizationRole ;
+    sh:minCount 2 ;
+    sh:path cmpe:partnershipParticipant .
+
+lab:field-ba-service-serviceCapability sh:class cmpe:EnterpriseCapability ;
+    sh:minCount 1 ;
+    sh:path lab:serviceCapability .
+
+lab:field-ba-view-viewOrganization sh:class cmpe:Organization ;
+    sh:minCount 1 ;
+    sh:path lab:viewOrganization .
+
+lab:field-ba-view-viewService sh:class cmpe:ServiceOfferingSpecification ;
+    sh:minCount 0 ;
+    sh:path lab:viewService .
+
+lab:field-deployment-atTime sh:datatype xsd:dateTime ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:path lab:atTime .
+
+lab:field-deployment-componentVersion sh:datatype xsd:string ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:path lab:componentVersion .
+
+lab:field-deployment-deploymentComponent sh:class cmpe:DigitalInformationSystemComponent ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:path lab:deploymentComponent .
+
+lab:field-deployment-deploymentOrganization sh:class cmpe:Organization ;
+    sh:minCount 1 ;
+    sh:path lab:deploymentOrganization .
+
+lab:field-digital-activity-atTime sh:datatype xsd:dateTime ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:path lab:atTime .
+
+lab:field-digital-activity-digitalActivityDeployment sh:class cmpe:SystemDeploymentActivity ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:path lab:digitalActivityDeployment .
+
+lab:field-digital-record-recordDigitalActivity sh:class cmpe:ProvenanceActivity ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:path lab:recordDigitalActivity .
+
+lab:field-digital-service-digitalServiceActivity sh:class cmpe:ProvenanceActivity ;
+    sh:minCount 1 ;
+    sh:path lab:digitalServiceActivity .
+
+lab:field-digital-service-digitalServiceComponent sh:class cmpe:DigitalInformationSystemComponent ;
+    sh:minCount 1 ;
+    sh:path lab:digitalServiceComponent .
+
+lab:field-pv-requirement-pvRequirementJurisdiction sh:class cmpe:RegulatoryJurisdiction ;
+    sh:minCount 1 ;
+    sh:path lab:pvRequirementJurisdiction .
+
+lab:field-pv-surveillance-surveillanceRequirement sh:class cmpe:PharmacovigilanceRequirement ;
+    sh:minCount 1 ;
+    sh:path lab:surveillanceRequirement .
+
+lab:field-pv-surveillance-surveillanceSource sh:class cmpe:SourceRecord ;
+    sh:minCount 1 ;
+    sh:path lab:surveillanceSource .
+
+lab:field-risk-assessment-assessmentScenario sh:class cmpe:Assertion ;
+    sh:minCount 1 ;
+    sh:path lab:assessmentScenario .
+
+lab:field-risk-plan-planRiskResult sh:class cmpe:Assertion ;
+    sh:minCount 1 ;
+    sh:path lab:planRiskResult .
+
+lab:field-risk-result-atTime sh:datatype xsd:dateTime ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:path lab:atTime .
+
+lab:field-risk-result-citesSourceRecord sh:class cmpe:SourceRecord ;
+    sh:minCount 1 ;
+    sh:path lab:citesSourceRecord .
+
+lab:field-risk-result-conclusion sh:datatype xsd:string ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:path lab:conclusion .
+
+lab:field-risk-result-resultAssessment sh:class cmpe:RiskAssessmentActivity ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:path lab:resultAssessment .
+
+lab:field-risk-review-atTime sh:datatype xsd:dateTime ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:path lab:atTime .
+
+lab:field-risk-review-reviewNewResult sh:class cmpe:Assertion ;
+    sh:minCount 1 ;
+    sh:path lab:reviewNewResult .
+
+lab:field-risk-review-reviewPriorResult sh:class cmpe:Assertion ;
+    sh:minCount 1 ;
+    sh:path lab:reviewPriorResult .
+
+lab:field-risk-scenario-scenarioProduct sh:class cmpe:MedicinalProduct ;
+    sh:minCount 1 ;
+    sh:path lab:scenarioProduct .
+
+lab:field-risk-treatment-atTime sh:datatype xsd:dateTime ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:path lab:atTime .
+
+lab:field-risk-treatment-implementsRiskPlan sh:class cmpe:RiskTreatmentPlan ;
+    sh:minCount 1 ;
+    sh:path lab:implementsRiskPlan .
+
+lab:field-safety-reporting-atTime sh:datatype xsd:dateTime ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:path lab:atTime .
+
+lab:field-safety-reporting-reportsRecord sh:class cmpe:SourceRecord ;
+    sh:minCount 1 ;
+    sh:path lab:reportsRecord .
+
+lab:field-safety-signal-citesSourceRecord sh:class cmpe:SourceRecord ;
+    sh:minCount 1 ;
+    sh:path lab:citesSourceRecord .
+
+lab:field-safety-signal-signalProduct sh:class cmpe:MedicinalProduct ;
+    sh:minCount 0 ;
+    sh:path lab:signalProduct .
+
+lab:field-safety-signal-signalSubstance sh:class cmpe:PharmaceuticalSubstance ;
+    sh:minCount 0 ;
+    sh:path lab:signalSubstance .
+
+lab:field-signal-assessment-signalAssessmentTarget sh:class cmpe:Assertion ;
+    sh:minCount 1 ;
+    sh:path lab:signalAssessmentTarget .
+
+lab:field-signal-result-atTime sh:datatype xsd:dateTime ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:path lab:atTime .
+
+lab:field-signal-result-pvResultAssessment sh:class cmpe:SignalAssessmentActivity ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:path lab:pvResultAssessment .
+
+lab:field-signal-result-pvResultSignal sh:class cmpe:Assertion ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:path lab:pvResultSignal .
+
+lab:field-signal-result-signalStatus sh:datatype xsd:string ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:path lab:signalStatus .
+
+lab:partners-not-known-aliases a sh:SPARQLConstraint ;
+    sh:message "Two known aliases do not establish two distinct organizations." ;
+    sh:select "SELECT DISTINCT $this WHERE { $this <https://w3id.org/cm-pharme/2.1/partnershipParticipant> ?a, ?b . ?a <http://www.w3.org/2002/07/owl#sameAs> ?b . FILTER(?a != ?b) }" .
+
+lab:review-time-order a sh:SPARQLConstraint ;
+    sh:message "New result must not predate the prior result." ;
+    sh:select "SELECT $this WHERE { $this <https://w3id.org/cm-pharme/experimental/four-domain/reviewPriorResult> ?old ; <https://w3id.org/cm-pharme/experimental/four-domain/reviewNewResult> ?new . ?old <https://w3id.org/cm-pharme/experimental/four-domain/atTime> ?a . ?new <https://w3id.org/cm-pharme/experimental/four-domain/atTime> ?b . FILTER(?b <= ?a) }" .
+
+lab:signal-result-agreement a sh:SPARQLConstraint ;
+    sh:message "The recorded result and producing assessment must refer to the same signal." ;
+    sh:select "SELECT $this WHERE { $this <https://w3id.org/cm-pharme/experimental/four-domain/pvResultSignal> ?s ; <https://w3id.org/cm-pharme/experimental/four-domain/pvResultAssessment> ?a . FILTER NOT EXISTS { ?a <https://w3id.org/cm-pharme/experimental/four-domain/signalAssessmentTarget> ?s } }" .
+
+lab:signal-result-distinct a sh:SPARQLConstraint ;
+    sh:message "An assessment result must not be its own assessed signal or a known alias of it." ;
+    sh:select "SELECT $this WHERE { $this <https://w3id.org/cm-pharme/experimental/four-domain/pvResultSignal> ?s . FILTER($this = ?s || EXISTS { $this <http://www.w3.org/2002/07/owl#sameAs> ?s } || EXISTS { ?s <http://www.w3.org/2002/07/owl#sameAs> $this }) }" .
+
+lab:signal-target-required a sh:SPARQLConstraint ;
+    sh:message "A signal must name a product or substance." ;
+    sh:select "SELECT $this WHERE { FILTER NOT EXISTS { $this <https://w3id.org/cm-pharme/experimental/four-domain/signalProduct> ?p } FILTER NOT EXISTS { $this <https://w3id.org/cm-pharme/experimental/four-domain/signalSubstance> ?s } }" .

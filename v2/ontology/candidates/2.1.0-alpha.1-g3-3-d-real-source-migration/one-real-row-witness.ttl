@@ -1,0 +1,105 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns1: <https://w3id.org/cm-pharme/2.1/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/cm-pharme/2.1/data/g3d/p1-19160825/atc-classification-assignment/b37a7e3bdb5471984b1f> a ns1:ProductClassificationAssignment ;
+    prov:wasDerivedFrom <https://w3id.org/cm-pharme/2.1/data/g3d/p1-19160825/source-record/03f0b09b8bcfa2bf7f01> ;
+    ns1:classificationEntity <https://w3id.org/cm-pharme/2.1/data/g3d/p1-19160825/source-product/1acf6306d18b9d84b3c2> ;
+    ns1:classificationEntry <https://w3id.org/cm-pharme/2.1/data/g3d/p1-19160825/atc-entry/bedc18ec82c5f73670dd> .
+
+<https://w3id.org/cm-pharme/2.1/data/g3d/p1-19160825/dataset/nhif-outpatient> a ns1:Dataset ;
+    ns1:hasDatasetRelease <https://w3id.org/cm-pharme/2.1/data/g3d/p1-19160825/release/zenodo-19160825> .
+
+<https://w3id.org/cm-pharme/2.1/data/g3d/p1-19160825/nhif-identifier-assignment/3323c0e0eab6e158c9f8> a ns1:IdentifierAssignment ;
+    prov:wasDerivedFrom <https://w3id.org/cm-pharme/2.1/data/g3d/p1-19160825/source-record/03f0b09b8bcfa2bf7f01> ;
+    ns1:identifierEntity <https://w3id.org/cm-pharme/2.1/data/g3d/p1-19160825/source-presentation/c92dc2998d358a09343e> ;
+    ns1:identifierLexicalValue "af156"^^xsd:string ;
+    ns1:identifierScheme <https://w3id.org/cm-pharme/2.1/data/g3d/p1-19160825/scheme/nhif-product-code-19160825> .
+
+<https://w3id.org/cm-pharme/2.1/data/g3d/p1-19160825/observation/03f0b09b8bcfa2bf7f01/costs_bgn> a ns1:ObservationResult,
+        ns1:ReimbursementUtilisationObservationResult ;
+    dcterms:spatial <https://w3id.org/cm-pharme/2.1/data/g3d/p1-19160825/region/17ed66724c8340060331> ;
+    prov:wasDerivedFrom <https://w3id.org/cm-pharme/2.1/data/g3d/p1-19160825/source-record/03f0b09b8bcfa2bf7f01> ;
+    ns1:measureNumericValue 5.4 ;
+    ns1:measureUnitLabel "BGN"^^xsd:string ;
+    ns1:observationAboutPresentation <https://w3id.org/cm-pharme/2.1/data/g3d/p1-19160825/source-presentation/c92dc2998d358a09343e> ;
+    ns1:observationAboutProduct <https://w3id.org/cm-pharme/2.1/data/g3d/p1-19160825/source-product/1acf6306d18b9d84b3c2> ;
+    ns1:reimbursementDiagnosisContext <https://w3id.org/cm-pharme/2.1/data/g3d/p1-19160825/icd-reference/b26f68c61862e032a55b> ;
+    ns1:validFrom "2021-04-01T00:00:00+00:00"^^xsd:dateTime .
+
+<https://w3id.org/cm-pharme/2.1/data/g3d/p1-19160825/observation/03f0b09b8bcfa2bf7f01/costs_eur> a ns1:ObservationResult,
+        ns1:ReimbursementUtilisationObservationResult ;
+    dcterms:spatial <https://w3id.org/cm-pharme/2.1/data/g3d/p1-19160825/region/17ed66724c8340060331> ;
+    prov:wasDerivedFrom <https://w3id.org/cm-pharme/2.1/data/g3d/p1-19160825/source-record/03f0b09b8bcfa2bf7f01> ;
+    ns1:measureNumericValue 2.76097615845958 ;
+    ns1:measureUnitLabel "EUR"^^xsd:string ;
+    ns1:observationAboutPresentation <https://w3id.org/cm-pharme/2.1/data/g3d/p1-19160825/source-presentation/c92dc2998d358a09343e> ;
+    ns1:observationAboutProduct <https://w3id.org/cm-pharme/2.1/data/g3d/p1-19160825/source-product/1acf6306d18b9d84b3c2> ;
+    ns1:reimbursementDiagnosisContext <https://w3id.org/cm-pharme/2.1/data/g3d/p1-19160825/icd-reference/b26f68c61862e032a55b> ;
+    ns1:validFrom "2021-04-01T00:00:00+00:00"^^xsd:dateTime .
+
+<https://w3id.org/cm-pharme/2.1/data/g3d/p1-19160825/observation/03f0b09b8bcfa2bf7f01/pack_num> a ns1:ObservationResult,
+        ns1:ReimbursementUtilisationObservationResult ;
+    dcterms:spatial <https://w3id.org/cm-pharme/2.1/data/g3d/p1-19160825/region/17ed66724c8340060331> ;
+    prov:wasDerivedFrom <https://w3id.org/cm-pharme/2.1/data/g3d/p1-19160825/source-record/03f0b09b8bcfa2bf7f01> ;
+    ns1:measureNumericValue 2.0 ;
+    ns1:measureUnitLabel "package count (aggregate)"^^xsd:string ;
+    ns1:observationAboutPresentation <https://w3id.org/cm-pharme/2.1/data/g3d/p1-19160825/source-presentation/c92dc2998d358a09343e> ;
+    ns1:observationAboutProduct <https://w3id.org/cm-pharme/2.1/data/g3d/p1-19160825/source-product/1acf6306d18b9d84b3c2> ;
+    ns1:reimbursementDiagnosisContext <https://w3id.org/cm-pharme/2.1/data/g3d/p1-19160825/icd-reference/b26f68c61862e032a55b> ;
+    ns1:validFrom "2021-04-01T00:00:00+00:00"^^xsd:dateTime .
+
+<https://w3id.org/cm-pharme/2.1/data/g3d/p1-19160825/observation/03f0b09b8bcfa2bf7f01/patients_num> a ns1:ObservationResult,
+        ns1:ReimbursementUtilisationObservationResult ;
+    dcterms:spatial <https://w3id.org/cm-pharme/2.1/data/g3d/p1-19160825/region/17ed66724c8340060331> ;
+    prov:wasDerivedFrom <https://w3id.org/cm-pharme/2.1/data/g3d/p1-19160825/source-record/03f0b09b8bcfa2bf7f01> ;
+    ns1:measureNumericValue 1.0 ;
+    ns1:measureUnitLabel "patient count (aggregate)"^^xsd:string ;
+    ns1:observationAboutPresentation <https://w3id.org/cm-pharme/2.1/data/g3d/p1-19160825/source-presentation/c92dc2998d358a09343e> ;
+    ns1:observationAboutProduct <https://w3id.org/cm-pharme/2.1/data/g3d/p1-19160825/source-product/1acf6306d18b9d84b3c2> ;
+    ns1:reimbursementDiagnosisContext <https://w3id.org/cm-pharme/2.1/data/g3d/p1-19160825/icd-reference/b26f68c61862e032a55b> ;
+    ns1:validFrom "2021-04-01T00:00:00+00:00"^^xsd:dateTime .
+
+<https://w3id.org/cm-pharme/2.1/data/g3d/p1-19160825/atc-entry/bedc18ec82c5f73670dd> a ns1:AppliedClassificationEntryRole,
+        ns1:ClassificationEntry ;
+    rdfs:label "omeprazole" ;
+    skos:notation "a02bc01" ;
+    ns1:entryInScheme <https://w3id.org/cm-pharme/2.1/data/g3d/p1-19160825/scheme/atc-source-19160825> .
+
+<https://w3id.org/cm-pharme/2.1/data/g3d/p1-19160825/release/zenodo-19160825> a ns1:DatasetRelease ;
+    dcterms:identifier "10.5281/zenodo.19160825" ;
+    dcterms:source <https://zenodo.org/records/19160825> ;
+    ns1:containsSourceRecord <https://w3id.org/cm-pharme/2.1/data/g3d/p1-19160825/source-record/03f0b09b8bcfa2bf7f01> .
+
+<https://w3id.org/cm-pharme/2.1/data/g3d/p1-19160825/scheme/atc-source-19160825> a ns1:ProductClassificationScheme ;
+    rdfs:label "ATC classification reference as given by NHIF source" .
+
+<https://w3id.org/cm-pharme/2.1/data/g3d/p1-19160825/scheme/nhif-product-code-19160825> a ns1:IdentifierScheme,
+        ns1:UsedIdentifierSchemeRole ;
+    rdfs:label "NHIF reimbursement product code (source-scoped)" .
+
+<https://w3id.org/cm-pharme/2.1/data/g3d/p1-19160825/icd-reference/b26f68c61862e032a55b> a ns1:DiagnosisClassificationReference ;
+    rdfs:label "Езофагит" ;
+    skos:notation "k20" .
+
+<https://w3id.org/cm-pharme/2.1/data/g3d/p1-19160825/region/17ed66724c8340060331> a ns1:AdministrativeRegion ;
+    rdfs:label "благоевград" ;
+    skos:notation "01" .
+
+<https://w3id.org/cm-pharme/2.1/data/g3d/p1-19160825/source-presentation/c92dc2998d358a09343e> a ns1:IdentifiedEntity,
+        ns1:IdentifiedMedicinalProductPresentationRole,
+        ns1:MedicinalProductPresentation ;
+    dcterms:description "source packaging=capsules; concentration=20 mg; units=28" ;
+    ns1:presentationOf <https://w3id.org/cm-pharme/2.1/data/g3d/p1-19160825/source-product/1acf6306d18b9d84b3c2> .
+
+<https://w3id.org/cm-pharme/2.1/data/g3d/p1-19160825/source-product/1acf6306d18b9d84b3c2> a ns1:ClassifiedEntity,
+        ns1:ClassifiedMedicinalProductRole,
+        ns1:MedicinalProduct ;
+    rdfs:label "bioprazol" .
+
+<https://w3id.org/cm-pharme/2.1/data/g3d/p1-19160825/source-record/03f0b09b8bcfa2bf7f01> a ns1:SourceRecord ;
+    dcterms:identifier "source-byte-186;sha256-7f204176ad00c5c6627191bd440f4c679c033c064542ae116a64de933aa9e542" .
+

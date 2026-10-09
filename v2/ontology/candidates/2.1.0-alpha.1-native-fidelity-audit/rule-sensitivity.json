@@ -1,0 +1,427 @@
+{
+  "scope": "Hand-specified rule sensitivity witnesses; not real candidate acceptance or native parser cases.",
+  "cases": [
+    {
+      "name": "valid-type-and-context",
+      "checked": "overall",
+      "expected": "PASS",
+      "actual": "PASS",
+      "pass": true,
+      "observation": {
+        "end": "narrow-b",
+        "target": "wide-b",
+        "kind": "subsettedProperties",
+        "relation": "narrow",
+        "reference": "PASS",
+        "source_type": "Child",
+        "target_type": "Parent",
+        "source_cardinality": "0..2",
+        "target_cardinality": "0..2",
+        "type_conformance": "PASS",
+        "context_conformance": "PASS",
+        "upper_bound": "PASS",
+        "different_names": "PASS",
+        "overall": "PASS"
+      }
+    },
+    {
+      "name": "same-type-allowed",
+      "checked": "type_conformance",
+      "expected": "PASS",
+      "actual": "PASS",
+      "pass": true,
+      "observation": {
+        "end": "narrow-b",
+        "target": "wide-b",
+        "kind": "subsettedProperties",
+        "relation": "narrow",
+        "reference": "PASS",
+        "source_type": "Parent",
+        "target_type": "Parent",
+        "source_cardinality": "0..2",
+        "target_cardinality": "0..2",
+        "type_conformance": "PASS",
+        "context_conformance": "PASS",
+        "upper_bound": "PASS",
+        "different_names": "PASS",
+        "overall": "PASS"
+      }
+    },
+    {
+      "name": "reverse-type-rejected",
+      "checked": "type_conformance",
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "pass": true,
+      "observation": {
+        "end": "narrow-b",
+        "target": "wide-b",
+        "kind": "subsettedProperties",
+        "relation": "narrow",
+        "reference": "PASS",
+        "source_type": "Parent",
+        "target_type": "Child",
+        "source_cardinality": "0..2",
+        "target_cardinality": "0..2",
+        "type_conformance": "FAIL",
+        "context_conformance": "PASS",
+        "upper_bound": "PASS",
+        "different_names": "PASS",
+        "overall": "FAIL"
+      }
+    },
+    {
+      "name": "unrelated-type-rejected",
+      "checked": "type_conformance",
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "pass": true,
+      "observation": {
+        "end": "narrow-b",
+        "target": "wide-b",
+        "kind": "subsettedProperties",
+        "relation": "narrow",
+        "reference": "PASS",
+        "source_type": "Other",
+        "target_type": "Parent",
+        "source_cardinality": "0..2",
+        "target_cardinality": "0..2",
+        "type_conformance": "FAIL",
+        "context_conformance": "PASS",
+        "upper_bound": "PASS",
+        "different_names": "PASS",
+        "overall": "FAIL"
+      }
+    },
+    {
+      "name": "unknown-parent-type-not-pass",
+      "checked": "type_conformance",
+      "expected": "UNKNOWN",
+      "actual": "UNKNOWN",
+      "pass": true,
+      "observation": {
+        "end": "narrow-b",
+        "target": "wide-b",
+        "kind": "subsettedProperties",
+        "relation": "narrow",
+        "reference": "PASS",
+        "source_type": "Child",
+        "target_type": null,
+        "source_cardinality": "0..2",
+        "target_cardinality": "0..2",
+        "type_conformance": "UNKNOWN",
+        "context_conformance": "PASS",
+        "upper_bound": "PASS",
+        "different_names": "PASS",
+        "overall": "UNKNOWN"
+      }
+    },
+    {
+      "name": "opposite-end-context-rejected",
+      "checked": "context_conformance",
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "pass": true,
+      "observation": {
+        "end": "narrow-b",
+        "target": "wide-b",
+        "kind": "subsettedProperties",
+        "relation": "narrow",
+        "reference": "PASS",
+        "source_type": "Child",
+        "target_type": "Parent",
+        "source_cardinality": "0..2",
+        "target_cardinality": "0..2",
+        "type_conformance": "PASS",
+        "context_conformance": "FAIL",
+        "upper_bound": "PASS",
+        "different_names": "PASS",
+        "overall": "FAIL"
+      }
+    },
+    {
+      "name": "same-type-at-both-ends-still-has-context",
+      "checked": "context_conformance",
+      "expected": "PASS",
+      "actual": "PASS",
+      "pass": true,
+      "observation": {
+        "end": "narrow-b",
+        "target": "wide-b",
+        "kind": "subsettedProperties",
+        "relation": "narrow",
+        "reference": "PASS",
+        "source_type": "Child",
+        "target_type": "Parent",
+        "source_cardinality": "0..2",
+        "target_cardinality": "0..2",
+        "type_conformance": "PASS",
+        "context_conformance": "PASS",
+        "upper_bound": "PASS",
+        "different_names": "PASS",
+        "overall": "PASS"
+      }
+    },
+    {
+      "name": "unknown-context-not-pass",
+      "checked": "context_conformance",
+      "expected": "UNKNOWN",
+      "actual": "UNKNOWN",
+      "pass": true,
+      "observation": {
+        "end": "narrow-b",
+        "target": "wide-b",
+        "kind": "subsettedProperties",
+        "relation": "narrow",
+        "reference": "PASS",
+        "source_type": "Child",
+        "target_type": "Parent",
+        "source_cardinality": "0..2",
+        "target_cardinality": "0..2",
+        "type_conformance": "PASS",
+        "context_conformance": "UNKNOWN",
+        "upper_bound": "PASS",
+        "different_names": "PASS",
+        "overall": "UNKNOWN"
+      }
+    },
+    {
+      "name": "finite-upper-widening-rejected",
+      "checked": "upper_bound",
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "pass": true,
+      "observation": {
+        "end": "narrow-b",
+        "target": "wide-b",
+        "kind": "subsettedProperties",
+        "relation": "narrow",
+        "reference": "PASS",
+        "source_type": "Child",
+        "target_type": "Parent",
+        "source_cardinality": "0..3",
+        "target_cardinality": "0..2",
+        "type_conformance": "PASS",
+        "context_conformance": "PASS",
+        "upper_bound": "FAIL",
+        "different_names": "PASS",
+        "overall": "FAIL"
+      }
+    },
+    {
+      "name": "unbounded-child-finite-parent-rejected",
+      "checked": "upper_bound",
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "pass": true,
+      "observation": {
+        "end": "narrow-b",
+        "target": "wide-b",
+        "kind": "subsettedProperties",
+        "relation": "narrow",
+        "reference": "PASS",
+        "source_type": "Child",
+        "target_type": "Parent",
+        "source_cardinality": "0..*",
+        "target_cardinality": "0..2",
+        "type_conformance": "PASS",
+        "context_conformance": "PASS",
+        "upper_bound": "FAIL",
+        "different_names": "PASS",
+        "overall": "FAIL"
+      }
+    },
+    {
+      "name": "finite-child-unbounded-parent-allowed",
+      "checked": "upper_bound",
+      "expected": "PASS",
+      "actual": "PASS",
+      "pass": true,
+      "observation": {
+        "end": "narrow-b",
+        "target": "wide-b",
+        "kind": "subsettedProperties",
+        "relation": "narrow",
+        "reference": "PASS",
+        "source_type": "Child",
+        "target_type": "Parent",
+        "source_cardinality": "0..2",
+        "target_cardinality": "0..*",
+        "type_conformance": "PASS",
+        "context_conformance": "PASS",
+        "upper_bound": "PASS",
+        "different_names": "PASS",
+        "overall": "PASS"
+      }
+    },
+    {
+      "name": "both-unbounded-allowed",
+      "checked": "upper_bound",
+      "expected": "PASS",
+      "actual": "PASS",
+      "pass": true,
+      "observation": {
+        "end": "narrow-b",
+        "target": "wide-b",
+        "kind": "subsettedProperties",
+        "relation": "narrow",
+        "reference": "PASS",
+        "source_type": "Child",
+        "target_type": "Parent",
+        "source_cardinality": "0..*",
+        "target_cardinality": "0..*",
+        "type_conformance": "PASS",
+        "context_conformance": "PASS",
+        "upper_bound": "PASS",
+        "different_names": "PASS",
+        "overall": "PASS"
+      }
+    },
+    {
+      "name": "unknown-upper-not-defaulted",
+      "checked": "upper_bound",
+      "expected": "UNKNOWN",
+      "actual": "UNKNOWN",
+      "pass": true,
+      "observation": {
+        "end": "narrow-b",
+        "target": "wide-b",
+        "kind": "subsettedProperties",
+        "relation": "narrow",
+        "reference": "PASS",
+        "source_type": "Child",
+        "target_type": "Parent",
+        "source_cardinality": "0..2",
+        "target_cardinality": null,
+        "type_conformance": "PASS",
+        "context_conformance": "PASS",
+        "upper_bound": "UNKNOWN",
+        "different_names": "PASS",
+        "overall": "UNKNOWN"
+      }
+    },
+    {
+      "name": "lower-may-be-less",
+      "checked": "overall",
+      "expected": "PASS",
+      "actual": "PASS",
+      "pass": true,
+      "observation": {
+        "end": "narrow-b",
+        "target": "wide-b",
+        "kind": "subsettedProperties",
+        "relation": "narrow",
+        "reference": "PASS",
+        "source_type": "Child",
+        "target_type": "Parent",
+        "source_cardinality": "0..2",
+        "target_cardinality": "1..2",
+        "type_conformance": "PASS",
+        "context_conformance": "PASS",
+        "upper_bound": "PASS",
+        "different_names": "PASS",
+        "overall": "PASS"
+      }
+    },
+    {
+      "name": "same-property-name-rejected",
+      "checked": "different_names",
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "pass": true,
+      "observation": {
+        "end": "narrow-b",
+        "target": "wide-b",
+        "kind": "subsettedProperties",
+        "relation": "narrow",
+        "reference": "PASS",
+        "source_type": "Child",
+        "target_type": "Parent",
+        "source_cardinality": "0..2",
+        "target_cardinality": "0..2",
+        "type_conformance": "PASS",
+        "context_conformance": "PASS",
+        "upper_bound": "PASS",
+        "different_names": "FAIL",
+        "overall": "FAIL"
+      }
+    },
+    {
+      "name": "dangling-reference-rejected",
+      "checked": "reference",
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "pass": true,
+      "observation": {
+        "end": "narrow-b",
+        "target": "missing",
+        "kind": "subsettedProperties",
+        "relation": "narrow",
+        "reference": "FAIL",
+        "overall": "FAIL"
+      }
+    },
+    {
+      "name": "redefinition-not-certified-as-subsetting",
+      "checked": "overall",
+      "expected": "UNKNOWN",
+      "actual": "UNKNOWN",
+      "pass": true,
+      "observation": {
+        "end": "narrow-b",
+        "target": "wide-b",
+        "kind": "redefinedProperties",
+        "relation": "narrow",
+        "reference": "PASS",
+        "source_type": "Child",
+        "target_type": "Parent",
+        "source_cardinality": "0..2",
+        "target_cardinality": "0..2",
+        "overall": "UNKNOWN",
+        "reason": "Redefinition semantic rules are outside this bounded checker"
+      }
+    },
+    {
+      "name": "inverted-bounds-refused",
+      "checked": "overall",
+      "expected": "REFUSED",
+      "actual": "REFUSED",
+      "pass": true,
+      "observation": {
+        "error": "Inverted cardinality"
+      }
+    },
+    {
+      "name": "cyclic-generalization-refused",
+      "checked": "overall",
+      "expected": "REFUSED",
+      "actual": "REFUSED",
+      "pass": true,
+      "observation": {
+        "error": "Cyclic generalization"
+      }
+    },
+    {
+      "name": "duplicate-id-refused",
+      "checked": "overall",
+      "expected": "REFUSED",
+      "actual": "REFUSED",
+      "pass": true,
+      "observation": {
+        "error": "Duplicate element IDs"
+      }
+    },
+    {
+      "name": "multiple-end-owners-refused",
+      "checked": "overall",
+      "expected": "REFUSED",
+      "actual": "REFUSED",
+      "pass": true,
+      "observation": {
+        "error": "Invalid or multiply owned binary end"
+      }
+    }
+  ],
+  "pass": 21,
+  "total": 21
+}

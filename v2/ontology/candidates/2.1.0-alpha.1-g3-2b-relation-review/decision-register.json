@@ -1,0 +1,281 @@
+{
+  "source_revision": "fb281f2d605090da2779bb2021be7cb00de4de73",
+  "status": "BOUNDED_SEMANTIC_REVIEW_PROPOSAL_NOT_FINAL_SIGNOFF",
+  "changes_to_native_model": 0,
+  "reviewed_relations": 7,
+  "records": [
+    {
+      "id": "rel-authorizationJurisdiction",
+      "name": "authorizationJurisdiction",
+      "source": {
+        "class": "RegulatoryAuthorization",
+        "stereotype": "relator",
+        "multiplicity": null,
+        "subsetted_end": null
+      },
+      "target": {
+        "class": "RegulatoryJurisdiction",
+        "stereotype": "kind",
+        "multiplicity": null,
+        "subsetted_end": null
+      },
+      "prior_stereotype": null,
+      "candidate_stereotype": null,
+      "disposition": "PENDING_RELRIG_DISPOSITION",
+      "rationale": "RegulatoryJurisdiction is a Kind denoting legal scope. RegulatoryAuthorization already mediates AuthorizingAuthorityRole and AuthorizedParty; the jurisdiction link records applicability and does not establish that a jurisdiction acquires a role from this authorization.",
+      "required_evidence": "Choose evidenced anti-rigid role or essential read-only dependency, then cardinality and lifecycle.",
+      "owl_check": {
+        "name": "authorizationJurisdiction",
+        "domain": "RegulatoryAuthorization",
+        "range": "RegulatoryJurisdiction",
+        "subproperty_of": null,
+        "source_matches": true,
+        "target_matches": true,
+        "subsetting_matches": true
+      },
+      "proposal": "SCOPE_REFERENCE_RETAIN_UNTYPED",
+      "positive_synthetic_example": "An authorization explicitly valid under jurisdiction J with identified authority and authorized party.",
+      "rejecting_counterexample": "A source-country field alone, or an authority office's physical address, cannot establish the authorization's legal jurisdiction.",
+      "remaining_evidence": "Evidence for legal applicability, validity interval and whether the scope is constitutive/immutable; decide formal stereotype only with a quality-comparison derivation or use a documented non-stereotyped reference.",
+      "sources": [
+        "https://github.com/ArazSaieArasi3/CM-PharmE/blob/fb281f2d605090da2779bb2021be7cb00de4de73/v2/research/w4/geography-jurisdiction.md",
+        "https://github.com/ArazSaieArasi3/CM-PharmE/blob/fb281f2d605090da2779bb2021be7cb00de4de73/v2/research/w4/relator-material-patterns.md"
+      ],
+      "author_scientific_disposition": "PENDING"
+    },
+    {
+      "id": "rel-disruptionAffectsDependency",
+      "name": "disruptionAffectsDependency",
+      "source": {
+        "class": "DisruptionEvent",
+        "stereotype": "event",
+        "multiplicity": "0..*",
+        "subsetted_end": "end-disruptionAffects-source"
+      },
+      "target": {
+        "class": "SupplyDependency",
+        "stereotype": "relator",
+        "multiplicity": "0..*",
+        "subsetted_end": "end-disruptionAffects-target"
+      },
+      "prior_stereotype": null,
+      "candidate_stereotype": null,
+      "disposition": "PENDING_PARENT_SEMANTICS",
+      "rationale": "An Event-to-Relator effect claim cannot be made a mediation (no Relator source) or material relation without an identified truthmaker/derivation. The child subsets an untyped parent.",
+      "required_evidence": "Resolve parent relation meaning and stereotype before child; inspect multiplicity constraints.",
+      "owl_check": {
+        "name": "disruptionAffectsDependency",
+        "domain": "DisruptionEvent",
+        "range": "SupplyDependency",
+        "subproperty_of": "disruptionAffects",
+        "source_matches": true,
+        "target_matches": true,
+        "subsetting_matches": true
+      },
+      "proposal": "ABOUTNESS_OR_EFFECT_REVIEW_NO_STEREOTYPE",
+      "positive_synthetic_example": "A dated disruption D with explicit source evidence that D impaired dependency S during a specified interval.",
+      "rejecting_counterexample": "Temporal overlap between a disruption and a dependency, or a co-reported shortage, does not prove D affected S.",
+      "remaining_evidence": "Define what 'affects' means, causal-evidence standard, temporal order, parent disruptionAffects semantics, and allowed endpoint types.",
+      "sources": [
+        "https://github.com/ArazSaieArasi3/CM-PharmE/blob/fb281f2d605090da2779bb2021be7cb00de4de73/v2/research/w4/events-situations-observations.md",
+        "https://github.com/ArazSaieArasi3/CM-PharmE/blob/fb281f2d605090da2779bb2021be7cb00de4de73/v2/research/w4/risk-resilience-extension.md"
+      ],
+      "author_scientific_disposition": "PENDING"
+    },
+    {
+      "id": "rel-listingJurisdiction",
+      "name": "listingJurisdiction",
+      "source": {
+        "class": "MarketListing",
+        "stereotype": "relator",
+        "multiplicity": null,
+        "subsetted_end": null
+      },
+      "target": {
+        "class": "RegulatoryJurisdiction",
+        "stereotype": "kind",
+        "multiplicity": null,
+        "subsetted_end": null
+      },
+      "prior_stereotype": null,
+      "candidate_stereotype": null,
+      "disposition": "PENDING_RELRIG_DISPOSITION",
+      "rationale": "MarketListing already mediates ListedPresentationRole and ListingResponsibleOrganizationRole. Jurisdiction is legal listing scope, not automatically a dependent participant Role.",
+      "required_evidence": "Choose evidenced anti-rigid role or essential read-only dependency, then cardinality and lifecycle.",
+      "owl_check": {
+        "name": "listingJurisdiction",
+        "domain": "MarketListing",
+        "range": "RegulatoryJurisdiction",
+        "subproperty_of": null,
+        "source_matches": true,
+        "target_matches": true,
+        "subsetting_matches": true
+      },
+      "proposal": "SCOPE_REFERENCE_RETAIN_UNTYPED",
+      "positive_synthetic_example": "A listing of presentation P with responsibility holder O explicitly recorded as applicable in jurisdiction J.",
+      "rejecting_counterexample": "Presence of P in a national source or the labeler's address alone cannot create a market listing for J.",
+      "remaining_evidence": "Listing validity by scope, source authority and temporal closure; if mediation is proposed, justify a distinct anti-rigid jurisdiction Role and its lifecycle.",
+      "sources": [
+        "https://github.com/ArazSaieArasi3/CM-PharmE/blob/fb281f2d605090da2779bb2021be7cb00de4de73/v2/research/w4/geography-jurisdiction.md",
+        "https://github.com/ArazSaieArasi3/CM-PharmE/blob/fb281f2d605090da2779bb2021be7cb00de4de73/v2/research/w4/relator-material-patterns.md"
+      ],
+      "author_scientific_disposition": "PENDING"
+    },
+    {
+      "id": "rel-observationAboutPresentation",
+      "name": "observationAboutPresentation",
+      "source": {
+        "class": "ObservationResult",
+        "stereotype": "kind",
+        "multiplicity": "0..*",
+        "subsetted_end": "end-observationResultAbout-source"
+      },
+      "target": {
+        "class": "MedicinalProductPresentation",
+        "stereotype": "kind",
+        "multiplicity": "0..*",
+        "subsetted_end": "end-observationResultAbout-target"
+      },
+      "prior_stereotype": null,
+      "candidate_stereotype": null,
+      "disposition": "PENDING_PARENT_SEMANTICS",
+      "rationale": "ObservationResult is an information-object Kind. Aboutness toward a presentation is distinct from the observation Event and from product identity. Parent observationResultAbout has no resolved stereotype.",
+      "required_evidence": "Resolve parent relation meaning and stereotype before child; inspect multiplicity constraints.",
+      "owl_check": {
+        "name": "observationAboutPresentation",
+        "domain": "ObservationResult",
+        "range": "MedicinalProductPresentation",
+        "subproperty_of": "observationResultAbout",
+        "source_matches": true,
+        "target_matches": true,
+        "subsetting_matches": true
+      },
+      "proposal": "INFORMATION_ABOUTNESS_REVIEW_NO_STEREOTYPE",
+      "positive_synthetic_example": "An aggregate observation row explicitly keyed to presentation P, with its source and measurement context.",
+      "rejecting_counterexample": "A product-level code alone cannot be silently promoted to a particular presentation or patient observation.",
+      "remaining_evidence": "Specify reference identity, exactness of source key, derivation of aboutness, admissible absence, parent semantics and end multiplicity.",
+      "sources": [
+        "https://github.com/ArazSaieArasi3/CM-PharmE/blob/fb281f2d605090da2779bb2021be7cb00de4de73/v2/research/w4/events-situations-observations.md",
+        "https://github.com/ArazSaieArasi3/CM-PharmE/blob/fb281f2d605090da2779bb2021be7cb00de4de73/v2/research/w4/integrated-ontouml-model.md"
+      ],
+      "author_scientific_disposition": "PENDING"
+    },
+    {
+      "id": "rel-observationAboutProduct",
+      "name": "observationAboutProduct",
+      "source": {
+        "class": "ObservationResult",
+        "stereotype": "kind",
+        "multiplicity": "0..*",
+        "subsetted_end": "end-observationResultAbout-source"
+      },
+      "target": {
+        "class": "MedicinalProduct",
+        "stereotype": "kind",
+        "multiplicity": "0..*",
+        "subsetted_end": "end-observationResultAbout-target"
+      },
+      "prior_stereotype": null,
+      "candidate_stereotype": null,
+      "disposition": "PENDING_PARENT_SEMANTICS",
+      "rationale": "The target is MedicinalProduct rather than MedicinalProductPresentation; conflating them loses the protected product/presentation distinction. Parent aboutness is untyped.",
+      "required_evidence": "Resolve parent relation meaning and stereotype before child; inspect multiplicity constraints.",
+      "owl_check": {
+        "name": "observationAboutProduct",
+        "domain": "ObservationResult",
+        "range": "MedicinalProduct",
+        "subproperty_of": "observationResultAbout",
+        "source_matches": true,
+        "target_matches": true,
+        "subsetting_matches": true
+      },
+      "proposal": "INFORMATION_ABOUTNESS_REVIEW_NO_STEREOTYPE",
+      "positive_synthetic_example": "A source result explicitly about product M where no specific presentation is identified.",
+      "rejecting_counterexample": "A result keyed to only one package does not thereby describe every presentation or the product in all jurisdictions.",
+      "remaining_evidence": "Specify product identity evidence, source scope, derivation of aboutness, parent semantics and end multiplicity.",
+      "sources": [
+        "https://github.com/ArazSaieArasi3/CM-PharmE/blob/fb281f2d605090da2779bb2021be7cb00de4de73/v2/research/w4/events-situations-observations.md",
+        "https://github.com/ArazSaieArasi3/CM-PharmE/blob/fb281f2d605090da2779bb2021be7cb00de4de73/v2/research/w4/integrated-ontouml-model.md"
+      ],
+      "author_scientific_disposition": "PENDING"
+    },
+    {
+      "id": "rel-registrationJurisdiction",
+      "name": "registrationJurisdiction",
+      "source": {
+        "class": "EstablishmentRegistration",
+        "stereotype": "relator",
+        "multiplicity": null,
+        "subsetted_end": null
+      },
+      "target": {
+        "class": "RegulatoryJurisdiction",
+        "stereotype": "kind",
+        "multiplicity": null,
+        "subsetted_end": null
+      },
+      "prior_stereotype": null,
+      "candidate_stereotype": null,
+      "disposition": "PENDING_RELRIG_DISPOSITION",
+      "rationale": "EstablishmentRegistration already mediates RegisteringAuthorityRole and RegisteredParty. The jurisdiction pointer scopes the registration; a rigid jurisdiction should not silently become a mediated role.",
+      "required_evidence": "Choose evidenced anti-rigid role or essential read-only dependency, then cardinality and lifecycle.",
+      "owl_check": {
+        "name": "registrationJurisdiction",
+        "domain": "EstablishmentRegistration",
+        "range": "RegulatoryJurisdiction",
+        "subproperty_of": null,
+        "source_matches": true,
+        "target_matches": true,
+        "subsetting_matches": true
+      },
+      "proposal": "SCOPE_REFERENCE_RETAIN_UNTYPED",
+      "positive_synthetic_example": "Registration R of a facility or organization by authority A with explicit legal jurisdiction J.",
+      "rejecting_counterexample": "The facility's geographic position alone cannot infer a registration in J.",
+      "remaining_evidence": "Source-backed scope, validity interval and distinct legal-versus-geographic identifiers; review an anti-rigid scope Role only if dependence evidence warrants it.",
+      "sources": [
+        "https://github.com/ArazSaieArasi3/CM-PharmE/blob/fb281f2d605090da2779bb2021be7cb00de4de73/v2/research/w4/geography-jurisdiction.md",
+        "https://github.com/ArazSaieArasi3/CM-PharmE/blob/fb281f2d605090da2779bb2021be7cb00de4de73/v2/research/w4/relator-material-patterns.md"
+      ],
+      "author_scientific_disposition": "PENDING"
+    },
+    {
+      "id": "rel-riskAssessmentConcernsDependency",
+      "name": "riskAssessmentConcernsDependency",
+      "source": {
+        "class": "RiskAssessmentActivity",
+        "stereotype": "event",
+        "multiplicity": "0..*",
+        "subsetted_end": "end-riskAssessmentConcerns-source"
+      },
+      "target": {
+        "class": "SupplyDependency",
+        "stereotype": "relator",
+        "multiplicity": "0..*",
+        "subsetted_end": "end-riskAssessmentConcerns-target"
+      },
+      "prior_stereotype": null,
+      "candidate_stereotype": null,
+      "disposition": "PENDING_PARENT_SEMANTICS",
+      "rationale": "RiskAssessmentActivity is an Event and SupplyDependency a Relator. A topic relation by itself does not assert vulnerability, measured risk or causal effect. Its parent riskAssessmentConcerns remains untyped.",
+      "required_evidence": "Resolve parent relation meaning and stereotype before child; inspect multiplicity constraints.",
+      "owl_check": {
+        "name": "riskAssessmentConcernsDependency",
+        "domain": "RiskAssessmentActivity",
+        "range": "SupplyDependency",
+        "subproperty_of": "riskAssessmentConcerns",
+        "source_matches": true,
+        "target_matches": true,
+        "subsetting_matches": true
+      },
+      "proposal": "TOPIC_REFERENCE_REVIEW_NO_STEREOTYPE",
+      "positive_synthetic_example": "Assessment A explicitly evaluates evidence about dependency S without claiming a risk score that was not measured.",
+      "rejecting_counterexample": "Mentioning S in a document or observing a disruption does not prove a quantified risk or vulnerability of S.",
+      "remaining_evidence": "Define topic admission, assessment evidence and time, parent semantics, endpoint identity and multiplicities.",
+      "sources": [
+        "https://github.com/ArazSaieArasi3/CM-PharmE/blob/fb281f2d605090da2779bb2021be7cb00de4de73/v2/research/w4/risk-resilience-extension.md",
+        "https://github.com/ArazSaieArasi3/CM-PharmE/blob/fb281f2d605090da2779bb2021be7cb00de4de73/v2/research/w4/events-situations-observations.md"
+      ],
+      "author_scientific_disposition": "PENDING"
+    }
+  ]
+}

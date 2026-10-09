@@ -1,0 +1,620 @@
+{
+  "status": "PROPOSALS_WITH_RATIONALE_NOT_APPROVAL",
+  "relations": [
+    {
+      "relation": "scenarioProduct",
+      "source": "Assertion",
+      "target": "MedicinalProduct",
+      "semantic_family": "content-aboutness",
+      "meaning": "Content refers to a domain entity. Preserve the Assertion/reality distinction; not a comparison of qualities.",
+      "recommended_next_decision": "specialize an existing aboutness relation where available",
+      "requirement_ids": [
+        "R-RM-01"
+      ],
+      "stereotype_verdict": "PENDING — no forced generic formal/material/mediation label",
+      "current_universal_bounds": "0..* both ends; not an approved final multiplicity",
+      "local_bounds_location": "model-manifest.json profiles and original laboratory profiles",
+      "author_acceptance": false
+    },
+    {
+      "relation": "signalProduct",
+      "source": "Assertion",
+      "target": "MedicinalProduct",
+      "semantic_family": "content-aboutness",
+      "meaning": "Content refers to a domain entity. Preserve the Assertion/reality distinction; not a comparison of qualities.",
+      "recommended_next_decision": "specialize an existing aboutness relation where available",
+      "requirement_ids": [
+        "R-PV-02"
+      ],
+      "stereotype_verdict": "PENDING — no forced generic formal/material/mediation label",
+      "current_universal_bounds": "0..* both ends; not an approved final multiplicity",
+      "local_bounds_location": "model-manifest.json profiles and original laboratory profiles",
+      "author_acceptance": false
+    },
+    {
+      "relation": "signalSubstance",
+      "source": "Assertion",
+      "target": "PharmaceuticalSubstance",
+      "semantic_family": "content-aboutness",
+      "meaning": "Content refers to a domain entity. Preserve the Assertion/reality distinction; not a comparison of qualities.",
+      "recommended_next_decision": "specialize an existing aboutness relation where available",
+      "requirement_ids": [
+        "R-PV-02"
+      ],
+      "stereotype_verdict": "PENDING — no forced generic formal/material/mediation label",
+      "current_universal_bounds": "0..* both ends; not an approved final multiplicity",
+      "local_bounds_location": "model-manifest.json profiles and original laboratory profiles",
+      "author_acceptance": false
+    },
+    {
+      "relation": "scenarioFacility",
+      "source": "Assertion",
+      "target": "Facility",
+      "semantic_family": "content-aboutness",
+      "meaning": "Content refers to a domain entity. Preserve the Assertion/reality distinction; not a comparison of qualities.",
+      "recommended_next_decision": "specialize an existing aboutness relation where available",
+      "requirement_ids": [
+        "X-RM-CONTEXT"
+      ],
+      "stereotype_verdict": "PENDING — no forced generic formal/material/mediation label",
+      "current_universal_bounds": "0..* both ends; not an approved final multiplicity",
+      "local_bounds_location": "model-manifest.json profiles and original laboratory profiles",
+      "author_acceptance": false
+    },
+    {
+      "relation": "scenarioDependency",
+      "source": "Assertion",
+      "target": "SupplyDependency",
+      "semantic_family": "content-aboutness",
+      "meaning": "Content refers to a domain entity. Preserve the Assertion/reality distinction; not a comparison of qualities.",
+      "recommended_next_decision": "specialize an existing aboutness relation where available",
+      "requirement_ids": [
+        "X-RM-CONTEXT"
+      ],
+      "stereotype_verdict": "PENDING — no forced generic formal/material/mediation label",
+      "current_universal_bounds": "0..* both ends; not an approved final multiplicity",
+      "local_bounds_location": "model-manifest.json profiles and original laboratory profiles",
+      "author_acceptance": false
+    },
+    {
+      "relation": "planRiskResult",
+      "source": "RiskTreatmentPlan",
+      "target": "Assertion",
+      "semantic_family": "content-reference",
+      "meaning": "An informational object references another content object; this is not their identity or a constitutive social dependency.",
+      "recommended_next_decision": "review content identity and local reference profile",
+      "requirement_ids": [
+        "R-RM-04"
+      ],
+      "stereotype_verdict": "PENDING — no forced generic formal/material/mediation label",
+      "current_universal_bounds": "0..* both ends; not an approved final multiplicity",
+      "local_bounds_location": "model-manifest.json profiles and original laboratory profiles",
+      "author_acceptance": false
+    },
+    {
+      "relation": "pvResultSignal",
+      "source": "Assertion",
+      "target": "Assertion",
+      "semantic_family": "content-reference",
+      "meaning": "An informational object references another content object; this is not their identity or a constitutive social dependency.",
+      "recommended_next_decision": "review content identity and local reference profile",
+      "requirement_ids": [
+        "R-PV-04"
+      ],
+      "stereotype_verdict": "PENDING — no forced generic formal/material/mediation label",
+      "current_universal_bounds": "0..* both ends; not an approved final multiplicity",
+      "local_bounds_location": "model-manifest.json profiles and original laboratory profiles",
+      "author_acceptance": false
+    },
+    {
+      "relation": "viewOrganization",
+      "source": "BusinessArchitectureView",
+      "target": "Organization",
+      "semantic_family": "content-reference",
+      "meaning": "An informational object references another content object; this is not their identity or a constitutive social dependency.",
+      "recommended_next_decision": "review content identity and local reference profile",
+      "requirement_ids": [
+        "R-BA-04",
+        "R-BA-06"
+      ],
+      "stereotype_verdict": "PENDING — no forced generic formal/material/mediation label",
+      "current_universal_bounds": "0..* both ends; not an approved final multiplicity",
+      "local_bounds_location": "model-manifest.json profiles and original laboratory profiles",
+      "author_acceptance": false
+    },
+    {
+      "relation": "viewService",
+      "source": "BusinessArchitectureView",
+      "target": "ServiceOfferingSpecification",
+      "semantic_family": "content-reference",
+      "meaning": "An informational object references another content object; this is not their identity or a constitutive social dependency.",
+      "recommended_next_decision": "review content identity and local reference profile",
+      "requirement_ids": [
+        "R-BA-04"
+      ],
+      "stereotype_verdict": "PENDING — no forced generic formal/material/mediation label",
+      "current_universal_bounds": "0..* both ends; not an approved final multiplicity",
+      "local_bounds_location": "model-manifest.json profiles and original laboratory profiles",
+      "author_acceptance": false
+    },
+    {
+      "relation": "carrierClaim",
+      "source": "SourceRecord",
+      "target": "Assertion",
+      "semantic_family": "content-reference",
+      "meaning": "An informational object references another content object; this is not their identity or a constitutive social dependency.",
+      "recommended_next_decision": "review content identity and local reference profile",
+      "requirement_ids": [
+        "X-PV-CARRIER"
+      ],
+      "stereotype_verdict": "PENDING — no forced generic formal/material/mediation label",
+      "current_universal_bounds": "0..* both ends; not an approved final multiplicity",
+      "local_bounds_location": "model-manifest.json profiles and original laboratory profiles",
+      "author_acceptance": false
+    },
+    {
+      "relation": "agreementCommitment",
+      "source": "StrategicPartnershipAgreement",
+      "target": "Assertion",
+      "semantic_family": "content-reference",
+      "meaning": "An informational object references another content object; this is not their identity or a constitutive social dependency.",
+      "recommended_next_decision": "review content identity and local reference profile",
+      "requirement_ids": [
+        "X-BA-COMMITMENT"
+      ],
+      "stereotype_verdict": "PENDING — no forced generic formal/material/mediation label",
+      "current_universal_bounds": "0..* both ends; not an approved final multiplicity",
+      "local_bounds_location": "model-manifest.json profiles and original laboratory profiles",
+      "author_acceptance": false
+    },
+    {
+      "relation": "commitmentActor",
+      "source": "Assertion",
+      "target": "Organization",
+      "semantic_family": "content-reference",
+      "meaning": "An informational object references another content object; this is not their identity or a constitutive social dependency.",
+      "recommended_next_decision": "review content identity and local reference profile",
+      "requirement_ids": [
+        "X-BA-COMMITMENT"
+      ],
+      "stereotype_verdict": "PENDING — no forced generic formal/material/mediation label",
+      "current_universal_bounds": "0..* both ends; not an approved final multiplicity",
+      "local_bounds_location": "model-manifest.json profiles and original laboratory profiles",
+      "author_acceptance": false
+    },
+    {
+      "relation": "assessmentScenario",
+      "source": "RiskAssessmentActivity",
+      "target": "Assertion",
+      "semantic_family": "event-content",
+      "meaning": "An occurrence has a content object as its topic/input/output. Event and content must retain distinct identity.",
+      "recommended_next_decision": "event participation/input/output policy in P5c",
+      "requirement_ids": [
+        "R-RM-01"
+      ],
+      "stereotype_verdict": "PENDING — no forced generic formal/material/mediation label",
+      "current_universal_bounds": "0..* both ends; not an approved final multiplicity",
+      "local_bounds_location": "model-manifest.json profiles and original laboratory profiles",
+      "author_acceptance": false
+    },
+    {
+      "relation": "resultAssessment",
+      "source": "Assertion",
+      "target": "RiskAssessmentActivity",
+      "semantic_family": "event-content",
+      "meaning": "An occurrence has a content object as its topic/input/output. Event and content must retain distinct identity.",
+      "recommended_next_decision": "event participation/input/output policy in P5c",
+      "requirement_ids": [
+        "R-RM-02"
+      ],
+      "stereotype_verdict": "PENDING — no forced generic formal/material/mediation label",
+      "current_universal_bounds": "0..* both ends; not an approved final multiplicity",
+      "local_bounds_location": "model-manifest.json profiles and original laboratory profiles",
+      "author_acceptance": false
+    },
+    {
+      "relation": "reviewPriorResult",
+      "source": "RiskReviewActivity",
+      "target": "Assertion",
+      "semantic_family": "event-content",
+      "meaning": "An occurrence has a content object as its topic/input/output. Event and content must retain distinct identity.",
+      "recommended_next_decision": "event participation/input/output policy in P5c",
+      "requirement_ids": [
+        "R-RM-06"
+      ],
+      "stereotype_verdict": "PENDING — no forced generic formal/material/mediation label",
+      "current_universal_bounds": "0..* both ends; not an approved final multiplicity",
+      "local_bounds_location": "model-manifest.json profiles and original laboratory profiles",
+      "author_acceptance": false
+    },
+    {
+      "relation": "reviewNewResult",
+      "source": "RiskReviewActivity",
+      "target": "Assertion",
+      "semantic_family": "event-content",
+      "meaning": "An occurrence has a content object as its topic/input/output. Event and content must retain distinct identity.",
+      "recommended_next_decision": "event participation/input/output policy in P5c",
+      "requirement_ids": [
+        "R-RM-06"
+      ],
+      "stereotype_verdict": "PENDING — no forced generic formal/material/mediation label",
+      "current_universal_bounds": "0..* both ends; not an approved final multiplicity",
+      "local_bounds_location": "model-manifest.json profiles and original laboratory profiles",
+      "author_acceptance": false
+    },
+    {
+      "relation": "reportsRecord",
+      "source": "AdverseEventReportingActivity",
+      "target": "SourceRecord",
+      "semantic_family": "event-content",
+      "meaning": "An occurrence has a content object as its topic/input/output. Event and content must retain distinct identity.",
+      "recommended_next_decision": "event participation/input/output policy in P5c",
+      "requirement_ids": [
+        "R-PV-01"
+      ],
+      "stereotype_verdict": "PENDING — no forced generic formal/material/mediation label",
+      "current_universal_bounds": "0..* both ends; not an approved final multiplicity",
+      "local_bounds_location": "model-manifest.json profiles and original laboratory profiles",
+      "author_acceptance": false
+    },
+    {
+      "relation": "signalAssessmentTarget",
+      "source": "SignalAssessmentActivity",
+      "target": "Assertion",
+      "semantic_family": "event-content",
+      "meaning": "An occurrence has a content object as its topic/input/output. Event and content must retain distinct identity.",
+      "recommended_next_decision": "event participation/input/output policy in P5c",
+      "requirement_ids": [
+        "R-PV-04"
+      ],
+      "stereotype_verdict": "PENDING — no forced generic formal/material/mediation label",
+      "current_universal_bounds": "0..* both ends; not an approved final multiplicity",
+      "local_bounds_location": "model-manifest.json profiles and original laboratory profiles",
+      "author_acceptance": false
+    },
+    {
+      "relation": "pvResultAssessment",
+      "source": "Assertion",
+      "target": "SignalAssessmentActivity",
+      "semantic_family": "event-content",
+      "meaning": "An occurrence has a content object as its topic/input/output. Event and content must retain distinct identity.",
+      "recommended_next_decision": "event participation/input/output policy in P5c",
+      "requirement_ids": [
+        "R-PV-04"
+      ],
+      "stereotype_verdict": "PENDING — no forced generic formal/material/mediation label",
+      "current_universal_bounds": "0..* both ends; not an approved final multiplicity",
+      "local_bounds_location": "model-manifest.json profiles and original laboratory profiles",
+      "author_acceptance": false
+    },
+    {
+      "relation": "surveillanceRequirement",
+      "source": "PostMarketSurveillanceActivity",
+      "target": "PharmacovigilanceRequirement",
+      "semantic_family": "event-content",
+      "meaning": "An occurrence has a content object as its topic/input/output. Event and content must retain distinct identity.",
+      "recommended_next_decision": "event participation/input/output policy in P5c",
+      "requirement_ids": [
+        "R-PV-06"
+      ],
+      "stereotype_verdict": "PENDING — no forced generic formal/material/mediation label",
+      "current_universal_bounds": "0..* both ends; not an approved final multiplicity",
+      "local_bounds_location": "model-manifest.json profiles and original laboratory profiles",
+      "author_acceptance": false
+    },
+    {
+      "relation": "surveillanceSource",
+      "source": "PostMarketSurveillanceActivity",
+      "target": "SourceRecord",
+      "semantic_family": "event-content",
+      "meaning": "An occurrence has a content object as its topic/input/output. Event and content must retain distinct identity.",
+      "recommended_next_decision": "event participation/input/output policy in P5c",
+      "requirement_ids": [
+        "X-PV-SURVEILLANCE"
+      ],
+      "stereotype_verdict": "PENDING — no forced generic formal/material/mediation label",
+      "current_universal_bounds": "0..* both ends; not an approved final multiplicity",
+      "local_bounds_location": "model-manifest.json profiles and original laboratory profiles",
+      "author_acceptance": false
+    },
+    {
+      "relation": "citesSourceRecord",
+      "source": "Assertion",
+      "target": "SourceRecord",
+      "semantic_family": "evidence-citation",
+      "meaning": "A citation is recoverable provenance; it does not by itself instantiate qualified evidential support.",
+      "recommended_next_decision": "keep citation weak; reuse EvidenceSupport when support is actually asserted",
+      "requirement_ids": [
+        "R-RM-03",
+        "R-PV-03"
+      ],
+      "stereotype_verdict": "PENDING — no forced generic formal/material/mediation label",
+      "current_universal_bounds": "0..* both ends; not an approved final multiplicity",
+      "local_bounds_location": "model-manifest.json profiles and original laboratory profiles",
+      "author_acceptance": false
+    },
+    {
+      "relation": "pvRequirementJurisdiction",
+      "source": "PharmacovigilanceRequirement",
+      "target": "RegulatoryJurisdiction",
+      "semantic_family": "scoped-applicability",
+      "meaning": "A requirement is scoped to jurisdiction; the reference does not establish legal applicability or compliance.",
+      "recommended_next_decision": "document scope without a universal compliance rule",
+      "requirement_ids": [
+        "R-PV-06"
+      ],
+      "stereotype_verdict": "PENDING — no forced generic formal/material/mediation label",
+      "current_universal_bounds": "0..* both ends; not an approved final multiplicity",
+      "local_bounds_location": "model-manifest.json profiles and original laboratory profiles",
+      "author_acceptance": false
+    },
+    {
+      "relation": "serviceCapability",
+      "source": "ServiceOfferingSpecification",
+      "target": "EnterpriseCapability",
+      "semantic_family": "service-specification",
+      "meaning": "A specification describes an offered service/context or supporting means; its existence does not imply actual execution.",
+      "recommended_next_decision": "retain specification/occurrence distinction and pharmaceutical context",
+      "requirement_ids": [
+        "R-BA-03"
+      ],
+      "stereotype_verdict": "PENDING — no forced generic formal/material/mediation label",
+      "current_universal_bounds": "0..* both ends; not an approved final multiplicity",
+      "local_bounds_location": "model-manifest.json profiles and original laboratory profiles",
+      "author_acceptance": false
+    },
+    {
+      "relation": "digitalServiceComponent",
+      "source": "ServiceOfferingSpecification",
+      "target": "DigitalInformationSystemComponent",
+      "semantic_family": "service-specification",
+      "meaning": "A specification describes an offered service/context or supporting means; its existence does not imply actual execution.",
+      "recommended_next_decision": "retain specification/occurrence distinction and pharmaceutical context",
+      "requirement_ids": [
+        "R-DS-03"
+      ],
+      "stereotype_verdict": "PENDING — no forced generic formal/material/mediation label",
+      "current_universal_bounds": "0..* both ends; not an approved final multiplicity",
+      "local_bounds_location": "model-manifest.json profiles and original laboratory profiles",
+      "author_acceptance": false
+    },
+    {
+      "relation": "digitalServiceActivity",
+      "source": "ServiceOfferingSpecification",
+      "target": "ProvenanceActivity",
+      "semantic_family": "service-specification",
+      "meaning": "A specification describes an offered service/context or supporting means; its existence does not imply actual execution.",
+      "recommended_next_decision": "retain specification/occurrence distinction and pharmaceutical context",
+      "requirement_ids": [
+        "R-DS-03"
+      ],
+      "stereotype_verdict": "PENDING — no forced generic formal/material/mediation label",
+      "current_universal_bounds": "0..* both ends; not an approved final multiplicity",
+      "local_bounds_location": "model-manifest.json profiles and original laboratory profiles",
+      "author_acceptance": false
+    },
+    {
+      "relation": "serviceProduct",
+      "source": "ServiceOfferingSpecification",
+      "target": "MedicinalProduct",
+      "semantic_family": "service-specification",
+      "meaning": "A specification describes an offered service/context or supporting means; its existence does not imply actual execution.",
+      "recommended_next_decision": "retain specification/occurrence distinction and pharmaceutical context",
+      "requirement_ids": [
+        "X-BA-SERVICE"
+      ],
+      "stereotype_verdict": "PENDING — no forced generic formal/material/mediation label",
+      "current_universal_bounds": "0..* both ends; not an approved final multiplicity",
+      "local_bounds_location": "model-manifest.json profiles and original laboratory profiles",
+      "author_acceptance": false
+    },
+    {
+      "relation": "serviceFacility",
+      "source": "ServiceOfferingSpecification",
+      "target": "Facility",
+      "semantic_family": "service-specification",
+      "meaning": "A specification describes an offered service/context or supporting means; its existence does not imply actual execution.",
+      "recommended_next_decision": "retain specification/occurrence distinction and pharmaceutical context",
+      "requirement_ids": [
+        "X-BA-SERVICE"
+      ],
+      "stereotype_verdict": "PENDING — no forced generic formal/material/mediation label",
+      "current_universal_bounds": "0..* both ends; not an approved final multiplicity",
+      "local_bounds_location": "model-manifest.json profiles and original laboratory profiles",
+      "author_acceptance": false
+    },
+    {
+      "relation": "capabilityRealizedIn",
+      "source": "EnterpriseCapability",
+      "target": "ManufacturingActivity",
+      "semantic_family": "capability-manifestation",
+      "meaning": "A capability is intrinsic to its organization; actual realization is a distinct event and not required merely by possession.",
+      "recommended_next_decision": "manifestation/event modeling review; do not use characterization between Mode and event",
+      "requirement_ids": [
+        "R-BA-02"
+      ],
+      "stereotype_verdict": "PENDING — no forced generic formal/material/mediation label",
+      "current_universal_bounds": "0..* both ends; not an approved final multiplicity",
+      "local_bounds_location": "model-manifest.json profiles and original laboratory profiles",
+      "author_acceptance": false
+    },
+    {
+      "relation": "deploymentComponent",
+      "source": "SystemDeploymentActivity",
+      "target": "DigitalInformationSystemComponent",
+      "semantic_family": "event-participation",
+      "meaning": "A component, organization, product or facility participates in or is context for an occurrence. No social relator is justified merely by this link.",
+      "recommended_next_decision": "typed event participation policy; preserve responsibility versus deployment distinction",
+      "requirement_ids": [
+        "R-DS-01",
+        "R-DS-04"
+      ],
+      "stereotype_verdict": "PENDING — no forced generic formal/material/mediation label",
+      "current_universal_bounds": "0..* both ends; not an approved final multiplicity",
+      "local_bounds_location": "model-manifest.json profiles and original laboratory profiles",
+      "author_acceptance": false
+    },
+    {
+      "relation": "deploymentOrganization",
+      "source": "SystemDeploymentActivity",
+      "target": "Organization",
+      "semantic_family": "event-participation",
+      "meaning": "A component, organization, product or facility participates in or is context for an occurrence. No social relator is justified merely by this link.",
+      "recommended_next_decision": "typed event participation policy; preserve responsibility versus deployment distinction",
+      "requirement_ids": [
+        "R-DS-04"
+      ],
+      "stereotype_verdict": "PENDING — no forced generic formal/material/mediation label",
+      "current_universal_bounds": "0..* both ends; not an approved final multiplicity",
+      "local_bounds_location": "model-manifest.json profiles and original laboratory profiles",
+      "author_acceptance": false
+    },
+    {
+      "relation": "assessmentOrganization",
+      "source": "SignalAssessmentActivity",
+      "target": "Organization",
+      "semantic_family": "event-participation",
+      "meaning": "A component, organization, product or facility participates in or is context for an occurrence. No social relator is justified merely by this link.",
+      "recommended_next_decision": "typed event participation policy; preserve responsibility versus deployment distinction",
+      "requirement_ids": [
+        "X-PV-ACTOR"
+      ],
+      "stereotype_verdict": "PENDING — no forced generic formal/material/mediation label",
+      "current_universal_bounds": "0..* both ends; not an approved final multiplicity",
+      "local_bounds_location": "model-manifest.json profiles and original laboratory profiles",
+      "author_acceptance": false
+    },
+    {
+      "relation": "activityResponsibleOrganization",
+      "source": "ProvenanceActivity",
+      "target": "Organization",
+      "semantic_family": "event-participation",
+      "meaning": "A component, organization, product or facility participates in or is context for an occurrence. No social relator is justified merely by this link.",
+      "recommended_next_decision": "typed event participation policy; preserve responsibility versus deployment distinction",
+      "requirement_ids": [
+        "X-DS-RESPONSIBILITY"
+      ],
+      "stereotype_verdict": "PENDING — no forced generic formal/material/mediation label",
+      "current_universal_bounds": "0..* both ends; not an approved final multiplicity",
+      "local_bounds_location": "model-manifest.json profiles and original laboratory profiles",
+      "author_acceptance": false
+    },
+    {
+      "relation": "manufacturingProduct",
+      "source": "ManufacturingActivity",
+      "target": "MedicinalProduct",
+      "semantic_family": "event-participation",
+      "meaning": "A component, organization, product or facility participates in or is context for an occurrence. No social relator is justified merely by this link.",
+      "recommended_next_decision": "typed event participation policy; preserve responsibility versus deployment distinction",
+      "requirement_ids": [
+        "X-DS-PHARMA"
+      ],
+      "stereotype_verdict": "PENDING — no forced generic formal/material/mediation label",
+      "current_universal_bounds": "0..* both ends; not an approved final multiplicity",
+      "local_bounds_location": "model-manifest.json profiles and original laboratory profiles",
+      "author_acceptance": false
+    },
+    {
+      "relation": "manufacturingFacility",
+      "source": "ManufacturingActivity",
+      "target": "Facility",
+      "semantic_family": "event-participation",
+      "meaning": "A component, organization, product or facility participates in or is context for an occurrence. No social relator is justified merely by this link.",
+      "recommended_next_decision": "typed event participation policy; preserve responsibility versus deployment distinction",
+      "requirement_ids": [
+        "X-DS-PHARMA"
+      ],
+      "stereotype_verdict": "PENDING — no forced generic formal/material/mediation label",
+      "current_universal_bounds": "0..* both ends; not an approved final multiplicity",
+      "local_bounds_location": "model-manifest.json profiles and original laboratory profiles",
+      "author_acceptance": false
+    },
+    {
+      "relation": "digitalActivityDeployment",
+      "source": "ProvenanceActivity",
+      "target": "SystemDeploymentActivity",
+      "semantic_family": "event-dependency",
+      "meaning": "Two occurrences are linked by use/support/plan enactment; temporal and intentional semantics need explicit review.",
+      "recommended_next_decision": "do not assume event mereology or causal necessity from an operational support link",
+      "requirement_ids": [
+        "R-DS-02",
+        "R-DS-04"
+      ],
+      "stereotype_verdict": "PENDING — no forced generic formal/material/mediation label",
+      "current_universal_bounds": "0..* both ends; not an approved final multiplicity",
+      "local_bounds_location": "model-manifest.json profiles and original laboratory profiles",
+      "author_acceptance": false
+    },
+    {
+      "relation": "supportsManufacturing",
+      "source": "ProvenanceActivity",
+      "target": "ManufacturingActivity",
+      "semantic_family": "event-dependency",
+      "meaning": "Two occurrences are linked by use/support/plan enactment; temporal and intentional semantics need explicit review.",
+      "recommended_next_decision": "do not assume event mereology or causal necessity from an operational support link",
+      "requirement_ids": [
+        "X-DS-PHARMA"
+      ],
+      "stereotype_verdict": "PENDING — no forced generic formal/material/mediation label",
+      "current_universal_bounds": "0..* both ends; not an approved final multiplicity",
+      "local_bounds_location": "model-manifest.json profiles and original laboratory profiles",
+      "author_acceptance": false
+    },
+    {
+      "relation": "implementsRiskPlan",
+      "source": "RiskTreatmentActivity",
+      "target": "RiskTreatmentPlan",
+      "semantic_family": "event-dependency",
+      "meaning": "Two occurrences are linked by use/support/plan enactment; temporal and intentional semantics need explicit review.",
+      "recommended_next_decision": "do not assume event mereology or causal necessity from an operational support link",
+      "requirement_ids": [
+        "R-RM-05"
+      ],
+      "stereotype_verdict": "PENDING — no forced generic formal/material/mediation label",
+      "current_universal_bounds": "0..* both ends; not an approved final multiplicity",
+      "local_bounds_location": "model-manifest.json profiles and original laboratory profiles",
+      "author_acceptance": false
+    },
+    {
+      "relation": "recordDigitalActivity",
+      "source": "SourceRecord",
+      "target": "ProvenanceActivity",
+      "semantic_family": "record-generation",
+      "meaning": "A source carrier is produced in a transformation occurrence; representation and producing event remain distinct.",
+      "recommended_next_decision": "qualified PROV-compatible generation candidate; no automatic agent identity",
+      "requirement_ids": [
+        "R-DS-01",
+        "R-DS-04",
+        "R-DS-06"
+      ],
+      "stereotype_verdict": "PENDING — no forced generic formal/material/mediation label",
+      "current_universal_bounds": "0..* both ends; not an approved final multiplicity",
+      "local_bounds_location": "model-manifest.json profiles and original laboratory profiles",
+      "author_acceptance": false
+    }
+  ],
+  "families": {
+    "content-aboutness": 5,
+    "content-reference": 7,
+    "event-content": 9,
+    "evidence-citation": 1,
+    "scoped-applicability": 1,
+    "service-specification": 5,
+    "capability-manifestation": 1,
+    "event-participation": 6,
+    "event-dependency": 3,
+    "record-generation": 1
+  },
+  "reused_native_mediations": [
+    "evidenceAssertion",
+    "evidenceRecord",
+    "partnershipParticipant"
+  ],
+  "new_mediations_claimed": 0,
+  "sources": [
+    "https://ontouml.readthedocs.io/en/latest/relationships/formal/index.html",
+    "https://ontouml.readthedocs.io/en/latest/relationships/mediation/index.html",
+    "https://ontouml.readthedocs.io/en/latest/relationships/material/index.html"
+  ],
+  "important": "Formal in the cited OntoUML documentation is comparative; arbitrary aboutness, provenance and event links must not receive that label merely to fill null stereotypes."
+}

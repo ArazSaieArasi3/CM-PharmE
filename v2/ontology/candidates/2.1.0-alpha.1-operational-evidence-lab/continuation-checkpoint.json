@@ -1,0 +1,497 @@
+{
+  "title": "CM-PharmE v2.1 — operational documentary evidence and scope refinement",
+  "date": "2026-10-09T23:28:00.639509+00:00",
+  "timezone": "Etc/UTC",
+  "previous_checkpoint": "../2.1.0-alpha.1-module-contract-lab/continuation-checkpoint.json",
+  "prior_development_head": "c4a428210da5d493c5317bcb011a1031ba5b8801",
+  "pr": 305,
+  "pr_state": "open draft",
+  "decision_hold": "Superseded for design direction: user accepts retaining all four domains as purposeful small ontologies.",
+  "scientific_acceptance": "Retention direction accepted; detailed semantics and release remain pending.",
+  "tasks": [
+    {
+      "order": 1,
+      "id": "N01",
+      "task_fa": "منشور هدف و مرز v2.1",
+      "prior_work_link_fa": "جدید؛ پیش‌نیاز ادامهٔ G3",
+      "deliverable_fa": "پاراگراف هدف، ذی‌نفعان، کاربردها، موارد خارج دامنه و حد ادعای جهانی",
+      "acceptance_fa": "تأیید نویسنده؛ عدم ادعای پوشش همهٔ اکوسیستم",
+      "status": "DRAFT_PREPARED_NOT_ACCEPTED"
+    },
+    {
+      "order": 2,
+      "id": "N02",
+      "task_fa": "استخراج مستقل و اتمیک نیازمندی‌ها",
+      "prior_work_link_fa": "جدید؛ تکمیل مبنای G1",
+      "deliverable_fa": "فهرست دارای شناسه، منبع، الزام واحد، CQ و معیار پذیرش",
+      "acceptance_fa": "تفکیک نیاز منبع‌دار، بازسازی از مدل، پیشنهاد جدید و فرض تأییدنشده",
+      "status": "BOUNDED_EVIDENCE_READY_NOT_ACCEPTED",
+      "current_extension": "۱۳ پالایش محلی CL/CTX با آزمون و پیوند به نیازهای قبلی ثبت شد؛ به ۳۹ عنوان قبلی جمع زده نشده است",
+      "remaining_fa": "استخراج مستقل تمام دامنه‌ها و پذیرش ماتریس جامع"
+    },
+    {
+      "order": 3,
+      "id": "N03",
+      "task_fa": "بازبینی مأموریت و مالکیت همهٔ دامنه‌ها",
+      "prior_work_link_fa": "جدید؛ مرتبط با G2/P3",
+      "deliverable_fa": "مأموریت هر دامنه، نگاشت همهٔ مفاهیم و وابستگی‌های بین‌دامنه‌ای",
+      "acceptance_fa": "تعیین تکلیف ۶۰ تخصیص پیشنهادی؛ مرز ماژول قابل آزمون",
+      "status": "BOUNDED_EVIDENCE_READY_NOT_ACCEPTED",
+      "current_extension": "ماتریس شاهد و شکاف برای تمام ۱۵ مفهوم هستهٔ چهار دامنه تهیه شد",
+      "remaining_fa": "داوری تعریف‌ها و مالکیت جامع سایر دامنه‌ها"
+    },
+    {
+      "order": 4,
+      "id": "N04",
+      "task_fa": "ماتریس پوشش جهانی و تحلیل شکاف",
+      "prior_work_link_fa": "جدید",
+      "deliverable_fa": "نیازمندی × سناریو × حوزه قضایی × منبع؛ وضعیت پشتیبانی/شکاف/خارج دامنه/تعویق",
+      "acceptance_fa": "بازبینی منابع مستقل و سناریوهای ناهمگون؛ بدون تعمیم جهانی از نمونه محدود",
+      "status": "PROPOSED_PENDING_DECISION"
+    },
+    {
+      "order": 5,
+      "id": "N05",
+      "task_fa": "حفظ و طراحی چهار انتالوژی کوچک هدفمند",
+      "prior_work_link_fa": "جدید؛ تغییر کنترل‌شده دامنه",
+      "deliverable_fa": "چهار قرارداد هدف، روابط، وابستگی‌ها و آزمون مستقل؛ حفظ دامنه‌ها پذیرفته شده و جزئیات مدل باز است.",
+      "acceptance_fa": "مفیدبودن مستقل و سهم در کل مدل، نگاشت نیاز و شاهد و ارزیابی فرمال؛ هیچ حذف یا افزودن صرفاً برای بهبود شمارش.",
+      "status": "RETENTION_DIRECTION_ACCEPTED_MODELS_PENDING_REVIEW",
+      "current_extension": "حفظ چهار دامنه پذیرفته؛ چهار بستهٔ مستقل قبلی محفوظ و برای RM/BA/DS شاهد واقعی مستند افزوده شد",
+      "remaining_fa": "پذیرش جزئیات و تکمیل شواهد عملیاتیِ فاقد شناسه/زمان/تعهد"
+    },
+    {
+      "order": 6,
+      "id": "N06",
+      "task_fa": "تعیین حد رجیستری",
+      "prior_work_link_fa": "جدید؛ وابسته به N01–N05",
+      "deliverable_fa": "تمایز ثبت حقوقی، رکورد منبع و سامانه؛ استفاده مجدد از مفاهیم موجود",
+      "acceptance_fa": "افزودن Registry/RegistryEntry فقط در صورت CQ ضروری",
+      "status": "BOUNDED_EVIDENCE_READY_NOT_ACCEPTED",
+      "current_extension": "اطلاعیهٔ رسمی Swissmedic دربارهٔ مجوز محل تولید Lonza پیدا و نگاشت شد",
+      "remaining_fa": "شناسه و رکورد مجوز، ثبت مؤسسه، مجوز محصول و داوری RG-07"
+    },
+    {
+      "order": 7,
+      "id": "N07",
+      "task_fa": "تقویت محدود Regulatory Policy",
+      "prior_work_link_fa": "جدید؛ مرتبط با P3",
+      "deliverable_fa": "تعریف دامنه، مرجع/اختیار/سند/مقرره/الزام/اعمال در زمان و قلمرو",
+      "acceptance_fa": "جداسازی محتوای الزام از سند و وضعیت انطباق؛ عدم ساخت موتور جامع حقوقی",
+      "status": "BOUNDED_EVIDENCE_READY_NOT_ACCEPTED",
+      "current_extension": "مدل حداقلی زمینه، پنج پروفایل راهنمای ESMP نسخهٔ ۱٫۴ و ۱۶ کنترل موفق",
+      "remaining_fa": "اعلان واقعی اقدام با دامنهٔ محصول، زمان و تناوب؛ دادهٔ واقعی گزارش‌دهی و پذیرش مدل"
+    },
+    {
+      "order": 8,
+      "id": "N08",
+      "task_fa": "تعیین تکلیف مفاهیم منزوی",
+      "prior_work_link_fa": "P3؛ حفظ کار قبلی",
+      "deliverable_fa": "تعیین تکلیف مستند هر ۱۳ منزوی فعلی؛ بررسی نیازمندی‌محور ۸ منزوی چهار دامنه بدون حذف پیش‌فرض.",
+      "acceptance_fa": "اتصال معنادار به نیازمندی یا تعویق مستند و قابل برگشت",
+      "status": "BOUNDED_EVIDENCE_READY_NOT_ACCEPTED",
+      "current_extension": "در کپی جدید منزوی‌ها ۴→۰ و مؤلفه‌ها ۵→۱؛ پایه دست‌نخورده است",
+      "remaining_fa": "پذیرش معنای روابط؛ صفر منزوی صرفاً نتیجهٔ ساختاری است"
+    },
+    {
+      "order": 9,
+      "id": "N09",
+      "task_fa": "طراحی سناریوها و مرجع پاسخ آزمون",
+      "prior_work_link_fa": "جدید؛ آماده‌سازی P6",
+      "deliverable_fa": "سناریوهای متعارف/تنوع زمینه/مرزی/ناقض و پاسخ مورد انتظار مستقل از مدل",
+      "acceptance_fa": "نیازمندی‌های نامزد v2.1 و پوشش آزمون مصوب؛ هنوز ادعای اثبات نهایی ندارد",
+      "status": "BOUNDED_EVIDENCE_READY_NOT_ACCEPTED",
+      "current_extension": "سناریوهای برنامه/وقوع، زمان کم‌دقت، نسخهٔ مجهول، مجوز محل و گروه ریسک اضافه شد",
+      "remaining_fa": "پوشش دادهٔ عملیاتی و سناریوهای مستقل باقی‌مانده"
+    },
+    {
+      "order": 10,
+      "id": "P3",
+      "task_fa": "نهایی‌سازی تصمیم‌های علمی قبلی و جدید",
+      "prior_work_link_fa": "G3-P3 باز",
+      "deliverable_fa": "۲۹ ردیف رابطه، ۱۰ پرسش ImpAbs، ۱۹ سیاست RepRel با اثر تصمیم‌های دامنه",
+      "acceptance_fa": "هر ردیف حل/حفظ با دلیل/تعویق خارج دامنه؛ شمارش‌ها همپوشان‌اند",
+      "status": "BOUNDED_EVIDENCE_READY_NOT_ACCEPTED",
+      "current_extension": "شش تصمیم علمی مشخص با پیشنهاد و شاهد آزمون آماده شد",
+      "remaining_fa": "داوری شش تصمیم و صف روابط/C/PROV/RG-07"
+    },
+    {
+      "order": 11,
+      "id": "P4",
+      "task_fa": "اعمال تصمیم‌های مصوب در سه نمایش",
+      "prior_work_link_fa": "G3-P4 باز؛ P4a قبلاً تکمیل",
+      "deliverable_fa": "نسخهٔ نامزد OntoUML/OWL/SHACL با ثبت تغییرات",
+      "acceptance_fa": "رگرسیون تغییرات؛ حفظ آزمون‌های SupplyCapacity یا ثبت دلیل تغییر",
+      "status": "BOUNDED_EVIDENCE_READY_NOT_ACCEPTED",
+      "current_extension": "رابط اطلاعاتی محدودهٔ ریسک و پروفایل شواهد OWL/SHACL آزمایشی پیاده شد؛ native ثابت ماند",
+      "remaining_fa": "اعمال تصمیم‌های مصوب و هماهنگی کامل نمایش‌ها"
+    },
+    {
+      "order": 12,
+      "id": "P5d",
+      "task_fa": "تکمیل نوع سررابطه‌ها، کاردینالیتی و subsetting",
+      "prior_work_link_fa": "G3-P5d باز؛ به پیش از تبدیل کامل منتقل شود",
+      "deliverable_fa": "تعیین تکلیف ۱۱ سر بی‌نوع، ۶۶ حد نامشخص در ۳۳ رابطه، ۱۴ سر تخصص‌یافته در مبنای فعلی",
+      "acceptance_fa": "تعدادها پس از تغییر دامنه بازشماری شود؛ قیود حدسی مجاز نیست",
+      "status": "BOUNDED_EVIDENCE_READY_NOT_ACCEPTED",
+      "current_extension": "۲۰ سررابطهٔ جدید نوع مشخص و کران آزمایشی دارند",
+      "remaining_fa": "۱۱ نوع و ۶۶ کران قبلی، ۱۴ تخصص و stereotype روابط؛ مجهول‌ها حذف نشده‌اند"
+    },
+    {
+      "order": 13,
+      "id": "P5c",
+      "task_fa": "پوشش معتبر Event/Situation و nature",
+      "prior_work_link_fa": "G3-P5c باز؛ پس از تثبیت معنا",
+      "deliverable_fa": "نگاشت وفادار یا مسیر اعتبارسنجی جایگزین برای ۱۲ کلاس و ۱۴۴ قید nature فعلی",
+      "acceptance_fa": "گزارش فقدان معنا و شاهد مثبت/منفی؛ حفظ هویت رخداد و وضعیت",
+      "status": "BOUNDED_EVIDENCE_READY_NOT_ACCEPTED",
+      "current_extension": "تفکیک رکورد/فعالیت در پروفایل PROV آزموده شد؛ قید تکراری در این پیکربندی شناخته شد",
+      "remaining_fa": "اعتبارسنجی جامع Event/Situation و nature؛ پذیرش علمی"
+    },
+    {
+      "order": 14,
+      "id": "P5e",
+      "task_fa": "اجرای الگوها و هر ۲۰ ضدالگو",
+      "prior_work_link_fa": "G3-P5e/#310 باز",
+      "deliverable_fa": "حساسیت‌سنجی آشکارساز، اجرای مدل نهایی و داوری هر رخداد در ماژول و کل",
+      "acceptance_fa": "صفر نقص مسدودکنندهٔ حل‌نشده؛ هشدار موجه با قیود و آزمون ثبت شود",
+      "status": "EXPERIMENTAL_PROGRESS_NOT_ACCEPTED",
+      "current_extension": "۱۲ آزمایش RelSpec؛ شش mutation بدشکل با خروجی صفر شناسایی شد",
+      "remaining_fa": "چهار اختلاف #315 و اجرای معتبر کل candidate همچنان ۰/۲۰"
+    },
+    {
+      "order": 15,
+      "id": "P6a",
+      "task_fa": "نمونه‌سازی مصنوعی کوچک اما پوشش‌دار",
+      "prior_work_link_fa": "جدید در G3-P6",
+      "deliverable_fa": "دادهٔ مصنوعی/رابطه‌ای و ABox؛ سناریو، پاسخ و یافته‌های طراحی",
+      "acceptance_fa": "پوشش همهٔ کلاس‌های concrete فعال و روابط/قیود الزامی؛ abstract از راه زیرکلاس",
+      "status": "BOUNDED_EVIDENCE_READY_NOT_ACCEPTED",
+      "current_extension": "۳۱ کنترل شواهد، ۸ کنترل محدودهٔ ریسک، ۱۱ کنترل قرارداد و ۳ ردِ موردانتظار برای دادهٔ ناکامل موفق شد",
+      "remaining_fa": "نمونه‌های عملیاتی متوازن‌تر"
+    },
+    {
+      "order": 16,
+      "id": "P6b",
+      "task_fa": "چرخهٔ اصلاح براساس آزمون",
+      "prior_work_link_fa": "جدید در G3-P4/P6",
+      "deliverable_fa": "اصلاح نیاز/تعریف/رابطه/قید/تست با ثبت علت",
+      "acceptance_fa": "بازاجرای تست‌های متأثر تا رفع خطا؛ تست صرفاً کپی مدل نباشد",
+      "status": "BOUNDED_EVIDENCE_READY_NOT_ACCEPTED",
+      "current_extension": "شکاف خانوادهٔ دارویی با استفادهٔ مجدد از پروفایل گروه پوشش داده شد؛ قیود کامل قبلی تضعیف نشد",
+      "remaining_fa": "زمان رویداد، هویت جزء سامانه و تعهد واقعی هنوز نیازمند تصمیم‌اند"
+    },
+    {
+      "order": 17,
+      "id": "P6c",
+      "task_fa": "قرارداد منبع و شواهد تجربی مستقل",
+      "prior_work_link_fa": "G3-P6/#307 باز",
+      "deliverable_fa": "هویت و checksum منبع، حل اختلاف نام، نگاشت دادهٔ گسترده‌تر/مستقل",
+      "acceptance_fa": "حد تعمیم صریح؛ نمونهٔ ۷۶۸ ردیفی معادل کل منبع نیست",
+      "status": "BOUNDED_EVIDENCE_READY_NOT_ACCEPTED",
+      "current_extension": "۸ سند اولیه، ۴۹ استخراج و ۱۳ نگاشت پیشنهادی ثبت شد؛ چهار خانوادهٔ ناشر؛ قرارداد عمومی دارای امضا نیز بررسی شد",
+      "remaining_fa": "SOWهای واقعی و هویت تعهدها، لاگ استقرار، اجرای اقدام RM، شاهد ESMP و رفع CI/#307"
+    },
+    {
+      "order": 18,
+      "id": "P6d",
+      "task_fa": "اعتبارسنجی یکپارچه و ریزنر",
+      "prior_work_link_fa": "G3-P6 و #306 باز",
+      "deliverable_fa": "سازگاری، satisfiability، entailment/non-entailment، SHACL، قیود زمانی و بین‌ماژولی",
+      "acceptance_fa": "آزمون مثبت/منفی، mutation و رگرسیون؛ SQL به‌تنهایی اثبات OntoUML نیست",
+      "status": "BOUNDED_EVIDENCE_READY_NOT_ACCEPTED",
+      "current_extension": "۸ انتظار منطقی موفق؛ گراف ترکیبی شامل شواهد، محدودهٔ ریسک و نگاشت قراردادی سازگار و پذیرفته شد",
+      "remaining_fa": "اعتبارسنجی جامع، ۲۰ آشکارساز و مرور انسانی"
+    },
+    {
+      "order": 19,
+      "id": "N10",
+      "task_fa": "تثبیت نهایی نیازمندی‌های آزموده‌شده v2.1",
+      "prior_work_link_fa": "جدید؛ خروجی مشترک P3–P6",
+      "deliverable_fa": "ماتریس نیاز→CQ→مفهوم/رابطه/قید→تست→شاهد→تصمیم",
+      "acceptance_fa": "۱۰۰٪ نیازمندی‌های الزامی پذیرفته‌شده دارای شاهد قبولی؛ استثناها و خارج‌دامنه‌ها صریح",
+      "status": "BOUNDED_EVIDENCE_READY_NOT_ACCEPTED",
+      "current_extension": "ردیابی محلی نیاز→تست→شاهد برای ۱۳ پالایش ثبت شد",
+      "remaining_fa": "تثبیت و پذیرش ماتریس سراسری؛ پوشش محلی با پوشش کامل برابر نیست"
+    },
+    {
+      "order": 20,
+      "id": "P7",
+      "task_fa": "مرور انسانی و بستن G3",
+      "prior_work_link_fa": "G3-P7 باز",
+      "deliverable_fa": "بستهٔ تصمیم و شواهد نسخهٔ نامزد پایدار",
+      "acceptance_fa": "تأیید نویسنده؛ رفع موارد مسدودکنندهٔ علمی",
+      "status": "PROPOSED_PENDING_DECISION"
+    },
+    {
+      "order": 21,
+      "id": "G4",
+      "task_fa": "تطبیق داده، ردیابی، ویکی، Pages و مقاله",
+      "prior_work_link_fa": "G4 باز؛ عنوان بازیابی‌شده از تاریخچهٔ #306",
+      "deliverable_fa": "همگامی نگاشت‌ها و شواهد مستقل، ادعاها و مستندات/مقاله با نسخهٔ مصوب",
+      "acceptance_fa": "مقاله دامنه محدود و نتایج واقعی را بیان کند؛ ارجاع CM-PharmE/IEEE حفظ شود",
+      "status": "PROPOSED_PENDING_DECISION"
+    },
+    {
+      "order": 22,
+      "id": "G5a",
+      "task_fa": "دیاگرام جامع و مرور نهایی نسخهٔ پایدار",
+      "prior_work_link_fa": "G5 باز",
+      "deliverable_fa": "دیاگرام جامع OntoUML و نماهای دامنه‌ای پس از تثبیت",
+      "acceptance_fa": "همخوانی دیاگرام با فایل مبنا؛ تأیید انسانی",
+      "status": "PROPOSED_PENDING_DECISION"
+    },
+    {
+      "order": 23,
+      "id": "G5b",
+      "task_fa": "ممیزی انتشار و release v2.1",
+      "prior_work_link_fa": "G5 باز",
+      "deliverable_fa": "چک‌لیست انتشار، نسخه‌بندی، تغییرات، مجوز، قابلیت بازتولید و آرشیو",
+      "acceptance_fa": "تمام دروازه‌های الزامی بسته؛ انتشار پس از تأیید نهایی",
+      "status": "PROPOSED_PENDING_DECISION"
+    }
+  ],
+  "active_issues": [
+    315,
+    314,
+    312,
+    313,
+    311,
+    310,
+    307,
+    306,
+    244,
+    243,
+    241,
+    240,
+    239,
+    238,
+    228,
+    214,
+    213,
+    212,
+    211,
+    202,
+    173,
+    171,
+    170,
+    159,
+    103,
+    98,
+    24,
+    23,
+    22,
+    21
+  ],
+  "remaining_full_candidate_blockers": {
+    "unsupported_event_situation_classes": 15,
+    "untyped_ends": 11,
+    "unknown_cardinality_ends": 66,
+    "specialized_ends_unvalidated_on_actual_candidate": 0,
+    "modern_nature_restrictions": 147,
+    "null_relation_stereotypes": 89,
+    "annotation_preservation": "Native Notes also refused by strict converter; annotations/constraints must be retained, not silently discarded.",
+    "note": "Overlapping inventories, not independent defect count; null-relation count updated to the new coherence experiment. Other prior semantic/adapter blockers remain.",
+    "specialized_ends_audited_but_semantically_unresolved": 14,
+    "unknown_readonly_ends": 82,
+    "new_experimental_isolates": 0,
+    "isolate_status": "structurally resolved only in this separate experimental copy; acceptance pending",
+    "new_unclassified_relations": 10
+  },
+  "next_steps_in_order": [
+    "Obtain company-level risk treatment/review and effectiveness records; retain public regulatory review separately.",
+    "Obtain full contract/commitment identity and deployment/build/operator evidence; resolve DS system/component granularity.",
+    "Review six OE decisions, prior ten relation proposals and C/PROV/RG-07; no invented identifiers/timestamps.",
+    "Continue real ESMP action and registry/licence identifier evidence; resolve CI and #307.",
+    "Align accepted native/OWL/SHACL changes, run full detectors and human G3 review, then documentation/article/diagrams/release."
+  ],
+  "reporting_rule_fa": "در هر اجرا دستاورد، کارهای انجام‌شده، تمام کارهای باز، گام بعدی و پیشرفت با مخرج مشخص گزارش شود؛ کارهای قبلی حذف نشوند.",
+  "source_review_update": {
+    "guidance": "EMA MAH guide 1.4, 2026-04-28, six paraphrased extractions with printed-page locators",
+    "ndc": "Five predeclared purposive strata, 15 distinct rows; not representative",
+    "real_action_notice": "Not retrieved; no assertion that no such notice exists"
+  },
+  "prior_summary": {
+    "status": "BOUNDED_STANDALONE_MODULES_READY_FOR_SCIENTIFIC_REVIEW",
+    "direction": "FOUR_DOMAINS_RETAINED_BY_USER_DECISION",
+    "modules": [
+      {
+        "id": "RM",
+        "owned_class_count": 4,
+        "interface_class_count": 8,
+        "schema_triples": 168,
+        "shape_triples": 142,
+        "admission_cases": 14,
+        "queries": 4,
+        "reasoner_cases": 3,
+        "omitted_outbound_triples": 2
+      },
+      {
+        "id": "PV",
+        "owned_class_count": 4,
+        "interface_class_count": 8,
+        "schema_triples": 193,
+        "shape_triples": 297,
+        "admission_cases": 35,
+        "queries": 9,
+        "reasoner_cases": 5,
+        "omitted_outbound_triples": 1
+      },
+      {
+        "id": "BA",
+        "owned_class_count": 5,
+        "interface_class_count": 11,
+        "schema_triples": 225,
+        "shape_triples": 175,
+        "admission_cases": 17,
+        "queries": 5,
+        "reasoner_cases": 3,
+        "omitted_outbound_triples": 2
+      },
+      {
+        "id": "DS",
+        "owned_class_count": 2,
+        "interface_class_count": 29,
+        "schema_triples": 941,
+        "shape_triples": 133,
+        "admission_cases": 17,
+        "queries": 5,
+        "reasoner_cases": 3,
+        "omitted_outbound_triples": 1
+      }
+    ],
+    "counts": {
+      "admission": [
+        83,
+        83
+      ],
+      "queries": [
+        23,
+        23
+      ],
+      "reasoner": [
+        14,
+        14
+      ],
+      "source_scope_lookups": [
+        15,
+        15
+      ]
+    },
+    "integration": {
+      "positive_triples": 477,
+      "full_admission": true,
+      "export_union_admission": true,
+      "full_reasoner": {
+        "consistent": true,
+        "unsatisfiable_named_classes": [],
+        "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+        "prov_profile": "two conflicting annotation-property declarations removed; raw source retained"
+      },
+      "export_union_reasoner": {
+        "consistent": true,
+        "unsatisfiable_named_classes": [],
+        "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+        "prov_profile": "two conflicting annotation-property declarations removed; raw source retained"
+      },
+      "pass": true
+    },
+    "full_fixture_comparison": [
+      83,
+      83
+    ],
+    "pv_group_checks": [
+      32,
+      32
+    ],
+    "progress": {
+      "portable_modules": [
+        4,
+        4
+      ],
+      "historical_gates": [
+        2,
+        5
+      ],
+      "G3_main_packages": [
+        2,
+        7
+      ],
+      "full_detector_suite": [
+        0,
+        20
+      ],
+      "global_weighted_percentage": null
+    },
+    "new_scientific_acceptance": "Retention/design direction only",
+    "native_unchanged": true,
+    "merge_performed": false,
+    "issue_closed_count": 0,
+    "limits": [
+      "Historical fixture replays are not new independent empirical evidence",
+      "Source-group checks overlap portable PV checks and must not be added as independent coverage",
+      "The current exports are signature projections, not formally certified locality modules",
+      "29 DS interface classes include the PROV dependency closure; only two classes are counted as owned",
+      "No full OntoUML/UFO or OWL2 DL conformance claim; relation stereotypes and cardinalities remain under review"
+    ]
+  },
+  "summary": {
+    "created_at": "2026-10-09T23:28:00.639509+00:00",
+    "base_head": "c4a428210da5d493c5317bcb011a1031ba5b8801",
+    "four_domain_direction": "RETAIN_ACCEPTED",
+    "source_documents": 8,
+    "publisher_families": 4,
+    "new_source_extractions": 49,
+    "proposed_ontology_mappings": 13,
+    "documentary_checks": [
+      31,
+      31
+    ],
+    "risk_scope_checks": [
+      8,
+      8
+    ],
+    "contract_checks": [
+      11,
+      11
+    ],
+    "logical_checks": [
+      8,
+      8
+    ],
+    "expected_incomplete_projection_rejections": 3,
+    "combined_triples": 1402,
+    "combined_admission": true,
+    "historical_fixtures_inspected_not_reexecuted": 83,
+    "new_owned_classes": 0,
+    "new_domain_information_relations": 1,
+    "native_changed": false,
+    "semantic_acceptance": "Retention direction only; six new detailed decisions pending",
+    "issues_open": 30,
+    "issues_closed": 170,
+    "issues_closed_this_run": 0,
+    "progress": {
+      "targeted_RM_BA_DS_documentary_witnesses": [
+        3,
+        3
+      ],
+      "portable_modules_prior": [
+        4,
+        4
+      ],
+      "historical_gates": [
+        2,
+        5
+      ],
+      "G3_packages": [
+        2,
+        7
+      ],
+      "full_detector_runs": [
+        0,
+        20
+      ],
+      "global_weighted_percent": null
+    }
+  }
+}

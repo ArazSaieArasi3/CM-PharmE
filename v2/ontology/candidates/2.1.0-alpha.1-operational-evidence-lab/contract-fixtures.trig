@@ -1,0 +1,191 @@
+@prefix ns1: <https://w3id.org/cm-pharme/experimental/four-domain/> .
+@prefix ns2: <https://w3id.org/cm-pharme/experimental/refinement/> .
+@prefix ns3: <https://w3id.org/cm-pharme/2.1/> .
+@prefix ns4: <https://w3id.org/cm-pharme/experimental/reporting-context/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<urn:cmpe-contract:outsider-added> {
+    <urn:cmpe-evidence:GLTA> a ns3:StrategicPartnershipAgreement ;
+        ns3:partnershipParticipant <urn:cmpe-evidence:LonzaLtd>,
+            <urn:cmpe-evidence:LonzaSales>,
+            <urn:cmpe-evidence:ModernaTX> ;
+        ns1:profile "ba-partnership",
+            "documented-partnership" ;
+        ns2:agreementCommitment <urn:cmpe-evidence:workOrderCommitment> .
+
+    <urn:cmpe-evidence:contractEvidence> a ns3:EvidenceSupport ;
+        ns3:evidenceAssertion <urn:cmpe-evidence:workOrderCommitment> ;
+        ns3:evidenceItem <urn:cmpe-evidence:BA-MODERNA-SEC-2020> ;
+        ns3:evidenceRecord <urn:cmpe-evidence:BA-MODERNA-SEC-2020> .
+
+    <urn:cmpe-evidence:outsider> a ns3:Organization .
+
+    <urn:cmpe-evidence:BA-MODERNA-SEC-2020> a ns3:EvidenceItem,
+            ns3:EvidenceSourceRecordRole,
+            ns3:SourceRecord ;
+        ns4:sourceURL "https://www.sec.gov/Archives/edgar/data/1682852/000168285220000023/lonzamodernagltafullye.htm"^^xsd:anyURI .
+
+    <urn:cmpe-evidence:LonzaLtd> a ns3:Organization,
+            ns3:PartnerOrganizationRole .
+
+    <urn:cmpe-evidence:LonzaSales> a ns3:Organization,
+            ns3:PartnerOrganizationRole .
+
+    <urn:cmpe-evidence:ModernaTX> a ns3:Organization,
+            ns3:PartnerOrganizationRole .
+
+    <urn:cmpe-evidence:workOrderCommitment> a ns3:Assertion,
+            ns3:SupportedAssertionRole ;
+        ns1:profile "commitment-assertion" ;
+        ns2:commitmentActor <urn:cmpe-evidence:LonzaLtd>,
+            <urn:cmpe-evidence:LonzaSales>,
+            <urn:cmpe-evidence:ModernaTX>,
+            <urn:cmpe-evidence:outsider> ;
+        ns2:commitmentText "The parties are to agree a work order before the specified work." .
+}
+
+<urn:cmpe-contract:missing-source-evidence> {
+    <urn:cmpe-evidence:GLTA> a ns3:StrategicPartnershipAgreement ;
+        ns3:partnershipParticipant <urn:cmpe-evidence:LonzaLtd>,
+            <urn:cmpe-evidence:LonzaSales>,
+            <urn:cmpe-evidence:ModernaTX> ;
+        ns1:profile "ba-partnership",
+            "documented-partnership" ;
+        ns2:agreementCommitment <urn:cmpe-evidence:workOrderCommitment> .
+
+    <urn:cmpe-evidence:contractEvidence> a ns3:EvidenceSupport ;
+        ns3:evidenceAssertion <urn:cmpe-evidence:workOrderCommitment> ;
+        ns3:evidenceItem <urn:cmpe-evidence:BA-MODERNA-SEC-2020> .
+
+    <urn:cmpe-evidence:BA-MODERNA-SEC-2020> a ns3:EvidenceItem,
+            ns3:EvidenceSourceRecordRole,
+            ns3:SourceRecord ;
+        ns4:sourceURL "https://www.sec.gov/Archives/edgar/data/1682852/000168285220000023/lonzamodernagltafullye.htm"^^xsd:anyURI .
+
+    <urn:cmpe-evidence:LonzaLtd> a ns3:Organization,
+            ns3:PartnerOrganizationRole .
+
+    <urn:cmpe-evidence:LonzaSales> a ns3:Organization,
+            ns3:PartnerOrganizationRole .
+
+    <urn:cmpe-evidence:ModernaTX> a ns3:Organization,
+            ns3:PartnerOrganizationRole .
+
+    <urn:cmpe-evidence:workOrderCommitment> a ns3:Assertion,
+            ns3:SupportedAssertionRole ;
+        ns1:profile "commitment-assertion" ;
+        ns2:commitmentActor <urn:cmpe-evidence:LonzaLtd>,
+            <urn:cmpe-evidence:LonzaSales>,
+            <urn:cmpe-evidence:ModernaTX> ;
+        ns2:commitmentText "The parties are to agree a work order before the specified work." .
+}
+
+<urn:cmpe-contract:document-as-agreement> {
+    <urn:cmpe-evidence:contractEvidence> a ns3:EvidenceSupport ;
+        ns3:evidenceAssertion <urn:cmpe-evidence:workOrderCommitment> ;
+        ns3:evidenceItem <urn:cmpe-evidence:BA-MODERNA-SEC-2020> ;
+        ns3:evidenceRecord <urn:cmpe-evidence:GLTA> .
+
+    <urn:cmpe-evidence:GLTA> a ns3:StrategicPartnershipAgreement ;
+        ns3:partnershipParticipant <urn:cmpe-evidence:LonzaLtd>,
+            <urn:cmpe-evidence:LonzaSales>,
+            <urn:cmpe-evidence:ModernaTX> ;
+        ns1:profile "ba-partnership",
+            "documented-partnership" ;
+        ns2:agreementCommitment <urn:cmpe-evidence:workOrderCommitment> .
+
+    <urn:cmpe-evidence:BA-MODERNA-SEC-2020> a ns3:EvidenceItem,
+            ns3:EvidenceSourceRecordRole,
+            ns3:SourceRecord ;
+        ns4:sourceURL "https://www.sec.gov/Archives/edgar/data/1682852/000168285220000023/lonzamodernagltafullye.htm"^^xsd:anyURI .
+
+    <urn:cmpe-evidence:LonzaLtd> a ns3:Organization,
+            ns3:PartnerOrganizationRole .
+
+    <urn:cmpe-evidence:LonzaSales> a ns3:Organization,
+            ns3:PartnerOrganizationRole .
+
+    <urn:cmpe-evidence:ModernaTX> a ns3:Organization,
+            ns3:PartnerOrganizationRole .
+
+    <urn:cmpe-evidence:workOrderCommitment> a ns3:Assertion,
+            ns3:SupportedAssertionRole ;
+        ns1:profile "commitment-assertion" ;
+        ns2:commitmentActor <urn:cmpe-evidence:LonzaLtd>,
+            <urn:cmpe-evidence:LonzaSales>,
+            <urn:cmpe-evidence:ModernaTX> ;
+        ns2:commitmentText "The parties are to agree a work order before the specified work." .
+}
+
+<urn:cmpe-contract:collapsed-party-set> {
+    <urn:cmpe-evidence:contractEvidence> a ns3:EvidenceSupport ;
+        ns3:evidenceAssertion <urn:cmpe-evidence:workOrderCommitment> ;
+        ns3:evidenceItem <urn:cmpe-evidence:BA-MODERNA-SEC-2020> ;
+        ns3:evidenceRecord <urn:cmpe-evidence:BA-MODERNA-SEC-2020> .
+
+    <urn:cmpe-evidence:GLTA> a ns3:StrategicPartnershipAgreement ;
+        ns3:partnershipParticipant <urn:cmpe-evidence:LonzaLtd>,
+            <urn:cmpe-evidence:ModernaTX> ;
+        ns1:profile "ba-partnership",
+            "documented-partnership" ;
+        ns2:agreementCommitment <urn:cmpe-evidence:workOrderCommitment> .
+
+    <urn:cmpe-evidence:BA-MODERNA-SEC-2020> a ns3:EvidenceItem,
+            ns3:EvidenceSourceRecordRole,
+            ns3:SourceRecord ;
+        ns4:sourceURL "https://www.sec.gov/Archives/edgar/data/1682852/000168285220000023/lonzamodernagltafullye.htm"^^xsd:anyURI .
+
+    <urn:cmpe-evidence:LonzaSales> a ns3:Organization,
+            ns3:PartnerOrganizationRole .
+
+    <urn:cmpe-evidence:LonzaLtd> a ns3:Organization,
+            ns3:PartnerOrganizationRole .
+
+    <urn:cmpe-evidence:ModernaTX> a ns3:Organization,
+            ns3:PartnerOrganizationRole .
+
+    <urn:cmpe-evidence:workOrderCommitment> a ns3:Assertion,
+            ns3:SupportedAssertionRole ;
+        ns1:profile "commitment-assertion" ;
+        ns2:commitmentActor <urn:cmpe-evidence:LonzaLtd>,
+            <urn:cmpe-evidence:LonzaSales>,
+            <urn:cmpe-evidence:ModernaTX> ;
+        ns2:commitmentText "The parties are to agree a work order before the specified work." .
+}
+
+<urn:cmpe-contract:three-party-projected-commitment> {
+    <urn:cmpe-evidence:contractEvidence> a ns3:EvidenceSupport ;
+        ns3:evidenceAssertion <urn:cmpe-evidence:workOrderCommitment> ;
+        ns3:evidenceItem <urn:cmpe-evidence:BA-MODERNA-SEC-2020> ;
+        ns3:evidenceRecord <urn:cmpe-evidence:BA-MODERNA-SEC-2020> .
+
+    <urn:cmpe-evidence:GLTA> a ns3:StrategicPartnershipAgreement ;
+        ns3:partnershipParticipant <urn:cmpe-evidence:LonzaLtd>,
+            <urn:cmpe-evidence:LonzaSales>,
+            <urn:cmpe-evidence:ModernaTX> ;
+        ns1:profile "ba-partnership",
+            "documented-partnership" ;
+        ns2:agreementCommitment <urn:cmpe-evidence:workOrderCommitment> .
+
+    <urn:cmpe-evidence:BA-MODERNA-SEC-2020> a ns3:EvidenceItem,
+            ns3:EvidenceSourceRecordRole,
+            ns3:SourceRecord ;
+        ns4:sourceURL "https://www.sec.gov/Archives/edgar/data/1682852/000168285220000023/lonzamodernagltafullye.htm"^^xsd:anyURI .
+
+    <urn:cmpe-evidence:LonzaSales> a ns3:Organization,
+            ns3:PartnerOrganizationRole .
+
+    <urn:cmpe-evidence:LonzaLtd> a ns3:Organization,
+            ns3:PartnerOrganizationRole .
+
+    <urn:cmpe-evidence:ModernaTX> a ns3:Organization,
+            ns3:PartnerOrganizationRole .
+
+    <urn:cmpe-evidence:workOrderCommitment> a ns3:Assertion,
+            ns3:SupportedAssertionRole ;
+        ns1:profile "commitment-assertion" ;
+        ns2:commitmentActor <urn:cmpe-evidence:LonzaLtd>,
+            <urn:cmpe-evidence:LonzaSales>,
+            <urn:cmpe-evidence:ModernaTX> ;
+        ns2:commitmentText "The parties are to agree a work order before the specified work." .
+}

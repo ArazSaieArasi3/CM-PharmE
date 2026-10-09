@@ -1,0 +1,273 @@
+@startuml CM_PharmE_V21_Design_Candidate
+hide methods
+hide fields
+skinparam classAttributeIconSize 0
+
+package "CORE — Ecosystem Organization" {
+  abstract class "Ecosystem Participant" as EcosystemParticipant <<RoleMixin>>
+  class Organization <<Kind>>
+  class "Regulatory Authority" as RegAuthorityRole <<Role>>
+  class Manufacturer as ManufacturerRole <<Role>>
+  class Importer as ImporterRole <<Role>>
+  class "Product Responsible Organization" as LabelerRole <<Role>>
+  class "Wholesale Distributor" as WDDRole <<Role>>
+  class "Third-Party Logistics Provider" as TPLRole <<Role>>
+}
+
+package "CORE — Facility Operations" {
+  class Facility <<Kind>>
+  class "Manufacturing Site" as MfgSiteRole <<Role>>
+  class "Distribution Site" as DistSiteRole <<Role>>
+  class "Facility Operation" as FacilityOperation <<Relator>>
+}
+
+package "CORE — Regulatory Governance" {
+  class "Establishment Registration" as Registration <<Relator>>
+  class "Regulatory Authorization" as Authorization <<Relator>>
+  class "Regulatory Jurisdiction" as Jurisdiction <<Kind>>
+}
+
+package "CORE — Pharmaceutical Product" {
+  class "Medicinal Product" as Product <<Kind>>
+  class "Pharmaceutical Substance" as Substance <<Kind>>
+  class "Medicinal Product Presentation" as Presentation <<Kind>>
+  class "Dosage Form Specification" as DosageForm <<Kind>>
+  class Strength <<Quality>>
+  class "Package Configuration" as PackageConfig <<Kind>>
+  class "Product Classification Scheme" as ClassScheme <<Kind>>
+  class "Classification Entry" as ClassEntry <<Kind>>
+  class "Product Classification Assignment" as ClassAssignment <<Relator>>
+  class "Market Listing" as MarketListing <<Relator>>
+}
+
+package "CORE — Supply Operations" {
+  class "Manufacturing Activity" as MfgActivity <<Event>>
+  class "Pharmaceutical Logistics Activity" as DistActivity <<Event>>
+  class "Medicine Shortage Situation" as Shortage <<Situation>>
+  class "Supply Capacity" as SupplyCapacity <<Mode>>
+}
+
+package "CORE — Ecosystem Observation" {
+  class "Availability Observation Result" as AvailabilityResult <<Subkind>>
+  class "Demand Observation Result" as DemandResult <<Subkind>>
+  class "Supply Capacity Observation Result" as SupplyCapacityResult <<Subkind>>
+}
+
+package "X-INFRA — Spatiotemporal Context" {
+  class "Geographic Feature" as GeoFeature <<Kind>>
+  class "Administrative Region" as AdminRegion <<Subkind>>
+  class Country <<Subkind>>
+  class "Geospatial Position" as Position <<Datatype>>
+  class Address <<Datatype>>
+  class "Time Interval" as TimeInterval <<Datatype>>
+  class "Reporting Period" as ReportingPeriod <<Datatype>>
+}
+
+package "X-INFRA — Evidence Traceability" {
+  class "Data Source" as DataSource <<Kind>>
+  class Dataset <<Kind>>
+  class "Dataset Release" as DatasetRelease <<Kind>>
+  class "Source Record" as SourceRecord <<Kind>>
+  class Assertion <<Kind>>
+  class "Observation Activity" as ObservationActivity <<Event>>
+  class "Observation Result" as ObservationResult <<Kind>>
+  class "Measure Value" as MeasureValue <<Datatype>>
+  abstract class "Evidence Item" as EvidenceItem <<RoleMixin>>
+  class "Evidence Support" as EvidenceSupport <<Relator>>
+  class "Mapping Assertion" as MappingAssertion <<Subkind>>
+  class "Provenance Activity" as ProvActivity <<Event>>
+  class "Data Quality Finding" as DQFinding <<Subkind>>
+}
+
+package "X-INFRA — Entity Identity" {
+  class "Identifier Value" as IdValue <<Datatype>>
+  class "Identifier Scheme" as IdScheme <<Kind>>
+  class "Identifier Assignment" as IdAssignment <<Relator>>
+  class "Entity Match Assertion" as MatchAssertion <<Subkind>>
+  class "Match Confidence" as MatchConfidence <<Quality>>
+}
+
+package "EXT — Regulatory Policy" {
+  class "Regulatory Requirement" as RegulatoryRequirement <<Kind>>
+  class "Regulatory Oversight" as RegulatoryOversight <<Relator>>
+}
+
+package "EXT — Supply Resilience" {
+  class "Contextual Medicine Classification Assignment" as ContextClass <<Relator>>
+  class "Essential Medicine Classification Assignment" as EssentialClass <<Subkind>>
+  class "Critical Medicine Classification Assignment" as CriticalClass <<Subkind>>
+  class "Alternative Medicinal Product" as AlternativeRole <<Role>>
+  class "Alternative Medicinal Product Assignment" as AlternativeAssignment <<Relator>>
+  class "Supply Dependency" as SupplyDependency <<Relator>>
+  class "Disruption Event" as Disruption <<Event>>
+  class "Inventory Observation Result" as InventoryResult <<Subkind>>
+  class "Procurement Activity" as ProcurementActivity <<Event>>
+  class "Lead Time Observation Result" as LeadTimeResult <<Subkind>>
+  class "Stockout Situation" as Stockout <<Situation>>
+}
+
+package "EXT — Market Access" {
+  class "Healthcare Financing Organization" as PayerRole <<Role>>
+  class "Reimbursement and Utilization Observation Result" as ReimbursementResult <<Subkind>>
+  class "Diagnosis Classification Reference" as DiagnosisReference <<Kind>>
+}
+
+package "EXT — Risk Management" {
+  abstract class "Asset at Risk" as AssetAtRisk <<RoleMixin>>
+  class "Risk Assessment Activity" as RiskAssessment <<Event>>
+  class Vulnerability <<Mode>>
+  class "Risk Treatment Plan" as RiskPlan <<Kind>>
+  class "Risk Treatment Activity" as RiskTreatment <<Event>>
+}
+
+package "EXT — Pharmacovigilance" {
+  class "Pharmacovigilance Requirement" as PVRequirement <<Kind>>
+  class "Adverse Event Reporting Activity" as AEReporting <<Event>>
+  class "Post-Market Surveillance Activity" as PMSurveillance <<Event>>
+}
+
+package "EXT — Business Architecture" {
+  class "Business Architecture View" as BAView <<Kind>>
+  class "Enterprise Capability" as Capability <<Mode>>
+  class "Strategic Partnership Agreement" as Partnership <<Relator>>
+  class "Service Offering Specification" as ServiceSpec <<Kind>>
+}
+
+package "EXT — Digital Systems" {
+  class "Digital System Component" as DigitalComponent <<Kind>>
+}
+
+package "EXT — Clinical Care" {
+  abstract class "Clinical Care Participant" as ClinicalParticipant <<RoleMixin>>
+}
+
+' Generalization families
+EcosystemParticipant <|-- RegAuthorityRole
+EcosystemParticipant <|-- ManufacturerRole
+EcosystemParticipant <|-- ImporterRole
+EcosystemParticipant <|-- LabelerRole
+EcosystemParticipant <|-- WDDRole
+EcosystemParticipant <|-- TPLRole
+Organization <|-- RegAuthorityRole
+Organization <|-- ManufacturerRole
+Organization <|-- ImporterRole
+Organization <|-- LabelerRole
+Organization <|-- WDDRole
+Organization <|-- TPLRole
+Facility <|-- MfgSiteRole
+Facility <|-- DistSiteRole
+GeoFeature <|-- AdminRegion
+GeoFeature <|-- Country
+Assertion <|-- MappingAssertion
+Assertion <|-- MatchAssertion
+Assertion <|-- DQFinding
+ObservationResult <|-- AvailabilityResult
+ObservationResult <|-- DemandResult
+ObservationResult <|-- SupplyCapacityResult
+ObservationResult <|-- InventoryResult
+ObservationResult <|-- LeadTimeResult
+ObservationResult <|-- ReimbursementResult
+ContextClass <|-- EssentialClass
+ContextClass <|-- CriticalClass
+Organization <|-- PayerRole
+
+' Core relator and participation patterns
+FacilityOperation -- Organization : <<mediation>>
+FacilityOperation -- Facility : <<mediation>>
+Registration -- RegAuthorityRole : <<mediation>>
+Registration -- Facility : <<mediation>>
+Authorization -- RegAuthorityRole : <<mediation>>
+Authorization -- EcosystemParticipant : <<mediation>>
+Authorization --> Jurisdiction : appliesIn
+
+Presentation --> Product : presentationOf
+Presentation --> Substance : hasActiveSubstance
+Presentation --> DosageForm : hasDosageForm
+Presentation -- Strength : <<characterization>>
+Presentation --> PackageConfig : hasPackage
+ClassAssignment -- Product : <<mediation>>
+ClassAssignment -- ClassEntry : <<mediation>>
+ClassEntry --> ClassScheme : inScheme
+MarketListing -- Presentation : <<mediation>>
+MarketListing -- LabelerRole : <<mediation>>
+MarketListing --> Jurisdiction : appliesIn
+
+Organization --> MfgActivity : participates
+Facility --> MfgActivity : participates
+Presentation --> MfgActivity : concerns
+Organization --> DistActivity : participates
+Facility --> DistActivity : participates
+Shortage --> Presentation : involves
+Shortage --> Jurisdiction : inContext
+Organization -- SupplyCapacity : <<characterization>>
+Facility -- SupplyCapacity : <<characterization>>
+
+' X-INFRA patterns
+DataSource --> Dataset : maintains
+Dataset --> DatasetRelease : hasRelease
+DatasetRelease --> SourceRecord : contains
+ObservationActivity --> ObservationResult : produces
+ObservationResult --> MeasureValue : hasValue
+EvidenceSupport -- EvidenceItem : <<mediation>>
+EvidenceSupport -- Assertion : <<mediation>>
+IdAssignment --> IdValue : hasIdentifierValue <<value>>
+IdAssignment -- IdScheme : <<mediation>>
+MatchAssertion -- MatchConfidence : <<characterization>>
+Facility --> GeoFeature : locatedIn
+Jurisdiction --> GeoFeature : hasGeographicScope
+
+' Extension patterns
+RegulatoryOversight -- RegAuthorityRole : <<mediation>> oversightAuthorityRole
+RegulatoryOversight --> RegulatoryRequirement : governedBy
+AlternativeAssignment -- Product : <<mediation>>
+AlternativeAssignment -- AlternativeRole : <<mediation>>
+Product <|-- AlternativeRole
+' AlternativeRole does not specialize EcosystemParticipant in the formal candidate.
+SupplyDependency -- Organization : <<mediation>>
+SupplyDependency -- Facility : <<mediation>>
+AssetAtRisk "1" -- Vulnerability : <<characterization>> vulnerabilityBearer
+RiskAssessment --> AssetAtRisk : assesses
+RiskAssessment --> Vulnerability : identifies
+RiskPlan --> Vulnerability : addresses
+RiskPlan --> RiskTreatment : realizedThrough
+AEReporting --> PVRequirement : governedBy
+PMSurveillance --> PVRequirement : governedBy
+Organization "1" -- Capability : <<characterization>> capabilityBearer
+Partnership "1" -- "2..*" Organization : <<mediation>> partnershipParticipant
+BAView --> Organization : maps
+BAView --> MfgActivity : maps
+
+note right of Shortage
+  Domain situation != source record.
+  Status is a controlled value,
+  not automatically a Phase.
+end note
+
+note bottom of Product
+  Product != Substance != Presentation
+  != Identifier Value.
+end note
+
+note bottom of Jurisdiction
+  Legal/social scope != geography.
+end note
+
+
+' Existing W5 links omitted from the original overview are shown here.
+EvidenceSupport -- SourceRecord : <<mediation>> evidenceRecord
+ContextClass -- Product : <<mediation>> contextClassificationProduct
+ContextClass -- ClassEntry : <<mediation>> contextClassificationEntry
+ProvActivity --> Assertion : generatedAssertion
+
+note right of IdAssignment
+  identifierEntity must mediate a concrete identified bearer;
+  its polymorphic end and multiplicity await author review.
+  Identifier Value is a value, never a mediated individual.
+end note
+
+note right of RegulatoryOversight
+  Governed end is polymorphic; two distinct mediated
+  individuals and their types require author review.
+end note
+
+@enduml

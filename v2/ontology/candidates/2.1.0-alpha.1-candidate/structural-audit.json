@@ -1,0 +1,568 @@
+{
+  "identity_checks": [
+    {
+      "role": "OperatingOrganizationRole",
+      "identity_providers": [
+        "Organization"
+      ],
+      "pass_": true
+    },
+    {
+      "role": "OperatedFacilityRole",
+      "identity_providers": [
+        "Facility"
+      ],
+      "pass_": true
+    },
+    {
+      "role": "RegisteredOrganizationRole",
+      "identity_providers": [
+        "Organization"
+      ],
+      "pass_": true
+    },
+    {
+      "role": "RegisteredFacilityRole",
+      "identity_providers": [
+        "Facility"
+      ],
+      "pass_": true
+    },
+    {
+      "role": "AuthorizedOrganizationRole",
+      "identity_providers": [
+        "Organization"
+      ],
+      "pass_": true
+    },
+    {
+      "role": "AuthorizedFacilityRole",
+      "identity_providers": [
+        "Facility"
+      ],
+      "pass_": true
+    },
+    {
+      "role": "GovernedOrganizationRole",
+      "identity_providers": [
+        "Organization"
+      ],
+      "pass_": true
+    },
+    {
+      "role": "GovernedFacilityRole",
+      "identity_providers": [
+        "Facility"
+      ],
+      "pass_": true
+    },
+    {
+      "role": "RegisteringAuthorityRole",
+      "identity_providers": [
+        "Organization"
+      ],
+      "pass_": true
+    },
+    {
+      "role": "AuthorizingAuthorityRole",
+      "identity_providers": [
+        "Organization"
+      ],
+      "pass_": true
+    },
+    {
+      "role": "OversightAuthorityRole",
+      "identity_providers": [
+        "Organization"
+      ],
+      "pass_": true
+    },
+    {
+      "role": "ClassifiedMedicinalProductRole",
+      "identity_providers": [
+        "MedicinalProduct"
+      ],
+      "pass_": true
+    },
+    {
+      "role": "ClassifiedPharmaceuticalSubstanceRole",
+      "identity_providers": [
+        "PharmaceuticalSubstance"
+      ],
+      "pass_": true
+    },
+    {
+      "role": "AppliedClassificationEntryRole",
+      "identity_providers": [
+        "ClassificationEntry"
+      ],
+      "pass_": true
+    },
+    {
+      "role": "ListedPresentationRole",
+      "identity_providers": [
+        "MedicinalProductPresentation"
+      ],
+      "pass_": true
+    },
+    {
+      "role": "ListingResponsibleOrganizationRole",
+      "identity_providers": [
+        "Organization"
+      ],
+      "pass_": true
+    },
+    {
+      "role": "SupportedAssertionRole",
+      "identity_providers": [
+        "Assertion"
+      ],
+      "pass_": true
+    },
+    {
+      "role": "EvidenceSourceRecordRole",
+      "identity_providers": [
+        "SourceRecord"
+      ],
+      "pass_": true
+    },
+    {
+      "role": "EvidenceObservationResultRole",
+      "identity_providers": [
+        "ObservationResult"
+      ],
+      "pass_": true
+    },
+    {
+      "role": "IdentifiedOrganizationRole",
+      "identity_providers": [
+        "Organization"
+      ],
+      "pass_": true
+    },
+    {
+      "role": "IdentifiedFacilityRole",
+      "identity_providers": [
+        "Facility"
+      ],
+      "pass_": true
+    },
+    {
+      "role": "IdentifiedMedicinalProductRole",
+      "identity_providers": [
+        "MedicinalProduct"
+      ],
+      "pass_": true
+    },
+    {
+      "role": "IdentifiedPharmaceuticalSubstanceRole",
+      "identity_providers": [
+        "PharmaceuticalSubstance"
+      ],
+      "pass_": true
+    },
+    {
+      "role": "IdentifiedMedicinalProductPresentationRole",
+      "identity_providers": [
+        "MedicinalProductPresentation"
+      ],
+      "pass_": true
+    },
+    {
+      "role": "IdentifiedGeographicFeatureRole",
+      "identity_providers": [
+        "GeographicFeature"
+      ],
+      "pass_": true
+    },
+    {
+      "role": "UsedIdentifierSchemeRole",
+      "identity_providers": [
+        "IdentifierScheme"
+      ],
+      "pass_": true
+    },
+    {
+      "role": "ReferenceProductRole",
+      "identity_providers": [
+        "MedicinalProduct"
+      ],
+      "pass_": true
+    },
+    {
+      "role": "DependentOrganizationRole",
+      "identity_providers": [
+        "Organization"
+      ],
+      "pass_": true
+    },
+    {
+      "role": "DependentFacilityRole",
+      "identity_providers": [
+        "Facility"
+      ],
+      "pass_": true
+    },
+    {
+      "role": "DependentMedicinalProductRole",
+      "identity_providers": [
+        "MedicinalProduct"
+      ],
+      "pass_": true
+    },
+    {
+      "role": "ProviderOrganizationRole",
+      "identity_providers": [
+        "Organization"
+      ],
+      "pass_": true
+    },
+    {
+      "role": "ProviderFacilityRole",
+      "identity_providers": [
+        "Facility"
+      ],
+      "pass_": true
+    },
+    {
+      "role": "ProviderMedicinalProductRole",
+      "identity_providers": [
+        "MedicinalProduct"
+      ],
+      "pass_": true
+    },
+    {
+      "role": "PartnerOrganizationRole",
+      "identity_providers": [
+        "Organization"
+      ],
+      "pass_": true
+    }
+  ],
+  "role_mixin_checks": [
+    {
+      "name": "RegisteredParty",
+      "identity_provider_count": 2,
+      "pass_": true
+    },
+    {
+      "name": "AuthorizedParty",
+      "identity_provider_count": 2,
+      "pass_": true
+    },
+    {
+      "name": "GovernedEntity",
+      "identity_provider_count": 2,
+      "pass_": true
+    },
+    {
+      "name": "ClassifiedEntity",
+      "identity_provider_count": 2,
+      "pass_": true
+    },
+    {
+      "name": "EvidenceItem",
+      "identity_provider_count": 2,
+      "pass_": true
+    },
+    {
+      "name": "IdentifiedEntity",
+      "identity_provider_count": 6,
+      "pass_": true
+    },
+    {
+      "name": "DependentEntity",
+      "identity_provider_count": 3,
+      "pass_": true
+    },
+    {
+      "name": "ProviderEntity",
+      "identity_provider_count": 3,
+      "pass_": true
+    }
+  ],
+  "protected_distinctions": [
+    {
+      "pair": [
+        "Organization",
+        "Facility"
+      ],
+      "pass_": true
+    },
+    {
+      "pair": [
+        "Facility",
+        "GeographicFeature"
+      ],
+      "pass_": true
+    },
+    {
+      "pair": [
+        "GeographicFeature",
+        "RegulatoryJurisdiction"
+      ],
+      "pass_": true
+    },
+    {
+      "pair": [
+        "MedicinalProduct",
+        "PharmaceuticalSubstance"
+      ],
+      "pass_": true
+    },
+    {
+      "pair": [
+        "MedicinalProduct",
+        "MedicinalProductPresentation"
+      ],
+      "pass_": true
+    },
+    {
+      "pair": [
+        "ObservationActivity",
+        "ObservationResult"
+      ],
+      "pass_": true
+    },
+    {
+      "pair": [
+        "MedicineShortageSituation",
+        "SourceRecord"
+      ],
+      "pass_": true
+    },
+    {
+      "pair": [
+        "SupplyCapacity",
+        "SupplyCapacityObservationResult"
+      ],
+      "pass_": true
+    }
+  ],
+  "mediation_checks": [
+    {
+      "profile": "FacilityOperation",
+      "minimum_participants": 2,
+      "all_ends_anti_rigid": true,
+      "local_exclusion": true
+    },
+    {
+      "profile": "EstablishmentRegistration",
+      "minimum_participants": 2,
+      "all_ends_anti_rigid": true,
+      "local_exclusion": true
+    },
+    {
+      "profile": "RegulatoryAuthorization",
+      "minimum_participants": 2,
+      "all_ends_anti_rigid": true,
+      "local_exclusion": true
+    },
+    {
+      "profile": "ProductClassificationAssignment",
+      "minimum_participants": 2,
+      "all_ends_anti_rigid": true,
+      "local_exclusion": true
+    },
+    {
+      "profile": "MarketListing",
+      "minimum_participants": 2,
+      "all_ends_anti_rigid": true,
+      "local_exclusion": true
+    },
+    {
+      "profile": "EvidenceSupport",
+      "minimum_participants": 2,
+      "all_ends_anti_rigid": true,
+      "local_exclusion": true
+    },
+    {
+      "profile": "IdentifierAssignment",
+      "minimum_participants": 2,
+      "all_ends_anti_rigid": true,
+      "local_exclusion": true
+    },
+    {
+      "profile": "AlternativeMedicineAssignment",
+      "minimum_participants": 2,
+      "all_ends_anti_rigid": true,
+      "local_exclusion": true
+    },
+    {
+      "profile": "SupplyDependency",
+      "minimum_participants": 2,
+      "all_ends_anti_rigid": true,
+      "local_exclusion": true
+    },
+    {
+      "profile": "RegulatoryOversight",
+      "minimum_participants": 2,
+      "all_ends_anti_rigid": true,
+      "local_exclusion": true
+    },
+    {
+      "profile": "StrategicPartnershipAgreement",
+      "minimum_participants": 2,
+      "all_ends_anti_rigid": true,
+      "local_exclusion": true
+    }
+  ],
+  "topology_before": {
+    "metric": "Named class graph: named subclass edges and named domain-range object-property edges; no datatypes, existential restrictions, anonymous unions or inferred semantics",
+    "classes": 81,
+    "components": 27,
+    "largest_component": 34,
+    "isolates": [
+      "AdverseEventReportingActivity",
+      "BusinessArchitectureView",
+      "ClinicalCareParticipant",
+      "DiagnosisClassificationReference",
+      "DigitalInformationSystemComponent",
+      "DisruptionEvent",
+      "DistributionLogisticsActivity",
+      "EvidenceItem",
+      "ManufacturingActivity",
+      "PharmaceuticalSubstance",
+      "PharmacovigilanceRequirement",
+      "PostMarketSurveillanceActivity",
+      "ProcurementActivity",
+      "RegulatoryRequirement",
+      "RiskAssessmentActivity",
+      "RiskTreatmentActivity",
+      "RiskTreatmentPlan",
+      "ServiceOfferingSpecification",
+      "StockoutSituation",
+      "SupplyCapacity",
+      "SupplyDependency"
+    ]
+  },
+  "topology_after": {
+    "metric": "Named class graph: named subclass edges and named domain-range object-property edges; no datatypes, existential restrictions, anonymous unions or inferred semantics",
+    "classes": 119,
+    "components": 19,
+    "largest_component": 79,
+    "isolates": [
+      "AdverseEventReportingActivity",
+      "BusinessArchitectureView",
+      "DiagnosisClassificationReference",
+      "DigitalInformationSystemComponent",
+      "DisruptionEvent",
+      "DistributionLogisticsActivity",
+      "ManufacturingActivity",
+      "PharmacovigilanceRequirement",
+      "PostMarketSurveillanceActivity",
+      "ProcurementActivity",
+      "RegulatoryRequirement",
+      "RiskAssessmentActivity",
+      "RiskTreatmentActivity",
+      "RiskTreatmentPlan",
+      "ServiceOfferingSpecification",
+      "StockoutSituation",
+      "SupplyCapacity"
+    ]
+  },
+  "catalogue": [
+    {
+      "name": "BinOver",
+      "status": "SCOPED_TESTS_PASS",
+      "rationale": "Strict geographic containment rejects self and longer cycles. Other binary relations require G3 review."
+    },
+    {
+      "name": "DecInt",
+      "status": "REVIEW",
+      "rationale": "No complete global intersection/generalization-set analysis."
+    },
+    {
+      "name": "DepPhase",
+      "status": "NOT_APPLICABLE_TO_DECLARED_MODEL",
+      "rationale": "No Phase stereotype."
+    },
+    {
+      "name": "FreeRole",
+      "status": "PARTIAL",
+      "rationale": "Approved role refinements have dependence; nine inherited role definitions still need disposition."
+    },
+    {
+      "name": "GSRig",
+      "status": "PARTIAL",
+      "rationale": "New RoleMixin generalization sets contain anti-rigid roles; inherited sets incomplete."
+    },
+    {
+      "name": "HetColl",
+      "status": "NO_TYPED_OCCURRENCE",
+      "rationale": "No memberOf stereotype in this projection; not a mereology certificate."
+    },
+    {
+      "name": "HomoFunc",
+      "status": "NO_TYPED_OCCURRENCE",
+      "rationale": "No componentOf stereotype in this projection."
+    },
+    {
+      "name": "ImpAbs",
+      "status": "REVIEW",
+      "rationale": "Native upper bounds remain unresolved outside approved mediations."
+    },
+    {
+      "name": "MixIden",
+      "status": "SCOPED_CHECKS_PASS",
+      "rationale": "Eight refined RoleMixin families span multiple Kind identities; deferred families inactive."
+    },
+    {
+      "name": "MixRig",
+      "status": "SCOPED_CHECKS_PASS",
+      "rationale": "New Role subtypes remain anti-rigid; no actor cast for Product."
+    },
+    {
+      "name": "MultDep",
+      "status": "REVIEW",
+      "rationale": "Multiple-dependence intent needs global source/context review."
+    },
+    {
+      "name": "PartOver",
+      "status": "NO_TYPED_OCCURRENCE",
+      "rationale": "No part-whole stereotypes; missing relation typing limits conclusion."
+    },
+    {
+      "name": "RelComp",
+      "status": "REVIEW",
+      "rationale": "Composition constraints not exhaustively validated."
+    },
+    {
+      "name": "RelOver",
+      "status": "SCOPED_TESTS_PASS",
+      "rationale": "Local participant exclusion and cross-context role overlap tested; global findings not certified."
+    },
+    {
+      "name": "RelRig",
+      "status": "APPROVED_PAIRS_REFACTORED",
+      "rationale": "15 registered rigid-end questions addressed through anti-rigid participant patterns; no official detector run."
+    },
+    {
+      "name": "RelSpec",
+      "status": "SCOPED_TESTS_PASS",
+      "rationale": "Evidence/context aliases subset generic participant positions; other relation specializations need review."
+    },
+    {
+      "name": "RepRel",
+      "status": "SCOPED_TESTS_PASS",
+      "rationale": "Different agreements can share participants; identity is relation ID plus justified source/context, not a participant-pair unique key."
+    },
+    {
+      "name": "UndefFormal",
+      "status": "REVIEW",
+      "rationale": "36 inherited/alias relations require stereotype and/or multiplicity disposition."
+    },
+    {
+      "name": "UndefPhase",
+      "status": "NOT_APPLICABLE_TO_DECLARED_MODEL",
+      "rationale": "No Phase stereotype."
+    },
+    {
+      "name": "WholeOver",
+      "status": "NO_TYPED_OCCURRENCE",
+      "rationale": "No whole-part stereotype; not an exhaustive semantic proof."
+    }
+  ],
+  "official_detector": "NOT_RUN",
+  "full_conformance": "NOT_ESTABLISHED"
+}

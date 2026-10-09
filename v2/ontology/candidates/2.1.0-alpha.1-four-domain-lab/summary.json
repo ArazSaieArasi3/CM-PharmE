@@ -1,0 +1,135 @@
+{
+  "status": "BOUNDED_EXPERIMENT_ONLY",
+  "versions": {
+    "python": "3.12.14",
+    "rdflib": "7.6.0",
+    "pyshacl": "0.30.1",
+    "owlready2": "0.49"
+  },
+  "shacl_cases": 39,
+  "shacl_pass": 39,
+  "cq_cases": 12,
+  "cq_pass": 12,
+  "reasoner_cases": 12,
+  "reasoner_pass": 12,
+  "scenario_families": [
+    {
+      "id": "SC-RM-01",
+      "executed_subcases": 1,
+      "pass": true,
+      "coverage": "bounded operationalization; remaining semantic limits in report"
+    },
+    {
+      "id": "SC-RM-02",
+      "executed_subcases": 1,
+      "pass": true,
+      "coverage": "bounded operationalization; remaining semantic limits in report"
+    },
+    {
+      "id": "SC-RM-03",
+      "executed_subcases": 7,
+      "pass": true,
+      "coverage": "bounded operationalization; remaining semantic limits in report"
+    },
+    {
+      "id": "SC-RM-04",
+      "executed_subcases": 1,
+      "pass": true,
+      "coverage": "bounded operationalization; remaining semantic limits in report"
+    },
+    {
+      "id": "SC-PV-01",
+      "executed_subcases": 1,
+      "pass": true,
+      "coverage": "bounded operationalization; remaining semantic limits in report"
+    },
+    {
+      "id": "SC-PV-02",
+      "executed_subcases": 1,
+      "pass": true,
+      "coverage": "bounded operationalization; remaining semantic limits in report"
+    },
+    {
+      "id": "SC-PV-03",
+      "executed_subcases": 9,
+      "pass": true,
+      "coverage": "bounded operationalization; remaining semantic limits in report"
+    },
+    {
+      "id": "SC-PV-04",
+      "executed_subcases": 1,
+      "pass": true,
+      "coverage": "bounded operationalization; remaining semantic limits in report"
+    },
+    {
+      "id": "SC-BA-01",
+      "executed_subcases": 1,
+      "pass": true,
+      "coverage": "bounded operationalization; remaining semantic limits in report"
+    },
+    {
+      "id": "SC-BA-02",
+      "executed_subcases": 1,
+      "pass": true,
+      "coverage": "bounded operationalization; remaining semantic limits in report"
+    },
+    {
+      "id": "SC-BA-03",
+      "executed_subcases": 6,
+      "pass": true,
+      "coverage": "bounded operationalization; remaining semantic limits in report"
+    },
+    {
+      "id": "SC-BA-04",
+      "executed_subcases": 1,
+      "pass": true,
+      "coverage": "bounded operationalization; remaining semantic limits in report"
+    },
+    {
+      "id": "SC-DS-01",
+      "executed_subcases": 1,
+      "pass": true,
+      "coverage": "bounded operationalization; remaining semantic limits in report"
+    },
+    {
+      "id": "SC-DS-02",
+      "executed_subcases": 1,
+      "pass": true,
+      "coverage": "bounded operationalization; remaining semantic limits in report"
+    },
+    {
+      "id": "SC-DS-03",
+      "executed_subcases": 6,
+      "pass": true,
+      "coverage": "bounded operationalization; remaining semantic limits in report"
+    },
+    {
+      "id": "SC-DS-04",
+      "executed_subcases": 1,
+      "pass": true,
+      "coverage": "bounded operationalization; remaining semantic limits in report"
+    }
+  ],
+  "scenario_family_pass": 16,
+  "real_sample_regression": {
+    "triples": 39272,
+    "sample_rows": 768,
+    "source_sha256": "939a80c8f3d4342e81c74c193cd9e65dc61b1b7e271ba99856edfd988daebfa9",
+    "old_shapes_conform": true,
+    "experimental_shapes_conform": true,
+    "violations": 0,
+    "experimental_profile_nodes": 0,
+    "meaning": "Nonregression only; this sample supplies no new witness for the four experimental profiles.",
+    "reasoner": {
+      "name": "existing-NHIF-ABox-with-experiment",
+      "expected_consistent": true,
+      "actual_consistent": true,
+      "unsatisfiable_named_classes": [],
+      "pass": true
+    }
+  },
+  "full_official_antipattern_detector_run": false,
+  "new_scientific_approval": false,
+  "release_gate_closed": false,
+  "all_executed_expectations_pass": true
+}

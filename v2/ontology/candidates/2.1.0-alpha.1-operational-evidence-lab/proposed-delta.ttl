@@ -1,0 +1,38 @@
+@prefix b: <https://w3id.org/cm-pharme/experimental/reporting-context/> .
+@prefix c: <https://w3id.org/cm-pharme/2.1/> .
+@prefix e: <https://w3id.org/cm-pharme/experimental/documentary-evidence/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+e:claimMode a owl:DatatypeProperty ;
+    rdfs:domain b:StructuredClaim ;
+    rdfs:range xsd:string .
+
+e:sourceDate a owl:DatatypeProperty ;
+    rdfs:domain c:SourceRecord ;
+    rdfs:range xsd:string .
+
+e:sourceDateKind a owl:DatatypeProperty ;
+    rdfs:domain c:SourceRecord ;
+    rdfs:range xsd:string .
+
+e:sourceID a owl:DatatypeProperty ;
+    rdfs:domain c:SourceRecord ;
+    rdfs:range xsd:string .
+
+e:timeLexical a owl:DatatypeProperty ;
+    rdfs:domain b:StructuredClaim ;
+    rdfs:range xsd:string .
+
+e:timePrecision a owl:DatatypeProperty ;
+    rdfs:domain b:StructuredClaim ;
+    rdfs:range xsd:string .
+
+e:timeQualifier a owl:DatatypeProperty ;
+    rdfs:domain b:StructuredClaim ;
+    rdfs:range xsd:string .
+
+e:timeRole a owl:DatatypeProperty ;
+    rdfs:domain b:StructuredClaim ;
+    rdfs:range xsd:string .

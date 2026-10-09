@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<RefOntoUML:Package xmlns:RefOntoUML="http://nemo.inf.ufes.br/ontouml/refontouml" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmi:version="2.0" xmi:id="pkg" name="MixRig-negative" visibility="public">
+  <packagedElement xsi:type="RefOntoUML:Mixin" xmi:id="Common" name="Common" visibility="public" isAbstract="false" />
+  <packagedElement xsi:type="RefOntoUML:Kind" xmi:id="Person" name="Person" visibility="public" isAbstract="false" />
+  <packagedElement xsi:type="RefOntoUML:SubKind" xmi:id="A" name="A" visibility="public" isAbstract="false">
+    <generalization xmi:id="AToCommon" general="Common" />
+    <generalization xmi:id="AToPerson" general="Person" />
+  </packagedElement>
+  <packagedElement xsi:type="RefOntoUML:Role" xmi:id="B" name="B" visibility="public" isAbstract="false">
+    <generalization xmi:id="BToCommon" general="Common" />
+    <generalization xmi:id="BToPerson" general="Person" />
+  </packagedElement>
+</RefOntoUML:Package>

@@ -1,0 +1,694 @@
+{
+  "module": "PV",
+  "scope": "bounded regression; not full semantic acceptance or a formal locality module",
+  "admission": [
+    {
+      "id": "lab-PV-1-positive.ttl",
+      "conforms": true,
+      "pass": true,
+      "violations": []
+    },
+    {
+      "id": "lab-PV-2-boundary.ttl",
+      "conforms": true,
+      "pass": true,
+      "violations": []
+    },
+    {
+      "id": "lab-PV-3-missing-target.ttl",
+      "conforms": false,
+      "pass": true,
+      "violations": [
+        {
+          "path": "",
+          "constraint": "https://w3id.org/cm-pharme/experimental/four-domain/signal-target-required",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent"
+        }
+      ]
+    },
+    {
+      "id": "lab-PV-3-missing-signal-source.ttl",
+      "conforms": false,
+      "pass": true,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/four-domain/citesSourceRecord",
+          "constraint": "",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent"
+        }
+      ]
+    },
+    {
+      "id": "lab-PV-3-dangling-signal.ttl",
+      "conforms": false,
+      "pass": true,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/four-domain/pvResultSignal",
+          "constraint": "",
+          "component": "http://www.w3.org/ns/shacl#ClassConstraintComponent"
+        },
+        {
+          "path": "",
+          "constraint": "https://w3id.org/cm-pharme/experimental/four-domain/signal-result-agreement",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent"
+        }
+      ]
+    },
+    {
+      "id": "lab-PV-3-missing-result-time.ttl",
+      "conforms": false,
+      "pass": true,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/four-domain/atTime",
+          "constraint": "",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent"
+        }
+      ]
+    },
+    {
+      "id": "lab-PV-3-missing-jurisdiction.ttl",
+      "conforms": false,
+      "pass": true,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/four-domain/pvRequirementJurisdiction",
+          "constraint": "",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent"
+        }
+      ]
+    },
+    {
+      "id": "lab-PV-3-reporting-is-record.ttl",
+      "conforms": false,
+      "pass": true,
+      "violations": [
+        {
+          "path": "",
+          "constraint": "https://w3id.org/cm-pharme/experimental/four-domain/distinct-AdverseEventReportingActivity-SourceRecord",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent"
+        }
+      ]
+    },
+    {
+      "id": "lab-PV-3-signal-is-own-result.ttl",
+      "conforms": false,
+      "pass": true,
+      "violations": [
+        {
+          "path": "",
+          "constraint": "https://w3id.org/cm-pharme/experimental/four-domain/signal-result-distinct",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent"
+        },
+        {
+          "path": "",
+          "constraint": "https://w3id.org/cm-pharme/experimental/four-domain/signal-result-agreement",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent"
+        },
+        {
+          "path": "",
+          "constraint": "urn:cmpe-policy:NoSelfOrSameAsChain",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent"
+        }
+      ]
+    },
+    {
+      "id": "lab-PV-3-signal-result-alias.ttl",
+      "conforms": false,
+      "pass": true,
+      "violations": [
+        {
+          "path": "",
+          "constraint": "https://w3id.org/cm-pharme/experimental/four-domain/signal-result-distinct",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent"
+        },
+        {
+          "path": "",
+          "constraint": "urn:cmpe-policy:NoSelfOrSameAsChain",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent"
+        }
+      ]
+    },
+    {
+      "id": "lab-PV-3-result-assessment-target-disagreement.ttl",
+      "conforms": false,
+      "pass": true,
+      "violations": [
+        {
+          "path": "",
+          "constraint": "https://w3id.org/cm-pharme/experimental/four-domain/signal-result-agreement",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent"
+        }
+      ]
+    },
+    {
+      "id": "refinement-X-PV-CARRIER-positive.ttl",
+      "conforms": true,
+      "pass": true,
+      "violations": []
+    },
+    {
+      "id": "refinement-X-PV-ACTOR-positive.ttl",
+      "conforms": true,
+      "pass": true,
+      "violations": []
+    },
+    {
+      "id": "refinement-X-PV-SURVEILLANCE-positive.ttl",
+      "conforms": true,
+      "pass": true,
+      "violations": []
+    },
+    {
+      "id": "refinement-X-PV-CARRIER-boundary.ttl",
+      "conforms": true,
+      "pass": true,
+      "violations": []
+    },
+    {
+      "id": "refinement-X-PV-ACTOR-boundary.ttl",
+      "conforms": true,
+      "pass": true,
+      "violations": []
+    },
+    {
+      "id": "refinement-X-PV-SURVEILLANCE-boundary.ttl",
+      "conforms": true,
+      "pass": true,
+      "violations": []
+    },
+    {
+      "id": "refinement-X-PV-CARRIER-missing-claim.ttl",
+      "conforms": false,
+      "pass": true,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/refinement/carrierClaim",
+          "constraint": "",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent"
+        }
+      ]
+    },
+    {
+      "id": "refinement-X-PV-CARRIER-missing-claim-content.ttl",
+      "conforms": false,
+      "pass": true,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/refinement/claimText",
+          "constraint": "",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent"
+        },
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/refinement/carrierClaim",
+          "constraint": "",
+          "component": "http://www.w3.org/ns/shacl#NodeConstraintComponent"
+        },
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/refinement/claimText",
+          "constraint": "",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent"
+        },
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/refinement/carrierClaim",
+          "constraint": "",
+          "component": "http://www.w3.org/ns/shacl#NodeConstraintComponent"
+        },
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/refinement/claimText",
+          "constraint": "",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent"
+        }
+      ]
+    },
+    {
+      "id": "refinement-X-PV-CARRIER-carrier-as-claim.ttl",
+      "conforms": false,
+      "pass": true,
+      "violations": [
+        {
+          "path": "",
+          "constraint": "urn:cmpe-policy:CarrierNotOwnClaim",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent"
+        },
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/refinement/carrierClaim",
+          "constraint": "",
+          "component": "http://www.w3.org/ns/shacl#NodeConstraintComponent"
+        },
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/refinement/claimText",
+          "constraint": "",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent"
+        },
+        {
+          "path": "",
+          "constraint": "https://w3id.org/cm-pharme/experimental/refinement/carrier-not-claim",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent"
+        }
+      ]
+    },
+    {
+      "id": "refinement-X-PV-ACTOR-missing-actor.ttl",
+      "conforms": false,
+      "pass": true,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/refinement/assessmentOrganization",
+          "constraint": "",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent"
+        }
+      ]
+    },
+    {
+      "id": "refinement-X-PV-ACTOR-untyped-actor.ttl",
+      "conforms": false,
+      "pass": true,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/refinement/assessmentOrganization",
+          "constraint": "",
+          "component": "http://www.w3.org/ns/shacl#ClassConstraintComponent"
+        }
+      ]
+    },
+    {
+      "id": "refinement-X-PV-SURVEILLANCE-missing-source.ttl",
+      "conforms": false,
+      "pass": true,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/four-domain/surveillanceSource",
+          "constraint": "",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent"
+        }
+      ]
+    },
+    {
+      "id": "refinement-X-PV-SURVEILLANCE-untyped-source.ttl",
+      "conforms": false,
+      "pass": true,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/four-domain/surveillanceSource",
+          "constraint": "",
+          "component": "http://www.w3.org/ns/shacl#ClassConstraintComponent"
+        },
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/four-domain/citesSourceRecord",
+          "constraint": "",
+          "component": "http://www.w3.org/ns/shacl#ClassConstraintComponent"
+        },
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/four-domain/reportsRecord",
+          "constraint": "",
+          "component": "http://www.w3.org/ns/shacl#ClassConstraintComponent"
+        }
+      ]
+    },
+    {
+      "id": "group-complete-documentary-scope.ttl",
+      "conforms": true,
+      "pass": true,
+      "violations": []
+    },
+    {
+      "id": "group-missing-source.ttl",
+      "conforms": false,
+      "pass": true,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/source-group/scopeSource",
+          "constraint": "",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent"
+        }
+      ]
+    },
+    {
+      "id": "group-missing-label.ttl",
+      "conforms": false,
+      "pass": true,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/source-group/sourceLabel",
+          "constraint": "",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent"
+        },
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/source-group/scopeEntry",
+          "constraint": "",
+          "component": "http://www.w3.org/ns/shacl#NodeConstraintComponent"
+        },
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/source-group/sourceLabel",
+          "constraint": "",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent"
+        }
+      ]
+    },
+    {
+      "id": "group-missing-pointer.ttl",
+      "conforms": false,
+      "pass": true,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/source-group/evidencePointer",
+          "constraint": "",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent"
+        },
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/source-group/scopeEntry",
+          "constraint": "",
+          "component": "http://www.w3.org/ns/shacl#NodeConstraintComponent"
+        },
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/source-group/evidencePointer",
+          "constraint": "",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent"
+        }
+      ]
+    },
+    {
+      "id": "group-wrong-version.ttl",
+      "conforms": false,
+      "pass": true,
+      "violations": [
+        {
+          "path": "",
+          "constraint": "n7681b00dd53d488babbb3190b2fc1834b28",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent"
+        }
+      ]
+    },
+    {
+      "id": "group-duplicate-ordinal.ttl",
+      "conforms": false,
+      "pass": true,
+      "violations": [
+        {
+          "path": "",
+          "constraint": "n7681b00dd53d488babbb3190b2fc1834b28",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent"
+        }
+      ]
+    },
+    {
+      "id": "group-entry-as-untyped-resource.ttl",
+      "conforms": false,
+      "pass": true,
+      "violations": [
+        {
+          "path": "",
+          "constraint": "",
+          "component": "http://www.w3.org/ns/shacl#ClassConstraintComponent"
+        },
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/source-group/scopeEntry",
+          "constraint": "",
+          "component": "http://www.w3.org/ns/shacl#ClassConstraintComponent"
+        },
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/source-group/scopeEntry",
+          "constraint": "",
+          "component": "http://www.w3.org/ns/shacl#NodeConstraintComponent"
+        },
+        {
+          "path": "",
+          "constraint": "",
+          "component": "http://www.w3.org/ns/shacl#ClassConstraintComponent"
+        }
+      ]
+    },
+    {
+      "id": "group-wrong-source.ttl",
+      "conforms": false,
+      "pass": true,
+      "violations": [
+        {
+          "path": "",
+          "constraint": "n7681b00dd53d488babbb3190b2fc1834b28",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent"
+        }
+      ]
+    },
+    {
+      "id": "group-nested-entry-without-label-or-profile.ttl",
+      "conforms": false,
+      "pass": true,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/source-group/scopeEntry",
+          "constraint": "",
+          "component": "http://www.w3.org/ns/shacl#NodeConstraintComponent"
+        },
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/source-group/sourceLabel",
+          "constraint": "",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent"
+        }
+      ]
+    }
+  ],
+  "queries": [
+    {
+      "id": "CQ-PV-01",
+      "actual": [
+        [
+          "urn:cmpe-lab:substance",
+          "urn:cmpe-lab:study"
+        ]
+      ],
+      "pass": true
+    },
+    {
+      "id": "CQ-PV-02",
+      "actual": [
+        [
+          "urn:cmpe-lab:signalAssessment",
+          "under-review",
+          "2026-10-02T10:00:00+00:00"
+        ],
+        [
+          "urn:cmpe-lab:signalAssessment2",
+          "refuted-at-this-time",
+          "2026-10-03T10:00:00+00:00"
+        ]
+      ],
+      "pass": true
+    },
+    {
+      "id": "CQ-PV-03",
+      "actual": [
+        [
+          "urn:cmpe-lab:surveillance",
+          "urn:cmpe-lab:pvRule",
+          "urn:cmpe-lab:jA"
+        ]
+      ],
+      "pass": true
+    },
+    {
+      "id": "X-PV-CARRIER",
+      "actual": [
+        [
+          "urn:cmpe-lab:report",
+          "SYNTHETIC-CASE-1",
+          "urn:cmpe-lab:reportedClaim"
+        ],
+        [
+          "urn:cmpe-lab:reportCopy",
+          "SYNTHETIC-CASE-1",
+          "urn:cmpe-lab:updatedClaim"
+        ]
+      ],
+      "pass": true
+    },
+    {
+      "id": "X-PV-ACTOR",
+      "actual": [
+        [
+          "urn:cmpe-lab:assessorA",
+          "under-review",
+          "2026-10-02T10:00:00+00:00"
+        ],
+        [
+          "urn:cmpe-lab:assessorB",
+          "refuted-at-this-time",
+          "2026-10-03T10:00:00+00:00"
+        ]
+      ],
+      "pass": true
+    },
+    {
+      "id": "X-PV-SURVEILLANCE",
+      "actual": [
+        [
+          "urn:cmpe-lab:report",
+          "urn:cmpe-lab:pvRule"
+        ]
+      ],
+      "pass": true
+    },
+    {
+      "id": "group-entry-count",
+      "actual": [
+        [
+          "28"
+        ]
+      ],
+      "pass": true
+    },
+    {
+      "id": "group-combination-label",
+      "actual": [
+        [
+          "chlormadinone/ethinylestradiol"
+        ]
+      ],
+      "pass": true
+    },
+    {
+      "id": "group-source-version",
+      "actual": [
+        [
+          "EMA-PRAC-183502-2026-EPITT20300-footnote4"
+        ]
+      ],
+      "pass": true
+    }
+  ],
+  "reasoner": [
+    {
+      "id": "PV-schema-satisfiable",
+      "consistent": true,
+      "unsatisfiable_named_classes": [],
+      "pass": true
+    },
+    {
+      "id": "PV-positive-consistent",
+      "consistent": true,
+      "unsatisfiable_named_classes": [],
+      "pass": true
+    },
+    {
+      "id": "PV-identity-collision-rejected",
+      "consistent": false,
+      "unsatisfiable_named_classes": [],
+      "pass": true
+    },
+    {
+      "id": "PV-source-scope-positive",
+      "consistent": true,
+      "unsatisfiable_named_classes": [],
+      "pass": true
+    },
+    {
+      "id": "PV-source-scope-is-not-carrier",
+      "consistent": true,
+      "unsatisfiable_named_classes": [],
+      "pass": false
+    }
+  ],
+  "source_scope_lookups": [
+    {
+      "id": "exact-unqualified-label",
+      "actual": "SOURCE_LABEL_LISTED",
+      "pass": true
+    },
+    {
+      "id": "combination-as-listed",
+      "actual": "SOURCE_LABEL_LISTED",
+      "pass": true
+    },
+    {
+      "id": "no-component-propagation",
+      "actual": "NOT_LISTED_IN_EXTRACTED_SCOPE_UNKNOWN_CHEMICAL_MEMBERSHIP",
+      "pass": true
+    },
+    {
+      "id": "no-reordered-combination-equivalence",
+      "actual": "NOT_LISTED_IN_EXTRACTED_SCOPE_UNKNOWN_CHEMICAL_MEMBERSHIP",
+      "pass": true
+    },
+    {
+      "id": "no-dose-assumption",
+      "actual": "UNKNOWN_QUALIFIERS",
+      "pass": true
+    },
+    {
+      "id": "source-version-mismatch",
+      "actual": "UNKNOWN_SOURCE_VERSION",
+      "pass": true
+    },
+    {
+      "id": "case-only-normalization",
+      "actual": "SOURCE_LABEL_LISTED",
+      "pass": true
+    },
+    {
+      "id": "amount-99",
+      "actual": "QUALIFIER_MATCH_UNDER_PROPOSED_MAPPING",
+      "pass": true
+    },
+    {
+      "id": "amount-100",
+      "actual": "OUTSIDE_THIS_ENTRY_UNDER_PROPOSED_MAPPING",
+      "pass": true
+    },
+    {
+      "id": "amount-101",
+      "actual": "OUTSIDE_THIS_ENTRY_UNDER_PROPOSED_MAPPING",
+      "pass": true
+    },
+    {
+      "id": "amount--1",
+      "actual": "INVALID_INPUT",
+      "pass": true
+    },
+    {
+      "id": "amount-NaN",
+      "actual": "INVALID_INPUT",
+      "pass": true
+    },
+    {
+      "id": "qualifier-{'unit': 'g'}",
+      "actual": "UNKNOWN_UNSUPPORTED_UNIT",
+      "pass": true
+    },
+    {
+      "id": "qualifier-{'route': 'injection'}",
+      "actual": "OUTSIDE_THIS_ENTRY_UNDER_PROPOSED_MAPPING",
+      "pass": true
+    },
+    {
+      "id": "qualifier-{'basis': 'daily-dose'}",
+      "actual": "UNKNOWN_AMOUNT_BASIS",
+      "pass": true
+    }
+  ],
+  "counts": {
+    "admission": [
+      33,
+      33
+    ],
+    "queries": [
+      9,
+      9
+    ],
+    "reasoner": [
+      4,
+      5
+    ],
+    "source_scope_lookups": [
+      15,
+      15
+    ]
+  },
+  "runtime": {
+    "python": "3.12.14",
+    "rdflib": "7.6.0",
+    "pyshacl": "0.30.1",
+    "owlready2": "0.49"
+  }
+}

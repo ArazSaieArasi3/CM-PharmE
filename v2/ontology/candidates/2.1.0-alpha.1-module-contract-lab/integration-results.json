@@ -1,0 +1,689 @@
+{
+  "fixture_comparisons": [
+    {
+      "module": "RM",
+      "id": "lab-RM-1-positive.ttl",
+      "full_conforms": true,
+      "local_conforms": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "module": "RM",
+      "id": "lab-RM-2-boundary.ttl",
+      "full_conforms": true,
+      "local_conforms": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "module": "RM",
+      "id": "lab-RM-3-missing-scenario-topic.ttl",
+      "full_conforms": false,
+      "local_conforms": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "module": "RM",
+      "id": "lab-RM-3-missing-evidence.ttl",
+      "full_conforms": false,
+      "local_conforms": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "module": "RM",
+      "id": "lab-RM-3-dangling-plan-result.ttl",
+      "full_conforms": false,
+      "local_conforms": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "module": "RM",
+      "id": "lab-RM-3-result-is-assessment.ttl",
+      "full_conforms": false,
+      "local_conforms": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "module": "RM",
+      "id": "lab-RM-3-missing-review-predecessor.ttl",
+      "full_conforms": false,
+      "local_conforms": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "module": "RM",
+      "id": "lab-RM-3-backdated-revision.ttl",
+      "full_conforms": false,
+      "local_conforms": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "module": "RM",
+      "id": "lab-RM-3-dangling-executed-plan.ttl",
+      "full_conforms": false,
+      "local_conforms": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "module": "RM",
+      "id": "refinement-X-RM-CONTEXT-positive.ttl",
+      "full_conforms": true,
+      "local_conforms": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "module": "RM",
+      "id": "refinement-X-RM-CONTEXT-boundary.ttl",
+      "full_conforms": true,
+      "local_conforms": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "module": "RM",
+      "id": "refinement-X-RM-CONTEXT-dependency-boundary.ttl",
+      "full_conforms": true,
+      "local_conforms": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "module": "RM",
+      "id": "refinement-X-RM-CONTEXT-missing-context.ttl",
+      "full_conforms": false,
+      "local_conforms": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "module": "RM",
+      "id": "refinement-X-RM-CONTEXT-untyped-facility.ttl",
+      "full_conforms": false,
+      "local_conforms": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "module": "PV",
+      "id": "lab-PV-1-positive.ttl",
+      "full_conforms": true,
+      "local_conforms": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "module": "PV",
+      "id": "lab-PV-2-boundary.ttl",
+      "full_conforms": true,
+      "local_conforms": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "module": "PV",
+      "id": "lab-PV-3-missing-target.ttl",
+      "full_conforms": false,
+      "local_conforms": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "module": "PV",
+      "id": "lab-PV-3-missing-signal-source.ttl",
+      "full_conforms": false,
+      "local_conforms": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "module": "PV",
+      "id": "lab-PV-3-dangling-signal.ttl",
+      "full_conforms": false,
+      "local_conforms": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "module": "PV",
+      "id": "lab-PV-3-missing-result-time.ttl",
+      "full_conforms": false,
+      "local_conforms": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "module": "PV",
+      "id": "lab-PV-3-missing-jurisdiction.ttl",
+      "full_conforms": false,
+      "local_conforms": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "module": "PV",
+      "id": "lab-PV-3-reporting-is-record.ttl",
+      "full_conforms": false,
+      "local_conforms": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "module": "PV",
+      "id": "lab-PV-3-signal-is-own-result.ttl",
+      "full_conforms": false,
+      "local_conforms": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "module": "PV",
+      "id": "lab-PV-3-signal-result-alias.ttl",
+      "full_conforms": false,
+      "local_conforms": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "module": "PV",
+      "id": "lab-PV-3-result-assessment-target-disagreement.ttl",
+      "full_conforms": false,
+      "local_conforms": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "module": "PV",
+      "id": "refinement-X-PV-CARRIER-positive.ttl",
+      "full_conforms": true,
+      "local_conforms": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "module": "PV",
+      "id": "refinement-X-PV-ACTOR-positive.ttl",
+      "full_conforms": true,
+      "local_conforms": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "module": "PV",
+      "id": "refinement-X-PV-SURVEILLANCE-positive.ttl",
+      "full_conforms": true,
+      "local_conforms": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "module": "PV",
+      "id": "refinement-X-PV-CARRIER-boundary.ttl",
+      "full_conforms": true,
+      "local_conforms": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "module": "PV",
+      "id": "refinement-X-PV-ACTOR-boundary.ttl",
+      "full_conforms": true,
+      "local_conforms": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "module": "PV",
+      "id": "refinement-X-PV-SURVEILLANCE-boundary.ttl",
+      "full_conforms": true,
+      "local_conforms": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "module": "PV",
+      "id": "refinement-X-PV-CARRIER-missing-claim.ttl",
+      "full_conforms": false,
+      "local_conforms": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "module": "PV",
+      "id": "refinement-X-PV-CARRIER-missing-claim-content.ttl",
+      "full_conforms": false,
+      "local_conforms": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "module": "PV",
+      "id": "refinement-X-PV-CARRIER-carrier-as-claim.ttl",
+      "full_conforms": false,
+      "local_conforms": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "module": "PV",
+      "id": "refinement-X-PV-ACTOR-missing-actor.ttl",
+      "full_conforms": false,
+      "local_conforms": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "module": "PV",
+      "id": "refinement-X-PV-ACTOR-untyped-actor.ttl",
+      "full_conforms": false,
+      "local_conforms": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "module": "PV",
+      "id": "refinement-X-PV-SURVEILLANCE-missing-source.ttl",
+      "full_conforms": false,
+      "local_conforms": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "module": "PV",
+      "id": "refinement-X-PV-SURVEILLANCE-untyped-source.ttl",
+      "full_conforms": false,
+      "local_conforms": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "module": "PV",
+      "id": "group-complete-documentary-scope.ttl",
+      "full_conforms": true,
+      "local_conforms": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "module": "PV",
+      "id": "group-missing-source.ttl",
+      "full_conforms": false,
+      "local_conforms": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "module": "PV",
+      "id": "group-scope-is-source-carrier.ttl",
+      "full_conforms": false,
+      "local_conforms": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "module": "PV",
+      "id": "group-entry-is-source-carrier.ttl",
+      "full_conforms": false,
+      "local_conforms": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "module": "PV",
+      "id": "group-missing-label.ttl",
+      "full_conforms": false,
+      "local_conforms": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "module": "PV",
+      "id": "group-missing-pointer.ttl",
+      "full_conforms": false,
+      "local_conforms": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "module": "PV",
+      "id": "group-wrong-version.ttl",
+      "full_conforms": false,
+      "local_conforms": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "module": "PV",
+      "id": "group-duplicate-ordinal.ttl",
+      "full_conforms": false,
+      "local_conforms": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "module": "PV",
+      "id": "group-entry-as-untyped-resource.ttl",
+      "full_conforms": false,
+      "local_conforms": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "module": "PV",
+      "id": "group-wrong-source.ttl",
+      "full_conforms": false,
+      "local_conforms": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "module": "PV",
+      "id": "group-nested-entry-without-label-or-profile.ttl",
+      "full_conforms": false,
+      "local_conforms": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "module": "BA",
+      "id": "lab-BA-1-positive.ttl",
+      "full_conforms": true,
+      "local_conforms": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "module": "BA",
+      "id": "lab-BA-2-boundary.ttl",
+      "full_conforms": true,
+      "local_conforms": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "module": "BA",
+      "id": "lab-BA-3-missing-capability-bearer.ttl",
+      "full_conforms": false,
+      "local_conforms": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "module": "BA",
+      "id": "lab-BA-3-service-without-capability.ttl",
+      "full_conforms": false,
+      "local_conforms": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "module": "BA",
+      "id": "lab-BA-3-view-is-organization.ttl",
+      "full_conforms": false,
+      "local_conforms": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "module": "BA",
+      "id": "lab-BA-3-untyped-view-reference.ttl",
+      "full_conforms": false,
+      "local_conforms": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "module": "BA",
+      "id": "lab-BA-3-one-partner-only.ttl",
+      "full_conforms": false,
+      "local_conforms": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "module": "BA",
+      "id": "lab-BA-3-known-partner-aliases.ttl",
+      "full_conforms": false,
+      "local_conforms": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "module": "BA",
+      "id": "refinement-X-BA-SERVICE-positive.ttl",
+      "full_conforms": true,
+      "local_conforms": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "module": "BA",
+      "id": "refinement-X-BA-COMMITMENT-positive.ttl",
+      "full_conforms": true,
+      "local_conforms": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "module": "BA",
+      "id": "refinement-X-BA-SERVICE-boundary.ttl",
+      "full_conforms": true,
+      "local_conforms": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "module": "BA",
+      "id": "refinement-X-BA-COMMITMENT-boundary.ttl",
+      "full_conforms": true,
+      "local_conforms": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "module": "BA",
+      "id": "refinement-X-BA-SERVICE-missing-pharma-context.ttl",
+      "full_conforms": false,
+      "local_conforms": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "module": "BA",
+      "id": "refinement-X-BA-SERVICE-untyped-product.ttl",
+      "full_conforms": false,
+      "local_conforms": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "module": "BA",
+      "id": "refinement-X-BA-COMMITMENT-missing-commitment.ttl",
+      "full_conforms": false,
+      "local_conforms": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "module": "BA",
+      "id": "refinement-X-BA-COMMITMENT-missing-source-evidence.ttl",
+      "full_conforms": false,
+      "local_conforms": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "module": "BA",
+      "id": "refinement-X-BA-COMMITMENT-outside-actor.ttl",
+      "full_conforms": false,
+      "local_conforms": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "module": "DS",
+      "id": "lab-DS-1-positive.ttl",
+      "full_conforms": true,
+      "local_conforms": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "module": "DS",
+      "id": "lab-DS-2-boundary.ttl",
+      "full_conforms": true,
+      "local_conforms": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "module": "DS",
+      "id": "lab-DS-3-missing-version.ttl",
+      "full_conforms": false,
+      "local_conforms": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "module": "DS",
+      "id": "lab-DS-3-missing-generating-activity.ttl",
+      "full_conforms": false,
+      "local_conforms": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "module": "DS",
+      "id": "lab-DS-3-record-is-component.ttl",
+      "full_conforms": false,
+      "local_conforms": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "module": "DS",
+      "id": "lab-DS-3-missing-deployment-time.ttl",
+      "full_conforms": false,
+      "local_conforms": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "module": "DS",
+      "id": "lab-DS-3-deployment-after-use.ttl",
+      "full_conforms": false,
+      "local_conforms": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "module": "DS",
+      "id": "lab-DS-3-service-without-supported-activity.ttl",
+      "full_conforms": false,
+      "local_conforms": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "module": "DS",
+      "id": "refinement-X-DS-PHARMA-positive.ttl",
+      "full_conforms": true,
+      "local_conforms": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "module": "DS",
+      "id": "refinement-X-DS-RESPONSIBILITY-positive.ttl",
+      "full_conforms": true,
+      "local_conforms": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "module": "DS",
+      "id": "refinement-X-DS-PHARMA-boundary.ttl",
+      "full_conforms": true,
+      "local_conforms": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "module": "DS",
+      "id": "refinement-X-DS-RESPONSIBILITY-boundary.ttl",
+      "full_conforms": true,
+      "local_conforms": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "module": "DS",
+      "id": "refinement-X-DS-PHARMA-missing-manufacturing.ttl",
+      "full_conforms": false,
+      "local_conforms": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "module": "DS",
+      "id": "refinement-X-DS-PHARMA-missing-manufactured-product.ttl",
+      "full_conforms": false,
+      "local_conforms": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "module": "DS",
+      "id": "refinement-X-DS-PHARMA-service-component-disagreement.ttl",
+      "full_conforms": false,
+      "local_conforms": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "module": "DS",
+      "id": "refinement-X-DS-RESPONSIBILITY-missing-responsibility.ttl",
+      "full_conforms": false,
+      "local_conforms": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "module": "DS",
+      "id": "refinement-X-DS-RESPONSIBILITY-untyped-responsible-actor.ttl",
+      "full_conforms": false,
+      "local_conforms": false,
+      "expected": false,
+      "pass": true
+    }
+  ],
+  "passed": 83,
+  "total": 83,
+  "integrated": {
+    "positive_triples": 477,
+    "full_admission": true,
+    "export_union_admission": true,
+    "full_reasoner": {
+      "consistent": true,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "prov_profile": "two conflicting annotation-property declarations removed; raw source retained"
+    },
+    "export_union_reasoner": {
+      "consistent": true,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "prov_profile": "two conflicting annotation-property declarations removed; raw source retained"
+    },
+    "pass": true
+  },
+  "interpretation": "Only these fixtures compared. No claim of logical equivalence, formal locality, full OWL2 DL conformance or semantic acceptance."
+}

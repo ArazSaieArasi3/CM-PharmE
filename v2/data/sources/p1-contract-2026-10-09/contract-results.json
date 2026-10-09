@@ -1,0 +1,127 @@
+{
+  "status": "CONTRACT_REPAIRED_WITH_BOUNDED_REPLAY",
+  "metadata_scope": "archived official API excerpt; pinned HTML filename/MD5 rechecked this run; API refresh timed out",
+  "published_discovery": {
+    "record_id": 19160825,
+    "filename": "pharmacy_data_20260322_131416.csv",
+    "checksum_metadata": "md5:b43fb62d3d44525de74f930f472d2f03",
+    "size_metadata": 1704038344,
+    "license_id": "cc-by-4.0",
+    "full_file_checksum_verified": false
+  },
+  "real_slice_contract": {
+    "discovery": {
+      "record_id": 19160825,
+      "filename": "pharmacy_data_20260322_131416.csv",
+      "checksum_metadata": "md5:b43fb62d3d44525de74f930f472d2f03",
+      "size_metadata": 1704038344,
+      "license_id": "cc-by-4.0",
+      "full_file_checksum_verified": false
+    },
+    "rows": 768,
+    "slices": 5,
+    "header_columns": 19,
+    "local_slice_hashes_verified": true,
+    "full_published_file_downloaded_or_hashed": false
+  },
+  "synthetic_fixture_contract": {
+    "mode": "synthetic-fixture",
+    "input_filename": "nhif_outpatient_fixture.csv",
+    "rows": 4,
+    "header_columns": 19,
+    "discovery": null,
+    "synthetic_fixture": true
+  },
+  "bootstrap_contract_only": {
+    "mode": "synthetic-fixture",
+    "input_filename": "nhif_outpatient_fixture.csv",
+    "rows": 4,
+    "header_columns": 19,
+    "discovery": null,
+    "synthetic_fixture": true
+  },
+  "negative_cases": [
+    {
+      "name": "stale-description-filename",
+      "expected": "PUBLISHED_FILENAME_NOT_UNIQUE_OR_MISSING",
+      "actual": "PUBLISHED_FILENAME_NOT_UNIQUE_OR_MISSING",
+      "pass": true
+    },
+    {
+      "name": "checksum-metadata-mismatch",
+      "expected": "PUBLISHED_CHECKSUM_METADATA_MISMATCH",
+      "actual": "PUBLISHED_CHECKSUM_METADATA_MISMATCH",
+      "pass": true
+    },
+    {
+      "name": "size-metadata-mismatch",
+      "expected": "PUBLISHED_SIZE_METADATA_MISMATCH",
+      "actual": "PUBLISHED_SIZE_METADATA_MISMATCH",
+      "pass": true
+    },
+    {
+      "name": "wrong-record",
+      "expected": "RECORD_ID_MISMATCH",
+      "actual": "RECORD_ID_MISMATCH",
+      "pass": true
+    },
+    {
+      "name": "wrong-license",
+      "expected": "LICENSE_METADATA_MISMATCH",
+      "actual": "LICENSE_METADATA_MISMATCH",
+      "pass": true
+    },
+    {
+      "name": "missing-header-column",
+      "expected": "ORDERED_HEADER_MISMATCH",
+      "actual": "ORDERED_HEADER_MISMATCH",
+      "pass": true
+    },
+    {
+      "name": "reordered-header",
+      "expected": "ORDERED_HEADER_MISMATCH",
+      "actual": "ORDERED_HEADER_MISMATCH",
+      "pass": true
+    },
+    {
+      "name": "slice-lookalike-source",
+      "expected": "SLICE_FILENAME_MISMATCH",
+      "actual": "SLICE_FILENAME_MISMATCH",
+      "pass": true
+    },
+    {
+      "name": "slice-tampering",
+      "expected": "SLICE_SHA256_MISMATCH",
+      "actual": "SLICE_SHA256_MISMATCH",
+      "pass": true
+    },
+    {
+      "name": "tampered-fixture",
+      "expected": "FIXTURE_HASH_MISMATCH",
+      "actual": "FIXTURE_HASH_MISMATCH",
+      "pass": true
+    },
+    {
+      "name": "fixture-renamed-as-published",
+      "expected": "LOCAL_PUBLISHED_SIZE_MISMATCH",
+      "actual": "LOCAL_PUBLISHED_SIZE_MISMATCH",
+      "pass": true
+    },
+    {
+      "name": "unrecognized-mode",
+      "expected": "UNKNOWN_INPUT_MODE",
+      "actual": "UNKNOWN_INPUT_MODE",
+      "pass": true
+    }
+  ],
+  "negative_pass": 12,
+  "negative_total": 12,
+  "replayed_rows": 768,
+  "replayed_triples": 39272,
+  "migration_negative_pass": 5,
+  "migration_full_shapes_conform": true,
+  "canonical_abox_unchanged": true,
+  "full_W6_database_execution": "PENDING_GITHUB_CI",
+  "full_file_downloaded_or_locally_checksummed": false,
+  "local_checks_pass": true
+}

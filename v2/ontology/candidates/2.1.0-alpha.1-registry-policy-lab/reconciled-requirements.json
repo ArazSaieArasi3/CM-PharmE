@@ -1,0 +1,842 @@
+{
+  "status": "DESK_RECONCILED_PROPOSAL_CATALOGUE",
+  "sources": {
+    "FDA-DRLS": {
+      "url": "https://www.fda.gov/drug-registration-and-listing",
+      "title": "Drug Registration and Listing",
+      "locator": "Overview; Submitting data to FDA",
+      "accessed": "2026-10-09",
+      "source_kind": "PRIMARY",
+      "full_legal_or_standard_implementation": false,
+      "resolved_url": "https://www.fda.gov/drugs/guidance-compliance-regulatory-information/electronic-drug-registration-and-listing-system-edrls",
+      "resolved_title": "Electronic Drug Registration and Listing System (eDRLS)"
+    },
+    "FDA-NDC": {
+      "url": "https://www.fda.gov/drugs/drug-approvals-and-databases/national-drug-code-directory",
+      "title": "National Drug Code Directory",
+      "locator": "About the NDC directory, bullets 1–6; Adding, correcting or updating",
+      "accessed": "2026-10-09",
+      "source_kind": "PRIMARY",
+      "full_legal_or_standard_implementation": false
+    },
+    "EMA-ESMP": {
+      "url": "https://www.ema.europa.eu/en/human-regulatory-overview/post-authorisation/medicine-shortages-availability-issues/european-shortages-monitoring-platform",
+      "title": "European Shortages Monitoring Platform",
+      "locator": "Reporting via ESMP: Normal circumstances / MSSG-led preparedness / Crisis",
+      "accessed": "2026-10-09",
+      "source_kind": "PRIMARY",
+      "full_legal_or_standard_implementation": false
+    },
+    "W3C-PROV": {
+      "url": "https://www.w3.org/TR/2013/REC-prov-o-20130430/",
+      "title": "PROV-O: The PROV Ontology",
+      "locator": "Sections 3.1, 4.1 wasGeneratedBy/wasAttributedTo/wasAssociatedWith, 4.2 wasDerivedFrom/wasRevisionOf",
+      "accessed": "2026-10-09",
+      "source_kind": "PRIMARY",
+      "full_legal_or_standard_implementation": false
+    }
+  },
+  "requirements": [
+    {
+      "id": "B2-RG-01",
+      "source_id": "FDA-DRLS",
+      "domain": "Registry",
+      "statement": "Keep establishment registration separate from drug listing.",
+      "competency_question": "Which subject is registered or listed?",
+      "positive_acceptance": "Facility registration and product listing remain distinct.",
+      "negative_acceptance": "Registration alone cannot create a product listing.",
+      "candidate_existing_ids": [
+        "EstablishmentRegistration",
+        "MarketListing",
+        "rel-registrationEntity",
+        "rel-listingPresentation"
+      ],
+      "mapping_gap": "Record-to-fact mapping unresolved.",
+      "related_prior_requirement_ids": [],
+      "overlap_status": "NO_DIRECT_MATCH_IN_PRIOR_24_BY_DESK_REVIEW",
+      "origin": "SOURCE_DERIVED_MODELING_PROPOSAL",
+      "author_accepted": false,
+      "baseline_implementation_verified": false,
+      "dedicated_executable_acceptance_tests": 0,
+      "desk_decision": "RETAIN",
+      "decision_reason": "Registration and listing have different subjects and facts; no matching prior requirement.",
+      "canonical_requirement_id": "B2-RG-01",
+      "desk_review_scope": "All prior 24 headings and acceptance criteria plus the other 15 B2 rows; human expert acceptance pending.",
+      "original_statement": "Keep establishment registration separate from drug listing.",
+      "mapping_state": "EXPERIMENTAL_PROFILE_WITH_NATIVE_GAPS",
+      "scientific_acceptance": false
+    },
+    {
+      "id": "B2-RG-02",
+      "source_id": "FDA-DRLS",
+      "domain": "Registry",
+      "statement": "Registration must not imply product approval.",
+      "competency_question": "Does registration establish approval?",
+      "positive_acceptance": "Answer unknown without approval evidence.",
+      "negative_acceptance": "Reject registration-to-approval inference.",
+      "candidate_existing_ids": [
+        "EstablishmentRegistration",
+        "RegulatoryAuthorization"
+      ],
+      "mapping_gap": "Existing authorizationParty targets organizations/facilities; product approval representation unresolved.",
+      "related_prior_requirement_ids": [
+        "R-DS-06"
+      ],
+      "overlap_status": "PARTIAL_OVERLAP_REQUIRES_DEDUPLICATION",
+      "origin": "SOURCE_DERIVED_MODELING_PROPOSAL",
+      "author_accepted": false,
+      "baseline_implementation_verified": false,
+      "dedicated_executable_acceptance_tests": 0,
+      "desk_decision": "RETAIN_SCOPED_EXTENSION",
+      "decision_reason": "R-DS-06 addresses digital records, not establishment-registration facts.",
+      "canonical_requirement_id": "B2-RG-02",
+      "desk_review_scope": "All prior 24 headings and acceptance criteria plus the other 15 B2 rows; human expert acceptance pending.",
+      "original_statement": "Registration must not imply product approval.",
+      "mapping_state": "EXPERIMENTAL_PROFILE_WITH_NATIVE_GAPS",
+      "scientific_acceptance": false
+    },
+    {
+      "id": "B2-RG-03",
+      "source_id": "FDA-NDC",
+      "domain": "Registry",
+      "statement": "NDC listing must not imply approval.",
+      "competency_question": "What approval evidence supports this product?",
+      "positive_acceptance": "Listed product may have unknown approval.",
+      "negative_acceptance": "NDC presence cannot supply approval evidence.",
+      "candidate_existing_ids": [
+        "IdentifierAssignment",
+        "IdentifierScheme",
+        "MarketListing",
+        "EvidenceSupport"
+      ],
+      "mapping_gap": "Approval evidence path unresolved.",
+      "related_prior_requirement_ids": [
+        "R-DS-06"
+      ],
+      "overlap_status": "PARTIAL_OVERLAP_REQUIRES_DEDUPLICATION",
+      "origin": "SOURCE_DERIVED_MODELING_PROPOSAL",
+      "author_accepted": false,
+      "baseline_implementation_verified": false,
+      "dedicated_executable_acceptance_tests": 0,
+      "desk_decision": "RETAIN_SCOPED_EXTENSION",
+      "decision_reason": "NDC identification/listing is a distinct insufficient premise from registration and mere record existence.",
+      "canonical_requirement_id": "B2-RG-03",
+      "desk_review_scope": "All prior 24 headings and acceptance criteria plus the other 15 B2 rows; human expert acceptance pending.",
+      "original_statement": "NDC listing must not imply approval.",
+      "mapping_state": "EXPERIMENTAL_PROFILE_WITH_NATIVE_GAPS",
+      "scientific_acceptance": false
+    },
+    {
+      "id": "B2-RG-04",
+      "source_id": "FDA-NDC",
+      "domain": "Registry",
+      "statement": "Attribute submitted directory information to its labeler.",
+      "competency_question": "Who supplied this entry?",
+      "positive_acceptance": "Return submitting labeler.",
+      "negative_acceptance": "Do not substitute FDA verification.",
+      "candidate_existing_ids": [
+        "SourceRecord",
+        "Organization",
+        "Assertion"
+      ],
+      "mapping_gap": "Submitter attribution differs from listing responsibility.",
+      "related_prior_requirement_ids": [],
+      "overlap_status": "NO_DIRECT_MATCH_IN_PRIOR_24_BY_DESK_REVIEW",
+      "origin": "SOURCE_DERIVED_MODELING_PROPOSAL",
+      "author_accepted": false,
+      "baseline_implementation_verified": false,
+      "dedicated_executable_acceptance_tests": 0,
+      "desk_decision": "RETAIN",
+      "decision_reason": "Submitting labeler attribution is not regulatory verification or listing responsibility.",
+      "canonical_requirement_id": "B2-RG-04",
+      "desk_review_scope": "All prior 24 headings and acceptance criteria plus the other 15 B2 rows; human expert acceptance pending.",
+      "original_statement": "Attribute submitted directory information to its labeler.",
+      "mapping_state": "EXPERIMENTAL_PROFILE_WITH_NATIVE_GAPS",
+      "scientific_acceptance": false
+    },
+    {
+      "id": "B2-RG-05",
+      "source_id": "FDA-NDC",
+      "domain": "Registry",
+      "statement": "Directory absence must preserve uncertainty.",
+      "competency_question": "What follows from a missing entry?",
+      "positive_acceptance": "Return not-found within this source.",
+      "negative_acceptance": "Do not infer unapproved or nonexistent.",
+      "candidate_existing_ids": [
+        "SourceRecord",
+        "DatasetRelease"
+      ],
+      "mapping_gap": "Query absence policy required.",
+      "related_prior_requirement_ids": [],
+      "overlap_status": "NO_DIRECT_MATCH_IN_PRIOR_24_BY_DESK_REVIEW",
+      "origin": "SOURCE_DERIVED_MODELING_PROPOSAL",
+      "author_accepted": false,
+      "baseline_implementation_verified": false,
+      "dedicated_executable_acceptance_tests": 0,
+      "desk_decision": "RETAIN",
+      "decision_reason": "Source-scoped absence and global negative conclusions were not addressed by the prior 24.",
+      "canonical_requirement_id": "B2-RG-05",
+      "desk_review_scope": "All prior 24 headings and acceptance criteria plus the other 15 B2 rows; human expert acceptance pending.",
+      "original_statement": "Directory absence must preserve uncertainty.",
+      "mapping_state": "EXPERIMENTAL_PROFILE_WITH_NATIVE_GAPS",
+      "scientific_acceptance": false
+    },
+    {
+      "id": "B2-RG-06",
+      "source_id": "FDA-NDC",
+      "domain": "Registry",
+      "statement": "Distinguish marketing dates from retrieval dates.",
+      "competency_question": "Was the entry published at the queried time?",
+      "positive_acceptance": "Apply declared source publication conditions.",
+      "negative_acceptance": "Do not equate retrieval with marketing start.",
+      "candidate_existing_ids": [
+        "SourceRecord",
+        "DatasetRelease",
+        "MarketListing",
+        "TimeInterval"
+      ],
+      "mapping_gap": "Bitemporal source profile needed.",
+      "related_prior_requirement_ids": [],
+      "overlap_status": "NO_DIRECT_MATCH_IN_PRIOR_24_BY_DESK_REVIEW",
+      "origin": "SOURCE_DERIVED_MODELING_PROPOSAL",
+      "author_accepted": false,
+      "baseline_implementation_verified": false,
+      "dedicated_executable_acceptance_tests": 0,
+      "desk_decision": "RETAIN",
+      "decision_reason": "Marketing validity and retrieval time differ from deployment time and result timestamps.",
+      "canonical_requirement_id": "B2-RG-06",
+      "desk_review_scope": "All prior 24 headings and acceptance criteria plus the other 15 B2 rows; human expert acceptance pending.",
+      "original_statement": "Distinguish marketing dates from retrieval dates.",
+      "mapping_state": "EXPERIMENTAL_PROFILE_WITH_NATIVE_GAPS",
+      "scientific_acceptance": false,
+      "clarification": "Date fields support a declared publication-window check, not a promise that the actual directory contains the entry; retrieval time can equal marketing time by coincidence."
+    },
+    {
+      "id": "B2-RP-01",
+      "source_id": "EMA-ESMP",
+      "domain": "Regulatory Policy",
+      "statement": "Qualify reporting obligations by actor role and scenario.",
+      "competency_question": "Who reports under this scenario?",
+      "positive_acceptance": "Return applicable MAH/NCA roles.",
+      "negative_acceptance": "Do not generalize one scenario globally.",
+      "candidate_existing_ids": [
+        "RegulatoryRequirement",
+        "Organization",
+        "RegulatoryJurisdiction"
+      ],
+      "mapping_gap": "Scenario applicability path absent.",
+      "related_prior_requirement_ids": [
+        "R-PV-06"
+      ],
+      "overlap_status": "PARTIAL_OVERLAP_REQUIRES_DEDUPLICATION",
+      "origin": "SOURCE_DERIVED_MODELING_PROPOSAL",
+      "author_accepted": false,
+      "baseline_implementation_verified": false,
+      "dedicated_executable_acceptance_tests": 0,
+      "desk_decision": "RETAIN_SCOPED_EXTENSION",
+      "decision_reason": "R-PV-06 constrains jurisdiction; actor-role and scenario selectors add independent criteria.",
+      "canonical_requirement_id": "B2-RP-01",
+      "desk_review_scope": "All prior 24 headings and acceptance criteria plus the other 15 B2 rows; human expert acceptance pending.",
+      "original_statement": "Qualify reporting obligations by actor role and scenario.",
+      "mapping_state": "EXPERIMENTAL_PROFILE_WITH_NATIVE_GAPS",
+      "scientific_acceptance": false,
+      "clarification": "Synthetic applicability profiles are bounded encodings of cited guidance, not a complete legal compliance engine."
+    },
+    {
+      "id": "B2-RP-02",
+      "source_id": "EMA-ESMP",
+      "domain": "Regulatory Policy",
+      "statement": "Separate potential-shortage reports from actual shortage situations.",
+      "competency_question": "Is this a forecast or actual shortage?",
+      "positive_acceptance": "Potential report remains an assertion.",
+      "negative_acceptance": "Forecast alone cannot establish actual shortage.",
+      "candidate_existing_ids": [
+        "Assertion",
+        "MedicineShortageSituation",
+        "SourceRecord"
+      ],
+      "mapping_gap": "Potential/actual assessment policy needed.",
+      "related_prior_requirement_ids": [],
+      "overlap_status": "NO_DIRECT_MATCH_IN_PRIOR_24_BY_DESK_REVIEW",
+      "origin": "SOURCE_DERIVED_MODELING_PROPOSAL",
+      "author_accepted": false,
+      "baseline_implementation_verified": false,
+      "dedicated_executable_acceptance_tests": 0,
+      "desk_decision": "RETAIN",
+      "decision_reason": "Potential-shortage content is distinct from an actual situation; PV signal criteria do not establish this.",
+      "canonical_requirement_id": "B2-RP-02",
+      "desk_review_scope": "All prior 24 headings and acceptance criteria plus the other 15 B2 rows; human expert acceptance pending.",
+      "original_statement": "Separate potential-shortage reports from actual shortage situations.",
+      "mapping_state": "EXPERIMENTAL_PROFILE_WITH_NATIVE_GAPS",
+      "scientific_acceptance": false
+    },
+    {
+      "id": "B2-RP-03",
+      "source_id": "EMA-ESMP",
+      "domain": "Regulatory Policy",
+      "statement": "Constrain reporting product scope to the selected scenario.",
+      "competency_question": "Are CAPs, NAPs or selected medicines in scope?",
+      "positive_acceptance": "Use the scenario-specific scope.",
+      "negative_acceptance": "Do not apply routine CAP scope universally.",
+      "candidate_existing_ids": [
+        "RegulatoryRequirement",
+        "MedicinalProduct",
+        "ContextualMedicineClassificationAssignment"
+      ],
+      "mapping_gap": "Authorization route and scenario membership unresolved.",
+      "related_prior_requirement_ids": [],
+      "overlap_status": "NO_DIRECT_MATCH_IN_PRIOR_24_BY_DESK_REVIEW",
+      "origin": "SOURCE_DERIVED_MODELING_PROPOSAL",
+      "author_accepted": false,
+      "baseline_implementation_verified": false,
+      "dedicated_executable_acceptance_tests": 0,
+      "desk_decision": "RETAIN",
+      "decision_reason": "Product authorization route and action-specific scope are independent selectors.",
+      "canonical_requirement_id": "B2-RP-03",
+      "desk_review_scope": "All prior 24 headings and acceptance criteria plus the other 15 B2 rows; human expert acceptance pending.",
+      "original_statement": "Constrain reporting product scope to the selected scenario.",
+      "mapping_state": "EXPERIMENTAL_PROFILE_WITH_NATIVE_GAPS",
+      "scientific_acceptance": false
+    },
+    {
+      "id": "B2-RP-04",
+      "source_id": "EMA-ESMP",
+      "domain": "Regulatory Policy",
+      "statement": "Bind reporting frequency to the announced action.",
+      "competency_question": "Which frequency applies to this action?",
+      "positive_acceptance": "Retrieve that action’s frequency.",
+      "negative_acceptance": "Do not hard-code a universal interval.",
+      "candidate_existing_ids": [
+        "RegulatoryRequirement",
+        "ReportingPeriod",
+        "TimeInterval"
+      ],
+      "mapping_gap": "Trigger/version/time linkage unresolved.",
+      "related_prior_requirement_ids": [],
+      "overlap_status": "NO_DIRECT_MATCH_IN_PRIOR_24_BY_DESK_REVIEW",
+      "origin": "SOURCE_DERIVED_MODELING_PROPOSAL",
+      "author_accepted": false,
+      "baseline_implementation_verified": false,
+      "dedicated_executable_acceptance_tests": 0,
+      "desk_decision": "RETAIN",
+      "decision_reason": "Action-scoped frequency and version selection are distinct from the existence of a timestamp.",
+      "canonical_requirement_id": "B2-RP-04",
+      "desk_review_scope": "All prior 24 headings and acceptance criteria plus the other 15 B2 rows; human expert acceptance pending.",
+      "original_statement": "Bind reporting frequency to the announced action.",
+      "mapping_state": "EXPERIMENTAL_PROFILE_WITH_NATIVE_GAPS",
+      "scientific_acceptance": false
+    },
+    {
+      "id": "B2-DS-07",
+      "source_id": "W3C-PROV",
+      "domain": "Digital Systems",
+      "statement": "Distinguish a generated record from its generating activity.",
+      "competency_question": "Which activity generated this record?",
+      "positive_acceptance": "Return a linked distinct activity.",
+      "negative_acceptance": "Do not identify activity with output.",
+      "candidate_existing_ids": [
+        "SourceRecord",
+        "ProvenanceActivity"
+      ],
+      "mapping_gap": "Generic provenance alignment pending.",
+      "related_prior_requirement_ids": [
+        "R-DS-01",
+        "R-DS-04"
+      ],
+      "overlap_status": "PARTIAL_OVERLAP_REQUIRES_DEDUPLICATION",
+      "origin": "SOURCE_DERIVED_MODELING_PROPOSAL",
+      "author_accepted": false,
+      "baseline_implementation_verified": false,
+      "dedicated_executable_acceptance_tests": 0,
+      "desk_decision": "REFINE_EXISTING",
+      "decision_reason": "Fold generation traversal and record/activity separation into R-DS-04; retain B2 alias and source provenance.",
+      "canonical_requirement_id": "R-DS-04",
+      "desk_review_scope": "All prior 24 headings and acceptance criteria plus the other 15 B2 rows; human expert acceptance pending.",
+      "original_statement": "Distinguish a generated record from its generating activity.",
+      "mapping_state": "EXPERIMENTAL_PROFILE_WITH_NATIVE_GAPS",
+      "scientific_acceptance": false
+    },
+    {
+      "id": "B2-DS-08",
+      "source_id": "W3C-PROV",
+      "domain": "Digital Systems",
+      "statement": "Distinguish entity attribution from activity association.",
+      "competency_question": "Is responsibility attached to artifact or activity?",
+      "positive_acceptance": "Return the qualified relation.",
+      "negative_acceptance": "Do not collapse both predicates.",
+      "candidate_existing_ids": [
+        "SourceRecord",
+        "ProvenanceActivity",
+        "Organization"
+      ],
+      "mapping_gap": "Agent typing and responsibility mapping pending.",
+      "related_prior_requirement_ids": [],
+      "overlap_status": "NO_DIRECT_MATCH_IN_PRIOR_24_BY_DESK_REVIEW",
+      "origin": "SOURCE_DERIVED_MODELING_PROPOSAL",
+      "author_accepted": false,
+      "baseline_implementation_verified": false,
+      "dedicated_executable_acceptance_tests": 0,
+      "desk_decision": "RETAIN",
+      "decision_reason": "Artifact attribution and activity association are different responsibilities; neither implies the other.",
+      "canonical_requirement_id": "B2-DS-08",
+      "desk_review_scope": "All prior 24 headings and acceptance criteria plus the other 15 B2 rows; human expert acceptance pending.",
+      "original_statement": "Distinguish entity attribution from activity association.",
+      "mapping_state": "EXPERIMENTAL_PROFILE_WITH_NATIVE_GAPS",
+      "scientific_acceptance": false
+    },
+    {
+      "id": "B2-DS-09",
+      "source_id": "W3C-PROV",
+      "domain": "Digital Systems",
+      "statement": "Retain derivation lineage between data artifacts.",
+      "competency_question": "Which artifact was this derived from?",
+      "positive_acceptance": "Return predecessor lineage.",
+      "negative_acceptance": "Source absence cannot invent lineage.",
+      "candidate_existing_ids": [
+        "SourceRecord",
+        "Dataset",
+        "DatasetRelease"
+      ],
+      "mapping_gap": "Derivation relation not mapped.",
+      "related_prior_requirement_ids": [
+        "R-DS-04"
+      ],
+      "overlap_status": "PARTIAL_OVERLAP_REQUIRES_DEDUPLICATION",
+      "origin": "SOURCE_DERIVED_MODELING_PROPOSAL",
+      "author_accepted": false,
+      "baseline_implementation_verified": false,
+      "dedicated_executable_acceptance_tests": 0,
+      "desk_decision": "RETAIN_SCOPED_EXTENSION",
+      "decision_reason": "Artifact-to-artifact derivation is not the same relation as record-to-generating-activity.",
+      "canonical_requirement_id": "B2-DS-09",
+      "desk_review_scope": "All prior 24 headings and acceptance criteria plus the other 15 B2 rows; human expert acceptance pending.",
+      "original_statement": "Retain derivation lineage between data artifacts.",
+      "mapping_state": "EXPERIMENTAL_PROFILE_WITH_NATIVE_GAPS",
+      "scientific_acceptance": false
+    },
+    {
+      "id": "B2-DS-10",
+      "source_id": "W3C-PROV",
+      "domain": "Digital Systems",
+      "statement": "Represent revision lineage without automatic identity merging.",
+      "competency_question": "Which prior version was revised?",
+      "positive_acceptance": "Keep both versions and revision link.",
+      "negative_acceptance": "Revision alone must not assert owl:sameAs.",
+      "candidate_existing_ids": [
+        "SourceRecord",
+        "DatasetRelease"
+      ],
+      "mapping_gap": "Revision identity policy unresolved.",
+      "related_prior_requirement_ids": [
+        "R-RM-06",
+        "R-DS-02"
+      ],
+      "overlap_status": "PARTIAL_OVERLAP_REQUIRES_DEDUPLICATION",
+      "origin": "SOURCE_DERIVED_MODELING_PROPOSAL",
+      "author_accepted": false,
+      "baseline_implementation_verified": false,
+      "dedicated_executable_acceptance_tests": 0,
+      "desk_decision": "RETAIN_SCOPED_EXTENSION",
+      "decision_reason": "R-RM-06 is review ordering and R-DS-02 is component version tracing; artifact revision adds a lineage contract.",
+      "canonical_requirement_id": "B2-DS-10",
+      "desk_review_scope": "All prior 24 headings and acceptance criteria plus the other 15 B2 rows; human expert acceptance pending.",
+      "original_statement": "Represent revision lineage without automatic identity merging.",
+      "mapping_state": "EXPERIMENTAL_PROFILE_WITH_NATIVE_GAPS",
+      "scientific_acceptance": false
+    },
+    {
+      "id": "B2-RG-07",
+      "source_id": "FDA-DRLS",
+      "domain": "Registry",
+      "statement": "Keep a source record distinct from its represented subject; resolve reporter identity without requiring reporter and organizational subject to differ.",
+      "competency_question": "Which organization reported on which establishment?",
+      "positive_acceptance": "An organizational subject may report on itself; record identity remains separate.",
+      "negative_acceptance": "Reject record-subject identity collision, including known owl:sameAs aliases.",
+      "candidate_existing_ids": [
+        "RegisteredFacilityRole",
+        "RegisteredOrganizationRole",
+        "SourceRecord"
+      ],
+      "mapping_gap": "Subject resolution policy required.",
+      "related_prior_requirement_ids": [
+        "R-DS-01"
+      ],
+      "overlap_status": "PARTIAL_OVERLAP_REQUIRES_DEDUPLICATION",
+      "origin": "SOURCE_DERIVED_MODELING_PROPOSAL",
+      "author_accepted": false,
+      "baseline_implementation_verified": false,
+      "dedicated_executable_acceptance_tests": 0,
+      "desk_decision": "REFINE_AND_RETAIN",
+      "decision_reason": "Separate record from subject; reporter may equal organizational subject. Do not impose pairwise distinctness universally.",
+      "canonical_requirement_id": "B2-RG-07",
+      "desk_review_scope": "All prior 24 headings and acceptance criteria plus the other 15 B2 rows; human expert acceptance pending.",
+      "original_statement": "Keep registration entity, reporting organization and source record distinct.",
+      "mapping_state": "EXPERIMENTAL_PROFILE_WITH_NATIVE_GAPS",
+      "scientific_acceptance": false
+    },
+    {
+      "id": "B2-RG-08",
+      "source_id": "FDA-DRLS",
+      "domain": "Registry",
+      "statement": "Treat SPL as a submission representation.",
+      "competency_question": "Which submission represents the listed drug?",
+      "positive_acceptance": "Trace submission to represented subject.",
+      "negative_acceptance": "Do not identify payload with physical product.",
+      "candidate_existing_ids": [
+        "SourceRecord",
+        "MedicinalProduct",
+        "Assertion"
+      ],
+      "mapping_gap": "Payload/carrier/claim mapping unresolved.",
+      "related_prior_requirement_ids": [
+        "R-DS-01"
+      ],
+      "overlap_status": "PARTIAL_OVERLAP_REQUIRES_DEDUPLICATION",
+      "origin": "SOURCE_DERIVED_MODELING_PROPOSAL",
+      "author_accepted": false,
+      "baseline_implementation_verified": false,
+      "dedicated_executable_acceptance_tests": 0,
+      "desk_decision": "RETAIN_SCOPED_EXTENSION",
+      "decision_reason": "SPL payload-to-subject representation differs from component-record identity and subject/reporter resolution.",
+      "canonical_requirement_id": "B2-RG-08",
+      "desk_review_scope": "All prior 24 headings and acceptance criteria plus the other 15 B2 rows; human expert acceptance pending.",
+      "original_statement": "Treat SPL as a submission representation.",
+      "mapping_state": "EXPERIMENTAL_PROFILE_WITH_NATIVE_GAPS",
+      "scientific_acceptance": false
+    }
+  ],
+  "canonical_proposal_headings": [
+    {
+      "id": "R-RM-01",
+      "source_row_ids": [
+        "R-RM-01"
+      ],
+      "original_statement_fa": "موضوع هر ارزیابی ریسک باید به زمینهٔ دارویی مشخص قابل ردیابی باشد.",
+      "accepted": false
+    },
+    {
+      "id": "R-RM-02",
+      "source_row_ids": [
+        "R-RM-02"
+      ],
+      "original_statement_fa": "نتیجهٔ هر ارزیابی باید از رخداد انجام ارزیابی متمایز باشد.",
+      "accepted": false
+    },
+    {
+      "id": "R-RM-03",
+      "source_row_ids": [
+        "R-RM-03"
+      ],
+      "original_statement_fa": "مبنای شواهد هر نتیجهٔ ارزیابی باید قابل بازیابی باشد.",
+      "accepted": false
+    },
+    {
+      "id": "R-RM-04",
+      "source_row_ids": [
+        "R-RM-04"
+      ],
+      "original_statement_fa": "برنامهٔ رسیدگی باید به نتیجهٔ ارزیابی موردنظر متصل باشد.",
+      "accepted": false
+    },
+    {
+      "id": "R-RM-05",
+      "source_row_ids": [
+        "R-RM-05"
+      ],
+      "original_statement_fa": "وقوع اقدام رسیدگی باید مستقل از وجود برنامه قابل تشخیص باشد.",
+      "accepted": false
+    },
+    {
+      "id": "R-RM-06",
+      "source_row_ids": [
+        "R-RM-06"
+      ],
+      "original_statement_fa": "هر بازبینی باید نتیجهٔ پیشین مورد بازبینی را مشخص کند.",
+      "accepted": false
+    },
+    {
+      "id": "R-PV-01",
+      "source_row_ids": [
+        "R-PV-01"
+      ],
+      "original_statement_fa": "اطلاعات گزارش ایمنی باید از رخداد گزارش‌کردن متمایز باشد.",
+      "accepted": false
+    },
+    {
+      "id": "R-PV-02",
+      "source_row_ids": [
+        "R-PV-02"
+      ],
+      "original_statement_fa": "موضوع سیگنال باید به محصول یا مادهٔ دارویی مشخص متصل باشد.",
+      "accepted": false
+    },
+    {
+      "id": "R-PV-03",
+      "source_row_ids": [
+        "R-PV-03"
+      ],
+      "original_statement_fa": "پشتوانهٔ هر سیگنال باید به منابع آن قابل ردیابی باشد.",
+      "accepted": false
+    },
+    {
+      "id": "R-PV-04",
+      "source_row_ids": [
+        "R-PV-04"
+      ],
+      "original_statement_fa": "هر نتیجهٔ ارزیابی باید به سیگنال مورد ارزیابی متصل باشد.",
+      "accepted": false
+    },
+    {
+      "id": "R-PV-05",
+      "source_row_ids": [
+        "R-PV-05"
+      ],
+      "original_statement_fa": "وضعیت نتیجهٔ ارزیابی باید به زمان ارزیابی مقید باشد.",
+      "accepted": false
+    },
+    {
+      "id": "R-PV-06",
+      "source_row_ids": [
+        "R-PV-06"
+      ],
+      "original_statement_fa": "اعمال الزام فارماکوویژیلانس باید به قلمرو مقرراتی مشخص مقید باشد.",
+      "accepted": false
+    },
+    {
+      "id": "R-BA-01",
+      "source_row_ids": [
+        "R-BA-01"
+      ],
+      "original_statement_fa": "هر EnterpriseCapability باید حامل سازمانی مشخص داشته باشد.",
+      "accepted": false
+    },
+    {
+      "id": "R-BA-02",
+      "source_row_ids": [
+        "R-BA-02"
+      ],
+      "original_statement_fa": "وجود قابلیت نباید وقوع فعالیت متناظر را الزام کند.",
+      "accepted": false
+    },
+    {
+      "id": "R-BA-03",
+      "source_row_ids": [
+        "R-BA-03"
+      ],
+      "original_statement_fa": "ServiceOfferingSpecification باید به موضوع خدمت دارویی متصل باشد.",
+      "accepted": false
+    },
+    {
+      "id": "R-BA-04",
+      "source_row_ids": [
+        "R-BA-04"
+      ],
+      "original_statement_fa": "BusinessArchitectureView باید به شناسه‌های موجودیت‌های اصلی ارجاع دهد.",
+      "accepted": false
+    },
+    {
+      "id": "R-BA-05",
+      "source_row_ids": [
+        "R-BA-05"
+      ],
+      "original_statement_fa": "مشارکت در StrategicPartnershipAgreement باید از تعامل اتفاقی متمایز باشد.",
+      "accepted": false
+    },
+    {
+      "id": "R-BA-06",
+      "source_row_ids": [
+        "R-BA-06"
+      ],
+      "original_statement_fa": "هویت موجودیت‌های هسته باید مستقل از وجود نمای معماری بماند.",
+      "accepted": false
+    },
+    {
+      "id": "R-DS-01",
+      "source_row_ids": [
+        "R-DS-01"
+      ],
+      "original_statement_fa": "هویت جزء سامانه باید از هویت رکورد تولیدشده متمایز باشد.",
+      "accepted": false
+    },
+    {
+      "id": "R-DS-02",
+      "source_row_ids": [
+        "R-DS-02"
+      ],
+      "original_statement_fa": "نسخه جزء سامانهٔ استفاده‌شده باید قابل بازیابی باشد.",
+      "accepted": false
+    },
+    {
+      "id": "R-DS-03",
+      "source_row_ids": [
+        "R-DS-03"
+      ],
+      "original_statement_fa": "رابطه پشتیبانی سامانه باید به فعالیت دارویی مشخص متصل باشد.",
+      "accepted": false
+    },
+    {
+      "id": "R-DS-04",
+      "source_row_ids": [
+        "R-DS-04",
+        "B2-DS-07"
+      ],
+      "original_statement_fa": "منشأ رکورد باید از مسیر فعالیت تولیدکننده قابل ردیابی باشد.",
+      "accepted": false,
+      "proposed_refinement": "Distinguish a generated record from its generating activity."
+    },
+    {
+      "id": "R-DS-05",
+      "source_row_ids": [
+        "R-DS-05"
+      ],
+      "original_statement_fa": "هر استقرار باید زمان وقوع مشخص داشته باشد.",
+      "accepted": false
+    },
+    {
+      "id": "R-DS-06",
+      "source_row_ids": [
+        "R-DS-06"
+      ],
+      "original_statement_fa": "وجود رکورد دیجیتال نباید به‌تنهایی مجوز مقرراتی ایجاد کند.",
+      "accepted": false
+    },
+    {
+      "id": "B2-RG-01",
+      "source_row_ids": [
+        "B2-RG-01"
+      ],
+      "statement": "Keep establishment registration separate from drug listing.",
+      "accepted": false
+    },
+    {
+      "id": "B2-RG-02",
+      "source_row_ids": [
+        "B2-RG-02"
+      ],
+      "statement": "Registration must not imply product approval.",
+      "accepted": false
+    },
+    {
+      "id": "B2-RG-03",
+      "source_row_ids": [
+        "B2-RG-03"
+      ],
+      "statement": "NDC listing must not imply approval.",
+      "accepted": false
+    },
+    {
+      "id": "B2-RG-04",
+      "source_row_ids": [
+        "B2-RG-04"
+      ],
+      "statement": "Attribute submitted directory information to its labeler.",
+      "accepted": false
+    },
+    {
+      "id": "B2-RG-05",
+      "source_row_ids": [
+        "B2-RG-05"
+      ],
+      "statement": "Directory absence must preserve uncertainty.",
+      "accepted": false
+    },
+    {
+      "id": "B2-RG-06",
+      "source_row_ids": [
+        "B2-RG-06"
+      ],
+      "statement": "Distinguish marketing dates from retrieval dates.",
+      "accepted": false
+    },
+    {
+      "id": "B2-RP-01",
+      "source_row_ids": [
+        "B2-RP-01"
+      ],
+      "statement": "Qualify reporting obligations by actor role and scenario.",
+      "accepted": false
+    },
+    {
+      "id": "B2-RP-02",
+      "source_row_ids": [
+        "B2-RP-02"
+      ],
+      "statement": "Separate potential-shortage reports from actual shortage situations.",
+      "accepted": false
+    },
+    {
+      "id": "B2-RP-03",
+      "source_row_ids": [
+        "B2-RP-03"
+      ],
+      "statement": "Constrain reporting product scope to the selected scenario.",
+      "accepted": false
+    },
+    {
+      "id": "B2-RP-04",
+      "source_row_ids": [
+        "B2-RP-04"
+      ],
+      "statement": "Bind reporting frequency to the announced action.",
+      "accepted": false
+    },
+    {
+      "id": "B2-DS-08",
+      "source_row_ids": [
+        "B2-DS-08"
+      ],
+      "statement": "Distinguish entity attribution from activity association.",
+      "accepted": false
+    },
+    {
+      "id": "B2-DS-09",
+      "source_row_ids": [
+        "B2-DS-09"
+      ],
+      "statement": "Retain derivation lineage between data artifacts.",
+      "accepted": false
+    },
+    {
+      "id": "B2-DS-10",
+      "source_row_ids": [
+        "B2-DS-10"
+      ],
+      "statement": "Represent revision lineage without automatic identity merging.",
+      "accepted": false
+    },
+    {
+      "id": "B2-RG-07",
+      "source_row_ids": [
+        "B2-RG-07"
+      ],
+      "statement": "Keep a source record distinct from its represented subject; resolve reporter identity without requiring reporter and organizational subject to differ.",
+      "accepted": false
+    },
+    {
+      "id": "B2-RG-08",
+      "source_row_ids": [
+        "B2-RG-08"
+      ],
+      "statement": "Treat SPL as a submission representation.",
+      "accepted": false
+    }
+  ],
+  "input_rows": 40,
+  "prior_rows": 24,
+  "new_batch_rows": 16,
+  "desk_decisions": 16,
+  "merged_into_existing_headings": 1,
+  "retained_batch_headings": 15,
+  "working_heading_count": 39,
+  "accepted_requirements": 0,
+  "all_project_requirements_exhaustive": false,
+  "count_limit": "39 is a reconciled working heading count for these two inputs only, not a claim of global completeness or independent expert validation.",
+  "changes_to_prior_contracts": [
+    "B2-DS-07 proposed as refinement of R-DS-04, without rewriting original files.",
+    "B2-RG-07 universal reporter/subject separation withdrawn in favor of record/subject separation."
+  ],
+  "input_sha256": {
+    "2.1.0-alpha.1-four-domain-lab/requirement-traceability.json": "4d7c503bbc5a9ebf382ad5fce482310a2c380ec1259e09164981117fa49040f0",
+    "2.1.0-alpha.1-derived-participant-lab/source-requirements.json": "be7465b39e6353379c1a5b4c18c8426da511d01d3b32beff8f66a9ce15dfde17"
+  }
+}

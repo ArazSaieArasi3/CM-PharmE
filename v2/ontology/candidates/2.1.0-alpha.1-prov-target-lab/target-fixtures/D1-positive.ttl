@@ -1,0 +1,24 @@
+@prefix c: <https://w3id.org/cm-pharme/2.1/> .
+@prefix q: <https://w3id.org/cm-pharme/experimental/prov-target/> .
+@prefix r: <https://w3id.org/cm-pharme/experimental/refinement/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+q:D1 a q:TargetCase ;
+    q:claim q:D1-claim ;
+    q:effectObservedAt "2026-09-01T02:00:00+00:00"^^xsd:dateTime ;
+    q:eventStart "2026-09-01T01:00:00+00:00"^^xsd:dateTime ;
+    q:evidenceKind "explicit-effect-report" ;
+    q:family "disruption" ;
+    q:source q:D1-event ;
+    q:sourceRecord q:D1-record ;
+    q:target q:D1-target ;
+    q:targetClass c:Facility .
+
+q:D1-event a c:DisruptionEvent .
+
+q:D1-record a c:SourceRecord ;
+    r:carrierClaim q:D1-claim .
+
+q:D1-target a c:Facility .
+
+q:D1-claim a c:Assertion .

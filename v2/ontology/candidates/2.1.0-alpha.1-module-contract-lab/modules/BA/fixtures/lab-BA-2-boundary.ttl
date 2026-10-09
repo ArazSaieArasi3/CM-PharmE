@@ -1,0 +1,27 @@
+@prefix c: <https://w3id.org/cm-pharme/2.1/> .
+@prefix l: <https://w3id.org/cm-pharme/experimental/four-domain/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix t: <urn:cmpe-lab:> .
+
+t:agreement a c:StrategicPartnershipAgreement ;
+    c:partnershipParticipant t:org,
+        t:org2 ;
+    l:profile "ba-partnership" .
+
+t:facility a c:Facility .
+
+t:product a c:MedicinalProduct .
+
+t:service a c:ServiceOfferingSpecification ;
+    l:profile "ba-service" ;
+    l:serviceCapability t:cap .
+
+t:cap a c:EnterpriseCapability ;
+    c:capabilityBearer t:org .
+
+t:org a c:Organization,
+        c:PartnerOrganizationRole ;
+    owl:differentFrom t:org2 .
+
+t:org2 a c:Organization,
+        c:PartnerOrganizationRole .

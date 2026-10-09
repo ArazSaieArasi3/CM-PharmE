@@ -1,0 +1,344 @@
+{
+  "id": "cm-pharme-four-domain-refinement",
+  "type": "Project",
+  "name": {
+    "en": "CM-PharmE four-domain refinement experiment"
+  },
+  "created": "2026-10-05",
+  "modified": "2026-10-09",
+  "alternativeNames": [],
+  "description": {
+    "en": "Native-only overlay: hasStrength Characterization and its end cardinalities; three G3-2a mediations retained."
+  },
+  "editorialNotes": [],
+  "creators": [],
+  "contributors": [],
+  "customProperties": null,
+  "elements": [
+    {
+      "id": "cm-pharme-root",
+      "type": "Package",
+      "name": {
+        "en": "cm-pharme-root"
+      },
+      "created": "2026-10-05",
+      "modified": null,
+      "alternativeNames": [],
+      "description": null,
+      "editorialNotes": [],
+      "creators": [],
+      "contributors": [],
+      "customProperties": null,
+      "contents": [
+        "AppliedClassificationEntryRole",
+        "ClassificationEntry",
+        "ContextualMedicineClassificationAssignment",
+        "ProductClassificationAssignment",
+        "gen-AppliedClassificationEntryRole-ClassificationEntry",
+        "gen-ContextualMedicineClassificationAssignment-ProductClassificationAssignment",
+        "rel-classificationEntry",
+        "end-classificationEntry-source",
+        "end-classificationEntry-target",
+        "rel-contextClassificationEntry",
+        "end-contextClassificationEntry-source",
+        "end-contextClassificationEntry-target"
+      ]
+    },
+    {
+      "id": "AppliedClassificationEntryRole",
+      "type": "Class",
+      "name": {
+        "en": "AppliedClassificationEntryRole"
+      },
+      "created": "2026-10-05",
+      "modified": null,
+      "alternativeNames": [],
+      "description": null,
+      "editorialNotes": [],
+      "creators": [],
+      "contributors": [],
+      "customProperties": null,
+      "stereotype": "role",
+      "isDerived": false,
+      "isAbstract": false,
+      "properties": [],
+      "literals": [],
+      "restrictedTo": [
+        "functional-complex"
+      ],
+      "isPowertype": false,
+      "order": "1"
+    },
+    {
+      "id": "ClassificationEntry",
+      "type": "Class",
+      "name": {
+        "en": "Classification Entry"
+      },
+      "created": "2026-10-05",
+      "modified": null,
+      "alternativeNames": [],
+      "description": null,
+      "editorialNotes": [],
+      "creators": [],
+      "contributors": [],
+      "customProperties": null,
+      "stereotype": "kind",
+      "isDerived": false,
+      "isAbstract": false,
+      "properties": [],
+      "literals": [],
+      "restrictedTo": [
+        "functional-complex"
+      ],
+      "isPowertype": false,
+      "order": "1"
+    },
+    {
+      "id": "ContextualMedicineClassificationAssignment",
+      "type": "Class",
+      "name": {
+        "en": "Contextual Medicine Classification Assignment"
+      },
+      "created": "2026-10-05",
+      "modified": null,
+      "alternativeNames": [],
+      "description": null,
+      "editorialNotes": [],
+      "creators": [],
+      "contributors": [],
+      "customProperties": null,
+      "stereotype": "subkind",
+      "isDerived": false,
+      "isAbstract": false,
+      "properties": [],
+      "literals": [],
+      "restrictedTo": [
+        "relator"
+      ],
+      "isPowertype": false,
+      "order": "1"
+    },
+    {
+      "id": "ProductClassificationAssignment",
+      "type": "Class",
+      "name": {
+        "en": "Product Classification Assignment"
+      },
+      "created": "2026-10-05",
+      "modified": null,
+      "alternativeNames": [],
+      "description": null,
+      "editorialNotes": [],
+      "creators": [],
+      "contributors": [],
+      "customProperties": null,
+      "stereotype": "relator",
+      "isDerived": false,
+      "isAbstract": false,
+      "properties": [],
+      "literals": [],
+      "restrictedTo": [
+        "relator"
+      ],
+      "isPowertype": false,
+      "order": "1"
+    },
+    {
+      "id": "gen-AppliedClassificationEntryRole-ClassificationEntry",
+      "type": "Generalization",
+      "name": {
+        "en": "gen-AppliedClassificationEntryRole-ClassificationEntry"
+      },
+      "created": "2026-10-05",
+      "modified": null,
+      "alternativeNames": [],
+      "description": null,
+      "editorialNotes": [],
+      "creators": [],
+      "contributors": [],
+      "customProperties": null,
+      "general": "ClassificationEntry",
+      "specific": "AppliedClassificationEntryRole"
+    },
+    {
+      "id": "gen-ContextualMedicineClassificationAssignment-ProductClassificationAssignment",
+      "type": "Generalization",
+      "name": {
+        "en": "gen-ContextualMedicineClassificationAssignment-ProductClassificationAssignment"
+      },
+      "created": "2026-10-05",
+      "modified": null,
+      "alternativeNames": [],
+      "description": null,
+      "editorialNotes": [],
+      "creators": [],
+      "contributors": [],
+      "customProperties": null,
+      "general": "ProductClassificationAssignment",
+      "specific": "ContextualMedicineClassificationAssignment"
+    },
+    {
+      "id": "rel-classificationEntry",
+      "type": "BinaryRelation",
+      "name": {
+        "en": "classificationEntry"
+      },
+      "created": "2026-10-05",
+      "modified": null,
+      "alternativeNames": [],
+      "description": null,
+      "editorialNotes": [],
+      "creators": [],
+      "contributors": [],
+      "customProperties": null,
+      "stereotype": "mediation",
+      "isDerived": false,
+      "isAbstract": false,
+      "properties": [
+        "end-classificationEntry-source",
+        "end-classificationEntry-target"
+      ]
+    },
+    {
+      "id": "end-classificationEntry-source",
+      "type": "Property",
+      "name": {
+        "en": "end-classificationEntry-source"
+      },
+      "created": "2026-10-05",
+      "modified": null,
+      "alternativeNames": [],
+      "description": null,
+      "editorialNotes": [],
+      "creators": [],
+      "contributors": [],
+      "customProperties": null,
+      "stereotype": null,
+      "isDerived": false,
+      "subsettedProperties": [],
+      "redefinedProperties": [],
+      "aggregationKind": "NONE",
+      "cardinality": "1..*",
+      "isOrdered": false,
+      "isReadOnly": false,
+      "propertyType": "ProductClassificationAssignment"
+    },
+    {
+      "id": "end-classificationEntry-target",
+      "type": "Property",
+      "name": {
+        "en": "end-classificationEntry-target"
+      },
+      "created": "2026-10-05",
+      "modified": null,
+      "alternativeNames": [],
+      "description": null,
+      "editorialNotes": [],
+      "creators": [],
+      "contributors": [],
+      "customProperties": null,
+      "stereotype": null,
+      "isDerived": false,
+      "subsettedProperties": [],
+      "redefinedProperties": [],
+      "aggregationKind": "NONE",
+      "cardinality": "1",
+      "isOrdered": false,
+      "isReadOnly": true,
+      "propertyType": "AppliedClassificationEntryRole"
+    },
+    {
+      "id": "rel-contextClassificationEntry",
+      "type": "BinaryRelation",
+      "name": {
+        "en": "contextClassificationEntry"
+      },
+      "created": "2026-10-05",
+      "modified": null,
+      "alternativeNames": [],
+      "description": null,
+      "editorialNotes": [],
+      "creators": [],
+      "contributors": [],
+      "customProperties": null,
+      "stereotype": null,
+      "isDerived": true,
+      "isAbstract": false,
+      "properties": [
+        "end-contextClassificationEntry-source",
+        "end-contextClassificationEntry-target"
+      ]
+    },
+    {
+      "id": "end-contextClassificationEntry-source",
+      "type": "Property",
+      "name": {
+        "en": "end-contextClassificationEntry-source"
+      },
+      "created": "2026-10-05",
+      "modified": null,
+      "alternativeNames": [],
+      "description": null,
+      "editorialNotes": [],
+      "creators": [],
+      "contributors": [],
+      "customProperties": null,
+      "stereotype": null,
+      "isDerived": false,
+      "subsettedProperties": [
+        "end-classificationEntry-source"
+      ],
+      "redefinedProperties": [],
+      "aggregationKind": "NONE",
+      "cardinality": "0..*",
+      "isOrdered": false,
+      "isReadOnly": false,
+      "propertyType": "ContextualMedicineClassificationAssignment"
+    },
+    {
+      "id": "end-contextClassificationEntry-target",
+      "type": "Property",
+      "name": {
+        "en": "end-contextClassificationEntry-target"
+      },
+      "created": "2026-10-05",
+      "modified": null,
+      "alternativeNames": [],
+      "description": null,
+      "editorialNotes": [],
+      "creators": [],
+      "contributors": [],
+      "customProperties": null,
+      "stereotype": null,
+      "isDerived": false,
+      "subsettedProperties": [
+        "end-classificationEntry-target"
+      ],
+      "redefinedProperties": [],
+      "aggregationKind": "NONE",
+      "cardinality": "1",
+      "isOrdered": false,
+      "isReadOnly": true,
+      "propertyType": "AppliedClassificationEntryRole"
+    }
+  ],
+  "root": "cm-pharme-root",
+  "publisher": null,
+  "designedForTasks": [],
+  "license": null,
+  "accessRights": [],
+  "themes": [],
+  "contexts": [],
+  "ontologyTypes": [],
+  "representationStyle": null,
+  "namespace": "https://w3id.org/cm-pharme/2.1/",
+  "landingPages": [],
+  "sources": [],
+  "bibliographicCitations": [],
+  "keywords": [],
+  "acronyms": [],
+  "languages": [
+    "en"
+  ]
+}

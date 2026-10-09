@@ -1,0 +1,52 @@
+{
+  "status": "PREDECLARED_SYNTHETIC_SCENARIOS_NOT_AUTHOR_ACCEPTED",
+  "source_basis": [
+    "v2/research/w4/risk-resilience-extension.md",
+    "https://database.ich.org/sites/default/files/ICH_Q9%28R1%29_Guideline_Step4_2025_0115.pdf"
+  ],
+  "cases": [
+    {
+      "id": "D1",
+      "family": "disruption",
+      "target": "Facility",
+      "text": "A fictional flood damage report names the sterile facility and its loss of operating capacity."
+    },
+    {
+      "id": "D2",
+      "family": "disruption",
+      "target": "ManufacturingActivity",
+      "text": "A fictional power outage report names the interrupted fill-finish occurrence."
+    },
+    {
+      "id": "D3",
+      "family": "disruption",
+      "target": "SupplyDependency",
+      "text": "A fictional supplier suspension report names the affected provider-dependent supply relation."
+    },
+    {
+      "id": "R1",
+      "family": "assessment",
+      "target": "SupplyDependency",
+      "text": "A preventive assessment scopes a sole-supplier dependency before any incident is asserted."
+    },
+    {
+      "id": "R2",
+      "family": "assessment",
+      "target": "Facility",
+      "text": "A prospective quality assessment scopes facility contamination controls."
+    },
+    {
+      "id": "R3",
+      "family": "assessment",
+      "target": "RiskTreatmentPlan",
+      "text": "A review evaluates a proposed alternative-supply plan without claiming its execution."
+    },
+    {
+      "id": "R4",
+      "family": "assessment",
+      "target": "ManufacturingActivity",
+      "text": "An assessment names the manufacturing occurrence being reviewed; its report is a separate output."
+    }
+  ],
+  "interpretation": "ICH supports considering diverse quality-risk contexts; it does not prescribe these classes, OWL ranges or fictional facts. Target lists are deliberately non-exhaustive."
+}

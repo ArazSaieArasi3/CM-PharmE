@@ -1,0 +1,1872 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:dcterms="http://purl.org/dc/terms/"
+   xmlns:ns1="https://w3id.org/cm-pharme/2.1/meta/"
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+>
+  <rdf:Description rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb12">
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb13"/>
+    <owl:onClass rdf:resource="https://w3id.org/cm-pharme/2.1/MarketListing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/disruptionAffects">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/cm-pharme/2.1/DisruptionEvent"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/AvailabilityObservationResult">
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm-pharme/2.1/ObservationResult"/>
+    <rdfs:label xml:lang="en">Availability Observation Result</rdfs:label>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <ns1:conceptualModule>core</ns1:conceptualModule>
+    <ns1:ontoumlStereotype>Subkind</ns1:ontoumlStereotype>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/IdentifiedFacilityRole">
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm-pharme/2.1/Facility"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm-pharme/2.1/IdentifiedEntity"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <ns1:ontoumlStereotype>Role</ns1:ontoumlStereotype>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/withinCountry">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm-pharme/2.1/Country"/>
+    <rdfs:domain rdf:resource="https://w3id.org/cm-pharme/2.1/GeographicFeature"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/EssentialMedicineClassification">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <ns1:ontoumlStereotype>Subkind</ns1:ontoumlStereotype>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm-pharme/2.1/ContextualMedicineClassificationAssignment"/>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+    <skos:altLabel xml:lang="en">Essential Medicine Classification</skos:altLabel>
+    <rdfs:label xml:lang="en">Essential Medicine Classification Assignment</rdfs:label>
+    <ns1:conceptualModule>extension</ns1:conceptualModule>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/EvidenceSupport">
+    <rdfs:label xml:lang="en">Evidence Support</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb52"/>
+    <rdfs:subClassOf rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb53"/>
+    <rdfs:subClassOf rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb54"/>
+    <rdfs:subClassOf rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb51"/>
+    <ns1:ontoumlStereotype>Relator</ns1:ontoumlStereotype>
+    <ns1:conceptualModule>x-infra</ns1:conceptualModule>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/IdentifiedMedicinalProductPresentationRole">
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm-pharme/2.1/MedicinalProductPresentation"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm-pharme/2.1/IdentifiedEntity"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <ns1:ontoumlStereotype>Role</ns1:ontoumlStereotype>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb16">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onClass rdf:resource="https://w3id.org/cm-pharme/2.1/FacilityOperation"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+    <owl:onProperty rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb17"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/ProductClassificationAssignment">
+    <rdfs:subClassOf rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb67"/>
+    <rdfs:subClassOf rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb68"/>
+    <rdfs:subClassOf rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb65"/>
+    <rdfs:subClassOf rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb66"/>
+    <ns1:conceptualModule>core</ns1:conceptualModule>
+    <ns1:ontoumlStereotype>Relator</ns1:ontoumlStereotype>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+    <rdfs:label xml:lang="en">Product Classification Assignment</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/RegisteredParty">
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+    <ns1:ontoumlStereotype>RoleMixin</ns1:ontoumlStereotype>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb69"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb20">
+    <owl:onClass rdf:resource="https://w3id.org/cm-pharme/2.1/AlternativeMedicineAssignment"/>
+    <owl:onProperty rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb21"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/AlternativeMedicineAssignment">
+    <skos:altLabel xml:lang="en">Alternative Medicine Assignment</skos:altLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Alternative Medicinal Product Assignment</rdfs:label>
+    <rdfs:subClassOf rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb30"/>
+    <rdfs:subClassOf rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb28"/>
+    <rdfs:subClassOf rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb31"/>
+    <rdfs:subClassOf rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb29"/>
+    <ns1:conceptualModule>extension</ns1:conceptualModule>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+    <ns1:ontoumlStereotype>Relator</ns1:ontoumlStereotype>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/PharmacovigilanceRequirement">
+    <ns1:conceptualModule>extension</ns1:conceptualModule>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+    <rdfs:label xml:lang="en">Pharmacovigilance Requirement</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <ns1:ontoumlStereotype>Kind</ns1:ontoumlStereotype>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/DistributionSiteRole">
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm-pharme/2.1/EcosystemParticipant"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm-pharme/2.1/Facility"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <ns1:conceptualModule>core</ns1:conceptualModule>
+    <skos:altLabel xml:lang="en">Distribution Site Role</skos:altLabel>
+    <ns1:ontoumlStereotype>Role</ns1:ontoumlStereotype>
+    <rdfs:label xml:lang="en">Distribution Site</rdfs:label>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb55">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onClass rdf:resource="https://w3id.org/cm-pharme/2.1/RegulatoryOversight"/>
+    <owl:onProperty rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb56"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/PayerFundingOrganizationRole">
+    <skos:altLabel xml:lang="en">Payer Organization</skos:altLabel>
+    <skos:altLabel xml:lang="en">Payer / Funding Organization Role</skos:altLabel>
+    <skos:altLabel xml:lang="en">Funding Organization</skos:altLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm-pharme/2.1/Organization"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm-pharme/2.1/EcosystemParticipant"/>
+    <ns1:ontoumlStereotype>Role</ns1:ontoumlStereotype>
+    <ns1:conceptualModule>extension</ns1:conceptualModule>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+    <rdfs:label xml:lang="en">Healthcare Financing Organization</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/ThirdPartyLogisticsProviderRole">
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+    <ns1:ontoumlStereotype>Role</ns1:ontoumlStereotype>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm-pharme/2.1/EcosystemParticipant"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm-pharme/2.1/Organization"/>
+    <ns1:conceptualModule>core</ns1:conceptualModule>
+    <skos:altLabel xml:lang="en">Third-Party Logistics Provider Role</skos:altLabel>
+    <rdfs:label xml:lang="en">Third-Party Logistics Provider</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/DatasetRelease">
+    <ns1:conceptualModule>x-infra</ns1:conceptualModule>
+    <rdfs:label xml:lang="en">Dataset Release</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <ns1:ontoumlStereotype>Kind</ns1:ontoumlStereotype>
+    <skos:closeMatch rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/MedicinalProduct">
+    <rdfs:label xml:lang="en">Medicinal Product</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <ns1:ontoumlStereotype>Kind</ns1:ontoumlStereotype>
+    <ns1:conceptualModule>core</ns1:conceptualModule>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/MedicineShortageSituation">
+    <rdfs:label xml:lang="en">Medicine Shortage Situation</rdfs:label>
+    <ns1:ontoumlStereotype>Situation</ns1:ontoumlStereotype>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:disjointWith rdf:resource="https://w3id.org/cm-pharme/2.1/SourceRecord"/>
+    <ns1:conceptualModule>core</ns1:conceptualModule>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/entryInScheme">
+    <rdfs:domain rdf:resource="https://w3id.org/cm-pharme/2.1/ClassificationEntry"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm-pharme/2.1/ProductClassificationScheme"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/AuthorizedFacilityRole">
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm-pharme/2.1/AuthorizedParty"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm-pharme/2.1/Facility"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+    <ns1:ontoumlStereotype>Role</ns1:ontoumlStereotype>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb89">
+    <rdf:rest rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb90"/>
+    <rdf:first rdf:resource="https://w3id.org/cm-pharme/2.1/MedicinalProduct"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/measureNumericValue">
+    <rdfs:domain rdf:resource="https://w3id.org/cm-pharme/2.1/ObservationResult"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/EntityMatchAssertion">
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+    <rdfs:label xml:lang="en">Entity Match Assertion</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm-pharme/2.1/Assertion"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <ns1:conceptualModule>x-infra</ns1:conceptualModule>
+    <ns1:ontoumlStereotype>Subkind</ns1:ontoumlStereotype>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/EcosystemParticipant">
+    <rdfs:label xml:lang="en">Ecosystem Participant</rdfs:label>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+    <ns1:conceptualModule>core</ns1:conceptualModule>
+    <ns1:ontoumlStereotype>RoleMixin</ns1:ontoumlStereotype>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/AuthorizedParty">
+    <rdfs:subClassOf rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb41"/>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <ns1:ontoumlStereotype>RoleMixin</ns1:ontoumlStereotype>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb26">
+    <owl:onClass rdf:resource="https://w3id.org/cm-pharme/2.1/IdentifierAssignment"/>
+    <owl:onProperty rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb27"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/ObservationActivity">
+    <ns1:conceptualModule>x-infra</ns1:conceptualModule>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:disjointWith rdf:resource="https://w3id.org/cm-pharme/2.1/ObservationResult"/>
+    <ns1:ontoumlStereotype>Event</ns1:ontoumlStereotype>
+    <rdfs:label xml:lang="en">Observation Activity</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/SupplyDependency">
+    <rdfs:subClassOf rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb82"/>
+    <rdfs:subClassOf rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb80"/>
+    <rdfs:subClassOf rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb81"/>
+    <rdfs:subClassOf rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb79"/>
+    <ns1:conceptualModule>extension</ns1:conceptualModule>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+    <ns1:ontoumlStereotype>Relator</ns1:ontoumlStereotype>
+    <rdfs:label xml:lang="en">Supply Dependency</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/DependentMedicinalProductRole">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <ns1:ontoumlStereotype>Role</ns1:ontoumlStereotype>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm-pharme/2.1/DependentEntity"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm-pharme/2.1/MedicinalProduct"/>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/contextClassificationProduct">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/cm-pharme/2.1/classificationEntity"/>
+    <rdfs:domain rdf:resource="https://w3id.org/cm-pharme/2.1/ContextualMedicineClassificationAssignment"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm-pharme/2.1/ClassifiedMedicinalProductRole"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/listingJurisdiction">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm-pharme/2.1/RegulatoryJurisdiction"/>
+    <rdfs:domain rdf:resource="https://w3id.org/cm-pharme/2.1/MarketListing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/hasMatchConfidence">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm-pharme/2.1/MatchConfidence"/>
+    <rdfs:domain rdf:resource="https://w3id.org/cm-pharme/2.1/EntityMatchAssertion"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/IdentifierScheme">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <ns1:ontoumlStereotype>Kind</ns1:ontoumlStereotype>
+    <rdfs:comment xml:lang="en">May represent NDC, ATC, ChEMBL, GeoNames, regulatory or dataset-specific identifier schemes. No scheme is assumed globally identifying outside its documented scope.</rdfs:comment>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+    <rdfs:label xml:lang="en">Identifier Scheme</rdfs:label>
+    <ns1:conceptualModule>x-infra</ns1:conceptualModule>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb75">
+    <owl:onClass rdf:resource="https://w3id.org/cm-pharme/2.1/SupplyDependency"/>
+    <owl:onProperty rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb76"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/IdentifiedMedicinalProductRole">
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm-pharme/2.1/IdentifiedEntity"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm-pharme/2.1/MedicinalProduct"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <ns1:ontoumlStereotype>Role</ns1:ontoumlStereotype>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/ProductClassificationScheme">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+    <ns1:ontoumlStereotype>Kind</ns1:ontoumlStereotype>
+    <rdfs:label xml:lang="en">Product Classification Scheme</rdfs:label>
+    <ns1:conceptualModule>core</ns1:conceptualModule>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/GovernedEntity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+    <ns1:ontoumlStereotype>RoleMixin</ns1:ontoumlStereotype>
+    <rdfs:subClassOf rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb55"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/riskAssessmentConcernsDependency">
+    <rdfs:domain rdf:resource="https://w3id.org/cm-pharme/2.1/RiskAssessmentActivity"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm-pharme/2.1/SupplyDependency"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="en">Assessment topic only; no vulnerability or quantitative risk conclusion is entailed.</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/cm-pharme/2.1/riskAssessmentConcerns"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/DependentOrganizationRole">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm-pharme/2.1/Organization"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm-pharme/2.1/DependentEntity"/>
+    <ns1:ontoumlStereotype>Role</ns1:ontoumlStereotype>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb40">
+    <owl:onClass rdf:resource="https://w3id.org/cm-pharme/2.1/GovernedEntity"/>
+    <owl:onProperty rdf:resource="https://w3id.org/cm-pharme/2.1/oversightGovernedEntity"/>
+    <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/Organization">
+    <ns1:ontoumlStereotype>Kind</ns1:ontoumlStereotype>
+    <rdfs:label xml:lang="en">Organization</rdfs:label>
+    <ns1:conceptualModule>core</ns1:conceptualModule>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/AdministrativeRegion">
+    <rdfs:label xml:lang="en">Administrative Region</rdfs:label>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+    <ns1:conceptualModule>x-infra</ns1:conceptualModule>
+    <ns1:ontoumlStereotype>Subkind</ns1:ontoumlStereotype>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm-pharme/2.1/GeographicFeature"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/ServiceOfferingSpecification">
+    <ns1:ontoumlStereotype>Kind</ns1:ontoumlStereotype>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <ns1:conceptualModule>extension</ns1:conceptualModule>
+    <rdfs:label xml:lang="en">Service Offering Specification</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/DemandObservationResult">
+    <ns1:ontoumlStereotype>Subkind</ns1:ontoumlStereotype>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm-pharme/2.1/ObservationResult"/>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+    <rdfs:label xml:lang="en">Demand Observation Result</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <ns1:conceptualModule>core</ns1:conceptualModule>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb43">
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+    <owl:onClass rdf:resource="https://w3id.org/cm-pharme/2.1/ProductClassificationAssignment"/>
+    <owl:onProperty rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb44"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/ProviderMedicinalProductRole">
+    <ns1:ontoumlStereotype>Role</ns1:ontoumlStereotype>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm-pharme/2.1/MedicinalProduct"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm-pharme/2.1/ProviderEntity"/>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/hasDosageForm">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm-pharme/2.1/DosageFormSpecification"/>
+    <rdfs:domain rdf:resource="https://w3id.org/cm-pharme/2.1/MedicinalProductPresentation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/operates">
+    <ns1:materialRelation rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ns1:materialRelation>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/cm-pharme/2.1/Organization"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm-pharme/2.1/Facility"/>
+    <ns1:derivedFromRelator>FacilityOperation</ns1:derivedFromRelator>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/GeographicFeature">
+    <rdfs:seeAlso rdf:resource="https://www.geonames.org/ontology#Feature"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <ns1:ontoumlStereotype>Kind</ns1:ontoumlStereotype>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+    <rdfs:label xml:lang="en">Geographic Feature</rdfs:label>
+    <owl:disjointWith rdf:resource="https://w3id.org/cm-pharme/2.1/RegulatoryJurisdiction"/>
+    <ns1:conceptualModule>x-infra</ns1:conceptualModule>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/AppliedClassificationEntryRole">
+    <rdfs:subClassOf rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb32"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm-pharme/2.1/ClassificationEntry"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+    <ns1:ontoumlStereotype>Role</ns1:ontoumlStereotype>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/LeadTimeObservationResult">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <ns1:ontoumlStereotype>Subkind</ns1:ontoumlStereotype>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+    <skos:altLabel xml:lang="en">Lead-Time Observation Result</skos:altLabel>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm-pharme/2.1/ObservationResult"/>
+    <rdfs:label xml:lang="en">Lead Time Observation Result</rdfs:label>
+    <ns1:conceptualModule>extension</ns1:conceptualModule>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/RegulatoryAuthorityRole">
+    <rdfs:label xml:lang="en">Regulatory Authority</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm-pharme/2.1/EcosystemParticipant"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm-pharme/2.1/Organization"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <ns1:ontoumlStereotype>Role</ns1:ontoumlStereotype>
+    <ns1:conceptualModule>core</ns1:conceptualModule>
+    <skos:altLabel xml:lang="en">Regulatory Authority Role</skos:altLabel>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/presentationOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm-pharme/2.1/MedicinalProduct"/>
+    <rdfs:domain rdf:resource="https://w3id.org/cm-pharme/2.1/MedicinalProductPresentation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/OversightAuthorityRole">
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm-pharme/2.1/RegulatoryAuthorityRole"/>
+    <rdfs:subClassOf rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb18"/>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <ns1:ontoumlStereotype>Role</ns1:ontoumlStereotype>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/oversightAuthorityRole">
+    <owl:propertyDisjointWith rdf:resource="https://w3id.org/cm-pharme/2.1/oversightGovernedEntity"/>
+    <rdfs:domain rdf:resource="https://w3id.org/cm-pharme/2.1/RegulatoryOversight"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm-pharme/2.1/OversightAuthorityRole"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb60">
+    <owl:onClass rdf:resource="https://w3id.org/cm-pharme/2.1/UsedIdentifierSchemeRole"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://w3id.org/cm-pharme/2.1/identifierScheme"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/AlternativeMedicinalProductRole">
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm-pharme/2.1/MedicinalProduct"/>
+    <rdfs:subClassOf rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb8"/>
+    <rdfs:label xml:lang="en">Alternative Medicinal Product</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <skos:altLabel xml:lang="en">Alternative Medicinal Product Role</skos:altLabel>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+    <ns1:conceptualModule>extension</ns1:conceptualModule>
+    <ns1:ontoumlStereotype>Role</ns1:ontoumlStereotype>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/EnterpriseCapability">
+    <ns1:conceptualModule>extension</ns1:conceptualModule>
+    <ns1:ontoumlStereotype>Mode</ns1:ontoumlStereotype>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb1"/>
+    <rdfs:label xml:lang="en">Enterprise Capability</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb39">
+    <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+    <owl:onClass rdf:resource="https://w3id.org/cm-pharme/2.1/OversightAuthorityRole"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://w3id.org/cm-pharme/2.1/oversightAuthorityRole"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/PackageConfiguration">
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Package Configuration</rdfs:label>
+    <ns1:ontoumlStereotype>Kind</ns1:ontoumlStereotype>
+    <ns1:conceptualModule>core</ns1:conceptualModule>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/ontology">
+    <ns1:persistentNamespaceStatus>w3id target namespace selected; redirect registration pending</ns1:persistentNamespaceStatus>
+    <ns1:formalizationStatus>G3-1 role diagnosis and conservative hierarchy repair; nine complete role definitions still require design decisions</ns1:formalizationStatus>
+    <dcterms:description xml:lang="en">Non-release review snapshot derived from the frozen CM-PharmE 2.0 baseline; semantics remain provisional.</dcterms:description>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <owl:versionIRI rdf:resource="https://w3id.org/cm-pharme/2.1/2.1.0-alpha.1-g3a-review"/>
+    <dcterms:creator>Araz Saie Arasi</dcterms:creator>
+    <dcterms:title xml:lang="en">CM-PharmE 2.1 Design Candidate</dcterms:title>
+    <dcterms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-10-04</dcterms:issued>
+    <owl:versionInfo>2.1.0-alpha.1-g3a-review</owl:versionInfo>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/InventoryObservationResult">
+    <ns1:ontoumlStereotype>Subkind</ns1:ontoumlStereotype>
+    <rdfs:label xml:lang="en">Inventory Observation Result</rdfs:label>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm-pharme/2.1/ObservationResult"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <ns1:conceptualModule>extension</ns1:conceptualModule>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/contextClassificationJurisdiction">
+    <rdfs:domain rdf:resource="https://w3id.org/cm-pharme/2.1/ContextualMedicineClassificationAssignment"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm-pharme/2.1/RegulatoryJurisdiction"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/DiagnosisClassificationReference">
+    <rdfs:label xml:lang="en">Diagnosis Classification Reference</rdfs:label>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <ns1:conceptualModule>extension</ns1:conceptualModule>
+    <ns1:ontoumlStereotype>Kind</ns1:ontoumlStereotype>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/PartnerOrganizationRole">
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm-pharme/2.1/Organization"/>
+    <rdfs:subClassOf rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb4"/>
+    <ns1:ontoumlStereotype>Role</ns1:ontoumlStereotype>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb29">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://w3id.org/cm-pharme/2.1/alternativeProduct"/>
+    <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+    <owl:onClass rdf:resource="https://w3id.org/cm-pharme/2.1/AlternativeMedicinalProductRole"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/disruptionAffectsDependency">
+    <rdfs:comment xml:lang="en">Source-supported impact link only; does not entail causation of shortage.</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/cm-pharme/2.1/disruptionAffects"/>
+    <rdfs:domain rdf:resource="https://w3id.org/cm-pharme/2.1/DisruptionEvent"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm-pharme/2.1/SupplyDependency"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/generatedAssertion">
+    <rdfs:range rdf:resource="https://w3id.org/cm-pharme/2.1/Assertion"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/cm-pharme/2.1/ProvenanceActivity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/AuthorizedOrganizationRole">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm-pharme/2.1/Organization"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm-pharme/2.1/AuthorizedParty"/>
+    <ns1:ontoumlStereotype>Role</ns1:ontoumlStereotype>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb38">
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+    <owl:onClass rdf:resource="https://w3id.org/cm-pharme/2.1/OversightAuthorityRole"/>
+    <owl:onProperty rdf:resource="https://w3id.org/cm-pharme/2.1/oversightAuthorityRole"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/IdentifiedEntity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb83"/>
+    <ns1:ontoumlStereotype>RoleMixin</ns1:ontoumlStereotype>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/RegulatoryAuthorization">
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Regulatory Authorization</rdfs:label>
+    <rdfs:subClassOf rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb73"/>
+    <rdfs:subClassOf rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb71"/>
+    <rdfs:subClassOf rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb74"/>
+    <rdfs:subClassOf rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb72"/>
+    <ns1:conceptualModule>core</ns1:conceptualModule>
+    <ns1:ontoumlStereotype>Relator</ns1:ontoumlStereotype>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/alternativeForProduct">
+    <rdfs:domain rdf:resource="https://w3id.org/cm-pharme/2.1/AlternativeMedicineAssignment"/>
+    <owl:propertyDisjointWith rdf:resource="https://w3id.org/cm-pharme/2.1/alternativeProduct"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm-pharme/2.1/ReferenceProductRole"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb48">
+    <owl:onClass rdf:resource="https://w3id.org/cm-pharme/2.1/RegisteredParty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+    <owl:onProperty rdf:resource="https://w3id.org/cm-pharme/2.1/registrationEntity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/UsedIdentifierSchemeRole">
+    <ns1:ontoumlStereotype>Role</ns1:ontoumlStereotype>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm-pharme/2.1/IdentifierScheme"/>
+    <rdfs:subClassOf rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb26"/>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/ReferenceProductRole">
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm-pharme/2.1/MedicinalProduct"/>
+    <rdfs:subClassOf rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb20"/>
+    <ns1:ontoumlStereotype>Role</ns1:ontoumlStereotype>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/ImporterRole">
+    <ns1:ontoumlStereotype>Role</ns1:ontoumlStereotype>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm-pharme/2.1/EcosystemParticipant"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm-pharme/2.1/Organization"/>
+    <ns1:conceptualModule>core</ns1:conceptualModule>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Importer</rdfs:label>
+    <skos:altLabel xml:lang="en">Importer Role</skos:altLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/ProductResponsibleLabelerRole">
+    <rdfs:label xml:lang="en">Product Responsible Organization</rdfs:label>
+    <skos:altLabel xml:lang="en">Labeler</skos:altLabel>
+    <skos:altLabel xml:lang="en">Product-Responsible / Labeler Role</skos:altLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm-pharme/2.1/Organization"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm-pharme/2.1/EcosystemParticipant"/>
+    <ns1:ontoumlStereotype>Role</ns1:ontoumlStereotype>
+    <ns1:conceptualModule>core</ns1:conceptualModule>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/ProvenanceActivity">
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+    <skos:closeMatch rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+    <ns1:conceptualModule>x-infra</ns1:conceptualModule>
+    <rdfs:label xml:lang="en">Provenance Activity</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <ns1:ontoumlStereotype>Event</ns1:ontoumlStereotype>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb81">
+    <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://w3id.org/cm-pharme/2.1/dependencyProvider"/>
+    <owl:onClass rdf:resource="https://w3id.org/cm-pharme/2.1/ProviderEntity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/OperatedFacilityRole">
+    <rdfs:subClassOf rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb16"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm-pharme/2.1/Facility"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+    <ns1:ontoumlStereotype>Role</ns1:ontoumlStereotype>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb66">
+    <owl:onProperty rdf:resource="https://w3id.org/cm-pharme/2.1/classificationEntry"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onClass rdf:resource="https://w3id.org/cm-pharme/2.1/AppliedClassificationEntryRole"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/EstablishmentRegistration">
+    <rdfs:subClassOf rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb48"/>
+    <rdfs:subClassOf rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb46"/>
+    <rdfs:subClassOf rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb45"/>
+    <rdfs:subClassOf rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb47"/>
+    <rdfs:label xml:lang="en">Establishment Registration</rdfs:label>
+    <ns1:ontoumlStereotype>Relator</ns1:ontoumlStereotype>
+    <ns1:conceptualModule>core</ns1:conceptualModule>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/DistributionLogisticsActivity">
+    <ns1:conceptualModule>core</ns1:conceptualModule>
+    <ns1:ontoumlStereotype>Event</ns1:ontoumlStereotype>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+    <skos:altLabel xml:lang="en">Distribution / Logistics Activity</skos:altLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Pharmaceutical Logistics Activity</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/matchSubject">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/cm-pharme/2.1/EntityMatchAssertion"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/locatedIn">
+    <rdfs:range rdf:resource="https://w3id.org/cm-pharme/2.1/GeographicFeature"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb41">
+    <owl:onProperty rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb42"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onClass rdf:resource="https://w3id.org/cm-pharme/2.1/RegulatoryAuthorization"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/containsSourceRecord">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm-pharme/2.1/SourceRecord"/>
+    <rdfs:domain rdf:resource="https://w3id.org/cm-pharme/2.1/DatasetRelease"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb84">
+    <owl:inverseOf rdf:resource="https://w3id.org/cm-pharme/2.1/identifierEntity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/listingResponsibleOrganization">
+    <rdfs:domain rdf:resource="https://w3id.org/cm-pharme/2.1/MarketListing"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm-pharme/2.1/ListingResponsibleOrganizationRole"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/IdentifierAssignment">
+    <rdfs:subClassOf rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb60"/>
+    <rdfs:subClassOf rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb57"/>
+    <rdfs:subClassOf rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb58"/>
+    <rdfs:subClassOf rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb59"/>
+    <ns1:ontoumlStereotype>Relator</ns1:ontoumlStereotype>
+    <ns1:conceptualModule>x-infra</ns1:conceptualModule>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+    <rdfs:label xml:lang="en">Identifier Assignment</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/MarketListing">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Market Listing</rdfs:label>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+    <rdfs:subClassOf rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb64"/>
+    <rdfs:subClassOf rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb61"/>
+    <rdfs:subClassOf rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb63"/>
+    <rdfs:subClassOf rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb62"/>
+    <ns1:conceptualModule>core</ns1:conceptualModule>
+    <ns1:ontoumlStereotype>Relator</ns1:ontoumlStereotype>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/PostMarketSurveillanceActivity">
+    <rdfs:label xml:lang="en">Post-Market Surveillance Activity</rdfs:label>
+    <ns1:ontoumlStereotype>Event</ns1:ontoumlStereotype>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <ns1:conceptualModule>extension</ns1:conceptualModule>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb30">
+    <owl:onClass rdf:resource="https://w3id.org/cm-pharme/2.1/ReferenceProductRole"/>
+    <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://w3id.org/cm-pharme/2.1/alternativeForProduct"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/reimbursementDiagnosisContext">
+    <rdfs:domain rdf:resource="https://w3id.org/cm-pharme/2.1/ReimbursementUtilisationObservationResult"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm-pharme/2.1/DiagnosisClassificationReference"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="en">Diagnosis classification context of an aggregate observation; never a patient diagnosis assertion.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/EvidenceSourceRecordRole">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <ns1:ontoumlStereotype>Role</ns1:ontoumlStereotype>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm-pharme/2.1/SourceRecord"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm-pharme/2.1/EvidenceItem"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/SourceRecord">
+    <ns1:ontoumlStereotype>Kind</ns1:ontoumlStereotype>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+    <ns1:conceptualModule>x-infra</ns1:conceptualModule>
+    <skos:closeMatch rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+    <rdfs:label xml:lang="en">Source Record</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb68">
+    <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onClass rdf:resource="https://w3id.org/cm-pharme/2.1/AppliedClassificationEntryRole"/>
+    <owl:onProperty rdf:resource="https://w3id.org/cm-pharme/2.1/classificationEntry"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/PharmaceuticalSubstance">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <ns1:ontoumlStereotype>Kind</ns1:ontoumlStereotype>
+    <rdfs:label xml:lang="en">Pharmaceutical Substance</rdfs:label>
+    <ns1:conceptualModule>core</ns1:conceptualModule>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/evidenceRecord">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/cm-pharme/2.1/EvidenceSupport"/>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/cm-pharme/2.1/evidenceItem"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm-pharme/2.1/EvidenceSourceRecordRole"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/hasActiveSubstance">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm-pharme/2.1/PharmaceuticalSubstance"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/authorizationJurisdiction">
+    <rdfs:range rdf:resource="https://w3id.org/cm-pharme/2.1/RegulatoryJurisdiction"/>
+    <rdfs:domain rdf:resource="https://w3id.org/cm-pharme/2.1/RegulatoryAuthorization"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/ManufacturingSiteRole">
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm-pharme/2.1/Facility"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm-pharme/2.1/EcosystemParticipant"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <ns1:ontoumlStereotype>Role</ns1:ontoumlStereotype>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+    <rdfs:label xml:lang="en">Manufacturing Site</rdfs:label>
+    <ns1:conceptualModule>core</ns1:conceptualModule>
+    <skos:altLabel xml:lang="en">Manufacturing Site Role</skos:altLabel>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb58">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onClass rdf:resource="https://w3id.org/cm-pharme/2.1/UsedIdentifierSchemeRole"/>
+    <owl:onProperty rdf:resource="https://w3id.org/cm-pharme/2.1/identifierScheme"/>
+    <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb72">
+    <owl:onClass rdf:resource="https://w3id.org/cm-pharme/2.1/AuthorizedParty"/>
+    <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://w3id.org/cm-pharme/2.1/authorizationParty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb24">
+    <owl:onClass rdf:resource="https://w3id.org/cm-pharme/2.1/EvidenceSupport"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+    <owl:onProperty rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb25"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/RiskAssessmentActivity">
+    <ns1:conceptualModule>extension</ns1:conceptualModule>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Risk Assessment Activity</rdfs:label>
+    <ns1:ontoumlStereotype>Event</ns1:ontoumlStereotype>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb71">
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+    <owl:onClass rdf:resource="https://w3id.org/cm-pharme/2.1/AuthorizingAuthorityRole"/>
+    <owl:onProperty rdf:resource="https://w3id.org/cm-pharme/2.1/authorizationAuthority"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/capacityBearer">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/cm-pharme/2.1/SupplyCapacity"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb34">
+    <owl:onProperty rdf:resource="https://w3id.org/cm-pharme/2.1/operationFacility"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+    <owl:onClass rdf:resource="https://w3id.org/cm-pharme/2.1/OperatedFacilityRole"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb49">
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+    <owl:onProperty rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb50"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onClass rdf:resource="https://w3id.org/cm-pharme/2.1/EvidenceSupport"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/ClassificationEntry">
+    <ns1:conceptualModule>core</ns1:conceptualModule>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Classification Entry</rdfs:label>
+    <ns1:ontoumlStereotype>Kind</ns1:ontoumlStereotype>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/FacilityOperation">
+    <ns1:ontoumlStereotype>Relator</ns1:ontoumlStereotype>
+    <ns1:conceptualModule>core</ns1:conceptualModule>
+    <rdfs:subClassOf rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb35"/>
+    <rdfs:subClassOf rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb34"/>
+    <rdfs:subClassOf rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb36"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Facility Operation</rdfs:label>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb67">
+    <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+    <owl:onProperty rdf:resource="https://w3id.org/cm-pharme/2.1/classificationEntity"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onClass rdf:resource="https://w3id.org/cm-pharme/2.1/ClassifiedEntity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/StrategicPartnershipAgreement">
+    <ns1:conceptualModule>extension</ns1:conceptualModule>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+    <rdfs:subClassOf rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb6"/>
+    <rdfs:subClassOf rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb7"/>
+    <rdfs:label xml:lang="en">Strategic Partnership Agreement</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <ns1:ontoumlStereotype>Relator</ns1:ontoumlStereotype>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/RegulatoryOversight">
+    <rdfs:subClassOf rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb38"/>
+    <rdfs:subClassOf rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb40"/>
+    <rdfs:subClassOf rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb37"/>
+    <rdfs:subClassOf rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb39"/>
+    <ns1:ontoumlStereotype>Relator</ns1:ontoumlStereotype>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+    <rdfs:label xml:lang="en">Regulatory Oversight</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <ns1:conceptualModule>extension</ns1:conceptualModule>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/g3-role-counterexample/listing-without-product-responsibility">
+    <rdf:type rdf:resource="https://w3id.org/cm-pharme/2.1/ListingResponsibleOrganizationRole"/>
+    <rdf:type rdf:nodeID="Naa12fba6d0254838981e3705de533f8b"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/GovernedFacilityRole">
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm-pharme/2.1/Facility"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm-pharme/2.1/GovernedEntity"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <ns1:ontoumlStereotype>Role</ns1:ontoumlStereotype>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/IdentifierValue">
+    <rdfs:label xml:lang="en">Identifier Value</rdfs:label>
+    <ns1:conceptualModule>x-infra</ns1:conceptualModule>
+    <ns1:ontoumlStereotype>Datatype</ns1:ontoumlStereotype>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb73">
+    <owl:onClass rdf:resource="https://w3id.org/cm-pharme/2.1/AuthorizingAuthorityRole"/>
+    <owl:onProperty rdf:resource="https://w3id.org/cm-pharme/2.1/authorizationAuthority"/>
+    <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/SupplyCapacity">
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+    <owl:disjointWith rdf:resource="https://w3id.org/cm-pharme/2.1/SupplyCapacityObservationResult"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Supply Capacity</rdfs:label>
+    <ns1:conceptualModule>core</ns1:conceptualModule>
+    <ns1:ontoumlStereotype>Mode</ns1:ontoumlStereotype>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/partnershipParticipant">
+    <rdfs:range rdf:resource="https://w3id.org/cm-pharme/2.1/PartnerOrganizationRole"/>
+    <rdfs:domain rdf:resource="https://w3id.org/cm-pharme/2.1/StrategicPartnershipAgreement"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/AdverseEventReportingActivity">
+    <ns1:ontoumlStereotype>Event</ns1:ontoumlStereotype>
+    <ns1:conceptualModule>extension</ns1:conceptualModule>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Adverse Event Reporting Activity</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/CriticalMedicineClassification">
+    <skos:altLabel xml:lang="en">Critical Medicine Classification</skos:altLabel>
+    <ns1:conceptualModule>extension</ns1:conceptualModule>
+    <ns1:ontoumlStereotype>Subkind</ns1:ontoumlStereotype>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm-pharme/2.1/ContextualMedicineClassificationAssignment"/>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Critical Medicine Classification Assignment</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb50">
+    <owl:inverseOf rdf:resource="https://w3id.org/cm-pharme/2.1/evidenceItem"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/evidenceItem">
+    <rdfs:domain rdf:resource="https://w3id.org/cm-pharme/2.1/EvidenceSupport"/>
+    <owl:propertyDisjointWith rdf:resource="https://w3id.org/cm-pharme/2.1/evidenceAssertion"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm-pharme/2.1/EvidenceItem"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/RiskTreatmentActivity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Risk Treatment Activity</rdfs:label>
+    <ns1:conceptualModule>extension</ns1:conceptualModule>
+    <ns1:ontoumlStereotype>Event</ns1:ontoumlStereotype>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/registrationJurisdiction">
+    <rdfs:domain rdf:resource="https://w3id.org/cm-pharme/2.1/EstablishmentRegistration"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm-pharme/2.1/RegulatoryJurisdiction"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/authorizationAuthority">
+    <owl:propertyDisjointWith rdf:resource="https://w3id.org/cm-pharme/2.1/authorizationParty"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm-pharme/2.1/AuthorizingAuthorityRole"/>
+    <rdfs:domain rdf:resource="https://w3id.org/cm-pharme/2.1/RegulatoryAuthorization"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb47">
+    <owl:onClass rdf:resource="https://w3id.org/cm-pharme/2.1/RegisteredParty"/>
+    <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+    <owl:onProperty rdf:resource="https://w3id.org/cm-pharme/2.1/registrationEntity"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/classificationEntry">
+    <rdfs:domain rdf:resource="https://w3id.org/cm-pharme/2.1/ProductClassificationAssignment"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm-pharme/2.1/AppliedClassificationEntryRole"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/Dataset">
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+    <ns1:conceptualModule>x-infra</ns1:conceptualModule>
+    <rdfs:label xml:lang="en">Dataset</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <ns1:ontoumlStereotype>Kind</ns1:ontoumlStereotype>
+    <skos:closeMatch rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/GovernedOrganizationRole">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm-pharme/2.1/Organization"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm-pharme/2.1/GovernedEntity"/>
+    <ns1:ontoumlStereotype>Role</ns1:ontoumlStereotype>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/Country">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <ns1:conceptualModule>x-infra</ns1:conceptualModule>
+    <ns1:ontoumlStereotype>Subkind</ns1:ontoumlStereotype>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm-pharme/2.1/GeographicFeature"/>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+    <rdfs:label xml:lang="en">Country</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/operationFacility">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/cm-pharme/2.1/FacilityOperation"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm-pharme/2.1/OperatedFacilityRole"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/SupportedAssertionRole">
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm-pharme/2.1/Assertion"/>
+    <rdfs:subClassOf rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb24"/>
+    <ns1:ontoumlStereotype>Role</ns1:ontoumlStereotype>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/Strength">
+    <ns1:conceptualModule>core</ns1:conceptualModule>
+    <rdfs:label xml:lang="en">Strength</rdfs:label>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+    <ns1:ontoumlStereotype>Quality</ns1:ontoumlStereotype>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/DataSourceResource">
+    <skos:altLabel xml:lang="en">Data Source Resource</skos:altLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Data Source</rdfs:label>
+    <ns1:ontoumlStereotype>Kind</ns1:ontoumlStereotype>
+    <ns1:conceptualModule>x-infra</ns1:conceptualModule>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/shortageProduct">
+    <rdfs:domain rdf:resource="https://w3id.org/cm-pharme/2.1/MedicineShortageSituation"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm-pharme/2.1/MedicinalProduct"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/issued">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/IdentifiedOrganizationRole">
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm-pharme/2.1/Organization"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm-pharme/2.1/IdentifiedEntity"/>
+    <ns1:ontoumlStereotype>Role</ns1:ontoumlStereotype>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/creator">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/ReimbursementUtilisationObservationResult">
+    <ns1:ontoumlStereotype>Subkind</ns1:ontoumlStereotype>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm-pharme/2.1/ObservationResult"/>
+    <skos:altLabel xml:lang="en">Reimbursement / Utilisation Observation Result</skos:altLabel>
+    <ns1:conceptualModule>extension</ns1:conceptualModule>
+    <rdfs:label xml:lang="en">Reimbursement and Utilization Observation Result</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/ManufacturingActivity">
+    <ns1:conceptualModule>core</ns1:conceptualModule>
+    <ns1:ontoumlStereotype>Event</ns1:ontoumlStereotype>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Manufacturing Activity</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb31">
+    <owl:onClass rdf:resource="https://w3id.org/cm-pharme/2.1/AlternativeMedicinalProductRole"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://w3id.org/cm-pharme/2.1/alternativeProduct"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/RegulatoryRequirement">
+    <rdfs:label xml:lang="en">Regulatory Requirement</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <ns1:ontoumlStereotype>Kind</ns1:ontoumlStereotype>
+    <ns1:conceptualModule>extension</ns1:conceptualModule>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/RiskTreatmentPlan">
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+    <rdfs:label xml:lang="en">Risk Treatment Plan</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <ns1:conceptualModule>extension</ns1:conceptualModule>
+    <ns1:ontoumlStereotype>Kind</ns1:ontoumlStereotype>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/capabilityBearer">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm-pharme/2.1/Organization"/>
+    <rdfs:domain rdf:resource="https://w3id.org/cm-pharme/2.1/EnterpriseCapability"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/DisruptionEvent">
+    <ns1:conceptualModule>extension</ns1:conceptualModule>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+    <ns1:ontoumlStereotype>Event</ns1:ontoumlStereotype>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Disruption Event</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb79">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+    <owl:onClass rdf:resource="https://w3id.org/cm-pharme/2.1/ProviderEntity"/>
+    <owl:onProperty rdf:resource="https://w3id.org/cm-pharme/2.1/dependencyProvider"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb2">
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+    <owl:onClass rdf:resource="https://w3id.org/cm-pharme/2.1/FacilityOperation"/>
+    <owl:onProperty rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb3"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/measureUnitLabel">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="https://w3id.org/cm-pharme/2.1/ObservationResult"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/ListingResponsibleOrganizationRole">
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+    <rdfs:subClassOf rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb14"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm-pharme/2.1/ProductResponsibleLabelerRole"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm-pharme/2.1/Organization"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <ns1:ontoumlStereotype>Role</ns1:ontoumlStereotype>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/meta/conceptualModule">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/authorizationParty">
+    <rdfs:domain rdf:resource="https://w3id.org/cm-pharme/2.1/RegulatoryAuthorization"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm-pharme/2.1/AuthorizedParty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb57">
+    <owl:onClass rdf:resource="https://w3id.org/cm-pharme/2.1/IdentifiedEntity"/>
+    <owl:onProperty rdf:resource="https://w3id.org/cm-pharme/2.1/identifierEntity"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/Address">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+    <rdfs:label xml:lang="en">Address</rdfs:label>
+    <ns1:conceptualModule>x-infra</ns1:conceptualModule>
+    <ns1:ontoumlStereotype>Datatype</ns1:ontoumlStereotype>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb65">
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+    <owl:onProperty rdf:resource="https://w3id.org/cm-pharme/2.1/classificationEntity"/>
+    <owl:onClass rdf:resource="https://w3id.org/cm-pharme/2.1/ClassifiedEntity"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb10">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+    <owl:onProperty rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb11"/>
+    <owl:onClass rdf:resource="https://w3id.org/cm-pharme/2.1/RegulatoryAuthorization"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/IdentifiedGeographicFeatureRole">
+    <ns1:ontoumlStereotype>Role</ns1:ontoumlStereotype>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm-pharme/2.1/GeographicFeature"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm-pharme/2.1/IdentifiedEntity"/>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb64">
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+    <owl:onProperty rdf:resource="https://w3id.org/cm-pharme/2.1/listingPresentation"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onClass rdf:resource="https://w3id.org/cm-pharme/2.1/ListedPresentationRole"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/SupplyCapacityObservationResult">
+    <rdfs:label xml:lang="en">Supply Capacity Observation Result</rdfs:label>
+    <ns1:conceptualModule>core</ns1:conceptualModule>
+    <ns1:ontoumlStereotype>Subkind</ns1:ontoumlStereotype>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm-pharme/2.1/ObservationResult"/>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/ClassifiedPharmaceuticalSubstanceRole">
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm-pharme/2.1/PharmaceuticalSubstance"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm-pharme/2.1/ClassifiedEntity"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+    <ns1:ontoumlStereotype>Role</ns1:ontoumlStereotype>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/ClassifiedMedicinalProductRole">
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm-pharme/2.1/MedicinalProduct"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm-pharme/2.1/ClassifiedEntity"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <ns1:ontoumlStereotype>Role</ns1:ontoumlStereotype>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb74">
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://w3id.org/cm-pharme/2.1/authorizationParty"/>
+    <owl:onClass rdf:resource="https://w3id.org/cm-pharme/2.1/AuthorizedParty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/BusinessArchitectureView">
+    <ns1:ontoumlStereotype>Kind</ns1:ontoumlStereotype>
+    <ns1:conceptualModule>extension</ns1:conceptualModule>
+    <rdfs:label xml:lang="en">Business Architecture View</rdfs:label>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/RegisteredFacilityRole">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <ns1:ontoumlStereotype>Role</ns1:ontoumlStereotype>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm-pharme/2.1/RegisteredParty"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm-pharme/2.1/Facility"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/matchObject">
+    <rdfs:domain rdf:resource="https://w3id.org/cm-pharme/2.1/EntityMatchAssertion"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/MatchConfidence">
+    <ns1:conceptualModule>x-infra</ns1:conceptualModule>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Match Confidence</rdfs:label>
+    <ns1:ontoumlStereotype>Quality</ns1:ontoumlStereotype>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/DigitalInformationSystemComponent">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <skos:altLabel xml:lang="en">Digital / Information System Component</skos:altLabel>
+    <ns1:ontoumlStereotype>Kind</ns1:ontoumlStereotype>
+    <rdfs:label xml:lang="en">Digital System Component</rdfs:label>
+    <ns1:conceptualModule>extension</ns1:conceptualModule>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb78">
+    <owl:inverseOf rdf:resource="https://w3id.org/cm-pharme/2.1/dependencyProvider"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/ObservationResult">
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+    <rdfs:label xml:lang="en">Observation Result</rdfs:label>
+    <ns1:conceptualModule>x-infra</ns1:conceptualModule>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <ns1:ontoumlStereotype>Kind</ns1:ontoumlStereotype>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/WholesaleDistributorRole">
+    <skos:altLabel xml:lang="en">Wholesale Distributor Role</skos:altLabel>
+    <rdfs:label xml:lang="en">Wholesale Distributor</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm-pharme/2.1/Organization"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm-pharme/2.1/EcosystemParticipant"/>
+    <ns1:ontoumlStereotype>Role</ns1:ontoumlStereotype>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+    <ns1:conceptualModule>core</ns1:conceptualModule>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/DataQualityFinding">
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm-pharme/2.1/Assertion"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+    <rdfs:label xml:lang="en">Data Quality Finding</rdfs:label>
+    <ns1:conceptualModule>x-infra</ns1:conceptualModule>
+    <ns1:ontoumlStereotype>Subkind</ns1:ontoumlStereotype>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb22">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb23"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+    <owl:onClass rdf:resource="https://w3id.org/cm-pharme/2.1/EstablishmentRegistration"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb86">
+    <rdf:rest rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb87"/>
+    <rdf:first rdf:resource="https://w3id.org/cm-pharme/2.1/Organization"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/EvidenceItem">
+    <rdfs:label xml:lang="en">Evidence Item</rdfs:label>
+    <ns1:conceptualModule>x-infra</ns1:conceptualModule>
+    <rdfs:subClassOf rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb49"/>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <ns1:ontoumlStereotype>RoleMixin</ns1:ontoumlStereotype>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/IdentifiedPharmaceuticalSubstanceRole">
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm-pharme/2.1/IdentifiedEntity"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm-pharme/2.1/PharmaceuticalSubstance"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <ns1:ontoumlStereotype>Role</ns1:ontoumlStereotype>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb91">
+    <rdf:first rdf:resource="https://w3id.org/cm-pharme/2.1/MedicinalProductPresentation"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/baViewRepresents">
+    <rdfs:domain rdf:resource="https://w3id.org/cm-pharme/2.1/BusinessArchitectureView"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/identifierScheme">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/cm-pharme/2.1/IdentifierAssignment"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm-pharme/2.1/UsedIdentifierSchemeRole"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/oversightGovernedEntity">
+    <rdfs:domain rdf:resource="https://w3id.org/cm-pharme/2.1/RegulatoryOversight"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm-pharme/2.1/GovernedEntity"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb37">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onClass rdf:resource="https://w3id.org/cm-pharme/2.1/GovernedEntity"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+    <owl:onProperty rdf:resource="https://w3id.org/cm-pharme/2.1/oversightGovernedEntity"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb77">
+    <owl:onProperty rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb78"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+    <owl:onClass rdf:resource="https://w3id.org/cm-pharme/2.1/SupplyDependency"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb61">
+    <owl:onClass rdf:resource="https://w3id.org/cm-pharme/2.1/ListingResponsibleOrganizationRole"/>
+    <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://w3id.org/cm-pharme/2.1/listingResponsibleOrganization"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/ManufacturerRole">
+    <rdfs:label xml:lang="en">Manufacturer</rdfs:label>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm-pharme/2.1/Organization"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm-pharme/2.1/EcosystemParticipant"/>
+    <ns1:ontoumlStereotype>Role</ns1:ontoumlStereotype>
+    <skos:altLabel xml:lang="en">Manufacturer Role</skos:altLabel>
+    <ns1:conceptualModule>core</ns1:conceptualModule>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/ProviderEntity">
+    <ns1:ontoumlStereotype>RoleMixin</ns1:ontoumlStereotype>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb77"/>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/ContextualMedicineClassificationAssignment">
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm-pharme/2.1/ProductClassificationAssignment"/>
+    <rdfs:label xml:lang="en">Contextual Medicine Classification Assignment</rdfs:label>
+    <ns1:conceptualModule>extension</ns1:conceptualModule>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <ns1:ontoumlStereotype>Subkind</ns1:ontoumlStereotype>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/shortagePresentation">
+    <rdfs:domain rdf:resource="https://w3id.org/cm-pharme/2.1/MedicineShortageSituation"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm-pharme/2.1/MedicinalProductPresentation"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb14">
+    <owl:onClass rdf:resource="https://w3id.org/cm-pharme/2.1/MarketListing"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb15"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb88">
+    <rdf:first rdf:resource="https://w3id.org/cm-pharme/2.1/RegulatoryJurisdiction"/>
+    <rdf:rest rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb89"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb8">
+    <owl:onProperty rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb9"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+    <owl:onClass rdf:resource="https://w3id.org/cm-pharme/2.1/AlternativeMedicineAssignment"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/contextClassificationEntry">
+    <rdfs:domain rdf:resource="https://w3id.org/cm-pharme/2.1/ContextualMedicineClassificationAssignment"/>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/cm-pharme/2.1/classificationEntry"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm-pharme/2.1/AppliedClassificationEntryRole"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb90">
+    <rdf:first rdf:resource="https://w3id.org/cm-pharme/2.1/PharmaceuticalSubstance"/>
+    <rdf:rest rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb91"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb51">
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+    <owl:onClass rdf:resource="https://w3id.org/cm-pharme/2.1/EvidenceItem"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://w3id.org/cm-pharme/2.1/evidenceItem"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/alternativeProduct">
+    <rdfs:range rdf:resource="https://w3id.org/cm-pharme/2.1/AlternativeMedicinalProductRole"/>
+    <rdfs:domain rdf:resource="https://w3id.org/cm-pharme/2.1/AlternativeMedicineAssignment"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb54">
+    <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+    <owl:onProperty rdf:resource="https://w3id.org/cm-pharme/2.1/evidenceItem"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onClass rdf:resource="https://w3id.org/cm-pharme/2.1/EvidenceItem"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb6">
+    <owl:onProperty rdf:resource="https://w3id.org/cm-pharme/2.1/partnershipParticipant"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:minQualifiedCardinality>
+    <owl:onClass rdf:resource="https://w3id.org/cm-pharme/2.1/PartnerOrganizationRole"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/OperatingOrganizationRole">
+    <rdfs:subClassOf rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb2"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm-pharme/2.1/Organization"/>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <ns1:ontoumlStereotype>Role</ns1:ontoumlStereotype>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/ReportingPeriod">
+    <ns1:conceptualModule>x-infra</ns1:conceptualModule>
+    <ns1:ontoumlStereotype>Datatype</ns1:ontoumlStereotype>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+    <rdfs:label xml:lang="en">Reporting Period</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/dependencyDependent">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/cm-pharme/2.1/SupplyDependency"/>
+    <owl:propertyDisjointWith rdf:resource="https://w3id.org/cm-pharme/2.1/dependencyProvider"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm-pharme/2.1/DependentEntity"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb70">
+    <owl:inverseOf rdf:resource="https://w3id.org/cm-pharme/2.1/registrationEntity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/maintainsDataset">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/cm-pharme/2.1/DataSourceResource"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm-pharme/2.1/Dataset"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/riskTreatmentAddresses">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/cm-pharme/2.1/RiskTreatmentActivity"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb52">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://w3id.org/cm-pharme/2.1/evidenceAssertion"/>
+    <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+    <owl:onClass rdf:resource="https://w3id.org/cm-pharme/2.1/SupportedAssertionRole"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb13">
+    <owl:inverseOf rdf:resource="https://w3id.org/cm-pharme/2.1/listingPresentation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/GeospatialPosition">
+    <ns1:ontoumlStereotype>Datatype</ns1:ontoumlStereotype>
+    <rdfs:label xml:lang="en">Geospatial Position</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+    <ns1:conceptualModule>x-infra</ns1:conceptualModule>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb83">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onClass rdf:resource="https://w3id.org/cm-pharme/2.1/IdentifierAssignment"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+    <owl:onProperty rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb84"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb69">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb70"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+    <owl:onClass rdf:resource="https://w3id.org/cm-pharme/2.1/EstablishmentRegistration"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb18">
+    <owl:onProperty rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb19"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onClass rdf:resource="https://w3id.org/cm-pharme/2.1/RegulatoryOversight"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/meta/formalizationStatus">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/listingPresentation">
+    <rdfs:domain rdf:resource="https://w3id.org/cm-pharme/2.1/MarketListing"/>
+    <owl:propertyDisjointWith rdf:resource="https://w3id.org/cm-pharme/2.1/listingResponsibleOrganization"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm-pharme/2.1/ListedPresentationRole"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/RegisteredOrganizationRole">
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm-pharme/2.1/RegisteredParty"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm-pharme/2.1/Organization"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <ns1:ontoumlStereotype>Role</ns1:ontoumlStereotype>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb28">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://w3id.org/cm-pharme/2.1/alternativeForProduct"/>
+    <owl:onClass rdf:resource="https://w3id.org/cm-pharme/2.1/ReferenceProductRole"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/operationOrganization">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:propertyDisjointWith rdf:resource="https://w3id.org/cm-pharme/2.1/operationFacility"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm-pharme/2.1/OperatingOrganizationRole"/>
+    <rdfs:domain rdf:resource="https://w3id.org/cm-pharme/2.1/FacilityOperation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/Facility">
+    <ns1:ontoumlStereotype>Kind</ns1:ontoumlStereotype>
+    <ns1:conceptualModule>core</ns1:conceptualModule>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+    <owl:disjointWith rdf:resource="https://w3id.org/cm-pharme/2.1/GeographicFeature"/>
+    <rdfs:label xml:lang="en">Facility</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb5">
+    <owl:inverseOf rdf:resource="https://w3id.org/cm-pharme/2.1/partnershipParticipant"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/ClassifiedEntity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+    <rdfs:subClassOf rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb43"/>
+    <ns1:ontoumlStereotype>RoleMixin</ns1:ontoumlStereotype>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/ProviderOrganizationRole">
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm-pharme/2.1/Organization"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm-pharme/2.1/ProviderEntity"/>
+    <ns1:ontoumlStereotype>Role</ns1:ontoumlStereotype>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb35">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://w3id.org/cm-pharme/2.1/operationFacility"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+    <owl:onClass rdf:resource="https://w3id.org/cm-pharme/2.1/OperatedFacilityRole"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/meta/sourceStatus">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb82">
+    <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onClass rdf:resource="https://w3id.org/cm-pharme/2.1/DependentEntity"/>
+    <owl:onProperty rdf:resource="https://w3id.org/cm-pharme/2.1/dependencyDependent"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/usedSourceArtifact">
+    <rdfs:domain rdf:resource="https://w3id.org/cm-pharme/2.1/ProvenanceActivity"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/observationAboutProduct">
+    <rdfs:range rdf:resource="https://w3id.org/cm-pharme/2.1/MedicinalProduct"/>
+    <rdfs:comment xml:lang="en">Information about a product; not an observation event or a product identity assertion.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/cm-pharme/2.1/ObservationResult"/>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/cm-pharme/2.1/observationResultAbout"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Naa12fba6d0254838981e3705de533f8b">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:complementOf rdf:resource="https://w3id.org/cm-pharme/2.1/ProductResponsibleLabelerRole"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb63">
+    <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://w3id.org/cm-pharme/2.1/listingPresentation"/>
+    <owl:onClass rdf:resource="https://w3id.org/cm-pharme/2.1/ListedPresentationRole"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/TimeInterval">
+    <ns1:conceptualModule>x-infra</ns1:conceptualModule>
+    <ns1:ontoumlStereotype>Datatype</ns1:ontoumlStereotype>
+    <rdfs:label xml:lang="en">Time Interval</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/ListedPresentationRole">
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm-pharme/2.1/MedicinalProductPresentation"/>
+    <rdfs:subClassOf rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb12"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <ns1:ontoumlStereotype>Role</ns1:ontoumlStereotype>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/shortageJurisdiction">
+    <rdfs:range rdf:resource="https://w3id.org/cm-pharme/2.1/RegulatoryJurisdiction"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/cm-pharme/2.1/MedicineShortageSituation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/MeasureValue">
+    <ns1:conceptualModule>x-infra</ns1:conceptualModule>
+    <ns1:ontoumlStereotype>Datatype</ns1:ontoumlStereotype>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+    <rdfs:label xml:lang="en">Measure Value</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/withinRegion">
+    <rdfs:domain rdf:resource="https://w3id.org/cm-pharme/2.1/GeographicFeature"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm-pharme/2.1/AdministrativeRegion"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/assertionAboutProduct">
+    <rdfs:range rdf:resource="https://w3id.org/cm-pharme/2.1/MedicinalProduct"/>
+    <rdfs:domain rdf:resource="https://w3id.org/cm-pharme/2.1/Assertion"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="en">Bounded product-target aboutness; the full polymorphic assertion target family remains for G3.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/RegulatoryJurisdiction">
+    <rdfs:label xml:lang="en">Regulatory Jurisdiction</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <ns1:ontoumlStereotype>Kind</ns1:ontoumlStereotype>
+    <ns1:conceptualModule>core</ns1:conceptualModule>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/Assertion">
+    <rdfs:label xml:lang="en">Assertion</rdfs:label>
+    <ns1:ontoumlStereotype>Kind</ns1:ontoumlStereotype>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <ns1:conceptualModule>x-infra</ns1:conceptualModule>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/DependentEntity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+    <rdfs:subClassOf rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb75"/>
+    <ns1:ontoumlStereotype>RoleMixin</ns1:ontoumlStereotype>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/DosageFormSpecification">
+    <ns1:ontoumlStereotype>Kind</ns1:ontoumlStereotype>
+    <ns1:conceptualModule>core</ns1:conceptualModule>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Dosage Form Specification</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/validFrom">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb46">
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+    <owl:onProperty rdf:resource="https://w3id.org/cm-pharme/2.1/registrationAuthority"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onClass rdf:resource="https://w3id.org/cm-pharme/2.1/RegisteringAuthorityRole"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/meta/materialRelation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/EvidenceObservationResultRole">
+    <ns1:ontoumlStereotype>Role</ns1:ontoumlStereotype>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm-pharme/2.1/EvidenceItem"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm-pharme/2.1/ObservationResult"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb15">
+    <owl:inverseOf rdf:resource="https://w3id.org/cm-pharme/2.1/listingResponsibleOrganization"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb1">
+    <owl:onClass rdf:resource="https://w3id.org/cm-pharme/2.1/Organization"/>
+    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+    <owl:onProperty rdf:resource="https://w3id.org/cm-pharme/2.1/capabilityBearer"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/riskAssessmentConcerns">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/cm-pharme/2.1/RiskAssessmentActivity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/MedicinalProductPresentation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <ns1:ontoumlStereotype>Kind</ns1:ontoumlStereotype>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+    <rdfs:label xml:lang="en">Medicinal Product Presentation</rdfs:label>
+    <ns1:conceptualModule>core</ns1:conceptualModule>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb4">
+    <owl:onClass rdf:resource="https://w3id.org/cm-pharme/2.1/StrategicPartnershipAgreement"/>
+    <owl:onProperty rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb5"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb17">
+    <owl:inverseOf rdf:resource="https://w3id.org/cm-pharme/2.1/operationFacility"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/StockoutSituation">
+    <ns1:ontoumlStereotype>Situation</ns1:ontoumlStereotype>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <ns1:conceptualModule>extension</ns1:conceptualModule>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+    <rdfs:label xml:lang="en">Stockout Situation</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb53">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://w3id.org/cm-pharme/2.1/evidenceAssertion"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+    <owl:onClass rdf:resource="https://w3id.org/cm-pharme/2.1/SupportedAssertionRole"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/validTo">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb45">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+    <owl:onClass rdf:resource="https://w3id.org/cm-pharme/2.1/RegisteringAuthorityRole"/>
+    <owl:onProperty rdf:resource="https://w3id.org/cm-pharme/2.1/registrationAuthority"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb62">
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+    <owl:onProperty rdf:resource="https://w3id.org/cm-pharme/2.1/listingResponsibleOrganization"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onClass rdf:resource="https://w3id.org/cm-pharme/2.1/ListingResponsibleOrganizationRole"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/registrationAuthority">
+    <rdfs:range rdf:resource="https://w3id.org/cm-pharme/2.1/RegisteringAuthorityRole"/>
+    <owl:propertyDisjointWith rdf:resource="https://w3id.org/cm-pharme/2.1/registrationEntity"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/cm-pharme/2.1/EstablishmentRegistration"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/MappingAssertion">
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+    <rdfs:label xml:lang="en">Mapping Assertion</rdfs:label>
+    <ns1:conceptualModule>x-infra</ns1:conceptualModule>
+    <ns1:ontoumlStereotype>Subkind</ns1:ontoumlStereotype>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm-pharme/2.1/Assertion"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/description">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/hasDatasetRelease">
+    <rdfs:domain rdf:resource="https://w3id.org/cm-pharme/2.1/Dataset"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm-pharme/2.1/DatasetRelease"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/ProviderFacilityRole">
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm-pharme/2.1/Facility"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm-pharme/2.1/ProviderEntity"/>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <ns1:ontoumlStereotype>Role</ns1:ontoumlStereotype>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/observationAboutPresentation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="en">Information about an identified presentation; no substitution for Product.</rdfs:comment>
+    <rdfs:range rdf:resource="https://w3id.org/cm-pharme/2.1/MedicinalProductPresentation"/>
+    <rdfs:domain rdf:resource="https://w3id.org/cm-pharme/2.1/ObservationResult"/>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/cm-pharme/2.1/observationResultAbout"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#altLabel">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/hasPackageConfiguration">
+    <rdfs:domain rdf:resource="https://w3id.org/cm-pharme/2.1/MedicinalProductPresentation"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm-pharme/2.1/PackageConfiguration"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb32">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onClass rdf:resource="https://w3id.org/cm-pharme/2.1/ProductClassificationAssignment"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+    <owl:onProperty rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb33"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/ProcurementActivity">
+    <ns1:conceptualModule>extension</ns1:conceptualModule>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+    <rdfs:label xml:lang="en">Procurement Activity</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <ns1:ontoumlStereotype>Event</ns1:ontoumlStereotype>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb44">
+    <owl:inverseOf rdf:resource="https://w3id.org/cm-pharme/2.1/classificationEntity"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb7">
+    <owl:onClass rdf:resource="https://w3id.org/cm-pharme/2.1/Organization"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:minQualifiedCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://w3id.org/cm-pharme/2.1/partnershipParticipant"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb59">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+    <owl:onProperty rdf:resource="https://w3id.org/cm-pharme/2.1/identifierEntity"/>
+    <owl:onClass rdf:resource="https://w3id.org/cm-pharme/2.1/IdentifiedEntity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/RegisteringAuthorityRole">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm-pharme/2.1/RegulatoryAuthorityRole"/>
+    <rdfs:subClassOf rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb22"/>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+    <ns1:ontoumlStereotype>Role</ns1:ontoumlStereotype>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/registrationEntity">
+    <rdfs:range rdf:resource="https://w3id.org/cm-pharme/2.1/RegisteredParty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/cm-pharme/2.1/EstablishmentRegistration"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#closeMatch">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/AuthorizingAuthorityRole">
+    <rdfs:subClassOf rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb10"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm-pharme/2.1/RegulatoryAuthorityRole"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <ns1:ontoumlStereotype>Role</ns1:ontoumlStereotype>
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/identifierLexicalValue">
+    <rdfs:domain rdf:resource="https://w3id.org/cm-pharme/2.1/IdentifierAssignment"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb9">
+    <owl:inverseOf rdf:resource="https://w3id.org/cm-pharme/2.1/alternativeProduct"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb56">
+    <owl:inverseOf rdf:resource="https://w3id.org/cm-pharme/2.1/oversightGovernedEntity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/meta/derivedFromRelator">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/dependencyProvider">
+    <rdfs:range rdf:resource="https://w3id.org/cm-pharme/2.1/ProviderEntity"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/cm-pharme/2.1/SupplyDependency"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb36">
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+    <owl:onClass rdf:resource="https://w3id.org/cm-pharme/2.1/OperatingOrganizationRole"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://w3id.org/cm-pharme/2.1/operationOrganization"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/observationResultAbout">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/cm-pharme/2.1/ObservationResult"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb76">
+    <owl:inverseOf rdf:resource="https://w3id.org/cm-pharme/2.1/dependencyDependent"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/identifierEntity">
+    <rdfs:range rdf:resource="https://w3id.org/cm-pharme/2.1/IdentifiedEntity"/>
+    <rdfs:domain rdf:resource="https://w3id.org/cm-pharme/2.1/IdentifierAssignment"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:propertyDisjointWith rdf:resource="https://w3id.org/cm-pharme/2.1/identifierScheme"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/hasStrength">
+    <rdfs:domain rdf:resource="https://w3id.org/cm-pharme/2.1/MedicinalProductPresentation"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm-pharme/2.1/Strength"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/meta/ontoumlStereotype">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/evidenceAssertion">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/cm-pharme/2.1/EvidenceSupport"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm-pharme/2.1/SupportedAssertionRole"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb80">
+    <owl:onProperty rdf:resource="https://w3id.org/cm-pharme/2.1/dependencyDependent"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onClass rdf:resource="https://w3id.org/cm-pharme/2.1/DependentEntity"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb33">
+    <owl:inverseOf rdf:resource="https://w3id.org/cm-pharme/2.1/classificationEntry"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/classificationEntity">
+    <rdfs:domain rdf:resource="https://w3id.org/cm-pharme/2.1/ProductClassificationAssignment"/>
+    <rdfs:range rdf:resource="https://w3id.org/cm-pharme/2.1/ClassifiedEntity"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:propertyDisjointWith rdf:resource="https://w3id.org/cm-pharme/2.1/classificationEntry"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb42">
+    <owl:inverseOf rdf:resource="https://w3id.org/cm-pharme/2.1/authorizationParty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb87">
+    <rdf:first rdf:resource="https://w3id.org/cm-pharme/2.1/Facility"/>
+    <rdf:rest rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb88"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/producesObservationResult">
+    <rdfs:range rdf:resource="https://w3id.org/cm-pharme/2.1/ObservationResult"/>
+    <rdfs:domain rdf:resource="https://w3id.org/cm-pharme/2.1/ObservationActivity"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/meta/persistentNamespaceStatus">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/meta/conceptualModelVersion">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb85">
+    <owl:members rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb86"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb3">
+    <owl:inverseOf rdf:resource="https://w3id.org/cm-pharme/2.1/operationOrganization"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/DependentFacilityRole">
+    <ns1:conceptualModelVersion>2.1.0-alpha.1-g3a-review</ns1:conceptualModelVersion>
+    <ns1:ontoumlStereotype>Role</ns1:ontoumlStereotype>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm-pharme/2.1/DependentEntity"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cm-pharme/2.1/Facility"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb25">
+    <owl:inverseOf rdf:resource="https://w3id.org/cm-pharme/2.1/evidenceAssertion"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb21">
+    <owl:inverseOf rdf:resource="https://w3id.org/cm-pharme/2.1/alternativeForProduct"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb19">
+    <owl:inverseOf rdf:resource="https://w3id.org/cm-pharme/2.1/oversightAuthorityRole"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb27">
+    <owl:inverseOf rdf:resource="https://w3id.org/cm-pharme/2.1/identifierScheme"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb23">
+    <owl:inverseOf rdf:resource="https://w3id.org/cm-pharme/2.1/registrationAuthority"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ne64a32398fb14a1bbe64a14da268bf7cb11">
+    <owl:inverseOf rdf:resource="https://w3id.org/cm-pharme/2.1/authorizationAuthority"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/title">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/meta/gateDIdentifier">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cm-pharme/2.1/meta/formalizationNote">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+</rdf:RDF>

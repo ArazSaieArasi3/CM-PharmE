@@ -1,0 +1,1082 @@
+{
+  "scope": "Synthetic complete-instance admission under the approved G1 contract; not held-out validation or full OntoUML semantics",
+  "case_count": 120,
+  "valid_cases": 36,
+  "invalid_cases": 84,
+  "passed": 120,
+  "failed": 0,
+  "sql_rdf_answer_comparisons": 828,
+  "temporal_boundary_passed": true,
+  "mutation_checks": [
+    {
+      "disabled_rule": "CARDINALITY",
+      "caught_by_suite": true,
+      "escaped_invalid_cases": 44,
+      "witness": "FacilityOperation-missing-operator"
+    },
+    {
+      "disabled_rule": "KIND",
+      "caught_by_suite": true,
+      "escaped_invalid_cases": 23,
+      "witness": "FacilityOperation-event-in-operator"
+    },
+    {
+      "disabled_rule": "DISTINCT",
+      "caught_by_suite": true,
+      "escaped_invalid_cases": 3,
+      "witness": "AlternativeMedicineAssignment-self"
+    },
+    {
+      "disabled_rule": "PROVENANCE",
+      "caught_by_suite": true,
+      "escaped_invalid_cases": 2,
+      "witness": "missing-source"
+    },
+    {
+      "disabled_rule": "TIME",
+      "caught_by_suite": true,
+      "escaped_invalid_cases": 3,
+      "witness": "missing-start"
+    },
+    {
+      "disabled_rule": "LEXICAL",
+      "caught_by_suite": true,
+      "escaped_invalid_cases": 1,
+      "witness": "missing-lexical"
+    },
+    {
+      "disabled_rule": "DEFERRED",
+      "caught_by_suite": true,
+      "escaped_invalid_cases": 3,
+      "witness": "deferred-AssetAtRisk"
+    },
+    {
+      "disabled_rule": "CYCLE",
+      "caught_by_suite": true,
+      "escaped_invalid_cases": 3,
+      "witness": "geo-self"
+    },
+    {
+      "disabled_rule": "ALIAS",
+      "caught_by_suite": true,
+      "escaped_invalid_cases": 1,
+      "witness": "evidence-alias-not-subset"
+    },
+    {
+      "disabled_rule": "GROUNDING",
+      "caught_by_suite": true,
+      "escaped_invalid_cases": 1,
+      "witness": "role-without-grounding-relation"
+    }
+  ],
+  "results": [
+    {
+      "id": "FacilityOperation-minimal",
+      "expected_valid": true,
+      "sql_errors": [],
+      "shacl_conforms": true,
+      "passed": true
+    },
+    {
+      "id": "FacilityOperation-missing-operator",
+      "expected_valid": false,
+      "sql_errors": [
+        "CARDINALITY"
+      ],
+      "shacl_conforms": false,
+      "passed": true
+    },
+    {
+      "id": "FacilityOperation-event-in-operator",
+      "expected_valid": false,
+      "sql_errors": [
+        "KIND"
+      ],
+      "shacl_conforms": false,
+      "passed": true
+    },
+    {
+      "id": "FacilityOperation-missing-facility",
+      "expected_valid": false,
+      "sql_errors": [
+        "CARDINALITY"
+      ],
+      "shacl_conforms": false,
+      "passed": true
+    },
+    {
+      "id": "FacilityOperation-event-in-facility",
+      "expected_valid": false,
+      "sql_errors": [
+        "KIND"
+      ],
+      "shacl_conforms": false,
+      "passed": true
+    },
+    {
+      "id": "FacilityOperation-excess-facility",
+      "expected_valid": false,
+      "sql_errors": [
+        "CARDINALITY"
+      ],
+      "shacl_conforms": false,
+      "passed": true
+    },
+    {
+      "id": "EstablishmentRegistration-minimal",
+      "expected_valid": true,
+      "sql_errors": [],
+      "shacl_conforms": true,
+      "passed": true
+    },
+    {
+      "id": "EstablishmentRegistration-missing-authority",
+      "expected_valid": false,
+      "sql_errors": [
+        "CARDINALITY"
+      ],
+      "shacl_conforms": false,
+      "passed": true
+    },
+    {
+      "id": "EstablishmentRegistration-event-in-authority",
+      "expected_valid": false,
+      "sql_errors": [
+        "KIND"
+      ],
+      "shacl_conforms": false,
+      "passed": true
+    },
+    {
+      "id": "EstablishmentRegistration-excess-authority",
+      "expected_valid": false,
+      "sql_errors": [
+        "CARDINALITY"
+      ],
+      "shacl_conforms": false,
+      "passed": true
+    },
+    {
+      "id": "EstablishmentRegistration-missing-subject",
+      "expected_valid": false,
+      "sql_errors": [
+        "CARDINALITY"
+      ],
+      "shacl_conforms": false,
+      "passed": true
+    },
+    {
+      "id": "EstablishmentRegistration-event-in-subject",
+      "expected_valid": false,
+      "sql_errors": [
+        "KIND"
+      ],
+      "shacl_conforms": false,
+      "passed": true
+    },
+    {
+      "id": "EstablishmentRegistration-excess-subject",
+      "expected_valid": false,
+      "sql_errors": [
+        "CARDINALITY"
+      ],
+      "shacl_conforms": false,
+      "passed": true
+    },
+    {
+      "id": "EstablishmentRegistration-subject-Facility",
+      "expected_valid": true,
+      "sql_errors": [],
+      "shacl_conforms": true,
+      "passed": true
+    },
+    {
+      "id": "RegulatoryAuthorization-minimal",
+      "expected_valid": true,
+      "sql_errors": [],
+      "shacl_conforms": true,
+      "passed": true
+    },
+    {
+      "id": "RegulatoryAuthorization-missing-authority",
+      "expected_valid": false,
+      "sql_errors": [
+        "CARDINALITY"
+      ],
+      "shacl_conforms": false,
+      "passed": true
+    },
+    {
+      "id": "RegulatoryAuthorization-event-in-authority",
+      "expected_valid": false,
+      "sql_errors": [
+        "KIND"
+      ],
+      "shacl_conforms": false,
+      "passed": true
+    },
+    {
+      "id": "RegulatoryAuthorization-excess-authority",
+      "expected_valid": false,
+      "sql_errors": [
+        "CARDINALITY"
+      ],
+      "shacl_conforms": false,
+      "passed": true
+    },
+    {
+      "id": "RegulatoryAuthorization-missing-subject",
+      "expected_valid": false,
+      "sql_errors": [
+        "CARDINALITY"
+      ],
+      "shacl_conforms": false,
+      "passed": true
+    },
+    {
+      "id": "RegulatoryAuthorization-event-in-subject",
+      "expected_valid": false,
+      "sql_errors": [
+        "KIND"
+      ],
+      "shacl_conforms": false,
+      "passed": true
+    },
+    {
+      "id": "RegulatoryAuthorization-excess-subject",
+      "expected_valid": false,
+      "sql_errors": [
+        "CARDINALITY"
+      ],
+      "shacl_conforms": false,
+      "passed": true
+    },
+    {
+      "id": "RegulatoryAuthorization-subject-Facility",
+      "expected_valid": true,
+      "sql_errors": [],
+      "shacl_conforms": true,
+      "passed": true
+    },
+    {
+      "id": "ProductClassificationAssignment-minimal",
+      "expected_valid": true,
+      "sql_errors": [],
+      "shacl_conforms": true,
+      "passed": true
+    },
+    {
+      "id": "ProductClassificationAssignment-missing-subject",
+      "expected_valid": false,
+      "sql_errors": [
+        "CARDINALITY"
+      ],
+      "shacl_conforms": false,
+      "passed": true
+    },
+    {
+      "id": "ProductClassificationAssignment-event-in-subject",
+      "expected_valid": false,
+      "sql_errors": [
+        "KIND"
+      ],
+      "shacl_conforms": false,
+      "passed": true
+    },
+    {
+      "id": "ProductClassificationAssignment-excess-subject",
+      "expected_valid": false,
+      "sql_errors": [
+        "CARDINALITY"
+      ],
+      "shacl_conforms": false,
+      "passed": true
+    },
+    {
+      "id": "ProductClassificationAssignment-subject-PharmaceuticalSubstance",
+      "expected_valid": true,
+      "sql_errors": [],
+      "shacl_conforms": true,
+      "passed": true
+    },
+    {
+      "id": "ProductClassificationAssignment-missing-entry",
+      "expected_valid": false,
+      "sql_errors": [
+        "CARDINALITY"
+      ],
+      "shacl_conforms": false,
+      "passed": true
+    },
+    {
+      "id": "ProductClassificationAssignment-event-in-entry",
+      "expected_valid": false,
+      "sql_errors": [
+        "KIND"
+      ],
+      "shacl_conforms": false,
+      "passed": true
+    },
+    {
+      "id": "ProductClassificationAssignment-excess-entry",
+      "expected_valid": false,
+      "sql_errors": [
+        "CARDINALITY"
+      ],
+      "shacl_conforms": false,
+      "passed": true
+    },
+    {
+      "id": "MarketListing-minimal",
+      "expected_valid": true,
+      "sql_errors": [],
+      "shacl_conforms": true,
+      "passed": true
+    },
+    {
+      "id": "MarketListing-missing-presentation",
+      "expected_valid": false,
+      "sql_errors": [
+        "CARDINALITY"
+      ],
+      "shacl_conforms": false,
+      "passed": true
+    },
+    {
+      "id": "MarketListing-event-in-presentation",
+      "expected_valid": false,
+      "sql_errors": [
+        "KIND"
+      ],
+      "shacl_conforms": false,
+      "passed": true
+    },
+    {
+      "id": "MarketListing-excess-presentation",
+      "expected_valid": false,
+      "sql_errors": [
+        "CARDINALITY"
+      ],
+      "shacl_conforms": false,
+      "passed": true
+    },
+    {
+      "id": "MarketListing-missing-responsible",
+      "expected_valid": false,
+      "sql_errors": [
+        "CARDINALITY"
+      ],
+      "shacl_conforms": false,
+      "passed": true
+    },
+    {
+      "id": "MarketListing-event-in-responsible",
+      "expected_valid": false,
+      "sql_errors": [
+        "KIND"
+      ],
+      "shacl_conforms": false,
+      "passed": true
+    },
+    {
+      "id": "MarketListing-excess-responsible",
+      "expected_valid": false,
+      "sql_errors": [
+        "CARDINALITY"
+      ],
+      "shacl_conforms": false,
+      "passed": true
+    },
+    {
+      "id": "EvidenceSupport-minimal",
+      "expected_valid": true,
+      "sql_errors": [],
+      "shacl_conforms": true,
+      "passed": true
+    },
+    {
+      "id": "EvidenceSupport-missing-evidence",
+      "expected_valid": false,
+      "sql_errors": [
+        "CARDINALITY"
+      ],
+      "shacl_conforms": false,
+      "passed": true
+    },
+    {
+      "id": "EvidenceSupport-event-in-evidence",
+      "expected_valid": false,
+      "sql_errors": [
+        "KIND"
+      ],
+      "shacl_conforms": false,
+      "passed": true
+    },
+    {
+      "id": "EvidenceSupport-excess-evidence",
+      "expected_valid": false,
+      "sql_errors": [
+        "CARDINALITY"
+      ],
+      "shacl_conforms": false,
+      "passed": true
+    },
+    {
+      "id": "EvidenceSupport-evidence-ObservationResult",
+      "expected_valid": true,
+      "sql_errors": [],
+      "shacl_conforms": true,
+      "passed": true
+    },
+    {
+      "id": "EvidenceSupport-missing-claim",
+      "expected_valid": false,
+      "sql_errors": [
+        "CARDINALITY"
+      ],
+      "shacl_conforms": false,
+      "passed": true
+    },
+    {
+      "id": "EvidenceSupport-event-in-claim",
+      "expected_valid": false,
+      "sql_errors": [
+        "KIND"
+      ],
+      "shacl_conforms": false,
+      "passed": true
+    },
+    {
+      "id": "EvidenceSupport-excess-claim",
+      "expected_valid": false,
+      "sql_errors": [
+        "CARDINALITY"
+      ],
+      "shacl_conforms": false,
+      "passed": true
+    },
+    {
+      "id": "IdentifierAssignment-minimal",
+      "expected_valid": true,
+      "sql_errors": [],
+      "shacl_conforms": true,
+      "passed": true
+    },
+    {
+      "id": "IdentifierAssignment-missing-subject",
+      "expected_valid": false,
+      "sql_errors": [
+        "CARDINALITY"
+      ],
+      "shacl_conforms": false,
+      "passed": true
+    },
+    {
+      "id": "IdentifierAssignment-event-in-subject",
+      "expected_valid": false,
+      "sql_errors": [
+        "KIND"
+      ],
+      "shacl_conforms": false,
+      "passed": true
+    },
+    {
+      "id": "IdentifierAssignment-excess-subject",
+      "expected_valid": false,
+      "sql_errors": [
+        "CARDINALITY"
+      ],
+      "shacl_conforms": false,
+      "passed": true
+    },
+    {
+      "id": "IdentifierAssignment-subject-Facility",
+      "expected_valid": true,
+      "sql_errors": [],
+      "shacl_conforms": true,
+      "passed": true
+    },
+    {
+      "id": "IdentifierAssignment-subject-MedicinalProduct",
+      "expected_valid": true,
+      "sql_errors": [],
+      "shacl_conforms": true,
+      "passed": true
+    },
+    {
+      "id": "IdentifierAssignment-subject-PharmaceuticalSubstance",
+      "expected_valid": true,
+      "sql_errors": [],
+      "shacl_conforms": true,
+      "passed": true
+    },
+    {
+      "id": "IdentifierAssignment-subject-MedicinalProductPresentation",
+      "expected_valid": true,
+      "sql_errors": [],
+      "shacl_conforms": true,
+      "passed": true
+    },
+    {
+      "id": "IdentifierAssignment-subject-GeographicFeature",
+      "expected_valid": true,
+      "sql_errors": [],
+      "shacl_conforms": true,
+      "passed": true
+    },
+    {
+      "id": "IdentifierAssignment-missing-scheme",
+      "expected_valid": false,
+      "sql_errors": [
+        "CARDINALITY"
+      ],
+      "shacl_conforms": false,
+      "passed": true
+    },
+    {
+      "id": "IdentifierAssignment-event-in-scheme",
+      "expected_valid": false,
+      "sql_errors": [
+        "KIND"
+      ],
+      "shacl_conforms": false,
+      "passed": true
+    },
+    {
+      "id": "IdentifierAssignment-excess-scheme",
+      "expected_valid": false,
+      "sql_errors": [
+        "CARDINALITY"
+      ],
+      "shacl_conforms": false,
+      "passed": true
+    },
+    {
+      "id": "AlternativeMedicineAssignment-minimal",
+      "expected_valid": true,
+      "sql_errors": [],
+      "shacl_conforms": true,
+      "passed": true
+    },
+    {
+      "id": "AlternativeMedicineAssignment-missing-reference",
+      "expected_valid": false,
+      "sql_errors": [
+        "CARDINALITY"
+      ],
+      "shacl_conforms": false,
+      "passed": true
+    },
+    {
+      "id": "AlternativeMedicineAssignment-event-in-reference",
+      "expected_valid": false,
+      "sql_errors": [
+        "KIND"
+      ],
+      "shacl_conforms": false,
+      "passed": true
+    },
+    {
+      "id": "AlternativeMedicineAssignment-excess-reference",
+      "expected_valid": false,
+      "sql_errors": [
+        "CARDINALITY"
+      ],
+      "shacl_conforms": false,
+      "passed": true
+    },
+    {
+      "id": "AlternativeMedicineAssignment-missing-alternative",
+      "expected_valid": false,
+      "sql_errors": [
+        "CARDINALITY"
+      ],
+      "shacl_conforms": false,
+      "passed": true
+    },
+    {
+      "id": "AlternativeMedicineAssignment-event-in-alternative",
+      "expected_valid": false,
+      "sql_errors": [
+        "KIND"
+      ],
+      "shacl_conforms": false,
+      "passed": true
+    },
+    {
+      "id": "AlternativeMedicineAssignment-excess-alternative",
+      "expected_valid": false,
+      "sql_errors": [
+        "CARDINALITY"
+      ],
+      "shacl_conforms": false,
+      "passed": true
+    },
+    {
+      "id": "SupplyDependency-minimal",
+      "expected_valid": true,
+      "sql_errors": [],
+      "shacl_conforms": true,
+      "passed": true
+    },
+    {
+      "id": "SupplyDependency-missing-dependent",
+      "expected_valid": false,
+      "sql_errors": [
+        "CARDINALITY"
+      ],
+      "shacl_conforms": false,
+      "passed": true
+    },
+    {
+      "id": "SupplyDependency-event-in-dependent",
+      "expected_valid": false,
+      "sql_errors": [
+        "KIND"
+      ],
+      "shacl_conforms": false,
+      "passed": true
+    },
+    {
+      "id": "SupplyDependency-excess-dependent",
+      "expected_valid": false,
+      "sql_errors": [
+        "CARDINALITY"
+      ],
+      "shacl_conforms": false,
+      "passed": true
+    },
+    {
+      "id": "SupplyDependency-dependent-Facility",
+      "expected_valid": true,
+      "sql_errors": [],
+      "shacl_conforms": true,
+      "passed": true
+    },
+    {
+      "id": "SupplyDependency-dependent-MedicinalProduct",
+      "expected_valid": true,
+      "sql_errors": [],
+      "shacl_conforms": true,
+      "passed": true
+    },
+    {
+      "id": "SupplyDependency-missing-provider",
+      "expected_valid": false,
+      "sql_errors": [
+        "CARDINALITY"
+      ],
+      "shacl_conforms": false,
+      "passed": true
+    },
+    {
+      "id": "SupplyDependency-event-in-provider",
+      "expected_valid": false,
+      "sql_errors": [
+        "KIND"
+      ],
+      "shacl_conforms": false,
+      "passed": true
+    },
+    {
+      "id": "SupplyDependency-excess-provider",
+      "expected_valid": false,
+      "sql_errors": [
+        "CARDINALITY"
+      ],
+      "shacl_conforms": false,
+      "passed": true
+    },
+    {
+      "id": "SupplyDependency-provider-Facility",
+      "expected_valid": true,
+      "sql_errors": [],
+      "shacl_conforms": true,
+      "passed": true
+    },
+    {
+      "id": "SupplyDependency-provider-MedicinalProduct",
+      "expected_valid": true,
+      "sql_errors": [],
+      "shacl_conforms": true,
+      "passed": true
+    },
+    {
+      "id": "RegulatoryOversight-minimal",
+      "expected_valid": true,
+      "sql_errors": [],
+      "shacl_conforms": true,
+      "passed": true
+    },
+    {
+      "id": "RegulatoryOversight-missing-authority",
+      "expected_valid": false,
+      "sql_errors": [
+        "CARDINALITY"
+      ],
+      "shacl_conforms": false,
+      "passed": true
+    },
+    {
+      "id": "RegulatoryOversight-event-in-authority",
+      "expected_valid": false,
+      "sql_errors": [
+        "KIND"
+      ],
+      "shacl_conforms": false,
+      "passed": true
+    },
+    {
+      "id": "RegulatoryOversight-excess-authority",
+      "expected_valid": false,
+      "sql_errors": [
+        "CARDINALITY"
+      ],
+      "shacl_conforms": false,
+      "passed": true
+    },
+    {
+      "id": "RegulatoryOversight-missing-subject",
+      "expected_valid": false,
+      "sql_errors": [
+        "CARDINALITY"
+      ],
+      "shacl_conforms": false,
+      "passed": true
+    },
+    {
+      "id": "RegulatoryOversight-event-in-subject",
+      "expected_valid": false,
+      "sql_errors": [
+        "KIND"
+      ],
+      "shacl_conforms": false,
+      "passed": true
+    },
+    {
+      "id": "RegulatoryOversight-excess-subject",
+      "expected_valid": false,
+      "sql_errors": [
+        "CARDINALITY"
+      ],
+      "shacl_conforms": false,
+      "passed": true
+    },
+    {
+      "id": "RegulatoryOversight-subject-Facility",
+      "expected_valid": true,
+      "sql_errors": [],
+      "shacl_conforms": true,
+      "passed": true
+    },
+    {
+      "id": "StrategicPartnershipAgreement-minimal",
+      "expected_valid": true,
+      "sql_errors": [],
+      "shacl_conforms": true,
+      "passed": true
+    },
+    {
+      "id": "StrategicPartnershipAgreement-missing-partner",
+      "expected_valid": false,
+      "sql_errors": [
+        "CARDINALITY"
+      ],
+      "shacl_conforms": false,
+      "passed": true
+    },
+    {
+      "id": "StrategicPartnershipAgreement-event-in-partner",
+      "expected_valid": false,
+      "sql_errors": [
+        "KIND"
+      ],
+      "shacl_conforms": false,
+      "passed": true
+    },
+    {
+      "id": "ContextualMedicineClassificationAssignment-minimal",
+      "expected_valid": true,
+      "sql_errors": [],
+      "shacl_conforms": true,
+      "passed": true
+    },
+    {
+      "id": "ContextualMedicineClassificationAssignment-missing-subject",
+      "expected_valid": false,
+      "sql_errors": [
+        "CARDINALITY"
+      ],
+      "shacl_conforms": false,
+      "passed": true
+    },
+    {
+      "id": "ContextualMedicineClassificationAssignment-event-in-subject",
+      "expected_valid": false,
+      "sql_errors": [
+        "KIND"
+      ],
+      "shacl_conforms": false,
+      "passed": true
+    },
+    {
+      "id": "ContextualMedicineClassificationAssignment-excess-subject",
+      "expected_valid": false,
+      "sql_errors": [
+        "CARDINALITY"
+      ],
+      "shacl_conforms": false,
+      "passed": true
+    },
+    {
+      "id": "ContextualMedicineClassificationAssignment-subject-PharmaceuticalSubstance",
+      "expected_valid": true,
+      "sql_errors": [],
+      "shacl_conforms": true,
+      "passed": true
+    },
+    {
+      "id": "ContextualMedicineClassificationAssignment-missing-entry",
+      "expected_valid": false,
+      "sql_errors": [
+        "CARDINALITY"
+      ],
+      "shacl_conforms": false,
+      "passed": true
+    },
+    {
+      "id": "ContextualMedicineClassificationAssignment-event-in-entry",
+      "expected_valid": false,
+      "sql_errors": [
+        "KIND"
+      ],
+      "shacl_conforms": false,
+      "passed": true
+    },
+    {
+      "id": "ContextualMedicineClassificationAssignment-excess-entry",
+      "expected_valid": false,
+      "sql_errors": [
+        "CARDINALITY"
+      ],
+      "shacl_conforms": false,
+      "passed": true
+    },
+    {
+      "id": "joint-operation",
+      "expected_valid": true,
+      "sql_errors": [],
+      "shacl_conforms": true,
+      "passed": true
+    },
+    {
+      "id": "three-partners",
+      "expected_valid": true,
+      "sql_errors": [],
+      "shacl_conforms": true,
+      "passed": true
+    },
+    {
+      "id": "AlternativeMedicineAssignment-self",
+      "expected_valid": false,
+      "sql_errors": [
+        "DISTINCT"
+      ],
+      "shacl_conforms": false,
+      "passed": true
+    },
+    {
+      "id": "SupplyDependency-self",
+      "expected_valid": false,
+      "sql_errors": [
+        "DISTINCT"
+      ],
+      "shacl_conforms": false,
+      "passed": true
+    },
+    {
+      "id": "RegulatoryOversight-self",
+      "expected_valid": false,
+      "sql_errors": [
+        "DISTINCT"
+      ],
+      "shacl_conforms": false,
+      "passed": true
+    },
+    {
+      "id": "product-can-switch-contextual-roles",
+      "expected_valid": true,
+      "sql_errors": [],
+      "shacl_conforms": true,
+      "passed": true
+    },
+    {
+      "id": "independent-agreements-same-partners",
+      "expected_valid": true,
+      "sql_errors": [],
+      "shacl_conforms": true,
+      "passed": true
+    },
+    {
+      "id": "same-lexical-value-different-schemes",
+      "expected_valid": true,
+      "sql_errors": [],
+      "shacl_conforms": true,
+      "passed": true
+    },
+    {
+      "id": "missing-source",
+      "expected_valid": false,
+      "sql_errors": [
+        "PROVENANCE"
+      ],
+      "shacl_conforms": false,
+      "passed": true
+    },
+    {
+      "id": "missing-context",
+      "expected_valid": false,
+      "sql_errors": [
+        "PROVENANCE"
+      ],
+      "shacl_conforms": false,
+      "passed": true
+    },
+    {
+      "id": "missing-start",
+      "expected_valid": false,
+      "sql_errors": [
+        "TIME"
+      ],
+      "shacl_conforms": false,
+      "passed": true
+    },
+    {
+      "id": "missing-lexical",
+      "expected_valid": false,
+      "sql_errors": [
+        "LEXICAL"
+      ],
+      "shacl_conforms": false,
+      "passed": true
+    },
+    {
+      "id": "empty-validity-interval",
+      "expected_valid": false,
+      "sql_errors": [
+        "TIME"
+      ],
+      "shacl_conforms": false,
+      "passed": true
+    },
+    {
+      "id": "reversed-validity-interval",
+      "expected_valid": false,
+      "sql_errors": [
+        "TIME"
+      ],
+      "shacl_conforms": false,
+      "passed": true
+    },
+    {
+      "id": "evidence-alias-counts-once",
+      "expected_valid": true,
+      "sql_errors": [],
+      "shacl_conforms": true,
+      "passed": true
+    },
+    {
+      "id": "evidence-alias-not-subset",
+      "expected_valid": false,
+      "sql_errors": [
+        "ALIAS"
+      ],
+      "shacl_conforms": false,
+      "passed": true
+    },
+    {
+      "id": "contextual-aliases-subset",
+      "expected_valid": true,
+      "sql_errors": [],
+      "shacl_conforms": true,
+      "passed": true
+    },
+    {
+      "id": "deferred-AssetAtRisk",
+      "expected_valid": false,
+      "sql_errors": [
+        "DEFERRED"
+      ],
+      "shacl_conforms": false,
+      "passed": true
+    },
+    {
+      "id": "deferred-Vulnerability",
+      "expected_valid": false,
+      "sql_errors": [
+        "DEFERRED"
+      ],
+      "shacl_conforms": false,
+      "passed": true
+    },
+    {
+      "id": "deferred-ClinicalCareParticipant",
+      "expected_valid": false,
+      "sql_errors": [
+        "DEFERRED"
+      ],
+      "shacl_conforms": false,
+      "passed": true
+    },
+    {
+      "id": "geo-chain",
+      "expected_valid": true,
+      "sql_errors": [],
+      "shacl_conforms": true,
+      "passed": true
+    },
+    {
+      "id": "geo-self",
+      "expected_valid": false,
+      "sql_errors": [
+        "CYCLE"
+      ],
+      "shacl_conforms": false,
+      "passed": true
+    },
+    {
+      "id": "geo-two-cycle",
+      "expected_valid": false,
+      "sql_errors": [
+        "CYCLE"
+      ],
+      "shacl_conforms": false,
+      "passed": true
+    },
+    {
+      "id": "geo-three-cycle",
+      "expected_valid": false,
+      "sql_errors": [
+        "CYCLE"
+      ],
+      "shacl_conforms": false,
+      "passed": true
+    },
+    {
+      "id": "organization-without-any-role-or-authorization",
+      "expected_valid": true,
+      "sql_errors": [],
+      "shacl_conforms": true,
+      "passed": true
+    },
+    {
+      "id": "role-without-grounding-relation",
+      "expected_valid": false,
+      "sql_errors": [
+        "GROUNDING"
+      ],
+      "shacl_conforms": false,
+      "passed": true
+    }
+  ]
+}

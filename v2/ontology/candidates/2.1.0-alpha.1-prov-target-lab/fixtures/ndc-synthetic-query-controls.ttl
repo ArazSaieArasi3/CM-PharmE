@@ -1,0 +1,282 @@
+@prefix c: <https://w3id.org/cm-pharme/2.1/> .
+@prefix l: <https://w3id.org/cm-pharme/experimental/four-domain/> .
+@prefix p: <https://w3id.org/cm-pharme/experimental/registry-policy/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix q: <https://w3id.org/cm-pharme/experimental/prov-target/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix t1: <urn:cmpe-prov-target:> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+q:ndc-query-dataset a c:Dataset ;
+    c:hasDatasetRelease q:ndc-extract-ecb97302aa8cb314 .
+
+q:package-record-ecb97302aa8cb314-0-0 a c:SourceRecord ;
+    prov:wasAttributedTo q:source-labeler-row-0 ;
+    prov:wasDerivedFrom q:source-row-ecb97302aa8cb314-0 ;
+    l:recordDigitalActivity q:ndc-package-projection-ecb97302aa8cb314 ;
+    q:jsonPointer "/results/0/packaging/0" ;
+    p:approvalConclusion "unknown" ;
+    p:approvalEvidence t1:syntheticDecision ;
+    p:externalKey "76162-741_73a6c0df-9ae0-7f13-afb6-0c0b099c4d56#76162-741-14" ;
+    p:marketingEnd "2027-01-01"^^xsd:date ;
+    p:marketingStart "2026-09-01"^^xsd:date ;
+    p:profile "registry-record" ;
+    p:recordKind "listing" ;
+    p:recordSubject q:source-presentation-76162-741-14 ;
+    p:release q:ndc-extract-ecb97302aa8cb314 ;
+    p:representsFact q:source-listing-ecb97302aa8cb314-0-0 ;
+    p:retrievedAt "2026-10-09T20:11:56.284077+00:00"^^xsd:dateTime .
+
+q:package-record-ecb97302aa8cb314-1-0 a c:SourceRecord ;
+    prov:wasAttributedTo q:source-labeler-row-1 ;
+    prov:wasDerivedFrom q:source-row-ecb97302aa8cb314-1 ;
+    l:recordDigitalActivity q:ndc-package-projection-ecb97302aa8cb314 ;
+    q:jsonPointer "/results/1/packaging/0" ;
+    p:approvalConclusion "unknown" ;
+    p:externalKey "80425-0302_2a9bfe6a-6d68-b262-e063-6294a90a1cf3#80425-0302-1" ;
+    p:marketingStart "2023-04-10"^^xsd:date ;
+    p:profile "registry-record" ;
+    p:recordKind "listing" ;
+    p:recordSubject q:source-presentation-80425-0302-1 ;
+    p:release q:ndc-extract-ecb97302aa8cb314 ;
+    p:representsFact q:source-listing-ecb97302aa8cb314-1-0 ;
+    p:retrievedAt "2026-10-09T20:11:56.284077+00:00"^^xsd:dateTime .
+
+q:package-record-ecb97302aa8cb314-1-1 a c:SourceRecord ;
+    prov:wasAttributedTo q:source-labeler-row-1 ;
+    prov:wasDerivedFrom q:source-row-ecb97302aa8cb314-1 ;
+    l:recordDigitalActivity q:ndc-package-projection-ecb97302aa8cb314 ;
+    q:jsonPointer "/results/1/packaging/1" ;
+    p:approvalConclusion "unknown" ;
+    p:externalKey "80425-0302_2a9bfe6a-6d68-b262-e063-6294a90a1cf3#80425-0302-2" ;
+    p:marketingStart "2023-04-10"^^xsd:date ;
+    p:profile "registry-record" ;
+    p:recordKind "listing" ;
+    p:recordSubject q:source-presentation-80425-0302-2 ;
+    p:release q:ndc-extract-ecb97302aa8cb314 ;
+    p:representsFact q:source-listing-ecb97302aa8cb314-1-1 ;
+    p:retrievedAt "2026-10-09T20:11:56.284077+00:00"^^xsd:dateTime .
+
+q:package-record-ecb97302aa8cb314-1-2 a c:SourceRecord ;
+    prov:wasAttributedTo q:source-labeler-row-1 ;
+    prov:wasDerivedFrom q:source-row-ecb97302aa8cb314-1 ;
+    l:recordDigitalActivity q:ndc-package-projection-ecb97302aa8cb314 ;
+    q:jsonPointer "/results/1/packaging/2" ;
+    p:approvalConclusion "unknown" ;
+    p:externalKey "80425-0302_2a9bfe6a-6d68-b262-e063-6294a90a1cf3#80425-0302-3" ;
+    p:marketingStart "2023-04-10"^^xsd:date ;
+    p:profile "registry-record" ;
+    p:recordKind "listing" ;
+    p:recordSubject q:source-presentation-80425-0302-3 ;
+    p:release q:ndc-extract-ecb97302aa8cb314 ;
+    p:representsFact q:source-listing-ecb97302aa8cb314-1-2 ;
+    p:retrievedAt "2026-10-09T20:11:56.284077+00:00"^^xsd:dateTime .
+
+q:package-record-ecb97302aa8cb314-2-0 a c:SourceRecord ;
+    prov:wasAttributedTo q:source-labeler-row-2 ;
+    prov:wasDerivedFrom q:source-row-ecb97302aa8cb314-2 ;
+    l:recordDigitalActivity q:ndc-package-projection-ecb97302aa8cb314 ;
+    q:jsonPointer "/results/2/packaging/0" ;
+    p:approvalConclusion "unknown" ;
+    p:externalKey "80425-0556_43045630-8bf9-59ae-e063-6294a90a2ebe#80425-0556-1" ;
+    p:marketingStart "2025-11-07"^^xsd:date ;
+    p:profile "registry-record" ;
+    p:recordKind "listing" ;
+    p:recordSubject q:source-presentation-80425-0556-1 ;
+    p:release q:ndc-extract-ecb97302aa8cb314 ;
+    p:representsFact q:source-listing-ecb97302aa8cb314-2-0 ;
+    p:retrievedAt "2026-10-09T20:11:56.284077+00:00"^^xsd:dateTime .
+
+q:package-record-ecb97302aa8cb314-3-0 a c:SourceRecord ;
+    prov:wasAttributedTo q:source-labeler-row-3 ;
+    prov:wasDerivedFrom q:source-row-ecb97302aa8cb314-3 ;
+    l:recordDigitalActivity q:ndc-package-projection-ecb97302aa8cb314 ;
+    q:jsonPointer "/results/3/packaging/0" ;
+    p:approvalConclusion "unknown" ;
+    p:externalKey "0615-8382_8970ba1c-ea60-4d30-be3b-e53b1bdc7871#0615-8382-39" ;
+    p:marketingStart "2021-02-09"^^xsd:date ;
+    p:profile "registry-record" ;
+    p:recordKind "listing" ;
+    p:recordSubject q:source-presentation-0615-8382-39 ;
+    p:release q:ndc-extract-ecb97302aa8cb314 ;
+    p:representsFact q:source-listing-ecb97302aa8cb314-3-0 ;
+    p:retrievedAt "2026-10-09T20:11:56.284077+00:00"^^xsd:dateTime .
+
+q:package-record-ecb97302aa8cb314-4-0 a c:SourceRecord ;
+    prov:wasAttributedTo q:source-labeler-row-4 ;
+    prov:wasDerivedFrom q:source-row-ecb97302aa8cb314-4 ;
+    l:recordDigitalActivity q:ndc-package-projection-ecb97302aa8cb314 ;
+    q:jsonPointer "/results/4/packaging/0" ;
+    p:approvalConclusion "unknown" ;
+    p:externalKey "80830-2305_cc28f253-e8e4-40b1-aaf8-1218fc83674c#80830-2305-2" ;
+    p:marketingStart "2026-01-13"^^xsd:date ;
+    p:profile "registry-record" ;
+    p:recordKind "listing" ;
+    p:recordSubject q:source-presentation-80830-2305-2 ;
+    p:release q:ndc-extract-ecb97302aa8cb314 ;
+    p:representsFact q:source-listing-ecb97302aa8cb314-4-0 ;
+    p:retrievedAt "2026-10-09T20:11:56.284077+00:00"^^xsd:dateTime .
+
+q:source-listing-ecb97302aa8cb314-0-0 a c:MarketListing ;
+    c:listingJurisdiction q:us ;
+    c:listingPresentation q:source-presentation-76162-741-14 ;
+    c:listingResponsibleOrganization q:source-labeler-row-0 .
+
+q:source-listing-ecb97302aa8cb314-1-0 a c:MarketListing ;
+    c:listingJurisdiction q:us ;
+    c:listingPresentation q:source-presentation-80425-0302-1 ;
+    c:listingResponsibleOrganization q:source-labeler-row-1 .
+
+q:source-listing-ecb97302aa8cb314-1-1 a c:MarketListing ;
+    c:listingJurisdiction q:us ;
+    c:listingPresentation q:source-presentation-80425-0302-2 ;
+    c:listingResponsibleOrganization q:source-labeler-row-1 .
+
+q:source-listing-ecb97302aa8cb314-1-2 a c:MarketListing ;
+    c:listingJurisdiction q:us ;
+    c:listingPresentation q:source-presentation-80425-0302-3 ;
+    c:listingResponsibleOrganization q:source-labeler-row-1 .
+
+q:source-listing-ecb97302aa8cb314-2-0 a c:MarketListing ;
+    c:listingJurisdiction q:us ;
+    c:listingPresentation q:source-presentation-80425-0556-1 ;
+    c:listingResponsibleOrganization q:source-labeler-row-2 .
+
+q:source-listing-ecb97302aa8cb314-3-0 a c:MarketListing ;
+    c:listingJurisdiction q:us ;
+    c:listingPresentation q:source-presentation-0615-8382-39 ;
+    c:listingResponsibleOrganization q:source-labeler-row-3 .
+
+q:source-listing-ecb97302aa8cb314-4-0 a c:MarketListing ;
+    c:listingJurisdiction q:us ;
+    c:listingPresentation q:source-presentation-80830-2305-2 ;
+    c:listingResponsibleOrganization q:source-labeler-row-4 .
+
+q:source-product-0615-8382 a c:MedicinalProduct .
+
+q:source-product-76162-741 a c:MedicinalProduct .
+
+q:source-product-80425-0556 a c:MedicinalProduct .
+
+q:source-product-80830-2305 a c:MedicinalProduct .
+
+q:source-row-ecb97302aa8cb314-0 a c:SourceRecord ;
+    prov:wasAttributedTo q:source-labeler-row-0 ;
+    prov:wasDerivedFrom q:ndc-response-ecb97302aa8cb314 ;
+    q:jsonPointer "/results/0" ;
+    q:productMarketingStart "2026-09-01"^^xsd:date ;
+    q:rawMarketingCategory "NDA" ;
+    q:sourceProductId "76162-741_73a6c0df-9ae0-7f13-afb6-0c0b099c4d56" .
+
+q:source-row-ecb97302aa8cb314-2 a c:SourceRecord ;
+    prov:wasAttributedTo q:source-labeler-row-2 ;
+    prov:wasDerivedFrom q:ndc-response-ecb97302aa8cb314 ;
+    q:jsonPointer "/results/2" ;
+    q:productMarketingStart "2025-11-07"^^xsd:date ;
+    q:rawMarketingCategory "UNAPPROVED DRUG OTHER" ;
+    q:sourceProductId "80425-0556_43045630-8bf9-59ae-e063-6294a90a2ebe" .
+
+q:source-row-ecb97302aa8cb314-3 a c:SourceRecord ;
+    prov:wasAttributedTo q:source-labeler-row-3 ;
+    prov:wasDerivedFrom q:ndc-response-ecb97302aa8cb314 ;
+    q:jsonPointer "/results/3" ;
+    q:productMarketingStart "2020-08-10"^^xsd:date ;
+    q:rawMarketingCategory "ANDA" ;
+    q:sourceProductId "0615-8382_8970ba1c-ea60-4d30-be3b-e53b1bdc7871" .
+
+q:source-row-ecb97302aa8cb314-4 a c:SourceRecord ;
+    prov:wasAttributedTo q:source-labeler-row-4 ;
+    prov:wasDerivedFrom q:ndc-response-ecb97302aa8cb314 ;
+    q:jsonPointer "/results/4" ;
+    q:productMarketingStart "2026-01-13"^^xsd:date ;
+    q:rawMarketingCategory "ANDA" ;
+    q:sourceProductId "80830-2305_cc28f253-e8e4-40b1-aaf8-1218fc83674c" .
+
+t1:syntheticDecision a c:SourceRecord ;
+    p:recordKind "regulatory-decision" ;
+    p:recordSubject q:source-presentation-76162-741-14 .
+
+q:source-presentation-0615-8382-39 a c:ListedPresentationRole,
+        c:MedicinalProductPresentation ;
+    rdfs:label "30 TABLET in 1 BLISTER PACK (0615-8382-39)" ;
+    c:presentationOf q:source-product-0615-8382 .
+
+q:source-presentation-80425-0302-1 a c:ListedPresentationRole,
+        c:MedicinalProductPresentation ;
+    rdfs:label "30 TABLET in 1 BOTTLE (80425-0302-1)" ;
+    c:presentationOf q:source-product-80425-0302 .
+
+q:source-presentation-80425-0302-2 a c:ListedPresentationRole,
+        c:MedicinalProductPresentation ;
+    rdfs:label "60 TABLET in 1 BOTTLE (80425-0302-2)" ;
+    c:presentationOf q:source-product-80425-0302 .
+
+q:source-presentation-80425-0302-3 a c:ListedPresentationRole,
+        c:MedicinalProductPresentation ;
+    rdfs:label "90 TABLET in 1 BOTTLE (80425-0302-3)" ;
+    c:presentationOf q:source-product-80425-0302 .
+
+q:source-presentation-80425-0556-1 a c:ListedPresentationRole,
+        c:MedicinalProductPresentation ;
+    rdfs:label "1 VIAL, SINGLE-DOSE in 1 CARTON (80425-0556-1)  / 1 mL in 1 VIAL, SINGLE-DOSE" ;
+    c:presentationOf q:source-product-80425-0556 .
+
+q:source-presentation-80830-2305-2 a c:ListedPresentationRole,
+        c:MedicinalProductPresentation ;
+    rdfs:label "25 VIAL, SINGLE-DOSE in 1 CARTON (80830-2305-2)  / 50 mL in 1 VIAL, SINGLE-DOSE (80830-2305-1)" ;
+    c:presentationOf q:source-product-80830-2305 .
+
+q:source-labeler-row-0 a c:ListingResponsibleOrganizationRole,
+        c:Organization ;
+    rdfs:label "Topco Associates LLC" .
+
+q:source-labeler-row-2 a c:ListingResponsibleOrganizationRole,
+        c:Organization ;
+    rdfs:label "Advanced Rx of Tennessee, LLC" .
+
+q:source-labeler-row-3 a c:ListingResponsibleOrganizationRole,
+        c:Organization ;
+    rdfs:label "NCS HealthCare of KY, LLC dba Vangard Labs" .
+
+q:source-labeler-row-4 a c:ListingResponsibleOrganizationRole,
+        c:Organization ;
+    rdfs:label "Amneal Pharmaceuticals Private Limited" .
+
+q:source-presentation-76162-741-14 a c:ListedPresentationRole,
+        c:MedicinalProductPresentation ;
+    rdfs:label "14 PATCH in 1 CARTON (76162-741-14)  / 24 h in 1 PATCH" ;
+    c:presentationOf q:source-product-76162-741 .
+
+q:source-product-80425-0302 a c:MedicinalProduct .
+
+q:source-row-ecb97302aa8cb314-1 a c:SourceRecord ;
+    prov:wasAttributedTo q:source-labeler-row-1 ;
+    prov:wasDerivedFrom q:ndc-response-ecb97302aa8cb314 ;
+    q:jsonPointer "/results/1" ;
+    q:productMarketingStart "2023-04-10"^^xsd:date ;
+    q:rawMarketingCategory "ANDA" ;
+    q:sourceProductId "80425-0302_2a9bfe6a-6d68-b262-e063-6294a90a1cf3" .
+
+q:ndc-response-ecb97302aa8cb314 a c:SourceRecord ;
+    q:retrievalURL "https://api.fda.gov/drug/ndc.json?limit=5" ;
+    q:sourceLastUpdated "2026-10-09"^^xsd:date ;
+    q:sourceSHA256 "ecb97302aa8cb3148a7971045811164bef22a4d988542d8af77a0829091330de" .
+
+q:ndc-package-projection-ecb97302aa8cb314 a c:ProvenanceActivity ;
+    prov:used q:ndc-response-ecb97302aa8cb314 .
+
+q:source-labeler-row-1 a c:ListingResponsibleOrganizationRole,
+        c:Organization ;
+    rdfs:label "Advanced Rx Pharmacy of Tennessee, LLC" .
+
+q:us a c:RegulatoryJurisdiction .
+
+q:ndc-extract-ecb97302aa8cb314 a c:DatasetRelease ;
+    c:containsSourceRecord q:package-record-ecb97302aa8cb314-0-0,
+        q:package-record-ecb97302aa8cb314-1-0,
+        q:package-record-ecb97302aa8cb314-1-1,
+        q:package-record-ecb97302aa8cb314-1-2,
+        q:package-record-ecb97302aa8cb314-2-0,
+        q:package-record-ecb97302aa8cb314-3-0,
+        q:package-record-ecb97302aa8cb314-4-0 ;
+    q:releaseKind "query-extract-not-full-directory" .

@@ -1,0 +1,29 @@
+@prefix c: <https://w3id.org/cm-pharme/2.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix q: <https://w3id.org/cm-pharme/experimental/prov-target/> .
+@prefix r: <https://w3id.org/cm-pharme/experimental/refinement/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+c:riskAssessmentConcerns rdfs:range c:SupplyDependency .
+
+q:R2 a q:TargetCase ;
+    q:claim q:R2-claim ;
+    q:evidenceKind "explicit-assessment-scope" ;
+    q:family "assessment" ;
+    q:source q:R2-event ;
+    q:sourceRecord q:R2-record ;
+    q:target q:R2-target ;
+    q:targetClass c:Facility .
+
+q:R2-event a c:RiskAssessmentActivity ;
+    c:riskAssessmentConcerns q:R2-target ;
+    q:assessmentOutput q:R2-claim .
+
+q:R2-record a c:SourceRecord ;
+    r:carrierClaim q:R2-claim .
+
+q:R2-target a [ a owl:Class ;
+            owl:complementOf c:SupplyDependency ],
+        c:Facility .
+
+q:R2-claim a c:Assertion .

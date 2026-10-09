@@ -1,0 +1,136 @@
+{
+  "status": "IMPLEMENTED_FOR_REVIEW",
+  "decisions": [
+    {
+      "id": "G3-D01",
+      "role": "ManufacturerRole",
+      "recommendation": "Define the inherited role by responsibility/site use; use scoped Authorized roles for permission and event participation for occurrence. This refines the previous umbrella proposal.",
+      "definition": "Bearer participates in at least one effective, scope-matching responsibility/site-use context at t.",
+      "identity": "Organization",
+      "source_package": "../g3-1b-operational-patterns/role-pattern-register.json",
+      "author_decision": "FINAL_SCIENTIFIC_REVIEW_PENDING",
+      "integration": "IMPLEMENTED_IN_G3D_CANDIDATE"
+    },
+    {
+      "id": "G3-D02",
+      "role": "ManufacturingSiteRole",
+      "recommendation": "Define the inherited role by responsibility/site use; use scoped Authorized roles for permission and event participation for occurrence. This refines the previous umbrella proposal.",
+      "definition": "Bearer participates in at least one effective, scope-matching responsibility/site-use context at t.",
+      "identity": "Facility",
+      "source_package": "../g3-1b-operational-patterns/role-pattern-register.json",
+      "author_decision": "FINAL_SCIENTIFIC_REVIEW_PENDING",
+      "integration": "IMPLEMENTED_IN_G3D_CANDIDATE"
+    },
+    {
+      "id": "G3-D03",
+      "role": "ImporterRole",
+      "recommendation": "Define the inherited role by responsibility/site use; use scoped Authorized roles for permission and event participation for occurrence. This refines the previous umbrella proposal.",
+      "definition": "Bearer participates in at least one effective, scope-matching responsibility/site-use context at t.",
+      "identity": "Organization",
+      "source_package": "../g3-1b-operational-patterns/role-pattern-register.json",
+      "author_decision": "FINAL_SCIENTIFIC_REVIEW_PENDING",
+      "integration": "IMPLEMENTED_IN_G3D_CANDIDATE"
+    },
+    {
+      "id": "G3-D04",
+      "role": "WholesaleDistributorRole",
+      "recommendation": "Define the inherited role by responsibility/site use; use scoped Authorized roles for permission and event participation for occurrence. This refines the previous umbrella proposal.",
+      "definition": "Bearer participates in at least one effective, scope-matching responsibility/site-use context at t.",
+      "identity": "Organization",
+      "source_package": "../g3-1b-operational-patterns/role-pattern-register.json",
+      "author_decision": "FINAL_SCIENTIFIC_REVIEW_PENDING",
+      "integration": "IMPLEMENTED_IN_G3D_CANDIDATE"
+    },
+    {
+      "id": "G3-D05",
+      "role": "ThirdPartyLogisticsProviderRole",
+      "recommendation": "Define the inherited role by responsibility/site use; use scoped Authorized roles for permission and event participation for occurrence. This refines the previous umbrella proposal.",
+      "definition": "Bearer participates in at least one effective, scope-matching responsibility/site-use context at t.",
+      "identity": "Organization",
+      "source_package": "../g3-1b-operational-patterns/role-pattern-register.json",
+      "author_decision": "FINAL_SCIENTIFIC_REVIEW_PENDING",
+      "integration": "IMPLEMENTED_IN_G3D_CANDIDATE"
+    },
+    {
+      "id": "G3-D06",
+      "role": "DistributionSiteRole",
+      "recommendation": "Define the inherited role by responsibility/site use; use scoped Authorized roles for permission and event participation for occurrence. This refines the previous umbrella proposal.",
+      "definition": "Bearer participates in at least one effective, scope-matching responsibility/site-use context at t.",
+      "identity": "Facility",
+      "source_package": "../g3-1b-operational-patterns/role-pattern-register.json",
+      "author_decision": "FINAL_SCIENTIFIC_REVIEW_PENDING",
+      "integration": "IMPLEMENTED_IN_G3D_CANDIDATE"
+    },
+    {
+      "role": "RegulatoryAuthorityRole",
+      "relator": "RegulatoryMandate",
+      "counterpart": "MandateConferringOrganizationRole",
+      "counterpart_identity": "Organization",
+      "definition": "Organization bearing an effective regulatory mandate for a specified jurisdiction and functional scope.",
+      "recommendation": "Ground authority in mandate, independently of whether it has already performed a regulatory act.",
+      "anchors": [
+        "V2C-003",
+        "W4 R2/R3/R13"
+      ],
+      "boundary": "Conferring institution must be evidenced; do not invent a grantor or recursively require it to bear the same mandate.",
+      "id": "G3-D07",
+      "identity": "Organization",
+      "author_decision": "FINAL_SCIENTIFIC_REVIEW_PENDING",
+      "integration": "IMPLEMENTED_IN_G3D_CANDIDATE",
+      "per_relator_cardinality": "1 holder + 1 distinct counterpart for each assignment route",
+      "relators_per_current_role": "1..* on the defining route; inclusive OR across product routes",
+      "temporal_rule": "[start,end); role lost only when final matching episode ends",
+      "relator_identity": "Constituting institutional episode, not source-row identity or participant pair",
+      "source_package": "README.md"
+    },
+    {
+      "role": "ProductResponsibleLabelerRole",
+      "relator": "ProductLabelResponsibility OR existing MarketListing",
+      "counterpart": "ResponsibilitySubjectProductRole OR existing ListedPresentationRole",
+      "counterpart_identity": "MedicinalProduct OR MedicinalProductPresentation, kept distinct",
+      "definition": "Organization bearing product/label responsibility through an explicit responsibility episode or the already justified listing-responsibility context.",
+      "recommendation": "Preserve ListingResponsibleOrganizationRole as one route; add ProductLabelCommitmentOrganizationRole as an alternative. Use an overlapping covering set only for the bounded proposed scope; never require both routes.",
+      "anchors": [
+        "V2C-006",
+        "W4 R6",
+        "G3a subtype repair"
+      ],
+      "boundary": "Product-side subject roles do not make the product responsible. No inference of manufacturing, market approval or mandatory listing from label responsibility.",
+      "id": "G3-D08",
+      "identity": "Organization",
+      "author_decision": "FINAL_SCIENTIFIC_REVIEW_PENDING",
+      "integration": "IMPLEMENTED_IN_G3D_CANDIDATE",
+      "per_relator_cardinality": "1 holder + 1 distinct counterpart for each assignment route",
+      "relators_per_current_role": "1..* on the defining route; inclusive OR across product routes",
+      "temporal_rule": "[start,end); role lost only when final matching episode ends",
+      "relator_identity": "Constituting institutional episode, not source-row identity or participant pair",
+      "source_package": "README.md"
+    },
+    {
+      "role": "PayerFundingOrganizationRole",
+      "relator": "InstitutionalFundingCommitment",
+      "counterpart": "InstitutionallyFundedOrganizationRole",
+      "counterpart_identity": "Organization",
+      "definition": "Organization bearing an evidenced institutional funding/reimbursement commitment toward a distinct recipient/provider organization.",
+      "recommendation": "Adopt this bounded institutional profile for the current candidate; defer direct-person entitlement until a Person identity and eligible-beneficiary pattern are justified.",
+      "anchors": [
+        "V2C-009",
+        "V2R-072",
+        "Market Access extension"
+      ],
+      "boundary": "This proposed scope restriction needs author disposition. An aggregate NHIF publisher or observed remitter is not automatically a funder; no patient/payment/entitlement individuals invented.",
+      "id": "G3-D09",
+      "identity": "Organization",
+      "author_decision": "FINAL_SCIENTIFIC_REVIEW_PENDING",
+      "integration": "IMPLEMENTED_IN_G3D_CANDIDATE",
+      "per_relator_cardinality": "1 holder + 1 distinct counterpart for each assignment route",
+      "relators_per_current_role": "1..* on the defining route; inclusive OR across product routes",
+      "temporal_rule": "[start,end); role lost only when final matching episode ends",
+      "relator_identity": "Constituting institutional episode, not source-row identity or participant pair",
+      "source_package": "README.md"
+    }
+  ],
+  "approved": 0,
+  "integrated": 9,
+  "implementation_authorization": "User instruction to proceed after the nine-decision table, 2026-10-07T00:45:47+03:30; not explicit final scientific approval"
+}

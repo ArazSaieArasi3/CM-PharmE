@@ -1,0 +1,33 @@
+{
+  "finding": "The previous experimental OWL accepts carrierClaim(record, record).",
+  "test": "record-cannot-be-its-claim",
+  "observed_consistent": true,
+  "expected_under_proposed_carrier_identity_policy": false,
+  "initial_run": {
+    "status": "ISOLATED_PROPOSAL_NOT_AUTHOR_APPROVED",
+    "new_classes": 0,
+    "new_relations": 0,
+    "new_owl_axioms": 1,
+    "new_shapes": 1,
+    "new_shacl_cases": 9,
+    "new_shacl_pass": 9,
+    "prior_regression_cases": 76,
+    "prior_regression_pass": 76,
+    "reasoner_cases": 8,
+    "reasoner_pass": 7,
+    "all_pass": false,
+    "native_stereotypes_approved": false,
+    "baseline_changed": false,
+    "full_ontology_validation": false,
+    "hashes": {
+      "proposed-delta.ttl": "778c56026f177ba248b4195f55c36daea3ef7ec280bacb2394264bd5854941fa",
+      "proposed-shapes.ttl": "a037fc5c5270e942113d7627065a1e89b7ba053f1ea8c3d2a18d158e093f3c81"
+    },
+    "parent_hashes": {
+      "experimental.owl.ttl": "8c37e6ca3c7405515a5f387a5228831a57f1be9eb27f3211484077e609bbd8fa",
+      "combined.shacl.ttl": "930604033ffb0bd9669c97de083aba647288367a432b570d04ab3643b5d22c86",
+      "ontouml-experimental.json": "fef3295149278bdf5a9c446f9699582a565d26fa2f52f76d90f593ba00e20989"
+    }
+  },
+  "resolution": "Propose irreflexivity for carrierClaim and a predicate-targeted sameAs-aware SHACL guard. Do not assert global SourceRecord/Assertion disjointness."
+}

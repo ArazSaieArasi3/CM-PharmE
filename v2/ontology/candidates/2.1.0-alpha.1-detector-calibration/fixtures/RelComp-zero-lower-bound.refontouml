@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<RefOntoUML:Package xmlns:RefOntoUML="http://nemo.inf.ufes.br/ontouml/refontouml" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmi:version="2.0" xmi:id="pkg" name="RelComp-zero-lower-bound" visibility="public">
+  <packagedElement xsi:type="RefOntoUML:Kind" xmi:id="Container" name="Container" visibility="public" isAbstract="false" />
+  <packagedElement xsi:type="RefOntoUML:Kind" xmi:id="Person" name="Person" visibility="public" isAbstract="false" />
+  <packagedElement xsi:type="RefOntoUML:SubKind" xmi:id="A" name="A" visibility="public" isAbstract="false">
+    <generalization xmi:id="AToPerson" general="Person" />
+  </packagedElement>
+  <packagedElement xsi:type="RefOntoUML:SubKind" xmi:id="B" name="B" visibility="public" isAbstract="false">
+    <generalization xmi:id="BToPerson" general="Person" />
+  </packagedElement>
+  <packagedElement xsi:type="RefOntoUML:Association" xmi:id="outer" name="outer" visibility="public" memberEnd="outerA outerB">
+    <ownedEnd xmi:id="outerA" name="outerA" type="Container" association="outer" aggregation="none" visibility="public">
+      <lowerValue xsi:type="RefOntoUML:LiteralInteger" xmi:id="outerAlower" value="0" />
+      <upperValue xsi:type="RefOntoUML:LiteralUnlimitedNatural" xmi:id="outerAupper" value="1" />
+    </ownedEnd>
+    <ownedEnd xmi:id="outerB" name="outerB" type="Person" association="outer" aggregation="none" visibility="public">
+      <lowerValue xsi:type="RefOntoUML:LiteralInteger" xmi:id="outerBlower" value="0" />
+      <upperValue xsi:type="RefOntoUML:LiteralUnlimitedNatural" xmi:id="outerBupper" value="2" />
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="RefOntoUML:Association" xmi:id="inner" name="inner" visibility="public" memberEnd="innerA innerB">
+    <ownedEnd xmi:id="innerA" name="innerA" type="A" association="inner" aggregation="none" visibility="public">
+      <lowerValue xsi:type="RefOntoUML:LiteralInteger" xmi:id="innerAlower" value="0" />
+      <upperValue xsi:type="RefOntoUML:LiteralUnlimitedNatural" xmi:id="innerAupper" value="1" />
+    </ownedEnd>
+    <ownedEnd xmi:id="innerB" name="innerB" type="B" association="inner" aggregation="none" visibility="public">
+      <lowerValue xsi:type="RefOntoUML:LiteralInteger" xmi:id="innerBlower" value="0" />
+      <upperValue xsi:type="RefOntoUML:LiteralUnlimitedNatural" xmi:id="innerBupper" value="1" />
+    </ownedEnd>
+  </packagedElement>
+</RefOntoUML:Package>

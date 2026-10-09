@@ -1,0 +1,118 @@
+{
+  "relations": [
+    {
+      "property": "logisticsProduct",
+      "source": "DistributionLogisticsActivity",
+      "target": "MedicinalProduct",
+      "source_id": "GDP",
+      "locator": "4.2, 5, 9",
+      "proposed_native_bounds": "0..* / 0..*",
+      "stereotype": "PENDING",
+      "accepted": false,
+      "meaning": "Design inference from source and local scope; the source does not prescribe this ontology relation."
+    },
+    {
+      "property": "logisticsFacility",
+      "source": "DistributionLogisticsActivity",
+      "target": "Facility",
+      "source_id": "GDP",
+      "locator": "3, 9",
+      "proposed_native_bounds": "0..* / 0..*",
+      "stereotype": "PENDING",
+      "accepted": false,
+      "meaning": "Design inference from source and local scope; the source does not prescribe this ontology relation."
+    },
+    {
+      "property": "procurementProduct",
+      "source": "ProcurementActivity",
+      "target": "MedicinalProduct",
+      "source_id": "GDP",
+      "locator": "4.2, 5.2",
+      "proposed_native_bounds": "0..* / 0..*",
+      "stereotype": "PENDING",
+      "accepted": false,
+      "meaning": "Design inference from source and local scope; the source does not prescribe this ontology relation."
+    },
+    {
+      "property": "procurementOrganization",
+      "source": "ProcurementActivity",
+      "target": "Organization",
+      "source_id": "GDP",
+      "locator": "5.2",
+      "proposed_native_bounds": "0..* / 0..*",
+      "stereotype": "PENDING",
+      "accepted": false,
+      "meaning": "Design inference from source and local scope; the source does not prescribe this ontology relation."
+    },
+    {
+      "property": "stockoutProduct",
+      "source": "StockoutSituation",
+      "target": "MedicinalProduct",
+      "source_id": "WHO-STOCKOUT",
+      "locator": "draft definition framework, printed p.10",
+      "proposed_native_bounds": "0..* / 0..*",
+      "stereotype": "PENDING",
+      "accepted": false,
+      "meaning": "Design inference from source and local scope; the source does not prescribe this ontology relation."
+    },
+    {
+      "property": "stockoutFacility",
+      "source": "StockoutSituation",
+      "target": "Facility",
+      "source_id": "WHO-STOCKOUT",
+      "locator": "draft definition framework, printed p.10",
+      "proposed_native_bounds": "0..* / 0..*",
+      "stereotype": "PENDING",
+      "accepted": false,
+      "meaning": "Design inference from source and local scope; the source does not prescribe this ontology relation."
+    },
+    {
+      "property": "requirementSource",
+      "source": "RegulatoryRequirement",
+      "target": "SourceRecord",
+      "source_id": "PROJECT-DEFINITION",
+      "locator": "normative information object; source trace",
+      "proposed_native_bounds": "0..* / 0..*",
+      "stereotype": "PENDING",
+      "accepted": false,
+      "meaning": "Design inference from source and local scope; the source does not prescribe this ontology relation."
+    },
+    {
+      "property": "requirementJurisdiction",
+      "source": "RegulatoryRequirement",
+      "target": "RegulatoryJurisdiction",
+      "source_id": "PROJECT-DEFINITION",
+      "locator": "applicability context, not legal compliance",
+      "proposed_native_bounds": "0..* / 0..*",
+      "stereotype": "PENDING",
+      "accepted": false,
+      "meaning": "Design inference from source and local scope; the source does not prescribe this ontology relation."
+    },
+    {
+      "property": "capabilityRealizedInLogistics",
+      "source": "EnterpriseCapability",
+      "target": "DistributionLogisticsActivity",
+      "source_id": "GDP",
+      "locator": "7.2–7.3, 9",
+      "proposed_native_bounds": "0..* / 0..*",
+      "stereotype": "PENDING",
+      "accepted": false,
+      "meaning": "Design inference from source and local scope; the source does not prescribe this ontology relation."
+    },
+    {
+      "property": "supportsLogistics",
+      "source": "ProvenanceActivity",
+      "target": "DistributionLogisticsActivity",
+      "source_id": "GDP",
+      "locator": "4.2; combined with PROV activity distinction",
+      "proposed_native_bounds": "0..* / 0..*",
+      "stereotype": "PENDING",
+      "accepted": false,
+      "meaning": "Design inference from source and local scope; the source does not prescribe this ontology relation."
+    }
+  ],
+  "new_classes": 0,
+  "new_relations": 10,
+  "baseline_unchanged": true,
+  "old_nonpackage_elements_unchanged": true
+}

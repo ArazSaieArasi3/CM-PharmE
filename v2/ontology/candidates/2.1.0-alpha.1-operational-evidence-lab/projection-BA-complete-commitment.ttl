@@ -1,0 +1,14 @@
+@prefix c: <https://w3id.org/cm-pharme/2.1/> .
+@prefix l: <https://w3id.org/cm-pharme/experimental/four-domain/> .
+@prefix t: <urn:cmpe-evidence:> .
+
+t:agreement a c:StrategicPartnershipAgreement ;
+    c:partnershipParticipant t:Lonza,
+        t:Moderna ;
+    l:profile "documented-partnership" .
+
+t:Lonza a c:Organization,
+        c:PartnerOrganizationRole .
+
+t:Moderna a c:Organization,
+        c:PartnerOrganizationRole .

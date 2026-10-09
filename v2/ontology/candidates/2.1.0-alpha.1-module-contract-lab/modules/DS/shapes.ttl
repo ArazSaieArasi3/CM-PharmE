@@ -1,0 +1,153 @@
+@prefix c: <https://w3id.org/cm-pharme/2.1/> .
+@prefix d: <https://w3id.org/cm-pharme/experimental/coherence/> .
+@prefix l: <https://w3id.org/cm-pharme/experimental/four-domain/> .
+@prefix r: <https://w3id.org/cm-pharme/experimental/refinement/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+d:digital-logisticsShape a sh:NodeShape ;
+    sh:class c:ProvenanceActivity ;
+    sh:property [ sh:class c:DistributionLogisticsActivity ;
+            sh:minCount 1 ;
+            sh:path d:supportsLogistics ] ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select "SELECT ?this WHERE { ?this <https://w3id.org/cm-pharme/experimental/coherence/profile> \"digital-logistics\" . }" ] .
+
+d:logisticsShape a sh:NodeShape ;
+    sh:class c:DistributionLogisticsActivity ;
+    sh:property [ sh:class c:Facility ;
+            sh:minCount 1 ;
+            sh:path d:logisticsFacility ],
+        [ sh:class c:MedicinalProduct ;
+            sh:minCount 1 ;
+            sh:path d:logisticsProduct ] ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select "SELECT ?this WHERE { ?this <https://w3id.org/cm-pharme/experimental/coherence/profile> \"logistics\" . }" ] .
+
+l:shape-deployment a sh:NodeShape ;
+    sh:class c:SystemDeploymentActivity ;
+    sh:property l:field-deployment-atTime,
+        l:field-deployment-componentVersion,
+        l:field-deployment-deploymentComponent,
+        l:field-deployment-deploymentOrganization ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select "SELECT ?this WHERE { ?this <https://w3id.org/cm-pharme/experimental/four-domain/profile> \"deployment\" . }" ] .
+
+l:shape-digital-activity a sh:NodeShape ;
+    sh:class c:ProvenanceActivity ;
+    sh:property l:field-digital-activity-atTime,
+        l:field-digital-activity-digitalActivityDeployment ;
+    sh:sparql l:deployment-before-use ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select "SELECT ?this WHERE { ?this <https://w3id.org/cm-pharme/experimental/four-domain/profile> \"digital-activity\" . }" ] .
+
+l:shape-digital-record a sh:NodeShape ;
+    sh:class c:SourceRecord ;
+    sh:property l:field-digital-record-recordDigitalActivity ;
+    sh:sparql l:distinct-SourceRecord-DigitalInformationSystemComponent ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select "SELECT ?this WHERE { ?this <https://w3id.org/cm-pharme/experimental/four-domain/profile> \"digital-record\" . }" ] .
+
+l:shape-digital-service a sh:NodeShape ;
+    sh:class c:ServiceOfferingSpecification ;
+    sh:property l:field-digital-service-digitalServiceActivity,
+        l:field-digital-service-digitalServiceComponent ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select "SELECT ?this WHERE { ?this <https://w3id.org/cm-pharme/experimental/four-domain/profile> \"digital-service\" . }" ] .
+
+r:shape-manufacturing-digital-service a sh:NodeShape ;
+    sh:class c:ServiceOfferingSpecification ;
+    sh:property r:field-manufacturing-digital-service-digitalServiceActivity ;
+    sh:sparql r:service-component-agreement ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select "SELECT ?this WHERE { ?this <https://w3id.org/cm-pharme/experimental/four-domain/profile> \"manufacturing-digital-service\" }" ] .
+
+l:deployment-before-use a sh:SPARQLConstraint ;
+    sh:message "A deployment must not postdate its use." ;
+    sh:select "SELECT $this WHERE { $this <https://w3id.org/cm-pharme/experimental/four-domain/digitalActivityDeployment> ?d ; <https://w3id.org/cm-pharme/experimental/four-domain/atTime> ?t . ?d <https://w3id.org/cm-pharme/experimental/four-domain/atTime> ?dt . FILTER(?dt > ?t) }" .
+
+l:distinct-SourceRecord-DigitalInformationSystemComponent a sh:SPARQLConstraint ;
+    sh:message "Content and real-world bearer/occurrence must not be the same node." ;
+    sh:select "SELECT $this WHERE { $this a <https://w3id.org/cm-pharme/2.1/SourceRecord> , <https://w3id.org/cm-pharme/2.1/DigitalInformationSystemComponent> . }" .
+
+l:field-deployment-atTime sh:datatype xsd:dateTime ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:path l:atTime .
+
+l:field-deployment-componentVersion sh:datatype xsd:string ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:path l:componentVersion .
+
+l:field-deployment-deploymentComponent sh:class c:DigitalInformationSystemComponent ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:path l:deploymentComponent .
+
+l:field-deployment-deploymentOrganization sh:class c:Organization ;
+    sh:minCount 1 ;
+    sh:path l:deploymentOrganization .
+
+l:field-digital-activity-atTime sh:datatype xsd:dateTime ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:path l:atTime .
+
+l:field-digital-activity-digitalActivityDeployment sh:class c:SystemDeploymentActivity ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:path l:digitalActivityDeployment .
+
+l:field-digital-record-recordDigitalActivity sh:class c:ProvenanceActivity ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:path l:recordDigitalActivity .
+
+l:field-digital-service-digitalServiceActivity sh:class c:ProvenanceActivity ;
+    sh:minCount 1 ;
+    sh:path l:digitalServiceActivity .
+
+l:field-digital-service-digitalServiceComponent sh:class c:DigitalInformationSystemComponent ;
+    sh:minCount 1 ;
+    sh:path l:digitalServiceComponent .
+
+r:field-manufacturing-context-manufacturingFacility sh:class c:Facility ;
+    sh:minCount 1 ;
+    sh:path r:manufacturingFacility .
+
+r:field-manufacturing-context-manufacturingProduct sh:class c:MedicinalProduct ;
+    sh:minCount 1 ;
+    sh:path r:manufacturingProduct .
+
+r:field-manufacturing-data-activity-activityResponsibleOrganization sh:class c:Organization ;
+    sh:minCount 1 ;
+    sh:path r:activityResponsibleOrganization .
+
+r:field-manufacturing-data-activity-supportsManufacturing sh:class c:ManufacturingActivity ;
+    sh:minCount 1 ;
+    sh:node r:shape-manufacturing-context ;
+    sh:path r:supportsManufacturing .
+
+r:field-manufacturing-digital-service-digitalServiceActivity sh:class c:ProvenanceActivity ;
+    sh:minCount 1 ;
+    sh:node r:shape-manufacturing-data-activity ;
+    sh:path l:digitalServiceActivity .
+
+r:service-component-agreement a sh:SPARQLConstraint ;
+    sh:message "Every supported activity deployment component must be listed as a service component." ;
+    sh:select "SELECT $this WHERE { $this <https://w3id.org/cm-pharme/experimental/four-domain/digitalServiceActivity> ?a . ?a <https://w3id.org/cm-pharme/experimental/four-domain/digitalActivityDeployment>/<https://w3id.org/cm-pharme/experimental/four-domain/deploymentComponent> ?c . FILTER NOT EXISTS { $this <https://w3id.org/cm-pharme/experimental/four-domain/digitalServiceComponent> ?c } }" .
+
+r:shape-manufacturing-context a sh:NodeShape ;
+    sh:class c:ManufacturingActivity ;
+    sh:property r:field-manufacturing-context-manufacturingFacility,
+        r:field-manufacturing-context-manufacturingProduct ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select "SELECT ?this WHERE { ?this <https://w3id.org/cm-pharme/experimental/four-domain/profile> \"manufacturing-context\" }" ] .
+
+r:shape-manufacturing-data-activity a sh:NodeShape ;
+    sh:class c:ProvenanceActivity ;
+    sh:property r:field-manufacturing-data-activity-activityResponsibleOrganization,
+        r:field-manufacturing-data-activity-supportsManufacturing ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select "SELECT ?this WHERE { ?this <https://w3id.org/cm-pharme/experimental/four-domain/profile> \"manufacturing-data-activity\" }" ] .

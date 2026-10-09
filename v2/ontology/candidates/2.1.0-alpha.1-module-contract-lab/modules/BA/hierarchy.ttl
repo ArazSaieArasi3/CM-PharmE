@@ -1,0 +1,11 @@
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://w3id.org/cm-pharme/2.1/EvidenceSourceRecordRole> rdfs:subClassOf <https://w3id.org/cm-pharme/2.1/EvidenceItem>,
+        <https://w3id.org/cm-pharme/2.1/SourceRecord> .
+
+<https://w3id.org/cm-pharme/2.1/PartnerOrganizationRole> rdfs:subClassOf <https://w3id.org/cm-pharme/2.1/Organization> .
+
+<https://w3id.org/cm-pharme/2.1/SupportedAssertionRole> rdfs:subClassOf <https://w3id.org/cm-pharme/2.1/Assertion> .
+
+<https://w3id.org/cm-pharme/2.1/SourceRecord> rdfs:subClassOf prov:Entity .

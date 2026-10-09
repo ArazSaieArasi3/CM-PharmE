@@ -1,0 +1,12 @@
+@prefix ns1: <https://w3id.org/cm-pharme/2.1/> .
+
+<urn:cmpe-participant-lab:assignment> a ns1:ProductClassificationAssignment ;
+    ns1:classificationEntity <urn:cmpe-participant-lab:entity> ;
+    ns1:classificationEntry <urn:cmpe-participant-lab:entry> .
+
+<urn:cmpe-participant-lab:entity> a ns1:ClassifiedEntity,
+        ns1:ClassifiedMedicinalProductRole,
+        ns1:MedicinalProduct .
+
+<urn:cmpe-participant-lab:entry> a ns1:AppliedClassificationEntryRole,
+        ns1:ClassificationEntry .

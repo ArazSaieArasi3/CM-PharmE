@@ -1,0 +1,45 @@
+@prefix c: <https://w3id.org/cm-pharme/2.1/> .
+@prefix l: <https://w3id.org/cm-pharme/experimental/four-domain/> .
+@prefix ns1: <https://w3id.org/cm-pharme/experimental/refinement/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix t: <urn:cmpe-lab:> .
+
+t:agreement a c:StrategicPartnershipAgreement ;
+    c:partnershipParticipant t:org,
+        t:org2 ;
+    l:profile "ba-partnership",
+        "documented-partnership" ;
+    ns1:agreementCommitment t:commitment .
+
+t:commitmentEvidence a c:EvidenceSupport ;
+    c:evidenceAssertion t:commitment .
+
+t:commitmentRecord a c:EvidenceItem,
+        c:EvidenceSourceRecordRole,
+        c:SourceRecord .
+
+t:view a c:BusinessArchitectureView ;
+    l:profile "ba-view" ;
+    l:viewOrganization t:org ;
+    l:viewService t:service .
+
+t:cap a c:EnterpriseCapability ;
+    c:capabilityBearer t:org .
+
+t:service a c:ServiceOfferingSpecification ;
+    l:profile "ba-service" ;
+    l:serviceCapability t:cap .
+
+t:commitment a c:Assertion,
+        c:SupportedAssertionRole ;
+    l:profile "commitment-assertion" ;
+    ns1:commitmentActor t:org,
+        t:org2 ;
+    ns1:commitmentText "Synthetic organizations commit to the stated joint service." .
+
+t:org2 a c:Organization,
+        c:PartnerOrganizationRole .
+
+t:org a c:Organization,
+        c:PartnerOrganizationRole ;
+    owl:differentFrom t:org2 .

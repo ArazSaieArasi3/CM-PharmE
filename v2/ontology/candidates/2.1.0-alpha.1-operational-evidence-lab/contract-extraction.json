@@ -1,0 +1,122 @@
+{
+  "source_id": "BA-MODERNA-SEC-2020",
+  "url": "https://www.sec.gov/Archives/edgar/data/1682852/000168285220000023/lonzamodernagltafullye.htm",
+  "publisher": "Moderna filing hosted by SEC; SEC hosting is not independent endorsement",
+  "document": "Exhibit 10.2 Global Long Term Agreement",
+  "facts": [
+    {
+      "id": "made",
+      "subject": "GLTA",
+      "predicate": "statedMadeDate",
+      "object": "2020-09-04",
+      "mode": "assessment-content",
+      "locator": "opening paragraph"
+    },
+    {
+      "id": "effective",
+      "subject": "GLTA",
+      "predicate": "statedEffectiveDate",
+      "object": "2020-05-01",
+      "mode": "assessment-content",
+      "locator": "opening paragraph"
+    },
+    {
+      "id": "prior-date",
+      "subject": "SCA",
+      "predicate": "statedAgreementDate",
+      "object": "2020-04-30",
+      "mode": "assessment-content",
+      "locator": "recital C"
+    },
+    {
+      "id": "supersedes",
+      "subject": "GLTA",
+      "predicate": "supersedesNamedAgreement",
+      "object": "SCA",
+      "mode": "assessment-content",
+      "locator": "Entire Agreement; Amendments"
+    },
+    {
+      "id": "party-moderna",
+      "subject": "GLTA",
+      "predicate": "signatureParty",
+      "object": "ModernaTX, Inc.",
+      "mode": "assessment-content",
+      "locator": "signature block"
+    },
+    {
+      "id": "party-sales",
+      "subject": "GLTA",
+      "predicate": "signatureParty",
+      "object": "Lonza Sales Ltd.",
+      "mode": "assessment-content",
+      "locator": "signature block"
+    },
+    {
+      "id": "party-lonza",
+      "subject": "GLTA",
+      "predicate": "signatureParty",
+      "object": "Lonza Ltd.",
+      "mode": "assessment-content",
+      "locator": "signature block"
+    },
+    {
+      "id": "signed",
+      "subject": "GLTA",
+      "predicate": "executionSignaturesShown",
+      "object": "true",
+      "mode": "reported-occurrence",
+      "locator": "signature block"
+    },
+    {
+      "id": "work-order",
+      "subject": "contract-parties",
+      "predicate": "prepareAgreedWorkOrderBeforeWork",
+      "object": "required",
+      "mode": "required",
+      "locator": "Statement of Work subsection"
+    },
+    {
+      "id": "sow-scope",
+      "subject": "SOW",
+      "predicate": "specifies",
+      "object": "service-scope-timetable-fees",
+      "mode": "assessment-content",
+      "locator": "definition Statement of Work"
+    },
+    {
+      "id": "affiliates",
+      "subject": "affiliates",
+      "predicate": "mayExecuteSOW",
+      "object": "subject-to-agreement",
+      "mode": "assessment-content",
+      "locator": "Affiliates subsection"
+    },
+    {
+      "id": "missing-sow",
+      "subject": "appendices-A1-A3",
+      "predicate": "availability",
+      "object": "to-be-attached",
+      "mode": "assessment-content",
+      "locator": "appendices A-1 A-2 A-3"
+    },
+    {
+      "id": "redacted-template",
+      "subject": "appendix-B",
+      "predicate": "availability",
+      "object": "redacted",
+      "mode": "assessment-content",
+      "locator": "appendix B"
+    }
+  ],
+  "count": 13,
+  "public_redacted_executed_text": true,
+  "full_unredacted_contract_available": false,
+  "identity_note": "Opening paragraph renders Lonza Ss Ltd.; signature block and filing exhibit index use Lonza Sales Ltd. Preserve this discrepancy; labels are not registry-resolved legal identifiers.",
+  "limits": [
+    "No reconstruction of redacted content or missing work orders",
+    "SCA and GLTA kept separate; no owl:sameAs link",
+    "Made date, effective date and filing/publication time are distinct",
+    "Three signatory organizations are not collapsed into the two corporate labels of the press release"
+  ]
+}

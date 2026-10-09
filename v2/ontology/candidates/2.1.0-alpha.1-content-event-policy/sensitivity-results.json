@@ -1,0 +1,375 @@
+{
+  "scope": "Controlled bounded structural sensitivity probes; modern nature remains outside legacy fidelity.",
+  "archive_commit": "42b926f6c2859dc87e49a96b8482eae28d02e7d5",
+  "total": 8,
+  "passed": 8,
+  "families_with_positive_and_negative_probes": [
+    "BinOver",
+    "ImpAbs",
+    "RepRel"
+  ],
+  "full_catalogue_sensitivity_validated": false,
+  "full_candidate_executed": false,
+  "rows": [
+    {
+      "detector": "ImpAbs",
+      "name": "two-subtypes-upper-two",
+      "expected": 1,
+      "actual": 1,
+      "pass": true,
+      "native_schema_parser_pass": true,
+      "conversion": {
+        "classes": 4,
+        "binary_relations": 1,
+        "generalizations": 2,
+        "generalization_sets": 0,
+        "ends": 2,
+        "known_semantic_losses": [
+          {
+            "id": "Parent",
+            "field": "restrictedTo",
+            "values": [
+              "functional-complex"
+            ],
+            "reason": "Legacy RefOntoUML class does not encode modern nature restrictions"
+          },
+          {
+            "id": "Other",
+            "field": "restrictedTo",
+            "values": [
+              "functional-complex"
+            ],
+            "reason": "Legacy RefOntoUML class does not encode modern nature restrictions"
+          },
+          {
+            "id": "Child0",
+            "field": "restrictedTo",
+            "values": [
+              "functional-complex"
+            ],
+            "reason": "Legacy RefOntoUML class does not encode modern nature restrictions"
+          },
+          {
+            "id": "Child1",
+            "field": "restrictedTo",
+            "values": [
+              "functional-complex"
+            ],
+            "reason": "Legacy RefOntoUML class does not encode modern nature restrictions"
+          }
+        ],
+        "scope": "Strict structural subset. Never claim full native or OWL equivalence."
+      },
+      "source_sha256": "3ee9a51636841a72138fac49db7399bfd8fc2fedf4550f8b8e4fcfe3da369615",
+      "xmi_sha256": "51c60efd1f312777e338bf15cca712ef0711c0ef085c0ae642be6b93373e5546",
+      "stdout": "CMPE_RESULT detector=ImpAbs classes=4 associations=1 occurrences=1\n",
+      "stderr": ""
+    },
+    {
+      "detector": "ImpAbs",
+      "name": "two-subtypes-upper-one",
+      "expected": 0,
+      "actual": 0,
+      "pass": true,
+      "native_schema_parser_pass": true,
+      "conversion": {
+        "classes": 4,
+        "binary_relations": 1,
+        "generalizations": 2,
+        "generalization_sets": 0,
+        "ends": 2,
+        "known_semantic_losses": [
+          {
+            "id": "Parent",
+            "field": "restrictedTo",
+            "values": [
+              "functional-complex"
+            ],
+            "reason": "Legacy RefOntoUML class does not encode modern nature restrictions"
+          },
+          {
+            "id": "Other",
+            "field": "restrictedTo",
+            "values": [
+              "functional-complex"
+            ],
+            "reason": "Legacy RefOntoUML class does not encode modern nature restrictions"
+          },
+          {
+            "id": "Child0",
+            "field": "restrictedTo",
+            "values": [
+              "functional-complex"
+            ],
+            "reason": "Legacy RefOntoUML class does not encode modern nature restrictions"
+          },
+          {
+            "id": "Child1",
+            "field": "restrictedTo",
+            "values": [
+              "functional-complex"
+            ],
+            "reason": "Legacy RefOntoUML class does not encode modern nature restrictions"
+          }
+        ],
+        "scope": "Strict structural subset. Never claim full native or OWL equivalence."
+      },
+      "source_sha256": "01e931c82b6ae6e23a54e3994ad488f9341649c134d87521ec552aa89f1ab606",
+      "xmi_sha256": "6b535d6f7f09e394cbffe03fc43cb336ba77bb7273b0f11a5f4a3fbe11e98695",
+      "stdout": "CMPE_RESULT detector=ImpAbs classes=4 associations=1 occurrences=0\n",
+      "stderr": ""
+    },
+    {
+      "detector": "ImpAbs",
+      "name": "one-subtype-unbounded",
+      "expected": 0,
+      "actual": 0,
+      "pass": true,
+      "native_schema_parser_pass": true,
+      "conversion": {
+        "classes": 3,
+        "binary_relations": 1,
+        "generalizations": 1,
+        "generalization_sets": 0,
+        "ends": 2,
+        "known_semantic_losses": [
+          {
+            "id": "Parent",
+            "field": "restrictedTo",
+            "values": [
+              "functional-complex"
+            ],
+            "reason": "Legacy RefOntoUML class does not encode modern nature restrictions"
+          },
+          {
+            "id": "Other",
+            "field": "restrictedTo",
+            "values": [
+              "functional-complex"
+            ],
+            "reason": "Legacy RefOntoUML class does not encode modern nature restrictions"
+          },
+          {
+            "id": "Child0",
+            "field": "restrictedTo",
+            "values": [
+              "functional-complex"
+            ],
+            "reason": "Legacy RefOntoUML class does not encode modern nature restrictions"
+          }
+        ],
+        "scope": "Strict structural subset. Never claim full native or OWL equivalence."
+      },
+      "source_sha256": "8fc77756e2effbf10c455c577e1eda5bce43b5dd3892344536d28826af22aecb",
+      "xmi_sha256": "ae646bf2493e7d5362c3c5cdfc984e9887e46858944e9c545fbf9cf8c2b182ef",
+      "stdout": "CMPE_RESULT detector=ImpAbs classes=3 associations=1 occurrences=0\n",
+      "stderr": ""
+    },
+    {
+      "detector": "RepRel",
+      "name": "two-mediations-many-relators",
+      "expected": 1,
+      "actual": 1,
+      "pass": true,
+      "native_schema_parser_pass": true,
+      "conversion": {
+        "classes": 3,
+        "binary_relations": 2,
+        "generalizations": 0,
+        "generalization_sets": 0,
+        "ends": 4,
+        "known_semantic_losses": [
+          {
+            "id": "Agreement",
+            "field": "restrictedTo",
+            "values": [
+              "relator"
+            ],
+            "reason": "Legacy RefOntoUML class does not encode modern nature restrictions"
+          },
+          {
+            "id": "ActorA",
+            "field": "restrictedTo",
+            "values": [
+              "functional-complex"
+            ],
+            "reason": "Legacy RefOntoUML class does not encode modern nature restrictions"
+          },
+          {
+            "id": "ActorB",
+            "field": "restrictedTo",
+            "values": [
+              "functional-complex"
+            ],
+            "reason": "Legacy RefOntoUML class does not encode modern nature restrictions"
+          }
+        ],
+        "scope": "Strict structural subset. Never claim full native or OWL equivalence."
+      },
+      "source_sha256": "8faafe43e6b8836f2c35dc6812e7a9ad4dd2d91cb8365c8b065f23486939a2ff",
+      "xmi_sha256": "10a7c7f1a6dda93bdcb67c85da960d284a639c72727360ac78d2204f61019b42",
+      "stdout": "CMPE_RESULT detector=RepRel classes=3 associations=2 occurrences=1\n",
+      "stderr": ""
+    },
+    {
+      "detector": "RepRel",
+      "name": "two-mediations-one-relator",
+      "expected": 0,
+      "actual": 0,
+      "pass": true,
+      "native_schema_parser_pass": true,
+      "conversion": {
+        "classes": 3,
+        "binary_relations": 2,
+        "generalizations": 0,
+        "generalization_sets": 0,
+        "ends": 4,
+        "known_semantic_losses": [
+          {
+            "id": "Agreement",
+            "field": "restrictedTo",
+            "values": [
+              "relator"
+            ],
+            "reason": "Legacy RefOntoUML class does not encode modern nature restrictions"
+          },
+          {
+            "id": "ActorA",
+            "field": "restrictedTo",
+            "values": [
+              "functional-complex"
+            ],
+            "reason": "Legacy RefOntoUML class does not encode modern nature restrictions"
+          },
+          {
+            "id": "ActorB",
+            "field": "restrictedTo",
+            "values": [
+              "functional-complex"
+            ],
+            "reason": "Legacy RefOntoUML class does not encode modern nature restrictions"
+          }
+        ],
+        "scope": "Strict structural subset. Never claim full native or OWL equivalence."
+      },
+      "source_sha256": "7fbd62e4b31ac9b3ccf0a64bbedba7dd89366928b1639f43ea66a4c54b9158db",
+      "xmi_sha256": "1c68fb4cd16f70c47a63f525b651e74b209cfb62ea8982174e1fdb134b8476a5",
+      "stdout": "CMPE_RESULT detector=RepRel classes=3 associations=2 occurrences=0\n",
+      "stderr": ""
+    },
+    {
+      "detector": "RepRel",
+      "name": "one-mediation-many-relators",
+      "expected": 0,
+      "actual": 0,
+      "pass": true,
+      "native_schema_parser_pass": true,
+      "conversion": {
+        "classes": 3,
+        "binary_relations": 1,
+        "generalizations": 0,
+        "generalization_sets": 0,
+        "ends": 2,
+        "known_semantic_losses": [
+          {
+            "id": "Agreement",
+            "field": "restrictedTo",
+            "values": [
+              "relator"
+            ],
+            "reason": "Legacy RefOntoUML class does not encode modern nature restrictions"
+          },
+          {
+            "id": "ActorA",
+            "field": "restrictedTo",
+            "values": [
+              "functional-complex"
+            ],
+            "reason": "Legacy RefOntoUML class does not encode modern nature restrictions"
+          },
+          {
+            "id": "ActorB",
+            "field": "restrictedTo",
+            "values": [
+              "functional-complex"
+            ],
+            "reason": "Legacy RefOntoUML class does not encode modern nature restrictions"
+          }
+        ],
+        "scope": "Strict structural subset. Never claim full native or OWL equivalence."
+      },
+      "source_sha256": "0ff9b0cc650540739dfa24054839b5bcfb6ef01897dbdc32c47a084cda40a80a",
+      "xmi_sha256": "d6a34a0bb30e20ed151600a982dc46a5f2cf3e5f0ee3ee7f9e175aaf73a3f570",
+      "stdout": "CMPE_RESULT detector=RepRel classes=3 associations=1 occurrences=0\n",
+      "stderr": ""
+    },
+    {
+      "detector": "BinOver",
+      "name": "prior-positive",
+      "expected": 1,
+      "actual": 1,
+      "pass": true,
+      "native_schema_parser_pass": true,
+      "conversion": {
+        "classes": 1,
+        "binary_relations": 1,
+        "generalizations": 0,
+        "generalization_sets": 0,
+        "ends": 2,
+        "known_semantic_losses": [
+          {
+            "id": "Organization",
+            "field": "restrictedTo",
+            "values": [
+              "functional-complex"
+            ],
+            "reason": "Legacy RefOntoUML class does not encode modern nature restrictions"
+          }
+        ],
+        "scope": "Strict structural subset. Never claim full native or OWL equivalence."
+      },
+      "source_sha256": "8e846a1a224cca9b2a73016e7d650852e326e70b605f5779b472a2c9aaa51b01",
+      "xmi_sha256": "8362451dd9dc2c7bcbfff77b188fa12774199f64f447c074ec8c40ef28f49d00",
+      "stdout": "CMPE_RESULT detector=BinOver classes=1 associations=1 occurrences=1\n",
+      "stderr": ""
+    },
+    {
+      "detector": "BinOver",
+      "name": "prior-negative",
+      "expected": 0,
+      "actual": 0,
+      "pass": true,
+      "native_schema_parser_pass": true,
+      "conversion": {
+        "classes": 2,
+        "binary_relations": 1,
+        "generalizations": 0,
+        "generalization_sets": 0,
+        "ends": 2,
+        "known_semantic_losses": [
+          {
+            "id": "Organization",
+            "field": "restrictedTo",
+            "values": [
+              "functional-complex"
+            ],
+            "reason": "Legacy RefOntoUML class does not encode modern nature restrictions"
+          },
+          {
+            "id": "Facility",
+            "field": "restrictedTo",
+            "values": [
+              "functional-complex"
+            ],
+            "reason": "Legacy RefOntoUML class does not encode modern nature restrictions"
+          }
+        ],
+        "scope": "Strict structural subset. Never claim full native or OWL equivalence."
+      },
+      "source_sha256": "ac1158fb34c9f772eed4ee3058e4111c7ba46fe109efc4b21e81efe39400076c",
+      "xmi_sha256": "94bb0b6676fa5ac9a2db2d8b2aa70a147ebb962e616faba415f766c2addbc747",
+      "stdout": "CMPE_RESULT detector=BinOver classes=2 associations=1 occurrences=0\n",
+      "stderr": ""
+    }
+  ]
+}

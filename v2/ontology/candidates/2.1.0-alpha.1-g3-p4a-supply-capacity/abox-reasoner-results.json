@@ -1,0 +1,27 @@
+{
+  "tool": "HermiT bundled with Owlready2 0.49",
+  "scope": "Full 768-row real-source ABox with G3-P4a OWL TBox; one injected contradiction checks sensitivity",
+  "input": {
+    "owl_triples": 1638,
+    "abox_triples": 39272,
+    "typed_named_abox_subjects": 5016,
+    "owl_sha256": "c62f0abb21df3aad36154ed6aa04ab0287bc7ce7a5fd6a04effc8cd338f6f304",
+    "abox_sha256": "939a80c8f3d4342e81c74c193cd9e65dc61b1b7e271ba99856edfd988daebfa9"
+  },
+  "positive": {
+    "expected_consistent": true,
+    "inconsistent": false,
+    "unsatisfiable_named_classes": [],
+    "imported_named_classes": 138,
+    "pass": true
+  },
+  "negative": {
+    "injection": "Assert one actual mapped MedicinalProduct also as disjoint MedicinalProductPresentation",
+    "expected_inconsistent": true,
+    "inconsistent": true,
+    "unsatisfiable_named_classes": [],
+    "imported_named_classes": 138,
+    "pass": true
+  },
+  "limits": "Consistency does not establish correctness of source identity, classification, missing values, current uniqueness or complete dataset coverage."
+}

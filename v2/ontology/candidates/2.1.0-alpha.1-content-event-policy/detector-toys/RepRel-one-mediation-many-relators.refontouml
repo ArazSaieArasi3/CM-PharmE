@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='utf-8'?>
+<RefOntoUML:Package xmlns:RefOntoUML="http://nemo.inf.ufes.br/ontouml/refontouml" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmi:version="2.0" xmi:id="_cmpe_cm-pharme-root" name="cm-pharme-root" visibility="public">
+  <packagedElement xsi:type="RefOntoUML:Relator" xmi:id="_cmpe_Agreement" name="Agreement" visibility="public" />
+  <packagedElement xsi:type="RefOntoUML:Kind" xmi:id="_cmpe_ActorA" name="ActorA" visibility="public" />
+  <packagedElement xsi:type="RefOntoUML:Kind" xmi:id="_cmpe_ActorB" name="ActorB" visibility="public" />
+  <packagedElement xsi:type="RefOntoUML:Mediation" xmi:id="_cmpe_mediation0" name="mediation0" visibility="public" memberEnd="_cmpe_mediation0-a _cmpe_mediation0-b">
+    <ownedEnd xmi:id="_cmpe_mediation0-a" name="mediation0-a" visibility="public" type="_cmpe_Agreement" association="_cmpe_mediation0">
+      <upperValue xsi:type="RefOntoUML:LiteralUnlimitedNatural" xmi:id="_cmpe_mediation0-a-upper" value="-1" />
+      <lowerValue xsi:type="RefOntoUML:LiteralInteger" xmi:id="_cmpe_mediation0-a-lower" value="0" />
+    </ownedEnd>
+    <ownedEnd xmi:id="_cmpe_mediation0-b" name="mediation0-b" visibility="public" type="_cmpe_ActorA" association="_cmpe_mediation0">
+      <upperValue xsi:type="RefOntoUML:LiteralUnlimitedNatural" xmi:id="_cmpe_mediation0-b-upper" value="1" />
+      <lowerValue xsi:type="RefOntoUML:LiteralInteger" xmi:id="_cmpe_mediation0-b-lower" value="1" />
+    </ownedEnd>
+  </packagedElement>
+</RefOntoUML:Package>

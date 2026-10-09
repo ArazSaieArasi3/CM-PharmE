@@ -1,0 +1,181 @@
+{
+  "id": "cm-pharme-g3-2d-native",
+  "type": "Project",
+  "name": {
+    "en": "CMPharmEtoyroute"
+  },
+  "created": "2026-10-05",
+  "modified": "2026-10-08",
+  "alternativeNames": [],
+  "description": {
+    "en": "Native-only overlay: hasStrength Characterization and its end cardinalities; three G3-2a mediations retained."
+  },
+  "editorialNotes": [],
+  "creators": [],
+  "contributors": [],
+  "customProperties": null,
+  "elements": [
+    {
+      "id": "cm-pharme-root",
+      "type": "Package",
+      "name": {
+        "en": "CMPharmEtoyroute"
+      },
+      "created": "2026-10-05",
+      "modified": null,
+      "alternativeNames": [],
+      "description": null,
+      "editorialNotes": [],
+      "creators": [],
+      "contributors": [],
+      "customProperties": null,
+      "contents": [
+        "Organization",
+        "SupplyCapacity",
+        "rel-toy",
+        "end-toy-source",
+        "end-toy-target"
+      ]
+    },
+    {
+      "id": "Organization",
+      "type": "Class",
+      "name": {
+        "en": "Organization"
+      },
+      "created": "2026-10-05",
+      "modified": null,
+      "alternativeNames": [],
+      "description": null,
+      "editorialNotes": [],
+      "creators": [],
+      "contributors": [],
+      "customProperties": null,
+      "stereotype": "kind",
+      "isDerived": false,
+      "isAbstract": false,
+      "properties": [],
+      "literals": [],
+      "restrictedTo": [
+        "functional-complex"
+      ],
+      "isPowertype": false,
+      "order": "1"
+    },
+    {
+      "id": "SupplyCapacity",
+      "type": "Class",
+      "name": {
+        "en": "Supply Capacity"
+      },
+      "created": "2026-10-05",
+      "modified": null,
+      "alternativeNames": [],
+      "description": null,
+      "editorialNotes": [],
+      "creators": [],
+      "contributors": [],
+      "customProperties": null,
+      "stereotype": "mode",
+      "isDerived": false,
+      "isAbstract": false,
+      "properties": [],
+      "literals": [],
+      "restrictedTo": [
+        "intrinsic-mode"
+      ],
+      "isPowertype": false,
+      "order": "1"
+    },
+    {
+      "id": "rel-toy",
+      "type": "BinaryRelation",
+      "name": {
+        "en": "toyRelation"
+      },
+      "created": "2026-10-09",
+      "modified": "2026-10-09",
+      "alternativeNames": [],
+      "description": {
+        "en": "Primary bearer-to-Mode Characterization; each Mode may have at most one Organization bearer in this branch."
+      },
+      "editorialNotes": [],
+      "creators": [],
+      "contributors": [],
+      "customProperties": null,
+      "stereotype": "characterization",
+      "isDerived": false,
+      "isAbstract": false,
+      "properties": [
+        "end-toy-source",
+        "end-toy-target"
+      ]
+    },
+    {
+      "id": "end-toy-source",
+      "type": "Property",
+      "name": {
+        "en": "end-toy-source"
+      },
+      "created": "2026-10-09",
+      "modified": "2026-10-09",
+      "alternativeNames": [],
+      "description": null,
+      "editorialNotes": [],
+      "creators": [],
+      "contributors": [],
+      "customProperties": null,
+      "stereotype": null,
+      "isDerived": false,
+      "subsettedProperties": [],
+      "redefinedProperties": [],
+      "aggregationKind": "NONE",
+      "cardinality": "0..1",
+      "isOrdered": false,
+      "isReadOnly": null,
+      "propertyType": "Organization"
+    },
+    {
+      "id": "end-toy-target",
+      "type": "Property",
+      "name": {
+        "en": "end-toy-target"
+      },
+      "created": "2026-10-09",
+      "modified": "2026-10-09",
+      "alternativeNames": [],
+      "description": null,
+      "editorialNotes": [],
+      "creators": [],
+      "contributors": [],
+      "customProperties": null,
+      "stereotype": null,
+      "isDerived": false,
+      "subsettedProperties": [],
+      "redefinedProperties": [],
+      "aggregationKind": "NONE",
+      "cardinality": "0..*",
+      "isOrdered": false,
+      "isReadOnly": null,
+      "propertyType": "SupplyCapacity"
+    }
+  ],
+  "root": "cm-pharme-root",
+  "publisher": null,
+  "designedForTasks": [],
+  "license": null,
+  "accessRights": [],
+  "themes": [],
+  "contexts": [],
+  "ontologyTypes": [],
+  "representationStyle": null,
+  "namespace": "https://w3id.org/cm-pharme/2.1/",
+  "landingPages": [],
+  "sources": [],
+  "bibliographicCitations": [],
+  "keywords": [],
+  "acronyms": [],
+  "languages": [
+    "en"
+  ]
+}

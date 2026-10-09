@@ -1,0 +1,17 @@
+@prefix c: <https://w3id.org/cm-pharme/2.1/> .
+@prefix l: <https://w3id.org/cm-pharme/experimental/four-domain/> .
+@prefix r: <https://w3id.org/cm-pharme/experimental/refinement/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Seven directional proposal axioms. NOT author accepted or native-integrated.
+# The runner loads the byte-pinned, complete official PROV ontology locally.
+c:SourceRecord rdfs:subClassOf prov:Entity .
+c:Dataset rdfs:subClassOf prov:Entity .
+c:DatasetRelease rdfs:subClassOf prov:Entity .
+c:ProvenanceActivity rdfs:subClassOf prov:Activity .
+l:recordDigitalActivity rdfs:subPropertyOf prov:wasGeneratedBy .
+c:generatedAssertion rdfs:subPropertyOf prov:generated .
+r:activityResponsibleOrganization rdfs:subPropertyOf prov:wasAssociatedWith .
+# No global Organization->Agent, Assertion->Entity or usedSourceArtifact->used.
+# Local class commitments are inferred where these mapped properties occur.

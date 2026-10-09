@@ -1,0 +1,690 @@
+{
+  "cases": [
+    {
+      "scenario": "SC-RM-01",
+      "name": "positive",
+      "expected_conforms": true,
+      "actual_conforms": true,
+      "expected_failure_marker": null,
+      "failure_marker_seen": true,
+      "violations": [],
+      "fixture": "fixtures/RM-1-positive.ttl",
+      "pass": true
+    },
+    {
+      "scenario": "SC-PV-01",
+      "name": "positive",
+      "expected_conforms": true,
+      "actual_conforms": true,
+      "expected_failure_marker": null,
+      "failure_marker_seen": true,
+      "violations": [],
+      "fixture": "fixtures/PV-1-positive.ttl",
+      "pass": true
+    },
+    {
+      "scenario": "SC-BA-01",
+      "name": "positive",
+      "expected_conforms": true,
+      "actual_conforms": true,
+      "expected_failure_marker": null,
+      "failure_marker_seen": true,
+      "violations": [],
+      "fixture": "fixtures/BA-1-positive.ttl",
+      "pass": true
+    },
+    {
+      "scenario": "SC-DS-01",
+      "name": "positive",
+      "expected_conforms": true,
+      "actual_conforms": true,
+      "expected_failure_marker": null,
+      "failure_marker_seen": true,
+      "violations": [],
+      "fixture": "fixtures/DS-1-positive.ttl",
+      "pass": true
+    },
+    {
+      "scenario": "SC-RM-02",
+      "name": "boundary",
+      "expected_conforms": true,
+      "actual_conforms": true,
+      "expected_failure_marker": null,
+      "failure_marker_seen": true,
+      "violations": [],
+      "fixture": "fixtures/RM-2-boundary.ttl",
+      "pass": true
+    },
+    {
+      "scenario": "SC-PV-02",
+      "name": "boundary",
+      "expected_conforms": true,
+      "actual_conforms": true,
+      "expected_failure_marker": null,
+      "failure_marker_seen": true,
+      "violations": [],
+      "fixture": "fixtures/PV-2-boundary.ttl",
+      "pass": true
+    },
+    {
+      "scenario": "SC-BA-02",
+      "name": "boundary",
+      "expected_conforms": true,
+      "actual_conforms": true,
+      "expected_failure_marker": null,
+      "failure_marker_seen": true,
+      "violations": [],
+      "fixture": "fixtures/BA-2-boundary.ttl",
+      "pass": true
+    },
+    {
+      "scenario": "SC-DS-02",
+      "name": "boundary",
+      "expected_conforms": true,
+      "actual_conforms": true,
+      "expected_failure_marker": null,
+      "failure_marker_seen": true,
+      "violations": [],
+      "fixture": "fixtures/DS-2-boundary.ttl",
+      "pass": true
+    },
+    {
+      "scenario": "SC-RM-03",
+      "name": "missing-scenario-topic",
+      "expected_conforms": false,
+      "actual_conforms": false,
+      "expected_failure_marker": "scenarioProduct",
+      "failure_marker_seen": true,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/four-domain/scenarioProduct",
+          "constraint": "",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent",
+          "focus": "urn:cmpe-lab:scenario"
+        }
+      ],
+      "fixture": "fixtures/RM-3-missing-scenario-topic.ttl",
+      "pass": true
+    },
+    {
+      "scenario": "SC-RM-03",
+      "name": "missing-evidence",
+      "expected_conforms": false,
+      "actual_conforms": false,
+      "expected_failure_marker": "citesSourceRecord",
+      "failure_marker_seen": true,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/four-domain/citesSourceRecord",
+          "constraint": "",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent",
+          "focus": "urn:cmpe-lab:riskResult"
+        }
+      ],
+      "fixture": "fixtures/RM-3-missing-evidence.ttl",
+      "pass": true
+    },
+    {
+      "scenario": "SC-RM-03",
+      "name": "dangling-plan-result",
+      "expected_conforms": false,
+      "actual_conforms": false,
+      "expected_failure_marker": "planRiskResult",
+      "failure_marker_seen": true,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/four-domain/planRiskResult",
+          "constraint": "",
+          "component": "http://www.w3.org/ns/shacl#ClassConstraintComponent",
+          "focus": "urn:cmpe-lab:plan"
+        }
+      ],
+      "fixture": "fixtures/RM-3-dangling-plan-result.ttl",
+      "pass": true
+    },
+    {
+      "scenario": "SC-RM-03",
+      "name": "result-is-assessment",
+      "expected_conforms": false,
+      "actual_conforms": false,
+      "expected_failure_marker": "distinct-RiskAssessmentActivity",
+      "failure_marker_seen": true,
+      "violations": [
+        {
+          "path": "",
+          "constraint": "https://w3id.org/cm-pharme/experimental/four-domain/distinct-RiskAssessmentActivity-Assertion",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent",
+          "focus": "urn:cmpe-lab:riskResult"
+        }
+      ],
+      "fixture": "fixtures/RM-3-result-is-assessment.ttl",
+      "pass": true
+    },
+    {
+      "scenario": "SC-RM-03",
+      "name": "missing-review-predecessor",
+      "expected_conforms": false,
+      "actual_conforms": false,
+      "expected_failure_marker": "reviewPriorResult",
+      "failure_marker_seen": true,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/four-domain/reviewPriorResult",
+          "constraint": "",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent",
+          "focus": "urn:cmpe-lab:review"
+        }
+      ],
+      "fixture": "fixtures/RM-3-missing-review-predecessor.ttl",
+      "pass": true
+    },
+    {
+      "scenario": "SC-RM-03",
+      "name": "backdated-revision",
+      "expected_conforms": false,
+      "actual_conforms": false,
+      "expected_failure_marker": "review-time-order",
+      "failure_marker_seen": true,
+      "violations": [
+        {
+          "path": "",
+          "constraint": "https://w3id.org/cm-pharme/experimental/four-domain/review-time-order",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent",
+          "focus": "urn:cmpe-lab:review"
+        }
+      ],
+      "fixture": "fixtures/RM-3-backdated-revision.ttl",
+      "pass": true
+    },
+    {
+      "scenario": "SC-RM-03",
+      "name": "dangling-executed-plan",
+      "expected_conforms": false,
+      "actual_conforms": false,
+      "expected_failure_marker": "implementsRiskPlan",
+      "failure_marker_seen": true,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/four-domain/implementsRiskPlan",
+          "constraint": "",
+          "component": "http://www.w3.org/ns/shacl#ClassConstraintComponent",
+          "focus": "urn:cmpe-lab:action"
+        }
+      ],
+      "fixture": "fixtures/RM-3-dangling-executed-plan.ttl",
+      "pass": true
+    },
+    {
+      "scenario": "SC-PV-03",
+      "name": "missing-target",
+      "expected_conforms": false,
+      "actual_conforms": false,
+      "expected_failure_marker": "signal-target-required",
+      "failure_marker_seen": true,
+      "violations": [
+        {
+          "path": "",
+          "constraint": "https://w3id.org/cm-pharme/experimental/four-domain/signal-target-required",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent",
+          "focus": "urn:cmpe-lab:signal"
+        }
+      ],
+      "fixture": "fixtures/PV-3-missing-target.ttl",
+      "pass": true
+    },
+    {
+      "scenario": "SC-PV-03",
+      "name": "missing-signal-source",
+      "expected_conforms": false,
+      "actual_conforms": false,
+      "expected_failure_marker": "citesSourceRecord",
+      "failure_marker_seen": true,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/four-domain/citesSourceRecord",
+          "constraint": "",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent",
+          "focus": "urn:cmpe-lab:signal"
+        }
+      ],
+      "fixture": "fixtures/PV-3-missing-signal-source.ttl",
+      "pass": true
+    },
+    {
+      "scenario": "SC-PV-03",
+      "name": "dangling-signal",
+      "expected_conforms": false,
+      "actual_conforms": false,
+      "expected_failure_marker": "pvResultSignal",
+      "failure_marker_seen": true,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/four-domain/pvResultSignal",
+          "constraint": "",
+          "component": "http://www.w3.org/ns/shacl#ClassConstraintComponent",
+          "focus": "urn:cmpe-lab:signalResult"
+        },
+        {
+          "path": "",
+          "constraint": "https://w3id.org/cm-pharme/experimental/four-domain/signal-result-agreement",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent",
+          "focus": "urn:cmpe-lab:signalResult"
+        }
+      ],
+      "fixture": "fixtures/PV-3-dangling-signal.ttl",
+      "pass": true
+    },
+    {
+      "scenario": "SC-PV-03",
+      "name": "missing-result-time",
+      "expected_conforms": false,
+      "actual_conforms": false,
+      "expected_failure_marker": "atTime",
+      "failure_marker_seen": true,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/four-domain/atTime",
+          "constraint": "",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent",
+          "focus": "urn:cmpe-lab:signalResult"
+        }
+      ],
+      "fixture": "fixtures/PV-3-missing-result-time.ttl",
+      "pass": true
+    },
+    {
+      "scenario": "SC-PV-03",
+      "name": "missing-jurisdiction",
+      "expected_conforms": false,
+      "actual_conforms": false,
+      "expected_failure_marker": "pvRequirementJurisdiction",
+      "failure_marker_seen": true,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/four-domain/pvRequirementJurisdiction",
+          "constraint": "",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent",
+          "focus": "urn:cmpe-lab:pvRule"
+        }
+      ],
+      "fixture": "fixtures/PV-3-missing-jurisdiction.ttl",
+      "pass": true
+    },
+    {
+      "scenario": "SC-PV-03",
+      "name": "reporting-is-record",
+      "expected_conforms": false,
+      "actual_conforms": false,
+      "expected_failure_marker": "distinct-AdverseEventReportingActivity",
+      "failure_marker_seen": true,
+      "violations": [
+        {
+          "path": "",
+          "constraint": "https://w3id.org/cm-pharme/experimental/four-domain/distinct-AdverseEventReportingActivity-SourceRecord",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent",
+          "focus": "urn:cmpe-lab:reporting"
+        }
+      ],
+      "fixture": "fixtures/PV-3-reporting-is-record.ttl",
+      "pass": true
+    },
+    {
+      "scenario": "SC-PV-03",
+      "name": "signal-is-own-result",
+      "expected_conforms": false,
+      "actual_conforms": false,
+      "expected_failure_marker": "signal-result-distinct",
+      "failure_marker_seen": true,
+      "violations": [
+        {
+          "path": "",
+          "constraint": "https://w3id.org/cm-pharme/experimental/four-domain/signal-result-distinct",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent",
+          "focus": "urn:cmpe-lab:signalResult"
+        },
+        {
+          "path": "",
+          "constraint": "https://w3id.org/cm-pharme/experimental/four-domain/signal-result-agreement",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent",
+          "focus": "urn:cmpe-lab:signalResult"
+        }
+      ],
+      "fixture": "fixtures/PV-3-signal-is-own-result.ttl",
+      "pass": true
+    },
+    {
+      "scenario": "SC-PV-03",
+      "name": "signal-result-alias",
+      "expected_conforms": false,
+      "actual_conforms": false,
+      "expected_failure_marker": "signal-result-distinct",
+      "failure_marker_seen": true,
+      "violations": [
+        {
+          "path": "",
+          "constraint": "https://w3id.org/cm-pharme/experimental/four-domain/signal-result-distinct",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent",
+          "focus": "urn:cmpe-lab:signalResult"
+        }
+      ],
+      "fixture": "fixtures/PV-3-signal-result-alias.ttl",
+      "pass": true
+    },
+    {
+      "scenario": "SC-PV-03",
+      "name": "result-assessment-target-disagreement",
+      "expected_conforms": false,
+      "actual_conforms": false,
+      "expected_failure_marker": "signal-result-agreement",
+      "failure_marker_seen": true,
+      "violations": [
+        {
+          "path": "",
+          "constraint": "https://w3id.org/cm-pharme/experimental/four-domain/signal-result-agreement",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent",
+          "focus": "urn:cmpe-lab:signalResult"
+        }
+      ],
+      "fixture": "fixtures/PV-3-result-assessment-target-disagreement.ttl",
+      "pass": true
+    },
+    {
+      "scenario": "SC-BA-03",
+      "name": "missing-capability-bearer",
+      "expected_conforms": false,
+      "actual_conforms": false,
+      "expected_failure_marker": "capabilityBearer",
+      "failure_marker_seen": true,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/2.1/capabilityBearer",
+          "constraint": "",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent",
+          "focus": "urn:cmpe-lab:cap"
+        }
+      ],
+      "fixture": "fixtures/BA-3-missing-capability-bearer.ttl",
+      "pass": true
+    },
+    {
+      "scenario": "SC-BA-03",
+      "name": "service-without-capability",
+      "expected_conforms": false,
+      "actual_conforms": false,
+      "expected_failure_marker": "serviceCapability",
+      "failure_marker_seen": true,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/four-domain/serviceCapability",
+          "constraint": "",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent",
+          "focus": "urn:cmpe-lab:service"
+        }
+      ],
+      "fixture": "fixtures/BA-3-service-without-capability.ttl",
+      "pass": true
+    },
+    {
+      "scenario": "SC-BA-03",
+      "name": "view-is-organization",
+      "expected_conforms": false,
+      "actual_conforms": false,
+      "expected_failure_marker": "distinct-BusinessArchitectureView",
+      "failure_marker_seen": true,
+      "violations": [
+        {
+          "path": "",
+          "constraint": "https://w3id.org/cm-pharme/experimental/four-domain/distinct-BusinessArchitectureView-Organization",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent",
+          "focus": "urn:cmpe-lab:view"
+        }
+      ],
+      "fixture": "fixtures/BA-3-view-is-organization.ttl",
+      "pass": true
+    },
+    {
+      "scenario": "SC-BA-03",
+      "name": "untyped-view-reference",
+      "expected_conforms": false,
+      "actual_conforms": false,
+      "expected_failure_marker": "viewOrganization",
+      "failure_marker_seen": true,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/four-domain/viewOrganization",
+          "constraint": "",
+          "component": "http://www.w3.org/ns/shacl#ClassConstraintComponent",
+          "focus": "urn:cmpe-lab:view"
+        }
+      ],
+      "fixture": "fixtures/BA-3-untyped-view-reference.ttl",
+      "pass": true
+    },
+    {
+      "scenario": "SC-BA-03",
+      "name": "one-partner-only",
+      "expected_conforms": false,
+      "actual_conforms": false,
+      "expected_failure_marker": "partnershipParticipant",
+      "failure_marker_seen": true,
+      "violations": [
+        {
+          "path": "n22d79c5b75fd4d628c93690d36f7a333b98",
+          "constraint": "",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent",
+          "focus": "urn:cmpe-lab:org2"
+        },
+        {
+          "path": "https://w3id.org/cm-pharme/2.1/partnershipParticipant",
+          "constraint": "",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent",
+          "focus": "urn:cmpe-lab:agreement"
+        },
+        {
+          "path": "https://w3id.org/cm-pharme/2.1/partnershipParticipant",
+          "constraint": "",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent",
+          "focus": "urn:cmpe-lab:agreement"
+        }
+      ],
+      "fixture": "fixtures/BA-3-one-partner-only.ttl",
+      "pass": true
+    },
+    {
+      "scenario": "SC-BA-03",
+      "name": "known-partner-aliases",
+      "expected_conforms": false,
+      "actual_conforms": false,
+      "expected_failure_marker": "partners-not-known-aliases",
+      "failure_marker_seen": true,
+      "violations": [
+        {
+          "path": "",
+          "constraint": "https://w3id.org/cm-pharme/experimental/four-domain/partners-not-known-aliases",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent",
+          "focus": "urn:cmpe-lab:agreement"
+        }
+      ],
+      "fixture": "fixtures/BA-3-known-partner-aliases.ttl",
+      "pass": true
+    },
+    {
+      "scenario": "SC-DS-03",
+      "name": "missing-version",
+      "expected_conforms": false,
+      "actual_conforms": false,
+      "expected_failure_marker": "componentVersion",
+      "failure_marker_seen": true,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/four-domain/componentVersion",
+          "constraint": "",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent",
+          "focus": "urn:cmpe-lab:deployment"
+        }
+      ],
+      "fixture": "fixtures/DS-3-missing-version.ttl",
+      "pass": true
+    },
+    {
+      "scenario": "SC-DS-03",
+      "name": "missing-generating-activity",
+      "expected_conforms": false,
+      "actual_conforms": false,
+      "expected_failure_marker": "recordDigitalActivity",
+      "failure_marker_seen": true,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/four-domain/recordDigitalActivity",
+          "constraint": "",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent",
+          "focus": "urn:cmpe-lab:record"
+        }
+      ],
+      "fixture": "fixtures/DS-3-missing-generating-activity.ttl",
+      "pass": true
+    },
+    {
+      "scenario": "SC-DS-03",
+      "name": "record-is-component",
+      "expected_conforms": false,
+      "actual_conforms": false,
+      "expected_failure_marker": "distinct-SourceRecord",
+      "failure_marker_seen": true,
+      "violations": [
+        {
+          "path": "",
+          "constraint": "https://w3id.org/cm-pharme/experimental/four-domain/distinct-SourceRecord-DigitalInformationSystemComponent",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent",
+          "focus": "urn:cmpe-lab:record"
+        }
+      ],
+      "fixture": "fixtures/DS-3-record-is-component.ttl",
+      "pass": true
+    },
+    {
+      "scenario": "SC-DS-03",
+      "name": "missing-deployment-time",
+      "expected_conforms": false,
+      "actual_conforms": false,
+      "expected_failure_marker": "atTime",
+      "failure_marker_seen": true,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/four-domain/atTime",
+          "constraint": "",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent",
+          "focus": "urn:cmpe-lab:deployment"
+        }
+      ],
+      "fixture": "fixtures/DS-3-missing-deployment-time.ttl",
+      "pass": true
+    },
+    {
+      "scenario": "SC-DS-03",
+      "name": "deployment-after-use",
+      "expected_conforms": false,
+      "actual_conforms": false,
+      "expected_failure_marker": "deployment-before-use",
+      "failure_marker_seen": true,
+      "violations": [
+        {
+          "path": "",
+          "constraint": "https://w3id.org/cm-pharme/experimental/four-domain/deployment-before-use",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent",
+          "focus": "urn:cmpe-lab:transform"
+        }
+      ],
+      "fixture": "fixtures/DS-3-deployment-after-use.ttl",
+      "pass": true
+    },
+    {
+      "scenario": "SC-DS-03",
+      "name": "service-without-supported-activity",
+      "expected_conforms": false,
+      "actual_conforms": false,
+      "expected_failure_marker": "digitalServiceActivity",
+      "failure_marker_seen": true,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/four-domain/digitalServiceActivity",
+          "constraint": "",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent",
+          "focus": "urn:cmpe-lab:digitalService"
+        }
+      ],
+      "fixture": "fixtures/DS-3-service-without-supported-activity.ttl",
+      "pass": true
+    },
+    {
+      "scenario": "SC-ALL-01",
+      "name": "combined-domains",
+      "expected_conforms": true,
+      "actual_conforms": true,
+      "expected_failure_marker": null,
+      "failure_marker_seen": true,
+      "violations": [],
+      "fixture": "fixtures/ALL-1-combined-domains.ttl",
+      "pass": true
+    },
+    {
+      "scenario": "SC-REG-01",
+      "name": "typed-capacity-preserved",
+      "expected_conforms": true,
+      "actual_conforms": true,
+      "expected_failure_marker": null,
+      "failure_marker_seen": true,
+      "violations": [],
+      "fixture": "fixtures/REG-1-typed-capacity-preserved.ttl",
+      "pass": true
+    },
+    {
+      "scenario": "SC-REG-03",
+      "name": "bearer-free-capacity-rejected",
+      "expected_conforms": false,
+      "actual_conforms": false,
+      "expected_failure_marker": null,
+      "failure_marker_seen": true,
+      "violations": [
+        {
+          "path": "n22d79c5b75fd4d628c93690d36f7a333b138",
+          "constraint": "",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent",
+          "focus": "urn:cmpe-lab:capacity"
+        },
+        {
+          "path": "",
+          "constraint": "",
+          "component": "http://www.w3.org/ns/shacl#XoneConstraintComponent",
+          "focus": "urn:cmpe-lab:capacity"
+        }
+      ],
+      "fixture": "fixtures/REG-3-bearer-free-capacity-rejected.ttl",
+      "pass": true
+    }
+  ],
+  "case_count": 39,
+  "pass_count": 39,
+  "rule_closure": [
+    {
+      "scenario": "SC-RM-04",
+      "method": "OWL-RL closure: bounded unwanted-triple absence",
+      "pass": true
+    },
+    {
+      "scenario": "SC-PV-04",
+      "method": "OWL-RL closure: bounded unwanted-triple absence",
+      "pass": true
+    },
+    {
+      "scenario": "SC-BA-04",
+      "method": "OWL-RL closure: bounded unwanted-triple absence",
+      "pass": true
+    },
+    {
+      "scenario": "SC-DS-04",
+      "method": "OWL-RL closure: bounded unwanted-triple absence",
+      "pass": true
+    }
+  ]
+}

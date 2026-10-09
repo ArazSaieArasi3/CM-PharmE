@@ -1,0 +1,10 @@
+@prefix c: <https://w3id.org/cm-pharme/2.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix t1: <urn:cmpe-prov-target:> .
+
+t1:x c:disruptionAffectsDependency t1:y .
+
+[] a owl:NegativePropertyAssertion ;
+    owl:assertionProperty c:disruptionAffects ;
+    owl:sourceIndividual t1:x ;
+    owl:targetIndividual t1:y .

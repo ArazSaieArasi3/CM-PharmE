@@ -1,0 +1,459 @@
+{
+  "requirements": [
+    {
+      "requirement_id": "B2-RG-01",
+      "canonical_requirement_id": "B2-RG-01",
+      "source_id": "FDA-DRLS",
+      "candidate_existing_ids": [
+        "EstablishmentRegistration",
+        "MarketListing",
+        "rel-registrationEntity",
+        "rel-listingPresentation"
+      ],
+      "desk_decision": "RETAIN",
+      "shacl_cases": [
+        "registration-positive",
+        "missing-inherited-authority-grounding",
+        "registration-is-not-listing"
+      ],
+      "query_cases": [
+        "registration-subject-query",
+        "registration-does-not-create-listing-query"
+      ],
+      "reasoner_cases": [],
+      "positive_and_negative_witnesses": true,
+      "bounded_expectations_pass": true,
+      "full_requirement_satisfaction_proven": false,
+      "native_implementation_complete": false,
+      "scientific_acceptance": false,
+      "remaining_mapping_gap": "Record-to-fact mapping unresolved."
+    },
+    {
+      "requirement_id": "B2-RG-02",
+      "canonical_requirement_id": "B2-RG-02",
+      "source_id": "FDA-DRLS",
+      "candidate_existing_ids": [
+        "EstablishmentRegistration",
+        "RegulatoryAuthorization"
+      ],
+      "desk_decision": "RETAIN_SCOPED_EXTENSION",
+      "shacl_cases": [
+        "registration-positive",
+        "registration-alone-cannot-support-approval"
+      ],
+      "query_cases": [
+        "registration-approval-unknown",
+        "independent-decision-available-not-verified"
+      ],
+      "reasoner_cases": [
+        "registration-fact-not-authorization-countermodel",
+        "source-record-not-authorization-countermodel"
+      ],
+      "positive_and_negative_witnesses": true,
+      "bounded_expectations_pass": true,
+      "full_requirement_satisfaction_proven": false,
+      "native_implementation_complete": false,
+      "scientific_acceptance": false,
+      "remaining_mapping_gap": "Existing authorizationParty targets organizations/facilities; product approval representation unresolved."
+    },
+    {
+      "requirement_id": "B2-RG-03",
+      "canonical_requirement_id": "B2-RG-03",
+      "source_id": "FDA-NDC",
+      "candidate_existing_ids": [
+        "IdentifierAssignment",
+        "IdentifierScheme",
+        "MarketListing",
+        "EvidenceSupport"
+      ],
+      "desk_decision": "RETAIN_SCOPED_EXTENSION",
+      "shacl_cases": [
+        "listing-positive",
+        "listing-cannot-approve-itself"
+      ],
+      "query_cases": [
+        "NDC-approval-unknown",
+        "listing-self-evidence-insufficient"
+      ],
+      "reasoner_cases": [
+        "listing-fact-not-authorization-countermodel",
+        "source-record-not-authorization-countermodel"
+      ],
+      "positive_and_negative_witnesses": true,
+      "bounded_expectations_pass": true,
+      "full_requirement_satisfaction_proven": false,
+      "native_implementation_complete": false,
+      "scientific_acceptance": false,
+      "remaining_mapping_gap": "Approval evidence path unresolved."
+    },
+    {
+      "requirement_id": "B2-RG-04",
+      "canonical_requirement_id": "B2-RG-04",
+      "source_id": "FDA-NDC",
+      "candidate_existing_ids": [
+        "SourceRecord",
+        "Organization",
+        "Assertion"
+      ],
+      "desk_decision": "RETAIN",
+      "shacl_cases": [
+        "registration-positive",
+        "listing-positive",
+        "missing-submitting-labeler"
+      ],
+      "query_cases": [
+        "submitter-is-labeler"
+      ],
+      "reasoner_cases": [],
+      "positive_and_negative_witnesses": true,
+      "bounded_expectations_pass": true,
+      "full_requirement_satisfaction_proven": false,
+      "native_implementation_complete": false,
+      "scientific_acceptance": false,
+      "remaining_mapping_gap": "Submitter attribution differs from listing responsibility."
+    },
+    {
+      "requirement_id": "B2-RG-05",
+      "canonical_requirement_id": "B2-RG-05",
+      "source_id": "FDA-NDC",
+      "candidate_existing_ids": [
+        "SourceRecord",
+        "DatasetRelease"
+      ],
+      "desk_decision": "RETAIN",
+      "shacl_cases": [],
+      "query_cases": [
+        "absent-code-is-source-scoped",
+        "present-code-does-not-establish-approval"
+      ],
+      "reasoner_cases": [],
+      "positive_and_negative_witnesses": true,
+      "bounded_expectations_pass": true,
+      "full_requirement_satisfaction_proven": false,
+      "native_implementation_complete": false,
+      "scientific_acceptance": false,
+      "remaining_mapping_gap": "Query absence policy required."
+    },
+    {
+      "requirement_id": "B2-RG-06",
+      "canonical_requirement_id": "B2-RG-06",
+      "source_id": "FDA-NDC",
+      "candidate_existing_ids": [
+        "SourceRecord",
+        "DatasetRelease",
+        "MarketListing",
+        "TimeInterval"
+      ],
+      "desk_decision": "RETAIN",
+      "shacl_cases": [
+        "listing-positive",
+        "reversed-marketing-dates",
+        "coincident-marketing-and-retrieval-allowed"
+      ],
+      "query_cases": [
+        "marketing-window-before",
+        "marketing-window-start",
+        "marketing-window-end",
+        "undeclared-marketing-end-is-unknown"
+      ],
+      "reasoner_cases": [],
+      "positive_and_negative_witnesses": true,
+      "bounded_expectations_pass": true,
+      "full_requirement_satisfaction_proven": false,
+      "native_implementation_complete": false,
+      "scientific_acceptance": false,
+      "remaining_mapping_gap": "Bitemporal source profile needed."
+    },
+    {
+      "requirement_id": "B2-RP-01",
+      "canonical_requirement_id": "B2-RP-01",
+      "source_id": "EMA-ESMP",
+      "candidate_existing_ids": [
+        "RegulatoryRequirement",
+        "Organization",
+        "RegulatoryJurisdiction"
+      ],
+      "desk_decision": "RETAIN_SCOPED_EXTENSION",
+      "shacl_cases": [
+        "routine-scope-positive",
+        "preparedness-scope-positive",
+        "crisis-scope-positive",
+        "missing-jurisdiction"
+      ],
+      "query_cases": [
+        "routine-MAH-CAP",
+        "routine-NCA-excluded",
+        "preparedness-NCA-NAP",
+        "wrong-jurisdiction",
+        "unknown-role",
+        "wrong-scenario",
+        "unannounced-action-unknown"
+      ],
+      "reasoner_cases": [],
+      "positive_and_negative_witnesses": true,
+      "bounded_expectations_pass": true,
+      "full_requirement_satisfaction_proven": false,
+      "native_implementation_complete": false,
+      "scientific_acceptance": false,
+      "remaining_mapping_gap": "Scenario applicability path absent."
+    },
+    {
+      "requirement_id": "B2-RP-02",
+      "canonical_requirement_id": "B2-RP-02",
+      "source_id": "EMA-ESMP",
+      "candidate_existing_ids": [
+        "Assertion",
+        "MedicineShortageSituation",
+        "SourceRecord"
+      ],
+      "desk_decision": "RETAIN",
+      "shacl_cases": [
+        "potential-shortage-positive",
+        "potential-claim-is-not-situation"
+      ],
+      "query_cases": [
+        "potential-report-status",
+        "potential-report-no-actual-instance"
+      ],
+      "reasoner_cases": [
+        "potential-claim-not-actual-situation-countermodel",
+        "claim-situation-collision-baseline",
+        "claim-situation-collision-proposal"
+      ],
+      "positive_and_negative_witnesses": true,
+      "bounded_expectations_pass": true,
+      "full_requirement_satisfaction_proven": false,
+      "native_implementation_complete": false,
+      "scientific_acceptance": false,
+      "remaining_mapping_gap": "Potential/actual assessment policy needed."
+    },
+    {
+      "requirement_id": "B2-RP-03",
+      "canonical_requirement_id": "B2-RP-03",
+      "source_id": "EMA-ESMP",
+      "candidate_existing_ids": [
+        "RegulatoryRequirement",
+        "MedicinalProduct",
+        "ContextualMedicineClassificationAssignment"
+      ],
+      "desk_decision": "RETAIN",
+      "shacl_cases": [
+        "routine-scope-positive",
+        "preparedness-scope-positive",
+        "crisis-scope-positive",
+        "routine-NAP-overgeneralization",
+        "action-without-explicit-product-scope"
+      ],
+      "query_cases": [
+        "routine-MAH-CAP",
+        "routine-NAP-excluded",
+        "preparedness-NCA-NAP",
+        "crisis-MAH-NAP",
+        "unselected-product",
+        "unknown-route",
+        "incomplete-scope-not-negative"
+      ],
+      "reasoner_cases": [],
+      "positive_and_negative_witnesses": true,
+      "bounded_expectations_pass": true,
+      "full_requirement_satisfaction_proven": false,
+      "native_implementation_complete": false,
+      "scientific_acceptance": false,
+      "remaining_mapping_gap": "Authorization route and scenario membership unresolved."
+    },
+    {
+      "requirement_id": "B2-RP-04",
+      "canonical_requirement_id": "B2-RP-04",
+      "source_id": "EMA-ESMP",
+      "candidate_existing_ids": [
+        "RegulatoryRequirement",
+        "ReportingPeriod",
+        "TimeInterval"
+      ],
+      "desk_decision": "RETAIN",
+      "shacl_cases": [
+        "routine-scope-positive",
+        "preparedness-scope-positive",
+        "crisis-scope-positive",
+        "missing-action-frequency"
+      ],
+      "query_cases": [
+        "expired-scope",
+        "timezone-not-assumed",
+        "action-frequency-query",
+        "frequency-not-hardcoded"
+      ],
+      "reasoner_cases": [],
+      "positive_and_negative_witnesses": true,
+      "bounded_expectations_pass": true,
+      "full_requirement_satisfaction_proven": false,
+      "native_implementation_complete": false,
+      "scientific_acceptance": false,
+      "remaining_mapping_gap": "Trigger/version/time linkage unresolved."
+    },
+    {
+      "requirement_id": "B2-DS-07",
+      "canonical_requirement_id": "R-DS-04",
+      "source_id": "W3C-PROV",
+      "candidate_existing_ids": [
+        "SourceRecord",
+        "ProvenanceActivity"
+      ],
+      "desk_decision": "REFINE_EXISTING",
+      "shacl_cases": [
+        "provenance-positive",
+        "record-activity-alias"
+      ],
+      "query_cases": [
+        "generation-query"
+      ],
+      "reasoner_cases": [
+        "record-activity-alias-baseline",
+        "record-activity-alias-proposal",
+        "closeMatch-does-not-entail-PROV-Entity"
+      ],
+      "positive_and_negative_witnesses": true,
+      "bounded_expectations_pass": true,
+      "full_requirement_satisfaction_proven": false,
+      "native_implementation_complete": false,
+      "scientific_acceptance": false,
+      "remaining_mapping_gap": "Generic provenance alignment pending."
+    },
+    {
+      "requirement_id": "B2-DS-08",
+      "canonical_requirement_id": "B2-DS-08",
+      "source_id": "W3C-PROV",
+      "candidate_existing_ids": [
+        "SourceRecord",
+        "ProvenanceActivity",
+        "Organization"
+      ],
+      "desk_decision": "RETAIN",
+      "shacl_cases": [
+        "provenance-positive",
+        "attribution-does-not-replace-activity-association"
+      ],
+      "query_cases": [
+        "two-responsibilities-query"
+      ],
+      "reasoner_cases": [
+        "closeMatch-does-not-entail-PROV-Entity"
+      ],
+      "positive_and_negative_witnesses": true,
+      "bounded_expectations_pass": true,
+      "full_requirement_satisfaction_proven": false,
+      "native_implementation_complete": false,
+      "scientific_acceptance": false,
+      "remaining_mapping_gap": "Agent typing and responsibility mapping pending."
+    },
+    {
+      "requirement_id": "B2-DS-09",
+      "canonical_requirement_id": "B2-DS-09",
+      "source_id": "W3C-PROV",
+      "candidate_existing_ids": [
+        "SourceRecord",
+        "Dataset",
+        "DatasetRelease"
+      ],
+      "desk_decision": "RETAIN_SCOPED_EXTENSION",
+      "shacl_cases": [
+        "provenance-positive",
+        "revision-missing-explicit-derivation"
+      ],
+      "query_cases": [
+        "derivation-query",
+        "missing-lineage-not-invented"
+      ],
+      "reasoner_cases": [
+        "closeMatch-does-not-entail-PROV-Entity"
+      ],
+      "positive_and_negative_witnesses": true,
+      "bounded_expectations_pass": true,
+      "full_requirement_satisfaction_proven": false,
+      "native_implementation_complete": false,
+      "scientific_acceptance": false,
+      "remaining_mapping_gap": "Derivation relation not mapped."
+    },
+    {
+      "requirement_id": "B2-DS-10",
+      "canonical_requirement_id": "B2-DS-10",
+      "source_id": "W3C-PROV",
+      "candidate_existing_ids": [
+        "SourceRecord",
+        "DatasetRelease"
+      ],
+      "desk_decision": "RETAIN_SCOPED_EXTENSION",
+      "shacl_cases": [
+        "provenance-positive",
+        "revision-alias-chain"
+      ],
+      "query_cases": [
+        "revision-query"
+      ],
+      "reasoner_cases": [
+        "revision-with-explicit-distinct-versions",
+        "closeMatch-does-not-entail-PROV-Entity"
+      ],
+      "positive_and_negative_witnesses": true,
+      "bounded_expectations_pass": true,
+      "full_requirement_satisfaction_proven": false,
+      "native_implementation_complete": false,
+      "scientific_acceptance": false,
+      "remaining_mapping_gap": "Revision identity policy unresolved."
+    },
+    {
+      "requirement_id": "B2-RG-07",
+      "canonical_requirement_id": "B2-RG-07",
+      "source_id": "FDA-DRLS",
+      "candidate_existing_ids": [
+        "RegisteredFacilityRole",
+        "RegisteredOrganizationRole",
+        "SourceRecord"
+      ],
+      "desk_decision": "REFINE_AND_RETAIN",
+      "shacl_cases": [
+        "registration-positive",
+        "organization-self-report-positive",
+        "record-subject-alias"
+      ],
+      "query_cases": [
+        "self-report-organizational-subject"
+      ],
+      "reasoner_cases": [],
+      "positive_and_negative_witnesses": true,
+      "bounded_expectations_pass": true,
+      "full_requirement_satisfaction_proven": false,
+      "native_implementation_complete": false,
+      "scientific_acceptance": false,
+      "remaining_mapping_gap": "Subject resolution policy required."
+    },
+    {
+      "requirement_id": "B2-RG-08",
+      "canonical_requirement_id": "B2-RG-08",
+      "source_id": "FDA-DRLS",
+      "candidate_existing_ids": [
+        "SourceRecord",
+        "MedicinalProduct",
+        "Assertion"
+      ],
+      "desk_decision": "RETAIN_SCOPED_EXTENSION",
+      "shacl_cases": [
+        "submission-positive",
+        "payload-product-alias"
+      ],
+      "query_cases": [
+        "payload-to-product"
+      ],
+      "reasoner_cases": [],
+      "positive_and_negative_witnesses": true,
+      "bounded_expectations_pass": true,
+      "full_requirement_satisfaction_proven": false,
+      "native_implementation_complete": false,
+      "scientific_acceptance": false,
+      "remaining_mapping_gap": "Payload/carrier/claim mapping unresolved."
+    }
+  ],
+  "bounded_rows_covered": 16,
+  "total_batch_rows": 16,
+  "all_project_coverage_claim": false
+}

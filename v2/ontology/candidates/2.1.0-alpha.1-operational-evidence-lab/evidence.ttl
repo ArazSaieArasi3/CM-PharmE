@@ -1,0 +1,734 @@
+@prefix b: <https://w3id.org/cm-pharme/experimental/reporting-context/> .
+@prefix c: <https://w3id.org/cm-pharme/2.1/> .
+@prefix e: <https://w3id.org/cm-pharme/experimental/documentary-evidence/> .
+@prefix r: <https://w3id.org/cm-pharme/experimental/refinement/> .
+@prefix t: <urn:cmpe-evidence:> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+t:BA-LONZA-2020-05 a c:SourceRecord ;
+    e:sourceDate "2020-05-01" ;
+    e:sourceDateKind "publication-date" ;
+    e:sourceID "BA-LONZA-2020-05" ;
+    r:carrierClaim t:ba-agreement,
+        t:ba-batch-plan,
+        t:ba-capability,
+        t:ba-party-Lonza,
+        t:ba-party-Moderna,
+        t:ba-service,
+        t:ba-term,
+        t:ba-transfer-plan,
+        t:map-10,
+        t:map-4,
+        t:map-5,
+        t:map-6,
+        t:map-7,
+        t:map-8,
+        t:map-9 ;
+    b:sourceURL "https://www.lonza.com/news/2020-05-01-04-50"^^xsd:anyURI .
+
+t:BA-LONZA-2020-07 a c:SourceRecord ;
+    e:sourceDate "2020-07-24" ;
+    e:sourceDateKind "publication-date" ;
+    e:sourceID "BA-LONZA-2020-07" ;
+    r:carrierClaim t:ba-batch-still-plan,
+        t:ba-transfer-complete ;
+    b:sourceURL "https://www.lonza.com/news/2020-07-24-05-00"^^xsd:anyURI .
+
+t:BA-LONZA-2021-04 a c:SourceRecord ;
+    e:sourceDate "2021-04-29" ;
+    e:sourceDateKind "publication-date" ;
+    e:sourceID "BA-LONZA-2021-04" ;
+    r:carrierClaim t:ba-existing-portsmouth,
+        t:ba-existing-visp,
+        t:ba-new-lines-plan,
+        t:ba-production ;
+    b:sourceURL "https://www.lonza.com/news/2021-04-29-05-00"^^xsd:anyURI .
+
+t:DS-EMA-LIVE a c:SourceRecord ;
+    e:sourceDateKind "not-established-in-read-page" ;
+    e:sourceID "DS-EMA-LIVE" ;
+    r:carrierClaim t:ds-launch,
+        t:ds-launching-actor,
+        t:ds-reporting-function,
+        t:map-11,
+        t:map-12 ;
+    b:sourceURL "https://www.ema.europa.eu/is/news/new-eudravigilance-system-live"^^xsd:anyURI .
+
+t:DS-EMA-TIMELINE a c:SourceRecord ;
+    e:sourceDate "2026-10-01" ;
+    e:sourceDateKind "timeline-section-update" ;
+    e:sourceID "DS-EMA-TIMELINE" ;
+    r:carrierClaim t:ds-launch-date,
+        t:ds-standard ;
+    b:sourceURL "https://www.ema.europa.eu/en/human-regulatory-overview/research-development/pharmacovigilance-research-development/eudravigilance/eudravigilance-electronic-reporting"^^xsd:anyURI .
+
+t:REG-SWISSMEDIC-2021 a c:SourceRecord ;
+    e:sourceDate "2021-03-15" ;
+    e:sourceDateKind "publication-date" ;
+    e:sourceID "REG-SWISSMEDIC-2021" ;
+    r:carrierClaim t:reg-authority,
+        t:reg-grant,
+        t:reg-holder,
+        t:reg-scope ;
+    b:sourceURL "https://www.admin.ch/en/nsb?id=82701"^^xsd:anyURI .
+
+t:RM-EMA-2020 a c:SourceRecord ;
+    e:sourceDate "2020-11-13" ;
+    e:sourceDateKind "document-date" ;
+    e:sourceID "RM-EMA-2020" ;
+    r:carrierClaim t:map-0,
+        t:map-1,
+        t:map-2,
+        t:map-3,
+        t:rm-control-required,
+        t:rm-excluded-1,
+        t:rm-excluded-2,
+        t:rm-excluded-3,
+        t:rm-included-1,
+        t:rm-included-2,
+        t:rm-included-3,
+        t:rm-included-4,
+        t:rm-included-5,
+        t:rm-new-scope,
+        t:rm-prior-scope,
+        t:rm-review,
+        t:rm-testing-required ;
+    b:sourceURL "https://www.ema.europa.eu/en/documents/referral/angiotensin-ii-receptor-antagonists-sartans-article-31-referral-nitrosamines-ema-aligns-recommendations-sartans-those-other-medicines_en.pdf"^^xsd:anyURI .
+
+t:ba-agreement a b:StructuredClaim ;
+    e:claimMode "reported-occurrence" ;
+    e:profile "documentary-witness" ;
+    e:timeLexical "2020-05-01" ;
+    e:timePrecision "day" ;
+    e:timeRole "event-date" ;
+    b:claimOrigin "source-extracted" ;
+    b:claimSubject t:collaboration ;
+    b:evidencePointer "BA-LONZA-2020-05#announcement para1" ;
+    b:objectValue "strategic-collaboration" ;
+    b:polarity "positive" ;
+    b:predicateIRI "https://w3id.org/cm-pharme/experimental/documentary-evidence/agreementAnnounced"^^xsd:anyURI .
+
+t:ba-batch-plan a b:StructuredClaim ;
+    e:claimMode "planned" ;
+    e:profile "documentary-witness" ;
+    e:timeLexical "2020-07" ;
+    e:timePrecision "month" ;
+    e:timeRole "planned-window" ;
+    b:claimOrigin "source-extracted" ;
+    b:claimSubject t:initial-batches ;
+    b:evidencePointer "BA-LONZA-2020-05#announcement para2" ;
+    b:objectValue "true" ;
+    b:polarity "positive" ;
+    b:predicateIRI "https://w3id.org/cm-pharme/experimental/documentary-evidence/manufactured"^^xsd:anyURI .
+
+t:ba-batch-still-plan a b:StructuredClaim ;
+    e:claimMode "planned" ;
+    e:profile "documentary-witness" ;
+    e:timeLexical "2020-07" ;
+    e:timePrecision "month" ;
+    e:timeRole "planned-window" ;
+    b:claimOrigin "source-extracted" ;
+    b:claimSubject t:initial-batches ;
+    b:evidencePointer "BA-LONZA-2020-07#collaboration progress paragraph" ;
+    b:objectValue "true" ;
+    b:polarity "positive" ;
+    b:predicateIRI "https://w3id.org/cm-pharme/experimental/documentary-evidence/delivered"^^xsd:anyURI .
+
+t:ba-capability a b:StructuredClaim ;
+    e:claimMode "reported-capability" ;
+    e:profile "documentary-witness" ;
+    e:timeLexical "UNKNOWN" ;
+    e:timePrecision "unspecified" ;
+    e:timeRole "not-established" ;
+    b:claimOrigin "source-extracted" ;
+    b:claimSubject t:Lonza ;
+    b:evidencePointer "BA-LONZA-2020-05#paragraph on experience" ;
+    b:objectValue "scaling-manufacture" ;
+    b:polarity "positive" ;
+    b:predicateIRI "https://w3id.org/cm-pharme/experimental/documentary-evidence/expertise"^^xsd:anyURI .
+
+t:ba-existing-portsmouth a b:StructuredClaim ;
+    e:claimMode "reported-occurrence" ;
+    e:profile "documentary-witness" ;
+    e:timeLexical "2021-04-29" ;
+    e:timePrecision "day" ;
+    e:timeRole "event-upper-bound" ;
+    b:claimOrigin "source-extracted" ;
+    b:claimSubject t:existing-Portsmouth-lines ;
+    b:evidencePointer "BA-LONZA-2021-04#paragraph beginning In May 2020" ;
+    b:objectValue "1" ;
+    b:polarity "positive" ;
+    b:predicateIRI "https://w3id.org/cm-pharme/experimental/documentary-evidence/installedCount"^^xsd:anyURI .
+
+t:ba-existing-visp a b:StructuredClaim ;
+    e:claimMode "reported-occurrence" ;
+    e:profile "documentary-witness" ;
+    e:timeLexical "2021-04-29" ;
+    e:timePrecision "day" ;
+    e:timeRole "event-upper-bound" ;
+    b:claimOrigin "source-extracted" ;
+    b:claimSubject t:existing-Visp-lines ;
+    b:evidencePointer "BA-LONZA-2021-04#paragraph beginning In May 2020" ;
+    b:objectValue "3" ;
+    b:polarity "positive" ;
+    b:predicateIRI "https://w3id.org/cm-pharme/experimental/documentary-evidence/installedCount"^^xsd:anyURI .
+
+t:ba-new-lines-plan a b:StructuredClaim ;
+    e:claimMode "planned" ;
+    e:profile "documentary-witness" ;
+    e:timeLexical "2022" ;
+    e:timePrecision "year" ;
+    e:timeQualifier "earlier-part-of-year; no exact subinterval established" ;
+    e:timeRole "planned-window" ;
+    b:claimOrigin "source-extracted" ;
+    b:claimSubject t:additional-Visp-lines ;
+    b:evidencePointer "BA-LONZA-2021-04#paragraph on expected operationalization" ;
+    b:objectValue "3" ;
+    b:polarity "positive" ;
+    b:predicateIRI "https://w3id.org/cm-pharme/experimental/documentary-evidence/operationalCount"^^xsd:anyURI .
+
+t:ba-party-Lonza a b:StructuredClaim ;
+    e:claimMode "assessment-content" ;
+    e:profile "documentary-witness" ;
+    e:timeLexical "UNKNOWN" ;
+    e:timePrecision "unspecified" ;
+    e:timeRole "not-established" ;
+    b:claimOrigin "source-extracted" ;
+    b:claimSubject t:collaboration ;
+    b:evidencePointer "BA-LONZA-2020-05#announcement para1" ;
+    b:objectValue "Lonza" ;
+    b:polarity "positive" ;
+    b:predicateIRI "https://w3id.org/cm-pharme/experimental/documentary-evidence/namedParty"^^xsd:anyURI .
+
+t:ba-party-Moderna a b:StructuredClaim ;
+    e:claimMode "assessment-content" ;
+    e:profile "documentary-witness" ;
+    e:timeLexical "UNKNOWN" ;
+    e:timePrecision "unspecified" ;
+    e:timeRole "not-established" ;
+    b:claimOrigin "source-extracted" ;
+    b:claimSubject t:collaboration ;
+    b:evidencePointer "BA-LONZA-2020-05#announcement para1" ;
+    b:objectValue "Moderna" ;
+    b:polarity "positive" ;
+    b:predicateIRI "https://w3id.org/cm-pharme/experimental/documentary-evidence/namedParty"^^xsd:anyURI .
+
+t:ba-production a b:StructuredClaim ;
+    e:claimMode "reported-occurrence" ;
+    e:profile "documentary-witness" ;
+    e:timeLexical "2021-04-29" ;
+    e:timePrecision "day" ;
+    e:timeRole "event-upper-bound" ;
+    b:claimOrigin "source-extracted" ;
+    b:claimSubject t:Visp-production ;
+    b:evidencePointer "BA-LONZA-2021-04#paragraph beginning In May 2020" ;
+    b:objectValue "true" ;
+    b:polarity "positive" ;
+    b:predicateIRI "https://w3id.org/cm-pharme/experimental/documentary-evidence/commenced"^^xsd:anyURI .
+
+t:ba-service a b:StructuredClaim ;
+    e:claimMode "planned" ;
+    e:profile "documentary-witness" ;
+    e:timeLexical "UNKNOWN" ;
+    e:timePrecision "unspecified" ;
+    e:timeRole "not-established" ;
+    b:claimOrigin "source-extracted" ;
+    b:claimSubject t:collaboration ;
+    b:evidencePointer "BA-LONZA-2020-05#announcement para2" ;
+    b:objectValue "mRNA-1273" ;
+    b:polarity "positive" ;
+    b:predicateIRI "https://w3id.org/cm-pharme/experimental/documentary-evidence/manufacturingTarget"^^xsd:anyURI .
+
+t:ba-term a b:StructuredClaim ;
+    e:claimMode "assessment-content" ;
+    e:profile "documentary-witness" ;
+    e:timeLexical "UNKNOWN" ;
+    e:timePrecision "unspecified" ;
+    e:timeRole "not-established" ;
+    b:claimOrigin "source-extracted" ;
+    b:claimSubject t:collaboration ;
+    b:evidencePointer "BA-LONZA-2020-05#announcement para1" ;
+    b:objectValue "10" ;
+    b:polarity "positive" ;
+    b:predicateIRI "https://w3id.org/cm-pharme/experimental/documentary-evidence/statedTermYears"^^xsd:anyURI .
+
+t:ba-transfer-complete a b:StructuredClaim ;
+    e:claimMode "reported-occurrence" ;
+    e:profile "documentary-witness" ;
+    e:timeLexical "2020-07-24" ;
+    e:timePrecision "day" ;
+    e:timeRole "event-upper-bound" ;
+    b:claimOrigin "source-extracted" ;
+    b:claimSubject t:technology-transfer ;
+    b:evidencePointer "BA-LONZA-2020-07#collaboration progress paragraph" ;
+    b:objectValue "true" ;
+    b:polarity "positive" ;
+    b:predicateIRI "https://w3id.org/cm-pharme/experimental/documentary-evidence/transferCompleted"^^xsd:anyURI .
+
+t:ba-transfer-plan a b:StructuredClaim ;
+    e:claimMode "planned" ;
+    e:profile "documentary-witness" ;
+    e:timeLexical "2020-06" ;
+    e:timePrecision "month" ;
+    e:timeRole "planned-window" ;
+    b:claimOrigin "source-extracted" ;
+    b:claimSubject t:technology-transfer ;
+    b:evidencePointer "BA-LONZA-2020-05#announcement para2" ;
+    b:objectValue "true" ;
+    b:polarity "positive" ;
+    b:predicateIRI "https://w3id.org/cm-pharme/experimental/documentary-evidence/transferBegins"^^xsd:anyURI .
+
+t:ds-launch a b:StructuredClaim ;
+    e:claimMode "reported-occurrence" ;
+    e:profile "documentary-witness" ;
+    e:timeLexical "UNKNOWN" ;
+    e:timePrecision "unspecified" ;
+    e:timeRole "not-established" ;
+    b:claimOrigin "source-extracted" ;
+    b:claimSubject t:EudraVigilance-launch ;
+    b:evidencePointer "DS-EMA-LIVE#opening English paragraph" ;
+    b:objectValue "true" ;
+    b:polarity "positive" ;
+    b:predicateIRI "https://w3id.org/cm-pharme/experimental/documentary-evidence/launched"^^xsd:anyURI .
+
+t:ds-launch-date a b:StructuredClaim ;
+    e:claimMode "reported-occurrence" ;
+    e:profile "documentary-witness" ;
+    e:timeLexical "2017-11-22" ;
+    e:timePrecision "day" ;
+    e:timeRole "event-date" ;
+    b:claimOrigin "source-extracted" ;
+    b:claimSubject t:EudraVigilance-launch ;
+    b:evidencePointer "DS-EMA-TIMELINE#timeline item10" ;
+    b:objectValue "true" ;
+    b:polarity "positive" ;
+    b:predicateIRI "https://w3id.org/cm-pharme/experimental/documentary-evidence/launched"^^xsd:anyURI .
+
+t:ds-launching-actor a b:StructuredClaim ;
+    e:claimMode "reported-occurrence" ;
+    e:profile "documentary-witness" ;
+    e:timeLexical "UNKNOWN" ;
+    e:timePrecision "unspecified" ;
+    e:timeRole "not-established" ;
+    b:claimOrigin "source-extracted" ;
+    b:claimSubject t:EudraVigilance-launch ;
+    b:evidencePointer "DS-EMA-LIVE#opening English paragraph" ;
+    b:objectValue "EMA" ;
+    b:polarity "positive" ;
+    b:predicateIRI "https://w3id.org/cm-pharme/experimental/documentary-evidence/launchingOrganization"^^xsd:anyURI .
+
+t:ds-reporting-function a b:StructuredClaim ;
+    e:claimMode "reported-capability" ;
+    e:profile "documentary-witness" ;
+    e:timeLexical "UNKNOWN" ;
+    e:timePrecision "unspecified" ;
+    e:timeRole "not-established" ;
+    b:claimOrigin "source-extracted" ;
+    b:claimSubject t:EudraVigilance ;
+    b:evidencePointer "DS-EMA-LIVE#opening English paragraph and benefits" ;
+    b:objectValue "safety-reporting-and-analysis" ;
+    b:polarity "positive" ;
+    b:predicateIRI "https://w3id.org/cm-pharme/experimental/documentary-evidence/supportsFunction"^^xsd:anyURI .
+
+t:ds-standard a b:StructuredClaim ;
+    e:claimMode "reported-capability" ;
+    e:profile "documentary-witness" ;
+    e:timeLexical "UNKNOWN" ;
+    e:timePrecision "unspecified" ;
+    e:timeRole "not-established" ;
+    b:claimOrigin "source-extracted" ;
+    b:claimSubject t:EudraVigilance ;
+    b:evidencePointer "DS-EMA-TIMELINE#timeline item10" ;
+    b:objectValue "ICH-E2B-R3" ;
+    b:polarity "positive" ;
+    b:predicateIRI "https://w3id.org/cm-pharme/experimental/documentary-evidence/messageStandard"^^xsd:anyURI .
+
+t:map-0 a b:StructuredClaim ;
+    e:claimMode "mapping-proposal" ;
+    e:profile "documentary-witness" ;
+    e:timeLexical "UNKNOWN" ;
+    e:timePrecision "unspecified" ;
+    e:timeRole "not-established" ;
+    b:claimOrigin "mapping-interpretation" ;
+    b:claimSubject t:sartan-review ;
+    b:evidencePointer "RM-EMA-2020#proposed-model-crosswalk" ;
+    b:objectResource c:RiskAssessmentActivity ;
+    b:polarity "positive" ;
+    b:predicateIRI "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"^^xsd:anyURI .
+
+t:map-1 a b:StructuredClaim ;
+    e:claimMode "mapping-proposal" ;
+    e:profile "documentary-witness" ;
+    e:timeLexical "UNKNOWN" ;
+    e:timePrecision "unspecified" ;
+    e:timeRole "not-established" ;
+    b:claimOrigin "mapping-interpretation" ;
+    b:claimSubject t:sartan-revision ;
+    b:evidencePointer "RM-EMA-2020#proposed-model-crosswalk" ;
+    b:objectResource c:RiskReviewActivity ;
+    b:polarity "positive" ;
+    b:predicateIRI "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"^^xsd:anyURI .
+
+t:map-10 a b:StructuredClaim ;
+    e:claimMode "mapping-proposal" ;
+    e:profile "documentary-witness" ;
+    e:timeLexical "UNKNOWN" ;
+    e:timePrecision "unspecified" ;
+    e:timeRole "not-established" ;
+    b:claimOrigin "mapping-interpretation" ;
+    b:claimSubject t:manufacturing-capability ;
+    b:evidencePointer "BA-LONZA-2020-05#proposed-model-crosswalk" ;
+    b:objectResource t:Lonza ;
+    b:polarity "positive" ;
+    b:predicateIRI "https://w3id.org/cm-pharme/2.1/capabilityBearer"^^xsd:anyURI .
+
+t:map-11 a b:StructuredClaim ;
+    e:claimMode "mapping-proposal" ;
+    e:profile "documentary-witness" ;
+    e:timeLexical "UNKNOWN" ;
+    e:timePrecision "unspecified" ;
+    e:timeRole "not-established" ;
+    b:claimOrigin "mapping-interpretation" ;
+    b:claimSubject t:EudraVigilance-launch ;
+    b:evidencePointer "DS-EMA-LIVE#proposed-model-crosswalk" ;
+    b:objectResource c:SystemDeploymentActivity ;
+    b:polarity "positive" ;
+    b:predicateIRI "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"^^xsd:anyURI .
+
+t:map-12 a b:StructuredClaim ;
+    e:claimMode "mapping-proposal" ;
+    e:profile "documentary-witness" ;
+    e:timeLexical "UNKNOWN" ;
+    e:timePrecision "unspecified" ;
+    e:timeRole "not-established" ;
+    b:claimOrigin "mapping-interpretation" ;
+    b:claimSubject t:EudraVigilance ;
+    b:evidencePointer "DS-EMA-LIVE#proposed-model-crosswalk" ;
+    b:objectResource c:DigitalInformationSystemComponent ;
+    b:polarity "positive" ;
+    b:predicateIRI "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"^^xsd:anyURI .
+
+t:map-2 a b:StructuredClaim ;
+    e:claimMode "mapping-proposal" ;
+    e:profile "documentary-witness" ;
+    e:timeLexical "UNKNOWN" ;
+    e:timePrecision "unspecified" ;
+    e:timeRole "not-established" ;
+    b:claimOrigin "mapping-interpretation" ;
+    b:claimSubject t:sartan-revision ;
+    b:evidencePointer "RM-EMA-2020#proposed-model-crosswalk" ;
+    b:objectResource t:sartan-prior-result ;
+    b:polarity "positive" ;
+    b:predicateIRI "https://w3id.org/cm-pharme/experimental/four-domain/reviewPriorResult"^^xsd:anyURI .
+
+t:map-3 a b:StructuredClaim ;
+    e:claimMode "mapping-proposal" ;
+    e:profile "documentary-witness" ;
+    e:timeLexical "UNKNOWN" ;
+    e:timePrecision "unspecified" ;
+    e:timeRole "not-established" ;
+    b:claimOrigin "mapping-interpretation" ;
+    b:claimSubject t:sartan-revision ;
+    b:evidencePointer "RM-EMA-2020#proposed-model-crosswalk" ;
+    b:objectResource t:sartan-revised-result ;
+    b:polarity "positive" ;
+    b:predicateIRI "https://w3id.org/cm-pharme/experimental/four-domain/reviewNewResult"^^xsd:anyURI .
+
+t:map-4 a b:StructuredClaim ;
+    e:claimMode "mapping-proposal" ;
+    e:profile "documentary-witness" ;
+    e:timeLexical "UNKNOWN" ;
+    e:timePrecision "unspecified" ;
+    e:timeRole "not-established" ;
+    b:claimOrigin "mapping-interpretation" ;
+    b:claimSubject t:collaboration ;
+    b:evidencePointer "BA-LONZA-2020-05#proposed-model-crosswalk" ;
+    b:objectResource c:StrategicPartnershipAgreement ;
+    b:polarity "positive" ;
+    b:predicateIRI "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"^^xsd:anyURI .
+
+t:map-5 a b:StructuredClaim ;
+    e:claimMode "mapping-proposal" ;
+    e:profile "documentary-witness" ;
+    e:timeLexical "UNKNOWN" ;
+    e:timePrecision "unspecified" ;
+    e:timeRole "not-established" ;
+    b:claimOrigin "mapping-interpretation" ;
+    b:claimSubject t:collaboration ;
+    b:evidencePointer "BA-LONZA-2020-05#proposed-model-crosswalk" ;
+    b:objectResource t:Lonza ;
+    b:polarity "positive" ;
+    b:predicateIRI "https://w3id.org/cm-pharme/2.1/partnershipParticipant"^^xsd:anyURI .
+
+t:map-6 a b:StructuredClaim ;
+    e:claimMode "mapping-proposal" ;
+    e:profile "documentary-witness" ;
+    e:timeLexical "UNKNOWN" ;
+    e:timePrecision "unspecified" ;
+    e:timeRole "not-established" ;
+    b:claimOrigin "mapping-interpretation" ;
+    b:claimSubject t:collaboration ;
+    b:evidencePointer "BA-LONZA-2020-05#proposed-model-crosswalk" ;
+    b:objectResource t:Moderna ;
+    b:polarity "positive" ;
+    b:predicateIRI "https://w3id.org/cm-pharme/2.1/partnershipParticipant"^^xsd:anyURI .
+
+t:map-7 a b:StructuredClaim ;
+    e:claimMode "mapping-proposal" ;
+    e:profile "documentary-witness" ;
+    e:timeLexical "UNKNOWN" ;
+    e:timePrecision "unspecified" ;
+    e:timeRole "not-established" ;
+    b:claimOrigin "mapping-interpretation" ;
+    b:claimSubject t:Lonza ;
+    b:evidencePointer "BA-LONZA-2020-05#proposed-model-crosswalk" ;
+    b:objectResource c:PartnerOrganizationRole ;
+    b:polarity "positive" ;
+    b:predicateIRI "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"^^xsd:anyURI .
+
+t:map-8 a b:StructuredClaim ;
+    e:claimMode "mapping-proposal" ;
+    e:profile "documentary-witness" ;
+    e:timeLexical "UNKNOWN" ;
+    e:timePrecision "unspecified" ;
+    e:timeRole "not-established" ;
+    b:claimOrigin "mapping-interpretation" ;
+    b:claimSubject t:Moderna ;
+    b:evidencePointer "BA-LONZA-2020-05#proposed-model-crosswalk" ;
+    b:objectResource c:PartnerOrganizationRole ;
+    b:polarity "positive" ;
+    b:predicateIRI "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"^^xsd:anyURI .
+
+t:map-9 a b:StructuredClaim ;
+    e:claimMode "mapping-proposal" ;
+    e:profile "documentary-witness" ;
+    e:timeLexical "UNKNOWN" ;
+    e:timePrecision "unspecified" ;
+    e:timeRole "not-established" ;
+    b:claimOrigin "mapping-interpretation" ;
+    b:claimSubject t:manufacturing-capability ;
+    b:evidencePointer "BA-LONZA-2020-05#proposed-model-crosswalk" ;
+    b:objectResource c:EnterpriseCapability ;
+    b:polarity "positive" ;
+    b:predicateIRI "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"^^xsd:anyURI .
+
+t:reg-authority a b:StructuredClaim ;
+    e:claimMode "authorization-report" ;
+    e:profile "documentary-witness" ;
+    e:timeLexical "UNKNOWN" ;
+    e:timePrecision "unspecified" ;
+    e:timeRole "not-established" ;
+    b:claimOrigin "source-extracted" ;
+    b:claimSubject t:Visp-establishment-licence ;
+    b:evidencePointer "REG-SWISSMEDIC-2021#opening paragraph" ;
+    b:objectValue "Swissmedic" ;
+    b:polarity "positive" ;
+    b:predicateIRI "https://w3id.org/cm-pharme/experimental/documentary-evidence/grantingAuthority"^^xsd:anyURI .
+
+t:reg-grant a b:StructuredClaim ;
+    e:claimMode "authorization-report" ;
+    e:profile "documentary-witness" ;
+    e:timeLexical "2021-03-15" ;
+    e:timePrecision "day" ;
+    e:timeRole "event-upper-bound" ;
+    b:claimOrigin "source-extracted" ;
+    b:claimSubject t:Visp-establishment-licence ;
+    b:evidencePointer "REG-SWISSMEDIC-2021#opening paragraph" ;
+    b:objectValue "true" ;
+    b:polarity "positive" ;
+    b:predicateIRI "https://w3id.org/cm-pharme/experimental/documentary-evidence/granted"^^xsd:anyURI .
+
+t:reg-holder a b:StructuredClaim ;
+    e:claimMode "authorization-report" ;
+    e:profile "documentary-witness" ;
+    e:timeLexical "UNKNOWN" ;
+    e:timePrecision "unspecified" ;
+    e:timeRole "not-established" ;
+    b:claimOrigin "source-extracted" ;
+    b:claimSubject t:Visp-establishment-licence ;
+    b:evidencePointer "REG-SWISSMEDIC-2021#opening paragraph" ;
+    b:objectValue "Lonza" ;
+    b:polarity "positive" ;
+    b:predicateIRI "https://w3id.org/cm-pharme/experimental/documentary-evidence/namedHolder"^^xsd:anyURI .
+
+t:reg-scope a b:StructuredClaim ;
+    e:claimMode "authorization-report" ;
+    e:profile "documentary-witness" ;
+    e:timeLexical "UNKNOWN" ;
+    e:timePrecision "unspecified" ;
+    e:timeRole "not-established" ;
+    b:claimOrigin "source-extracted" ;
+    b:claimSubject t:Visp-establishment-licence ;
+    b:evidencePointer "REG-SWISSMEDIC-2021#second paragraph" ;
+    b:objectValue "manufacture-active-substance-for-Moderna" ;
+    b:polarity "positive" ;
+    b:predicateIRI "https://w3id.org/cm-pharme/experimental/documentary-evidence/scope"^^xsd:anyURI .
+
+t:rm-control-required a b:StructuredClaim ;
+    e:claimMode "required" ;
+    e:profile "documentary-witness" ;
+    e:timeLexical "UNKNOWN" ;
+    e:timePrecision "unspecified" ;
+    e:timeRole "not-established" ;
+    b:claimOrigin "source-extracted" ;
+    b:claimSubject t:manufacturers ;
+    b:evidencePointer "RM-EMA-2020#p1 para3" ;
+    b:objectValue "prevent-or-limit-impurities" ;
+    b:polarity "positive" ;
+    b:predicateIRI "https://w3id.org/cm-pharme/experimental/documentary-evidence/controlStrategy"^^xsd:anyURI .
+
+t:rm-excluded-1 a b:StructuredClaim ;
+    e:claimMode "assessment-content" ;
+    e:profile "documentary-witness" ;
+    e:timeLexical "UNKNOWN" ;
+    e:timePrecision "unspecified" ;
+    e:timeRole "not-established" ;
+    b:claimOrigin "source-extracted" ;
+    b:claimSubject t:sartan-review ;
+    b:evidencePointer "RM-EMA-2020#p2 para1" ;
+    b:objectValue "azilsartan" ;
+    b:polarity "positive" ;
+    b:predicateIRI "https://w3id.org/cm-pharme/experimental/documentary-evidence/excludedLabel"^^xsd:anyURI .
+
+t:rm-excluded-2 a b:StructuredClaim ;
+    e:claimMode "assessment-content" ;
+    e:profile "documentary-witness" ;
+    e:timeLexical "UNKNOWN" ;
+    e:timePrecision "unspecified" ;
+    e:timeRole "not-established" ;
+    b:claimOrigin "source-extracted" ;
+    b:claimSubject t:sartan-review ;
+    b:evidencePointer "RM-EMA-2020#p2 para1" ;
+    b:objectValue "eprosartan" ;
+    b:polarity "positive" ;
+    b:predicateIRI "https://w3id.org/cm-pharme/experimental/documentary-evidence/excludedLabel"^^xsd:anyURI .
+
+t:rm-excluded-3 a b:StructuredClaim ;
+    e:claimMode "assessment-content" ;
+    e:profile "documentary-witness" ;
+    e:timeLexical "UNKNOWN" ;
+    e:timePrecision "unspecified" ;
+    e:timeRole "not-established" ;
+    b:claimOrigin "source-extracted" ;
+    b:claimSubject t:sartan-review ;
+    b:evidencePointer "RM-EMA-2020#p2 para1" ;
+    b:objectValue "telmisartan" ;
+    b:polarity "positive" ;
+    b:predicateIRI "https://w3id.org/cm-pharme/experimental/documentary-evidence/excludedLabel"^^xsd:anyURI .
+
+t:rm-included-1 a b:StructuredClaim ;
+    e:claimMode "assessment-content" ;
+    e:profile "documentary-witness" ;
+    e:timeLexical "UNKNOWN" ;
+    e:timePrecision "unspecified" ;
+    e:timeRole "not-established" ;
+    b:claimOrigin "source-extracted" ;
+    b:claimSubject t:sartan-review ;
+    b:evidencePointer "RM-EMA-2020#p1 More about the medicine" ;
+    b:objectValue "candesartan" ;
+    b:polarity "positive" ;
+    b:predicateIRI "https://w3id.org/cm-pharme/experimental/documentary-evidence/includedLabel"^^xsd:anyURI .
+
+t:rm-included-2 a b:StructuredClaim ;
+    e:claimMode "assessment-content" ;
+    e:profile "documentary-witness" ;
+    e:timeLexical "UNKNOWN" ;
+    e:timePrecision "unspecified" ;
+    e:timeRole "not-established" ;
+    b:claimOrigin "source-extracted" ;
+    b:claimSubject t:sartan-review ;
+    b:evidencePointer "RM-EMA-2020#p1 More about the medicine" ;
+    b:objectValue "irbesartan" ;
+    b:polarity "positive" ;
+    b:predicateIRI "https://w3id.org/cm-pharme/experimental/documentary-evidence/includedLabel"^^xsd:anyURI .
+
+t:rm-included-3 a b:StructuredClaim ;
+    e:claimMode "assessment-content" ;
+    e:profile "documentary-witness" ;
+    e:timeLexical "UNKNOWN" ;
+    e:timePrecision "unspecified" ;
+    e:timeRole "not-established" ;
+    b:claimOrigin "source-extracted" ;
+    b:claimSubject t:sartan-review ;
+    b:evidencePointer "RM-EMA-2020#p1 More about the medicine" ;
+    b:objectValue "losartan" ;
+    b:polarity "positive" ;
+    b:predicateIRI "https://w3id.org/cm-pharme/experimental/documentary-evidence/includedLabel"^^xsd:anyURI .
+
+t:rm-included-4 a b:StructuredClaim ;
+    e:claimMode "assessment-content" ;
+    e:profile "documentary-witness" ;
+    e:timeLexical "UNKNOWN" ;
+    e:timePrecision "unspecified" ;
+    e:timeRole "not-established" ;
+    b:claimOrigin "source-extracted" ;
+    b:claimSubject t:sartan-review ;
+    b:evidencePointer "RM-EMA-2020#p1 More about the medicine" ;
+    b:objectValue "olmesartan" ;
+    b:polarity "positive" ;
+    b:predicateIRI "https://w3id.org/cm-pharme/experimental/documentary-evidence/includedLabel"^^xsd:anyURI .
+
+t:rm-included-5 a b:StructuredClaim ;
+    e:claimMode "assessment-content" ;
+    e:profile "documentary-witness" ;
+    e:timeLexical "UNKNOWN" ;
+    e:timePrecision "unspecified" ;
+    e:timeRole "not-established" ;
+    b:claimOrigin "source-extracted" ;
+    b:claimSubject t:sartan-review ;
+    b:evidencePointer "RM-EMA-2020#p1 More about the medicine" ;
+    b:objectValue "valsartan" ;
+    b:polarity "positive" ;
+    b:predicateIRI "https://w3id.org/cm-pharme/experimental/documentary-evidence/includedLabel"^^xsd:anyURI .
+
+t:rm-new-scope a b:StructuredClaim ;
+    e:claimMode "assessment-content" ;
+    e:profile "documentary-witness" ;
+    e:timeLexical "UNKNOWN" ;
+    e:timePrecision "unspecified" ;
+    e:timeRole "not-established" ;
+    b:claimOrigin "source-extracted" ;
+    b:claimSubject t:sartan-revised-result ;
+    b:evidencePointer "RM-EMA-2020#p1 para2" ;
+    b:objectValue "finished-product" ;
+    b:polarity "positive" ;
+    b:predicateIRI "https://w3id.org/cm-pharme/experimental/documentary-evidence/limitBasis"^^xsd:anyURI .
+
+t:rm-prior-scope a b:StructuredClaim ;
+    e:claimMode "assessment-content" ;
+    e:profile "documentary-witness" ;
+    e:timeLexical "UNKNOWN" ;
+    e:timePrecision "unspecified" ;
+    e:timeRole "not-established" ;
+    b:claimOrigin "source-extracted" ;
+    b:claimSubject t:sartan-prior-result ;
+    b:evidencePointer "RM-EMA-2020#p1 para2" ;
+    b:objectValue "active-ingredient" ;
+    b:polarity "positive" ;
+    b:predicateIRI "https://w3id.org/cm-pharme/experimental/documentary-evidence/limitBasis"^^xsd:anyURI .
+
+t:rm-review a b:StructuredClaim ;
+    e:claimMode "reported-occurrence" ;
+    e:profile "documentary-witness" ;
+    e:timeLexical "2019-01" ;
+    e:timePrecision "month" ;
+    e:timeRole "assessment-period" ;
+    b:claimOrigin "source-extracted" ;
+    b:claimSubject t:sartan-review ;
+    b:evidencePointer "RM-EMA-2020#p1 para5" ;
+    b:objectValue "true" ;
+    b:polarity "positive" ;
+    b:predicateIRI "https://w3id.org/cm-pharme/experimental/documentary-evidence/reviewConcluded"^^xsd:anyURI .
+
+t:rm-testing-required a b:StructuredClaim ;
+    e:claimMode "required" ;
+    e:profile "documentary-witness" ;
+    e:timeLexical "UNKNOWN" ;
+    e:timePrecision "unspecified" ;
+    e:timeRole "not-established" ;
+    b:claimOrigin "source-extracted" ;
+    b:claimSubject t:manufacturers ;
+    b:evidencePointer "RM-EMA-2020#p1 para3" ;
+    b:objectValue "required" ;
+    b:polarity "positive" ;
+    b:predicateIRI "https://w3id.org/cm-pharme/experimental/documentary-evidence/riskEvaluationAndTesting"^^xsd:anyURI .

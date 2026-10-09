@@ -1,0 +1,4766 @@
+[
+  {
+    "id": "ManufacturerRole/permission_without_responsibility_or_occurrence",
+    "role": "ManufacturerRole",
+    "records": [
+      {
+        "id": "authorization",
+        "episode_key": "authorization",
+        "facet": "authorization",
+        "role": "ManufacturerRole",
+        "scope": "manufacturing",
+        "holder": "org",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "auth"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": false,
+    "expected_facets": [
+      "authorization"
+    ],
+    "actual_facets": [
+      "authorization"
+    ],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "ManufacturerRole/responsibility_persists_while_idle",
+    "role": "ManufacturerRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "ManufacturerRole",
+        "scope": "manufacturing",
+        "holder": "org",
+        "counterpart": "product",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": false,
+    "expected_facets": [
+      "responsibility"
+    ],
+    "actual_facets": [
+      "responsibility"
+    ],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "ManufacturerRole/occurrence_does_not_invent_permission_or_commitment",
+    "role": "ManufacturerRole",
+    "records": [
+      {
+        "id": "activity",
+        "episode_key": "activity",
+        "facet": "activity",
+        "role": "ManufacturerRole",
+        "scope": "manufacturing",
+        "holder": "org",
+        "counterpart": null,
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "event"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": false,
+    "expected_facets": [
+      "activity"
+    ],
+    "actual_facets": [
+      "activity"
+    ],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "ManufacturerRole/three_facets_can_coexist",
+    "role": "ManufacturerRole",
+    "records": [
+      {
+        "id": "authorization",
+        "episode_key": "authorization",
+        "facet": "authorization",
+        "role": "ManufacturerRole",
+        "scope": "manufacturing",
+        "holder": "org",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "auth"
+      },
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "ManufacturerRole",
+        "scope": "manufacturing",
+        "holder": "org",
+        "counterpart": "product",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      },
+      {
+        "id": "activity",
+        "episode_key": "activity",
+        "facet": "activity",
+        "role": "ManufacturerRole",
+        "scope": "manufacturing",
+        "holder": "org",
+        "counterpart": null,
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "event"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": false,
+    "expected_facets": [
+      "activity",
+      "authorization",
+      "responsibility"
+    ],
+    "actual_facets": [
+      "activity",
+      "authorization",
+      "responsibility"
+    ],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "ManufacturerRole/registration_is_insufficient",
+    "role": "ManufacturerRole",
+    "records": [
+      {
+        "id": "registration",
+        "episode_key": "registration",
+        "facet": "registration",
+        "role": "ManufacturerRole",
+        "scope": "manufacturing",
+        "holder": "org",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "reg"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": false,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "ManufacturerRole/generic_operation_is_insufficient",
+    "role": "ManufacturerRole",
+    "records": [
+      {
+        "id": "operation",
+        "episode_key": "operation",
+        "facet": "operation",
+        "role": "ManufacturerRole",
+        "scope": "manufacturing",
+        "holder": "org",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "op"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": false,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "ManufacturerRole/generic_scope_is_insufficient",
+    "role": "ManufacturerRole",
+    "records": [
+      {
+        "id": "authorization",
+        "episode_key": "authorization",
+        "facet": "authorization",
+        "role": "ManufacturerRole",
+        "scope": "generic",
+        "holder": "org",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "auth"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": false,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "ManufacturerRole/wrong_responsibility_scope",
+    "role": "ManufacturerRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "ManufacturerRole",
+        "scope": "unrelated",
+        "holder": "org",
+        "counterpart": "product",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": false,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "ManufacturerRole/wrong_jurisdiction",
+    "role": "ManufacturerRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "ManufacturerRole",
+        "scope": "manufacturing",
+        "holder": "org",
+        "counterpart": "product",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "OTHER",
+    "expected_rejection": false,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "ManufacturerRole/start_is_inclusive",
+    "role": "ManufacturerRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "ManufacturerRole",
+        "scope": "manufacturing",
+        "holder": "org",
+        "counterpart": "product",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 10,
+    "jurisdiction": "LAB",
+    "expected_rejection": false,
+    "expected_facets": [
+      "responsibility"
+    ],
+    "actual_facets": [
+      "responsibility"
+    ],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "ManufacturerRole/before_start",
+    "role": "ManufacturerRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "ManufacturerRole",
+        "scope": "manufacturing",
+        "holder": "org",
+        "counterpart": "product",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 9,
+    "jurisdiction": "LAB",
+    "expected_rejection": false,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "ManufacturerRole/end_is_exclusive",
+    "role": "ManufacturerRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "ManufacturerRole",
+        "scope": "manufacturing",
+        "holder": "org",
+        "counterpart": "product",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 30,
+    "jurisdiction": "LAB",
+    "expected_rejection": false,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "ManufacturerRole/ending_one_of_two_contexts_preserves_role",
+    "role": "ManufacturerRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "ManufacturerRole",
+        "scope": "manufacturing",
+        "holder": "org",
+        "counterpart": "product",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      },
+      {
+        "id": "r2",
+        "episode_key": "r2",
+        "facet": "responsibility",
+        "role": "ManufacturerRole",
+        "scope": "manufacturing",
+        "holder": "org",
+        "counterpart": "product",
+        "jurisdiction": "LAB",
+        "start_day": 25,
+        "end_day": 50,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 30,
+    "jurisdiction": "LAB",
+    "expected_rejection": false,
+    "expected_facets": [
+      "responsibility"
+    ],
+    "actual_facets": [
+      "responsibility"
+    ],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "ManufacturerRole/renewal_can_follow_expiration",
+    "role": "ManufacturerRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "ManufacturerRole",
+        "scope": "manufacturing",
+        "holder": "org",
+        "counterpart": "product",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      },
+      {
+        "id": "r2",
+        "episode_key": "r2",
+        "facet": "responsibility",
+        "role": "ManufacturerRole",
+        "scope": "manufacturing",
+        "holder": "org",
+        "counterpart": "product",
+        "jurisdiction": "LAB",
+        "start_day": 30,
+        "end_day": 50,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 30,
+    "jurisdiction": "LAB",
+    "expected_rejection": false,
+    "expected_facets": [
+      "responsibility"
+    ],
+    "actual_facets": [
+      "responsibility"
+    ],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "ManufacturerRole/open_ended_explicit_commitment",
+    "role": "ManufacturerRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "ManufacturerRole",
+        "scope": "manufacturing",
+        "holder": "org",
+        "counterpart": "product",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": null,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 99,
+    "jurisdiction": "LAB",
+    "expected_rejection": false,
+    "expected_facets": [
+      "responsibility"
+    ],
+    "actual_facets": [
+      "responsibility"
+    ],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "ManufacturerRole/duplicate_constituting_episode_rejected",
+    "role": "ManufacturerRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "ManufacturerRole",
+        "scope": "manufacturing",
+        "holder": "org",
+        "counterpart": "product",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      },
+      {
+        "id": "copy",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "ManufacturerRole",
+        "scope": "manufacturing",
+        "holder": "org",
+        "counterpart": "product",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": true,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": "UNIQUE constraint failed: context.facet, context.episode_key",
+    "passed": true
+  },
+  {
+    "id": "ManufacturerRole/same_parties_distinct_commitments_allowed",
+    "role": "ManufacturerRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "ManufacturerRole",
+        "scope": "manufacturing",
+        "holder": "org",
+        "counterpart": "product",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      },
+      {
+        "id": "other",
+        "episode_key": "independent",
+        "facet": "responsibility",
+        "role": "ManufacturerRole",
+        "scope": "manufacturing",
+        "holder": "org",
+        "counterpart": "product",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": false,
+    "expected_facets": [
+      "responsibility"
+    ],
+    "actual_facets": [
+      "responsibility"
+    ],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "ManufacturerRole/reversed_interval_rejected",
+    "role": "ManufacturerRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "ManufacturerRole",
+        "scope": "manufacturing",
+        "holder": "org",
+        "counterpart": "product",
+        "jurisdiction": "LAB",
+        "start_day": 40,
+        "end_day": 30,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": true,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": "CHECK constraint failed: end_day IS NULL OR (typeof(end_day)='integer' AND end_day>start_day)",
+    "passed": true
+  },
+  {
+    "id": "ManufacturerRole/missing_time_rejected",
+    "role": "ManufacturerRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "ManufacturerRole",
+        "scope": "manufacturing",
+        "holder": "org",
+        "counterpart": "product",
+        "jurisdiction": "LAB",
+        "start_day": null,
+        "end_day": 30,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": true,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": "NOT NULL constraint failed: context.start_day",
+    "passed": true
+  },
+  {
+    "id": "ManufacturerRole/missing_counterpart_rejected",
+    "role": "ManufacturerRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "ManufacturerRole",
+        "scope": "manufacturing",
+        "holder": "org",
+        "counterpart": null,
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": true,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": "CHECK constraint failed: facet='activity' OR counterpart IS NOT NULL",
+    "passed": true
+  },
+  {
+    "id": "ManufacturerRole/self_mediation_rejected",
+    "role": "ManufacturerRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "ManufacturerRole",
+        "scope": "manufacturing",
+        "holder": "org",
+        "counterpart": "org",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": true,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": "wrong responsibility counterpart",
+    "passed": true
+  },
+  {
+    "id": "ManufacturerRole/wrong_bearer_identity_rejected",
+    "role": "ManufacturerRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "ManufacturerRole",
+        "scope": "manufacturing",
+        "holder": "product",
+        "counterpart": "product",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": true,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": "wrong bearer identity",
+    "passed": true
+  },
+  {
+    "id": "ManufacturerRole/wrong_counterpart_identity_rejected",
+    "role": "ManufacturerRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "ManufacturerRole",
+        "scope": "manufacturing",
+        "holder": "org",
+        "counterpart": "org3",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": true,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": "wrong responsibility counterpart",
+    "passed": true
+  },
+  {
+    "id": "ManufacturerRole/source_registration_not_authorization_decision",
+    "role": "ManufacturerRole",
+    "records": [
+      {
+        "id": "authorization",
+        "episode_key": "authorization",
+        "facet": "authorization",
+        "role": "ManufacturerRole",
+        "scope": "manufacturing",
+        "holder": "org",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "reg"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": true,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": "evidence kind cannot support facet",
+    "passed": true
+  },
+  {
+    "id": "ManufacturerRole/permission_not_occurrence_evidence",
+    "role": "ManufacturerRole",
+    "records": [
+      {
+        "id": "activity",
+        "episode_key": "activity",
+        "facet": "activity",
+        "role": "ManufacturerRole",
+        "scope": "manufacturing",
+        "holder": "org",
+        "counterpart": null,
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "auth"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": true,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": "evidence kind cannot support facet",
+    "passed": true
+  },
+  {
+    "id": "ManufacturerRole/unbounded_occurrence_rejected",
+    "role": "ManufacturerRole",
+    "records": [
+      {
+        "id": "activity",
+        "episode_key": "activity",
+        "facet": "activity",
+        "role": "ManufacturerRole",
+        "scope": "manufacturing",
+        "holder": "org",
+        "counterpart": null,
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": null,
+        "evidence_id": "event"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": true,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": "CHECK constraint failed: facet<>'activity' OR end_day IS NOT NULL",
+    "passed": true
+  },
+  {
+    "id": "ManufacturingSiteRole/permission_without_responsibility_or_occurrence",
+    "role": "ManufacturingSiteRole",
+    "records": [
+      {
+        "id": "authorization",
+        "episode_key": "authorization",
+        "facet": "authorization",
+        "role": "ManufacturingSiteRole",
+        "scope": "manufacturing_site",
+        "holder": "site",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "auth"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": false,
+    "expected_facets": [
+      "authorization"
+    ],
+    "actual_facets": [
+      "authorization"
+    ],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "ManufacturingSiteRole/responsibility_persists_while_idle",
+    "role": "ManufacturingSiteRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "ManufacturingSiteRole",
+        "scope": "manufacturing_site",
+        "holder": "site",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": false,
+    "expected_facets": [
+      "responsibility"
+    ],
+    "actual_facets": [
+      "responsibility"
+    ],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "ManufacturingSiteRole/occurrence_does_not_invent_permission_or_commitment",
+    "role": "ManufacturingSiteRole",
+    "records": [
+      {
+        "id": "activity",
+        "episode_key": "activity",
+        "facet": "activity",
+        "role": "ManufacturingSiteRole",
+        "scope": "manufacturing_site",
+        "holder": "site",
+        "counterpart": null,
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "event"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": false,
+    "expected_facets": [
+      "activity"
+    ],
+    "actual_facets": [
+      "activity"
+    ],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "ManufacturingSiteRole/three_facets_can_coexist",
+    "role": "ManufacturingSiteRole",
+    "records": [
+      {
+        "id": "authorization",
+        "episode_key": "authorization",
+        "facet": "authorization",
+        "role": "ManufacturingSiteRole",
+        "scope": "manufacturing_site",
+        "holder": "site",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "auth"
+      },
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "ManufacturingSiteRole",
+        "scope": "manufacturing_site",
+        "holder": "site",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      },
+      {
+        "id": "activity",
+        "episode_key": "activity",
+        "facet": "activity",
+        "role": "ManufacturingSiteRole",
+        "scope": "manufacturing_site",
+        "holder": "site",
+        "counterpart": null,
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "event"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": false,
+    "expected_facets": [
+      "activity",
+      "authorization",
+      "responsibility"
+    ],
+    "actual_facets": [
+      "activity",
+      "authorization",
+      "responsibility"
+    ],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "ManufacturingSiteRole/registration_is_insufficient",
+    "role": "ManufacturingSiteRole",
+    "records": [
+      {
+        "id": "registration",
+        "episode_key": "registration",
+        "facet": "registration",
+        "role": "ManufacturingSiteRole",
+        "scope": "manufacturing_site",
+        "holder": "site",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "reg"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": false,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "ManufacturingSiteRole/generic_operation_is_insufficient",
+    "role": "ManufacturingSiteRole",
+    "records": [
+      {
+        "id": "operation",
+        "episode_key": "operation",
+        "facet": "operation",
+        "role": "ManufacturingSiteRole",
+        "scope": "manufacturing_site",
+        "holder": "site",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "op"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": false,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "ManufacturingSiteRole/generic_scope_is_insufficient",
+    "role": "ManufacturingSiteRole",
+    "records": [
+      {
+        "id": "authorization",
+        "episode_key": "authorization",
+        "facet": "authorization",
+        "role": "ManufacturingSiteRole",
+        "scope": "generic",
+        "holder": "site",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "auth"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": false,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "ManufacturingSiteRole/wrong_responsibility_scope",
+    "role": "ManufacturingSiteRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "ManufacturingSiteRole",
+        "scope": "unrelated",
+        "holder": "site",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": false,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "ManufacturingSiteRole/wrong_jurisdiction",
+    "role": "ManufacturingSiteRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "ManufacturingSiteRole",
+        "scope": "manufacturing_site",
+        "holder": "site",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "OTHER",
+    "expected_rejection": false,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "ManufacturingSiteRole/start_is_inclusive",
+    "role": "ManufacturingSiteRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "ManufacturingSiteRole",
+        "scope": "manufacturing_site",
+        "holder": "site",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 10,
+    "jurisdiction": "LAB",
+    "expected_rejection": false,
+    "expected_facets": [
+      "responsibility"
+    ],
+    "actual_facets": [
+      "responsibility"
+    ],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "ManufacturingSiteRole/before_start",
+    "role": "ManufacturingSiteRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "ManufacturingSiteRole",
+        "scope": "manufacturing_site",
+        "holder": "site",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 9,
+    "jurisdiction": "LAB",
+    "expected_rejection": false,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "ManufacturingSiteRole/end_is_exclusive",
+    "role": "ManufacturingSiteRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "ManufacturingSiteRole",
+        "scope": "manufacturing_site",
+        "holder": "site",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 30,
+    "jurisdiction": "LAB",
+    "expected_rejection": false,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "ManufacturingSiteRole/ending_one_of_two_contexts_preserves_role",
+    "role": "ManufacturingSiteRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "ManufacturingSiteRole",
+        "scope": "manufacturing_site",
+        "holder": "site",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      },
+      {
+        "id": "r2",
+        "episode_key": "r2",
+        "facet": "responsibility",
+        "role": "ManufacturingSiteRole",
+        "scope": "manufacturing_site",
+        "holder": "site",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": 25,
+        "end_day": 50,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 30,
+    "jurisdiction": "LAB",
+    "expected_rejection": false,
+    "expected_facets": [
+      "responsibility"
+    ],
+    "actual_facets": [
+      "responsibility"
+    ],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "ManufacturingSiteRole/renewal_can_follow_expiration",
+    "role": "ManufacturingSiteRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "ManufacturingSiteRole",
+        "scope": "manufacturing_site",
+        "holder": "site",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      },
+      {
+        "id": "r2",
+        "episode_key": "r2",
+        "facet": "responsibility",
+        "role": "ManufacturingSiteRole",
+        "scope": "manufacturing_site",
+        "holder": "site",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": 30,
+        "end_day": 50,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 30,
+    "jurisdiction": "LAB",
+    "expected_rejection": false,
+    "expected_facets": [
+      "responsibility"
+    ],
+    "actual_facets": [
+      "responsibility"
+    ],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "ManufacturingSiteRole/open_ended_explicit_commitment",
+    "role": "ManufacturingSiteRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "ManufacturingSiteRole",
+        "scope": "manufacturing_site",
+        "holder": "site",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": null,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 99,
+    "jurisdiction": "LAB",
+    "expected_rejection": false,
+    "expected_facets": [
+      "responsibility"
+    ],
+    "actual_facets": [
+      "responsibility"
+    ],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "ManufacturingSiteRole/duplicate_constituting_episode_rejected",
+    "role": "ManufacturingSiteRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "ManufacturingSiteRole",
+        "scope": "manufacturing_site",
+        "holder": "site",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      },
+      {
+        "id": "copy",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "ManufacturingSiteRole",
+        "scope": "manufacturing_site",
+        "holder": "site",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": true,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": "UNIQUE constraint failed: context.facet, context.episode_key",
+    "passed": true
+  },
+  {
+    "id": "ManufacturingSiteRole/same_parties_distinct_commitments_allowed",
+    "role": "ManufacturingSiteRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "ManufacturingSiteRole",
+        "scope": "manufacturing_site",
+        "holder": "site",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      },
+      {
+        "id": "other",
+        "episode_key": "independent",
+        "facet": "responsibility",
+        "role": "ManufacturingSiteRole",
+        "scope": "manufacturing_site",
+        "holder": "site",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": false,
+    "expected_facets": [
+      "responsibility"
+    ],
+    "actual_facets": [
+      "responsibility"
+    ],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "ManufacturingSiteRole/reversed_interval_rejected",
+    "role": "ManufacturingSiteRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "ManufacturingSiteRole",
+        "scope": "manufacturing_site",
+        "holder": "site",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": 40,
+        "end_day": 30,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": true,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": "CHECK constraint failed: end_day IS NULL OR (typeof(end_day)='integer' AND end_day>start_day)",
+    "passed": true
+  },
+  {
+    "id": "ManufacturingSiteRole/missing_time_rejected",
+    "role": "ManufacturingSiteRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "ManufacturingSiteRole",
+        "scope": "manufacturing_site",
+        "holder": "site",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": null,
+        "end_day": 30,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": true,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": "NOT NULL constraint failed: context.start_day",
+    "passed": true
+  },
+  {
+    "id": "ManufacturingSiteRole/missing_counterpart_rejected",
+    "role": "ManufacturingSiteRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "ManufacturingSiteRole",
+        "scope": "manufacturing_site",
+        "holder": "site",
+        "counterpart": null,
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": true,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": "CHECK constraint failed: facet='activity' OR counterpart IS NOT NULL",
+    "passed": true
+  },
+  {
+    "id": "ManufacturingSiteRole/self_mediation_rejected",
+    "role": "ManufacturingSiteRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "ManufacturingSiteRole",
+        "scope": "manufacturing_site",
+        "holder": "site",
+        "counterpart": "site",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": true,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": "wrong responsibility counterpart",
+    "passed": true
+  },
+  {
+    "id": "ManufacturingSiteRole/wrong_bearer_identity_rejected",
+    "role": "ManufacturingSiteRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "ManufacturingSiteRole",
+        "scope": "manufacturing_site",
+        "holder": "product",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": true,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": "wrong bearer identity",
+    "passed": true
+  },
+  {
+    "id": "ManufacturingSiteRole/wrong_counterpart_identity_rejected",
+    "role": "ManufacturingSiteRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "ManufacturingSiteRole",
+        "scope": "manufacturing_site",
+        "holder": "site",
+        "counterpart": "site2",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": true,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": "wrong responsibility counterpart",
+    "passed": true
+  },
+  {
+    "id": "ManufacturingSiteRole/source_registration_not_authorization_decision",
+    "role": "ManufacturingSiteRole",
+    "records": [
+      {
+        "id": "authorization",
+        "episode_key": "authorization",
+        "facet": "authorization",
+        "role": "ManufacturingSiteRole",
+        "scope": "manufacturing_site",
+        "holder": "site",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "reg"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": true,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": "evidence kind cannot support facet",
+    "passed": true
+  },
+  {
+    "id": "ManufacturingSiteRole/permission_not_occurrence_evidence",
+    "role": "ManufacturingSiteRole",
+    "records": [
+      {
+        "id": "activity",
+        "episode_key": "activity",
+        "facet": "activity",
+        "role": "ManufacturingSiteRole",
+        "scope": "manufacturing_site",
+        "holder": "site",
+        "counterpart": null,
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "auth"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": true,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": "evidence kind cannot support facet",
+    "passed": true
+  },
+  {
+    "id": "ManufacturingSiteRole/unbounded_occurrence_rejected",
+    "role": "ManufacturingSiteRole",
+    "records": [
+      {
+        "id": "activity",
+        "episode_key": "activity",
+        "facet": "activity",
+        "role": "ManufacturingSiteRole",
+        "scope": "manufacturing_site",
+        "holder": "site",
+        "counterpart": null,
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": null,
+        "evidence_id": "event"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": true,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": "CHECK constraint failed: facet<>'activity' OR end_day IS NOT NULL",
+    "passed": true
+  },
+  {
+    "id": "ImporterRole/permission_without_responsibility_or_occurrence",
+    "role": "ImporterRole",
+    "records": [
+      {
+        "id": "authorization",
+        "episode_key": "authorization",
+        "facet": "authorization",
+        "role": "ImporterRole",
+        "scope": "import",
+        "holder": "org",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "auth"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": false,
+    "expected_facets": [
+      "authorization"
+    ],
+    "actual_facets": [
+      "authorization"
+    ],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "ImporterRole/responsibility_persists_while_idle",
+    "role": "ImporterRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "ImporterRole",
+        "scope": "import",
+        "holder": "org",
+        "counterpart": "product",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": false,
+    "expected_facets": [
+      "responsibility"
+    ],
+    "actual_facets": [
+      "responsibility"
+    ],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "ImporterRole/occurrence_does_not_invent_permission_or_commitment",
+    "role": "ImporterRole",
+    "records": [
+      {
+        "id": "activity",
+        "episode_key": "activity",
+        "facet": "activity",
+        "role": "ImporterRole",
+        "scope": "import",
+        "holder": "org",
+        "counterpart": null,
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "event"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": false,
+    "expected_facets": [
+      "activity"
+    ],
+    "actual_facets": [
+      "activity"
+    ],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "ImporterRole/three_facets_can_coexist",
+    "role": "ImporterRole",
+    "records": [
+      {
+        "id": "authorization",
+        "episode_key": "authorization",
+        "facet": "authorization",
+        "role": "ImporterRole",
+        "scope": "import",
+        "holder": "org",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "auth"
+      },
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "ImporterRole",
+        "scope": "import",
+        "holder": "org",
+        "counterpart": "product",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      },
+      {
+        "id": "activity",
+        "episode_key": "activity",
+        "facet": "activity",
+        "role": "ImporterRole",
+        "scope": "import",
+        "holder": "org",
+        "counterpart": null,
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "event"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": false,
+    "expected_facets": [
+      "activity",
+      "authorization",
+      "responsibility"
+    ],
+    "actual_facets": [
+      "activity",
+      "authorization",
+      "responsibility"
+    ],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "ImporterRole/registration_is_insufficient",
+    "role": "ImporterRole",
+    "records": [
+      {
+        "id": "registration",
+        "episode_key": "registration",
+        "facet": "registration",
+        "role": "ImporterRole",
+        "scope": "import",
+        "holder": "org",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "reg"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": false,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "ImporterRole/generic_operation_is_insufficient",
+    "role": "ImporterRole",
+    "records": [
+      {
+        "id": "operation",
+        "episode_key": "operation",
+        "facet": "operation",
+        "role": "ImporterRole",
+        "scope": "import",
+        "holder": "org",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "op"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": false,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "ImporterRole/generic_scope_is_insufficient",
+    "role": "ImporterRole",
+    "records": [
+      {
+        "id": "authorization",
+        "episode_key": "authorization",
+        "facet": "authorization",
+        "role": "ImporterRole",
+        "scope": "generic",
+        "holder": "org",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "auth"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": false,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "ImporterRole/wrong_responsibility_scope",
+    "role": "ImporterRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "ImporterRole",
+        "scope": "unrelated",
+        "holder": "org",
+        "counterpart": "product",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": false,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "ImporterRole/wrong_jurisdiction",
+    "role": "ImporterRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "ImporterRole",
+        "scope": "import",
+        "holder": "org",
+        "counterpart": "product",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "OTHER",
+    "expected_rejection": false,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "ImporterRole/start_is_inclusive",
+    "role": "ImporterRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "ImporterRole",
+        "scope": "import",
+        "holder": "org",
+        "counterpart": "product",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 10,
+    "jurisdiction": "LAB",
+    "expected_rejection": false,
+    "expected_facets": [
+      "responsibility"
+    ],
+    "actual_facets": [
+      "responsibility"
+    ],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "ImporterRole/before_start",
+    "role": "ImporterRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "ImporterRole",
+        "scope": "import",
+        "holder": "org",
+        "counterpart": "product",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 9,
+    "jurisdiction": "LAB",
+    "expected_rejection": false,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "ImporterRole/end_is_exclusive",
+    "role": "ImporterRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "ImporterRole",
+        "scope": "import",
+        "holder": "org",
+        "counterpart": "product",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 30,
+    "jurisdiction": "LAB",
+    "expected_rejection": false,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "ImporterRole/ending_one_of_two_contexts_preserves_role",
+    "role": "ImporterRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "ImporterRole",
+        "scope": "import",
+        "holder": "org",
+        "counterpart": "product",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      },
+      {
+        "id": "r2",
+        "episode_key": "r2",
+        "facet": "responsibility",
+        "role": "ImporterRole",
+        "scope": "import",
+        "holder": "org",
+        "counterpart": "product",
+        "jurisdiction": "LAB",
+        "start_day": 25,
+        "end_day": 50,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 30,
+    "jurisdiction": "LAB",
+    "expected_rejection": false,
+    "expected_facets": [
+      "responsibility"
+    ],
+    "actual_facets": [
+      "responsibility"
+    ],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "ImporterRole/renewal_can_follow_expiration",
+    "role": "ImporterRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "ImporterRole",
+        "scope": "import",
+        "holder": "org",
+        "counterpart": "product",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      },
+      {
+        "id": "r2",
+        "episode_key": "r2",
+        "facet": "responsibility",
+        "role": "ImporterRole",
+        "scope": "import",
+        "holder": "org",
+        "counterpart": "product",
+        "jurisdiction": "LAB",
+        "start_day": 30,
+        "end_day": 50,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 30,
+    "jurisdiction": "LAB",
+    "expected_rejection": false,
+    "expected_facets": [
+      "responsibility"
+    ],
+    "actual_facets": [
+      "responsibility"
+    ],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "ImporterRole/open_ended_explicit_commitment",
+    "role": "ImporterRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "ImporterRole",
+        "scope": "import",
+        "holder": "org",
+        "counterpart": "product",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": null,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 99,
+    "jurisdiction": "LAB",
+    "expected_rejection": false,
+    "expected_facets": [
+      "responsibility"
+    ],
+    "actual_facets": [
+      "responsibility"
+    ],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "ImporterRole/duplicate_constituting_episode_rejected",
+    "role": "ImporterRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "ImporterRole",
+        "scope": "import",
+        "holder": "org",
+        "counterpart": "product",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      },
+      {
+        "id": "copy",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "ImporterRole",
+        "scope": "import",
+        "holder": "org",
+        "counterpart": "product",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": true,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": "UNIQUE constraint failed: context.facet, context.episode_key",
+    "passed": true
+  },
+  {
+    "id": "ImporterRole/same_parties_distinct_commitments_allowed",
+    "role": "ImporterRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "ImporterRole",
+        "scope": "import",
+        "holder": "org",
+        "counterpart": "product",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      },
+      {
+        "id": "other",
+        "episode_key": "independent",
+        "facet": "responsibility",
+        "role": "ImporterRole",
+        "scope": "import",
+        "holder": "org",
+        "counterpart": "product",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": false,
+    "expected_facets": [
+      "responsibility"
+    ],
+    "actual_facets": [
+      "responsibility"
+    ],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "ImporterRole/reversed_interval_rejected",
+    "role": "ImporterRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "ImporterRole",
+        "scope": "import",
+        "holder": "org",
+        "counterpart": "product",
+        "jurisdiction": "LAB",
+        "start_day": 40,
+        "end_day": 30,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": true,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": "CHECK constraint failed: end_day IS NULL OR (typeof(end_day)='integer' AND end_day>start_day)",
+    "passed": true
+  },
+  {
+    "id": "ImporterRole/missing_time_rejected",
+    "role": "ImporterRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "ImporterRole",
+        "scope": "import",
+        "holder": "org",
+        "counterpart": "product",
+        "jurisdiction": "LAB",
+        "start_day": null,
+        "end_day": 30,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": true,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": "NOT NULL constraint failed: context.start_day",
+    "passed": true
+  },
+  {
+    "id": "ImporterRole/missing_counterpart_rejected",
+    "role": "ImporterRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "ImporterRole",
+        "scope": "import",
+        "holder": "org",
+        "counterpart": null,
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": true,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": "CHECK constraint failed: facet='activity' OR counterpart IS NOT NULL",
+    "passed": true
+  },
+  {
+    "id": "ImporterRole/self_mediation_rejected",
+    "role": "ImporterRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "ImporterRole",
+        "scope": "import",
+        "holder": "org",
+        "counterpart": "org",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": true,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": "wrong responsibility counterpart",
+    "passed": true
+  },
+  {
+    "id": "ImporterRole/wrong_bearer_identity_rejected",
+    "role": "ImporterRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "ImporterRole",
+        "scope": "import",
+        "holder": "product",
+        "counterpart": "product",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": true,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": "wrong bearer identity",
+    "passed": true
+  },
+  {
+    "id": "ImporterRole/wrong_counterpart_identity_rejected",
+    "role": "ImporterRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "ImporterRole",
+        "scope": "import",
+        "holder": "org",
+        "counterpart": "org3",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": true,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": "wrong responsibility counterpart",
+    "passed": true
+  },
+  {
+    "id": "ImporterRole/source_registration_not_authorization_decision",
+    "role": "ImporterRole",
+    "records": [
+      {
+        "id": "authorization",
+        "episode_key": "authorization",
+        "facet": "authorization",
+        "role": "ImporterRole",
+        "scope": "import",
+        "holder": "org",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "reg"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": true,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": "evidence kind cannot support facet",
+    "passed": true
+  },
+  {
+    "id": "ImporterRole/permission_not_occurrence_evidence",
+    "role": "ImporterRole",
+    "records": [
+      {
+        "id": "activity",
+        "episode_key": "activity",
+        "facet": "activity",
+        "role": "ImporterRole",
+        "scope": "import",
+        "holder": "org",
+        "counterpart": null,
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "auth"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": true,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": "evidence kind cannot support facet",
+    "passed": true
+  },
+  {
+    "id": "ImporterRole/unbounded_occurrence_rejected",
+    "role": "ImporterRole",
+    "records": [
+      {
+        "id": "activity",
+        "episode_key": "activity",
+        "facet": "activity",
+        "role": "ImporterRole",
+        "scope": "import",
+        "holder": "org",
+        "counterpart": null,
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": null,
+        "evidence_id": "event"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": true,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": "CHECK constraint failed: facet<>'activity' OR end_day IS NOT NULL",
+    "passed": true
+  },
+  {
+    "id": "WholesaleDistributorRole/permission_without_responsibility_or_occurrence",
+    "role": "WholesaleDistributorRole",
+    "records": [
+      {
+        "id": "authorization",
+        "episode_key": "authorization",
+        "facet": "authorization",
+        "role": "WholesaleDistributorRole",
+        "scope": "wholesale",
+        "holder": "org",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "auth"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": false,
+    "expected_facets": [
+      "authorization"
+    ],
+    "actual_facets": [
+      "authorization"
+    ],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "WholesaleDistributorRole/responsibility_persists_while_idle",
+    "role": "WholesaleDistributorRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "WholesaleDistributorRole",
+        "scope": "wholesale",
+        "holder": "org",
+        "counterpart": "product",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": false,
+    "expected_facets": [
+      "responsibility"
+    ],
+    "actual_facets": [
+      "responsibility"
+    ],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "WholesaleDistributorRole/occurrence_does_not_invent_permission_or_commitment",
+    "role": "WholesaleDistributorRole",
+    "records": [
+      {
+        "id": "activity",
+        "episode_key": "activity",
+        "facet": "activity",
+        "role": "WholesaleDistributorRole",
+        "scope": "wholesale",
+        "holder": "org",
+        "counterpart": null,
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "event"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": false,
+    "expected_facets": [
+      "activity"
+    ],
+    "actual_facets": [
+      "activity"
+    ],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "WholesaleDistributorRole/three_facets_can_coexist",
+    "role": "WholesaleDistributorRole",
+    "records": [
+      {
+        "id": "authorization",
+        "episode_key": "authorization",
+        "facet": "authorization",
+        "role": "WholesaleDistributorRole",
+        "scope": "wholesale",
+        "holder": "org",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "auth"
+      },
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "WholesaleDistributorRole",
+        "scope": "wholesale",
+        "holder": "org",
+        "counterpart": "product",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      },
+      {
+        "id": "activity",
+        "episode_key": "activity",
+        "facet": "activity",
+        "role": "WholesaleDistributorRole",
+        "scope": "wholesale",
+        "holder": "org",
+        "counterpart": null,
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "event"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": false,
+    "expected_facets": [
+      "activity",
+      "authorization",
+      "responsibility"
+    ],
+    "actual_facets": [
+      "activity",
+      "authorization",
+      "responsibility"
+    ],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "WholesaleDistributorRole/registration_is_insufficient",
+    "role": "WholesaleDistributorRole",
+    "records": [
+      {
+        "id": "registration",
+        "episode_key": "registration",
+        "facet": "registration",
+        "role": "WholesaleDistributorRole",
+        "scope": "wholesale",
+        "holder": "org",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "reg"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": false,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "WholesaleDistributorRole/generic_operation_is_insufficient",
+    "role": "WholesaleDistributorRole",
+    "records": [
+      {
+        "id": "operation",
+        "episode_key": "operation",
+        "facet": "operation",
+        "role": "WholesaleDistributorRole",
+        "scope": "wholesale",
+        "holder": "org",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "op"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": false,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "WholesaleDistributorRole/generic_scope_is_insufficient",
+    "role": "WholesaleDistributorRole",
+    "records": [
+      {
+        "id": "authorization",
+        "episode_key": "authorization",
+        "facet": "authorization",
+        "role": "WholesaleDistributorRole",
+        "scope": "generic",
+        "holder": "org",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "auth"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": false,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "WholesaleDistributorRole/wrong_responsibility_scope",
+    "role": "WholesaleDistributorRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "WholesaleDistributorRole",
+        "scope": "unrelated",
+        "holder": "org",
+        "counterpart": "product",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": false,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "WholesaleDistributorRole/wrong_jurisdiction",
+    "role": "WholesaleDistributorRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "WholesaleDistributorRole",
+        "scope": "wholesale",
+        "holder": "org",
+        "counterpart": "product",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "OTHER",
+    "expected_rejection": false,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "WholesaleDistributorRole/start_is_inclusive",
+    "role": "WholesaleDistributorRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "WholesaleDistributorRole",
+        "scope": "wholesale",
+        "holder": "org",
+        "counterpart": "product",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 10,
+    "jurisdiction": "LAB",
+    "expected_rejection": false,
+    "expected_facets": [
+      "responsibility"
+    ],
+    "actual_facets": [
+      "responsibility"
+    ],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "WholesaleDistributorRole/before_start",
+    "role": "WholesaleDistributorRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "WholesaleDistributorRole",
+        "scope": "wholesale",
+        "holder": "org",
+        "counterpart": "product",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 9,
+    "jurisdiction": "LAB",
+    "expected_rejection": false,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "WholesaleDistributorRole/end_is_exclusive",
+    "role": "WholesaleDistributorRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "WholesaleDistributorRole",
+        "scope": "wholesale",
+        "holder": "org",
+        "counterpart": "product",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 30,
+    "jurisdiction": "LAB",
+    "expected_rejection": false,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "WholesaleDistributorRole/ending_one_of_two_contexts_preserves_role",
+    "role": "WholesaleDistributorRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "WholesaleDistributorRole",
+        "scope": "wholesale",
+        "holder": "org",
+        "counterpart": "product",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      },
+      {
+        "id": "r2",
+        "episode_key": "r2",
+        "facet": "responsibility",
+        "role": "WholesaleDistributorRole",
+        "scope": "wholesale",
+        "holder": "org",
+        "counterpart": "product",
+        "jurisdiction": "LAB",
+        "start_day": 25,
+        "end_day": 50,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 30,
+    "jurisdiction": "LAB",
+    "expected_rejection": false,
+    "expected_facets": [
+      "responsibility"
+    ],
+    "actual_facets": [
+      "responsibility"
+    ],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "WholesaleDistributorRole/renewal_can_follow_expiration",
+    "role": "WholesaleDistributorRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "WholesaleDistributorRole",
+        "scope": "wholesale",
+        "holder": "org",
+        "counterpart": "product",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      },
+      {
+        "id": "r2",
+        "episode_key": "r2",
+        "facet": "responsibility",
+        "role": "WholesaleDistributorRole",
+        "scope": "wholesale",
+        "holder": "org",
+        "counterpart": "product",
+        "jurisdiction": "LAB",
+        "start_day": 30,
+        "end_day": 50,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 30,
+    "jurisdiction": "LAB",
+    "expected_rejection": false,
+    "expected_facets": [
+      "responsibility"
+    ],
+    "actual_facets": [
+      "responsibility"
+    ],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "WholesaleDistributorRole/open_ended_explicit_commitment",
+    "role": "WholesaleDistributorRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "WholesaleDistributorRole",
+        "scope": "wholesale",
+        "holder": "org",
+        "counterpart": "product",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": null,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 99,
+    "jurisdiction": "LAB",
+    "expected_rejection": false,
+    "expected_facets": [
+      "responsibility"
+    ],
+    "actual_facets": [
+      "responsibility"
+    ],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "WholesaleDistributorRole/duplicate_constituting_episode_rejected",
+    "role": "WholesaleDistributorRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "WholesaleDistributorRole",
+        "scope": "wholesale",
+        "holder": "org",
+        "counterpart": "product",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      },
+      {
+        "id": "copy",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "WholesaleDistributorRole",
+        "scope": "wholesale",
+        "holder": "org",
+        "counterpart": "product",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": true,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": "UNIQUE constraint failed: context.facet, context.episode_key",
+    "passed": true
+  },
+  {
+    "id": "WholesaleDistributorRole/same_parties_distinct_commitments_allowed",
+    "role": "WholesaleDistributorRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "WholesaleDistributorRole",
+        "scope": "wholesale",
+        "holder": "org",
+        "counterpart": "product",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      },
+      {
+        "id": "other",
+        "episode_key": "independent",
+        "facet": "responsibility",
+        "role": "WholesaleDistributorRole",
+        "scope": "wholesale",
+        "holder": "org",
+        "counterpart": "product",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": false,
+    "expected_facets": [
+      "responsibility"
+    ],
+    "actual_facets": [
+      "responsibility"
+    ],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "WholesaleDistributorRole/reversed_interval_rejected",
+    "role": "WholesaleDistributorRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "WholesaleDistributorRole",
+        "scope": "wholesale",
+        "holder": "org",
+        "counterpart": "product",
+        "jurisdiction": "LAB",
+        "start_day": 40,
+        "end_day": 30,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": true,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": "CHECK constraint failed: end_day IS NULL OR (typeof(end_day)='integer' AND end_day>start_day)",
+    "passed": true
+  },
+  {
+    "id": "WholesaleDistributorRole/missing_time_rejected",
+    "role": "WholesaleDistributorRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "WholesaleDistributorRole",
+        "scope": "wholesale",
+        "holder": "org",
+        "counterpart": "product",
+        "jurisdiction": "LAB",
+        "start_day": null,
+        "end_day": 30,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": true,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": "NOT NULL constraint failed: context.start_day",
+    "passed": true
+  },
+  {
+    "id": "WholesaleDistributorRole/missing_counterpart_rejected",
+    "role": "WholesaleDistributorRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "WholesaleDistributorRole",
+        "scope": "wholesale",
+        "holder": "org",
+        "counterpart": null,
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": true,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": "CHECK constraint failed: facet='activity' OR counterpart IS NOT NULL",
+    "passed": true
+  },
+  {
+    "id": "WholesaleDistributorRole/self_mediation_rejected",
+    "role": "WholesaleDistributorRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "WholesaleDistributorRole",
+        "scope": "wholesale",
+        "holder": "org",
+        "counterpart": "org",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": true,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": "wrong responsibility counterpart",
+    "passed": true
+  },
+  {
+    "id": "WholesaleDistributorRole/wrong_bearer_identity_rejected",
+    "role": "WholesaleDistributorRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "WholesaleDistributorRole",
+        "scope": "wholesale",
+        "holder": "product",
+        "counterpart": "product",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": true,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": "wrong bearer identity",
+    "passed": true
+  },
+  {
+    "id": "WholesaleDistributorRole/wrong_counterpart_identity_rejected",
+    "role": "WholesaleDistributorRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "WholesaleDistributorRole",
+        "scope": "wholesale",
+        "holder": "org",
+        "counterpart": "org3",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": true,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": "wrong responsibility counterpart",
+    "passed": true
+  },
+  {
+    "id": "WholesaleDistributorRole/source_registration_not_authorization_decision",
+    "role": "WholesaleDistributorRole",
+    "records": [
+      {
+        "id": "authorization",
+        "episode_key": "authorization",
+        "facet": "authorization",
+        "role": "WholesaleDistributorRole",
+        "scope": "wholesale",
+        "holder": "org",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "reg"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": true,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": "evidence kind cannot support facet",
+    "passed": true
+  },
+  {
+    "id": "WholesaleDistributorRole/permission_not_occurrence_evidence",
+    "role": "WholesaleDistributorRole",
+    "records": [
+      {
+        "id": "activity",
+        "episode_key": "activity",
+        "facet": "activity",
+        "role": "WholesaleDistributorRole",
+        "scope": "wholesale",
+        "holder": "org",
+        "counterpart": null,
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "auth"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": true,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": "evidence kind cannot support facet",
+    "passed": true
+  },
+  {
+    "id": "WholesaleDistributorRole/unbounded_occurrence_rejected",
+    "role": "WholesaleDistributorRole",
+    "records": [
+      {
+        "id": "activity",
+        "episode_key": "activity",
+        "facet": "activity",
+        "role": "WholesaleDistributorRole",
+        "scope": "wholesale",
+        "holder": "org",
+        "counterpart": null,
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": null,
+        "evidence_id": "event"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": true,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": "CHECK constraint failed: facet<>'activity' OR end_day IS NOT NULL",
+    "passed": true
+  },
+  {
+    "id": "ThirdPartyLogisticsProviderRole/permission_without_responsibility_or_occurrence",
+    "role": "ThirdPartyLogisticsProviderRole",
+    "records": [
+      {
+        "id": "authorization",
+        "episode_key": "authorization",
+        "facet": "authorization",
+        "role": "ThirdPartyLogisticsProviderRole",
+        "scope": "third_party_logistics",
+        "holder": "org",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "auth"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": false,
+    "expected_facets": [
+      "authorization"
+    ],
+    "actual_facets": [
+      "authorization"
+    ],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "ThirdPartyLogisticsProviderRole/responsibility_persists_while_idle",
+    "role": "ThirdPartyLogisticsProviderRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "ThirdPartyLogisticsProviderRole",
+        "scope": "third_party_logistics",
+        "holder": "org",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": false,
+    "expected_facets": [
+      "responsibility"
+    ],
+    "actual_facets": [
+      "responsibility"
+    ],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "ThirdPartyLogisticsProviderRole/occurrence_does_not_invent_permission_or_commitment",
+    "role": "ThirdPartyLogisticsProviderRole",
+    "records": [
+      {
+        "id": "activity",
+        "episode_key": "activity",
+        "facet": "activity",
+        "role": "ThirdPartyLogisticsProviderRole",
+        "scope": "third_party_logistics",
+        "holder": "org",
+        "counterpart": null,
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "event"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": false,
+    "expected_facets": [
+      "activity"
+    ],
+    "actual_facets": [
+      "activity"
+    ],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "ThirdPartyLogisticsProviderRole/three_facets_can_coexist",
+    "role": "ThirdPartyLogisticsProviderRole",
+    "records": [
+      {
+        "id": "authorization",
+        "episode_key": "authorization",
+        "facet": "authorization",
+        "role": "ThirdPartyLogisticsProviderRole",
+        "scope": "third_party_logistics",
+        "holder": "org",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "auth"
+      },
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "ThirdPartyLogisticsProviderRole",
+        "scope": "third_party_logistics",
+        "holder": "org",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      },
+      {
+        "id": "activity",
+        "episode_key": "activity",
+        "facet": "activity",
+        "role": "ThirdPartyLogisticsProviderRole",
+        "scope": "third_party_logistics",
+        "holder": "org",
+        "counterpart": null,
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "event"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": false,
+    "expected_facets": [
+      "activity",
+      "authorization",
+      "responsibility"
+    ],
+    "actual_facets": [
+      "activity",
+      "authorization",
+      "responsibility"
+    ],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "ThirdPartyLogisticsProviderRole/registration_is_insufficient",
+    "role": "ThirdPartyLogisticsProviderRole",
+    "records": [
+      {
+        "id": "registration",
+        "episode_key": "registration",
+        "facet": "registration",
+        "role": "ThirdPartyLogisticsProviderRole",
+        "scope": "third_party_logistics",
+        "holder": "org",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "reg"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": false,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "ThirdPartyLogisticsProviderRole/generic_operation_is_insufficient",
+    "role": "ThirdPartyLogisticsProviderRole",
+    "records": [
+      {
+        "id": "operation",
+        "episode_key": "operation",
+        "facet": "operation",
+        "role": "ThirdPartyLogisticsProviderRole",
+        "scope": "third_party_logistics",
+        "holder": "org",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "op"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": false,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "ThirdPartyLogisticsProviderRole/generic_scope_is_insufficient",
+    "role": "ThirdPartyLogisticsProviderRole",
+    "records": [
+      {
+        "id": "authorization",
+        "episode_key": "authorization",
+        "facet": "authorization",
+        "role": "ThirdPartyLogisticsProviderRole",
+        "scope": "generic",
+        "holder": "org",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "auth"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": false,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "ThirdPartyLogisticsProviderRole/wrong_responsibility_scope",
+    "role": "ThirdPartyLogisticsProviderRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "ThirdPartyLogisticsProviderRole",
+        "scope": "unrelated",
+        "holder": "org",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": false,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "ThirdPartyLogisticsProviderRole/wrong_jurisdiction",
+    "role": "ThirdPartyLogisticsProviderRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "ThirdPartyLogisticsProviderRole",
+        "scope": "third_party_logistics",
+        "holder": "org",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "OTHER",
+    "expected_rejection": false,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "ThirdPartyLogisticsProviderRole/start_is_inclusive",
+    "role": "ThirdPartyLogisticsProviderRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "ThirdPartyLogisticsProviderRole",
+        "scope": "third_party_logistics",
+        "holder": "org",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 10,
+    "jurisdiction": "LAB",
+    "expected_rejection": false,
+    "expected_facets": [
+      "responsibility"
+    ],
+    "actual_facets": [
+      "responsibility"
+    ],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "ThirdPartyLogisticsProviderRole/before_start",
+    "role": "ThirdPartyLogisticsProviderRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "ThirdPartyLogisticsProviderRole",
+        "scope": "third_party_logistics",
+        "holder": "org",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 9,
+    "jurisdiction": "LAB",
+    "expected_rejection": false,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "ThirdPartyLogisticsProviderRole/end_is_exclusive",
+    "role": "ThirdPartyLogisticsProviderRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "ThirdPartyLogisticsProviderRole",
+        "scope": "third_party_logistics",
+        "holder": "org",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 30,
+    "jurisdiction": "LAB",
+    "expected_rejection": false,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "ThirdPartyLogisticsProviderRole/ending_one_of_two_contexts_preserves_role",
+    "role": "ThirdPartyLogisticsProviderRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "ThirdPartyLogisticsProviderRole",
+        "scope": "third_party_logistics",
+        "holder": "org",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      },
+      {
+        "id": "r2",
+        "episode_key": "r2",
+        "facet": "responsibility",
+        "role": "ThirdPartyLogisticsProviderRole",
+        "scope": "third_party_logistics",
+        "holder": "org",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": 25,
+        "end_day": 50,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 30,
+    "jurisdiction": "LAB",
+    "expected_rejection": false,
+    "expected_facets": [
+      "responsibility"
+    ],
+    "actual_facets": [
+      "responsibility"
+    ],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "ThirdPartyLogisticsProviderRole/renewal_can_follow_expiration",
+    "role": "ThirdPartyLogisticsProviderRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "ThirdPartyLogisticsProviderRole",
+        "scope": "third_party_logistics",
+        "holder": "org",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      },
+      {
+        "id": "r2",
+        "episode_key": "r2",
+        "facet": "responsibility",
+        "role": "ThirdPartyLogisticsProviderRole",
+        "scope": "third_party_logistics",
+        "holder": "org",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": 30,
+        "end_day": 50,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 30,
+    "jurisdiction": "LAB",
+    "expected_rejection": false,
+    "expected_facets": [
+      "responsibility"
+    ],
+    "actual_facets": [
+      "responsibility"
+    ],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "ThirdPartyLogisticsProviderRole/open_ended_explicit_commitment",
+    "role": "ThirdPartyLogisticsProviderRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "ThirdPartyLogisticsProviderRole",
+        "scope": "third_party_logistics",
+        "holder": "org",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": null,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 99,
+    "jurisdiction": "LAB",
+    "expected_rejection": false,
+    "expected_facets": [
+      "responsibility"
+    ],
+    "actual_facets": [
+      "responsibility"
+    ],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "ThirdPartyLogisticsProviderRole/duplicate_constituting_episode_rejected",
+    "role": "ThirdPartyLogisticsProviderRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "ThirdPartyLogisticsProviderRole",
+        "scope": "third_party_logistics",
+        "holder": "org",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      },
+      {
+        "id": "copy",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "ThirdPartyLogisticsProviderRole",
+        "scope": "third_party_logistics",
+        "holder": "org",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": true,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": "UNIQUE constraint failed: context.facet, context.episode_key",
+    "passed": true
+  },
+  {
+    "id": "ThirdPartyLogisticsProviderRole/same_parties_distinct_commitments_allowed",
+    "role": "ThirdPartyLogisticsProviderRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "ThirdPartyLogisticsProviderRole",
+        "scope": "third_party_logistics",
+        "holder": "org",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      },
+      {
+        "id": "other",
+        "episode_key": "independent",
+        "facet": "responsibility",
+        "role": "ThirdPartyLogisticsProviderRole",
+        "scope": "third_party_logistics",
+        "holder": "org",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": false,
+    "expected_facets": [
+      "responsibility"
+    ],
+    "actual_facets": [
+      "responsibility"
+    ],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "ThirdPartyLogisticsProviderRole/reversed_interval_rejected",
+    "role": "ThirdPartyLogisticsProviderRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "ThirdPartyLogisticsProviderRole",
+        "scope": "third_party_logistics",
+        "holder": "org",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": 40,
+        "end_day": 30,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": true,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": "CHECK constraint failed: end_day IS NULL OR (typeof(end_day)='integer' AND end_day>start_day)",
+    "passed": true
+  },
+  {
+    "id": "ThirdPartyLogisticsProviderRole/missing_time_rejected",
+    "role": "ThirdPartyLogisticsProviderRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "ThirdPartyLogisticsProviderRole",
+        "scope": "third_party_logistics",
+        "holder": "org",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": null,
+        "end_day": 30,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": true,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": "NOT NULL constraint failed: context.start_day",
+    "passed": true
+  },
+  {
+    "id": "ThirdPartyLogisticsProviderRole/missing_counterpart_rejected",
+    "role": "ThirdPartyLogisticsProviderRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "ThirdPartyLogisticsProviderRole",
+        "scope": "third_party_logistics",
+        "holder": "org",
+        "counterpart": null,
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": true,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": "CHECK constraint failed: facet='activity' OR counterpart IS NOT NULL",
+    "passed": true
+  },
+  {
+    "id": "ThirdPartyLogisticsProviderRole/self_mediation_rejected",
+    "role": "ThirdPartyLogisticsProviderRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "ThirdPartyLogisticsProviderRole",
+        "scope": "third_party_logistics",
+        "holder": "org",
+        "counterpart": "org",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": true,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": "CHECK constraint failed: counterpart IS NULL OR counterpart<>holder",
+    "passed": true
+  },
+  {
+    "id": "ThirdPartyLogisticsProviderRole/wrong_bearer_identity_rejected",
+    "role": "ThirdPartyLogisticsProviderRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "ThirdPartyLogisticsProviderRole",
+        "scope": "third_party_logistics",
+        "holder": "product",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": true,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": "wrong bearer identity",
+    "passed": true
+  },
+  {
+    "id": "ThirdPartyLogisticsProviderRole/wrong_counterpart_identity_rejected",
+    "role": "ThirdPartyLogisticsProviderRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "ThirdPartyLogisticsProviderRole",
+        "scope": "third_party_logistics",
+        "holder": "org",
+        "counterpart": "site2",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": true,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": "wrong responsibility counterpart",
+    "passed": true
+  },
+  {
+    "id": "ThirdPartyLogisticsProviderRole/source_registration_not_authorization_decision",
+    "role": "ThirdPartyLogisticsProviderRole",
+    "records": [
+      {
+        "id": "authorization",
+        "episode_key": "authorization",
+        "facet": "authorization",
+        "role": "ThirdPartyLogisticsProviderRole",
+        "scope": "third_party_logistics",
+        "holder": "org",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "reg"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": true,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": "evidence kind cannot support facet",
+    "passed": true
+  },
+  {
+    "id": "ThirdPartyLogisticsProviderRole/permission_not_occurrence_evidence",
+    "role": "ThirdPartyLogisticsProviderRole",
+    "records": [
+      {
+        "id": "activity",
+        "episode_key": "activity",
+        "facet": "activity",
+        "role": "ThirdPartyLogisticsProviderRole",
+        "scope": "third_party_logistics",
+        "holder": "org",
+        "counterpart": null,
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "auth"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": true,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": "evidence kind cannot support facet",
+    "passed": true
+  },
+  {
+    "id": "ThirdPartyLogisticsProviderRole/unbounded_occurrence_rejected",
+    "role": "ThirdPartyLogisticsProviderRole",
+    "records": [
+      {
+        "id": "activity",
+        "episode_key": "activity",
+        "facet": "activity",
+        "role": "ThirdPartyLogisticsProviderRole",
+        "scope": "third_party_logistics",
+        "holder": "org",
+        "counterpart": null,
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": null,
+        "evidence_id": "event"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": true,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": "CHECK constraint failed: facet<>'activity' OR end_day IS NOT NULL",
+    "passed": true
+  },
+  {
+    "id": "DistributionSiteRole/permission_without_responsibility_or_occurrence",
+    "role": "DistributionSiteRole",
+    "records": [
+      {
+        "id": "authorization",
+        "episode_key": "authorization",
+        "facet": "authorization",
+        "role": "DistributionSiteRole",
+        "scope": "distribution_site",
+        "holder": "site",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "auth"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": false,
+    "expected_facets": [
+      "authorization"
+    ],
+    "actual_facets": [
+      "authorization"
+    ],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "DistributionSiteRole/responsibility_persists_while_idle",
+    "role": "DistributionSiteRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "DistributionSiteRole",
+        "scope": "distribution_site",
+        "holder": "site",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": false,
+    "expected_facets": [
+      "responsibility"
+    ],
+    "actual_facets": [
+      "responsibility"
+    ],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "DistributionSiteRole/occurrence_does_not_invent_permission_or_commitment",
+    "role": "DistributionSiteRole",
+    "records": [
+      {
+        "id": "activity",
+        "episode_key": "activity",
+        "facet": "activity",
+        "role": "DistributionSiteRole",
+        "scope": "distribution_site",
+        "holder": "site",
+        "counterpart": null,
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "event"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": false,
+    "expected_facets": [
+      "activity"
+    ],
+    "actual_facets": [
+      "activity"
+    ],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "DistributionSiteRole/three_facets_can_coexist",
+    "role": "DistributionSiteRole",
+    "records": [
+      {
+        "id": "authorization",
+        "episode_key": "authorization",
+        "facet": "authorization",
+        "role": "DistributionSiteRole",
+        "scope": "distribution_site",
+        "holder": "site",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "auth"
+      },
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "DistributionSiteRole",
+        "scope": "distribution_site",
+        "holder": "site",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      },
+      {
+        "id": "activity",
+        "episode_key": "activity",
+        "facet": "activity",
+        "role": "DistributionSiteRole",
+        "scope": "distribution_site",
+        "holder": "site",
+        "counterpart": null,
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "event"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": false,
+    "expected_facets": [
+      "activity",
+      "authorization",
+      "responsibility"
+    ],
+    "actual_facets": [
+      "activity",
+      "authorization",
+      "responsibility"
+    ],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "DistributionSiteRole/registration_is_insufficient",
+    "role": "DistributionSiteRole",
+    "records": [
+      {
+        "id": "registration",
+        "episode_key": "registration",
+        "facet": "registration",
+        "role": "DistributionSiteRole",
+        "scope": "distribution_site",
+        "holder": "site",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "reg"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": false,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "DistributionSiteRole/generic_operation_is_insufficient",
+    "role": "DistributionSiteRole",
+    "records": [
+      {
+        "id": "operation",
+        "episode_key": "operation",
+        "facet": "operation",
+        "role": "DistributionSiteRole",
+        "scope": "distribution_site",
+        "holder": "site",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "op"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": false,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "DistributionSiteRole/generic_scope_is_insufficient",
+    "role": "DistributionSiteRole",
+    "records": [
+      {
+        "id": "authorization",
+        "episode_key": "authorization",
+        "facet": "authorization",
+        "role": "DistributionSiteRole",
+        "scope": "generic",
+        "holder": "site",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "auth"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": false,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "DistributionSiteRole/wrong_responsibility_scope",
+    "role": "DistributionSiteRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "DistributionSiteRole",
+        "scope": "unrelated",
+        "holder": "site",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": false,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "DistributionSiteRole/wrong_jurisdiction",
+    "role": "DistributionSiteRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "DistributionSiteRole",
+        "scope": "distribution_site",
+        "holder": "site",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "OTHER",
+    "expected_rejection": false,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "DistributionSiteRole/start_is_inclusive",
+    "role": "DistributionSiteRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "DistributionSiteRole",
+        "scope": "distribution_site",
+        "holder": "site",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 10,
+    "jurisdiction": "LAB",
+    "expected_rejection": false,
+    "expected_facets": [
+      "responsibility"
+    ],
+    "actual_facets": [
+      "responsibility"
+    ],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "DistributionSiteRole/before_start",
+    "role": "DistributionSiteRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "DistributionSiteRole",
+        "scope": "distribution_site",
+        "holder": "site",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 9,
+    "jurisdiction": "LAB",
+    "expected_rejection": false,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "DistributionSiteRole/end_is_exclusive",
+    "role": "DistributionSiteRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "DistributionSiteRole",
+        "scope": "distribution_site",
+        "holder": "site",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 30,
+    "jurisdiction": "LAB",
+    "expected_rejection": false,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "DistributionSiteRole/ending_one_of_two_contexts_preserves_role",
+    "role": "DistributionSiteRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "DistributionSiteRole",
+        "scope": "distribution_site",
+        "holder": "site",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      },
+      {
+        "id": "r2",
+        "episode_key": "r2",
+        "facet": "responsibility",
+        "role": "DistributionSiteRole",
+        "scope": "distribution_site",
+        "holder": "site",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": 25,
+        "end_day": 50,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 30,
+    "jurisdiction": "LAB",
+    "expected_rejection": false,
+    "expected_facets": [
+      "responsibility"
+    ],
+    "actual_facets": [
+      "responsibility"
+    ],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "DistributionSiteRole/renewal_can_follow_expiration",
+    "role": "DistributionSiteRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "DistributionSiteRole",
+        "scope": "distribution_site",
+        "holder": "site",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      },
+      {
+        "id": "r2",
+        "episode_key": "r2",
+        "facet": "responsibility",
+        "role": "DistributionSiteRole",
+        "scope": "distribution_site",
+        "holder": "site",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": 30,
+        "end_day": 50,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 30,
+    "jurisdiction": "LAB",
+    "expected_rejection": false,
+    "expected_facets": [
+      "responsibility"
+    ],
+    "actual_facets": [
+      "responsibility"
+    ],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "DistributionSiteRole/open_ended_explicit_commitment",
+    "role": "DistributionSiteRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "DistributionSiteRole",
+        "scope": "distribution_site",
+        "holder": "site",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": null,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 99,
+    "jurisdiction": "LAB",
+    "expected_rejection": false,
+    "expected_facets": [
+      "responsibility"
+    ],
+    "actual_facets": [
+      "responsibility"
+    ],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "DistributionSiteRole/duplicate_constituting_episode_rejected",
+    "role": "DistributionSiteRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "DistributionSiteRole",
+        "scope": "distribution_site",
+        "holder": "site",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      },
+      {
+        "id": "copy",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "DistributionSiteRole",
+        "scope": "distribution_site",
+        "holder": "site",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": true,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": "UNIQUE constraint failed: context.facet, context.episode_key",
+    "passed": true
+  },
+  {
+    "id": "DistributionSiteRole/same_parties_distinct_commitments_allowed",
+    "role": "DistributionSiteRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "DistributionSiteRole",
+        "scope": "distribution_site",
+        "holder": "site",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      },
+      {
+        "id": "other",
+        "episode_key": "independent",
+        "facet": "responsibility",
+        "role": "DistributionSiteRole",
+        "scope": "distribution_site",
+        "holder": "site",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": false,
+    "expected_facets": [
+      "responsibility"
+    ],
+    "actual_facets": [
+      "responsibility"
+    ],
+    "error": null,
+    "passed": true
+  },
+  {
+    "id": "DistributionSiteRole/reversed_interval_rejected",
+    "role": "DistributionSiteRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "DistributionSiteRole",
+        "scope": "distribution_site",
+        "holder": "site",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": 40,
+        "end_day": 30,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": true,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": "CHECK constraint failed: end_day IS NULL OR (typeof(end_day)='integer' AND end_day>start_day)",
+    "passed": true
+  },
+  {
+    "id": "DistributionSiteRole/missing_time_rejected",
+    "role": "DistributionSiteRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "DistributionSiteRole",
+        "scope": "distribution_site",
+        "holder": "site",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": null,
+        "end_day": 30,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": true,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": "NOT NULL constraint failed: context.start_day",
+    "passed": true
+  },
+  {
+    "id": "DistributionSiteRole/missing_counterpart_rejected",
+    "role": "DistributionSiteRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "DistributionSiteRole",
+        "scope": "distribution_site",
+        "holder": "site",
+        "counterpart": null,
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": true,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": "CHECK constraint failed: facet='activity' OR counterpart IS NOT NULL",
+    "passed": true
+  },
+  {
+    "id": "DistributionSiteRole/self_mediation_rejected",
+    "role": "DistributionSiteRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "DistributionSiteRole",
+        "scope": "distribution_site",
+        "holder": "site",
+        "counterpart": "site",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": true,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": "wrong responsibility counterpart",
+    "passed": true
+  },
+  {
+    "id": "DistributionSiteRole/wrong_bearer_identity_rejected",
+    "role": "DistributionSiteRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "DistributionSiteRole",
+        "scope": "distribution_site",
+        "holder": "product",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": true,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": "wrong bearer identity",
+    "passed": true
+  },
+  {
+    "id": "DistributionSiteRole/wrong_counterpart_identity_rejected",
+    "role": "DistributionSiteRole",
+    "records": [
+      {
+        "id": "responsibility",
+        "episode_key": "responsibility",
+        "facet": "responsibility",
+        "role": "DistributionSiteRole",
+        "scope": "distribution_site",
+        "holder": "site",
+        "counterpart": "site2",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "resp"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": true,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": "wrong responsibility counterpart",
+    "passed": true
+  },
+  {
+    "id": "DistributionSiteRole/source_registration_not_authorization_decision",
+    "role": "DistributionSiteRole",
+    "records": [
+      {
+        "id": "authorization",
+        "episode_key": "authorization",
+        "facet": "authorization",
+        "role": "DistributionSiteRole",
+        "scope": "distribution_site",
+        "holder": "site",
+        "counterpart": "org2",
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "reg"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": true,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": "evidence kind cannot support facet",
+    "passed": true
+  },
+  {
+    "id": "DistributionSiteRole/permission_not_occurrence_evidence",
+    "role": "DistributionSiteRole",
+    "records": [
+      {
+        "id": "activity",
+        "episode_key": "activity",
+        "facet": "activity",
+        "role": "DistributionSiteRole",
+        "scope": "distribution_site",
+        "holder": "site",
+        "counterpart": null,
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": 30,
+        "evidence_id": "auth"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": true,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": "evidence kind cannot support facet",
+    "passed": true
+  },
+  {
+    "id": "DistributionSiteRole/unbounded_occurrence_rejected",
+    "role": "DistributionSiteRole",
+    "records": [
+      {
+        "id": "activity",
+        "episode_key": "activity",
+        "facet": "activity",
+        "role": "DistributionSiteRole",
+        "scope": "distribution_site",
+        "holder": "site",
+        "counterpart": null,
+        "jurisdiction": "LAB",
+        "start_day": 10,
+        "end_day": null,
+        "evidence_id": "event"
+      }
+    ],
+    "query_day": 20,
+    "jurisdiction": "LAB",
+    "expected_rejection": true,
+    "expected_facets": [],
+    "actual_facets": [],
+    "error": "CHECK constraint failed: facet<>'activity' OR end_day IS NOT NULL",
+    "passed": true
+  }
+]

@@ -1,0 +1,236 @@
+{
+  "tool": "pySHACL",
+  "version": "0.30.1",
+  "shapes_source": "G3-2e-F candidate-shapes.ttl, selected existing NodeShapes only",
+  "geography_cases": {
+    "valid_facility_country": {
+      "conforms": true,
+      "expected": true,
+      "validation_results": 0
+    },
+    "valid_region_country": {
+      "conforms": true,
+      "expected": true,
+      "validation_results": 0
+    },
+    "self_country_rejected": {
+      "conforms": false,
+      "expected": false,
+      "validation_results": 2
+    },
+    "self_region_rejected": {
+      "conforms": false,
+      "expected": false,
+      "validation_results": 2
+    },
+    "two_step_cycle_rejected": {
+      "conforms": false,
+      "expected": false,
+      "validation_results": 4
+    },
+    "no_postal_label_inference": {
+      "conforms": true,
+      "expected": true,
+      "validation_results": 0
+    }
+  },
+  "repRel_cases": [
+    {
+      "relator": "AlternativeMedicineAssignment",
+      "mediation_names": [
+        "alternativeForProduct",
+        "alternativeProduct"
+      ],
+      "two_simultaneous_same_party_tuple_conforms_to_focal_shape": true,
+      "missing_one_mediation_rejected_by_focal_shape": true,
+      "scope": "Focal relator SHACL shape only; no timing or full-graph uniqueness proof"
+    },
+    {
+      "relator": "EstablishmentRegistration",
+      "mediation_names": [
+        "registrationAuthority",
+        "registrationEntity"
+      ],
+      "two_simultaneous_same_party_tuple_conforms_to_focal_shape": true,
+      "missing_one_mediation_rejected_by_focal_shape": true,
+      "scope": "Focal relator SHACL shape only; no timing or full-graph uniqueness proof"
+    },
+    {
+      "relator": "EvidenceSupport",
+      "mediation_names": [
+        "evidenceAssertion",
+        "evidenceItem"
+      ],
+      "two_simultaneous_same_party_tuple_conforms_to_focal_shape": true,
+      "missing_one_mediation_rejected_by_focal_shape": true,
+      "scope": "Focal relator SHACL shape only; no timing or full-graph uniqueness proof"
+    },
+    {
+      "relator": "FacilityOperation",
+      "mediation_names": [
+        "operationFacility",
+        "operationOrganization"
+      ],
+      "two_simultaneous_same_party_tuple_conforms_to_focal_shape": true,
+      "missing_one_mediation_rejected_by_focal_shape": true,
+      "scope": "Focal relator SHACL shape only; no timing or full-graph uniqueness proof"
+    },
+    {
+      "relator": "IdentifierAssignment",
+      "mediation_names": [
+        "identifierEntity",
+        "identifierScheme"
+      ],
+      "two_simultaneous_same_party_tuple_conforms_to_focal_shape": true,
+      "missing_one_mediation_rejected_by_focal_shape": true,
+      "scope": "Focal relator SHACL shape only; no timing or full-graph uniqueness proof"
+    },
+    {
+      "relator": "MarketListing",
+      "mediation_names": [
+        "listingPresentation",
+        "listingResponsibleOrganization"
+      ],
+      "two_simultaneous_same_party_tuple_conforms_to_focal_shape": true,
+      "missing_one_mediation_rejected_by_focal_shape": true,
+      "scope": "Focal relator SHACL shape only; no timing or full-graph uniqueness proof"
+    },
+    {
+      "relator": "ProductClassificationAssignment",
+      "mediation_names": [
+        "classificationEntity",
+        "classificationEntry"
+      ],
+      "two_simultaneous_same_party_tuple_conforms_to_focal_shape": true,
+      "missing_one_mediation_rejected_by_focal_shape": true,
+      "scope": "Focal relator SHACL shape only; no timing or full-graph uniqueness proof"
+    },
+    {
+      "relator": "RegulatoryAuthorization",
+      "mediation_names": [
+        "authorizationAuthority",
+        "authorizationParty"
+      ],
+      "two_simultaneous_same_party_tuple_conforms_to_focal_shape": true,
+      "missing_one_mediation_rejected_by_focal_shape": true,
+      "scope": "Focal relator SHACL shape only; no timing or full-graph uniqueness proof"
+    },
+    {
+      "relator": "RegulatoryOversight",
+      "mediation_names": [
+        "oversightAuthorityRole",
+        "oversightGovernedEntity"
+      ],
+      "two_simultaneous_same_party_tuple_conforms_to_focal_shape": true,
+      "missing_one_mediation_rejected_by_focal_shape": true,
+      "scope": "Focal relator SHACL shape only; no timing or full-graph uniqueness proof"
+    },
+    {
+      "relator": "SupplyDependency",
+      "mediation_names": [
+        "dependencyDependent",
+        "dependencyProvider"
+      ],
+      "two_simultaneous_same_party_tuple_conforms_to_focal_shape": true,
+      "missing_one_mediation_rejected_by_focal_shape": true,
+      "scope": "Focal relator SHACL shape only; no timing or full-graph uniqueness proof"
+    },
+    {
+      "relator": "ManufacturingResponsibility",
+      "mediation_names": [
+        "manufacturingResponsibilityHolder",
+        "manufacturingResponsibilityCounterpart"
+      ],
+      "two_simultaneous_same_party_tuple_conforms_to_focal_shape": true,
+      "missing_one_mediation_rejected_by_focal_shape": true,
+      "scope": "Focal relator SHACL shape only; no timing or full-graph uniqueness proof"
+    },
+    {
+      "relator": "ManufacturingSiteUse",
+      "mediation_names": [
+        "manufacturingSiteUseHolder",
+        "manufacturingSiteUseCounterpart"
+      ],
+      "two_simultaneous_same_party_tuple_conforms_to_focal_shape": true,
+      "missing_one_mediation_rejected_by_focal_shape": true,
+      "scope": "Focal relator SHACL shape only; no timing or full-graph uniqueness proof"
+    },
+    {
+      "relator": "ImportResponsibility",
+      "mediation_names": [
+        "importResponsibilityHolder",
+        "importResponsibilityCounterpart"
+      ],
+      "two_simultaneous_same_party_tuple_conforms_to_focal_shape": true,
+      "missing_one_mediation_rejected_by_focal_shape": true,
+      "scope": "Focal relator SHACL shape only; no timing or full-graph uniqueness proof"
+    },
+    {
+      "relator": "WholesaleResponsibility",
+      "mediation_names": [
+        "wholesaleResponsibilityHolder",
+        "wholesaleResponsibilityCounterpart"
+      ],
+      "two_simultaneous_same_party_tuple_conforms_to_focal_shape": true,
+      "missing_one_mediation_rejected_by_focal_shape": true,
+      "scope": "Focal relator SHACL shape only; no timing or full-graph uniqueness proof"
+    },
+    {
+      "relator": "LogisticsServiceCommitment",
+      "mediation_names": [
+        "logisticsServiceCommitmentHolder",
+        "logisticsServiceCommitmentCounterpart"
+      ],
+      "two_simultaneous_same_party_tuple_conforms_to_focal_shape": true,
+      "missing_one_mediation_rejected_by_focal_shape": true,
+      "scope": "Focal relator SHACL shape only; no timing or full-graph uniqueness proof"
+    },
+    {
+      "relator": "DistributionSiteUse",
+      "mediation_names": [
+        "distributionSiteUseHolder",
+        "distributionSiteUseCounterpart"
+      ],
+      "two_simultaneous_same_party_tuple_conforms_to_focal_shape": true,
+      "missing_one_mediation_rejected_by_focal_shape": true,
+      "scope": "Focal relator SHACL shape only; no timing or full-graph uniqueness proof"
+    },
+    {
+      "relator": "RegulatoryMandate",
+      "mediation_names": [
+        "regulatoryMandateHolder",
+        "regulatoryMandateCounterpart"
+      ],
+      "two_simultaneous_same_party_tuple_conforms_to_focal_shape": true,
+      "missing_one_mediation_rejected_by_focal_shape": true,
+      "scope": "Focal relator SHACL shape only; no timing or full-graph uniqueness proof"
+    },
+    {
+      "relator": "ProductLabelResponsibility",
+      "mediation_names": [
+        "productLabelResponsibilityHolder",
+        "productLabelResponsibilityCounterpart"
+      ],
+      "two_simultaneous_same_party_tuple_conforms_to_focal_shape": true,
+      "missing_one_mediation_rejected_by_focal_shape": true,
+      "scope": "Focal relator SHACL shape only; no timing or full-graph uniqueness proof"
+    },
+    {
+      "relator": "InstitutionalFundingCommitment",
+      "mediation_names": [
+        "institutionalFundingCommitmentHolder",
+        "institutionalFundingCommitmentCounterpart"
+      ],
+      "two_simultaneous_same_party_tuple_conforms_to_focal_shape": true,
+      "missing_one_mediation_rejected_by_focal_shape": true,
+      "scope": "Focal relator SHACL shape only; no timing or full-graph uniqueness proof"
+    }
+  ],
+  "counts": {
+    "geo_passed": 6,
+    "relators_checked": 19,
+    "repeatable_tuple_allowed": 19,
+    "missing_participant_rejected": 19
+  },
+  "qualification": "SHACL shape behavior under positive and negative synthetic fixtures; does not choose whether concurrent duplicates are domain-valid."
+}
