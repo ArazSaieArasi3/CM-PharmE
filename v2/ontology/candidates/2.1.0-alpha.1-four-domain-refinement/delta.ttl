@@ -1,0 +1,70 @@
+@prefix c: <https://w3id.org/cm-pharme/2.1/> .
+@prefix l: <https://w3id.org/cm-pharme/experimental/four-domain/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix r: <https://w3id.org/cm-pharme/experimental/refinement/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+l:scenarioProduct rdfs:subPropertyOf c:assertionAboutProduct .
+
+l:signalProduct rdfs:subPropertyOf c:assertionAboutProduct .
+
+r:activityResponsibleOrganization a owl:ObjectProperty ;
+    rdfs:domain c:ProvenanceActivity ;
+    rdfs:range c:Organization .
+
+r:agreementCommitment a owl:ObjectProperty ;
+    rdfs:domain c:StrategicPartnershipAgreement ;
+    rdfs:range c:Assertion .
+
+r:assessmentOrganization a owl:ObjectProperty ;
+    rdfs:domain c:SignalAssessmentActivity ;
+    rdfs:range c:Organization .
+
+r:carrierClaim a owl:ObjectProperty ;
+    rdfs:domain c:SourceRecord ;
+    rdfs:range c:Assertion .
+
+r:caseIdentifier a owl:DatatypeProperty ;
+    rdfs:range xsd:string .
+
+r:caseIdentifierScheme a owl:DatatypeProperty ;
+    rdfs:range xsd:string .
+
+r:claimText a owl:DatatypeProperty ;
+    rdfs:range xsd:string .
+
+r:commitmentActor a owl:ObjectProperty ;
+    rdfs:domain c:Assertion ;
+    rdfs:range c:Organization .
+
+r:commitmentText a owl:DatatypeProperty ;
+    rdfs:range xsd:string .
+
+r:manufacturingFacility a owl:ObjectProperty ;
+    rdfs:domain c:ManufacturingActivity ;
+    rdfs:range c:Facility .
+
+r:manufacturingProduct a owl:ObjectProperty ;
+    rdfs:domain c:ManufacturingActivity ;
+    rdfs:range c:MedicinalProduct .
+
+r:scenarioDependency a owl:ObjectProperty ;
+    rdfs:domain c:Assertion ;
+    rdfs:range c:SupplyDependency .
+
+r:scenarioFacility a owl:ObjectProperty ;
+    rdfs:domain c:Assertion ;
+    rdfs:range c:Facility .
+
+r:serviceFacility a owl:ObjectProperty ;
+    rdfs:domain c:ServiceOfferingSpecification ;
+    rdfs:range c:Facility .
+
+r:serviceProduct a owl:ObjectProperty ;
+    rdfs:domain c:ServiceOfferingSpecification ;
+    rdfs:range c:MedicinalProduct .
+
+r:supportsManufacturing a owl:ObjectProperty ;
+    rdfs:domain c:ProvenanceActivity ;
+    rdfs:range c:ManufacturingActivity .

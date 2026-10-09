@@ -1,0 +1,63 @@
+@prefix c: <https://w3id.org/cm-pharme/2.1/> .
+@prefix l: <https://w3id.org/cm-pharme/experimental/four-domain/> .
+@prefix ns1: <https://w3id.org/cm-pharme/experimental/refinement/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix t: <urn:cmpe-lab:> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+t:copyReporting a c:AdverseEventReportingActivity ;
+    l:atTime "2026-10-03T10:00:00+00:00"^^xsd:dateTime ;
+    l:profile "safety-reporting" ;
+    l:reportsRecord t:reportCopy .
+
+t:jB a c:RegulatoryJurisdiction .
+
+t:reporting a c:AdverseEventReportingActivity ;
+    l:atTime "2026-10-01T10:00:00+00:00"^^xsd:dateTime ;
+    l:profile "safety-reporting" ;
+    l:reportsRecord t:report .
+
+t:signalResult a c:Assertion ;
+    l:atTime "2026-10-02T10:00:00+00:00"^^xsd:dateTime ;
+    l:profile "signal-result" ;
+    l:pvResultAssessment t:signalAssessment ;
+    l:pvResultSignal t:signal ;
+    l:signalStatus "under-review" .
+
+t:surveillance a c:PostMarketSurveillanceActivity ;
+    l:profile "pv-surveillance" ;
+    l:surveillanceRequirement t:pvRule ;
+    l:surveillanceSource t:report .
+
+t:jA a c:RegulatoryJurisdiction .
+
+t:medicine a c:MedicinalProduct .
+
+t:pvRule a c:PharmacovigilanceRequirement ;
+    l:profile "pv-requirement" ;
+    l:pvRequirementJurisdiction t:jA .
+
+t:reportedClaim a c:Assertion ;
+    l:profile "report-claim" ;
+    ns1:claimText "A source reports a suspected event; causation is unestablished." .
+
+t:signalAssessment a c:SignalAssessmentActivity ;
+    l:profile "signal-assessment" ;
+    l:signalAssessmentTarget t:signal .
+
+t:reportCopy a c:SourceRecord ;
+    l:profile "report-carrier" ;
+    ns1:carrierClaim t:reportedClaim ;
+    ns1:caseIdentifier "SYNTHETIC-CASE-1" ;
+    ns1:caseIdentifierScheme "synthetic-local-case-id-not-E2B-conformance" .
+
+t:signal a c:Assertion ;
+    l:citesSourceRecord t:report ;
+    l:profile "safety-signal" ;
+    l:signalProduct t:medicine .
+
+t:report a c:SourceRecord ;
+    owl:differentFrom t:reportCopy ;
+    l:profile "report-carrier" ;
+    ns1:caseIdentifier "SYNTHETIC-CASE-1" ;
+    ns1:caseIdentifierScheme "synthetic-local-case-id-not-E2B-conformance" .

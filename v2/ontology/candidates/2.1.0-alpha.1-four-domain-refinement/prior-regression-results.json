@@ -1,0 +1,591 @@
+[
+  {
+    "requirement": "PREVIOUS",
+    "name": "positive",
+    "expected_conforms": true,
+    "actual_conforms": true,
+    "expected_marker": null,
+    "violations": [],
+    "fixture": "../2.1.0-alpha.1-four-domain-lab/fixtures/RM-1-positive.ttl",
+    "pass": true
+  },
+  {
+    "requirement": "PREVIOUS",
+    "name": "positive",
+    "expected_conforms": true,
+    "actual_conforms": true,
+    "expected_marker": null,
+    "violations": [],
+    "fixture": "../2.1.0-alpha.1-four-domain-lab/fixtures/PV-1-positive.ttl",
+    "pass": true
+  },
+  {
+    "requirement": "PREVIOUS",
+    "name": "positive",
+    "expected_conforms": true,
+    "actual_conforms": true,
+    "expected_marker": null,
+    "violations": [],
+    "fixture": "../2.1.0-alpha.1-four-domain-lab/fixtures/BA-1-positive.ttl",
+    "pass": true
+  },
+  {
+    "requirement": "PREVIOUS",
+    "name": "positive",
+    "expected_conforms": true,
+    "actual_conforms": true,
+    "expected_marker": null,
+    "violations": [],
+    "fixture": "../2.1.0-alpha.1-four-domain-lab/fixtures/DS-1-positive.ttl",
+    "pass": true
+  },
+  {
+    "requirement": "PREVIOUS",
+    "name": "boundary",
+    "expected_conforms": true,
+    "actual_conforms": true,
+    "expected_marker": null,
+    "violations": [],
+    "fixture": "../2.1.0-alpha.1-four-domain-lab/fixtures/RM-2-boundary.ttl",
+    "pass": true
+  },
+  {
+    "requirement": "PREVIOUS",
+    "name": "boundary",
+    "expected_conforms": true,
+    "actual_conforms": true,
+    "expected_marker": null,
+    "violations": [],
+    "fixture": "../2.1.0-alpha.1-four-domain-lab/fixtures/PV-2-boundary.ttl",
+    "pass": true
+  },
+  {
+    "requirement": "PREVIOUS",
+    "name": "boundary",
+    "expected_conforms": true,
+    "actual_conforms": true,
+    "expected_marker": null,
+    "violations": [],
+    "fixture": "../2.1.0-alpha.1-four-domain-lab/fixtures/BA-2-boundary.ttl",
+    "pass": true
+  },
+  {
+    "requirement": "PREVIOUS",
+    "name": "boundary",
+    "expected_conforms": true,
+    "actual_conforms": true,
+    "expected_marker": null,
+    "violations": [],
+    "fixture": "../2.1.0-alpha.1-four-domain-lab/fixtures/DS-2-boundary.ttl",
+    "pass": true
+  },
+  {
+    "requirement": "PREVIOUS",
+    "name": "missing-scenario-topic",
+    "expected_conforms": false,
+    "actual_conforms": false,
+    "expected_marker": "scenarioProduct",
+    "violations": [
+      {
+        "path": "",
+        "constraint": "https://w3id.org/cm-pharme/experimental/refinement/scenarioProduct-or-context-required",
+        "focus": "urn:cmpe-lab:scenario"
+      }
+    ],
+    "fixture": "../2.1.0-alpha.1-four-domain-lab/fixtures/RM-3-missing-scenario-topic.ttl",
+    "pass": true
+  },
+  {
+    "requirement": "PREVIOUS",
+    "name": "missing-evidence",
+    "expected_conforms": false,
+    "actual_conforms": false,
+    "expected_marker": "citesSourceRecord",
+    "violations": [
+      {
+        "path": "https://w3id.org/cm-pharme/experimental/four-domain/citesSourceRecord",
+        "constraint": "",
+        "focus": "urn:cmpe-lab:riskResult"
+      }
+    ],
+    "fixture": "../2.1.0-alpha.1-four-domain-lab/fixtures/RM-3-missing-evidence.ttl",
+    "pass": true
+  },
+  {
+    "requirement": "PREVIOUS",
+    "name": "dangling-plan-result",
+    "expected_conforms": false,
+    "actual_conforms": false,
+    "expected_marker": "planRiskResult",
+    "violations": [
+      {
+        "path": "https://w3id.org/cm-pharme/experimental/four-domain/planRiskResult",
+        "constraint": "",
+        "focus": "urn:cmpe-lab:plan"
+      }
+    ],
+    "fixture": "../2.1.0-alpha.1-four-domain-lab/fixtures/RM-3-dangling-plan-result.ttl",
+    "pass": true
+  },
+  {
+    "requirement": "PREVIOUS",
+    "name": "result-is-assessment",
+    "expected_conforms": false,
+    "actual_conforms": false,
+    "expected_marker": "distinct-RiskAssessmentActivity",
+    "violations": [
+      {
+        "path": "",
+        "constraint": "https://w3id.org/cm-pharme/experimental/four-domain/distinct-RiskAssessmentActivity-Assertion",
+        "focus": "urn:cmpe-lab:riskResult"
+      }
+    ],
+    "fixture": "../2.1.0-alpha.1-four-domain-lab/fixtures/RM-3-result-is-assessment.ttl",
+    "pass": true
+  },
+  {
+    "requirement": "PREVIOUS",
+    "name": "missing-review-predecessor",
+    "expected_conforms": false,
+    "actual_conforms": false,
+    "expected_marker": "reviewPriorResult",
+    "violations": [
+      {
+        "path": "https://w3id.org/cm-pharme/experimental/four-domain/reviewPriorResult",
+        "constraint": "",
+        "focus": "urn:cmpe-lab:review"
+      }
+    ],
+    "fixture": "../2.1.0-alpha.1-four-domain-lab/fixtures/RM-3-missing-review-predecessor.ttl",
+    "pass": true
+  },
+  {
+    "requirement": "PREVIOUS",
+    "name": "backdated-revision",
+    "expected_conforms": false,
+    "actual_conforms": false,
+    "expected_marker": "review-time-order",
+    "violations": [
+      {
+        "path": "",
+        "constraint": "https://w3id.org/cm-pharme/experimental/four-domain/review-time-order",
+        "focus": "urn:cmpe-lab:review"
+      }
+    ],
+    "fixture": "../2.1.0-alpha.1-four-domain-lab/fixtures/RM-3-backdated-revision.ttl",
+    "pass": true
+  },
+  {
+    "requirement": "PREVIOUS",
+    "name": "dangling-executed-plan",
+    "expected_conforms": false,
+    "actual_conforms": false,
+    "expected_marker": "implementsRiskPlan",
+    "violations": [
+      {
+        "path": "https://w3id.org/cm-pharme/experimental/four-domain/implementsRiskPlan",
+        "constraint": "",
+        "focus": "urn:cmpe-lab:action"
+      }
+    ],
+    "fixture": "../2.1.0-alpha.1-four-domain-lab/fixtures/RM-3-dangling-executed-plan.ttl",
+    "pass": true
+  },
+  {
+    "requirement": "PREVIOUS",
+    "name": "missing-target",
+    "expected_conforms": false,
+    "actual_conforms": false,
+    "expected_marker": "signal-target-required",
+    "violations": [
+      {
+        "path": "",
+        "constraint": "https://w3id.org/cm-pharme/experimental/four-domain/signal-target-required",
+        "focus": "urn:cmpe-lab:signal"
+      }
+    ],
+    "fixture": "../2.1.0-alpha.1-four-domain-lab/fixtures/PV-3-missing-target.ttl",
+    "pass": true
+  },
+  {
+    "requirement": "PREVIOUS",
+    "name": "missing-signal-source",
+    "expected_conforms": false,
+    "actual_conforms": false,
+    "expected_marker": "citesSourceRecord",
+    "violations": [
+      {
+        "path": "https://w3id.org/cm-pharme/experimental/four-domain/citesSourceRecord",
+        "constraint": "",
+        "focus": "urn:cmpe-lab:signal"
+      }
+    ],
+    "fixture": "../2.1.0-alpha.1-four-domain-lab/fixtures/PV-3-missing-signal-source.ttl",
+    "pass": true
+  },
+  {
+    "requirement": "PREVIOUS",
+    "name": "dangling-signal",
+    "expected_conforms": false,
+    "actual_conforms": false,
+    "expected_marker": "pvResultSignal",
+    "violations": [
+      {
+        "path": "https://w3id.org/cm-pharme/experimental/four-domain/pvResultSignal",
+        "constraint": "",
+        "focus": "urn:cmpe-lab:signalResult"
+      },
+      {
+        "path": "",
+        "constraint": "https://w3id.org/cm-pharme/experimental/four-domain/signal-result-agreement",
+        "focus": "urn:cmpe-lab:signalResult"
+      }
+    ],
+    "fixture": "../2.1.0-alpha.1-four-domain-lab/fixtures/PV-3-dangling-signal.ttl",
+    "pass": true
+  },
+  {
+    "requirement": "PREVIOUS",
+    "name": "missing-result-time",
+    "expected_conforms": false,
+    "actual_conforms": false,
+    "expected_marker": "atTime",
+    "violations": [
+      {
+        "path": "https://w3id.org/cm-pharme/experimental/four-domain/atTime",
+        "constraint": "",
+        "focus": "urn:cmpe-lab:signalResult"
+      }
+    ],
+    "fixture": "../2.1.0-alpha.1-four-domain-lab/fixtures/PV-3-missing-result-time.ttl",
+    "pass": true
+  },
+  {
+    "requirement": "PREVIOUS",
+    "name": "missing-jurisdiction",
+    "expected_conforms": false,
+    "actual_conforms": false,
+    "expected_marker": "pvRequirementJurisdiction",
+    "violations": [
+      {
+        "path": "https://w3id.org/cm-pharme/experimental/four-domain/pvRequirementJurisdiction",
+        "constraint": "",
+        "focus": "urn:cmpe-lab:pvRule"
+      }
+    ],
+    "fixture": "../2.1.0-alpha.1-four-domain-lab/fixtures/PV-3-missing-jurisdiction.ttl",
+    "pass": true
+  },
+  {
+    "requirement": "PREVIOUS",
+    "name": "reporting-is-record",
+    "expected_conforms": false,
+    "actual_conforms": false,
+    "expected_marker": "distinct-AdverseEventReportingActivity",
+    "violations": [
+      {
+        "path": "",
+        "constraint": "https://w3id.org/cm-pharme/experimental/four-domain/distinct-AdverseEventReportingActivity-SourceRecord",
+        "focus": "urn:cmpe-lab:reporting"
+      }
+    ],
+    "fixture": "../2.1.0-alpha.1-four-domain-lab/fixtures/PV-3-reporting-is-record.ttl",
+    "pass": true
+  },
+  {
+    "requirement": "PREVIOUS",
+    "name": "signal-is-own-result",
+    "expected_conforms": false,
+    "actual_conforms": false,
+    "expected_marker": "signal-result-distinct",
+    "violations": [
+      {
+        "path": "",
+        "constraint": "https://w3id.org/cm-pharme/experimental/four-domain/signal-result-agreement",
+        "focus": "urn:cmpe-lab:signalResult"
+      },
+      {
+        "path": "",
+        "constraint": "https://w3id.org/cm-pharme/experimental/four-domain/signal-result-distinct",
+        "focus": "urn:cmpe-lab:signalResult"
+      }
+    ],
+    "fixture": "../2.1.0-alpha.1-four-domain-lab/fixtures/PV-3-signal-is-own-result.ttl",
+    "pass": true
+  },
+  {
+    "requirement": "PREVIOUS",
+    "name": "signal-result-alias",
+    "expected_conforms": false,
+    "actual_conforms": false,
+    "expected_marker": "signal-result-distinct",
+    "violations": [
+      {
+        "path": "",
+        "constraint": "https://w3id.org/cm-pharme/experimental/four-domain/signal-result-distinct",
+        "focus": "urn:cmpe-lab:signalResult"
+      }
+    ],
+    "fixture": "../2.1.0-alpha.1-four-domain-lab/fixtures/PV-3-signal-result-alias.ttl",
+    "pass": true
+  },
+  {
+    "requirement": "PREVIOUS",
+    "name": "result-assessment-target-disagreement",
+    "expected_conforms": false,
+    "actual_conforms": false,
+    "expected_marker": "signal-result-agreement",
+    "violations": [
+      {
+        "path": "",
+        "constraint": "https://w3id.org/cm-pharme/experimental/four-domain/signal-result-agreement",
+        "focus": "urn:cmpe-lab:signalResult"
+      }
+    ],
+    "fixture": "../2.1.0-alpha.1-four-domain-lab/fixtures/PV-3-result-assessment-target-disagreement.ttl",
+    "pass": true
+  },
+  {
+    "requirement": "PREVIOUS",
+    "name": "missing-capability-bearer",
+    "expected_conforms": false,
+    "actual_conforms": false,
+    "expected_marker": "capabilityBearer",
+    "violations": [
+      {
+        "path": "https://w3id.org/cm-pharme/2.1/capabilityBearer",
+        "constraint": "",
+        "focus": "urn:cmpe-lab:cap"
+      }
+    ],
+    "fixture": "../2.1.0-alpha.1-four-domain-lab/fixtures/BA-3-missing-capability-bearer.ttl",
+    "pass": true
+  },
+  {
+    "requirement": "PREVIOUS",
+    "name": "service-without-capability",
+    "expected_conforms": false,
+    "actual_conforms": false,
+    "expected_marker": "serviceCapability",
+    "violations": [
+      {
+        "path": "https://w3id.org/cm-pharme/experimental/four-domain/serviceCapability",
+        "constraint": "",
+        "focus": "urn:cmpe-lab:service"
+      }
+    ],
+    "fixture": "../2.1.0-alpha.1-four-domain-lab/fixtures/BA-3-service-without-capability.ttl",
+    "pass": true
+  },
+  {
+    "requirement": "PREVIOUS",
+    "name": "view-is-organization",
+    "expected_conforms": false,
+    "actual_conforms": false,
+    "expected_marker": "distinct-BusinessArchitectureView",
+    "violations": [
+      {
+        "path": "",
+        "constraint": "https://w3id.org/cm-pharme/experimental/four-domain/distinct-BusinessArchitectureView-Organization",
+        "focus": "urn:cmpe-lab:view"
+      }
+    ],
+    "fixture": "../2.1.0-alpha.1-four-domain-lab/fixtures/BA-3-view-is-organization.ttl",
+    "pass": true
+  },
+  {
+    "requirement": "PREVIOUS",
+    "name": "untyped-view-reference",
+    "expected_conforms": false,
+    "actual_conforms": false,
+    "expected_marker": "viewOrganization",
+    "violations": [
+      {
+        "path": "https://w3id.org/cm-pharme/experimental/four-domain/viewOrganization",
+        "constraint": "",
+        "focus": "urn:cmpe-lab:view"
+      }
+    ],
+    "fixture": "../2.1.0-alpha.1-four-domain-lab/fixtures/BA-3-untyped-view-reference.ttl",
+    "pass": true
+  },
+  {
+    "requirement": "PREVIOUS",
+    "name": "one-partner-only",
+    "expected_conforms": false,
+    "actual_conforms": false,
+    "expected_marker": "partnershipParticipant",
+    "violations": [
+      {
+        "path": "n1496c4d48a3243c9a3c04dbfeb9e43ccb98",
+        "constraint": "",
+        "focus": "urn:cmpe-lab:org2"
+      },
+      {
+        "path": "https://w3id.org/cm-pharme/2.1/partnershipParticipant",
+        "constraint": "",
+        "focus": "urn:cmpe-lab:agreement"
+      },
+      {
+        "path": "https://w3id.org/cm-pharme/2.1/partnershipParticipant",
+        "constraint": "",
+        "focus": "urn:cmpe-lab:agreement"
+      }
+    ],
+    "fixture": "../2.1.0-alpha.1-four-domain-lab/fixtures/BA-3-one-partner-only.ttl",
+    "pass": true
+  },
+  {
+    "requirement": "PREVIOUS",
+    "name": "known-partner-aliases",
+    "expected_conforms": false,
+    "actual_conforms": false,
+    "expected_marker": "partners-not-known-aliases",
+    "violations": [
+      {
+        "path": "",
+        "constraint": "https://w3id.org/cm-pharme/experimental/four-domain/partners-not-known-aliases",
+        "focus": "urn:cmpe-lab:agreement"
+      }
+    ],
+    "fixture": "../2.1.0-alpha.1-four-domain-lab/fixtures/BA-3-known-partner-aliases.ttl",
+    "pass": true
+  },
+  {
+    "requirement": "PREVIOUS",
+    "name": "missing-version",
+    "expected_conforms": false,
+    "actual_conforms": false,
+    "expected_marker": "componentVersion",
+    "violations": [
+      {
+        "path": "https://w3id.org/cm-pharme/experimental/four-domain/componentVersion",
+        "constraint": "",
+        "focus": "urn:cmpe-lab:deployment"
+      }
+    ],
+    "fixture": "../2.1.0-alpha.1-four-domain-lab/fixtures/DS-3-missing-version.ttl",
+    "pass": true
+  },
+  {
+    "requirement": "PREVIOUS",
+    "name": "missing-generating-activity",
+    "expected_conforms": false,
+    "actual_conforms": false,
+    "expected_marker": "recordDigitalActivity",
+    "violations": [
+      {
+        "path": "https://w3id.org/cm-pharme/experimental/four-domain/recordDigitalActivity",
+        "constraint": "",
+        "focus": "urn:cmpe-lab:record"
+      }
+    ],
+    "fixture": "../2.1.0-alpha.1-four-domain-lab/fixtures/DS-3-missing-generating-activity.ttl",
+    "pass": true
+  },
+  {
+    "requirement": "PREVIOUS",
+    "name": "record-is-component",
+    "expected_conforms": false,
+    "actual_conforms": false,
+    "expected_marker": "distinct-SourceRecord",
+    "violations": [
+      {
+        "path": "",
+        "constraint": "https://w3id.org/cm-pharme/experimental/four-domain/distinct-SourceRecord-DigitalInformationSystemComponent",
+        "focus": "urn:cmpe-lab:record"
+      }
+    ],
+    "fixture": "../2.1.0-alpha.1-four-domain-lab/fixtures/DS-3-record-is-component.ttl",
+    "pass": true
+  },
+  {
+    "requirement": "PREVIOUS",
+    "name": "missing-deployment-time",
+    "expected_conforms": false,
+    "actual_conforms": false,
+    "expected_marker": "atTime",
+    "violations": [
+      {
+        "path": "https://w3id.org/cm-pharme/experimental/four-domain/atTime",
+        "constraint": "",
+        "focus": "urn:cmpe-lab:deployment"
+      }
+    ],
+    "fixture": "../2.1.0-alpha.1-four-domain-lab/fixtures/DS-3-missing-deployment-time.ttl",
+    "pass": true
+  },
+  {
+    "requirement": "PREVIOUS",
+    "name": "deployment-after-use",
+    "expected_conforms": false,
+    "actual_conforms": false,
+    "expected_marker": "deployment-before-use",
+    "violations": [
+      {
+        "path": "",
+        "constraint": "https://w3id.org/cm-pharme/experimental/four-domain/deployment-before-use",
+        "focus": "urn:cmpe-lab:transform"
+      }
+    ],
+    "fixture": "../2.1.0-alpha.1-four-domain-lab/fixtures/DS-3-deployment-after-use.ttl",
+    "pass": true
+  },
+  {
+    "requirement": "PREVIOUS",
+    "name": "service-without-supported-activity",
+    "expected_conforms": false,
+    "actual_conforms": false,
+    "expected_marker": "digitalServiceActivity",
+    "violations": [
+      {
+        "path": "https://w3id.org/cm-pharme/experimental/four-domain/digitalServiceActivity",
+        "constraint": "",
+        "focus": "urn:cmpe-lab:digitalService"
+      }
+    ],
+    "fixture": "../2.1.0-alpha.1-four-domain-lab/fixtures/DS-3-service-without-supported-activity.ttl",
+    "pass": true
+  },
+  {
+    "requirement": "PREVIOUS",
+    "name": "combined-domains",
+    "expected_conforms": true,
+    "actual_conforms": true,
+    "expected_marker": null,
+    "violations": [],
+    "fixture": "../2.1.0-alpha.1-four-domain-lab/fixtures/ALL-1-combined-domains.ttl",
+    "pass": true
+  },
+  {
+    "requirement": "PREVIOUS",
+    "name": "typed-capacity-preserved",
+    "expected_conforms": true,
+    "actual_conforms": true,
+    "expected_marker": null,
+    "violations": [],
+    "fixture": "../2.1.0-alpha.1-four-domain-lab/fixtures/REG-1-typed-capacity-preserved.ttl",
+    "pass": true
+  },
+  {
+    "requirement": "PREVIOUS",
+    "name": "bearer-free-capacity-rejected",
+    "expected_conforms": false,
+    "actual_conforms": false,
+    "expected_marker": null,
+    "violations": [
+      {
+        "path": "n1496c4d48a3243c9a3c04dbfeb9e43ccb138",
+        "constraint": "",
+        "focus": "urn:cmpe-lab:capacity"
+      },
+      {
+        "path": "",
+        "constraint": "",
+        "focus": "urn:cmpe-lab:capacity"
+      }
+    ],
+    "fixture": "../2.1.0-alpha.1-four-domain-lab/fixtures/REG-3-bearer-free-capacity-rejected.ttl",
+    "pass": true
+  }
+]

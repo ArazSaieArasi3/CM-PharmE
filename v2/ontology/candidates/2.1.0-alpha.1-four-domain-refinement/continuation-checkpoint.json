@@ -1,0 +1,388 @@
+{
+  "title": "CM-PharmE v2.1 — checkpoint after eight four-domain refinements and P1 contract repair",
+  "date": "2026-10-09",
+  "timezone": "Asia/Tehran",
+  "status": "ACTIVE_ANALYSIS_DOMAIN_DISPOSITION_OPEN",
+  "execution_note": "Prior baseline and laboratory preserved. Eight gap-specific contracts implemented and tested; twelve associations and no classes added. P1 source contract repaired with bounded replay; full W6 PostgreSQL CI is pending.",
+  "baseline": {
+    "repo": "ArazSaieArasi3/CM-PharmE",
+    "head": "71a8615d7e89b2ee735ca21be4e6f49683816555",
+    "pr": 305,
+    "pr_state": "open draft",
+    "gate_issue": 306,
+    "source_issue": 307,
+    "detector_issue": 310,
+    "closed_scope_issue": 309,
+    "major_gates": {
+      "G1": "historically closed in bounded scope",
+      "G2": "historically closed in bounded scope",
+      "G3": "active",
+      "G4": "pending: full data/mapping/traceability/Wiki/Pages/article alignment",
+      "G5": "pending: stable author review/diagram/release"
+    },
+    "completed_preserved": [
+      "G3-P1 integrated candidate",
+      "G3-P2 first relation reviews",
+      "G3-P4a SupplyCapacity scoped implementation and tests",
+      "G3-P5a tooling compatibility audit (not full detection)",
+      "G3-P5b archived runtime and three toy adapters (one detector family)"
+    ],
+    "progress_historical": {
+      "closed_major_gates": "2/5 = 40%",
+      "closed_G3_packages": "2/7 = 28.6%",
+      "caution": "These are historical gate counts, not estimated completion of the expanded scope or ontology quality."
+    }
+  },
+  "goal_proposed_fa": "هدف پیشنهادی CM-PharmE v2.1، مدل مفهومی مرجع و ماژولار برای پیوند سازمان‌ها و نقش‌ها، محصولات و تأسیسات، ثبت و مجوز و نظارت، عرضه و دسترسی و وابستگی‌های تأمین با شواهد زمان‌مند و قلمرومند است. چهار دامنه ریسک، فارماکوویژیلانس، معماری کسب‌وکار و سامانه‌های دیجیتال در وضعیت حفظ برای بررسی‌اند تا با نیازمندی و روابط موجه، سهم حداقلی و قابل ارزیابی در کل مدل داشته باشند. استقلال از کشور هدف طراحی است؛ اعتبار در همه کشورها ادعای اثبات‌شده نیست.",
+  "decisions_proposed_not_approved": {
+    "four_domain_deferral": "SUPERSEDED: final removal/transfer on hold by explicit user direction. Evaluate minimum viable retained modules; core versus extension placement still open.",
+    "regulator": "Reuse RegulatoryAuthorityRole and grounded authority roles; GovernedEntity is regulated entity, not regulator.",
+    "registry": "Existing EstablishmentRegistration is a regulatory relator; Dataset/SourceRecord/IdentifierAssignment provide partial information support, not proof of full registry coverage. Digital component is not synonymous with registry.",
+    "regulatory": "Candidate gap: traceable legal document/provision/requirement applicability, jurisdiction and validity; keep bounded. No full legal compliance reasoning claim.",
+    "global": "Reusable across selected varied jurisdictions within declared scope, not universal completeness of pharmaceutical ecosystem.",
+    "isolates": "Requirement-supported connection or documented deferral, never artificial edges for a connectivity score.",
+    "vvEAA": "Exact project-specific definition/source could not be recovered in this turn; no invented expansion. Map supplied framework to release gates when available."
+  },
+  "analysis_findings": {
+    "native_elements": 536,
+    "named_classes": 138,
+    "datatypes": 6,
+    "canonical_domain_labels": 17,
+    "populated_domains": 16,
+    "editorial_added_class_domain_assignments_pending": 60,
+    "actual_named_class_isolates": 13,
+    "hypothetical_four_domain_class_removal": {
+      "removed_classes": 12,
+      "remaining_named_classes": 126,
+      "remaining_isolates": 5,
+      "remaining_isolate_ids": [
+        "DistributionLogisticsActivity",
+        "ManufacturingActivity",
+        "ProcurementActivity",
+        "RegulatoryRequirement",
+        "StockoutSituation"
+      ],
+      "note": "Historical counterfactual only, not a recommendation or implemented change; user has put removal/transfer on hold."
+    },
+    "current_adapter_blockers": {
+      "event_situation_classes": 12,
+      "untyped_ends": 11,
+      "unspecified_cardinality_ends": 66,
+      "relations_with_unspecified_bounds": 33,
+      "specialized_ends": 14,
+      "nature_restrictions": 144,
+      "note": "Overlapping categories; recalculate after scope changes."
+    }
+  },
+  "requirement_record_fields": [
+    "id",
+    "atomic_statement",
+    "stakeholder_and_purpose",
+    "evidence_source",
+    "status_observed_reconstructed_proposed",
+    "primary_domain",
+    "priority_and_scope_decision",
+    "competency_questions",
+    "model_elements",
+    "constraints",
+    "positive_witness",
+    "negative_or_boundary_witness",
+    "acceptance_criterion",
+    "test_result",
+    "author_decision"
+  ],
+  "test_principles": [
+    "Independent requirements and expected outcomes before model-driven fixture generation",
+    "Multiple simultaneous roles for one organization; role changes over time",
+    "Jurisdiction-scoped permissions and statuses; no automatic global disjointness",
+    "Repeated relators over different time periods; tuple/context uniqueness",
+    "Registration versus authorization versus registry record",
+    "Incomplete evidence versus actual violation under OWL open-world semantics",
+    "Positive concrete-class instantiation, relation coverage, negative fixtures and mutation sensitivity",
+    "SQL constraints and synthetic data complement but do not replace OntoUML semantics, OWL reasoners, SHACL and expert review",
+    "Global coverage matrix must retain out-of-scope areas to avoid denominator manipulation"
+  ],
+  "tasks": [
+    {
+      "order": 1,
+      "id": "N01",
+      "task_fa": "منشور هدف و مرز v2.1",
+      "prior_work_link_fa": "جدید؛ پیش‌نیاز ادامهٔ G3",
+      "deliverable_fa": "پاراگراف هدف، ذی‌نفعان، کاربردها، موارد خارج دامنه و حد ادعای جهانی",
+      "acceptance_fa": "تأیید نویسنده؛ عدم ادعای پوشش همهٔ اکوسیستم",
+      "status": "DRAFT_PREPARED_NOT_ACCEPTED"
+    },
+    {
+      "order": 2,
+      "id": "N02",
+      "task_fa": "استخراج مستقل و اتمیک نیازمندی‌ها",
+      "prior_work_link_fa": "جدید؛ تکمیل مبنای G1",
+      "deliverable_fa": "فهرست دارای شناسه، منبع، الزام واحد، CQ و معیار پذیرش",
+      "acceptance_fa": "تفکیک نیاز منبع‌دار، بازسازی از مدل، پیشنهاد جدید و فرض تأییدنشده",
+      "status": "PARTIAL_DRAFT_FOUR_DOMAINS_ONLY"
+    },
+    {
+      "order": 3,
+      "id": "N03",
+      "task_fa": "بازبینی مأموریت و مالکیت همهٔ دامنه‌ها",
+      "prior_work_link_fa": "جدید؛ مرتبط با G2/P3",
+      "deliverable_fa": "مأموریت هر دامنه، نگاشت همهٔ مفاهیم و وابستگی‌های بین‌دامنه‌ای",
+      "acceptance_fa": "تعیین تکلیف ۶۰ تخصیص پیشنهادی؛ مرز ماژول قابل آزمون",
+      "status": "PARTIAL_DRAFT_FOUR_DOMAINS_ONLY"
+    },
+    {
+      "order": 4,
+      "id": "N04",
+      "task_fa": "ماتریس پوشش جهانی و تحلیل شکاف",
+      "prior_work_link_fa": "جدید",
+      "deliverable_fa": "نیازمندی × سناریو × حوزه قضایی × منبع؛ وضعیت پشتیبانی/شکاف/خارج دامنه/تعویق",
+      "acceptance_fa": "بازبینی منابع مستقل و سناریوهای ناهمگون؛ بدون تعمیم جهانی از نمونه محدود",
+      "status": "PROPOSED_PENDING_DECISION"
+    },
+    {
+      "order": 5,
+      "id": "N05",
+      "task_fa": "طراحی و ارزیابی حداقلی چهار دامنه با بازماندن تصمیم جایگاه نهایی",
+      "prior_work_link_fa": "جدید؛ تغییر کنترل‌شده دامنه",
+      "deliverable_fa": "چهار قرارداد دامنه، نیازمندی و CQ، روابط و شواهد، سناریوهای مثبت و منفی و تحلیل اثر؛ خروج یا انتقال نهایی نشده است.",
+      "acceptance_fa": "مفیدبودن مستقل و سهم در کل مدل، نگاشت نیاز و شاهد و ارزیابی فرمال؛ هیچ حذف یا افزودن صرفاً برای بهبود شمارش.",
+      "status": "FOUR_DOMAINS_RETAINED_FOR_REVIEW_EIGHT_GAPS_OPERATIONALIZED"
+    },
+    {
+      "order": 6,
+      "id": "N06",
+      "task_fa": "تعیین حد رجیستری",
+      "prior_work_link_fa": "جدید؛ وابسته به N01–N05",
+      "deliverable_fa": "تمایز ثبت حقوقی، رکورد منبع و سامانه؛ استفاده مجدد از مفاهیم موجود",
+      "acceptance_fa": "افزودن Registry/RegistryEntry فقط در صورت CQ ضروری",
+      "status": "PROPOSED_PENDING_DECISION"
+    },
+    {
+      "order": 7,
+      "id": "N07",
+      "task_fa": "تقویت محدود Regulatory Policy",
+      "prior_work_link_fa": "جدید؛ مرتبط با P3",
+      "deliverable_fa": "تعریف دامنه، مرجع/اختیار/سند/مقرره/الزام/اعمال در زمان و قلمرو",
+      "acceptance_fa": "جداسازی محتوای الزام از سند و وضعیت انطباق؛ عدم ساخت موتور جامع حقوقی",
+      "status": "PROPOSED_PENDING_DECISION"
+    },
+    {
+      "order": 8,
+      "id": "N08",
+      "task_fa": "تعیین تکلیف مفاهیم منزوی",
+      "prior_work_link_fa": "P3؛ حفظ کار قبلی",
+      "deliverable_fa": "تعیین تکلیف مستند هر ۱۳ منزوی فعلی؛ بررسی نیازمندی‌محور ۸ منزوی چهار دامنه بدون حذف پیش‌فرض.",
+      "acceptance_fa": "اتصال معنادار به نیازمندی یا تعویق مستند و قابل برگشت",
+      "status": "PROPOSED_PENDING_DECISION"
+    },
+    {
+      "order": 9,
+      "id": "N09",
+      "task_fa": "طراحی سناریوها و مرجع پاسخ آزمون",
+      "prior_work_link_fa": "جدید؛ آماده‌سازی P6",
+      "deliverable_fa": "سناریوهای متعارف/تنوع زمینه/مرزی/ناقض و پاسخ مورد انتظار مستقل از مدل",
+      "acceptance_fa": "نیازمندی‌های نامزد v2.1 و پوشش آزمون مصوب؛ هنوز ادعای اثبات نهایی ندارد",
+      "status": "FOUR_DOMAIN_16_FAMILIES_EXECUTED_REMAINING_PROJECT_SCOPE_OPEN"
+    },
+    {
+      "order": 10,
+      "id": "P3",
+      "task_fa": "نهایی‌سازی تصمیم‌های علمی قبلی و جدید",
+      "prior_work_link_fa": "G3-P3 باز",
+      "deliverable_fa": "۲۹ ردیف رابطه، ۱۰ پرسش ImpAbs، ۱۹ سیاست RepRel با اثر تصمیم‌های دامنه",
+      "acceptance_fa": "هر ردیف حل/حفظ با دلیل/تعویق خارج دامنه؛ شمارش‌ها همپوشان‌اند",
+      "status": "PROPOSED_PENDING_DECISION",
+      "current_extension": "39 experimental relations now have semantic-family/rationale review proposals; no final stereotype decisions. Prior 29-relation backlog preserved."
+    },
+    {
+      "order": 11,
+      "id": "P4",
+      "task_fa": "اعمال تصمیم‌های مصوب در سه نمایش",
+      "prior_work_link_fa": "G3-P4 باز؛ P4a قبلاً تکمیل",
+      "deliverable_fa": "نسخهٔ نامزد OntoUML/OWL/SHACL با ثبت تغییرات",
+      "acceptance_fa": "رگرسیون تغییرات؛ حفظ آزمون‌های SupplyCapacity یا ثبت دلیل تغییر",
+      "status": "PROPOSED_PENDING_DECISION",
+      "current_extension": "Bounded four-domain experiment executed; no full package closure."
+    },
+    {
+      "order": 12,
+      "id": "P5d",
+      "task_fa": "تکمیل نوع سررابطه‌ها، کاردینالیتی و subsetting",
+      "prior_work_link_fa": "G3-P5d باز؛ به پیش از تبدیل کامل منتقل شود",
+      "deliverable_fa": "تعیین تکلیف ۱۱ سر بی‌نوع، ۶۶ حد نامشخص در ۳۳ رابطه، ۱۴ سر تخصص‌یافته در مبنای فعلی",
+      "acceptance_fa": "تعدادها پس از تغییر دامنه بازشماری شود؛ قیود حدسی مجاز نیست",
+      "status": "PROPOSED_PENDING_DECISION"
+    },
+    {
+      "order": 13,
+      "id": "P5c",
+      "task_fa": "پوشش معتبر Event/Situation و nature",
+      "prior_work_link_fa": "G3-P5c باز؛ پس از تثبیت معنا",
+      "deliverable_fa": "نگاشت وفادار یا مسیر اعتبارسنجی جایگزین برای ۱۲ کلاس و ۱۴۴ قید nature فعلی",
+      "acceptance_fa": "گزارش فقدان معنا و شاهد مثبت/منفی؛ حفظ هویت رخداد و وضعیت",
+      "status": "PROPOSED_PENDING_DECISION"
+    },
+    {
+      "order": 14,
+      "id": "P5e",
+      "task_fa": "اجرای الگوها و هر ۲۰ ضدالگو",
+      "prior_work_link_fa": "G3-P5e/#310 باز",
+      "deliverable_fa": "حساسیت‌سنجی آشکارساز، اجرای مدل نهایی و داوری هر رخداد در ماژول و کل",
+      "acceptance_fa": "صفر نقص مسدودکنندهٔ حل‌نشده؛ هشدار موجه با قیود و آزمون ثبت شود",
+      "status": "PROPOSED_PENDING_DECISION"
+    },
+    {
+      "order": 15,
+      "id": "P6a",
+      "task_fa": "نمونه‌سازی مصنوعی کوچک اما پوشش‌دار",
+      "prior_work_link_fa": "جدید در G3-P6",
+      "deliverable_fa": "دادهٔ مصنوعی/رابطه‌ای و ABox؛ سناریو، پاسخ و یافته‌های طراحی",
+      "acceptance_fa": "پوشش همهٔ کلاس‌های concrete فعال و روابط/قیود الزامی؛ abstract از راه زیرکلاس",
+      "status": "PROPOSED_PENDING_DECISION",
+      "current_extension": "Bounded four-domain experiment executed; no full package closure."
+    },
+    {
+      "order": 16,
+      "id": "P6b",
+      "task_fa": "چرخهٔ اصلاح براساس آزمون",
+      "prior_work_link_fa": "جدید در G3-P4/P6",
+      "deliverable_fa": "اصلاح نیاز/تعریف/رابطه/قید/تست با ثبت علت",
+      "acceptance_fa": "بازاجرای تست‌های متأثر تا رفع خطا؛ تست صرفاً کپی مدل نباشد",
+      "status": "PROPOSED_PENDING_DECISION",
+      "current_extension": "Eight original gap areas refined with 37 new SHACL cases plus all 39 prior cases passing."
+    },
+    {
+      "order": 17,
+      "id": "P6c",
+      "task_fa": "قرارداد منبع و شواهد تجربی مستقل",
+      "prior_work_link_fa": "G3-P6/#307 باز",
+      "deliverable_fa": "هویت و checksum منبع، حل اختلاف نام، نگاشت دادهٔ گسترده‌تر/مستقل",
+      "acceptance_fa": "حد تعمیم صریح؛ نمونهٔ ۷۶۸ ردیفی معادل کل منبع نیست",
+      "status": "PROPOSED_PENDING_DECISION",
+      "current_extension": "P1 filename/metadata/header contract repaired; 12 negative checks and 768-row replay pass. Full W6 database CI pending; other empirical sources remain open."
+    },
+    {
+      "order": 18,
+      "id": "P6d",
+      "task_fa": "اعتبارسنجی یکپارچه و ریزنر",
+      "prior_work_link_fa": "G3-P6 و #306 باز",
+      "deliverable_fa": "سازگاری، satisfiability، entailment/non-entailment، SHACL، قیود زمانی و بین‌ماژولی",
+      "acceptance_fa": "آزمون مثبت/منفی، mutation و رگرسیون؛ SQL به‌تنهایی اثبات OntoUML نیست",
+      "status": "PROPOSED_PENDING_DECISION",
+      "current_extension": "Bounded four-domain experiment executed; no full package closure."
+    },
+    {
+      "order": 19,
+      "id": "N10",
+      "task_fa": "تثبیت نهایی نیازمندی‌های آزموده‌شده v2.1",
+      "prior_work_link_fa": "جدید؛ خروجی مشترک P3–P6",
+      "deliverable_fa": "ماتریس نیاز→CQ→مفهوم/رابطه/قید→تست→شاهد→تصمیم",
+      "acceptance_fa": "۱۰۰٪ نیازمندی‌های الزامی پذیرفته‌شده دارای شاهد قبولی؛ استثناها و خارج‌دامنه‌ها صریح",
+      "status": "PROPOSED_PENDING_DECISION"
+    },
+    {
+      "order": 20,
+      "id": "P7",
+      "task_fa": "مرور انسانی و بستن G3",
+      "prior_work_link_fa": "G3-P7 باز",
+      "deliverable_fa": "بستهٔ تصمیم و شواهد نسخهٔ نامزد پایدار",
+      "acceptance_fa": "تأیید نویسنده؛ رفع موارد مسدودکنندهٔ علمی",
+      "status": "PROPOSED_PENDING_DECISION"
+    },
+    {
+      "order": 21,
+      "id": "G4",
+      "task_fa": "تطبیق داده، ردیابی، ویکی، Pages و مقاله",
+      "prior_work_link_fa": "G4 باز؛ عنوان بازیابی‌شده از تاریخچهٔ #306",
+      "deliverable_fa": "همگامی نگاشت‌ها و شواهد مستقل، ادعاها و مستندات/مقاله با نسخهٔ مصوب",
+      "acceptance_fa": "مقاله دامنه محدود و نتایج واقعی را بیان کند؛ ارجاع CM-PharmE/IEEE حفظ شود",
+      "status": "PROPOSED_PENDING_DECISION"
+    },
+    {
+      "order": 22,
+      "id": "G5a",
+      "task_fa": "دیاگرام جامع و مرور نهایی نسخهٔ پایدار",
+      "prior_work_link_fa": "G5 باز",
+      "deliverable_fa": "دیاگرام جامع OntoUML و نماهای دامنه‌ای پس از تثبیت",
+      "acceptance_fa": "همخوانی دیاگرام با فایل مبنا؛ تأیید انسانی",
+      "status": "PROPOSED_PENDING_DECISION"
+    },
+    {
+      "order": 23,
+      "id": "G5b",
+      "task_fa": "ممیزی انتشار و release v2.1",
+      "prior_work_link_fa": "G5 باز",
+      "deliverable_fa": "چک‌لیست انتشار، نسخه‌بندی، تغییرات، مجوز، قابلیت بازتولید و آرشیو",
+      "acceptance_fa": "تمام دروازه‌های الزامی بسته؛ انتشار پس از تأیید نهایی",
+      "status": "PROPOSED_PENDING_DECISION"
+    }
+  ],
+  "exact_next": {
+    "task": "P3/P5 semantic and representation alignment",
+    "items": [
+      "Review informational content/proposition profile boundaries against structural BinOver candidates; a complete report-content model is still absent.",
+      "Adjudicate 39 experimental relations with event/participation/nature policy; align native, OWL and SHACL.",
+      "Read W6 PostgreSQL CI for the repaired P1 contract and close #307 only after its acceptance conditions are met.",
+      "Continue full 20-pattern adapter, independent data and P7 human evaluation."
+    ]
+  },
+  "sources": [
+    "https://github.com/ArazSaieArasi3/CM-PharmE/issues/306",
+    "https://github.com/ArazSaieArasi3/CM-PharmE/pull/305",
+    "https://ontouml.readthedocs.io/en/latest/patterns/index.html",
+    "https://ontouml.readthedocs.io/en/latest/anti-patterns/index.html",
+    "https://www.who.int/tools/global-benchmarking-tools/",
+    "https://www.ema.europa.eu/en/human-regulatory-overview/research-development/data-medicines-iso-idmp-standards-overview/substance-product-organisation-referential-spor-master-data",
+    "https://docs.oasis-open.org/legalruleml/legalruleml-core-spec/v1.0/os/legalruleml-core-spec-v1.0-os.pdf"
+  ],
+  "retrieval_limit": "Personal Context search returned an error; no claim to have read all prior project chats. G4/G5 definitions recovered from issue/PR history.",
+  "supersedes_source": {
+    "library_file_id": "libfile_17a1a89ecf008191a42112f009a68737",
+    "filename": "cm-pharme-v2.1-consolidated-plan-2026-10-09.json",
+    "scope": "Direction of N05 and draft preparation status only; all 23 work items preserved."
+  },
+  "user_decision": {
+    "id": "D-20261009-FOUR-DOMAIN-HOLD",
+    "status": "CONFIRMED_USER_DIRECTION",
+    "text_fa": "تصمیم خروج یا انتقال چهار دامنه معلق است؛ امکان طراحی دامنه حداقلی مفید بررسی شود؛ تصمیم نهایی حذف اتخاذ نشود.",
+    "effect": "Preserve current model and prior backlog; develop evidence-backed bounded alternatives. No new scientific approval inferred."
+  },
+  "progress_current": {
+    "this_refinement_contracts": "8/8 have passing bounded tests; none author-accepted",
+    "original_requirement_trace_records": "24/24 preserved; no scientific closure inferred",
+    "closed_major_gates": "2/5 = 40% unchanged",
+    "closed_G3_packages": "2/7 = 28.6% unchanged",
+    "new_semantic_gates_closed": 0
+  },
+  "next_action_fa": "بررسی نتیجهٔ CI قرارداد منبع و سپس تعیین تکلیف هویت محتوای اطلاعاتی و سیاست روابط رخدادها برای هم‌ترازی سه نمایش.",
+  "module_followup_issues": [
+    {
+      "module": "RM",
+      "number": 311,
+      "url": "https://github.com/ArazSaieArasi3/CM-PharmE/issues/311"
+    },
+    {
+      "module": "PV",
+      "number": 312,
+      "url": "https://github.com/ArazSaieArasi3/CM-PharmE/issues/312"
+    },
+    {
+      "module": "BA",
+      "number": 313,
+      "url": "https://github.com/ArazSaieArasi3/CM-PharmE/issues/313"
+    },
+    {
+      "module": "DS",
+      "number": 314,
+      "url": "https://github.com/ArazSaieArasi3/CM-PharmE/issues/314"
+    }
+  ],
+  "issue_snapshot_after_tracking": {
+    "open": 29,
+    "closed": 170,
+    "new_opened_this_turn": 4,
+    "closed_this_turn": 0,
+    "excludes_pull_requests": true
+  },
+  "experiment": "v2/ontology/candidates/2.1.0-alpha.1-four-domain-refinement"
+}

@@ -1,0 +1,581 @@
+[
+  {
+    "requirement": "X-RM-CONTEXT",
+    "name": "positive",
+    "expected_conforms": true,
+    "actual_conforms": true,
+    "expected_marker": null,
+    "violations": [],
+    "fixture": "fixtures/X-RM-CONTEXT-positive.ttl",
+    "pass": true
+  },
+  {
+    "requirement": "X-PV-CARRIER",
+    "name": "positive",
+    "expected_conforms": true,
+    "actual_conforms": true,
+    "expected_marker": null,
+    "violations": [],
+    "fixture": "fixtures/X-PV-CARRIER-positive.ttl",
+    "pass": true
+  },
+  {
+    "requirement": "X-PV-ACTOR",
+    "name": "positive",
+    "expected_conforms": true,
+    "actual_conforms": true,
+    "expected_marker": null,
+    "violations": [],
+    "fixture": "fixtures/X-PV-ACTOR-positive.ttl",
+    "pass": true
+  },
+  {
+    "requirement": "X-BA-SERVICE",
+    "name": "positive",
+    "expected_conforms": true,
+    "actual_conforms": true,
+    "expected_marker": null,
+    "violations": [],
+    "fixture": "fixtures/X-BA-SERVICE-positive.ttl",
+    "pass": true
+  },
+  {
+    "requirement": "X-BA-COMMITMENT",
+    "name": "positive",
+    "expected_conforms": true,
+    "actual_conforms": true,
+    "expected_marker": null,
+    "violations": [],
+    "fixture": "fixtures/X-BA-COMMITMENT-positive.ttl",
+    "pass": true
+  },
+  {
+    "requirement": "X-DS-PHARMA",
+    "name": "positive",
+    "expected_conforms": true,
+    "actual_conforms": true,
+    "expected_marker": null,
+    "violations": [],
+    "fixture": "fixtures/X-DS-PHARMA-positive.ttl",
+    "pass": true
+  },
+  {
+    "requirement": "X-DS-RESPONSIBILITY",
+    "name": "positive",
+    "expected_conforms": true,
+    "actual_conforms": true,
+    "expected_marker": null,
+    "violations": [],
+    "fixture": "fixtures/X-DS-RESPONSIBILITY-positive.ttl",
+    "pass": true
+  },
+  {
+    "requirement": "X-PV-SURVEILLANCE",
+    "name": "positive",
+    "expected_conforms": true,
+    "actual_conforms": true,
+    "expected_marker": null,
+    "violations": [],
+    "fixture": "fixtures/X-PV-SURVEILLANCE-positive.ttl",
+    "pass": true
+  },
+  {
+    "requirement": "X-RM-CONTEXT",
+    "name": "boundary",
+    "expected_conforms": true,
+    "actual_conforms": true,
+    "expected_marker": null,
+    "violations": [],
+    "fixture": "fixtures/X-RM-CONTEXT-boundary.ttl",
+    "pass": true
+  },
+  {
+    "requirement": "X-PV-CARRIER",
+    "name": "boundary",
+    "expected_conforms": true,
+    "actual_conforms": true,
+    "expected_marker": null,
+    "violations": [],
+    "fixture": "fixtures/X-PV-CARRIER-boundary.ttl",
+    "pass": true
+  },
+  {
+    "requirement": "X-PV-ACTOR",
+    "name": "boundary",
+    "expected_conforms": true,
+    "actual_conforms": true,
+    "expected_marker": null,
+    "violations": [],
+    "fixture": "fixtures/X-PV-ACTOR-boundary.ttl",
+    "pass": true
+  },
+  {
+    "requirement": "X-BA-SERVICE",
+    "name": "boundary",
+    "expected_conforms": true,
+    "actual_conforms": true,
+    "expected_marker": null,
+    "violations": [],
+    "fixture": "fixtures/X-BA-SERVICE-boundary.ttl",
+    "pass": true
+  },
+  {
+    "requirement": "X-BA-COMMITMENT",
+    "name": "boundary",
+    "expected_conforms": true,
+    "actual_conforms": true,
+    "expected_marker": null,
+    "violations": [],
+    "fixture": "fixtures/X-BA-COMMITMENT-boundary.ttl",
+    "pass": true
+  },
+  {
+    "requirement": "X-DS-PHARMA",
+    "name": "boundary",
+    "expected_conforms": true,
+    "actual_conforms": true,
+    "expected_marker": null,
+    "violations": [],
+    "fixture": "fixtures/X-DS-PHARMA-boundary.ttl",
+    "pass": true
+  },
+  {
+    "requirement": "X-DS-RESPONSIBILITY",
+    "name": "boundary",
+    "expected_conforms": true,
+    "actual_conforms": true,
+    "expected_marker": null,
+    "violations": [],
+    "fixture": "fixtures/X-DS-RESPONSIBILITY-boundary.ttl",
+    "pass": true
+  },
+  {
+    "requirement": "X-PV-SURVEILLANCE",
+    "name": "boundary",
+    "expected_conforms": true,
+    "actual_conforms": true,
+    "expected_marker": null,
+    "violations": [],
+    "fixture": "fixtures/X-PV-SURVEILLANCE-boundary.ttl",
+    "pass": true
+  },
+  {
+    "requirement": "X-RM-CONTEXT",
+    "name": "dependency-boundary",
+    "expected_conforms": true,
+    "actual_conforms": true,
+    "expected_marker": null,
+    "violations": [],
+    "fixture": "fixtures/X-RM-CONTEXT-dependency-boundary.ttl",
+    "pass": true
+  },
+  {
+    "requirement": "X-RM-CONTEXT",
+    "name": "missing-context",
+    "expected_conforms": false,
+    "actual_conforms": false,
+    "expected_marker": "scenarioProduct-or-context-required",
+    "violations": [
+      {
+        "path": "",
+        "constraint": "https://w3id.org/cm-pharme/experimental/refinement/scenarioProduct-or-context-required",
+        "focus": "urn:cmpe-lab:scenario"
+      }
+    ],
+    "fixture": "fixtures/X-RM-CONTEXT-missing-context.ttl",
+    "pass": true
+  },
+  {
+    "requirement": "X-RM-CONTEXT",
+    "name": "untyped-facility",
+    "expected_conforms": false,
+    "actual_conforms": false,
+    "expected_marker": "scenarioFacility",
+    "violations": [
+      {
+        "path": "https://w3id.org/cm-pharme/experimental/refinement/scenarioFacility",
+        "constraint": "",
+        "focus": "urn:cmpe-lab:scenario"
+      }
+    ],
+    "fixture": "fixtures/X-RM-CONTEXT-untyped-facility.ttl",
+    "pass": true
+  },
+  {
+    "requirement": "X-PV-CARRIER",
+    "name": "missing-claim",
+    "expected_conforms": false,
+    "actual_conforms": false,
+    "expected_marker": "carrierClaim",
+    "violations": [
+      {
+        "path": "https://w3id.org/cm-pharme/experimental/refinement/carrierClaim",
+        "constraint": "",
+        "focus": "urn:cmpe-lab:report"
+      }
+    ],
+    "fixture": "fixtures/X-PV-CARRIER-missing-claim.ttl",
+    "pass": true
+  },
+  {
+    "requirement": "X-PV-CARRIER",
+    "name": "missing-claim-content",
+    "expected_conforms": false,
+    "actual_conforms": false,
+    "expected_marker": "carrierClaim",
+    "violations": [
+      {
+        "path": "https://w3id.org/cm-pharme/experimental/refinement/carrierClaim",
+        "constraint": "",
+        "focus": "urn:cmpe-lab:report"
+      },
+      {
+        "path": "https://w3id.org/cm-pharme/experimental/refinement/claimText",
+        "constraint": "",
+        "focus": "urn:cmpe-lab:reportedClaim"
+      },
+      {
+        "path": "https://w3id.org/cm-pharme/experimental/refinement/carrierClaim",
+        "constraint": "",
+        "focus": "urn:cmpe-lab:reportCopy"
+      },
+      {
+        "path": "https://w3id.org/cm-pharme/experimental/refinement/claimText",
+        "constraint": "",
+        "focus": "urn:cmpe-lab:reportedClaim"
+      },
+      {
+        "path": "https://w3id.org/cm-pharme/experimental/refinement/claimText",
+        "constraint": "",
+        "focus": "urn:cmpe-lab:reportedClaim"
+      }
+    ],
+    "fixture": "fixtures/X-PV-CARRIER-missing-claim-content.ttl",
+    "pass": true
+  },
+  {
+    "requirement": "X-PV-CARRIER",
+    "name": "carrier-as-claim",
+    "expected_conforms": false,
+    "actual_conforms": false,
+    "expected_marker": "carrier-not-claim",
+    "violations": [
+      {
+        "path": "https://w3id.org/cm-pharme/experimental/refinement/carrierClaim",
+        "constraint": "",
+        "focus": "urn:cmpe-lab:report"
+      },
+      {
+        "path": "https://w3id.org/cm-pharme/experimental/refinement/claimText",
+        "constraint": "",
+        "focus": "urn:cmpe-lab:report"
+      },
+      {
+        "path": "",
+        "constraint": "https://w3id.org/cm-pharme/experimental/refinement/carrier-not-claim",
+        "focus": "urn:cmpe-lab:report"
+      }
+    ],
+    "fixture": "fixtures/X-PV-CARRIER-carrier-as-claim.ttl",
+    "pass": true
+  },
+  {
+    "requirement": "X-PV-ACTOR",
+    "name": "missing-actor",
+    "expected_conforms": false,
+    "actual_conforms": false,
+    "expected_marker": "assessmentOrganization",
+    "violations": [
+      {
+        "path": "https://w3id.org/cm-pharme/experimental/refinement/assessmentOrganization",
+        "constraint": "",
+        "focus": "urn:cmpe-lab:signalAssessment"
+      }
+    ],
+    "fixture": "fixtures/X-PV-ACTOR-missing-actor.ttl",
+    "pass": true
+  },
+  {
+    "requirement": "X-PV-ACTOR",
+    "name": "untyped-actor",
+    "expected_conforms": false,
+    "actual_conforms": false,
+    "expected_marker": "assessmentOrganization",
+    "violations": [
+      {
+        "path": "https://w3id.org/cm-pharme/experimental/refinement/assessmentOrganization",
+        "constraint": "",
+        "focus": "urn:cmpe-lab:signalAssessment"
+      }
+    ],
+    "fixture": "fixtures/X-PV-ACTOR-untyped-actor.ttl",
+    "pass": true
+  },
+  {
+    "requirement": "X-BA-SERVICE",
+    "name": "missing-pharma-context",
+    "expected_conforms": false,
+    "actual_conforms": false,
+    "expected_marker": "pharma-service-context",
+    "violations": [
+      {
+        "path": "",
+        "constraint": "https://w3id.org/cm-pharme/experimental/refinement/pharma-service-context",
+        "focus": "urn:cmpe-lab:service"
+      }
+    ],
+    "fixture": "fixtures/X-BA-SERVICE-missing-pharma-context.ttl",
+    "pass": true
+  },
+  {
+    "requirement": "X-BA-SERVICE",
+    "name": "untyped-product",
+    "expected_conforms": false,
+    "actual_conforms": false,
+    "expected_marker": "serviceProduct",
+    "violations": [
+      {
+        "path": "https://w3id.org/cm-pharme/experimental/refinement/serviceProduct",
+        "constraint": "",
+        "focus": "urn:cmpe-lab:service"
+      }
+    ],
+    "fixture": "fixtures/X-BA-SERVICE-untyped-product.ttl",
+    "pass": true
+  },
+  {
+    "requirement": "X-BA-COMMITMENT",
+    "name": "missing-commitment",
+    "expected_conforms": false,
+    "actual_conforms": false,
+    "expected_marker": "agreementCommitment",
+    "violations": [
+      {
+        "path": "https://w3id.org/cm-pharme/experimental/refinement/agreementCommitment",
+        "constraint": "",
+        "focus": "urn:cmpe-lab:agreement"
+      }
+    ],
+    "fixture": "fixtures/X-BA-COMMITMENT-missing-commitment.ttl",
+    "pass": true
+  },
+  {
+    "requirement": "X-BA-COMMITMENT",
+    "name": "missing-source-evidence",
+    "expected_conforms": false,
+    "actual_conforms": false,
+    "expected_marker": "commitment-evidence-required",
+    "violations": [
+      {
+        "path": "",
+        "constraint": "https://w3id.org/cm-pharme/experimental/refinement/commitment-evidence-required",
+        "focus": "urn:cmpe-lab:agreement"
+      }
+    ],
+    "fixture": "fixtures/X-BA-COMMITMENT-missing-source-evidence.ttl",
+    "pass": true
+  },
+  {
+    "requirement": "X-BA-COMMITMENT",
+    "name": "outside-actor",
+    "expected_conforms": false,
+    "actual_conforms": false,
+    "expected_marker": "commitment-participant-agreement",
+    "violations": [
+      {
+        "path": "",
+        "constraint": "https://w3id.org/cm-pharme/experimental/refinement/commitment-participant-agreement",
+        "focus": "urn:cmpe-lab:agreement"
+      }
+    ],
+    "fixture": "fixtures/X-BA-COMMITMENT-outside-actor.ttl",
+    "pass": true
+  },
+  {
+    "requirement": "X-DS-PHARMA",
+    "name": "missing-manufacturing",
+    "expected_conforms": false,
+    "actual_conforms": false,
+    "expected_marker": "supportsManufacturing",
+    "violations": [
+      {
+        "path": "https://w3id.org/cm-pharme/experimental/four-domain/digitalServiceActivity",
+        "constraint": "",
+        "focus": "urn:cmpe-lab:digitalService"
+      },
+      {
+        "path": "https://w3id.org/cm-pharme/experimental/refinement/supportsManufacturing",
+        "constraint": "",
+        "focus": "urn:cmpe-lab:transform"
+      },
+      {
+        "path": "https://w3id.org/cm-pharme/experimental/refinement/supportsManufacturing",
+        "constraint": "",
+        "focus": "urn:cmpe-lab:transform"
+      }
+    ],
+    "fixture": "fixtures/X-DS-PHARMA-missing-manufacturing.ttl",
+    "pass": true
+  },
+  {
+    "requirement": "X-DS-PHARMA",
+    "name": "missing-manufactured-product",
+    "expected_conforms": false,
+    "actual_conforms": false,
+    "expected_marker": "manufacturingProduct",
+    "violations": [
+      {
+        "path": "https://w3id.org/cm-pharme/experimental/refinement/manufacturingProduct",
+        "constraint": "",
+        "focus": "urn:cmpe-lab:manufacturing"
+      },
+      {
+        "path": "https://w3id.org/cm-pharme/experimental/four-domain/digitalServiceActivity",
+        "constraint": "",
+        "focus": "urn:cmpe-lab:digitalService"
+      },
+      {
+        "path": "https://w3id.org/cm-pharme/experimental/refinement/supportsManufacturing",
+        "constraint": "",
+        "focus": "urn:cmpe-lab:transform"
+      },
+      {
+        "path": "https://w3id.org/cm-pharme/experimental/refinement/manufacturingProduct",
+        "constraint": "",
+        "focus": "urn:cmpe-lab:manufacturing"
+      },
+      {
+        "path": "https://w3id.org/cm-pharme/experimental/refinement/supportsManufacturing",
+        "constraint": "",
+        "focus": "urn:cmpe-lab:transform"
+      },
+      {
+        "path": "https://w3id.org/cm-pharme/experimental/refinement/manufacturingProduct",
+        "constraint": "",
+        "focus": "urn:cmpe-lab:manufacturing"
+      }
+    ],
+    "fixture": "fixtures/X-DS-PHARMA-missing-manufactured-product.ttl",
+    "pass": true
+  },
+  {
+    "requirement": "X-DS-PHARMA",
+    "name": "service-component-disagreement",
+    "expected_conforms": false,
+    "actual_conforms": false,
+    "expected_marker": "service-component-agreement",
+    "violations": [
+      {
+        "path": "",
+        "constraint": "https://w3id.org/cm-pharme/experimental/refinement/service-component-agreement",
+        "focus": "urn:cmpe-lab:digitalService"
+      }
+    ],
+    "fixture": "fixtures/X-DS-PHARMA-service-component-disagreement.ttl",
+    "pass": true
+  },
+  {
+    "requirement": "X-DS-RESPONSIBILITY",
+    "name": "missing-responsibility",
+    "expected_conforms": false,
+    "actual_conforms": false,
+    "expected_marker": "activityResponsibleOrganization",
+    "violations": [
+      {
+        "path": "https://w3id.org/cm-pharme/experimental/four-domain/digitalServiceActivity",
+        "constraint": "",
+        "focus": "urn:cmpe-lab:digitalService"
+      },
+      {
+        "path": "https://w3id.org/cm-pharme/experimental/refinement/activityResponsibleOrganization",
+        "constraint": "",
+        "focus": "urn:cmpe-lab:transform"
+      },
+      {
+        "path": "https://w3id.org/cm-pharme/experimental/refinement/activityResponsibleOrganization",
+        "constraint": "",
+        "focus": "urn:cmpe-lab:transform"
+      }
+    ],
+    "fixture": "fixtures/X-DS-RESPONSIBILITY-missing-responsibility.ttl",
+    "pass": true
+  },
+  {
+    "requirement": "X-DS-RESPONSIBILITY",
+    "name": "untyped-responsible-actor",
+    "expected_conforms": false,
+    "actual_conforms": false,
+    "expected_marker": "activityResponsibleOrganization",
+    "violations": [
+      {
+        "path": "https://w3id.org/cm-pharme/experimental/four-domain/digitalServiceActivity",
+        "constraint": "",
+        "focus": "urn:cmpe-lab:digitalService"
+      },
+      {
+        "path": "https://w3id.org/cm-pharme/experimental/refinement/activityResponsibleOrganization",
+        "constraint": "",
+        "focus": "urn:cmpe-lab:transform"
+      },
+      {
+        "path": "https://w3id.org/cm-pharme/experimental/refinement/activityResponsibleOrganization",
+        "constraint": "",
+        "focus": "urn:cmpe-lab:transform"
+      }
+    ],
+    "fixture": "fixtures/X-DS-RESPONSIBILITY-untyped-responsible-actor.ttl",
+    "pass": true
+  },
+  {
+    "requirement": "X-PV-SURVEILLANCE",
+    "name": "missing-source",
+    "expected_conforms": false,
+    "actual_conforms": false,
+    "expected_marker": "surveillanceSource",
+    "violations": [
+      {
+        "path": "https://w3id.org/cm-pharme/experimental/four-domain/surveillanceSource",
+        "constraint": "",
+        "focus": "urn:cmpe-lab:surveillance"
+      }
+    ],
+    "fixture": "fixtures/X-PV-SURVEILLANCE-missing-source.ttl",
+    "pass": true
+  },
+  {
+    "requirement": "X-PV-SURVEILLANCE",
+    "name": "untyped-source",
+    "expected_conforms": false,
+    "actual_conforms": false,
+    "expected_marker": "surveillanceSource",
+    "violations": [
+      {
+        "path": "https://w3id.org/cm-pharme/experimental/four-domain/reportsRecord",
+        "constraint": "",
+        "focus": "urn:cmpe-lab:reporting"
+      },
+      {
+        "path": "https://w3id.org/cm-pharme/experimental/four-domain/citesSourceRecord",
+        "constraint": "",
+        "focus": "urn:cmpe-lab:signal"
+      },
+      {
+        "path": "https://w3id.org/cm-pharme/experimental/four-domain/surveillanceSource",
+        "constraint": "",
+        "focus": "urn:cmpe-lab:surveillance"
+      }
+    ],
+    "fixture": "fixtures/X-PV-SURVEILLANCE-untyped-source.ttl",
+    "pass": true
+  },
+  {
+    "requirement": "COMBINED",
+    "name": "all-refinements",
+    "expected_conforms": true,
+    "actual_conforms": true,
+    "expected_marker": null,
+    "violations": [],
+    "fixture": "fixtures/COMBINED-all-refinements.ttl",
+    "pass": true
+  }
+]

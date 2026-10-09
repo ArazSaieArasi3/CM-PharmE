@@ -1,0 +1,300 @@
+{
+  "status": "EXPERIMENT_NOT_RELEASE",
+  "baseline_commit": "17b5d12e160033f3a1bd814bc580e4fb81fb753e",
+  "new_classes": 0,
+  "additional_relations": 12,
+  "total_experimental_relation_decisions": 39,
+  "profiles": {
+    "risk-scenario": {
+      "type": "Assertion",
+      "fields": [
+        [
+          "r:scenarioFacility",
+          "Facility",
+          0,
+          null
+        ],
+        [
+          "r:scenarioDependency",
+          "SupplyDependency",
+          0,
+          null
+        ]
+      ]
+    },
+    "report-carrier": {
+      "type": "SourceRecord",
+      "fields": [
+        [
+          "r:carrierClaim",
+          "Assertion",
+          1,
+          null
+        ],
+        [
+          "r:caseIdentifier",
+          "xsd:string",
+          1,
+          1
+        ],
+        [
+          "r:caseIdentifierScheme",
+          "xsd:string",
+          1,
+          1
+        ]
+      ]
+    },
+    "report-claim": {
+      "type": "Assertion",
+      "fields": [
+        [
+          "r:claimText",
+          "xsd:string",
+          1,
+          1
+        ]
+      ]
+    },
+    "attributed-signal-assessment": {
+      "type": "SignalAssessmentActivity",
+      "fields": [
+        [
+          "r:assessmentOrganization",
+          "Organization",
+          1,
+          null
+        ]
+      ]
+    },
+    "pharma-service": {
+      "type": "ServiceOfferingSpecification",
+      "fields": [
+        [
+          "l:serviceCapability",
+          "EnterpriseCapability",
+          1,
+          null
+        ],
+        [
+          "r:serviceProduct",
+          "MedicinalProduct",
+          0,
+          null
+        ],
+        [
+          "r:serviceFacility",
+          "Facility",
+          0,
+          null
+        ]
+      ]
+    },
+    "documented-partnership": {
+      "type": "StrategicPartnershipAgreement",
+      "fields": [
+        [
+          "r:agreementCommitment",
+          "Assertion",
+          1,
+          null
+        ]
+      ]
+    },
+    "commitment-assertion": {
+      "type": "Assertion",
+      "fields": [
+        [
+          "r:commitmentActor",
+          "Organization",
+          2,
+          null
+        ],
+        [
+          "r:commitmentText",
+          "xsd:string",
+          1,
+          1
+        ]
+      ]
+    },
+    "manufacturing-context": {
+      "type": "ManufacturingActivity",
+      "fields": [
+        [
+          "r:manufacturingProduct",
+          "MedicinalProduct",
+          1,
+          null
+        ],
+        [
+          "r:manufacturingFacility",
+          "Facility",
+          1,
+          null
+        ]
+      ]
+    },
+    "manufacturing-data-activity": {
+      "type": "ProvenanceActivity",
+      "fields": [
+        [
+          "r:supportsManufacturing",
+          "ManufacturingActivity",
+          1,
+          null
+        ],
+        [
+          "r:activityResponsibleOrganization",
+          "Organization",
+          1,
+          null
+        ]
+      ]
+    },
+    "manufacturing-digital-service": {
+      "type": "ServiceOfferingSpecification",
+      "fields": [
+        [
+          "l:digitalServiceActivity",
+          "ProvenanceActivity",
+          1,
+          null
+        ]
+      ]
+    }
+  },
+  "relations": [
+    {
+      "name": "scenarioFacility",
+      "source": "Assertion",
+      "target": "Facility",
+      "requirement": "X-RM-CONTEXT",
+      "native_stereotype": null,
+      "bounds": "0..*; local admission is separate"
+    },
+    {
+      "name": "scenarioDependency",
+      "source": "Assertion",
+      "target": "SupplyDependency",
+      "requirement": "X-RM-CONTEXT",
+      "native_stereotype": null,
+      "bounds": "0..*; local admission is separate"
+    },
+    {
+      "name": "carrierClaim",
+      "source": "SourceRecord",
+      "target": "Assertion",
+      "requirement": "X-PV-CARRIER",
+      "native_stereotype": null,
+      "bounds": "0..*; local admission is separate"
+    },
+    {
+      "name": "assessmentOrganization",
+      "source": "SignalAssessmentActivity",
+      "target": "Organization",
+      "requirement": "X-PV-ACTOR",
+      "native_stereotype": null,
+      "bounds": "0..*; local admission is separate"
+    },
+    {
+      "name": "serviceProduct",
+      "source": "ServiceOfferingSpecification",
+      "target": "MedicinalProduct",
+      "requirement": "X-BA-SERVICE",
+      "native_stereotype": null,
+      "bounds": "0..*; local admission is separate"
+    },
+    {
+      "name": "serviceFacility",
+      "source": "ServiceOfferingSpecification",
+      "target": "Facility",
+      "requirement": "X-BA-SERVICE",
+      "native_stereotype": null,
+      "bounds": "0..*; local admission is separate"
+    },
+    {
+      "name": "agreementCommitment",
+      "source": "StrategicPartnershipAgreement",
+      "target": "Assertion",
+      "requirement": "X-BA-COMMITMENT",
+      "native_stereotype": null,
+      "bounds": "0..*; local admission is separate"
+    },
+    {
+      "name": "commitmentActor",
+      "source": "Assertion",
+      "target": "Organization",
+      "requirement": "X-BA-COMMITMENT",
+      "native_stereotype": null,
+      "bounds": "0..*; local admission is separate"
+    },
+    {
+      "name": "supportsManufacturing",
+      "source": "ProvenanceActivity",
+      "target": "ManufacturingActivity",
+      "requirement": "X-DS-PHARMA",
+      "native_stereotype": null,
+      "bounds": "0..*; local admission is separate"
+    },
+    {
+      "name": "manufacturingProduct",
+      "source": "ManufacturingActivity",
+      "target": "MedicinalProduct",
+      "requirement": "X-DS-PHARMA",
+      "native_stereotype": null,
+      "bounds": "0..*; local admission is separate"
+    },
+    {
+      "name": "manufacturingFacility",
+      "source": "ManufacturingActivity",
+      "target": "Facility",
+      "requirement": "X-DS-PHARMA",
+      "native_stereotype": null,
+      "bounds": "0..*; local admission is separate"
+    },
+    {
+      "name": "activityResponsibleOrganization",
+      "source": "ProvenanceActivity",
+      "target": "Organization",
+      "requirement": "X-DS-RESPONSIBILITY",
+      "native_stereotype": null,
+      "bounds": "0..*; local admission is separate"
+    }
+  ],
+  "old_package_sha256": {
+    "summary.json": "9697f7c3d0c13b520cb27aefae9b81066117f5e5915a9edd242e3fc157b43baa",
+    "cq-results.json": "f40b7d375f04b3ca029f996ad591374a5f95b85210659efad811e75d15baee10",
+    "finalize_lab.py": "3aaeb6e2cb6385ff9788a512f4b964f21bee96d20465efd86418b6f4de928a99",
+    "requirement-traceability.json": "4d7c503bbc5a9ebf382ad5fce482310a2c380ec1259e09164981117fa49040f0",
+    "experimental.owl.ttl": "10e4c15c97e3d369e5e090d9209927ffcd8fcc71104f55e09ad09363b7c6f9e7",
+    "run_lab.py": "962a28ad43abc04dad04fa4c1d5375258b65f0d36c5db777c289dbf212b6839b",
+    "shacl-results.json": "4aece0cea996377dd7593615a2dd142c34026f3f4a1ef0adcbafbab42b0c6da1",
+    "combined.shacl.ttl": "03adc430471229f825c09fa5bfd7fd41c4cdc314a7b5eee337ad28f60232a3bb",
+    "build_lab.py": "75e58fefb47d144552a877a61dadd77dfe673da237a41b001304149a74377aac",
+    "continuation-checkpoint.json": "c5a4285b316f0ce48657c0516b976f5d912391f0ef4df108a29660a9ad0dbe42",
+    "ontouml-experimental.json": "542913196a1414bdebc806636b09dca2915e4491f68830c7178e0f56c0685070",
+    "model-manifest.json": "a9eb27a8975214767bb7844e2690861ddcce472edbbc4057834cd962ae11896d",
+    "README-fa.md": "9396f98177ebfff620211db2d2c2f101684fd90f185d615a4ba1e17c6fbc4000",
+    "requirements.txt": "58edb069b65ec9bb9e8674802d6a6ff4b88c73f294736b9546069b739ea80b1e",
+    "structural-prefilter.json": "d9a49893348369e3fccc251a4cc0e561ce9105262d14e9d8da05816caec28026",
+    "relation-review-queue.json": "857da108d47222870caa12f1aab2f58afabebd2d083ff94fe843f03dba69983a",
+    "reasoner-results.json": "e046b30405689291b23443d52f468b97855baf4f9296337d78cfe44df1f7d71c",
+    "combined-positive.ttl": "ea5bfdc019b1b7731545f974ed9ac7d1dfcb3b93450267dcbbe70ec44756bb55",
+    "delta.ttl": "3a760deaf9f6df5f36decf18238dc0a4b301b2aabc0b2dc9e21089bee46a4b6d",
+    "profiles.shacl.ttl": "9b6a14688523c3595441837c698f5f24c9915581e5b0d1ff36a32cda853c539e",
+    "structural-comparison.json": "a3ee84eba68a13bc3470b0e14ce8e161857632ded20aa272be0b35204a0ec907",
+    "real-regression.json": "7cc09c88c79c29ef21932978b02202bded30c4bbddc25ba936fb50c59cae716f",
+    "native-results.json": "18fb72bb13e73649fe23815df5e7ae904c5cd3fe2e781136ab1d9fabe5eb2766"
+  },
+  "reuse": [
+    "EvidenceSupport, SupportedAssertionRole, EvidenceSourceRecordRole and their existing mediation relations",
+    "assertionAboutProduct as superproperty for the two content-specific product links",
+    "No caseIdentifier owl:hasKey or inverse-functional carrierClaim"
+  ],
+  "limits": [
+    "Report claim is a proposition, not complete report content",
+    "Profile constraints are not universal OntoUML identity axioms",
+    "Native/OWL/SHACL alignment and 39 relation stereotypes need adjudication"
+  ]
+}

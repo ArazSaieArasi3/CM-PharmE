@@ -1,0 +1,158 @@
+[
+  {
+    "id": "X-RM-CONTEXT",
+    "parent_requirements": [
+      "R-RM-01"
+    ],
+    "source_ids": [
+      "S1",
+      "PROJECT-W3"
+    ],
+    "fixture_paths": [
+      "fixtures/X-RM-CONTEXT-positive.ttl",
+      "fixtures/X-RM-CONTEXT-boundary.ttl",
+      "fixtures/X-RM-CONTEXT-dependency-boundary.ttl",
+      "fixtures/X-RM-CONTEXT-missing-context.ttl",
+      "fixtures/X-RM-CONTEXT-untyped-facility.ttl"
+    ],
+    "case_count": 5,
+    "test_expectations_pass": true,
+    "scientific_acceptance": false
+  },
+  {
+    "id": "X-PV-CARRIER",
+    "parent_requirements": [
+      "R-PV-01",
+      "R-PV-04"
+    ],
+    "source_ids": [
+      "E2B",
+      "PROJECT-W3"
+    ],
+    "fixture_paths": [
+      "fixtures/X-PV-CARRIER-positive.ttl",
+      "fixtures/X-PV-CARRIER-boundary.ttl",
+      "fixtures/X-PV-CARRIER-missing-claim.ttl",
+      "fixtures/X-PV-CARRIER-missing-claim-content.ttl",
+      "fixtures/X-PV-CARRIER-carrier-as-claim.ttl"
+    ],
+    "case_count": 5,
+    "test_expectations_pass": true,
+    "scientific_acceptance": false
+  },
+  {
+    "id": "X-PV-ACTOR",
+    "parent_requirements": [
+      "R-PV-05"
+    ],
+    "source_ids": [
+      "GVP-IX",
+      "PROV-O"
+    ],
+    "fixture_paths": [
+      "fixtures/X-PV-ACTOR-positive.ttl",
+      "fixtures/X-PV-ACTOR-boundary.ttl",
+      "fixtures/X-PV-ACTOR-missing-actor.ttl",
+      "fixtures/X-PV-ACTOR-untyped-actor.ttl"
+    ],
+    "case_count": 4,
+    "test_expectations_pass": true,
+    "scientific_acceptance": false
+  },
+  {
+    "id": "X-BA-SERVICE",
+    "parent_requirements": [
+      "R-BA-03"
+    ],
+    "source_ids": [
+      "PROJECT-DOSSIER"
+    ],
+    "fixture_paths": [
+      "fixtures/X-BA-SERVICE-positive.ttl",
+      "fixtures/X-BA-SERVICE-boundary.ttl",
+      "fixtures/X-BA-SERVICE-missing-pharma-context.ttl",
+      "fixtures/X-BA-SERVICE-untyped-product.ttl"
+    ],
+    "case_count": 4,
+    "test_expectations_pass": true,
+    "scientific_acceptance": false
+  },
+  {
+    "id": "X-BA-COMMITMENT",
+    "parent_requirements": [
+      "R-BA-05"
+    ],
+    "source_ids": [
+      "PROJECT-W3",
+      "ONTOUML-MEDIATION"
+    ],
+    "fixture_paths": [
+      "fixtures/X-BA-COMMITMENT-positive.ttl",
+      "fixtures/X-BA-COMMITMENT-boundary.ttl",
+      "fixtures/X-BA-COMMITMENT-missing-commitment.ttl",
+      "fixtures/X-BA-COMMITMENT-missing-source-evidence.ttl",
+      "fixtures/X-BA-COMMITMENT-outside-actor.ttl"
+    ],
+    "case_count": 5,
+    "test_expectations_pass": true,
+    "scientific_acceptance": false
+  },
+  {
+    "id": "X-DS-PHARMA",
+    "parent_requirements": [
+      "R-DS-03"
+    ],
+    "source_ids": [
+      "PROJECT-DOSSIER",
+      "PROV-O"
+    ],
+    "fixture_paths": [
+      "fixtures/X-DS-PHARMA-positive.ttl",
+      "fixtures/X-DS-PHARMA-boundary.ttl",
+      "fixtures/X-DS-PHARMA-missing-manufacturing.ttl",
+      "fixtures/X-DS-PHARMA-missing-manufactured-product.ttl",
+      "fixtures/X-DS-PHARMA-service-component-disagreement.ttl"
+    ],
+    "case_count": 5,
+    "test_expectations_pass": true,
+    "scientific_acceptance": false
+  },
+  {
+    "id": "X-DS-RESPONSIBILITY",
+    "parent_requirements": [
+      "R-DS-04"
+    ],
+    "source_ids": [
+      "PROV-O"
+    ],
+    "fixture_paths": [
+      "fixtures/X-DS-RESPONSIBILITY-positive.ttl",
+      "fixtures/X-DS-RESPONSIBILITY-boundary.ttl",
+      "fixtures/X-DS-RESPONSIBILITY-missing-responsibility.ttl",
+      "fixtures/X-DS-RESPONSIBILITY-untyped-responsible-actor.ttl"
+    ],
+    "case_count": 4,
+    "test_expectations_pass": true,
+    "scientific_acceptance": false
+  },
+  {
+    "id": "X-PV-SURVEILLANCE",
+    "parent_requirements": [
+      "R-PV-03",
+      "R-PV-06"
+    ],
+    "source_ids": [
+      "GVP-IX",
+      "PROJECT-DOSSIER"
+    ],
+    "fixture_paths": [
+      "fixtures/X-PV-SURVEILLANCE-positive.ttl",
+      "fixtures/X-PV-SURVEILLANCE-boundary.ttl",
+      "fixtures/X-PV-SURVEILLANCE-missing-source.ttl",
+      "fixtures/X-PV-SURVEILLANCE-untyped-source.ttl"
+    ],
+    "case_count": 4,
+    "test_expectations_pass": true,
+    "scientific_acceptance": false
+  }
+]
