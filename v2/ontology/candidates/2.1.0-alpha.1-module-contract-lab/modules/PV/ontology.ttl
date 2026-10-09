@@ -1,0 +1,261 @@
+@prefix c: <https://w3id.org/cm-pharme/2.1/> .
+@prefix l: <https://w3id.org/cm-pharme/experimental/four-domain/> .
+@prefix ns1: <https://w3id.org/cm-pharme/2.1/meta/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix r: <https://w3id.org/cm-pharme/experimental/refinement/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+prov:category a owl:AnnotationProperty ;
+    rdfs:comment "Classify prov-o terms into three categories, including 'starting-point', 'qualifed', and 'extended'. This classification is used by the prov-o html document to gently introduce prov-o terms to its users. "@en ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> .
+
+prov:component a owl:AnnotationProperty ;
+    rdfs:comment "Classify prov-o terms into six components according to prov-dm, including 'agents-responsibility', 'alternate', 'annotations', 'collections', 'derivations', and 'entities-activities'. This classification is used so that readers of prov-o specification can find its correspondence with the prov-dm specification."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> .
+
+prov:constraints a owl:AnnotationProperty ;
+    rdfs:comment "A reference to the principal section of the PROV-CONSTRAINTS document that describes this concept."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
+    rdfs:subPropertyOf rdfs:seeAlso .
+
+prov:definition a owl:AnnotationProperty ;
+    rdfs:comment "A definition quoted from PROV-DM or PROV-CONSTRAINTS that describes the concept expressed with this OWL term."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> .
+
+prov:dm a owl:AnnotationProperty ;
+    rdfs:comment "A reference to the principal section of the PROV-DM document that describes this concept."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
+    rdfs:subPropertyOf rdfs:seeAlso .
+
+prov:n a owl:AnnotationProperty ;
+    rdfs:comment "A reference to the principal section of the PROV-DM document that describes this concept."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
+    rdfs:subPropertyOf rdfs:seeAlso .
+
+ns1:conceptualModelVersion a owl:AnnotationProperty .
+
+ns1:conceptualModule a owl:AnnotationProperty .
+
+ns1:ontoumlStereotype a owl:AnnotationProperty .
+
+l:atTime a owl:DatatypeProperty ;
+    rdfs:range xsd:dateTime .
+
+l:citesSourceRecord a owl:ObjectProperty ;
+    rdfs:domain c:Assertion ;
+    rdfs:range c:SourceRecord .
+
+l:profile a owl:DatatypeProperty ;
+    rdfs:range xsd:string .
+
+l:pvRequirementJurisdiction a owl:ObjectProperty ;
+    rdfs:domain c:PharmacovigilanceRequirement ;
+    rdfs:range c:RegulatoryJurisdiction .
+
+l:pvResultAssessment a owl:ObjectProperty ;
+    rdfs:domain c:Assertion ;
+    rdfs:range c:SignalAssessmentActivity .
+
+l:pvResultSignal a owl:IrreflexiveProperty,
+        owl:ObjectProperty ;
+    rdfs:domain c:Assertion ;
+    rdfs:range c:Assertion .
+
+l:reportsRecord a owl:ObjectProperty ;
+    rdfs:domain c:AdverseEventReportingActivity ;
+    rdfs:range c:SourceRecord .
+
+l:signalAssessmentTarget a owl:ObjectProperty ;
+    rdfs:domain c:SignalAssessmentActivity ;
+    rdfs:range c:Assertion .
+
+l:signalProduct a owl:ObjectProperty ;
+    rdfs:domain c:Assertion ;
+    rdfs:range c:MedicinalProduct ;
+    rdfs:subPropertyOf c:assertionAboutProduct .
+
+l:signalStatus a owl:DatatypeProperty ;
+    rdfs:range xsd:string .
+
+l:signalSubstance a owl:ObjectProperty ;
+    rdfs:domain c:Assertion ;
+    rdfs:range c:PharmaceuticalSubstance .
+
+l:surveillanceRequirement a owl:ObjectProperty ;
+    rdfs:domain c:PostMarketSurveillanceActivity ;
+    rdfs:range c:PharmacovigilanceRequirement .
+
+l:surveillanceSource a owl:ObjectProperty ;
+    rdfs:domain c:PostMarketSurveillanceActivity ;
+    rdfs:range c:SourceRecord .
+
+<https://w3id.org/cm-pharme/experimental/modules/PV/2026-10-09> a owl:Ontology ;
+    rdfs:comment "Bounded selected-signature interface projection. Not an approved replacement or a locality module. Dependencies flattened; no remote imports." .
+
+r:assessmentOrganization a owl:ObjectProperty ;
+    rdfs:domain c:SignalAssessmentActivity ;
+    rdfs:range c:Organization .
+
+r:carrierClaim a owl:IrreflexiveProperty,
+        owl:ObjectProperty ;
+    rdfs:domain c:SourceRecord ;
+    rdfs:range c:Assertion .
+
+r:caseIdentifier a owl:DatatypeProperty ;
+    rdfs:range xsd:string .
+
+r:caseIdentifierScheme a owl:DatatypeProperty ;
+    rdfs:range xsd:string .
+
+r:claimText a owl:DatatypeProperty ;
+    rdfs:range xsd:string .
+
+<https://w3id.org/cm-pharme/experimental/reporting-context/claimOrigin> a owl:DatatypeProperty ;
+    rdfs:domain <https://w3id.org/cm-pharme/experimental/reporting-context/StructuredClaim> ;
+    rdfs:range xsd:string .
+
+<https://w3id.org/cm-pharme/experimental/reporting-context/claimSubject> a owl:ObjectProperty ;
+    rdfs:domain <https://w3id.org/cm-pharme/experimental/reporting-context/StructuredClaim> .
+
+<https://w3id.org/cm-pharme/experimental/reporting-context/evidencePointer> a owl:DatatypeProperty ;
+    rdfs:range xsd:string .
+
+<https://w3id.org/cm-pharme/experimental/reporting-context/objectResource> a owl:ObjectProperty ;
+    rdfs:domain <https://w3id.org/cm-pharme/experimental/reporting-context/StructuredClaim> .
+
+<https://w3id.org/cm-pharme/experimental/reporting-context/objectValue> a owl:DatatypeProperty ;
+    rdfs:domain <https://w3id.org/cm-pharme/experimental/reporting-context/StructuredClaim> .
+
+<https://w3id.org/cm-pharme/experimental/reporting-context/polarity> a owl:DatatypeProperty ;
+    rdfs:domain <https://w3id.org/cm-pharme/experimental/reporting-context/StructuredClaim> ;
+    rdfs:range xsd:string .
+
+<https://w3id.org/cm-pharme/experimental/reporting-context/predicateIRI> a owl:DatatypeProperty ;
+    rdfs:domain <https://w3id.org/cm-pharme/experimental/reporting-context/StructuredClaim> ;
+    rdfs:range xsd:anyURI .
+
+<https://w3id.org/cm-pharme/experimental/reporting-context/sourceSHA256> a owl:DatatypeProperty ;
+    rdfs:range xsd:string .
+
+<https://w3id.org/cm-pharme/experimental/reporting-context/sourceURL> a owl:DatatypeProperty ;
+    rdfs:range xsd:anyURI .
+
+<https://w3id.org/cm-pharme/experimental/source-group/entryOrdinal> a owl:DatatypeProperty ;
+    rdfs:domain c:Assertion ;
+    rdfs:range xsd:integer .
+
+<https://w3id.org/cm-pharme/experimental/source-group/entrySource> a owl:ObjectProperty ;
+    rdfs:domain _:n3706288893f94714b0999776b0d4e4dfb1,
+        c:Assertion ;
+    rdfs:range c:SourceRecord .
+
+<https://w3id.org/cm-pharme/experimental/source-group/evidencePointer> a owl:DatatypeProperty ;
+    rdfs:domain c:Assertion ;
+    rdfs:range xsd:string .
+
+<https://w3id.org/cm-pharme/experimental/source-group/labelKindProposal> a owl:DatatypeProperty ;
+    rdfs:domain c:Assertion ;
+    rdfs:range xsd:string .
+
+<https://w3id.org/cm-pharme/experimental/source-group/scopeEntry> a owl:ObjectProperty ;
+    rdfs:domain c:Assertion ;
+    rdfs:range c:Assertion .
+
+<https://w3id.org/cm-pharme/experimental/source-group/scopeSource> a owl:ObjectProperty ;
+    rdfs:domain _:n3706288893f94714b0999776b0d4e4dfb1,
+        c:Assertion ;
+    rdfs:range c:SourceRecord .
+
+<https://w3id.org/cm-pharme/experimental/source-group/scopeVersion> a owl:DatatypeProperty ;
+    rdfs:domain c:Assertion ;
+    rdfs:range xsd:string .
+
+<https://w3id.org/cm-pharme/experimental/source-group/sourceLabel> a owl:DatatypeProperty ;
+    rdfs:domain c:Assertion ;
+    rdfs:range xsd:string .
+
+c:AdverseEventReportingActivity a owl:Class ;
+    rdfs:label "Adverse Event Reporting Activity"@en ;
+    owl:disjointWith c:SourceRecord ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "extension" ;
+    ns1:ontoumlStereotype "Event" .
+
+c:Organization a owl:Class ;
+    rdfs:label "Organization"@en ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "core" ;
+    ns1:ontoumlStereotype "Kind" .
+
+c:PharmaceuticalSubstance a owl:Class ;
+    rdfs:label "Pharmaceutical Substance"@en ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "core" ;
+    ns1:ontoumlStereotype "Kind" .
+
+c:RegulatoryJurisdiction a owl:Class ;
+    rdfs:label "Regulatory Jurisdiction"@en ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "core" ;
+    ns1:ontoumlStereotype "Kind" .
+
+c:assertionAboutProduct a owl:ObjectProperty ;
+    rdfs:comment "Bounded product-target aboutness; the full polymorphic assertion target family remains for G3."@en ;
+    rdfs:domain c:Assertion ;
+    rdfs:range c:MedicinalProduct .
+
+prov:Entity a owl:Class ;
+    rdfs:label "Entity" ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
+    prov:category "starting-point" ;
+    prov:component "entities-activities" ;
+    prov:constraints "http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#prov-dm-constraints-fig"^^xsd:anyURI ;
+    prov:definition "An entity is a physical, digital, conceptual, or other kind of thing with some fixed aspects; entities may be real or imaginary. "@en ;
+    prov:dm "http://www.w3.org/TR/2013/REC-prov-dm-20130430/#term-entity"^^xsd:anyURI ;
+    prov:n "http://www.w3.org/TR/2013/REC-prov-n-20130430/#expression-Entity"^^xsd:anyURI .
+
+c:MedicinalProduct a owl:Class ;
+    rdfs:label "Medicinal Product"@en ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "core" ;
+    ns1:ontoumlStereotype "Kind" .
+
+c:PharmacovigilanceRequirement a owl:Class ;
+    rdfs:label "Pharmacovigilance Requirement"@en ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "extension" ;
+    ns1:ontoumlStereotype "Kind" .
+
+c:PostMarketSurveillanceActivity a owl:Class ;
+    rdfs:label "Post-Market Surveillance Activity"@en ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "extension" ;
+    ns1:ontoumlStereotype "Event" .
+
+c:SignalAssessmentActivity a owl:Class ;
+    rdfs:comment "An occurrence assessing a medicinal safety signal; separate from reporting and from assessment content." ;
+    owl:disjointWith c:Assertion .
+
+<https://w3id.org/cm-pharme/experimental/reporting-context/StructuredClaim> a owl:Class ;
+    rdfs:subClassOf c:Assertion ;
+    owl:disjointWith c:SourceRecord .
+
+c:SourceRecord a owl:Class ;
+    rdfs:label "Source Record"@en ;
+    rdfs:subClassOf prov:Entity ;
+    skos:closeMatch prov:Entity ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "x-infra" ;
+    ns1:ontoumlStereotype "Kind" .
+
+c:Assertion a owl:Class ;
+    rdfs:label "Assertion"@en ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "x-infra" ;
+    ns1:ontoumlStereotype "Kind" .
+
+_:n3706288893f94714b0999776b0d4e4dfb1 a owl:Class ;
+    owl:complementOf c:SourceRecord .

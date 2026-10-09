@@ -1,0 +1,124 @@
+{
+  "status": "BOUNDED_STANDALONE_MODULES_READY_FOR_SCIENTIFIC_REVIEW",
+  "direction": "FOUR_DOMAINS_RETAINED_BY_USER_DECISION",
+  "modules": [
+    {
+      "id": "RM",
+      "owned_class_count": 4,
+      "interface_class_count": 8,
+      "schema_triples": 168,
+      "shape_triples": 142,
+      "admission_cases": 14,
+      "queries": 4,
+      "reasoner_cases": 3,
+      "omitted_outbound_triples": 2
+    },
+    {
+      "id": "PV",
+      "owned_class_count": 4,
+      "interface_class_count": 8,
+      "schema_triples": 193,
+      "shape_triples": 297,
+      "admission_cases": 35,
+      "queries": 9,
+      "reasoner_cases": 5,
+      "omitted_outbound_triples": 1
+    },
+    {
+      "id": "BA",
+      "owned_class_count": 5,
+      "interface_class_count": 11,
+      "schema_triples": 225,
+      "shape_triples": 175,
+      "admission_cases": 17,
+      "queries": 5,
+      "reasoner_cases": 3,
+      "omitted_outbound_triples": 2
+    },
+    {
+      "id": "DS",
+      "owned_class_count": 2,
+      "interface_class_count": 29,
+      "schema_triples": 941,
+      "shape_triples": 133,
+      "admission_cases": 17,
+      "queries": 5,
+      "reasoner_cases": 3,
+      "omitted_outbound_triples": 1
+    }
+  ],
+  "counts": {
+    "admission": [
+      83,
+      83
+    ],
+    "queries": [
+      23,
+      23
+    ],
+    "reasoner": [
+      14,
+      14
+    ],
+    "source_scope_lookups": [
+      15,
+      15
+    ]
+  },
+  "integration": {
+    "positive_triples": 477,
+    "full_admission": true,
+    "export_union_admission": true,
+    "full_reasoner": {
+      "consistent": true,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "prov_profile": "two conflicting annotation-property declarations removed; raw source retained"
+    },
+    "export_union_reasoner": {
+      "consistent": true,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "prov_profile": "two conflicting annotation-property declarations removed; raw source retained"
+    },
+    "pass": true
+  },
+  "full_fixture_comparison": [
+    83,
+    83
+  ],
+  "pv_group_checks": [
+    32,
+    32
+  ],
+  "progress": {
+    "portable_modules": [
+      4,
+      4
+    ],
+    "historical_gates": [
+      2,
+      5
+    ],
+    "G3_main_packages": [
+      2,
+      7
+    ],
+    "full_detector_suite": [
+      0,
+      20
+    ],
+    "global_weighted_percentage": null
+  },
+  "new_scientific_acceptance": "Retention/design direction only",
+  "native_unchanged": true,
+  "merge_performed": false,
+  "issue_closed_count": 0,
+  "limits": [
+    "Historical fixture replays are not new independent empirical evidence",
+    "Source-group checks overlap portable PV checks and must not be added as independent coverage",
+    "The current exports are signature projections, not formally certified locality modules",
+    "29 DS interface classes include the PROV dependency closure; only two classes are counted as owned",
+    "No full OntoUML/UFO or OWL2 DL conformance claim; relation stereotypes and cardinalities remain under review"
+  ]
+}

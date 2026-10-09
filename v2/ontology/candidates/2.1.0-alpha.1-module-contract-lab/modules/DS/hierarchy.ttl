@@ -1,0 +1,41 @@
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+prov:Association rdfs:subClassOf prov:AgentInfluence .
+
+prov:Communication rdfs:subClassOf prov:ActivityInfluence .
+
+prov:Delegation rdfs:subClassOf prov:AgentInfluence .
+
+prov:End rdfs:subClassOf prov:EntityInfluence,
+        prov:InstantaneousEvent .
+
+prov:Generation rdfs:subClassOf prov:ActivityInfluence,
+        prov:InstantaneousEvent .
+
+prov:Invalidation rdfs:subClassOf prov:ActivityInfluence,
+        prov:InstantaneousEvent .
+
+prov:PrimarySource rdfs:subClassOf prov:Derivation .
+
+prov:Quotation rdfs:subClassOf prov:Derivation .
+
+prov:Revision rdfs:subClassOf prov:Derivation .
+
+prov:Start rdfs:subClassOf prov:EntityInfluence,
+        prov:InstantaneousEvent .
+
+prov:Usage rdfs:subClassOf prov:EntityInfluence,
+        prov:InstantaneousEvent .
+
+<https://w3id.org/cm-pharme/2.1/ProvenanceActivity> rdfs:subClassOf prov:Activity .
+
+<https://w3id.org/cm-pharme/2.1/SourceRecord> rdfs:subClassOf prov:Entity .
+
+prov:AgentInfluence rdfs:subClassOf prov:Influence .
+
+prov:ActivityInfluence rdfs:subClassOf prov:Influence .
+
+prov:Derivation rdfs:subClassOf prov:EntityInfluence .
+
+prov:EntityInfluence rdfs:subClassOf prov:Influence .

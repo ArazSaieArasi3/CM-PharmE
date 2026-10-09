@@ -1,0 +1,353 @@
+{
+  "module": "DS",
+  "name": "Digital Systems",
+  "mission_fa": "توصیف جزء سامانه، استقرار و منشأ تولید یا تبدیل دادهٔ دارویی",
+  "direction": "RETAIN_ACCEPTED_BY_USER",
+  "detailed_model_acceptance": "PENDING",
+  "owned_classes": [
+    "https://w3id.org/cm-pharme/2.1/DigitalInformationSystemComponent",
+    "https://w3id.org/cm-pharme/2.1/SystemDeploymentActivity"
+  ],
+  "imported_interface_classes": [
+    "http://www.w3.org/ns/prov#Activity",
+    "http://www.w3.org/ns/prov#ActivityInfluence",
+    "http://www.w3.org/ns/prov#Agent",
+    "http://www.w3.org/ns/prov#AgentInfluence",
+    "http://www.w3.org/ns/prov#Association",
+    "http://www.w3.org/ns/prov#Communication",
+    "http://www.w3.org/ns/prov#Delegation",
+    "http://www.w3.org/ns/prov#Derivation",
+    "http://www.w3.org/ns/prov#End",
+    "http://www.w3.org/ns/prov#Entity",
+    "http://www.w3.org/ns/prov#EntityInfluence",
+    "http://www.w3.org/ns/prov#Generation",
+    "http://www.w3.org/ns/prov#Influence",
+    "http://www.w3.org/ns/prov#InstantaneousEvent",
+    "http://www.w3.org/ns/prov#Invalidation",
+    "http://www.w3.org/ns/prov#Location",
+    "http://www.w3.org/ns/prov#PrimarySource",
+    "http://www.w3.org/ns/prov#Quotation",
+    "http://www.w3.org/ns/prov#Revision",
+    "http://www.w3.org/ns/prov#Start",
+    "http://www.w3.org/ns/prov#Usage",
+    "https://w3id.org/cm-pharme/2.1/DistributionLogisticsActivity",
+    "https://w3id.org/cm-pharme/2.1/Facility",
+    "https://w3id.org/cm-pharme/2.1/ManufacturingActivity",
+    "https://w3id.org/cm-pharme/2.1/MedicinalProduct",
+    "https://w3id.org/cm-pharme/2.1/Organization",
+    "https://w3id.org/cm-pharme/2.1/ProvenanceActivity",
+    "https://w3id.org/cm-pharme/2.1/ServiceOfferingSpecification",
+    "https://w3id.org/cm-pharme/2.1/SourceRecord"
+  ],
+  "profiles": [
+    "deployment",
+    "digital-activity",
+    "digital-record",
+    "digital-service",
+    "manufacturing-data-activity",
+    "manufacturing-context",
+    "manufacturing-digital-service",
+    "digital-logistics",
+    "logistics"
+  ],
+  "properties": [
+    "http://www.w3.org/ns/prov#actedOnBehalfOf",
+    "http://www.w3.org/ns/prov#activity",
+    "http://www.w3.org/ns/prov#agent",
+    "http://www.w3.org/ns/prov#atLocation",
+    "http://www.w3.org/ns/prov#atTime",
+    "http://www.w3.org/ns/prov#endedAtTime",
+    "http://www.w3.org/ns/prov#entity",
+    "http://www.w3.org/ns/prov#generated",
+    "http://www.w3.org/ns/prov#generatedAtTime",
+    "http://www.w3.org/ns/prov#hadActivity",
+    "http://www.w3.org/ns/prov#hadPrimarySource",
+    "http://www.w3.org/ns/prov#influenced",
+    "http://www.w3.org/ns/prov#influencer",
+    "http://www.w3.org/ns/prov#invalidatedAtTime",
+    "http://www.w3.org/ns/prov#qualifiedAssociation",
+    "http://www.w3.org/ns/prov#qualifiedCommunication",
+    "http://www.w3.org/ns/prov#qualifiedDelegation",
+    "http://www.w3.org/ns/prov#qualifiedDerivation",
+    "http://www.w3.org/ns/prov#qualifiedEnd",
+    "http://www.w3.org/ns/prov#qualifiedGeneration",
+    "http://www.w3.org/ns/prov#qualifiedInfluence",
+    "http://www.w3.org/ns/prov#qualifiedInvalidation",
+    "http://www.w3.org/ns/prov#qualifiedPrimarySource",
+    "http://www.w3.org/ns/prov#qualifiedQuotation",
+    "http://www.w3.org/ns/prov#qualifiedRevision",
+    "http://www.w3.org/ns/prov#qualifiedStart",
+    "http://www.w3.org/ns/prov#qualifiedUsage",
+    "http://www.w3.org/ns/prov#startedAtTime",
+    "http://www.w3.org/ns/prov#used",
+    "http://www.w3.org/ns/prov#wasAssociatedWith",
+    "http://www.w3.org/ns/prov#wasDerivedFrom",
+    "http://www.w3.org/ns/prov#wasEndedBy",
+    "http://www.w3.org/ns/prov#wasGeneratedBy",
+    "http://www.w3.org/ns/prov#wasInfluencedBy",
+    "http://www.w3.org/ns/prov#wasInformedBy",
+    "http://www.w3.org/ns/prov#wasInvalidatedBy",
+    "http://www.w3.org/ns/prov#wasQuotedFrom",
+    "http://www.w3.org/ns/prov#wasRevisionOf",
+    "http://www.w3.org/ns/prov#wasStartedBy",
+    "https://w3id.org/cm-pharme/experimental/coherence/logisticsFacility",
+    "https://w3id.org/cm-pharme/experimental/coherence/logisticsProduct",
+    "https://w3id.org/cm-pharme/experimental/coherence/supportsLogistics",
+    "https://w3id.org/cm-pharme/experimental/four-domain/atTime",
+    "https://w3id.org/cm-pharme/experimental/four-domain/componentVersion",
+    "https://w3id.org/cm-pharme/experimental/four-domain/deploymentComponent",
+    "https://w3id.org/cm-pharme/experimental/four-domain/deploymentOrganization",
+    "https://w3id.org/cm-pharme/experimental/four-domain/digitalActivityDeployment",
+    "https://w3id.org/cm-pharme/experimental/four-domain/digitalServiceActivity",
+    "https://w3id.org/cm-pharme/experimental/four-domain/digitalServiceComponent",
+    "https://w3id.org/cm-pharme/experimental/four-domain/profile",
+    "https://w3id.org/cm-pharme/experimental/four-domain/recordDigitalActivity",
+    "https://w3id.org/cm-pharme/experimental/refinement/activityResponsibleOrganization",
+    "https://w3id.org/cm-pharme/experimental/refinement/manufacturingFacility",
+    "https://w3id.org/cm-pharme/experimental/refinement/manufacturingProduct",
+    "https://w3id.org/cm-pharme/experimental/refinement/supportsManufacturing"
+  ],
+  "excluded_scope": [
+    "Full software architecture or cybersecurity ontology",
+    "A record implying regulatory authorization",
+    "Digital activity being identical to physical manufacturing/logistics"
+  ],
+  "admission_cases": [
+    {
+      "id": "lab-DS-1-positive.ttl",
+      "fixture": "fixtures/lab-DS-1-positive.ttl",
+      "expected": true,
+      "marker": null
+    },
+    {
+      "id": "lab-DS-2-boundary.ttl",
+      "fixture": "fixtures/lab-DS-2-boundary.ttl",
+      "expected": true,
+      "marker": null
+    },
+    {
+      "id": "lab-DS-3-missing-version.ttl",
+      "fixture": "fixtures/lab-DS-3-missing-version.ttl",
+      "expected": false,
+      "marker": "componentVersion"
+    },
+    {
+      "id": "lab-DS-3-missing-generating-activity.ttl",
+      "fixture": "fixtures/lab-DS-3-missing-generating-activity.ttl",
+      "expected": false,
+      "marker": "recordDigitalActivity"
+    },
+    {
+      "id": "lab-DS-3-record-is-component.ttl",
+      "fixture": "fixtures/lab-DS-3-record-is-component.ttl",
+      "expected": false,
+      "marker": "distinct-SourceRecord"
+    },
+    {
+      "id": "lab-DS-3-missing-deployment-time.ttl",
+      "fixture": "fixtures/lab-DS-3-missing-deployment-time.ttl",
+      "expected": false,
+      "marker": "atTime"
+    },
+    {
+      "id": "lab-DS-3-deployment-after-use.ttl",
+      "fixture": "fixtures/lab-DS-3-deployment-after-use.ttl",
+      "expected": false,
+      "marker": "deployment-before-use"
+    },
+    {
+      "id": "lab-DS-3-service-without-supported-activity.ttl",
+      "fixture": "fixtures/lab-DS-3-service-without-supported-activity.ttl",
+      "expected": false,
+      "marker": "digitalServiceActivity"
+    },
+    {
+      "id": "refinement-X-DS-PHARMA-positive.ttl",
+      "fixture": "fixtures/refinement-X-DS-PHARMA-positive.ttl",
+      "expected": true,
+      "marker": null
+    },
+    {
+      "id": "refinement-X-DS-RESPONSIBILITY-positive.ttl",
+      "fixture": "fixtures/refinement-X-DS-RESPONSIBILITY-positive.ttl",
+      "expected": true,
+      "marker": null
+    },
+    {
+      "id": "refinement-X-DS-PHARMA-boundary.ttl",
+      "fixture": "fixtures/refinement-X-DS-PHARMA-boundary.ttl",
+      "expected": true,
+      "marker": null
+    },
+    {
+      "id": "refinement-X-DS-RESPONSIBILITY-boundary.ttl",
+      "fixture": "fixtures/refinement-X-DS-RESPONSIBILITY-boundary.ttl",
+      "expected": true,
+      "marker": null
+    },
+    {
+      "id": "refinement-X-DS-PHARMA-missing-manufacturing.ttl",
+      "fixture": "fixtures/refinement-X-DS-PHARMA-missing-manufacturing.ttl",
+      "expected": false,
+      "marker": "supportsManufacturing"
+    },
+    {
+      "id": "refinement-X-DS-PHARMA-missing-manufactured-product.ttl",
+      "fixture": "fixtures/refinement-X-DS-PHARMA-missing-manufactured-product.ttl",
+      "expected": false,
+      "marker": "manufacturingProduct"
+    },
+    {
+      "id": "refinement-X-DS-PHARMA-service-component-disagreement.ttl",
+      "fixture": "fixtures/refinement-X-DS-PHARMA-service-component-disagreement.ttl",
+      "expected": false,
+      "marker": "service-component-agreement"
+    },
+    {
+      "id": "refinement-X-DS-RESPONSIBILITY-missing-responsibility.ttl",
+      "fixture": "fixtures/refinement-X-DS-RESPONSIBILITY-missing-responsibility.ttl",
+      "expected": false,
+      "marker": "activityResponsibleOrganization"
+    },
+    {
+      "id": "refinement-X-DS-RESPONSIBILITY-untyped-responsible-actor.ttl",
+      "fixture": "fixtures/refinement-X-DS-RESPONSIBILITY-untyped-responsible-actor.ttl",
+      "expected": false,
+      "marker": "activityResponsibleOrganization"
+    }
+  ],
+  "queries": [
+    {
+      "id": "CQ-DS-01",
+      "query": "PREFIX c: <https://w3id.org/cm-pharme/2.1/> PREFIX l: <https://w3id.org/cm-pharme/experimental/four-domain/> PREFIX t: <urn:cmpe-lab:> SELECT ?component ?version WHERE { t:record l:recordDigitalActivity/l:digitalActivityDeployment ?d . ?d l:deploymentComponent ?component ; l:componentVersion ?version }",
+      "expected": [
+        [
+          "urn:cmpe-lab:component",
+          "1.0"
+        ]
+      ],
+      "fixture": "fixtures/lab-DS-2-boundary.ttl"
+    },
+    {
+      "id": "CQ-DS-02",
+      "query": "PREFIX c: <https://w3id.org/cm-pharme/2.1/> PREFIX l: <https://w3id.org/cm-pharme/experimental/four-domain/> PREFIX t: <urn:cmpe-lab:> SELECT ?activity ?component ?operator WHERE { t:record l:recordDigitalActivity ?activity . ?activity l:digitalActivityDeployment ?deployment . ?deployment l:deploymentComponent ?component ; l:deploymentOrganization ?operator }",
+      "expected": [
+        [
+          "urn:cmpe-lab:transform",
+          "urn:cmpe-lab:component",
+          "urn:cmpe-lab:operator"
+        ]
+      ],
+      "fixture": "fixtures/lab-DS-2-boundary.ttl"
+    },
+    {
+      "id": "CQ-DS-03",
+      "query": "PREFIX c: <https://w3id.org/cm-pharme/2.1/> PREFIX l: <https://w3id.org/cm-pharme/experimental/four-domain/> PREFIX t: <urn:cmpe-lab:> SELECT ?org ?version ?time WHERE { ?d l:deploymentOrganization ?org ; l:componentVersion ?version ; l:atTime ?time }",
+      "expected": [
+        [
+          "urn:cmpe-lab:operator",
+          "1.0",
+          "2026-10-01T10:00:00+00:00"
+        ],
+        [
+          "urn:cmpe-lab:operator2",
+          "2.0",
+          "2026-10-03T10:00:00+00:00"
+        ]
+      ],
+      "fixture": "fixtures/lab-DS-2-boundary.ttl"
+    },
+    {
+      "id": "X-DS-PHARMA",
+      "query": "PREFIX c: <https://w3id.org/cm-pharme/2.1/> PREFIX l: <https://w3id.org/cm-pharme/experimental/four-domain/> PREFIX r: <https://w3id.org/cm-pharme/experimental/refinement/> PREFIX t: <urn:cmpe-lab:> SELECT ?manufacturing ?product ?facility WHERE { t:transform r:supportsManufacturing ?manufacturing . ?manufacturing r:manufacturingProduct ?product ; r:manufacturingFacility ?facility }",
+      "expected": [
+        [
+          "urn:cmpe-lab:manufacturing",
+          "urn:cmpe-lab:manufacturedProduct",
+          "urn:cmpe-lab:manufacturingSite"
+        ]
+      ],
+      "fixture": "fixtures/refinement-X-DS-PHARMA-positive.ttl"
+    },
+    {
+      "id": "X-DS-RESPONSIBILITY",
+      "query": "PREFIX c: <https://w3id.org/cm-pharme/2.1/> PREFIX l: <https://w3id.org/cm-pharme/experimental/four-domain/> PREFIX r: <https://w3id.org/cm-pharme/experimental/refinement/> PREFIX t: <urn:cmpe-lab:> SELECT ?responsible ?operator WHERE { t:transform r:activityResponsibleOrganization ?responsible ; l:digitalActivityDeployment/l:deploymentOrganization ?operator }",
+      "expected": [
+        [
+          "urn:cmpe-lab:processor",
+          "urn:cmpe-lab:operator"
+        ]
+      ],
+      "fixture": "fixtures/refinement-X-DS-RESPONSIBILITY-positive.ttl"
+    }
+  ],
+  "reasoner_cases": [
+    {
+      "id": "DS-schema-satisfiable",
+      "expected": true
+    },
+    {
+      "id": "DS-positive-consistent",
+      "expected": true,
+      "fixture": "fixtures/lab-DS-2-boundary.ttl"
+    },
+    {
+      "id": "DS-identity-collision-rejected",
+      "expected": false,
+      "fixture": "fixtures/lab-DS-3-record-is-component.ttl"
+    }
+  ],
+  "limits": [
+    "Selected-signature projection; no proof of entailment preservation outside listed witnesses",
+    "Import interfaces are not counted as owned classes",
+    "SHACL profile requirements are not global OWL cardinalities",
+    "No native OntoUML module export is claimed",
+    "Source model semantic decisions, including PROV projection, remain pending"
+  ],
+  "purpose_contract": {
+    "input": "An identified digital component, versioned deployment and organization, a data activity and generated record, plus a supported pharmaceutical operation.",
+    "output": "A trace from a record to the digital activity, deployment/version, operator and separately attributed activity responsibility.",
+    "flow": "record → data activity → deployment → component/version/operator; data activity → supported manufacturing/logistics.",
+    "questions": [
+      "Which component version and deployment produced this record?",
+      "Which organization operated deployment, and which was responsible for processing?",
+      "Which pharmaceutical manufacturing or logistics activity was supported?"
+    ],
+    "definitions": {
+      "DigitalInformationSystemComponent": "An identifiable software/information-system component used in a deployment; distinct from a generated record.",
+      "SystemDeploymentActivity": "An actual occurrence deploying an identified component version in an organizational context; distinct from transformation of data."
+    },
+    "remaining": "Independent real deployment/agent evidence, version identity, delegation and responsibility, and adjudication of the inherited PROV projection."
+  },
+  "interface_ownership": {
+    "http://www.w3.org/ns/prov#Activity": "PROV standard",
+    "http://www.w3.org/ns/prov#ActivityInfluence": "PROV standard",
+    "http://www.w3.org/ns/prov#Agent": "PROV standard",
+    "http://www.w3.org/ns/prov#AgentInfluence": "PROV standard",
+    "http://www.w3.org/ns/prov#Association": "PROV standard",
+    "http://www.w3.org/ns/prov#Communication": "PROV standard",
+    "http://www.w3.org/ns/prov#Delegation": "PROV standard",
+    "http://www.w3.org/ns/prov#Derivation": "PROV standard",
+    "http://www.w3.org/ns/prov#End": "PROV standard",
+    "http://www.w3.org/ns/prov#Entity": "PROV standard",
+    "http://www.w3.org/ns/prov#EntityInfluence": "PROV standard",
+    "http://www.w3.org/ns/prov#Generation": "PROV standard",
+    "http://www.w3.org/ns/prov#Influence": "PROV standard",
+    "http://www.w3.org/ns/prov#InstantaneousEvent": "PROV standard",
+    "http://www.w3.org/ns/prov#Invalidation": "PROV standard",
+    "http://www.w3.org/ns/prov#Location": "PROV standard",
+    "http://www.w3.org/ns/prov#PrimarySource": "PROV standard",
+    "http://www.w3.org/ns/prov#Quotation": "PROV standard",
+    "http://www.w3.org/ns/prov#Revision": "PROV standard",
+    "http://www.w3.org/ns/prov#Start": "PROV standard",
+    "http://www.w3.org/ns/prov#Usage": "PROV standard",
+    "https://w3id.org/cm-pharme/2.1/DistributionLogisticsActivity": "CM-PharmE shared/other-domain interface; final ownership review pending",
+    "https://w3id.org/cm-pharme/2.1/Facility": "CM-PharmE shared/other-domain interface; final ownership review pending",
+    "https://w3id.org/cm-pharme/2.1/ManufacturingActivity": "CM-PharmE shared/other-domain interface; final ownership review pending",
+    "https://w3id.org/cm-pharme/2.1/MedicinalProduct": "CM-PharmE shared/other-domain interface; final ownership review pending",
+    "https://w3id.org/cm-pharme/2.1/Organization": "CM-PharmE shared/other-domain interface; final ownership review pending",
+    "https://w3id.org/cm-pharme/2.1/ProvenanceActivity": "CM-PharmE shared/other-domain interface; final ownership review pending",
+    "https://w3id.org/cm-pharme/2.1/ServiceOfferingSpecification": "BA",
+    "https://w3id.org/cm-pharme/2.1/SourceRecord": "CM-PharmE shared/other-domain interface; final ownership review pending"
+  }
+}

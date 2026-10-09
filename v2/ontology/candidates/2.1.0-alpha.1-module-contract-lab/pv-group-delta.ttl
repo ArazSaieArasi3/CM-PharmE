@@ -1,0 +1,42 @@
+@prefix c: <https://w3id.org/cm-pharme/2.1/> .
+@prefix g: <https://w3id.org/cm-pharme/experimental/source-group/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+g:entryOrdinal a owl:DatatypeProperty ;
+    rdfs:domain c:Assertion ;
+    rdfs:range xsd:integer .
+
+g:entrySource a owl:ObjectProperty ;
+    rdfs:domain _:N135fd58476214883a6cfc8649fb67adc,
+        c:Assertion ;
+    rdfs:range c:SourceRecord .
+
+g:evidencePointer a owl:DatatypeProperty ;
+    rdfs:domain c:Assertion ;
+    rdfs:range xsd:string .
+
+g:labelKindProposal a owl:DatatypeProperty ;
+    rdfs:domain c:Assertion ;
+    rdfs:range xsd:string .
+
+g:scopeEntry a owl:ObjectProperty ;
+    rdfs:domain c:Assertion ;
+    rdfs:range c:Assertion .
+
+g:scopeSource a owl:ObjectProperty ;
+    rdfs:domain _:N135fd58476214883a6cfc8649fb67adc,
+        c:Assertion ;
+    rdfs:range c:SourceRecord .
+
+g:scopeVersion a owl:DatatypeProperty ;
+    rdfs:domain c:Assertion ;
+    rdfs:range xsd:string .
+
+g:sourceLabel a owl:DatatypeProperty ;
+    rdfs:domain c:Assertion ;
+    rdfs:range xsd:string .
+
+_:N135fd58476214883a6cfc8649fb67adc a owl:Class ;
+    owl:complementOf c:SourceRecord .
