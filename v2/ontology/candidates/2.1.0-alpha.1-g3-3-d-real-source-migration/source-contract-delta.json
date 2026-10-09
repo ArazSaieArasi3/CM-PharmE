@@ -1,0 +1,14 @@
+{
+  "source_id": "P1-NHIF-OUTPATIENT",
+  "source_manifest_branch": "v2/research-program",
+  "zenodo_record": "https://zenodo.org/records/19160825",
+  "manifest_file_contract": "nhif_outpatient_pharmacy_combined.csv",
+  "published_file_at_pinned_record": "pharmacy_data_20260322_131416.csv",
+  "published_size_bytes": 1704038344,
+  "published_md5_metadata_only_not_downloaded": "b43fb62d3d44525de74f930f472d2f03",
+  "required_header_matches_19_columns_in_five_real_slices": true,
+  "impact": "The source contract's literal filename will not locate the published v3 file even though its sampled schema matches; fixture-only CI did not exercise remote file discovery.",
+  "recommended_fix": "Pin record ID and file checksum; update the expected published filename (or explicit alias) in the W6 source adapter and manifest, then test discovery against official Zenodo metadata and the parsed header. Preserve the fixture filename only as a documented local fixture alias.",
+  "negative_acceptance": "Do not mark the whole 1.7 GB file ingested, equate schema match with full-data quality, or silently rename the real source to pass a fixture contract.",
+  "state": "OPEN_RECONCILIATION"
+}
