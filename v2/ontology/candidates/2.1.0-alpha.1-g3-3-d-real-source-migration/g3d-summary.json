@@ -1,0 +1,65 @@
+{
+  "as_of": "2026-10-09 Asia/Tehran",
+  "step": "G3-3-D",
+  "source": {
+    "doi": "10.5281/zenodo.19160825",
+    "published_filename": "pharmacy_data_20260322_131416.csv",
+    "sampled_rows": 768,
+    "strata": 5,
+    "region_codes": [
+      "01",
+      "09",
+      "13",
+      "22",
+      "21"
+    ],
+    "periods": [
+      "2021-04-01",
+      "2024-05-01",
+      "2021-07-01",
+      "2020-12-01",
+      "2025-10-01"
+    ],
+    "filename_contract_mismatch": true
+  },
+  "results": {
+    "required_columns": 19,
+    "observed_missing_cells_in_sample": 0,
+    "schema_accepted_rows": 768,
+    "preflight_rejected_rows": 0,
+    "full_SHACL_admitted_rows": 768,
+    "full_SHACL_violations": 0,
+    "controlled_negative_rejections": 5,
+    "ABox_triples": 39272,
+    "aggregate_observation_nodes": 3072,
+    "HermiT_full_ABox_consistent": true,
+    "HermiT_injected_disjointness_rejected": true,
+    "product_nodes_source_scoped": 264,
+    "presentation_nodes_source_scoped": 264,
+    "asserted_patient_individuals": 0,
+    "asserted_substance_nodes_from_ambiguous_ATC": 0
+  },
+  "limits": [
+    "Five contiguous byte-range strata, each one region/period; no random or representative sampling claim.",
+    "The full 1.7 GB dataset and its published MD5 were not downloaded or independently verified.",
+    "Three fields remain raw-only; packaging, concentration and units are descriptive strings, not first-class domain structures.",
+    "Source-scoped product and presentation nodes are provisional, not authoritative cross-source identity.",
+    "Official full anti-pattern engine, scientific decisions and SupplyCapacity bearer route remain open."
+  ],
+  "progress": {
+    "closed_major_stages": 2,
+    "total_major_stages": 5,
+    "closed_major_stage_percent": 40.0,
+    "closed_G3_packages": 2,
+    "total_G3_packages": 7,
+    "closed_G3_package_percent": 28.6,
+    "bounded_B3_to_F_turns_completed": 3,
+    "bounded_B3_to_F_turns_total": 5,
+    "bounded_B3_to_F_turns_percent": 60.0,
+    "remaining_turns": [
+      "G3-3-E",
+      "G3-3-F"
+    ]
+  },
+  "release_state": "REVIEW_CANDIDATE_ONLY"
+}
