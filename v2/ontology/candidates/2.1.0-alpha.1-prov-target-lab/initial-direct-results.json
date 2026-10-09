@@ -1,0 +1,366 @@
+{
+  "cases": [
+    {
+      "name": "full-prov-and-baseline",
+      "mode": "unaligned",
+      "claim": "",
+      "expected_consistent": true,
+      "consistent": true,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "pass": true
+    },
+    {
+      "name": "full-prov-and-directional-alignment",
+      "mode": "aligned",
+      "claim": "",
+      "expected_consistent": true,
+      "consistent": true,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "pass": true
+    },
+    {
+      "name": "SourceRecord-forward-entails",
+      "mode": "aligned",
+      "claim": "Negated external membership is inconsistent.",
+      "expected_consistent": false,
+      "consistent": false,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "pass": true
+    },
+    {
+      "name": "SourceRecord-reverse-not-entailed",
+      "mode": "aligned",
+      "claim": "External membership need not imply local membership.",
+      "expected_consistent": true,
+      "consistent": true,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "pass": true
+    },
+    {
+      "name": "Dataset-forward-entails",
+      "mode": "aligned",
+      "claim": "Negated external membership is inconsistent.",
+      "expected_consistent": false,
+      "consistent": false,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "pass": true
+    },
+    {
+      "name": "Dataset-reverse-not-entailed",
+      "mode": "aligned",
+      "claim": "External membership need not imply local membership.",
+      "expected_consistent": true,
+      "consistent": true,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "pass": true
+    },
+    {
+      "name": "DatasetRelease-forward-entails",
+      "mode": "aligned",
+      "claim": "Negated external membership is inconsistent.",
+      "expected_consistent": false,
+      "consistent": false,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "pass": true
+    },
+    {
+      "name": "DatasetRelease-reverse-not-entailed",
+      "mode": "aligned",
+      "claim": "External membership need not imply local membership.",
+      "expected_consistent": true,
+      "consistent": true,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "pass": true
+    },
+    {
+      "name": "ProvenanceActivity-forward-entails",
+      "mode": "aligned",
+      "claim": "Negated external membership is inconsistent.",
+      "expected_consistent": false,
+      "consistent": false,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "pass": true
+    },
+    {
+      "name": "ProvenanceActivity-reverse-not-entailed",
+      "mode": "aligned",
+      "claim": "External membership need not imply local membership.",
+      "expected_consistent": true,
+      "consistent": true,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "pass": true
+    },
+    {
+      "name": "recordDigitalActivity-forward-entails",
+      "mode": "aligned",
+      "claim": "",
+      "expected_consistent": false,
+      "consistent": false,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "pass": true
+    },
+    {
+      "name": "recordDigitalActivity-reverse-not-entailed",
+      "mode": "aligned",
+      "claim": "",
+      "expected_consistent": true,
+      "consistent": true,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "pass": true
+    },
+    {
+      "name": "generatedAssertion-forward-entails",
+      "mode": "aligned",
+      "claim": "",
+      "expected_consistent": false,
+      "consistent": false,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "pass": true
+    },
+    {
+      "name": "generatedAssertion-reverse-not-entailed",
+      "mode": "aligned",
+      "claim": "",
+      "expected_consistent": true,
+      "consistent": true,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "pass": true
+    },
+    {
+      "name": "activityResponsibleOrganization-forward-entails",
+      "mode": "aligned",
+      "claim": "",
+      "expected_consistent": false,
+      "consistent": false,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "pass": true
+    },
+    {
+      "name": "activityResponsibleOrganization-reverse-not-entailed",
+      "mode": "aligned",
+      "claim": "",
+      "expected_consistent": true,
+      "consistent": true,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "pass": true
+    },
+    {
+      "name": "Agent-need-not-be-Entity",
+      "mode": "aligned",
+      "claim": "Official PROV has no global Agent subclass Entity axiom.",
+      "expected_consistent": true,
+      "consistent": true,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "pass": true
+    },
+    {
+      "name": "Agent-may-also-be-Entity",
+      "mode": "aligned",
+      "claim": "",
+      "expected_consistent": true,
+      "consistent": true,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "pass": true
+    },
+    {
+      "name": "unassociated-Organization-not-automatically-Agent",
+      "mode": "aligned",
+      "claim": "",
+      "expected_consistent": true,
+      "consistent": true,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "pass": true
+    },
+    {
+      "name": "ungenerated-Assertion-not-automatically-Entity",
+      "mode": "aligned",
+      "claim": "",
+      "expected_consistent": true,
+      "consistent": true,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "pass": true
+    },
+    {
+      "name": "generated-Assertion-Entity-by-range",
+      "mode": "aligned",
+      "claim": "",
+      "expected_consistent": false,
+      "consistent": false,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "pass": true
+    },
+    {
+      "name": "responsible-Organization-Agent-by-range",
+      "mode": "aligned",
+      "claim": "",
+      "expected_consistent": false,
+      "consistent": false,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "pass": true
+    },
+    {
+      "name": "record-activity-collision-unaligned",
+      "mode": "unaligned",
+      "claim": "",
+      "expected_consistent": true,
+      "consistent": true,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "pass": true
+    },
+    {
+      "name": "record-activity-collision-aligned",
+      "mode": "aligned",
+      "claim": "PROV Entity/Activity disjointness makes prior proposal redundant in this import configuration only.",
+      "expected_consistent": false,
+      "consistent": false,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "pass": true
+    },
+    {
+      "name": "generation-inverse-entails",
+      "mode": "aligned",
+      "claim": "",
+      "expected_consistent": false,
+      "consistent": false,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "pass": true
+    },
+    {
+      "name": "revision-entails-derivation",
+      "mode": "aligned",
+      "claim": "",
+      "expected_consistent": false,
+      "consistent": true,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "pass": false
+    },
+    {
+      "name": "revision-with-distinct-records",
+      "mode": "aligned",
+      "claim": "",
+      "expected_consistent": true,
+      "consistent": true,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "pass": true
+    },
+    {
+      "name": "qualified-generation-chain",
+      "mode": "aligned",
+      "claim": "",
+      "expected_consistent": false,
+      "consistent": false,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "pass": true
+    },
+    {
+      "name": "generated-record-is-not-reified-Generation",
+      "mode": "aligned",
+      "claim": "",
+      "expected_consistent": true,
+      "consistent": true,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "pass": true
+    },
+    {
+      "name": "registration-no-authorization-entailment",
+      "mode": "aligned",
+      "claim": "",
+      "expected_consistent": true,
+      "consistent": true,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "pass": true
+    },
+    {
+      "name": "listing-no-authorization-entailment",
+      "mode": "aligned",
+      "claim": "",
+      "expected_consistent": true,
+      "consistent": true,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "pass": true
+    },
+    {
+      "name": "record-no-authorization-entailment",
+      "mode": "aligned",
+      "claim": "",
+      "expected_consistent": true,
+      "consistent": true,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "pass": true
+    },
+    {
+      "name": "potential-claim-no-actual-shortage",
+      "mode": "aligned",
+      "claim": "",
+      "expected_consistent": true,
+      "consistent": true,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "pass": true
+    },
+    {
+      "name": "broad-artifact-parent-allows-Activity-target",
+      "mode": "aligned",
+      "claim": "",
+      "expected_consistent": true,
+      "consistent": true,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "pass": true
+    },
+    {
+      "name": "unsafe-global-usage-mapping-rejects-Activity-target",
+      "mode": "aligned",
+      "claim": "Stress case exposes new range commitment; not proof this use is intended.",
+      "expected_consistent": false,
+      "consistent": false,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "pass": true
+    },
+    {
+      "name": "OWL-does-not-validate-time-order",
+      "mode": "aligned",
+      "claim": "Expected limitation: temporal consistency needs a separate constraints checker.",
+      "expected_consistent": true,
+      "consistent": true,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "pass": true
+    }
+  ],
+  "pass": 35,
+  "total": 36
+}

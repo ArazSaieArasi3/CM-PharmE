@@ -1,0 +1,10 @@
+@prefix c: <https://w3id.org/cm-pharme/2.1/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix t1: <urn:cmpe-prov-target:> .
+
+c:usedSourceArtifact rdfs:subPropertyOf prov:used .
+
+t1:x c:usedSourceArtifact t1:y .
+
+t1:y a prov:Activity .

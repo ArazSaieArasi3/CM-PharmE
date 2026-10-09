@@ -1,0 +1,7 @@
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix t1: <urn:cmpe-prov-target:> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+t1:x a prov:Activity ;
+    prov:endedAtTime "2026-10-01T00:00:00+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-10-02T00:00:00+00:00"^^xsd:dateTime .
