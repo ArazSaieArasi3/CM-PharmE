@@ -3,7 +3,7 @@
   "date": "2026-10-09",
   "timezone": "Asia/Tehran",
   "status": "ACTIVE_ANALYSIS_DOMAIN_DISPOSITION_OPEN",
-  "execution_note": "Prior baseline and laboratory preserved. Eight gap-specific contracts implemented and tested; twelve associations and no classes added. P1 source contract repaired with bounded replay; full W6 PostgreSQL CI is pending.",
+  "execution_note": "Prior baseline and laboratory preserved. Eight gap-specific contracts implemented and tested; twelve associations and no classes added. P1 source contract repaired with bounded replay; GitHub W6 CI failed before any recorded step and full database execution remains unverified.",
   "baseline": {
     "repo": "ArazSaieArasi3/CM-PharmE",
     "head": "71a8615d7e89b2ee735ca21be4e6f49683816555",
@@ -259,7 +259,7 @@
       "deliverable_fa": "هویت و checksum منبع، حل اختلاف نام، نگاشت دادهٔ گسترده‌تر/مستقل",
       "acceptance_fa": "حد تعمیم صریح؛ نمونهٔ ۷۶۸ ردیفی معادل کل منبع نیست",
       "status": "PROPOSED_PENDING_DECISION",
-      "current_extension": "P1 filename/metadata/header contract repaired; 12 negative checks and 768-row replay pass. Full W6 database CI pending; other empirical sources remain open."
+      "current_extension": "P1 filename/metadata/header contract repaired; 12 negative checks and 768-row replay pass. Full W6 database CI failed before recorded steps; #307 stays open. Other empirical sources remain open."
     },
     {
       "order": 18,
@@ -322,7 +322,7 @@
     "items": [
       "Review informational content/proposition profile boundaries against structural BinOver candidates; a complete report-content model is still absent.",
       "Adjudicate 39 experimental relations with event/participation/nature policy; align native, OWL and SHACL.",
-      "Read W6 PostgreSQL CI for the repaired P1 contract and close #307 only after its acceptance conditions are met.",
+      "Resolve W6 CI execution failure or run PostgreSQL/PostGIS in an available independent environment; close #307 only after acceptance.",
       "Continue full 20-pattern adapter, independent data and P7 human evaluation."
     ]
   },
@@ -384,5 +384,6 @@
     "closed_this_turn": 0,
     "excludes_pull_requests": true
   },
-  "experiment": "v2/ontology/candidates/2.1.0-alpha.1-four-domain-refinement"
+  "experiment": "v2/ontology/candidates/2.1.0-alpha.1-four-domain-refinement",
+  "reporting_rule_fa": "در هر اجرا: دستاورد، کارهای انجام‌شده، فهرست تمام کارهای باز، شمار ایشوهای باز/بسته و بسته‌شدهٔ همان اجرا، گام مستقیم بعدی و درصد با مخرج روشن گزارش شود."
 }
