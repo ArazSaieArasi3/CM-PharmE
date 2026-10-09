@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='utf-8'?>
+<RefOntoUML:Package xmlns:RefOntoUML="http://nemo.inf.ufes.br/ontouml/refontouml" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmi:version="2.0" xmi:id="pkg" name="HomoFunc-negative" visibility="public">
+  <packagedElement xsi:type="RefOntoUML:Kind" xmi:id="Machine" name="Machine" visibility="public" isAbstract="false" />
+  <packagedElement xsi:type="RefOntoUML:Kind" xmi:id="PartA" name="PartA" visibility="public" isAbstract="false" />
+  <packagedElement xsi:type="RefOntoUML:Kind" xmi:id="PartB" name="PartB" visibility="public" isAbstract="false" />
+  <packagedElement xsi:type="RefOntoUML:componentOf" xmi:id="componentA" name="componentA" visibility="public" memberEnd="componentAA componentAB">
+    <ownedEnd xmi:id="componentAA" name="componentAA" type="Machine" association="componentA" aggregation="shared" visibility="public">
+      <lowerValue xsi:type="RefOntoUML:LiteralInteger" xmi:id="componentAAlower" value="0" />
+      <upperValue xsi:type="RefOntoUML:LiteralUnlimitedNatural" xmi:id="componentAAupper" value="1" />
+    </ownedEnd>
+    <ownedEnd xmi:id="componentAB" name="componentAB" type="PartA" association="componentA" aggregation="none" visibility="public">
+      <lowerValue xsi:type="RefOntoUML:LiteralInteger" xmi:id="componentABlower" value="1" />
+      <upperValue xsi:type="RefOntoUML:LiteralUnlimitedNatural" xmi:id="componentABupper" value="-1" />
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="RefOntoUML:componentOf" xmi:id="componentB" name="componentB" visibility="public" memberEnd="componentBA componentBB">
+    <ownedEnd xmi:id="componentBA" name="componentBA" type="Machine" association="componentB" aggregation="shared" visibility="public">
+      <lowerValue xsi:type="RefOntoUML:LiteralInteger" xmi:id="componentBAlower" value="0" />
+      <upperValue xsi:type="RefOntoUML:LiteralUnlimitedNatural" xmi:id="componentBAupper" value="1" />
+    </ownedEnd>
+    <ownedEnd xmi:id="componentBB" name="componentBB" type="PartB" association="componentB" aggregation="none" visibility="public">
+      <lowerValue xsi:type="RefOntoUML:LiteralInteger" xmi:id="componentBBlower" value="1" />
+      <upperValue xsi:type="RefOntoUML:LiteralUnlimitedNatural" xmi:id="componentBBupper" value="-1" />
+    </ownedEnd>
+  </packagedElement>
+</RefOntoUML:Package>

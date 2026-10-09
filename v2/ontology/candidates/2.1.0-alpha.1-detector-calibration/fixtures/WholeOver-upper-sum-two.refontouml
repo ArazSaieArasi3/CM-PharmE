@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='utf-8'?>
+<RefOntoUML:Package xmlns:RefOntoUML="http://nemo.inf.ufes.br/ontouml/refontouml" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmi:version="2.0" xmi:id="pkg" name="WholeOver-upper-sum-two" visibility="public">
+  <packagedElement xsi:type="RefOntoUML:Kind" xmi:id="Parent" name="Parent" visibility="public" isAbstract="false" />
+  <packagedElement xsi:type="RefOntoUML:SubKind" xmi:id="A" name="A" visibility="public" isAbstract="false">
+    <generalization xmi:id="AToParent" general="Parent" generalizationSet="Overlap" />
+  </packagedElement>
+  <packagedElement xsi:type="RefOntoUML:SubKind" xmi:id="B" name="B" visibility="public" isAbstract="false">
+    <generalization xmi:id="BToParent" general="Parent" generalizationSet="Overlap" />
+  </packagedElement>
+  <packagedElement xsi:type="RefOntoUML:Kind" xmi:id="Base" name="Base" visibility="public" isAbstract="false" />
+  <packagedElement xsi:type="RefOntoUML:componentOf" xmi:id="r1" name="r1" visibility="public" memberEnd="r1A r1B">
+    <ownedEnd xmi:id="r1A" name="r1A" type="Base" association="r1" aggregation="shared" visibility="public">
+      <lowerValue xsi:type="RefOntoUML:LiteralInteger" xmi:id="r1Alower" value="0" />
+      <upperValue xsi:type="RefOntoUML:LiteralUnlimitedNatural" xmi:id="r1Aupper" value="1" />
+    </ownedEnd>
+    <ownedEnd xmi:id="r1B" name="r1B" type="A" association="r1" aggregation="none" visibility="public">
+      <lowerValue xsi:type="RefOntoUML:LiteralInteger" xmi:id="r1Blower" value="1" />
+      <upperValue xsi:type="RefOntoUML:LiteralUnlimitedNatural" xmi:id="r1Bupper" value="1" />
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="RefOntoUML:componentOf" xmi:id="r2" name="r2" visibility="public" memberEnd="r2A r2B">
+    <ownedEnd xmi:id="r2A" name="r2A" type="Base" association="r2" aggregation="shared" visibility="public">
+      <lowerValue xsi:type="RefOntoUML:LiteralInteger" xmi:id="r2Alower" value="0" />
+      <upperValue xsi:type="RefOntoUML:LiteralUnlimitedNatural" xmi:id="r2Aupper" value="1" />
+    </ownedEnd>
+    <ownedEnd xmi:id="r2B" name="r2B" type="B" association="r2" aggregation="none" visibility="public">
+      <lowerValue xsi:type="RefOntoUML:LiteralInteger" xmi:id="r2Blower" value="1" />
+      <upperValue xsi:type="RefOntoUML:LiteralUnlimitedNatural" xmi:id="r2Bupper" value="1" />
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="RefOntoUML:GeneralizationSet" xmi:id="Overlap" name="Overlap" generalization="AToParent BToParent" isDisjoint="false" isCovering="false" />
+</RefOntoUML:Package>

@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<RefOntoUML:Package xmlns:RefOntoUML="http://nemo.inf.ufes.br/ontouml/refontouml" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmi:version="2.0" xmi:id="pkg" name="FreeRole-positive" visibility="public">
+  <packagedElement xsi:type="RefOntoUML:Kind" xmi:id="Person" name="Person" visibility="public" isAbstract="false" />
+  <packagedElement xsi:type="RefOntoUML:Role" xmi:id="Employee" name="Employee" visibility="public" isAbstract="false">
+    <generalization xmi:id="EmployeeToPerson" general="Person" />
+  </packagedElement>
+  <packagedElement xsi:type="RefOntoUML:Role" xmi:id="Manager" name="Manager" visibility="public" isAbstract="false">
+    <generalization xmi:id="ManagerToEmployee" general="Employee" />
+  </packagedElement>
+  <packagedElement xsi:type="RefOntoUML:Relator" xmi:id="Employment" name="Employment" visibility="public" isAbstract="false" />
+  <packagedElement xsi:type="RefOntoUML:Relator" xmi:id="Appointment" name="Appointment" visibility="public" isAbstract="false" />
+  <packagedElement xsi:type="RefOntoUML:Mediation" xmi:id="employment" name="employment" visibility="public" memberEnd="employmentA employmentB">
+    <ownedEnd xmi:id="employmentA" name="employmentA" type="Employment" association="employment" aggregation="none" visibility="public">
+      <lowerValue xsi:type="RefOntoUML:LiteralInteger" xmi:id="employmentAlower" value="1" />
+      <upperValue xsi:type="RefOntoUML:LiteralUnlimitedNatural" xmi:id="employmentAupper" value="1" />
+    </ownedEnd>
+    <ownedEnd xmi:id="employmentB" name="employmentB" type="Employee" association="employment" aggregation="none" visibility="public">
+      <lowerValue xsi:type="RefOntoUML:LiteralInteger" xmi:id="employmentBlower" value="1" />
+      <upperValue xsi:type="RefOntoUML:LiteralUnlimitedNatural" xmi:id="employmentBupper" value="1" />
+    </ownedEnd>
+  </packagedElement>
+</RefOntoUML:Package>

@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<RefOntoUML:Package xmlns:RefOntoUML="http://nemo.inf.ufes.br/ontouml/refontouml" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmi:version="2.0" xmi:id="pkg" name="RelRig-positive" visibility="public">
+  <packagedElement xsi:type="RefOntoUML:Kind" xmi:id="Person" name="Person" visibility="public" isAbstract="false" />
+  <packagedElement xsi:type="RefOntoUML:SubKind" xmi:id="ParticipatingPerson" name="ParticipatingPerson" visibility="public" isAbstract="false">
+    <generalization xmi:id="ParticipatingPersonToPerson" general="Person" />
+  </packagedElement>
+  <packagedElement xsi:type="RefOntoUML:Relator" xmi:id="Agreement" name="Agreement" visibility="public" isAbstract="false" />
+  <packagedElement xsi:type="RefOntoUML:Mediation" xmi:id="m" name="m" visibility="public" memberEnd="mA mB">
+    <ownedEnd xmi:id="mA" name="mA" type="Agreement" association="m" aggregation="none" visibility="public" isReadOnly="false">
+      <lowerValue xsi:type="RefOntoUML:LiteralInteger" xmi:id="mAlower" value="1" />
+      <upperValue xsi:type="RefOntoUML:LiteralUnlimitedNatural" xmi:id="mAupper" value="1" />
+    </ownedEnd>
+    <ownedEnd xmi:id="mB" name="mB" type="ParticipatingPerson" association="m" aggregation="none" visibility="public" isReadOnly="false">
+      <lowerValue xsi:type="RefOntoUML:LiteralInteger" xmi:id="mBlower" value="1" />
+      <upperValue xsi:type="RefOntoUML:LiteralUnlimitedNatural" xmi:id="mBupper" value="1" />
+    </ownedEnd>
+  </packagedElement>
+</RefOntoUML:Package>
