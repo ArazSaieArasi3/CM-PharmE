@@ -1,0 +1,15 @@
+import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
+import { parseCase, search, label, SOURCE } from './graph.mjs';
+const graph = parseCase(readFileSync(new URL('./data/CASE_INSTANCE_GRAPH.nt', import.meta.url), 'utf8'));
+assert.equal(graph.triples.length, 197);
+assert.equal(graph.entities.size, 67);
+assert.equal([...graph.entities.values()].filter(e => e.id.includes(':pk:')).length, 52);
+assert.equal([...graph.entities.values()].filter(e => e.id.includes(':domain:')).length, 15);
+assert.equal(graph.triples.filter(t => t.predicate === SOURCE).length, 67);
+const product = search(graph, 'PROD-CMPE-EXPLORER')[0];
+assert(product?.types.some(t => label(t) === 'Product'));
+assert(product.outgoing.some(t => label(t.predicate) === 'hasVision' && label(t.object) === 'VIS-CMPE-001'));
+assert.equal(search(graph, 'TestCase').length, 1);
+assert.throws(() => parseCase('<unsupported>'), /Unsupported N-Triples line 1/);
+console.log('Case graph parser, search, provenance, and selected trace: PASS');
