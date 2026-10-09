@@ -1,0 +1,44 @@
+{
+  "inputs": {
+    "native_sha256": "752abd468c991381f3d80042d24b3597b58d735c5c698a0fcf25ac9d06355d50",
+    "owl_sha256": "96630c946b849194cd6b6099bc7a307bc1c26c27c35883642849bc8a942b355c",
+    "shacl_sha256": "f5cfd077e96b7c659b22502f81ac50d1a4cd2f275b7a4dd619d34a68d7b307a1"
+  },
+  "outputs": {
+    "native_sha256": "264d26d263e5fa25e432dc65dd6b0402bf274958c9d18c32be2d2583634deaca",
+    "owl_sha256": "c62f0abb21df3aad36154ed6aa04ab0287bc7ce7a5fd6a04effc8cd338f6f304",
+    "shacl_sha256": "510a65519ae0534c48c98250134bc8a4b2b658dd571e185c030af112ef461229"
+  },
+  "native_elements_before_after": [
+    523,
+    536
+  ],
+  "owl_named_classes": 138,
+  "native_and_owl_object_property_names": 86,
+  "native_additions": [
+    "rel-organizationHasSupplyCapacity",
+    "end-organizationHasSupplyCapacity-source",
+    "end-organizationHasSupplyCapacity-target",
+    "rel-facilityHasSupplyCapacity",
+    "end-facilityHasSupplyCapacity-source",
+    "end-facilityHasSupplyCapacity-target",
+    "rel-capacityOrganizationBearer",
+    "end-capacityOrganizationBearer-source",
+    "end-capacityOrganizationBearer-target",
+    "rel-capacityFacilityBearer",
+    "end-capacityFacilityBearer-source",
+    "end-capacityFacilityBearer-target",
+    "p4a-capacity-xor-note"
+  ],
+  "primary_routes": [
+    "organizationHasSupplyCapacity",
+    "facilityHasSupplyCapacity"
+  ],
+  "derived_inverse_routes": [
+    "capacityOrganizationBearer",
+    "capacityFacilityBearer"
+  ],
+  "common_query_surface": "capacityBearer",
+  "closed_graph_xor": "SHACL two primary inverse paths, exactly one typed bearer, explicit query assertions grounded",
+  "open_world_xor": "OWL exact-one common bearer with a disjunction of typed route existentials; missing explicit ABox bearer stays consistent under OWA"
+}
