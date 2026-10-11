@@ -1,0 +1,46 @@
+{
+  "version": "0.12.0",
+  "reasoner": "HermiT via ROBOT 1.9.11",
+  "logical_population_triples": 89,
+  "excluded_metadata_triples": 138,
+  "ontology_sha256": "4c0cd24abdab09f3f65e3c166d69907b26634b814b178370cdea8a03545bf0ff",
+  "tests": [
+    {
+      "name": "cm-source-population",
+      "exit_code": 0,
+      "expectation_met": true,
+      "expected_consistent": true,
+      "command": [
+        "java",
+        "-jar",
+        "/tmp/product-orsd-robot-1.9.11.jar",
+        "reason",
+        "--input",
+        "/workspace/scratch/4a9d6272c362/product_ontology_case_integration_v0_12_0/results/cm-source-population.owl",
+        "--reasoner",
+        "HermiT",
+        "--output",
+        "/workspace/scratch/4a9d6272c362/product_ontology_case_integration_v0_12_0/results/cm-source-population-reasoned.owl"
+      ]
+    },
+    {
+      "name": "cm-product-organization-collision",
+      "exit_code": 1,
+      "expectation_met": true,
+      "expected_consistent": false,
+      "command": [
+        "java",
+        "-jar",
+        "/tmp/product-orsd-robot-1.9.11.jar",
+        "reason",
+        "--input",
+        "/workspace/scratch/4a9d6272c362/product_ontology_case_integration_v0_12_0/results/cm-product-organization-collision.owl",
+        "--reasoner",
+        "HermiT",
+        "--output",
+        "/workspace/scratch/4a9d6272c362/product_ontology_case_integration_v0_12_0/results/cm-product-organization-collision-reasoned.owl"
+      ]
+    }
+  ],
+  "scope": "Pinned native CM-PharmE G1 candidate and declared population; PROV/experimental document metadata is retained separately. Not full upstream PROV alignment acceptance or an independent validity assessment."
+}

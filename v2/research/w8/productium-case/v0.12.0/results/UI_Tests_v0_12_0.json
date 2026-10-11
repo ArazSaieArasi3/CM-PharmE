@@ -1,0 +1,87 @@
+{
+  "version": "0.12.0",
+  "passed": 20,
+  "checks": [
+    {
+      "name": "finds-real-product-by-name",
+      "pass": true
+    },
+    {
+      "name": "finds-two-source-rows-with-similar-labeler-without-merge",
+      "pass": true
+    },
+    {
+      "name": "equal-name-negative-control-retains-two-distinct-identities",
+      "pass": true
+    },
+    {
+      "name": "finds-product-by-package-ndc",
+      "pass": true
+    },
+    {
+      "name": "unknown-search-does-not-invent-entity",
+      "pass": true
+    },
+    {
+      "name": "clearing-search-restores-all-five-rows",
+      "pass": true
+    },
+    {
+      "name": "unknown-id-rejected",
+      "pass": true
+    },
+    {
+      "name": "brief-pins-model-and-source",
+      "pass": true
+    },
+    {
+      "name": "brief-retains-unknowns-and-exact-pointers",
+      "pass": true
+    },
+    {
+      "name": "brief-does-not-export-unselected-products",
+      "pass": true
+    },
+    {
+      "name": "standalone-html-no-remote-scripts-or-data-fetch",
+      "pass": true
+    },
+    {
+      "name": "renders-all-source-records",
+      "pass": true
+    },
+    {
+      "name": "renders-native-chain-with-source-record",
+      "pass": true
+    },
+    {
+      "name": "search-input-connects-to-visible-list",
+      "pass": true
+    },
+    {
+      "name": "selection-renders-three-packages-and-original-source",
+      "pass": true
+    },
+    {
+      "name": "export-button-produces-selected-versioned-brief",
+      "pass": true
+    },
+    {
+      "name": "source-text-is-not-rendered-as-html",
+      "pass": true
+    },
+    {
+      "name": "missing-source-control-displays-unknown-not-false",
+      "pass": true
+    },
+    {
+      "name": "missing-source-control-survives-export",
+      "pass": true
+    },
+    {
+      "name": "complete-standalone-bundle-runs-with-no-network-api",
+      "pass": true
+    }
+  ],
+  "scope": "Node/domain contracts and DOM functional tests; no actual-browser visual or user-study claim."
+}
