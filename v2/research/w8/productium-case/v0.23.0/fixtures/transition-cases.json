@@ -1,0 +1,477 @@
+[
+  {
+    "name": "restart_preserved",
+    "input": {
+      "before_r": "urn:v022:synthetic:r1",
+      "after_r": "urn:v022:synthetic:r1",
+      "before_v": "urn:v022:synthetic:v1",
+      "after_v": "urn:v022:synthetic:v1",
+      "before_c": "urn:v022:synthetic:c1",
+      "after_c": "urn:v022:synthetic:c1",
+      "operation": "restart",
+      "system_continuity": "PRESERVED",
+      "disposition_continuity": "PRESERVED",
+      "branching": false,
+      "evidence": "urn:v022:synthetic:continuity-observation"
+    },
+    "expected_status": "ACCEPTED",
+    "expected_realization": "SAME",
+    "expected_capability": "SAME"
+  },
+  {
+    "name": "restart_disposition_recreated",
+    "input": {
+      "before_r": "urn:v022:synthetic:r1",
+      "after_r": "urn:v022:synthetic:r1",
+      "before_v": "urn:v022:synthetic:v1",
+      "after_v": "urn:v022:synthetic:v1",
+      "before_c": "urn:v022:synthetic:c1",
+      "after_c": "urn:v022:synthetic:c2",
+      "operation": "restart",
+      "system_continuity": "PRESERVED",
+      "disposition_continuity": "BROKEN",
+      "branching": false,
+      "evidence": "urn:v022:synthetic:continuity-observation"
+    },
+    "expected_status": "ACCEPTED",
+    "expected_realization": "SAME",
+    "expected_capability": "DISTINCT"
+  },
+  {
+    "name": "rolling_upgrade",
+    "input": {
+      "before_r": "urn:v022:synthetic:r1",
+      "after_r": "urn:v022:synthetic:r2",
+      "before_v": "urn:v022:synthetic:v1",
+      "after_v": "urn:v022:synthetic:v2",
+      "before_c": "urn:v022:synthetic:c1",
+      "after_c": "urn:v022:synthetic:c2",
+      "operation": "upgrade",
+      "system_continuity": "PRESERVED",
+      "disposition_continuity": "PRESERVED",
+      "branching": false,
+      "evidence": "urn:v022:synthetic:continuity-observation"
+    },
+    "expected_status": "ACCEPTED",
+    "expected_realization": "DISTINCT",
+    "expected_capability": "DISTINCT"
+  },
+  {
+    "name": "rollback_successor",
+    "input": {
+      "before_r": "urn:v022:synthetic:r1",
+      "after_r": "urn:v022:synthetic:r2",
+      "before_v": "urn:v022:synthetic:v2",
+      "after_v": "urn:v022:synthetic:v1",
+      "before_c": "urn:v022:synthetic:c1",
+      "after_c": "urn:v022:synthetic:c2",
+      "operation": "rollback",
+      "system_continuity": "PRESERVED",
+      "disposition_continuity": "PRESERVED",
+      "branching": false,
+      "evidence": "urn:v022:synthetic:continuity-observation"
+    },
+    "expected_status": "ACCEPTED",
+    "expected_realization": "DISTINCT",
+    "expected_capability": "DISTINCT"
+  },
+  {
+    "name": "migration_preserved",
+    "input": {
+      "before_r": "urn:v022:synthetic:r1",
+      "after_r": "urn:v022:synthetic:r1",
+      "before_v": "urn:v022:synthetic:v1",
+      "after_v": "urn:v022:synthetic:v1",
+      "before_c": "urn:v022:synthetic:c1",
+      "after_c": "urn:v022:synthetic:c1",
+      "operation": "migrate",
+      "system_continuity": "PRESERVED",
+      "disposition_continuity": "PRESERVED",
+      "branching": false,
+      "evidence": "urn:v022:synthetic:continuity-observation"
+    },
+    "expected_status": "ACCEPTED",
+    "expected_realization": "SAME",
+    "expected_capability": "SAME"
+  },
+  {
+    "name": "migration_disposition_recreated",
+    "input": {
+      "before_r": "urn:v022:synthetic:r1",
+      "after_r": "urn:v022:synthetic:r1",
+      "before_v": "urn:v022:synthetic:v1",
+      "after_v": "urn:v022:synthetic:v1",
+      "before_c": "urn:v022:synthetic:c1",
+      "after_c": "urn:v022:synthetic:c2",
+      "operation": "migrate",
+      "system_continuity": "PRESERVED",
+      "disposition_continuity": "BROKEN",
+      "branching": false,
+      "evidence": "urn:v022:synthetic:continuity-observation"
+    },
+    "expected_status": "ACCEPTED",
+    "expected_realization": "SAME",
+    "expected_capability": "DISTINCT"
+  },
+  {
+    "name": "migration_breaks_whole",
+    "input": {
+      "before_r": "urn:v022:synthetic:r1",
+      "after_r": "urn:v022:synthetic:r2",
+      "before_v": "urn:v022:synthetic:v1",
+      "after_v": "urn:v022:synthetic:v1",
+      "before_c": "urn:v022:synthetic:c1",
+      "after_c": "urn:v022:synthetic:c2",
+      "operation": "migrate",
+      "system_continuity": "BROKEN",
+      "disposition_continuity": "PRESERVED",
+      "branching": false,
+      "evidence": "urn:v022:synthetic:continuity-observation"
+    },
+    "expected_status": "ACCEPTED",
+    "expected_realization": "DISTINCT",
+    "expected_capability": "DISTINCT"
+  },
+  {
+    "name": "migration_branches",
+    "input": {
+      "before_r": "urn:v022:synthetic:r1",
+      "after_r": "urn:v022:synthetic:r2",
+      "before_v": "urn:v022:synthetic:v1",
+      "after_v": "urn:v022:synthetic:v1",
+      "before_c": "urn:v022:synthetic:c1",
+      "after_c": "urn:v022:synthetic:c2",
+      "operation": "migrate",
+      "system_continuity": "PRESERVED",
+      "disposition_continuity": "PRESERVED",
+      "branching": true,
+      "evidence": "urn:v022:synthetic:continuity-observation"
+    },
+    "expected_status": "ACCEPTED",
+    "expected_realization": "DISTINCT",
+    "expected_capability": "DISTINCT"
+  },
+  {
+    "name": "clone_same_version",
+    "input": {
+      "before_r": "urn:v022:synthetic:r1",
+      "after_r": "urn:v022:synthetic:r2",
+      "before_v": "urn:v022:synthetic:v1",
+      "after_v": "urn:v022:synthetic:v1",
+      "before_c": "urn:v022:synthetic:c1",
+      "after_c": "urn:v022:synthetic:c2",
+      "operation": "clone",
+      "system_continuity": "PRESERVED",
+      "disposition_continuity": "PRESERVED",
+      "branching": false,
+      "evidence": "urn:v022:synthetic:continuity-observation"
+    },
+    "expected_status": "ACCEPTED",
+    "expected_realization": "DISTINCT",
+    "expected_capability": "DISTINCT"
+  },
+  {
+    "name": "destroy_and_recreate",
+    "input": {
+      "before_r": "urn:v022:synthetic:r1",
+      "after_r": "urn:v022:synthetic:r2",
+      "before_v": "urn:v022:synthetic:v1",
+      "after_v": "urn:v022:synthetic:v1",
+      "before_c": "urn:v022:synthetic:c1",
+      "after_c": "urn:v022:synthetic:c2",
+      "operation": "recreate",
+      "system_continuity": "PRESERVED",
+      "disposition_continuity": "PRESERVED",
+      "branching": false,
+      "evidence": "urn:v022:synthetic:continuity-observation"
+    },
+    "expected_status": "ACCEPTED",
+    "expected_realization": "DISTINCT",
+    "expected_capability": "DISTINCT"
+  },
+  {
+    "name": "unknown_system",
+    "input": {
+      "before_r": "urn:v022:synthetic:r1",
+      "after_r": "urn:v022:synthetic:r1",
+      "before_v": "urn:v022:synthetic:v1",
+      "after_v": "urn:v022:synthetic:v1",
+      "before_c": "urn:v022:synthetic:c1",
+      "after_c": "urn:v022:synthetic:c1",
+      "operation": "restart",
+      "system_continuity": "UNKNOWN",
+      "disposition_continuity": "PRESERVED",
+      "branching": false,
+      "evidence": "urn:v022:synthetic:continuity-observation"
+    },
+    "expected_status": "REVIEW_REQUIRED",
+    "expected_realization": null,
+    "expected_capability": null
+  },
+  {
+    "name": "unknown_disposition",
+    "input": {
+      "before_r": "urn:v022:synthetic:r1",
+      "after_r": "urn:v022:synthetic:r1",
+      "before_v": "urn:v022:synthetic:v1",
+      "after_v": "urn:v022:synthetic:v1",
+      "before_c": "urn:v022:synthetic:c1",
+      "after_c": "urn:v022:synthetic:c1",
+      "operation": "restart",
+      "system_continuity": "PRESERVED",
+      "disposition_continuity": "UNKNOWN",
+      "branching": false,
+      "evidence": "urn:v022:synthetic:continuity-observation"
+    },
+    "expected_status": "REVIEW_REQUIRED",
+    "expected_realization": null,
+    "expected_capability": null
+  },
+  {
+    "name": "upgrade_reuses_object",
+    "input": {
+      "before_r": "urn:v022:synthetic:r1",
+      "after_r": "urn:v022:synthetic:r1",
+      "before_v": "urn:v022:synthetic:v1",
+      "after_v": "urn:v022:synthetic:v2",
+      "before_c": "urn:v022:synthetic:c1",
+      "after_c": "urn:v022:synthetic:c2",
+      "operation": "upgrade",
+      "system_continuity": "PRESERVED",
+      "disposition_continuity": "PRESERVED",
+      "branching": false,
+      "evidence": "urn:v022:synthetic:continuity-observation"
+    },
+    "expected_status": "REJECTED",
+    "expected_realization": null,
+    "expected_capability": null
+  },
+  {
+    "name": "cross_bearer_mode_reuse",
+    "input": {
+      "before_r": "urn:v022:synthetic:r1",
+      "after_r": "urn:v022:synthetic:r2",
+      "before_v": "urn:v022:synthetic:v1",
+      "after_v": "urn:v022:synthetic:v1",
+      "before_c": "urn:v022:synthetic:c1",
+      "after_c": "urn:v022:synthetic:c1",
+      "operation": "clone",
+      "system_continuity": "PRESERVED",
+      "disposition_continuity": "PRESERVED",
+      "branching": false,
+      "evidence": "urn:v022:synthetic:continuity-observation"
+    },
+    "expected_status": "REJECTED",
+    "expected_realization": null,
+    "expected_capability": null
+  },
+  {
+    "name": "clone_reuses_whole",
+    "input": {
+      "before_r": "urn:v022:synthetic:r1",
+      "after_r": "urn:v022:synthetic:r1",
+      "before_v": "urn:v022:synthetic:v1",
+      "after_v": "urn:v022:synthetic:v1",
+      "before_c": "urn:v022:synthetic:c1",
+      "after_c": "urn:v022:synthetic:c2",
+      "operation": "clone",
+      "system_continuity": "PRESERVED",
+      "disposition_continuity": "PRESERVED",
+      "branching": false,
+      "evidence": "urn:v022:synthetic:continuity-observation"
+    },
+    "expected_status": "REJECTED",
+    "expected_realization": null,
+    "expected_capability": null
+  },
+  {
+    "name": "broken_disposition_reuses_mode",
+    "input": {
+      "before_r": "urn:v022:synthetic:r1",
+      "after_r": "urn:v022:synthetic:r1",
+      "before_v": "urn:v022:synthetic:v1",
+      "after_v": "urn:v022:synthetic:v1",
+      "before_c": "urn:v022:synthetic:c1",
+      "after_c": "urn:v022:synthetic:c1",
+      "operation": "restart",
+      "system_continuity": "PRESERVED",
+      "disposition_continuity": "BROKEN",
+      "branching": false,
+      "evidence": "urn:v022:synthetic:continuity-observation"
+    },
+    "expected_status": "REJECTED",
+    "expected_realization": null,
+    "expected_capability": null
+  },
+  {
+    "name": "same_disposition_split_without_basis",
+    "input": {
+      "before_r": "urn:v022:synthetic:r1",
+      "after_r": "urn:v022:synthetic:r1",
+      "before_v": "urn:v022:synthetic:v1",
+      "after_v": "urn:v022:synthetic:v1",
+      "before_c": "urn:v022:synthetic:c1",
+      "after_c": "urn:v022:synthetic:c2",
+      "operation": "restart",
+      "system_continuity": "PRESERVED",
+      "disposition_continuity": "PRESERVED",
+      "branching": false,
+      "evidence": "urn:v022:synthetic:continuity-observation"
+    },
+    "expected_status": "REJECTED",
+    "expected_realization": null,
+    "expected_capability": null
+  },
+  {
+    "name": "preserved_whole_split_without_basis",
+    "input": {
+      "before_r": "urn:v022:synthetic:r1",
+      "after_r": "urn:v022:synthetic:r2",
+      "before_v": "urn:v022:synthetic:v1",
+      "after_v": "urn:v022:synthetic:v1",
+      "before_c": "urn:v022:synthetic:c1",
+      "after_c": "urn:v022:synthetic:c2",
+      "operation": "restart",
+      "system_continuity": "PRESERVED",
+      "disposition_continuity": "PRESERVED",
+      "branching": false,
+      "evidence": "urn:v022:synthetic:continuity-observation"
+    },
+    "expected_status": "REJECTED",
+    "expected_realization": null,
+    "expected_capability": null
+  },
+  {
+    "name": "restart_changes_version",
+    "input": {
+      "before_r": "urn:v022:synthetic:r1",
+      "after_r": "urn:v022:synthetic:r1",
+      "before_v": "urn:v022:synthetic:v1",
+      "after_v": "urn:v022:synthetic:v2",
+      "before_c": "urn:v022:synthetic:c1",
+      "after_c": "urn:v022:synthetic:c1",
+      "operation": "restart",
+      "system_continuity": "PRESERVED",
+      "disposition_continuity": "PRESERVED",
+      "branching": false,
+      "evidence": "urn:v022:synthetic:continuity-observation"
+    },
+    "expected_status": "REJECTED",
+    "expected_realization": null,
+    "expected_capability": null
+  },
+  {
+    "name": "upgrade_without_version_change",
+    "input": {
+      "before_r": "urn:v022:synthetic:r1",
+      "after_r": "urn:v022:synthetic:r2",
+      "before_v": "urn:v022:synthetic:v1",
+      "after_v": "urn:v022:synthetic:v1",
+      "before_c": "urn:v022:synthetic:c1",
+      "after_c": "urn:v022:synthetic:c2",
+      "operation": "upgrade",
+      "system_continuity": "PRESERVED",
+      "disposition_continuity": "PRESERVED",
+      "branching": false,
+      "evidence": "urn:v022:synthetic:continuity-observation"
+    },
+    "expected_status": "REJECTED",
+    "expected_realization": null,
+    "expected_capability": null
+  },
+  {
+    "name": "empty_evidence",
+    "input": {
+      "before_r": "urn:v022:synthetic:r1",
+      "after_r": "urn:v022:synthetic:r1",
+      "before_v": "urn:v022:synthetic:v1",
+      "after_v": "urn:v022:synthetic:v1",
+      "before_c": "urn:v022:synthetic:c1",
+      "after_c": "urn:v022:synthetic:c1",
+      "operation": "restart",
+      "system_continuity": "PRESERVED",
+      "disposition_continuity": "PRESERVED",
+      "branching": false,
+      "evidence": ""
+    },
+    "expected_status": "REJECTED",
+    "expected_realization": null,
+    "expected_capability": null
+  },
+  {
+    "name": "identifier_looks_like_iri",
+    "input": {
+      "before_r": "urn:v022:synthetic:r1",
+      "after_r": "deployment-r1",
+      "before_v": "urn:v022:synthetic:v1",
+      "after_v": "urn:v022:synthetic:v1",
+      "before_c": "urn:v022:synthetic:c1",
+      "after_c": "urn:v022:synthetic:c1",
+      "operation": "restart",
+      "system_continuity": "PRESERVED",
+      "disposition_continuity": "PRESERVED",
+      "branching": false,
+      "evidence": "urn:v022:synthetic:continuity-observation"
+    },
+    "expected_status": "REJECTED",
+    "expected_realization": null,
+    "expected_capability": null
+  },
+  {
+    "name": "unrecognized_operation",
+    "input": {
+      "before_r": "urn:v022:synthetic:r1",
+      "after_r": "urn:v022:synthetic:r1",
+      "before_v": "urn:v022:synthetic:v1",
+      "after_v": "urn:v022:synthetic:v1",
+      "before_c": "urn:v022:synthetic:c1",
+      "after_c": "urn:v022:synthetic:c1",
+      "operation": "rename",
+      "system_continuity": "PRESERVED",
+      "disposition_continuity": "PRESERVED",
+      "branching": false,
+      "evidence": "urn:v022:synthetic:continuity-observation"
+    },
+    "expected_status": "REJECTED",
+    "expected_realization": null,
+    "expected_capability": null
+  },
+  {
+    "name": "invalid_continuity_enum",
+    "input": {
+      "before_r": "urn:v022:synthetic:r1",
+      "after_r": "urn:v022:synthetic:r1",
+      "before_v": "urn:v022:synthetic:v1",
+      "after_v": "urn:v022:synthetic:v1",
+      "before_c": "urn:v022:synthetic:c1",
+      "after_c": "urn:v022:synthetic:c1",
+      "operation": "restart",
+      "system_continuity": "yes",
+      "disposition_continuity": "PRESERVED",
+      "branching": false,
+      "evidence": "urn:v022:synthetic:continuity-observation"
+    },
+    "expected_status": "REJECTED",
+    "expected_realization": null,
+    "expected_capability": null
+  },
+  {
+    "name": "string_boolean",
+    "input": {
+      "before_r": "urn:v022:synthetic:r1",
+      "after_r": "urn:v022:synthetic:r1",
+      "before_v": "urn:v022:synthetic:v1",
+      "after_v": "urn:v022:synthetic:v1",
+      "before_c": "urn:v022:synthetic:c1",
+      "after_c": "urn:v022:synthetic:c1",
+      "operation": "restart",
+      "system_continuity": "PRESERVED",
+      "disposition_continuity": "PRESERVED",
+      "branching": "false",
+      "evidence": "urn:v022:synthetic:continuity-observation"
+    },
+    "expected_status": "REJECTED",
+    "expected_realization": null,
+    "expected_capability": null
+  }
+]
