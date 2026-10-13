@@ -1,0 +1,21 @@
+{
+  "accessed": "2026-10-13",
+  "sources": [
+    {
+      "id": "FDA-NDC-DEFINITIONS",
+      "url": "https://www.fda.gov/drugs/drug-approvals-and-databases/ndc-product-file-definitions",
+      "use": "A labeler can have different business activities. Listing identifies a responsible source party, not a unique verified manufacturing or distribution activity."
+    },
+    {
+      "id": "OPENFDA-NDC",
+      "url": "https://open.fda.gov/apis/drug/ndc/",
+      "use": "NDC record and harmonization scope. Listing is not regulatory approval."
+    },
+    {
+      "id": "OPENFDA-FIELD-SCHEMA",
+      "url": "https://open.fda.gov/fields/drugndc.yaml",
+      "use": "manufacturer_name is a harmonized company-name field associated with the NDC labeler segment. Retain its wording and pointer as a source observation; do not silently type the row-scoped organization as a native ManufacturerRole."
+    }
+  ],
+  "schema_download_sha256": "1c6b19df2678079bb79e0a1861156a141de5320cf7a95fc81c82de7286994505"
+}

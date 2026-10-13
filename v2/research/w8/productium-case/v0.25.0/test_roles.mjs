@@ -1,0 +1,38 @@
+import fs from 'node:fs';
+import {roleEvidence} from './role-evidence.mjs';
+import {exportBrief} from './explorer.mjs';
+const root=new URL('./',import.meta.url);
+const data=JSON.parse(fs.readFileSync(new URL('generated/explorer-data.json',root)));
+const checks=[];const check=(name,ok)=>{checks.push({name,passed:!!ok});if(!ok)throw Error(name);};
+const before=JSON.stringify(data);
+for(const p of data.products){
+ const e=roleEvidence(data,p),b=exportBrief(data,p.id,'2026-10-13T00:00:00Z');
+ check(p.ndc+':listing-source-bound',e.labeler.status==='SOURCE_REPORTED_LISTING_RESPONSIBILITY'&&e.source_snapshot_sha256===data.policy.raw_source_sha256);
+ check(p.ndc+':manufacturer-observations-preserved',JSON.stringify(e.harmonized_manufacturer.observations.map(x=>x.value))===JSON.stringify(p.source_envelope.openfda.manufacturer_name));
+ check(p.ndc+':no-manufacturer-wholesale-or-approval-inference',e.native_role_projection.ManufacturerRole==='NOT_ASSERTED'&&e.native_role_projection.WholesaleDistributorRole==='NOT_ASSERTED'&&e.approval_status==='UNKNOWN');
+ check(p.ndc+':brief-includes-source-observations',JSON.stringify(b.role_evidence)===JSON.stringify(e));
+}
+const probe=(change,alter=()=>{})=>{const d=structuredClone(data);change(d.products[0]);alter(d);return roleEvidence(d,d.products[0]);};
+let e=probe(p=>{delete p.source_envelope.labeler_name});check('missing-labeler-does-not-use-manufacturer-as-fallback',e.labeler.name===null&&e.native_role_projection.listing_responsibility==='WITHHELD_PENDING_REVIEW');
+e=probe(p=>{p.source_envelope.labeler_name=''});check('blank-labeler-withheld',e.labeler.status==='REVIEW_REQUIRED');
+e=probe(p=>{p.source_envelope.labeler_name={value:'A'}});check('nonstring-labeler-withheld',e.labeler.status==='REVIEW_REQUIRED');
+e=probe(p=>{delete p.source_envelope.openfda.manufacturer_name});check('missing-manufacturer-is-not-negative-world-fact',e.harmonized_manufacturer.status==='NOT_REPORTED'&&e.native_role_projection.ManufacturerRole==='NOT_ASSERTED');
+e=probe(p=>{p.source_envelope.openfda.manufacturer_name=[]});check('empty-array-not-reported',e.harmonized_manufacturer.status==='NOT_REPORTED');
+e=probe(p=>{p.source_envelope.openfda.manufacturer_name='Single source name'});check('documented-string-input-supported',e.harmonized_manufacturer.observations[0].value==='Single source name'&&!e.harmonized_manufacturer.observations[0].json_pointer.endsWith('/0'));
+e=probe(p=>{p.source_envelope.openfda.manufacturer_name=['A','B']});check('multiple-names-preserved-and-flagged',e.harmonized_manufacturer.observations.length===2&&e.review_reasons.includes('MULTIPLE_NAMES_REVIEW'));
+e=probe(p=>{p.source_envelope.openfda.manufacturer_name=['A',null,7,'']});check('invalid-values-flagged-with-exact-valid-index',e.review_reasons.includes('MANUFACTURER_FIELD_INVALID')&&e.harmonized_manufacturer.observations.length===1&&e.harmonized_manufacturer.observations[0].json_pointer.endsWith('/0'));
+e=probe(p=>{p.source_envelope.openfda.manufacturer_name=42});check('invalid-field-type-flagged',e.review_reasons.includes('MANUFACTURER_FIELD_INVALID'));
+e=probe(p=>{p.source_envelope.openfda.manufacturer_name=['Different Ltd']});check('different-name-not-overwritten-or-merged',e.labeler.name===data.products[0].organization_name&&e.review_reasons.includes('DIFFERENT_TEXT_REVIEW'));
+e=probe(p=>{p.source_envelope.openfda.manufacturer_name=[p.organization_name,p.organization_name]});check('duplicate-observations-retain-source-occurrences',e.harmonized_manufacturer.observations.length===2&&e.harmonized_manufacturer.comparison_to_labeler==='EXACT_TEXT_AGREEMENT');
+e=probe(p=>{delete p.source_pointer});check('missing-pointer-withholds-projection',!e.source_locator_present&&e.labeler.status==='REVIEW_REQUIRED');
+e=probe(p=>{p.source_pointer='/other/0'});check('unexpected-pointer-withholds-projection',!e.source_locator_present);
+e=probe(()=>{},d=>{d.policy.raw_source_sha256='not-a-digest'});check('invalid-digest-withholds-projection',!e.source_locator_present&&e.harmonized_manufacturer.status==='SOURCE_LOCATOR_MISSING');
+e=probe(p=>{p.source_envelope.product_ndc='different-product'});check('product-binding-mismatch-withholds-projection',e.review_reasons.includes('PRODUCT_REFERENCE_MISMATCH')&&e.native_role_projection.listing_responsibility==='WITHHELD_PENDING_REVIEW');
+e=probe(p=>{p.organization_name='Different projection'});check('labeler-binding-mismatch-withholds-projection',e.review_reasons.includes('LABELER_PROJECTION_MISMATCH'));
+e=probe(p=>{p.source_envelope.openfda.is_original_packager=[true];p.source_envelope.application_number='NDA123';p.source_envelope.marketing_category='NDA'});check('packager-application-and-category-do-not-establish-native-role-or-approval',e.approval_status==='UNKNOWN'&&e.native_role_projection.ManufacturerRole==='NOT_ASSERTED');
+const d=structuredClone(data);d.products[1].organization_name=d.products[0].organization_name;d.products[1].source_envelope.labeler_name=d.products[0].organization_name;
+check('same-names-do-not-merge-row-identities',roleEvidence(d,d.products[0]).labeler.organization_reference!==roleEvidence(d,d.products[1]).labeler.organization_reference);
+check('source-input-never-mutated',JSON.stringify(data)===before);
+fs.writeFileSync(new URL('results/Role_Evidence_Tests_v0_25_0.json',root),JSON.stringify({version:'0.25.0',passed:checks.length,checks,scope:'Five retained source rows and controlled adverse variants. Tests validate a source-observation policy; no independent role verification or ontology classification approval.'},null,2));
+fs.writeFileSync(new URL('generated/role-evidence.json',root),JSON.stringify({version:'0.25.0',products:data.products.map(p=>({product:p.id,ndc:p.ndc,role_evidence:roleEvidence(data,p)}))},null,2));
+console.log('Role evidence checks:',checks.length,'passed');
