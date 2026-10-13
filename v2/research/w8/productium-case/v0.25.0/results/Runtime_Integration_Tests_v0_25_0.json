@@ -1,0 +1,296 @@
+{
+  "version": "0.25.0",
+  "passed": 72,
+  "checks": [
+    {
+      "name": "runtime-build-is-the-explorer-software-product",
+      "passed": true
+    },
+    {
+      "name": "serves-integrated-explorer",
+      "passed": true
+    },
+    {
+      "name": "HTTP-restart_preserved",
+      "passed": true
+    },
+    {
+      "name": "accepted-graph-shacl-restart_preserved",
+      "passed": true
+    },
+    {
+      "name": "HTTP-restart_disposition_recreated",
+      "passed": true
+    },
+    {
+      "name": "accepted-graph-shacl-restart_disposition_recreated",
+      "passed": true
+    },
+    {
+      "name": "HTTP-rolling_upgrade",
+      "passed": true
+    },
+    {
+      "name": "accepted-graph-shacl-rolling_upgrade",
+      "passed": true
+    },
+    {
+      "name": "HTTP-rollback_successor",
+      "passed": true
+    },
+    {
+      "name": "accepted-graph-shacl-rollback_successor",
+      "passed": true
+    },
+    {
+      "name": "HTTP-migration_preserved",
+      "passed": true
+    },
+    {
+      "name": "accepted-graph-shacl-migration_preserved",
+      "passed": true
+    },
+    {
+      "name": "HTTP-migration_disposition_recreated",
+      "passed": true
+    },
+    {
+      "name": "accepted-graph-shacl-migration_disposition_recreated",
+      "passed": true
+    },
+    {
+      "name": "HTTP-migration_breaks_whole",
+      "passed": true
+    },
+    {
+      "name": "accepted-graph-shacl-migration_breaks_whole",
+      "passed": true
+    },
+    {
+      "name": "HTTP-migration_branches",
+      "passed": true
+    },
+    {
+      "name": "accepted-graph-shacl-migration_branches",
+      "passed": true
+    },
+    {
+      "name": "HTTP-clone_same_version",
+      "passed": true
+    },
+    {
+      "name": "accepted-graph-shacl-clone_same_version",
+      "passed": true
+    },
+    {
+      "name": "HTTP-destroy_and_recreate",
+      "passed": true
+    },
+    {
+      "name": "accepted-graph-shacl-destroy_and_recreate",
+      "passed": true
+    },
+    {
+      "name": "HTTP-unknown_system",
+      "passed": true
+    },
+    {
+      "name": "no-accepted-graph-unknown_system",
+      "passed": true
+    },
+    {
+      "name": "HTTP-unknown_disposition",
+      "passed": true
+    },
+    {
+      "name": "no-accepted-graph-unknown_disposition",
+      "passed": true
+    },
+    {
+      "name": "HTTP-upgrade_reuses_object",
+      "passed": true
+    },
+    {
+      "name": "no-accepted-graph-upgrade_reuses_object",
+      "passed": true
+    },
+    {
+      "name": "HTTP-cross_bearer_mode_reuse",
+      "passed": true
+    },
+    {
+      "name": "no-accepted-graph-cross_bearer_mode_reuse",
+      "passed": true
+    },
+    {
+      "name": "HTTP-clone_reuses_whole",
+      "passed": true
+    },
+    {
+      "name": "no-accepted-graph-clone_reuses_whole",
+      "passed": true
+    },
+    {
+      "name": "HTTP-broken_disposition_reuses_mode",
+      "passed": true
+    },
+    {
+      "name": "no-accepted-graph-broken_disposition_reuses_mode",
+      "passed": true
+    },
+    {
+      "name": "HTTP-same_disposition_split_without_basis",
+      "passed": true
+    },
+    {
+      "name": "no-accepted-graph-same_disposition_split_without_basis",
+      "passed": true
+    },
+    {
+      "name": "HTTP-preserved_whole_split_without_basis",
+      "passed": true
+    },
+    {
+      "name": "no-accepted-graph-preserved_whole_split_without_basis",
+      "passed": true
+    },
+    {
+      "name": "HTTP-restart_changes_version",
+      "passed": true
+    },
+    {
+      "name": "no-accepted-graph-restart_changes_version",
+      "passed": true
+    },
+    {
+      "name": "HTTP-upgrade_without_version_change",
+      "passed": true
+    },
+    {
+      "name": "no-accepted-graph-upgrade_without_version_change",
+      "passed": true
+    },
+    {
+      "name": "HTTP-empty_evidence",
+      "passed": true
+    },
+    {
+      "name": "no-accepted-graph-empty_evidence",
+      "passed": true
+    },
+    {
+      "name": "HTTP-identifier_looks_like_iri",
+      "passed": true
+    },
+    {
+      "name": "no-accepted-graph-identifier_looks_like_iri",
+      "passed": true
+    },
+    {
+      "name": "HTTP-unrecognized_operation",
+      "passed": true
+    },
+    {
+      "name": "no-accepted-graph-unrecognized_operation",
+      "passed": true
+    },
+    {
+      "name": "HTTP-invalid_continuity_enum",
+      "passed": true
+    },
+    {
+      "name": "no-accepted-graph-invalid_continuity_enum",
+      "passed": true
+    },
+    {
+      "name": "HTTP-string_boolean",
+      "passed": true
+    },
+    {
+      "name": "no-accepted-graph-string_boolean",
+      "passed": true
+    },
+    {
+      "name": "retry-idempotent-without-new-history",
+      "passed": true
+    },
+    {
+      "name": "reused-request-id-conflict",
+      "passed": true
+    },
+    {
+      "name": "cross-snapshot-retarget-rejected",
+      "passed": true
+    },
+    {
+      "name": "failed-admission-leaves-accepted-graph-unchanged",
+      "passed": true
+    },
+    {
+      "name": "scenario-cannot-be-relabeled-operational",
+      "passed": true
+    },
+    {
+      "name": "malformed-field-rejected-without-server-failure",
+      "passed": true
+    },
+    {
+      "name": "unsafe-rdf-iri-rejected",
+      "passed": true
+    },
+    {
+      "name": "type-collision-rejected",
+      "passed": true
+    },
+    {
+      "name": "no-token-rejected",
+      "passed": true
+    },
+    {
+      "name": "foreign-origin-rejected",
+      "passed": true
+    },
+    {
+      "name": "non-json-rejected",
+      "passed": true
+    },
+    {
+      "name": "oversized-request-rejected",
+      "passed": true
+    },
+    {
+      "name": "private-database-not-served",
+      "passed": true
+    },
+    {
+      "name": "unknown-record-rejected",
+      "passed": true
+    },
+    {
+      "name": "concurrent-retry-single-admission",
+      "passed": true
+    },
+    {
+      "name": "review-and-rejection-retained-as-audit-only",
+      "passed": true
+    },
+    {
+      "name": "history-survives-service-restart",
+      "passed": true
+    },
+    {
+      "name": "graph-survives-service-restart",
+      "passed": true
+    },
+    {
+      "name": "pharmaceutical-identities-not-used-as-deployments",
+      "passed": true
+    },
+    {
+      "name": "historical-pharma-projection-preserved",
+      "passed": true
+    }
+  ],
+  "data_origin": "25 controlled transition scenarios; retained historical pharmaceutical source projection",
+  "scope": "Actual local HTTP service, SQLite persistence, concurrency controls and focused RDF validation. No empirical deployment or human effectiveness study."
+}

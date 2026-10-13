@@ -1,0 +1,12 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix p: <urn:productium:specification-profile:> .
+@prefix s: <urn:product-ontology:identity-shapes:0.22:> .
+s:Realization a sh:NodeShape ; sh:targetClass p:ProductRealization ;
+ sh:property [sh:path p:realizesVersion; sh:minCount 1; sh:maxCount 1; sh:class p:ProductVersion; sh:nodeKind sh:IRI] ;
+ sh:property [sh:path p:bearsCapability; sh:minCount 1; sh:class p:ProductCapability; sh:nodeKind sh:IRI] .
+s:Capability a sh:NodeShape ; sh:targetClass p:ProductCapability ;
+ sh:property [sh:path [sh:inversePath p:bearsCapability]; sh:minCount 1; sh:maxCount 1; sh:class p:ProductRealization] .
+s:VersionSource a sh:NodeShape ; sh:targetSubjectsOf p:realizesVersion ; sh:class p:ProductRealization .
+s:VersionTarget a sh:NodeShape ; sh:targetObjectsOf p:realizesVersion ; sh:class p:ProductVersion .
+s:BearerSource a sh:NodeShape ; sh:targetSubjectsOf p:bearsCapability ; sh:class p:ProductRealization .
+s:CapabilityTarget a sh:NodeShape ; sh:targetObjectsOf p:bearsCapability ; sh:class p:ProductCapability .
