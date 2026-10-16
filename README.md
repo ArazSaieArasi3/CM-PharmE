@@ -1,5 +1,15 @@
 # CM-PharmE
 
+## OntoSPK case-study Explorer
+
+The **Pharmaceutical Ecosystem Explorer** is the bounded application demonstration used in the OntoSPK software-product knowledge study. Its implementation is available on the Explorer development branch, separately from the stable CM-PharmE model described below.
+
+- **[Implementation and local run instructions](https://github.com/ArazSaieArasi3/CM-PharmE/blob/26f8d133d2d3565844f67454dc7d3dfc4ba3f003/v2/research/w8/productium-case/v0.25.0/README.md)** — a fixed implementation snapshot for inspection and reproduction.
+- **[Recorded execution reports](https://github.com/ArazSaieArasi3/CM-PharmE/tree/26f8d133d2d3565844f67454dc7d3dfc4ba3f003/v2/research/w8/productium-case/v0.25.0/results)** — scoped functional checks and the explicit browser-validation status.
+- **[Development and integration status (PR #308)](https://github.com/ArazSaieArasi3/CM-PharmE/pull/308)** — the integration proposal remains open at the time of this documentation update.
+
+The prototype supports source inspection and research-brief export from a retained historical openFDA extract, together with a separate, locally persisted software-deployment declaration workflow. It is not a live pharmaceutical service or a completed general-purpose Product Workbench. Visual-browser verification, independent acceptance and user-effectiveness evaluation remain pending. Follow the implementation README to run the local service; the links above provide source and evidence, not a hosted application.
+
 [![CM-PharmE Ontology CI](https://github.com/ArazSaieArasi3/CM-PharmE/actions/workflows/ontology-reasoner.yml/badge.svg?branch=main)](https://github.com/ArazSaieArasi3/CM-PharmE/actions/workflows/ontology-reasoner.yml)
 
 **CM-PharmE** is an evolving, versioned, ontology-grounded conceptual model and research knowledge base for the pharmaceutical ecosystem. The repository is designed as a long-lived research asset supporting conceptual modeling, formal ontology engineering, evaluation, data mapping, publication traceability, reproducible builds, semantic-query testing and future data/application layers.
