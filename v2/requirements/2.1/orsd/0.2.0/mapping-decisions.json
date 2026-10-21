@@ -1,0 +1,14 @@
+[
+  {
+    "id": "MAP-BA-02",
+    "prior_reference": "https://w3id.org/cm-pharme/experimental/four-domain/capabilityRealizedIn",
+    "selected_reference": "https://w3id.org/cm-pharme/experimental/coherence/capabilityRealizedInLogistics",
+    "decision": "Bind the current scoped CQ to the exported logistics relation. Retire the old generic query as evidence for this ORSD row; preserve historical files. Do not assert owl:equivalentProperty or rename the ontology silently.",
+    "status": "SCOPED_MAPPING_RESOLVED",
+    "generic_requirement_status": "Still requires future per-domain realization paths if scope expands",
+    "queries": {
+      "corrected": "PREFIX c: <https://w3id.org/cm-pharme/2.1/> PREFIX d: <https://w3id.org/cm-pharme/experimental/coherence/>\nSELECT DISTINCT ?cap ?org WHERE { ?cap a c:EnterpriseCapability ; c:capabilityBearer ?org . FILTER NOT EXISTS { ?cap d:capabilityRealizedInLogistics ?activity } } ORDER BY ?cap ?org",
+      "recorded_execution": "PREFIX c: <https://w3id.org/cm-pharme/2.1/> PREFIX d: <https://w3id.org/cm-pharme/experimental/coherence/>\nSELECT DISTINCT ?cap ?activity WHERE { ?cap a c:EnterpriseCapability ; d:capabilityRealizedInLogistics ?activity } ORDER BY ?cap ?activity"
+    }
+  }
+]

@@ -1,0 +1,7 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://w3id.org/cm-pharme/2.1/EnterpriseCapability> rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <https://w3id.org/cm-pharme/experimental/coherence/capabilityRealizedInLogistics> ;
+            owl:someValuesFrom <https://w3id.org/cm-pharme/2.1/DistributionLogisticsActivity> ] .
+

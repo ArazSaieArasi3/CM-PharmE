@@ -1,0 +1,11 @@
+@prefix ns1: <https://w3id.org/cm-pharme/2.1/> .
+@prefix ns2: <https://w3id.org/cm-pharme/experimental/coherence/> .
+
+<urn:orsd-02:capExecuted> a ns1:EnterpriseCapability ;
+    ns1:capabilityBearer <urn:orsd-02:org> ;
+    ns2:capabilityRealizedInLogistics <urn:orsd-02:activity> .
+
+<urn:orsd-02:activity> a ns1:DistributionLogisticsActivity .
+
+<urn:orsd-02:org> a ns1:Organization .
+
