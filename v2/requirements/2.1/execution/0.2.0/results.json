@@ -1,0 +1,124 @@
+{
+  "source_commit": "d01f48bd7be76e02490177c1e6ebcb40825d77a3",
+  "oracle_commit": "bbfbd92",
+  "versions": {
+    "python": "3.12.14",
+    "rdflib": "7.6.0",
+    "pyshacl": "0.30.1",
+    "owlrl": "7.6.2"
+  },
+  "model_sha256": {
+    "ontouml.json": "264d26d263e5fa25e432dc65dd6b0402bf274958c9d18c32be2d2583634deaca",
+    "active.ttl": "c62f0abb21df3aad36154ed6aa04ab0287bc7ce7a5fd6a04effc8cd338f6f304",
+    "constraints.ttl": "510a65519ae0534c48c98250134bc8a4b2b658dd571e185c030af112ef461229",
+    "requirements.json": "eedd4752204e860cbca6e55a18304b5f0e44382e8cdab2368924d83c6a5a0c32",
+    "acceptance-contracts.json": "89e5473428d54403c666a76bf369eac9037ffaf5f95a147f8cb61dc86a73b6d5"
+  },
+  "synthetic_witnesses": {
+    "FR-01": {
+      "positive": 12,
+      "negative": 4,
+      "boundary": 4
+    },
+    "FR-02": {
+      "positive": 7,
+      "negative": 2,
+      "boundary": 3
+    },
+    "FR-03": {
+      "positive": 7,
+      "negative": 5,
+      "boundary": 4
+    }
+  },
+  "native_ids_present": {
+    "FR-01": {
+      "Organization": true,
+      "Facility": true,
+      "FacilityOperation": true,
+      "rel-operates": true,
+      "rel-operationOrganization": true,
+      "rel-operationFacility": true
+    },
+    "FR-02": {
+      "Organization": true,
+      "ManufacturerRole": true,
+      "ImporterRole": true,
+      "WholesaleDistributorRole": true,
+      "ManufacturingResponsibility": true,
+      "rel-manufacturingResponsibilityHolder": true
+    },
+    "FR-03": {
+      "FacilityOperation": true,
+      "OperatingOrganizationRole": true,
+      "OperatedFacilityRole": true,
+      "rel-operationOrganization": true,
+      "rel-operationFacility": true
+    }
+  },
+  "supplemental_diagnostics": {
+    "positive_admission_conforms": {
+      "FR-01": true,
+      "FR-02": true,
+      "FR-03": true
+    },
+    "negative_no_relation_admission_conforms": {
+      "FR-01": true,
+      "FR-02": true,
+      "FR-03": true
+    },
+    "identity_countermodel_triples": 2,
+    "operates_materialization_from_two_relators": false
+  },
+  "outcomes": {
+    "FR-01": {
+      "expected": {
+        "positive_pairs": 2,
+        "negative_pairs": 0,
+        "boundary_pairs": 0,
+        "negative_identity_inconsistent": true,
+        "boundary_admission_conforms": false
+      },
+      "observed": {
+        "positive_pairs": 2,
+        "negative_pairs": 0,
+        "boundary_pairs": 0,
+        "boundary_admission_conforms": false,
+        "negative_identity_inconsistent": true
+      },
+      "all_expected_met": true
+    },
+    "FR-02": {
+      "expected": {
+        "positive_contexts": 1,
+        "negative_contexts": 0,
+        "boundary_contexts": 0,
+        "inferred_holder_role": true,
+        "incomplete_admission_conforms": false
+      },
+      "observed": {
+        "positive_contexts": 1,
+        "negative_contexts": 0,
+        "boundary_contexts": 0,
+        "incomplete_admission_conforms": false,
+        "inferred_holder_role": true
+      },
+      "all_expected_met": true
+    },
+    "FR-03": {
+      "expected": {
+        "positive_operations": 1,
+        "negative_operations": 0,
+        "boundary_operations": 0,
+        "boundary_admission_conforms": false
+      },
+      "observed": {
+        "positive_operations": 1,
+        "negative_operations": 0,
+        "boundary_operations": 0,
+        "boundary_admission_conforms": false
+      },
+      "all_expected_met": true
+    }
+  }
+}
