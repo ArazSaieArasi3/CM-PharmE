@@ -4,7 +4,7 @@ Target: **CM-PharmE ontology 2.1 research candidate**, not a release. Canonical 
 
 ## Reproduction and provenance
 
-The source snapshot is commit `d01f48bd7be76e02490177c1e6ebcb40825d77a3` on `v2/connectivity-audit-2-1-candidate`. Input SHA-256 values for the ORSD and the latest integrated G3-P4a native, OWL and SHACL model are in `fixed-oracles.json` and checked by the runner. The oracle file was committed first as `bbfbd92`, before the fixtures and runner existed. These are **synthetic** named witnesses; no company, facility or source record is claimed to exist in the empirical dataset. The underlying model still describes itself as a provisional G3-2e-F OWL subset and is not silently relabeled as a release.
+The source snapshot is commit `d01f48bd7be76e02490177c1e6ebcb40825d77a3` on `v2/connectivity-audit-2-1-candidate`. Input SHA-256 values for the ORSD and the latest integrated G3-P4a native, OWL and SHACL model are in `fixed-oracles.json` and checked by the runner. The oracle file was committed first as [`6452d379`](https://github.com/ArazSaieArasi3/CM-PharmE/commit/6452d379ab070486fe632a2146eb249c703a30d0), before the fixtures and runner existed. These are **synthetic** named witnesses; no company, facility or source record is claimed to exist in the empirical dataset. The underlying model still describes itself as a provisional G3-2e-F OWL subset and is not silently relabeled as a release.
 
 From the repository root, with Python 3.12, RDFLib 7.6.0, pySHACL 0.30.1 and owlrl 7.6.2:
 

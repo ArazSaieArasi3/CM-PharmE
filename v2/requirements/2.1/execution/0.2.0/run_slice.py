@@ -142,7 +142,7 @@ crosswalk = {
 }
 native_presence = {key: {n: n in native_ids for n in ids} for key, ids in crosswalk.items()}
 
-result = {"source_commit": ORACLES["source_commit"], "oracle_commit": "bbfbd92",
+result = {"source_commit": ORACLES["source_commit"], "oracle_commit": "6452d379ab070486fe632a2146eb249c703a30d0",
           "versions": {"python": platform.python_version(), "rdflib": rdflib.__version__,
                        "pyshacl": __import__("pyshacl").__version__,
                        "owlrl": __import__("owlrl").__version__},
