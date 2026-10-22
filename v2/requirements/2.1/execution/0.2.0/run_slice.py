@@ -136,7 +136,8 @@ crosswalk = {
     "FR-01": ["Organization", "Facility", "FacilityOperation", "rel-operates",
               "rel-operationOrganization", "rel-operationFacility"],
     "FR-02": ["Organization", "ManufacturerRole", "ImporterRole", "WholesaleDistributorRole",
-              "ManufacturingResponsibility", "rel-manufacturingResponsibilityHolder"],
+              "ManufacturingResponsibility", "ManufacturingResponsibilitySubjectRole",
+              "rel-manufacturingResponsibilityHolder", "rel-manufacturingResponsibilityCounterpart"],
     "FR-03": ["FacilityOperation", "OperatingOrganizationRole", "OperatedFacilityRole",
               "rel-operationOrganization", "rel-operationFacility"],
 }
