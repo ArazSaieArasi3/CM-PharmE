@@ -2,6 +2,8 @@
 
 Status: **W6 implementation branch; Gate E candidate architecture.**
 
+For the separate ontology 2.1 research candidate, see the [versioned 2.0→2.1 read-only relational delta inventory and migration contract](migrations/2.1/0.1.0/README.md). It does not modify this W6 2.0 baseline.
+
 ## Purpose
 W6 realizes the Gate-D/W5 semantics across a PostgreSQL/PostGIS reference database and an RDF instance graph while preserving explicit provenance and source boundaries.
 

@@ -1,5 +1,7 @@
 # CM-PharmE 2.0 Mapping Architecture
 
+The [CM-PharmE 2.1 candidate delta inventory](../migrations/2.1/0.1.0/README.md) crosswalks this preserved 2.0 registry to proposed 2.1 terms and records unresolved migration gates.
+
 ## Purpose
 This directory is the authoritative mapping documentation layer between admitted source schemas, the CM-PharmE 2.0 ontology, the PostgreSQL/PostGIS reference representation, and the RDF knowledge-graph projection.
 
