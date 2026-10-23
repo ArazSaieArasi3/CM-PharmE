@@ -1,12 +1,12 @@
 # Conditional migration and representation contract for CM-PharmE 2.1
 
-This is a **read-only design contract**, not executable DDL or permission to promote the research candidate. The source of record remains W6's 2.0 schema and fixtures. Implement one accepted semantic slice at a time after the corresponding ontology disposition in #306 and #311–#314; verify #307 source/hosted integration separately.
+This is a **read-only design contract**, not executable DDL or permission to promote the research candidate. The source of record remains W6's 2.0 schema and fixtures. Implement one scoped semantic slice at a time; #306 and #311–#314 retain broader review gates. The repaired #307 source contract passed its hosted W6 PostgreSQL/PostGIS fixture integration on workflow run 37963571813 (rerun attempt 2), and #307 is closed. This does not execute the new 2.1 migration.
 
 ## Invariants and decision order
 
 1. Preserve all W6 primary keys, public IDs, immutable source hashes, release/DOI links, transformation-run IDs, assertion/evidence links and the 2.0 ontology IRIs. Version the 2.1 RDF projection explicitly; never update all `ontology_iri` defaults or reinterpret old rows by string replacement alone.
 2. For a candidate addition, record a truthmaker and a named source witness before any non-null backfill. A role, relational commitment or `SupplyCapacity` Mode cannot be inferred from an organization name or a measurement row. Missing information remains unknown in OWL; only a declared admission profile may reject a row.
-3. Review the `FacilityOperation` operator cardinality first: W6 has one non-null `organization_id`; candidate SHACL has `operationOrganization` **min 1 without max**, `operationFacility` exactly one, and role-typed endpoints. If the author accepts multiple operators per relator, propose an additive participant table and keep the W6 column/view through migration. If the author instead accepts max 1, record that ontology decision and validate the existing column as the bounded representation. Do not silently insert the missing max into the ontology or silently limit the database's new 2.1 contract.
+3. DEC-21-01/02 now select one operating organization and one facility **per `FacilityOperation` relator** for the bounded 2.1 candidate, with distinct relators for joint or successive operations. The native/OWL/SHACL overlay records this explicitly, and `operates` is derived from those endpoints. W6's one non-null `organization_id` is representable, but its exporter still lacks the operation branch. Preserve its 2.0 column/view and run #319 copied-database and source-witness checks before accepting a 2.1 projection. Revisit a genuinely indivisible multi-operator operation if source evidence appears; do not impose one operator globally per facility.
 4. P4a `SupplyCapacity` is a Mode with one eligible Organization **or** Facility bearer, not an `observation_result` row. A proposed additive capacity table needs a distinct public ID, exactly-one typed bearer, a source/evidence route when asserted, and an optional result link only if scientifically supported. Preserve the old aggregate observations.
 5. The 36 W6 registry entries are declarations, not proof that all tables reach RDF. In particular, `tools/v2_data/export_kg.py` has no `facility_operation` SELECT/export branch. A facility operation SQL↔SPARQL test must first implement or select an explicit exporter route; a SQL-only positive is insufficient.
 
@@ -43,7 +43,7 @@ SELECT ?operation_id ?organization_id ?facility_id WHERE {
 } ORDER BY ?operation_id ?organization_id ?facility_id
 ```
 
-The `dcterms:identifier` projection above is a **proposed 2.1 export contract**, not an assertion that W6 exports those triples. Pin the source of every ID and the exact RDF serialization before running equivalence. If multi-operator semantics is accepted, adapt SQL to the new participant table and keep this same tuple key for comparison. Compare multisets, not only row counts. Extend with the four established W6 benchmark pairs as regressions; a 4/4 historical fixture pass does not establish the new pair.
+The `dcterms:identifier` projection above is a **proposed 2.1 export contract**, not an assertion that W6 exports those triples. Pin the source of every ID and the exact RDF serialization before running equivalence. Each accepted operator assignment has a separate operation ID; if that bounded decision is later revised to multiple operators in a single relator, adapt SQL to a new participant table and retain the tuple key. Compare multisets, not only row counts. Extend with the four established W6 benchmark pairs as regressions; a 4/4 historical fixture pass does not establish the new pair.
 
 ## Rollback and release boundary
 
