@@ -58,6 +58,9 @@ jobs:
           'pyshacl==0.31.0'
           'PyYAML==6.0.2'
 
+      - name: Verify pinned P1 discovery, negative source contracts and bounded real replay
+        run: python tools/v2_data/check_p1_contract.py --output build/w6/source-contract
+
       - name: Bootstrap PostgreSQL/PostGIS and ingest schema-faithful fixtures
         run: >-
           python tools/v2_data/bootstrap_ingest.py
@@ -156,5 +159,6 @@ jobs:
             build/w6/gate-e-summary.md
             build/w6/cm-pharme-v2-fixture-kg.ttl
             build/w6/cm-pharme-v2-fixture-kg.nt
+            build/w6/source-contract/
           if-no-files-found: warn
           retention-days: 30

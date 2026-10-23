@@ -1,0 +1,29 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/cm-pharme/2.1/ContextualMedicineClassificationAssignment> rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass <https://w3id.org/cm-pharme/2.1/AppliedClassificationEntryRole> ;
+            owl:onProperty <https://w3id.org/cm-pharme/2.1/contextClassificationEntry> ],
+        [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass <https://w3id.org/cm-pharme/2.1/AppliedClassificationEntryRole> ;
+            owl:onProperty <https://w3id.org/cm-pharme/2.1/contextClassificationEntry> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass <https://w3id.org/cm-pharme/2.1/ClassifiedMedicinalProductRole> ;
+            owl:onProperty <https://w3id.org/cm-pharme/2.1/contextClassificationProduct> ],
+        [ a owl:Restriction ;
+            owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+            owl:onClass <https://w3id.org/cm-pharme/2.1/ClassifiedMedicinalProductRole> ;
+            owl:onProperty <https://w3id.org/cm-pharme/2.1/contextClassificationProduct> ] .
+
+<https://w3id.org/cm-pharme/2.1/EvidenceSupport> rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass <https://w3id.org/cm-pharme/2.1/EvidenceSourceRecordRole> ;
+            owl:onProperty <https://w3id.org/cm-pharme/2.1/evidenceRecord> ],
+        [ a owl:Restriction ;
+            owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+            owl:onClass <https://w3id.org/cm-pharme/2.1/EvidenceSourceRecordRole> ;
+            owl:onProperty <https://w3id.org/cm-pharme/2.1/evidenceRecord> ] .

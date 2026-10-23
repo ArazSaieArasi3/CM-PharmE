@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0",
+  "fixed_before_fixture": true,
+  "source_commit": "d01f48bd7be76e02490177c1e6ebcb40825d77a3",
+  "orsd_version": "0.2.0",
+  "model_package": "v2/ontology/candidates/2.1.0-alpha.1-g3-p4a-supply-capacity",
+  "input_sha256": {
+    "ontouml.json": "264d26d263e5fa25e432dc65dd6b0402bf274958c9d18c32be2d2583634deaca",
+    "active.ttl": "c62f0abb21df3aad36154ed6aa04ab0287bc7ce7a5fd6a04effc8cd338f6f304",
+    "constraints.ttl": "510a65519ae0534c48c98250134bc8a4b2b658dd571e185c030af112ef461229",
+    "requirements.json": "eedd4752204e860cbca6e55a18304b5f0e44382e8cdab2368924d83c6a5a0c32",
+    "acceptance-contracts.json": "89e5473428d54403c666a76bf369eac9037ffaf5f95a147f8cb61dc86a73b6d5"
+  },
+  "witness_scope": "Synthetic named instances for independently specified contract tests; no empirical source coverage or author approval.",
+  "requirements": {
+    "FR-01": {
+      "positive": "One explicitly identified organization and two explicitly distinct facilities linked through two complete FacilityOperation relators yield exactly the two stated operator/site pairs.",
+      "negative": "An organization and facility with the same label or address and no operation link yield no operator/site pair; one individual asserted as both Organization and Facility contradicts their OWL disjointness.",
+      "boundary": "An incomplete operation with no recorded facility yields no query answer; OWL does not entail that no facility exists, while a declared SHACL admission profile rejects the incomplete relator.",
+      "expected": {"positive_pairs": 2, "negative_pairs": 0, "boundary_pairs": 0, "negative_identity_inconsistent": true, "boundary_admission_conforms": false}
+    },
+    "FR-02": {
+      "positive": "A named organization typed ManufacturerRole linked by ManufacturingResponsibility to a typed product subject yields the organization, role and responsibility context.",
+      "negative": "A company label without a responsibility relation yields no asserted or entailed role-context answer.",
+      "boundary": "An untyped organization in an asserted ManufacturingResponsibility holder position may infer ManufacturerRole from range, but without the assertion a missing relation stays unknown; SHACL requires the declared counterpart for an admitted responsibility.",
+      "expected": {"positive_contexts": 1, "negative_contexts": 0, "boundary_contexts": 0, "inferred_holder_role": true, "incomplete_admission_conforms": false}
+    },
+    "FR-03": {
+      "positive": "The same organization-to-site relation is recoverable only when a FacilityOperation instance mediates an OperatingOrganizationRole and an OperatedFacilityRole.",
+      "negative": "Co-location or matching address alone yields no operation relation.",
+      "boundary": "Missing recorded operationFacility stays unknown in query/OWL; a declared SHACL operation admission profile rejects it without making a global negative claim.",
+      "expected": {"positive_operations": 1, "negative_operations": 0, "boundary_operations": 0, "boundary_admission_conforms": false}
+    }
+  }
+}

@@ -1,0 +1,35 @@
+@prefix c: <https://w3id.org/cm-pharme/2.1/> .
+@prefix l: <https://w3id.org/cm-pharme/experimental/four-domain/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix p: <https://w3id.org/cm-pharme/experimental/registry-policy/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix r: <https://w3id.org/cm-pharme/experimental/refinement/> .
+@prefix t: <urn:cmpe-registry-policy:> .
+
+t:record a c:SourceRecord ;
+    owl:differentFrom t:previous ;
+    owl:sameAs t:product ;
+    prov:wasAttributedTo t:author ;
+    prov:wasDerivedFrom t:previous ;
+    prov:wasRevisionOf t:previous ;
+    l:recordDigitalActivity t:activity ;
+    r:carrierClaim t:claim ;
+    p:payloadFormat "SPL" ;
+    p:profile "provenance-record",
+        "submission-record" ;
+    p:version "2" .
+
+t:activity a c:ProvenanceActivity ;
+    prov:wasAssociatedWith t:operator .
+
+t:author a c:Organization .
+
+t:claim a c:Assertion ;
+    c:assertionAboutProduct t:product .
+
+t:operator a c:Organization .
+
+t:product a c:MedicinalProduct .
+
+t:previous a c:SourceRecord ;
+    p:version "1" .

@@ -1,0 +1,100 @@
+{
+  "source_head": "accb79534f43c940b2214ef74557b4e9de7e0ada",
+  "scope": "local static/native and deterministic synthetic fixture checks; official OntoUML anti-pattern engine, OWL reasoners, SHACL not run on this overlay",
+  "native_elements": 520,
+  "binary_relations": 81,
+  "all_relation_end_references_resolve": true,
+  "reviewed_new_records": 20,
+  "consolidated_before": 42,
+  "one_stereotype_change": true,
+  "changes": [
+    {
+      "id": "rel-hasStrength",
+      "field": "stereotype",
+      "from": null,
+      "to": "characterization"
+    },
+    {
+      "id": "end-hasStrength-source",
+      "field": "cardinality",
+      "from": null,
+      "to": "1"
+    },
+    {
+      "id": "end-hasStrength-target",
+      "field": "cardinality",
+      "from": null,
+      "to": "1..*"
+    }
+  ],
+  "hasStrength": {
+    "source_type": "MedicinalProductPresentation",
+    "target_type": "Strength",
+    "source_cardinality": "1",
+    "target_cardinality": "1..*",
+    "stereotype": "characterization",
+    "pass": true
+  },
+  "operates_fixture_checks": [
+    {
+      "id": "FacilityOperation-minimal",
+      "expected_valid": true,
+      "actual_valid": true,
+      "expected_rule": null,
+      "actual_rule": null,
+      "derived_pairs": [
+        [
+          "operator0",
+          "facility0"
+        ]
+      ],
+      "pass": true
+    },
+    {
+      "id": "FacilityOperation-missing-operator",
+      "expected_valid": false,
+      "actual_valid": false,
+      "expected_rule": "CARDINALITY",
+      "actual_rule": "CARDINALITY",
+      "derived_pairs": [],
+      "pass": true
+    },
+    {
+      "id": "FacilityOperation-event-in-operator",
+      "expected_valid": false,
+      "actual_valid": false,
+      "expected_rule": "KIND",
+      "actual_rule": "KIND",
+      "derived_pairs": [],
+      "pass": true
+    },
+    {
+      "id": "FacilityOperation-missing-facility",
+      "expected_valid": false,
+      "actual_valid": false,
+      "expected_rule": "CARDINALITY",
+      "actual_rule": "CARDINALITY",
+      "derived_pairs": [],
+      "pass": true
+    },
+    {
+      "id": "FacilityOperation-event-in-facility",
+      "expected_valid": false,
+      "actual_valid": false,
+      "expected_rule": "KIND",
+      "actual_rule": "KIND",
+      "derived_pairs": [],
+      "pass": true
+    },
+    {
+      "id": "FacilityOperation-excess-facility",
+      "expected_valid": false,
+      "actual_valid": false,
+      "expected_rule": "CARDINALITY",
+      "actual_rule": "CARDINALITY",
+      "derived_pairs": [],
+      "pass": true
+    }
+  ],
+  "pass": true
+}

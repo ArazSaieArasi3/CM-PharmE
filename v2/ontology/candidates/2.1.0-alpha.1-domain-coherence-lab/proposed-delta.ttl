@@ -1,0 +1,44 @@
+@prefix c: <https://w3id.org/cm-pharme/2.1/> .
+@prefix d: <https://w3id.org/cm-pharme/experimental/coherence/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+d:capabilityRealizedInLogistics a owl:ObjectProperty ;
+    rdfs:domain c:EnterpriseCapability ;
+    rdfs:range c:DistributionLogisticsActivity .
+
+d:logisticsFacility a owl:ObjectProperty ;
+    rdfs:domain c:DistributionLogisticsActivity ;
+    rdfs:range c:Facility .
+
+d:logisticsProduct a owl:ObjectProperty ;
+    rdfs:domain c:DistributionLogisticsActivity ;
+    rdfs:range c:MedicinalProduct .
+
+d:procurementOrganization a owl:ObjectProperty ;
+    rdfs:domain c:ProcurementActivity ;
+    rdfs:range c:Organization .
+
+d:procurementProduct a owl:ObjectProperty ;
+    rdfs:domain c:ProcurementActivity ;
+    rdfs:range c:MedicinalProduct .
+
+d:requirementJurisdiction a owl:ObjectProperty ;
+    rdfs:domain c:RegulatoryRequirement ;
+    rdfs:range c:RegulatoryJurisdiction .
+
+d:requirementSource a owl:ObjectProperty ;
+    rdfs:domain c:RegulatoryRequirement ;
+    rdfs:range c:SourceRecord .
+
+d:stockoutFacility a owl:ObjectProperty ;
+    rdfs:domain c:StockoutSituation ;
+    rdfs:range c:Facility .
+
+d:stockoutProduct a owl:ObjectProperty ;
+    rdfs:domain c:StockoutSituation ;
+    rdfs:range c:MedicinalProduct .
+
+d:supportsLogistics a owl:ObjectProperty ;
+    rdfs:domain c:ProvenanceActivity ;
+    rdfs:range c:DistributionLogisticsActivity .

@@ -1,0 +1,529 @@
+{
+  "scope": "Full-model fidelity audit for archived RefOntoUML adapter; no full candidate detector run",
+  "model_sha256": "264d26d263e5fa25e432dc65dd6b0402bf274958c9d18c32be2d2583634deaca",
+  "model_counts": {
+    "elements": 536,
+    "classes": 144,
+    "relations": 86,
+    "generalizations": 99,
+    "generalization_sets": 9
+  },
+  "unsupported_class_stereotypes": {
+    "count": 12,
+    "rows": [
+      {
+        "id": "AdverseEventReportingActivity",
+        "stereotype": "event"
+      },
+      {
+        "id": "DisruptionEvent",
+        "stereotype": "event"
+      },
+      {
+        "id": "DistributionLogisticsActivity",
+        "stereotype": "event"
+      },
+      {
+        "id": "ManufacturingActivity",
+        "stereotype": "event"
+      },
+      {
+        "id": "MedicineShortageSituation",
+        "stereotype": "situation"
+      },
+      {
+        "id": "ObservationActivity",
+        "stereotype": "event"
+      },
+      {
+        "id": "PostMarketSurveillanceActivity",
+        "stereotype": "event"
+      },
+      {
+        "id": "ProcurementActivity",
+        "stereotype": "event"
+      },
+      {
+        "id": "ProvenanceActivity",
+        "stereotype": "event"
+      },
+      {
+        "id": "RiskAssessmentActivity",
+        "stereotype": "event"
+      },
+      {
+        "id": "RiskTreatmentActivity",
+        "stereotype": "event"
+      },
+      {
+        "id": "StockoutSituation",
+        "stereotype": "situation"
+      }
+    ],
+    "meaning": "Legacy Ecore has no direct Event or Situation classifier; coercion to generic Class would change semantic pattern detection."
+  },
+  "untyped_relation_ends": {
+    "count": 11,
+    "rows": [
+      {
+        "relation": "rel-baViewRepresents",
+        "end": "end-baViewRepresents-target"
+      },
+      {
+        "relation": "rel-capacityBearer",
+        "end": "end-capacityBearer-target"
+      },
+      {
+        "relation": "rel-disruptionAffects",
+        "end": "end-disruptionAffects-target"
+      },
+      {
+        "relation": "rel-hasActiveSubstance",
+        "end": "end-hasActiveSubstance-source"
+      },
+      {
+        "relation": "rel-locatedIn",
+        "end": "end-locatedIn-source"
+      },
+      {
+        "relation": "rel-matchObject",
+        "end": "end-matchObject-target"
+      },
+      {
+        "relation": "rel-matchSubject",
+        "end": "end-matchSubject-target"
+      },
+      {
+        "relation": "rel-observationResultAbout",
+        "end": "end-observationResultAbout-target"
+      },
+      {
+        "relation": "rel-riskAssessmentConcerns",
+        "end": "end-riskAssessmentConcerns-target"
+      },
+      {
+        "relation": "rel-riskTreatmentAddresses",
+        "end": "end-riskTreatmentAddresses-target"
+      },
+      {
+        "relation": "rel-usedSourceArtifact",
+        "end": "end-usedSourceArtifact-target"
+      }
+    ],
+    "meaning": "A missing native endpoint type must not be fabricated during XMI export."
+  },
+  "unspecified_cardinality_ends": {
+    "count": 66,
+    "rows": [
+      {
+        "relation": "rel-authorizationJurisdiction",
+        "end": "end-authorizationJurisdiction-source"
+      },
+      {
+        "relation": "rel-authorizationJurisdiction",
+        "end": "end-authorizationJurisdiction-target"
+      },
+      {
+        "relation": "rel-baViewRepresents",
+        "end": "end-baViewRepresents-source"
+      },
+      {
+        "relation": "rel-baViewRepresents",
+        "end": "end-baViewRepresents-target"
+      },
+      {
+        "relation": "rel-capacityBearer",
+        "end": "end-capacityBearer-source"
+      },
+      {
+        "relation": "rel-capacityBearer",
+        "end": "end-capacityBearer-target"
+      },
+      {
+        "relation": "rel-containsSourceRecord",
+        "end": "end-containsSourceRecord-source"
+      },
+      {
+        "relation": "rel-containsSourceRecord",
+        "end": "end-containsSourceRecord-target"
+      },
+      {
+        "relation": "rel-contextClassificationEntry",
+        "end": "end-contextClassificationEntry-source"
+      },
+      {
+        "relation": "rel-contextClassificationEntry",
+        "end": "end-contextClassificationEntry-target"
+      },
+      {
+        "relation": "rel-contextClassificationJurisdiction",
+        "end": "end-contextClassificationJurisdiction-source"
+      },
+      {
+        "relation": "rel-contextClassificationJurisdiction",
+        "end": "end-contextClassificationJurisdiction-target"
+      },
+      {
+        "relation": "rel-contextClassificationProduct",
+        "end": "end-contextClassificationProduct-source"
+      },
+      {
+        "relation": "rel-contextClassificationProduct",
+        "end": "end-contextClassificationProduct-target"
+      },
+      {
+        "relation": "rel-disruptionAffects",
+        "end": "end-disruptionAffects-source"
+      },
+      {
+        "relation": "rel-disruptionAffects",
+        "end": "end-disruptionAffects-target"
+      },
+      {
+        "relation": "rel-entryInScheme",
+        "end": "end-entryInScheme-source"
+      },
+      {
+        "relation": "rel-entryInScheme",
+        "end": "end-entryInScheme-target"
+      },
+      {
+        "relation": "rel-evidenceRecord",
+        "end": "end-evidenceRecord-source"
+      },
+      {
+        "relation": "rel-evidenceRecord",
+        "end": "end-evidenceRecord-target"
+      },
+      {
+        "relation": "rel-generatedAssertion",
+        "end": "end-generatedAssertion-source"
+      },
+      {
+        "relation": "rel-generatedAssertion",
+        "end": "end-generatedAssertion-target"
+      },
+      {
+        "relation": "rel-hasActiveSubstance",
+        "end": "end-hasActiveSubstance-source"
+      },
+      {
+        "relation": "rel-hasActiveSubstance",
+        "end": "end-hasActiveSubstance-target"
+      },
+      {
+        "relation": "rel-hasDatasetRelease",
+        "end": "end-hasDatasetRelease-source"
+      },
+      {
+        "relation": "rel-hasDatasetRelease",
+        "end": "end-hasDatasetRelease-target"
+      },
+      {
+        "relation": "rel-hasDosageForm",
+        "end": "end-hasDosageForm-source"
+      },
+      {
+        "relation": "rel-hasDosageForm",
+        "end": "end-hasDosageForm-target"
+      },
+      {
+        "relation": "rel-hasPackageConfiguration",
+        "end": "end-hasPackageConfiguration-source"
+      },
+      {
+        "relation": "rel-hasPackageConfiguration",
+        "end": "end-hasPackageConfiguration-target"
+      },
+      {
+        "relation": "rel-listingJurisdiction",
+        "end": "end-listingJurisdiction-source"
+      },
+      {
+        "relation": "rel-listingJurisdiction",
+        "end": "end-listingJurisdiction-target"
+      },
+      {
+        "relation": "rel-locatedIn",
+        "end": "end-locatedIn-source"
+      },
+      {
+        "relation": "rel-locatedIn",
+        "end": "end-locatedIn-target"
+      },
+      {
+        "relation": "rel-maintainsDataset",
+        "end": "end-maintainsDataset-source"
+      },
+      {
+        "relation": "rel-maintainsDataset",
+        "end": "end-maintainsDataset-target"
+      },
+      {
+        "relation": "rel-matchObject",
+        "end": "end-matchObject-source"
+      },
+      {
+        "relation": "rel-matchObject",
+        "end": "end-matchObject-target"
+      },
+      {
+        "relation": "rel-matchSubject",
+        "end": "end-matchSubject-source"
+      },
+      {
+        "relation": "rel-matchSubject",
+        "end": "end-matchSubject-target"
+      },
+      {
+        "relation": "rel-observationResultAbout",
+        "end": "end-observationResultAbout-source"
+      },
+      {
+        "relation": "rel-observationResultAbout",
+        "end": "end-observationResultAbout-target"
+      },
+      {
+        "relation": "rel-operates",
+        "end": "end-operates-source"
+      },
+      {
+        "relation": "rel-operates",
+        "end": "end-operates-target"
+      },
+      {
+        "relation": "rel-presentationOf",
+        "end": "end-presentationOf-source"
+      },
+      {
+        "relation": "rel-presentationOf",
+        "end": "end-presentationOf-target"
+      },
+      {
+        "relation": "rel-producesObservationResult",
+        "end": "end-producesObservationResult-source"
+      },
+      {
+        "relation": "rel-producesObservationResult",
+        "end": "end-producesObservationResult-target"
+      },
+      {
+        "relation": "rel-registrationJurisdiction",
+        "end": "end-registrationJurisdiction-source"
+      },
+      {
+        "relation": "rel-registrationJurisdiction",
+        "end": "end-registrationJurisdiction-target"
+      },
+      {
+        "relation": "rel-riskAssessmentConcerns",
+        "end": "end-riskAssessmentConcerns-source"
+      },
+      {
+        "relation": "rel-riskAssessmentConcerns",
+        "end": "end-riskAssessmentConcerns-target"
+      },
+      {
+        "relation": "rel-riskTreatmentAddresses",
+        "end": "end-riskTreatmentAddresses-source"
+      },
+      {
+        "relation": "rel-riskTreatmentAddresses",
+        "end": "end-riskTreatmentAddresses-target"
+      },
+      {
+        "relation": "rel-shortageJurisdiction",
+        "end": "end-shortageJurisdiction-source"
+      },
+      {
+        "relation": "rel-shortageJurisdiction",
+        "end": "end-shortageJurisdiction-target"
+      },
+      {
+        "relation": "rel-shortagePresentation",
+        "end": "end-shortagePresentation-source"
+      },
+      {
+        "relation": "rel-shortagePresentation",
+        "end": "end-shortagePresentation-target"
+      },
+      {
+        "relation": "rel-shortageProduct",
+        "end": "end-shortageProduct-source"
+      },
+      {
+        "relation": "rel-shortageProduct",
+        "end": "end-shortageProduct-target"
+      },
+      {
+        "relation": "rel-usedSourceArtifact",
+        "end": "end-usedSourceArtifact-source"
+      },
+      {
+        "relation": "rel-usedSourceArtifact",
+        "end": "end-usedSourceArtifact-target"
+      },
+      {
+        "relation": "rel-withinCountry",
+        "end": "end-withinCountry-source"
+      },
+      {
+        "relation": "rel-withinCountry",
+        "end": "end-withinCountry-target"
+      },
+      {
+        "relation": "rel-withinRegion",
+        "end": "end-withinRegion-source"
+      },
+      {
+        "relation": "rel-withinRegion",
+        "end": "end-withinRegion-target"
+      }
+    ],
+    "distinct_relations": 33,
+    "meaning": "Absent native cardinalities cannot silently become an EMF default such as 1..1."
+  },
+  "subsetted_or_redefined_ends": {
+    "count": 14,
+    "rows": [
+      {
+        "relation": "rel-contextClassificationEntry",
+        "end": "end-contextClassificationEntry-source",
+        "subsetted": [
+          "end-classificationEntry-source"
+        ],
+        "redefined": []
+      },
+      {
+        "relation": "rel-contextClassificationEntry",
+        "end": "end-contextClassificationEntry-target",
+        "subsetted": [
+          "end-classificationEntry-target"
+        ],
+        "redefined": []
+      },
+      {
+        "relation": "rel-contextClassificationProduct",
+        "end": "end-contextClassificationProduct-source",
+        "subsetted": [
+          "end-classificationEntity-source"
+        ],
+        "redefined": []
+      },
+      {
+        "relation": "rel-contextClassificationProduct",
+        "end": "end-contextClassificationProduct-target",
+        "subsetted": [
+          "end-classificationEntity-target"
+        ],
+        "redefined": []
+      },
+      {
+        "relation": "rel-disruptionAffectsDependency",
+        "end": "end-disruptionAffectsDependency-source",
+        "subsetted": [
+          "end-disruptionAffects-source"
+        ],
+        "redefined": []
+      },
+      {
+        "relation": "rel-disruptionAffectsDependency",
+        "end": "end-disruptionAffectsDependency-target",
+        "subsetted": [
+          "end-disruptionAffects-target"
+        ],
+        "redefined": []
+      },
+      {
+        "relation": "rel-evidenceRecord",
+        "end": "end-evidenceRecord-source",
+        "subsetted": [
+          "end-evidenceItem-source"
+        ],
+        "redefined": []
+      },
+      {
+        "relation": "rel-evidenceRecord",
+        "end": "end-evidenceRecord-target",
+        "subsetted": [
+          "end-evidenceItem-target"
+        ],
+        "redefined": []
+      },
+      {
+        "relation": "rel-observationAboutPresentation",
+        "end": "end-observationAboutPresentation-source",
+        "subsetted": [
+          "end-observationResultAbout-source"
+        ],
+        "redefined": []
+      },
+      {
+        "relation": "rel-observationAboutPresentation",
+        "end": "end-observationAboutPresentation-target",
+        "subsetted": [
+          "end-observationResultAbout-target"
+        ],
+        "redefined": []
+      },
+      {
+        "relation": "rel-observationAboutProduct",
+        "end": "end-observationAboutProduct-source",
+        "subsetted": [
+          "end-observationResultAbout-source"
+        ],
+        "redefined": []
+      },
+      {
+        "relation": "rel-observationAboutProduct",
+        "end": "end-observationAboutProduct-target",
+        "subsetted": [
+          "end-observationResultAbout-target"
+        ],
+        "redefined": []
+      },
+      {
+        "relation": "rel-riskAssessmentConcernsDependency",
+        "end": "end-riskAssessmentConcernsDependency-source",
+        "subsetted": [
+          "end-riskAssessmentConcerns-source"
+        ],
+        "redefined": []
+      },
+      {
+        "relation": "rel-riskAssessmentConcernsDependency",
+        "end": "end-riskAssessmentConcernsDependency-target",
+        "subsetted": [
+          "end-riskAssessmentConcerns-target"
+        ],
+        "redefined": []
+      }
+    ],
+    "meaning": "The strict toy adapter does not yet preserve property specialization semantics."
+  },
+  "modern_nature_restrictions": {
+    "count": 144,
+    "examples": [
+      {
+        "id": "Organization",
+        "restrictedTo": [
+          "functional-complex"
+        ]
+      },
+      {
+        "id": "SupplyCapacity",
+        "restrictedTo": [
+          "intrinsic-mode"
+        ]
+      }
+    ],
+    "meaning": "Legacy model has no exact equivalent of restrictedTo; even a class stereotype conversion loses an explicit nature axiom."
+  },
+  "notes": {
+    "count": 25,
+    "includes_capacity_xor_note": true,
+    "meaning": "The explanatory native XOR note must not be mistaken for an executable legacy constraint."
+  },
+  "full_adapter_result": "REFUSED: Unsupported element kinds: [('decision-RR-01', 'Note'), ('decision-RR-02', 'Note'), ('decision-RR-03', 'Note'), ('decision-RR-04', 'Note')]",
+  "safe_next_action": "Design a loss-aware policy per blocker; then verify full model structural roundtrip and detector sensitivity on all 20 patterns before official findings."
+}

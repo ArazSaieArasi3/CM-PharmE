@@ -1,0 +1,191 @@
+@prefix b: <https://w3id.org/cm-pharme/experimental/reporting-context/> .
+@prefix c: <https://w3id.org/cm-pharme/2.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix r: <https://w3id.org/cm-pharme/experimental/refinement/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+owl:Class rdfs:subClassOf rdfs:Class .
+
+owl:DatatypeProperty rdfs:subClassOf rdf:Property .
+
+b:ReportingContextDescriptionShape a sh:NodeShape ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:path b:marketingStatus ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:path b:contextCountry ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:path b:scenario ],
+        [ sh:class c:Organization ;
+            sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:path b:contextActor ],
+        [ sh:datatype xsd:dateTime ;
+            sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:path b:evaluatedAt ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:path b:marketingCountry ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:path b:contextVersion ],
+        [ sh:class c:MedicinalProductPresentation ;
+            sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:path b:contextPresentation ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:path b:contextRole ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:path b:submissionKind ],
+        [ sh:datatype xsd:boolean ;
+            sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:path b:portfolioRelationDeclared ],
+        [ sh:class c:RegulatoryJurisdiction ;
+            sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:path b:contextJurisdiction ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:path b:contextRoute ],
+        [ sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:path b:contextAction ],
+        [ sh:class c:MedicinalProduct ;
+            sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:path b:contextProduct ] ;
+    sh:sparql b:presentation-product-agreement ;
+    sh:targetClass b:ReportingContextDescription .
+
+b:ReportingScopeSpecificationShape a sh:NodeShape ;
+    sh:property [ sh:class c:RegulatoryJurisdiction ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path b:scopeJurisdiction ],
+        [ sh:in ( "all-declared-route-products" "enumerated" ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path b:scopeMode ],
+        [ sh:in ( "routine" "preparedness" "crisis" ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path b:scenario ],
+        [ sh:datatype xsd:string ;
+            sh:minCount 1 ;
+            sh:path b:allowedRole ],
+        [ sh:datatype xsd:string ;
+            sh:minCount 1 ;
+            sh:path b:allowedRoute ],
+        [ sh:class c:SourceRecord ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path b:specificationSource ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:path b:reportingFrequency ],
+        [ sh:in ( "action-announcement" "platform-launch" "guidance" "unknown" ) ;
+            sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:path b:actionEvidenceKind ],
+        [ sh:datatype xsd:dateTime ;
+            sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:path b:effectiveTo ],
+        [ sh:in ( "announced" "not-announced" "unknown" ) ;
+            sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:path b:actionState ],
+        [ sh:datatype xsd:dateTime ;
+            sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:path b:effectiveFrom ],
+        [ sh:class c:MedicinalProduct ;
+            sh:minCount 0 ;
+            sh:path b:scopedProduct ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path b:specificationVersion ],
+        [ sh:datatype xsd:boolean ;
+            sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:path b:scopeComplete ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path b:submissionKind ],
+        [ sh:in ( "require-marketed-status" "not-a-condition" "unknown" ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path b:marketingPolicy ],
+        [ sh:class c:SourceRecord ;
+            sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:path b:actionEvidence ],
+        [ sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:path b:actionReference ] ;
+    sh:targetClass b:ReportingScopeSpecification .
+
+b:StructuredClaimShape a sh:NodeShape ;
+    sh:property [ sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:nodeKind sh:Literal ;
+            sh:path b:objectValue ],
+        [ sh:class c:SourceRecord ;
+            sh:minCount 1 ;
+            sh:path [ sh:inversePath r:carrierClaim ] ],
+        [ sh:in ( "positive" "negative" ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path b:polarity ],
+        [ sh:datatype xsd:anyURI ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path b:predicateIRI ],
+        [ sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path b:objectResource ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path b:evidencePointer ],
+        [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path b:claimSubject ],
+        [ sh:in ( "source-extracted" "mapping-interpretation" "synthetic" ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path b:claimOrigin ] ;
+    sh:sparql b:claim-not-carrier,
+        b:one-object-kind ;
+    sh:targetClass b:StructuredClaim .
+
+b:claim-not-carrier sh:message "claim-not-carrier" ;
+    sh:select "PREFIX b: <https://w3id.org/cm-pharme/experimental/reporting-context/> PREFIX r: <https://w3id.org/cm-pharme/experimental/refinement/> PREFIX owl: <http://www.w3.org/2002/07/owl#> SELECT $this WHERE { ?record r:carrierClaim $this . $this (owl:sameAs|^owl:sameAs)* ?record . }" .
+
+b:one-object-kind sh:message "one-object-kind" ;
+    sh:select "PREFIX b: <https://w3id.org/cm-pharme/experimental/reporting-context/> PREFIX r: <https://w3id.org/cm-pharme/experimental/refinement/> PREFIX owl: <http://www.w3.org/2002/07/owl#> SELECT $this WHERE { { FILTER NOT EXISTS { $this b:objectResource ?r } FILTER NOT EXISTS { $this b:objectValue ?v } } UNION { $this b:objectResource ?r ; b:objectValue ?v } }" .
+
+b:presentation-product-agreement sh:message "presentation-product-agreement" ;
+    sh:select "PREFIX b: <https://w3id.org/cm-pharme/experimental/reporting-context/> PREFIX r: <https://w3id.org/cm-pharme/experimental/refinement/> PREFIX owl: <http://www.w3.org/2002/07/owl#> SELECT $this WHERE { $this b:contextPresentation ?p ; b:contextProduct ?product . ?p <https://w3id.org/cm-pharme/2.1/presentationOf> ?other . FILTER(?other != ?product) }" .

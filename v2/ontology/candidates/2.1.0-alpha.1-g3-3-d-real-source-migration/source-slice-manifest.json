@@ -1,0 +1,161 @@
+{
+  "source": "Zenodo record 19160825 / DOI 10.5281/zenodo.19160825",
+  "record_url": "https://zenodo.org/records/19160825",
+  "file_url": "https://zenodo.org/records/19160825/files/pharmacy_data_20260322_131416.csv?download=1",
+  "published_filename": "pharmacy_data_20260322_131416.csv",
+  "published_size_bytes": 1704038344,
+  "published_md5_from_Zenodo_metadata_unverified_locally": "b43fb62d3d44525de74f930f472d2f03",
+  "source_license_id_from_Zenodo_API": "cc-by-4.0",
+  "retrieved_local_date": "2026-10-09 Asia/Tehran",
+  "source_contract_discrepancy": "W6 manifest expects nhif_outpatient_pharmacy_combined.csv, but record 19160825 publishes pharmacy_data_20260322_131416.csv; 19 required columns match this slice",
+  "sampling_limit": "Five deterministic contiguous byte-range prefixes, deliberately not random or representative of the 7,266,074 source rows; whole 1.7 GB file was not downloaded or hashed locally.",
+  "columns": [
+    "region_num",
+    "region_name",
+    "atc_code",
+    "atc_name",
+    "nhif_code",
+    "market_name",
+    "packaging",
+    "concentration",
+    "num_in_pack",
+    "icd_code",
+    "icd_name",
+    "patients_num",
+    "pack_num",
+    "costs",
+    "period",
+    "part",
+    "currency",
+    "costs_bgn",
+    "costs_eur"
+  ],
+  "strata": [
+    {
+      "stratum": 0,
+      "raw_range_filename": "cmpe-p1-prefix.bin",
+      "raw_headers_filename": "cmpe-range-headers.txt",
+      "range_start": 0,
+      "range_end": 262143,
+      "range_bytes": 262144,
+      "range_sha256": "a311cfde61616ccdbd94cd0165f6abc034bc26185108dbe9bc5c37e026cd20f0",
+      "selection_rule": "first 256 complete data records after header",
+      "selected_file": "nhif-p1-record19160825-stratum0-256.csv",
+      "selected_file_bytes": 63925,
+      "selected_file_sha256": "4b8757d165d86a60d3af28c257b09dd709dd5642e9902b2894f7919c55a6c1e5",
+      "first_selected_source_byte_offset": 186,
+      "last_selected_source_byte_offset": 63655,
+      "selected_rows": 256,
+      "selected_region_codes": [
+        "01"
+      ],
+      "selected_periods": [
+        "2021-04-01"
+      ],
+      "selected_parts": [
+        "01"
+      ]
+    },
+    {
+      "stratum": 1,
+      "raw_range_filename": "cmpe-p1-range-1.bin",
+      "raw_headers_filename": "cmpe-range-1.headers",
+      "range_start": 426009586,
+      "range_end": 426140657,
+      "range_bytes": 131072,
+      "range_sha256": "8c4439415ea20bad39c535f0277e322f3a317f138d416fa896a33d44fdfd28ca",
+      "selection_rule": "discard partial first record; take first 128 complete data records",
+      "selected_file": "nhif-p1-record19160825-stratum1-128.csv",
+      "selected_file_bytes": 28237,
+      "selected_file_sha256": "90e2578832d5432802b5724535c4e60d70b0a0a433caab55c58e05e091af6510",
+      "first_selected_source_byte_offset": 426009795,
+      "last_selected_source_byte_offset": 426037577,
+      "selected_rows": 128,
+      "selected_region_codes": [
+        "09"
+      ],
+      "selected_periods": [
+        "2024-05-01"
+      ],
+      "selected_parts": [
+        "01"
+      ]
+    },
+    {
+      "stratum": 2,
+      "raw_range_filename": "cmpe-p1-range-2.bin",
+      "raw_headers_filename": "cmpe-range-2.headers",
+      "range_start": 852019172,
+      "range_end": 852150243,
+      "range_bytes": 131072,
+      "range_sha256": "2c57fdba78cef1e3ca713900d995423bc791deaf5717ee240f413e6ea6421892",
+      "selection_rule": "discard partial first record; take first 128 complete data records",
+      "selected_file": "nhif-p1-record19160825-stratum2-128.csv",
+      "selected_file_bytes": 33443,
+      "selected_file_sha256": "58f9d1990f40caf862f7efb6f4d26d11c338cc52af78bfb24235687be5162a41",
+      "first_selected_source_byte_offset": 852019398,
+      "last_selected_source_byte_offset": 852052462,
+      "selected_rows": 128,
+      "selected_region_codes": [
+        "13"
+      ],
+      "selected_periods": [
+        "2021-07-01"
+      ],
+      "selected_parts": [
+        "02"
+      ]
+    },
+    {
+      "stratum": 3,
+      "raw_range_filename": "cmpe-p1-range-3.bin",
+      "raw_headers_filename": "cmpe-range-3.headers",
+      "range_start": 1278028758,
+      "range_end": 1278159829,
+      "range_bytes": 131072,
+      "range_sha256": "82cc52050c722aa52f9358f494d1931d6089e400edf4187f22d65657d677f918",
+      "selection_rule": "discard partial first record; take first 128 complete data records",
+      "selected_file": "nhif-p1-record19160825-stratum3-128.csv",
+      "selected_file_bytes": 30488,
+      "selected_file_sha256": "b37645a90b6289cf2129cc4cc4077021ddf2e745b018aaaa7950776baddb5140",
+      "first_selected_source_byte_offset": 1278028793,
+      "last_selected_source_byte_offset": 1278058873,
+      "selected_rows": 128,
+      "selected_region_codes": [
+        "22"
+      ],
+      "selected_periods": [
+        "2020-12-01"
+      ],
+      "selected_parts": [
+        "03"
+      ]
+    },
+    {
+      "stratum": 4,
+      "raw_range_filename": "cmpe-p1-range-4.bin",
+      "raw_headers_filename": "cmpe-range-4.headers",
+      "range_start": 1650000000,
+      "range_end": 1650131071,
+      "range_bytes": 131072,
+      "range_sha256": "322353021f3a09089d98562c9366a634f90c28a16d04c4222a3d30bf7912048c",
+      "selection_rule": "discard partial first record; take first 128 complete data records",
+      "selected_file": "nhif-p1-record19160825-stratum4-128.csv",
+      "selected_file_bytes": 29324,
+      "selected_file_sha256": "052467f8caa3d1e612c40d8d1de27e92f8b508b58bb3413bf9f795c58c049b19",
+      "first_selected_source_byte_offset": 1650000021,
+      "last_selected_source_byte_offset": 1650028988,
+      "selected_rows": 128,
+      "selected_region_codes": [
+        "21"
+      ],
+      "selected_periods": [
+        "2025-10-01"
+      ],
+      "selected_parts": [
+        "03"
+      ]
+    }
+  ],
+  "selected_rows_total": 768
+}

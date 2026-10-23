@@ -1,0 +1,158 @@
+[
+  {
+    "name": "capabilityBearer",
+    "status": "PARTIAL_NATIVE",
+    "native_effect": "Bearer uniqueness is encoded as Mode→Organization 1; bearer-side Characterization would make every Organization capable and is deferred.",
+    "approved_decision": "Keep EnterpriseCapability as a Mode dependent on exactly one Organization. Preserve the current Mode-to-bearer property and add a bearer-to-Mode Characterization only after confirming inverse semantics; do not require every Organization to have a capability.",
+    "negative_acceptance": "One intrinsic Mode cannot inhere in two distinct Organizations.",
+    "source_anchors": [
+      "v2/research/w4/business-architecture-view.md"
+    ],
+    "author_approved": true,
+    "formal_release_gate": "OPEN"
+  },
+  {
+    "name": "capacityBearer",
+    "status": "BLOCKED_FORMAL_DESIGN",
+    "native_effect": "Generic target remains untyped. Two routes and exactly-one-of-two cannot be represented by a naive pair of optional Characterizations; introduce scoped bearer types or explicit constraints after formal design review.",
+    "approved_decision": "Use typed Organization and Facility bearer routes beneath a common query surface; each SupplyCapacity Mode has exactly one of these bearers. Keep SupplyCapacityObservationResult separate.",
+    "negative_acceptance": "Do not infer capacity from an aggregate observation or assign the same intrinsic Mode to two different bearer individuals.",
+    "source_anchors": [
+      "https://github.com/ArazSaieArasi3/CM-PharmE/blob/d95b5640c14d2c43c1e88a9a76ef78067f058916/v2/research/w4/events-situations-observations.md"
+    ],
+    "author_approved": true,
+    "formal_release_gate": "OPEN"
+  },
+  {
+    "name": "contextClassificationJurisdiction",
+    "status": "RETAIN_TYPED",
+    "native_effect": "Legal-scope reference retained; no Mediation to rigid Jurisdiction.",
+    "approved_decision": "Keep RegulatoryJurisdiction as a formal legal-scope reference of the contextual assignment. Do not type direct Relator-to-rigid-Kind Mediation; introduce a role only if dependence is evidenced.",
+    "negative_acceptance": "Classification in J1 does not transfer to J2.",
+    "source_anchors": [
+      "v2/research/w4/integrated-ontouml-model.md"
+    ],
+    "author_approved": true,
+    "formal_release_gate": "OPEN"
+  },
+  {
+    "name": "entryInScheme",
+    "status": "RETAIN_TYPED",
+    "native_effect": "Typed scheme reference retained without global exact-one or code-string identity.",
+    "approved_decision": "Retain a typed scheme-and-version reference. Do not merge equal lexical codes across schemes or impose an exactly-one-scheme axiom until the entry identity criterion is agreed.",
+    "negative_acceptance": "Equal code strings across schemes do not identify one entry.",
+    "source_anchors": [
+      "v2/research/w4/integrated-ontouml-model.md"
+    ],
+    "author_approved": true,
+    "formal_release_gate": "OPEN"
+  },
+  {
+    "name": "hasActiveSubstance",
+    "status": "PARTIAL_NATIVE",
+    "native_effect": "Product-specific typed relation added; native/OWL subproperty link and source admission follow in G3-2e-F. Presentation-specific route remains source-gated.",
+    "approved_decision": "Keep the broad parent property. Add a Product-specific child for evidenced M016 mappings and a Presentation-specific child only when a source explicitly supports it.",
+    "negative_acceptance": "Do not infer that a presentation using the parent relation is a MedicinalProduct; these Kinds are disjoint.",
+    "source_anchors": [
+      "https://github.com/ArazSaieArasi3/CM-PharmE/blob/d95b5640c14d2c43c1e88a9a76ef78067f058916/v2/research/w4/integrated-ontouml-model.md"
+    ],
+    "author_approved": true,
+    "formal_release_gate": "OPEN"
+  },
+  {
+    "name": "hasDosageForm",
+    "status": "RETAIN_TYPED",
+    "native_effect": "Specification reference retained without global min/max.",
+    "approved_decision": "Keep a formal reference to DosageFormSpecification. Defer global minimum and maximum cardinalities until Presentation identity and source completeness are evaluated.",
+    "negative_acceptance": "A generic Product dosage label does not identify this Presentation's form.",
+    "source_anchors": [
+      "v2/research/w4/integrated-ontouml-model.md"
+    ],
+    "author_approved": true,
+    "formal_release_gate": "OPEN"
+  },
+  {
+    "name": "hasMatchConfidence",
+    "status": "PARTIAL_NATIVE",
+    "native_effect": "Each Quality associated through this relation has one Assertion; zero or more Qualities per Assertion preserves unscored cases. Required Characterization and completeness are unresolved.",
+    "approved_decision": "Treat MatchConfidence as a Quality dependent on one EntityMatchAssertion, but hold class-wide Characterization and the minimum-one constraint until unscored assertions are resolved. Record this as an open conformance blocker.",
+    "negative_acceptance": "One Quality individual cannot belong to two distinct Assertions.",
+    "source_anchors": [
+      "v2/research/w4/integrated-ontouml-model.md"
+    ],
+    "author_approved": true,
+    "formal_release_gate": "OPEN"
+  },
+  {
+    "name": "hasPackageConfiguration",
+    "status": "RETAIN_TYPED",
+    "native_effect": "Configuration reference retained without mereology or universal existence.",
+    "approved_decision": "Keep a reference to PackageConfiguration as a specification. Do not use componentOf or a universal existence constraint until identity and completeness are established.",
+    "negative_acceptance": "A pack-size value is insufficient to identify a configuration.",
+    "source_anchors": [
+      "v2/research/w4/integrated-ontouml-model.md"
+    ],
+    "author_approved": true,
+    "formal_release_gate": "OPEN"
+  },
+  {
+    "name": "presentationOf",
+    "status": "RETAIN_TYPED",
+    "native_effect": "Formal association retained without universal OWL exact-one axiom.",
+    "approved_decision": "Keep presentationOf as a formal Presentation-to-Product association. Examine the one-Product identity condition in the candidate, but defer a universal OWL cardinality until author review.",
+    "negative_acceptance": "A Product source row alone does not instantiate a Presentation.",
+    "source_anchors": [
+      "v2/research/w4/integrated-ontouml-model.md"
+    ],
+    "author_approved": true,
+    "formal_release_gate": "OPEN"
+  },
+  {
+    "name": "shortagePresentation",
+    "status": "RETAIN_TYPED",
+    "native_effect": "Presentation scoped relation retained, evidence-gated at instance admission.",
+    "approved_decision": "Create shortagePresentation only when a source identifies the exact Presentation, period and jurisdiction. Do not derive it from a Product-only report.",
+    "negative_acceptance": "Product-only report does not identify a package/presentation.",
+    "source_anchors": [
+      "v2/research/w4/events-situations-observations.md"
+    ],
+    "author_approved": true,
+    "formal_release_gate": "OPEN"
+  },
+  {
+    "name": "shortageProduct",
+    "status": "RETAIN_TYPED",
+    "native_effect": "Product scoped relation retained, no propagation to all presentations.",
+    "approved_decision": "Record shortageProduct only with an identified Product and report scope; do not infer shortages for all of its Presentations.",
+    "negative_acceptance": "Presentation shortage does not establish shortage of all presentations.",
+    "source_anchors": [
+      "v2/research/w4/events-situations-observations.md"
+    ],
+    "author_approved": true,
+    "formal_release_gate": "OPEN"
+  },
+  {
+    "name": "withinCountry",
+    "status": "RETAIN_TYPED",
+    "native_effect": "Versioned containment reference retained; self-containment and completeness constraints deferred to SHACL.",
+    "approved_decision": "Keep withinCountry as a versioned formal spatial or administrative reference; prohibit self-containment and limit an exactly-one-Country constraint to proven data scope.",
+    "negative_acceptance": "Country cannot be within itself; Jurisdiction is distinct.",
+    "source_anchors": [
+      "v2/research/w4/geography-jurisdiction.md"
+    ],
+    "author_approved": true,
+    "formal_release_gate": "OPEN"
+  },
+  {
+    "name": "withinRegion",
+    "status": "RETAIN_TYPED",
+    "native_effect": "Versioned administrative/spatial reference retained; postal inference and self-containment deferred to SHACL.",
+    "approved_decision": "Keep a versioned formal administrative or spatial reference; reject self-containment and postal-label inference, and scope any exactly-one-Region rule to complete sources.",
+    "negative_acceptance": "Region cannot be within itself or inferred from postal label.",
+    "source_anchors": [
+      "v2/research/w4/geography-jurisdiction.md"
+    ],
+    "author_approved": true,
+    "formal_release_gate": "OPEN"
+  }
+]

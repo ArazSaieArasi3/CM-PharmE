@@ -1,0 +1,14 @@
+@prefix c: <https://w3id.org/cm-pharme/2.1/> .
+@prefix e: <https://w3id.org/cm-pharme/experimental/documentary-evidence/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+e:SourceScopedRiskScenarioShape a sh:NodeShape ;
+    sh:class c:Assertion ;
+    sh:property [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:node <https://w3id.org/cm-pharme/experimental/source-group/source-group-scopeShape> ;
+            sh:path e:scenarioScopeDescription ] ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select "SELECT ?this WHERE { ?this <https://w3id.org/cm-pharme/experimental/documentary-evidence/riskProfile> \"source-scoped-risk-scenario\" }" ] ;
+    sh:targetSubjectsOf e:scenarioScopeDescription .

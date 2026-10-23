@@ -1,0 +1,167 @@
+@prefix b: <https://w3id.org/cm-pharme/experimental/reporting-context/> .
+@prefix c: <https://w3id.org/cm-pharme/2.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+b:actionEvidence a owl:ObjectProperty ;
+    rdfs:domain b:ReportingScopeSpecification ;
+    rdfs:range c:SourceRecord .
+
+b:actionEvidenceKind a owl:DatatypeProperty ;
+    rdfs:domain b:ReportingScopeSpecification ;
+    rdfs:range xsd:string .
+
+b:actionReference a owl:ObjectProperty ;
+    rdfs:domain b:ReportingScopeSpecification .
+
+b:actionState a owl:DatatypeProperty ;
+    rdfs:domain b:ReportingScopeSpecification ;
+    rdfs:range xsd:string .
+
+b:allowedRole a owl:DatatypeProperty ;
+    rdfs:domain b:ReportingScopeSpecification ;
+    rdfs:range xsd:string .
+
+b:allowedRoute a owl:DatatypeProperty ;
+    rdfs:domain b:ReportingScopeSpecification ;
+    rdfs:range xsd:string .
+
+b:claimOrigin a owl:DatatypeProperty ;
+    rdfs:domain b:StructuredClaim ;
+    rdfs:range xsd:string .
+
+b:claimSubject a owl:ObjectProperty ;
+    rdfs:domain b:StructuredClaim .
+
+b:contextAction a owl:ObjectProperty ;
+    rdfs:domain b:ReportingContextDescription .
+
+b:contextActor a owl:ObjectProperty ;
+    rdfs:domain b:ReportingContextDescription ;
+    rdfs:range c:Organization .
+
+b:contextCountry a owl:DatatypeProperty ;
+    rdfs:domain b:ReportingContextDescription ;
+    rdfs:range xsd:string .
+
+b:contextJurisdiction a owl:ObjectProperty ;
+    rdfs:domain b:ReportingContextDescription ;
+    rdfs:range c:RegulatoryJurisdiction .
+
+b:contextPresentation a owl:ObjectProperty ;
+    rdfs:domain b:ReportingContextDescription ;
+    rdfs:range c:MedicinalProductPresentation .
+
+b:contextProduct a owl:ObjectProperty ;
+    rdfs:domain b:ReportingContextDescription ;
+    rdfs:range c:MedicinalProduct .
+
+b:contextRole a owl:DatatypeProperty ;
+    rdfs:domain b:ReportingContextDescription ;
+    rdfs:range xsd:string .
+
+b:contextRoute a owl:DatatypeProperty ;
+    rdfs:domain b:ReportingContextDescription ;
+    rdfs:range xsd:string .
+
+b:contextVersion a owl:DatatypeProperty ;
+    rdfs:domain b:ReportingContextDescription ;
+    rdfs:range xsd:string .
+
+b:effectiveFrom a owl:DatatypeProperty ;
+    rdfs:domain b:ReportingScopeSpecification ;
+    rdfs:range xsd:dateTime .
+
+b:effectiveTo a owl:DatatypeProperty ;
+    rdfs:domain b:ReportingScopeSpecification ;
+    rdfs:range xsd:dateTime .
+
+b:evaluatedAt a owl:DatatypeProperty ;
+    rdfs:domain b:ReportingContextDescription ;
+    rdfs:range xsd:dateTime .
+
+b:evidencePointer a owl:DatatypeProperty ;
+    rdfs:range xsd:string .
+
+b:marketingCountry a owl:DatatypeProperty ;
+    rdfs:domain b:ReportingContextDescription ;
+    rdfs:range xsd:string .
+
+b:marketingPolicy a owl:DatatypeProperty ;
+    rdfs:domain b:ReportingScopeSpecification ;
+    rdfs:range xsd:string .
+
+b:marketingStatus a owl:DatatypeProperty ;
+    rdfs:domain b:ReportingContextDescription ;
+    rdfs:range xsd:string .
+
+b:objectResource a owl:ObjectProperty ;
+    rdfs:domain b:StructuredClaim .
+
+b:objectValue a owl:DatatypeProperty ;
+    rdfs:domain b:StructuredClaim .
+
+b:polarity a owl:DatatypeProperty ;
+    rdfs:domain b:StructuredClaim ;
+    rdfs:range xsd:string .
+
+b:portfolioRelationDeclared a owl:DatatypeProperty ;
+    rdfs:domain b:ReportingContextDescription ;
+    rdfs:range xsd:boolean .
+
+b:predicateIRI a owl:DatatypeProperty ;
+    rdfs:domain b:StructuredClaim ;
+    rdfs:range xsd:anyURI .
+
+b:reportingFrequency a owl:DatatypeProperty ;
+    rdfs:domain b:ReportingScopeSpecification ;
+    rdfs:range xsd:string .
+
+b:scenario a owl:DatatypeProperty ;
+    rdfs:range xsd:string .
+
+b:scopeComplete a owl:DatatypeProperty ;
+    rdfs:domain b:ReportingScopeSpecification ;
+    rdfs:range xsd:boolean .
+
+b:scopeJurisdiction a owl:ObjectProperty ;
+    rdfs:domain b:ReportingScopeSpecification ;
+    rdfs:range c:RegulatoryJurisdiction .
+
+b:scopeMode a owl:DatatypeProperty ;
+    rdfs:domain b:ReportingScopeSpecification ;
+    rdfs:range xsd:string .
+
+b:scopedProduct a owl:ObjectProperty ;
+    rdfs:domain b:ReportingScopeSpecification ;
+    rdfs:range c:MedicinalProduct .
+
+b:sourceSHA256 a owl:DatatypeProperty ;
+    rdfs:range xsd:string .
+
+b:sourceURL a owl:DatatypeProperty ;
+    rdfs:range xsd:anyURI .
+
+b:specificationSource a owl:ObjectProperty ;
+    rdfs:domain b:ReportingScopeSpecification ;
+    rdfs:range c:SourceRecord .
+
+b:specificationVersion a owl:DatatypeProperty ;
+    rdfs:domain b:ReportingScopeSpecification ;
+    rdfs:range xsd:string .
+
+b:submissionKind a owl:DatatypeProperty ;
+    rdfs:range xsd:string .
+
+b:StructuredClaim a owl:Class ;
+    rdfs:subClassOf c:Assertion ;
+    owl:disjointWith c:SourceRecord .
+
+b:ReportingContextDescription a owl:Class ;
+    rdfs:subClassOf c:Assertion ;
+    owl:disjointWith c:SourceRecord .
+
+b:ReportingScopeSpecification a owl:Class ;
+    rdfs:subClassOf c:RegulatoryRequirement ;
+    owl:disjointWith c:SourceRecord .

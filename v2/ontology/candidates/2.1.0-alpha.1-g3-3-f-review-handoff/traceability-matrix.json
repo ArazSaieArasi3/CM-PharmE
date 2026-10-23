@@ -1,0 +1,1897 @@
+{
+  "summary": {
+    "scope": "Traceability handoff for the G3 candidate. Families overlap: do not add 29+14+10+19 into a count of distinct scientific decisions.",
+    "inputs_sha256": {
+      "g3-3-b2-focused-adjudication/ontouml-b2-review-overlay.json": "752abd468c991381f3d80042d24b3597b58d735c5c698a0fcf25ac9d06355d50",
+      "g3-3-c-integrated-validation/active.ttl": "96630c946b849194cd6b6099bc7a307bc1c26c27c35883642849bc8a942b355c",
+      "g3-3-c-integrated-validation/constraints.ttl": "f5cfd077e96b7c659b22502f81ac50d1a4cd2f275b7a4dd619d34a68d7b307a1",
+      "g3-3-d-real-source-migration/real-source-abox.nt.gz.b64": "ce353b78764c1e04f3e84577dadcc2dd21cf47b0619e15791ce144164cc369e1",
+      "g3-3-e-connectivity-evidence/connectivity-evidence.json": "de3bf620810cf9817e6da09e3dc69668c00b4849473df2027454d07ab07400f5",
+      "g3-3-b3-pattern-closure/structural-results.json": "bbdf96e67660e2533ead1cf333bdd579595c825e7dd74c07afadd99233ad575f",
+      "g3-3-b3-pattern-closure/reprel-evidence-ranked-decisions.json": "eee3e7adc54766ad893f856d9abf3ad45bb7cf82c45829e6911dd93471d0293d",
+      "g3-3-b2-focused-adjudication/reprel-19-decision-docket.json": "1ffa3d12d82f6d6e5775ccf4e59103bb6c07c819af7360d4f1cbd057f581368b",
+      "g3-3-c-integrated-validation/validation-results.json": "367c94a4d656ce667471f429490d711d5b1608484cfcafb2b981d3b140ad9e21",
+      "g3-3-d-real-source-migration/migration-results.json": "8bc863fe1835153d639fe12e25575f86b1548749a34ff1621742b3306bc0dee5",
+      "g3-3-b-pattern-adjudication/catalogue-triage.json": "35ca8410f44084e53a49dd6b104f5e2b1e28c705c61e54f2c71bbb57971f65cf"
+    },
+    "author_register_sha256": "7062d34eafb76e73953d426dc62e747491bcb2ed8a1f1c2f7a8ea9d4b3419275",
+    "suite": {
+      "full_candidate_shacl_expected": [
+        11,
+        11
+      ],
+      "hermit_expected": [
+        8,
+        8
+      ],
+      "real_source_rows": 768,
+      "real_source_full_graph_conforms": true,
+      "real_source_injected_negative_passes": 5,
+      "official_20_pattern_detector_executed": false
+    },
+    "counts": {
+      "bounded_author_approved_relation_recommendations": 13,
+      "relation_pending": 29,
+      "isolates_pending": 14,
+      "ImpAbs_endpoint_questions": 10,
+      "RepRel_tuple_policies": 19,
+      "official_catalogue_entries_prefiltered_only": 20,
+      "crosswalk_active_elements": 144,
+      "provisional_primary_domain_assignments": 60,
+      "intentional_deferred_gate_d_concepts": 3
+    },
+    "remaining_gates": [
+      {
+        "id": "SCIENTIFIC",
+        "owner": "scientific author(s)",
+        "accept": "Decide each pending relation, isolate, ImpAbs end and RepRel tuple policy in context; preserve negative acceptance and run focused regressions.",
+        "reject": "Do not convert target-only observations or graph aesthetics into new semantic relations."
+      },
+      {
+        "id": "SUPPLY_CAPACITY",
+        "owner": "ontology engineer and scientific author(s)",
+        "accept": "Implement two typed Organization/Facility bearer routes, exactly one bearer per SupplyCapacity Mode; test positives and negatives in native, OWL and SHACL.",
+        "reject": "A capacity measurement alone cannot instantiate Mode or require every bearer to have capacity."
+      },
+      {
+        "id": "OFFICIAL_ANTIPATTERN",
+        "owner": "ontology verification",
+        "accept": "Run complete official 20-pattern detector on the authoritative native model; triage each finding with witness and author disposition.",
+        "reject": "Prefilters, schema parsing and legacy verifier passes are not a complete certificate."
+      },
+      {
+        "id": "EMPIRICAL_AND_CONTRACT",
+        "owner": "source curator and ontology engineer",
+        "accept": "Resolve issue #307, verify published P1 file/header/checksum contract and extend real-source/external validation with declared scope.",
+        "reject": "Do not claim a full-source download or generalizability from five nonrandom slices."
+      },
+      {
+        "id": "DOMAIN_CROSSWALK",
+        "owner": "scientific author(s)",
+        "accept": "Review 60 editorial primary-domain assignments and confirm the S-04/S-05 deferrals; align wiki/visuals after acceptance.",
+        "reject": "Do not present W4's 87-element domain counts as counts of the 144-element candidate."
+      }
+    ],
+    "release_state": "REVIEW_CANDIDATE_ONLY",
+    "human_review_ready": "Decision packet ready for review; ontology acceptance and G3 closure pending"
+  },
+  "pending_relation_decisions": [
+    {
+      "decision_id": "rel-assertionAboutProduct",
+      "subject": "assertionAboutProduct",
+      "scientific_question": "آیا aboutness ادعا به Product فقط با ارجاع صریح ثبت شود یا از Presentation نیز انتقال یابد؟",
+      "recommended_bounded_action": "Retain current broad or untyped relation; gather source-specific witnesses before any global axiom",
+      "negative_acceptance": "A claim about a Presentation alone cannot be promoted to Product scope.",
+      "native": {
+        "id": "rel-assertionAboutProduct",
+        "stereotype": null,
+        "typed_ends": [
+          "Assertion",
+          "MedicinalProduct"
+        ]
+      },
+      "formal": {
+        "owl_object_property_declared": true,
+        "direct_shacl_path_shapes": [
+          "https://w3id.org/cm-pharme/2.1/assertionAboutProductShape"
+        ],
+        "direct_P1_abox_assertions": 0,
+        "interpretation": "A path declaration/fixture pass is not evidence for a relation's scientific truthmaker or uniqueness policy."
+      },
+      "source_anchors": [
+        "v2/research/w4/integrated-ontouml-model.md"
+      ],
+      "owner": "scientific author(s)",
+      "gate": "P3 author disposition then targeted native/OWL/SHACL positive and negative regression",
+      "status": "PENDING_AUTHOR"
+    },
+    {
+      "decision_id": "rel-authorizationJurisdiction",
+      "subject": "authorizationJurisdiction",
+      "scientific_question": "چه شاهدی صلاحیت قانونی این Authorization در Jurisdiction را ثابت می‌کند، نه محل فیزیکی مرجع را؟",
+      "recommended_bounded_action": "Retain contextual reference; collect legal-scope evidence; no Relator→rigid Mediation",
+      "negative_acceptance": "A source-country field alone, or an authority office's physical address, cannot establish the authorization's legal jurisdiction.",
+      "native": {
+        "id": "rel-authorizationJurisdiction",
+        "stereotype": null,
+        "typed_ends": [
+          "RegulatoryAuthorization",
+          "RegulatoryJurisdiction"
+        ]
+      },
+      "formal": {
+        "owl_object_property_declared": true,
+        "direct_shacl_path_shapes": [],
+        "direct_P1_abox_assertions": 0,
+        "interpretation": "A path declaration/fixture pass is not evidence for a relation's scientific truthmaker or uniqueness policy."
+      },
+      "source_anchors": [
+        "https://github.com/ArazSaieArasi3/CM-PharmE/blob/fb281f2d605090da2779bb2021be7cb00de4de73/v2/research/w4/geography-jurisdiction.md",
+        "https://github.com/ArazSaieArasi3/CM-PharmE/blob/fb281f2d605090da2779bb2021be7cb00de4de73/v2/research/w4/relator-material-patterns.md"
+      ],
+      "owner": "scientific author(s)",
+      "gate": "P3 author disposition then targeted native/OWL/SHACL positive and negative regression",
+      "status": "PENDING_AUTHOR"
+    },
+    {
+      "decision_id": "rel-baViewRepresents",
+      "subject": "baViewRepresents",
+      "scientific_question": "دامنهٔ موضوعات BA View چه خانواده‌هایی را در بر می‌گیرد و آیا پیوندهای نوع‌دار لازم‌اند؟",
+      "recommended_bounded_action": "Retain current broad or untyped relation; gather source-specific witnesses before any global axiom",
+      "negative_acceptance": "Do not infer that a view target acquires a new identity or that core depends on the optional BA module.",
+      "native": {
+        "id": "rel-baViewRepresents",
+        "stereotype": null,
+        "typed_ends": [
+          "BusinessArchitectureView",
+          null
+        ]
+      },
+      "formal": {
+        "owl_object_property_declared": true,
+        "direct_shacl_path_shapes": [],
+        "direct_P1_abox_assertions": 0,
+        "interpretation": "A path declaration/fixture pass is not evidence for a relation's scientific truthmaker or uniqueness policy."
+      },
+      "source_anchors": [
+        "https://github.com/ArazSaieArasi3/CM-PharmE/blob/d95b5640c14d2c43c1e88a9a76ef78067f058916/v2/research/w4/business-architecture-view.md"
+      ],
+      "owner": "scientific author(s)",
+      "gate": "P3 author disposition then targeted native/OWL/SHACL positive and negative regression",
+      "status": "PENDING_AUTHOR"
+    },
+    {
+      "decision_id": "rel-containsSourceRecord",
+      "subject": "containsSourceRecord",
+      "scientific_question": "عضویت SourceRecord در یک DatasetRelease با کدام manifest/version اثبات می‌شود؟",
+      "recommended_bounded_action": "Retain current broad or untyped relation; gather source-specific witnesses before any global axiom",
+      "negative_acceptance": "Occurrence in a different release is not membership here.",
+      "native": {
+        "id": "rel-containsSourceRecord",
+        "stereotype": null,
+        "typed_ends": [
+          "DatasetRelease",
+          "SourceRecord"
+        ]
+      },
+      "formal": {
+        "owl_object_property_declared": true,
+        "direct_shacl_path_shapes": [],
+        "direct_P1_abox_assertions": 768,
+        "interpretation": "A path declaration/fixture pass is not evidence for a relation's scientific truthmaker or uniqueness policy."
+      },
+      "source_anchors": [
+        "v2/research/w4/integrated-ontouml-model.md"
+      ],
+      "owner": "scientific author(s)",
+      "gate": "P3 author disposition then targeted native/OWL/SHACL positive and negative regression",
+      "status": "PENDING_AUTHOR"
+    },
+    {
+      "decision_id": "rel-contextClassificationEntry",
+      "subject": "contextClassificationEntry",
+      "scientific_question": "آیا همهٔ Contextual Assignmentها باید child edge entry داشته باشند یا والد generic کافی است؟",
+      "recommended_bounded_action": "Keep native child Mediation; verify optional child and parent-only cases in formal integration; no child min1.",
+      "negative_acceptance": "A generic classificationEntry(r,e) alone does not entail contextClassificationEntry(r,e); same lexical classification code is insufficient.",
+      "native": {
+        "id": "rel-contextClassificationEntry",
+        "stereotype": "mediation",
+        "typed_ends": [
+          "ContextualMedicineClassificationAssignment",
+          "AppliedClassificationEntryRole"
+        ]
+      },
+      "formal": {
+        "owl_object_property_declared": true,
+        "direct_shacl_path_shapes": [],
+        "direct_P1_abox_assertions": 0,
+        "interpretation": "A path declaration/fixture pass is not evidence for a relation's scientific truthmaker or uniqueness policy."
+      },
+      "source_anchors": [
+        "v2/research/w4/relator-material-patterns.md"
+      ],
+      "owner": "scientific author(s)",
+      "gate": "P3 author disposition then targeted native/OWL/SHACL positive and negative regression",
+      "status": "PENDING_AUTHOR"
+    },
+    {
+      "decision_id": "rel-contextClassificationProduct",
+      "subject": "contextClassificationProduct",
+      "scientific_question": "آیا طبقه‌بندی Substance بدون child edge Product همچنان مجاز است؟",
+      "recommended_bounded_action": "Keep native child Mediation; test valid Substance classification without Product child; no child min1.",
+      "negative_acceptance": "A contextual assignment with a PharmaceuticalSubstance subject is valid in inherited contract and must not be forced to have a Product child edge.",
+      "native": {
+        "id": "rel-contextClassificationProduct",
+        "stereotype": "mediation",
+        "typed_ends": [
+          "ContextualMedicineClassificationAssignment",
+          "ClassifiedMedicinalProductRole"
+        ]
+      },
+      "formal": {
+        "owl_object_property_declared": true,
+        "direct_shacl_path_shapes": [],
+        "direct_P1_abox_assertions": 0,
+        "interpretation": "A path declaration/fixture pass is not evidence for a relation's scientific truthmaker or uniqueness policy."
+      },
+      "source_anchors": [
+        "v2/research/w4/relator-material-patterns.md"
+      ],
+      "owner": "scientific author(s)",
+      "gate": "P3 author disposition then targeted native/OWL/SHACL positive and negative regression",
+      "status": "PENDING_AUTHOR"
+    },
+    {
+      "decision_id": "rel-disruptionAffects",
+      "subject": "disruptionAffects",
+      "scientific_question": "تأثیر Disruption روی کدام خانوادهٔ target با شواهد علی/زمانی ثابت می‌شود؟",
+      "recommended_bounded_action": "Retain current broad or untyped relation; gather source-specific witnesses before any global axiom",
+      "negative_acceptance": "A co-reported shortage alone cannot establish a causal disruption or its target.",
+      "native": {
+        "id": "rel-disruptionAffects",
+        "stereotype": null,
+        "typed_ends": [
+          "DisruptionEvent",
+          null
+        ]
+      },
+      "formal": {
+        "owl_object_property_declared": true,
+        "direct_shacl_path_shapes": [],
+        "direct_P1_abox_assertions": 0,
+        "interpretation": "A path declaration/fixture pass is not evidence for a relation's scientific truthmaker or uniqueness policy."
+      },
+      "source_anchors": [
+        "https://github.com/ArazSaieArasi3/CM-PharmE/blob/d95b5640c14d2c43c1e88a9a76ef78067f058916/v2/research/w4/risk-resilience-extension.md"
+      ],
+      "owner": "scientific author(s)",
+      "gate": "P3 author disposition then targeted native/OWL/SHACL positive and negative regression",
+      "status": "PENDING_AUTHOR"
+    },
+    {
+      "decision_id": "rel-disruptionAffectsDependency",
+      "subject": "disruptionAffectsDependency",
+      "scientific_question": "آیا child edge فقط وقتی ایجاد می‌شود که تأثیر بر SupplyDependency مستقل ثبت شده باشد؟",
+      "recommended_bounded_action": "Retain child untyped until parent truthmaker and target family are justified",
+      "negative_acceptance": "Temporal overlap between a disruption and a dependency, or a co-reported shortage, does not prove D affected S.",
+      "native": {
+        "id": "rel-disruptionAffectsDependency",
+        "stereotype": null,
+        "typed_ends": [
+          "DisruptionEvent",
+          "SupplyDependency"
+        ]
+      },
+      "formal": {
+        "owl_object_property_declared": true,
+        "direct_shacl_path_shapes": [
+          "https://w3id.org/cm-pharme/2.1/disruptionAffectsDependencyShape"
+        ],
+        "direct_P1_abox_assertions": 0,
+        "interpretation": "A path declaration/fixture pass is not evidence for a relation's scientific truthmaker or uniqueness policy."
+      },
+      "source_anchors": [
+        "https://github.com/ArazSaieArasi3/CM-PharmE/blob/fb281f2d605090da2779bb2021be7cb00de4de73/v2/research/w4/events-situations-observations.md",
+        "https://github.com/ArazSaieArasi3/CM-PharmE/blob/fb281f2d605090da2779bb2021be7cb00de4de73/v2/research/w4/risk-resilience-extension.md"
+      ],
+      "owner": "scientific author(s)",
+      "gate": "P3 author disposition then targeted native/OWL/SHACL positive and negative regression",
+      "status": "PENDING_AUTHOR"
+    },
+    {
+      "decision_id": "rel-evidenceRecord",
+      "subject": "evidenceRecord",
+      "scientific_question": "آیا EvidenceSupport با ObservationResult باید بدون child edge SourceRecord مجاز بماند؟",
+      "recommended_bounded_action": "Keep native child Mediation; test ObservationResult evidence without SourceRecord child; no child min1.",
+      "negative_acceptance": "An EvidenceSupport whose evidence is an ObservationResult remains valid; the parent evidenceItem edge does not entail evidenceRecord.",
+      "native": {
+        "id": "rel-evidenceRecord",
+        "stereotype": "mediation",
+        "typed_ends": [
+          "EvidenceSupport",
+          "EvidenceSourceRecordRole"
+        ]
+      },
+      "formal": {
+        "owl_object_property_declared": true,
+        "direct_shacl_path_shapes": [],
+        "direct_P1_abox_assertions": 0,
+        "interpretation": "A path declaration/fixture pass is not evidence for a relation's scientific truthmaker or uniqueness policy."
+      },
+      "source_anchors": [
+        "v2/research/w4/relator-material-patterns.md"
+      ],
+      "owner": "scientific author(s)",
+      "gate": "P3 author disposition then targeted native/OWL/SHACL positive and negative regression",
+      "status": "PENDING_AUTHOR"
+    },
+    {
+      "decision_id": "rel-generatedAssertion",
+      "subject": "generatedAssertion",
+      "scientific_question": "کدام خروجی ProvenanceActivity در منبع تولید Assertion را اثبات می‌کند؟",
+      "recommended_bounded_action": "Retain current broad or untyped relation; gather source-specific witnesses before any global axiom",
+      "negative_acceptance": "Reading an Assertion does not mean the activity generated it.",
+      "native": {
+        "id": "rel-generatedAssertion",
+        "stereotype": null,
+        "typed_ends": [
+          "ProvenanceActivity",
+          "Assertion"
+        ]
+      },
+      "formal": {
+        "owl_object_property_declared": true,
+        "direct_shacl_path_shapes": [],
+        "direct_P1_abox_assertions": 0,
+        "interpretation": "A path declaration/fixture pass is not evidence for a relation's scientific truthmaker or uniqueness policy."
+      },
+      "source_anchors": [
+        "v2/research/w4/integrated-ontouml-model.md"
+      ],
+      "owner": "scientific author(s)",
+      "gate": "P3 author disposition then targeted native/OWL/SHACL positive and negative regression",
+      "status": "PENDING_AUTHOR"
+    },
+    {
+      "decision_id": "rel-hasDatasetRelease",
+      "subject": "hasDatasetRelease",
+      "scientific_question": "معیار تعلق یک DatasetRelease به Dataset در میان نسخه‌ها چیست؟",
+      "recommended_bounded_action": "Retain current broad or untyped relation; gather source-specific witnesses before any global axiom",
+      "negative_acceptance": "Equal publication dates do not merge releases.",
+      "native": {
+        "id": "rel-hasDatasetRelease",
+        "stereotype": null,
+        "typed_ends": [
+          "Dataset",
+          "DatasetRelease"
+        ]
+      },
+      "formal": {
+        "owl_object_property_declared": true,
+        "direct_shacl_path_shapes": [],
+        "direct_P1_abox_assertions": 1,
+        "interpretation": "A path declaration/fixture pass is not evidence for a relation's scientific truthmaker or uniqueness policy."
+      },
+      "source_anchors": [
+        "v2/research/w4/integrated-ontouml-model.md"
+      ],
+      "owner": "scientific author(s)",
+      "gate": "P3 author disposition then targeted native/OWL/SHACL positive and negative regression",
+      "status": "PENDING_AUTHOR"
+    },
+    {
+      "decision_id": "rel-hasStrength",
+      "subject": "hasStrength",
+      "scientific_question": "آیا هر Presentation دست‌کم یک Strength دارد و آیا Strength فقط یک bearer دارد؟",
+      "recommended_bounded_action": "Align OWL/SHACL in separate candidate only after documenting whether every Presentation has Strength; test uniqueness and incompleteness.",
+      "negative_acceptance": "One Strength individual cannot belong to two distinct Presentations.",
+      "native": {
+        "id": "rel-hasStrength",
+        "stereotype": "characterization",
+        "typed_ends": [
+          "MedicinalProductPresentation",
+          "Strength"
+        ]
+      },
+      "formal": {
+        "owl_object_property_declared": true,
+        "direct_shacl_path_shapes": [],
+        "direct_P1_abox_assertions": 0,
+        "interpretation": "A path declaration/fixture pass is not evidence for a relation's scientific truthmaker or uniqueness policy."
+      },
+      "source_anchors": [
+        "v2/research/w4/integrated-ontouml-model.md"
+      ],
+      "owner": "scientific author(s)",
+      "gate": "P3 author disposition then targeted native/OWL/SHACL positive and negative regression",
+      "status": "PENDING_AUTHOR"
+    },
+    {
+      "decision_id": "rel-listingJurisdiction",
+      "subject": "listingJurisdiction",
+      "scientific_question": "Scope قانونی MarketListing از چه شاهدی فراتر از country/address به دست می‌آید؟",
+      "recommended_bounded_action": "Retain contextual reference; collect legal-scope evidence; no Relator→rigid Mediation",
+      "negative_acceptance": "Presence of P in a national source or the labeler's address alone cannot create a market listing for J.",
+      "native": {
+        "id": "rel-listingJurisdiction",
+        "stereotype": null,
+        "typed_ends": [
+          "MarketListing",
+          "RegulatoryJurisdiction"
+        ]
+      },
+      "formal": {
+        "owl_object_property_declared": true,
+        "direct_shacl_path_shapes": [],
+        "direct_P1_abox_assertions": 0,
+        "interpretation": "A path declaration/fixture pass is not evidence for a relation's scientific truthmaker or uniqueness policy."
+      },
+      "source_anchors": [
+        "https://github.com/ArazSaieArasi3/CM-PharmE/blob/fb281f2d605090da2779bb2021be7cb00de4de73/v2/research/w4/geography-jurisdiction.md",
+        "https://github.com/ArazSaieArasi3/CM-PharmE/blob/fb281f2d605090da2779bb2021be7cb00de4de73/v2/research/w4/relator-material-patterns.md"
+      ],
+      "owner": "scientific author(s)",
+      "gate": "P3 author disposition then targeted native/OWL/SHACL positive and negative regression",
+      "status": "PENDING_AUTHOR"
+    },
+    {
+      "decision_id": "rel-locatedIn",
+      "subject": "locatedIn",
+      "scientific_question": "آیا parent عمومی فقط spatial reference می‌ماند و Facility-specific edge صرفاً در نگاشت M031 اعمال شود؟",
+      "recommended_bounded_action": "Retain current broad or untyped relation; gather source-specific witnesses before any global axiom",
+      "negative_acceptance": "An organization's headquarters or a jurisdiction label must not be typed Facility via a global domain axiom.",
+      "native": {
+        "id": "rel-locatedIn",
+        "stereotype": null,
+        "typed_ends": [
+          null,
+          "GeographicFeature"
+        ]
+      },
+      "formal": {
+        "owl_object_property_declared": true,
+        "direct_shacl_path_shapes": [],
+        "direct_P1_abox_assertions": 0,
+        "interpretation": "A path declaration/fixture pass is not evidence for a relation's scientific truthmaker or uniqueness policy."
+      },
+      "source_anchors": [
+        "https://github.com/ArazSaieArasi3/CM-PharmE/blob/d95b5640c14d2c43c1e88a9a76ef78067f058916/v2/research/w4/geography-jurisdiction.md"
+      ],
+      "owner": "scientific author(s)",
+      "gate": "P3 author disposition then targeted native/OWL/SHACL positive and negative regression",
+      "status": "PENDING_AUTHOR"
+    },
+    {
+      "decision_id": "rel-maintainsDataset",
+      "subject": "maintainsDataset",
+      "scientific_question": "آیا stewardship نسبت به Dataset در طول زمان عوض می‌شود و چه مرجعی آن را ثابت می‌کند؟",
+      "recommended_bounded_action": "Retain current broad or untyped relation; gather source-specific witnesses before any global axiom",
+      "negative_acceptance": "Hosting a copy does not prove maintenance.",
+      "native": {
+        "id": "rel-maintainsDataset",
+        "stereotype": null,
+        "typed_ends": [
+          "DataSourceResource",
+          "Dataset"
+        ]
+      },
+      "formal": {
+        "owl_object_property_declared": true,
+        "direct_shacl_path_shapes": [],
+        "direct_P1_abox_assertions": 0,
+        "interpretation": "A path declaration/fixture pass is not evidence for a relation's scientific truthmaker or uniqueness policy."
+      },
+      "source_anchors": [
+        "v2/research/w4/integrated-ontouml-model.md"
+      ],
+      "owner": "scientific author(s)",
+      "gate": "P3 author disposition then targeted native/OWL/SHACL positive and negative regression",
+      "status": "PENDING_AUTHOR"
+    },
+    {
+      "decision_id": "rel-matchObject",
+      "subject": "matchObject",
+      "scientific_question": "subject/object تطبیق به entity یا representation اشاره می‌کنند و خانوادهٔ هویتی target چیست؟",
+      "recommended_bounded_action": "Retain current broad or untyped relation; gather source-specific witnesses before any global axiom",
+      "negative_acceptance": "An ambiguous record pair is not an accepted real-world identity equality.",
+      "native": {
+        "id": "rel-matchObject",
+        "stereotype": null,
+        "typed_ends": [
+          "EntityMatchAssertion",
+          null
+        ]
+      },
+      "formal": {
+        "owl_object_property_declared": true,
+        "direct_shacl_path_shapes": [],
+        "direct_P1_abox_assertions": 0,
+        "interpretation": "A path declaration/fixture pass is not evidence for a relation's scientific truthmaker or uniqueness policy."
+      },
+      "source_anchors": [
+        "https://github.com/ArazSaieArasi3/CM-PharmE/blob/d95b5640c14d2c43c1e88a9a76ef78067f058916/v2/research/w6/provenance-entity-resolution.md"
+      ],
+      "owner": "scientific author(s)",
+      "gate": "P3 author disposition then targeted native/OWL/SHACL positive and negative regression",
+      "status": "PENDING_AUTHOR"
+    },
+    {
+      "decision_id": "rel-matchSubject",
+      "subject": "matchSubject",
+      "scientific_question": "subject/object تطبیق به entity یا representation اشاره می‌کنند و خانوادهٔ هویتی target چیست؟",
+      "recommended_bounded_action": "Retain current broad or untyped relation; gather source-specific witnesses before any global axiom",
+      "negative_acceptance": "A source identifier alone is not universal canonical entity identity.",
+      "native": {
+        "id": "rel-matchSubject",
+        "stereotype": null,
+        "typed_ends": [
+          "EntityMatchAssertion",
+          null
+        ]
+      },
+      "formal": {
+        "owl_object_property_declared": true,
+        "direct_shacl_path_shapes": [],
+        "direct_P1_abox_assertions": 0,
+        "interpretation": "A path declaration/fixture pass is not evidence for a relation's scientific truthmaker or uniqueness policy."
+      },
+      "source_anchors": [
+        "https://github.com/ArazSaieArasi3/CM-PharmE/blob/d95b5640c14d2c43c1e88a9a76ef78067f058916/v2/research/w6/provenance-entity-resolution.md"
+      ],
+      "owner": "scientific author(s)",
+      "gate": "P3 author disposition then targeted native/OWL/SHACL positive and negative regression",
+      "status": "PENDING_AUTHOR"
+    },
+    {
+      "decision_id": "rel-observationAboutPresentation",
+      "subject": "observationAboutPresentation",
+      "scientific_question": "آیا result با سند مشخص دربارهٔ Presentation است، بی‌آنکه همهٔ resultها Presentation شوند؟",
+      "recommended_bounded_action": "Retain child untyped until parent truthmaker and target family are justified",
+      "negative_acceptance": "A product-level code alone cannot be silently promoted to a particular presentation or patient observation.",
+      "native": {
+        "id": "rel-observationAboutPresentation",
+        "stereotype": null,
+        "typed_ends": [
+          "ObservationResult",
+          "MedicinalProductPresentation"
+        ]
+      },
+      "formal": {
+        "owl_object_property_declared": true,
+        "direct_shacl_path_shapes": [
+          "https://w3id.org/cm-pharme/2.1/observationAboutPresentationShape"
+        ],
+        "direct_P1_abox_assertions": 3072,
+        "interpretation": "A path declaration/fixture pass is not evidence for a relation's scientific truthmaker or uniqueness policy."
+      },
+      "source_anchors": [
+        "https://github.com/ArazSaieArasi3/CM-PharmE/blob/fb281f2d605090da2779bb2021be7cb00de4de73/v2/research/w4/events-situations-observations.md",
+        "https://github.com/ArazSaieArasi3/CM-PharmE/blob/fb281f2d605090da2779bb2021be7cb00de4de73/v2/research/w4/integrated-ontouml-model.md"
+      ],
+      "owner": "scientific author(s)",
+      "gate": "P3 author disposition then targeted native/OWL/SHACL positive and negative regression",
+      "status": "PENDING_AUTHOR"
+    },
+    {
+      "decision_id": "rel-observationAboutProduct",
+      "subject": "observationAboutProduct",
+      "scientific_question": "آیا result با سند مشخص دربارهٔ Product است، بی‌آنکه همهٔ resultها Product شوند؟",
+      "recommended_bounded_action": "Retain child untyped until parent truthmaker and target family are justified",
+      "negative_acceptance": "A result keyed to only one package does not thereby describe every presentation or the product in all jurisdictions.",
+      "native": {
+        "id": "rel-observationAboutProduct",
+        "stereotype": null,
+        "typed_ends": [
+          "ObservationResult",
+          "MedicinalProduct"
+        ]
+      },
+      "formal": {
+        "owl_object_property_declared": true,
+        "direct_shacl_path_shapes": [
+          "https://w3id.org/cm-pharme/2.1/observationAboutProductShape"
+        ],
+        "direct_P1_abox_assertions": 3072,
+        "interpretation": "A path declaration/fixture pass is not evidence for a relation's scientific truthmaker or uniqueness policy."
+      },
+      "source_anchors": [
+        "https://github.com/ArazSaieArasi3/CM-PharmE/blob/fb281f2d605090da2779bb2021be7cb00de4de73/v2/research/w4/events-situations-observations.md",
+        "https://github.com/ArazSaieArasi3/CM-PharmE/blob/fb281f2d605090da2779bb2021be7cb00de4de73/v2/research/w4/integrated-ontouml-model.md"
+      ],
+      "owner": "scientific author(s)",
+      "gate": "P3 author disposition then targeted native/OWL/SHACL positive and negative regression",
+      "status": "PENDING_AUTHOR"
+    },
+    {
+      "decision_id": "rel-observationResultAbout",
+      "subject": "observationResultAbout",
+      "scientific_question": "خانوادهٔ target عمومی result چیست و آیا به pattern موضوعات نوع‌دار نیاز داریم؟",
+      "recommended_bounded_action": "Retain current broad or untyped relation; gather source-specific witnesses before any global axiom",
+      "negative_acceptance": "An aggregate result does not create a patient individual, and a product link does not identify a presentation.",
+      "native": {
+        "id": "rel-observationResultAbout",
+        "stereotype": null,
+        "typed_ends": [
+          "ObservationResult",
+          null
+        ]
+      },
+      "formal": {
+        "owl_object_property_declared": true,
+        "direct_shacl_path_shapes": [],
+        "direct_P1_abox_assertions": 0,
+        "interpretation": "A path declaration/fixture pass is not evidence for a relation's scientific truthmaker or uniqueness policy."
+      },
+      "source_anchors": [
+        "https://github.com/ArazSaieArasi3/CM-PharmE/blob/d95b5640c14d2c43c1e88a9a76ef78067f058916/v2/research/w4/events-situations-observations.md"
+      ],
+      "owner": "scientific author(s)",
+      "gate": "P3 author disposition then targeted native/OWL/SHACL positive and negative regression",
+      "status": "PENDING_AUTHOR"
+    },
+    {
+      "decision_id": "rel-operates",
+      "subject": "operates",
+      "scientific_question": "آیا قاعدهٔ اشتقاق از همان FacilityOperation با بازهٔ اعتبار و provenance برای material relation پذیرفته است؟",
+      "recommended_bounded_action": "Specify executable same-relator temporal/provenance rule outside bare OWL annotation; test false cross-joins and time boundaries.",
+      "negative_acceptance": "An Organization and Facility co-occurring in a source record without FacilityOperation must not yield operates.",
+      "native": {
+        "id": "rel-operates",
+        "stereotype": "material",
+        "typed_ends": [
+          "Organization",
+          "Facility"
+        ]
+      },
+      "formal": {
+        "owl_object_property_declared": true,
+        "direct_shacl_path_shapes": [],
+        "direct_P1_abox_assertions": 0,
+        "interpretation": "A path declaration/fixture pass is not evidence for a relation's scientific truthmaker or uniqueness policy."
+      },
+      "source_anchors": [
+        "v2/research/w4/integrated-ontouml-model.md"
+      ],
+      "owner": "scientific author(s)",
+      "gate": "P3 author disposition then targeted native/OWL/SHACL positive and negative regression",
+      "status": "PENDING_AUTHOR"
+    },
+    {
+      "decision_id": "rel-producesObservationResult",
+      "subject": "producesObservationResult",
+      "scientific_question": "کدام provenance ارتباط رویداد ObservationActivity و Result را اثبات می‌کند؟",
+      "recommended_bounded_action": "Retain current broad or untyped relation; gather source-specific witnesses before any global axiom",
+      "negative_acceptance": "An imported aggregate result does not entail a particular event.",
+      "native": {
+        "id": "rel-producesObservationResult",
+        "stereotype": null,
+        "typed_ends": [
+          "ObservationActivity",
+          "ObservationResult"
+        ]
+      },
+      "formal": {
+        "owl_object_property_declared": true,
+        "direct_shacl_path_shapes": [],
+        "direct_P1_abox_assertions": 0,
+        "interpretation": "A path declaration/fixture pass is not evidence for a relation's scientific truthmaker or uniqueness policy."
+      },
+      "source_anchors": [
+        "v2/research/w4/events-situations-observations.md"
+      ],
+      "owner": "scientific author(s)",
+      "gate": "P3 author disposition then targeted native/OWL/SHACL positive and negative regression",
+      "status": "PENDING_AUTHOR"
+    },
+    {
+      "decision_id": "rel-registrationJurisdiction",
+      "subject": "registrationJurisdiction",
+      "scientific_question": "ثبت در کدام scope قانونی معتبر است و آیا به نقش jurisdictional جداگانه نیاز داریم؟",
+      "recommended_bounded_action": "Retain contextual reference; collect legal-scope evidence; no Relator→rigid Mediation",
+      "negative_acceptance": "The facility's geographic position alone cannot infer a registration in J.",
+      "native": {
+        "id": "rel-registrationJurisdiction",
+        "stereotype": null,
+        "typed_ends": [
+          "EstablishmentRegistration",
+          "RegulatoryJurisdiction"
+        ]
+      },
+      "formal": {
+        "owl_object_property_declared": true,
+        "direct_shacl_path_shapes": [],
+        "direct_P1_abox_assertions": 0,
+        "interpretation": "A path declaration/fixture pass is not evidence for a relation's scientific truthmaker or uniqueness policy."
+      },
+      "source_anchors": [
+        "https://github.com/ArazSaieArasi3/CM-PharmE/blob/fb281f2d605090da2779bb2021be7cb00de4de73/v2/research/w4/geography-jurisdiction.md",
+        "https://github.com/ArazSaieArasi3/CM-PharmE/blob/fb281f2d605090da2779bb2021be7cb00de4de73/v2/research/w4/relator-material-patterns.md"
+      ],
+      "owner": "scientific author(s)",
+      "gate": "P3 author disposition then targeted native/OWL/SHACL positive and negative regression",
+      "status": "PENDING_AUTHOR"
+    },
+    {
+      "decision_id": "rel-reimbursementDiagnosisContext",
+      "subject": "reimbursementDiagnosisContext",
+      "scientific_question": "کد/نسخهٔ DiagnosisClassificationReference در aggregate result چگونه ثبت می‌شود؟",
+      "recommended_bounded_action": "Retain current broad or untyped relation; gather source-specific witnesses before any global axiom",
+      "negative_acceptance": "Counts do not instantiate patients or diagnoses.",
+      "native": {
+        "id": "rel-reimbursementDiagnosisContext",
+        "stereotype": null,
+        "typed_ends": [
+          "ReimbursementUtilisationObservationResult",
+          "DiagnosisClassificationReference"
+        ]
+      },
+      "formal": {
+        "owl_object_property_declared": true,
+        "direct_shacl_path_shapes": [
+          "https://w3id.org/cm-pharme/2.1/reimbursementDiagnosisContextShape"
+        ],
+        "direct_P1_abox_assertions": 3072,
+        "interpretation": "A path declaration/fixture pass is not evidence for a relation's scientific truthmaker or uniqueness policy."
+      },
+      "source_anchors": [
+        "v2/research/w4/events-situations-observations.md"
+      ],
+      "owner": "scientific author(s)",
+      "gate": "P3 author disposition then targeted native/OWL/SHACL positive and negative regression",
+      "status": "PENDING_AUTHOR"
+    },
+    {
+      "decision_id": "rel-riskAssessmentConcerns",
+      "subject": "riskAssessmentConcerns",
+      "scientific_question": "موضوع RiskAssessmentActivity باید Asset/Dependency/Event/Plan باشد یا یک target عام مستند؟",
+      "recommended_bounded_action": "Retain current broad or untyped relation; gather source-specific witnesses before any global axiom",
+      "negative_acceptance": "Mentioning an asset does not prove a vulnerability or quantified risk.",
+      "native": {
+        "id": "rel-riskAssessmentConcerns",
+        "stereotype": null,
+        "typed_ends": [
+          "RiskAssessmentActivity",
+          null
+        ]
+      },
+      "formal": {
+        "owl_object_property_declared": true,
+        "direct_shacl_path_shapes": [],
+        "direct_P1_abox_assertions": 0,
+        "interpretation": "A path declaration/fixture pass is not evidence for a relation's scientific truthmaker or uniqueness policy."
+      },
+      "source_anchors": [
+        "https://github.com/ArazSaieArasi3/CM-PharmE/blob/d95b5640c14d2c43c1e88a9a76ef78067f058916/v2/research/w4/risk-resilience-extension.md"
+      ],
+      "owner": "scientific author(s)",
+      "gate": "P3 author disposition then targeted native/OWL/SHACL positive and negative regression",
+      "status": "PENDING_AUTHOR"
+    },
+    {
+      "decision_id": "rel-riskAssessmentConcernsDependency",
+      "subject": "riskAssessmentConcernsDependency",
+      "scientific_question": "آیا child edge فقط با ارزیابی مستند SupplyDependency ایجاد می‌شود؟",
+      "recommended_bounded_action": "Retain child untyped until parent truthmaker and target family are justified",
+      "negative_acceptance": "Mentioning S in a document or observing a disruption does not prove a quantified risk or vulnerability of S.",
+      "native": {
+        "id": "rel-riskAssessmentConcernsDependency",
+        "stereotype": null,
+        "typed_ends": [
+          "RiskAssessmentActivity",
+          "SupplyDependency"
+        ]
+      },
+      "formal": {
+        "owl_object_property_declared": true,
+        "direct_shacl_path_shapes": [
+          "https://w3id.org/cm-pharme/2.1/riskAssessmentConcernsDependencyShape"
+        ],
+        "direct_P1_abox_assertions": 0,
+        "interpretation": "A path declaration/fixture pass is not evidence for a relation's scientific truthmaker or uniqueness policy."
+      },
+      "source_anchors": [
+        "https://github.com/ArazSaieArasi3/CM-PharmE/blob/fb281f2d605090da2779bb2021be7cb00de4de73/v2/research/w4/risk-resilience-extension.md",
+        "https://github.com/ArazSaieArasi3/CM-PharmE/blob/fb281f2d605090da2779bb2021be7cb00de4de73/v2/research/w4/events-situations-observations.md"
+      ],
+      "owner": "scientific author(s)",
+      "gate": "P3 author disposition then targeted native/OWL/SHACL positive and negative regression",
+      "status": "PENDING_AUTHOR"
+    },
+    {
+      "decision_id": "rel-riskTreatmentAddresses",
+      "subject": "riskTreatmentAddresses",
+      "scientific_question": "موضوع RiskTreatmentActivity به کدام target با شواهد برنامه و اجرا وصل است؟",
+      "recommended_bounded_action": "Retain current broad or untyped relation; gather source-specific witnesses before any global axiom",
+      "negative_acceptance": "Do not claim that every treatment is effective, or that a target is necessarily a SupplyDependency.",
+      "native": {
+        "id": "rel-riskTreatmentAddresses",
+        "stereotype": null,
+        "typed_ends": [
+          "RiskTreatmentActivity",
+          null
+        ]
+      },
+      "formal": {
+        "owl_object_property_declared": true,
+        "direct_shacl_path_shapes": [],
+        "direct_P1_abox_assertions": 0,
+        "interpretation": "A path declaration/fixture pass is not evidence for a relation's scientific truthmaker or uniqueness policy."
+      },
+      "source_anchors": [
+        "https://github.com/ArazSaieArasi3/CM-PharmE/blob/d95b5640c14d2c43c1e88a9a76ef78067f058916/v2/research/w4/risk-resilience-extension.md"
+      ],
+      "owner": "scientific author(s)",
+      "gate": "P3 author disposition then targeted native/OWL/SHACL positive and negative regression",
+      "status": "PENDING_AUTHOR"
+    },
+    {
+      "decision_id": "rel-shortageJurisdiction",
+      "subject": "shortageJurisdiction",
+      "scientific_question": "Jurisdiction نسبت به shortage از source status و بازهٔ زمانی چگونه تعیین می‌شود؟",
+      "recommended_bounded_action": "Retain current broad or untyped relation; gather source-specific witnesses before any global axiom",
+      "negative_acceptance": "A J1 shortage does not imply a J2 shortage.",
+      "native": {
+        "id": "rel-shortageJurisdiction",
+        "stereotype": null,
+        "typed_ends": [
+          "MedicineShortageSituation",
+          "RegulatoryJurisdiction"
+        ]
+      },
+      "formal": {
+        "owl_object_property_declared": true,
+        "direct_shacl_path_shapes": [],
+        "direct_P1_abox_assertions": 0,
+        "interpretation": "A path declaration/fixture pass is not evidence for a relation's scientific truthmaker or uniqueness policy."
+      },
+      "source_anchors": [
+        "v2/research/w4/events-situations-observations.md"
+      ],
+      "owner": "scientific author(s)",
+      "gate": "P3 author disposition then targeted native/OWL/SHACL positive and negative regression",
+      "status": "PENDING_AUTHOR"
+    },
+    {
+      "decision_id": "rel-usedSourceArtifact",
+      "subject": "usedSourceArtifact",
+      "scientific_question": "آیا ProvenanceActivity از Dataset/Record/Artifact استفاده کرده و target family چیست؟",
+      "recommended_bounded_action": "Retain current broad or untyped relation; gather source-specific witnesses before any global axiom",
+      "negative_acceptance": "A dataset name alone cannot fabricate a source record or complete provenance chain.",
+      "native": {
+        "id": "rel-usedSourceArtifact",
+        "stereotype": null,
+        "typed_ends": [
+          "ProvenanceActivity",
+          null
+        ]
+      },
+      "formal": {
+        "owl_object_property_declared": true,
+        "direct_shacl_path_shapes": [],
+        "direct_P1_abox_assertions": 0,
+        "interpretation": "A path declaration/fixture pass is not evidence for a relation's scientific truthmaker or uniqueness policy."
+      },
+      "source_anchors": [
+        "https://github.com/ArazSaieArasi3/CM-PharmE/blob/d95b5640c14d2c43c1e88a9a76ef78067f058916/v2/research/w3/provenance-evidence-observation.md"
+      ],
+      "owner": "scientific author(s)",
+      "gate": "P3 author disposition then targeted native/OWL/SHACL positive and negative regression",
+      "status": "PENDING_AUTHOR"
+    }
+  ],
+  "isolate_decisions": [
+    {
+      "subject": "AdverseEventReportingActivity",
+      "domain": "Pharmacovigilance",
+      "proposed_relation": "reportConcernsProduct",
+      "proposed_target": "MedicinalProduct",
+      "native_class": true,
+      "native_relation": null,
+      "formal": {
+        "owl_object_property_declared": false,
+        "direct_shacl_path_shapes": [],
+        "direct_P1_abox_assertions": 0,
+        "interpretation": "A path declaration/fixture pass is not evidence for a relation's scientific truthmaker or uniqueness policy."
+      },
+      "sample_direct_source_instances": 0,
+      "sample_direct_target_instances": 264,
+      "truthmaker_required": "An actual safety report explicitly identifies the product and the reporting activity; S3 records must distinguish the reporting event from an adverse-event case.",
+      "negative_acceptance": "A product listing or safety requirement alone cannot instantiate a reporting event.",
+      "owner": "scientific author(s); source curator for witness acquisition",
+      "gate": "P3 domain decision with actual relation witness; optional module may remain isolated",
+      "status": "PENDING_SOURCE_AND_AUTHOR"
+    },
+    {
+      "subject": "BusinessArchitectureView",
+      "domain": "Business Architecture",
+      "proposed_relation": "baViewRepresents",
+      "proposed_target": "Organization",
+      "native_class": true,
+      "native_relation": {
+        "id": "rel-baViewRepresents",
+        "stereotype": null,
+        "typed_ends": [
+          "BusinessArchitectureView",
+          null
+        ]
+      },
+      "formal": {
+        "owl_object_property_declared": true,
+        "direct_shacl_path_shapes": [],
+        "direct_P1_abox_assertions": 0,
+        "interpretation": "A path declaration/fixture pass is not evidence for a relation's scientific truthmaker or uniqueness policy."
+      },
+      "sample_direct_source_instances": 0,
+      "sample_direct_target_instances": 0,
+      "truthmaker_required": "A concrete BA view maps a named Organization or activity; retain one directional optional module dependency.",
+      "negative_acceptance": "The mere presence of an Organization cannot entail a BA view or Core dependency.",
+      "owner": "scientific author(s); source curator for witness acquisition",
+      "gate": "P3 domain decision with actual relation witness; optional module may remain isolated",
+      "status": "PENDING_SOURCE_AND_AUTHOR"
+    },
+    {
+      "subject": "DigitalInformationSystemComponent",
+      "domain": "Digital Systems",
+      "proposed_relation": "supportsObservationActivity",
+      "proposed_target": "ObservationActivity",
+      "native_class": true,
+      "native_relation": null,
+      "formal": {
+        "owl_object_property_declared": false,
+        "direct_shacl_path_shapes": [],
+        "direct_P1_abox_assertions": 0,
+        "interpretation": "A path declaration/fixture pass is not evidence for a relation's scientific truthmaker or uniqueness policy."
+      },
+      "sample_direct_source_instances": 0,
+      "sample_direct_target_instances": 0,
+      "truthmaker_required": "A system component is documented as supporting a specific observation process, with scope and provenance (C12).",
+      "negative_acceptance": "A component inventory alone does not imply an observation or universal support.",
+      "owner": "scientific author(s); source curator for witness acquisition",
+      "gate": "P3 domain decision with actual relation witness; optional module may remain isolated",
+      "status": "PENDING_SOURCE_AND_AUTHOR"
+    },
+    {
+      "subject": "DistributionLogisticsActivity",
+      "domain": "Supply Operations",
+      "proposed_relation": "logisticsAtSite",
+      "proposed_target": "DistributionSiteRole",
+      "native_class": true,
+      "native_relation": null,
+      "formal": {
+        "owl_object_property_declared": false,
+        "direct_shacl_path_shapes": [],
+        "direct_P1_abox_assertions": 0,
+        "interpretation": "A path declaration/fixture pass is not evidence for a relation's scientific truthmaker or uniqueness policy."
+      },
+      "sample_direct_source_instances": 0,
+      "sample_direct_target_instances": 0,
+      "truthmaker_required": "Evidence of an actual time-bounded handling, storage or distribution activity at the site, distinct from registration.",
+      "negative_acceptance": "Distributor registration alone cannot create a logistics event.",
+      "owner": "scientific author(s); source curator for witness acquisition",
+      "gate": "P3 domain decision with actual relation witness; optional module may remain isolated",
+      "status": "PENDING_SOURCE_AND_AUTHOR"
+    },
+    {
+      "subject": "ManufacturingActivity",
+      "domain": "Supply Operations",
+      "proposed_relation": "manufacturingAtSite",
+      "proposed_target": "ManufacturingSiteRole",
+      "native_class": true,
+      "native_relation": null,
+      "formal": {
+        "owl_object_property_declared": false,
+        "direct_shacl_path_shapes": [],
+        "direct_P1_abox_assertions": 0,
+        "interpretation": "A path declaration/fixture pass is not evidence for a relation's scientific truthmaker or uniqueness policy."
+      },
+      "sample_direct_source_instances": 0,
+      "sample_direct_target_instances": 0,
+      "truthmaker_required": "Evidence of an actual time-bounded production activity at the site, distinct from site authorization.",
+      "negative_acceptance": "An establishment registration alone cannot create a manufacturing event.",
+      "owner": "scientific author(s); source curator for witness acquisition",
+      "gate": "P3 domain decision with actual relation witness; optional module may remain isolated",
+      "status": "PENDING_SOURCE_AND_AUTHOR"
+    },
+    {
+      "subject": "PharmacovigilanceRequirement",
+      "domain": "Pharmacovigilance",
+      "proposed_relation": "requirementAppliesInJurisdiction",
+      "proposed_target": "RegulatoryJurisdiction",
+      "native_class": true,
+      "native_relation": null,
+      "formal": {
+        "owl_object_property_declared": false,
+        "direct_shacl_path_shapes": [],
+        "direct_P1_abox_assertions": 0,
+        "interpretation": "A path declaration/fixture pass is not evidence for a relation's scientific truthmaker or uniqueness policy."
+      },
+      "sample_direct_source_instances": 0,
+      "sample_direct_target_instances": 0,
+      "truthmaker_required": "An authoritative requirement text with version, jurisdiction and effective period supports the normative scope.",
+      "negative_acceptance": "A report record or optional safety activity cannot by itself establish a legal duty.",
+      "owner": "scientific author(s); source curator for witness acquisition",
+      "gate": "P3 domain decision with actual relation witness; optional module may remain isolated",
+      "status": "PENDING_SOURCE_AND_AUTHOR"
+    },
+    {
+      "subject": "PostMarketSurveillanceActivity",
+      "domain": "Pharmacovigilance",
+      "proposed_relation": "surveillanceProducesResult",
+      "proposed_target": "ObservationResult",
+      "native_class": true,
+      "native_relation": null,
+      "formal": {
+        "owl_object_property_declared": false,
+        "direct_shacl_path_shapes": [],
+        "direct_P1_abox_assertions": 0,
+        "interpretation": "A path declaration/fixture pass is not evidence for a relation's scientific truthmaker or uniqueness policy."
+      },
+      "sample_direct_source_instances": 0,
+      "sample_direct_target_instances": 3072,
+      "truthmaker_required": "Evidence of an actual surveillance activity and its output; a result without process trace is retained only as a result.",
+      "negative_acceptance": "An ingested aggregate observation cannot imply an unrecorded surveillance event.",
+      "owner": "scientific author(s); source curator for witness acquisition",
+      "gate": "P3 domain decision with actual relation witness; optional module may remain isolated",
+      "status": "PENDING_SOURCE_AND_AUTHOR"
+    },
+    {
+      "subject": "ProcurementActivity",
+      "domain": "Supply Resilience",
+      "proposed_relation": "procurementBuyer",
+      "proposed_target": "Organization",
+      "native_class": true,
+      "native_relation": null,
+      "formal": {
+        "owl_object_property_declared": false,
+        "direct_shacl_path_shapes": [],
+        "direct_P1_abox_assertions": 0,
+        "interpretation": "A path declaration/fixture pass is not evidence for a relation's scientific truthmaker or uniqueness policy."
+      },
+      "sample_direct_source_instances": 0,
+      "sample_direct_target_instances": 0,
+      "truthmaker_required": "A documented transaction or procurement event identifies the buyer; further Product/Facility participants only when C1 evidence supports them.",
+      "negative_acceptance": "Registration, supplier role or product listing alone cannot instantiate a procurement event.",
+      "owner": "scientific author(s); source curator for witness acquisition",
+      "gate": "P3 domain decision with actual relation witness; optional module may remain isolated",
+      "status": "PENDING_SOURCE_AND_AUTHOR"
+    },
+    {
+      "subject": "RegulatoryRequirement",
+      "domain": "Regulatory Policy",
+      "proposed_relation": "requirementAppliesInJurisdiction",
+      "proposed_target": "RegulatoryJurisdiction",
+      "native_class": true,
+      "native_relation": null,
+      "formal": {
+        "owl_object_property_declared": false,
+        "direct_shacl_path_shapes": [],
+        "direct_P1_abox_assertions": 0,
+        "interpretation": "A path declaration/fixture pass is not evidence for a relation's scientific truthmaker or uniqueness policy."
+      },
+      "sample_direct_source_instances": 0,
+      "sample_direct_target_instances": 0,
+      "truthmaker_required": "Authoritative normative source identifies jurisdiction and temporal validity; authorization is modeled separately.",
+      "negative_acceptance": "A regulatory data record alone does not authorize a party or make all activities mandatory.",
+      "owner": "scientific author(s); source curator for witness acquisition",
+      "gate": "P3 domain decision with actual relation witness; optional module may remain isolated",
+      "status": "PENDING_SOURCE_AND_AUTHOR"
+    },
+    {
+      "subject": "RiskTreatmentActivity",
+      "domain": "Risk Management",
+      "proposed_relation": "executesRiskTreatmentPlan",
+      "proposed_target": "RiskTreatmentPlan",
+      "native_class": true,
+      "native_relation": null,
+      "formal": {
+        "owl_object_property_declared": false,
+        "direct_shacl_path_shapes": [],
+        "direct_P1_abox_assertions": 0,
+        "interpretation": "A path declaration/fixture pass is not evidence for a relation's scientific truthmaker or uniqueness policy."
+      },
+      "sample_direct_source_instances": 0,
+      "sample_direct_target_instances": 0,
+      "truthmaker_required": "Evidence of a performed mitigation event referencing a specific plan; target of broad riskTreatmentAddresses may be typed to SupplyDependency only with separate evidence.",
+      "negative_acceptance": "A drafted plan alone cannot entail an executed treatment activity.",
+      "owner": "scientific author(s); source curator for witness acquisition",
+      "gate": "P3 domain decision with actual relation witness; optional module may remain isolated",
+      "status": "PENDING_SOURCE_AND_AUTHOR"
+    },
+    {
+      "subject": "RiskTreatmentPlan",
+      "domain": "Risk Management",
+      "proposed_relation": "planAddressesDependency",
+      "proposed_target": "SupplyDependency",
+      "native_class": true,
+      "native_relation": null,
+      "formal": {
+        "owl_object_property_declared": false,
+        "direct_shacl_path_shapes": [],
+        "direct_P1_abox_assertions": 0,
+        "interpretation": "A path declaration/fixture pass is not evidence for a relation's scientific truthmaker or uniqueness policy."
+      },
+      "sample_direct_source_instances": 0,
+      "sample_direct_target_instances": 0,
+      "truthmaker_required": "A plan explicitly specifies a dependency as treatment target; an optional execution link to RiskTreatmentActivity requires actual performance.",
+      "negative_acceptance": "A planned action does not entail its execution or a quantitative risk score.",
+      "owner": "scientific author(s); source curator for witness acquisition",
+      "gate": "P3 domain decision with actual relation witness; optional module may remain isolated",
+      "status": "PENDING_SOURCE_AND_AUTHOR"
+    },
+    {
+      "subject": "ServiceOfferingSpecification",
+      "domain": "Business Architecture",
+      "proposed_relation": "referencesOfferedActivity",
+      "proposed_target": "ManufacturingActivity",
+      "native_class": true,
+      "native_relation": null,
+      "formal": {
+        "owl_object_property_declared": false,
+        "direct_shacl_path_shapes": [],
+        "direct_P1_abox_assertions": 0,
+        "interpretation": "A path declaration/fixture pass is not evidence for a relation's scientific truthmaker or uniqueness policy."
+      },
+      "sample_direct_source_instances": 0,
+      "sample_direct_target_instances": 0,
+      "truthmaker_required": "A concrete offering specification with identified provider, offered activity and commitment is required; current W4 leaves it optional.",
+      "negative_acceptance": "Generic BA vocabulary without an actual offering cannot justify a connection; an optional isolate may remain.",
+      "owner": "scientific author(s); source curator for witness acquisition",
+      "gate": "P3 domain decision with actual relation witness; optional module may remain isolated",
+      "status": "PENDING_SOURCE_AND_AUTHOR"
+    },
+    {
+      "subject": "StockoutSituation",
+      "domain": "Supply Resilience",
+      "proposed_relation": "stockoutAtFacility",
+      "proposed_target": "Facility",
+      "native_class": true,
+      "native_relation": null,
+      "formal": {
+        "owl_object_property_declared": false,
+        "direct_shacl_path_shapes": [],
+        "direct_P1_abox_assertions": 0,
+        "interpretation": "A path declaration/fixture pass is not evidence for a relation's scientific truthmaker or uniqueness policy."
+      },
+      "sample_direct_source_instances": 0,
+      "sample_direct_target_instances": 0,
+      "truthmaker_required": "A local inventory state at a Facility with a Product or Presentation and interval; C10 presentation link requires that exact grain.",
+      "negative_acceptance": "A national MedicineShortageSituation or an inventory result without local evidence cannot imply StockoutSituation.",
+      "owner": "scientific author(s); source curator for witness acquisition",
+      "gate": "P3 domain decision with actual relation witness; optional module may remain isolated",
+      "status": "PENDING_SOURCE_AND_AUTHOR"
+    },
+    {
+      "subject": "SupplyCapacity",
+      "domain": "Supply Operations",
+      "proposed_relation": "capacityBearer",
+      "proposed_target": "Facility",
+      "native_class": true,
+      "native_relation": {
+        "id": "rel-capacityBearer",
+        "stereotype": null,
+        "typed_ends": [
+          "SupplyCapacity",
+          null
+        ]
+      },
+      "formal": {
+        "owl_object_property_declared": true,
+        "direct_shacl_path_shapes": [],
+        "direct_P1_abox_assertions": 0,
+        "interpretation": "A path declaration/fixture pass is not evidence for a relation's scientific truthmaker or uniqueness policy."
+      },
+      "sample_direct_source_instances": 0,
+      "sample_direct_target_instances": 0,
+      "truthmaker_required": "A capacity Mode inheres in exactly one eligible bearer at a time, with capacity context; a measured SupplyCapacityObservationResult remains distinct. Select Organization or Facility by witnessed bearer type, without blanket Characterization.",
+      "negative_acceptance": "A capacity measurement alone cannot prove the mode or force every Facility to have it.",
+      "owner": "scientific author(s); source curator for witness acquisition",
+      "gate": "P3 domain decision with actual relation witness; optional module may remain isolated",
+      "status": "PENDING_SOURCE_AND_AUTHOR"
+    }
+  ],
+  "ImpAbs_end_questions": [
+    {
+      "subject": "assertionAboutProduct",
+      "end": "source",
+      "type": "Assertion",
+      "cardinality": "0..*",
+      "subtypes": [
+        "DataQualityFinding",
+        "EntityMatchAssertion",
+        "MappingAssertion",
+        "SupportedAssertionRole"
+      ],
+      "native": {
+        "id": "rel-assertionAboutProduct",
+        "stereotype": null,
+        "typed_ends": [
+          "Assertion",
+          "MedicinalProduct"
+        ]
+      },
+      "formal": {
+        "owl_object_property_declared": true,
+        "direct_shacl_path_shapes": [
+          "https://w3id.org/cm-pharme/2.1/assertionAboutProductShape"
+        ],
+        "direct_P1_abox_assertions": 0,
+        "interpretation": "A path declaration/fixture pass is not evidence for a relation's scientific truthmaker or uniqueness policy."
+      },
+      "known_enforcement": "base RDF SHACL checks endpoint class; no subtype-specific cardinality for this broad association",
+      "owner": "scientific author(s)",
+      "gate": "P5 subtype-specific multiplicity/metaproperty adjudication and focused counterexample",
+      "status": "PENDING_SCIENTIFIC_ADJUDICATION"
+    },
+    {
+      "subject": "assertionAboutProduct",
+      "end": "target",
+      "type": "MedicinalProduct",
+      "cardinality": "0..*",
+      "subtypes": [
+        "AlternativeMedicinalProductRole",
+        "ClassifiedMedicinalProductRole",
+        "DependentMedicinalProductRole",
+        "IdentifiedMedicinalProductRole",
+        "ImportResponsibilitySubjectRole",
+        "ManufacturingResponsibilitySubjectRole",
+        "ProviderMedicinalProductRole",
+        "ReferenceProductRole",
+        "ResponsibilitySubjectProductRole",
+        "WholesaleResponsibilitySubjectRole"
+      ],
+      "native": {
+        "id": "rel-assertionAboutProduct",
+        "stereotype": null,
+        "typed_ends": [
+          "Assertion",
+          "MedicinalProduct"
+        ]
+      },
+      "formal": {
+        "owl_object_property_declared": true,
+        "direct_shacl_path_shapes": [
+          "https://w3id.org/cm-pharme/2.1/assertionAboutProductShape"
+        ],
+        "direct_P1_abox_assertions": 0,
+        "interpretation": "A path declaration/fixture pass is not evidence for a relation's scientific truthmaker or uniqueness policy."
+      },
+      "known_enforcement": "base RDF SHACL checks endpoint class; no subtype-specific cardinality for this broad association",
+      "owner": "scientific author(s)",
+      "gate": "P5 subtype-specific multiplicity/metaproperty adjudication and focused counterexample",
+      "status": "PENDING_SCIENTIFIC_ADJUDICATION"
+    },
+    {
+      "subject": "classificationEntity",
+      "end": "source",
+      "type": "ProductClassificationAssignment",
+      "cardinality": "1..*",
+      "subtypes": [
+        "ContextualMedicineClassificationAssignment",
+        "CriticalMedicineClassification",
+        "EssentialMedicineClassification"
+      ],
+      "native": {
+        "id": "rel-classificationEntity",
+        "stereotype": "mediation",
+        "typed_ends": [
+          "ProductClassificationAssignment",
+          "ClassifiedEntity"
+        ]
+      },
+      "formal": {
+        "owl_object_property_declared": true,
+        "direct_shacl_path_shapes": [
+          "https://w3id.org/cm-pharme/2.1/ContextualMedicineClassificationAssignmentShape",
+          "https://w3id.org/cm-pharme/2.1/ProductClassificationAssignmentShape"
+        ],
+        "direct_P1_abox_assertions": 264,
+        "interpretation": "A path declaration/fixture pass is not evidence for a relation's scientific truthmaker or uniqueness policy."
+      },
+      "known_enforcement": "focal mediation SHACL checks relator's required end; specialized contextual subset may apply",
+      "owner": "scientific author(s)",
+      "gate": "P5 subtype-specific multiplicity/metaproperty adjudication and focused counterexample",
+      "status": "PENDING_SCIENTIFIC_ADJUDICATION"
+    },
+    {
+      "subject": "classificationEntry",
+      "end": "source",
+      "type": "ProductClassificationAssignment",
+      "cardinality": "1..*",
+      "subtypes": [
+        "ContextualMedicineClassificationAssignment",
+        "CriticalMedicineClassification",
+        "EssentialMedicineClassification"
+      ],
+      "native": {
+        "id": "rel-classificationEntry",
+        "stereotype": "mediation",
+        "typed_ends": [
+          "ProductClassificationAssignment",
+          "AppliedClassificationEntryRole"
+        ]
+      },
+      "formal": {
+        "owl_object_property_declared": true,
+        "direct_shacl_path_shapes": [
+          "https://w3id.org/cm-pharme/2.1/ContextualMedicineClassificationAssignmentShape",
+          "https://w3id.org/cm-pharme/2.1/ProductClassificationAssignmentShape"
+        ],
+        "direct_P1_abox_assertions": 264,
+        "interpretation": "A path declaration/fixture pass is not evidence for a relation's scientific truthmaker or uniqueness policy."
+      },
+      "known_enforcement": "focal mediation SHACL checks relator's required end; specialized contextual subset may apply",
+      "owner": "scientific author(s)",
+      "gate": "P5 subtype-specific multiplicity/metaproperty adjudication and focused counterexample",
+      "status": "PENDING_SCIENTIFIC_ADJUDICATION"
+    },
+    {
+      "subject": "observationAboutPresentation",
+      "end": "source",
+      "type": "ObservationResult",
+      "cardinality": "0..*",
+      "subtypes": [
+        "AvailabilityObservationResult",
+        "DemandObservationResult",
+        "EvidenceObservationResultRole",
+        "InventoryObservationResult",
+        "LeadTimeObservationResult",
+        "ReimbursementUtilisationObservationResult",
+        "SupplyCapacityObservationResult"
+      ],
+      "native": {
+        "id": "rel-observationAboutPresentation",
+        "stereotype": null,
+        "typed_ends": [
+          "ObservationResult",
+          "MedicinalProductPresentation"
+        ]
+      },
+      "formal": {
+        "owl_object_property_declared": true,
+        "direct_shacl_path_shapes": [
+          "https://w3id.org/cm-pharme/2.1/observationAboutPresentationShape"
+        ],
+        "direct_P1_abox_assertions": 3072,
+        "interpretation": "A path declaration/fixture pass is not evidence for a relation's scientific truthmaker or uniqueness policy."
+      },
+      "known_enforcement": "base RDF SHACL checks endpoint class; no subtype-specific cardinality for this broad association",
+      "owner": "scientific author(s)",
+      "gate": "P5 subtype-specific multiplicity/metaproperty adjudication and focused counterexample",
+      "status": "PENDING_SCIENTIFIC_ADJUDICATION"
+    },
+    {
+      "subject": "observationAboutPresentation",
+      "end": "target",
+      "type": "MedicinalProductPresentation",
+      "cardinality": "0..*",
+      "subtypes": [
+        "IdentifiedMedicinalProductPresentationRole",
+        "ListedPresentationRole"
+      ],
+      "native": {
+        "id": "rel-observationAboutPresentation",
+        "stereotype": null,
+        "typed_ends": [
+          "ObservationResult",
+          "MedicinalProductPresentation"
+        ]
+      },
+      "formal": {
+        "owl_object_property_declared": true,
+        "direct_shacl_path_shapes": [
+          "https://w3id.org/cm-pharme/2.1/observationAboutPresentationShape"
+        ],
+        "direct_P1_abox_assertions": 3072,
+        "interpretation": "A path declaration/fixture pass is not evidence for a relation's scientific truthmaker or uniqueness policy."
+      },
+      "known_enforcement": "base RDF SHACL checks endpoint class; no subtype-specific cardinality for this broad association",
+      "owner": "scientific author(s)",
+      "gate": "P5 subtype-specific multiplicity/metaproperty adjudication and focused counterexample",
+      "status": "PENDING_SCIENTIFIC_ADJUDICATION"
+    },
+    {
+      "subject": "observationAboutProduct",
+      "end": "source",
+      "type": "ObservationResult",
+      "cardinality": "0..*",
+      "subtypes": [
+        "AvailabilityObservationResult",
+        "DemandObservationResult",
+        "EvidenceObservationResultRole",
+        "InventoryObservationResult",
+        "LeadTimeObservationResult",
+        "ReimbursementUtilisationObservationResult",
+        "SupplyCapacityObservationResult"
+      ],
+      "native": {
+        "id": "rel-observationAboutProduct",
+        "stereotype": null,
+        "typed_ends": [
+          "ObservationResult",
+          "MedicinalProduct"
+        ]
+      },
+      "formal": {
+        "owl_object_property_declared": true,
+        "direct_shacl_path_shapes": [
+          "https://w3id.org/cm-pharme/2.1/observationAboutProductShape"
+        ],
+        "direct_P1_abox_assertions": 3072,
+        "interpretation": "A path declaration/fixture pass is not evidence for a relation's scientific truthmaker or uniqueness policy."
+      },
+      "known_enforcement": "base RDF SHACL checks endpoint class; no subtype-specific cardinality for this broad association",
+      "owner": "scientific author(s)",
+      "gate": "P5 subtype-specific multiplicity/metaproperty adjudication and focused counterexample",
+      "status": "PENDING_SCIENTIFIC_ADJUDICATION"
+    },
+    {
+      "subject": "observationAboutProduct",
+      "end": "target",
+      "type": "MedicinalProduct",
+      "cardinality": "0..*",
+      "subtypes": [
+        "AlternativeMedicinalProductRole",
+        "ClassifiedMedicinalProductRole",
+        "DependentMedicinalProductRole",
+        "IdentifiedMedicinalProductRole",
+        "ImportResponsibilitySubjectRole",
+        "ManufacturingResponsibilitySubjectRole",
+        "ProviderMedicinalProductRole",
+        "ReferenceProductRole",
+        "ResponsibilitySubjectProductRole",
+        "WholesaleResponsibilitySubjectRole"
+      ],
+      "native": {
+        "id": "rel-observationAboutProduct",
+        "stereotype": null,
+        "typed_ends": [
+          "ObservationResult",
+          "MedicinalProduct"
+        ]
+      },
+      "formal": {
+        "owl_object_property_declared": true,
+        "direct_shacl_path_shapes": [
+          "https://w3id.org/cm-pharme/2.1/observationAboutProductShape"
+        ],
+        "direct_P1_abox_assertions": 3072,
+        "interpretation": "A path declaration/fixture pass is not evidence for a relation's scientific truthmaker or uniqueness policy."
+      },
+      "known_enforcement": "base RDF SHACL checks endpoint class; no subtype-specific cardinality for this broad association",
+      "owner": "scientific author(s)",
+      "gate": "P5 subtype-specific multiplicity/metaproperty adjudication and focused counterexample",
+      "status": "PENDING_SCIENTIFIC_ADJUDICATION"
+    },
+    {
+      "subject": "productHasActiveSubstance",
+      "end": "source",
+      "type": "MedicinalProduct",
+      "cardinality": "0..*",
+      "subtypes": [
+        "AlternativeMedicinalProductRole",
+        "ClassifiedMedicinalProductRole",
+        "DependentMedicinalProductRole",
+        "IdentifiedMedicinalProductRole",
+        "ImportResponsibilitySubjectRole",
+        "ManufacturingResponsibilitySubjectRole",
+        "ProviderMedicinalProductRole",
+        "ReferenceProductRole",
+        "ResponsibilitySubjectProductRole",
+        "WholesaleResponsibilitySubjectRole"
+      ],
+      "native": {
+        "id": "rel-productHasActiveSubstance",
+        "stereotype": null,
+        "typed_ends": [
+          "MedicinalProduct",
+          "PharmaceuticalSubstance"
+        ]
+      },
+      "formal": {
+        "owl_object_property_declared": true,
+        "direct_shacl_path_shapes": [
+          "https://w3id.org/cm-pharme/2.1/ProductActiveSubstanceAdmissionShape"
+        ],
+        "direct_P1_abox_assertions": 0,
+        "interpretation": "A path declaration/fixture pass is not evidence for a relation's scientific truthmaker or uniqueness policy."
+      },
+      "known_enforcement": "base RDF SHACL checks endpoint class; no subtype-specific cardinality for this broad association",
+      "owner": "scientific author(s)",
+      "gate": "P5 subtype-specific multiplicity/metaproperty adjudication and focused counterexample",
+      "status": "PENDING_SCIENTIFIC_ADJUDICATION"
+    },
+    {
+      "subject": "productHasActiveSubstance",
+      "end": "target",
+      "type": "PharmaceuticalSubstance",
+      "cardinality": "0..*",
+      "subtypes": [
+        "ClassifiedPharmaceuticalSubstanceRole",
+        "IdentifiedPharmaceuticalSubstanceRole"
+      ],
+      "native": {
+        "id": "rel-productHasActiveSubstance",
+        "stereotype": null,
+        "typed_ends": [
+          "MedicinalProduct",
+          "PharmaceuticalSubstance"
+        ]
+      },
+      "formal": {
+        "owl_object_property_declared": true,
+        "direct_shacl_path_shapes": [
+          "https://w3id.org/cm-pharme/2.1/ProductActiveSubstanceAdmissionShape"
+        ],
+        "direct_P1_abox_assertions": 0,
+        "interpretation": "A path declaration/fixture pass is not evidence for a relation's scientific truthmaker or uniqueness policy."
+      },
+      "known_enforcement": "base RDF SHACL checks endpoint class; no subtype-specific cardinality for this broad association",
+      "owner": "scientific author(s)",
+      "gate": "P5 subtype-specific multiplicity/metaproperty adjudication and focused counterexample",
+      "status": "PENDING_SCIENTIFIC_ADJUDICATION"
+    }
+  ],
+  "RepRel_tuple_questions": [
+    {
+      "subject": "AlternativeMedicineAssignment",
+      "native_class_present": true,
+      "OWL_named_class_present": true,
+      "P1_direct_relator_instances": 0,
+      "mediation_properties": [
+        "alternativeForProduct",
+        "alternativeProduct"
+      ],
+      "tier": "C_no_extra_typed_reference",
+      "fixture_evidence": "Selected B2 focal SHACL accepts two same-party-tuple instances and rejects a missing end; no uniqueness constraint tested.",
+      "focal_duplicate_fixture": "ACCEPTED; shape imposes no participant-tuple uniqueness",
+      "focal_missing_end_fixture": "REJECTED",
+      "recommended_interim_rule": "Preserve repeatability and required mediation ends; do not set blanket max 1 or add tuple uniqueness.",
+      "author_question": "Can two concurrent instances mediate exactly the same participants? If yes, which recorded key/scope/version differentiates them? If no, which source rule and valid-time boundaries establish scoped uniqueness?",
+      "owner": "scientific author(s)",
+      "gate": "P5 choose contextual/temporal tuple key or explicitly allow repeated distinct relators; test both cases",
+      "status": "PENDING_TUPLE_POLICY"
+    },
+    {
+      "subject": "EstablishmentRegistration",
+      "native_class_present": true,
+      "OWL_named_class_present": true,
+      "P1_direct_relator_instances": 0,
+      "mediation_properties": [
+        "registrationAuthority",
+        "registrationEntity"
+      ],
+      "tier": "A_explicit_context_reference",
+      "fixture_evidence": "Selected B2 focal SHACL accepts two same-party-tuple instances and rejects a missing end; no uniqueness constraint tested.",
+      "focal_duplicate_fixture": "ACCEPTED; shape imposes no participant-tuple uniqueness",
+      "focal_missing_end_fixture": "REJECTED",
+      "recommended_interim_rule": "Preserve repeatability and required mediation ends; do not set blanket max 1 or add tuple uniqueness.",
+      "author_question": "Can two concurrent instances mediate exactly the same participants? If yes, which recorded key/scope/version differentiates them? If no, which source rule and valid-time boundaries establish scoped uniqueness?",
+      "owner": "scientific author(s)",
+      "gate": "P5 choose contextual/temporal tuple key or explicitly allow repeated distinct relators; test both cases",
+      "status": "PENDING_TUPLE_POLICY"
+    },
+    {
+      "subject": "EvidenceSupport",
+      "native_class_present": true,
+      "OWL_named_class_present": true,
+      "P1_direct_relator_instances": 0,
+      "mediation_properties": [
+        "evidenceAssertion",
+        "evidenceItem"
+      ],
+      "tier": "A_explicit_context_reference",
+      "fixture_evidence": "Selected B2 focal SHACL accepts two same-party-tuple instances and rejects a missing end; no uniqueness constraint tested.",
+      "focal_duplicate_fixture": "ACCEPTED; shape imposes no participant-tuple uniqueness",
+      "focal_missing_end_fixture": "REJECTED",
+      "recommended_interim_rule": "Preserve repeatability and required mediation ends; do not set blanket max 1 or add tuple uniqueness.",
+      "author_question": "Can two concurrent instances mediate exactly the same participants? If yes, which recorded key/scope/version differentiates them? If no, which source rule and valid-time boundaries establish scoped uniqueness?",
+      "owner": "scientific author(s)",
+      "gate": "P5 choose contextual/temporal tuple key or explicitly allow repeated distinct relators; test both cases",
+      "status": "PENDING_TUPLE_POLICY"
+    },
+    {
+      "subject": "FacilityOperation",
+      "native_class_present": true,
+      "OWL_named_class_present": true,
+      "P1_direct_relator_instances": 0,
+      "mediation_properties": [
+        "operationFacility",
+        "operationOrganization"
+      ],
+      "tier": "C_no_extra_typed_reference",
+      "fixture_evidence": "Selected B2 focal SHACL accepts two same-party-tuple instances and rejects a missing end; no uniqueness constraint tested.",
+      "focal_duplicate_fixture": "ACCEPTED; shape imposes no participant-tuple uniqueness",
+      "focal_missing_end_fixture": "REJECTED",
+      "recommended_interim_rule": "Preserve repeatability and required mediation ends; do not set blanket max 1 or add tuple uniqueness.",
+      "author_question": "Can two concurrent instances mediate exactly the same participants? If yes, which recorded key/scope/version differentiates them? If no, which source rule and valid-time boundaries establish scoped uniqueness?",
+      "owner": "scientific author(s)",
+      "gate": "P5 choose contextual/temporal tuple key or explicitly allow repeated distinct relators; test both cases",
+      "status": "PENDING_TUPLE_POLICY"
+    },
+    {
+      "subject": "IdentifierAssignment",
+      "native_class_present": true,
+      "OWL_named_class_present": true,
+      "P1_direct_relator_instances": 264,
+      "mediation_properties": [
+        "identifierEntity",
+        "identifierScheme"
+      ],
+      "tier": "C_no_extra_typed_reference",
+      "fixture_evidence": "Selected B2 focal SHACL accepts two same-party-tuple instances and rejects a missing end; no uniqueness constraint tested.",
+      "focal_duplicate_fixture": "ACCEPTED; shape imposes no participant-tuple uniqueness",
+      "focal_missing_end_fixture": "REJECTED",
+      "recommended_interim_rule": "Preserve repeatability and required mediation ends; do not set blanket max 1 or add tuple uniqueness.",
+      "author_question": "Can two concurrent instances mediate exactly the same participants? If yes, which recorded key/scope/version differentiates them? If no, which source rule and valid-time boundaries establish scoped uniqueness?",
+      "owner": "scientific author(s)",
+      "gate": "P5 choose contextual/temporal tuple key or explicitly allow repeated distinct relators; test both cases",
+      "status": "PENDING_TUPLE_POLICY"
+    },
+    {
+      "subject": "MarketListing",
+      "native_class_present": true,
+      "OWL_named_class_present": true,
+      "P1_direct_relator_instances": 0,
+      "mediation_properties": [
+        "listingPresentation",
+        "listingResponsibleOrganization"
+      ],
+      "tier": "A_explicit_context_reference",
+      "fixture_evidence": "Selected B2 focal SHACL accepts two same-party-tuple instances and rejects a missing end; no uniqueness constraint tested.",
+      "focal_duplicate_fixture": "ACCEPTED; shape imposes no participant-tuple uniqueness",
+      "focal_missing_end_fixture": "REJECTED",
+      "recommended_interim_rule": "Preserve repeatability and required mediation ends; do not set blanket max 1 or add tuple uniqueness.",
+      "author_question": "Can two concurrent instances mediate exactly the same participants? If yes, which recorded key/scope/version differentiates them? If no, which source rule and valid-time boundaries establish scoped uniqueness?",
+      "owner": "scientific author(s)",
+      "gate": "P5 choose contextual/temporal tuple key or explicitly allow repeated distinct relators; test both cases",
+      "status": "PENDING_TUPLE_POLICY"
+    },
+    {
+      "subject": "ProductClassificationAssignment",
+      "native_class_present": true,
+      "OWL_named_class_present": true,
+      "P1_direct_relator_instances": 264,
+      "mediation_properties": [
+        "classificationEntity",
+        "classificationEntry"
+      ],
+      "tier": "C_no_extra_typed_reference",
+      "fixture_evidence": "Selected B2 focal SHACL accepts two same-party-tuple instances and rejects a missing end; no uniqueness constraint tested.",
+      "focal_duplicate_fixture": "ACCEPTED; shape imposes no participant-tuple uniqueness",
+      "focal_missing_end_fixture": "REJECTED",
+      "recommended_interim_rule": "Preserve repeatability and required mediation ends; do not set blanket max 1 or add tuple uniqueness.",
+      "author_question": "Can two concurrent instances mediate exactly the same participants? If yes, which recorded key/scope/version differentiates them? If no, which source rule and valid-time boundaries establish scoped uniqueness?",
+      "owner": "scientific author(s)",
+      "gate": "P5 choose contextual/temporal tuple key or explicitly allow repeated distinct relators; test both cases",
+      "status": "PENDING_TUPLE_POLICY"
+    },
+    {
+      "subject": "RegulatoryAuthorization",
+      "native_class_present": true,
+      "OWL_named_class_present": true,
+      "P1_direct_relator_instances": 0,
+      "mediation_properties": [
+        "authorizationAuthority",
+        "authorizationParty"
+      ],
+      "tier": "A_explicit_context_reference",
+      "fixture_evidence": "Selected B2 focal SHACL accepts two same-party-tuple instances and rejects a missing end; no uniqueness constraint tested.",
+      "focal_duplicate_fixture": "ACCEPTED; shape imposes no participant-tuple uniqueness",
+      "focal_missing_end_fixture": "REJECTED",
+      "recommended_interim_rule": "Preserve repeatability and required mediation ends; do not set blanket max 1 or add tuple uniqueness.",
+      "author_question": "Can two concurrent instances mediate exactly the same participants? If yes, which recorded key/scope/version differentiates them? If no, which source rule and valid-time boundaries establish scoped uniqueness?",
+      "owner": "scientific author(s)",
+      "gate": "P5 choose contextual/temporal tuple key or explicitly allow repeated distinct relators; test both cases",
+      "status": "PENDING_TUPLE_POLICY"
+    },
+    {
+      "subject": "RegulatoryOversight",
+      "native_class_present": true,
+      "OWL_named_class_present": true,
+      "P1_direct_relator_instances": 0,
+      "mediation_properties": [
+        "oversightAuthorityRole",
+        "oversightGovernedEntity"
+      ],
+      "tier": "C_no_extra_typed_reference",
+      "fixture_evidence": "Selected B2 focal SHACL accepts two same-party-tuple instances and rejects a missing end; no uniqueness constraint tested.",
+      "focal_duplicate_fixture": "ACCEPTED; shape imposes no participant-tuple uniqueness",
+      "focal_missing_end_fixture": "REJECTED",
+      "recommended_interim_rule": "Preserve repeatability and required mediation ends; do not set blanket max 1 or add tuple uniqueness.",
+      "author_question": "Can two concurrent instances mediate exactly the same participants? If yes, which recorded key/scope/version differentiates them? If no, which source rule and valid-time boundaries establish scoped uniqueness?",
+      "owner": "scientific author(s)",
+      "gate": "P5 choose contextual/temporal tuple key or explicitly allow repeated distinct relators; test both cases",
+      "status": "PENDING_TUPLE_POLICY"
+    },
+    {
+      "subject": "SupplyDependency",
+      "native_class_present": true,
+      "OWL_named_class_present": true,
+      "P1_direct_relator_instances": 0,
+      "mediation_properties": [
+        "dependencyDependent",
+        "dependencyProvider"
+      ],
+      "tier": "B_indirect_context_references",
+      "fixture_evidence": "Selected B2 focal SHACL accepts two same-party-tuple instances and rejects a missing end; no uniqueness constraint tested.",
+      "focal_duplicate_fixture": "ACCEPTED; shape imposes no participant-tuple uniqueness",
+      "focal_missing_end_fixture": "REJECTED",
+      "recommended_interim_rule": "Preserve repeatability and required mediation ends; do not set blanket max 1 or add tuple uniqueness.",
+      "author_question": "Can two concurrent instances mediate exactly the same participants? If yes, which recorded key/scope/version differentiates them? If no, which source rule and valid-time boundaries establish scoped uniqueness?",
+      "owner": "scientific author(s)",
+      "gate": "P5 choose contextual/temporal tuple key or explicitly allow repeated distinct relators; test both cases",
+      "status": "PENDING_TUPLE_POLICY"
+    },
+    {
+      "subject": "ManufacturingResponsibility",
+      "native_class_present": true,
+      "OWL_named_class_present": true,
+      "P1_direct_relator_instances": 0,
+      "mediation_properties": [
+        "manufacturingResponsibilityHolder",
+        "manufacturingResponsibilityCounterpart"
+      ],
+      "tier": "C_no_extra_typed_reference",
+      "fixture_evidence": "Selected B2 focal SHACL accepts two same-party-tuple instances and rejects a missing end; no uniqueness constraint tested.",
+      "focal_duplicate_fixture": "ACCEPTED; shape imposes no participant-tuple uniqueness",
+      "focal_missing_end_fixture": "REJECTED",
+      "recommended_interim_rule": "Preserve repeatability and required mediation ends; do not set blanket max 1 or add tuple uniqueness.",
+      "author_question": "Can two concurrent instances mediate exactly the same participants? If yes, which recorded key/scope/version differentiates them? If no, which source rule and valid-time boundaries establish scoped uniqueness?",
+      "owner": "scientific author(s)",
+      "gate": "P5 choose contextual/temporal tuple key or explicitly allow repeated distinct relators; test both cases",
+      "status": "PENDING_TUPLE_POLICY"
+    },
+    {
+      "subject": "ManufacturingSiteUse",
+      "native_class_present": true,
+      "OWL_named_class_present": true,
+      "P1_direct_relator_instances": 0,
+      "mediation_properties": [
+        "manufacturingSiteUseHolder",
+        "manufacturingSiteUseCounterpart"
+      ],
+      "tier": "C_no_extra_typed_reference",
+      "fixture_evidence": "Selected B2 focal SHACL accepts two same-party-tuple instances and rejects a missing end; no uniqueness constraint tested.",
+      "focal_duplicate_fixture": "ACCEPTED; shape imposes no participant-tuple uniqueness",
+      "focal_missing_end_fixture": "REJECTED",
+      "recommended_interim_rule": "Preserve repeatability and required mediation ends; do not set blanket max 1 or add tuple uniqueness.",
+      "author_question": "Can two concurrent instances mediate exactly the same participants? If yes, which recorded key/scope/version differentiates them? If no, which source rule and valid-time boundaries establish scoped uniqueness?",
+      "owner": "scientific author(s)",
+      "gate": "P5 choose contextual/temporal tuple key or explicitly allow repeated distinct relators; test both cases",
+      "status": "PENDING_TUPLE_POLICY"
+    },
+    {
+      "subject": "ImportResponsibility",
+      "native_class_present": true,
+      "OWL_named_class_present": true,
+      "P1_direct_relator_instances": 0,
+      "mediation_properties": [
+        "importResponsibilityHolder",
+        "importResponsibilityCounterpart"
+      ],
+      "tier": "C_no_extra_typed_reference",
+      "fixture_evidence": "Selected B2 focal SHACL accepts two same-party-tuple instances and rejects a missing end; no uniqueness constraint tested.",
+      "focal_duplicate_fixture": "ACCEPTED; shape imposes no participant-tuple uniqueness",
+      "focal_missing_end_fixture": "REJECTED",
+      "recommended_interim_rule": "Preserve repeatability and required mediation ends; do not set blanket max 1 or add tuple uniqueness.",
+      "author_question": "Can two concurrent instances mediate exactly the same participants? If yes, which recorded key/scope/version differentiates them? If no, which source rule and valid-time boundaries establish scoped uniqueness?",
+      "owner": "scientific author(s)",
+      "gate": "P5 choose contextual/temporal tuple key or explicitly allow repeated distinct relators; test both cases",
+      "status": "PENDING_TUPLE_POLICY"
+    },
+    {
+      "subject": "WholesaleResponsibility",
+      "native_class_present": true,
+      "OWL_named_class_present": true,
+      "P1_direct_relator_instances": 0,
+      "mediation_properties": [
+        "wholesaleResponsibilityHolder",
+        "wholesaleResponsibilityCounterpart"
+      ],
+      "tier": "C_no_extra_typed_reference",
+      "fixture_evidence": "Selected B2 focal SHACL accepts two same-party-tuple instances and rejects a missing end; no uniqueness constraint tested.",
+      "focal_duplicate_fixture": "ACCEPTED; shape imposes no participant-tuple uniqueness",
+      "focal_missing_end_fixture": "REJECTED",
+      "recommended_interim_rule": "Preserve repeatability and required mediation ends; do not set blanket max 1 or add tuple uniqueness.",
+      "author_question": "Can two concurrent instances mediate exactly the same participants? If yes, which recorded key/scope/version differentiates them? If no, which source rule and valid-time boundaries establish scoped uniqueness?",
+      "owner": "scientific author(s)",
+      "gate": "P5 choose contextual/temporal tuple key or explicitly allow repeated distinct relators; test both cases",
+      "status": "PENDING_TUPLE_POLICY"
+    },
+    {
+      "subject": "LogisticsServiceCommitment",
+      "native_class_present": true,
+      "OWL_named_class_present": true,
+      "P1_direct_relator_instances": 0,
+      "mediation_properties": [
+        "logisticsServiceCommitmentHolder",
+        "logisticsServiceCommitmentCounterpart"
+      ],
+      "tier": "C_no_extra_typed_reference",
+      "fixture_evidence": "Selected B2 focal SHACL accepts two same-party-tuple instances and rejects a missing end; no uniqueness constraint tested.",
+      "focal_duplicate_fixture": "ACCEPTED; shape imposes no participant-tuple uniqueness",
+      "focal_missing_end_fixture": "REJECTED",
+      "recommended_interim_rule": "Preserve repeatability and required mediation ends; do not set blanket max 1 or add tuple uniqueness.",
+      "author_question": "Can two concurrent instances mediate exactly the same participants? If yes, which recorded key/scope/version differentiates them? If no, which source rule and valid-time boundaries establish scoped uniqueness?",
+      "owner": "scientific author(s)",
+      "gate": "P5 choose contextual/temporal tuple key or explicitly allow repeated distinct relators; test both cases",
+      "status": "PENDING_TUPLE_POLICY"
+    },
+    {
+      "subject": "DistributionSiteUse",
+      "native_class_present": true,
+      "OWL_named_class_present": true,
+      "P1_direct_relator_instances": 0,
+      "mediation_properties": [
+        "distributionSiteUseHolder",
+        "distributionSiteUseCounterpart"
+      ],
+      "tier": "C_no_extra_typed_reference",
+      "fixture_evidence": "Selected B2 focal SHACL accepts two same-party-tuple instances and rejects a missing end; no uniqueness constraint tested.",
+      "focal_duplicate_fixture": "ACCEPTED; shape imposes no participant-tuple uniqueness",
+      "focal_missing_end_fixture": "REJECTED",
+      "recommended_interim_rule": "Preserve repeatability and required mediation ends; do not set blanket max 1 or add tuple uniqueness.",
+      "author_question": "Can two concurrent instances mediate exactly the same participants? If yes, which recorded key/scope/version differentiates them? If no, which source rule and valid-time boundaries establish scoped uniqueness?",
+      "owner": "scientific author(s)",
+      "gate": "P5 choose contextual/temporal tuple key or explicitly allow repeated distinct relators; test both cases",
+      "status": "PENDING_TUPLE_POLICY"
+    },
+    {
+      "subject": "RegulatoryMandate",
+      "native_class_present": true,
+      "OWL_named_class_present": true,
+      "P1_direct_relator_instances": 0,
+      "mediation_properties": [
+        "regulatoryMandateHolder",
+        "regulatoryMandateCounterpart"
+      ],
+      "tier": "C_no_extra_typed_reference",
+      "fixture_evidence": "Selected B2 focal SHACL accepts two same-party-tuple instances and rejects a missing end; no uniqueness constraint tested.",
+      "focal_duplicate_fixture": "ACCEPTED; shape imposes no participant-tuple uniqueness",
+      "focal_missing_end_fixture": "REJECTED",
+      "recommended_interim_rule": "Preserve repeatability and required mediation ends; do not set blanket max 1 or add tuple uniqueness.",
+      "author_question": "Can two concurrent instances mediate exactly the same participants? If yes, which recorded key/scope/version differentiates them? If no, which source rule and valid-time boundaries establish scoped uniqueness?",
+      "owner": "scientific author(s)",
+      "gate": "P5 choose contextual/temporal tuple key or explicitly allow repeated distinct relators; test both cases",
+      "status": "PENDING_TUPLE_POLICY"
+    },
+    {
+      "subject": "ProductLabelResponsibility",
+      "native_class_present": true,
+      "OWL_named_class_present": true,
+      "P1_direct_relator_instances": 0,
+      "mediation_properties": [
+        "productLabelResponsibilityHolder",
+        "productLabelResponsibilityCounterpart"
+      ],
+      "tier": "C_no_extra_typed_reference",
+      "fixture_evidence": "Selected B2 focal SHACL accepts two same-party-tuple instances and rejects a missing end; no uniqueness constraint tested.",
+      "focal_duplicate_fixture": "ACCEPTED; shape imposes no participant-tuple uniqueness",
+      "focal_missing_end_fixture": "REJECTED",
+      "recommended_interim_rule": "Preserve repeatability and required mediation ends; do not set blanket max 1 or add tuple uniqueness.",
+      "author_question": "Can two concurrent instances mediate exactly the same participants? If yes, which recorded key/scope/version differentiates them? If no, which source rule and valid-time boundaries establish scoped uniqueness?",
+      "owner": "scientific author(s)",
+      "gate": "P5 choose contextual/temporal tuple key or explicitly allow repeated distinct relators; test both cases",
+      "status": "PENDING_TUPLE_POLICY"
+    },
+    {
+      "subject": "InstitutionalFundingCommitment",
+      "native_class_present": true,
+      "OWL_named_class_present": true,
+      "P1_direct_relator_instances": 0,
+      "mediation_properties": [
+        "institutionalFundingCommitmentHolder",
+        "institutionalFundingCommitmentCounterpart"
+      ],
+      "tier": "C_no_extra_typed_reference",
+      "fixture_evidence": "Selected B2 focal SHACL accepts two same-party-tuple instances and rejects a missing end; no uniqueness constraint tested.",
+      "focal_duplicate_fixture": "ACCEPTED; shape imposes no participant-tuple uniqueness",
+      "focal_missing_end_fixture": "REJECTED",
+      "recommended_interim_rule": "Preserve repeatability and required mediation ends; do not set blanket max 1 or add tuple uniqueness.",
+      "author_question": "Can two concurrent instances mediate exactly the same participants? If yes, which recorded key/scope/version differentiates them? If no, which source rule and valid-time boundaries establish scoped uniqueness?",
+      "owner": "scientific author(s)",
+      "gate": "P5 choose contextual/temporal tuple key or explicitly allow repeated distinct relators; test both cases",
+      "status": "PENDING_TUPLE_POLICY"
+    }
+  ]
+}

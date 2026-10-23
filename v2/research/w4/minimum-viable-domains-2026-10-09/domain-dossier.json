@@ -1,0 +1,1337 @@
+{
+  "title": "CM-PharmE four-domain minimum viable design dossier",
+  "as_of": "2026-10-09 Asia/Tehran",
+  "status": "REVIEW_DESIGN_ONLY",
+  "baseline_commit": "71a8615d7e89b2ee735ca21be4e6f49683816555",
+  "user_decision": {
+    "id": "D-20261009-FOUR-DOMAIN-HOLD",
+    "status": "CONFIRMED_USER_DIRECTION",
+    "text_fa": "تصمیم خروج یا انتقال چهار دامنه معلق است؛ امکان طراحی دامنه حداقلی مفید بررسی شود؛ تصمیم نهایی حذف اتخاذ نشود.",
+    "effect": "Preserve current model and prior backlog; develop evidence-backed bounded alternatives. No new scientific approval inferred."
+  },
+  "sources": [
+    {
+      "id": "S1",
+      "title": "ICH Q9(R1), final Step 4, 2023",
+      "url": "https://database.ich.org/sites/default/files/ICH_Q9%28R1%29_Guideline_Step4_2023_0126_0.pdf",
+      "locator": "Sections 4.3–4.6, 6.1",
+      "support": "Pharmaceutical quality risk assessment, control and review, including availability risks from quality/manufacturing issues. Does not prescribe the proposed ontology classes."
+    },
+    {
+      "id": "S2",
+      "title": "WHO Pharmacovigilance",
+      "url": "https://www.who.int/teams/regulation-prequalification/regulation-and-safety/pharmacovigilance/",
+      "locator": "What is Pharmacovigilance?",
+      "support": "Medicine-safety monitoring is a legitimate pharmaceutical ecosystem concern."
+    },
+    {
+      "id": "S3",
+      "title": "EMA GVP Module IX Rev.1, final",
+      "url": "https://www.ema.europa.eu/en/documents/scientific-guideline/guideline-good-pharmacovigilance-practices-gvp-module-ix-signal-management-rev-1_en.pdf",
+      "locator": "IX.A.1.1, pp.4–6; IX.B; IX.C.8",
+      "support": "Reports, signals, assessment and recorded dispositions are distinct. EU procedures are jurisdiction-specific; signal status is not proof of causation."
+    },
+    {
+      "id": "S4",
+      "title": "The Open Group ArchiMate overview",
+      "url": "https://www.opengroup.org/archimate-forum/archimate-overview",
+      "locator": "About the ArchiMate Modeling Language",
+      "support": "Cross-domain analysis of processes, organizational structures, information flows and IT. Not an OntoUML stereotype mapping."
+    },
+    {
+      "id": "S5",
+      "title": "The Open Group ArchiMate 101",
+      "url": "https://archimate-community.pages.opengroup.org/workgroups/archimate-101/",
+      "locator": "Business Layer Elements; Application Layer Elements",
+      "support": "Distinguishes business behavior, applications and data; supports analytical interfaces."
+    },
+    {
+      "id": "S6",
+      "title": "W3C PROV-O Recommendation",
+      "url": "https://www.w3.org/TR/prov-o/",
+      "locator": "Section 3.1 Starting Point Terms; qualified relations",
+      "support": "Reusable provenance for entities, activities and responsible agents; no mandatory equivalence between a software artifact and a software agent."
+    },
+    {
+      "id": "S7",
+      "title": "OntoUML Characterization documentation",
+      "url": "https://ontouml.readthedocs.io/en/latest/relationships/characterization/index.html",
+      "locator": "Definition",
+      "support": "Mode and Quality bearer dependence; generic constraints do not settle each proposed domain-specific stereotype."
+    }
+  ],
+  "modules": [
+    {
+      "id": "RM",
+      "name": "Risk Management",
+      "goal_fa": "ارزیابی و پیگیری ریسک کیفیت و تداوم عرضهٔ دارو در زمینهٔ محصول، تأسیسات و وابستگی تأمین.",
+      "retained_existing_ids": [
+        "RiskAssessmentActivity",
+        "RiskTreatmentActivity",
+        "RiskTreatmentPlan"
+      ],
+      "proposed_concepts": [
+        {
+          "id": "RiskScenarioSpecification",
+          "meaning": "A documented possible harmful circumstance and consequence; not an occurred disruption.",
+          "candidate_category": "information content; identity review pending",
+          "status": "PROPOSED_NOT_INTEGRATED"
+        },
+        {
+          "id": "RiskAssessmentResult",
+          "meaning": "A contextual assessment conclusion; reuse ObservationResult/Assertion if their definitions suffice.",
+          "candidate_category": "information result; reuse before adding a class",
+          "status": "PROPOSED_NOT_INTEGRATED"
+        },
+        {
+          "id": "RiskReviewActivity",
+          "meaning": "An occurrence reviewing prior assessment or treatment evidence.",
+          "candidate_category": "event candidate",
+          "status": "PROPOSED_NOT_INTEGRATED"
+        }
+      ],
+      "interfaces": [
+        "MedicinalProduct",
+        "Facility",
+        "SupplyDependency",
+        "DisruptionEvent",
+        "ObservationResult",
+        "SourceRecord",
+        "Organization",
+        "TimeInterval"
+      ],
+      "source_ids": [
+        "S1",
+        "S6"
+      ],
+      "exclusions": [
+        "Generic enterprise risk taxonomy",
+        "Universal numeric risk formula",
+        "Automatic revival of deferred AssetAtRisk/Vulnerability"
+      ],
+      "open_semantic_decisions": [
+        "Result versus ObservationResult reuse",
+        "Scenario identity versus actual Situation",
+        "Meaning and jurisdiction of risk acceptance"
+      ],
+      "competency_questions": [
+        {
+          "id": "CQ-RM-01",
+          "question_fa": "چه ریسک مستندی دربارهٔ کدام محصول یا وابستگی، با چه ارزیابی‌ای وجود دارد؟"
+        },
+        {
+          "id": "CQ-RM-02",
+          "question_fa": "برای نتیجهٔ ارزیابی چه برنامه‌ای وجود دارد و کدام اقدام واقعاً اجرا شده است؟"
+        },
+        {
+          "id": "CQ-RM-03",
+          "question_fa": "بازبینی بعدی با چه شواهدی نتیجهٔ قبلی را تغییر داده است؟"
+        }
+      ],
+      "requirements": [
+        {
+          "id": "R-RM-01",
+          "atomic_statement_fa": "موضوع هر ارزیابی ریسک باید به زمینهٔ دارویی مشخص قابل ردیابی باشد.",
+          "stakeholder_and_purpose": "ارزیابی و پیگیری ریسک کیفیت و تداوم عرضهٔ دارو در زمینهٔ محصول، تأسیسات و وابستگی تأمین.",
+          "evidence_sources": [
+            "S1",
+            "S6"
+          ],
+          "status": "PROPOSED_SOURCE_INFORMED",
+          "priority": "MUST_IF_MODULE_ACCEPTED",
+          "primary_domain": "Risk Management",
+          "competency_questions": [
+            "CQ-RM-01"
+          ],
+          "acceptance_criterion_fa": "پرسش، محصول/تأسیسات/وابستگی موضوع را برگرداند؛ موضوع نامعلوم به‌عنوان نقص اطلاعات مشخص شود.",
+          "model_elements": "Candidate vocabulary and relations in this module; exact mapping pending P3",
+          "constraints": "Proposed admission contracts below; not universal OWL axioms",
+          "test_result": "NOT_EXECUTED",
+          "author_decision": "PENDING",
+          "positive_witness": [
+            "SC-RM-01"
+          ],
+          "negative_or_boundary_witness": [
+            "SC-RM-03"
+          ]
+        },
+        {
+          "id": "R-RM-02",
+          "atomic_statement_fa": "نتیجهٔ هر ارزیابی باید از رخداد انجام ارزیابی متمایز باشد.",
+          "stakeholder_and_purpose": "ارزیابی و پیگیری ریسک کیفیت و تداوم عرضهٔ دارو در زمینهٔ محصول، تأسیسات و وابستگی تأمین.",
+          "evidence_sources": [
+            "S1",
+            "S6"
+          ],
+          "status": "PROPOSED_SOURCE_INFORMED",
+          "priority": "MUST_IF_MODULE_ACCEPTED",
+          "primary_domain": "Risk Management",
+          "competency_questions": [
+            "CQ-RM-01"
+          ],
+          "acceptance_criterion_fa": "شناسه نتیجه و رخداد قابل تفکیک باشند؛ نبود نتیجهٔ منتشرشده به معنی نبود رخداد نیست.",
+          "model_elements": "Candidate vocabulary and relations in this module; exact mapping pending P3",
+          "constraints": "Proposed admission contracts below; not universal OWL axioms",
+          "test_result": "NOT_EXECUTED",
+          "author_decision": "PENDING",
+          "positive_witness": [
+            "SC-RM-01",
+            "SC-RM-02"
+          ],
+          "negative_or_boundary_witness": [
+            "SC-RM-02"
+          ]
+        },
+        {
+          "id": "R-RM-03",
+          "atomic_statement_fa": "مبنای شواهد هر نتیجهٔ ارزیابی باید قابل بازیابی باشد.",
+          "stakeholder_and_purpose": "ارزیابی و پیگیری ریسک کیفیت و تداوم عرضهٔ دارو در زمینهٔ محصول، تأسیسات و وابستگی تأمین.",
+          "evidence_sources": [
+            "S1",
+            "S6"
+          ],
+          "status": "PROPOSED_SOURCE_INFORMED",
+          "priority": "MUST_IF_MODULE_ACCEPTED",
+          "primary_domain": "Risk Management",
+          "competency_questions": [
+            "CQ-RM-01"
+          ],
+          "acceptance_criterion_fa": "نتیجهٔ پذیرفته‌شده در پروفایل داده به حداقل یک SourceRecord/Assertion متصل باشد.",
+          "model_elements": "Candidate vocabulary and relations in this module; exact mapping pending P3",
+          "constraints": "Proposed admission contracts below; not universal OWL axioms",
+          "test_result": "NOT_EXECUTED",
+          "author_decision": "PENDING",
+          "positive_witness": [
+            "SC-RM-01",
+            "SC-RM-02"
+          ],
+          "negative_or_boundary_witness": [
+            "SC-RM-02",
+            "SC-RM-03"
+          ]
+        },
+        {
+          "id": "R-RM-04",
+          "atomic_statement_fa": "برنامهٔ رسیدگی باید به نتیجهٔ ارزیابی موردنظر متصل باشد.",
+          "stakeholder_and_purpose": "ارزیابی و پیگیری ریسک کیفیت و تداوم عرضهٔ دارو در زمینهٔ محصول، تأسیسات و وابستگی تأمین.",
+          "evidence_sources": [
+            "S1",
+            "S6"
+          ],
+          "status": "PROPOSED_SOURCE_INFORMED",
+          "priority": "MUST_IF_MODULE_ACCEPTED",
+          "primary_domain": "Risk Management",
+          "competency_questions": [
+            "CQ-RM-02"
+          ],
+          "acceptance_criterion_fa": "پرسش برنامه فقط ارزیابی‌های تصریح‌شده را برگرداند.",
+          "model_elements": "Candidate vocabulary and relations in this module; exact mapping pending P3",
+          "constraints": "Proposed admission contracts below; not universal OWL axioms",
+          "test_result": "NOT_EXECUTED",
+          "author_decision": "PENDING",
+          "positive_witness": [
+            "SC-RM-01"
+          ],
+          "negative_or_boundary_witness": [
+            "SC-RM-03"
+          ]
+        },
+        {
+          "id": "R-RM-05",
+          "atomic_statement_fa": "وقوع اقدام رسیدگی باید مستقل از وجود برنامه قابل تشخیص باشد.",
+          "stakeholder_and_purpose": "ارزیابی و پیگیری ریسک کیفیت و تداوم عرضهٔ دارو در زمینهٔ محصول، تأسیسات و وابستگی تأمین.",
+          "evidence_sources": [
+            "S1",
+            "S6"
+          ],
+          "status": "PROPOSED_SOURCE_INFORMED",
+          "priority": "MUST_IF_MODULE_ACCEPTED",
+          "primary_domain": "Risk Management",
+          "competency_questions": [
+            "CQ-RM-02"
+          ],
+          "acceptance_criterion_fa": "وجود برنامه بدون رخداد، اجرای اقدام را نتیجه ندهد.",
+          "model_elements": "Candidate vocabulary and relations in this module; exact mapping pending P3",
+          "constraints": "Proposed admission contracts below; not universal OWL axioms",
+          "test_result": "NOT_EXECUTED",
+          "author_decision": "PENDING",
+          "positive_witness": [
+            "SC-RM-01"
+          ],
+          "negative_or_boundary_witness": [
+            "SC-RM-04"
+          ]
+        },
+        {
+          "id": "R-RM-06",
+          "atomic_statement_fa": "هر بازبینی باید نتیجهٔ پیشین مورد بازبینی را مشخص کند.",
+          "stakeholder_and_purpose": "ارزیابی و پیگیری ریسک کیفیت و تداوم عرضهٔ دارو در زمینهٔ محصول، تأسیسات و وابستگی تأمین.",
+          "evidence_sources": [
+            "S1",
+            "S6"
+          ],
+          "status": "PROPOSED_SOURCE_INFORMED",
+          "priority": "MUST_IF_MODULE_ACCEPTED",
+          "primary_domain": "Risk Management",
+          "competency_questions": [
+            "CQ-RM-03"
+          ],
+          "acceptance_criterion_fa": "زنجیره نسخه/زمان نتیجه‌های قبلی حفظ شود.",
+          "model_elements": "Candidate vocabulary and relations in this module; exact mapping pending P3",
+          "constraints": "Proposed admission contracts below; not universal OWL axioms",
+          "test_result": "NOT_EXECUTED",
+          "author_decision": "PENDING",
+          "positive_witness": [
+            "SC-RM-02"
+          ],
+          "negative_or_boundary_witness": [
+            "SC-RM-02",
+            "SC-RM-04"
+          ]
+        }
+      ],
+      "relation_designs": [
+        {
+          "id": "RD-RM-01",
+          "statement_fa": "RiskAssessmentActivity موضوع RiskScenarioSpecification را بررسی می‌کند.",
+          "proposed_constraint": "At least one declared scenario for an admitted assessment record; incomplete evidence is not OWL inconsistency.",
+          "status": "DESIGN_ONLY",
+          "ontouml_stereotype": "PENDING_IDENTITY_AND_DEPENDENCE_REVIEW"
+        },
+        {
+          "id": "RD-RM-02",
+          "statement_fa": "RiskScenarioSpecification دربارهٔ MedicinalProduct/Facility/SupplyDependency است.",
+          "proposed_constraint": "Use typed aboutness routes; do not resurrect deferred AssetAtRisk/Vulnerability automatically.",
+          "status": "DESIGN_ONLY",
+          "ontouml_stereotype": "PENDING_IDENTITY_AND_DEPENDENCE_REVIEW"
+        },
+        {
+          "id": "RD-RM-03",
+          "statement_fa": "ارزیابی، RiskAssessmentResult تولید می‌کند و نتیجه به SourceRecord ارجاع دارد.",
+          "proposed_constraint": "Completed admitted result: one generating assessment and >=1 evidence record; not a universal claim that all assessments complete.",
+          "status": "DESIGN_ONLY",
+          "ontouml_stereotype": "PENDING_IDENTITY_AND_DEPENDENCE_REVIEW"
+        },
+        {
+          "id": "RD-RM-04",
+          "statement_fa": "RiskTreatmentPlan نتیجه را مبنا قرار می‌دهد؛ RiskTreatmentActivity اجرای برنامه را ثبت می‌کند.",
+          "proposed_constraint": "Plan can exist with 0 execution occurrences; ad hoc activity must not force an invented plan.",
+          "status": "DESIGN_ONLY",
+          "ontouml_stereotype": "PENDING_IDENTITY_AND_DEPENDENCE_REVIEW"
+        },
+        {
+          "id": "RD-RM-05",
+          "statement_fa": "RiskReviewActivity نتیجه پیشین را بازبینی می‌کند.",
+          "proposed_constraint": "A review may produce a revised result; preserve original evidence and timestamp.",
+          "status": "DESIGN_ONLY",
+          "ontouml_stereotype": "PENDING_IDENTITY_AND_DEPENDENCE_REVIEW"
+        }
+      ],
+      "scenarios": [
+        {
+          "id": "SC-RM-01",
+          "kind": "positive",
+          "input_fa": "ارزیابی وابستگی تأمین X با شاهد E، نتیجه R و برنامه P ثبت می‌شود؛ هنوز اقدامی رخ نداده است.",
+          "expected_fa": "X/E/R/P بازیابی شوند؛ اقدام اجراشده صفر؛ رخداد و نتیجه یکی نشوند.",
+          "requirement_ids": [
+            "R-RM-01",
+            "R-RM-02",
+            "R-RM-03",
+            "R-RM-04",
+            "R-RM-05"
+          ],
+          "status": "DESIGNED_NOT_EXECUTED"
+        },
+        {
+          "id": "SC-RM-02",
+          "kind": "boundary",
+          "input_fa": "بازبینی دوم در زمان t2 نتیجه R را با شاهد جدید اصلاح می‌کند؛ نتیجه t1 باقی است.",
+          "expected_fa": "هر دو نتیجه با ترتیب زمانی و پیوند بازبینی حفظ شوند.",
+          "requirement_ids": [
+            "R-RM-02",
+            "R-RM-03",
+            "R-RM-06"
+          ],
+          "status": "DESIGNED_NOT_EXECUTED"
+        },
+        {
+          "id": "SC-RM-03",
+          "kind": "negative",
+          "input_fa": "نتیجه آماده پذیرش فاقد موضوع یا شاهد است؛ برنامه به ارزیابی ناموجود اشاره دارد.",
+          "expected_fa": "پروفایل پذیرش، نقص ارجاع/شواهد را رد کند؛ نوع نقص گزارش شود.",
+          "requirement_ids": [
+            "R-RM-01",
+            "R-RM-03",
+            "R-RM-04"
+          ],
+          "status": "DESIGNED_NOT_EXECUTED"
+        },
+        {
+          "id": "SC-RM-04",
+          "kind": "non_entailment",
+          "input_fa": "تنها سناریوی ریسک و برنامهٔ پیشگیری موجود است.",
+          "expected_fa": "وقوع اختلال، اجرای درمان یا کاهش واقعی ریسک استنتاج نشود.",
+          "requirement_ids": [
+            "R-RM-05",
+            "R-RM-06"
+          ],
+          "status": "DESIGNED_NOT_EXECUTED"
+        }
+      ]
+    },
+    {
+      "id": "PV",
+      "name": "Pharmacovigilance",
+      "goal_fa": "پیوند شواهد ایمنی دارو به گزارش‌دهی، سیگنال، ارزیابی و تصمیم قابل ردیابی.",
+      "retained_existing_ids": [
+        "AdverseEventReportingActivity",
+        "PharmacovigilanceRequirement",
+        "PostMarketSurveillanceActivity"
+      ],
+      "proposed_concepts": [
+        {
+          "id": "SafetyReport",
+          "meaning": "Versioned safety information submitted/referenced by a reporting occurrence; not the adverse event itself.",
+          "candidate_category": "information content; may reuse a SourceRecord profile",
+          "status": "PROPOSED_NOT_INTEGRATED"
+        },
+        {
+          "id": "SafetySignal",
+          "meaning": "Information warranting investigation of a possible medicine-event association.",
+          "candidate_category": "information content; not an actual event",
+          "status": "PROPOSED_NOT_INTEGRATED"
+        },
+        {
+          "id": "SignalAssessmentActivity",
+          "meaning": "An occurrence evaluating a safety signal.",
+          "candidate_category": "event candidate",
+          "status": "PROPOSED_NOT_INTEGRATED"
+        },
+        {
+          "id": "SignalAssessmentResult",
+          "meaning": "Versioned assessment conclusion with provenance and scoped status.",
+          "candidate_category": "information result; reuse Assertion/ObservationResult if appropriate",
+          "status": "PROPOSED_NOT_INTEGRATED"
+        }
+      ],
+      "interfaces": [
+        "MedicinalProduct",
+        "PharmaceuticalSubstance",
+        "SourceRecord",
+        "EvidenceSupport",
+        "Organization",
+        "RegulatoryRequirement",
+        "RegulatoryJurisdiction",
+        "TimeInterval"
+      ],
+      "source_ids": [
+        "S2",
+        "S3",
+        "S6"
+      ],
+      "exclusions": [
+        "Full clinical record",
+        "Automatic causal diagnosis",
+        "Complete ICSR standard implementation",
+        "All EU workflow steps as global invariants"
+      ],
+      "open_semantic_decisions": [
+        "Report content versus SourceRecord carrier",
+        "Signal statuses as contextual claims, not rigid kinds",
+        "PharmacovigilanceRequirement specialization of RegulatoryRequirement"
+      ],
+      "competency_questions": [
+        {
+          "id": "CQ-PV-01",
+          "question_fa": "کدام گزارش یا منبع از سیگنال مربوط به کدام دارو یا ماده پشتیبانی می‌کند؟"
+        },
+        {
+          "id": "CQ-PV-02",
+          "question_fa": "وضعیت ارزیابی سیگنال در زمان و مرجع معین چیست؟"
+        },
+        {
+          "id": "CQ-PV-03",
+          "question_fa": "کدام الزام پایش در این قلمرو اعمال می‌شود و چه فعالیتی آن را پوشش می‌دهد؟"
+        }
+      ],
+      "requirements": [
+        {
+          "id": "R-PV-01",
+          "atomic_statement_fa": "اطلاعات گزارش ایمنی باید از رخداد گزارش‌کردن متمایز باشد.",
+          "stakeholder_and_purpose": "پیوند شواهد ایمنی دارو به گزارش‌دهی، سیگنال، ارزیابی و تصمیم قابل ردیابی.",
+          "evidence_sources": [
+            "S2",
+            "S3",
+            "S6"
+          ],
+          "status": "PROPOSED_SOURCE_INFORMED",
+          "priority": "MUST_IF_MODULE_ACCEPTED",
+          "primary_domain": "Pharmacovigilance",
+          "competency_questions": [
+            "CQ-PV-01"
+          ],
+          "acceptance_criterion_fa": "بازارسال همان محتوا، رخداد جدید را بدون ادغام خودکار گزارش‌ها ثبت کند.",
+          "model_elements": "Candidate vocabulary and relations in this module; exact mapping pending P3",
+          "constraints": "Proposed admission contracts below; not universal OWL axioms",
+          "test_result": "NOT_EXECUTED",
+          "author_decision": "PENDING",
+          "positive_witness": [
+            "SC-PV-01",
+            "SC-PV-02"
+          ],
+          "negative_or_boundary_witness": [
+            "SC-PV-02"
+          ]
+        },
+        {
+          "id": "R-PV-02",
+          "atomic_statement_fa": "موضوع سیگنال باید به محصول یا مادهٔ دارویی مشخص متصل باشد.",
+          "stakeholder_and_purpose": "پیوند شواهد ایمنی دارو به گزارش‌دهی، سیگنال، ارزیابی و تصمیم قابل ردیابی.",
+          "evidence_sources": [
+            "S2",
+            "S3",
+            "S6"
+          ],
+          "status": "PROPOSED_SOURCE_INFORMED",
+          "priority": "MUST_IF_MODULE_ACCEPTED",
+          "primary_domain": "Pharmacovigilance",
+          "competency_questions": [
+            "CQ-PV-01"
+          ],
+          "acceptance_criterion_fa": "سیگنال ماده‌ای بدون اجبار ساختن یک برند قابل ثبت باشد.",
+          "model_elements": "Candidate vocabulary and relations in this module; exact mapping pending P3",
+          "constraints": "Proposed admission contracts below; not universal OWL axioms",
+          "test_result": "NOT_EXECUTED",
+          "author_decision": "PENDING",
+          "positive_witness": [
+            "SC-PV-01",
+            "SC-PV-02"
+          ],
+          "negative_or_boundary_witness": [
+            "SC-PV-02",
+            "SC-PV-03"
+          ]
+        },
+        {
+          "id": "R-PV-03",
+          "atomic_statement_fa": "پشتوانهٔ هر سیگنال باید به منابع آن قابل ردیابی باشد.",
+          "stakeholder_and_purpose": "پیوند شواهد ایمنی دارو به گزارش‌دهی، سیگنال، ارزیابی و تصمیم قابل ردیابی.",
+          "evidence_sources": [
+            "S2",
+            "S3",
+            "S6"
+          ],
+          "status": "PROPOSED_SOURCE_INFORMED",
+          "priority": "MUST_IF_MODULE_ACCEPTED",
+          "primary_domain": "Pharmacovigilance",
+          "competency_questions": [
+            "CQ-PV-01"
+          ],
+          "acceptance_criterion_fa": "منبع ادعاشده موجود و قابل ارجاع باشد؛ نبود گزارش فردی سیگنال مبتنی بر مطالعه را رد نکند.",
+          "model_elements": "Candidate vocabulary and relations in this module; exact mapping pending P3",
+          "constraints": "Proposed admission contracts below; not universal OWL axioms",
+          "test_result": "NOT_EXECUTED",
+          "author_decision": "PENDING",
+          "positive_witness": [
+            "SC-PV-01",
+            "SC-PV-02"
+          ],
+          "negative_or_boundary_witness": [
+            "SC-PV-02",
+            "SC-PV-03"
+          ]
+        },
+        {
+          "id": "R-PV-04",
+          "atomic_statement_fa": "هر نتیجهٔ ارزیابی باید به سیگنال مورد ارزیابی متصل باشد.",
+          "stakeholder_and_purpose": "پیوند شواهد ایمنی دارو به گزارش‌دهی، سیگنال، ارزیابی و تصمیم قابل ردیابی.",
+          "evidence_sources": [
+            "S2",
+            "S3",
+            "S6"
+          ],
+          "status": "PROPOSED_SOURCE_INFORMED",
+          "priority": "MUST_IF_MODULE_ACCEPTED",
+          "primary_domain": "Pharmacovigilance",
+          "competency_questions": [
+            "CQ-PV-02"
+          ],
+          "acceptance_criterion_fa": "سیگنال و نتیجهٔ ارزیابی آن شناسه و نوع متمایز داشته باشند.",
+          "model_elements": "Candidate vocabulary and relations in this module; exact mapping pending P3",
+          "constraints": "Proposed admission contracts below; not universal OWL axioms",
+          "test_result": "NOT_EXECUTED",
+          "author_decision": "PENDING",
+          "positive_witness": [
+            "SC-PV-01",
+            "SC-PV-02"
+          ],
+          "negative_or_boundary_witness": [
+            "SC-PV-02",
+            "SC-PV-03"
+          ]
+        },
+        {
+          "id": "R-PV-05",
+          "atomic_statement_fa": "وضعیت نتیجهٔ ارزیابی باید به زمان ارزیابی مقید باشد.",
+          "stakeholder_and_purpose": "پیوند شواهد ایمنی دارو به گزارش‌دهی، سیگنال، ارزیابی و تصمیم قابل ردیابی.",
+          "evidence_sources": [
+            "S2",
+            "S3",
+            "S6"
+          ],
+          "status": "PROPOSED_SOURCE_INFORMED",
+          "priority": "MUST_IF_MODULE_ACCEPTED",
+          "primary_domain": "Pharmacovigilance",
+          "competency_questions": [
+            "CQ-PV-02"
+          ],
+          "acceptance_criterion_fa": "نتیجهٔ بازبینی، تاریخچهٔ قبلی را پاک نکند.",
+          "model_elements": "Candidate vocabulary and relations in this module; exact mapping pending P3",
+          "constraints": "Proposed admission contracts below; not universal OWL axioms",
+          "test_result": "NOT_EXECUTED",
+          "author_decision": "PENDING",
+          "positive_witness": [
+            "SC-PV-01",
+            "SC-PV-02"
+          ],
+          "negative_or_boundary_witness": [
+            "SC-PV-02",
+            "SC-PV-04"
+          ]
+        },
+        {
+          "id": "R-PV-06",
+          "atomic_statement_fa": "اعمال الزام فارماکوویژیلانس باید به قلمرو مقرراتی مشخص مقید باشد.",
+          "stakeholder_and_purpose": "پیوند شواهد ایمنی دارو به گزارش‌دهی، سیگنال، ارزیابی و تصمیم قابل ردیابی.",
+          "evidence_sources": [
+            "S2",
+            "S3",
+            "S6"
+          ],
+          "status": "PROPOSED_SOURCE_INFORMED",
+          "priority": "MUST_IF_MODULE_ACCEPTED",
+          "primary_domain": "Pharmacovigilance",
+          "competency_questions": [
+            "CQ-PV-03"
+          ],
+          "acceptance_criterion_fa": "الزام منطقه A به‌طور خودکار به منطقه B تعمیم نیابد.",
+          "model_elements": "Candidate vocabulary and relations in this module; exact mapping pending P3",
+          "constraints": "Proposed admission contracts below; not universal OWL axioms",
+          "test_result": "NOT_EXECUTED",
+          "author_decision": "PENDING",
+          "positive_witness": [
+            "SC-PV-01"
+          ],
+          "negative_or_boundary_witness": [
+            "SC-PV-03",
+            "SC-PV-04"
+          ]
+        }
+      ],
+      "relation_designs": [
+        {
+          "id": "RD-PV-01",
+          "statement_fa": "AdverseEventReportingActivity گزارش SafetyReport را ارسال می‌کند.",
+          "proposed_constraint": "One or more reports per admitted reporting occurrence; same report may have multiple transmissions.",
+          "status": "DESIGN_ONLY",
+          "ontouml_stereotype": "PENDING_IDENTITY_AND_DEPENDENCE_REVIEW"
+        },
+        {
+          "id": "RD-PV-02",
+          "statement_fa": "SafetySignal دربارهٔ MedicinalProduct یا PharmaceuticalSubstance است.",
+          "proposed_constraint": ">=1 explicit target in admitted profile; typed routes permit substance-level signals.",
+          "status": "DESIGN_ONLY",
+          "ontouml_stereotype": "PENDING_IDENTITY_AND_DEPENDENCE_REVIEW"
+        },
+        {
+          "id": "RD-PV-03",
+          "statement_fa": "SafetySignal به SourceRecord/EvidenceSupport متصل است.",
+          "proposed_constraint": ">=1 evidence item for accepted signal record; spontaneous report is not the only permitted source.",
+          "status": "DESIGN_ONLY",
+          "ontouml_stereotype": "PENDING_IDENTITY_AND_DEPENDENCE_REVIEW"
+        },
+        {
+          "id": "RD-PV-04",
+          "statement_fa": "SignalAssessmentActivity نتیجه SignalAssessmentResult دربارهٔ سیگنال تولید می‌کند.",
+          "proposed_constraint": "Result has an identified assessment and temporal context; no one-result-ever uniqueness policy.",
+          "status": "DESIGN_ONLY",
+          "ontouml_stereotype": "PENDING_IDENTITY_AND_DEPENDENCE_REVIEW"
+        },
+        {
+          "id": "RD-PV-05",
+          "statement_fa": "PharmacovigilanceRequirement با RegulatoryRequirement هم‌تراز و به قلمرو مربوط می‌شود.",
+          "proposed_constraint": "Subclass/reuse and applicability constraints pending N07; avoid a duplicate normative-content identity.",
+          "status": "DESIGN_ONLY",
+          "ontouml_stereotype": "PENDING_IDENTITY_AND_DEPENDENCE_REVIEW"
+        },
+        {
+          "id": "RD-PV-06",
+          "statement_fa": "PostMarketSurveillanceActivity شواهد مرتبط با موضوع دارویی را تولید/استفاده می‌کند.",
+          "proposed_constraint": "No mandatory patient individual; law-specific obligations remain separate from actual activity.",
+          "status": "DESIGN_ONLY",
+          "ontouml_stereotype": "PENDING_IDENTITY_AND_DEPENDENCE_REVIEW"
+        }
+      ],
+      "scenarios": [
+        {
+          "id": "SC-PV-01",
+          "kind": "positive",
+          "input_fa": "گزارش RP درباره محصول P در رخداد T ارسال و با شاهد E به سیگنال S وصل می‌شود؛ ارزیابی A نتیجه R در t1 می‌دهد. الزام پایش فقط در قلمرو A مستند است.",
+          "expected_fa": "محتوا، ارسال، سیگنال و نتیجه به‌تفکیک بازیابی شوند. الزام با همان قلمرو برگردد.",
+          "requirement_ids": [
+            "R-PV-01",
+            "R-PV-02",
+            "R-PV-03",
+            "R-PV-04",
+            "R-PV-05",
+            "R-PV-06"
+          ],
+          "status": "DESIGNED_NOT_EXECUTED"
+        },
+        {
+          "id": "SC-PV-02",
+          "kind": "boundary",
+          "input_fa": "سیگنال مربوط به یک ماده از مطالعه و نه گزارش فردی آمده؛ دو ارزیابی در t1 و t2 دارد.",
+          "expected_fa": "سیگنال معتبرِ داده‌ای با منبع مطالعه پذیرفته و هر دو نتیجه حفظ شوند.",
+          "requirement_ids": [
+            "R-PV-01",
+            "R-PV-02",
+            "R-PV-03",
+            "R-PV-04",
+            "R-PV-05"
+          ],
+          "status": "DESIGNED_NOT_EXECUTED"
+        },
+        {
+          "id": "SC-PV-03",
+          "kind": "negative",
+          "input_fa": "رکورد پذیرش‌شده موضوع سیگنال ندارد یا نتیجه به سیگنال ناموجود اشاره دارد؛ الزام A به B منتسب شده است.",
+          "expected_fa": "نقص ارجاع رد و انتساب بی‌شاهد قلمرو متوقف شود.",
+          "requirement_ids": [
+            "R-PV-02",
+            "R-PV-03",
+            "R-PV-04",
+            "R-PV-06"
+          ],
+          "status": "DESIGNED_NOT_EXECUTED"
+        },
+        {
+          "id": "SC-PV-04",
+          "kind": "non_entailment",
+          "input_fa": "یک سیگنال مشکوک ثبت شده و الزام گزارش‌دهی فقط برای قلمرو A مستند است.",
+          "expected_fa": "علیت قطعی، ایمنی قطعی یا الزام در B استنتاج نشود.",
+          "requirement_ids": [
+            "R-PV-05",
+            "R-PV-06"
+          ],
+          "status": "DESIGNED_NOT_EXECUTED"
+        }
+      ]
+    },
+    {
+      "id": "BA",
+      "name": "Business Architecture",
+      "goal_fa": "توضیح اینکه سازمان چگونه با قابلیت، خدمت و تعهد همکاری در اکوسیستم دارویی مشارکت می‌کند.",
+      "retained_existing_ids": [
+        "BusinessArchitectureView",
+        "ServiceOfferingSpecification",
+        "EnterpriseCapability",
+        "PartnerOrganizationRole",
+        "StrategicPartnershipAgreement"
+      ],
+      "proposed_concepts": [],
+      "interfaces": [
+        "Organization",
+        "ManufacturingActivity",
+        "DistributionLogisticsActivity",
+        "MedicinalProduct",
+        "SourceRecord",
+        "TimeInterval"
+      ],
+      "source_ids": [
+        "S4",
+        "S5",
+        "S7"
+      ],
+      "exclusions": [
+        "Full enterprise strategy ontology",
+        "Core entities dependent on BA views",
+        "Equating ArchiMate symbols to UFO stereotypes"
+      ],
+      "open_semantic_decisions": [
+        "Service specification target types",
+        "Evidence for distinct partners and repeated agreements",
+        "View information identity; preserve prior W4 optional-view decision"
+      ],
+      "competency_questions": [
+        {
+          "id": "CQ-BA-01",
+          "question_fa": "سازمان چه قابلیتی دارد و آن قابلیت از چه فعالیت واقع‌شده‌ای متمایز است؟"
+        },
+        {
+          "id": "CQ-BA-02",
+          "question_fa": "خدمت عرضه‌شده به کدام قابلیت یا فعالیت دارویی متکی است؟"
+        },
+        {
+          "id": "CQ-BA-03",
+          "question_fa": "نمای معماری و تعهد همکاری به کدام موجودیت‌های اصلی اشاره می‌کنند؟"
+        }
+      ],
+      "requirements": [
+        {
+          "id": "R-BA-01",
+          "atomic_statement_fa": "هر EnterpriseCapability باید حامل سازمانی مشخص داشته باشد.",
+          "stakeholder_and_purpose": "توضیح اینکه سازمان چگونه با قابلیت، خدمت و تعهد همکاری در اکوسیستم دارویی مشارکت می‌کند.",
+          "evidence_sources": [
+            "S4",
+            "S5",
+            "S7"
+          ],
+          "status": "PROPOSED_SOURCE_INFORMED",
+          "priority": "MUST_IF_MODULE_ACCEPTED",
+          "primary_domain": "Business Architecture",
+          "competency_questions": [
+            "CQ-BA-01"
+          ],
+          "acceptance_criterion_fa": "حامل با رابطه موجود capabilityBearer قابل بازیابی باشد؛ Mode بی‌حامل در پروفایل کامل رد شود.",
+          "model_elements": "Candidate vocabulary and relations in this module; exact mapping pending P3",
+          "constraints": "Proposed admission contracts below; not universal OWL axioms",
+          "test_result": "NOT_EXECUTED",
+          "author_decision": "PENDING",
+          "positive_witness": [
+            "SC-BA-01"
+          ],
+          "negative_or_boundary_witness": [
+            "SC-BA-03"
+          ]
+        },
+        {
+          "id": "R-BA-02",
+          "atomic_statement_fa": "وجود قابلیت نباید وقوع فعالیت متناظر را الزام کند.",
+          "stakeholder_and_purpose": "توضیح اینکه سازمان چگونه با قابلیت، خدمت و تعهد همکاری در اکوسیستم دارویی مشارکت می‌کند.",
+          "evidence_sources": [
+            "S4",
+            "S5",
+            "S7"
+          ],
+          "status": "PROPOSED_SOURCE_INFORMED",
+          "priority": "MUST_IF_MODULE_ACCEPTED",
+          "primary_domain": "Business Architecture",
+          "competency_questions": [
+            "CQ-BA-01"
+          ],
+          "acceptance_criterion_fa": "سازمان دارای قابلیت غیرفعال مجاز باشد.",
+          "model_elements": "Candidate vocabulary and relations in this module; exact mapping pending P3",
+          "constraints": "Proposed admission contracts below; not universal OWL axioms",
+          "test_result": "NOT_EXECUTED",
+          "author_decision": "PENDING",
+          "positive_witness": [
+            "SC-BA-02"
+          ],
+          "negative_or_boundary_witness": [
+            "SC-BA-02",
+            "SC-BA-04"
+          ]
+        },
+        {
+          "id": "R-BA-03",
+          "atomic_statement_fa": "ServiceOfferingSpecification باید به موضوع خدمت دارویی متصل باشد.",
+          "stakeholder_and_purpose": "توضیح اینکه سازمان چگونه با قابلیت، خدمت و تعهد همکاری در اکوسیستم دارویی مشارکت می‌کند.",
+          "evidence_sources": [
+            "S4",
+            "S5",
+            "S7"
+          ],
+          "status": "PROPOSED_SOURCE_INFORMED",
+          "priority": "MUST_IF_MODULE_ACCEPTED",
+          "primary_domain": "Business Architecture",
+          "competency_questions": [
+            "CQ-BA-02"
+          ],
+          "acceptance_criterion_fa": "حداقل یک قابلیت/فعالیت/محصول مرتبط در پروفایل پذیرفته‌شده مشخص باشد.",
+          "model_elements": "Candidate vocabulary and relations in this module; exact mapping pending P3",
+          "constraints": "Proposed admission contracts below; not universal OWL axioms",
+          "test_result": "NOT_EXECUTED",
+          "author_decision": "PENDING",
+          "positive_witness": [
+            "SC-BA-01"
+          ],
+          "negative_or_boundary_witness": [
+            "SC-BA-04"
+          ]
+        },
+        {
+          "id": "R-BA-04",
+          "atomic_statement_fa": "BusinessArchitectureView باید به شناسه‌های موجودیت‌های اصلی ارجاع دهد.",
+          "stakeholder_and_purpose": "توضیح اینکه سازمان چگونه با قابلیت، خدمت و تعهد همکاری در اکوسیستم دارویی مشارکت می‌کند.",
+          "evidence_sources": [
+            "S4",
+            "S5",
+            "S7"
+          ],
+          "status": "PROPOSED_SOURCE_INFORMED",
+          "priority": "MUST_IF_MODULE_ACCEPTED",
+          "primary_domain": "Business Architecture",
+          "competency_questions": [
+            "CQ-BA-03"
+          ],
+          "acceptance_criterion_fa": "نمای جدید برای یک سازمان، سازمان دوم ایجاد نکند.",
+          "model_elements": "Candidate vocabulary and relations in this module; exact mapping pending P3",
+          "constraints": "Proposed admission contracts below; not universal OWL axioms",
+          "test_result": "NOT_EXECUTED",
+          "author_decision": "PENDING",
+          "positive_witness": [
+            "SC-BA-01"
+          ],
+          "negative_or_boundary_witness": [
+            "SC-BA-03"
+          ]
+        },
+        {
+          "id": "R-BA-05",
+          "atomic_statement_fa": "مشارکت در StrategicPartnershipAgreement باید از تعامل اتفاقی متمایز باشد.",
+          "stakeholder_and_purpose": "توضیح اینکه سازمان چگونه با قابلیت، خدمت و تعهد همکاری در اکوسیستم دارویی مشارکت می‌کند.",
+          "evidence_sources": [
+            "S4",
+            "S5",
+            "S7"
+          ],
+          "status": "PROPOSED_SOURCE_INFORMED",
+          "priority": "MUST_IF_MODULE_ACCEPTED",
+          "primary_domain": "Business Architecture",
+          "competency_questions": [
+            "CQ-BA-03"
+          ],
+          "acceptance_criterion_fa": "تعامل بدون شاهد تعهد، خودکار PartnerOrganizationRole نسازد.",
+          "model_elements": "Candidate vocabulary and relations in this module; exact mapping pending P3",
+          "constraints": "Proposed admission contracts below; not universal OWL axioms",
+          "test_result": "NOT_EXECUTED",
+          "author_decision": "PENDING",
+          "positive_witness": [
+            "SC-BA-01"
+          ],
+          "negative_or_boundary_witness": [
+            "SC-BA-03",
+            "SC-BA-04"
+          ]
+        },
+        {
+          "id": "R-BA-06",
+          "atomic_statement_fa": "هویت موجودیت‌های هسته باید مستقل از وجود نمای معماری بماند.",
+          "stakeholder_and_purpose": "توضیح اینکه سازمان چگونه با قابلیت، خدمت و تعهد همکاری در اکوسیستم دارویی مشارکت می‌کند.",
+          "evidence_sources": [
+            "S4",
+            "S5",
+            "S7"
+          ],
+          "status": "PROPOSED_SOURCE_INFORMED",
+          "priority": "MUST_IF_MODULE_ACCEPTED",
+          "primary_domain": "Business Architecture",
+          "competency_questions": [
+            "CQ-BA-03"
+          ],
+          "acceptance_criterion_fa": "حذف نمای اختیاری، هویت یا طبقه‌بندی اجباری محصول و تأسیسات را تغییر ندهد.",
+          "model_elements": "Candidate vocabulary and relations in this module; exact mapping pending P3",
+          "constraints": "Proposed admission contracts below; not universal OWL axioms",
+          "test_result": "NOT_EXECUTED",
+          "author_decision": "PENDING",
+          "positive_witness": [
+            "SC-BA-02"
+          ],
+          "negative_or_boundary_witness": [
+            "SC-BA-02",
+            "SC-BA-04"
+          ]
+        }
+      ],
+      "relation_designs": [
+        {
+          "id": "RD-BA-01",
+          "statement_fa": "EnterpriseCapability حامل Organization دارد.",
+          "proposed_constraint": "Existing native capabilityBearer is retained; cardinality and inverse characterization orientation reviewed in P3/P5d, no silent replacement.",
+          "status": "DESIGN_ONLY",
+          "ontouml_stereotype": "PENDING_IDENTITY_AND_DEPENDENCE_REVIEW"
+        },
+        {
+          "id": "RD-BA-02",
+          "statement_fa": "ServiceOfferingSpecification به قابلیت/فعالیت/محصول دارویی ارجاع می‌دهد.",
+          "proposed_constraint": "Typed aboutness routes; specification is not actual service execution.",
+          "status": "DESIGN_ONLY",
+          "ontouml_stereotype": "PENDING_IDENTITY_AND_DEPENDENCE_REVIEW"
+        },
+        {
+          "id": "RD-BA-03",
+          "statement_fa": "BusinessArchitectureView موجودیت‌های اصلی را بازنمایی می‌کند.",
+          "proposed_constraint": "Refine existing untyped baViewRepresents with justified typed routes; no mandatory reverse dependency.",
+          "status": "DESIGN_ONLY",
+          "ontouml_stereotype": "PENDING_IDENTITY_AND_DEPENDENCE_REVIEW"
+        },
+        {
+          "id": "RD-BA-04",
+          "statement_fa": "StrategicPartnershipAgreement نقش‌های PartnerOrganizationRole را زمینه‌مند می‌کند.",
+          "proposed_constraint": "Existing mediation retained; >=2 distinct organizations needs identity and temporal evidence, not just two IRIs.",
+          "status": "DESIGN_ONLY",
+          "ontouml_stereotype": "PENDING_IDENTITY_AND_DEPENDENCE_REVIEW"
+        }
+      ],
+      "scenarios": [
+        {
+          "id": "SC-BA-01",
+          "kind": "positive",
+          "input_fa": "سازمان O قابلیت C دارد؛ خدمت S به C اشاره و نمای V همان O را بازنمایی می‌کند. O و سازمان متمایز O2 با شاهد توافق A مشارکت راهبردی دارند.",
+          "expected_fa": "شناسه O مشترک بماند و C/S/V قابل ردیابی باشند. دو نقش شریک به همان توافق و دو سازمان متمایز متصل باشند.",
+          "requirement_ids": [
+            "R-BA-01",
+            "R-BA-03",
+            "R-BA-04",
+            "R-BA-05"
+          ],
+          "status": "DESIGNED_NOT_EXECUTED"
+        },
+        {
+          "id": "SC-BA-02",
+          "kind": "boundary",
+          "input_fa": "O در بازه t هیچ تولیدی انجام نداده ولی قابلیت C همچنان برقرار است؛ V حذف می‌شود.",
+          "expected_fa": "وجود C و هویت O/P مستقل از تولید و V حفظ شوند.",
+          "requirement_ids": [
+            "R-BA-02",
+            "R-BA-06"
+          ],
+          "status": "DESIGNED_NOT_EXECUTED"
+        },
+        {
+          "id": "SC-BA-03",
+          "kind": "negative",
+          "input_fa": "نمای V سازمان O را کپی می‌کند یا توافق فقط یک سازمان را با دو شناسه تکراری شریک معرفی می‌کند.",
+          "expected_fa": "تکرار هویت یا ناکافی‌بودن طرف‌های متمایز تشخیص داده شود.",
+          "requirement_ids": [
+            "R-BA-01",
+            "R-BA-04",
+            "R-BA-05"
+          ],
+          "status": "DESIGNED_NOT_EXECUTED"
+        },
+        {
+          "id": "SC-BA-04",
+          "kind": "non_entailment",
+          "input_fa": "خدمت فقط توصیف شده و دو سازمان یک مبادله داشته‌اند.",
+          "expected_fa": "وقوع خدمت، تحقق قابلیت یا وجود توافق راهبردی استنتاج نشود.",
+          "requirement_ids": [
+            "R-BA-02",
+            "R-BA-03",
+            "R-BA-05",
+            "R-BA-06"
+          ],
+          "status": "DESIGNED_NOT_EXECUTED"
+        }
+      ]
+    },
+    {
+      "id": "DS",
+      "name": "Digital Systems",
+      "goal_fa": "ردیابی پشتیبانی سامانه‌های دیجیتال از فعالیت‌ها و شواهد دارویی، همراه نسخه و استقرار.",
+      "retained_existing_ids": [
+        "DigitalInformationSystemComponent"
+      ],
+      "proposed_concepts": [
+        {
+          "id": "SystemDeploymentActivity",
+          "meaning": "An actual deployment occurrence of a component/version in an organizational context.",
+          "candidate_category": "event candidate; check reuse of ProvenanceActivity",
+          "status": "PROPOSED_NOT_INTEGRATED"
+        },
+        {
+          "id": "DigitalServiceSpecification",
+          "meaning": "A description of a digital service supporting a pharmaceutical task.",
+          "candidate_category": "information content; assess ServiceOfferingSpecification reuse",
+          "status": "PROPOSED_NOT_INTEGRATED"
+        }
+      ],
+      "interfaces": [
+        "Organization",
+        "SourceRecord",
+        "DatasetRelease",
+        "ProvenanceActivity",
+        "ObservationActivity",
+        "TimeInterval",
+        "ServiceOfferingSpecification"
+      ],
+      "source_ids": [
+        "S5",
+        "S6"
+      ],
+      "exclusions": [
+        "Full software architecture or cybersecurity ontology",
+        "Mandatory internal implementation details",
+        "Registry record equated with authorization"
+      ],
+      "open_semantic_decisions": [
+        "Software component identity across versions",
+        "Deployment event versus state/record",
+        "Reuse service specification and provenance before adding types"
+      ],
+      "competency_questions": [
+        {
+          "id": "CQ-DS-01",
+          "question_fa": "کدام جزء و نسخه سامانه از فعالیت دارویی پشتیبانی کرده است؟"
+        },
+        {
+          "id": "CQ-DS-02",
+          "question_fa": "رکورد از کدام فعالیت و سامانه به دست آمده است؟"
+        },
+        {
+          "id": "CQ-DS-03",
+          "question_fa": "کدام سازمان و در چه زمانی نسخه سامانه را مستقر کرده است؟"
+        }
+      ],
+      "requirements": [
+        {
+          "id": "R-DS-01",
+          "atomic_statement_fa": "هویت جزء سامانه باید از هویت رکورد تولیدشده متمایز باشد.",
+          "stakeholder_and_purpose": "ردیابی پشتیبانی سامانه‌های دیجیتال از فعالیت‌ها و شواهد دارویی، همراه نسخه و استقرار.",
+          "evidence_sources": [
+            "S5",
+            "S6"
+          ],
+          "status": "PROPOSED_SOURCE_INFORMED",
+          "priority": "MUST_IF_MODULE_ACCEPTED",
+          "primary_domain": "Digital Systems",
+          "competency_questions": [
+            "CQ-DS-02"
+          ],
+          "acceptance_criterion_fa": "سامانه و SourceRecord شناسه و نوع قابل تفکیک داشته باشند.",
+          "model_elements": "Candidate vocabulary and relations in this module; exact mapping pending P3",
+          "constraints": "Proposed admission contracts below; not universal OWL axioms",
+          "test_result": "NOT_EXECUTED",
+          "author_decision": "PENDING",
+          "positive_witness": [
+            "SC-DS-01"
+          ],
+          "negative_or_boundary_witness": [
+            "SC-DS-03"
+          ]
+        },
+        {
+          "id": "R-DS-02",
+          "atomic_statement_fa": "نسخه جزء سامانهٔ استفاده‌شده باید قابل بازیابی باشد.",
+          "stakeholder_and_purpose": "ردیابی پشتیبانی سامانه‌های دیجیتال از فعالیت‌ها و شواهد دارویی، همراه نسخه و استقرار.",
+          "evidence_sources": [
+            "S5",
+            "S6"
+          ],
+          "status": "PROPOSED_SOURCE_INFORMED",
+          "priority": "MUST_IF_MODULE_ACCEPTED",
+          "primary_domain": "Digital Systems",
+          "competency_questions": [
+            "CQ-DS-01"
+          ],
+          "acceptance_criterion_fa": "دو اجرای دارای نسخه‌های مختلف در ردیابی ادغام نشوند.",
+          "model_elements": "Candidate vocabulary and relations in this module; exact mapping pending P3",
+          "constraints": "Proposed admission contracts below; not universal OWL axioms",
+          "test_result": "NOT_EXECUTED",
+          "author_decision": "PENDING",
+          "positive_witness": [
+            "SC-DS-01",
+            "SC-DS-02"
+          ],
+          "negative_or_boundary_witness": [
+            "SC-DS-02",
+            "SC-DS-03"
+          ]
+        },
+        {
+          "id": "R-DS-03",
+          "atomic_statement_fa": "رابطه پشتیبانی سامانه باید به فعالیت دارویی مشخص متصل باشد.",
+          "stakeholder_and_purpose": "ردیابی پشتیبانی سامانه‌های دیجیتال از فعالیت‌ها و شواهد دارویی، همراه نسخه و استقرار.",
+          "evidence_sources": [
+            "S5",
+            "S6"
+          ],
+          "status": "PROPOSED_SOURCE_INFORMED",
+          "priority": "MUST_IF_MODULE_ACCEPTED",
+          "primary_domain": "Digital Systems",
+          "competency_questions": [
+            "CQ-DS-01"
+          ],
+          "acceptance_criterion_fa": "نام بردن سامانه بدون فعالیت مرتبط، پوشش عملکرد دامنه شمرده نشود.",
+          "model_elements": "Candidate vocabulary and relations in this module; exact mapping pending P3",
+          "constraints": "Proposed admission contracts below; not universal OWL axioms",
+          "test_result": "NOT_EXECUTED",
+          "author_decision": "PENDING",
+          "positive_witness": [
+            "SC-DS-01"
+          ],
+          "negative_or_boundary_witness": [
+            "SC-DS-03"
+          ]
+        },
+        {
+          "id": "R-DS-04",
+          "atomic_statement_fa": "منشأ رکورد باید از مسیر فعالیت تولیدکننده قابل ردیابی باشد.",
+          "stakeholder_and_purpose": "ردیابی پشتیبانی سامانه‌های دیجیتال از فعالیت‌ها و شواهد دارویی، همراه نسخه و استقرار.",
+          "evidence_sources": [
+            "S5",
+            "S6"
+          ],
+          "status": "PROPOSED_SOURCE_INFORMED",
+          "priority": "MUST_IF_MODULE_ACCEPTED",
+          "primary_domain": "Digital Systems",
+          "competency_questions": [
+            "CQ-DS-02"
+          ],
+          "acceptance_criterion_fa": "مسیر رکورد→فعالیت→جزء/نسخه و عامل مسئول برای پروفایل کامل قابل پرس‌وجو باشد.",
+          "model_elements": "Candidate vocabulary and relations in this module; exact mapping pending P3",
+          "constraints": "Proposed admission contracts below; not universal OWL axioms",
+          "test_result": "NOT_EXECUTED",
+          "author_decision": "PENDING",
+          "positive_witness": [
+            "SC-DS-01",
+            "SC-DS-02"
+          ],
+          "negative_or_boundary_witness": [
+            "SC-DS-02",
+            "SC-DS-03"
+          ]
+        },
+        {
+          "id": "R-DS-05",
+          "atomic_statement_fa": "هر استقرار باید زمان وقوع مشخص داشته باشد.",
+          "stakeholder_and_purpose": "ردیابی پشتیبانی سامانه‌های دیجیتال از فعالیت‌ها و شواهد دارویی، همراه نسخه و استقرار.",
+          "evidence_sources": [
+            "S5",
+            "S6"
+          ],
+          "status": "PROPOSED_SOURCE_INFORMED",
+          "priority": "MUST_IF_MODULE_ACCEPTED",
+          "primary_domain": "Digital Systems",
+          "competency_questions": [
+            "CQ-DS-03"
+          ],
+          "acceptance_criterion_fa": "تغییر نسخه با رخداد استقرار جدید و حفظ تاریخچه نمایش داده شود.",
+          "model_elements": "Candidate vocabulary and relations in this module; exact mapping pending P3",
+          "constraints": "Proposed admission contracts below; not universal OWL axioms",
+          "test_result": "NOT_EXECUTED",
+          "author_decision": "PENDING",
+          "positive_witness": [
+            "SC-DS-01",
+            "SC-DS-02"
+          ],
+          "negative_or_boundary_witness": [
+            "SC-DS-02"
+          ]
+        },
+        {
+          "id": "R-DS-06",
+          "atomic_statement_fa": "وجود رکورد دیجیتال نباید به‌تنهایی مجوز مقرراتی ایجاد کند.",
+          "stakeholder_and_purpose": "ردیابی پشتیبانی سامانه‌های دیجیتال از فعالیت‌ها و شواهد دارویی، همراه نسخه و استقرار.",
+          "evidence_sources": [
+            "S5",
+            "S6"
+          ],
+          "status": "PROPOSED_SOURCE_INFORMED",
+          "priority": "MUST_IF_MODULE_ACCEPTED",
+          "primary_domain": "Digital Systems",
+          "competency_questions": [
+            "CQ-DS-02"
+          ],
+          "acceptance_criterion_fa": "رکورد رجیستری بدون شاهد مجوز، RegulatoryAuthorization استنتاج نکند.",
+          "model_elements": "Candidate vocabulary and relations in this module; exact mapping pending P3",
+          "constraints": "Proposed admission contracts below; not universal OWL axioms",
+          "test_result": "NOT_EXECUTED",
+          "author_decision": "PENDING",
+          "positive_witness": [
+            "SC-DS-01"
+          ],
+          "negative_or_boundary_witness": [
+            "SC-DS-04"
+          ]
+        }
+      ],
+      "relation_designs": [
+        {
+          "id": "RD-DS-01",
+          "statement_fa": "SystemDeploymentActivity جزء/نسخه و سازمان زمینه را مشخص می‌کند.",
+          "proposed_constraint": "At least one identified component/version and organizational context for admitted deployment evidence; shared hosting is allowed.",
+          "status": "DESIGN_ONLY",
+          "ontouml_stereotype": "PENDING_IDENTITY_AND_DEPENDENCE_REVIEW"
+        },
+        {
+          "id": "RD-DS-02",
+          "statement_fa": "DigitalInformationSystemComponent از فعالیت مشخص پشتیبانی می‌کند.",
+          "proposed_constraint": "Support/use relation differs from executing agent; no component→prov:SoftwareAgent equivalence without agency evidence.",
+          "status": "DESIGN_ONLY",
+          "ontouml_stereotype": "PENDING_IDENTITY_AND_DEPENDENCE_REVIEW"
+        },
+        {
+          "id": "RD-DS-03",
+          "statement_fa": "ProvenanceActivity/ObservationActivity، SourceRecord یا DatasetRelease را تولید می‌کند.",
+          "proposed_constraint": "Reuse existing provenance where definitions match; preserve generation and responsibility as separate relations.",
+          "status": "DESIGN_ONLY",
+          "ontouml_stereotype": "PENDING_IDENTITY_AND_DEPENDENCE_REVIEW"
+        },
+        {
+          "id": "RD-DS-04",
+          "statement_fa": "DigitalServiceSpecification فعالیت دارویی پشتیبانی‌شده را توصیف می‌کند.",
+          "proposed_constraint": "Existing ServiceOfferingSpecification may suffice; a class addition is not mandatory for domain acceptance.",
+          "status": "DESIGN_ONLY",
+          "ontouml_stereotype": "PENDING_IDENTITY_AND_DEPENDENCE_REVIEW"
+        }
+      ],
+      "scenarios": [
+        {
+          "id": "SC-DS-01",
+          "kind": "positive",
+          "input_fa": "سامانه C نسخه v1 در فعالیت A استفاده شده و رکورد R تولید شده؛ استقرار در t1 با سازمان O مستند است. R رکورد رجیستری است و شاهد مجوز ارائه نشده است.",
+          "expected_fa": "مسیر R/A/C/v1/O/t1 بازیابی و سامانه با رکورد یکی نشود. رکورد قابل بازیابی باشد و وضعیت مجوز نامعلوم بماند.",
+          "requirement_ids": [
+            "R-DS-01",
+            "R-DS-02",
+            "R-DS-03",
+            "R-DS-04",
+            "R-DS-05",
+            "R-DS-06"
+          ],
+          "status": "DESIGNED_NOT_EXECUTED"
+        },
+        {
+          "id": "SC-DS-02",
+          "kind": "boundary",
+          "input_fa": "C به v2 ارتقا یافته؛ R قدیمی همچنان حاصل v1 است و چند سازمان از C استفاده می‌کنند.",
+          "expected_fa": "ردیابی تاریخی و اشتراک سامانه بدون بازنویسی منشأ قدیمی حفظ شود.",
+          "requirement_ids": [
+            "R-DS-02",
+            "R-DS-04",
+            "R-DS-05"
+          ],
+          "status": "DESIGNED_NOT_EXECUTED"
+        },
+        {
+          "id": "SC-DS-03",
+          "kind": "negative",
+          "input_fa": "رکورد کامل ادعا شده ولی نسخه یا فعالیت تولیدکننده مفقود است؛ رکورد عین سامانه معرفی شده است.",
+          "expected_fa": "خطای کامل‌بودن داده و اختلاط هویت در پروفایل پذیرش رد شود.",
+          "requirement_ids": [
+            "R-DS-01",
+            "R-DS-02",
+            "R-DS-03",
+            "R-DS-04"
+          ],
+          "status": "DESIGNED_NOT_EXECUTED"
+        },
+        {
+          "id": "SC-DS-04",
+          "kind": "non_entailment",
+          "input_fa": "نام محصول در رکورد رجیستری دیجیتال آمده و هیچ شاهد مجوز ارائه نشده است.",
+          "expected_fa": "ثبت داده به معنی ثبت حقوقی، مجوز یا انطباق کامل تلقی نشود.",
+          "requirement_ids": [
+            "R-DS-06"
+          ],
+          "status": "DESIGNED_NOT_EXECUTED"
+        }
+      ]
+    }
+  ],
+  "counting_note": "Proposed concepts are semantic slots, not mandatory new classes. Reuse may reduce additions. Primary-domain ownership is provisional; shared concepts are counted once in their owning domain. Domain adequacy is CQ/evidence-based, not a minimum class quota.",
+  "global_limit": "International and EU sources support a starting design, not universal legal/clinical completeness. Additional non-EU empirical/domain review remains N04/P6c.",
+  "validation_claim": "Package integrity and current topology are checked separately; proposed domain semantics and scenarios have not been executed against native/OWL/SHACL."
+}

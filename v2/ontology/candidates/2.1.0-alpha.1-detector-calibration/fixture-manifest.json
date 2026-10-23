@@ -1,0 +1,2689 @@
+{
+  "format": "custom legacy witness specification, NOT native OntoUML JSON",
+  "cases": [
+    {
+      "family": "DecInt",
+      "name": "positive",
+      "model": {
+        "classes": [
+          {
+            "name": "Person",
+            "type": "Kind",
+            "abstract": false
+          },
+          {
+            "name": "Employed",
+            "type": "Role",
+            "abstract": false
+          },
+          {
+            "name": "Student",
+            "type": "Role",
+            "abstract": false
+          },
+          {
+            "name": "WorkingStudent",
+            "type": "Role",
+            "abstract": false
+          }
+        ],
+        "relations": [],
+        "generalizations": [
+          {
+            "name": "EmployedToPerson",
+            "specific": "Employed",
+            "general": "Person"
+          },
+          {
+            "name": "StudentToPerson",
+            "specific": "Student",
+            "general": "Person"
+          },
+          {
+            "name": "WorkingStudentToEmployed",
+            "specific": "WorkingStudent",
+            "general": "Employed"
+          },
+          {
+            "name": "WorkingStudentToStudent",
+            "specific": "WorkingStudent",
+            "general": "Student"
+          }
+        ],
+        "sets": []
+      },
+      "expected_engine_occurrences": 1,
+      "rationale": "Concrete intersection role has two direct sortal parents.",
+      "category": "paired",
+      "documentation_expected_occurrences": null
+    },
+    {
+      "family": "DecInt",
+      "name": "negative",
+      "model": {
+        "classes": [
+          {
+            "name": "Person",
+            "type": "Kind",
+            "abstract": false
+          },
+          {
+            "name": "Employed",
+            "type": "Role",
+            "abstract": false
+          },
+          {
+            "name": "Student",
+            "type": "Role",
+            "abstract": false
+          },
+          {
+            "name": "WorkingStudent",
+            "type": "Role",
+            "abstract": false
+          }
+        ],
+        "relations": [],
+        "generalizations": [
+          {
+            "name": "EmployedToPerson",
+            "specific": "Employed",
+            "general": "Person"
+          },
+          {
+            "name": "StudentToPerson",
+            "specific": "Student",
+            "general": "Person"
+          },
+          {
+            "name": "WorkingStudentToEmployed",
+            "specific": "WorkingStudent",
+            "general": "Employed"
+          }
+        ],
+        "sets": []
+      },
+      "expected_engine_occurrences": 0,
+      "rationale": "Remove only one intersection-parent edge.",
+      "category": "paired",
+      "documentation_expected_occurrences": null
+    },
+    {
+      "family": "DepPhase",
+      "name": "positive",
+      "model": {
+        "classes": [
+          {
+            "name": "Person",
+            "type": "Kind",
+            "abstract": false
+          },
+          {
+            "name": "Dependent",
+            "type": "Phase",
+            "abstract": false
+          },
+          {
+            "name": "Agreement",
+            "type": "Relator",
+            "abstract": false
+          }
+        ],
+        "relations": [
+          {
+            "name": "med",
+            "type": "Mediation",
+            "ends": [
+              {
+                "name": "medA",
+                "type": "Agreement",
+                "lower": 1,
+                "upper": 1,
+                "aggregation": "none",
+                "subset": []
+              },
+              {
+                "name": "medB",
+                "type": "Dependent",
+                "lower": 1,
+                "upper": 1,
+                "aggregation": "none",
+                "subset": []
+              }
+            ]
+          }
+        ],
+        "generalizations": [
+          {
+            "name": "DependentToPerson",
+            "specific": "Dependent",
+            "general": "Person"
+          }
+        ],
+        "sets": []
+      },
+      "expected_engine_occurrences": 1,
+      "rationale": "A phase is directly mediated by a relator.",
+      "category": "paired",
+      "documentation_expected_occurrences": null
+    },
+    {
+      "family": "DepPhase",
+      "name": "negative",
+      "model": {
+        "classes": [
+          {
+            "name": "Person",
+            "type": "Kind",
+            "abstract": false
+          },
+          {
+            "name": "Dependent",
+            "type": "Role",
+            "abstract": false
+          },
+          {
+            "name": "Agreement",
+            "type": "Relator",
+            "abstract": false
+          }
+        ],
+        "relations": [
+          {
+            "name": "med",
+            "type": "Mediation",
+            "ends": [
+              {
+                "name": "medA",
+                "type": "Agreement",
+                "lower": 1,
+                "upper": 1,
+                "aggregation": "none",
+                "subset": []
+              },
+              {
+                "name": "medB",
+                "type": "Dependent",
+                "lower": 1,
+                "upper": 1,
+                "aggregation": "none",
+                "subset": []
+              }
+            ]
+          }
+        ],
+        "generalizations": [
+          {
+            "name": "DependentToPerson",
+            "specific": "Dependent",
+            "general": "Person"
+          }
+        ],
+        "sets": []
+      },
+      "expected_engine_occurrences": 0,
+      "rationale": "Only the mediated stereotype changes from Phase to Role.",
+      "category": "paired",
+      "documentation_expected_occurrences": null
+    },
+    {
+      "family": "FreeRole",
+      "name": "positive",
+      "model": {
+        "classes": [
+          {
+            "name": "Person",
+            "type": "Kind",
+            "abstract": false
+          },
+          {
+            "name": "Employee",
+            "type": "Role",
+            "abstract": false
+          },
+          {
+            "name": "Manager",
+            "type": "Role",
+            "abstract": false
+          },
+          {
+            "name": "Employment",
+            "type": "Relator",
+            "abstract": false
+          },
+          {
+            "name": "Appointment",
+            "type": "Relator",
+            "abstract": false
+          }
+        ],
+        "relations": [
+          {
+            "name": "employment",
+            "type": "Mediation",
+            "ends": [
+              {
+                "name": "employmentA",
+                "type": "Employment",
+                "lower": 1,
+                "upper": 1,
+                "aggregation": "none",
+                "subset": []
+              },
+              {
+                "name": "employmentB",
+                "type": "Employee",
+                "lower": 1,
+                "upper": 1,
+                "aggregation": "none",
+                "subset": []
+              }
+            ]
+          }
+        ],
+        "generalizations": [
+          {
+            "name": "EmployeeToPerson",
+            "specific": "Employee",
+            "general": "Person"
+          },
+          {
+            "name": "ManagerToEmployee",
+            "specific": "Manager",
+            "general": "Employee"
+          }
+        ],
+        "sets": []
+      },
+      "expected_engine_occurrences": 1,
+      "rationale": "Child role has no additional direct mediation.",
+      "category": "paired",
+      "documentation_expected_occurrences": null
+    },
+    {
+      "family": "FreeRole",
+      "name": "negative",
+      "model": {
+        "classes": [
+          {
+            "name": "Person",
+            "type": "Kind",
+            "abstract": false
+          },
+          {
+            "name": "Employee",
+            "type": "Role",
+            "abstract": false
+          },
+          {
+            "name": "Manager",
+            "type": "Role",
+            "abstract": false
+          },
+          {
+            "name": "Employment",
+            "type": "Relator",
+            "abstract": false
+          },
+          {
+            "name": "Appointment",
+            "type": "Relator",
+            "abstract": false
+          }
+        ],
+        "relations": [
+          {
+            "name": "employment",
+            "type": "Mediation",
+            "ends": [
+              {
+                "name": "employmentA",
+                "type": "Employment",
+                "lower": 1,
+                "upper": 1,
+                "aggregation": "none",
+                "subset": []
+              },
+              {
+                "name": "employmentB",
+                "type": "Employee",
+                "lower": 1,
+                "upper": 1,
+                "aggregation": "none",
+                "subset": []
+              }
+            ]
+          },
+          {
+            "name": "appointment",
+            "type": "Mediation",
+            "ends": [
+              {
+                "name": "appointmentA",
+                "type": "Appointment",
+                "lower": 1,
+                "upper": 1,
+                "aggregation": "none",
+                "subset": []
+              },
+              {
+                "name": "appointmentB",
+                "type": "Manager",
+                "lower": 1,
+                "upper": 1,
+                "aggregation": "none",
+                "subset": []
+              }
+            ]
+          }
+        ],
+        "generalizations": [
+          {
+            "name": "EmployeeToPerson",
+            "specific": "Employee",
+            "general": "Person"
+          },
+          {
+            "name": "ManagerToEmployee",
+            "specific": "Manager",
+            "general": "Employee"
+          }
+        ],
+        "sets": []
+      },
+      "expected_engine_occurrences": 0,
+      "rationale": "Additional direct mediation defines the child role.",
+      "category": "paired",
+      "documentation_expected_occurrences": null
+    },
+    {
+      "family": "GSRig",
+      "name": "positive",
+      "model": {
+        "classes": [
+          {
+            "name": "Person",
+            "type": "Kind",
+            "abstract": false
+          },
+          {
+            "name": "A",
+            "type": "SubKind",
+            "abstract": false
+          },
+          {
+            "name": "B",
+            "type": "Role",
+            "abstract": false
+          }
+        ],
+        "relations": [],
+        "generalizations": [
+          {
+            "name": "AToPerson",
+            "specific": "A",
+            "general": "Person"
+          },
+          {
+            "name": "BToPerson",
+            "specific": "B",
+            "general": "Person"
+          }
+        ],
+        "sets": [
+          {
+            "name": "Types",
+            "generalizations": [
+              "AToPerson",
+              "BToPerson"
+            ],
+            "disjoint": false,
+            "complete": false
+          }
+        ]
+      },
+      "expected_engine_occurrences": 1,
+      "rationale": "One rigid and one anti-rigid child in one generalization set.",
+      "category": "paired",
+      "documentation_expected_occurrences": null
+    },
+    {
+      "family": "GSRig",
+      "name": "negative",
+      "model": {
+        "classes": [
+          {
+            "name": "Person",
+            "type": "Kind",
+            "abstract": false
+          },
+          {
+            "name": "A",
+            "type": "SubKind",
+            "abstract": false
+          },
+          {
+            "name": "B",
+            "type": "SubKind",
+            "abstract": false
+          }
+        ],
+        "relations": [],
+        "generalizations": [
+          {
+            "name": "AToPerson",
+            "specific": "A",
+            "general": "Person"
+          },
+          {
+            "name": "BToPerson",
+            "specific": "B",
+            "general": "Person"
+          }
+        ],
+        "sets": [
+          {
+            "name": "Types",
+            "generalizations": [
+              "AToPerson",
+              "BToPerson"
+            ],
+            "disjoint": false,
+            "complete": false
+          }
+        ]
+      },
+      "expected_engine_occurrences": 0,
+      "rationale": "Both children rigid; all other set properties preserved.",
+      "category": "paired",
+      "documentation_expected_occurrences": null
+    },
+    {
+      "family": "HetColl",
+      "name": "positive",
+      "model": {
+        "classes": [
+          {
+            "name": "Group",
+            "type": "Collective",
+            "abstract": false
+          },
+          {
+            "name": "MemberA",
+            "type": "Kind",
+            "abstract": false
+          },
+          {
+            "name": "MemberB",
+            "type": "Kind",
+            "abstract": false
+          }
+        ],
+        "relations": [
+          {
+            "name": "membershipA",
+            "type": "memberOf",
+            "ends": [
+              {
+                "name": "membershipAA",
+                "type": "Group",
+                "lower": 0,
+                "upper": 1,
+                "aggregation": "shared",
+                "subset": []
+              },
+              {
+                "name": "membershipAB",
+                "type": "MemberA",
+                "lower": 1,
+                "upper": -1,
+                "aggregation": "none",
+                "subset": []
+              }
+            ]
+          },
+          {
+            "name": "membershipB",
+            "type": "memberOf",
+            "ends": [
+              {
+                "name": "membershipBA",
+                "type": "Group",
+                "lower": 0,
+                "upper": 1,
+                "aggregation": "shared",
+                "subset": []
+              },
+              {
+                "name": "membershipBB",
+                "type": "MemberB",
+                "lower": 1,
+                "upper": -1,
+                "aggregation": "none",
+                "subset": []
+              }
+            ]
+          }
+        ],
+        "generalizations": [],
+        "sets": []
+      },
+      "expected_engine_occurrences": 1,
+      "rationale": "Collective with two memberOf associations to distinct member types.",
+      "category": "paired",
+      "documentation_expected_occurrences": null
+    },
+    {
+      "family": "HetColl",
+      "name": "negative",
+      "model": {
+        "classes": [
+          {
+            "name": "Group",
+            "type": "Collective",
+            "abstract": false
+          },
+          {
+            "name": "MemberA",
+            "type": "Kind",
+            "abstract": false
+          },
+          {
+            "name": "MemberB",
+            "type": "Kind",
+            "abstract": false
+          }
+        ],
+        "relations": [
+          {
+            "name": "membershipA",
+            "type": "memberOf",
+            "ends": [
+              {
+                "name": "membershipAA",
+                "type": "Group",
+                "lower": 0,
+                "upper": 1,
+                "aggregation": "shared",
+                "subset": []
+              },
+              {
+                "name": "membershipAB",
+                "type": "MemberA",
+                "lower": 1,
+                "upper": -1,
+                "aggregation": "none",
+                "subset": []
+              }
+            ]
+          }
+        ],
+        "generalizations": [],
+        "sets": []
+      },
+      "expected_engine_occurrences": 0,
+      "rationale": "Exactly one memberOf association.",
+      "category": "paired",
+      "documentation_expected_occurrences": null
+    },
+    {
+      "family": "HomoFunc",
+      "name": "positive",
+      "model": {
+        "classes": [
+          {
+            "name": "Machine",
+            "type": "Kind",
+            "abstract": false
+          },
+          {
+            "name": "PartA",
+            "type": "Kind",
+            "abstract": false
+          },
+          {
+            "name": "PartB",
+            "type": "Kind",
+            "abstract": false
+          }
+        ],
+        "relations": [
+          {
+            "name": "componentA",
+            "type": "componentOf",
+            "ends": [
+              {
+                "name": "componentAA",
+                "type": "Machine",
+                "lower": 0,
+                "upper": 1,
+                "aggregation": "shared",
+                "subset": []
+              },
+              {
+                "name": "componentAB",
+                "type": "PartA",
+                "lower": 1,
+                "upper": -1,
+                "aggregation": "none",
+                "subset": []
+              }
+            ]
+          }
+        ],
+        "generalizations": [],
+        "sets": []
+      },
+      "expected_engine_occurrences": 1,
+      "rationale": "Functional whole has exactly one componentOf association.",
+      "category": "paired",
+      "documentation_expected_occurrences": null
+    },
+    {
+      "family": "HomoFunc",
+      "name": "negative",
+      "model": {
+        "classes": [
+          {
+            "name": "Machine",
+            "type": "Kind",
+            "abstract": false
+          },
+          {
+            "name": "PartA",
+            "type": "Kind",
+            "abstract": false
+          },
+          {
+            "name": "PartB",
+            "type": "Kind",
+            "abstract": false
+          }
+        ],
+        "relations": [
+          {
+            "name": "componentA",
+            "type": "componentOf",
+            "ends": [
+              {
+                "name": "componentAA",
+                "type": "Machine",
+                "lower": 0,
+                "upper": 1,
+                "aggregation": "shared",
+                "subset": []
+              },
+              {
+                "name": "componentAB",
+                "type": "PartA",
+                "lower": 1,
+                "upper": -1,
+                "aggregation": "none",
+                "subset": []
+              }
+            ]
+          },
+          {
+            "name": "componentB",
+            "type": "componentOf",
+            "ends": [
+              {
+                "name": "componentBA",
+                "type": "Machine",
+                "lower": 0,
+                "upper": 1,
+                "aggregation": "shared",
+                "subset": []
+              },
+              {
+                "name": "componentBB",
+                "type": "PartB",
+                "lower": 1,
+                "upper": -1,
+                "aggregation": "none",
+                "subset": []
+              }
+            ]
+          }
+        ],
+        "generalizations": [],
+        "sets": []
+      },
+      "expected_engine_occurrences": 0,
+      "rationale": "Second distinct part association removes homogeneous structure.",
+      "category": "paired",
+      "documentation_expected_occurrences": null
+    },
+    {
+      "family": "MixIden",
+      "name": "positive",
+      "model": {
+        "classes": [
+          {
+            "name": "Common",
+            "type": "Category",
+            "abstract": false
+          },
+          {
+            "name": "Person",
+            "type": "Kind",
+            "abstract": false
+          },
+          {
+            "name": "Organization",
+            "type": "Kind",
+            "abstract": false
+          },
+          {
+            "name": "A",
+            "type": "SubKind",
+            "abstract": false
+          },
+          {
+            "name": "B",
+            "type": "SubKind",
+            "abstract": false
+          }
+        ],
+        "relations": [],
+        "generalizations": [
+          {
+            "name": "AToCommon",
+            "specific": "A",
+            "general": "Common"
+          },
+          {
+            "name": "BToCommon",
+            "specific": "B",
+            "general": "Common"
+          },
+          {
+            "name": "AToPerson",
+            "specific": "A",
+            "general": "Person"
+          },
+          {
+            "name": "BToPerson",
+            "specific": "B",
+            "general": "Person"
+          }
+        ],
+        "sets": []
+      },
+      "expected_engine_occurrences": 1,
+      "rationale": "Two category children share one ultimate kind.",
+      "category": "paired",
+      "documentation_expected_occurrences": null
+    },
+    {
+      "family": "MixIden",
+      "name": "negative",
+      "model": {
+        "classes": [
+          {
+            "name": "Common",
+            "type": "Category",
+            "abstract": false
+          },
+          {
+            "name": "Person",
+            "type": "Kind",
+            "abstract": false
+          },
+          {
+            "name": "Organization",
+            "type": "Kind",
+            "abstract": false
+          },
+          {
+            "name": "A",
+            "type": "SubKind",
+            "abstract": false
+          },
+          {
+            "name": "B",
+            "type": "SubKind",
+            "abstract": false
+          }
+        ],
+        "relations": [],
+        "generalizations": [
+          {
+            "name": "AToCommon",
+            "specific": "A",
+            "general": "Common"
+          },
+          {
+            "name": "BToCommon",
+            "specific": "B",
+            "general": "Common"
+          },
+          {
+            "name": "AToPerson",
+            "specific": "A",
+            "general": "Person"
+          },
+          {
+            "name": "BToOrganization",
+            "specific": "B",
+            "general": "Organization"
+          }
+        ],
+        "sets": []
+      },
+      "expected_engine_occurrences": 0,
+      "rationale": "Second child inherits a different ultimate kind.",
+      "category": "paired",
+      "documentation_expected_occurrences": null
+    },
+    {
+      "family": "MixRig",
+      "name": "positive",
+      "model": {
+        "classes": [
+          {
+            "name": "Common",
+            "type": "Mixin",
+            "abstract": false
+          },
+          {
+            "name": "Person",
+            "type": "Kind",
+            "abstract": false
+          },
+          {
+            "name": "A",
+            "type": "SubKind",
+            "abstract": false
+          },
+          {
+            "name": "B",
+            "type": "SubKind",
+            "abstract": false
+          }
+        ],
+        "relations": [],
+        "generalizations": [
+          {
+            "name": "AToCommon",
+            "specific": "A",
+            "general": "Common"
+          },
+          {
+            "name": "BToCommon",
+            "specific": "B",
+            "general": "Common"
+          },
+          {
+            "name": "AToPerson",
+            "specific": "A",
+            "general": "Person"
+          },
+          {
+            "name": "BToPerson",
+            "specific": "B",
+            "general": "Person"
+          }
+        ],
+        "sets": []
+      },
+      "expected_engine_occurrences": 1,
+      "rationale": "Both direct mixin children are rigid.",
+      "category": "paired",
+      "documentation_expected_occurrences": null
+    },
+    {
+      "family": "MixRig",
+      "name": "negative",
+      "model": {
+        "classes": [
+          {
+            "name": "Common",
+            "type": "Mixin",
+            "abstract": false
+          },
+          {
+            "name": "Person",
+            "type": "Kind",
+            "abstract": false
+          },
+          {
+            "name": "A",
+            "type": "SubKind",
+            "abstract": false
+          },
+          {
+            "name": "B",
+            "type": "Role",
+            "abstract": false
+          }
+        ],
+        "relations": [],
+        "generalizations": [
+          {
+            "name": "AToCommon",
+            "specific": "A",
+            "general": "Common"
+          },
+          {
+            "name": "BToCommon",
+            "specific": "B",
+            "general": "Common"
+          },
+          {
+            "name": "AToPerson",
+            "specific": "A",
+            "general": "Person"
+          },
+          {
+            "name": "BToPerson",
+            "specific": "B",
+            "general": "Person"
+          }
+        ],
+        "sets": []
+      },
+      "expected_engine_occurrences": 0,
+      "rationale": "One direct child is anti-rigid.",
+      "category": "paired",
+      "documentation_expected_occurrences": null
+    },
+    {
+      "family": "MultiDep",
+      "name": "positive",
+      "model": {
+        "classes": [
+          {
+            "name": "Actor",
+            "type": "Kind",
+            "abstract": false
+          },
+          {
+            "name": "R1",
+            "type": "Relator",
+            "abstract": false
+          },
+          {
+            "name": "R2",
+            "type": "Relator",
+            "abstract": false
+          }
+        ],
+        "relations": [
+          {
+            "name": "m1",
+            "type": "Mediation",
+            "ends": [
+              {
+                "name": "m1A",
+                "type": "R1",
+                "lower": 1,
+                "upper": 1,
+                "aggregation": "none",
+                "subset": []
+              },
+              {
+                "name": "m1B",
+                "type": "Actor",
+                "lower": 1,
+                "upper": 1,
+                "aggregation": "none",
+                "subset": []
+              }
+            ]
+          },
+          {
+            "name": "m2",
+            "type": "Mediation",
+            "ends": [
+              {
+                "name": "m2A",
+                "type": "R2",
+                "lower": 1,
+                "upper": 1,
+                "aggregation": "none",
+                "subset": []
+              },
+              {
+                "name": "m2B",
+                "type": "Actor",
+                "lower": 1,
+                "upper": 1,
+                "aggregation": "none",
+                "subset": []
+              }
+            ]
+          }
+        ],
+        "generalizations": [],
+        "sets": []
+      },
+      "expected_engine_occurrences": 1,
+      "rationale": "One object directly mediated by two distinct relators.",
+      "category": "paired",
+      "documentation_expected_occurrences": null
+    },
+    {
+      "family": "MultiDep",
+      "name": "negative",
+      "model": {
+        "classes": [
+          {
+            "name": "Actor",
+            "type": "Kind",
+            "abstract": false
+          },
+          {
+            "name": "R1",
+            "type": "Relator",
+            "abstract": false
+          },
+          {
+            "name": "R2",
+            "type": "Relator",
+            "abstract": false
+          }
+        ],
+        "relations": [
+          {
+            "name": "m1",
+            "type": "Mediation",
+            "ends": [
+              {
+                "name": "m1A",
+                "type": "R1",
+                "lower": 1,
+                "upper": 1,
+                "aggregation": "none",
+                "subset": []
+              },
+              {
+                "name": "m1B",
+                "type": "Actor",
+                "lower": 1,
+                "upper": 1,
+                "aggregation": "none",
+                "subset": []
+              }
+            ]
+          }
+        ],
+        "generalizations": [],
+        "sets": []
+      },
+      "expected_engine_occurrences": 0,
+      "rationale": "Only one mediation remains.",
+      "category": "paired",
+      "documentation_expected_occurrences": null
+    },
+    {
+      "family": "PartOver",
+      "name": "positive",
+      "model": {
+        "classes": [
+          {
+            "name": "Parent",
+            "type": "Kind",
+            "abstract": false
+          },
+          {
+            "name": "A",
+            "type": "SubKind",
+            "abstract": false
+          },
+          {
+            "name": "B",
+            "type": "SubKind",
+            "abstract": false
+          },
+          {
+            "name": "Base",
+            "type": "Kind",
+            "abstract": false
+          }
+        ],
+        "relations": [
+          {
+            "name": "r1",
+            "type": "componentOf",
+            "ends": [
+              {
+                "name": "r1A",
+                "type": "A",
+                "lower": 1,
+                "upper": 2,
+                "aggregation": "shared",
+                "subset": []
+              },
+              {
+                "name": "r1B",
+                "type": "Base",
+                "lower": 1,
+                "upper": 1,
+                "aggregation": "none",
+                "subset": []
+              }
+            ]
+          },
+          {
+            "name": "r2",
+            "type": "componentOf",
+            "ends": [
+              {
+                "name": "r2A",
+                "type": "B",
+                "lower": 1,
+                "upper": 2,
+                "aggregation": "shared",
+                "subset": []
+              },
+              {
+                "name": "r2B",
+                "type": "Base",
+                "lower": 1,
+                "upper": 1,
+                "aggregation": "none",
+                "subset": []
+              }
+            ]
+          }
+        ],
+        "generalizations": [
+          {
+            "name": "AToParent",
+            "specific": "A",
+            "general": "Parent"
+          },
+          {
+            "name": "BToParent",
+            "specific": "B",
+            "general": "Parent"
+          }
+        ],
+        "sets": [
+          {
+            "name": "Overlap",
+            "generalizations": [
+              "AToParent",
+              "BToParent"
+            ],
+            "disjoint": false,
+            "complete": false
+          }
+        ]
+      },
+      "expected_engine_occurrences": 1,
+      "rationale": "Two possibly overlapping sibling types share a kind. Upper bounds safely exceed the disputed boundary.",
+      "category": "paired",
+      "documentation_expected_occurrences": null
+    },
+    {
+      "family": "PartOver",
+      "name": "negative",
+      "model": {
+        "classes": [
+          {
+            "name": "Parent",
+            "type": "Kind",
+            "abstract": false
+          },
+          {
+            "name": "A",
+            "type": "SubKind",
+            "abstract": false
+          },
+          {
+            "name": "B",
+            "type": "SubKind",
+            "abstract": false
+          },
+          {
+            "name": "Base",
+            "type": "Kind",
+            "abstract": false
+          }
+        ],
+        "relations": [
+          {
+            "name": "r1",
+            "type": "componentOf",
+            "ends": [
+              {
+                "name": "r1A",
+                "type": "A",
+                "lower": 1,
+                "upper": 2,
+                "aggregation": "shared",
+                "subset": []
+              },
+              {
+                "name": "r1B",
+                "type": "Base",
+                "lower": 1,
+                "upper": 1,
+                "aggregation": "none",
+                "subset": []
+              }
+            ]
+          },
+          {
+            "name": "r2",
+            "type": "componentOf",
+            "ends": [
+              {
+                "name": "r2A",
+                "type": "B",
+                "lower": 1,
+                "upper": 2,
+                "aggregation": "shared",
+                "subset": []
+              },
+              {
+                "name": "r2B",
+                "type": "Base",
+                "lower": 1,
+                "upper": 1,
+                "aggregation": "none",
+                "subset": []
+              }
+            ]
+          }
+        ],
+        "generalizations": [
+          {
+            "name": "AToParent",
+            "specific": "A",
+            "general": "Parent"
+          },
+          {
+            "name": "BToParent",
+            "specific": "B",
+            "general": "Parent"
+          }
+        ],
+        "sets": [
+          {
+            "name": "Overlap",
+            "generalizations": [
+              "AToParent",
+              "BToParent"
+            ],
+            "disjoint": true,
+            "complete": false
+          }
+        ]
+      },
+      "expected_engine_occurrences": 0,
+      "rationale": "Explicit disjointness of the same siblings removes overlap.",
+      "category": "paired",
+      "documentation_expected_occurrences": null
+    },
+    {
+      "family": "WholeOver",
+      "name": "positive",
+      "model": {
+        "classes": [
+          {
+            "name": "Parent",
+            "type": "Kind",
+            "abstract": false
+          },
+          {
+            "name": "A",
+            "type": "SubKind",
+            "abstract": false
+          },
+          {
+            "name": "B",
+            "type": "SubKind",
+            "abstract": false
+          },
+          {
+            "name": "Base",
+            "type": "Kind",
+            "abstract": false
+          }
+        ],
+        "relations": [
+          {
+            "name": "r1",
+            "type": "componentOf",
+            "ends": [
+              {
+                "name": "r1A",
+                "type": "Base",
+                "lower": 0,
+                "upper": 1,
+                "aggregation": "shared",
+                "subset": []
+              },
+              {
+                "name": "r1B",
+                "type": "A",
+                "lower": 1,
+                "upper": 2,
+                "aggregation": "none",
+                "subset": []
+              }
+            ]
+          },
+          {
+            "name": "r2",
+            "type": "componentOf",
+            "ends": [
+              {
+                "name": "r2A",
+                "type": "Base",
+                "lower": 0,
+                "upper": 1,
+                "aggregation": "shared",
+                "subset": []
+              },
+              {
+                "name": "r2B",
+                "type": "B",
+                "lower": 1,
+                "upper": 2,
+                "aggregation": "none",
+                "subset": []
+              }
+            ]
+          }
+        ],
+        "generalizations": [
+          {
+            "name": "AToParent",
+            "specific": "A",
+            "general": "Parent"
+          },
+          {
+            "name": "BToParent",
+            "specific": "B",
+            "general": "Parent"
+          }
+        ],
+        "sets": [
+          {
+            "name": "Overlap",
+            "generalizations": [
+              "AToParent",
+              "BToParent"
+            ],
+            "disjoint": false,
+            "complete": false
+          }
+        ]
+      },
+      "expected_engine_occurrences": 1,
+      "rationale": "Two possibly overlapping sibling types share a kind. Upper bounds safely exceed the disputed boundary.",
+      "category": "paired",
+      "documentation_expected_occurrences": null
+    },
+    {
+      "family": "WholeOver",
+      "name": "negative",
+      "model": {
+        "classes": [
+          {
+            "name": "Parent",
+            "type": "Kind",
+            "abstract": false
+          },
+          {
+            "name": "A",
+            "type": "SubKind",
+            "abstract": false
+          },
+          {
+            "name": "B",
+            "type": "SubKind",
+            "abstract": false
+          },
+          {
+            "name": "Base",
+            "type": "Kind",
+            "abstract": false
+          }
+        ],
+        "relations": [
+          {
+            "name": "r1",
+            "type": "componentOf",
+            "ends": [
+              {
+                "name": "r1A",
+                "type": "Base",
+                "lower": 0,
+                "upper": 1,
+                "aggregation": "shared",
+                "subset": []
+              },
+              {
+                "name": "r1B",
+                "type": "A",
+                "lower": 1,
+                "upper": 2,
+                "aggregation": "none",
+                "subset": []
+              }
+            ]
+          },
+          {
+            "name": "r2",
+            "type": "componentOf",
+            "ends": [
+              {
+                "name": "r2A",
+                "type": "Base",
+                "lower": 0,
+                "upper": 1,
+                "aggregation": "shared",
+                "subset": []
+              },
+              {
+                "name": "r2B",
+                "type": "B",
+                "lower": 1,
+                "upper": 2,
+                "aggregation": "none",
+                "subset": []
+              }
+            ]
+          }
+        ],
+        "generalizations": [
+          {
+            "name": "AToParent",
+            "specific": "A",
+            "general": "Parent"
+          },
+          {
+            "name": "BToParent",
+            "specific": "B",
+            "general": "Parent"
+          }
+        ],
+        "sets": [
+          {
+            "name": "Overlap",
+            "generalizations": [
+              "AToParent",
+              "BToParent"
+            ],
+            "disjoint": true,
+            "complete": false
+          }
+        ]
+      },
+      "expected_engine_occurrences": 0,
+      "rationale": "Explicit disjointness of the same siblings removes overlap.",
+      "category": "paired",
+      "documentation_expected_occurrences": null
+    },
+    {
+      "family": "RelOver",
+      "name": "positive",
+      "model": {
+        "classes": [
+          {
+            "name": "Parent",
+            "type": "Kind",
+            "abstract": false
+          },
+          {
+            "name": "A",
+            "type": "SubKind",
+            "abstract": false
+          },
+          {
+            "name": "B",
+            "type": "SubKind",
+            "abstract": false
+          },
+          {
+            "name": "Base",
+            "type": "Relator",
+            "abstract": false
+          }
+        ],
+        "relations": [
+          {
+            "name": "r1",
+            "type": "Mediation",
+            "ends": [
+              {
+                "name": "r1A",
+                "type": "Base",
+                "lower": 0,
+                "upper": 1,
+                "aggregation": "none",
+                "subset": []
+              },
+              {
+                "name": "r1B",
+                "type": "A",
+                "lower": 1,
+                "upper": 2,
+                "aggregation": "none",
+                "subset": []
+              }
+            ]
+          },
+          {
+            "name": "r2",
+            "type": "Mediation",
+            "ends": [
+              {
+                "name": "r2A",
+                "type": "Base",
+                "lower": 0,
+                "upper": 1,
+                "aggregation": "none",
+                "subset": []
+              },
+              {
+                "name": "r2B",
+                "type": "B",
+                "lower": 1,
+                "upper": 2,
+                "aggregation": "none",
+                "subset": []
+              }
+            ]
+          }
+        ],
+        "generalizations": [
+          {
+            "name": "AToParent",
+            "specific": "A",
+            "general": "Parent"
+          },
+          {
+            "name": "BToParent",
+            "specific": "B",
+            "general": "Parent"
+          }
+        ],
+        "sets": [
+          {
+            "name": "Overlap",
+            "generalizations": [
+              "AToParent",
+              "BToParent"
+            ],
+            "disjoint": false,
+            "complete": false
+          }
+        ]
+      },
+      "expected_engine_occurrences": 1,
+      "rationale": "Two possibly overlapping sibling types share a kind. Upper bounds safely exceed the disputed boundary.",
+      "category": "paired",
+      "documentation_expected_occurrences": null
+    },
+    {
+      "family": "RelOver",
+      "name": "negative",
+      "model": {
+        "classes": [
+          {
+            "name": "Parent",
+            "type": "Kind",
+            "abstract": false
+          },
+          {
+            "name": "A",
+            "type": "SubKind",
+            "abstract": false
+          },
+          {
+            "name": "B",
+            "type": "SubKind",
+            "abstract": false
+          },
+          {
+            "name": "Base",
+            "type": "Relator",
+            "abstract": false
+          }
+        ],
+        "relations": [
+          {
+            "name": "r1",
+            "type": "Mediation",
+            "ends": [
+              {
+                "name": "r1A",
+                "type": "Base",
+                "lower": 0,
+                "upper": 1,
+                "aggregation": "none",
+                "subset": []
+              },
+              {
+                "name": "r1B",
+                "type": "A",
+                "lower": 1,
+                "upper": 2,
+                "aggregation": "none",
+                "subset": []
+              }
+            ]
+          },
+          {
+            "name": "r2",
+            "type": "Mediation",
+            "ends": [
+              {
+                "name": "r2A",
+                "type": "Base",
+                "lower": 0,
+                "upper": 1,
+                "aggregation": "none",
+                "subset": []
+              },
+              {
+                "name": "r2B",
+                "type": "B",
+                "lower": 1,
+                "upper": 2,
+                "aggregation": "none",
+                "subset": []
+              }
+            ]
+          }
+        ],
+        "generalizations": [
+          {
+            "name": "AToParent",
+            "specific": "A",
+            "general": "Parent"
+          },
+          {
+            "name": "BToParent",
+            "specific": "B",
+            "general": "Parent"
+          }
+        ],
+        "sets": [
+          {
+            "name": "Overlap",
+            "generalizations": [
+              "AToParent",
+              "BToParent"
+            ],
+            "disjoint": true,
+            "complete": false
+          }
+        ]
+      },
+      "expected_engine_occurrences": 0,
+      "rationale": "Explicit disjointness of the same siblings removes overlap.",
+      "category": "paired",
+      "documentation_expected_occurrences": null
+    },
+    {
+      "family": "RelComp",
+      "name": "positive",
+      "model": {
+        "classes": [
+          {
+            "name": "Container",
+            "type": "Kind",
+            "abstract": false
+          },
+          {
+            "name": "Person",
+            "type": "Kind",
+            "abstract": false
+          },
+          {
+            "name": "A",
+            "type": "SubKind",
+            "abstract": false
+          },
+          {
+            "name": "B",
+            "type": "SubKind",
+            "abstract": false
+          }
+        ],
+        "relations": [
+          {
+            "name": "outer",
+            "type": "Association",
+            "ends": [
+              {
+                "name": "outerA",
+                "type": "Container",
+                "lower": 0,
+                "upper": 1,
+                "aggregation": "none",
+                "subset": []
+              },
+              {
+                "name": "outerB",
+                "type": "Person",
+                "lower": 1,
+                "upper": 2,
+                "aggregation": "none",
+                "subset": []
+              }
+            ]
+          },
+          {
+            "name": "inner",
+            "type": "Association",
+            "ends": [
+              {
+                "name": "innerA",
+                "type": "A",
+                "lower": 0,
+                "upper": 1,
+                "aggregation": "none",
+                "subset": []
+              },
+              {
+                "name": "innerB",
+                "type": "B",
+                "lower": 0,
+                "upper": 1,
+                "aggregation": "none",
+                "subset": []
+              }
+            ]
+          }
+        ],
+        "generalizations": [
+          {
+            "name": "AToPerson",
+            "specific": "A",
+            "general": "Person"
+          },
+          {
+            "name": "BToPerson",
+            "specific": "B",
+            "general": "Person"
+          }
+        ],
+        "sets": []
+      },
+      "expected_engine_occurrences": 1,
+      "rationale": "Outer target has plural upper bound and both inner ends specialize it.",
+      "category": "paired",
+      "documentation_expected_occurrences": null
+    },
+    {
+      "family": "RelComp",
+      "name": "negative",
+      "model": {
+        "classes": [
+          {
+            "name": "Container",
+            "type": "Kind",
+            "abstract": false
+          },
+          {
+            "name": "Person",
+            "type": "Kind",
+            "abstract": false
+          },
+          {
+            "name": "A",
+            "type": "SubKind",
+            "abstract": false
+          },
+          {
+            "name": "B",
+            "type": "SubKind",
+            "abstract": false
+          }
+        ],
+        "relations": [
+          {
+            "name": "outer",
+            "type": "Association",
+            "ends": [
+              {
+                "name": "outerA",
+                "type": "Container",
+                "lower": 0,
+                "upper": 1,
+                "aggregation": "none",
+                "subset": []
+              },
+              {
+                "name": "outerB",
+                "type": "Person",
+                "lower": 1,
+                "upper": 1,
+                "aggregation": "none",
+                "subset": []
+              }
+            ]
+          },
+          {
+            "name": "inner",
+            "type": "Association",
+            "ends": [
+              {
+                "name": "innerA",
+                "type": "A",
+                "lower": 0,
+                "upper": 1,
+                "aggregation": "none",
+                "subset": []
+              },
+              {
+                "name": "innerB",
+                "type": "B",
+                "lower": 0,
+                "upper": 1,
+                "aggregation": "none",
+                "subset": []
+              }
+            ]
+          }
+        ],
+        "generalizations": [
+          {
+            "name": "AToPerson",
+            "specific": "A",
+            "general": "Person"
+          },
+          {
+            "name": "BToPerson",
+            "specific": "B",
+            "general": "Person"
+          }
+        ],
+        "sets": []
+      },
+      "expected_engine_occurrences": 0,
+      "rationale": "Change only outer target upper bound to one.",
+      "category": "paired",
+      "documentation_expected_occurrences": null
+    },
+    {
+      "family": "RelComp",
+      "name": "zero-lower-bound",
+      "model": {
+        "classes": [
+          {
+            "name": "Container",
+            "type": "Kind",
+            "abstract": false
+          },
+          {
+            "name": "Person",
+            "type": "Kind",
+            "abstract": false
+          },
+          {
+            "name": "A",
+            "type": "SubKind",
+            "abstract": false
+          },
+          {
+            "name": "B",
+            "type": "SubKind",
+            "abstract": false
+          }
+        ],
+        "relations": [
+          {
+            "name": "outer",
+            "type": "Association",
+            "ends": [
+              {
+                "name": "outerA",
+                "type": "Container",
+                "lower": 0,
+                "upper": 1,
+                "aggregation": "none",
+                "subset": []
+              },
+              {
+                "name": "outerB",
+                "type": "Person",
+                "lower": 0,
+                "upper": 2,
+                "aggregation": "none",
+                "subset": []
+              }
+            ]
+          },
+          {
+            "name": "inner",
+            "type": "Association",
+            "ends": [
+              {
+                "name": "innerA",
+                "type": "A",
+                "lower": 0,
+                "upper": 1,
+                "aggregation": "none",
+                "subset": []
+              },
+              {
+                "name": "innerB",
+                "type": "B",
+                "lower": 0,
+                "upper": 1,
+                "aggregation": "none",
+                "subset": []
+              }
+            ]
+          }
+        ],
+        "generalizations": [
+          {
+            "name": "AToPerson",
+            "specific": "A",
+            "general": "Person"
+          },
+          {
+            "name": "BToPerson",
+            "specific": "B",
+            "general": "Person"
+          }
+        ],
+        "sets": []
+      },
+      "expected_engine_occurrences": 1,
+      "rationale": "Implementation checks upper but omits the documented positive lower-bound condition.",
+      "category": "documentation-discrepancy",
+      "documentation_expected_occurrences": 0
+    },
+    {
+      "family": "RelRig",
+      "name": "positive",
+      "model": {
+        "classes": [
+          {
+            "name": "Person",
+            "type": "Kind",
+            "abstract": false
+          },
+          {
+            "name": "ParticipatingPerson",
+            "type": "SubKind",
+            "abstract": false
+          },
+          {
+            "name": "Agreement",
+            "type": "Relator",
+            "abstract": false
+          }
+        ],
+        "relations": [
+          {
+            "name": "m",
+            "type": "Mediation",
+            "ends": [
+              {
+                "name": "mA",
+                "type": "Agreement",
+                "lower": 1,
+                "upper": 1,
+                "aggregation": "none",
+                "subset": []
+              },
+              {
+                "name": "mB",
+                "type": "ParticipatingPerson",
+                "lower": 1,
+                "upper": 1,
+                "aggregation": "none",
+                "subset": []
+              }
+            ]
+          }
+        ],
+        "generalizations": [
+          {
+            "name": "ParticipatingPersonToPerson",
+            "specific": "ParticipatingPerson",
+            "general": "Person"
+          }
+        ],
+        "sets": []
+      },
+      "expected_engine_occurrences": 1,
+      "rationale": "Relator mediates a rigid subkind with mandatory relator end.",
+      "category": "paired",
+      "documentation_expected_occurrences": null
+    },
+    {
+      "family": "RelRig",
+      "name": "negative",
+      "model": {
+        "classes": [
+          {
+            "name": "Person",
+            "type": "Kind",
+            "abstract": false
+          },
+          {
+            "name": "ParticipatingPerson",
+            "type": "Role",
+            "abstract": false
+          },
+          {
+            "name": "Agreement",
+            "type": "Relator",
+            "abstract": false
+          }
+        ],
+        "relations": [
+          {
+            "name": "m",
+            "type": "Mediation",
+            "ends": [
+              {
+                "name": "mA",
+                "type": "Agreement",
+                "lower": 1,
+                "upper": 1,
+                "aggregation": "none",
+                "subset": []
+              },
+              {
+                "name": "mB",
+                "type": "ParticipatingPerson",
+                "lower": 1,
+                "upper": 1,
+                "aggregation": "none",
+                "subset": []
+              }
+            ]
+          }
+        ],
+        "generalizations": [
+          {
+            "name": "ParticipatingPersonToPerson",
+            "specific": "ParticipatingPerson",
+            "general": "Person"
+          }
+        ],
+        "sets": []
+      },
+      "expected_engine_occurrences": 0,
+      "rationale": "Same endpoint is anti-rigid Role.",
+      "category": "paired",
+      "documentation_expected_occurrences": null
+    },
+    {
+      "family": "RelSpec",
+      "name": "positive",
+      "model": {
+        "classes": [
+          {
+            "name": "Person",
+            "type": "Kind",
+            "abstract": false
+          },
+          {
+            "name": "Product",
+            "type": "Kind",
+            "abstract": false
+          },
+          {
+            "name": "Worker",
+            "type": "Role",
+            "abstract": false
+          },
+          {
+            "name": "Medicine",
+            "type": "SubKind",
+            "abstract": false
+          }
+        ],
+        "relations": [
+          {
+            "name": "general",
+            "type": "Association",
+            "ends": [
+              {
+                "name": "generalA",
+                "type": "Person",
+                "lower": 0,
+                "upper": 1,
+                "aggregation": "none",
+                "subset": []
+              },
+              {
+                "name": "generalB",
+                "type": "Product",
+                "lower": 0,
+                "upper": -1,
+                "aggregation": "none",
+                "subset": []
+              }
+            ]
+          },
+          {
+            "name": "special",
+            "type": "Association",
+            "ends": [
+              {
+                "name": "specialA",
+                "type": "Worker",
+                "lower": 0,
+                "upper": 1,
+                "aggregation": "none",
+                "subset": []
+              },
+              {
+                "name": "specialB",
+                "type": "Medicine",
+                "lower": 0,
+                "upper": -1,
+                "aggregation": "none",
+                "subset": []
+              }
+            ]
+          }
+        ],
+        "generalizations": [
+          {
+            "name": "WorkerToPerson",
+            "specific": "Worker",
+            "general": "Person"
+          },
+          {
+            "name": "MedicineToProduct",
+            "specific": "Medicine",
+            "general": "Product"
+          }
+        ],
+        "sets": []
+      },
+      "expected_engine_occurrences": 1,
+      "rationale": "Relation endpoints specialize the endpoints of a broader association.",
+      "category": "paired",
+      "documentation_expected_occurrences": null
+    },
+    {
+      "family": "RelSpec",
+      "name": "negative",
+      "model": {
+        "classes": [
+          {
+            "name": "Person",
+            "type": "Kind",
+            "abstract": false
+          },
+          {
+            "name": "Product",
+            "type": "Kind",
+            "abstract": false
+          },
+          {
+            "name": "Worker",
+            "type": "Role",
+            "abstract": false
+          },
+          {
+            "name": "Medicine",
+            "type": "SubKind",
+            "abstract": false
+          }
+        ],
+        "relations": [
+          {
+            "name": "general",
+            "type": "Association",
+            "ends": [
+              {
+                "name": "generalA",
+                "type": "Person",
+                "lower": 0,
+                "upper": 1,
+                "aggregation": "none",
+                "subset": []
+              },
+              {
+                "name": "generalB",
+                "type": "Product",
+                "lower": 0,
+                "upper": -1,
+                "aggregation": "none",
+                "subset": []
+              }
+            ]
+          },
+          {
+            "name": "special",
+            "type": "Association",
+            "ends": [
+              {
+                "name": "specialA",
+                "type": "Worker",
+                "lower": 0,
+                "upper": 1,
+                "aggregation": "none",
+                "subset": [
+                  "generalA"
+                ]
+              },
+              {
+                "name": "specialB",
+                "type": "Medicine",
+                "lower": 0,
+                "upper": -1,
+                "aggregation": "none",
+                "subset": [
+                  "generalB"
+                ]
+              }
+            ]
+          }
+        ],
+        "generalizations": [
+          {
+            "name": "WorkerToPerson",
+            "specific": "Worker",
+            "general": "Person"
+          },
+          {
+            "name": "MedicineToProduct",
+            "specific": "Medicine",
+            "general": "Product"
+          }
+        ],
+        "sets": []
+      },
+      "expected_engine_occurrences": 0,
+      "rationale": "Declare explicit subsetting on both specialized ends.",
+      "category": "paired",
+      "documentation_expected_occurrences": null
+    },
+    {
+      "family": "UndefFormal",
+      "name": "positive",
+      "model": {
+        "classes": [
+          {
+            "name": "PersonA",
+            "type": "Kind",
+            "abstract": false
+          },
+          {
+            "name": "PersonB",
+            "type": "Kind",
+            "abstract": false
+          },
+          {
+            "name": "Value",
+            "type": "DataType",
+            "abstract": false
+          }
+        ],
+        "relations": [
+          {
+            "name": "comparison",
+            "type": "FormalAssociation",
+            "ends": [
+              {
+                "name": "comparisonA",
+                "type": "PersonA",
+                "lower": 0,
+                "upper": 1,
+                "aggregation": "none",
+                "subset": []
+              },
+              {
+                "name": "comparisonB",
+                "type": "PersonB",
+                "lower": 0,
+                "upper": -1,
+                "aggregation": "none",
+                "subset": []
+              }
+            ]
+          }
+        ],
+        "generalizations": [],
+        "sets": []
+      },
+      "expected_engine_occurrences": 1,
+      "rationale": "Neither formal relation endpoint has datatype support.",
+      "category": "paired",
+      "documentation_expected_occurrences": null
+    },
+    {
+      "family": "UndefFormal",
+      "name": "negative",
+      "model": {
+        "classes": [
+          {
+            "name": "PersonA",
+            "type": "Kind",
+            "abstract": false
+          },
+          {
+            "name": "PersonB",
+            "type": "Kind",
+            "abstract": false
+          },
+          {
+            "name": "Value",
+            "type": "DataType",
+            "abstract": false
+          }
+        ],
+        "relations": [
+          {
+            "name": "comparison",
+            "type": "FormalAssociation",
+            "ends": [
+              {
+                "name": "comparisonA",
+                "type": "PersonA",
+                "lower": 0,
+                "upper": 1,
+                "aggregation": "none",
+                "subset": []
+              },
+              {
+                "name": "comparisonB",
+                "type": "PersonB",
+                "lower": 0,
+                "upper": -1,
+                "aggregation": "none",
+                "subset": []
+              }
+            ]
+          },
+          {
+            "name": "valueA",
+            "type": "Association",
+            "ends": [
+              {
+                "name": "valueAA",
+                "type": "PersonA",
+                "lower": 0,
+                "upper": 1,
+                "aggregation": "none",
+                "subset": []
+              },
+              {
+                "name": "valueAB",
+                "type": "Value",
+                "lower": 0,
+                "upper": -1,
+                "aggregation": "none",
+                "subset": []
+              }
+            ]
+          },
+          {
+            "name": "valueB",
+            "type": "Association",
+            "ends": [
+              {
+                "name": "valueBA",
+                "type": "PersonB",
+                "lower": 0,
+                "upper": 1,
+                "aggregation": "none",
+                "subset": []
+              },
+              {
+                "name": "valueBB",
+                "type": "Value",
+                "lower": 0,
+                "upper": -1,
+                "aggregation": "none",
+                "subset": []
+              }
+            ]
+          }
+        ],
+        "generalizations": [],
+        "sets": []
+      },
+      "expected_engine_occurrences": 0,
+      "rationale": "Both endpoints have explicit associations to DataType.",
+      "category": "paired",
+      "documentation_expected_occurrences": null
+    },
+    {
+      "family": "UndefPhase",
+      "name": "positive",
+      "model": {
+        "classes": [
+          {
+            "name": "Person",
+            "type": "Kind",
+            "abstract": false
+          },
+          {
+            "name": "PhaseA",
+            "type": "Phase",
+            "abstract": false
+          },
+          {
+            "name": "PhaseB",
+            "type": "Phase",
+            "abstract": false
+          },
+          {
+            "name": "Value",
+            "type": "DataType",
+            "abstract": false
+          }
+        ],
+        "relations": [],
+        "generalizations": [
+          {
+            "name": "PhaseAToPerson",
+            "specific": "PhaseA",
+            "general": "Person"
+          },
+          {
+            "name": "PhaseBToPerson",
+            "specific": "PhaseB",
+            "general": "Person"
+          }
+        ],
+        "sets": [
+          {
+            "name": "Partition",
+            "generalizations": [
+              "PhaseAToPerson",
+              "PhaseBToPerson"
+            ],
+            "disjoint": true,
+            "complete": true
+          }
+        ]
+      },
+      "expected_engine_occurrences": 1,
+      "rationale": "Complete disjoint phase partition with no discriminator.",
+      "category": "paired",
+      "documentation_expected_occurrences": null
+    },
+    {
+      "family": "UndefPhase",
+      "name": "negative",
+      "model": {
+        "classes": [
+          {
+            "name": "Person",
+            "type": "Kind",
+            "abstract": false
+          },
+          {
+            "name": "PhaseA",
+            "type": "Phase",
+            "abstract": false
+          },
+          {
+            "name": "PhaseB",
+            "type": "Phase",
+            "abstract": false
+          },
+          {
+            "name": "Value",
+            "type": "DataType",
+            "abstract": false
+          }
+        ],
+        "relations": [
+          {
+            "name": "discriminator",
+            "type": "Association",
+            "ends": [
+              {
+                "name": "discriminatorA",
+                "type": "Person",
+                "lower": 0,
+                "upper": 1,
+                "aggregation": "none",
+                "subset": []
+              },
+              {
+                "name": "discriminatorB",
+                "type": "Value",
+                "lower": 0,
+                "upper": -1,
+                "aggregation": "none",
+                "subset": []
+              }
+            ]
+          }
+        ],
+        "generalizations": [
+          {
+            "name": "PhaseAToPerson",
+            "specific": "PhaseA",
+            "general": "Person"
+          },
+          {
+            "name": "PhaseBToPerson",
+            "specific": "PhaseB",
+            "general": "Person"
+          }
+        ],
+        "sets": [
+          {
+            "name": "Partition",
+            "generalizations": [
+              "PhaseAToPerson",
+              "PhaseBToPerson"
+            ],
+            "disjoint": true,
+            "complete": true
+          }
+        ]
+      },
+      "expected_engine_occurrences": 0,
+      "rationale": "Parent has datatype support for an intrinsic discriminator.",
+      "category": "paired",
+      "documentation_expected_occurrences": null
+    },
+    {
+      "family": "WholeOver",
+      "name": "upper-sum-two",
+      "model": {
+        "classes": [
+          {
+            "name": "Parent",
+            "type": "Kind",
+            "abstract": false
+          },
+          {
+            "name": "A",
+            "type": "SubKind",
+            "abstract": false
+          },
+          {
+            "name": "B",
+            "type": "SubKind",
+            "abstract": false
+          },
+          {
+            "name": "Base",
+            "type": "Kind",
+            "abstract": false
+          }
+        ],
+        "relations": [
+          {
+            "name": "r1",
+            "type": "componentOf",
+            "ends": [
+              {
+                "name": "r1A",
+                "type": "Base",
+                "lower": 0,
+                "upper": 1,
+                "aggregation": "shared",
+                "subset": []
+              },
+              {
+                "name": "r1B",
+                "type": "A",
+                "lower": 1,
+                "upper": 1,
+                "aggregation": "none",
+                "subset": []
+              }
+            ]
+          },
+          {
+            "name": "r2",
+            "type": "componentOf",
+            "ends": [
+              {
+                "name": "r2A",
+                "type": "Base",
+                "lower": 0,
+                "upper": 1,
+                "aggregation": "shared",
+                "subset": []
+              },
+              {
+                "name": "r2B",
+                "type": "B",
+                "lower": 1,
+                "upper": 1,
+                "aggregation": "none",
+                "subset": []
+              }
+            ]
+          }
+        ],
+        "generalizations": [
+          {
+            "name": "AToParent",
+            "specific": "A",
+            "general": "Parent"
+          },
+          {
+            "name": "BToParent",
+            "specific": "B",
+            "general": "Parent"
+          }
+        ],
+        "sets": [
+          {
+            "name": "Overlap",
+            "generalizations": [
+              "AToParent",
+              "BToParent"
+            ],
+            "disjoint": false,
+            "complete": false
+          }
+        ]
+      },
+      "expected_engine_occurrences": 0,
+      "rationale": "Pinned occurrence constructor requires upper sum>=3; published catalogue says>=2.",
+      "category": "documentation-discrepancy",
+      "documentation_expected_occurrences": 1
+    }
+  ]
+}

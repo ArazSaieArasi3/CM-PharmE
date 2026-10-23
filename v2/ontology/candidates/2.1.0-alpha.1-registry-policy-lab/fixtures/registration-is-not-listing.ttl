@@ -1,0 +1,42 @@
+@prefix c: <https://w3id.org/cm-pharme/2.1/> .
+@prefix p: <https://w3id.org/cm-pharme/experimental/registry-policy/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix t: <urn:cmpe-registry-policy:> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+t:mandate a c:RegulatoryMandate ;
+    c:regulatoryMandateCounterpart t:conferrer ;
+    c:regulatoryMandateHolder t:authority .
+
+t:conferrer a c:MandateConferringOrganizationRole,
+        c:Organization .
+
+t:fact a c:EstablishmentRegistration ;
+    c:registrationAuthority t:authority ;
+    c:registrationEntity t:facility ;
+    c:registrationJurisdiction t:jurisdiction .
+
+t:jurisdiction a c:RegulatoryJurisdiction .
+
+t:record a c:SourceRecord ;
+    prov:wasAttributedTo t:reporter ;
+    p:approvalConclusion "unknown" ;
+    p:externalKey "SYNTHETIC-001" ;
+    p:profile "registry-record" ;
+    p:recordKind "listing" ;
+    p:recordSubject t:facility ;
+    p:release t:release ;
+    p:representsFact t:fact ;
+    p:retrievedAt "2026-10-01T10:00:00+00:00"^^xsd:dateTime .
+
+t:release a c:DatasetRelease ;
+    c:containsSourceRecord t:record .
+
+t:reporter a c:Organization .
+
+t:authority a c:Organization,
+        c:RegisteringAuthorityRole .
+
+t:facility a c:Facility,
+        c:RegisteredFacilityRole,
+        c:RegisteredParty .

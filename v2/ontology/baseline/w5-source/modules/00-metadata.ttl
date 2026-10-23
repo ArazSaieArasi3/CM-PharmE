@@ -1,0 +1,36 @@
+@prefix cmpe: <https://w3id.org/cm-pharme/2.0/> .
+@prefix cmmeta: <https://w3id.org/cm-pharme/2.0/meta/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/cm-pharme/2.0/ontology> a owl:Ontology ;
+  owl:versionIRI <https://w3id.org/cm-pharme/2.0/releases/2.0.0-alpha.1/ontology> ;
+  owl:versionInfo "2.0.0-alpha.1" ;
+  dct:title "CM-PharmE 2.0 Formal Ontology"@en ;
+  dct:description "Gate-D-preserving formalization of the CM-PharmE 2.0 pharmaceutical ecosystem conceptual model."@en ;
+  dct:creator "Araz Saie Arasi" ;
+  dct:issued "2026-08-19"^^xsd:date ;
+  cmmeta:formalizationStatus "W5 Formal Gate candidate" ;
+  cmmeta:persistentNamespaceStatus "w3id target namespace selected; redirect registration pending" .
+
+# Annotation declarations are explicit so the ontology remains inside OWL 2 DL profile checks.
+dct:title a owl:AnnotationProperty .
+dct:description a owl:AnnotationProperty .
+dct:creator a owl:AnnotationProperty .
+dct:issued a owl:AnnotationProperty .
+skos:closeMatch a owl:AnnotationProperty .
+
+cmmeta:ontoumlStereotype a owl:AnnotationProperty .
+cmmeta:conceptualModule a owl:AnnotationProperty .
+cmmeta:gateDIdentifier a owl:AnnotationProperty .
+cmmeta:formalizationNote a owl:AnnotationProperty .
+cmmeta:sourceStatus a owl:AnnotationProperty .
+cmmeta:conceptualModelVersion a owl:AnnotationProperty .
+cmmeta:formalizationStatus a owl:AnnotationProperty .
+cmmeta:persistentNamespaceStatus a owl:AnnotationProperty .
+cmmeta:materialRelation a owl:AnnotationProperty .
+cmmeta:derivedFromRelator a owl:AnnotationProperty .

@@ -1,0 +1,1307 @@
+{
+  "queries": [
+    {
+      "name": "complete-declared-match",
+      "requirement": "CTX-01",
+      "expected": "MATCHES_DECLARED_CRITERIA",
+      "actual": "MATCHES_DECLARED_CRITERIA",
+      "result": {
+        "verdict": "MATCHES_DECLARED_CRITERIA",
+        "dimensions": {
+          "version": "MATCH",
+          "scenario": "MATCH",
+          "submission": "MATCH",
+          "jurisdiction": "MATCH",
+          "role": "MATCH",
+          "route": "MATCH",
+          "actor": "MATCH",
+          "portfolio": "MATCH",
+          "product": "MATCH",
+          "action": "MATCH",
+          "time": "MATCH",
+          "marketing": "MATCH"
+        },
+        "frequency": "synthetic-weekly",
+        "legal_compliance": "NOT_ASSESSED",
+        "operational_readiness": "NOT_ASSESSED"
+      },
+      "dimension": null,
+      "pass": true
+    },
+    {
+      "name": "wrong-role",
+      "requirement": "CTX-01",
+      "expected": "OUTSIDE_DECLARED_SCOPE",
+      "actual": "OUTSIDE_DECLARED_SCOPE",
+      "result": {
+        "verdict": "OUTSIDE_DECLARED_SCOPE",
+        "dimensions": {
+          "version": "MATCH",
+          "scenario": "MATCH",
+          "submission": "MATCH",
+          "jurisdiction": "MATCH",
+          "role": "OUTSIDE",
+          "route": "MATCH",
+          "actor": "MATCH",
+          "portfolio": "NOT_REQUIRED",
+          "product": "MATCH",
+          "action": "MATCH",
+          "time": "MATCH",
+          "marketing": "MATCH"
+        },
+        "frequency": "synthetic-weekly",
+        "legal_compliance": "NOT_ASSESSED",
+        "operational_readiness": "NOT_ASSESSED"
+      },
+      "dimension": null,
+      "pass": true
+    },
+    {
+      "name": "wrong-route",
+      "requirement": "CTX-03",
+      "expected": "OUTSIDE_DECLARED_SCOPE",
+      "actual": "OUTSIDE_DECLARED_SCOPE",
+      "result": {
+        "verdict": "OUTSIDE_DECLARED_SCOPE",
+        "dimensions": {
+          "version": "MATCH",
+          "scenario": "MATCH",
+          "submission": "MATCH",
+          "jurisdiction": "MATCH",
+          "role": "MATCH",
+          "route": "OUTSIDE",
+          "actor": "MATCH",
+          "portfolio": "MATCH",
+          "product": "MATCH",
+          "action": "MATCH",
+          "time": "MATCH",
+          "marketing": "MATCH"
+        },
+        "frequency": "synthetic-weekly",
+        "legal_compliance": "NOT_ASSESSED",
+        "operational_readiness": "NOT_ASSESSED"
+      },
+      "dimension": null,
+      "pass": true
+    },
+    {
+      "name": "wrong-scenario",
+      "requirement": "CTX-03",
+      "expected": "OUTSIDE_DECLARED_SCOPE",
+      "actual": "OUTSIDE_DECLARED_SCOPE",
+      "result": {
+        "verdict": "OUTSIDE_DECLARED_SCOPE",
+        "dimensions": {
+          "version": "MATCH",
+          "scenario": "OUTSIDE",
+          "submission": "MATCH",
+          "jurisdiction": "MATCH",
+          "role": "MATCH",
+          "route": "MATCH",
+          "actor": "MATCH",
+          "portfolio": "MATCH",
+          "product": "MATCH",
+          "action": "MATCH",
+          "time": "MATCH",
+          "marketing": "MATCH"
+        },
+        "frequency": "synthetic-weekly",
+        "legal_compliance": "NOT_ASSESSED",
+        "operational_readiness": "NOT_ASSESSED"
+      },
+      "dimension": null,
+      "pass": true
+    },
+    {
+      "name": "wrong-submission-kind",
+      "requirement": "CTX-07",
+      "expected": "OUTSIDE_DECLARED_SCOPE",
+      "actual": "OUTSIDE_DECLARED_SCOPE",
+      "result": {
+        "verdict": "OUTSIDE_DECLARED_SCOPE",
+        "dimensions": {
+          "version": "MATCH",
+          "scenario": "MATCH",
+          "submission": "OUTSIDE",
+          "jurisdiction": "MATCH",
+          "role": "MATCH",
+          "route": "MATCH",
+          "actor": "MATCH",
+          "portfolio": "MATCH",
+          "product": "MATCH",
+          "action": "MATCH",
+          "time": "MATCH",
+          "marketing": "MATCH"
+        },
+        "frequency": "synthetic-weekly",
+        "legal_compliance": "NOT_ASSESSED",
+        "operational_readiness": "NOT_ASSESSED"
+      },
+      "dimension": null,
+      "pass": true
+    },
+    {
+      "name": "wrong-jurisdiction",
+      "requirement": "CTX-02",
+      "expected": "OUTSIDE_DECLARED_SCOPE",
+      "actual": "OUTSIDE_DECLARED_SCOPE",
+      "result": {
+        "verdict": "OUTSIDE_DECLARED_SCOPE",
+        "dimensions": {
+          "version": "MATCH",
+          "scenario": "MATCH",
+          "submission": "MATCH",
+          "jurisdiction": "OUTSIDE",
+          "role": "MATCH",
+          "route": "MATCH",
+          "actor": "MATCH",
+          "portfolio": "MATCH",
+          "product": "MATCH",
+          "action": "MATCH",
+          "time": "MATCH",
+          "marketing": "MATCH"
+        },
+        "frequency": "synthetic-weekly",
+        "legal_compliance": "NOT_ASSESSED",
+        "operational_readiness": "NOT_ASSESSED"
+      },
+      "dimension": null,
+      "pass": true
+    },
+    {
+      "name": "missing-role",
+      "requirement": "CTX-01",
+      "expected": "UNKNOWN",
+      "actual": "UNKNOWN",
+      "result": {
+        "verdict": "UNKNOWN",
+        "dimensions": {
+          "version": "MATCH",
+          "scenario": "MATCH",
+          "submission": "MATCH",
+          "jurisdiction": "MATCH",
+          "role": "UNKNOWN",
+          "route": "MATCH",
+          "actor": "MATCH",
+          "portfolio": "UNKNOWN",
+          "product": "MATCH",
+          "action": "MATCH",
+          "time": "MATCH",
+          "marketing": "MATCH"
+        },
+        "frequency": "synthetic-weekly",
+        "legal_compliance": "NOT_ASSESSED",
+        "operational_readiness": "NOT_ASSESSED"
+      },
+      "dimension": null,
+      "pass": true
+    },
+    {
+      "name": "missing-actor",
+      "requirement": "CTX-01",
+      "expected": "UNKNOWN",
+      "actual": "UNKNOWN",
+      "result": {
+        "verdict": "UNKNOWN",
+        "dimensions": {
+          "version": "MATCH",
+          "scenario": "MATCH",
+          "submission": "MATCH",
+          "jurisdiction": "MATCH",
+          "role": "MATCH",
+          "route": "MATCH",
+          "actor": "UNKNOWN",
+          "portfolio": "MATCH",
+          "product": "MATCH",
+          "action": "MATCH",
+          "time": "MATCH",
+          "marketing": "MATCH"
+        },
+        "frequency": "synthetic-weekly",
+        "legal_compliance": "NOT_ASSESSED",
+        "operational_readiness": "NOT_ASSESSED"
+      },
+      "dimension": null,
+      "pass": true
+    },
+    {
+      "name": "not-in-MAH-portfolio",
+      "requirement": "CTX-01",
+      "expected": "OUTSIDE_DECLARED_SCOPE",
+      "actual": "OUTSIDE_DECLARED_SCOPE",
+      "result": {
+        "verdict": "OUTSIDE_DECLARED_SCOPE",
+        "dimensions": {
+          "version": "MATCH",
+          "scenario": "MATCH",
+          "submission": "MATCH",
+          "jurisdiction": "MATCH",
+          "role": "MATCH",
+          "route": "MATCH",
+          "actor": "MATCH",
+          "portfolio": "OUTSIDE",
+          "product": "MATCH",
+          "action": "MATCH",
+          "time": "MATCH",
+          "marketing": "MATCH"
+        },
+        "frequency": "synthetic-weekly",
+        "legal_compliance": "NOT_ASSESSED",
+        "operational_readiness": "NOT_ASSESSED"
+      },
+      "dimension": null,
+      "pass": true
+    },
+    {
+      "name": "missing-portfolio",
+      "requirement": "CTX-01",
+      "expected": "UNKNOWN",
+      "actual": "UNKNOWN",
+      "result": {
+        "verdict": "UNKNOWN",
+        "dimensions": {
+          "version": "MATCH",
+          "scenario": "MATCH",
+          "submission": "MATCH",
+          "jurisdiction": "MATCH",
+          "role": "MATCH",
+          "route": "MATCH",
+          "actor": "MATCH",
+          "portfolio": "UNKNOWN",
+          "product": "MATCH",
+          "action": "MATCH",
+          "time": "MATCH",
+          "marketing": "MATCH"
+        },
+        "frequency": "synthetic-weekly",
+        "legal_compliance": "NOT_ASSESSED",
+        "operational_readiness": "NOT_ASSESSED"
+      },
+      "dimension": null,
+      "pass": true
+    },
+    {
+      "name": "missing-product",
+      "requirement": "CTX-05",
+      "expected": "UNKNOWN",
+      "actual": "UNKNOWN",
+      "result": {
+        "verdict": "UNKNOWN",
+        "dimensions": {
+          "version": "MATCH",
+          "scenario": "MATCH",
+          "submission": "MATCH",
+          "jurisdiction": "MATCH",
+          "role": "MATCH",
+          "route": "MATCH",
+          "actor": "MATCH",
+          "portfolio": "MATCH",
+          "product": "UNKNOWN",
+          "action": "MATCH",
+          "time": "MATCH",
+          "marketing": "MATCH"
+        },
+        "frequency": "synthetic-weekly",
+        "legal_compliance": "NOT_ASSESSED",
+        "operational_readiness": "NOT_ASSESSED"
+      },
+      "dimension": null,
+      "pass": true
+    },
+    {
+      "name": "other-product-complete-list",
+      "requirement": "CTX-05",
+      "expected": "OUTSIDE_DECLARED_SCOPE",
+      "actual": "OUTSIDE_DECLARED_SCOPE",
+      "result": {
+        "verdict": "OUTSIDE_DECLARED_SCOPE",
+        "dimensions": {
+          "version": "MATCH",
+          "scenario": "MATCH",
+          "submission": "MATCH",
+          "jurisdiction": "MATCH",
+          "role": "MATCH",
+          "route": "MATCH",
+          "actor": "MATCH",
+          "portfolio": "MATCH",
+          "product": "OUTSIDE",
+          "action": "MATCH",
+          "time": "MATCH",
+          "marketing": "MATCH"
+        },
+        "frequency": "synthetic-weekly",
+        "legal_compliance": "NOT_ASSESSED",
+        "operational_readiness": "NOT_ASSESSED"
+      },
+      "dimension": null,
+      "pass": true
+    },
+    {
+      "name": "missing-action-evidence",
+      "requirement": "CTX-04",
+      "expected": "UNKNOWN",
+      "actual": "UNKNOWN",
+      "result": {
+        "verdict": "UNKNOWN",
+        "dimensions": {
+          "version": "MATCH",
+          "scenario": "MATCH",
+          "submission": "MATCH",
+          "jurisdiction": "MATCH",
+          "role": "MATCH",
+          "route": "MATCH",
+          "actor": "MATCH",
+          "portfolio": "MATCH",
+          "product": "MATCH",
+          "action": "UNKNOWN",
+          "time": "MATCH",
+          "marketing": "MATCH"
+        },
+        "frequency": "synthetic-weekly",
+        "legal_compliance": "NOT_ASSESSED",
+        "operational_readiness": "NOT_ASSESSED"
+      },
+      "dimension": null,
+      "pass": true
+    },
+    {
+      "name": "launch-is-not-action",
+      "requirement": "CTX-04",
+      "expected": "UNKNOWN",
+      "actual": "UNKNOWN",
+      "result": {
+        "verdict": "UNKNOWN",
+        "dimensions": {
+          "version": "MATCH",
+          "scenario": "MATCH",
+          "submission": "MATCH",
+          "jurisdiction": "MATCH",
+          "role": "MATCH",
+          "route": "MATCH",
+          "actor": "MATCH",
+          "portfolio": "MATCH",
+          "product": "MATCH",
+          "action": "UNKNOWN",
+          "time": "MATCH",
+          "marketing": "MATCH"
+        },
+        "frequency": "synthetic-weekly",
+        "legal_compliance": "NOT_ASSESSED",
+        "operational_readiness": "NOT_ASSESSED"
+      },
+      "dimension": null,
+      "pass": true
+    },
+    {
+      "name": "guidance-is-not-action",
+      "requirement": "CTX-04",
+      "expected": "UNKNOWN",
+      "actual": "UNKNOWN",
+      "result": {
+        "verdict": "UNKNOWN",
+        "dimensions": {
+          "version": "MATCH",
+          "scenario": "MATCH",
+          "submission": "MATCH",
+          "jurisdiction": "MATCH",
+          "role": "MATCH",
+          "route": "MATCH",
+          "actor": "MATCH",
+          "portfolio": "MATCH",
+          "product": "MATCH",
+          "action": "UNKNOWN",
+          "time": "MATCH",
+          "marketing": "MATCH"
+        },
+        "frequency": "synthetic-weekly",
+        "legal_compliance": "NOT_ASSESSED",
+        "operational_readiness": "NOT_ASSESSED"
+      },
+      "dimension": null,
+      "pass": true
+    },
+    {
+      "name": "unannounced-action",
+      "requirement": "CTX-04",
+      "expected": "UNKNOWN",
+      "actual": "UNKNOWN",
+      "result": {
+        "verdict": "UNKNOWN",
+        "dimensions": {
+          "version": "MATCH",
+          "scenario": "MATCH",
+          "submission": "MATCH",
+          "jurisdiction": "MATCH",
+          "role": "MATCH",
+          "route": "MATCH",
+          "actor": "MATCH",
+          "portfolio": "MATCH",
+          "product": "MATCH",
+          "action": "UNKNOWN",
+          "time": "MATCH",
+          "marketing": "MATCH"
+        },
+        "frequency": "synthetic-weekly",
+        "legal_compliance": "NOT_ASSESSED",
+        "operational_readiness": "NOT_ASSESSED"
+      },
+      "dimension": null,
+      "pass": true
+    },
+    {
+      "name": "different-action",
+      "requirement": "CTX-04",
+      "expected": "OUTSIDE_DECLARED_SCOPE",
+      "actual": "OUTSIDE_DECLARED_SCOPE",
+      "result": {
+        "verdict": "OUTSIDE_DECLARED_SCOPE",
+        "dimensions": {
+          "version": "MATCH",
+          "scenario": "MATCH",
+          "submission": "MATCH",
+          "jurisdiction": "MATCH",
+          "role": "MATCH",
+          "route": "MATCH",
+          "actor": "MATCH",
+          "portfolio": "MATCH",
+          "product": "MATCH",
+          "action": "OUTSIDE",
+          "time": "MATCH",
+          "marketing": "MATCH"
+        },
+        "frequency": "synthetic-weekly",
+        "legal_compliance": "NOT_ASSESSED",
+        "operational_readiness": "NOT_ASSESSED"
+      },
+      "dimension": null,
+      "pass": true
+    },
+    {
+      "name": "missing-end",
+      "requirement": "CTX-06",
+      "expected": "UNKNOWN",
+      "actual": "UNKNOWN",
+      "result": {
+        "verdict": "UNKNOWN",
+        "dimensions": {
+          "version": "MATCH",
+          "scenario": "MATCH",
+          "submission": "MATCH",
+          "jurisdiction": "MATCH",
+          "role": "MATCH",
+          "route": "MATCH",
+          "actor": "MATCH",
+          "portfolio": "MATCH",
+          "product": "MATCH",
+          "action": "MATCH",
+          "time": "UNKNOWN",
+          "marketing": "MATCH"
+        },
+        "frequency": "synthetic-weekly",
+        "legal_compliance": "NOT_ASSESSED",
+        "operational_readiness": "NOT_ASSESSED"
+      },
+      "dimension": null,
+      "pass": true
+    },
+    {
+      "name": "missing-timezone",
+      "requirement": "CTX-06",
+      "expected": "UNKNOWN",
+      "actual": "UNKNOWN",
+      "result": {
+        "verdict": "UNKNOWN",
+        "dimensions": {
+          "version": "MATCH",
+          "scenario": "MATCH",
+          "submission": "MATCH",
+          "jurisdiction": "MATCH",
+          "role": "MATCH",
+          "route": "MATCH",
+          "actor": "MATCH",
+          "portfolio": "MATCH",
+          "product": "MATCH",
+          "action": "MATCH",
+          "time": "UNKNOWN",
+          "marketing": "MATCH"
+        },
+        "frequency": "synthetic-weekly",
+        "legal_compliance": "NOT_ASSESSED",
+        "operational_readiness": "NOT_ASSESSED"
+      },
+      "dimension": null,
+      "pass": true
+    },
+    {
+      "name": "expired-at-exclusive-end",
+      "requirement": "CTX-06",
+      "expected": "OUTSIDE_DECLARED_SCOPE",
+      "actual": "OUTSIDE_DECLARED_SCOPE",
+      "result": {
+        "verdict": "OUTSIDE_DECLARED_SCOPE",
+        "dimensions": {
+          "version": "MATCH",
+          "scenario": "MATCH",
+          "submission": "MATCH",
+          "jurisdiction": "MATCH",
+          "role": "MATCH",
+          "route": "MATCH",
+          "actor": "MATCH",
+          "portfolio": "MATCH",
+          "product": "MATCH",
+          "action": "MATCH",
+          "time": "OUTSIDE",
+          "marketing": "MATCH"
+        },
+        "frequency": "synthetic-weekly",
+        "legal_compliance": "NOT_ASSESSED",
+        "operational_readiness": "NOT_ASSESSED"
+      },
+      "dimension": null,
+      "pass": true
+    },
+    {
+      "name": "inclusive-start",
+      "requirement": "CTX-06",
+      "expected": "MATCHES_DECLARED_CRITERIA",
+      "actual": "MATCHES_DECLARED_CRITERIA",
+      "result": {
+        "verdict": "MATCHES_DECLARED_CRITERIA",
+        "dimensions": {
+          "version": "MATCH",
+          "scenario": "MATCH",
+          "submission": "MATCH",
+          "jurisdiction": "MATCH",
+          "role": "MATCH",
+          "route": "MATCH",
+          "actor": "MATCH",
+          "portfolio": "MATCH",
+          "product": "MATCH",
+          "action": "MATCH",
+          "time": "MATCH",
+          "marketing": "MATCH"
+        },
+        "frequency": "synthetic-weekly",
+        "legal_compliance": "NOT_ASSESSED",
+        "operational_readiness": "NOT_ASSESSED"
+      },
+      "dimension": null,
+      "pass": true
+    },
+    {
+      "name": "different-rule-version",
+      "requirement": "CTX-06",
+      "expected": "VERSION_MISMATCH",
+      "actual": "VERSION_MISMATCH",
+      "result": {
+        "verdict": "VERSION_MISMATCH",
+        "dimensions": {
+          "version": "OUTSIDE"
+        }
+      },
+      "dimension": null,
+      "pass": true
+    },
+    {
+      "name": "missing-version",
+      "requirement": "CTX-06",
+      "expected": "UNKNOWN",
+      "actual": "UNKNOWN",
+      "result": {
+        "verdict": "UNKNOWN",
+        "dimensions": {
+          "version": "UNKNOWN",
+          "scenario": "MATCH",
+          "submission": "MATCH",
+          "jurisdiction": "MATCH",
+          "role": "MATCH",
+          "route": "MATCH",
+          "actor": "MATCH",
+          "portfolio": "MATCH",
+          "product": "MATCH",
+          "action": "MATCH",
+          "time": "MATCH",
+          "marketing": "MATCH"
+        },
+        "frequency": "synthetic-weekly",
+        "legal_compliance": "NOT_ASSESSED",
+        "operational_readiness": "NOT_ASSESSED"
+      },
+      "dimension": null,
+      "pass": true
+    },
+    {
+      "name": "not-marketed-availability",
+      "requirement": "CTX-07",
+      "expected": "OUTSIDE_DECLARED_SCOPE",
+      "actual": "OUTSIDE_DECLARED_SCOPE",
+      "result": {
+        "verdict": "OUTSIDE_DECLARED_SCOPE",
+        "dimensions": {
+          "version": "MATCH",
+          "scenario": "MATCH",
+          "submission": "MATCH",
+          "jurisdiction": "MATCH",
+          "role": "MATCH",
+          "route": "MATCH",
+          "actor": "MATCH",
+          "portfolio": "MATCH",
+          "product": "MATCH",
+          "action": "MATCH",
+          "time": "MATCH",
+          "marketing": "OUTSIDE"
+        },
+        "frequency": "synthetic-weekly",
+        "legal_compliance": "NOT_ASSESSED",
+        "operational_readiness": "NOT_ASSESSED"
+      },
+      "dimension": null,
+      "pass": true
+    },
+    {
+      "name": "temporary-unavailability-admitted",
+      "requirement": "CTX-07",
+      "expected": "MATCHES_DECLARED_CRITERIA",
+      "actual": "MATCHES_DECLARED_CRITERIA",
+      "result": {
+        "verdict": "MATCHES_DECLARED_CRITERIA",
+        "dimensions": {
+          "version": "MATCH",
+          "scenario": "MATCH",
+          "submission": "MATCH",
+          "jurisdiction": "MATCH",
+          "role": "MATCH",
+          "route": "MATCH",
+          "actor": "MATCH",
+          "portfolio": "MATCH",
+          "product": "MATCH",
+          "action": "MATCH",
+          "time": "MATCH",
+          "marketing": "MATCH"
+        },
+        "frequency": "synthetic-weekly",
+        "legal_compliance": "NOT_ASSESSED",
+        "operational_readiness": "NOT_ASSESSED"
+      },
+      "dimension": null,
+      "pass": true
+    },
+    {
+      "name": "unknown-marketing-status",
+      "requirement": "CTX-07",
+      "expected": "UNKNOWN",
+      "actual": "UNKNOWN",
+      "result": {
+        "verdict": "UNKNOWN",
+        "dimensions": {
+          "version": "MATCH",
+          "scenario": "MATCH",
+          "submission": "MATCH",
+          "jurisdiction": "MATCH",
+          "role": "MATCH",
+          "route": "MATCH",
+          "actor": "MATCH",
+          "portfolio": "MATCH",
+          "product": "MATCH",
+          "action": "MATCH",
+          "time": "MATCH",
+          "marketing": "UNKNOWN"
+        },
+        "frequency": "synthetic-weekly",
+        "legal_compliance": "NOT_ASSESSED",
+        "operational_readiness": "NOT_ASSESSED"
+      },
+      "dimension": null,
+      "pass": true
+    },
+    {
+      "name": "marketing-country-mismatch",
+      "requirement": "CTX-02",
+      "expected": "UNKNOWN",
+      "actual": "UNKNOWN",
+      "result": {
+        "verdict": "UNKNOWN",
+        "dimensions": {
+          "version": "MATCH",
+          "scenario": "MATCH",
+          "submission": "MATCH",
+          "jurisdiction": "MATCH",
+          "role": "MATCH",
+          "route": "MATCH",
+          "actor": "MATCH",
+          "portfolio": "MATCH",
+          "product": "MATCH",
+          "action": "MATCH",
+          "time": "MATCH",
+          "marketing": "UNKNOWN"
+        },
+        "frequency": "synthetic-weekly",
+        "legal_compliance": "NOT_ASSESSED",
+        "operational_readiness": "NOT_ASSESSED"
+      },
+      "dimension": null,
+      "pass": true
+    },
+    {
+      "name": "reversed-effective-interval",
+      "requirement": "CTX-06",
+      "expected": "INVALID_INPUT",
+      "actual": "INVALID_INPUT",
+      "result": {
+        "verdict": "INVALID_INPUT",
+        "dimensions": {
+          "time": "REVERSED_INTERVAL"
+        }
+      },
+      "dimension": null,
+      "pass": true
+    },
+    {
+      "name": "other-product-incomplete-list",
+      "requirement": "CTX-05",
+      "expected": "UNKNOWN",
+      "actual": "UNKNOWN",
+      "result": {
+        "verdict": "UNKNOWN",
+        "dimensions": {
+          "version": "MATCH",
+          "scenario": "MATCH",
+          "submission": "MATCH",
+          "jurisdiction": "MATCH",
+          "role": "MATCH",
+          "route": "MATCH",
+          "actor": "MATCH",
+          "portfolio": "MATCH",
+          "product": "UNKNOWN",
+          "action": "MATCH",
+          "time": "MATCH",
+          "marketing": "MATCH"
+        },
+        "frequency": "synthetic-weekly",
+        "legal_compliance": "NOT_ASSESSED",
+        "operational_readiness": "NOT_ASSESSED"
+      },
+      "dimension": null,
+      "pass": true
+    },
+    {
+      "name": "NCA-does-not-need-MAH-portfolio",
+      "requirement": "CTX-01",
+      "expected": "MATCHES_DECLARED_CRITERIA",
+      "actual": "MATCHES_DECLARED_CRITERIA",
+      "result": {
+        "verdict": "MATCHES_DECLARED_CRITERIA",
+        "dimensions": {
+          "version": "MATCH",
+          "scenario": "MATCH",
+          "submission": "MATCH",
+          "jurisdiction": "MATCH",
+          "role": "MATCH",
+          "route": "MATCH",
+          "actor": "MATCH",
+          "portfolio": "NOT_REQUIRED",
+          "product": "MATCH",
+          "action": "MATCH",
+          "time": "MATCH",
+          "marketing": "MATCH"
+        },
+        "frequency": "synthetic-weekly",
+        "legal_compliance": "NOT_ASSESSED",
+        "operational_readiness": "NOT_ASSESSED"
+      },
+      "dimension": null,
+      "pass": true
+    },
+    {
+      "name": "manufacturing-independent-of-marketing",
+      "requirement": "CTX-07",
+      "expected": "MATCHES_DECLARED_CRITERIA",
+      "actual": "MATCHES_DECLARED_CRITERIA",
+      "result": {
+        "verdict": "MATCHES_DECLARED_CRITERIA",
+        "dimensions": {
+          "version": "MATCH",
+          "scenario": "MATCH",
+          "submission": "MATCH",
+          "jurisdiction": "MATCH",
+          "role": "MATCH",
+          "route": "MATCH",
+          "actor": "MATCH",
+          "portfolio": "MATCH",
+          "product": "MATCH",
+          "action": "MATCH",
+          "time": "MATCH",
+          "marketing": "NOT_REQUIRED"
+        },
+        "frequency": "synthetic-weekly",
+        "legal_compliance": "NOT_ASSESSED",
+        "operational_readiness": "NOT_ASSESSED"
+      },
+      "dimension": null,
+      "pass": true
+    },
+    {
+      "name": "alternative-therapies-independent-of-marketing",
+      "requirement": "CTX-07",
+      "expected": "MATCHES_DECLARED_CRITERIA",
+      "actual": "MATCHES_DECLARED_CRITERIA",
+      "result": {
+        "verdict": "MATCHES_DECLARED_CRITERIA",
+        "dimensions": {
+          "version": "MATCH",
+          "scenario": "MATCH",
+          "submission": "MATCH",
+          "jurisdiction": "MATCH",
+          "role": "MATCH",
+          "route": "MATCH",
+          "actor": "MATCH",
+          "portfolio": "MATCH",
+          "product": "MATCH",
+          "action": "MATCH",
+          "time": "MATCH",
+          "marketing": "NOT_REQUIRED"
+        },
+        "frequency": "synthetic-weekly",
+        "legal_compliance": "NOT_ASSESSED",
+        "operational_readiness": "NOT_ASSESSED"
+      },
+      "dimension": null,
+      "pass": true
+    },
+    {
+      "name": "routine-no-action-notice-required",
+      "requirement": "CTX-04",
+      "expected": "MATCHES_DECLARED_CRITERIA",
+      "actual": "MATCHES_DECLARED_CRITERIA",
+      "result": {
+        "verdict": "MATCHES_DECLARED_CRITERIA",
+        "dimensions": {
+          "version": "MATCH",
+          "scenario": "MATCH",
+          "submission": "MATCH",
+          "jurisdiction": "MATCH",
+          "role": "MATCH",
+          "route": "MATCH",
+          "actor": "MATCH",
+          "portfolio": "MATCH",
+          "product": "MATCH",
+          "action": "NOT_REQUIRED",
+          "time": "MATCH",
+          "marketing": "MATCH"
+        },
+        "frequency": "synthetic-weekly",
+        "legal_compliance": "NOT_ASSESSED",
+        "operational_readiness": "NOT_ASSESSED"
+      },
+      "dimension": null,
+      "pass": true
+    },
+    {
+      "name": "unknown-record-selector-rejected",
+      "requirement": "CTX-08",
+      "expected": "INVALID_INPUT",
+      "actual": "INVALID_INPUT",
+      "result": {
+        "verdict": "INVALID_INPUT",
+        "dimensions": {
+          "identifier": "MISSING_TYPED_INPUT"
+        }
+      },
+      "dimension": null,
+      "pass": true
+    },
+    {
+      "name": "frequency-not-hardcoded",
+      "requirement": "CTX-06",
+      "expected": "synthetic-monthly",
+      "actual": "synthetic-monthly",
+      "pass": true
+    },
+    {
+      "name": "positive-source-claim",
+      "requirement": "CL-02",
+      "expected": "SOURCE_REPORTED",
+      "actual": "SOURCE_REPORTED",
+      "pass": true
+    },
+    {
+      "name": "conflicting-source-claims",
+      "requirement": "CL-03",
+      "expected": "CONFLICTING_SOURCE_CLAIMS",
+      "actual": "CONFLICTING_SOURCE_CLAIMS",
+      "pass": true
+    },
+    {
+      "name": "absent-is-not-false",
+      "requirement": "CL-04",
+      "expected": "NOT_REPORTED_IN_SLICE",
+      "actual": "NOT_REPORTED_IN_SLICE",
+      "pass": true
+    },
+    {
+      "name": "negative-source-claim",
+      "requirement": "CL-03",
+      "expected": "SOURCE_DENIED",
+      "actual": "SOURCE_DENIED",
+      "pass": true
+    },
+    {
+      "name": "mapping-is-not-source-extraction",
+      "requirement": "CL-05",
+      "expected": "MAPPING_PROPOSED",
+      "actual": "MAPPING_PROPOSED",
+      "pass": true
+    },
+    {
+      "name": "conflicting-mapping-proposals",
+      "requirement": "CL-05",
+      "expected": "CONFLICTING_MAPPING_PROPOSALS",
+      "actual": "CONFLICTING_MAPPING_PROPOSALS",
+      "pass": true
+    },
+    {
+      "name": "mixed-origin-answer",
+      "requirement": "CL-05",
+      "expected": "MIXED_EVIDENCE_ORIGINS",
+      "actual": "MIXED_EVIDENCE_ORIGINS",
+      "pass": true
+    },
+    {
+      "name": "direct-source-extraction",
+      "requirement": "CL-05",
+      "expected": "SOURCE_REPORTED",
+      "actual": "SOURCE_REPORTED",
+      "pass": true
+    }
+  ],
+  "query_pass": 43,
+  "query_total": 43,
+  "shacl": [
+    {
+      "name": "complete-context-positive",
+      "requirement": "CTX-01",
+      "expected": true,
+      "conforms": true,
+      "violations": [],
+      "marker": null,
+      "pass": true
+    },
+    {
+      "name": "ambiguous-context-role",
+      "requirement": "CTX-01",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/reporting-context/contextRole",
+          "constraint": "",
+          "component": "http://www.w3.org/ns/shacl#MaxCountConstraintComponent"
+        }
+      ],
+      "marker": "MaxCountConstraintComponent",
+      "pass": true
+    },
+    {
+      "name": "untyped-source-reference",
+      "requirement": "CTX-08",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/reporting-context/specificationSource",
+          "constraint": "",
+          "component": "http://www.w3.org/ns/shacl#ClassConstraintComponent"
+        }
+      ],
+      "marker": "ClassConstraintComponent",
+      "pass": true
+    },
+    {
+      "name": "presentation-product-mismatch",
+      "requirement": "CTX-02",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "",
+          "constraint": "https://w3id.org/cm-pharme/experimental/reporting-context/presentation-product-agreement",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent"
+        }
+      ],
+      "marker": "presentation-product-agreement",
+      "pass": true
+    },
+    {
+      "name": "structured-claim-positive",
+      "requirement": "CL-01",
+      "expected": true,
+      "conforms": true,
+      "violations": [],
+      "marker": null,
+      "pass": true
+    },
+    {
+      "name": "literal-subject",
+      "requirement": "CL-02",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/reporting-context/claimSubject",
+          "constraint": "",
+          "component": "http://www.w3.org/ns/shacl#NodeKindConstraintComponent"
+        }
+      ],
+      "marker": "NodeKindConstraintComponent",
+      "pass": true
+    },
+    {
+      "name": "literal-resource-object",
+      "requirement": "CL-02",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/reporting-context/objectResource",
+          "constraint": "",
+          "component": "http://www.w3.org/ns/shacl#NodeKindConstraintComponent"
+        }
+      ],
+      "marker": "NodeKindConstraintComponent",
+      "pass": true
+    },
+    {
+      "name": "resource-in-literal-slot",
+      "requirement": "CL-02",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/reporting-context/objectValue",
+          "constraint": "",
+          "component": "http://www.w3.org/ns/shacl#NodeKindConstraintComponent"
+        }
+      ],
+      "marker": "NodeKindConstraintComponent",
+      "pass": true
+    },
+    {
+      "name": "claim-carrier-alias",
+      "requirement": "CL-01",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "",
+          "constraint": "https://w3id.org/cm-pharme/experimental/reporting-context/claim-not-carrier",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent"
+        }
+      ],
+      "marker": "claim-not-carrier",
+      "pass": true
+    },
+    {
+      "name": "resource-and-literal-object",
+      "requirement": "CL-02",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "",
+          "constraint": "https://w3id.org/cm-pharme/experimental/reporting-context/one-object-kind",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent"
+        }
+      ],
+      "marker": "one-object-kind",
+      "pass": true
+    },
+    {
+      "name": "no-claim-object",
+      "requirement": "CL-02",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "",
+          "constraint": "https://w3id.org/cm-pharme/experimental/reporting-context/one-object-kind",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent"
+        }
+      ],
+      "marker": "one-object-kind",
+      "pass": true
+    },
+    {
+      "name": "claim-without-carrier",
+      "requirement": "CL-04",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "N119678ddb7744179b66c8f701cb8a5c2",
+          "constraint": "",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent"
+        }
+      ],
+      "marker": "MinCountConstraintComponent",
+      "pass": true
+    },
+    {
+      "name": "predicate-is-not-anyURI",
+      "requirement": "CL-02",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/reporting-context/predicateIRI",
+          "constraint": "",
+          "component": "http://www.w3.org/ns/shacl#DatatypeConstraintComponent"
+        }
+      ],
+      "marker": "DatatypeConstraintComponent",
+      "pass": true
+    },
+    {
+      "name": "missing-claim-origin",
+      "requirement": "CL-05",
+      "expected": false,
+      "conforms": false,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/reporting-context/claimOrigin",
+          "constraint": "",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent"
+        }
+      ],
+      "marker": "MinCountConstraintComponent",
+      "pass": true
+    }
+  ],
+  "shacl_pass": 14,
+  "shacl_total": 14,
+  "hermit": [
+    {
+      "name": "combined-proposed-tbox",
+      "requirement": "CTX-08",
+      "expected_consistent": true,
+      "consistent": true,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "prov_profile": "two conflicting annotation-property declarations removed; raw source retained",
+      "pass": true
+    },
+    {
+      "name": "complete-synthetic-context",
+      "requirement": "CTX-01",
+      "expected_consistent": true,
+      "consistent": true,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "prov_profile": "two conflicting annotation-property declarations removed; raw source retained",
+      "pass": true
+    },
+    {
+      "name": "claim-does-not-assert-relation",
+      "requirement": "CL-02",
+      "expected_consistent": true,
+      "consistent": true,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "prov_profile": "two conflicting annotation-property declarations removed; raw source retained",
+      "pass": true
+    },
+    {
+      "name": "claim-does-not-create-listing",
+      "requirement": "CL-02",
+      "expected_consistent": true,
+      "consistent": true,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "prov_profile": "two conflicting annotation-property declarations removed; raw source retained",
+      "pass": true
+    },
+    {
+      "name": "type-claim-does-not-create-authorization",
+      "requirement": "CL-02",
+      "expected_consistent": true,
+      "consistent": true,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "prov_profile": "two conflicting annotation-property declarations removed; raw source retained",
+      "pass": true
+    },
+    {
+      "name": "conflicting-claims-remain-logically-consistent",
+      "requirement": "CL-03",
+      "expected_consistent": true,
+      "consistent": true,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "prov_profile": "two conflicting annotation-property declarations removed; raw source retained",
+      "pass": true
+    },
+    {
+      "name": "claim-carrier-identity-collision",
+      "requirement": "CL-01",
+      "expected_consistent": false,
+      "consistent": false,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "prov_profile": "two conflicting annotation-property declarations removed; raw source retained",
+      "pass": true
+    },
+    {
+      "name": "source-denial-is-not-negative-world-assertion",
+      "requirement": "CL-03",
+      "expected_consistent": true,
+      "consistent": true,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "prov_profile": "two conflicting annotation-property declarations removed; raw source retained",
+      "pass": true
+    },
+    {
+      "name": "context-description-not-shortage-fact",
+      "requirement": "CTX-08",
+      "expected_consistent": true,
+      "consistent": true,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "prov_profile": "two conflicting annotation-property declarations removed; raw source retained",
+      "pass": true
+    },
+    {
+      "name": "scope-match-no-authorization",
+      "requirement": "CTX-08",
+      "expected_consistent": true,
+      "consistent": true,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "prov_profile": "two conflicting annotation-property declarations removed; raw source retained",
+      "pass": true
+    },
+    {
+      "name": "specification-is-not-source-carrier",
+      "requirement": "CL-01",
+      "expected_consistent": false,
+      "consistent": false,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "prov_profile": "two conflicting annotation-property declarations removed; raw source retained",
+      "pass": true
+    },
+    {
+      "name": "context-is-an-assertion-description",
+      "requirement": "CTX-08",
+      "expected_consistent": false,
+      "consistent": false,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "prov_profile": "two conflicting annotation-property declarations removed; raw source retained",
+      "pass": true
+    }
+  ],
+  "hermit_pass": 12,
+  "hermit_total": 12,
+  "world_fact_materialization": false,
+  "scientific_acceptance": false
+}

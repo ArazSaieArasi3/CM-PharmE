@@ -1,0 +1,161 @@
+@prefix c: <https://w3id.org/cm-pharme/2.1/> .
+@prefix l: <https://w3id.org/cm-pharme/experimental/four-domain/> .
+@prefix r: <https://w3id.org/cm-pharme/experimental/refinement/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+c:DependentEntityDependenceShape a sh:NodeShape ;
+    sh:property [ sh:class c:SupplyDependency ;
+            sh:minCount 1 ;
+            sh:path [ sh:inversePath c:dependencyDependent ] ] ;
+    sh:targetClass c:DependentEntity .
+
+c:ProviderEntityDependenceShape a sh:NodeShape ;
+    sh:property [ sh:class c:SupplyDependency ;
+            sh:minCount 1 ;
+            sh:path [ sh:inversePath c:dependencyProvider ] ] ;
+    sh:targetClass c:ProviderEntity .
+
+c:SupplyDependencyShape a sh:NodeShape ;
+    sh:property [ sh:class c:DependentEntity ;
+            sh:disjoint c:dependencyProvider ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path c:dependencyDependent ],
+        [ sh:class c:ProviderEntity ;
+            sh:disjoint c:dependencyDependent ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path c:dependencyProvider ] ;
+    sh:targetClass c:SupplyDependency .
+
+c:assertionAboutProductShape a sh:NodeShape ;
+    sh:class c:Assertion ;
+    sh:property [ sh:class c:MedicinalProduct ;
+            sh:path c:assertionAboutProduct ] ;
+    sh:targetSubjectsOf c:assertionAboutProduct .
+
+l:shape-risk-assessment a sh:NodeShape ;
+    sh:class c:RiskAssessmentActivity ;
+    sh:property l:field-risk-assessment-assessmentScenario ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select "SELECT ?this WHERE { ?this <https://w3id.org/cm-pharme/experimental/four-domain/profile> \"risk-assessment\" . }" ] .
+
+l:shape-risk-plan a sh:NodeShape ;
+    sh:class c:RiskTreatmentPlan ;
+    sh:property l:field-risk-plan-planRiskResult ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select "SELECT ?this WHERE { ?this <https://w3id.org/cm-pharme/experimental/four-domain/profile> \"risk-plan\" . }" ] .
+
+l:shape-risk-result a sh:NodeShape ;
+    sh:class c:Assertion ;
+    sh:property l:field-risk-result-atTime,
+        l:field-risk-result-citesSourceRecord,
+        l:field-risk-result-conclusion,
+        l:field-risk-result-resultAssessment ;
+    sh:sparql l:distinct-RiskAssessmentActivity-Assertion ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select "SELECT ?this WHERE { ?this <https://w3id.org/cm-pharme/experimental/four-domain/profile> \"risk-result\" . }" ] .
+
+l:shape-risk-review a sh:NodeShape ;
+    sh:class c:RiskReviewActivity ;
+    sh:property l:field-risk-review-atTime,
+        l:field-risk-review-reviewNewResult,
+        l:field-risk-review-reviewPriorResult ;
+    sh:sparql l:review-time-order ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select "SELECT ?this WHERE { ?this <https://w3id.org/cm-pharme/experimental/four-domain/profile> \"risk-review\" . }" ] .
+
+l:shape-risk-scenario a sh:NodeShape ;
+    sh:class c:Assertion ;
+    sh:property l:field-risk-scenario-scenarioProduct ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select "SELECT ?this WHERE { ?this <https://w3id.org/cm-pharme/experimental/four-domain/profile> \"risk-scenario\" . }" ] .
+
+l:shape-risk-treatment a sh:NodeShape ;
+    sh:class c:RiskTreatmentActivity ;
+    sh:property l:field-risk-treatment-atTime,
+        l:field-risk-treatment-implementsRiskPlan ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select "SELECT ?this WHERE { ?this <https://w3id.org/cm-pharme/experimental/four-domain/profile> \"risk-treatment\" . }" ] .
+
+r:shape-risk-scenario a sh:NodeShape ;
+    sh:class c:Assertion ;
+    sh:property r:field-risk-scenario-scenarioDependency,
+        r:field-risk-scenario-scenarioFacility ;
+    sh:sparql r:scenarioProduct-or-context-required ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select "SELECT ?this WHERE { ?this <https://w3id.org/cm-pharme/experimental/four-domain/profile> \"risk-scenario\" }" ] .
+
+l:distinct-RiskAssessmentActivity-Assertion a sh:SPARQLConstraint ;
+    sh:message "Content and real-world bearer/occurrence must not be the same node." ;
+    sh:select "SELECT $this WHERE { $this a <https://w3id.org/cm-pharme/2.1/RiskAssessmentActivity> , <https://w3id.org/cm-pharme/2.1/Assertion> . }" .
+
+l:field-risk-assessment-assessmentScenario sh:class c:Assertion ;
+    sh:minCount 1 ;
+    sh:path l:assessmentScenario .
+
+l:field-risk-plan-planRiskResult sh:class c:Assertion ;
+    sh:minCount 1 ;
+    sh:path l:planRiskResult .
+
+l:field-risk-result-atTime sh:datatype xsd:dateTime ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:path l:atTime .
+
+l:field-risk-result-citesSourceRecord sh:class c:SourceRecord ;
+    sh:minCount 1 ;
+    sh:path l:citesSourceRecord .
+
+l:field-risk-result-conclusion sh:datatype xsd:string ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:path l:conclusion .
+
+l:field-risk-result-resultAssessment sh:class c:RiskAssessmentActivity ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:path l:resultAssessment .
+
+l:field-risk-review-atTime sh:datatype xsd:dateTime ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:path l:atTime .
+
+l:field-risk-review-reviewNewResult sh:class c:Assertion ;
+    sh:minCount 1 ;
+    sh:path l:reviewNewResult .
+
+l:field-risk-review-reviewPriorResult sh:class c:Assertion ;
+    sh:minCount 1 ;
+    sh:path l:reviewPriorResult .
+
+l:field-risk-scenario-scenarioProduct sh:class c:MedicinalProduct ;
+    sh:minCount 0 ;
+    sh:path l:scenarioProduct .
+
+l:field-risk-treatment-atTime sh:datatype xsd:dateTime ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:path l:atTime .
+
+l:field-risk-treatment-implementsRiskPlan sh:class c:RiskTreatmentPlan ;
+    sh:minCount 1 ;
+    sh:path l:implementsRiskPlan .
+
+l:review-time-order a sh:SPARQLConstraint ;
+    sh:message "New result must not predate the prior result." ;
+    sh:select "SELECT $this WHERE { $this <https://w3id.org/cm-pharme/experimental/four-domain/reviewPriorResult> ?old ; <https://w3id.org/cm-pharme/experimental/four-domain/reviewNewResult> ?new . ?old <https://w3id.org/cm-pharme/experimental/four-domain/atTime> ?a . ?new <https://w3id.org/cm-pharme/experimental/four-domain/atTime> ?b . FILTER(?b <= ?a) }" .
+
+r:field-risk-scenario-scenarioDependency sh:class c:SupplyDependency ;
+    sh:minCount 0 ;
+    sh:path r:scenarioDependency .
+
+r:field-risk-scenario-scenarioFacility sh:class c:Facility ;
+    sh:minCount 0 ;
+    sh:path r:scenarioFacility .
+
+r:scenarioProduct-or-context-required a sh:SPARQLConstraint ;
+    sh:message "A product, facility or dependency context is required." ;
+    sh:select "SELECT $this WHERE { FILTER NOT EXISTS { $this <https://w3id.org/cm-pharme/experimental/four-domain/scenarioProduct> ?p } FILTER NOT EXISTS { $this <https://w3id.org/cm-pharme/experimental/refinement/scenarioFacility> ?f } FILTER NOT EXISTS { $this <https://w3id.org/cm-pharme/experimental/refinement/scenarioDependency> ?d } }" .

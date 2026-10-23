@@ -1,0 +1,469 @@
+{
+  "status": "P3_REVIEW_INPUT_NOT_ADJUDICATED",
+  "count": 27,
+  "relations": [
+    {
+      "name": "scenarioProduct",
+      "source": "Assertion",
+      "target": "MedicinalProduct",
+      "native_stereotype": "PENDING_P3",
+      "native_bounds": "0..* at both ends; profile restrictions are conditional",
+      "decision": "OPEN",
+      "questions": [
+        "What ontological dependence/truthmaker justifies this association?",
+        "Reuse or specialize an existing relation instead?",
+        "What multiplicities hold universally, as distinct from local profile admission?",
+        "How are event participation or content-aboutness preserved in native/OWL/SHACL and the detector adapter?"
+      ],
+      "requirement_ids": [
+        "R-RM-01"
+      ]
+    },
+    {
+      "name": "assessmentScenario",
+      "source": "RiskAssessmentActivity",
+      "target": "Assertion",
+      "native_stereotype": "PENDING_P3",
+      "native_bounds": "0..* at both ends; profile restrictions are conditional",
+      "decision": "OPEN",
+      "questions": [
+        "What ontological dependence/truthmaker justifies this association?",
+        "Reuse or specialize an existing relation instead?",
+        "What multiplicities hold universally, as distinct from local profile admission?",
+        "How are event participation or content-aboutness preserved in native/OWL/SHACL and the detector adapter?"
+      ],
+      "requirement_ids": [
+        "R-RM-01"
+      ]
+    },
+    {
+      "name": "resultAssessment",
+      "source": "Assertion",
+      "target": "RiskAssessmentActivity",
+      "native_stereotype": "PENDING_P3",
+      "native_bounds": "0..* at both ends; profile restrictions are conditional",
+      "decision": "OPEN",
+      "questions": [
+        "What ontological dependence/truthmaker justifies this association?",
+        "Reuse or specialize an existing relation instead?",
+        "What multiplicities hold universally, as distinct from local profile admission?",
+        "How are event participation or content-aboutness preserved in native/OWL/SHACL and the detector adapter?"
+      ],
+      "requirement_ids": [
+        "R-RM-02"
+      ]
+    },
+    {
+      "name": "citesSourceRecord",
+      "source": "Assertion",
+      "target": "SourceRecord",
+      "native_stereotype": "PENDING_P3",
+      "native_bounds": "0..* at both ends; profile restrictions are conditional",
+      "decision": "OPEN",
+      "questions": [
+        "What ontological dependence/truthmaker justifies this association?",
+        "Reuse or specialize an existing relation instead?",
+        "What multiplicities hold universally, as distinct from local profile admission?",
+        "How are event participation or content-aboutness preserved in native/OWL/SHACL and the detector adapter?"
+      ],
+      "requirement_ids": [
+        "R-RM-03",
+        "R-PV-03"
+      ]
+    },
+    {
+      "name": "planRiskResult",
+      "source": "RiskTreatmentPlan",
+      "target": "Assertion",
+      "native_stereotype": "PENDING_P3",
+      "native_bounds": "0..* at both ends; profile restrictions are conditional",
+      "decision": "OPEN",
+      "questions": [
+        "What ontological dependence/truthmaker justifies this association?",
+        "Reuse or specialize an existing relation instead?",
+        "What multiplicities hold universally, as distinct from local profile admission?",
+        "How are event participation or content-aboutness preserved in native/OWL/SHACL and the detector adapter?"
+      ],
+      "requirement_ids": [
+        "R-RM-04"
+      ]
+    },
+    {
+      "name": "implementsRiskPlan",
+      "source": "RiskTreatmentActivity",
+      "target": "RiskTreatmentPlan",
+      "native_stereotype": "PENDING_P3",
+      "native_bounds": "0..* at both ends; profile restrictions are conditional",
+      "decision": "OPEN",
+      "questions": [
+        "What ontological dependence/truthmaker justifies this association?",
+        "Reuse or specialize an existing relation instead?",
+        "What multiplicities hold universally, as distinct from local profile admission?",
+        "How are event participation or content-aboutness preserved in native/OWL/SHACL and the detector adapter?"
+      ],
+      "requirement_ids": [
+        "R-RM-05"
+      ]
+    },
+    {
+      "name": "reviewPriorResult",
+      "source": "RiskReviewActivity",
+      "target": "Assertion",
+      "native_stereotype": "PENDING_P3",
+      "native_bounds": "0..* at both ends; profile restrictions are conditional",
+      "decision": "OPEN",
+      "questions": [
+        "What ontological dependence/truthmaker justifies this association?",
+        "Reuse or specialize an existing relation instead?",
+        "What multiplicities hold universally, as distinct from local profile admission?",
+        "How are event participation or content-aboutness preserved in native/OWL/SHACL and the detector adapter?"
+      ],
+      "requirement_ids": [
+        "R-RM-06"
+      ]
+    },
+    {
+      "name": "reviewNewResult",
+      "source": "RiskReviewActivity",
+      "target": "Assertion",
+      "native_stereotype": "PENDING_P3",
+      "native_bounds": "0..* at both ends; profile restrictions are conditional",
+      "decision": "OPEN",
+      "questions": [
+        "What ontological dependence/truthmaker justifies this association?",
+        "Reuse or specialize an existing relation instead?",
+        "What multiplicities hold universally, as distinct from local profile admission?",
+        "How are event participation or content-aboutness preserved in native/OWL/SHACL and the detector adapter?"
+      ],
+      "requirement_ids": [
+        "R-RM-06"
+      ]
+    },
+    {
+      "name": "reportsRecord",
+      "source": "AdverseEventReportingActivity",
+      "target": "SourceRecord",
+      "native_stereotype": "PENDING_P3",
+      "native_bounds": "0..* at both ends; profile restrictions are conditional",
+      "decision": "OPEN",
+      "questions": [
+        "What ontological dependence/truthmaker justifies this association?",
+        "Reuse or specialize an existing relation instead?",
+        "What multiplicities hold universally, as distinct from local profile admission?",
+        "How are event participation or content-aboutness preserved in native/OWL/SHACL and the detector adapter?"
+      ],
+      "requirement_ids": [
+        "R-PV-01"
+      ]
+    },
+    {
+      "name": "signalProduct",
+      "source": "Assertion",
+      "target": "MedicinalProduct",
+      "native_stereotype": "PENDING_P3",
+      "native_bounds": "0..* at both ends; profile restrictions are conditional",
+      "decision": "OPEN",
+      "questions": [
+        "What ontological dependence/truthmaker justifies this association?",
+        "Reuse or specialize an existing relation instead?",
+        "What multiplicities hold universally, as distinct from local profile admission?",
+        "How are event participation or content-aboutness preserved in native/OWL/SHACL and the detector adapter?"
+      ],
+      "requirement_ids": [
+        "R-PV-02"
+      ]
+    },
+    {
+      "name": "signalSubstance",
+      "source": "Assertion",
+      "target": "PharmaceuticalSubstance",
+      "native_stereotype": "PENDING_P3",
+      "native_bounds": "0..* at both ends; profile restrictions are conditional",
+      "decision": "OPEN",
+      "questions": [
+        "What ontological dependence/truthmaker justifies this association?",
+        "Reuse or specialize an existing relation instead?",
+        "What multiplicities hold universally, as distinct from local profile admission?",
+        "How are event participation or content-aboutness preserved in native/OWL/SHACL and the detector adapter?"
+      ],
+      "requirement_ids": [
+        "R-PV-02"
+      ]
+    },
+    {
+      "name": "signalAssessmentTarget",
+      "source": "SignalAssessmentActivity",
+      "target": "Assertion",
+      "native_stereotype": "PENDING_P3",
+      "native_bounds": "0..* at both ends; profile restrictions are conditional",
+      "decision": "OPEN",
+      "questions": [
+        "What ontological dependence/truthmaker justifies this association?",
+        "Reuse or specialize an existing relation instead?",
+        "What multiplicities hold universally, as distinct from local profile admission?",
+        "How are event participation or content-aboutness preserved in native/OWL/SHACL and the detector adapter?"
+      ],
+      "requirement_ids": [
+        "R-PV-04"
+      ]
+    },
+    {
+      "name": "pvResultSignal",
+      "source": "Assertion",
+      "target": "Assertion",
+      "native_stereotype": "PENDING_P3",
+      "native_bounds": "0..* at both ends; profile restrictions are conditional",
+      "decision": "OPEN",
+      "questions": [
+        "What ontological dependence/truthmaker justifies this association?",
+        "Reuse or specialize an existing relation instead?",
+        "What multiplicities hold universally, as distinct from local profile admission?",
+        "How are event participation or content-aboutness preserved in native/OWL/SHACL and the detector adapter?"
+      ],
+      "requirement_ids": [
+        "R-PV-04"
+      ]
+    },
+    {
+      "name": "pvResultAssessment",
+      "source": "Assertion",
+      "target": "SignalAssessmentActivity",
+      "native_stereotype": "PENDING_P3",
+      "native_bounds": "0..* at both ends; profile restrictions are conditional",
+      "decision": "OPEN",
+      "questions": [
+        "What ontological dependence/truthmaker justifies this association?",
+        "Reuse or specialize an existing relation instead?",
+        "What multiplicities hold universally, as distinct from local profile admission?",
+        "How are event participation or content-aboutness preserved in native/OWL/SHACL and the detector adapter?"
+      ],
+      "requirement_ids": [
+        "R-PV-04"
+      ]
+    },
+    {
+      "name": "pvRequirementJurisdiction",
+      "source": "PharmacovigilanceRequirement",
+      "target": "RegulatoryJurisdiction",
+      "native_stereotype": "PENDING_P3",
+      "native_bounds": "0..* at both ends; profile restrictions are conditional",
+      "decision": "OPEN",
+      "questions": [
+        "What ontological dependence/truthmaker justifies this association?",
+        "Reuse or specialize an existing relation instead?",
+        "What multiplicities hold universally, as distinct from local profile admission?",
+        "How are event participation or content-aboutness preserved in native/OWL/SHACL and the detector adapter?"
+      ],
+      "requirement_ids": [
+        "R-PV-06"
+      ]
+    },
+    {
+      "name": "surveillanceRequirement",
+      "source": "PostMarketSurveillanceActivity",
+      "target": "PharmacovigilanceRequirement",
+      "native_stereotype": "PENDING_P3",
+      "native_bounds": "0..* at both ends; profile restrictions are conditional",
+      "decision": "OPEN",
+      "questions": [
+        "What ontological dependence/truthmaker justifies this association?",
+        "Reuse or specialize an existing relation instead?",
+        "What multiplicities hold universally, as distinct from local profile admission?",
+        "How are event participation or content-aboutness preserved in native/OWL/SHACL and the detector adapter?"
+      ],
+      "requirement_ids": [
+        "R-PV-06"
+      ]
+    },
+    {
+      "name": "surveillanceSource",
+      "source": "PostMarketSurveillanceActivity",
+      "target": "SourceRecord",
+      "native_stereotype": "PENDING_P3",
+      "native_bounds": "0..* at both ends; profile restrictions are conditional",
+      "decision": "OPEN",
+      "questions": [
+        "What ontological dependence/truthmaker justifies this association?",
+        "Reuse or specialize an existing relation instead?",
+        "What multiplicities hold universally, as distinct from local profile admission?",
+        "How are event participation or content-aboutness preserved in native/OWL/SHACL and the detector adapter?"
+      ],
+      "requirement_ids": []
+    },
+    {
+      "name": "serviceCapability",
+      "source": "ServiceOfferingSpecification",
+      "target": "EnterpriseCapability",
+      "native_stereotype": "PENDING_P3",
+      "native_bounds": "0..* at both ends; profile restrictions are conditional",
+      "decision": "OPEN",
+      "questions": [
+        "What ontological dependence/truthmaker justifies this association?",
+        "Reuse or specialize an existing relation instead?",
+        "What multiplicities hold universally, as distinct from local profile admission?",
+        "How are event participation or content-aboutness preserved in native/OWL/SHACL and the detector adapter?"
+      ],
+      "requirement_ids": [
+        "R-BA-03"
+      ]
+    },
+    {
+      "name": "viewOrganization",
+      "source": "BusinessArchitectureView",
+      "target": "Organization",
+      "native_stereotype": "PENDING_P3",
+      "native_bounds": "0..* at both ends; profile restrictions are conditional",
+      "decision": "OPEN",
+      "questions": [
+        "What ontological dependence/truthmaker justifies this association?",
+        "Reuse or specialize an existing relation instead?",
+        "What multiplicities hold universally, as distinct from local profile admission?",
+        "How are event participation or content-aboutness preserved in native/OWL/SHACL and the detector adapter?"
+      ],
+      "requirement_ids": [
+        "R-BA-04",
+        "R-BA-06"
+      ]
+    },
+    {
+      "name": "viewService",
+      "source": "BusinessArchitectureView",
+      "target": "ServiceOfferingSpecification",
+      "native_stereotype": "PENDING_P3",
+      "native_bounds": "0..* at both ends; profile restrictions are conditional",
+      "decision": "OPEN",
+      "questions": [
+        "What ontological dependence/truthmaker justifies this association?",
+        "Reuse or specialize an existing relation instead?",
+        "What multiplicities hold universally, as distinct from local profile admission?",
+        "How are event participation or content-aboutness preserved in native/OWL/SHACL and the detector adapter?"
+      ],
+      "requirement_ids": [
+        "R-BA-04"
+      ]
+    },
+    {
+      "name": "capabilityRealizedIn",
+      "source": "EnterpriseCapability",
+      "target": "ManufacturingActivity",
+      "native_stereotype": "PENDING_P3",
+      "native_bounds": "0..* at both ends; profile restrictions are conditional",
+      "decision": "OPEN",
+      "questions": [
+        "What ontological dependence/truthmaker justifies this association?",
+        "Reuse or specialize an existing relation instead?",
+        "What multiplicities hold universally, as distinct from local profile admission?",
+        "How are event participation or content-aboutness preserved in native/OWL/SHACL and the detector adapter?"
+      ],
+      "requirement_ids": [
+        "R-BA-02"
+      ]
+    },
+    {
+      "name": "deploymentComponent",
+      "source": "SystemDeploymentActivity",
+      "target": "DigitalInformationSystemComponent",
+      "native_stereotype": "PENDING_P3",
+      "native_bounds": "0..* at both ends; profile restrictions are conditional",
+      "decision": "OPEN",
+      "questions": [
+        "What ontological dependence/truthmaker justifies this association?",
+        "Reuse or specialize an existing relation instead?",
+        "What multiplicities hold universally, as distinct from local profile admission?",
+        "How are event participation or content-aboutness preserved in native/OWL/SHACL and the detector adapter?"
+      ],
+      "requirement_ids": [
+        "R-DS-01",
+        "R-DS-04"
+      ]
+    },
+    {
+      "name": "deploymentOrganization",
+      "source": "SystemDeploymentActivity",
+      "target": "Organization",
+      "native_stereotype": "PENDING_P3",
+      "native_bounds": "0..* at both ends; profile restrictions are conditional",
+      "decision": "OPEN",
+      "questions": [
+        "What ontological dependence/truthmaker justifies this association?",
+        "Reuse or specialize an existing relation instead?",
+        "What multiplicities hold universally, as distinct from local profile admission?",
+        "How are event participation or content-aboutness preserved in native/OWL/SHACL and the detector adapter?"
+      ],
+      "requirement_ids": [
+        "R-DS-04"
+      ]
+    },
+    {
+      "name": "digitalActivityDeployment",
+      "source": "ProvenanceActivity",
+      "target": "SystemDeploymentActivity",
+      "native_stereotype": "PENDING_P3",
+      "native_bounds": "0..* at both ends; profile restrictions are conditional",
+      "decision": "OPEN",
+      "questions": [
+        "What ontological dependence/truthmaker justifies this association?",
+        "Reuse or specialize an existing relation instead?",
+        "What multiplicities hold universally, as distinct from local profile admission?",
+        "How are event participation or content-aboutness preserved in native/OWL/SHACL and the detector adapter?"
+      ],
+      "requirement_ids": [
+        "R-DS-02",
+        "R-DS-04"
+      ]
+    },
+    {
+      "name": "recordDigitalActivity",
+      "source": "SourceRecord",
+      "target": "ProvenanceActivity",
+      "native_stereotype": "PENDING_P3",
+      "native_bounds": "0..* at both ends; profile restrictions are conditional",
+      "decision": "OPEN",
+      "questions": [
+        "What ontological dependence/truthmaker justifies this association?",
+        "Reuse or specialize an existing relation instead?",
+        "What multiplicities hold universally, as distinct from local profile admission?",
+        "How are event participation or content-aboutness preserved in native/OWL/SHACL and the detector adapter?"
+      ],
+      "requirement_ids": [
+        "R-DS-01",
+        "R-DS-04",
+        "R-DS-06"
+      ]
+    },
+    {
+      "name": "digitalServiceComponent",
+      "source": "ServiceOfferingSpecification",
+      "target": "DigitalInformationSystemComponent",
+      "native_stereotype": "PENDING_P3",
+      "native_bounds": "0..* at both ends; profile restrictions are conditional",
+      "decision": "OPEN",
+      "questions": [
+        "What ontological dependence/truthmaker justifies this association?",
+        "Reuse or specialize an existing relation instead?",
+        "What multiplicities hold universally, as distinct from local profile admission?",
+        "How are event participation or content-aboutness preserved in native/OWL/SHACL and the detector adapter?"
+      ],
+      "requirement_ids": [
+        "R-DS-03"
+      ]
+    },
+    {
+      "name": "digitalServiceActivity",
+      "source": "ServiceOfferingSpecification",
+      "target": "ProvenanceActivity",
+      "native_stereotype": "PENDING_P3",
+      "native_bounds": "0..* at both ends; profile restrictions are conditional",
+      "decision": "OPEN",
+      "questions": [
+        "What ontological dependence/truthmaker justifies this association?",
+        "Reuse or specialize an existing relation instead?",
+        "What multiplicities hold universally, as distinct from local profile admission?",
+        "How are event participation or content-aboutness preserved in native/OWL/SHACL and the detector adapter?"
+      ],
+      "requirement_ids": [
+        "R-DS-03"
+      ]
+    }
+  ]
+}

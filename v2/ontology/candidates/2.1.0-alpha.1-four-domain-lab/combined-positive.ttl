@@ -1,0 +1,172 @@
+@prefix c: <https://w3id.org/cm-pharme/2.1/> .
+@prefix l: <https://w3id.org/cm-pharme/experimental/four-domain/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix t: <urn:cmpe-lab:> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+t:action a c:RiskTreatmentActivity ;
+    l:atTime "2026-10-03T10:00:00+00:00"^^xsd:dateTime ;
+    l:implementsRiskPlan t:plan ;
+    l:profile "risk-treatment" .
+
+t:agreement a c:StrategicPartnershipAgreement ;
+    c:partnershipParticipant t:org,
+        t:org2 ;
+    l:profile "ba-partnership" .
+
+t:digitalService a c:ServiceOfferingSpecification ;
+    l:digitalServiceActivity t:transform ;
+    l:digitalServiceComponent t:component ;
+    l:profile "digital-service" .
+
+t:facility a c:Facility .
+
+t:jB a c:RegulatoryJurisdiction .
+
+t:medicine a c:MedicinalProduct .
+
+t:record a c:SourceRecord ;
+    l:profile "digital-record" ;
+    l:recordDigitalActivity t:transform .
+
+t:record2 a c:SourceRecord ;
+    l:profile "digital-record" ;
+    l:recordDigitalActivity t:transform2 .
+
+t:reporting a c:AdverseEventReportingActivity ;
+    l:atTime "2026-10-01T10:00:00+00:00"^^xsd:dateTime ;
+    l:profile "safety-reporting" ;
+    l:reportsRecord t:report .
+
+t:reporting2 a c:AdverseEventReportingActivity ;
+    l:atTime "2026-10-03T10:00:00+00:00"^^xsd:dateTime ;
+    l:profile "safety-reporting" ;
+    l:reportsRecord t:report .
+
+t:review a c:RiskReviewActivity ;
+    l:atTime "2026-10-02T10:00:00+00:00"^^xsd:dateTime ;
+    l:profile "risk-review" ;
+    l:reviewNewResult t:riskResult2 ;
+    l:reviewPriorResult t:riskResult .
+
+t:service a c:ServiceOfferingSpecification ;
+    l:profile "ba-service" ;
+    l:serviceCapability t:cap .
+
+t:signalResult a c:Assertion ;
+    l:atTime "2026-10-02T10:00:00+00:00"^^xsd:dateTime ;
+    l:profile "signal-result" ;
+    l:pvResultAssessment t:signalAssessment ;
+    l:pvResultSignal t:signal ;
+    l:signalStatus "under-review" .
+
+t:signalResult2 a c:Assertion ;
+    l:atTime "2026-10-03T10:00:00+00:00"^^xsd:dateTime ;
+    l:profile "signal-result" ;
+    l:pvResultAssessment t:signalAssessment2 ;
+    l:pvResultSignal t:signal ;
+    l:signalStatus "refuted-at-this-time" .
+
+t:surveillance a c:PostMarketSurveillanceActivity ;
+    l:profile "pv-surveillance" ;
+    l:surveillanceRequirement t:pvRule ;
+    l:surveillanceSource t:report .
+
+t:assessment a c:RiskAssessmentActivity ;
+    l:assessmentScenario t:scenario ;
+    l:profile "risk-assessment" .
+
+t:assessment2 a c:RiskAssessmentActivity ;
+    l:assessmentScenario t:scenario ;
+    l:profile "risk-assessment" .
+
+t:cap a c:EnterpriseCapability ;
+    c:capabilityBearer t:org .
+
+t:deployment a c:SystemDeploymentActivity ;
+    l:atTime "2026-10-01T10:00:00+00:00"^^xsd:dateTime ;
+    l:componentVersion "1.0" ;
+    l:deploymentComponent t:component ;
+    l:deploymentOrganization t:operator ;
+    l:profile "deployment" .
+
+t:deployment2 a c:SystemDeploymentActivity ;
+    l:atTime "2026-10-03T10:00:00+00:00"^^xsd:dateTime ;
+    l:componentVersion "2.0" ;
+    l:deploymentComponent t:component ;
+    l:deploymentOrganization t:operator2 ;
+    l:profile "deployment" .
+
+t:jA a c:RegulatoryJurisdiction .
+
+t:operator a c:Organization .
+
+t:operator2 a c:Organization .
+
+t:plan a c:RiskTreatmentPlan ;
+    l:planRiskResult t:riskResult ;
+    l:profile "risk-plan" .
+
+t:product a c:MedicinalProduct .
+
+t:pvRule a c:PharmacovigilanceRequirement ;
+    l:profile "pv-requirement" ;
+    l:pvRequirementJurisdiction t:jA .
+
+t:riskResult2 a c:Assertion ;
+    l:atTime "2026-10-02T10:00:00+00:00"^^xsd:dateTime ;
+    l:citesSourceRecord t:source ;
+    l:conclusion "revised assessment" ;
+    l:profile "risk-result" ;
+    l:resultAssessment t:assessment2 .
+
+t:signalAssessment a c:SignalAssessmentActivity ;
+    l:profile "signal-assessment" ;
+    l:signalAssessmentTarget t:signal .
+
+t:signalAssessment2 a c:SignalAssessmentActivity ;
+    l:profile "signal-assessment" ;
+    l:signalAssessmentTarget t:signal .
+
+t:study a c:SourceRecord .
+
+t:substance a c:PharmaceuticalSubstance .
+
+t:transform2 a c:ProvenanceActivity ;
+    l:atTime "2026-10-04T10:00:00+00:00"^^xsd:dateTime ;
+    l:digitalActivityDeployment t:deployment2 ;
+    l:profile "digital-activity" .
+
+t:org a c:Organization,
+        c:PartnerOrganizationRole ;
+    owl:differentFrom t:org2 .
+
+t:org2 a c:Organization,
+        c:PartnerOrganizationRole .
+
+t:riskResult a c:Assertion ;
+    l:atTime "2026-10-01T10:00:00+00:00"^^xsd:dateTime ;
+    l:citesSourceRecord t:source ;
+    l:conclusion "review supply continuity" ;
+    l:profile "risk-result" ;
+    l:resultAssessment t:assessment .
+
+t:scenario a c:Assertion ;
+    l:profile "risk-scenario" ;
+    l:scenarioProduct t:product .
+
+t:source a c:SourceRecord .
+
+t:transform a c:ProvenanceActivity ;
+    l:atTime "2026-10-02T10:00:00+00:00"^^xsd:dateTime ;
+    l:digitalActivityDeployment t:deployment ;
+    l:profile "digital-activity" .
+
+t:component a c:DigitalInformationSystemComponent .
+
+t:report a c:SourceRecord .
+
+t:signal a c:Assertion ;
+    l:citesSourceRecord t:study ;
+    l:profile "safety-signal" ;
+    l:signalSubstance t:substance .

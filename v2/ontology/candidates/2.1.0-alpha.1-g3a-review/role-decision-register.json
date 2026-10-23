@@ -1,0 +1,104 @@
+{
+  "scope": "All nine inherited role definitions. Recommendations are not author/expert approval and not implemented existential axioms.",
+  "roles": [
+    {
+      "role": "ManufacturerRole",
+      "identity_provider": "Organization",
+      "identity_check": "PASS",
+      "evidence": "V2C-004; V2R-006/024/025; W4 R4",
+      "recommended_design": "Keep umbrella meaning; distinguish authorized manufacturing, contractual manufacturing responsibility and performed manufacturing participation.",
+      "rejection_example": "A registration, license, operation or source label alone must not assert a particular manufacturing occurrence.",
+      "decision": "Does the umbrella include commissioned/contract manufacturing without operating the physical site? Recommended: yes, if an explicit responsibility commitment is evidenced.",
+      "complete_grounding": "OPEN",
+      "human_approval": "NOT_RECORDED_FOR_THIS_NEW_DECISION"
+    },
+    {
+      "role": "ManufacturingSiteRole",
+      "identity_provider": "Facility",
+      "identity_check": "PASS",
+      "evidence": "V2C-011; V2R-003/024; W4 R4",
+      "recommended_design": "Separate authorized use, assigned manufacturing function and participation in a concrete manufacturing event.",
+      "rejection_example": "A currently registered site may have no evidenced production event in the observation interval.",
+      "decision": "May a site retain its assigned function while idle? Recommended: yes; do not require an event at every snapshot.",
+      "complete_grounding": "OPEN",
+      "human_approval": "NOT_RECORDED_FOR_THIS_NEW_DECISION"
+    },
+    {
+      "role": "ImporterRole",
+      "identity_provider": "Organization",
+      "identity_check": "PASS",
+      "evidence": "V2C-005; V2R-006/008; W4 R3/R4",
+      "recommended_design": "Distinguish import authorization from responsibility in a documented import context.",
+      "rejection_example": "Generic authorization does not establish import scope, and import permission does not establish a shipment.",
+      "decision": "Recommended: preserve a broad umbrella with separate permission/responsibility contexts, not a universal licensing axiom.",
+      "complete_grounding": "OPEN",
+      "human_approval": "NOT_RECORDED_FOR_THIS_NEW_DECISION"
+    },
+    {
+      "role": "WholesaleDistributorRole",
+      "identity_provider": "Organization",
+      "identity_check": "PASS",
+      "evidence": "V2C-007; V2R-004/008/026; W4 R3/R4",
+      "recommended_design": "Use explicit wholesale scope and separate actual distribution responsibility.",
+      "rejection_example": "Neither establishment registration nor a generic logistics activity proves wholesale distribution.",
+      "decision": "Recommended: explicit wholesale scope; do not infer ownership transfer or a shipment from licensure reporting.",
+      "complete_grounding": "OPEN",
+      "human_approval": "NOT_RECORDED_FOR_THIS_NEW_DECISION"
+    },
+    {
+      "role": "ThirdPartyLogisticsProviderRole",
+      "identity_provider": "Organization",
+      "identity_check": "PASS",
+      "evidence": "V2C-008; V2R-004/008/026; W4 R3/R4",
+      "recommended_design": "Model service responsibility separately from wholesale ownership/distribution and permission.",
+      "rejection_example": "Logistics services do not by themselves imply title to the pharmaceutical product.",
+      "decision": "Recommended: distinguish the service commitment from license evidence and from individual activities.",
+      "complete_grounding": "OPEN",
+      "human_approval": "NOT_RECORDED_FOR_THIS_NEW_DECISION"
+    },
+    {
+      "role": "DistributionSiteRole",
+      "identity_provider": "Facility",
+      "identity_check": "PASS",
+      "evidence": "V2C-012; V2R-004/026; W4 R4",
+      "recommended_design": "A site function/use role; distinguish assigned distribution/storage use, authorization and activity occurrence.",
+      "rejection_example": "Facility operation alone does not make a site a distribution site; an idle distribution site need not lose its assigned function.",
+      "decision": "Recommended: a documented site-use context without asserting an actual shipment.",
+      "complete_grounding": "OPEN",
+      "human_approval": "NOT_RECORDED_FOR_THIS_NEW_DECISION"
+    },
+    {
+      "role": "RegulatoryAuthorityRole",
+      "identity_provider": "Organization",
+      "identity_check": "PASS",
+      "evidence": "V2C-003; V2R-005/011/055; W4 R2/R3/R13",
+      "recommended_design": "Distinguish institutional mandate from exercising registration, authorization or oversight.",
+      "rejection_example": "An authority may hold its mandate before issuing any registration or license.",
+      "decision": "Recommended: a mandate context; do not define the parent as exactly the union of the three exercised-authority subroles.",
+      "complete_grounding": "OPEN",
+      "human_approval": "NOT_RECORDED_FOR_THIS_NEW_DECISION"
+    },
+    {
+      "role": "ProductResponsibleLabelerRole",
+      "identity_provider": "Organization",
+      "identity_check": "PASS",
+      "evidence": "V2C-006; V2R-019/020; W4 R6",
+      "recommended_design": "ListingResponsibleOrganizationRole is a subtype; the broader label/product responsibility may have additional contexts.",
+      "rejection_example": "A private labeler need not perform manufacturing; a broader responsibility role must not automatically create a market listing.",
+      "decision": "Recommended: retain the broad parent and the one-way listing subtype. Additional label-only contexts require their own definition.",
+      "complete_grounding": "OPEN",
+      "human_approval": "NOT_RECORDED_FOR_THIS_NEW_DECISION"
+    },
+    {
+      "role": "PayerFundingOrganizationRole",
+      "identity_provider": "Organization",
+      "identity_check": "PASS",
+      "evidence": "V2C-009; V2R-072; Market Access extension",
+      "recommended_design": "Distinguish reimbursement/funding commitment from publication of aggregate utilization observations.",
+      "rejection_example": "Publishing reimbursement counts does not establish the publisher as payer, patient identity, coverage entitlement or payment occurrence.",
+      "decision": "Recommended: an explicit funding/reimbursement commitment context; aggregate NHIF rows alone do not establish its full parties/cardinalities.",
+      "complete_grounding": "OPEN",
+      "human_approval": "NOT_RECORDED_FOR_THIS_NEW_DECISION"
+    }
+  ]
+}

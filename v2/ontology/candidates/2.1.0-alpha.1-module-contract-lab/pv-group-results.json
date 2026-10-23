@@ -1,0 +1,330 @@
+{
+  "checks": [
+    {
+      "id": "complete-documentary-scope",
+      "kind": "admission",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "id": "missing-source",
+      "kind": "admission",
+      "expected": false,
+      "actual": false,
+      "pass": true
+    },
+    {
+      "id": "scope-is-source-carrier",
+      "kind": "admission",
+      "expected": false,
+      "actual": false,
+      "pass": true
+    },
+    {
+      "id": "entry-is-source-carrier",
+      "kind": "admission",
+      "expected": false,
+      "actual": false,
+      "pass": true
+    },
+    {
+      "id": "missing-label",
+      "kind": "admission",
+      "expected": false,
+      "actual": false,
+      "pass": true
+    },
+    {
+      "id": "missing-pointer",
+      "kind": "admission",
+      "expected": false,
+      "actual": false,
+      "pass": true
+    },
+    {
+      "id": "wrong-version",
+      "kind": "admission",
+      "expected": false,
+      "actual": false,
+      "pass": true
+    },
+    {
+      "id": "duplicate-ordinal",
+      "kind": "admission",
+      "expected": false,
+      "actual": false,
+      "pass": true
+    },
+    {
+      "id": "entry-as-untyped-resource",
+      "kind": "admission",
+      "expected": false,
+      "actual": false,
+      "pass": true
+    },
+    {
+      "id": "wrong-source",
+      "kind": "admission",
+      "expected": false,
+      "actual": false,
+      "pass": true
+    },
+    {
+      "id": "nested-entry-without-label-or-profile",
+      "kind": "admission",
+      "expected": false,
+      "actual": false,
+      "pass": true
+    },
+    {
+      "id": "exact-unqualified-label",
+      "kind": "lookup",
+      "input": {
+        "version": "EMA-PRAC-183502-2026-EPITT20300-footnote4",
+        "label": "dienogest"
+      },
+      "expected": "SOURCE_LABEL_LISTED",
+      "actual": "SOURCE_LABEL_LISTED",
+      "pass": true
+    },
+    {
+      "id": "combination-as-listed",
+      "kind": "lookup",
+      "input": {
+        "version": "EMA-PRAC-183502-2026-EPITT20300-footnote4",
+        "label": "dienogest/estradiol"
+      },
+      "expected": "SOURCE_LABEL_LISTED",
+      "actual": "SOURCE_LABEL_LISTED",
+      "pass": true
+    },
+    {
+      "id": "no-component-propagation",
+      "kind": "lookup",
+      "input": {
+        "version": "EMA-PRAC-183502-2026-EPITT20300-footnote4",
+        "label": "ethinylestradiol"
+      },
+      "expected": "NOT_LISTED_IN_EXTRACTED_SCOPE_UNKNOWN_CHEMICAL_MEMBERSHIP",
+      "actual": "NOT_LISTED_IN_EXTRACTED_SCOPE_UNKNOWN_CHEMICAL_MEMBERSHIP",
+      "pass": true
+    },
+    {
+      "id": "no-reordered-combination-equivalence",
+      "kind": "lookup",
+      "input": {
+        "version": "EMA-PRAC-183502-2026-EPITT20300-footnote4",
+        "label": "ethinylestradiol/chlormadinone"
+      },
+      "expected": "NOT_LISTED_IN_EXTRACTED_SCOPE_UNKNOWN_CHEMICAL_MEMBERSHIP",
+      "actual": "NOT_LISTED_IN_EXTRACTED_SCOPE_UNKNOWN_CHEMICAL_MEMBERSHIP",
+      "pass": true
+    },
+    {
+      "id": "no-dose-assumption",
+      "kind": "lookup",
+      "input": {
+        "version": "EMA-PRAC-183502-2026-EPITT20300-footnote4",
+        "label": "medroxyprogesterone"
+      },
+      "expected": "UNKNOWN_QUALIFIERS",
+      "actual": "UNKNOWN_QUALIFIERS",
+      "pass": true
+    },
+    {
+      "id": "source-version-mismatch",
+      "kind": "lookup",
+      "input": {
+        "label": "dienogest",
+        "version": "later"
+      },
+      "expected": "UNKNOWN_SOURCE_VERSION",
+      "actual": "UNKNOWN_SOURCE_VERSION",
+      "pass": true
+    },
+    {
+      "id": "case-only-normalization",
+      "kind": "lookup",
+      "input": {
+        "version": "EMA-PRAC-183502-2026-EPITT20300-footnote4",
+        "label": " DIENOGEST "
+      },
+      "expected": "SOURCE_LABEL_LISTED",
+      "actual": "SOURCE_LABEL_LISTED",
+      "pass": true
+    },
+    {
+      "id": "amount-99",
+      "kind": "lookup",
+      "input": {
+        "version": "EMA-PRAC-183502-2026-EPITT20300-footnote4",
+        "label": "medroxyprogesterone",
+        "amount": 99,
+        "unit": "mg",
+        "route": "oral",
+        "basis": "source-formulation-amount"
+      },
+      "expected": "QUALIFIER_MATCH_UNDER_PROPOSED_MAPPING",
+      "actual": "QUALIFIER_MATCH_UNDER_PROPOSED_MAPPING",
+      "pass": true
+    },
+    {
+      "id": "amount-100",
+      "kind": "lookup",
+      "input": {
+        "version": "EMA-PRAC-183502-2026-EPITT20300-footnote4",
+        "label": "medroxyprogesterone",
+        "amount": 100,
+        "unit": "mg",
+        "route": "oral",
+        "basis": "source-formulation-amount"
+      },
+      "expected": "OUTSIDE_THIS_ENTRY_UNDER_PROPOSED_MAPPING",
+      "actual": "OUTSIDE_THIS_ENTRY_UNDER_PROPOSED_MAPPING",
+      "pass": true
+    },
+    {
+      "id": "amount-101",
+      "kind": "lookup",
+      "input": {
+        "version": "EMA-PRAC-183502-2026-EPITT20300-footnote4",
+        "label": "medroxyprogesterone",
+        "amount": 101,
+        "unit": "mg",
+        "route": "oral",
+        "basis": "source-formulation-amount"
+      },
+      "expected": "OUTSIDE_THIS_ENTRY_UNDER_PROPOSED_MAPPING",
+      "actual": "OUTSIDE_THIS_ENTRY_UNDER_PROPOSED_MAPPING",
+      "pass": true
+    },
+    {
+      "id": "amount--1",
+      "kind": "lookup",
+      "input": {
+        "version": "EMA-PRAC-183502-2026-EPITT20300-footnote4",
+        "label": "medroxyprogesterone",
+        "amount": -1,
+        "unit": "mg",
+        "route": "oral",
+        "basis": "source-formulation-amount"
+      },
+      "expected": "INVALID_INPUT",
+      "actual": "INVALID_INPUT",
+      "pass": true
+    },
+    {
+      "id": "amount-NaN",
+      "kind": "lookup",
+      "input": {
+        "version": "EMA-PRAC-183502-2026-EPITT20300-footnote4",
+        "label": "medroxyprogesterone",
+        "amount": "NaN",
+        "unit": "mg",
+        "route": "oral",
+        "basis": "source-formulation-amount"
+      },
+      "expected": "INVALID_INPUT",
+      "actual": "INVALID_INPUT",
+      "pass": true
+    },
+    {
+      "id": "qualifier-{'unit': 'g'}",
+      "kind": "lookup",
+      "input": {
+        "version": "EMA-PRAC-183502-2026-EPITT20300-footnote4",
+        "label": "medroxyprogesterone",
+        "amount": 50,
+        "unit": "g",
+        "route": "oral",
+        "basis": "source-formulation-amount"
+      },
+      "expected": "UNKNOWN_UNSUPPORTED_UNIT",
+      "actual": "UNKNOWN_UNSUPPORTED_UNIT",
+      "pass": true
+    },
+    {
+      "id": "qualifier-{'route': 'injection'}",
+      "kind": "lookup",
+      "input": {
+        "version": "EMA-PRAC-183502-2026-EPITT20300-footnote4",
+        "label": "medroxyprogesterone",
+        "amount": 50,
+        "unit": "mg",
+        "route": "injection",
+        "basis": "source-formulation-amount"
+      },
+      "expected": "OUTSIDE_THIS_ENTRY_UNDER_PROPOSED_MAPPING",
+      "actual": "OUTSIDE_THIS_ENTRY_UNDER_PROPOSED_MAPPING",
+      "pass": true
+    },
+    {
+      "id": "qualifier-{'basis': 'daily-dose'}",
+      "kind": "lookup",
+      "input": {
+        "version": "EMA-PRAC-183502-2026-EPITT20300-footnote4",
+        "label": "medroxyprogesterone",
+        "amount": 50,
+        "unit": "mg",
+        "route": "oral",
+        "basis": "daily-dose"
+      },
+      "expected": "UNKNOWN_AMOUNT_BASIS",
+      "actual": "UNKNOWN_AMOUNT_BASIS",
+      "pass": true
+    },
+    {
+      "id": "entry-count",
+      "kind": "integrity",
+      "actual": 28,
+      "expected": 28,
+      "pass": true
+    },
+    {
+      "id": "unique-source-labels",
+      "kind": "integrity",
+      "actual": 28,
+      "expected": 28,
+      "pass": true
+    },
+    {
+      "id": "group-not-chemical",
+      "kind": "integrity",
+      "actual": 0,
+      "expected": 0,
+      "pass": true
+    },
+    {
+      "id": "scope-link-mapping-only",
+      "kind": "integrity",
+      "actual": "MAPPING_PROPOSED",
+      "expected": "MAPPING_PROPOSED",
+      "pass": true
+    },
+    {
+      "id": "group-integrated-consistency",
+      "kind": "reasoner",
+      "consistent": true,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "prov_profile": "two conflicting annotation-property declarations removed; raw source retained",
+      "pass": true
+    },
+    {
+      "id": "group-not-substance-and-no-materialized-link-countermodel",
+      "kind": "reasoner",
+      "consistent": true,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "prov_profile": "two conflicting annotation-property declarations removed; raw source retained",
+      "pass": true
+    }
+  ],
+  "passed": 32,
+  "total": 32,
+  "scope_entries": 28,
+  "new_native_classes": 0,
+  "new_native_relations": 0,
+  "status": "INFORMATION_PROFILE_PROPOSAL_PENDING_SEMANTIC_REVIEW"
+}

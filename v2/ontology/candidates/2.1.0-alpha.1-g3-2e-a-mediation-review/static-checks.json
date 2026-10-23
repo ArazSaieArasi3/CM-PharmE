@@ -1,0 +1,69 @@
+{
+  "scope": "Read-only static subsetting/OWL subproperty review plus inherited fixture outcome inspection; no formal engine rerun",
+  "relations": [
+    {
+      "relation": "contextClassificationEntry",
+      "clauses": {
+        "child_mediation": true,
+        "parent_mediation": true,
+        "both_ends_subset_parent": true,
+        "native_endpoint_source": "ContextualMedicineClassificationAssignment",
+        "native_endpoint_target": "AppliedClassificationEntryRole",
+        "owl_subproperty": true,
+        "parent_target_cardinality": "1",
+        "child_target_cardinality": null
+      },
+      "pass": true
+    },
+    {
+      "relation": "contextClassificationProduct",
+      "clauses": {
+        "child_mediation": true,
+        "parent_mediation": true,
+        "both_ends_subset_parent": true,
+        "native_endpoint_source": "ContextualMedicineClassificationAssignment",
+        "native_endpoint_target": "ClassifiedMedicinalProductRole",
+        "owl_subproperty": true,
+        "parent_target_cardinality": "1",
+        "child_target_cardinality": null
+      },
+      "pass": true
+    },
+    {
+      "relation": "evidenceRecord",
+      "clauses": {
+        "child_mediation": true,
+        "parent_mediation": true,
+        "both_ends_subset_parent": true,
+        "native_endpoint_source": "EvidenceSupport",
+        "native_endpoint_target": "EvidenceSourceRecordRole",
+        "owl_subproperty": true,
+        "parent_target_cardinality": "1",
+        "child_target_cardinality": null
+      },
+      "pass": true
+    }
+  ],
+  "inherited_fixture_count": 16,
+  "inherited_fixture_expected_valid": 4,
+  "inherited_fixture_expected_invalid": 12,
+  "fixture_ids": [
+    "EvidenceSupport-minimal",
+    "EvidenceSupport-missing-evidence",
+    "EvidenceSupport-event-in-evidence",
+    "EvidenceSupport-excess-evidence",
+    "EvidenceSupport-evidence-ObservationResult",
+    "EvidenceSupport-missing-claim",
+    "EvidenceSupport-event-in-claim",
+    "EvidenceSupport-excess-claim",
+    "ContextualMedicineClassificationAssignment-minimal",
+    "ContextualMedicineClassificationAssignment-missing-subject",
+    "ContextualMedicineClassificationAssignment-event-in-subject",
+    "ContextualMedicineClassificationAssignment-excess-subject",
+    "ContextualMedicineClassificationAssignment-subject-PharmaceuticalSubstance",
+    "ContextualMedicineClassificationAssignment-missing-entry",
+    "ContextualMedicineClassificationAssignment-event-in-entry",
+    "ContextualMedicineClassificationAssignment-excess-entry"
+  ],
+  "all_pass": true
+}

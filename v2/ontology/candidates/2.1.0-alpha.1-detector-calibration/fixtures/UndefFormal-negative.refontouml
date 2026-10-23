@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8'?>
+<RefOntoUML:Package xmlns:RefOntoUML="http://nemo.inf.ufes.br/ontouml/refontouml" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmi:version="2.0" xmi:id="pkg" name="UndefFormal-negative" visibility="public">
+  <packagedElement xsi:type="RefOntoUML:Kind" xmi:id="PersonA" name="PersonA" visibility="public" isAbstract="false" />
+  <packagedElement xsi:type="RefOntoUML:Kind" xmi:id="PersonB" name="PersonB" visibility="public" isAbstract="false" />
+  <packagedElement xsi:type="RefOntoUML:DataType" xmi:id="Value" name="Value" visibility="public" isAbstract="false" />
+  <packagedElement xsi:type="RefOntoUML:FormalAssociation" xmi:id="comparison" name="comparison" visibility="public" memberEnd="comparisonA comparisonB">
+    <ownedEnd xmi:id="comparisonA" name="comparisonA" type="PersonA" association="comparison" aggregation="none" visibility="public">
+      <lowerValue xsi:type="RefOntoUML:LiteralInteger" xmi:id="comparisonAlower" value="0" />
+      <upperValue xsi:type="RefOntoUML:LiteralUnlimitedNatural" xmi:id="comparisonAupper" value="1" />
+    </ownedEnd>
+    <ownedEnd xmi:id="comparisonB" name="comparisonB" type="PersonB" association="comparison" aggregation="none" visibility="public">
+      <lowerValue xsi:type="RefOntoUML:LiteralInteger" xmi:id="comparisonBlower" value="0" />
+      <upperValue xsi:type="RefOntoUML:LiteralUnlimitedNatural" xmi:id="comparisonBupper" value="-1" />
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="RefOntoUML:Association" xmi:id="valueA" name="valueA" visibility="public" memberEnd="valueAA valueAB">
+    <ownedEnd xmi:id="valueAA" name="valueAA" type="PersonA" association="valueA" aggregation="none" visibility="public">
+      <lowerValue xsi:type="RefOntoUML:LiteralInteger" xmi:id="valueAAlower" value="0" />
+      <upperValue xsi:type="RefOntoUML:LiteralUnlimitedNatural" xmi:id="valueAAupper" value="1" />
+    </ownedEnd>
+    <ownedEnd xmi:id="valueAB" name="valueAB" type="Value" association="valueA" aggregation="none" visibility="public">
+      <lowerValue xsi:type="RefOntoUML:LiteralInteger" xmi:id="valueABlower" value="0" />
+      <upperValue xsi:type="RefOntoUML:LiteralUnlimitedNatural" xmi:id="valueABupper" value="-1" />
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="RefOntoUML:Association" xmi:id="valueB" name="valueB" visibility="public" memberEnd="valueBA valueBB">
+    <ownedEnd xmi:id="valueBA" name="valueBA" type="PersonB" association="valueB" aggregation="none" visibility="public">
+      <lowerValue xsi:type="RefOntoUML:LiteralInteger" xmi:id="valueBAlower" value="0" />
+      <upperValue xsi:type="RefOntoUML:LiteralUnlimitedNatural" xmi:id="valueBAupper" value="1" />
+    </ownedEnd>
+    <ownedEnd xmi:id="valueBB" name="valueBB" type="Value" association="valueB" aggregation="none" visibility="public">
+      <lowerValue xsi:type="RefOntoUML:LiteralInteger" xmi:id="valueBBlower" value="0" />
+      <upperValue xsi:type="RefOntoUML:LiteralUnlimitedNatural" xmi:id="valueBBupper" value="-1" />
+    </ownedEnd>
+  </packagedElement>
+</RefOntoUML:Package>

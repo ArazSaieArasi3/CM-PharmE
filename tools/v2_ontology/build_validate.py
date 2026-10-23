@@ -23,7 +23,7 @@ SH = Namespace("http://www.w3.org/ns/shacl#")
 
 def parse_args():
     p = argparse.ArgumentParser()
-    p.add_argument("--source-dir", default="v2/ontology/source/modules")
+    p.add_argument("--source-dir", default="v2/ontology/baseline/w5-source/modules")
     p.add_argument("--conceptual-model", default="v2/ontouml/cm-pharme-v2.conceptual-model.json")
     p.add_argument("--baseline", default="v2/ontology/baseline/formal-baseline.json")
     p.add_argument("--shapes", default="v2/ontology/shapes/cm-pharme-v2.shacl.ttl")

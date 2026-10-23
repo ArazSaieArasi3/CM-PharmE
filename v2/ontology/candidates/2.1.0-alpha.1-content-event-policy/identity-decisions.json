@@ -1,0 +1,77 @@
+{
+  "status": "REVIEWABLE_PROPOSALS",
+  "decisions": [
+    {
+      "id": "ID-01",
+      "subject": "carrierClaim",
+      "recommended_policy": "Require a carrier to differ from the claim it carries, including sameAs aliases.",
+      "implementation_or_evidence": "Proposed irreflexive OWL predicate plus tag-independent SHACL shape.",
+      "limit": "Do not infer that SourceRecord and Assertion are globally disjoint classes.",
+      "author_acceptance": false
+    },
+    {
+      "id": "ID-02",
+      "subject": "pvResultSignal",
+      "recommended_policy": "An assessment conclusion differs from the signal it evaluates.",
+      "implementation_or_evidence": "Proposed irreflexive OWL predicate plus tag-independent SHACL shape.",
+      "limit": "Do not create disjoint SignalKind/ResultKind just to silence BinOver; cross-context proposition reuse remains possible.",
+      "author_acceptance": false
+    },
+    {
+      "id": "ID-03",
+      "subject": "caseIdentifier",
+      "recommended_policy": "Case identifier identifies a scoped case reference; multiple carriers and evolving propositions may share it.",
+      "implementation_or_evidence": "No OWL hasKey or inverse-functional identity axiom.",
+      "limit": "Identifier scheme and reporting context are needed; not E2B message conformance.",
+      "author_acceptance": false
+    },
+    {
+      "id": "ID-04",
+      "subject": "claimText",
+      "recommended_policy": "Lexical equality is insufficient to infer propositional identity.",
+      "implementation_or_evidence": "Two distinct claims with identical text remain consistent.",
+      "limit": "A full intensional identity criterion is pending.",
+      "author_acceptance": false
+    },
+    {
+      "id": "ID-05",
+      "subject": "reportsRecord",
+      "recommended_policy": "Reporting event is distinct from its output record and the assertions carried by that record.",
+      "implementation_or_evidence": "Retain separate event, SourceRecord and Assertion links.",
+      "limit": "Complete ICSR content/message ontology remains out of this bounded profile.",
+      "author_acceptance": false
+    },
+    {
+      "id": "ID-06",
+      "subject": "pvResultAssessment",
+      "recommended_policy": "Status/conclusion is contextual to an assessment, assessor and time.",
+      "implementation_or_evidence": "Use result-to-assessment link and assessment attribution.",
+      "limit": "Do not collapse changing conclusions into timeless truth or infer causality from a signal.",
+      "author_acceptance": false
+    },
+    {
+      "id": "ID-07",
+      "subject": "citesSourceRecord",
+      "recommended_policy": "Citation is not by itself evidential support or truth.",
+      "implementation_or_evidence": "Reuse EvidenceSupport where evidential grounding is asserted.",
+      "limit": "No automatic supported/true claim inference from citation.",
+      "author_acceptance": false
+    },
+    {
+      "id": "ID-08",
+      "subject": "withinCountry/withinRegion",
+      "recommended_policy": "Preserve existing accepted no-self and cycle constraints.",
+      "implementation_or_evidence": "No geography edit in this package.",
+      "limit": "Structural BinOver trigger remains; source-specific nesting and identity still require context.",
+      "author_acceptance": "prior bounded geography decision retained; no new acceptance requested"
+    },
+    {
+      "id": "ID-09",
+      "subject": "serviceCapability/capabilityRealizedIn",
+      "recommended_policy": "Capability can exist without a recorded realization; specification is not execution.",
+      "implementation_or_evidence": "Retain prior zero-exercise countermodel.",
+      "limit": "Do not raise global lower bounds to make the graph look connected.",
+      "author_acceptance": false
+    }
+  ]
+}

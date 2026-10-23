@@ -1,0 +1,408 @@
+{
+  "scenario_families": 7,
+  "admission_cases": [
+    {
+      "name": "D1-positive",
+      "expected": "SOURCE_REPORTED_EFFECT",
+      "actual": "SOURCE_REPORTED_EFFECT",
+      "pass": true
+    },
+    {
+      "name": "D1-missing-record",
+      "expected": "UNKNOWN",
+      "actual": "UNKNOWN",
+      "pass": true
+    },
+    {
+      "name": "D1-mere-co-report",
+      "expected": "UNKNOWN",
+      "actual": "UNKNOWN",
+      "pass": true
+    },
+    {
+      "name": "D1-effect-before-event",
+      "expected": "REJECTED_TEMPORAL_ORDER",
+      "actual": "REJECTED_TEMPORAL_ORDER",
+      "pass": true
+    },
+    {
+      "name": "D1-timezone-missing",
+      "expected": "UNKNOWN",
+      "actual": "UNKNOWN",
+      "pass": true
+    },
+    {
+      "name": "D2-positive",
+      "expected": "SOURCE_REPORTED_EFFECT",
+      "actual": "SOURCE_REPORTED_EFFECT",
+      "pass": true
+    },
+    {
+      "name": "D2-missing-record",
+      "expected": "UNKNOWN",
+      "actual": "UNKNOWN",
+      "pass": true
+    },
+    {
+      "name": "D2-mere-co-report",
+      "expected": "UNKNOWN",
+      "actual": "UNKNOWN",
+      "pass": true
+    },
+    {
+      "name": "D2-effect-before-event",
+      "expected": "REJECTED_TEMPORAL_ORDER",
+      "actual": "REJECTED_TEMPORAL_ORDER",
+      "pass": true
+    },
+    {
+      "name": "D2-timezone-missing",
+      "expected": "UNKNOWN",
+      "actual": "UNKNOWN",
+      "pass": true
+    },
+    {
+      "name": "D3-positive",
+      "expected": "SOURCE_REPORTED_EFFECT",
+      "actual": "SOURCE_REPORTED_EFFECT",
+      "pass": true
+    },
+    {
+      "name": "D3-missing-record",
+      "expected": "UNKNOWN",
+      "actual": "UNKNOWN",
+      "pass": true
+    },
+    {
+      "name": "D3-mere-co-report",
+      "expected": "UNKNOWN",
+      "actual": "UNKNOWN",
+      "pass": true
+    },
+    {
+      "name": "D3-effect-before-event",
+      "expected": "REJECTED_TEMPORAL_ORDER",
+      "actual": "REJECTED_TEMPORAL_ORDER",
+      "pass": true
+    },
+    {
+      "name": "D3-timezone-missing",
+      "expected": "UNKNOWN",
+      "actual": "UNKNOWN",
+      "pass": true
+    },
+    {
+      "name": "R1-positive",
+      "expected": "SOURCE_REPORTED_SCOPE",
+      "actual": "SOURCE_REPORTED_SCOPE",
+      "pass": true
+    },
+    {
+      "name": "R1-missing-record",
+      "expected": "UNKNOWN",
+      "actual": "UNKNOWN",
+      "pass": true
+    },
+    {
+      "name": "R1-mere-co-report",
+      "expected": "UNKNOWN",
+      "actual": "UNKNOWN",
+      "pass": true
+    },
+    {
+      "name": "R2-positive",
+      "expected": "SOURCE_REPORTED_SCOPE",
+      "actual": "SOURCE_REPORTED_SCOPE",
+      "pass": true
+    },
+    {
+      "name": "R2-missing-record",
+      "expected": "UNKNOWN",
+      "actual": "UNKNOWN",
+      "pass": true
+    },
+    {
+      "name": "R2-mere-co-report",
+      "expected": "UNKNOWN",
+      "actual": "UNKNOWN",
+      "pass": true
+    },
+    {
+      "name": "R3-positive",
+      "expected": "SOURCE_REPORTED_SCOPE",
+      "actual": "SOURCE_REPORTED_SCOPE",
+      "pass": true
+    },
+    {
+      "name": "R3-missing-record",
+      "expected": "UNKNOWN",
+      "actual": "UNKNOWN",
+      "pass": true
+    },
+    {
+      "name": "R3-mere-co-report",
+      "expected": "UNKNOWN",
+      "actual": "UNKNOWN",
+      "pass": true
+    },
+    {
+      "name": "R4-positive",
+      "expected": "SOURCE_REPORTED_SCOPE",
+      "actual": "SOURCE_REPORTED_SCOPE",
+      "pass": true
+    },
+    {
+      "name": "R4-missing-record",
+      "expected": "UNKNOWN",
+      "actual": "UNKNOWN",
+      "pass": true
+    },
+    {
+      "name": "R4-mere-co-report",
+      "expected": "UNKNOWN",
+      "actual": "UNKNOWN",
+      "pass": true
+    }
+  ],
+  "admission_pass": 27,
+  "admission_total": 27,
+  "reasoner_cases": [
+    {
+      "name": "D1-profile-does-not-assert-world-edge",
+      "expected_consistent": true,
+      "consistent": true,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "prov_profile": "two conflicting annotation-property declarations removed; raw source retained",
+      "pass": true
+    },
+    {
+      "name": "D1-broad-parent-alternative-A",
+      "expected_consistent": true,
+      "consistent": true,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "prov_profile": "two conflicting annotation-property declarations removed; raw source retained",
+      "pass": true
+    },
+    {
+      "name": "D1-dependency-only-alternative-B",
+      "expected_consistent": false,
+      "consistent": false,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "prov_profile": "two conflicting annotation-property declarations removed; raw source retained",
+      "pass": true
+    },
+    {
+      "name": "D2-profile-does-not-assert-world-edge",
+      "expected_consistent": true,
+      "consistent": true,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "prov_profile": "two conflicting annotation-property declarations removed; raw source retained",
+      "pass": true
+    },
+    {
+      "name": "D2-broad-parent-alternative-A",
+      "expected_consistent": true,
+      "consistent": true,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "prov_profile": "two conflicting annotation-property declarations removed; raw source retained",
+      "pass": true
+    },
+    {
+      "name": "D2-dependency-only-alternative-B",
+      "expected_consistent": false,
+      "consistent": false,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "prov_profile": "two conflicting annotation-property declarations removed; raw source retained",
+      "pass": true
+    },
+    {
+      "name": "D3-profile-does-not-assert-world-edge",
+      "expected_consistent": true,
+      "consistent": true,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "prov_profile": "two conflicting annotation-property declarations removed; raw source retained",
+      "pass": true
+    },
+    {
+      "name": "D3-broad-parent-alternative-A",
+      "expected_consistent": true,
+      "consistent": true,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "prov_profile": "two conflicting annotation-property declarations removed; raw source retained",
+      "pass": true
+    },
+    {
+      "name": "D3-dependency-only-alternative-B",
+      "expected_consistent": true,
+      "consistent": true,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "prov_profile": "two conflicting annotation-property declarations removed; raw source retained",
+      "pass": true
+    },
+    {
+      "name": "R1-profile-does-not-assert-world-edge",
+      "expected_consistent": true,
+      "consistent": true,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "prov_profile": "two conflicting annotation-property declarations removed; raw source retained",
+      "pass": true
+    },
+    {
+      "name": "R1-broad-parent-alternative-A",
+      "expected_consistent": true,
+      "consistent": true,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "prov_profile": "two conflicting annotation-property declarations removed; raw source retained",
+      "pass": true
+    },
+    {
+      "name": "R1-dependency-only-alternative-B",
+      "expected_consistent": true,
+      "consistent": true,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "prov_profile": "two conflicting annotation-property declarations removed; raw source retained",
+      "pass": true
+    },
+    {
+      "name": "R2-profile-does-not-assert-world-edge",
+      "expected_consistent": true,
+      "consistent": true,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "prov_profile": "two conflicting annotation-property declarations removed; raw source retained",
+      "pass": true
+    },
+    {
+      "name": "R2-broad-parent-alternative-A",
+      "expected_consistent": true,
+      "consistent": true,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "prov_profile": "two conflicting annotation-property declarations removed; raw source retained",
+      "pass": true
+    },
+    {
+      "name": "R2-dependency-only-alternative-B",
+      "expected_consistent": false,
+      "consistent": false,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "prov_profile": "two conflicting annotation-property declarations removed; raw source retained",
+      "pass": true
+    },
+    {
+      "name": "R3-profile-does-not-assert-world-edge",
+      "expected_consistent": true,
+      "consistent": true,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "prov_profile": "two conflicting annotation-property declarations removed; raw source retained",
+      "pass": true
+    },
+    {
+      "name": "R3-broad-parent-alternative-A",
+      "expected_consistent": true,
+      "consistent": true,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "prov_profile": "two conflicting annotation-property declarations removed; raw source retained",
+      "pass": true
+    },
+    {
+      "name": "R3-dependency-only-alternative-B",
+      "expected_consistent": false,
+      "consistent": false,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "prov_profile": "two conflicting annotation-property declarations removed; raw source retained",
+      "pass": true
+    },
+    {
+      "name": "R4-profile-does-not-assert-world-edge",
+      "expected_consistent": true,
+      "consistent": true,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "prov_profile": "two conflicting annotation-property declarations removed; raw source retained",
+      "pass": true
+    },
+    {
+      "name": "R4-broad-parent-alternative-A",
+      "expected_consistent": true,
+      "consistent": true,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "prov_profile": "two conflicting annotation-property declarations removed; raw source retained",
+      "pass": true
+    },
+    {
+      "name": "R4-dependency-only-alternative-B",
+      "expected_consistent": false,
+      "consistent": false,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "prov_profile": "two conflicting annotation-property declarations removed; raw source retained",
+      "pass": true
+    },
+    {
+      "name": "disruptionAffectsDependency-entails-parent",
+      "expected_consistent": false,
+      "consistent": false,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "prov_profile": "two conflicting annotation-property declarations removed; raw source retained",
+      "pass": true
+    },
+    {
+      "name": "disruptionAffectsDependency-parent-does-not-entail-child",
+      "expected_consistent": true,
+      "consistent": true,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "prov_profile": "two conflicting annotation-property declarations removed; raw source retained",
+      "pass": true
+    },
+    {
+      "name": "riskAssessmentConcernsDependency-entails-parent",
+      "expected_consistent": false,
+      "consistent": false,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "prov_profile": "two conflicting annotation-property declarations removed; raw source retained",
+      "pass": true
+    },
+    {
+      "name": "riskAssessmentConcernsDependency-parent-does-not-entail-child",
+      "expected_consistent": true,
+      "consistent": true,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "prov_profile": "two conflicting annotation-property declarations removed; raw source retained",
+      "pass": true
+    }
+  ],
+  "reasoner_pass": 25,
+  "reasoner_total": 25,
+  "native_endpoints_changed": 0,
+  "real_incident_witnesses": 0,
+  "author_accepted": false,
+  "recommendation": "Keep parent target/cardinality unresolved; use source-qualified scope/effect profiles and typed dependency children. Reject a universal SupplyDependency-only range. Do not freeze an exhaustive union or invent Entity merely for the converter.",
+  "alternatives": {
+    "A": "Current broad parent plus evidence-qualified admission; preferred interim research policy, native conversion still blocked.",
+    "B": "Universal SupplyDependency range rejects the five explicit non-dependency counterexamples; do not select.",
+    "C": "Split by target family into typed predicates, preserving parent only as an OWL/query umbrella. Viable proposal but needs native subsetting/stereotype and complete target-universe review; not implemented here."
+  },
+  "limit": "These seven scenarios exercise bounded semantics and countermodels, not independent empirical causal validation. Passing admission means the source claim has required fields; it never materializes a world-level causal edge."
+}

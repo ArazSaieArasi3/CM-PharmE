@@ -1,0 +1,39 @@
+{
+  "scope": "Thesis Table 38 requires part-end lower bound >=2; pinned engine detects both lower=1 and lower=2 with identical other fields. Source-policy disagreement, not a final finding that the ontology or source is wrong.",
+  "source": "https://nemo.inf.ufes.br/wp-content/papercite-data/pdf/ontology_validation_for_managers_2014.pdf",
+  "source_locator": "Table 38, printed page 144",
+  "archive_commit": "42b926f6c2859dc87e49a96b8482eae28d02e7d5",
+  "total": 2,
+  "engine_expectation_pass": 2,
+  "thesis_matches": 1,
+  "rows": [
+    {
+      "name": "HomoFunc-lower-1",
+      "part_end_lower_bound": 1,
+      "part_end_upper_bound": -1,
+      "parsed_field": "END|componentA|1|componentAB|PartA|1|-1|none|",
+      "fields_preserved": true,
+      "expected_engine": 1,
+      "actual": 1,
+      "engine_expectation_pass": true,
+      "literal_thesis_expected": 0,
+      "literal_thesis_matches": false,
+      "fixture_sha256": "698a4c7ccbcec97d50676645d96ffc70cf4b823074b78a03507882dbc5e6c566",
+      "output": "CMPE_RESULT detector=HomoFunc classes=3 associations=1 occurrences=1\n"
+    },
+    {
+      "name": "HomoFunc-lower-2",
+      "part_end_lower_bound": 2,
+      "part_end_upper_bound": -1,
+      "parsed_field": "END|componentA|1|componentAB|PartA|2|-1|none|",
+      "fields_preserved": true,
+      "expected_engine": 1,
+      "actual": 1,
+      "engine_expectation_pass": true,
+      "literal_thesis_expected": 1,
+      "literal_thesis_matches": true,
+      "fixture_sha256": "d2dfe53477de39e374b0fb54004bc7aab30a81ef8ad5609fda537d2fbea452a3",
+      "output": "CMPE_RESULT detector=HomoFunc classes=3 associations=1 occurrences=1\n"
+    }
+  ]
+}

@@ -1,0 +1,580 @@
+@prefix ns1: <https://w3id.org/cm-pharme/experimental/source-group/> .
+@prefix ns2: <https://w3id.org/cm-pharme/experimental/four-domain/> .
+@prefix ns3: <https://w3id.org/cm-pharme/experimental/refinement/> .
+@prefix ns4: <https://w3id.org/cm-pharme/2.1/> .
+@prefix ns5: <https://w3id.org/cm-pharme/experimental/reporting-context/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<urn:cmpe-coherence:PRAC-row-20300> a ns4:SourceRecord ;
+    ns3:carrierClaim <urn:cmpe-group:scopeMapping> .
+
+<urn:cmpe-lab:action> a ns4:RiskTreatmentActivity ;
+    ns2:atTime "2026-10-03T10:00:00+00:00"^^xsd:dateTime ;
+    ns2:implementsRiskPlan <urn:cmpe-lab:plan> ;
+    ns2:profile "risk-treatment" .
+
+<urn:cmpe-lab:agreement> a ns4:StrategicPartnershipAgreement ;
+    ns4:partnershipParticipant <urn:cmpe-lab:org>,
+        <urn:cmpe-lab:org2> ;
+    ns2:profile "ba-partnership",
+        "documented-partnership" ;
+    ns3:agreementCommitment <urn:cmpe-lab:commitment> .
+
+<urn:cmpe-lab:commitmentEvidence> a ns4:EvidenceSupport ;
+    ns4:evidenceAssertion <urn:cmpe-lab:commitment> ;
+    ns4:evidenceItem <urn:cmpe-lab:commitmentRecord> ;
+    ns4:evidenceRecord <urn:cmpe-lab:commitmentRecord> .
+
+<urn:cmpe-lab:contactRecord> a ns4:SourceRecord ;
+    ns3:carrierClaim <urn:cmpe-lab:contactClaim> .
+
+<urn:cmpe-lab:copyReporting> a ns4:AdverseEventReportingActivity ;
+    ns2:atTime "2026-10-03T10:00:00+00:00"^^xsd:dateTime ;
+    ns2:profile "safety-reporting" ;
+    ns2:reportsRecord <urn:cmpe-lab:reportCopy> .
+
+<urn:cmpe-lab:digitalService> a ns4:ServiceOfferingSpecification ;
+    ns2:digitalServiceActivity <urn:cmpe-lab:transform> ;
+    ns2:digitalServiceComponent <urn:cmpe-lab:component> ;
+    ns2:profile "digital-service",
+        "manufacturing-digital-service" .
+
+<urn:cmpe-lab:facility> a ns4:Facility .
+
+<urn:cmpe-lab:jB> a ns4:RegulatoryJurisdiction .
+
+<urn:cmpe-lab:record> a ns4:SourceRecord ;
+    ns2:profile "digital-record" ;
+    ns2:recordDigitalActivity <urn:cmpe-lab:transform> .
+
+<urn:cmpe-lab:record2> a ns4:SourceRecord ;
+    ns2:profile "digital-record" ;
+    ns2:recordDigitalActivity <urn:cmpe-lab:transform2> .
+
+<urn:cmpe-lab:reporting> a ns4:AdverseEventReportingActivity ;
+    ns2:atTime "2026-10-01T10:00:00+00:00"^^xsd:dateTime ;
+    ns2:profile "safety-reporting" ;
+    ns2:reportsRecord <urn:cmpe-lab:report> .
+
+<urn:cmpe-lab:reporting2> a ns4:AdverseEventReportingActivity ;
+    ns2:atTime "2026-10-03T10:00:00+00:00"^^xsd:dateTime ;
+    ns2:profile "safety-reporting" ;
+    ns2:reportsRecord <urn:cmpe-lab:report> .
+
+<urn:cmpe-lab:review> a ns4:RiskReviewActivity ;
+    ns2:atTime "2026-10-02T10:00:00+00:00"^^xsd:dateTime ;
+    ns2:profile "risk-review" ;
+    ns2:reviewNewResult <urn:cmpe-lab:riskResult2> ;
+    ns2:reviewPriorResult <urn:cmpe-lab:riskResult> .
+
+<urn:cmpe-lab:signalResult> a ns4:Assertion ;
+    ns2:atTime "2026-10-02T10:00:00+00:00"^^xsd:dateTime ;
+    ns2:profile "signal-result" ;
+    ns2:pvResultAssessment <urn:cmpe-lab:signalAssessment> ;
+    ns2:pvResultSignal <urn:cmpe-lab:signal> ;
+    ns2:signalStatus "under-review" .
+
+<urn:cmpe-lab:signalResult2> a ns4:Assertion ;
+    ns2:atTime "2026-10-03T10:00:00+00:00"^^xsd:dateTime ;
+    ns2:profile "signal-result" ;
+    ns2:pvResultAssessment <urn:cmpe-lab:signalAssessment2> ;
+    ns2:pvResultSignal <urn:cmpe-lab:signal> ;
+    ns2:signalStatus "refuted-at-this-time" .
+
+<urn:cmpe-lab:surveillance> a ns4:PostMarketSurveillanceActivity ;
+    ns2:profile "pv-surveillance" ;
+    ns2:surveillanceRequirement <urn:cmpe-lab:pvRule> ;
+    ns2:surveillanceSource <urn:cmpe-lab:report> .
+
+<urn:cmpe-lab:view> a ns4:BusinessArchitectureView ;
+    ns2:profile "ba-view" ;
+    ns2:viewOrganization <urn:cmpe-lab:org> ;
+    ns2:viewService <urn:cmpe-lab:service> .
+
+<urn:cmpe-coherence:PRAC-signal-20300> a ns4:Assertion .
+
+<urn:cmpe-group:entry-1> a ns4:Assertion ;
+    ns1:entryOrdinal 1 ;
+    ns1:entrySource <urn:cmpe-group:document> ;
+    ns1:evidencePointer "EMA/PRAC/183502/2026#page=6&footnote=4" ;
+    ns1:labelKindProposal "combination-label" ;
+    ns1:profile "source-group-entry" ;
+    ns1:scopeVersion "EMA-PRAC-183502-2026-EPITT20300-footnote4" ;
+    ns1:sourceLabel "chlormadinone/ethinylestradiol" .
+
+<urn:cmpe-group:entry-10> a ns4:Assertion ;
+    ns1:entryOrdinal 10 ;
+    ns1:entrySource <urn:cmpe-group:document> ;
+    ns1:evidencePointer "EMA/PRAC/183502/2026#page=6&footnote=4" ;
+    ns1:labelKindProposal "combination-label" ;
+    ns1:profile "source-group-entry" ;
+    ns1:scopeVersion "EMA-PRAC-183502-2026-EPITT20300-footnote4" ;
+    ns1:sourceLabel "drospirenone/ethinylestradiol" .
+
+<urn:cmpe-group:entry-11> a ns4:Assertion ;
+    ns1:entryOrdinal 11 ;
+    ns1:entrySource <urn:cmpe-group:document> ;
+    ns1:evidencePointer "EMA/PRAC/183502/2026#page=6&footnote=4" ;
+    ns1:labelKindProposal "unqualified-name" ;
+    ns1:profile "source-group-entry" ;
+    ns1:scopeVersion "EMA-PRAC-183502-2026-EPITT20300-footnote4" ;
+    ns1:sourceLabel "dydrogesterone" .
+
+<urn:cmpe-group:entry-12> a ns4:Assertion ;
+    ns1:entryOrdinal 12 ;
+    ns1:entrySource <urn:cmpe-group:document> ;
+    ns1:evidencePointer "EMA/PRAC/183502/2026#page=6&footnote=4" ;
+    ns1:labelKindProposal "combination-label" ;
+    ns1:profile "source-group-entry" ;
+    ns1:scopeVersion "EMA-PRAC-183502-2026-EPITT20300-footnote4" ;
+    ns1:sourceLabel "dydrogesterone/estradiol" .
+
+<urn:cmpe-group:entry-13> a ns4:Assertion ;
+    ns1:entryOrdinal 13 ;
+    ns1:entrySource <urn:cmpe-group:document> ;
+    ns1:evidencePointer "EMA/PRAC/183502/2026#page=6&footnote=4" ;
+    ns1:labelKindProposal "combination-label" ;
+    ns1:profile "source-group-entry" ;
+    ns1:scopeVersion "EMA-PRAC-183502-2026-EPITT20300-footnote4" ;
+    ns1:sourceLabel "estradiol/levonorgestrel" .
+
+<urn:cmpe-group:entry-14> a ns4:Assertion ;
+    ns1:entryOrdinal 14 ;
+    ns1:entrySource <urn:cmpe-group:document> ;
+    ns1:evidencePointer "EMA/PRAC/183502/2026#page=6&footnote=4" ;
+    ns1:labelKindProposal "combination-label" ;
+    ns1:profile "source-group-entry" ;
+    ns1:scopeVersion "EMA-PRAC-183502-2026-EPITT20300-footnote4" ;
+    ns1:sourceLabel "estradiol/norethisterone" .
+
+<urn:cmpe-group:entry-15> a ns4:Assertion ;
+    ns1:entryOrdinal 15 ;
+    ns1:entrySource <urn:cmpe-group:document> ;
+    ns1:evidencePointer "EMA/PRAC/183502/2026#page=6&footnote=4" ;
+    ns1:labelKindProposal "combination-label" ;
+    ns1:profile "source-group-entry" ;
+    ns1:scopeVersion "EMA-PRAC-183502-2026-EPITT20300-footnote4" ;
+    ns1:sourceLabel "estradiol/progesterone" .
+
+<urn:cmpe-group:entry-16> a ns4:Assertion ;
+    ns1:entryOrdinal 16 ;
+    ns1:entrySource <urn:cmpe-group:document> ;
+    ns1:evidencePointer "EMA/PRAC/183502/2026#page=6&footnote=4" ;
+    ns1:labelKindProposal "combination-label" ;
+    ns1:profile "source-group-entry" ;
+    ns1:scopeVersion "EMA-PRAC-183502-2026-EPITT20300-footnote4" ;
+    ns1:sourceLabel "estradiol valerate/norgestrel" .
+
+<urn:cmpe-group:entry-17> a ns4:Assertion ;
+    ns1:entryOrdinal 17 ;
+    ns1:entrySource <urn:cmpe-group:document> ;
+    ns1:evidencePointer "EMA/PRAC/183502/2026#page=6&footnote=4" ;
+    ns1:labelKindProposal "combination-label" ;
+    ns1:profile "source-group-entry" ;
+    ns1:scopeVersion "EMA-PRAC-183502-2026-EPITT20300-footnote4" ;
+    ns1:sourceLabel "ethinylestradiol/gestodene" .
+
+<urn:cmpe-group:entry-18> a ns4:Assertion ;
+    ns1:entryOrdinal 18 ;
+    ns1:entrySource <urn:cmpe-group:document> ;
+    ns1:evidencePointer "EMA/PRAC/183502/2026#page=6&footnote=4" ;
+    ns1:labelKindProposal "combination-label" ;
+    ns1:profile "source-group-entry" ;
+    ns1:scopeVersion "EMA-PRAC-183502-2026-EPITT20300-footnote4" ;
+    ns1:sourceLabel "ethinylestradiol/levonorgestrel" .
+
+<urn:cmpe-group:entry-19> a ns4:Assertion ;
+    ns1:entryOrdinal 19 ;
+    ns1:entrySource <urn:cmpe-group:document> ;
+    ns1:evidencePointer "EMA/PRAC/183502/2026#page=6&footnote=4" ;
+    ns1:labelKindProposal "combination-label" ;
+    ns1:profile "source-group-entry" ;
+    ns1:scopeVersion "EMA-PRAC-183502-2026-EPITT20300-footnote4" ;
+    ns1:sourceLabel "ethinylestradiol/norelgestromin" .
+
+<urn:cmpe-group:entry-2> a ns4:Assertion ;
+    ns1:entryOrdinal 2 ;
+    ns1:entrySource <urn:cmpe-group:document> ;
+    ns1:evidencePointer "EMA/PRAC/183502/2026#page=6&footnote=4" ;
+    ns1:labelKindProposal "combination-label" ;
+    ns1:profile "source-group-entry" ;
+    ns1:scopeVersion "EMA-PRAC-183502-2026-EPITT20300-footnote4" ;
+    ns1:sourceLabel "cyproterone acetate/estradiol valerate" .
+
+<urn:cmpe-group:entry-20> a ns4:Assertion ;
+    ns1:entryOrdinal 20 ;
+    ns1:entrySource <urn:cmpe-group:document> ;
+    ns1:evidencePointer "EMA/PRAC/183502/2026#page=6&footnote=4" ;
+    ns1:labelKindProposal "combination-label" ;
+    ns1:profile "source-group-entry" ;
+    ns1:scopeVersion "EMA-PRAC-183502-2026-EPITT20300-footnote4" ;
+    ns1:sourceLabel "ethinylestradiol/norethisterone" .
+
+<urn:cmpe-group:entry-21> a ns4:Assertion ;
+    ns1:entryOrdinal 21 ;
+    ns1:entrySource <urn:cmpe-group:document> ;
+    ns1:evidencePointer "EMA/PRAC/183502/2026#page=6&footnote=4" ;
+    ns1:labelKindProposal "combination-label" ;
+    ns1:profile "source-group-entry" ;
+    ns1:scopeVersion "EMA-PRAC-183502-2026-EPITT20300-footnote4" ;
+    ns1:sourceLabel "ethinylestradiol/norgestimate" .
+
+<urn:cmpe-group:entry-22> a ns4:Assertion ;
+    ns1:entryOrdinal 22 ;
+    ns1:entrySource <urn:cmpe-group:document> ;
+    ns1:evidencePointer "EMA/PRAC/183502/2026#page=6&footnote=4" ;
+    ns1:labelKindProposal "unqualified-name" ;
+    ns1:profile "source-group-entry" ;
+    ns1:scopeVersion "EMA-PRAC-183502-2026-EPITT20300-footnote4" ;
+    ns1:sourceLabel "levonorgestrel" .
+
+<urn:cmpe-group:entry-23> a ns4:Assertion ;
+    ns1:entryOrdinal 23 ;
+    ns1:entrySource <urn:cmpe-group:document> ;
+    ns1:evidencePointer "EMA/PRAC/183502/2026#page=6&footnote=4" ;
+    ns1:labelKindProposal "unqualified-name" ;
+    ns1:profile "source-group-entry" ;
+    ns1:scopeVersion "EMA-PRAC-183502-2026-EPITT20300-footnote4" ;
+    ns1:sourceLabel "lynestrenol" .
+
+<urn:cmpe-group:entry-24> a ns4:Assertion ;
+    ns1:entryOrdinal 24 ;
+    ns1:entrySource <urn:cmpe-group:document> ;
+    ns1:evidencePointer "EMA/PRAC/183502/2026#page=6&footnote=4" ;
+    ns1:labelKindProposal "qualified-label" ;
+    ns1:profile "source-group-entry" ;
+    ns1:scopeVersion "EMA-PRAC-183502-2026-EPITT20300-footnote4" ;
+    ns1:sourceLabel "medroxyprogesterone <100 mg oral formulations" .
+
+<urn:cmpe-group:entry-25> a ns4:Assertion ;
+    ns1:entryOrdinal 25 ;
+    ns1:entrySource <urn:cmpe-group:document> ;
+    ns1:evidencePointer "EMA/PRAC/183502/2026#page=6&footnote=4" ;
+    ns1:labelKindProposal "unqualified-name" ;
+    ns1:profile "source-group-entry" ;
+    ns1:scopeVersion "EMA-PRAC-183502-2026-EPITT20300-footnote4" ;
+    ns1:sourceLabel "megestrol" .
+
+<urn:cmpe-group:entry-26> a ns4:Assertion ;
+    ns1:entryOrdinal 26 ;
+    ns1:entrySource <urn:cmpe-group:document> ;
+    ns1:evidencePointer "EMA/PRAC/183502/2026#page=6&footnote=4" ;
+    ns1:labelKindProposal "combination-label" ;
+    ns1:profile "source-group-entry" ;
+    ns1:scopeVersion "EMA-PRAC-183502-2026-EPITT20300-footnote4" ;
+    ns1:sourceLabel "nomegestrol acetate/estradiol" .
+
+<urn:cmpe-group:entry-27> a ns4:Assertion ;
+    ns1:entryOrdinal 27 ;
+    ns1:entrySource <urn:cmpe-group:document> ;
+    ns1:evidencePointer "EMA/PRAC/183502/2026#page=6&footnote=4" ;
+    ns1:labelKindProposal "unqualified-name" ;
+    ns1:profile "source-group-entry" ;
+    ns1:scopeVersion "EMA-PRAC-183502-2026-EPITT20300-footnote4" ;
+    ns1:sourceLabel "norethisterone" .
+
+<urn:cmpe-group:entry-28> a ns4:Assertion ;
+    ns1:entryOrdinal 28 ;
+    ns1:entrySource <urn:cmpe-group:document> ;
+    ns1:evidencePointer "EMA/PRAC/183502/2026#page=6&footnote=4" ;
+    ns1:labelKindProposal "unqualified-name" ;
+    ns1:profile "source-group-entry" ;
+    ns1:scopeVersion "EMA-PRAC-183502-2026-EPITT20300-footnote4" ;
+    ns1:sourceLabel "progesterone" .
+
+<urn:cmpe-group:entry-3> a ns4:Assertion ;
+    ns1:entryOrdinal 3 ;
+    ns1:entrySource <urn:cmpe-group:document> ;
+    ns1:evidencePointer "EMA/PRAC/183502/2026#page=6&footnote=4" ;
+    ns1:labelKindProposal "combination-label" ;
+    ns1:profile "source-group-entry" ;
+    ns1:scopeVersion "EMA-PRAC-183502-2026-EPITT20300-footnote4" ;
+    ns1:sourceLabel "cyproterone/ethinylestradiol" .
+
+<urn:cmpe-group:entry-4> a ns4:Assertion ;
+    ns1:entryOrdinal 4 ;
+    ns1:entrySource <urn:cmpe-group:document> ;
+    ns1:evidencePointer "EMA/PRAC/183502/2026#page=6&footnote=4" ;
+    ns1:labelKindProposal "unqualified-name" ;
+    ns1:profile "source-group-entry" ;
+    ns1:scopeVersion "EMA-PRAC-183502-2026-EPITT20300-footnote4" ;
+    ns1:sourceLabel "dienogest" .
+
+<urn:cmpe-group:entry-5> a ns4:Assertion ;
+    ns1:entryOrdinal 5 ;
+    ns1:entrySource <urn:cmpe-group:document> ;
+    ns1:evidencePointer "EMA/PRAC/183502/2026#page=6&footnote=4" ;
+    ns1:labelKindProposal "combination-label" ;
+    ns1:profile "source-group-entry" ;
+    ns1:scopeVersion "EMA-PRAC-183502-2026-EPITT20300-footnote4" ;
+    ns1:sourceLabel "dienogest/estradiol" .
+
+<urn:cmpe-group:entry-6> a ns4:Assertion ;
+    ns1:entryOrdinal 6 ;
+    ns1:entrySource <urn:cmpe-group:document> ;
+    ns1:evidencePointer "EMA/PRAC/183502/2026#page=6&footnote=4" ;
+    ns1:labelKindProposal "combination-label" ;
+    ns1:profile "source-group-entry" ;
+    ns1:scopeVersion "EMA-PRAC-183502-2026-EPITT20300-footnote4" ;
+    ns1:sourceLabel "dienogest/ethinylestradiol" .
+
+<urn:cmpe-group:entry-7> a ns4:Assertion ;
+    ns1:entryOrdinal 7 ;
+    ns1:entrySource <urn:cmpe-group:document> ;
+    ns1:evidencePointer "EMA/PRAC/183502/2026#page=6&footnote=4" ;
+    ns1:labelKindProposal "unqualified-name" ;
+    ns1:profile "source-group-entry" ;
+    ns1:scopeVersion "EMA-PRAC-183502-2026-EPITT20300-footnote4" ;
+    ns1:sourceLabel "drospirenone" .
+
+<urn:cmpe-group:entry-8> a ns4:Assertion ;
+    ns1:entryOrdinal 8 ;
+    ns1:entrySource <urn:cmpe-group:document> ;
+    ns1:evidencePointer "EMA/PRAC/183502/2026#page=6&footnote=4" ;
+    ns1:labelKindProposal "combination-label" ;
+    ns1:profile "source-group-entry" ;
+    ns1:scopeVersion "EMA-PRAC-183502-2026-EPITT20300-footnote4" ;
+    ns1:sourceLabel "drospirenone/estetrol" .
+
+<urn:cmpe-group:entry-9> a ns4:Assertion ;
+    ns1:entryOrdinal 9 ;
+    ns1:entrySource <urn:cmpe-group:document> ;
+    ns1:evidencePointer "EMA/PRAC/183502/2026#page=6&footnote=4" ;
+    ns1:labelKindProposal "combination-label" ;
+    ns1:profile "source-group-entry" ;
+    ns1:scopeVersion "EMA-PRAC-183502-2026-EPITT20300-footnote4" ;
+    ns1:sourceLabel "drospirenone/estradiol" .
+
+<urn:cmpe-group:scope> a ns4:Assertion ;
+    ns1:profile "source-group-scope" ;
+    ns1:scopeEntry <urn:cmpe-group:entry-1>,
+        <urn:cmpe-group:entry-10>,
+        <urn:cmpe-group:entry-11>,
+        <urn:cmpe-group:entry-12>,
+        <urn:cmpe-group:entry-13>,
+        <urn:cmpe-group:entry-14>,
+        <urn:cmpe-group:entry-15>,
+        <urn:cmpe-group:entry-16>,
+        <urn:cmpe-group:entry-17>,
+        <urn:cmpe-group:entry-18>,
+        <urn:cmpe-group:entry-19>,
+        <urn:cmpe-group:entry-2>,
+        <urn:cmpe-group:entry-20>,
+        <urn:cmpe-group:entry-21>,
+        <urn:cmpe-group:entry-22>,
+        <urn:cmpe-group:entry-23>,
+        <urn:cmpe-group:entry-24>,
+        <urn:cmpe-group:entry-25>,
+        <urn:cmpe-group:entry-26>,
+        <urn:cmpe-group:entry-27>,
+        <urn:cmpe-group:entry-28>,
+        <urn:cmpe-group:entry-3>,
+        <urn:cmpe-group:entry-4>,
+        <urn:cmpe-group:entry-5>,
+        <urn:cmpe-group:entry-6>,
+        <urn:cmpe-group:entry-7>,
+        <urn:cmpe-group:entry-8>,
+        <urn:cmpe-group:entry-9> ;
+    ns1:scopeSource <urn:cmpe-group:document> ;
+    ns1:scopeVersion "EMA-PRAC-183502-2026-EPITT20300-footnote4" ;
+    ns1:sourceLabel "Progestogens" .
+
+<urn:cmpe-group:scopeMapping> a ns5:StructuredClaim ;
+    ns5:claimOrigin "mapping-interpretation" ;
+    ns5:claimSubject <urn:cmpe-coherence:PRAC-signal-20300> ;
+    ns5:evidencePointer "EMA/PRAC/183502/2026#page=6&footnote=4" ;
+    ns5:objectResource <urn:cmpe-group:scope> ;
+    ns5:polarity "positive" ;
+    ns5:predicateIRI "https://w3id.org/cm-pharme/experimental/source-group/signalScope"^^xsd:anyURI .
+
+<urn:cmpe-lab:assessment> a ns4:RiskAssessmentActivity ;
+    ns2:assessmentScenario <urn:cmpe-lab:scenario> ;
+    ns2:profile "risk-assessment" .
+
+<urn:cmpe-lab:assessment2> a ns4:RiskAssessmentActivity ;
+    ns2:assessmentScenario <urn:cmpe-lab:scenario> ;
+    ns2:profile "risk-assessment" .
+
+<urn:cmpe-lab:assessorA> a ns4:Organization .
+
+<urn:cmpe-lab:assessorB> a ns4:Organization .
+
+<urn:cmpe-lab:cap> a ns4:EnterpriseCapability ;
+    ns4:capabilityBearer <urn:cmpe-lab:org> .
+
+<urn:cmpe-lab:contactClaim> a ns4:Assertion ;
+    ns3:claimText "Two organizations met; no agreement is asserted." .
+
+<urn:cmpe-lab:dependency> a ns4:SupplyDependency ;
+    ns4:dependencyDependent <urn:cmpe-lab:dependent> ;
+    ns4:dependencyProvider <urn:cmpe-lab:provider> .
+
+<urn:cmpe-lab:dependent> a ns4:DependentEntity .
+
+<urn:cmpe-lab:deployment> a ns4:SystemDeploymentActivity ;
+    ns2:atTime "2026-10-01T10:00:00+00:00"^^xsd:dateTime ;
+    ns2:componentVersion "1.0" ;
+    ns2:deploymentComponent <urn:cmpe-lab:component> ;
+    ns2:deploymentOrganization <urn:cmpe-lab:operator> ;
+    ns2:profile "deployment" .
+
+<urn:cmpe-lab:deployment2> a ns4:SystemDeploymentActivity ;
+    ns2:atTime "2026-10-03T10:00:00+00:00"^^xsd:dateTime ;
+    ns2:componentVersion "2.0" ;
+    ns2:deploymentComponent <urn:cmpe-lab:component> ;
+    ns2:deploymentOrganization <urn:cmpe-lab:operator2> ;
+    ns2:profile "deployment" .
+
+<urn:cmpe-lab:jA> a ns4:RegulatoryJurisdiction .
+
+<urn:cmpe-lab:manufacturedProduct> a ns4:MedicinalProduct .
+
+<urn:cmpe-lab:manufacturingSite> a ns4:Facility .
+
+<urn:cmpe-lab:medicine> a ns4:MedicinalProduct .
+
+<urn:cmpe-lab:operator2> a ns4:Organization .
+
+<urn:cmpe-lab:plan> a ns4:RiskTreatmentPlan ;
+    ns2:planRiskResult <urn:cmpe-lab:riskResult> ;
+    ns2:profile "risk-plan" .
+
+<urn:cmpe-lab:product> a ns4:MedicinalProduct .
+
+<urn:cmpe-lab:provider> a ns4:ProviderEntity .
+
+<urn:cmpe-lab:pvRule> a ns4:PharmacovigilanceRequirement ;
+    ns2:profile "pv-requirement" ;
+    ns2:pvRequirementJurisdiction <urn:cmpe-lab:jA> .
+
+<urn:cmpe-lab:riskFacility> a ns4:Facility .
+
+<urn:cmpe-lab:riskResult2> a ns4:Assertion ;
+    ns2:atTime "2026-10-02T10:00:00+00:00"^^xsd:dateTime ;
+    ns2:citesSourceRecord <urn:cmpe-lab:source> ;
+    ns2:conclusion "revised assessment" ;
+    ns2:profile "risk-result" ;
+    ns2:resultAssessment <urn:cmpe-lab:assessment2> .
+
+<urn:cmpe-lab:service> a ns4:ServiceOfferingSpecification ;
+    ns2:profile "ba-service",
+        "pharma-service" ;
+    ns2:serviceCapability <urn:cmpe-lab:cap> ;
+    ns3:serviceFacility <urn:cmpe-lab:serviceFacility> ;
+    ns3:serviceProduct <urn:cmpe-lab:serviceProduct> .
+
+<urn:cmpe-lab:serviceFacility> a ns4:Facility .
+
+<urn:cmpe-lab:serviceProduct> a ns4:MedicinalProduct .
+
+<urn:cmpe-lab:signalAssessment> a ns4:SignalAssessmentActivity ;
+    ns2:profile "attributed-signal-assessment",
+        "signal-assessment" ;
+    ns2:signalAssessmentTarget <urn:cmpe-lab:signal> ;
+    ns3:assessmentOrganization <urn:cmpe-lab:assessorA> .
+
+<urn:cmpe-lab:signalAssessment2> a ns4:SignalAssessmentActivity ;
+    ns2:profile "attributed-signal-assessment",
+        "signal-assessment" ;
+    ns2:signalAssessmentTarget <urn:cmpe-lab:signal> ;
+    ns3:assessmentOrganization <urn:cmpe-lab:assessorB> .
+
+<urn:cmpe-lab:study> a ns4:SourceRecord .
+
+<urn:cmpe-lab:substance> a ns4:PharmaceuticalSubstance .
+
+<urn:cmpe-lab:transform2> a ns4:ProvenanceActivity ;
+    ns2:atTime "2026-10-04T10:00:00+00:00"^^xsd:dateTime ;
+    ns2:digitalActivityDeployment <urn:cmpe-lab:deployment2> ;
+    ns2:profile "digital-activity",
+        "manufacturing-data-activity" ;
+    ns3:activityResponsibleOrganization <urn:cmpe-lab:processor> ;
+    ns3:supportsManufacturing <urn:cmpe-lab:manufacturing> .
+
+<urn:cmpe-lab:commitment> a ns4:Assertion,
+        ns4:SupportedAssertionRole ;
+    ns2:profile "commitment-assertion" ;
+    ns3:commitmentActor <urn:cmpe-lab:org>,
+        <urn:cmpe-lab:org2> ;
+    ns3:commitmentText "Synthetic organizations commit to the stated joint service." .
+
+<urn:cmpe-lab:commitmentRecord> a ns4:EvidenceItem,
+        ns4:EvidenceSourceRecordRole,
+        ns4:SourceRecord .
+
+<urn:cmpe-lab:manufacturing> a ns4:ManufacturingActivity ;
+    ns2:profile "manufacturing-context" ;
+    ns3:manufacturingFacility <urn:cmpe-lab:manufacturingSite> ;
+    ns3:manufacturingProduct <urn:cmpe-lab:manufacturedProduct> .
+
+<urn:cmpe-lab:operator> a ns4:Organization .
+
+<urn:cmpe-lab:processor> a ns4:Organization ;
+    owl:differentFrom <urn:cmpe-lab:operator> .
+
+<urn:cmpe-lab:reportCopy> a ns4:SourceRecord ;
+    ns2:profile "report-carrier" ;
+    ns3:carrierClaim <urn:cmpe-lab:reportedClaim>,
+        <urn:cmpe-lab:updatedClaim> ;
+    ns3:caseIdentifier "SYNTHETIC-CASE-1" ;
+    ns3:caseIdentifierScheme "synthetic-local-case-id-not-E2B-conformance" .
+
+<urn:cmpe-lab:reportedClaim> a ns4:Assertion ;
+    owl:differentFrom <urn:cmpe-lab:updatedClaim> ;
+    ns2:profile "report-claim" ;
+    ns3:claimText "A source reports a suspected event; causation is unestablished." .
+
+<urn:cmpe-lab:riskResult> a ns4:Assertion ;
+    ns2:atTime "2026-10-01T10:00:00+00:00"^^xsd:dateTime ;
+    ns2:citesSourceRecord <urn:cmpe-lab:source> ;
+    ns2:conclusion "review supply continuity" ;
+    ns2:profile "risk-result" ;
+    ns2:resultAssessment <urn:cmpe-lab:assessment> .
+
+<urn:cmpe-lab:scenario> a ns4:Assertion ;
+    ns2:profile "risk-scenario" ;
+    ns2:scenarioProduct <urn:cmpe-lab:product> ;
+    ns3:scenarioDependency <urn:cmpe-lab:dependency> ;
+    ns3:scenarioFacility <urn:cmpe-lab:riskFacility> .
+
+<urn:cmpe-lab:source> a ns4:SourceRecord .
+
+<urn:cmpe-lab:transform> a ns4:ProvenanceActivity ;
+    ns2:atTime "2026-10-02T10:00:00+00:00"^^xsd:dateTime ;
+    ns2:digitalActivityDeployment <urn:cmpe-lab:deployment> ;
+    ns2:profile "digital-activity",
+        "manufacturing-data-activity" ;
+    ns3:activityResponsibleOrganization <urn:cmpe-lab:processor> ;
+    ns3:supportsManufacturing <urn:cmpe-lab:manufacturing> .
+
+<urn:cmpe-lab:updatedClaim> a ns4:Assertion ;
+    ns2:profile "report-claim" ;
+    ns3:claimText "Follow-up changes the reported clinical claim." .
+
+<urn:cmpe-lab:component> a ns4:DigitalInformationSystemComponent .
+
+<urn:cmpe-lab:org2> a ns4:Organization,
+        ns4:PartnerOrganizationRole .
+
+<urn:cmpe-lab:org> a ns4:Organization,
+        ns4:PartnerOrganizationRole ;
+    owl:differentFrom <urn:cmpe-lab:org2> .
+
+<urn:cmpe-lab:report> a ns4:SourceRecord ;
+    owl:differentFrom <urn:cmpe-lab:reportCopy> ;
+    ns2:profile "report-carrier" ;
+    ns3:carrierClaim <urn:cmpe-lab:reportedClaim> ;
+    ns3:caseIdentifier "SYNTHETIC-CASE-1" ;
+    ns3:caseIdentifierScheme "synthetic-local-case-id-not-E2B-conformance" .
+
+<urn:cmpe-lab:signal> a ns4:Assertion ;
+    ns2:citesSourceRecord <urn:cmpe-lab:report>,
+        <urn:cmpe-lab:study> ;
+    ns2:profile "safety-signal" ;
+    ns2:signalProduct <urn:cmpe-lab:medicine> ;
+    ns2:signalSubstance <urn:cmpe-lab:substance> .
+
+<urn:cmpe-group:document> a ns4:SourceRecord ;
+    ns5:sourceSHA256 "f645702d0abbbae65654ba1fea63f450fbd2827a6657714b832e088d667c38d9" ;
+    ns5:sourceURL "https://www.ema.europa.eu/en/documents/prac-recommendation/prac-recommendations-signals-adopted-31-august-3-september-2026-prac-meeting_en.pdf"^^xsd:anyURI .

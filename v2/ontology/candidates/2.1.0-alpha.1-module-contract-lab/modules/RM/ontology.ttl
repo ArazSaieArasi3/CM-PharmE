@@ -1,0 +1,207 @@
+@prefix c: <https://w3id.org/cm-pharme/2.1/> .
+@prefix l: <https://w3id.org/cm-pharme/experimental/four-domain/> .
+@prefix ns1: <https://w3id.org/cm-pharme/2.1/meta/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix r: <https://w3id.org/cm-pharme/experimental/refinement/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+prov:category a owl:AnnotationProperty ;
+    rdfs:comment "Classify prov-o terms into three categories, including 'starting-point', 'qualifed', and 'extended'. This classification is used by the prov-o html document to gently introduce prov-o terms to its users. "@en ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> .
+
+prov:component a owl:AnnotationProperty ;
+    rdfs:comment "Classify prov-o terms into six components according to prov-dm, including 'agents-responsibility', 'alternate', 'annotations', 'collections', 'derivations', and 'entities-activities'. This classification is used so that readers of prov-o specification can find its correspondence with the prov-dm specification."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> .
+
+prov:constraints a owl:AnnotationProperty ;
+    rdfs:comment "A reference to the principal section of the PROV-CONSTRAINTS document that describes this concept."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
+    rdfs:subPropertyOf rdfs:seeAlso .
+
+prov:definition a owl:AnnotationProperty ;
+    rdfs:comment "A definition quoted from PROV-DM or PROV-CONSTRAINTS that describes the concept expressed with this OWL term."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> .
+
+prov:dm a owl:AnnotationProperty ;
+    rdfs:comment "A reference to the principal section of the PROV-DM document that describes this concept."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
+    rdfs:subPropertyOf rdfs:seeAlso .
+
+prov:n a owl:AnnotationProperty ;
+    rdfs:comment "A reference to the principal section of the PROV-DM document that describes this concept."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
+    rdfs:subPropertyOf rdfs:seeAlso .
+
+ns1:conceptualModelVersion a owl:AnnotationProperty .
+
+ns1:conceptualModule a owl:AnnotationProperty .
+
+ns1:ontoumlStereotype a owl:AnnotationProperty .
+
+l:assessmentScenario a owl:ObjectProperty ;
+    rdfs:domain c:RiskAssessmentActivity ;
+    rdfs:range c:Assertion .
+
+l:atTime a owl:DatatypeProperty ;
+    rdfs:range xsd:dateTime .
+
+l:citesSourceRecord a owl:ObjectProperty ;
+    rdfs:domain c:Assertion ;
+    rdfs:range c:SourceRecord .
+
+l:conclusion a owl:DatatypeProperty ;
+    rdfs:range xsd:string .
+
+l:implementsRiskPlan a owl:ObjectProperty ;
+    rdfs:domain c:RiskTreatmentActivity ;
+    rdfs:range c:RiskTreatmentPlan .
+
+l:planRiskResult a owl:ObjectProperty ;
+    rdfs:domain c:RiskTreatmentPlan ;
+    rdfs:range c:Assertion .
+
+l:profile a owl:DatatypeProperty ;
+    rdfs:range xsd:string .
+
+l:resultAssessment a owl:ObjectProperty ;
+    rdfs:domain c:Assertion ;
+    rdfs:range c:RiskAssessmentActivity .
+
+l:reviewNewResult a owl:ObjectProperty ;
+    rdfs:domain c:RiskReviewActivity ;
+    rdfs:range c:Assertion .
+
+l:reviewPriorResult a owl:ObjectProperty ;
+    rdfs:domain c:RiskReviewActivity ;
+    rdfs:range c:Assertion .
+
+l:scenarioProduct a owl:ObjectProperty ;
+    rdfs:domain c:Assertion ;
+    rdfs:range c:MedicinalProduct ;
+    rdfs:subPropertyOf c:assertionAboutProduct .
+
+<https://w3id.org/cm-pharme/experimental/modules/RM/2026-10-09> a owl:Ontology ;
+    rdfs:comment "Bounded selected-signature interface projection. Not an approved replacement or a locality module. Dependencies flattened; no remote imports." .
+
+r:scenarioDependency a owl:ObjectProperty ;
+    rdfs:domain c:Assertion ;
+    rdfs:range c:SupplyDependency .
+
+r:scenarioFacility a owl:ObjectProperty ;
+    rdfs:domain c:Assertion ;
+    rdfs:range c:Facility .
+
+c:Facility a owl:Class ;
+    rdfs:label "Facility"@en ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "core" ;
+    ns1:ontoumlStereotype "Kind" .
+
+c:RiskTreatmentActivity a owl:Class ;
+    rdfs:label "Risk Treatment Activity"@en ;
+    owl:disjointWith c:RiskTreatmentPlan ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "extension" ;
+    ns1:ontoumlStereotype "Event" .
+
+c:SourceRecord a owl:Class ;
+    rdfs:label "Source Record"@en ;
+    rdfs:subClassOf prov:Entity ;
+    skos:closeMatch prov:Entity ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "x-infra" ;
+    ns1:ontoumlStereotype "Kind" .
+
+c:assertionAboutProduct a owl:ObjectProperty ;
+    rdfs:comment "Bounded product-target aboutness; the full polymorphic assertion target family remains for G3."@en ;
+    rdfs:domain c:Assertion ;
+    rdfs:range c:MedicinalProduct .
+
+prov:Entity a owl:Class ;
+    rdfs:label "Entity" ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
+    prov:category "starting-point" ;
+    prov:component "entities-activities" ;
+    prov:constraints "http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#prov-dm-constraints-fig"^^xsd:anyURI ;
+    prov:definition "An entity is a physical, digital, conceptual, or other kind of thing with some fixed aspects; entities may be real or imaginary. "@en ;
+    prov:dm "http://www.w3.org/TR/2013/REC-prov-dm-20130430/#term-entity"^^xsd:anyURI ;
+    prov:n "http://www.w3.org/TR/2013/REC-prov-n-20130430/#expression-Entity"^^xsd:anyURI .
+
+c:MedicinalProduct a owl:Class ;
+    rdfs:label "Medicinal Product"@en ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "core" ;
+    ns1:ontoumlStereotype "Kind" .
+
+c:RiskAssessmentActivity a owl:Class ;
+    rdfs:label "Risk Assessment Activity"@en ;
+    owl:disjointWith c:Assertion ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "extension" ;
+    ns1:ontoumlStereotype "Event" .
+
+c:RiskReviewActivity a owl:Class ;
+    rdfs:comment "An occurrence reviewing an earlier risk assessment/result. It need not repeat the assessment." ;
+    owl:disjointWith c:Assertion .
+
+c:DependentEntity a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass c:SupplyDependency ;
+            owl:onProperty [ owl:inverseOf c:dependencyDependent ] ] ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:ontoumlStereotype "RoleMixin" .
+
+c:ProviderEntity a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass c:SupplyDependency ;
+            owl:onProperty [ owl:inverseOf c:dependencyProvider ] ] ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:ontoumlStereotype "RoleMixin" .
+
+c:RiskTreatmentPlan a owl:Class ;
+    rdfs:label "Risk Treatment Plan"@en ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "extension" ;
+    ns1:ontoumlStereotype "Kind" .
+
+c:dependencyDependent a owl:ObjectProperty ;
+    rdfs:domain c:SupplyDependency ;
+    rdfs:range c:DependentEntity ;
+    owl:propertyDisjointWith c:dependencyProvider .
+
+c:dependencyProvider a owl:ObjectProperty ;
+    rdfs:domain c:SupplyDependency ;
+    rdfs:range c:ProviderEntity .
+
+c:SupplyDependency a owl:Class ;
+    rdfs:label "Supply Dependency"@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass c:ProviderEntity ;
+            owl:onProperty c:dependencyProvider ],
+        [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass c:DependentEntity ;
+            owl:onProperty c:dependencyDependent ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass c:ProviderEntity ;
+            owl:onProperty c:dependencyProvider ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass c:DependentEntity ;
+            owl:onProperty c:dependencyDependent ] ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "extension" ;
+    ns1:ontoumlStereotype "Relator" .
+
+c:Assertion a owl:Class ;
+    rdfs:label "Assertion"@en ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "x-infra" ;
+    ns1:ontoumlStereotype "Kind" .

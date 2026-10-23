@@ -1,0 +1,46 @@
+@prefix c: <https://w3id.org/cm-pharme/2.1/> .
+@prefix l: <https://w3id.org/cm-pharme/experimental/four-domain/> .
+@prefix ns1: <https://w3id.org/cm-pharme/experimental/refinement/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix t: <urn:cmpe-lab:> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+t:digitalService a c:ServiceOfferingSpecification ;
+    l:digitalServiceActivity t:transform ;
+    l:digitalServiceComponent t:component ;
+    l:profile "digital-service",
+        "manufacturing-digital-service" .
+
+t:manufacturing a c:ManufacturingActivity ;
+    l:profile "manufacturing-context" ;
+    ns1:manufacturingFacility t:manufacturingSite ;
+    ns1:manufacturingProduct t:manufacturedProduct .
+
+t:record a c:SourceRecord ;
+    l:profile "digital-record" ;
+    l:recordDigitalActivity t:transform .
+
+t:deployment a c:SystemDeploymentActivity ;
+    l:atTime "2026-10-01T10:00:00+00:00"^^xsd:dateTime ;
+    l:componentVersion "1.0" ;
+    l:deploymentComponent t:component ;
+    l:deploymentOrganization t:operator ;
+    l:profile "deployment" .
+
+t:manufacturedProduct a c:MedicinalProduct .
+
+t:manufacturingSite a c:Facility .
+
+t:processor a c:Organization ;
+    owl:differentFrom t:operator .
+
+t:component a c:DigitalInformationSystemComponent .
+
+t:operator a c:Organization .
+
+t:transform a c:ProvenanceActivity ;
+    l:atTime "2026-10-02T10:00:00+00:00"^^xsd:dateTime ;
+    l:digitalActivityDeployment t:deployment ;
+    l:profile "digital-activity",
+        "manufacturing-data-activity" ;
+    ns1:activityResponsibleOrganization t:processor .

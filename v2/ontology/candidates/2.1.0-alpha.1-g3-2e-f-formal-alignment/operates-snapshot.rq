@@ -1,0 +1,28 @@
+PREFIX cmpe: <https://w3id.org/cm-pharme/2.1/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+# Bind ?at (xsd:dateTime) in the query API. Returns provenance-bearing snapshot rows;
+# it does not assert atemporal cmpe:operates triples into the ontology.
+SELECT DISTINCT ?org ?facility ?operation WHERE {
+  ?operation a cmpe:FacilityOperation ;
+             cmpe:operationOrganization ?org ;
+             cmpe:operationFacility ?facility ;
+             cmpe:validFrom ?start .
+  ?org a cmpe:OperatingOrganizationRole, cmpe:Organization .
+  ?facility a cmpe:OperatedFacilityRole, cmpe:Facility .
+  FILTER(datatype(?start) = xsd:dateTime && ?start <= ?at)
+  FILTER NOT EXISTS {
+    ?operation cmpe:validFrom ?otherStart .
+    FILTER(?otherStart != ?start)
+  }
+  OPTIONAL { ?operation cmpe:validTo ?end . }
+  FILTER(!BOUND(?end) || (datatype(?end) = xsd:dateTime && ?at < ?end))
+  FILTER NOT EXISTS {
+    ?operation cmpe:validTo ?otherEnd .
+    FILTER(?otherEnd != ?end)
+  }
+  FILTER NOT EXISTS {
+    ?operation cmpe:operationFacility ?otherFacility .
+    FILTER(?otherFacility != ?facility)
+  }
+}

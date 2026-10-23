@@ -1,0 +1,35 @@
+@prefix b: <https://w3id.org/cm-pharme/experimental/reporting-context/> .
+@prefix c: <https://w3id.org/cm-pharme/2.1/> .
+@prefix e: <https://w3id.org/cm-pharme/experimental/documentary-evidence/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+e:DocumentaryClaimShape a sh:NodeShape ;
+    sh:class b:StructuredClaim ;
+    sh:not [ sh:class c:SourceRecord ] ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path e:timeLexical ],
+        [ sh:datatype xsd:string ;
+            sh:in ( "reported-occurrence" "planned" "required" "reported-capability" "assessment-content" "authorization-report" "mapping-proposal" ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path e:claimMode ],
+        [ sh:datatype xsd:string ;
+            sh:in ( "event-date" "event-upper-bound" "planned-window" "assessment-period" "not-established" ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path e:timeRole ],
+        [ sh:datatype xsd:string ;
+            sh:in ( "day" "month" "year" "unspecified" ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path e:timePrecision ] ;
+    sh:sparql [ sh:message "Mapping mode and origin must agree; every witness needs exactly one source ID." ;
+            sh:select """PREFIX b: <https://w3id.org/cm-pharme/experimental/reporting-context/> PREFIX e: <https://w3id.org/cm-pharme/experimental/documentary-evidence/> PREFIX r: <https://w3id.org/cm-pharme/experimental/refinement/>
+SELECT $this WHERE { $this e:claimMode ?m ; b:claimOrigin ?o .
+ FILTER ((?m = "mapping-proposal" && ?o != "mapping-interpretation") || (?m != "mapping-proposal" && ?o != "source-extracted") || NOT EXISTS { ?src r:carrierClaim $this ; e:sourceID ?id }) }""" ] ;
+    sh:targetSubjectsOf e:claimMode,
+        e:profile .

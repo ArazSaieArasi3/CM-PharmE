@@ -1,0 +1,209 @@
+@prefix c: <https://w3id.org/cm-pharme/2.1/> .
+@prefix l: <https://w3id.org/cm-pharme/experimental/four-domain/> .
+@prefix p: <https://w3id.org/cm-pharme/experimental/registry-policy/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix r: <https://w3id.org/cm-pharme/experimental/refinement/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+p:shape-provenance-record a sh:NodeShape ;
+    sh:class c:SourceRecord ;
+    sh:property [ sh:class c:Organization ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path prov:wasAttributedTo ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path p:version ],
+        [ sh:class c:ProvenanceActivity ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path l:recordDigitalActivity ] ;
+    sh:sparql p:associated-actor-required,
+        p:record-not-generating-activity,
+        p:revision-known-identity-collision,
+        p:revision-needs-lineage ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select """PREFIX p: <https://w3id.org/cm-pharme/experimental/registry-policy/> PREFIX c: <https://w3id.org/cm-pharme/2.1/> PREFIX l: <https://w3id.org/cm-pharme/experimental/four-domain/> PREFIX r: <https://w3id.org/cm-pharme/experimental/refinement/> PREFIX prov: <http://www.w3.org/ns/prov#> PREFIX owl: <http://www.w3.org/2002/07/owl#>
+SELECT ?this WHERE { ?this p:profile "provenance-record" }""" ] .
+
+p:shape-registry-record a sh:NodeShape ;
+    sh:class c:SourceRecord ;
+    sh:property [ sh:datatype xsd:dateTime ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path p:retrievedAt ],
+        [ sh:in ( "registration" "listing" ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path p:recordKind ],
+        [ sh:datatype xsd:date ;
+            sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:path p:marketingStart ],
+        [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path p:representsFact ],
+        [ sh:class c:Organization ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path prov:wasAttributedTo ],
+        [ sh:in ( "unknown" "source-asserted-approved" "source-asserted-not-approved" ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path p:approvalConclusion ],
+        [ sh:class c:DatasetRelease ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path p:release ],
+        [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path p:recordSubject ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path p:externalKey ],
+        [ sh:datatype xsd:date ;
+            sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:path p:marketingEnd ] ;
+    sh:sparql p:approval-needs-independent-decision,
+        p:fact-kind-subject-agreement,
+        p:marketing-interval-order,
+        p:record-not-fact,
+        p:record-not-subject ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select """PREFIX p: <https://w3id.org/cm-pharme/experimental/registry-policy/> PREFIX c: <https://w3id.org/cm-pharme/2.1/> PREFIX l: <https://w3id.org/cm-pharme/experimental/four-domain/> PREFIX r: <https://w3id.org/cm-pharme/experimental/refinement/> PREFIX prov: <http://www.w3.org/ns/prov#> PREFIX owl: <http://www.w3.org/2002/07/owl#>
+SELECT ?this WHERE { ?this p:profile "registry-record" }""" ] .
+
+p:shape-reporting-scope a sh:NodeShape ;
+    sh:class c:RegulatoryRequirement ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path p:sourceVersion ],
+        [ sh:in ( "routine" "preparedness" "crisis" ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path p:scenario ],
+        [ sh:in ( "MAH" "NCA" ) ;
+            sh:minCount 1 ;
+            sh:path p:actorRole ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path p:frequency ],
+        [ sh:in ( "CAP" "NAP" ) ;
+            sh:minCount 1 ;
+            sh:path p:authorizationRoute ],
+        [ sh:class c:RegulatoryJurisdiction ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path p:jurisdiction ],
+        [ sh:datatype xsd:dateTime ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path c:validTo ],
+        [ sh:datatype xsd:dateTime ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path c:validFrom ] ;
+    sh:sparql p:action-scope-required,
+        p:routine-scope-guard,
+        p:scope-time-order ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select """PREFIX p: <https://w3id.org/cm-pharme/experimental/registry-policy/> PREFIX c: <https://w3id.org/cm-pharme/2.1/> PREFIX l: <https://w3id.org/cm-pharme/experimental/four-domain/> PREFIX r: <https://w3id.org/cm-pharme/experimental/refinement/> PREFIX prov: <http://www.w3.org/ns/prov#> PREFIX owl: <http://www.w3.org/2002/07/owl#>
+SELECT ?this WHERE { ?this p:profile "reporting-scope" }""" ] .
+
+p:shape-shortage-claim a sh:NodeShape ;
+    sh:class c:Assertion ;
+    sh:property [ sh:class c:MedicinalProduct ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path c:assertionAboutProduct ],
+        [ sh:in ( "potential" "reported-actual" ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path p:shortageStatus ] ;
+    sh:sparql p:claim-not-situation ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select """PREFIX p: <https://w3id.org/cm-pharme/experimental/registry-policy/> PREFIX c: <https://w3id.org/cm-pharme/2.1/> PREFIX l: <https://w3id.org/cm-pharme/experimental/four-domain/> PREFIX r: <https://w3id.org/cm-pharme/experimental/refinement/> PREFIX prov: <http://www.w3.org/ns/prov#> PREFIX owl: <http://www.w3.org/2002/07/owl#>
+SELECT ?this WHERE { ?this p:profile "shortage-claim" }""" ] .
+
+p:shape-submission-record a sh:NodeShape ;
+    sh:class c:SourceRecord ;
+    sh:property [ sh:class c:Assertion ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path r:carrierClaim ],
+        [ sh:in ( "SPL" ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path p:payloadFormat ] ;
+    sh:sparql p:payload-not-product,
+        p:submission-subject-required ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select """PREFIX p: <https://w3id.org/cm-pharme/experimental/registry-policy/> PREFIX c: <https://w3id.org/cm-pharme/2.1/> PREFIX l: <https://w3id.org/cm-pharme/experimental/four-domain/> PREFIX r: <https://w3id.org/cm-pharme/experimental/refinement/> PREFIX prov: <http://www.w3.org/ns/prov#> PREFIX owl: <http://www.w3.org/2002/07/owl#>
+SELECT ?this WHERE { ?this p:profile "submission-record" }""" ] .
+
+p:action-scope-required sh:message "action-scope-required" ;
+    sh:select """PREFIX p: <https://w3id.org/cm-pharme/experimental/registry-policy/> PREFIX c: <https://w3id.org/cm-pharme/2.1/> PREFIX l: <https://w3id.org/cm-pharme/experimental/four-domain/> PREFIX r: <https://w3id.org/cm-pharme/experimental/refinement/> PREFIX prov: <http://www.w3.org/ns/prov#> PREFIX owl: <http://www.w3.org/2002/07/owl#>
+SELECT $this WHERE { $this p:scenario ?s . FILTER(?s != "routine") FILTER NOT EXISTS { $this p:actionAnnounced true ; p:scopeComplete true ; p:scopedProduct ?product . ?product a c:MedicinalProduct } }""" .
+
+p:approval-needs-independent-decision sh:message "approval-needs-independent-decision" ;
+    sh:select """PREFIX p: <https://w3id.org/cm-pharme/experimental/registry-policy/> PREFIX c: <https://w3id.org/cm-pharme/2.1/> PREFIX l: <https://w3id.org/cm-pharme/experimental/four-domain/> PREFIX r: <https://w3id.org/cm-pharme/experimental/refinement/> PREFIX prov: <http://www.w3.org/ns/prov#> PREFIX owl: <http://www.w3.org/2002/07/owl#>
+SELECT $this WHERE { $this p:approvalConclusion ?status ; p:recordSubject ?subject . FILTER(?status != "unknown") FILTER NOT EXISTS { $this p:approvalEvidence ?e . ?e a c:SourceRecord ; p:recordKind "regulatory-decision" ; p:recordSubject ?subject . FILTER(?e != $this) FILTER NOT EXISTS { $this (owl:sameAs|^owl:sameAs)+ ?e } } }""" .
+
+p:associated-actor-required sh:message "associated-actor-required" ;
+    sh:select """PREFIX p: <https://w3id.org/cm-pharme/experimental/registry-policy/> PREFIX c: <https://w3id.org/cm-pharme/2.1/> PREFIX l: <https://w3id.org/cm-pharme/experimental/four-domain/> PREFIX r: <https://w3id.org/cm-pharme/experimental/refinement/> PREFIX prov: <http://www.w3.org/ns/prov#> PREFIX owl: <http://www.w3.org/2002/07/owl#>
+SELECT $this WHERE { $this l:recordDigitalActivity ?a . FILTER NOT EXISTS { ?a prov:wasAssociatedWith ?actor . ?actor a c:Organization } }""" .
+
+p:claim-not-situation sh:message "claim-not-situation" ;
+    sh:select """PREFIX p: <https://w3id.org/cm-pharme/experimental/registry-policy/> PREFIX c: <https://w3id.org/cm-pharme/2.1/> PREFIX l: <https://w3id.org/cm-pharme/experimental/four-domain/> PREFIX r: <https://w3id.org/cm-pharme/experimental/refinement/> PREFIX prov: <http://www.w3.org/ns/prov#> PREFIX owl: <http://www.w3.org/2002/07/owl#>
+SELECT $this WHERE { $this (owl:sameAs|^owl:sameAs)* ?s . ?s a c:MedicineShortageSituation . }""" .
+
+p:fact-kind-subject-agreement sh:message "fact-kind-subject-agreement" ;
+    sh:select """PREFIX p: <https://w3id.org/cm-pharme/experimental/registry-policy/> PREFIX c: <https://w3id.org/cm-pharme/2.1/> PREFIX l: <https://w3id.org/cm-pharme/experimental/four-domain/> PREFIX r: <https://w3id.org/cm-pharme/experimental/refinement/> PREFIX prov: <http://www.w3.org/ns/prov#> PREFIX owl: <http://www.w3.org/2002/07/owl#>
+SELECT $this WHERE { { $this p:recordKind "registration" ; p:recordSubject ?x ; p:representsFact ?f . FILTER NOT EXISTS { ?f a c:EstablishmentRegistration ; c:registrationEntity ?x } } UNION { $this p:recordKind "listing" ; p:recordSubject ?x ; p:representsFact ?f . FILTER NOT EXISTS { ?f a c:MarketListing ; c:listingPresentation ?x } } }""" .
+
+p:marketing-interval-order sh:message "marketing-interval-order" ;
+    sh:select """PREFIX p: <https://w3id.org/cm-pharme/experimental/registry-policy/> PREFIX c: <https://w3id.org/cm-pharme/2.1/> PREFIX l: <https://w3id.org/cm-pharme/experimental/four-domain/> PREFIX r: <https://w3id.org/cm-pharme/experimental/refinement/> PREFIX prov: <http://www.w3.org/ns/prov#> PREFIX owl: <http://www.w3.org/2002/07/owl#>
+SELECT $this WHERE { $this p:marketingStart ?s ; p:marketingEnd ?e . FILTER(?s >= ?e) }""" .
+
+p:payload-not-product sh:message "payload-not-product" ;
+    sh:select """PREFIX p: <https://w3id.org/cm-pharme/experimental/registry-policy/> PREFIX c: <https://w3id.org/cm-pharme/2.1/> PREFIX l: <https://w3id.org/cm-pharme/experimental/four-domain/> PREFIX r: <https://w3id.org/cm-pharme/experimental/refinement/> PREFIX prov: <http://www.w3.org/ns/prov#> PREFIX owl: <http://www.w3.org/2002/07/owl#>
+SELECT $this WHERE { $this r:carrierClaim/c:assertionAboutProduct ?p . $this (owl:sameAs|^owl:sameAs)* ?p . }""" .
+
+p:record-not-fact sh:message "record-not-fact" ;
+    sh:select """PREFIX p: <https://w3id.org/cm-pharme/experimental/registry-policy/> PREFIX c: <https://w3id.org/cm-pharme/2.1/> PREFIX l: <https://w3id.org/cm-pharme/experimental/four-domain/> PREFIX r: <https://w3id.org/cm-pharme/experimental/refinement/> PREFIX prov: <http://www.w3.org/ns/prov#> PREFIX owl: <http://www.w3.org/2002/07/owl#>
+SELECT $this WHERE { $this p:representsFact ?x . $this (owl:sameAs|^owl:sameAs)* ?x . }""" .
+
+p:record-not-generating-activity sh:message "record-not-generating-activity" ;
+    sh:select """PREFIX p: <https://w3id.org/cm-pharme/experimental/registry-policy/> PREFIX c: <https://w3id.org/cm-pharme/2.1/> PREFIX l: <https://w3id.org/cm-pharme/experimental/four-domain/> PREFIX r: <https://w3id.org/cm-pharme/experimental/refinement/> PREFIX prov: <http://www.w3.org/ns/prov#> PREFIX owl: <http://www.w3.org/2002/07/owl#>
+SELECT $this WHERE { $this l:recordDigitalActivity ?a . $this (owl:sameAs|^owl:sameAs)* ?a . }""" .
+
+p:record-not-subject sh:message "record-not-subject" ;
+    sh:select """PREFIX p: <https://w3id.org/cm-pharme/experimental/registry-policy/> PREFIX c: <https://w3id.org/cm-pharme/2.1/> PREFIX l: <https://w3id.org/cm-pharme/experimental/four-domain/> PREFIX r: <https://w3id.org/cm-pharme/experimental/refinement/> PREFIX prov: <http://www.w3.org/ns/prov#> PREFIX owl: <http://www.w3.org/2002/07/owl#>
+SELECT $this WHERE { $this p:recordSubject ?x . $this (owl:sameAs|^owl:sameAs)* ?x . }""" .
+
+p:revision-known-identity-collision sh:message "revision-known-identity-collision" ;
+    sh:select """PREFIX p: <https://w3id.org/cm-pharme/experimental/registry-policy/> PREFIX c: <https://w3id.org/cm-pharme/2.1/> PREFIX l: <https://w3id.org/cm-pharme/experimental/four-domain/> PREFIX r: <https://w3id.org/cm-pharme/experimental/refinement/> PREFIX prov: <http://www.w3.org/ns/prov#> PREFIX owl: <http://www.w3.org/2002/07/owl#>
+SELECT $this WHERE { $this prov:wasRevisionOf ?old . $this (owl:sameAs|^owl:sameAs)* ?old . }""" .
+
+p:revision-needs-lineage sh:message "revision-needs-lineage" ;
+    sh:select """PREFIX p: <https://w3id.org/cm-pharme/experimental/registry-policy/> PREFIX c: <https://w3id.org/cm-pharme/2.1/> PREFIX l: <https://w3id.org/cm-pharme/experimental/four-domain/> PREFIX r: <https://w3id.org/cm-pharme/experimental/refinement/> PREFIX prov: <http://www.w3.org/ns/prov#> PREFIX owl: <http://www.w3.org/2002/07/owl#>
+SELECT $this WHERE { $this prov:wasRevisionOf ?old . FILTER NOT EXISTS { $this prov:wasDerivedFrom ?old . ?old a c:SourceRecord ; p:version ?version } }""" .
+
+p:routine-scope-guard sh:message "routine-scope-guard" ;
+    sh:select """PREFIX p: <https://w3id.org/cm-pharme/experimental/registry-policy/> PREFIX c: <https://w3id.org/cm-pharme/2.1/> PREFIX l: <https://w3id.org/cm-pharme/experimental/four-domain/> PREFIX r: <https://w3id.org/cm-pharme/experimental/refinement/> PREFIX prov: <http://www.w3.org/ns/prov#> PREFIX owl: <http://www.w3.org/2002/07/owl#>
+SELECT $this WHERE { $this p:scenario "routine" . { $this p:actorRole ?r . FILTER(?r != "MAH") } UNION { $this p:authorizationRoute ?r . FILTER(?r != "CAP") } }""" .
+
+p:scope-time-order sh:message "scope-time-order" ;
+    sh:select """PREFIX p: <https://w3id.org/cm-pharme/experimental/registry-policy/> PREFIX c: <https://w3id.org/cm-pharme/2.1/> PREFIX l: <https://w3id.org/cm-pharme/experimental/four-domain/> PREFIX r: <https://w3id.org/cm-pharme/experimental/refinement/> PREFIX prov: <http://www.w3.org/ns/prov#> PREFIX owl: <http://www.w3.org/2002/07/owl#>
+SELECT $this WHERE { $this c:validFrom ?s ; c:validTo ?e . FILTER(?s >= ?e) }""" .
+
+p:submission-subject-required sh:message "submission-subject-required" ;
+    sh:select """PREFIX p: <https://w3id.org/cm-pharme/experimental/registry-policy/> PREFIX c: <https://w3id.org/cm-pharme/2.1/> PREFIX l: <https://w3id.org/cm-pharme/experimental/four-domain/> PREFIX r: <https://w3id.org/cm-pharme/experimental/refinement/> PREFIX prov: <http://www.w3.org/ns/prov#> PREFIX owl: <http://www.w3.org/2002/07/owl#>
+SELECT $this WHERE { $this r:carrierClaim ?claim . FILTER NOT EXISTS { ?claim c:assertionAboutProduct ?product . ?product a c:MedicinalProduct } }""" .

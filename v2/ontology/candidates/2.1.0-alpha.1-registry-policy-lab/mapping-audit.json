@@ -1,0 +1,498 @@
+{
+  "native_source_sha256": "fef3295149278bdf5a9c446f9699582a565d26fa2f52f76d90f593ba00e20989",
+  "native_file_modified": false,
+  "new_native_classes": 0,
+  "new_native_relations": 0,
+  "new_owl_disjointness_proposals": 2,
+  "positive_fixture_classes": [
+    "https://w3id.org/cm-pharme/2.1/Assertion",
+    "https://w3id.org/cm-pharme/2.1/DatasetRelease",
+    "https://w3id.org/cm-pharme/2.1/EstablishmentRegistration",
+    "https://w3id.org/cm-pharme/2.1/Facility",
+    "https://w3id.org/cm-pharme/2.1/ListedPresentationRole",
+    "https://w3id.org/cm-pharme/2.1/ListingResponsibleOrganizationRole",
+    "https://w3id.org/cm-pharme/2.1/MandateConferringOrganizationRole",
+    "https://w3id.org/cm-pharme/2.1/MarketListing",
+    "https://w3id.org/cm-pharme/2.1/MedicinalProduct",
+    "https://w3id.org/cm-pharme/2.1/MedicinalProductPresentation",
+    "https://w3id.org/cm-pharme/2.1/Organization",
+    "https://w3id.org/cm-pharme/2.1/ProvenanceActivity",
+    "https://w3id.org/cm-pharme/2.1/RegisteredFacilityRole",
+    "https://w3id.org/cm-pharme/2.1/RegisteredOrganizationRole",
+    "https://w3id.org/cm-pharme/2.1/RegisteredParty",
+    "https://w3id.org/cm-pharme/2.1/RegisteringAuthorityRole",
+    "https://w3id.org/cm-pharme/2.1/RegulatoryJurisdiction",
+    "https://w3id.org/cm-pharme/2.1/RegulatoryMandate",
+    "https://w3id.org/cm-pharme/2.1/RegulatoryRequirement",
+    "https://w3id.org/cm-pharme/2.1/SourceRecord"
+  ],
+  "predicate_inventory": [
+    {
+      "iri": "http://www.w3.org/ns/prov#wasAssociatedWith",
+      "category": "EXTERNAL_PROV_WITHOUT_FORMAL_ALIGNMENT",
+      "native_relation_ids": [],
+      "owl_declared_object_property": false,
+      "owl_declared_datatype_property": false,
+      "native_acceptance": false
+    },
+    {
+      "iri": "http://www.w3.org/ns/prov#wasAttributedTo",
+      "category": "EXTERNAL_PROV_WITHOUT_FORMAL_ALIGNMENT",
+      "native_relation_ids": [],
+      "owl_declared_object_property": false,
+      "owl_declared_datatype_property": false,
+      "native_acceptance": false
+    },
+    {
+      "iri": "http://www.w3.org/ns/prov#wasDerivedFrom",
+      "category": "EXTERNAL_PROV_WITHOUT_FORMAL_ALIGNMENT",
+      "native_relation_ids": [],
+      "owl_declared_object_property": false,
+      "owl_declared_datatype_property": false,
+      "native_acceptance": false
+    },
+    {
+      "iri": "http://www.w3.org/ns/prov#wasRevisionOf",
+      "category": "EXTERNAL_PROV_WITHOUT_FORMAL_ALIGNMENT",
+      "native_relation_ids": [],
+      "owl_declared_object_property": false,
+      "owl_declared_datatype_property": false,
+      "native_acceptance": false
+    },
+    {
+      "iri": "https://w3id.org/cm-pharme/2.1/assertionAboutProduct",
+      "category": "EXISTING_NATIVE_RELATION",
+      "native_relation_ids": [
+        "rel-assertionAboutProduct"
+      ],
+      "owl_declared_object_property": true,
+      "owl_declared_datatype_property": false,
+      "native_acceptance": false
+    },
+    {
+      "iri": "https://w3id.org/cm-pharme/2.1/containsSourceRecord",
+      "category": "EXISTING_NATIVE_RELATION",
+      "native_relation_ids": [
+        "rel-containsSourceRecord"
+      ],
+      "owl_declared_object_property": true,
+      "owl_declared_datatype_property": false,
+      "native_acceptance": false
+    },
+    {
+      "iri": "https://w3id.org/cm-pharme/2.1/listingJurisdiction",
+      "category": "EXISTING_NATIVE_RELATION",
+      "native_relation_ids": [
+        "rel-listingJurisdiction"
+      ],
+      "owl_declared_object_property": true,
+      "owl_declared_datatype_property": false,
+      "native_acceptance": false
+    },
+    {
+      "iri": "https://w3id.org/cm-pharme/2.1/listingPresentation",
+      "category": "EXISTING_NATIVE_RELATION",
+      "native_relation_ids": [
+        "rel-listingPresentation"
+      ],
+      "owl_declared_object_property": true,
+      "owl_declared_datatype_property": false,
+      "native_acceptance": false
+    },
+    {
+      "iri": "https://w3id.org/cm-pharme/2.1/listingResponsibleOrganization",
+      "category": "EXISTING_NATIVE_RELATION",
+      "native_relation_ids": [
+        "rel-listingResponsibleOrganization"
+      ],
+      "owl_declared_object_property": true,
+      "owl_declared_datatype_property": false,
+      "native_acceptance": false
+    },
+    {
+      "iri": "https://w3id.org/cm-pharme/2.1/presentationOf",
+      "category": "EXISTING_NATIVE_RELATION",
+      "native_relation_ids": [
+        "rel-presentationOf"
+      ],
+      "owl_declared_object_property": true,
+      "owl_declared_datatype_property": false,
+      "native_acceptance": false
+    },
+    {
+      "iri": "https://w3id.org/cm-pharme/2.1/registrationAuthority",
+      "category": "EXISTING_NATIVE_RELATION",
+      "native_relation_ids": [
+        "rel-registrationAuthority"
+      ],
+      "owl_declared_object_property": true,
+      "owl_declared_datatype_property": false,
+      "native_acceptance": false
+    },
+    {
+      "iri": "https://w3id.org/cm-pharme/2.1/registrationEntity",
+      "category": "EXISTING_NATIVE_RELATION",
+      "native_relation_ids": [
+        "rel-registrationEntity"
+      ],
+      "owl_declared_object_property": true,
+      "owl_declared_datatype_property": false,
+      "native_acceptance": false
+    },
+    {
+      "iri": "https://w3id.org/cm-pharme/2.1/registrationJurisdiction",
+      "category": "EXISTING_NATIVE_RELATION",
+      "native_relation_ids": [
+        "rel-registrationJurisdiction"
+      ],
+      "owl_declared_object_property": true,
+      "owl_declared_datatype_property": false,
+      "native_acceptance": false
+    },
+    {
+      "iri": "https://w3id.org/cm-pharme/2.1/regulatoryMandateCounterpart",
+      "category": "EXISTING_NATIVE_RELATION",
+      "native_relation_ids": [
+        "rel-regulatoryMandateCounterpart"
+      ],
+      "owl_declared_object_property": true,
+      "owl_declared_datatype_property": false,
+      "native_acceptance": false
+    },
+    {
+      "iri": "https://w3id.org/cm-pharme/2.1/regulatoryMandateHolder",
+      "category": "EXISTING_NATIVE_RELATION",
+      "native_relation_ids": [
+        "rel-regulatoryMandateHolder"
+      ],
+      "owl_declared_object_property": true,
+      "owl_declared_datatype_property": false,
+      "native_acceptance": false
+    },
+    {
+      "iri": "https://w3id.org/cm-pharme/2.1/validFrom",
+      "category": "EXISTING_RDF_FIELD_NATIVE_MAPPING_UNVERIFIED",
+      "native_relation_ids": [],
+      "owl_declared_object_property": false,
+      "owl_declared_datatype_property": true,
+      "native_acceptance": false
+    },
+    {
+      "iri": "https://w3id.org/cm-pharme/2.1/validTo",
+      "category": "EXISTING_RDF_FIELD_NATIVE_MAPPING_UNVERIFIED",
+      "native_relation_ids": [],
+      "owl_declared_object_property": false,
+      "owl_declared_datatype_property": true,
+      "native_acceptance": false
+    },
+    {
+      "iri": "https://w3id.org/cm-pharme/experimental/four-domain/recordDigitalActivity",
+      "category": "EXISTING_NATIVE_RELATION",
+      "native_relation_ids": [
+        "lab-rel-recordDigitalActivity"
+      ],
+      "owl_declared_object_property": true,
+      "owl_declared_datatype_property": false,
+      "native_acceptance": false
+    },
+    {
+      "iri": "https://w3id.org/cm-pharme/experimental/refinement/carrierClaim",
+      "category": "EXISTING_NATIVE_RELATION",
+      "native_relation_ids": [
+        "refine-rel-carrierClaim"
+      ],
+      "owl_declared_object_property": true,
+      "owl_declared_datatype_property": false,
+      "native_acceptance": false
+    },
+    {
+      "iri": "https://w3id.org/cm-pharme/experimental/registry-policy/actionAnnounced",
+      "category": "EXPERIMENTAL_PROFILE_FIELD",
+      "native_relation_ids": [],
+      "owl_declared_object_property": false,
+      "owl_declared_datatype_property": false,
+      "native_acceptance": false
+    },
+    {
+      "iri": "https://w3id.org/cm-pharme/experimental/registry-policy/actorRole",
+      "category": "EXPERIMENTAL_PROFILE_FIELD",
+      "native_relation_ids": [],
+      "owl_declared_object_property": false,
+      "owl_declared_datatype_property": false,
+      "native_acceptance": false
+    },
+    {
+      "iri": "https://w3id.org/cm-pharme/experimental/registry-policy/approvalConclusion",
+      "category": "EXPERIMENTAL_PROFILE_FIELD",
+      "native_relation_ids": [],
+      "owl_declared_object_property": false,
+      "owl_declared_datatype_property": false,
+      "native_acceptance": false
+    },
+    {
+      "iri": "https://w3id.org/cm-pharme/experimental/registry-policy/authorizationRoute",
+      "category": "EXPERIMENTAL_PROFILE_FIELD",
+      "native_relation_ids": [],
+      "owl_declared_object_property": false,
+      "owl_declared_datatype_property": false,
+      "native_acceptance": false
+    },
+    {
+      "iri": "https://w3id.org/cm-pharme/experimental/registry-policy/externalKey",
+      "category": "EXPERIMENTAL_PROFILE_FIELD",
+      "native_relation_ids": [],
+      "owl_declared_object_property": false,
+      "owl_declared_datatype_property": false,
+      "native_acceptance": false
+    },
+    {
+      "iri": "https://w3id.org/cm-pharme/experimental/registry-policy/frequency",
+      "category": "EXPERIMENTAL_PROFILE_FIELD",
+      "native_relation_ids": [],
+      "owl_declared_object_property": false,
+      "owl_declared_datatype_property": false,
+      "native_acceptance": false
+    },
+    {
+      "iri": "https://w3id.org/cm-pharme/experimental/registry-policy/jurisdiction",
+      "category": "EXPERIMENTAL_PROFILE_FIELD",
+      "native_relation_ids": [],
+      "owl_declared_object_property": false,
+      "owl_declared_datatype_property": false,
+      "native_acceptance": false
+    },
+    {
+      "iri": "https://w3id.org/cm-pharme/experimental/registry-policy/marketingEnd",
+      "category": "EXPERIMENTAL_PROFILE_FIELD",
+      "native_relation_ids": [],
+      "owl_declared_object_property": false,
+      "owl_declared_datatype_property": false,
+      "native_acceptance": false
+    },
+    {
+      "iri": "https://w3id.org/cm-pharme/experimental/registry-policy/marketingStart",
+      "category": "EXPERIMENTAL_PROFILE_FIELD",
+      "native_relation_ids": [],
+      "owl_declared_object_property": false,
+      "owl_declared_datatype_property": false,
+      "native_acceptance": false
+    },
+    {
+      "iri": "https://w3id.org/cm-pharme/experimental/registry-policy/payloadFormat",
+      "category": "EXPERIMENTAL_PROFILE_FIELD",
+      "native_relation_ids": [],
+      "owl_declared_object_property": false,
+      "owl_declared_datatype_property": false,
+      "native_acceptance": false
+    },
+    {
+      "iri": "https://w3id.org/cm-pharme/experimental/registry-policy/profile",
+      "category": "EXPERIMENTAL_PROFILE_FIELD",
+      "native_relation_ids": [],
+      "owl_declared_object_property": false,
+      "owl_declared_datatype_property": false,
+      "native_acceptance": false
+    },
+    {
+      "iri": "https://w3id.org/cm-pharme/experimental/registry-policy/recordKind",
+      "category": "EXPERIMENTAL_PROFILE_FIELD",
+      "native_relation_ids": [],
+      "owl_declared_object_property": false,
+      "owl_declared_datatype_property": false,
+      "native_acceptance": false
+    },
+    {
+      "iri": "https://w3id.org/cm-pharme/experimental/registry-policy/recordSubject",
+      "category": "EXPERIMENTAL_PROFILE_FIELD",
+      "native_relation_ids": [],
+      "owl_declared_object_property": false,
+      "owl_declared_datatype_property": false,
+      "native_acceptance": false
+    },
+    {
+      "iri": "https://w3id.org/cm-pharme/experimental/registry-policy/release",
+      "category": "EXPERIMENTAL_PROFILE_FIELD",
+      "native_relation_ids": [],
+      "owl_declared_object_property": false,
+      "owl_declared_datatype_property": false,
+      "native_acceptance": false
+    },
+    {
+      "iri": "https://w3id.org/cm-pharme/experimental/registry-policy/representsFact",
+      "category": "EXPERIMENTAL_PROFILE_FIELD",
+      "native_relation_ids": [],
+      "owl_declared_object_property": false,
+      "owl_declared_datatype_property": false,
+      "native_acceptance": false
+    },
+    {
+      "iri": "https://w3id.org/cm-pharme/experimental/registry-policy/retrievedAt",
+      "category": "EXPERIMENTAL_PROFILE_FIELD",
+      "native_relation_ids": [],
+      "owl_declared_object_property": false,
+      "owl_declared_datatype_property": false,
+      "native_acceptance": false
+    },
+    {
+      "iri": "https://w3id.org/cm-pharme/experimental/registry-policy/scenario",
+      "category": "EXPERIMENTAL_PROFILE_FIELD",
+      "native_relation_ids": [],
+      "owl_declared_object_property": false,
+      "owl_declared_datatype_property": false,
+      "native_acceptance": false
+    },
+    {
+      "iri": "https://w3id.org/cm-pharme/experimental/registry-policy/scopeComplete",
+      "category": "EXPERIMENTAL_PROFILE_FIELD",
+      "native_relation_ids": [],
+      "owl_declared_object_property": false,
+      "owl_declared_datatype_property": false,
+      "native_acceptance": false
+    },
+    {
+      "iri": "https://w3id.org/cm-pharme/experimental/registry-policy/scopedProduct",
+      "category": "EXPERIMENTAL_PROFILE_FIELD",
+      "native_relation_ids": [],
+      "owl_declared_object_property": false,
+      "owl_declared_datatype_property": false,
+      "native_acceptance": false
+    },
+    {
+      "iri": "https://w3id.org/cm-pharme/experimental/registry-policy/shortageStatus",
+      "category": "EXPERIMENTAL_PROFILE_FIELD",
+      "native_relation_ids": [],
+      "owl_declared_object_property": false,
+      "owl_declared_datatype_property": false,
+      "native_acceptance": false
+    },
+    {
+      "iri": "https://w3id.org/cm-pharme/experimental/registry-policy/sourceVersion",
+      "category": "EXPERIMENTAL_PROFILE_FIELD",
+      "native_relation_ids": [],
+      "owl_declared_object_property": false,
+      "owl_declared_datatype_property": false,
+      "native_acceptance": false
+    },
+    {
+      "iri": "https://w3id.org/cm-pharme/experimental/registry-policy/version",
+      "category": "EXPERIMENTAL_PROFILE_FIELD",
+      "native_relation_ids": [],
+      "owl_declared_object_property": false,
+      "owl_declared_datatype_property": false,
+      "native_acceptance": false
+    }
+  ],
+  "predicate_categories": {
+    "EXTERNAL_PROV_WITHOUT_FORMAL_ALIGNMENT": 4,
+    "EXISTING_NATIVE_RELATION": 13,
+    "EXISTING_RDF_FIELD_NATIVE_MAPPING_UNVERIFIED": 2,
+    "EXPERIMENTAL_PROFILE_FIELD": 22
+  },
+  "broad_parent_usage_audit": [
+    {
+      "relation": "disruptionAffects",
+      "native_ends": [
+        {
+          "id": "end-disruptionAffects-source",
+          "type": "DisruptionEvent",
+          "cardinality": null
+        },
+        {
+          "id": "end-disruptionAffects-target",
+          "type": null,
+          "cardinality": null
+        }
+      ],
+      "owl_ranges": [],
+      "declared_children": [
+        "https://w3id.org/cm-pharme/2.1/disruptionAffectsDependency"
+      ],
+      "observations": [],
+      "observation_count": 0,
+      "sufficient_to_freeze_universal_target_range": false,
+      "next_decision": "Establish intended subject universe from independent requirements; positive fixture types alone cannot justify a complete union or a new generic native Entity."
+    },
+    {
+      "relation": "observationResultAbout",
+      "native_ends": [
+        {
+          "id": "end-observationResultAbout-source",
+          "type": "ObservationResult",
+          "cardinality": null
+        },
+        {
+          "id": "end-observationResultAbout-target",
+          "type": null,
+          "cardinality": null
+        }
+      ],
+      "owl_ranges": [],
+      "declared_children": [
+        "https://w3id.org/cm-pharme/2.1/observationAboutPresentation",
+        "https://w3id.org/cm-pharme/2.1/observationAboutProduct"
+      ],
+      "observations": [
+        {
+          "source": "prior-real-source-768-rows",
+          "predicate": "https://w3id.org/cm-pharme/2.1/observationAboutPresentation",
+          "triple_count": 3072,
+          "explicit_target_types": {
+            "https://w3id.org/cm-pharme/2.1/IdentifiedEntity": 3072,
+            "https://w3id.org/cm-pharme/2.1/IdentifiedMedicinalProductPresentationRole": 3072,
+            "https://w3id.org/cm-pharme/2.1/MedicinalProductPresentation": 3072
+          }
+        },
+        {
+          "source": "prior-real-source-768-rows",
+          "predicate": "https://w3id.org/cm-pharme/2.1/observationAboutProduct",
+          "triple_count": 3072,
+          "explicit_target_types": {
+            "https://w3id.org/cm-pharme/2.1/ClassifiedEntity": 3072,
+            "https://w3id.org/cm-pharme/2.1/ClassifiedMedicinalProductRole": 3072,
+            "https://w3id.org/cm-pharme/2.1/MedicinalProduct": 3072
+          }
+        }
+      ],
+      "observation_count": 6144,
+      "sufficient_to_freeze_universal_target_range": false,
+      "next_decision": "Establish intended subject universe from independent requirements; positive fixture types alone cannot justify a complete union or a new generic native Entity."
+    },
+    {
+      "relation": "riskAssessmentConcerns",
+      "native_ends": [
+        {
+          "id": "end-riskAssessmentConcerns-source",
+          "type": "RiskAssessmentActivity",
+          "cardinality": null
+        },
+        {
+          "id": "end-riskAssessmentConcerns-target",
+          "type": null,
+          "cardinality": null
+        }
+      ],
+      "owl_ranges": [],
+      "declared_children": [
+        "https://w3id.org/cm-pharme/2.1/riskAssessmentConcernsDependency"
+      ],
+      "observations": [],
+      "observation_count": 0,
+      "sufficient_to_freeze_universal_target_range": false,
+      "next_decision": "Establish intended subject universe from independent requirements; positive fixture types alone cannot justify a complete union or a new generic native Entity."
+    }
+  ],
+  "positive_fixture_graphs_examined": 45,
+  "prior_real_graph": {
+    "rows": 768,
+    "triples": 39272,
+    "sha256": "939a80c8f3d4342e81c74c193cd9e65dc61b1b7e271ba99856edfd988daebfa9",
+    "new_profile_empirical_validation": false
+  },
+  "remaining_native_isolates_unchanged": [
+    "DistributionLogisticsActivity",
+    "ProcurementActivity",
+    "RegulatoryRequirement",
+    "StockoutSituation"
+  ],
+  "scope_limit": "Occurrence counts include repeated scenario witnesses and are not counts of unique empirical entities. Profile and external predicates are not newly accepted native domain relations."
+}

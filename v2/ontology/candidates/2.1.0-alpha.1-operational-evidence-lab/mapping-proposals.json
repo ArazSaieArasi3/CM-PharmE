@@ -1,0 +1,113 @@
+{
+  "mappings": [
+    {
+      "domain": "RM",
+      "subject": "sartan-review",
+      "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+      "object": "https://w3id.org/cm-pharme/2.1/RiskAssessmentActivity",
+      "source": "RM-EMA-2020",
+      "accepted": false
+    },
+    {
+      "domain": "RM",
+      "subject": "sartan-revision",
+      "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+      "object": "https://w3id.org/cm-pharme/2.1/RiskReviewActivity",
+      "source": "RM-EMA-2020",
+      "accepted": false
+    },
+    {
+      "domain": "RM",
+      "subject": "sartan-revision",
+      "predicate": "https://w3id.org/cm-pharme/experimental/four-domain/reviewPriorResult",
+      "object": "urn:cmpe-evidence:sartan-prior-result",
+      "source": "RM-EMA-2020",
+      "accepted": false
+    },
+    {
+      "domain": "RM",
+      "subject": "sartan-revision",
+      "predicate": "https://w3id.org/cm-pharme/experimental/four-domain/reviewNewResult",
+      "object": "urn:cmpe-evidence:sartan-revised-result",
+      "source": "RM-EMA-2020",
+      "accepted": false
+    },
+    {
+      "domain": "BA",
+      "subject": "collaboration",
+      "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+      "object": "https://w3id.org/cm-pharme/2.1/StrategicPartnershipAgreement",
+      "source": "BA-LONZA-2020-05",
+      "accepted": false
+    },
+    {
+      "domain": "BA",
+      "subject": "collaboration",
+      "predicate": "https://w3id.org/cm-pharme/2.1/partnershipParticipant",
+      "object": "urn:cmpe-evidence:Lonza",
+      "source": "BA-LONZA-2020-05",
+      "accepted": false
+    },
+    {
+      "domain": "BA",
+      "subject": "collaboration",
+      "predicate": "https://w3id.org/cm-pharme/2.1/partnershipParticipant",
+      "object": "urn:cmpe-evidence:Moderna",
+      "source": "BA-LONZA-2020-05",
+      "accepted": false
+    },
+    {
+      "domain": "BA",
+      "subject": "Lonza",
+      "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+      "object": "https://w3id.org/cm-pharme/2.1/PartnerOrganizationRole",
+      "source": "BA-LONZA-2020-05",
+      "accepted": false
+    },
+    {
+      "domain": "BA",
+      "subject": "Moderna",
+      "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+      "object": "https://w3id.org/cm-pharme/2.1/PartnerOrganizationRole",
+      "source": "BA-LONZA-2020-05",
+      "accepted": false
+    },
+    {
+      "domain": "BA",
+      "subject": "manufacturing-capability",
+      "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+      "object": "https://w3id.org/cm-pharme/2.1/EnterpriseCapability",
+      "source": "BA-LONZA-2020-05",
+      "accepted": false
+    },
+    {
+      "domain": "BA",
+      "subject": "manufacturing-capability",
+      "predicate": "https://w3id.org/cm-pharme/2.1/capabilityBearer",
+      "object": "urn:cmpe-evidence:Lonza",
+      "source": "BA-LONZA-2020-05",
+      "accepted": false
+    },
+    {
+      "domain": "DS",
+      "subject": "EudraVigilance-launch",
+      "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+      "object": "https://w3id.org/cm-pharme/2.1/SystemDeploymentActivity",
+      "source": "DS-EMA-LIVE",
+      "accepted": false
+    },
+    {
+      "domain": "DS",
+      "subject": "EudraVigilance",
+      "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+      "object": "https://w3id.org/cm-pharme/2.1/DigitalInformationSystemComponent",
+      "source": "DS-EMA-LIVE",
+      "accepted": false
+    }
+  ],
+  "warnings": [
+    "A strategic collaboration announcement is not the full executed contract",
+    "System-wide EudraVigilance to component-class mapping needs granularity review",
+    "Public regulatory review is not a company risk register or treatment effectiveness study"
+  ]
+}

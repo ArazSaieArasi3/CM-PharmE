@@ -1,0 +1,351 @@
+{
+  "scope": "Conservative source-graph prefilter, not official detector or full catalogue adjudication",
+  "native_sha256": "264d26d263e5fa25e432dc65dd6b0402bf274958c9d18c32be2d2583634deaca",
+  "native_elements": 536,
+  "counts": {
+    "BinOver_definite": 2,
+    "DecInt_multiple_concrete_parents": 0,
+    "DepPhase": 0,
+    "FreeRole_direct_path": 0,
+    "GSRig": 0,
+    "MixRig": 0,
+    "MultDep_direct": 0,
+    "RelRig_rigid_endpoint": 0,
+    "RepRel_direct": 19,
+    "ImpAbs": 10,
+    "UndefFormal": 0,
+    "UndefPhase": 0,
+    "meronymic_relations": 0,
+    "MixIden_precondition": 9,
+    "RelSpec_simple": 3
+  },
+  "triggers": {
+    "BinOver_definite": [
+      {
+        "id": "rel-withinCountry",
+        "name": "withinCountry",
+        "stereotype": null,
+        "source": "GeographicFeature",
+        "target": "Country",
+        "source_card": null,
+        "target_card": null,
+        "source_readonly": null,
+        "target_readonly": null,
+        "source_id": "end-withinCountry-source",
+        "target_id": "end-withinCountry-target"
+      },
+      {
+        "id": "rel-withinRegion",
+        "name": "withinRegion",
+        "stereotype": null,
+        "source": "GeographicFeature",
+        "target": "AdministrativeRegion",
+        "source_card": null,
+        "target_card": null,
+        "source_readonly": null,
+        "target_readonly": null,
+        "source_id": "end-withinRegion-source",
+        "target_id": "end-withinRegion-target"
+      }
+    ],
+    "DecInt_multiple_concrete_parents": [],
+    "DepPhase": [],
+    "FreeRole_direct_path": [],
+    "GSRig": [],
+    "MixRig": [],
+    "MultDep_direct": [],
+    "RelRig_rigid_endpoint": [],
+    "RepRel_direct": [
+      {
+        "relator": "AlternativeMedicineAssignment",
+        "mediations": [
+          "alternativeForProduct",
+          "alternativeProduct"
+        ]
+      },
+      {
+        "relator": "EstablishmentRegistration",
+        "mediations": [
+          "registrationAuthority",
+          "registrationEntity"
+        ]
+      },
+      {
+        "relator": "EvidenceSupport",
+        "mediations": [
+          "evidenceAssertion",
+          "evidenceItem"
+        ]
+      },
+      {
+        "relator": "FacilityOperation",
+        "mediations": [
+          "operationFacility",
+          "operationOrganization"
+        ]
+      },
+      {
+        "relator": "IdentifierAssignment",
+        "mediations": [
+          "identifierEntity",
+          "identifierScheme"
+        ]
+      },
+      {
+        "relator": "MarketListing",
+        "mediations": [
+          "listingPresentation",
+          "listingResponsibleOrganization"
+        ]
+      },
+      {
+        "relator": "ProductClassificationAssignment",
+        "mediations": [
+          "classificationEntity",
+          "classificationEntry"
+        ]
+      },
+      {
+        "relator": "RegulatoryAuthorization",
+        "mediations": [
+          "authorizationAuthority",
+          "authorizationParty"
+        ]
+      },
+      {
+        "relator": "RegulatoryOversight",
+        "mediations": [
+          "oversightAuthorityRole",
+          "oversightGovernedEntity"
+        ]
+      },
+      {
+        "relator": "SupplyDependency",
+        "mediations": [
+          "dependencyDependent",
+          "dependencyProvider"
+        ]
+      },
+      {
+        "relator": "ManufacturingResponsibility",
+        "mediations": [
+          "manufacturingResponsibilityHolder",
+          "manufacturingResponsibilityCounterpart"
+        ]
+      },
+      {
+        "relator": "ManufacturingSiteUse",
+        "mediations": [
+          "manufacturingSiteUseHolder",
+          "manufacturingSiteUseCounterpart"
+        ]
+      },
+      {
+        "relator": "ImportResponsibility",
+        "mediations": [
+          "importResponsibilityHolder",
+          "importResponsibilityCounterpart"
+        ]
+      },
+      {
+        "relator": "WholesaleResponsibility",
+        "mediations": [
+          "wholesaleResponsibilityHolder",
+          "wholesaleResponsibilityCounterpart"
+        ]
+      },
+      {
+        "relator": "LogisticsServiceCommitment",
+        "mediations": [
+          "logisticsServiceCommitmentHolder",
+          "logisticsServiceCommitmentCounterpart"
+        ]
+      },
+      {
+        "relator": "DistributionSiteUse",
+        "mediations": [
+          "distributionSiteUseHolder",
+          "distributionSiteUseCounterpart"
+        ]
+      },
+      {
+        "relator": "RegulatoryMandate",
+        "mediations": [
+          "regulatoryMandateHolder",
+          "regulatoryMandateCounterpart"
+        ]
+      },
+      {
+        "relator": "ProductLabelResponsibility",
+        "mediations": [
+          "productLabelResponsibilityHolder",
+          "productLabelResponsibilityCounterpart"
+        ]
+      },
+      {
+        "relator": "InstitutionalFundingCommitment",
+        "mediations": [
+          "institutionalFundingCommitmentHolder",
+          "institutionalFundingCommitmentCounterpart"
+        ]
+      }
+    ],
+    "ImpAbs": [
+      {
+        "relation": "assertionAboutProduct",
+        "end": "source",
+        "class": "Assertion",
+        "subtype_count": 4
+      },
+      {
+        "relation": "assertionAboutProduct",
+        "end": "target",
+        "class": "MedicinalProduct",
+        "subtype_count": 10
+      },
+      {
+        "relation": "classificationEntity",
+        "end": "source",
+        "class": "ProductClassificationAssignment",
+        "subtype_count": 3
+      },
+      {
+        "relation": "classificationEntry",
+        "end": "source",
+        "class": "ProductClassificationAssignment",
+        "subtype_count": 3
+      },
+      {
+        "relation": "observationAboutPresentation",
+        "end": "source",
+        "class": "ObservationResult",
+        "subtype_count": 7
+      },
+      {
+        "relation": "observationAboutPresentation",
+        "end": "target",
+        "class": "MedicinalProductPresentation",
+        "subtype_count": 2
+      },
+      {
+        "relation": "observationAboutProduct",
+        "end": "source",
+        "class": "ObservationResult",
+        "subtype_count": 7
+      },
+      {
+        "relation": "observationAboutProduct",
+        "end": "target",
+        "class": "MedicinalProduct",
+        "subtype_count": 10
+      },
+      {
+        "relation": "productHasActiveSubstance",
+        "end": "source",
+        "class": "MedicinalProduct",
+        "subtype_count": 10
+      },
+      {
+        "relation": "productHasActiveSubstance",
+        "end": "target",
+        "class": "PharmaceuticalSubstance",
+        "subtype_count": 2
+      }
+    ],
+    "UndefFormal": [],
+    "UndefPhase": [],
+    "meronymic_relations": [],
+    "MixIden_precondition": [
+      {
+        "non_sortal": "AuthorizedParty",
+        "children": [
+          "AuthorizedFacilityRole",
+          "AuthorizedOrganizationRole"
+        ]
+      },
+      {
+        "non_sortal": "ClassifiedEntity",
+        "children": [
+          "ClassifiedMedicinalProductRole",
+          "ClassifiedPharmaceuticalSubstanceRole"
+        ]
+      },
+      {
+        "non_sortal": "DependentEntity",
+        "children": [
+          "DependentFacilityRole",
+          "DependentMedicinalProductRole",
+          "DependentOrganizationRole"
+        ]
+      },
+      {
+        "non_sortal": "EcosystemParticipant",
+        "children": [
+          "DistributionSiteRole",
+          "ImporterRole",
+          "ManufacturerRole",
+          "ManufacturingSiteRole",
+          "PayerFundingOrganizationRole",
+          "ProductResponsibleLabelerRole",
+          "RegulatoryAuthorityRole",
+          "ThirdPartyLogisticsProviderRole",
+          "WholesaleDistributorRole"
+        ]
+      },
+      {
+        "non_sortal": "EvidenceItem",
+        "children": [
+          "EvidenceObservationResultRole",
+          "EvidenceSourceRecordRole"
+        ]
+      },
+      {
+        "non_sortal": "GovernedEntity",
+        "children": [
+          "GovernedFacilityRole",
+          "GovernedOrganizationRole"
+        ]
+      },
+      {
+        "non_sortal": "IdentifiedEntity",
+        "children": [
+          "IdentifiedFacilityRole",
+          "IdentifiedGeographicFeatureRole",
+          "IdentifiedMedicinalProductPresentationRole",
+          "IdentifiedMedicinalProductRole",
+          "IdentifiedOrganizationRole",
+          "IdentifiedPharmaceuticalSubstanceRole"
+        ]
+      },
+      {
+        "non_sortal": "ProviderEntity",
+        "children": [
+          "ProviderFacilityRole",
+          "ProviderMedicinalProductRole",
+          "ProviderOrganizationRole"
+        ]
+      },
+      {
+        "non_sortal": "RegisteredParty",
+        "children": [
+          "RegisteredFacilityRole",
+          "RegisteredOrganizationRole"
+        ]
+      }
+    ],
+    "RelSpec_simple": [
+      [
+        "classificationEntity",
+        "contextClassificationProduct"
+      ],
+      [
+        "classificationEntry",
+        "contextClassificationEntry"
+      ],
+      [
+        "evidenceItem",
+        "evidenceRecord"
+      ]
+    ]
+  }
+}

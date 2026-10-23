@@ -1,0 +1,452 @@
+{
+  "scope": "19 structural RepRel candidates; per-row discriminator is a hypothesis for verification, not a confirmed identity key",
+  "source": "G3-2e-E native model and G3-2e-F focal SHACL shapes",
+  "rows": [
+    {
+      "relator": "AlternativeMedicineAssignment",
+      "mediations": [
+        {
+          "name": "alternativeForProduct",
+          "mediated_class": "ReferenceProductRole",
+          "relator_end_cardinality": "1..*"
+        },
+        {
+          "name": "alternativeProduct",
+          "mediated_class": "AlternativeMedicinalProductRole",
+          "relator_end_cardinality": "1..*"
+        }
+      ],
+      "existing_other_references": [],
+      "candidate_distinctness_basis_to_verify": "reference product, alternative product, decision context and effective period",
+      "positive_witness": "Two relator instances link the same mediated individuals but differ in a documented scope or non-overlapping validity interval; admit only if the domain allows repeat events.",
+      "rejecting_witness": "Two relator instances link the same mediated individuals and have indistinguishable scope and overlapping time; reject only if a current-instance uniqueness rule is scientifically approved.",
+      "focal_shacl_duplicate_fixture": "ACCEPTED; shape imposes no participant-tuple uniqueness",
+      "focal_shacl_missing_end_fixture": "REJECTED",
+      "recommended_disposition": "Do not force global upper 1. Determine relator identity, scope and concurrent uniqueness from source/author evidence before adding a scoped SHACL/OCL rule.",
+      "author_status": "PENDING_SCIENTIFIC_ADJUDICATION"
+    },
+    {
+      "relator": "EstablishmentRegistration",
+      "mediations": [
+        {
+          "name": "registrationAuthority",
+          "mediated_class": "RegisteringAuthorityRole",
+          "relator_end_cardinality": "1..*"
+        },
+        {
+          "name": "registrationEntity",
+          "mediated_class": "RegisteredParty",
+          "relator_end_cardinality": "1..*"
+        }
+      ],
+      "existing_other_references": [
+        "registrationJurisdiction"
+      ],
+      "candidate_distinctness_basis_to_verify": "registered party, authority, jurisdiction, registration event and validity period",
+      "positive_witness": "Two relator instances link the same mediated individuals but differ in a documented scope or non-overlapping validity interval; admit only if the domain allows repeat events.",
+      "rejecting_witness": "Two relator instances link the same mediated individuals and have indistinguishable scope and overlapping time; reject only if a current-instance uniqueness rule is scientifically approved.",
+      "focal_shacl_duplicate_fixture": "ACCEPTED; shape imposes no participant-tuple uniqueness",
+      "focal_shacl_missing_end_fixture": "REJECTED",
+      "recommended_disposition": "Do not force global upper 1. Determine relator identity, scope and concurrent uniqueness from source/author evidence before adding a scoped SHACL/OCL rule.",
+      "author_status": "PENDING_SCIENTIFIC_ADJUDICATION"
+    },
+    {
+      "relator": "EvidenceSupport",
+      "mediations": [
+        {
+          "name": "evidenceAssertion",
+          "mediated_class": "SupportedAssertionRole",
+          "relator_end_cardinality": "1..*"
+        },
+        {
+          "name": "evidenceItem",
+          "mediated_class": "EvidenceItem",
+          "relator_end_cardinality": "1..*"
+        }
+      ],
+      "existing_other_references": [],
+      "candidate_distinctness_basis_to_verify": "assertion, evidence item, source version and provenance of support",
+      "positive_witness": "Two relator instances link the same mediated individuals but differ in a documented scope or non-overlapping validity interval; admit only if the domain allows repeat events.",
+      "rejecting_witness": "Two relator instances link the same mediated individuals and have indistinguishable scope and overlapping time; reject only if a current-instance uniqueness rule is scientifically approved.",
+      "focal_shacl_duplicate_fixture": "ACCEPTED; shape imposes no participant-tuple uniqueness",
+      "focal_shacl_missing_end_fixture": "REJECTED",
+      "recommended_disposition": "Do not force global upper 1. Determine relator identity, scope and concurrent uniqueness from source/author evidence before adding a scoped SHACL/OCL rule.",
+      "author_status": "PENDING_SCIENTIFIC_ADJUDICATION"
+    },
+    {
+      "relator": "FacilityOperation",
+      "mediations": [
+        {
+          "name": "operationFacility",
+          "mediated_class": "OperatedFacilityRole",
+          "relator_end_cardinality": "1..*"
+        },
+        {
+          "name": "operationOrganization",
+          "mediated_class": "OperatingOrganizationRole",
+          "relator_end_cardinality": "1..*"
+        }
+      ],
+      "existing_other_references": [],
+      "candidate_distinctness_basis_to_verify": "organization, facility, operation agreement and effective period",
+      "positive_witness": "Two relator instances link the same mediated individuals but differ in a documented scope or non-overlapping validity interval; admit only if the domain allows repeat events.",
+      "rejecting_witness": "Two relator instances link the same mediated individuals and have indistinguishable scope and overlapping time; reject only if a current-instance uniqueness rule is scientifically approved.",
+      "focal_shacl_duplicate_fixture": "ACCEPTED; shape imposes no participant-tuple uniqueness",
+      "focal_shacl_missing_end_fixture": "REJECTED",
+      "recommended_disposition": "Do not force global upper 1. Determine relator identity, scope and concurrent uniqueness from source/author evidence before adding a scoped SHACL/OCL rule.",
+      "author_status": "PENDING_SCIENTIFIC_ADJUDICATION"
+    },
+    {
+      "relator": "IdentifierAssignment",
+      "mediations": [
+        {
+          "name": "identifierEntity",
+          "mediated_class": "IdentifiedEntity",
+          "relator_end_cardinality": "1..*"
+        },
+        {
+          "name": "identifierScheme",
+          "mediated_class": "UsedIdentifierSchemeRole",
+          "relator_end_cardinality": "1..*"
+        }
+      ],
+      "existing_other_references": [],
+      "candidate_distinctness_basis_to_verify": "entity, identifier scheme, lexical value and validity period",
+      "positive_witness": "Two relator instances link the same mediated individuals but differ in a documented scope or non-overlapping validity interval; admit only if the domain allows repeat events.",
+      "rejecting_witness": "Two relator instances link the same mediated individuals and have indistinguishable scope and overlapping time; reject only if a current-instance uniqueness rule is scientifically approved.",
+      "focal_shacl_duplicate_fixture": "ACCEPTED; shape imposes no participant-tuple uniqueness",
+      "focal_shacl_missing_end_fixture": "REJECTED",
+      "recommended_disposition": "Do not force global upper 1. Determine relator identity, scope and concurrent uniqueness from source/author evidence before adding a scoped SHACL/OCL rule.",
+      "author_status": "PENDING_SCIENTIFIC_ADJUDICATION"
+    },
+    {
+      "relator": "MarketListing",
+      "mediations": [
+        {
+          "name": "listingPresentation",
+          "mediated_class": "ListedPresentationRole",
+          "relator_end_cardinality": "1..*"
+        },
+        {
+          "name": "listingResponsibleOrganization",
+          "mediated_class": "ListingResponsibleOrganizationRole",
+          "relator_end_cardinality": "1..*"
+        }
+      ],
+      "existing_other_references": [
+        "listingJurisdiction"
+      ],
+      "candidate_distinctness_basis_to_verify": "presentation, responsible organization, jurisdiction, listing identifier and effective period",
+      "positive_witness": "Two relator instances link the same mediated individuals but differ in a documented scope or non-overlapping validity interval; admit only if the domain allows repeat events.",
+      "rejecting_witness": "Two relator instances link the same mediated individuals and have indistinguishable scope and overlapping time; reject only if a current-instance uniqueness rule is scientifically approved.",
+      "focal_shacl_duplicate_fixture": "ACCEPTED; shape imposes no participant-tuple uniqueness",
+      "focal_shacl_missing_end_fixture": "REJECTED",
+      "recommended_disposition": "Do not force global upper 1. Determine relator identity, scope and concurrent uniqueness from source/author evidence before adding a scoped SHACL/OCL rule.",
+      "author_status": "PENDING_SCIENTIFIC_ADJUDICATION"
+    },
+    {
+      "relator": "ProductClassificationAssignment",
+      "mediations": [
+        {
+          "name": "classificationEntity",
+          "mediated_class": "ClassifiedEntity",
+          "relator_end_cardinality": "1..*"
+        },
+        {
+          "name": "classificationEntry",
+          "mediated_class": "AppliedClassificationEntryRole",
+          "relator_end_cardinality": "1..*"
+        }
+      ],
+      "existing_other_references": [],
+      "candidate_distinctness_basis_to_verify": "classified entity, entry, scheme version and classification context",
+      "positive_witness": "Two relator instances link the same mediated individuals but differ in a documented scope or non-overlapping validity interval; admit only if the domain allows repeat events.",
+      "rejecting_witness": "Two relator instances link the same mediated individuals and have indistinguishable scope and overlapping time; reject only if a current-instance uniqueness rule is scientifically approved.",
+      "focal_shacl_duplicate_fixture": "ACCEPTED; shape imposes no participant-tuple uniqueness",
+      "focal_shacl_missing_end_fixture": "REJECTED",
+      "recommended_disposition": "Do not force global upper 1. Determine relator identity, scope and concurrent uniqueness from source/author evidence before adding a scoped SHACL/OCL rule.",
+      "author_status": "PENDING_SCIENTIFIC_ADJUDICATION"
+    },
+    {
+      "relator": "RegulatoryAuthorization",
+      "mediations": [
+        {
+          "name": "authorizationAuthority",
+          "mediated_class": "AuthorizingAuthorityRole",
+          "relator_end_cardinality": "1..*"
+        },
+        {
+          "name": "authorizationParty",
+          "mediated_class": "AuthorizedParty",
+          "relator_end_cardinality": "1..*"
+        }
+      ],
+      "existing_other_references": [
+        "authorizationJurisdiction"
+      ],
+      "candidate_distinctness_basis_to_verify": "authorized party, authority, jurisdiction, authorization scope and validity period",
+      "positive_witness": "Two relator instances link the same mediated individuals but differ in a documented scope or non-overlapping validity interval; admit only if the domain allows repeat events.",
+      "rejecting_witness": "Two relator instances link the same mediated individuals and have indistinguishable scope and overlapping time; reject only if a current-instance uniqueness rule is scientifically approved.",
+      "focal_shacl_duplicate_fixture": "ACCEPTED; shape imposes no participant-tuple uniqueness",
+      "focal_shacl_missing_end_fixture": "REJECTED",
+      "recommended_disposition": "Do not force global upper 1. Determine relator identity, scope and concurrent uniqueness from source/author evidence before adding a scoped SHACL/OCL rule.",
+      "author_status": "PENDING_SCIENTIFIC_ADJUDICATION"
+    },
+    {
+      "relator": "RegulatoryOversight",
+      "mediations": [
+        {
+          "name": "oversightAuthorityRole",
+          "mediated_class": "OversightAuthorityRole",
+          "relator_end_cardinality": "1..*"
+        },
+        {
+          "name": "oversightGovernedEntity",
+          "mediated_class": "GovernedEntity",
+          "relator_end_cardinality": "1..*"
+        }
+      ],
+      "existing_other_references": [],
+      "candidate_distinctness_basis_to_verify": "authority, governed entity, legal basis, scope and period",
+      "positive_witness": "Two relator instances link the same mediated individuals but differ in a documented scope or non-overlapping validity interval; admit only if the domain allows repeat events.",
+      "rejecting_witness": "Two relator instances link the same mediated individuals and have indistinguishable scope and overlapping time; reject only if a current-instance uniqueness rule is scientifically approved.",
+      "focal_shacl_duplicate_fixture": "ACCEPTED; shape imposes no participant-tuple uniqueness",
+      "focal_shacl_missing_end_fixture": "REJECTED",
+      "recommended_disposition": "Do not force global upper 1. Determine relator identity, scope and concurrent uniqueness from source/author evidence before adding a scoped SHACL/OCL rule.",
+      "author_status": "PENDING_SCIENTIFIC_ADJUDICATION"
+    },
+    {
+      "relator": "SupplyDependency",
+      "mediations": [
+        {
+          "name": "dependencyDependent",
+          "mediated_class": "DependentEntity",
+          "relator_end_cardinality": "1..*"
+        },
+        {
+          "name": "dependencyProvider",
+          "mediated_class": "ProviderEntity",
+          "relator_end_cardinality": "1..*"
+        }
+      ],
+      "existing_other_references": [
+        "disruptionAffectsDependency",
+        "riskAssessmentConcernsDependency"
+      ],
+      "candidate_distinctness_basis_to_verify": "dependent entity, provider, supplied subject and effective period",
+      "positive_witness": "Two relator instances link the same mediated individuals but differ in a documented scope or non-overlapping validity interval; admit only if the domain allows repeat events.",
+      "rejecting_witness": "Two relator instances link the same mediated individuals and have indistinguishable scope and overlapping time; reject only if a current-instance uniqueness rule is scientifically approved.",
+      "focal_shacl_duplicate_fixture": "ACCEPTED; shape imposes no participant-tuple uniqueness",
+      "focal_shacl_missing_end_fixture": "REJECTED",
+      "recommended_disposition": "Do not force global upper 1. Determine relator identity, scope and concurrent uniqueness from source/author evidence before adding a scoped SHACL/OCL rule.",
+      "author_status": "PENDING_SCIENTIFIC_ADJUDICATION"
+    },
+    {
+      "relator": "ManufacturingResponsibility",
+      "mediations": [
+        {
+          "name": "manufacturingResponsibilityHolder",
+          "mediated_class": "ManufacturerRole",
+          "relator_end_cardinality": "1..*"
+        },
+        {
+          "name": "manufacturingResponsibilityCounterpart",
+          "mediated_class": "ManufacturingResponsibilitySubjectRole",
+          "relator_end_cardinality": "1..*"
+        }
+      ],
+      "existing_other_references": [],
+      "candidate_distinctness_basis_to_verify": "holder, subject, legal instrument and effective period",
+      "positive_witness": "Two relator instances link the same mediated individuals but differ in a documented scope or non-overlapping validity interval; admit only if the domain allows repeat events.",
+      "rejecting_witness": "Two relator instances link the same mediated individuals and have indistinguishable scope and overlapping time; reject only if a current-instance uniqueness rule is scientifically approved.",
+      "focal_shacl_duplicate_fixture": "ACCEPTED; shape imposes no participant-tuple uniqueness",
+      "focal_shacl_missing_end_fixture": "REJECTED",
+      "recommended_disposition": "Do not force global upper 1. Determine relator identity, scope and concurrent uniqueness from source/author evidence before adding a scoped SHACL/OCL rule.",
+      "author_status": "PENDING_SCIENTIFIC_ADJUDICATION"
+    },
+    {
+      "relator": "ManufacturingSiteUse",
+      "mediations": [
+        {
+          "name": "manufacturingSiteUseHolder",
+          "mediated_class": "ManufacturingSiteRole",
+          "relator_end_cardinality": "1..*"
+        },
+        {
+          "name": "manufacturingSiteUseCounterpart",
+          "mediated_class": "AssigningManufacturingSiteUseOrganizationRole",
+          "relator_end_cardinality": "1..*"
+        }
+      ],
+      "existing_other_references": [],
+      "candidate_distinctness_basis_to_verify": "facility, assigning organization, use authorization and effective period",
+      "positive_witness": "Two relator instances link the same mediated individuals but differ in a documented scope or non-overlapping validity interval; admit only if the domain allows repeat events.",
+      "rejecting_witness": "Two relator instances link the same mediated individuals and have indistinguishable scope and overlapping time; reject only if a current-instance uniqueness rule is scientifically approved.",
+      "focal_shacl_duplicate_fixture": "ACCEPTED; shape imposes no participant-tuple uniqueness",
+      "focal_shacl_missing_end_fixture": "REJECTED",
+      "recommended_disposition": "Do not force global upper 1. Determine relator identity, scope and concurrent uniqueness from source/author evidence before adding a scoped SHACL/OCL rule.",
+      "author_status": "PENDING_SCIENTIFIC_ADJUDICATION"
+    },
+    {
+      "relator": "ImportResponsibility",
+      "mediations": [
+        {
+          "name": "importResponsibilityHolder",
+          "mediated_class": "ImporterRole",
+          "relator_end_cardinality": "1..*"
+        },
+        {
+          "name": "importResponsibilityCounterpart",
+          "mediated_class": "ImportResponsibilitySubjectRole",
+          "relator_end_cardinality": "1..*"
+        }
+      ],
+      "existing_other_references": [],
+      "candidate_distinctness_basis_to_verify": "importer, subject, legal instrument and effective period",
+      "positive_witness": "Two relator instances link the same mediated individuals but differ in a documented scope or non-overlapping validity interval; admit only if the domain allows repeat events.",
+      "rejecting_witness": "Two relator instances link the same mediated individuals and have indistinguishable scope and overlapping time; reject only if a current-instance uniqueness rule is scientifically approved.",
+      "focal_shacl_duplicate_fixture": "ACCEPTED; shape imposes no participant-tuple uniqueness",
+      "focal_shacl_missing_end_fixture": "REJECTED",
+      "recommended_disposition": "Do not force global upper 1. Determine relator identity, scope and concurrent uniqueness from source/author evidence before adding a scoped SHACL/OCL rule.",
+      "author_status": "PENDING_SCIENTIFIC_ADJUDICATION"
+    },
+    {
+      "relator": "WholesaleResponsibility",
+      "mediations": [
+        {
+          "name": "wholesaleResponsibilityHolder",
+          "mediated_class": "WholesaleDistributorRole",
+          "relator_end_cardinality": "1..*"
+        },
+        {
+          "name": "wholesaleResponsibilityCounterpart",
+          "mediated_class": "WholesaleResponsibilitySubjectRole",
+          "relator_end_cardinality": "1..*"
+        }
+      ],
+      "existing_other_references": [],
+      "candidate_distinctness_basis_to_verify": "distributor, subject, legal instrument and effective period",
+      "positive_witness": "Two relator instances link the same mediated individuals but differ in a documented scope or non-overlapping validity interval; admit only if the domain allows repeat events.",
+      "rejecting_witness": "Two relator instances link the same mediated individuals and have indistinguishable scope and overlapping time; reject only if a current-instance uniqueness rule is scientifically approved.",
+      "focal_shacl_duplicate_fixture": "ACCEPTED; shape imposes no participant-tuple uniqueness",
+      "focal_shacl_missing_end_fixture": "REJECTED",
+      "recommended_disposition": "Do not force global upper 1. Determine relator identity, scope and concurrent uniqueness from source/author evidence before adding a scoped SHACL/OCL rule.",
+      "author_status": "PENDING_SCIENTIFIC_ADJUDICATION"
+    },
+    {
+      "relator": "LogisticsServiceCommitment",
+      "mediations": [
+        {
+          "name": "logisticsServiceCommitmentHolder",
+          "mediated_class": "ThirdPartyLogisticsProviderRole",
+          "relator_end_cardinality": "1..*"
+        },
+        {
+          "name": "logisticsServiceCommitmentCounterpart",
+          "mediated_class": "CommissioningLogisticsClientRole",
+          "relator_end_cardinality": "1..*"
+        }
+      ],
+      "existing_other_references": [],
+      "candidate_distinctness_basis_to_verify": "provider, client, service scope and effective period",
+      "positive_witness": "Two relator instances link the same mediated individuals but differ in a documented scope or non-overlapping validity interval; admit only if the domain allows repeat events.",
+      "rejecting_witness": "Two relator instances link the same mediated individuals and have indistinguishable scope and overlapping time; reject only if a current-instance uniqueness rule is scientifically approved.",
+      "focal_shacl_duplicate_fixture": "ACCEPTED; shape imposes no participant-tuple uniqueness",
+      "focal_shacl_missing_end_fixture": "REJECTED",
+      "recommended_disposition": "Do not force global upper 1. Determine relator identity, scope and concurrent uniqueness from source/author evidence before adding a scoped SHACL/OCL rule.",
+      "author_status": "PENDING_SCIENTIFIC_ADJUDICATION"
+    },
+    {
+      "relator": "DistributionSiteUse",
+      "mediations": [
+        {
+          "name": "distributionSiteUseHolder",
+          "mediated_class": "DistributionSiteRole",
+          "relator_end_cardinality": "1..*"
+        },
+        {
+          "name": "distributionSiteUseCounterpart",
+          "mediated_class": "AssigningDistributionSiteUseOrganizationRole",
+          "relator_end_cardinality": "1..*"
+        }
+      ],
+      "existing_other_references": [],
+      "candidate_distinctness_basis_to_verify": "site, assigning organization, use authorization and effective period",
+      "positive_witness": "Two relator instances link the same mediated individuals but differ in a documented scope or non-overlapping validity interval; admit only if the domain allows repeat events.",
+      "rejecting_witness": "Two relator instances link the same mediated individuals and have indistinguishable scope and overlapping time; reject only if a current-instance uniqueness rule is scientifically approved.",
+      "focal_shacl_duplicate_fixture": "ACCEPTED; shape imposes no participant-tuple uniqueness",
+      "focal_shacl_missing_end_fixture": "REJECTED",
+      "recommended_disposition": "Do not force global upper 1. Determine relator identity, scope and concurrent uniqueness from source/author evidence before adding a scoped SHACL/OCL rule.",
+      "author_status": "PENDING_SCIENTIFIC_ADJUDICATION"
+    },
+    {
+      "relator": "RegulatoryMandate",
+      "mediations": [
+        {
+          "name": "regulatoryMandateHolder",
+          "mediated_class": "RegulatoryAuthorityRole",
+          "relator_end_cardinality": "1..*"
+        },
+        {
+          "name": "regulatoryMandateCounterpart",
+          "mediated_class": "MandateConferringOrganizationRole",
+          "relator_end_cardinality": "1..*"
+        }
+      ],
+      "existing_other_references": [],
+      "candidate_distinctness_basis_to_verify": "authority, conferring organization, jurisdiction, legal instrument and effective period",
+      "positive_witness": "Two relator instances link the same mediated individuals but differ in a documented scope or non-overlapping validity interval; admit only if the domain allows repeat events.",
+      "rejecting_witness": "Two relator instances link the same mediated individuals and have indistinguishable scope and overlapping time; reject only if a current-instance uniqueness rule is scientifically approved.",
+      "focal_shacl_duplicate_fixture": "ACCEPTED; shape imposes no participant-tuple uniqueness",
+      "focal_shacl_missing_end_fixture": "REJECTED",
+      "recommended_disposition": "Do not force global upper 1. Determine relator identity, scope and concurrent uniqueness from source/author evidence before adding a scoped SHACL/OCL rule.",
+      "author_status": "PENDING_SCIENTIFIC_ADJUDICATION"
+    },
+    {
+      "relator": "ProductLabelResponsibility",
+      "mediations": [
+        {
+          "name": "productLabelResponsibilityHolder",
+          "mediated_class": "ProductLabelCommitmentOrganizationRole",
+          "relator_end_cardinality": "1..*"
+        },
+        {
+          "name": "productLabelResponsibilityCounterpart",
+          "mediated_class": "ResponsibilitySubjectProductRole",
+          "relator_end_cardinality": "1..*"
+        }
+      ],
+      "existing_other_references": [],
+      "candidate_distinctness_basis_to_verify": "responsible organization, product, commitment and effective period",
+      "positive_witness": "Two relator instances link the same mediated individuals but differ in a documented scope or non-overlapping validity interval; admit only if the domain allows repeat events.",
+      "rejecting_witness": "Two relator instances link the same mediated individuals and have indistinguishable scope and overlapping time; reject only if a current-instance uniqueness rule is scientifically approved.",
+      "focal_shacl_duplicate_fixture": "ACCEPTED; shape imposes no participant-tuple uniqueness",
+      "focal_shacl_missing_end_fixture": "REJECTED",
+      "recommended_disposition": "Do not force global upper 1. Determine relator identity, scope and concurrent uniqueness from source/author evidence before adding a scoped SHACL/OCL rule.",
+      "author_status": "PENDING_SCIENTIFIC_ADJUDICATION"
+    },
+    {
+      "relator": "InstitutionalFundingCommitment",
+      "mediations": [
+        {
+          "name": "institutionalFundingCommitmentHolder",
+          "mediated_class": "PayerFundingOrganizationRole",
+          "relator_end_cardinality": "1..*"
+        },
+        {
+          "name": "institutionalFundingCommitmentCounterpart",
+          "mediated_class": "InstitutionallyFundedOrganizationRole",
+          "relator_end_cardinality": "1..*"
+        }
+      ],
+      "existing_other_references": [],
+      "candidate_distinctness_basis_to_verify": "funding organization, funded organization, institutional instrument and effective period",
+      "positive_witness": "Two relator instances link the same mediated individuals but differ in a documented scope or non-overlapping validity interval; admit only if the domain allows repeat events.",
+      "rejecting_witness": "Two relator instances link the same mediated individuals and have indistinguishable scope and overlapping time; reject only if a current-instance uniqueness rule is scientifically approved.",
+      "focal_shacl_duplicate_fixture": "ACCEPTED; shape imposes no participant-tuple uniqueness",
+      "focal_shacl_missing_end_fixture": "REJECTED",
+      "recommended_disposition": "Do not force global upper 1. Determine relator identity, scope and concurrent uniqueness from source/author evidence before adding a scoped SHACL/OCL rule.",
+      "author_status": "PENDING_SCIENTIFIC_ADJUDICATION"
+    }
+  ]
+}

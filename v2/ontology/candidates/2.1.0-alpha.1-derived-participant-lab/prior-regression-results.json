@@ -1,0 +1,1452 @@
+{
+  "cases": [
+    {
+      "name": "positive",
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/RM-1-positive.ttl",
+      "expected": true,
+      "actual": true,
+      "marker": null,
+      "baseline_actual": true,
+      "baseline_pass": true,
+      "details": [],
+      "triples_added": 0,
+      "pass": true
+    },
+    {
+      "name": "positive",
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/PV-1-positive.ttl",
+      "expected": true,
+      "actual": true,
+      "marker": null,
+      "baseline_actual": true,
+      "baseline_pass": true,
+      "details": [],
+      "triples_added": 0,
+      "pass": true
+    },
+    {
+      "name": "positive",
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/BA-1-positive.ttl",
+      "expected": true,
+      "actual": true,
+      "marker": null,
+      "baseline_actual": true,
+      "baseline_pass": true,
+      "details": [],
+      "triples_added": 0,
+      "pass": true
+    },
+    {
+      "name": "positive",
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/DS-1-positive.ttl",
+      "expected": true,
+      "actual": true,
+      "marker": null,
+      "baseline_actual": true,
+      "baseline_pass": true,
+      "details": [],
+      "triples_added": 0,
+      "pass": true
+    },
+    {
+      "name": "boundary",
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/RM-2-boundary.ttl",
+      "expected": true,
+      "actual": true,
+      "marker": null,
+      "baseline_actual": true,
+      "baseline_pass": true,
+      "details": [],
+      "triples_added": 0,
+      "pass": true
+    },
+    {
+      "name": "boundary",
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/PV-2-boundary.ttl",
+      "expected": true,
+      "actual": true,
+      "marker": null,
+      "baseline_actual": true,
+      "baseline_pass": true,
+      "details": [],
+      "triples_added": 0,
+      "pass": true
+    },
+    {
+      "name": "boundary",
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/BA-2-boundary.ttl",
+      "expected": true,
+      "actual": true,
+      "marker": null,
+      "baseline_actual": true,
+      "baseline_pass": true,
+      "details": [],
+      "triples_added": 0,
+      "pass": true
+    },
+    {
+      "name": "boundary",
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/DS-2-boundary.ttl",
+      "expected": true,
+      "actual": true,
+      "marker": null,
+      "baseline_actual": true,
+      "baseline_pass": true,
+      "details": [],
+      "triples_added": 0,
+      "pass": true
+    },
+    {
+      "name": "missing-scenario-topic",
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/RM-3-missing-scenario-topic.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "scenarioProduct",
+      "baseline_actual": false,
+      "baseline_pass": true,
+      "details": [
+        {
+          "path": "",
+          "constraint": "https://w3id.org/cm-pharme/experimental/refinement/scenarioProduct-or-context-required"
+        }
+      ],
+      "triples_added": 0,
+      "pass": true
+    },
+    {
+      "name": "missing-evidence",
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/RM-3-missing-evidence.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "citesSourceRecord",
+      "baseline_actual": false,
+      "baseline_pass": true,
+      "details": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/four-domain/citesSourceRecord",
+          "constraint": ""
+        }
+      ],
+      "triples_added": 0,
+      "pass": true
+    },
+    {
+      "name": "dangling-plan-result",
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/RM-3-dangling-plan-result.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "planRiskResult",
+      "baseline_actual": false,
+      "baseline_pass": true,
+      "details": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/four-domain/planRiskResult",
+          "constraint": ""
+        }
+      ],
+      "triples_added": 0,
+      "pass": true
+    },
+    {
+      "name": "result-is-assessment",
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/RM-3-result-is-assessment.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "distinct-RiskAssessmentActivity",
+      "baseline_actual": false,
+      "baseline_pass": true,
+      "details": [
+        {
+          "path": "",
+          "constraint": "https://w3id.org/cm-pharme/experimental/four-domain/distinct-RiskAssessmentActivity-Assertion"
+        }
+      ],
+      "triples_added": 0,
+      "pass": true
+    },
+    {
+      "name": "missing-review-predecessor",
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/RM-3-missing-review-predecessor.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "reviewPriorResult",
+      "baseline_actual": false,
+      "baseline_pass": true,
+      "details": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/four-domain/reviewPriorResult",
+          "constraint": ""
+        }
+      ],
+      "triples_added": 0,
+      "pass": true
+    },
+    {
+      "name": "backdated-revision",
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/RM-3-backdated-revision.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "review-time-order",
+      "baseline_actual": false,
+      "baseline_pass": true,
+      "details": [
+        {
+          "path": "",
+          "constraint": "https://w3id.org/cm-pharme/experimental/four-domain/review-time-order"
+        }
+      ],
+      "triples_added": 0,
+      "pass": true
+    },
+    {
+      "name": "dangling-executed-plan",
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/RM-3-dangling-executed-plan.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "implementsRiskPlan",
+      "baseline_actual": false,
+      "baseline_pass": true,
+      "details": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/four-domain/implementsRiskPlan",
+          "constraint": ""
+        }
+      ],
+      "triples_added": 0,
+      "pass": true
+    },
+    {
+      "name": "missing-target",
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/PV-3-missing-target.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "signal-target-required",
+      "baseline_actual": false,
+      "baseline_pass": true,
+      "details": [
+        {
+          "path": "",
+          "constraint": "https://w3id.org/cm-pharme/experimental/four-domain/signal-target-required"
+        }
+      ],
+      "triples_added": 0,
+      "pass": true
+    },
+    {
+      "name": "missing-signal-source",
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/PV-3-missing-signal-source.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "citesSourceRecord",
+      "baseline_actual": false,
+      "baseline_pass": true,
+      "details": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/four-domain/citesSourceRecord",
+          "constraint": ""
+        }
+      ],
+      "triples_added": 0,
+      "pass": true
+    },
+    {
+      "name": "dangling-signal",
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/PV-3-dangling-signal.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "pvResultSignal",
+      "baseline_actual": false,
+      "baseline_pass": true,
+      "details": [
+        {
+          "path": "",
+          "constraint": "https://w3id.org/cm-pharme/experimental/four-domain/signal-result-agreement"
+        },
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/four-domain/pvResultSignal",
+          "constraint": ""
+        }
+      ],
+      "triples_added": 0,
+      "pass": true
+    },
+    {
+      "name": "missing-result-time",
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/PV-3-missing-result-time.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "atTime",
+      "baseline_actual": false,
+      "baseline_pass": true,
+      "details": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/four-domain/atTime",
+          "constraint": ""
+        }
+      ],
+      "triples_added": 0,
+      "pass": true
+    },
+    {
+      "name": "missing-jurisdiction",
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/PV-3-missing-jurisdiction.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "pvRequirementJurisdiction",
+      "baseline_actual": false,
+      "baseline_pass": true,
+      "details": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/four-domain/pvRequirementJurisdiction",
+          "constraint": ""
+        }
+      ],
+      "triples_added": 0,
+      "pass": true
+    },
+    {
+      "name": "reporting-is-record",
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/PV-3-reporting-is-record.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "distinct-AdverseEventReportingActivity",
+      "baseline_actual": false,
+      "baseline_pass": true,
+      "details": [
+        {
+          "path": "",
+          "constraint": "https://w3id.org/cm-pharme/experimental/four-domain/distinct-AdverseEventReportingActivity-SourceRecord"
+        }
+      ],
+      "triples_added": 0,
+      "pass": true
+    },
+    {
+      "name": "signal-is-own-result",
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/PV-3-signal-is-own-result.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "signal-result-distinct",
+      "baseline_actual": false,
+      "baseline_pass": true,
+      "details": [
+        {
+          "path": "",
+          "constraint": "https://w3id.org/cm-pharme/experimental/four-domain/signal-result-distinct"
+        },
+        {
+          "path": "",
+          "constraint": "https://w3id.org/cm-pharme/experimental/four-domain/signal-result-agreement"
+        },
+        {
+          "path": "",
+          "constraint": "urn:cmpe-policy:NoSelfOrSameAsChain"
+        }
+      ],
+      "triples_added": 0,
+      "pass": true
+    },
+    {
+      "name": "signal-result-alias",
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/PV-3-signal-result-alias.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "signal-result-distinct",
+      "baseline_actual": false,
+      "baseline_pass": true,
+      "details": [
+        {
+          "path": "",
+          "constraint": "https://w3id.org/cm-pharme/experimental/four-domain/signal-result-distinct"
+        },
+        {
+          "path": "",
+          "constraint": "urn:cmpe-policy:NoSelfOrSameAsChain"
+        }
+      ],
+      "triples_added": 0,
+      "pass": true
+    },
+    {
+      "name": "result-assessment-target-disagreement",
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/PV-3-result-assessment-target-disagreement.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "signal-result-agreement",
+      "baseline_actual": false,
+      "baseline_pass": true,
+      "details": [
+        {
+          "path": "",
+          "constraint": "https://w3id.org/cm-pharme/experimental/four-domain/signal-result-agreement"
+        }
+      ],
+      "triples_added": 0,
+      "pass": true
+    },
+    {
+      "name": "missing-capability-bearer",
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/BA-3-missing-capability-bearer.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "capabilityBearer",
+      "baseline_actual": false,
+      "baseline_pass": true,
+      "details": [
+        {
+          "path": "https://w3id.org/cm-pharme/2.1/capabilityBearer",
+          "constraint": ""
+        }
+      ],
+      "triples_added": 0,
+      "pass": true
+    },
+    {
+      "name": "service-without-capability",
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/BA-3-service-without-capability.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "serviceCapability",
+      "baseline_actual": false,
+      "baseline_pass": true,
+      "details": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/four-domain/serviceCapability",
+          "constraint": ""
+        }
+      ],
+      "triples_added": 0,
+      "pass": true
+    },
+    {
+      "name": "view-is-organization",
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/BA-3-view-is-organization.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "distinct-BusinessArchitectureView",
+      "baseline_actual": false,
+      "baseline_pass": true,
+      "details": [
+        {
+          "path": "",
+          "constraint": "https://w3id.org/cm-pharme/experimental/four-domain/distinct-BusinessArchitectureView-Organization"
+        }
+      ],
+      "triples_added": 0,
+      "pass": true
+    },
+    {
+      "name": "untyped-view-reference",
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/BA-3-untyped-view-reference.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "viewOrganization",
+      "baseline_actual": false,
+      "baseline_pass": true,
+      "details": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/four-domain/viewOrganization",
+          "constraint": ""
+        }
+      ],
+      "triples_added": 0,
+      "pass": true
+    },
+    {
+      "name": "one-partner-only",
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/BA-3-one-partner-only.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "partnershipParticipant",
+      "baseline_actual": false,
+      "baseline_pass": true,
+      "details": [
+        {
+          "path": "n710cfdf2ff714163b1cb5c4dc6ddd1f2b98",
+          "constraint": ""
+        },
+        {
+          "path": "https://w3id.org/cm-pharme/2.1/partnershipParticipant",
+          "constraint": ""
+        },
+        {
+          "path": "https://w3id.org/cm-pharme/2.1/partnershipParticipant",
+          "constraint": ""
+        }
+      ],
+      "triples_added": 0,
+      "pass": true
+    },
+    {
+      "name": "known-partner-aliases",
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/BA-3-known-partner-aliases.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "partners-not-known-aliases",
+      "baseline_actual": false,
+      "baseline_pass": true,
+      "details": [
+        {
+          "path": "",
+          "constraint": "https://w3id.org/cm-pharme/experimental/four-domain/partners-not-known-aliases"
+        }
+      ],
+      "triples_added": 0,
+      "pass": true
+    },
+    {
+      "name": "missing-version",
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/DS-3-missing-version.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "componentVersion",
+      "baseline_actual": false,
+      "baseline_pass": true,
+      "details": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/four-domain/componentVersion",
+          "constraint": ""
+        }
+      ],
+      "triples_added": 0,
+      "pass": true
+    },
+    {
+      "name": "missing-generating-activity",
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/DS-3-missing-generating-activity.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "recordDigitalActivity",
+      "baseline_actual": false,
+      "baseline_pass": true,
+      "details": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/four-domain/recordDigitalActivity",
+          "constraint": ""
+        }
+      ],
+      "triples_added": 0,
+      "pass": true
+    },
+    {
+      "name": "record-is-component",
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/DS-3-record-is-component.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "distinct-SourceRecord",
+      "baseline_actual": false,
+      "baseline_pass": true,
+      "details": [
+        {
+          "path": "",
+          "constraint": "https://w3id.org/cm-pharme/experimental/four-domain/distinct-SourceRecord-DigitalInformationSystemComponent"
+        }
+      ],
+      "triples_added": 0,
+      "pass": true
+    },
+    {
+      "name": "missing-deployment-time",
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/DS-3-missing-deployment-time.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "atTime",
+      "baseline_actual": false,
+      "baseline_pass": true,
+      "details": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/four-domain/atTime",
+          "constraint": ""
+        }
+      ],
+      "triples_added": 0,
+      "pass": true
+    },
+    {
+      "name": "deployment-after-use",
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/DS-3-deployment-after-use.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "deployment-before-use",
+      "baseline_actual": false,
+      "baseline_pass": true,
+      "details": [
+        {
+          "path": "",
+          "constraint": "https://w3id.org/cm-pharme/experimental/four-domain/deployment-before-use"
+        }
+      ],
+      "triples_added": 0,
+      "pass": true
+    },
+    {
+      "name": "service-without-supported-activity",
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/DS-3-service-without-supported-activity.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "digitalServiceActivity",
+      "baseline_actual": false,
+      "baseline_pass": true,
+      "details": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/four-domain/digitalServiceActivity",
+          "constraint": ""
+        }
+      ],
+      "triples_added": 0,
+      "pass": true
+    },
+    {
+      "name": "combined-domains",
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/ALL-1-combined-domains.ttl",
+      "expected": true,
+      "actual": true,
+      "marker": null,
+      "baseline_actual": true,
+      "baseline_pass": true,
+      "details": [],
+      "triples_added": 0,
+      "pass": true
+    },
+    {
+      "name": "typed-capacity-preserved",
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/REG-1-typed-capacity-preserved.ttl",
+      "expected": true,
+      "actual": true,
+      "marker": null,
+      "baseline_actual": true,
+      "baseline_pass": true,
+      "details": [],
+      "triples_added": 0,
+      "pass": true
+    },
+    {
+      "name": "bearer-free-capacity-rejected",
+      "source": "2.1.0-alpha.1-four-domain-lab/fixtures/REG-3-bearer-free-capacity-rejected.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": null,
+      "baseline_actual": false,
+      "baseline_pass": true,
+      "details": [
+        {
+          "path": "n710cfdf2ff714163b1cb5c4dc6ddd1f2b138",
+          "constraint": ""
+        },
+        {
+          "path": "",
+          "constraint": ""
+        }
+      ],
+      "triples_added": 0,
+      "pass": true
+    },
+    {
+      "name": "positive",
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-RM-CONTEXT-positive.ttl",
+      "expected": true,
+      "actual": true,
+      "marker": null,
+      "baseline_actual": true,
+      "baseline_pass": true,
+      "details": [],
+      "triples_added": 0,
+      "pass": true
+    },
+    {
+      "name": "positive",
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-PV-CARRIER-positive.ttl",
+      "expected": true,
+      "actual": true,
+      "marker": null,
+      "baseline_actual": true,
+      "baseline_pass": true,
+      "details": [],
+      "triples_added": 0,
+      "pass": true
+    },
+    {
+      "name": "positive",
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-PV-ACTOR-positive.ttl",
+      "expected": true,
+      "actual": true,
+      "marker": null,
+      "baseline_actual": true,
+      "baseline_pass": true,
+      "details": [],
+      "triples_added": 0,
+      "pass": true
+    },
+    {
+      "name": "positive",
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-BA-SERVICE-positive.ttl",
+      "expected": true,
+      "actual": true,
+      "marker": null,
+      "baseline_actual": true,
+      "baseline_pass": true,
+      "details": [],
+      "triples_added": 0,
+      "pass": true
+    },
+    {
+      "name": "positive",
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-BA-COMMITMENT-positive.ttl",
+      "expected": true,
+      "actual": true,
+      "marker": null,
+      "baseline_actual": true,
+      "baseline_pass": true,
+      "details": [],
+      "triples_added": 0,
+      "pass": true
+    },
+    {
+      "name": "positive",
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-DS-PHARMA-positive.ttl",
+      "expected": true,
+      "actual": true,
+      "marker": null,
+      "baseline_actual": true,
+      "baseline_pass": true,
+      "details": [],
+      "triples_added": 0,
+      "pass": true
+    },
+    {
+      "name": "positive",
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-DS-RESPONSIBILITY-positive.ttl",
+      "expected": true,
+      "actual": true,
+      "marker": null,
+      "baseline_actual": true,
+      "baseline_pass": true,
+      "details": [],
+      "triples_added": 0,
+      "pass": true
+    },
+    {
+      "name": "positive",
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-PV-SURVEILLANCE-positive.ttl",
+      "expected": true,
+      "actual": true,
+      "marker": null,
+      "baseline_actual": true,
+      "baseline_pass": true,
+      "details": [],
+      "triples_added": 0,
+      "pass": true
+    },
+    {
+      "name": "boundary",
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-RM-CONTEXT-boundary.ttl",
+      "expected": true,
+      "actual": true,
+      "marker": null,
+      "baseline_actual": true,
+      "baseline_pass": true,
+      "details": [],
+      "triples_added": 0,
+      "pass": true
+    },
+    {
+      "name": "boundary",
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-PV-CARRIER-boundary.ttl",
+      "expected": true,
+      "actual": true,
+      "marker": null,
+      "baseline_actual": true,
+      "baseline_pass": true,
+      "details": [],
+      "triples_added": 0,
+      "pass": true
+    },
+    {
+      "name": "boundary",
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-PV-ACTOR-boundary.ttl",
+      "expected": true,
+      "actual": true,
+      "marker": null,
+      "baseline_actual": true,
+      "baseline_pass": true,
+      "details": [],
+      "triples_added": 0,
+      "pass": true
+    },
+    {
+      "name": "boundary",
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-BA-SERVICE-boundary.ttl",
+      "expected": true,
+      "actual": true,
+      "marker": null,
+      "baseline_actual": true,
+      "baseline_pass": true,
+      "details": [],
+      "triples_added": 0,
+      "pass": true
+    },
+    {
+      "name": "boundary",
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-BA-COMMITMENT-boundary.ttl",
+      "expected": true,
+      "actual": true,
+      "marker": null,
+      "baseline_actual": true,
+      "baseline_pass": true,
+      "details": [],
+      "triples_added": 0,
+      "pass": true
+    },
+    {
+      "name": "boundary",
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-DS-PHARMA-boundary.ttl",
+      "expected": true,
+      "actual": true,
+      "marker": null,
+      "baseline_actual": true,
+      "baseline_pass": true,
+      "details": [],
+      "triples_added": 0,
+      "pass": true
+    },
+    {
+      "name": "boundary",
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-DS-RESPONSIBILITY-boundary.ttl",
+      "expected": true,
+      "actual": true,
+      "marker": null,
+      "baseline_actual": true,
+      "baseline_pass": true,
+      "details": [],
+      "triples_added": 0,
+      "pass": true
+    },
+    {
+      "name": "boundary",
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-PV-SURVEILLANCE-boundary.ttl",
+      "expected": true,
+      "actual": true,
+      "marker": null,
+      "baseline_actual": true,
+      "baseline_pass": true,
+      "details": [],
+      "triples_added": 0,
+      "pass": true
+    },
+    {
+      "name": "dependency-boundary",
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-RM-CONTEXT-dependency-boundary.ttl",
+      "expected": true,
+      "actual": true,
+      "marker": null,
+      "baseline_actual": true,
+      "baseline_pass": true,
+      "details": [],
+      "triples_added": 0,
+      "pass": true
+    },
+    {
+      "name": "missing-context",
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-RM-CONTEXT-missing-context.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "scenarioProduct-or-context-required",
+      "baseline_actual": false,
+      "baseline_pass": true,
+      "details": [
+        {
+          "path": "",
+          "constraint": "https://w3id.org/cm-pharme/experimental/refinement/scenarioProduct-or-context-required"
+        }
+      ],
+      "triples_added": 0,
+      "pass": true
+    },
+    {
+      "name": "untyped-facility",
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-RM-CONTEXT-untyped-facility.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "scenarioFacility",
+      "baseline_actual": false,
+      "baseline_pass": true,
+      "details": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/refinement/scenarioFacility",
+          "constraint": ""
+        }
+      ],
+      "triples_added": 0,
+      "pass": true
+    },
+    {
+      "name": "missing-claim",
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-PV-CARRIER-missing-claim.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "carrierClaim",
+      "baseline_actual": false,
+      "baseline_pass": true,
+      "details": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/refinement/carrierClaim",
+          "constraint": ""
+        }
+      ],
+      "triples_added": 0,
+      "pass": true
+    },
+    {
+      "name": "missing-claim-content",
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-PV-CARRIER-missing-claim-content.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "carrierClaim",
+      "baseline_actual": false,
+      "baseline_pass": true,
+      "details": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/refinement/claimText",
+          "constraint": ""
+        },
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/refinement/carrierClaim",
+          "constraint": ""
+        },
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/refinement/claimText",
+          "constraint": ""
+        },
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/refinement/carrierClaim",
+          "constraint": ""
+        },
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/refinement/claimText",
+          "constraint": ""
+        }
+      ],
+      "triples_added": 0,
+      "pass": true
+    },
+    {
+      "name": "carrier-as-claim",
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-PV-CARRIER-carrier-as-claim.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "carrier-not-claim",
+      "baseline_actual": false,
+      "baseline_pass": true,
+      "details": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/refinement/carrierClaim",
+          "constraint": ""
+        },
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/refinement/claimText",
+          "constraint": ""
+        },
+        {
+          "path": "",
+          "constraint": "https://w3id.org/cm-pharme/experimental/refinement/carrier-not-claim"
+        },
+        {
+          "path": "",
+          "constraint": "urn:cmpe-policy:CarrierNotOwnClaim"
+        }
+      ],
+      "triples_added": 0,
+      "pass": true
+    },
+    {
+      "name": "missing-actor",
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-PV-ACTOR-missing-actor.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "assessmentOrganization",
+      "baseline_actual": false,
+      "baseline_pass": true,
+      "details": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/refinement/assessmentOrganization",
+          "constraint": ""
+        }
+      ],
+      "triples_added": 0,
+      "pass": true
+    },
+    {
+      "name": "untyped-actor",
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-PV-ACTOR-untyped-actor.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "assessmentOrganization",
+      "baseline_actual": false,
+      "baseline_pass": true,
+      "details": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/refinement/assessmentOrganization",
+          "constraint": ""
+        }
+      ],
+      "triples_added": 0,
+      "pass": true
+    },
+    {
+      "name": "missing-pharma-context",
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-BA-SERVICE-missing-pharma-context.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "pharma-service-context",
+      "baseline_actual": false,
+      "baseline_pass": true,
+      "details": [
+        {
+          "path": "",
+          "constraint": "https://w3id.org/cm-pharme/experimental/refinement/pharma-service-context"
+        }
+      ],
+      "triples_added": 0,
+      "pass": true
+    },
+    {
+      "name": "untyped-product",
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-BA-SERVICE-untyped-product.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "serviceProduct",
+      "baseline_actual": false,
+      "baseline_pass": true,
+      "details": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/refinement/serviceProduct",
+          "constraint": ""
+        }
+      ],
+      "triples_added": 0,
+      "pass": true
+    },
+    {
+      "name": "missing-commitment",
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-BA-COMMITMENT-missing-commitment.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "agreementCommitment",
+      "baseline_actual": false,
+      "baseline_pass": true,
+      "details": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/refinement/agreementCommitment",
+          "constraint": ""
+        }
+      ],
+      "triples_added": 0,
+      "pass": true
+    },
+    {
+      "name": "missing-source-evidence",
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-BA-COMMITMENT-missing-source-evidence.ttl",
+      "expected": false,
+      "actual": true,
+      "marker": "commitment-evidence-required",
+      "baseline_actual": false,
+      "baseline_pass": true,
+      "details": [],
+      "triples_added": 1,
+      "pass": false
+    },
+    {
+      "name": "outside-actor",
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-BA-COMMITMENT-outside-actor.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "commitment-participant-agreement",
+      "baseline_actual": false,
+      "baseline_pass": true,
+      "details": [
+        {
+          "path": "",
+          "constraint": "https://w3id.org/cm-pharme/experimental/refinement/commitment-participant-agreement"
+        }
+      ],
+      "triples_added": 0,
+      "pass": true
+    },
+    {
+      "name": "missing-manufacturing",
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-DS-PHARMA-missing-manufacturing.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "supportsManufacturing",
+      "baseline_actual": false,
+      "baseline_pass": true,
+      "details": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/four-domain/digitalServiceActivity",
+          "constraint": ""
+        },
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/refinement/supportsManufacturing",
+          "constraint": ""
+        },
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/refinement/supportsManufacturing",
+          "constraint": ""
+        }
+      ],
+      "triples_added": 0,
+      "pass": true
+    },
+    {
+      "name": "missing-manufactured-product",
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-DS-PHARMA-missing-manufactured-product.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "manufacturingProduct",
+      "baseline_actual": false,
+      "baseline_pass": true,
+      "details": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/four-domain/digitalServiceActivity",
+          "constraint": ""
+        },
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/refinement/supportsManufacturing",
+          "constraint": ""
+        },
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/refinement/manufacturingProduct",
+          "constraint": ""
+        },
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/refinement/manufacturingProduct",
+          "constraint": ""
+        },
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/refinement/supportsManufacturing",
+          "constraint": ""
+        },
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/refinement/manufacturingProduct",
+          "constraint": ""
+        }
+      ],
+      "triples_added": 0,
+      "pass": true
+    },
+    {
+      "name": "service-component-disagreement",
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-DS-PHARMA-service-component-disagreement.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "service-component-agreement",
+      "baseline_actual": false,
+      "baseline_pass": true,
+      "details": [
+        {
+          "path": "",
+          "constraint": "https://w3id.org/cm-pharme/experimental/refinement/service-component-agreement"
+        }
+      ],
+      "triples_added": 0,
+      "pass": true
+    },
+    {
+      "name": "missing-responsibility",
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-DS-RESPONSIBILITY-missing-responsibility.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "activityResponsibleOrganization",
+      "baseline_actual": false,
+      "baseline_pass": true,
+      "details": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/four-domain/digitalServiceActivity",
+          "constraint": ""
+        },
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/refinement/activityResponsibleOrganization",
+          "constraint": ""
+        },
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/refinement/activityResponsibleOrganization",
+          "constraint": ""
+        }
+      ],
+      "triples_added": 0,
+      "pass": true
+    },
+    {
+      "name": "untyped-responsible-actor",
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-DS-RESPONSIBILITY-untyped-responsible-actor.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "activityResponsibleOrganization",
+      "baseline_actual": false,
+      "baseline_pass": true,
+      "details": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/four-domain/digitalServiceActivity",
+          "constraint": ""
+        },
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/refinement/activityResponsibleOrganization",
+          "constraint": ""
+        },
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/refinement/activityResponsibleOrganization",
+          "constraint": ""
+        }
+      ],
+      "triples_added": 0,
+      "pass": true
+    },
+    {
+      "name": "missing-source",
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-PV-SURVEILLANCE-missing-source.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "surveillanceSource",
+      "baseline_actual": false,
+      "baseline_pass": true,
+      "details": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/four-domain/surveillanceSource",
+          "constraint": ""
+        }
+      ],
+      "triples_added": 0,
+      "pass": true
+    },
+    {
+      "name": "untyped-source",
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/X-PV-SURVEILLANCE-untyped-source.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": "surveillanceSource",
+      "baseline_actual": false,
+      "baseline_pass": true,
+      "details": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/four-domain/reportsRecord",
+          "constraint": ""
+        },
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/four-domain/citesSourceRecord",
+          "constraint": ""
+        },
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/four-domain/surveillanceSource",
+          "constraint": ""
+        }
+      ],
+      "triples_added": 0,
+      "pass": true
+    },
+    {
+      "name": "all-refinements",
+      "source": "2.1.0-alpha.1-four-domain-refinement/fixtures/COMBINED-all-refinements.ttl",
+      "expected": true,
+      "actual": true,
+      "marker": null,
+      "baseline_actual": true,
+      "baseline_pass": true,
+      "details": [],
+      "triples_added": 0,
+      "pass": true
+    },
+    {
+      "name": "untagged-distinct-result",
+      "source": "2.1.0-alpha.1-content-event-policy/fixtures/untagged-distinct-result.ttl",
+      "expected": true,
+      "actual": true,
+      "marker": null,
+      "baseline_actual": true,
+      "baseline_pass": true,
+      "details": [],
+      "triples_added": 0,
+      "pass": true
+    },
+    {
+      "name": "untagged-self",
+      "source": "2.1.0-alpha.1-content-event-policy/fixtures/untagged-self.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": null,
+      "baseline_actual": false,
+      "baseline_pass": true,
+      "details": [
+        {
+          "path": "",
+          "constraint": "urn:cmpe-policy:NoSelfOrSameAsChain"
+        }
+      ],
+      "triples_added": 0,
+      "pass": true
+    },
+    {
+      "name": "direct-alias",
+      "source": "2.1.0-alpha.1-content-event-policy/fixtures/direct-alias.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": null,
+      "baseline_actual": false,
+      "baseline_pass": true,
+      "details": [
+        {
+          "path": "",
+          "constraint": "urn:cmpe-policy:NoSelfOrSameAsChain"
+        }
+      ],
+      "triples_added": 0,
+      "pass": true
+    },
+    {
+      "name": "reverse-alias",
+      "source": "2.1.0-alpha.1-content-event-policy/fixtures/reverse-alias.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": null,
+      "baseline_actual": false,
+      "baseline_pass": true,
+      "details": [
+        {
+          "path": "",
+          "constraint": "urn:cmpe-policy:NoSelfOrSameAsChain"
+        }
+      ],
+      "triples_added": 0,
+      "pass": true
+    },
+    {
+      "name": "mixed-three-link-alias",
+      "source": "2.1.0-alpha.1-content-event-policy/fixtures/mixed-three-link-alias.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": null,
+      "baseline_actual": false,
+      "baseline_pass": true,
+      "details": [
+        {
+          "path": "",
+          "constraint": "urn:cmpe-policy:NoSelfOrSameAsChain"
+        }
+      ],
+      "triples_added": 0,
+      "pass": true
+    },
+    {
+      "name": "unrelated-alias",
+      "source": "2.1.0-alpha.1-content-event-policy/fixtures/unrelated-alias.ttl",
+      "expected": true,
+      "actual": true,
+      "marker": null,
+      "baseline_actual": true,
+      "baseline_pass": true,
+      "details": [],
+      "triples_added": 0,
+      "pass": true
+    },
+    {
+      "name": "shared-signal-two-assessments",
+      "source": "2.1.0-alpha.1-content-event-policy/fixtures/shared-signal-two-assessments.ttl",
+      "expected": true,
+      "actual": true,
+      "marker": null,
+      "baseline_actual": true,
+      "baseline_pass": true,
+      "details": [],
+      "triples_added": 0,
+      "pass": true
+    },
+    {
+      "name": "cross-context-content-reuse",
+      "source": "2.1.0-alpha.1-content-event-policy/fixtures/cross-context-content-reuse.ttl",
+      "expected": true,
+      "actual": true,
+      "marker": null,
+      "baseline_actual": true,
+      "baseline_pass": true,
+      "details": [],
+      "triples_added": 0,
+      "pass": true
+    },
+    {
+      "name": "same-text-does-not-merge-claims",
+      "source": "2.1.0-alpha.1-content-event-policy/fixtures/same-text-does-not-merge-claims.ttl",
+      "expected": true,
+      "actual": true,
+      "marker": null,
+      "baseline_actual": true,
+      "baseline_pass": true,
+      "details": [],
+      "triples_added": 0,
+      "pass": true
+    },
+    {
+      "name": "carrier-self-without-tag",
+      "source": "2.1.0-alpha.1-content-event-policy/fixtures/carrier-self-without-tag.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": null,
+      "baseline_actual": false,
+      "baseline_pass": true,
+      "details": [
+        {
+          "path": "",
+          "constraint": "urn:cmpe-policy:CarrierNotOwnClaim"
+        }
+      ],
+      "triples_added": 0,
+      "pass": true
+    },
+    {
+      "name": "carrier-alias-chain",
+      "source": "2.1.0-alpha.1-content-event-policy/fixtures/carrier-alias-chain.ttl",
+      "expected": false,
+      "actual": false,
+      "marker": null,
+      "baseline_actual": false,
+      "baseline_pass": true,
+      "details": [
+        {
+          "path": "",
+          "constraint": "urn:cmpe-policy:CarrierNotOwnClaim"
+        }
+      ],
+      "triples_added": 0,
+      "pass": true
+    },
+    {
+      "name": "distinct-carrier-and-claim",
+      "source": "2.1.0-alpha.1-content-event-policy/fixtures/distinct-carrier-and-claim.ttl",
+      "expected": true,
+      "actual": true,
+      "marker": null,
+      "baseline_actual": true,
+      "baseline_pass": true,
+      "details": [],
+      "triples_added": 0,
+      "pass": true
+    },
+    {
+      "name": "two-carriers-same-claim",
+      "source": "2.1.0-alpha.1-content-event-policy/fixtures/two-carriers-same-claim.ttl",
+      "expected": true,
+      "actual": true,
+      "marker": null,
+      "baseline_actual": true,
+      "baseline_pass": true,
+      "details": [],
+      "triples_added": 0,
+      "pass": true
+    }
+  ],
+  "pass": 88,
+  "total": 89,
+  "materialization_applied": true,
+  "baseline_pass": 89,
+  "known_contract_change_characterized": true,
+  "contract_change_accepted": false,
+  "regression_gate": "BLOCKED_PENDING_SEMANTIC_DECISION"
+}

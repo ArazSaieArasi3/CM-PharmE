@@ -1,0 +1,21 @@
+@prefix c: <https://w3id.org/cm-pharme/2.1/> .
+@prefix q: <https://w3id.org/cm-pharme/experimental/prov-target/> .
+@prefix r: <https://w3id.org/cm-pharme/experimental/refinement/> .
+
+q:R4 a q:TargetCase ;
+    q:claim q:R4-claim ;
+    q:evidenceKind "explicit-assessment-scope" ;
+    q:family "assessment" ;
+    q:source q:R4-event ;
+    q:target q:R4-target ;
+    q:targetClass c:ManufacturingActivity .
+
+q:R4-record a c:SourceRecord ;
+    r:carrierClaim q:R4-claim .
+
+q:R4-event a c:RiskAssessmentActivity ;
+    q:assessmentOutput q:R4-claim .
+
+q:R4-target a c:ManufacturingActivity .
+
+q:R4-claim a c:Assertion .

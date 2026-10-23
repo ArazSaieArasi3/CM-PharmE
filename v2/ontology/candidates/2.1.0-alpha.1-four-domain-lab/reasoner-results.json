@@ -1,0 +1,85 @@
+{
+  "engine": "HermiT bundled with Owlready2 0.49",
+  "cases": [
+    {
+      "name": "experimental-tbox-coherence",
+      "expected_consistent": true,
+      "actual_consistent": true,
+      "unsatisfiable_named_classes": [],
+      "pass": true
+    },
+    {
+      "name": "all-four-modules-positive",
+      "expected_consistent": true,
+      "actual_consistent": true,
+      "unsatisfiable_named_classes": [],
+      "pass": true
+    },
+    {
+      "name": "RM-identity-collision",
+      "expected_consistent": false,
+      "actual_consistent": false,
+      "unsatisfiable_named_classes": [],
+      "pass": true
+    },
+    {
+      "name": "PV-identity-collision",
+      "expected_consistent": false,
+      "actual_consistent": false,
+      "unsatisfiable_named_classes": [],
+      "pass": true
+    },
+    {
+      "name": "BA-identity-collision",
+      "expected_consistent": false,
+      "actual_consistent": false,
+      "unsatisfiable_named_classes": [],
+      "pass": true
+    },
+    {
+      "name": "DS-identity-collision",
+      "expected_consistent": false,
+      "actual_consistent": false,
+      "unsatisfiable_named_classes": [],
+      "pass": true
+    },
+    {
+      "name": "RM-plan-with-zero-executions-countermodel",
+      "expected_consistent": true,
+      "actual_consistent": true,
+      "unsatisfiable_named_classes": [],
+      "pass": true
+    },
+    {
+      "name": "BA-capability-with-zero-exercises-countermodel",
+      "expected_consistent": true,
+      "actual_consistent": true,
+      "unsatisfiable_named_classes": [],
+      "pass": true
+    },
+    {
+      "name": "PV-signal-without-established-causality-countermodel",
+      "expected_consistent": true,
+      "actual_consistent": true,
+      "unsatisfiable_named_classes": [],
+      "pass": true
+    },
+    {
+      "name": "DS-record-with-no-authorization-in-model-countermodel",
+      "expected_consistent": true,
+      "actual_consistent": true,
+      "unsatisfiable_named_classes": [],
+      "pass": true
+    },
+    {
+      "name": "PV-jurisdiction-B-not-implied-countermodel",
+      "expected_consistent": true,
+      "actual_consistent": true,
+      "unsatisfiable_named_classes": [],
+      "pass": true
+    }
+  ],
+  "pass_count": 11,
+  "case_count": 11,
+  "countermodel_note": "Consistency of added negations/max-zero establishes the scoped non-entailment only; it does not validate causality or a regulatory rule."
+}

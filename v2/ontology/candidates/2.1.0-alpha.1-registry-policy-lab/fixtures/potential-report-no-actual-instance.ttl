@@ -1,0 +1,10 @@
+@prefix c: <https://w3id.org/cm-pharme/2.1/> .
+@prefix p: <https://w3id.org/cm-pharme/experimental/registry-policy/> .
+@prefix t: <urn:cmpe-registry-policy:> .
+
+t:claim a c:Assertion ;
+    c:assertionAboutProduct t:product ;
+    p:profile "shortage-claim" ;
+    p:shortageStatus "potential" .
+
+t:product a c:MedicinalProduct .

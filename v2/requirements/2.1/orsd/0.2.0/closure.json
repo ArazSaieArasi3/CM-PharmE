@@ -1,0 +1,23 @@
+{
+  "document_version": "0.2.0",
+  "ontology_target": "CM-PharmE 2.1 research candidate",
+  "status": "TECHNICAL_CONSOLIDATION_COMPLETE_READY_FOR_AUTHOR_CONTENT_REVIEW",
+  "completed": [
+    {"id": "DOC-01", "task": "Known overlap dispositions", "evidence": "overlap-decisions.json", "result": "24 recorded decisions; eight scoped specializations; all 83 tracked IDs retained"},
+    {"id": "DOC-02", "task": "R-BA-02 scoped mapping and oracle", "evidence": "mapping-decisions.json and verification/", "result": "Current logistics predicate selected; no equivalence or alias asserted; new witnesses and countermodel tested"},
+    {"id": "DOC-03", "task": "Acceptance contract specification", "evidence": "acceptance-contracts.json", "result": "71 functional contracts and 12 quality protocols specified; execution states explicit"},
+    {"id": "DOC-04", "task": "Technical validation and deliverables", "evidence": "validation.json and artifact-checks.json", "result": "Targeted tests and document checks passed; Word/PDF checked separately"}
+  ],
+  "remaining_for_document_freeze": [
+    {"id": "DOC-05", "task": "One author content review", "items": ["Confirm stated purpose and scope", "Review candidate Must/Should priorities", "Identify any concrete missing essential requirement"], "output": "Record any corrections and freeze document 1.0.0", "status": "NOT_RECORDED"}
+  ],
+  "separate_ontology_work": [
+    "Execute and assess the other 47 functional acceptance contracts under independently fixed oracles",
+    "Complete native relation, cardinality and Event/Situation semantic decisions",
+    "Perform prospective expert evaluation",
+    "Strengthen operational evidence and full source coverage",
+    "Align accepted model, article, diagrams and documentation"
+  ],
+  "not_required_to_write_or_freeze_a_specification": "Completing every model acceptance test or empirical evaluation; their pending status must remain explicit.",
+  "approval_boundary": "Editorial dispositions and test success do not constitute author or independent expert acceptance of all ontology commitments."
+}

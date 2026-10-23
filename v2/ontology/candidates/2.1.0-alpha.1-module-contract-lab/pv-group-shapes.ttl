@@ -1,0 +1,67 @@
+@prefix c: <https://w3id.org/cm-pharme/2.1/> .
+@prefix g: <https://w3id.org/cm-pharme/experimental/source-group/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+g:source-group-scopeShape a sh:NodeShape ;
+    sh:class c:Assertion ;
+    sh:not [ sh:class c:SourceRecord ] ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:minLength 1 ;
+            sh:path g:scopeVersion ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:minLength 1 ;
+            sh:path g:sourceLabel ],
+        [ sh:class c:Assertion ;
+            sh:minCount 1 ;
+            sh:node g:source-group-entryShape ;
+            sh:path g:scopeEntry ],
+        [ sh:class c:SourceRecord ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path g:scopeSource ] ;
+    sh:sparql [ sh:message "Scope entries must share source/version and distinct positive ordinal." ;
+            sh:select """SELECT $this WHERE {
+ $this <https://w3id.org/cm-pharme/experimental/source-group/scopeEntry> ?e ; <https://w3id.org/cm-pharme/experimental/source-group/scopeSource> ?src ; <https://w3id.org/cm-pharme/experimental/source-group/scopeVersion> ?v .
+ ?e <https://w3id.org/cm-pharme/experimental/source-group/entrySource> ?es ; <https://w3id.org/cm-pharme/experimental/source-group/scopeVersion> ?ev ; <https://w3id.org/cm-pharme/experimental/source-group/entryOrdinal> ?n .
+ FILTER (?src != ?es || ?v != ?ev || ?n < 1 || EXISTS { $this <https://w3id.org/cm-pharme/experimental/source-group/scopeEntry> ?other . ?other <https://w3id.org/cm-pharme/experimental/source-group/entryOrdinal> ?n . FILTER (?other != ?e) }) }""" ] ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select "SELECT ?this WHERE { ?this <https://w3id.org/cm-pharme/experimental/source-group/profile> \"source-group-scope\" }" ] .
+
+g:source-group-entryShape a sh:NodeShape ;
+    sh:class c:Assertion ;
+    sh:not [ sh:class c:SourceRecord ] ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:minLength 1 ;
+            sh:path g:evidencePointer ],
+        [ sh:datatype xsd:integer ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path g:entryOrdinal ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:minLength 1 ;
+            sh:path g:scopeVersion ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:minLength 1 ;
+            sh:path g:labelKindProposal ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:minLength 1 ;
+            sh:path g:sourceLabel ],
+        [ sh:class c:SourceRecord ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path g:entrySource ] ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select "SELECT ?this WHERE { ?this <https://w3id.org/cm-pharme/experimental/source-group/profile> \"source-group-entry\" }" ] .

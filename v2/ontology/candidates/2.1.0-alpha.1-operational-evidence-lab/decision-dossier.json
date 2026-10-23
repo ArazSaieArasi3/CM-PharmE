@@ -1,0 +1,74 @@
+{
+  "retention_direction": "ACCEPTED; all four domains retained",
+  "decisions": [
+    {
+      "id": "OE-01",
+      "topic": "RM family-scoped risk",
+      "recommendation": "Keep scenarioScopeDescription as a proposed information relation to a versioned source-defined scope. Reuse the PV scope profile; do not create a fake MedicinalProduct for a family.",
+      "evidence": "risk-scope-results.json: 8/8 checks, 2/2 logical expectations",
+      "remaining": "Native representation and semantic acceptance; formal scope membership versus lexical source labels.",
+      "status": "PROPOSED_NOT_YET_SCIENTIFICALLY_ACCEPTED",
+      "execution_owner": "assistant",
+      "review_owner": "Araz"
+    },
+    {
+      "id": "OE-02",
+      "topic": "Time precision",
+      "recommendation": "Retain day/month/year and time role on documentary claims. Use an interval for a month/year; never manufacture a midnight instant or treat publication date as event date.",
+      "evidence": "RM January 2019; DS launch day; BA occurrence upper bounds and planned windows",
+      "remaining": "A future accepted temporal model for domain events, separate from this documentary adapter.",
+      "status": "PROPOSED_NOT_YET_SCIENTIFICALLY_ACCEPTED",
+      "execution_owner": "assistant",
+      "review_owner": "Araz"
+    },
+    {
+      "id": "OE-03",
+      "topic": "Plan versus occurrence",
+      "recommendation": "Keep planned/required/capability/occurrence reports distinct and query source publication cutoffs. A future target is not observed capacity.",
+      "evidence": "Lonza May 2020 plan, July 2020 transfer update, April 2021 production report",
+      "remaining": "Redacted/absent work orders, commitment identity, quantities and effectiveness; public executed agreement now examined.",
+      "status": "PROPOSED_NOT_YET_SCIENTIFICALLY_ACCEPTED",
+      "execution_owner": "assistant",
+      "review_owner": "Araz"
+    },
+    {
+      "id": "OE-04",
+      "topic": "DS granularity and version",
+      "recommendation": "Preserve launch evidence in the documentary layer until component/build/operator details are known. E2B(R3) is a message format, not componentVersion. Keep the complete deployment profile strict.",
+      "evidence": "DS-complete-deployment projection correctly rejected",
+      "remaining": "Actual deployment/change record and operator evidence; choose system/component scope explicitly.",
+      "status": "PROPOSED_NOT_YET_SCIENTIFICALLY_ACCEPTED",
+      "execution_owner": "assistant",
+      "review_owner": "Araz"
+    },
+    {
+      "id": "OE-05",
+      "topic": "Registry licence boundary",
+      "recommendation": "Use Swissmedic as authority evidence for a facility licence. Do not promote it to product marketing authorization or establishment registration.",
+      "evidence": "REG-SWISSMEDIC-2021 and query boundary checks",
+      "remaining": "Licence record/identifier, exact issuance date, legal object classification and RG-07.",
+      "status": "PROPOSED_NOT_YET_SCIENTIFICALLY_ACCEPTED",
+      "execution_owner": "assistant",
+      "review_owner": "Araz"
+    },
+    {
+      "id": "OE-06",
+      "topic": "BA contract identity and party scope",
+      "recommendation": "Keep SCA and GLTA separate; retain made/effective dates and three signature-party identities. Scope commitments to their agreement/SOW. Do not collapse affiliates into corporate labels or apply the exact-set profile universally.",
+      "evidence": "Public SEC Exhibit 10.2; contract-results.json: 11/11 checks and 2/2 logical expectations",
+      "remaining": "Missing SOWs, redacted clauses, registry identity, debtor/creditor roles and subset/affiliate commitments.",
+      "status": "PROPOSED_NOT_YET_SCIENTIFICALLY_ACCEPTED",
+      "execution_owner": "assistant",
+      "review_owner": "Araz"
+    }
+  ],
+  "proceed_without_waiting": [
+    "source and identifier research",
+    "scenario expansion",
+    "formal validation preparation"
+  ],
+  "not_inferred": [
+    "full semantic approval",
+    "merge/release approval for this draft candidate"
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "schema": "cm-pharme.g3-2e-e.static.v1",
+  "baseline_native_elements": 520,
+  "candidate_native_elements": 524,
+  "unique_ids": true,
+  "root_contents_references_valid": true,
+  "typed_endpoint_references_valid": true,
+  "all_existing_elements_retained": true,
+  "changed_existing_ids": [
+    "cm-pharme-root",
+    "rel-capabilityBearer",
+    "end-capabilityBearer-source",
+    "end-capabilityBearer-target",
+    "rel-capacityBearer",
+    "rel-contextClassificationJurisdiction",
+    "rel-entryInScheme",
+    "rel-hasActiveSubstance",
+    "rel-hasDosageForm",
+    "rel-hasMatchConfidence",
+    "end-hasMatchConfidence-source",
+    "end-hasMatchConfidence-target",
+    "rel-hasPackageConfiguration",
+    "rel-presentationOf",
+    "rel-shortagePresentation",
+    "rel-shortageProduct",
+    "rel-withinCountry",
+    "rel-withinRegion"
+  ],
+  "new_ids": [
+    "rel-productHasActiveSubstance",
+    "end-productHasActiveSubstance-source",
+    "end-productHasActiveSubstance-target",
+    "g3-2e-e-scope-note"
+  ],
+  "cardinality_checks": {
+    "capability_bearer": [
+      "0..*",
+      "1"
+    ],
+    "match_confidence": [
+      "1",
+      "0..*"
+    ],
+    "product_active_substance": [
+      "0..*",
+      "0..*"
+    ]
+  },
+  "retained_stereotypes": {
+    "hasStrength": "characterization",
+    "g3_2a_mediations": [
+      [
+        "alternativeForProduct",
+        "mediation"
+      ],
+      [
+        "alternativeProduct",
+        "mediation"
+      ],
+      [
+        "authorizationAuthority",
+        "mediation"
+      ]
+    ]
+  },
+  "native_named_class_graph_before": {
+    "classes": 138,
+    "components": 15,
+    "isolates": [
+      "AdverseEventReportingActivity",
+      "BusinessArchitectureView",
+      "DigitalInformationSystemComponent",
+      "DistributionLogisticsActivity",
+      "ManufacturingActivity",
+      "PharmacovigilanceRequirement",
+      "PostMarketSurveillanceActivity",
+      "ProcurementActivity",
+      "RegulatoryRequirement",
+      "RiskTreatmentActivity",
+      "RiskTreatmentPlan",
+      "ServiceOfferingSpecification",
+      "StockoutSituation",
+      "SupplyCapacity"
+    ],
+    "largest": 124
+  },
+  "native_named_class_graph_after": {
+    "classes": 138,
+    "components": 15,
+    "isolates": [
+      "AdverseEventReportingActivity",
+      "BusinessArchitectureView",
+      "DigitalInformationSystemComponent",
+      "DistributionLogisticsActivity",
+      "ManufacturingActivity",
+      "PharmacovigilanceRequirement",
+      "PostMarketSurveillanceActivity",
+      "ProcurementActivity",
+      "RegulatoryRequirement",
+      "RiskTreatmentActivity",
+      "RiskTreatmentPlan",
+      "ServiceOfferingSpecification",
+      "StockoutSituation",
+      "SupplyCapacity"
+    ],
+    "largest": 124
+  },
+  "author_decisions_described": 13,
+  "official_parser_schema_run": false,
+  "official_antipattern_run": false,
+  "owl_shacl_run_on_this_candidate": false,
+  "real_data_migration": false
+}

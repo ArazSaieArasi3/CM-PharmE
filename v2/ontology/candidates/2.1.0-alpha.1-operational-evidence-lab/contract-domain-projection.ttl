@@ -1,0 +1,41 @@
+@prefix b: <https://w3id.org/cm-pharme/experimental/reporting-context/> .
+@prefix c: <https://w3id.org/cm-pharme/2.1/> .
+@prefix l: <https://w3id.org/cm-pharme/experimental/four-domain/> .
+@prefix r: <https://w3id.org/cm-pharme/experimental/refinement/> .
+@prefix t: <urn:cmpe-evidence:> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+t:GLTA a c:StrategicPartnershipAgreement ;
+    c:partnershipParticipant t:LonzaLtd,
+        t:LonzaSales,
+        t:ModernaTX ;
+    l:profile "ba-partnership",
+        "documented-partnership" ;
+    r:agreementCommitment t:workOrderCommitment .
+
+t:contractEvidence a c:EvidenceSupport ;
+    c:evidenceAssertion t:workOrderCommitment ;
+    c:evidenceItem t:BA-MODERNA-SEC-2020 ;
+    c:evidenceRecord t:BA-MODERNA-SEC-2020 .
+
+t:BA-MODERNA-SEC-2020 a c:EvidenceItem,
+        c:EvidenceSourceRecordRole,
+        c:SourceRecord ;
+    b:sourceURL "https://www.sec.gov/Archives/edgar/data/1682852/000168285220000023/lonzamodernagltafullye.htm"^^xsd:anyURI .
+
+t:LonzaLtd a c:Organization,
+        c:PartnerOrganizationRole .
+
+t:LonzaSales a c:Organization,
+        c:PartnerOrganizationRole .
+
+t:ModernaTX a c:Organization,
+        c:PartnerOrganizationRole .
+
+t:workOrderCommitment a c:Assertion,
+        c:SupportedAssertionRole ;
+    l:profile "commitment-assertion" ;
+    r:commitmentActor t:LonzaLtd,
+        t:LonzaSales,
+        t:ModernaTX ;
+    r:commitmentText "The parties are to agree a work order before the specified work." .

@@ -1,0 +1,64 @@
+@prefix c: <https://w3id.org/cm-pharme/2.1/> .
+@prefix d: <https://w3id.org/cm-pharme/experimental/coherence/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+d:capability-logisticsShape a sh:NodeShape ;
+    sh:class c:EnterpriseCapability ;
+    sh:property [ sh:class c:DistributionLogisticsActivity ;
+            sh:minCount 1 ;
+            sh:path d:capabilityRealizedInLogistics ] ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select "SELECT ?this WHERE { ?this <https://w3id.org/cm-pharme/experimental/coherence/profile> \"capability-logistics\" . }" ] .
+
+d:digital-logisticsShape a sh:NodeShape ;
+    sh:class c:ProvenanceActivity ;
+    sh:property [ sh:class c:DistributionLogisticsActivity ;
+            sh:minCount 1 ;
+            sh:path d:supportsLogistics ] ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select "SELECT ?this WHERE { ?this <https://w3id.org/cm-pharme/experimental/coherence/profile> \"digital-logistics\" . }" ] .
+
+d:logisticsShape a sh:NodeShape ;
+    sh:class c:DistributionLogisticsActivity ;
+    sh:property [ sh:class c:MedicinalProduct ;
+            sh:minCount 1 ;
+            sh:path d:logisticsProduct ],
+        [ sh:class c:Facility ;
+            sh:minCount 1 ;
+            sh:path d:logisticsFacility ] ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select "SELECT ?this WHERE { ?this <https://w3id.org/cm-pharme/experimental/coherence/profile> \"logistics\" . }" ] .
+
+d:procurementShape a sh:NodeShape ;
+    sh:class c:ProcurementActivity ;
+    sh:property [ sh:class c:Organization ;
+            sh:minCount 1 ;
+            sh:path d:procurementOrganization ],
+        [ sh:class c:MedicinalProduct ;
+            sh:minCount 1 ;
+            sh:path d:procurementProduct ] ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select "SELECT ?this WHERE { ?this <https://w3id.org/cm-pharme/experimental/coherence/profile> \"procurement\" . }" ] .
+
+d:requirementShape a sh:NodeShape ;
+    sh:class c:RegulatoryRequirement ;
+    sh:property [ sh:class c:SourceRecord ;
+            sh:minCount 1 ;
+            sh:path d:requirementSource ],
+        [ sh:class c:RegulatoryJurisdiction ;
+            sh:minCount 1 ;
+            sh:path d:requirementJurisdiction ] ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select "SELECT ?this WHERE { ?this <https://w3id.org/cm-pharme/experimental/coherence/profile> \"requirement\" . }" ] .
+
+d:stockoutShape a sh:NodeShape ;
+    sh:class c:StockoutSituation ;
+    sh:property [ sh:class c:Facility ;
+            sh:minCount 1 ;
+            sh:path d:stockoutFacility ],
+        [ sh:class c:MedicinalProduct ;
+            sh:minCount 1 ;
+            sh:path d:stockoutProduct ] ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select "SELECT ?this WHERE { ?this <https://w3id.org/cm-pharme/experimental/coherence/profile> \"stockout\" . }" ] .

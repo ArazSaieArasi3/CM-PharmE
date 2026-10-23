@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<RefOntoUML:Package xmlns:RefOntoUML="http://nemo.inf.ufes.br/ontouml/refontouml" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmi:version="2.0" xmi:id="pkg" name="DepPhase-positive" visibility="public">
+  <packagedElement xsi:type="RefOntoUML:Kind" xmi:id="Person" name="Person" visibility="public" isAbstract="false" />
+  <packagedElement xsi:type="RefOntoUML:Phase" xmi:id="Dependent" name="Dependent" visibility="public" isAbstract="false">
+    <generalization xmi:id="DependentToPerson" general="Person" />
+  </packagedElement>
+  <packagedElement xsi:type="RefOntoUML:Relator" xmi:id="Agreement" name="Agreement" visibility="public" isAbstract="false" />
+  <packagedElement xsi:type="RefOntoUML:Mediation" xmi:id="med" name="med" visibility="public" memberEnd="medA medB">
+    <ownedEnd xmi:id="medA" name="medA" type="Agreement" association="med" aggregation="none" visibility="public">
+      <lowerValue xsi:type="RefOntoUML:LiteralInteger" xmi:id="medAlower" value="1" />
+      <upperValue xsi:type="RefOntoUML:LiteralUnlimitedNatural" xmi:id="medAupper" value="1" />
+    </ownedEnd>
+    <ownedEnd xmi:id="medB" name="medB" type="Dependent" association="med" aggregation="none" visibility="public">
+      <lowerValue xsi:type="RefOntoUML:LiteralInteger" xmi:id="medBlower" value="1" />
+      <upperValue xsi:type="RefOntoUML:LiteralUnlimitedNatural" xmi:id="medBupper" value="1" />
+    </ownedEnd>
+  </packagedElement>
+</RefOntoUML:Package>

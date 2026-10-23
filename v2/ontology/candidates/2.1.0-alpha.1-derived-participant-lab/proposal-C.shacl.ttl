@@ -1,0 +1,59 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<urn:cmpe-participant-lab:contextClassificationEntryShape> a sh:NodeShape ;
+    sh:class <https://w3id.org/cm-pharme/2.1/ContextualMedicineClassificationAssignment> ;
+    sh:property <urn:cmpe-participant-lab:contextClassificationEntryCardinality> ;
+    sh:sparql <urn:cmpe-participant-lab:contextClassificationEntryExactProjection> ;
+    sh:targetClass <https://w3id.org/cm-pharme/2.1/ContextualMedicineClassificationAssignment> ;
+    sh:targetSubjectsOf <https://w3id.org/cm-pharme/2.1/contextClassificationEntry> .
+
+<urn:cmpe-participant-lab:contextClassificationProductShape> a sh:NodeShape ;
+    sh:class <https://w3id.org/cm-pharme/2.1/ContextualMedicineClassificationAssignment> ;
+    sh:property <urn:cmpe-participant-lab:contextClassificationProductCardinality> ;
+    sh:sparql <urn:cmpe-participant-lab:contextClassificationProductExactProjection> ;
+    sh:targetClass <https://w3id.org/cm-pharme/2.1/ContextualMedicineClassificationAssignment> ;
+    sh:targetSubjectsOf <https://w3id.org/cm-pharme/2.1/contextClassificationProduct> .
+
+<urn:cmpe-participant-lab:evidenceRecordShape> a sh:NodeShape ;
+    sh:class <https://w3id.org/cm-pharme/2.1/EvidenceSupport> ;
+    sh:property <urn:cmpe-participant-lab:evidenceRecordCardinality> ;
+    sh:sparql <urn:cmpe-participant-lab:evidenceRecordExactProjection> ;
+    sh:targetClass <https://w3id.org/cm-pharme/2.1/EvidenceSupport> ;
+    sh:targetSubjectsOf <https://w3id.org/cm-pharme/2.1/evidenceRecord> .
+
+<urn:cmpe-participant-lab:contextClassificationEntryCardinality> sh:class <https://w3id.org/cm-pharme/2.1/AppliedClassificationEntryRole> ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:path <https://w3id.org/cm-pharme/2.1/contextClassificationEntry> .
+
+<urn:cmpe-participant-lab:contextClassificationEntryExactProjection> sh:message "Derived typed projection must equal the eligible primitive links." ;
+    sh:select """PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT $this ?value WHERE {
+   { $this <https://w3id.org/cm-pharme/2.1/classificationEntry> ?value . $this a/rdfs:subClassOf* <https://w3id.org/cm-pharme/2.1/ContextualMedicineClassificationAssignment> . ?value a/rdfs:subClassOf* <https://w3id.org/cm-pharme/2.1/AppliedClassificationEntryRole> . FILTER NOT EXISTS { $this <https://w3id.org/cm-pharme/2.1/contextClassificationEntry> ?value } }
+   UNION { $this <https://w3id.org/cm-pharme/2.1/contextClassificationEntry> ?value . FILTER NOT EXISTS { $this <https://w3id.org/cm-pharme/2.1/classificationEntry> ?value . $this a/rdfs:subClassOf* <https://w3id.org/cm-pharme/2.1/ContextualMedicineClassificationAssignment> . ?value a/rdfs:subClassOf* <https://w3id.org/cm-pharme/2.1/AppliedClassificationEntryRole> } }
+  }""" .
+
+<urn:cmpe-participant-lab:contextClassificationProductCardinality> sh:class <https://w3id.org/cm-pharme/2.1/ClassifiedMedicinalProductRole> ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:path <https://w3id.org/cm-pharme/2.1/contextClassificationProduct> .
+
+<urn:cmpe-participant-lab:contextClassificationProductExactProjection> sh:message "Derived typed projection must equal the eligible primitive links." ;
+    sh:select """PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT $this ?value WHERE {
+   { $this <https://w3id.org/cm-pharme/2.1/classificationEntity> ?value . $this a/rdfs:subClassOf* <https://w3id.org/cm-pharme/2.1/ContextualMedicineClassificationAssignment> . ?value a/rdfs:subClassOf* <https://w3id.org/cm-pharme/2.1/ClassifiedMedicinalProductRole> . FILTER NOT EXISTS { $this <https://w3id.org/cm-pharme/2.1/contextClassificationProduct> ?value } }
+   UNION { $this <https://w3id.org/cm-pharme/2.1/contextClassificationProduct> ?value . FILTER NOT EXISTS { $this <https://w3id.org/cm-pharme/2.1/classificationEntity> ?value . $this a/rdfs:subClassOf* <https://w3id.org/cm-pharme/2.1/ContextualMedicineClassificationAssignment> . ?value a/rdfs:subClassOf* <https://w3id.org/cm-pharme/2.1/ClassifiedMedicinalProductRole> } }
+  }""" .
+
+<urn:cmpe-participant-lab:evidenceRecordCardinality> sh:class <https://w3id.org/cm-pharme/2.1/EvidenceSourceRecordRole> ;
+    sh:maxCount 1 ;
+    sh:minCount 0 ;
+    sh:path <https://w3id.org/cm-pharme/2.1/evidenceRecord> .
+
+<urn:cmpe-participant-lab:evidenceRecordExactProjection> sh:message "Derived typed projection must equal the eligible primitive links." ;
+    sh:select """PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT $this ?value WHERE {
+   { $this <https://w3id.org/cm-pharme/2.1/evidenceItem> ?value . $this a/rdfs:subClassOf* <https://w3id.org/cm-pharme/2.1/EvidenceSupport> . ?value a/rdfs:subClassOf* <https://w3id.org/cm-pharme/2.1/EvidenceSourceRecordRole> . FILTER NOT EXISTS { $this <https://w3id.org/cm-pharme/2.1/evidenceRecord> ?value } }
+   UNION { $this <https://w3id.org/cm-pharme/2.1/evidenceRecord> ?value . FILTER NOT EXISTS { $this <https://w3id.org/cm-pharme/2.1/evidenceItem> ?value . $this a/rdfs:subClassOf* <https://w3id.org/cm-pharme/2.1/EvidenceSupport> . ?value a/rdfs:subClassOf* <https://w3id.org/cm-pharme/2.1/EvidenceSourceRecordRole> } }
+  }""" .

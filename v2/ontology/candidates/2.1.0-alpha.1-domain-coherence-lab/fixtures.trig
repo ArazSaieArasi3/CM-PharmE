@@ -1,0 +1,444 @@
+@prefix ns1: <https://w3id.org/cm-pharme/experimental/coherence/> .
+@prefix ns2: <https://w3id.org/cm-pharme/experimental/four-domain/> .
+@prefix ns3: <https://w3id.org/cm-pharme/2.1/> .
+@prefix ns4: <https://w3id.org/cm-pharme/experimental/reporting-context/> .
+@prefix ns5: <https://w3id.org/cm-pharme/experimental/refinement/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<urn:coherence-case:digital-logistics-positive> {
+    <urn:cmpe-coherence:digital-logistics> a ns3:ProvenanceActivity ;
+        ns1:profile "digital-logistics" ;
+        ns1:supportsLogistics <urn:cmpe-coherence:DistributionLogisticsActivity> .
+
+    <urn:cmpe-coherence:DistributionLogisticsActivity> a ns3:DistributionLogisticsActivity .
+}
+
+<urn:coherence-case:logistics-positive> {
+    <urn:cmpe-coherence:logistics> a ns3:DistributionLogisticsActivity ;
+        ns1:logisticsFacility <urn:cmpe-coherence:Facility> ;
+        ns1:logisticsProduct <urn:cmpe-coherence:MedicinalProduct> ;
+        ns1:profile "logistics" .
+
+    <urn:cmpe-coherence:Facility> a ns3:Facility .
+
+    <urn:cmpe-coherence:MedicinalProduct> a ns3:MedicinalProduct .
+}
+
+<urn:coherence-case:procurement-untyped-procurementProduct> {
+    <urn:cmpe-coherence:procurement> a ns3:ProcurementActivity ;
+        ns1:procurementOrganization <urn:cmpe-coherence:Organization> ;
+        ns1:procurementProduct <urn:cmpe-coherence:MedicinalProduct> ;
+        ns1:profile "procurement" .
+
+    <urn:cmpe-coherence:Organization> a ns3:Organization .
+}
+
+<urn:coherence-case:DS-original-positive-replay> {
+    <urn:cmpe-lab:digitalService> a ns3:ServiceOfferingSpecification ;
+        ns2:digitalServiceActivity <urn:cmpe-lab:transform> ;
+        ns2:digitalServiceComponent <urn:cmpe-lab:component> ;
+        ns2:profile "digital-service" .
+
+    <urn:cmpe-lab:record> a ns3:SourceRecord ;
+        ns2:profile "digital-record" ;
+        ns2:recordDigitalActivity <urn:cmpe-lab:transform> .
+
+    <urn:cmpe-lab:deployment> a ns3:SystemDeploymentActivity ;
+        ns2:atTime "2026-10-01T10:00:00+00:00"^^xsd:dateTime ;
+        ns2:componentVersion "1.0" ;
+        ns2:deploymentComponent <urn:cmpe-lab:component> ;
+        ns2:deploymentOrganization <urn:cmpe-lab:operator> ;
+        ns2:profile "deployment" .
+
+    <urn:cmpe-lab:operator> a ns3:Organization .
+
+    <urn:cmpe-lab:component> a ns3:DigitalInformationSystemComponent .
+
+    <urn:cmpe-lab:transform> a ns3:ProvenanceActivity ;
+        ns2:atTime "2026-10-02T10:00:00+00:00"^^xsd:dateTime ;
+        ns2:digitalActivityDeployment <urn:cmpe-lab:deployment> ;
+        ns2:profile "digital-activity" .
+}
+
+<urn:coherence-case:procurement-missing-procurementProduct> {
+    <urn:cmpe-coherence:procurement> a ns3:ProcurementActivity ;
+        ns1:procurementOrganization <urn:cmpe-coherence:Organization> ;
+        ns1:profile "procurement" .
+
+    <urn:cmpe-coherence:MedicinalProduct> a ns3:MedicinalProduct .
+
+    <urn:cmpe-coherence:Organization> a ns3:Organization .
+}
+
+<urn:coherence-case:logistics-untyped-logisticsProduct> {
+    <urn:cmpe-coherence:logistics> a ns3:DistributionLogisticsActivity ;
+        ns1:logisticsFacility <urn:cmpe-coherence:Facility> ;
+        ns1:logisticsProduct <urn:cmpe-coherence:MedicinalProduct> ;
+        ns1:profile "logistics" .
+
+    <urn:cmpe-coherence:Facility> a ns3:Facility .
+}
+
+<urn:coherence-case:requirement-missing-requirementJurisdiction> {
+    <urn:cmpe-coherence:RegulatoryJurisdiction> a ns3:RegulatoryJurisdiction .
+
+    <urn:cmpe-coherence:requirement> a ns3:RegulatoryRequirement ;
+        ns1:profile "requirement" ;
+        ns1:requirementSource <urn:cmpe-coherence:SourceRecord> .
+
+    <urn:cmpe-coherence:SourceRecord> a ns3:SourceRecord .
+}
+
+<urn:coherence-case:BA-original-positive-replay> {
+    <urn:cmpe-lab:agreement> a ns3:StrategicPartnershipAgreement ;
+        ns3:partnershipParticipant <urn:cmpe-lab:org>,
+            <urn:cmpe-lab:org2> ;
+        ns2:profile "ba-partnership" .
+
+    <urn:cmpe-lab:view> a ns3:BusinessArchitectureView ;
+        ns2:profile "ba-view" ;
+        ns2:viewOrganization <urn:cmpe-lab:org> ;
+        ns2:viewService <urn:cmpe-lab:service> .
+
+    <urn:cmpe-lab:cap> a ns3:EnterpriseCapability ;
+        ns3:capabilityBearer <urn:cmpe-lab:org> .
+
+    <urn:cmpe-lab:service> a ns3:ServiceOfferingSpecification ;
+        ns2:profile "ba-service" ;
+        ns2:serviceCapability <urn:cmpe-lab:cap> .
+
+    <urn:cmpe-lab:org2> a ns3:Organization,
+            ns3:PartnerOrganizationRole .
+
+    <urn:cmpe-lab:org> a ns3:Organization,
+            ns3:PartnerOrganizationRole ;
+        owl:differentFrom <urn:cmpe-lab:org2> .
+}
+
+<urn:coherence-case:procurement-positive> {
+    <urn:cmpe-coherence:procurement> a ns3:ProcurementActivity ;
+        ns1:procurementOrganization <urn:cmpe-coherence:Organization> ;
+        ns1:procurementProduct <urn:cmpe-coherence:MedicinalProduct> ;
+        ns1:profile "procurement" .
+
+    <urn:cmpe-coherence:Organization> a ns3:Organization .
+
+    <urn:cmpe-coherence:MedicinalProduct> a ns3:MedicinalProduct .
+}
+
+<urn:coherence-case:DS-logistics-provenance> {
+    <urn:cmpe-lab:digitalService> a ns3:ServiceOfferingSpecification ;
+        ns2:digitalServiceActivity <urn:cmpe-lab:transform> ;
+        ns2:digitalServiceComponent <urn:cmpe-lab:component> ;
+        ns2:profile "digital-service" .
+
+    <urn:cmpe-lab:record> a ns3:SourceRecord ;
+        ns2:profile "digital-record" ;
+        ns2:recordDigitalActivity <urn:cmpe-lab:transform> .
+
+    <urn:cmpe-coherence:logistics> a ns3:DistributionLogisticsActivity ;
+        ns1:logisticsFacility <urn:cmpe-coherence:Facility> ;
+        ns1:logisticsProduct <urn:cmpe-coherence:MedicinalProduct> ;
+        ns1:profile "logistics" .
+
+    <urn:cmpe-lab:deployment> a ns3:SystemDeploymentActivity ;
+        ns2:atTime "2026-10-01T10:00:00+00:00"^^xsd:dateTime ;
+        ns2:componentVersion "1.0" ;
+        ns2:deploymentComponent <urn:cmpe-lab:component> ;
+        ns2:deploymentOrganization <urn:cmpe-lab:operator> ;
+        ns2:profile "deployment" .
+
+    <urn:cmpe-lab:operator> a ns3:Organization .
+
+    <urn:cmpe-coherence:Facility> a ns3:Facility .
+
+    <urn:cmpe-lab:component> a ns3:DigitalInformationSystemComponent .
+
+    <urn:cmpe-lab:transform> a ns3:ProvenanceActivity ;
+        ns1:profile "digital-logistics" ;
+        ns1:supportsLogistics <urn:cmpe-coherence:logistics> ;
+        ns2:atTime "2026-10-02T10:00:00+00:00"^^xsd:dateTime ;
+        ns2:digitalActivityDeployment <urn:cmpe-lab:deployment> ;
+        ns2:profile "digital-activity" .
+
+    <urn:cmpe-coherence:MedicinalProduct> a ns3:MedicinalProduct .
+}
+
+<urn:coherence-case:BA-outsourced-logistics-service> {
+    <urn:cmpe-coherence:contractCarrier> a ns3:SourceRecord ;
+        ns5:carrierClaim <urn:cmpe-coherence:contractClaim> .
+
+    <urn:cmpe-coherence:view> a ns3:BusinessArchitectureView ;
+        ns2:viewOrganization <urn:cmpe-coherence:bearer> ;
+        ns2:viewService <urn:cmpe-coherence:service> .
+
+    <urn:cmpe-coherence:capability-logistics> a ns3:EnterpriseCapability ;
+        ns3:capabilityBearer <urn:cmpe-coherence:bearer> ;
+        ns1:capabilityRealizedInLogistics <urn:cmpe-coherence:DistributionLogisticsActivity> ;
+        ns1:profile "capability-logistics" .
+
+    <urn:cmpe-coherence:contractClaim> a ns4:StructuredClaim ;
+        ns4:claimOrigin "synthetic" ;
+        ns4:claimSubject <urn:cmpe-coherence:bearer> ;
+        ns4:evidencePointer "synthetic:GDP-chapter-7-outsourcing-example" ;
+        ns4:objectResource <urn:cmpe-coherence:customer> ;
+        ns4:polarity "positive" ;
+        ns4:predicateIRI "https://w3id.org/cm-pharme/experimental/coherence/outsourcingCounterparty"^^xsd:anyURI .
+
+    <urn:cmpe-coherence:customer> a ns3:Organization .
+
+    <urn:cmpe-coherence:product> a ns3:MedicinalProduct .
+
+    <urn:cmpe-coherence:service> a ns3:ServiceOfferingSpecification ;
+        ns2:serviceCapability <urn:cmpe-coherence:capability-logistics> ;
+        ns5:serviceProduct <urn:cmpe-coherence:product> .
+
+    <urn:cmpe-coherence:DistributionLogisticsActivity> a ns3:DistributionLogisticsActivity .
+
+    <urn:cmpe-coherence:bearer> a ns3:Organization .
+}
+
+<urn:coherence-case:procurement-missing-procurementOrganization> {
+    <urn:cmpe-coherence:procurement> a ns3:ProcurementActivity ;
+        ns1:procurementProduct <urn:cmpe-coherence:MedicinalProduct> ;
+        ns1:profile "procurement" .
+
+    <urn:cmpe-coherence:Organization> a ns3:Organization .
+
+    <urn:cmpe-coherence:MedicinalProduct> a ns3:MedicinalProduct .
+}
+
+<urn:coherence-case:procurement-untyped-procurementOrganization> {
+    <urn:cmpe-coherence:procurement> a ns3:ProcurementActivity ;
+        ns1:procurementOrganization <urn:cmpe-coherence:Organization> ;
+        ns1:procurementProduct <urn:cmpe-coherence:MedicinalProduct> ;
+        ns1:profile "procurement" .
+
+    <urn:cmpe-coherence:MedicinalProduct> a ns3:MedicinalProduct .
+}
+
+<urn:coherence-case:requirement-untyped-requirementSource> {
+    <urn:cmpe-coherence:requirement> a ns3:RegulatoryRequirement ;
+        ns1:profile "requirement" ;
+        ns1:requirementJurisdiction <urn:cmpe-coherence:RegulatoryJurisdiction> ;
+        ns1:requirementSource <urn:cmpe-coherence:SourceRecord> .
+
+    <urn:cmpe-coherence:RegulatoryJurisdiction> a ns3:RegulatoryJurisdiction .
+}
+
+<urn:coherence-case:stockout-missing-stockoutProduct> {
+    <urn:cmpe-coherence:stockout> a ns3:StockoutSituation ;
+        ns1:profile "stockout" ;
+        ns1:stockoutFacility <urn:cmpe-coherence:Facility> .
+
+    <urn:cmpe-coherence:Facility> a ns3:Facility .
+
+    <urn:cmpe-coherence:MedicinalProduct> a ns3:MedicinalProduct .
+}
+
+<urn:coherence-case:capability-logistics-missing-capabilityRealizedInLogistics> {
+    <urn:cmpe-coherence:capability-logistics> a ns3:EnterpriseCapability ;
+        ns3:capabilityBearer <urn:cmpe-coherence:bearer> ;
+        ns1:profile "capability-logistics" .
+
+    <urn:cmpe-coherence:DistributionLogisticsActivity> a ns3:DistributionLogisticsActivity .
+
+    <urn:cmpe-coherence:bearer> a ns3:Organization .
+}
+
+<urn:coherence-case:digital-logistics-missing-supportsLogistics> {
+    <urn:cmpe-coherence:digital-logistics> a ns3:ProvenanceActivity ;
+        ns1:profile "digital-logistics" .
+
+    <urn:cmpe-coherence:DistributionLogisticsActivity> a ns3:DistributionLogisticsActivity .
+}
+
+<urn:coherence-case:stockout-untyped-stockoutProduct> {
+    <urn:cmpe-coherence:stockout> a ns3:StockoutSituation ;
+        ns1:profile "stockout" ;
+        ns1:stockoutFacility <urn:cmpe-coherence:Facility> ;
+        ns1:stockoutProduct <urn:cmpe-coherence:MedicinalProduct> .
+
+    <urn:cmpe-coherence:Facility> a ns3:Facility .
+}
+
+<urn:coherence-case:stockout-untyped-stockoutFacility> {
+    <urn:cmpe-coherence:stockout> a ns3:StockoutSituation ;
+        ns1:profile "stockout" ;
+        ns1:stockoutFacility <urn:cmpe-coherence:Facility> ;
+        ns1:stockoutProduct <urn:cmpe-coherence:MedicinalProduct> .
+
+    <urn:cmpe-coherence:MedicinalProduct> a ns3:MedicinalProduct .
+}
+
+<urn:coherence-case:stockout-missing-stockoutFacility> {
+    <urn:cmpe-coherence:stockout> a ns3:StockoutSituation ;
+        ns1:profile "stockout" ;
+        ns1:stockoutProduct <urn:cmpe-coherence:MedicinalProduct> .
+
+    <urn:cmpe-coherence:Facility> a ns3:Facility .
+
+    <urn:cmpe-coherence:MedicinalProduct> a ns3:MedicinalProduct .
+}
+
+<urn:coherence-case:logistics-missing-logisticsFacility> {
+    <urn:cmpe-coherence:logistics> a ns3:DistributionLogisticsActivity ;
+        ns1:logisticsProduct <urn:cmpe-coherence:MedicinalProduct> ;
+        ns1:profile "logistics" .
+
+    <urn:cmpe-coherence:Facility> a ns3:Facility .
+
+    <urn:cmpe-coherence:MedicinalProduct> a ns3:MedicinalProduct .
+}
+
+<urn:coherence-case:capability-logistics-positive> {
+    <urn:cmpe-coherence:capability-logistics> a ns3:EnterpriseCapability ;
+        ns3:capabilityBearer <urn:cmpe-coherence:bearer> ;
+        ns1:capabilityRealizedInLogistics <urn:cmpe-coherence:DistributionLogisticsActivity> ;
+        ns1:profile "capability-logistics" .
+
+    <urn:cmpe-coherence:DistributionLogisticsActivity> a ns3:DistributionLogisticsActivity .
+
+    <urn:cmpe-coherence:bearer> a ns3:Organization .
+}
+
+<urn:coherence-case:requirement-untyped-requirementJurisdiction> {
+    <urn:cmpe-coherence:requirement> a ns3:RegulatoryRequirement ;
+        ns1:profile "requirement" ;
+        ns1:requirementJurisdiction <urn:cmpe-coherence:RegulatoryJurisdiction> ;
+        ns1:requirementSource <urn:cmpe-coherence:SourceRecord> .
+
+    <urn:cmpe-coherence:SourceRecord> a ns3:SourceRecord .
+}
+
+<urn:coherence-case:PV-original-positive-replay> {
+    <urn:cmpe-lab:jB> a ns3:RegulatoryJurisdiction .
+
+    <urn:cmpe-lab:reporting> a ns3:AdverseEventReportingActivity ;
+        ns2:atTime "2026-10-01T10:00:00+00:00"^^xsd:dateTime ;
+        ns2:profile "safety-reporting" ;
+        ns2:reportsRecord <urn:cmpe-lab:report> .
+
+    <urn:cmpe-lab:signalResult> a ns3:Assertion ;
+        ns2:atTime "2026-10-02T10:00:00+00:00"^^xsd:dateTime ;
+        ns2:profile "signal-result" ;
+        ns2:pvResultAssessment <urn:cmpe-lab:signalAssessment> ;
+        ns2:pvResultSignal <urn:cmpe-lab:signal> ;
+        ns2:signalStatus "under-review" .
+
+    <urn:cmpe-lab:surveillance> a ns3:PostMarketSurveillanceActivity ;
+        ns2:profile "pv-surveillance" ;
+        ns2:surveillanceRequirement <urn:cmpe-lab:pvRule> ;
+        ns2:surveillanceSource <urn:cmpe-lab:report> .
+
+    <urn:cmpe-lab:jA> a ns3:RegulatoryJurisdiction .
+
+    <urn:cmpe-lab:medicine> a ns3:MedicinalProduct .
+
+    <urn:cmpe-lab:pvRule> a ns3:PharmacovigilanceRequirement ;
+        ns2:profile "pv-requirement" ;
+        ns2:pvRequirementJurisdiction <urn:cmpe-lab:jA> .
+
+    <urn:cmpe-lab:signalAssessment> a ns3:SignalAssessmentActivity ;
+        ns2:profile "signal-assessment" ;
+        ns2:signalAssessmentTarget <urn:cmpe-lab:signal> .
+
+    <urn:cmpe-lab:signal> a ns3:Assertion ;
+        ns2:citesSourceRecord <urn:cmpe-lab:report> ;
+        ns2:profile "safety-signal" ;
+        ns2:signalProduct <urn:cmpe-lab:medicine> .
+
+    <urn:cmpe-lab:report> a ns3:SourceRecord .
+}
+
+<urn:coherence-case:requirement-missing-requirementSource> {
+    <urn:cmpe-coherence:requirement> a ns3:RegulatoryRequirement ;
+        ns1:profile "requirement" ;
+        ns1:requirementJurisdiction <urn:cmpe-coherence:RegulatoryJurisdiction> .
+
+    <urn:cmpe-coherence:RegulatoryJurisdiction> a ns3:RegulatoryJurisdiction .
+
+    <urn:cmpe-coherence:SourceRecord> a ns3:SourceRecord .
+}
+
+<urn:coherence-case:stockout-positive> {
+    <urn:cmpe-coherence:stockout> a ns3:StockoutSituation ;
+        ns1:profile "stockout" ;
+        ns1:stockoutFacility <urn:cmpe-coherence:Facility> ;
+        ns1:stockoutProduct <urn:cmpe-coherence:MedicinalProduct> .
+
+    <urn:cmpe-coherence:Facility> a ns3:Facility .
+
+    <urn:cmpe-coherence:MedicinalProduct> a ns3:MedicinalProduct .
+}
+
+<urn:coherence-case:digital-logistics-untyped-supportsLogistics> {
+    <urn:cmpe-coherence:digital-logistics> a ns3:ProvenanceActivity ;
+        ns1:profile "digital-logistics" ;
+        ns1:supportsLogistics <urn:cmpe-coherence:DistributionLogisticsActivity> .
+}
+
+<urn:coherence-case:requirement-positive> {
+    <urn:cmpe-coherence:requirement> a ns3:RegulatoryRequirement ;
+        ns1:profile "requirement" ;
+        ns1:requirementJurisdiction <urn:cmpe-coherence:RegulatoryJurisdiction> ;
+        ns1:requirementSource <urn:cmpe-coherence:SourceRecord> .
+
+    <urn:cmpe-coherence:RegulatoryJurisdiction> a ns3:RegulatoryJurisdiction .
+
+    <urn:cmpe-coherence:SourceRecord> a ns3:SourceRecord .
+}
+
+<urn:coherence-case:logistics-missing-logisticsProduct> {
+    <urn:cmpe-coherence:logistics> a ns3:DistributionLogisticsActivity ;
+        ns1:logisticsFacility <urn:cmpe-coherence:Facility> ;
+        ns1:profile "logistics" .
+
+    <urn:cmpe-coherence:Facility> a ns3:Facility .
+
+    <urn:cmpe-coherence:MedicinalProduct> a ns3:MedicinalProduct .
+}
+
+<urn:coherence-case:RM-original-positive-replay> {
+    <urn:cmpe-lab:plan> a ns3:RiskTreatmentPlan ;
+        ns2:planRiskResult <urn:cmpe-lab:riskResult> ;
+        ns2:profile "risk-plan" .
+
+    <urn:cmpe-lab:assessment> a ns3:RiskAssessmentActivity ;
+        ns2:assessmentScenario <urn:cmpe-lab:scenario> ;
+        ns2:profile "risk-assessment" .
+
+    <urn:cmpe-lab:product> a ns3:MedicinalProduct .
+
+    <urn:cmpe-lab:riskResult> a ns3:Assertion ;
+        ns2:atTime "2026-10-01T10:00:00+00:00"^^xsd:dateTime ;
+        ns2:citesSourceRecord <urn:cmpe-lab:source> ;
+        ns2:conclusion "review supply continuity" ;
+        ns2:profile "risk-result" ;
+        ns2:resultAssessment <urn:cmpe-lab:assessment> .
+
+    <urn:cmpe-lab:scenario> a ns3:Assertion ;
+        ns2:profile "risk-scenario" ;
+        ns2:scenarioProduct <urn:cmpe-lab:product> .
+
+    <urn:cmpe-lab:source> a ns3:SourceRecord .
+}
+
+<urn:coherence-case:logistics-untyped-logisticsFacility> {
+    <urn:cmpe-coherence:logistics> a ns3:DistributionLogisticsActivity ;
+        ns1:logisticsFacility <urn:cmpe-coherence:Facility> ;
+        ns1:logisticsProduct <urn:cmpe-coherence:MedicinalProduct> ;
+        ns1:profile "logistics" .
+
+    <urn:cmpe-coherence:MedicinalProduct> a ns3:MedicinalProduct .
+}
+
+<urn:coherence-case:capability-logistics-untyped-capabilityRealizedInLogistics> {
+    <urn:cmpe-coherence:capability-logistics> a ns3:EnterpriseCapability ;
+        ns3:capabilityBearer <urn:cmpe-coherence:bearer> ;
+        ns1:capabilityRealizedInLogistics <urn:cmpe-coherence:DistributionLogisticsActivity> ;
+        ns1:profile "capability-logistics" .
+
+    <urn:cmpe-coherence:bearer> a ns3:Organization .
+}

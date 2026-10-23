@@ -1,0 +1,308 @@
+@prefix c: <https://w3id.org/cm-pharme/2.1/> .
+@prefix l: <https://w3id.org/cm-pharme/experimental/four-domain/> .
+@prefix r: <https://w3id.org/cm-pharme/experimental/refinement/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+c:assertionAboutProductShape a sh:NodeShape ;
+    sh:class c:Assertion ;
+    sh:property [ sh:class c:MedicinalProduct ;
+            sh:path c:assertionAboutProduct ] ;
+    sh:targetSubjectsOf c:assertionAboutProduct .
+
+l:shape-pv-requirement a sh:NodeShape ;
+    sh:class c:PharmacovigilanceRequirement ;
+    sh:property l:field-pv-requirement-pvRequirementJurisdiction ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select "SELECT ?this WHERE { ?this <https://w3id.org/cm-pharme/experimental/four-domain/profile> \"pv-requirement\" . }" ] .
+
+l:shape-pv-surveillance a sh:NodeShape ;
+    sh:class c:PostMarketSurveillanceActivity ;
+    sh:property l:field-pv-surveillance-surveillanceRequirement,
+        l:field-pv-surveillance-surveillanceSource ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select "SELECT ?this WHERE { ?this <https://w3id.org/cm-pharme/experimental/four-domain/profile> \"pv-surveillance\" . }" ] .
+
+l:shape-safety-reporting a sh:NodeShape ;
+    sh:class c:AdverseEventReportingActivity ;
+    sh:property l:field-safety-reporting-atTime,
+        l:field-safety-reporting-reportsRecord ;
+    sh:sparql l:distinct-AdverseEventReportingActivity-SourceRecord ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select "SELECT ?this WHERE { ?this <https://w3id.org/cm-pharme/experimental/four-domain/profile> \"safety-reporting\" . }" ] .
+
+l:shape-safety-signal a sh:NodeShape ;
+    sh:class c:Assertion ;
+    sh:property l:field-safety-signal-citesSourceRecord,
+        l:field-safety-signal-signalProduct,
+        l:field-safety-signal-signalSubstance ;
+    sh:sparql l:signal-target-required ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select "SELECT ?this WHERE { ?this <https://w3id.org/cm-pharme/experimental/four-domain/profile> \"safety-signal\" . }" ] .
+
+l:shape-signal-assessment a sh:NodeShape ;
+    sh:class c:SignalAssessmentActivity ;
+    sh:property l:field-signal-assessment-signalAssessmentTarget ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select "SELECT ?this WHERE { ?this <https://w3id.org/cm-pharme/experimental/four-domain/profile> \"signal-assessment\" . }" ] .
+
+l:shape-signal-result a sh:NodeShape ;
+    sh:class c:Assertion ;
+    sh:property l:field-signal-result-atTime,
+        l:field-signal-result-pvResultAssessment,
+        l:field-signal-result-pvResultSignal,
+        l:field-signal-result-signalStatus ;
+    sh:sparql l:distinct-SignalAssessmentActivity-Assertion,
+        l:signal-result-agreement,
+        l:signal-result-distinct ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select "SELECT ?this WHERE { ?this <https://w3id.org/cm-pharme/experimental/four-domain/profile> \"signal-result\" . }" ] .
+
+r:shape-attributed-signal-assessment a sh:NodeShape ;
+    sh:class c:SignalAssessmentActivity ;
+    sh:property r:field-attributed-signal-assessment-assessmentOrganization ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select "SELECT ?this WHERE { ?this <https://w3id.org/cm-pharme/experimental/four-domain/profile> \"attributed-signal-assessment\" }" ] .
+
+r:shape-report-carrier a sh:NodeShape ;
+    sh:class c:SourceRecord ;
+    sh:property r:field-report-carrier-carrierClaim,
+        r:field-report-carrier-caseIdentifier,
+        r:field-report-carrier-caseIdentifierScheme ;
+    sh:sparql r:carrier-not-claim ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select "SELECT ?this WHERE { ?this <https://w3id.org/cm-pharme/experimental/four-domain/profile> \"report-carrier\" }" ] .
+
+<https://w3id.org/cm-pharme/experimental/reporting-context/StructuredClaimShape> a sh:NodeShape ;
+    sh:property [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path <https://w3id.org/cm-pharme/experimental/reporting-context/claimSubject> ],
+        [ sh:in ( "source-extracted" "mapping-interpretation" "synthetic" ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path <https://w3id.org/cm-pharme/experimental/reporting-context/claimOrigin> ],
+        [ sh:datatype xsd:anyURI ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path <https://w3id.org/cm-pharme/experimental/reporting-context/predicateIRI> ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path <https://w3id.org/cm-pharme/experimental/reporting-context/evidencePointer> ],
+        [ sh:in ( "positive" "negative" ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path <https://w3id.org/cm-pharme/experimental/reporting-context/polarity> ],
+        [ sh:class c:SourceRecord ;
+            sh:minCount 1 ;
+            sh:path [ sh:inversePath r:carrierClaim ] ],
+        [ sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path <https://w3id.org/cm-pharme/experimental/reporting-context/objectResource> ],
+        [ sh:maxCount 1 ;
+            sh:minCount 0 ;
+            sh:nodeKind sh:Literal ;
+            sh:path <https://w3id.org/cm-pharme/experimental/reporting-context/objectValue> ] ;
+    sh:sparql <https://w3id.org/cm-pharme/experimental/reporting-context/claim-not-carrier>,
+        <https://w3id.org/cm-pharme/experimental/reporting-context/one-object-kind> ;
+    sh:targetClass <https://w3id.org/cm-pharme/experimental/reporting-context/StructuredClaim> .
+
+<https://w3id.org/cm-pharme/experimental/source-group/source-group-scopeShape> a sh:NodeShape ;
+    sh:class c:Assertion ;
+    sh:not [ sh:class c:SourceRecord ] ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:minLength 1 ;
+            sh:path <https://w3id.org/cm-pharme/experimental/source-group/scopeVersion> ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:minLength 1 ;
+            sh:path <https://w3id.org/cm-pharme/experimental/source-group/sourceLabel> ],
+        [ sh:class c:Assertion ;
+            sh:minCount 1 ;
+            sh:node <https://w3id.org/cm-pharme/experimental/source-group/source-group-entryShape> ;
+            sh:path <https://w3id.org/cm-pharme/experimental/source-group/scopeEntry> ],
+        [ sh:class c:SourceRecord ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path <https://w3id.org/cm-pharme/experimental/source-group/scopeSource> ] ;
+    sh:sparql [ sh:message "Scope entries must share source/version and distinct positive ordinal." ;
+            sh:select """SELECT $this WHERE {
+ $this <https://w3id.org/cm-pharme/experimental/source-group/scopeEntry> ?e ; <https://w3id.org/cm-pharme/experimental/source-group/scopeSource> ?src ; <https://w3id.org/cm-pharme/experimental/source-group/scopeVersion> ?v .
+ ?e <https://w3id.org/cm-pharme/experimental/source-group/entrySource> ?es ; <https://w3id.org/cm-pharme/experimental/source-group/scopeVersion> ?ev ; <https://w3id.org/cm-pharme/experimental/source-group/entryOrdinal> ?n .
+ FILTER (?src != ?es || ?v != ?ev || ?n < 1 || EXISTS { $this <https://w3id.org/cm-pharme/experimental/source-group/scopeEntry> ?other . ?other <https://w3id.org/cm-pharme/experimental/source-group/entryOrdinal> ?n . FILTER (?other != ?e) }) }""" ] ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select "SELECT ?this WHERE { ?this <https://w3id.org/cm-pharme/experimental/source-group/profile> \"source-group-scope\" }" ] .
+
+<urn:cmpe-policy:CarrierClaimIdentityShape> a sh:NodeShape ;
+    sh:sparql <urn:cmpe-policy:CarrierNotOwnClaim> ;
+    sh:targetSubjectsOf r:carrierClaim .
+
+<urn:cmpe-policy:ResultSignalIdentityShape> a sh:NodeShape ;
+    sh:sparql <urn:cmpe-policy:NoSelfOrSameAsChain> ;
+    sh:targetSubjectsOf l:pvResultSignal .
+
+l:distinct-AdverseEventReportingActivity-SourceRecord a sh:SPARQLConstraint ;
+    sh:message "Content and real-world bearer/occurrence must not be the same node." ;
+    sh:select "SELECT $this WHERE { $this a <https://w3id.org/cm-pharme/2.1/AdverseEventReportingActivity> , <https://w3id.org/cm-pharme/2.1/SourceRecord> . }" .
+
+l:distinct-SignalAssessmentActivity-Assertion a sh:SPARQLConstraint ;
+    sh:message "Content and real-world bearer/occurrence must not be the same node." ;
+    sh:select "SELECT $this WHERE { $this a <https://w3id.org/cm-pharme/2.1/SignalAssessmentActivity> , <https://w3id.org/cm-pharme/2.1/Assertion> . }" .
+
+l:field-pv-requirement-pvRequirementJurisdiction sh:class c:RegulatoryJurisdiction ;
+    sh:minCount 1 ;
+    sh:path l:pvRequirementJurisdiction .
+
+l:field-pv-surveillance-surveillanceRequirement sh:class c:PharmacovigilanceRequirement ;
+    sh:minCount 1 ;
+    sh:path l:surveillanceRequirement .
+
+l:field-pv-surveillance-surveillanceSource sh:class c:SourceRecord ;
+    sh:minCount 1 ;
+    sh:path l:surveillanceSource .
+
+l:field-safety-reporting-atTime sh:datatype xsd:dateTime ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:path l:atTime .
+
+l:field-safety-reporting-reportsRecord sh:class c:SourceRecord ;
+    sh:minCount 1 ;
+    sh:path l:reportsRecord .
+
+l:field-safety-signal-citesSourceRecord sh:class c:SourceRecord ;
+    sh:minCount 1 ;
+    sh:path l:citesSourceRecord .
+
+l:field-safety-signal-signalProduct sh:class c:MedicinalProduct ;
+    sh:minCount 0 ;
+    sh:path l:signalProduct .
+
+l:field-safety-signal-signalSubstance sh:class c:PharmaceuticalSubstance ;
+    sh:minCount 0 ;
+    sh:path l:signalSubstance .
+
+l:field-signal-assessment-signalAssessmentTarget sh:class c:Assertion ;
+    sh:minCount 1 ;
+    sh:path l:signalAssessmentTarget .
+
+l:field-signal-result-atTime sh:datatype xsd:dateTime ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:path l:atTime .
+
+l:field-signal-result-pvResultAssessment sh:class c:SignalAssessmentActivity ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:path l:pvResultAssessment .
+
+l:field-signal-result-pvResultSignal sh:class c:Assertion ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:path l:pvResultSignal .
+
+l:field-signal-result-signalStatus sh:datatype xsd:string ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:path l:signalStatus .
+
+l:signal-result-agreement a sh:SPARQLConstraint ;
+    sh:message "The recorded result and producing assessment must refer to the same signal." ;
+    sh:select "SELECT $this WHERE { $this <https://w3id.org/cm-pharme/experimental/four-domain/pvResultSignal> ?s ; <https://w3id.org/cm-pharme/experimental/four-domain/pvResultAssessment> ?a . FILTER NOT EXISTS { ?a <https://w3id.org/cm-pharme/experimental/four-domain/signalAssessmentTarget> ?s } }" .
+
+l:signal-result-distinct a sh:SPARQLConstraint ;
+    sh:message "An assessment result must not be its own assessed signal or a known alias of it." ;
+    sh:select "SELECT $this WHERE { $this <https://w3id.org/cm-pharme/experimental/four-domain/pvResultSignal> ?s . FILTER($this = ?s || EXISTS { $this <http://www.w3.org/2002/07/owl#sameAs> ?s } || EXISTS { ?s <http://www.w3.org/2002/07/owl#sameAs> $this }) }" .
+
+l:signal-target-required a sh:SPARQLConstraint ;
+    sh:message "A signal must name a product or substance." ;
+    sh:select "SELECT $this WHERE { FILTER NOT EXISTS { $this <https://w3id.org/cm-pharme/experimental/four-domain/signalProduct> ?p } FILTER NOT EXISTS { $this <https://w3id.org/cm-pharme/experimental/four-domain/signalSubstance> ?s } }" .
+
+r:carrier-not-claim a sh:SPARQLConstraint ;
+    sh:message "A carrier is not its own carried claim or a known alias of that claim." ;
+    sh:select "SELECT $this WHERE { $this <https://w3id.org/cm-pharme/experimental/refinement/carrierClaim> ?c . FILTER($this = ?c || EXISTS { $this <http://www.w3.org/2002/07/owl#sameAs> ?c } || EXISTS { ?c <http://www.w3.org/2002/07/owl#sameAs> $this }) }" .
+
+r:field-attributed-signal-assessment-assessmentOrganization sh:class c:Organization ;
+    sh:minCount 1 ;
+    sh:path r:assessmentOrganization .
+
+r:field-report-carrier-carrierClaim sh:class c:Assertion ;
+    sh:minCount 1 ;
+    sh:node r:shape-report-claim ;
+    sh:path r:carrierClaim .
+
+r:field-report-carrier-caseIdentifier sh:datatype xsd:string ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:path r:caseIdentifier .
+
+r:field-report-carrier-caseIdentifierScheme sh:datatype xsd:string ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:path r:caseIdentifierScheme .
+
+r:field-report-claim-claimText sh:datatype xsd:string ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:path r:claimText .
+
+r:shape-report-claim a sh:NodeShape ;
+    sh:class c:Assertion ;
+    sh:property r:field-report-claim-claimText ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select "SELECT ?this WHERE { ?this <https://w3id.org/cm-pharme/experimental/four-domain/profile> \"report-claim\" }" ] .
+
+<https://w3id.org/cm-pharme/experimental/reporting-context/claim-not-carrier> sh:message "claim-not-carrier" ;
+    sh:select "PREFIX b: <https://w3id.org/cm-pharme/experimental/reporting-context/> PREFIX r: <https://w3id.org/cm-pharme/experimental/refinement/> PREFIX owl: <http://www.w3.org/2002/07/owl#> SELECT $this WHERE { ?record r:carrierClaim $this . $this (owl:sameAs|^owl:sameAs)* ?record . }" .
+
+<https://w3id.org/cm-pharme/experimental/reporting-context/one-object-kind> sh:message "one-object-kind" ;
+    sh:select "PREFIX b: <https://w3id.org/cm-pharme/experimental/reporting-context/> PREFIX r: <https://w3id.org/cm-pharme/experimental/refinement/> PREFIX owl: <http://www.w3.org/2002/07/owl#> SELECT $this WHERE { { FILTER NOT EXISTS { $this b:objectResource ?r } FILTER NOT EXISTS { $this b:objectValue ?v } } UNION { $this b:objectResource ?r ; b:objectValue ?v } }" .
+
+<https://w3id.org/cm-pharme/experimental/source-group/source-group-entryShape> a sh:NodeShape ;
+    sh:class c:Assertion ;
+    sh:not [ sh:class c:SourceRecord ] ;
+    sh:property [ sh:datatype xsd:integer ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path <https://w3id.org/cm-pharme/experimental/source-group/entryOrdinal> ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:minLength 1 ;
+            sh:path <https://w3id.org/cm-pharme/experimental/source-group/scopeVersion> ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:minLength 1 ;
+            sh:path <https://w3id.org/cm-pharme/experimental/source-group/labelKindProposal> ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:minLength 1 ;
+            sh:path <https://w3id.org/cm-pharme/experimental/source-group/sourceLabel> ],
+        [ sh:class c:SourceRecord ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path <https://w3id.org/cm-pharme/experimental/source-group/entrySource> ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:minLength 1 ;
+            sh:path <https://w3id.org/cm-pharme/experimental/source-group/evidencePointer> ] ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select "SELECT ?this WHERE { ?this <https://w3id.org/cm-pharme/experimental/source-group/profile> \"source-group-entry\" }" ] .
+
+<urn:cmpe-policy:CarrierNotOwnClaim> sh:message "A carrier must differ from its carried claim, including explicit sameAs aliases." ;
+    sh:select "SELECT $this ?value WHERE { $this <https://w3id.org/cm-pharme/experimental/refinement/carrierClaim> ?value . $this (<http://www.w3.org/2002/07/owl#sameAs>|^<http://www.w3.org/2002/07/owl#sameAs>)* ?value . }" .
+
+<urn:cmpe-policy:NoSelfOrSameAsChain> sh:message "An assessment result must differ from its target signal, including explicitly stated sameAs aliases." ;
+    sh:select """SELECT $this ?value WHERE {
+ $this <https://w3id.org/cm-pharme/experimental/four-domain/pvResultSignal> ?value .
+ $this (<http://www.w3.org/2002/07/owl#sameAs>|^<http://www.w3.org/2002/07/owl#sameAs>)* ?value .
+}""" .

@@ -1,0 +1,52 @@
+{
+  "design": "Purposive quota sample: three returned rows per five predefined strata; not random or representative. Duplicate product_id rows retained in source snapshots and deduplicated in projections.",
+  "strata": [
+    {
+      "stratum": "nda",
+      "query": "marketing_category.exact:\"NDA\"",
+      "requested_url": "https://api.fda.gov/drug/ndc.json?search=marketing_category.exact%3A%22NDA%22&limit=3",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "stratum": "anda",
+      "query": "marketing_category.exact:\"ANDA\"",
+      "requested_url": "https://api.fda.gov/drug/ndc.json?search=marketing_category.exact%3A%22ANDA%22&limit=3",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "stratum": "otc",
+      "query": "marketing_category.exact:\"OTC MONOGRAPH DRUG\"",
+      "requested_url": "https://api.fda.gov/drug/ndc.json?search=marketing_category.exact%3A%22OTC+MONOGRAPH+DRUG%22&limit=3",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "stratum": "unapproved",
+      "query": "marketing_category.exact:\"UNAPPROVED DRUG OTHER\"",
+      "requested_url": "https://api.fda.gov/drug/ndc.json?search=marketing_category.exact%3A%22UNAPPROVED+DRUG+OTHER%22&limit=3",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "stratum": "dated-end",
+      "query": "marketing_end_date:[19000101 TO 99991231]",
+      "requested_url": "https://api.fda.gov/drug/ndc.json?search=marketing_end_date%3A%5B19000101+TO+99991231%5D&limit=3",
+      "resolved_url": "https://api.fda.gov/drug/ndc.json?search=marketing_end_date%3A%5B19000101+TO+99991231%5D&limit=3",
+      "retrieved_at": "2026-10-09T20:47:33.802996+00:00",
+      "file": "ndc-dated-end.json",
+      "sha256": "464a400483035733794a7e410d672ca4f8360bdf2a7889a51f52213f6f5e27cd",
+      "bytes": 10656,
+      "rows": 3,
+      "status": 200,
+      "response_meta": {
+        "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+        "terms": "https://open.fda.gov/terms/",
+        "license": "https://open.fda.gov/license/",
+        "last_updated": "2026-10-09",
+        "results": {
+          "skip": 0,
+          "limit": 3,
+          "total": 3704
+        }
+      }
+    }
+  ]
+}

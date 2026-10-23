@@ -1,0 +1,818 @@
+{
+  "source_commit": "87154b6043f57f9798c4eb04beba729df3ab7677",
+  "scope": "G3-2e-B triage, not author acceptance or integrated ontology revision",
+  "count": 42,
+  "bucket_counts": {
+    "EVIDENCE_FIRST_RETAIN": 24,
+    "AUTHOR_CHOICE_BEFORE_MODEL_CHANGE": 13,
+    "CANDIDATE_ALIGNMENT": 5
+  },
+  "all_author_dispositions_pending": true,
+  "records": [
+    {
+      "id": "rel-assertionAboutProduct",
+      "name": "assertionAboutProduct",
+      "source_end": "Assertion",
+      "target_end": "MedicinalProduct",
+      "bucket": "EVIDENCE_FIRST_RETAIN",
+      "scientific_author_status": "PENDING",
+      "current_candidate_status": "PENDING_DOMAIN_SEMANTICS",
+      "review_depth": "DETAILED_DESIGN_REVIEW",
+      "question": "آیا aboutness ادعا به Product فقط با ارجاع صریح ثبت شود یا از Presentation نیز انتقال یابد؟",
+      "preferred_bounded_action": "Retain current broad or untyped relation; gather source-specific witnesses before any global axiom",
+      "evidence_to_collect": "A claim explicitly identifies a Product.",
+      "negative_acceptance_condition": "A claim about a Presentation alone cannot be promoted to Product scope.",
+      "source_anchors": [
+        "v2/research/w4/integrated-ontouml-model.md"
+      ],
+      "candidate_change_authorized": "No new global model axiom",
+      "release_gate": "BLOCKED_PENDING_AUTHOR_AND_FORMAL_VALIDATION"
+    },
+    {
+      "id": "rel-authorizationJurisdiction",
+      "name": "authorizationJurisdiction",
+      "source_end": "RegulatoryAuthorization",
+      "target_end": "RegulatoryJurisdiction",
+      "bucket": "EVIDENCE_FIRST_RETAIN",
+      "scientific_author_status": "PENDING",
+      "current_candidate_status": "PENDING_RELRIG_DISPOSITION",
+      "review_depth": "DETAILED_DESIGN_PROPOSAL",
+      "question": "چه شاهدی صلاحیت قانونی این Authorization در Jurisdiction را ثابت می‌کند، نه محل فیزیکی مرجع را؟",
+      "preferred_bounded_action": "Retain contextual reference; collect legal-scope evidence; no Relator→rigid Mediation",
+      "evidence_to_collect": "Evidence for legal applicability, validity interval and whether the scope is constitutive/immutable; decide formal stereotype only with a quality-comparison derivation or use a documented non-stereotyped reference.",
+      "negative_acceptance_condition": "A source-country field alone, or an authority office's physical address, cannot establish the authorization's legal jurisdiction.",
+      "source_anchors": [
+        "https://github.com/ArazSaieArasi3/CM-PharmE/blob/fb281f2d605090da2779bb2021be7cb00de4de73/v2/research/w4/geography-jurisdiction.md",
+        "https://github.com/ArazSaieArasi3/CM-PharmE/blob/fb281f2d605090da2779bb2021be7cb00de4de73/v2/research/w4/relator-material-patterns.md"
+      ],
+      "candidate_change_authorized": "No new global model axiom",
+      "release_gate": "BLOCKED_PENDING_AUTHOR_AND_FORMAL_VALIDATION"
+    },
+    {
+      "id": "rel-baViewRepresents",
+      "name": "baViewRepresents",
+      "source_end": "BusinessArchitectureView",
+      "target_end": null,
+      "bucket": "EVIDENCE_FIRST_RETAIN",
+      "scientific_author_status": "PENDING",
+      "current_candidate_status": "PENDING_ENDPOINT_REFINEMENT",
+      "review_depth": "DETAILED_ENDPOINT_POLICY",
+      "question": "دامنهٔ موضوعات BA View چه خانواده‌هایی را در بر می‌گیرد و آیا پیوندهای نوع‌دار لازم‌اند؟",
+      "preferred_bounded_action": "Retain current broad or untyped relation; gather source-specific witnesses before any global axiom",
+      "evidence_to_collect": "Define a documented target family or qualified topic links if cross-family query need is approved.",
+      "negative_acceptance_condition": "Do not infer that a view target acquires a new identity or that core depends on the optional BA module.",
+      "source_anchors": [
+        "https://github.com/ArazSaieArasi3/CM-PharmE/blob/d95b5640c14d2c43c1e88a9a76ef78067f058916/v2/research/w4/business-architecture-view.md"
+      ],
+      "candidate_change_authorized": "No new global model axiom",
+      "release_gate": "BLOCKED_PENDING_AUTHOR_AND_FORMAL_VALIDATION"
+    },
+    {
+      "id": "rel-capabilityBearer",
+      "name": "capabilityBearer",
+      "source_end": "EnterpriseCapability",
+      "target_end": "Organization",
+      "bucket": "AUTHOR_CHOICE_BEFORE_MODEL_CHANGE",
+      "scientific_author_status": "PENDING",
+      "current_candidate_status": "PENDING_DOMAIN_SEMANTICS",
+      "review_depth": "DETAILED_DESIGN_REVIEW",
+      "question": "آیا Mode باید از bearer به شکل inverse Characterization نمایش یابد و آیا هر Organization قابلیت دارد؟",
+      "preferred_bounded_action": "Preserve Mode→bearer source property; if formal Characterization required, add evidence-backed inverse bearer→Mode with one bearer per Mode.",
+      "evidence_to_collect": "Capability is a Mode inhering in an Organization; source direction Mode→bearer reverses Characterization.",
+      "negative_acceptance_condition": "One intrinsic Mode cannot inhere in two distinct Organizations.",
+      "source_anchors": [
+        "v2/research/w4/business-architecture-view.md"
+      ],
+      "candidate_change_authorized": "No new global model axiom",
+      "release_gate": "BLOCKED_PENDING_AUTHOR_AND_FORMAL_VALIDATION"
+    },
+    {
+      "id": "rel-capacityBearer",
+      "name": "capacityBearer",
+      "source_end": "SupplyCapacity",
+      "target_end": null,
+      "bucket": "AUTHOR_CHOICE_BEFORE_MODEL_CHANGE",
+      "scientific_author_status": "PENDING",
+      "current_candidate_status": "PENDING_ENDPOINT_REFINEMENT",
+      "review_depth": "DETAILED_ENDPOINT_POLICY",
+      "question": "آیا SupplyCapacity به Organization یا Facility می‌چسبد و برای هر Mode دقیقاً یک bearer کدام است؟",
+      "preferred_bounded_action": "Choose Organization/Facility-specific bearer routes with single-bearer invariant; do not equate observation result to Mode.",
+      "evidence_to_collect": "Choose explicit inverse bearer→Mode characterization or scoped bearer roles; justify minimum/maximum and optional possession.",
+      "negative_acceptance_condition": "Do not infer capacity from an aggregate observation or assign the same intrinsic Mode to two different bearer individuals.",
+      "source_anchors": [
+        "https://github.com/ArazSaieArasi3/CM-PharmE/blob/d95b5640c14d2c43c1e88a9a76ef78067f058916/v2/research/w4/events-situations-observations.md"
+      ],
+      "candidate_change_authorized": "No new global model axiom",
+      "release_gate": "BLOCKED_PENDING_AUTHOR_AND_FORMAL_VALIDATION"
+    },
+    {
+      "id": "rel-containsSourceRecord",
+      "name": "containsSourceRecord",
+      "source_end": "DatasetRelease",
+      "target_end": "SourceRecord",
+      "bucket": "EVIDENCE_FIRST_RETAIN",
+      "scientific_author_status": "PENDING",
+      "current_candidate_status": "PENDING_DOMAIN_SEMANTICS",
+      "review_depth": "DETAILED_DESIGN_REVIEW",
+      "question": "عضویت SourceRecord در یک DatasetRelease با کدام manifest/version اثبات می‌شود؟",
+      "preferred_bounded_action": "Retain current broad or untyped relation; gather source-specific witnesses before any global axiom",
+      "evidence_to_collect": "Release manifest/provenance assigns a SourceRecord to DatasetRelease.",
+      "negative_acceptance_condition": "Occurrence in a different release is not membership here.",
+      "source_anchors": [
+        "v2/research/w4/integrated-ontouml-model.md"
+      ],
+      "candidate_change_authorized": "No new global model axiom",
+      "release_gate": "BLOCKED_PENDING_AUTHOR_AND_FORMAL_VALIDATION"
+    },
+    {
+      "id": "rel-contextClassificationEntry",
+      "name": "contextClassificationEntry",
+      "source_end": "ContextualMedicineClassificationAssignment",
+      "target_end": "AppliedClassificationEntryRole",
+      "bucket": "CANDIDATE_ALIGNMENT",
+      "scientific_author_status": "PENDING",
+      "current_candidate_status": "IMPLEMENTED_MEDIATION_DETAILED_REVIEW_PENDING_AUTHOR",
+      "review_depth": "DETAILED_DESIGN_REVIEW",
+      "question": "آیا همهٔ Contextual Assignmentها باید child edge entry داشته باشند یا والد generic کافی است؟",
+      "preferred_bounded_action": "Keep native child Mediation; verify optional child and parent-only cases in formal integration; no child min1.",
+      "evidence_to_collect": "ContextualMedicineClassificationAssignment specifies an AppliedClassificationEntryRole under a list/scheme/version/jurisdiction context.",
+      "negative_acceptance_condition": "A generic classificationEntry(r,e) alone does not entail contextClassificationEntry(r,e); same lexical classification code is insufficient.",
+      "source_anchors": [
+        "v2/research/w4/relator-material-patterns.md"
+      ],
+      "candidate_change_authorized": "Only bounded engineering candidate; no promotion",
+      "release_gate": "BLOCKED_PENDING_AUTHOR_AND_FORMAL_VALIDATION"
+    },
+    {
+      "id": "rel-contextClassificationJurisdiction",
+      "name": "contextClassificationJurisdiction",
+      "source_end": "ContextualMedicineClassificationAssignment",
+      "target_end": "RegulatoryJurisdiction",
+      "bucket": "AUTHOR_CHOICE_BEFORE_MODEL_CHANGE",
+      "scientific_author_status": "PENDING",
+      "current_candidate_status": "PENDING_DOMAIN_SEMANTICS",
+      "review_depth": "DETAILED_DESIGN_REVIEW",
+      "question": "Jurisdiction در Assignment مرجع دامنه است یا نقش ضدصلب با شرط وجودی؟",
+      "preferred_bounded_action": "Keep legal-scope reference; do not stereotype Mediation to rigid Jurisdiction without justified anti-rigid role.",
+      "evidence_to_collect": "A specific Assignment references legal jurisdictional scope.",
+      "negative_acceptance_condition": "Classification in J1 does not transfer to J2.",
+      "source_anchors": [
+        "v2/research/w4/integrated-ontouml-model.md"
+      ],
+      "candidate_change_authorized": "No new global model axiom",
+      "release_gate": "BLOCKED_PENDING_AUTHOR_AND_FORMAL_VALIDATION"
+    },
+    {
+      "id": "rel-contextClassificationProduct",
+      "name": "contextClassificationProduct",
+      "source_end": "ContextualMedicineClassificationAssignment",
+      "target_end": "ClassifiedMedicinalProductRole",
+      "bucket": "CANDIDATE_ALIGNMENT",
+      "scientific_author_status": "PENDING",
+      "current_candidate_status": "IMPLEMENTED_MEDIATION_DETAILED_REVIEW_PENDING_AUTHOR",
+      "review_depth": "DETAILED_DESIGN_REVIEW",
+      "question": "آیا طبقه‌بندی Substance بدون child edge Product همچنان مجاز است؟",
+      "preferred_bounded_action": "Keep native child Mediation; test valid Substance classification without Product child; no child min1.",
+      "evidence_to_collect": "ContextualMedicineClassificationAssignment relates a ClassifiedMedicinalProductRole when the classified entity is specifically a Product.",
+      "negative_acceptance_condition": "A contextual assignment with a PharmaceuticalSubstance subject is valid in inherited contract and must not be forced to have a Product child edge.",
+      "source_anchors": [
+        "v2/research/w4/relator-material-patterns.md"
+      ],
+      "candidate_change_authorized": "Only bounded engineering candidate; no promotion",
+      "release_gate": "BLOCKED_PENDING_AUTHOR_AND_FORMAL_VALIDATION"
+    },
+    {
+      "id": "rel-disruptionAffects",
+      "name": "disruptionAffects",
+      "source_end": "DisruptionEvent",
+      "target_end": null,
+      "bucket": "EVIDENCE_FIRST_RETAIN",
+      "scientific_author_status": "PENDING",
+      "current_candidate_status": "PENDING_ENDPOINT_REFINEMENT",
+      "review_depth": "DETAILED_ENDPOINT_POLICY",
+      "question": "تأثیر Disruption روی کدام خانوادهٔ target با شواهد علی/زمانی ثابت می‌شود؟",
+      "preferred_bounded_action": "Retain current broad or untyped relation; gather source-specific witnesses before any global axiom",
+      "evidence_to_collect": "Specify admitted target families and causal evidence before general OWL range or stereotype.",
+      "negative_acceptance_condition": "A co-reported shortage alone cannot establish a causal disruption or its target.",
+      "source_anchors": [
+        "https://github.com/ArazSaieArasi3/CM-PharmE/blob/d95b5640c14d2c43c1e88a9a76ef78067f058916/v2/research/w4/risk-resilience-extension.md"
+      ],
+      "candidate_change_authorized": "No new global model axiom",
+      "release_gate": "BLOCKED_PENDING_AUTHOR_AND_FORMAL_VALIDATION"
+    },
+    {
+      "id": "rel-disruptionAffectsDependency",
+      "name": "disruptionAffectsDependency",
+      "source_end": "DisruptionEvent",
+      "target_end": "SupplyDependency",
+      "bucket": "EVIDENCE_FIRST_RETAIN",
+      "scientific_author_status": "PENDING",
+      "current_candidate_status": "PENDING_PARENT_SEMANTICS",
+      "review_depth": "DETAILED_DESIGN_PROPOSAL",
+      "question": "آیا child edge فقط وقتی ایجاد می‌شود که تأثیر بر SupplyDependency مستقل ثبت شده باشد؟",
+      "preferred_bounded_action": "Retain child untyped until parent truthmaker and target family are justified",
+      "evidence_to_collect": "Define what 'affects' means, causal-evidence standard, temporal order, parent disruptionAffects semantics, and allowed endpoint types.",
+      "negative_acceptance_condition": "Temporal overlap between a disruption and a dependency, or a co-reported shortage, does not prove D affected S.",
+      "source_anchors": [
+        "https://github.com/ArazSaieArasi3/CM-PharmE/blob/fb281f2d605090da2779bb2021be7cb00de4de73/v2/research/w4/events-situations-observations.md",
+        "https://github.com/ArazSaieArasi3/CM-PharmE/blob/fb281f2d605090da2779bb2021be7cb00de4de73/v2/research/w4/risk-resilience-extension.md"
+      ],
+      "candidate_change_authorized": "No new global model axiom",
+      "release_gate": "BLOCKED_PENDING_AUTHOR_AND_FORMAL_VALIDATION"
+    },
+    {
+      "id": "rel-entryInScheme",
+      "name": "entryInScheme",
+      "source_end": "ClassificationEntry",
+      "target_end": "ProductClassificationScheme",
+      "bucket": "AUTHOR_CHOICE_BEFORE_MODEL_CHANGE",
+      "scientific_author_status": "PENDING",
+      "current_candidate_status": "PENDING_DOMAIN_SEMANTICS",
+      "review_depth": "DETAILED_DESIGN_REVIEW",
+      "question": "آیا هویت ClassificationEntry در یک Scheme و version وابسته است و cardinality آن چیست؟",
+      "preferred_bounded_action": "Use scheme/version reference, not functional component parthood; settle entry identity and required scheme.",
+      "evidence_to_collect": "Scheme/version defines a ClassificationEntry.",
+      "negative_acceptance_condition": "Equal code strings across schemes do not identify one entry.",
+      "source_anchors": [
+        "v2/research/w4/integrated-ontouml-model.md"
+      ],
+      "candidate_change_authorized": "No new global model axiom",
+      "release_gate": "BLOCKED_PENDING_AUTHOR_AND_FORMAL_VALIDATION"
+    },
+    {
+      "id": "rel-evidenceRecord",
+      "name": "evidenceRecord",
+      "source_end": "EvidenceSupport",
+      "target_end": "EvidenceSourceRecordRole",
+      "bucket": "CANDIDATE_ALIGNMENT",
+      "scientific_author_status": "PENDING",
+      "current_candidate_status": "IMPLEMENTED_MEDIATION_DETAILED_REVIEW_PENDING_AUTHOR",
+      "review_depth": "DETAILED_DESIGN_REVIEW",
+      "question": "آیا EvidenceSupport با ObservationResult باید بدون child edge SourceRecord مجاز بماند؟",
+      "preferred_bounded_action": "Keep native child Mediation; test ObservationResult evidence without SourceRecord child; no child min1.",
+      "evidence_to_collect": "EvidenceSupport mediates a SourceRecord that bears EvidenceSourceRecordRole and an Assertion through its separate claim mediation.",
+      "negative_acceptance_condition": "An EvidenceSupport whose evidence is an ObservationResult remains valid; the parent evidenceItem edge does not entail evidenceRecord.",
+      "source_anchors": [
+        "v2/research/w4/relator-material-patterns.md"
+      ],
+      "candidate_change_authorized": "Only bounded engineering candidate; no promotion",
+      "release_gate": "BLOCKED_PENDING_AUTHOR_AND_FORMAL_VALIDATION"
+    },
+    {
+      "id": "rel-generatedAssertion",
+      "name": "generatedAssertion",
+      "source_end": "ProvenanceActivity",
+      "target_end": "Assertion",
+      "bucket": "EVIDENCE_FIRST_RETAIN",
+      "scientific_author_status": "PENDING",
+      "current_candidate_status": "PENDING_DOMAIN_SEMANTICS",
+      "review_depth": "DETAILED_DESIGN_REVIEW",
+      "question": "کدام خروجی ProvenanceActivity در منبع تولید Assertion را اثبات می‌کند؟",
+      "preferred_bounded_action": "Retain current broad or untyped relation; gather source-specific witnesses before any global axiom",
+      "evidence_to_collect": "A ProvenanceActivity output trace names the Assertion.",
+      "negative_acceptance_condition": "Reading an Assertion does not mean the activity generated it.",
+      "source_anchors": [
+        "v2/research/w4/integrated-ontouml-model.md"
+      ],
+      "candidate_change_authorized": "No new global model axiom",
+      "release_gate": "BLOCKED_PENDING_AUTHOR_AND_FORMAL_VALIDATION"
+    },
+    {
+      "id": "rel-hasActiveSubstance",
+      "name": "hasActiveSubstance",
+      "source_end": null,
+      "target_end": "PharmaceuticalSubstance",
+      "bucket": "AUTHOR_CHOICE_BEFORE_MODEL_CHANGE",
+      "scientific_author_status": "PENDING",
+      "current_candidate_status": "PENDING_ENDPOINT_REFINEMENT",
+      "review_depth": "DETAILED_ENDPOINT_POLICY",
+      "question": "آیا subject عام Product/Presentation باید در دو زیررابطهٔ نوع‌دار جدا شود؟",
+      "preferred_bounded_action": "Keep broad parent; mapping-specific Product M016 and optional Presentation child require separate scope evidence.",
+      "evidence_to_collect": "Keep parent domain open; test separate Product and Presentation scoped patterns and composition cardinalities.",
+      "negative_acceptance_condition": "Do not infer that a presentation using the parent relation is a MedicinalProduct; these Kinds are disjoint.",
+      "source_anchors": [
+        "https://github.com/ArazSaieArasi3/CM-PharmE/blob/d95b5640c14d2c43c1e88a9a76ef78067f058916/v2/research/w4/integrated-ontouml-model.md"
+      ],
+      "candidate_change_authorized": "No new global model axiom",
+      "release_gate": "BLOCKED_PENDING_AUTHOR_AND_FORMAL_VALIDATION"
+    },
+    {
+      "id": "rel-hasDatasetRelease",
+      "name": "hasDatasetRelease",
+      "source_end": "Dataset",
+      "target_end": "DatasetRelease",
+      "bucket": "EVIDENCE_FIRST_RETAIN",
+      "scientific_author_status": "PENDING",
+      "current_candidate_status": "PENDING_DOMAIN_SEMANTICS",
+      "review_depth": "DETAILED_DESIGN_REVIEW",
+      "question": "معیار تعلق یک DatasetRelease به Dataset در میان نسخه‌ها چیست؟",
+      "preferred_bounded_action": "Retain current broad or untyped relation; gather source-specific witnesses before any global axiom",
+      "evidence_to_collect": "Release lineage names a Dataset and its DatasetRelease.",
+      "negative_acceptance_condition": "Equal publication dates do not merge releases.",
+      "source_anchors": [
+        "v2/research/w4/integrated-ontouml-model.md"
+      ],
+      "candidate_change_authorized": "No new global model axiom",
+      "release_gate": "BLOCKED_PENDING_AUTHOR_AND_FORMAL_VALIDATION"
+    },
+    {
+      "id": "rel-hasDosageForm",
+      "name": "hasDosageForm",
+      "source_end": "MedicinalProductPresentation",
+      "target_end": "DosageFormSpecification",
+      "bucket": "AUTHOR_CHOICE_BEFORE_MODEL_CHANGE",
+      "scientific_author_status": "PENDING",
+      "current_candidate_status": "PENDING_DOMAIN_SEMANTICS",
+      "review_depth": "DETAILED_DESIGN_REVIEW",
+      "question": "آیا هر Presentation الزاماً DosageFormSpecification واحدی دارد یا ویژگی منبع ناقص است؟",
+      "preferred_bounded_action": "Formal specification reference; optional/mandatory at conceptual level requires scientific decision.",
+      "evidence_to_collect": "Presentation specification refers to DosageFormSpecification.",
+      "negative_acceptance_condition": "A generic Product dosage label does not identify this Presentation's form.",
+      "source_anchors": [
+        "v2/research/w4/integrated-ontouml-model.md"
+      ],
+      "candidate_change_authorized": "No new global model axiom",
+      "release_gate": "BLOCKED_PENDING_AUTHOR_AND_FORMAL_VALIDATION"
+    },
+    {
+      "id": "rel-hasMatchConfidence",
+      "name": "hasMatchConfidence",
+      "source_end": "EntityMatchAssertion",
+      "target_end": "MatchConfidence",
+      "bucket": "AUTHOR_CHOICE_BEFORE_MODEL_CHANGE",
+      "scientific_author_status": "PENDING",
+      "current_candidate_status": "PENDING_DOMAIN_SEMANTICS",
+      "review_depth": "DETAILED_DESIGN_REVIEW",
+      "question": "آیا MatchConfidence برای هر EntityMatchAssertion الزامی و یکتا است؟",
+      "preferred_bounded_action": "Bearer→Quality Characterization only if conceptual totality/uniqueness is accepted; missing scores may be source incompleteness.",
+      "evidence_to_collect": "MatchConfidence is an intrinsic Quality of one EntityMatchAssertion; totality remains unresolved.",
+      "negative_acceptance_condition": "One Quality individual cannot belong to two distinct Assertions.",
+      "source_anchors": [
+        "v2/research/w4/integrated-ontouml-model.md"
+      ],
+      "candidate_change_authorized": "No new global model axiom",
+      "release_gate": "BLOCKED_PENDING_AUTHOR_AND_FORMAL_VALIDATION"
+    },
+    {
+      "id": "rel-hasPackageConfiguration",
+      "name": "hasPackageConfiguration",
+      "source_end": "MedicinalProductPresentation",
+      "target_end": "PackageConfiguration",
+      "bucket": "AUTHOR_CHOICE_BEFORE_MODEL_CHANGE",
+      "scientific_author_status": "PENDING",
+      "current_candidate_status": "PENDING_DOMAIN_SEMANTICS",
+      "review_depth": "DETAILED_DESIGN_REVIEW",
+      "question": "آیا هر Presentation یک PackageConfiguration دارد و specification از شیء فیزیکی جداست؟",
+      "preferred_bounded_action": "Formal specification reference; packaging value does not imply physical part relation.",
+      "evidence_to_collect": "Presentation specification references PackageConfiguration.",
+      "negative_acceptance_condition": "A pack-size value is insufficient to identify a configuration.",
+      "source_anchors": [
+        "v2/research/w4/integrated-ontouml-model.md"
+      ],
+      "candidate_change_authorized": "No new global model axiom",
+      "release_gate": "BLOCKED_PENDING_AUTHOR_AND_FORMAL_VALIDATION"
+    },
+    {
+      "id": "rel-hasStrength",
+      "name": "hasStrength",
+      "source_end": "MedicinalProductPresentation",
+      "target_end": "Strength",
+      "bucket": "CANDIDATE_ALIGNMENT",
+      "scientific_author_status": "PENDING",
+      "current_candidate_status": "IMPLEMENTED_NATIVE_CHARACTERIZATION_PENDING_FORMAL_ALIGNMENT",
+      "review_depth": "DETAILED_DESIGN_REVIEW",
+      "question": "آیا هر Presentation دست‌کم یک Strength دارد و آیا Strength فقط یک bearer دارد؟",
+      "preferred_bounded_action": "Align OWL/SHACL in separate candidate only after documenting whether every Presentation has Strength; test uniqueness and incompleteness.",
+      "evidence_to_collect": "W4 says Strength is the Quality characterizing ProductPresentation.",
+      "negative_acceptance_condition": "One Strength individual cannot belong to two distinct Presentations.",
+      "source_anchors": [
+        "v2/research/w4/integrated-ontouml-model.md"
+      ],
+      "candidate_change_authorized": "Only bounded engineering candidate; no promotion",
+      "release_gate": "BLOCKED_PENDING_AUTHOR_AND_FORMAL_VALIDATION"
+    },
+    {
+      "id": "rel-listingJurisdiction",
+      "name": "listingJurisdiction",
+      "source_end": "MarketListing",
+      "target_end": "RegulatoryJurisdiction",
+      "bucket": "EVIDENCE_FIRST_RETAIN",
+      "scientific_author_status": "PENDING",
+      "current_candidate_status": "PENDING_RELRIG_DISPOSITION",
+      "review_depth": "DETAILED_DESIGN_PROPOSAL",
+      "question": "Scope قانونی MarketListing از چه شاهدی فراتر از country/address به دست می‌آید؟",
+      "preferred_bounded_action": "Retain contextual reference; collect legal-scope evidence; no Relator→rigid Mediation",
+      "evidence_to_collect": "Listing validity by scope, source authority and temporal closure; if mediation is proposed, justify a distinct anti-rigid jurisdiction Role and its lifecycle.",
+      "negative_acceptance_condition": "Presence of P in a national source or the labeler's address alone cannot create a market listing for J.",
+      "source_anchors": [
+        "https://github.com/ArazSaieArasi3/CM-PharmE/blob/fb281f2d605090da2779bb2021be7cb00de4de73/v2/research/w4/geography-jurisdiction.md",
+        "https://github.com/ArazSaieArasi3/CM-PharmE/blob/fb281f2d605090da2779bb2021be7cb00de4de73/v2/research/w4/relator-material-patterns.md"
+      ],
+      "candidate_change_authorized": "No new global model axiom",
+      "release_gate": "BLOCKED_PENDING_AUTHOR_AND_FORMAL_VALIDATION"
+    },
+    {
+      "id": "rel-locatedIn",
+      "name": "locatedIn",
+      "source_end": null,
+      "target_end": "GeographicFeature",
+      "bucket": "EVIDENCE_FIRST_RETAIN",
+      "scientific_author_status": "PENDING",
+      "current_candidate_status": "PENDING_ENDPOINT_REFINEMENT",
+      "review_depth": "DETAILED_ENDPOINT_POLICY",
+      "question": "آیا parent عمومی فقط spatial reference می‌ماند و Facility-specific edge صرفاً در نگاشت M031 اعمال شود؟",
+      "preferred_bounded_action": "Retain current broad or untyped relation; gather source-specific witnesses before any global axiom",
+      "evidence_to_collect": "Preserve generic parent until all locatable entity families reviewed; use a scoped facility location contract.",
+      "negative_acceptance_condition": "An organization's headquarters or a jurisdiction label must not be typed Facility via a global domain axiom.",
+      "source_anchors": [
+        "https://github.com/ArazSaieArasi3/CM-PharmE/blob/d95b5640c14d2c43c1e88a9a76ef78067f058916/v2/research/w4/geography-jurisdiction.md"
+      ],
+      "candidate_change_authorized": "No new global model axiom",
+      "release_gate": "BLOCKED_PENDING_AUTHOR_AND_FORMAL_VALIDATION"
+    },
+    {
+      "id": "rel-maintainsDataset",
+      "name": "maintainsDataset",
+      "source_end": "DataSourceResource",
+      "target_end": "Dataset",
+      "bucket": "EVIDENCE_FIRST_RETAIN",
+      "scientific_author_status": "PENDING",
+      "current_candidate_status": "PENDING_DOMAIN_SEMANTICS",
+      "review_depth": "DETAILED_DESIGN_REVIEW",
+      "question": "آیا stewardship نسبت به Dataset در طول زمان عوض می‌شود و چه مرجعی آن را ثابت می‌کند؟",
+      "preferred_bounded_action": "Retain current broad or untyped relation; gather source-specific witnesses before any global axiom",
+      "evidence_to_collect": "Stewardship evidence identifies a DataSourceResource maintaining Dataset.",
+      "negative_acceptance_condition": "Hosting a copy does not prove maintenance.",
+      "source_anchors": [
+        "v2/research/w4/integrated-ontouml-model.md"
+      ],
+      "candidate_change_authorized": "No new global model axiom",
+      "release_gate": "BLOCKED_PENDING_AUTHOR_AND_FORMAL_VALIDATION"
+    },
+    {
+      "id": "rel-matchObject",
+      "name": "matchObject",
+      "source_end": "EntityMatchAssertion",
+      "target_end": null,
+      "bucket": "EVIDENCE_FIRST_RETAIN",
+      "scientific_author_status": "PENDING",
+      "current_candidate_status": "PENDING_ENDPOINT_REFINEMENT",
+      "review_depth": "DETAILED_ENDPOINT_POLICY",
+      "question": "subject/object تطبیق به entity یا representation اشاره می‌کنند و خانوادهٔ هویتی target چیست؟",
+      "preferred_bounded_action": "Retain current broad or untyped relation; gather source-specific witnesses before any global axiom",
+      "evidence_to_collect": "Define whether subject/object are SourceRecord or a typed union, symmetrical admissibility, cardinality and identity constraints.",
+      "negative_acceptance_condition": "An ambiguous record pair is not an accepted real-world identity equality.",
+      "source_anchors": [
+        "https://github.com/ArazSaieArasi3/CM-PharmE/blob/d95b5640c14d2c43c1e88a9a76ef78067f058916/v2/research/w6/provenance-entity-resolution.md"
+      ],
+      "candidate_change_authorized": "No new global model axiom",
+      "release_gate": "BLOCKED_PENDING_AUTHOR_AND_FORMAL_VALIDATION"
+    },
+    {
+      "id": "rel-matchSubject",
+      "name": "matchSubject",
+      "source_end": "EntityMatchAssertion",
+      "target_end": null,
+      "bucket": "EVIDENCE_FIRST_RETAIN",
+      "scientific_author_status": "PENDING",
+      "current_candidate_status": "PENDING_ENDPOINT_REFINEMENT",
+      "review_depth": "DETAILED_ENDPOINT_POLICY",
+      "question": "subject/object تطبیق به entity یا representation اشاره می‌کنند و خانوادهٔ هویتی target چیست؟",
+      "preferred_bounded_action": "Retain current broad or untyped relation; gather source-specific witnesses before any global axiom",
+      "evidence_to_collect": "Define a common endpoint policy with matchObject, disjoint source-vs-entity layers and acceptable null/ambiguous status.",
+      "negative_acceptance_condition": "A source identifier alone is not universal canonical entity identity.",
+      "source_anchors": [
+        "https://github.com/ArazSaieArasi3/CM-PharmE/blob/d95b5640c14d2c43c1e88a9a76ef78067f058916/v2/research/w6/provenance-entity-resolution.md"
+      ],
+      "candidate_change_authorized": "No new global model axiom",
+      "release_gate": "BLOCKED_PENDING_AUTHOR_AND_FORMAL_VALIDATION"
+    },
+    {
+      "id": "rel-observationAboutPresentation",
+      "name": "observationAboutPresentation",
+      "source_end": "ObservationResult",
+      "target_end": "MedicinalProductPresentation",
+      "bucket": "EVIDENCE_FIRST_RETAIN",
+      "scientific_author_status": "PENDING",
+      "current_candidate_status": "PENDING_PARENT_SEMANTICS",
+      "review_depth": "DETAILED_DESIGN_PROPOSAL",
+      "question": "آیا result با سند مشخص دربارهٔ Presentation است، بی‌آنکه همهٔ resultها Presentation شوند؟",
+      "preferred_bounded_action": "Retain child untyped until parent truthmaker and target family are justified",
+      "evidence_to_collect": "Specify reference identity, exactness of source key, derivation of aboutness, admissible absence, parent semantics and end multiplicity.",
+      "negative_acceptance_condition": "A product-level code alone cannot be silently promoted to a particular presentation or patient observation.",
+      "source_anchors": [
+        "https://github.com/ArazSaieArasi3/CM-PharmE/blob/fb281f2d605090da2779bb2021be7cb00de4de73/v2/research/w4/events-situations-observations.md",
+        "https://github.com/ArazSaieArasi3/CM-PharmE/blob/fb281f2d605090da2779bb2021be7cb00de4de73/v2/research/w4/integrated-ontouml-model.md"
+      ],
+      "candidate_change_authorized": "No new global model axiom",
+      "release_gate": "BLOCKED_PENDING_AUTHOR_AND_FORMAL_VALIDATION"
+    },
+    {
+      "id": "rel-observationAboutProduct",
+      "name": "observationAboutProduct",
+      "source_end": "ObservationResult",
+      "target_end": "MedicinalProduct",
+      "bucket": "EVIDENCE_FIRST_RETAIN",
+      "scientific_author_status": "PENDING",
+      "current_candidate_status": "PENDING_PARENT_SEMANTICS",
+      "review_depth": "DETAILED_DESIGN_PROPOSAL",
+      "question": "آیا result با سند مشخص دربارهٔ Product است، بی‌آنکه همهٔ resultها Product شوند؟",
+      "preferred_bounded_action": "Retain child untyped until parent truthmaker and target family are justified",
+      "evidence_to_collect": "Specify product identity evidence, source scope, derivation of aboutness, parent semantics and end multiplicity.",
+      "negative_acceptance_condition": "A result keyed to only one package does not thereby describe every presentation or the product in all jurisdictions.",
+      "source_anchors": [
+        "https://github.com/ArazSaieArasi3/CM-PharmE/blob/fb281f2d605090da2779bb2021be7cb00de4de73/v2/research/w4/events-situations-observations.md",
+        "https://github.com/ArazSaieArasi3/CM-PharmE/blob/fb281f2d605090da2779bb2021be7cb00de4de73/v2/research/w4/integrated-ontouml-model.md"
+      ],
+      "candidate_change_authorized": "No new global model axiom",
+      "release_gate": "BLOCKED_PENDING_AUTHOR_AND_FORMAL_VALIDATION"
+    },
+    {
+      "id": "rel-observationResultAbout",
+      "name": "observationResultAbout",
+      "source_end": "ObservationResult",
+      "target_end": null,
+      "bucket": "EVIDENCE_FIRST_RETAIN",
+      "scientific_author_status": "PENDING",
+      "current_candidate_status": "PENDING_ENDPOINT_REFINEMENT",
+      "review_depth": "DETAILED_ENDPOINT_POLICY",
+      "question": "خانوادهٔ target عمومی result چیست و آیا به pattern موضوعات نوع‌دار نیاز داریم؟",
+      "preferred_bounded_action": "Retain current broad or untyped relation; gather source-specific witnesses before any global axiom",
+      "evidence_to_collect": "Test all result subfamilies before a common range; preserve child target distinctions and resolve aboutness truthmaker.",
+      "negative_acceptance_condition": "An aggregate result does not create a patient individual, and a product link does not identify a presentation.",
+      "source_anchors": [
+        "https://github.com/ArazSaieArasi3/CM-PharmE/blob/d95b5640c14d2c43c1e88a9a76ef78067f058916/v2/research/w4/events-situations-observations.md"
+      ],
+      "candidate_change_authorized": "No new global model axiom",
+      "release_gate": "BLOCKED_PENDING_AUTHOR_AND_FORMAL_VALIDATION"
+    },
+    {
+      "id": "rel-operates",
+      "name": "operates",
+      "source_end": "Organization",
+      "target_end": "Facility",
+      "bucket": "CANDIDATE_ALIGNMENT",
+      "scientific_author_status": "PENDING",
+      "current_candidate_status": "RETAIN_MATERIAL_WITH_FIXTURE_SUPPORT_PENDING_FORMAL_RULE",
+      "review_depth": "DETAILED_DERIVATION_AUDIT",
+      "question": "آیا قاعدهٔ اشتقاق از همان FacilityOperation با بازهٔ اعتبار و provenance برای material relation پذیرفته است؟",
+      "preferred_bounded_action": "Specify executable same-relator temporal/provenance rule outside bare OWL annotation; test false cross-joins and time boundaries.",
+      "evidence_to_collect": "FacilityOperation relator mediates OperatingOrganizationRole and OperatedFacilityRole; both specialize Organization and Facility.",
+      "negative_acceptance_condition": "An Organization and Facility co-occurring in a source record without FacilityOperation must not yield operates.",
+      "source_anchors": [
+        "v2/research/w4/integrated-ontouml-model.md"
+      ],
+      "candidate_change_authorized": "Only bounded engineering candidate; no promotion",
+      "release_gate": "BLOCKED_PENDING_AUTHOR_AND_FORMAL_VALIDATION"
+    },
+    {
+      "id": "rel-presentationOf",
+      "name": "presentationOf",
+      "source_end": "MedicinalProductPresentation",
+      "target_end": "MedicinalProduct",
+      "bucket": "AUTHOR_CHOICE_BEFORE_MODEL_CHANGE",
+      "scientific_author_status": "PENDING",
+      "current_candidate_status": "PENDING_DOMAIN_SEMANTICS",
+      "review_depth": "DETAILED_DESIGN_REVIEW",
+      "question": "آیا هر Presentation دقیقاً به یک Product تعریف‌شده تعلق دارد و تغییر Product هویت آن را عوض می‌کند؟",
+      "preferred_bounded_action": "Formal Presentation→Product identity association; reject Product/Presentation mereology.",
+      "evidence_to_collect": "Product definition explicitly identifies the Presentation's Product.",
+      "negative_acceptance_condition": "A Product source row alone does not instantiate a Presentation.",
+      "source_anchors": [
+        "v2/research/w4/integrated-ontouml-model.md"
+      ],
+      "candidate_change_authorized": "No new global model axiom",
+      "release_gate": "BLOCKED_PENDING_AUTHOR_AND_FORMAL_VALIDATION"
+    },
+    {
+      "id": "rel-producesObservationResult",
+      "name": "producesObservationResult",
+      "source_end": "ObservationActivity",
+      "target_end": "ObservationResult",
+      "bucket": "EVIDENCE_FIRST_RETAIN",
+      "scientific_author_status": "PENDING",
+      "current_candidate_status": "PENDING_DOMAIN_SEMANTICS",
+      "review_depth": "DETAILED_DESIGN_REVIEW",
+      "question": "کدام provenance ارتباط رویداد ObservationActivity و Result را اثبات می‌کند؟",
+      "preferred_bounded_action": "Retain current broad or untyped relation; gather source-specific witnesses before any global axiom",
+      "evidence_to_collect": "Provenance links an ObservationActivity to its generated Result.",
+      "negative_acceptance_condition": "An imported aggregate result does not entail a particular event.",
+      "source_anchors": [
+        "v2/research/w4/events-situations-observations.md"
+      ],
+      "candidate_change_authorized": "No new global model axiom",
+      "release_gate": "BLOCKED_PENDING_AUTHOR_AND_FORMAL_VALIDATION"
+    },
+    {
+      "id": "rel-registrationJurisdiction",
+      "name": "registrationJurisdiction",
+      "source_end": "EstablishmentRegistration",
+      "target_end": "RegulatoryJurisdiction",
+      "bucket": "EVIDENCE_FIRST_RETAIN",
+      "scientific_author_status": "PENDING",
+      "current_candidate_status": "PENDING_RELRIG_DISPOSITION",
+      "review_depth": "DETAILED_DESIGN_PROPOSAL",
+      "question": "ثبت در کدام scope قانونی معتبر است و آیا به نقش jurisdictional جداگانه نیاز داریم؟",
+      "preferred_bounded_action": "Retain contextual reference; collect legal-scope evidence; no Relator→rigid Mediation",
+      "evidence_to_collect": "Source-backed scope, validity interval and distinct legal-versus-geographic identifiers; review an anti-rigid scope Role only if dependence evidence warrants it.",
+      "negative_acceptance_condition": "The facility's geographic position alone cannot infer a registration in J.",
+      "source_anchors": [
+        "https://github.com/ArazSaieArasi3/CM-PharmE/blob/fb281f2d605090da2779bb2021be7cb00de4de73/v2/research/w4/geography-jurisdiction.md",
+        "https://github.com/ArazSaieArasi3/CM-PharmE/blob/fb281f2d605090da2779bb2021be7cb00de4de73/v2/research/w4/relator-material-patterns.md"
+      ],
+      "candidate_change_authorized": "No new global model axiom",
+      "release_gate": "BLOCKED_PENDING_AUTHOR_AND_FORMAL_VALIDATION"
+    },
+    {
+      "id": "rel-reimbursementDiagnosisContext",
+      "name": "reimbursementDiagnosisContext",
+      "source_end": "ReimbursementUtilisationObservationResult",
+      "target_end": "DiagnosisClassificationReference",
+      "bucket": "EVIDENCE_FIRST_RETAIN",
+      "scientific_author_status": "PENDING",
+      "current_candidate_status": "PENDING_DOMAIN_SEMANTICS",
+      "review_depth": "DETAILED_DESIGN_REVIEW",
+      "question": "کد/نسخهٔ DiagnosisClassificationReference در aggregate result چگونه ثبت می‌شود؟",
+      "preferred_bounded_action": "Retain current broad or untyped relation; gather source-specific witnesses before any global axiom",
+      "evidence_to_collect": "Aggregate source references a versioned DiagnosisClassificationReference.",
+      "negative_acceptance_condition": "Counts do not instantiate patients or diagnoses.",
+      "source_anchors": [
+        "v2/research/w4/events-situations-observations.md"
+      ],
+      "candidate_change_authorized": "No new global model axiom",
+      "release_gate": "BLOCKED_PENDING_AUTHOR_AND_FORMAL_VALIDATION"
+    },
+    {
+      "id": "rel-riskAssessmentConcerns",
+      "name": "riskAssessmentConcerns",
+      "source_end": "RiskAssessmentActivity",
+      "target_end": null,
+      "bucket": "EVIDENCE_FIRST_RETAIN",
+      "scientific_author_status": "PENDING",
+      "current_candidate_status": "PENDING_ENDPOINT_REFINEMENT",
+      "review_depth": "DETAILED_ENDPOINT_POLICY",
+      "question": "موضوع RiskAssessmentActivity باید Asset/Dependency/Event/Plan باشد یا یک target عام مستند؟",
+      "preferred_bounded_action": "Retain current broad or untyped relation; gather source-specific witnesses before any global axiom",
+      "evidence_to_collect": "Admit target families with assessment evidence; do not impose a deferred AssetAtRisk range.",
+      "negative_acceptance_condition": "Mentioning an asset does not prove a vulnerability or quantified risk.",
+      "source_anchors": [
+        "https://github.com/ArazSaieArasi3/CM-PharmE/blob/d95b5640c14d2c43c1e88a9a76ef78067f058916/v2/research/w4/risk-resilience-extension.md"
+      ],
+      "candidate_change_authorized": "No new global model axiom",
+      "release_gate": "BLOCKED_PENDING_AUTHOR_AND_FORMAL_VALIDATION"
+    },
+    {
+      "id": "rel-riskAssessmentConcernsDependency",
+      "name": "riskAssessmentConcernsDependency",
+      "source_end": "RiskAssessmentActivity",
+      "target_end": "SupplyDependency",
+      "bucket": "EVIDENCE_FIRST_RETAIN",
+      "scientific_author_status": "PENDING",
+      "current_candidate_status": "PENDING_PARENT_SEMANTICS",
+      "review_depth": "DETAILED_DESIGN_PROPOSAL",
+      "question": "آیا child edge فقط با ارزیابی مستند SupplyDependency ایجاد می‌شود؟",
+      "preferred_bounded_action": "Retain child untyped until parent truthmaker and target family are justified",
+      "evidence_to_collect": "Define topic admission, assessment evidence and time, parent semantics, endpoint identity and multiplicities.",
+      "negative_acceptance_condition": "Mentioning S in a document or observing a disruption does not prove a quantified risk or vulnerability of S.",
+      "source_anchors": [
+        "https://github.com/ArazSaieArasi3/CM-PharmE/blob/fb281f2d605090da2779bb2021be7cb00de4de73/v2/research/w4/risk-resilience-extension.md",
+        "https://github.com/ArazSaieArasi3/CM-PharmE/blob/fb281f2d605090da2779bb2021be7cb00de4de73/v2/research/w4/events-situations-observations.md"
+      ],
+      "candidate_change_authorized": "No new global model axiom",
+      "release_gate": "BLOCKED_PENDING_AUTHOR_AND_FORMAL_VALIDATION"
+    },
+    {
+      "id": "rel-riskTreatmentAddresses",
+      "name": "riskTreatmentAddresses",
+      "source_end": "RiskTreatmentActivity",
+      "target_end": null,
+      "bucket": "EVIDENCE_FIRST_RETAIN",
+      "scientific_author_status": "PENDING",
+      "current_candidate_status": "PENDING_ENDPOINT_REFINEMENT",
+      "review_depth": "DETAILED_ENDPOINT_POLICY",
+      "question": "موضوع RiskTreatmentActivity به کدام target با شواهد برنامه و اجرا وصل است؟",
+      "preferred_bounded_action": "Retain current broad or untyped relation; gather source-specific witnesses before any global axiom",
+      "evidence_to_collect": "Define treatment plan/target semantics, evidence and direction before adding range or stereotype.",
+      "negative_acceptance_condition": "Do not claim that every treatment is effective, or that a target is necessarily a SupplyDependency.",
+      "source_anchors": [
+        "https://github.com/ArazSaieArasi3/CM-PharmE/blob/d95b5640c14d2c43c1e88a9a76ef78067f058916/v2/research/w4/risk-resilience-extension.md"
+      ],
+      "candidate_change_authorized": "No new global model axiom",
+      "release_gate": "BLOCKED_PENDING_AUTHOR_AND_FORMAL_VALIDATION"
+    },
+    {
+      "id": "rel-shortageJurisdiction",
+      "name": "shortageJurisdiction",
+      "source_end": "MedicineShortageSituation",
+      "target_end": "RegulatoryJurisdiction",
+      "bucket": "EVIDENCE_FIRST_RETAIN",
+      "scientific_author_status": "PENDING",
+      "current_candidate_status": "PENDING_DOMAIN_SEMANTICS",
+      "review_depth": "DETAILED_DESIGN_REVIEW",
+      "question": "Jurisdiction نسبت به shortage از source status و بازهٔ زمانی چگونه تعیین می‌شود؟",
+      "preferred_bounded_action": "Retain current broad or untyped relation; gather source-specific witnesses before any global axiom",
+      "evidence_to_collect": "Source identifies a jurisdictionally bounded ShortageSituation.",
+      "negative_acceptance_condition": "A J1 shortage does not imply a J2 shortage.",
+      "source_anchors": [
+        "v2/research/w4/events-situations-observations.md"
+      ],
+      "candidate_change_authorized": "No new global model axiom",
+      "release_gate": "BLOCKED_PENDING_AUTHOR_AND_FORMAL_VALIDATION"
+    },
+    {
+      "id": "rel-shortagePresentation",
+      "name": "shortagePresentation",
+      "source_end": "MedicineShortageSituation",
+      "target_end": "MedicinalProductPresentation",
+      "bucket": "AUTHOR_CHOICE_BEFORE_MODEL_CHANGE",
+      "scientific_author_status": "PENDING",
+      "current_candidate_status": "PENDING_DOMAIN_SEMANTICS",
+      "review_depth": "DETAILED_DESIGN_REVIEW",
+      "question": "آیا Product-level shortage بدون سند package اجازهٔ Presentation-level edge می‌دهد؟",
+      "preferred_bounded_action": "Require source-backed presentation specificity; Product-level shortage alone is insufficient.",
+      "evidence_to_collect": "Source identifies a particular presentation in a shortage.",
+      "negative_acceptance_condition": "Product-only report does not identify a package/presentation.",
+      "source_anchors": [
+        "v2/research/w4/events-situations-observations.md"
+      ],
+      "candidate_change_authorized": "No new global model axiom",
+      "release_gate": "BLOCKED_PENDING_AUTHOR_AND_FORMAL_VALIDATION"
+    },
+    {
+      "id": "rel-shortageProduct",
+      "name": "shortageProduct",
+      "source_end": "MedicineShortageSituation",
+      "target_end": "MedicinalProduct",
+      "bucket": "AUTHOR_CHOICE_BEFORE_MODEL_CHANGE",
+      "scientific_author_status": "PENDING",
+      "current_candidate_status": "PENDING_DOMAIN_SEMANTICS",
+      "review_depth": "DETAILED_DESIGN_REVIEW",
+      "question": "آیا Presentation-level shortage همهٔ Product را درگیر می‌کند یا به scope منبع محدود است؟",
+      "preferred_bounded_action": "Scope shortage to evidenced Product, not all presentations.",
+      "evidence_to_collect": "Source identifies the Product concerned by shortage.",
+      "negative_acceptance_condition": "Presentation shortage does not establish shortage of all presentations.",
+      "source_anchors": [
+        "v2/research/w4/events-situations-observations.md"
+      ],
+      "candidate_change_authorized": "No new global model axiom",
+      "release_gate": "BLOCKED_PENDING_AUTHOR_AND_FORMAL_VALIDATION"
+    },
+    {
+      "id": "rel-usedSourceArtifact",
+      "name": "usedSourceArtifact",
+      "source_end": "ProvenanceActivity",
+      "target_end": null,
+      "bucket": "EVIDENCE_FIRST_RETAIN",
+      "scientific_author_status": "PENDING",
+      "current_candidate_status": "PENDING_ENDPOINT_REFINEMENT",
+      "review_depth": "DETAILED_ENDPOINT_POLICY",
+      "question": "آیا ProvenanceActivity از Dataset/Record/Artifact استفاده کرده و target family چیست؟",
+      "preferred_bounded_action": "Retain current broad or untyped relation; gather source-specific witnesses before any global axiom",
+      "evidence_to_collect": "Specify the admitted source-artifact abstraction or scoped subproperties for record/release/document; check PROV alignment.",
+      "negative_acceptance_condition": "A dataset name alone cannot fabricate a source record or complete provenance chain.",
+      "source_anchors": [
+        "https://github.com/ArazSaieArasi3/CM-PharmE/blob/d95b5640c14d2c43c1e88a9a76ef78067f058916/v2/research/w3/provenance-evidence-observation.md"
+      ],
+      "candidate_change_authorized": "No new global model axiom",
+      "release_gate": "BLOCKED_PENDING_AUTHOR_AND_FORMAL_VALIDATION"
+    },
+    {
+      "id": "rel-withinCountry",
+      "name": "withinCountry",
+      "source_end": "GeographicFeature",
+      "target_end": "Country",
+      "bucket": "AUTHOR_CHOICE_BEFORE_MODEL_CHANGE",
+      "scientific_author_status": "PENDING",
+      "current_candidate_status": "PENDING_DOMAIN_SEMANTICS",
+      "review_depth": "DETAILED_DESIGN_REVIEW",
+      "question": "آیا containment اداری versioned است و آیا هر GeographicFeature دقیقاً یک Country دارد؟",
+      "preferred_bounded_action": "Use versioned spatial/administrative reference; avoid componentOf and blanket one-Country axiom.",
+      "evidence_to_collect": "Geographic reference establishes feature containment in Country.",
+      "negative_acceptance_condition": "Country cannot be within itself; Jurisdiction is distinct.",
+      "source_anchors": [
+        "v2/research/w4/geography-jurisdiction.md"
+      ],
+      "candidate_change_authorized": "No new global model axiom",
+      "release_gate": "BLOCKED_PENDING_AUTHOR_AND_FORMAL_VALIDATION"
+    },
+    {
+      "id": "rel-withinRegion",
+      "name": "withinRegion",
+      "source_end": "GeographicFeature",
+      "target_end": "AdministrativeRegion",
+      "bucket": "AUTHOR_CHOICE_BEFORE_MODEL_CHANGE",
+      "scientific_author_status": "PENDING",
+      "current_candidate_status": "PENDING_DOMAIN_SEMANTICS",
+      "review_depth": "DETAILED_DESIGN_REVIEW",
+      "question": "آیا containment اداری versioned است و آیا هر GeographicFeature دقیقاً یک Region دارد؟",
+      "preferred_bounded_action": "Use versioned spatial/administrative reference; avoid componentOf and blanket one-Region axiom.",
+      "evidence_to_collect": "Geographic reference establishes feature containment in AdministrativeRegion.",
+      "negative_acceptance_condition": "Region cannot be within itself or inferred from postal label.",
+      "source_anchors": [
+        "v2/research/w4/geography-jurisdiction.md"
+      ],
+      "candidate_change_authorized": "No new global model axiom",
+      "release_gate": "BLOCKED_PENDING_AUTHOR_AND_FORMAL_VALIDATION"
+    }
+  ]
+}

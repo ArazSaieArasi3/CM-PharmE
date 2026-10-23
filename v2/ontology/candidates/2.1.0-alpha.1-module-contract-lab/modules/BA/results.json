@@ -1,0 +1,291 @@
+{
+  "module": "BA",
+  "scope": "bounded regression; not full semantic acceptance or a formal locality module",
+  "admission": [
+    {
+      "id": "lab-BA-1-positive.ttl",
+      "conforms": true,
+      "pass": true,
+      "violations": []
+    },
+    {
+      "id": "lab-BA-2-boundary.ttl",
+      "conforms": true,
+      "pass": true,
+      "violations": []
+    },
+    {
+      "id": "lab-BA-3-missing-capability-bearer.ttl",
+      "conforms": false,
+      "pass": true,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/2.1/capabilityBearer",
+          "constraint": "",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent"
+        }
+      ]
+    },
+    {
+      "id": "lab-BA-3-service-without-capability.ttl",
+      "conforms": false,
+      "pass": true,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/four-domain/serviceCapability",
+          "constraint": "",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent"
+        }
+      ]
+    },
+    {
+      "id": "lab-BA-3-view-is-organization.ttl",
+      "conforms": false,
+      "pass": true,
+      "violations": [
+        {
+          "path": "",
+          "constraint": "https://w3id.org/cm-pharme/experimental/four-domain/distinct-BusinessArchitectureView-Organization",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent"
+        }
+      ]
+    },
+    {
+      "id": "lab-BA-3-untyped-view-reference.ttl",
+      "conforms": false,
+      "pass": true,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/four-domain/viewOrganization",
+          "constraint": "",
+          "component": "http://www.w3.org/ns/shacl#ClassConstraintComponent"
+        }
+      ]
+    },
+    {
+      "id": "lab-BA-3-one-partner-only.ttl",
+      "conforms": false,
+      "pass": true,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/2.1/partnershipParticipant",
+          "constraint": "",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent"
+        },
+        {
+          "path": "https://w3id.org/cm-pharme/2.1/partnershipParticipant",
+          "constraint": "",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent"
+        },
+        {
+          "path": "nd318ce1a43704a0db5c091a0836502b1b9",
+          "constraint": "",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent"
+        }
+      ]
+    },
+    {
+      "id": "lab-BA-3-known-partner-aliases.ttl",
+      "conforms": false,
+      "pass": true,
+      "violations": [
+        {
+          "path": "",
+          "constraint": "https://w3id.org/cm-pharme/experimental/four-domain/partners-not-known-aliases",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent"
+        }
+      ]
+    },
+    {
+      "id": "refinement-X-BA-SERVICE-positive.ttl",
+      "conforms": true,
+      "pass": true,
+      "violations": []
+    },
+    {
+      "id": "refinement-X-BA-COMMITMENT-positive.ttl",
+      "conforms": true,
+      "pass": true,
+      "violations": []
+    },
+    {
+      "id": "refinement-X-BA-SERVICE-boundary.ttl",
+      "conforms": true,
+      "pass": true,
+      "violations": []
+    },
+    {
+      "id": "refinement-X-BA-COMMITMENT-boundary.ttl",
+      "conforms": true,
+      "pass": true,
+      "violations": []
+    },
+    {
+      "id": "refinement-X-BA-SERVICE-missing-pharma-context.ttl",
+      "conforms": false,
+      "pass": true,
+      "violations": [
+        {
+          "path": "",
+          "constraint": "https://w3id.org/cm-pharme/experimental/refinement/pharma-service-context",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent"
+        }
+      ]
+    },
+    {
+      "id": "refinement-X-BA-SERVICE-untyped-product.ttl",
+      "conforms": false,
+      "pass": true,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/refinement/serviceProduct",
+          "constraint": "",
+          "component": "http://www.w3.org/ns/shacl#ClassConstraintComponent"
+        }
+      ]
+    },
+    {
+      "id": "refinement-X-BA-COMMITMENT-missing-commitment.ttl",
+      "conforms": false,
+      "pass": true,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/refinement/agreementCommitment",
+          "constraint": "",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent"
+        }
+      ]
+    },
+    {
+      "id": "refinement-X-BA-COMMITMENT-missing-source-evidence.ttl",
+      "conforms": false,
+      "pass": true,
+      "violations": [
+        {
+          "path": "",
+          "constraint": "https://w3id.org/cm-pharme/experimental/refinement/commitment-evidence-required",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent"
+        }
+      ]
+    },
+    {
+      "id": "refinement-X-BA-COMMITMENT-outside-actor.ttl",
+      "conforms": false,
+      "pass": true,
+      "violations": [
+        {
+          "path": "",
+          "constraint": "https://w3id.org/cm-pharme/experimental/refinement/commitment-participant-agreement",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent"
+        }
+      ]
+    }
+  ],
+  "queries": [
+    {
+      "id": "CQ-BA-01",
+      "actual": [
+        [
+          "urn:cmpe-lab:org"
+        ]
+      ],
+      "pass": true
+    },
+    {
+      "id": "CQ-BA-02",
+      "actual": [
+        [
+          "urn:cmpe-lab:cap"
+        ]
+      ],
+      "pass": true
+    },
+    {
+      "id": "CQ-BA-03",
+      "actual": [
+        [
+          "urn:cmpe-lab:agreement",
+          "urn:cmpe-lab:org"
+        ],
+        [
+          "urn:cmpe-lab:agreement",
+          "urn:cmpe-lab:org2"
+        ],
+        [
+          "urn:cmpe-lab:view",
+          "urn:cmpe-lab:org"
+        ]
+      ],
+      "pass": true
+    },
+    {
+      "id": "X-BA-SERVICE",
+      "actual": [
+        [
+          "urn:cmpe-lab:serviceProduct",
+          "urn:cmpe-lab:cap"
+        ]
+      ],
+      "pass": true
+    },
+    {
+      "id": "X-BA-COMMITMENT",
+      "actual": [
+        [
+          "urn:cmpe-lab:org",
+          "urn:cmpe-lab:commitmentRecord"
+        ],
+        [
+          "urn:cmpe-lab:org2",
+          "urn:cmpe-lab:commitmentRecord"
+        ]
+      ],
+      "pass": true
+    }
+  ],
+  "reasoner": [
+    {
+      "id": "BA-schema-satisfiable",
+      "consistent": true,
+      "unsatisfiable_named_classes": [],
+      "pass": true
+    },
+    {
+      "id": "BA-positive-consistent",
+      "consistent": true,
+      "unsatisfiable_named_classes": [],
+      "pass": true
+    },
+    {
+      "id": "BA-identity-collision-rejected",
+      "consistent": false,
+      "unsatisfiable_named_classes": [],
+      "pass": true
+    }
+  ],
+  "source_scope_lookups": [],
+  "counts": {
+    "admission": [
+      17,
+      17
+    ],
+    "queries": [
+      5,
+      5
+    ],
+    "reasoner": [
+      3,
+      3
+    ],
+    "source_scope_lookups": [
+      0,
+      0
+    ]
+  },
+  "runtime": {
+    "python": "3.12.14",
+    "rdflib": "7.6.0",
+    "pyshacl": "0.30.1",
+    "owlready2": "0.49"
+  }
+}

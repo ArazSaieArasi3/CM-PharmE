@@ -1,0 +1,231 @@
+{
+  "approval_quote": "بسیار خوب انجام بده\nنتیجه را بگو بعد بگو چه کارهای دیگری باید انجام بدهیم",
+  "scope": "preceding 22-decision package; not release approval or independent expert validation",
+  "decisions": [
+    {
+      "id": "RR-01",
+      "disposition": "APPROVE",
+      "decision": "Operating organization Role; one or more operators.",
+      "profile": "FacilityOperation",
+      "position": "operator",
+      "authority": "Project author: explicit batch approval in this conversation",
+      "approved_at": "2026-10-05T20:59:49+03:30",
+      "implementation_status": "candidate implemented; validation is separate"
+    },
+    {
+      "id": "RR-02",
+      "disposition": "APPROVE",
+      "decision": "Operated facility Role; exactly one facility per operation relation.",
+      "profile": "FacilityOperation",
+      "position": "facility",
+      "authority": "Project author: explicit batch approval in this conversation",
+      "approved_at": "2026-10-05T20:59:49+03:30",
+      "implementation_status": "candidate implemented; validation is separate"
+    },
+    {
+      "id": "RR-03",
+      "disposition": "APPROVE",
+      "decision": "Separate registered Organization and Facility Roles.",
+      "profile": "EstablishmentRegistration",
+      "position": "subject",
+      "authority": "Project author: explicit batch approval in this conversation",
+      "approved_at": "2026-10-05T20:59:49+03:30",
+      "implementation_status": "candidate implemented; validation is separate"
+    },
+    {
+      "id": "RR-04",
+      "disposition": "APPROVE",
+      "decision": "Separate classified Product and Substance Roles.",
+      "profile": "ProductClassificationAssignment",
+      "position": "subject",
+      "authority": "Project author: explicit batch approval in this conversation",
+      "approved_at": "2026-10-05T20:59:49+03:30",
+      "implementation_status": "candidate implemented; validation is separate"
+    },
+    {
+      "id": "RR-05",
+      "disposition": "APPROVE",
+      "decision": "Applied entry Role is a relatum; revise W4 reference wording.",
+      "profile": "ProductClassificationAssignment",
+      "position": "entry",
+      "authority": "Project author: explicit batch approval in this conversation",
+      "approved_at": "2026-10-05T20:59:49+03:30",
+      "implementation_status": "candidate implemented; validation is separate"
+    },
+    {
+      "id": "RR-06",
+      "disposition": "APPROVE",
+      "decision": "Scoped listing requires presentation and documented responsible party.",
+      "profile": "MarketListing",
+      "position": "responsible",
+      "authority": "Project author: explicit batch approval in this conversation",
+      "approved_at": "2026-10-05T20:59:49+03:30",
+      "implementation_status": "candidate implemented; validation is separate"
+    },
+    {
+      "id": "RR-07",
+      "disposition": "APPROVE",
+      "decision": "Supported Assertion Role; support never implies truth.",
+      "profile": "EvidenceSupport",
+      "position": "claim",
+      "authority": "Project author: explicit batch approval in this conversation",
+      "approved_at": "2026-10-05T20:59:49+03:30",
+      "implementation_status": "candidate implemented; validation is separate"
+    },
+    {
+      "id": "RR-08",
+      "disposition": "APPROVE",
+      "decision": "Used scheme Role is a relatum; lexical value remains a literal.",
+      "profile": "IdentifierAssignment",
+      "position": "scheme",
+      "authority": "Project author: explicit batch approval in this conversation",
+      "approved_at": "2026-10-05T20:59:49+03:30",
+      "implementation_status": "candidate implemented; validation is separate"
+    },
+    {
+      "id": "RR-09",
+      "disposition": "APPROVE",
+      "decision": "Reference and alternative are context-local product roles.",
+      "profile": "AlternativeMedicineAssignment",
+      "position": "reference",
+      "authority": "Project author: explicit batch approval in this conversation",
+      "approved_at": "2026-10-05T20:59:49+03:30",
+      "implementation_status": "candidate implemented; validation is separate"
+    },
+    {
+      "id": "RR-10",
+      "disposition": "APPROVE",
+      "decision": "Dependent is an admitted endurant; events excluded from this RoleMixin.",
+      "profile": "SupplyDependency",
+      "position": "dependent",
+      "authority": "Project author: explicit batch approval in this conversation",
+      "approved_at": "2026-10-05T20:59:49+03:30",
+      "implementation_status": "candidate implemented; validation is separate"
+    },
+    {
+      "id": "RR-11",
+      "disposition": "APPROVE",
+      "decision": "Provider is Organization, Facility or Product; no required Org-Facility pair.",
+      "profile": "SupplyDependency",
+      "position": "provider",
+      "authority": "Project author: explicit batch approval in this conversation",
+      "approved_at": "2026-10-05T20:59:49+03:30",
+      "implementation_status": "candidate implemented; validation is separate"
+    },
+    {
+      "id": "RR-12",
+      "disposition": "APPROVE",
+      "decision": "At least two distinct partner organizations; repeated independent agreements permitted.",
+      "profile": "StrategicPartnershipAgreement",
+      "position": "partner",
+      "authority": "Project author: explicit batch approval in this conversation",
+      "approved_at": "2026-10-05T20:59:49+03:30",
+      "implementation_status": "candidate implemented; validation is separate"
+    },
+    {
+      "id": "RR-13",
+      "disposition": "APPROVE",
+      "decision": "Record evidence is a specialization of generic evidence; no double counting.",
+      "profile": "EvidenceSupport",
+      "position": "evidence",
+      "authority": "Project author: explicit batch approval in this conversation",
+      "approved_at": "2026-10-05T20:59:49+03:30",
+      "implementation_status": "candidate implemented; validation is separate"
+    },
+    {
+      "id": "RR-14",
+      "disposition": "APPROVE",
+      "decision": "Contextual classification reuses Product/Substance pattern.",
+      "profile": "ContextualMedicineClassificationAssignment",
+      "position": "subject",
+      "authority": "Project author: explicit batch approval in this conversation",
+      "approved_at": "2026-10-05T20:59:49+03:30",
+      "implementation_status": "candidate implemented; validation is separate"
+    },
+    {
+      "id": "RR-15",
+      "disposition": "APPROVE",
+      "decision": "Contextual entry link subsets the generic assignment pattern.",
+      "profile": "ContextualMedicineClassificationAssignment",
+      "position": "entry",
+      "authority": "Project author: explicit batch approval in this conversation",
+      "approved_at": "2026-10-05T20:59:49+03:30",
+      "implementation_status": "candidate implemented; validation is separate"
+    },
+    {
+      "id": "S-01",
+      "disposition": "APPROVE",
+      "decision": "Identified bearer and used scheme, lexical value, provenance and validity.",
+      "profile": "IdentifierAssignment",
+      "position": "subject",
+      "authority": "Project author: explicit batch approval in this conversation",
+      "approved_at": "2026-10-05T20:59:49+03:30",
+      "implementation_status": "candidate implemented; validation is separate"
+    },
+    {
+      "id": "S-02",
+      "disposition": "APPROVE",
+      "decision": "Separate governed roles and authority; activity scope stays a reported target.",
+      "profile": "RegulatoryOversight",
+      "position": "subject",
+      "authority": "Project author: explicit batch approval in this conversation",
+      "approved_at": "2026-10-05T20:59:49+03:30",
+      "implementation_status": "candidate implemented; validation is separate"
+    },
+    {
+      "id": "S-03",
+      "disposition": "APPROVE",
+      "decision": "EvidenceItem has distinct SourceRecord and ObservationResult identities.",
+      "profile": "EvidenceSupport",
+      "position": "evidence",
+      "authority": "Project author: explicit batch approval in this conversation",
+      "approved_at": "2026-10-05T20:59:49+03:30",
+      "implementation_status": "candidate implemented; validation is separate"
+    },
+    {
+      "id": "S-04",
+      "disposition": "DEFER",
+      "decision": "Defer AssetAtRisk and dependent Vulnerability bearer pattern; preserve declarations outside active import.",
+      "profile": null,
+      "position": null,
+      "authority": "Project author: explicit batch approval in this conversation",
+      "approved_at": "2026-10-05T20:59:49+03:30",
+      "implementation_status": "candidate implemented; validation is separate"
+    },
+    {
+      "id": "S-05",
+      "disposition": "DEFER",
+      "decision": "Defer ClinicalCareParticipant until admitted bearer and care-activity pattern.",
+      "profile": null,
+      "position": null,
+      "authority": "Project author: explicit batch approval in this conversation",
+      "approved_at": "2026-10-05T20:59:49+03:30",
+      "implementation_status": "candidate implemented; validation is separate"
+    },
+    {
+      "id": "S-06",
+      "disposition": "APPROVE",
+      "decision": "Strict directed geographic containment: no self-loop or cycle; no universal transitivity axiom added.",
+      "profile": null,
+      "position": null,
+      "authority": "Project author: explicit batch approval in this conversation",
+      "approved_at": "2026-10-05T20:59:49+03:30",
+      "implementation_status": "candidate implemented; validation is separate"
+    },
+    {
+      "id": "S-07",
+      "disposition": "APPROVE",
+      "decision": "Distinct values within one assignment; roles may overlap across assignments.",
+      "profile": "AlternativeMedicineAssignment",
+      "position": "alternative",
+      "authority": "Project author: explicit batch approval in this conversation",
+      "approved_at": "2026-10-05T20:59:49+03:30",
+      "implementation_status": "candidate implemented; validation is separate"
+    }
+  ],
+  "deferred_dependency_closure": {
+    "AssetAtRisk": "S-04",
+    "Vulnerability": "S-04",
+    "ClinicalCareParticipant": "S-05"
+  }
+}

@@ -1,0 +1,185 @@
+{
+  "project": "CM-PharmE 2.1",
+  "decision_set": "G3-2e-B thirteen author choices",
+  "approved_at": "2026-10-08T19:44:00+03:30",
+  "approval_evidence": "User message: خوب مواردی که گفتی مورد قبول است / گام بعدی را انجام بدهیم",
+  "source_pdf": {
+    "library_file_id": "libfile_22cc37af5cd4819186548c50fb1f441d",
+    "filename": "CM-PharmE_G3-2e-B_Scientific_Decisions_FA-EN.pdf",
+    "sha256": "7ce79c87e5e444dc2efd87860f08e851c204229cd411a4f5fba113a30eb0266e",
+    "source_repo_commit": "1329c8ef46ef428a6fd8780dfa906f3bbfd03534"
+  },
+  "scope": "Acceptance of the thirteen bounded proposals in the bilingual PDF, including their conditions and deferrals; not full acceptance of all forty-two relations or ontology release.",
+  "accepted_count": 13,
+  "records": [
+    {
+      "name": "capabilityBearer",
+      "status": "APPROVED_BOUNDED_DESIGN_RECOMMENDATION",
+      "decision_en": "Keep EnterpriseCapability as a Mode dependent on exactly one Organization. Preserve the current Mode-to-bearer property and add a bearer-to-Mode Characterization only after confirming inverse semantics; do not require every Organization to have a capability.",
+      "decision_fa": "قابلیت سازمانی را Mode وابسته به دقیقاً یک سازمان نگه دارید؛ پیوند فعلی را حفظ و رابطهٔ معکوسِ حامل→قابلیت را فقط پس از تأیید معنایی به‌عنوان Characterization در کاندیدا تعریف کنید. برای همهٔ سازمان‌ها وجود قابلیت را اجباری نکنید.",
+      "rationale_en": "OntoUML Characterization runs from bearer to intrinsic feature. This preserves Mode dependence without fabricating a capability for every Organization.",
+      "expected_result_en": "Each modeled capability has one bearer; unsupported organizational capabilities and a Mode shared by two organizations are rejected.",
+      "negative_acceptance_condition": "One intrinsic Mode cannot inhere in two distinct Organizations.",
+      "conditions": "Preserve scoped wording; no unconditional global axioms, model promotion or anti-pattern certificate implied. Further author confirmation only if implementation materially changes the accepted meaning.",
+      "source_anchors": [
+        "v2/research/w4/business-architecture-view.md"
+      ]
+    },
+    {
+      "name": "capacityBearer",
+      "status": "APPROVED_BOUNDED_DESIGN_RECOMMENDATION",
+      "decision_en": "Use typed Organization and Facility bearer routes beneath a common query surface; each SupplyCapacity Mode has exactly one of these bearers. Keep SupplyCapacityObservationResult separate.",
+      "decision_fa": "دو مسیر نوع‌دار برای Organization و Facility زیر یک پرس‌وجوی عمومی ظرفیت تعریف کنید؛ هر نمونهٔ SupplyCapacity دقیقاً به یکی از این دو هویت وابسته باشد و ObservationResult جدا بماند.",
+      "rationale_en": "The bearers have distinct Kind identities, while capacity is a dependent Mode. Typed routes prevent dual bearers and conflation of disposition with measurement.",
+      "expected_result_en": "Capacity can be queried by bearer type; an aggregate observation alone cannot instantiate a capacity or a second bearer.",
+      "negative_acceptance_condition": "Do not infer capacity from an aggregate observation or assign the same intrinsic Mode to two different bearer individuals.",
+      "conditions": "Preserve scoped wording; no unconditional global axioms, model promotion or anti-pattern certificate implied. Further author confirmation only if implementation materially changes the accepted meaning.",
+      "source_anchors": [
+        "https://github.com/ArazSaieArasi3/CM-PharmE/blob/d95b5640c14d2c43c1e88a9a76ef78067f058916/v2/research/w4/events-situations-observations.md"
+      ]
+    },
+    {
+      "name": "contextClassificationJurisdiction",
+      "status": "APPROVED_BOUNDED_DESIGN_RECOMMENDATION",
+      "decision_en": "Keep RegulatoryJurisdiction as a formal legal-scope reference of the contextual assignment. Do not type direct Relator-to-rigid-Kind Mediation; introduce a role only if dependence is evidenced.",
+      "decision_fa": "Jurisdiction را مرجع رسمیِ محدودهٔ اعتبار ContextualAssignment نگه دارید؛ آن را واسطه‌گریِ مستقیمِ Relator با Kind صلب نکنید. نقش تازه فقط با شاهد وابستگی واقعی طراحی شود.",
+      "rationale_en": "Jurisdiction retains independent legal identity. Direct mediation to a rigid Kind invites the RelRig anti-pattern without proving contextual dependence.",
+      "expected_result_en": "Classification in J1 does not automatically apply in J2, and jurisdiction identity remains separate from assignment context.",
+      "negative_acceptance_condition": "Classification in J1 does not transfer to J2.",
+      "conditions": "Preserve scoped wording; no unconditional global axioms, model promotion or anti-pattern certificate implied. Further author confirmation only if implementation materially changes the accepted meaning.",
+      "source_anchors": [
+        "v2/research/w4/integrated-ontouml-model.md"
+      ]
+    },
+    {
+      "name": "entryInScheme",
+      "status": "APPROVED_BOUNDED_DESIGN_RECOMMENDATION",
+      "decision_en": "Retain a typed scheme-and-version reference. Do not merge equal lexical codes across schemes or impose an exactly-one-scheme axiom until the entry identity criterion is agreed.",
+      "decision_fa": "entryInScheme را ارجاعِ نوع‌دار به طرح و نسخهٔ مشخص نگه دارید؛ برای کد یکسان در طرح‌های مختلف هویت یکسان فرض نکنید و قید «دقیقاً یک طرح» را تا تثبیت اصل هویت اعمال نکنید.",
+      "rationale_en": "A scheme defines classification context rather than a functional-complex whole. Versioned reference avoids false identity and unwarranted mereology.",
+      "expected_result_en": "Entries remain traceable to scheme/version without merging homonymous codes or introducing a false part-whole relation.",
+      "negative_acceptance_condition": "Equal code strings across schemes do not identify one entry.",
+      "conditions": "Preserve scoped wording; no unconditional global axioms, model promotion or anti-pattern certificate implied. Further author confirmation only if implementation materially changes the accepted meaning.",
+      "source_anchors": [
+        "v2/research/w4/integrated-ontouml-model.md"
+      ]
+    },
+    {
+      "name": "hasActiveSubstance",
+      "status": "APPROVED_BOUNDED_DESIGN_RECOMMENDATION",
+      "decision_en": "Keep the broad parent property. Add a Product-specific child for evidenced M016 mappings and a Presentation-specific child only when a source explicitly supports it.",
+      "decision_fa": "رابطهٔ والدِ عام را حفظ کنید؛ زیررابطهٔ Product را برای نگاشت مستند M016 و زیررابطهٔ Presentation را فقط برای منبعی که آن را صریحاً تعیین می‌کند ایجاد کنید.",
+      "rationale_en": "Product and Presentation are distinct Kinds. Universal narrowing from one mapping would misclassify or discard valid Presentation links.",
+      "expected_result_en": "Product mappings remain precise without coercing Presentation data into Product identity.",
+      "negative_acceptance_condition": "Do not infer that a presentation using the parent relation is a MedicinalProduct; these Kinds are disjoint.",
+      "conditions": "Preserve scoped wording; no unconditional global axioms, model promotion or anti-pattern certificate implied. Further author confirmation only if implementation materially changes the accepted meaning.",
+      "source_anchors": [
+        "https://github.com/ArazSaieArasi3/CM-PharmE/blob/d95b5640c14d2c43c1e88a9a76ef78067f058916/v2/research/w4/integrated-ontouml-model.md"
+      ]
+    },
+    {
+      "name": "hasDosageForm",
+      "status": "APPROVED_BOUNDED_DESIGN_RECOMMENDATION",
+      "decision_en": "Keep a formal reference to DosageFormSpecification. Defer global minimum and maximum cardinalities until Presentation identity and source completeness are evaluated.",
+      "decision_fa": "hasDosageForm را ارجاع به DosageFormSpecification نگه دارید؛ فعلاً قید سراسریِ حداقل یک و حداکثر یک نگذارید و کامل‌بودن مشخصه را با شواهد هویت Presentation بسنجید.",
+      "rationale_en": "Dosage form is a specification, not a physical component. A source label or foreign key cannot establish universal conceptual cardinality.",
+      "expected_result_en": "Existing data remain usable without fabricated forms or false contradictions for incomplete records.",
+      "negative_acceptance_condition": "A generic Product dosage label does not identify this Presentation's form.",
+      "conditions": "Preserve scoped wording; no unconditional global axioms, model promotion or anti-pattern certificate implied. Further author confirmation only if implementation materially changes the accepted meaning.",
+      "source_anchors": [
+        "v2/research/w4/integrated-ontouml-model.md"
+      ]
+    },
+    {
+      "name": "hasMatchConfidence",
+      "status": "APPROVED_BOUNDED_DESIGN_RECOMMENDATION",
+      "decision_en": "Treat MatchConfidence as a Quality dependent on one EntityMatchAssertion, but hold class-wide Characterization and the minimum-one constraint until unscored assertions are resolved. Record this as an open conformance blocker.",
+      "decision_fa": "MatchConfidence را Quality وابسته به یک EntityMatchAssertion تلقی کنید، ولی Characterization و حداقل یک کیفیت برای همهٔ ادعاها را تا تعیین معنای «ادعای بدون امتیاز» اعمال نکنید؛ این را مانع بازِ اعتبارسنجی ثبت کنید.",
+      "rationale_en": "OntoUML Characterization commits every bearer instance to the intrinsic feature. Missing scores can mean absent data or a genuinely unscored assertion; these are different cases.",
+      "expected_result_en": "A Quality cannot be shared across assertions, while incomplete data are not silently converted into false inconsistencies.",
+      "negative_acceptance_condition": "One Quality individual cannot belong to two distinct Assertions.",
+      "conditions": "Preserve scoped wording; no unconditional global axioms, model promotion or anti-pattern certificate implied. Further author confirmation only if implementation materially changes the accepted meaning.",
+      "source_anchors": [
+        "v2/research/w4/integrated-ontouml-model.md"
+      ]
+    },
+    {
+      "name": "hasPackageConfiguration",
+      "status": "APPROVED_BOUNDED_DESIGN_RECOMMENDATION",
+      "decision_en": "Keep a reference to PackageConfiguration as a specification. Do not use componentOf or a universal existence constraint until identity and completeness are established.",
+      "decision_fa": "رابطه را ارجاع به PackageConfiguration به‌عنوان specification نگه دارید؛ از componentOf و قید اجباریِ سراسری تا اثبات هویت و کامل‌بودن داده پرهیز کنید.",
+      "rationale_en": "A package specification is an information object, not a physical component of a functional complex.",
+      "expected_result_en": "Presentation and configuration stay distinct; pack-size values do not create false identity or parthood.",
+      "negative_acceptance_condition": "A pack-size value is insufficient to identify a configuration.",
+      "conditions": "Preserve scoped wording; no unconditional global axioms, model promotion or anti-pattern certificate implied. Further author confirmation only if implementation materially changes the accepted meaning.",
+      "source_anchors": [
+        "v2/research/w4/integrated-ontouml-model.md"
+      ]
+    },
+    {
+      "name": "presentationOf",
+      "status": "APPROVED_BOUNDED_DESIGN_RECOMMENDATION",
+      "decision_en": "Keep presentationOf as a formal Presentation-to-Product association. Examine the one-Product identity condition in the candidate, but defer a universal OWL cardinality until author review.",
+      "decision_fa": "presentationOf را رابطهٔ رسمیِ Presentation به Product حفظ کنید؛ به‌صورت کاندیدا اصل یک Product برای هر Presentation را در تعریف هویت بررسی کنید، اما تا تأیید نویسنده قید OWL سراسری نگذارید.",
+      "rationale_en": "Presentation has its own identifiable layer and is not a physical part of Product. Definition-level dependence needs proof beyond source foreign keys.",
+      "expected_result_en": "Both identity levels remain intact and queryable, with universal constraints added only when justified.",
+      "negative_acceptance_condition": "A Product source row alone does not instantiate a Presentation.",
+      "conditions": "Preserve scoped wording; no unconditional global axioms, model promotion or anti-pattern certificate implied. Further author confirmation only if implementation materially changes the accepted meaning.",
+      "source_anchors": [
+        "v2/research/w4/integrated-ontouml-model.md"
+      ]
+    },
+    {
+      "name": "shortagePresentation",
+      "status": "APPROVED_BOUNDED_DESIGN_RECOMMENDATION",
+      "decision_en": "Create shortagePresentation only when a source identifies the exact Presentation, period and jurisdiction. Do not derive it from a Product-only report.",
+      "decision_fa": "shortagePresentation را فقط برای shortage با شناسه/دامنهٔ صریح Presentation، همراه بازهٔ زمانی و حوزهٔ منبع، ثبت کنید؛ از گزارش Product پیوند Presentation نسازید.",
+      "rationale_en": "A Product-level shortage need not affect every form or package. Automatic propagation would overstate shortage coverage.",
+      "expected_result_en": "Presentation-level shortage queries remain specific and traceable; ambiguous reports stay at Product scope.",
+      "negative_acceptance_condition": "Product-only report does not identify a package/presentation.",
+      "conditions": "Preserve scoped wording; no unconditional global axioms, model promotion or anti-pattern certificate implied. Further author confirmation only if implementation materially changes the accepted meaning.",
+      "source_anchors": [
+        "v2/research/w4/events-situations-observations.md"
+      ]
+    },
+    {
+      "name": "shortageProduct",
+      "status": "APPROVED_BOUNDED_DESIGN_RECOMMENDATION",
+      "decision_en": "Record shortageProduct only with an identified Product and report scope; do not infer shortages for all of its Presentations.",
+      "decision_fa": "shortageProduct را با Product صریحاً شناسایی‌شده و بازه/حوزهٔ گزارش ثبت کنید؛ از آن کمبود همهٔ Presentationهای Product را نتیجه نگیرید.",
+      "rationale_en": "Shortage is context and time dependent. One affected Presentation cannot prove universal unavailability.",
+      "expected_result_en": "Product-level analysis remains possible without inflating package or market shortage counts.",
+      "negative_acceptance_condition": "Presentation shortage does not establish shortage of all presentations.",
+      "conditions": "Preserve scoped wording; no unconditional global axioms, model promotion or anti-pattern certificate implied. Further author confirmation only if implementation materially changes the accepted meaning.",
+      "source_anchors": [
+        "v2/research/w4/events-situations-observations.md"
+      ]
+    },
+    {
+      "name": "withinCountry",
+      "status": "APPROVED_BOUNDED_DESIGN_RECOMMENDATION",
+      "decision_en": "Keep withinCountry as a versioned formal spatial or administrative reference; prohibit self-containment and limit an exactly-one-Country constraint to proven data scope.",
+      "decision_fa": "withinCountry را رابطهٔ رسمیِ مکانی/اداری با نسخه و زمان نگه دارید؛ خودارجاعی را رد کنید و «دقیقاً یک Country» را فقط در دامنهٔ داده‌ایِ اثبات‌شده اعمال کنید.",
+      "rationale_en": "Boundaries and references vary over time. A Country is not a functional component relation, and legal Jurisdiction differs from geography.",
+      "expected_result_en": "Historical and ambiguous places remain traceable without fabricated country assignments.",
+      "negative_acceptance_condition": "Country cannot be within itself; Jurisdiction is distinct.",
+      "conditions": "Preserve scoped wording; no unconditional global axioms, model promotion or anti-pattern certificate implied. Further author confirmation only if implementation materially changes the accepted meaning.",
+      "source_anchors": [
+        "v2/research/w4/geography-jurisdiction.md"
+      ]
+    },
+    {
+      "name": "withinRegion",
+      "status": "APPROVED_BOUNDED_DESIGN_RECOMMENDATION",
+      "decision_en": "Keep a versioned formal administrative or spatial reference; reject self-containment and postal-label inference, and scope any exactly-one-Region rule to complete sources.",
+      "decision_fa": "withinRegion را رابطهٔ رسمیِ مکانی/اداریِ نسخه‌دار نگه دارید؛ خودارجاعی و استنتاج از صرفِ برچسب پستی را رد کنید و اجبار یک منطقه را به منبع دارای پوشش کامل محدود کنید.",
+      "rationale_en": "Administrative hierarchies depend on place, time and reference source. No evidence supports a universal single-region axiom.",
+      "expected_result_en": "Regional joins remain reproducible without forcing border or missing cases into a fabricated region.",
+      "negative_acceptance_condition": "Region cannot be within itself or inferred from postal label.",
+      "conditions": "Preserve scoped wording; no unconditional global axioms, model promotion or anti-pattern certificate implied. Further author confirmation only if implementation materially changes the accepted meaning.",
+      "source_anchors": [
+        "v2/research/w4/geography-jurisdiction.md"
+      ]
+    }
+  ]
+}

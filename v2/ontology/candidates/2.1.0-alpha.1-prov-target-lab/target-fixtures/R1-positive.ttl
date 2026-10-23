@@ -1,0 +1,30 @@
+@prefix c: <https://w3id.org/cm-pharme/2.1/> .
+@prefix q: <https://w3id.org/cm-pharme/experimental/prov-target/> .
+@prefix r: <https://w3id.org/cm-pharme/experimental/refinement/> .
+
+q:R1 a q:TargetCase ;
+    q:claim q:R1-claim ;
+    q:evidenceKind "explicit-assessment-scope" ;
+    q:family "assessment" ;
+    q:source q:R1-event ;
+    q:sourceRecord q:R1-record ;
+    q:target q:R1-target ;
+    q:targetClass c:SupplyDependency .
+
+q:R1-dependent a c:DependentOrganizationRole,
+        c:Organization .
+
+q:R1-event a c:RiskAssessmentActivity ;
+    q:assessmentOutput q:R1-claim .
+
+q:R1-provider a c:Organization,
+        c:ProviderOrganizationRole .
+
+q:R1-record a c:SourceRecord ;
+    r:carrierClaim q:R1-claim .
+
+q:R1-target a c:SupplyDependency ;
+    c:dependencyDependent q:R1-dependent ;
+    c:dependencyProvider q:R1-provider .
+
+q:R1-claim a c:Assertion .

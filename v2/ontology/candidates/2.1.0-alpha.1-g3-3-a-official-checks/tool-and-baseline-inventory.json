@@ -1,0 +1,57 @@
+{
+  "candidate_source": "v2/ontology/candidates/2.1.0-alpha.1-g3-2e-e-native-integration/ontouml.json",
+  "candidate_elements": 524,
+  "schema_and_current_parser": {
+    "tool_versions": {
+      "node": "v24.19.0",
+      "ontouml_js": "1.0.0",
+      "ontouml_schema": "1.0.2",
+      "ajv": "8.20.0"
+    },
+    "schema_valid": true,
+    "schema_errors": null,
+    "parsed": {
+      "type": "Project16",
+      "id": "cm-pharme-g3-2d-native",
+      "classes": 144
+    },
+    "parse_error": null
+  },
+  "legacy_verifier": {
+    "name": "ontouml-js OntoumlVerification",
+    "version": "0.4.1",
+    "adapted_projection": {
+      "renamed_relation_type": "BinaryRelation -> Relation",
+      "nested_flat_elements": true,
+      "omitted_notes": 24,
+      "original_elements": 524,
+      "projected_elements": 500
+    },
+    "issue_count": 244,
+    "issue_counts": {
+      "class_missing_nature_restrictions": 144,
+      "generalization_incompatible_natures": 100
+    },
+    "qualification": "Older verifier on a compatibility projection, not a direct 1.0.2 schema or full anti-pattern verdict."
+  },
+  "legacy_baseline_comparison": {
+    "baseline": "v2/ontology/candidates/2.1.0-alpha.1-g3-2d-domain-review/ontouml.json",
+    "baseline_elements": 520,
+    "baseline_classes": 144,
+    "baseline_generalizations": 100,
+    "candidate_classes": 144,
+    "candidate_generalizations": 100,
+    "class_json_differences": 0,
+    "generalization_json_differences": 0,
+    "empty_restrictedTo_in_both": 144,
+    "meaning": "The legacy signal-bearing source elements are unchanged; this is not a rerun of the verifier on the baseline."
+  },
+  "json2graph": {
+    "version": "2.0.2",
+    "input": "legacy compatibility projection (not native flat JSON directly)",
+    "status": "decoded with strict invalid-cardinality, invalid-stereotype, and unresolved-element error policies",
+    "rdf_triples": 3761,
+    "anti_pattern_detection": false
+  },
+  "antipattern_engine": "NOT_RUN"
+}

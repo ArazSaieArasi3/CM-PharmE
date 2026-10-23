@@ -1,0 +1,197 @@
+@prefix ns1: <https://w3id.org/cm-pharme/2.1/> .
+@prefix ns2: <https://example.org/cm-pharme-g2/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns2:inpatient-row-1-costs_bgn a ns1:ReimbursementUtilisationObservationResult ;
+    ns2:reportingPeriod "2025-01-01" ;
+    ns2:sourceRow ns2:inpatient-row-1 ;
+    ns1:measureNumericValue 110.00 ;
+    ns1:measureUnitLabel "costs_bgn" ;
+    ns1:observationAboutPresentation ns2:presentation-c719653f649fe784ae7d ;
+    ns1:reimbursementDiagnosisContext ns2:icd10-C50.9 .
+
+ns2:inpatient-row-1-pack_num a ns1:ReimbursementUtilisationObservationResult ;
+    ns2:reportingPeriod "2025-01-01" ;
+    ns2:sourceRow ns2:inpatient-row-1 ;
+    ns1:measureNumericValue 5.0 ;
+    ns1:measureUnitLabel "pack_num" ;
+    ns1:observationAboutPresentation ns2:presentation-c719653f649fe784ae7d ;
+    ns1:reimbursementDiagnosisContext ns2:icd10-C50.9 .
+
+ns2:inpatient-row-1-patients_num a ns1:ReimbursementUtilisationObservationResult ;
+    ns2:reportingPeriod "2025-01-01" ;
+    ns2:sourceRow ns2:inpatient-row-1 ;
+    ns1:measureNumericValue 4.0 ;
+    ns1:measureUnitLabel "patients_num" ;
+    ns1:observationAboutPresentation ns2:presentation-c719653f649fe784ae7d ;
+    ns1:reimbursementDiagnosisContext ns2:icd10-C50.9 .
+
+ns2:inpatient-row-2-costs_bgn a ns1:ReimbursementUtilisationObservationResult ;
+    ns2:reportingPeriod "2025-02-01" ;
+    ns2:sourceRow ns2:inpatient-row-2 ;
+    ns1:measureNumericValue 205.00 ;
+    ns1:measureUnitLabel "costs_bgn" ;
+    ns1:observationAboutPresentation ns2:presentation-427818c080bb2700875a ;
+    ns1:reimbursementDiagnosisContext ns2:icd10-D66 .
+
+ns2:inpatient-row-2-pack_num a ns1:ReimbursementUtilisationObservationResult ;
+    ns2:reportingPeriod "2025-02-01" ;
+    ns2:sourceRow ns2:inpatient-row-2 ;
+    ns1:measureNumericValue 4.0 ;
+    ns1:measureUnitLabel "pack_num" ;
+    ns1:observationAboutPresentation ns2:presentation-427818c080bb2700875a ;
+    ns1:reimbursementDiagnosisContext ns2:icd10-D66 .
+
+ns2:inpatient-row-2-patients_num a ns1:ReimbursementUtilisationObservationResult ;
+    ns2:reportingPeriod "2025-02-01" ;
+    ns2:sourceRow ns2:inpatient-row-2 ;
+    ns1:measureNumericValue 3.0 ;
+    ns1:measureUnitLabel "patients_num" ;
+    ns1:observationAboutPresentation ns2:presentation-427818c080bb2700875a ;
+    ns1:reimbursementDiagnosisContext ns2:icd10-D66 .
+
+ns2:inpatient-row-3-costs_bgn a ns1:ReimbursementUtilisationObservationResult ;
+    ns2:reportingPeriod "2025-02-01" ;
+    ns2:sourceRow ns2:inpatient-row-3 ;
+    ns1:measureNumericValue 90.00 ;
+    ns1:measureUnitLabel "costs_bgn" ;
+    ns1:observationAboutPresentation ns2:presentation-c719653f649fe784ae7d ;
+    ns1:reimbursementDiagnosisContext ns2:icd10-C50.9 .
+
+ns2:inpatient-row-3-pack_num a ns1:ReimbursementUtilisationObservationResult ;
+    ns2:reportingPeriod "2025-02-01" ;
+    ns2:sourceRow ns2:inpatient-row-3 ;
+    ns1:measureNumericValue 2.0 ;
+    ns1:measureUnitLabel "pack_num" ;
+    ns1:observationAboutPresentation ns2:presentation-c719653f649fe784ae7d ;
+    ns1:reimbursementDiagnosisContext ns2:icd10-C50.9 .
+
+ns2:inpatient-row-3-patients_num a ns1:ReimbursementUtilisationObservationResult ;
+    ns2:reportingPeriod "2025-02-01" ;
+    ns2:sourceRow ns2:inpatient-row-3 ;
+    ns1:measureNumericValue 2.0 ;
+    ns1:measureUnitLabel "patients_num" ;
+    ns1:observationAboutPresentation ns2:presentation-c719653f649fe784ae7d ;
+    ns1:reimbursementDiagnosisContext ns2:icd10-C50.9 .
+
+ns2:outpatient-row-1-costs_bgn a ns1:ReimbursementUtilisationObservationResult ;
+    ns2:reportingPeriod "2025-01-01" ;
+    ns2:sourceRow ns2:outpatient-row-1 ;
+    ns1:measureNumericValue 320.00 ;
+    ns1:measureUnitLabel "costs_bgn" ;
+    ns1:observationAboutPresentation ns2:presentation-c719653f649fe784ae7d ;
+    ns1:reimbursementDiagnosisContext ns2:icd10-C50.9 .
+
+ns2:outpatient-row-1-pack_num a ns1:ReimbursementUtilisationObservationResult ;
+    ns2:reportingPeriod "2025-01-01" ;
+    ns2:sourceRow ns2:outpatient-row-1 ;
+    ns1:measureNumericValue 16.0 ;
+    ns1:measureUnitLabel "pack_num" ;
+    ns1:observationAboutPresentation ns2:presentation-c719653f649fe784ae7d ;
+    ns1:reimbursementDiagnosisContext ns2:icd10-C50.9 .
+
+ns2:outpatient-row-1-patients_num a ns1:ReimbursementUtilisationObservationResult ;
+    ns2:reportingPeriod "2025-01-01" ;
+    ns2:sourceRow ns2:outpatient-row-1 ;
+    ns1:measureNumericValue 12.0 ;
+    ns1:measureUnitLabel "patients_num" ;
+    ns1:observationAboutPresentation ns2:presentation-c719653f649fe784ae7d ;
+    ns1:reimbursementDiagnosisContext ns2:icd10-C50.9 .
+
+ns2:outpatient-row-2-costs_bgn a ns1:ReimbursementUtilisationObservationResult ;
+    ns2:reportingPeriod "2025-01-01" ;
+    ns2:sourceRow ns2:outpatient-row-2 ;
+    ns1:measureNumericValue 220.00 ;
+    ns1:measureUnitLabel "costs_bgn" ;
+    ns1:observationAboutPresentation ns2:presentation-c719653f649fe784ae7d ;
+    ns1:reimbursementDiagnosisContext ns2:icd10-C50.9 .
+
+ns2:outpatient-row-2-pack_num a ns1:ReimbursementUtilisationObservationResult ;
+    ns2:reportingPeriod "2025-01-01" ;
+    ns2:sourceRow ns2:outpatient-row-2 ;
+    ns1:measureNumericValue 11.0 ;
+    ns1:measureUnitLabel "pack_num" ;
+    ns1:observationAboutPresentation ns2:presentation-c719653f649fe784ae7d ;
+    ns1:reimbursementDiagnosisContext ns2:icd10-C50.9 .
+
+ns2:outpatient-row-2-patients_num a ns1:ReimbursementUtilisationObservationResult ;
+    ns2:reportingPeriod "2025-01-01" ;
+    ns2:sourceRow ns2:outpatient-row-2 ;
+    ns1:measureNumericValue 9.0 ;
+    ns1:measureUnitLabel "patients_num" ;
+    ns1:observationAboutPresentation ns2:presentation-c719653f649fe784ae7d ;
+    ns1:reimbursementDiagnosisContext ns2:icd10-C50.9 .
+
+ns2:outpatient-row-3-costs_bgn a ns1:ReimbursementUtilisationObservationResult ;
+    ns2:reportingPeriod "2025-02-01" ;
+    ns2:sourceRow ns2:outpatient-row-3 ;
+    ns1:measureNumericValue 410.00 ;
+    ns1:measureUnitLabel "costs_bgn" ;
+    ns1:observationAboutPresentation ns2:presentation-427818c080bb2700875a ;
+    ns1:reimbursementDiagnosisContext ns2:icd10-D66 .
+
+ns2:outpatient-row-3-pack_num a ns1:ReimbursementUtilisationObservationResult ;
+    ns2:reportingPeriod "2025-02-01" ;
+    ns2:sourceRow ns2:outpatient-row-3 ;
+    ns1:measureNumericValue 8.0 ;
+    ns1:measureUnitLabel "pack_num" ;
+    ns1:observationAboutPresentation ns2:presentation-427818c080bb2700875a ;
+    ns1:reimbursementDiagnosisContext ns2:icd10-D66 .
+
+ns2:outpatient-row-3-patients_num a ns1:ReimbursementUtilisationObservationResult ;
+    ns2:reportingPeriod "2025-02-01" ;
+    ns2:sourceRow ns2:outpatient-row-3 ;
+    ns1:measureNumericValue 7.0 ;
+    ns1:measureUnitLabel "patients_num" ;
+    ns1:observationAboutPresentation ns2:presentation-427818c080bb2700875a ;
+    ns1:reimbursementDiagnosisContext ns2:icd10-D66 .
+
+ns2:outpatient-row-4-costs_bgn a ns1:ReimbursementUtilisationObservationResult ;
+    ns2:reportingPeriod "2025-02-01" ;
+    ns2:sourceRow ns2:outpatient-row-4 ;
+    ns1:measureNumericValue 450.00 ;
+    ns1:measureUnitLabel "costs_bgn" ;
+    ns1:observationAboutPresentation ns2:presentation-427818c080bb2700875a ;
+    ns1:reimbursementDiagnosisContext ns2:icd10-D66 .
+
+ns2:outpatient-row-4-pack_num a ns1:ReimbursementUtilisationObservationResult ;
+    ns2:reportingPeriod "2025-02-01" ;
+    ns2:sourceRow ns2:outpatient-row-4 ;
+    ns1:measureNumericValue 9.0 ;
+    ns1:measureUnitLabel "pack_num" ;
+    ns1:observationAboutPresentation ns2:presentation-427818c080bb2700875a ;
+    ns1:reimbursementDiagnosisContext ns2:icd10-D66 .
+
+ns2:outpatient-row-4-patients_num a ns1:ReimbursementUtilisationObservationResult ;
+    ns2:reportingPeriod "2025-02-01" ;
+    ns2:sourceRow ns2:outpatient-row-4 ;
+    ns1:measureNumericValue 8.0 ;
+    ns1:measureUnitLabel "patients_num" ;
+    ns1:observationAboutPresentation ns2:presentation-427818c080bb2700875a ;
+    ns1:reimbursementDiagnosisContext ns2:icd10-D66 .
+
+ns2:inpatient-row-1 a ns1:SourceRecord .
+
+ns2:inpatient-row-2 a ns1:SourceRecord .
+
+ns2:inpatient-row-3 a ns1:SourceRecord .
+
+ns2:outpatient-row-1 a ns1:SourceRecord .
+
+ns2:outpatient-row-2 a ns1:SourceRecord .
+
+ns2:outpatient-row-3 a ns1:SourceRecord .
+
+ns2:outpatient-row-4 a ns1:SourceRecord .
+
+ns2:icd10-D66 a ns1:DiagnosisClassificationReference ;
+    rdfs:label "Test diagnosis B" .
+
+ns2:presentation-427818c080bb2700875a a ns1:MedicinalProductPresentation .
+
+ns2:icd10-C50.9 a ns1:DiagnosisClassificationReference ;
+    rdfs:label "Test diagnosis A" .
+
+ns2:presentation-c719653f649fe784ae7d a ns1:MedicinalProductPresentation .
+
