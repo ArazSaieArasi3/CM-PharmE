@@ -1,0 +1,16 @@
+@prefix cmpe: <https://w3id.org/cm-pharme/2.0/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix geonames: <https://www.geonames.org/ontology#> .
+
+# Conservative external alignments; these are not conformance claims.
+cmpe:ProvenanceActivity skos:closeMatch prov:Activity .
+cmpe:Dataset skos:closeMatch prov:Entity .
+cmpe:DatasetRelease skos:closeMatch prov:Entity .
+cmpe:SourceRecord skos:closeMatch prov:Entity .
+cmpe:GeographicFeature rdfs:seeAlso geonames:Feature .
+
+cmpe:IdentifierScheme rdfs:comment "May represent NDC, ATC, ChEMBL, GeoNames, regulatory or dataset-specific identifier schemes. No scheme is assumed globally identifying outside its documented scope."@en .
+cmpe:Vulnerability rdfs:comment "Risk-extension concept intended for later explicit alignment review against UFO-grounded risk reference ontologies such as COVER/ROSE; no owl:equivalentClass assertion is made in W5."@en .
