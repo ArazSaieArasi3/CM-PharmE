@@ -1,0 +1,55 @@
+{
+  "boundary": "One pinned documentary attribution plus three explicitly synthetic relational scenarios; no legal/operational or universal role-grounding acceptance.",
+  "expected": {
+    "admitted_rows": 4,
+    "database_rows_schema_restored": true,
+    "documentary_rows": 1,
+    "hermit": {
+      "manufactured_for_not_manufacturer_countermodel": true,
+      "missing_product_open_world": true,
+      "name_only_not_manufacturer_countermodel": true,
+      "organization_product_identity_collapse": false,
+      "positive": true,
+      "two_distinct_holders": false
+    },
+    "legacy_pairs_each_phase": 4,
+    "manufactured_for_contexts": 0,
+    "name_only_contexts": 0,
+    "rdf_roundtrip_equal": true,
+    "shacl": {
+      "bare_role": false,
+      "manufactured_for_only": true,
+      "missing_evidence": false,
+      "missing_holder": false,
+      "missing_product": false,
+      "missing_source": false,
+      "name_only": true,
+      "positive": true,
+      "two_holders": false,
+      "two_products": false,
+      "wrong_product_kind": false
+    },
+    "source_positive_holder": "m3-doc-org:MSD-International-Business-GmbH",
+    "source_positive_product": "m3-doc-product:FDA-125514-S186:KEYTRUDA-IV",
+    "sql_rejections": {
+      "duplicate_public_id": "23505",
+      "duplicate_source_assertion": "23505",
+      "manufactured_for_as_manufacturer": "23514",
+      "mismatched_evidence": "23514",
+      "missing_holder": "23502",
+      "missing_product": "23502",
+      "missing_source": "23502",
+      "reversed_interval": "23514",
+      "wrong_holder_fk": "23503",
+      "wrong_product_fk": "23503",
+      "wrong_source_fk": "23503"
+    },
+    "sql_sparql_equal": true,
+    "synthetic_rows": 3
+  },
+  "frozen_before_implementation": true,
+  "model_commit": "6950bf119cef9dd8701cf693a5cd77068cd47424",
+  "parent_issue": 320,
+  "requirement": "FR-02",
+  "schema_version": 1
+}
