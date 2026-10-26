@@ -91,3 +91,9 @@ This is a typed-bearer database prototype. Completing all four M1–M4 slices do
 not mean all 36 ontology/database mappings, real-source coverage, ORSD content,
 full anti-patterns, four-module semantics, human/expert review or publication are
 complete. #306 remains open and PR #305 remains draft until those gates pass.
+
+## Verified hosted outcome
+
+[Run 40406467502](https://github.com/ArazSaieArasi3/CM-PharmE/actions/runs/40406467502) passed on implementation commit `47f283de5a32cea6348326e0a4856e961f7782b5`. [hosted-results.json](hosted-results.json) records complete PostgreSQL/PostGIS outcomes; [ci-evidence.json](ci-evidence.json) pins all 17 successful distinct workflow families and the artifact identity/digest. [offline-results.json](offline-results.json) remains a separate local RDF-only report. [traceability.csv](traceability.csv) links FR-14/FR-15 to decisions, model, SQL/graph constraints, both paired queries and remaining scientific review.
+
+Results: Q21-04 2/2 and Q21-05 1/1 complete normalized tuples agree; 9/9 expected SQL rejections, 14/14 SHACL expectations and 9/9 HermiT expectations pass. Two derived bearer pairs are correct and the observation-only facility gets no capacity Mode. Four legacy pairs pass before/during/after, W6 validation passes during addition, and all pre-existing rows/schema/sequences, the old observation query and canonical old KG are restored. This closes only the bounded #321 prototype contract. Real capacity and candidate-wide scientific/author acceptance remain open.
