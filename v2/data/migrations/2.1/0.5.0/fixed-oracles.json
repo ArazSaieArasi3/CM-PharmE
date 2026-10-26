@@ -1,0 +1,60 @@
+{
+  "boundary": "Two explicitly synthetic capacity Modes, one sourced synthetic assertion and one unknown source; one separate synthetic observation. No empirical capacity or blanket bearer-capacity existence claim.",
+  "expected": {
+    "capacity_rows": 2,
+    "capacity_source_routes": 1,
+    "capacity_unknown_source_routes": 1,
+    "database_rows_schema_sequences_restored": true,
+    "facility_routes": 1,
+    "hermit": {
+      "eligible_bearers_with_zero_capacities": true,
+      "missing_explicit_bearer_open_world": true,
+      "observation_mode_collision": false,
+      "observation_without_capacity": true,
+      "organization_and_facility_routes": false,
+      "positive": true,
+      "two_distinct_organizations": false,
+      "two_organization_iris_without_inequality": true,
+      "wrong_typed_bearer": false
+    },
+    "legacy_pairs_each_phase": 4,
+    "observation_only_capacity_rows": 0,
+    "observation_rows": 1,
+    "organization_routes": 1,
+    "shacl": {
+      "both_routes": false,
+      "broad_only": false,
+      "facility_bearer_unknown_source": true,
+      "misaligned_assertion": false,
+      "missing_bearer": false,
+      "no_capacity_required": true,
+      "observation_and_mode_collision": false,
+      "observation_used_as_mode": false,
+      "organization_bearer": true,
+      "partial_provenance": false,
+      "positive_export": true,
+      "two_organization_bearers": false,
+      "typed_inverse_only": false,
+      "wrong_bearer_type": false
+    },
+    "sql_rejections": {
+      "double_route": "23514",
+      "duplicate_capacity_public_id": "23505",
+      "facility_in_organization_fk": "23503",
+      "mismatched_evidence": "23514",
+      "missing_bearer": "23514",
+      "observation_public_id_as_capacity": "23514",
+      "organization_in_facility_fk": "23503",
+      "partial_provenance": "23514",
+      "wrong_source_fk": "23503"
+    }
+  },
+  "frozen_before_implementation": true,
+  "model_commit": "f1b357847356479ee749e5d91cb3adf131ff30e1",
+  "parent_issue": 321,
+  "requirements": [
+    "FR-14",
+    "FR-15"
+  ],
+  "schema_version": 1
+}
