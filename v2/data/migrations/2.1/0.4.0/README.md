@@ -82,3 +82,9 @@ ORSD content acceptance, author/expert review or 2.1 GA. Generic provenance link
 preserve EvidenceSupport SQL identity without asserting its unresolved 2.1 type.
 Source-backed documentary attribution is distinct from independently observed
 manufacturing responsibility and must remain qualified in manuscript claims.
+
+## Verified hosted outcome
+
+[Run 40402255076](https://github.com/ArazSaieArasi3/CM-PharmE/actions/runs/40402255076) passed on implementation commit `79a4601cae90d8f4351b18ccce6db283eeb6d97d`. [hosted-results.json](hosted-results.json) records PostgreSQL/PostGIS execution; [ci-evidence.json](ci-evidence.json) pins 16 successful distinct workflow families, the run and evidence-artifact identity/digest. [offline-results.json](offline-results.json) remains separately labeled as the earlier local RDF-only subset. [source-verification.json](source-verification.json) records the original local PDF-byte/page recheck. [traceability.csv](traceability.csv) links FR-02 to the model, decisions, mapping, constraints, query, source and remaining review gate.
+
+Result: Q21-03 4/4 complete tuples agree; 11/11 expected SQL rejections, 11/11 SHACL expectations, the separate provenance-alignment mutation and 6/6 HermiT expectations pass. Four legacy pairs pass at each phase and all pre-existing rows/schema/sequences and old canonical KG match after cleanup. This satisfies the bounded #320 contract. Candidate-wide scientific/author acceptance remains open.
