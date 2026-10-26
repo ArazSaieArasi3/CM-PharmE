@@ -14,7 +14,7 @@ this slice. Frozen 2.0 and ORSD 0.2.0 inputs remain unchanged.
 | M3-D03 | An explicit manufacturer attribution in a pinned source supports a documentary context in an experimental graph. | The FDA-hosted label in source-witness.json differentiates its manufacturer from its commissioned-for party. The relator interpretation remains subject to #306; a label attribution does not establish a legal duty, factory, production event, batch or current operation. |
 | M3-D04 | SourceRecord, Assertion and EvidenceSupport identities must be present and aligned for every admitted M3 row. | Admission is stricter than open-world OWL. A missing source, counterpart or mismatched assertion is rejected; absence of a record means unknown. Do not use the manufactured-for statement as a manufacturer statement. |
 | M3-D05 | Source revision and retrieval dates are provenance, not responsibility validity dates. | The real witness has unknown valid_from/valid_to. Only explicitly synthetic contexts exercise intervals and repeated assignments. |
-| M3-D06 | Use a new versioned table and validation trigger in a copied database; export separately into the 2.1 namespace. | Preserve existing Organization/product rows and 2.0 schema/views/exporter. Transaction rollback restores all persistent state, including sequences. No production migration is authorized by this research slice. |
+| M3-D06 | Use a new versioned table and validation trigger in a copied database; export separately into the 2.1 namespace. | Preserve existing Organization/product rows and 2.0 schema/views/exporter. Reversible cleanup restores the rows and schema; explicit negative fixture keys never advance existing sequences, which are checked separately. No production migration is authorized by this research slice. |
 
 ## Source and identity limits
 
@@ -43,3 +43,9 @@ qualifying relation also receives no role. An OWL countermodel must allow both.
 
 No source witness may be synthesized. The three additional synthetic records must
 remain identified as test fixtures in SQL, RDF, query outputs and the final report.
+
+Implementation clarification after the oracle freeze: PostgreSQL sequences are
+not transactionally rolled back. M3 therefore uses collision-checked explicit
+negative keys for all copied-W6 inserts, and compares sequence values before and
+after cleanup. This corrects the original wording of M3-D06 without changing its
+preservation requirement or any expected test result.
