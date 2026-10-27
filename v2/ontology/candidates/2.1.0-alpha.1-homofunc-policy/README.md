@@ -25,7 +25,7 @@ python v2/ontology/candidates/2.1.0-alpha.1-homofunc-policy/run_policy.py \
   --ecj /path/to/ecj-3.39.0.jar
 ```
 
-Local evidence: **16/16** witness rows, **4/4** historical byte/field/count-preserving replays and **10/10** malformed/unsupported refusals pass. [local-results.json](local-results.json) retains exact fields, roles, raw/profile outputs and runtime hashes; [traceability.csv](traceability.csv) records the per-case expectations. Nine below-minimum states remain engine-only review items. Hosted evidence is recorded after execution. Historical source, fixtures,
+Local evidence: **16/16** witness rows, **4/4** historical byte/field/count-preserving replays and **10/10** malformed/unsupported refusals pass. [local-results.json](local-results.json) retains exact fields, roles, raw/profile outputs and runtime hashes; [traceability.csv](traceability.csv) records the per-case expectations. Nine below-minimum states remain engine-only review items. [Hosted run 40472176042](https://github.com/ArazSaieArasi3/CM-PharmE/actions/runs/40472176042) passes at implementation `5493bc041291e3cd1459bc148106c5c7ee998aaf`, with **21/21 distinct workflows successful**. [hosted-results.json](hosted-results.json) and [ci-evidence.json](ci-evidence.json) preserve exact results and original implementation/job/artifact provenance. Local and hosted cases, parsed structural/role fields, refusals and runtime JAR hashes agree exactly. Artifact ID `12719615888`, digest `sha256:d41191b96ca9a511658e05441c8712360269da28f74096017338f9ae6b27621d`. Historical source, fixtures,
 expectations and results remain unchanged. The official parser independently
 checks class/relation/end/type/bound/aggregation fields and resolves whole/part
 roles. Zero-upper witnesses test the signature, not model validity.
@@ -36,3 +36,5 @@ inheritance/part-count variations, a validation of refactoring plans or author/
 scientific acceptance. No automatic Collective/memberOf change or new part
 invention follows. Keep #315/#310/#306 open and PR #305 draft. Cross-rule
 integration and full-candidate acceptance remain separate work.
+
+The four scoped implementations are **4/4 verified**. The [technical integration/review bundle](../2.1.0-alpha.1-source-policy-integration/README.md) consolidates their evidence without granting scientific/author acceptance or full-model validation.

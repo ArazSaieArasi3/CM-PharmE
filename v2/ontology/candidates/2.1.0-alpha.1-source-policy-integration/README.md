@@ -34,7 +34,9 @@ are not independent scientific samples or exhaustive detector-correctness eviden
 Native inventories are overlapping sets, not anti-pattern detections. Original IDs
 are retained in the verification output so counts can be inspected.
 
-Execution evidence is recorded after verification. The technical integration can
+Technical integration passed locally and in [hosted run 40472813955](https://github.com/ArazSaieArasi3/CM-PharmE/actions/runs/40472813955) at implementation `524c270d6eef737cf094ff97d9426b30ec8e0740`; **21/21 distinct workflows succeeded**. [local-results.json](local-results.json) and [hosted-results.json](hosted-results.json) agree exactly. [ci-evidence.json](ci-evidence.json) pins the implementation, job and artifact. The shared HomoFunc evidence artifact includes `integration-report.json` and a fresh `report.json` runtime replay; [hosted-homofunc-rerun.json](hosted-homofunc-rerun.json) retains that rerun, whose case/field/role/refusal/JAR evidence matches the original verified HomoFunc package. Artifact ID `12718727953`, digest `sha256:7c0a3aa7e17af0fcc572d0968e9b0707517600991e0f8e457675d88a82eb29c1`. The technical integration can
 be completed with #315 still open for scientific/author acceptance. #310 full-
 candidate adapter/execution and #306 scientific release review remain open.
 PR #305 stays draft; no merge, automatic refactoring, final tag or release follows.
+
+[Central four-rule disposition](adjudication-register.csv): **4/4 scoped implementations and technical integration verified; 0/4 author/scientific acceptances recorded**. The next work is scientific/source review and bounded native-fidelity resolution for #310/#306. These pending states are explicit, not inferred from passing CI.
