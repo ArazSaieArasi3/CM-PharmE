@@ -6,11 +6,13 @@ on:
     paths:
       - 'v2/ontology/candidates/2.1.0-alpha.1-homofunc-policy/**'
       - '.github/workflows/v2-21-homofunc-policy.yml'
+      - 'v2/ontology/candidates/2.1.0-alpha.1-source-policy-integration/**'
   push:
     branches: ['v2/**']
     paths:
       - 'v2/ontology/candidates/2.1.0-alpha.1-homofunc-policy/**'
       - '.github/workflows/v2-21-homofunc-policy.yml'
+      - 'v2/ontology/candidates/2.1.0-alpha.1-source-policy-integration/**'
   workflow_dispatch:
 
 permissions:
@@ -48,11 +50,18 @@ jobs:
           python v2/ontology/candidates/2.1.0-alpha.1-homofunc-policy/run_policy.py
           --archive build/homofunc-runtime/oled
           --ecj build/homofunc-runtime/ecj-3.39.0.jar
+      - name: Verify pinned four-rule integration and non-promotion boundaries
+        run: >-
+          python v2/ontology/candidates/2.1.0-alpha.1-source-policy-integration/verify_integration.py
+          --output build/homofunc-policy/integration-report.json
       - name: Expose exact scoped evidence
         if: always()
         run: |
           if test -f build/homofunc-policy/report.json; then
             cat build/homofunc-policy/report.json
+          fi
+          if test -f build/homofunc-policy/integration-report.json; then
+            cat build/homofunc-policy/integration-report.json
           fi
       - name: Upload scoped evidence
         if: always()
