@@ -75,3 +75,11 @@ run the full CM-PharmE candidate, validate other detector families, or constitut
 author/expert approval. WholeOver, RelRig, HomoFunc and the final applicability
 integration remain open under #315; native adapter fidelity remains #310.
 Scientific and release gates remain #306. PR #305 stays draft.
+
+## Verified outcome
+
+[Hosted run 40460902265](https://github.com/ArazSaieArasi3/CM-PharmE/actions/runs/40460902265) passes on implementation commit `9ecefa656651c5a5801ba42af5b227d6a6c17a9b`. [hosted-results.json](hosted-results.json) records all 14/14 independent cases, 3/3 historical replays and 8/8 refusal guards. [ci-evidence.json](ci-evidence.json) pins the successful run/artifact and all 18 successful distinct workflow families. [local-results.json](local-results.json) is the separate local runtime report.
+
+Three new engine-only review states remain visible: finite-zero-2, unlimited-zero and reordered-zero. Old expected/actual counts and archive bytes are unchanged. [traceability.csv](traceability.csv) connects source, decision, predicate, fixtures, runtime and open gates. [applicability.json](applicability.json) identifies the exact P3/M1–M4 target snapshot and why it was not executed. Its 66 unknown-cardinality properties, 11 untyped properties and 14 specialized properties are overlapping source inventories, not RelComp findings.
+
+[adjudication-register.csv](adjudication-register.csv) preserves the four-rule scope: the RelComp lower-bound slice is verified; WholeOver, RelRig and HomoFunc remain open, as does final integration. #315 remains open. The next finite task is P5e-2 WholeOver. No author/scientific or full-candidate approval follows from this technical completion.

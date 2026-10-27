@@ -1,13 +1,13 @@
 # CM-PharmE 2.1 release decision and gate register — 0.1.0
 
-The [nine-row decision register](decision-register.csv) records delegated bounded choices, their evidence, negative conditions, current status and explicit later-review questions. It does not turn research observations into an author's or external expert's review. The target is ontology **2.1**; this directory is release-planning record **0.1.0**, not an ontology version.
+The [ten-row decision register](decision-register.csv) records delegated bounded choices, their evidence, negative conditions, current status and explicit later-review questions. It does not turn research observations into an author's or external expert's review. The target is ontology **2.1**; this directory is release-planning record **0.1.0**, not an ontology version.
 
 | Gate | Current evidence | Status for GA 2.1.0 |
 |---|---|---|
 | ORSD | Document 0.2.0, 83 stable IDs; execution ledger 0.2.0 with three fresh bounded contracts | OPEN: author content freeze and remaining contract slices |
 | Facility operation decision | [Native/OWL/SHACL overlay](../../../ontology/candidates/2.1.0-alpha.1-p3-facility-operation/README.md), 10/10 scoped fixtures, native parser, OWL RL/HermiT, zero-violation real ABox nonregression | SCOPED PASS; real operation/source evidence and broader P3 review open |
 | Four purposeful modules | RM/PV/BA/DS preserved as experimental independent packages | OPEN: detailed contracts and author semantic review #311–#314 |
-| Official full anti-patterns | Detector source-policy discrepancies documented; bounded tests exist | OPEN: #310/#315 full-candidate adjudication |
+| Official full anti-patterns | RelComp lower-bound scoped profile verified; three other source-policy discrepancies and full-candidate application remain open | OPEN: #310/#315 full-candidate adjudication |
 | Database/source | W6 2.0 preserved; repaired P1 source contract #307; [M1 provenance slice](../../../data/migrations/2.1/0.2.0/README.md) [M2 FacilityOperation slice](../../../data/migrations/2.1/0.3.0/README.md) and [M3 manufacturer context](../../../data/migrations/2.1/0.4.0/README.md) and [M4 capacity bearer/observation](../../../data/migrations/2.1/0.5.0/README.md) passed on copied PostgreSQL/PostGIS fixtures with 2.0/2.1 SQL/SPARQL and rollback checks ([M2 run 40232374161](https://github.com/ArazSaieArasi3/CM-PharmE/actions/runs/40232374161)) | #307/#318/#319/#320/#321 scoped CLOSED; OPEN: real capacity/operation witnesses, wider mapping and scientific acceptance |
 | Human/expert and paper | Provenance and manuscript tasks tracked | OPEN: #159/#173/#98/#171 and claim review |
 | Publication | PR #305 draft on V2 integration branch; no completed GA release evidence | OPEN: versioned diagrams, docs/Wiki, changelog, validation bundle, reviewed release/tag |
@@ -39,3 +39,11 @@ Q21-04 compares **2/2** complete capacity bearer/provenance tuples, SHA-256 `666
 All new records are synthetic. One capacity has explicit synthetic source evidence and one has unknown provenance. The observation-only facility receives no Mode. M4-D01–06 and DEC-21-09 do not claim empirical capacity validation, all 36 mappings, completed ORSD content, full anti-patterns, four-domain semantics or author/expert/GA acceptance. **M1–M4 are 4/4 scoped implementation slices complete**, not 100% release readiness. #306 remains open and PR #305 stays draft.
 
 Next finite work: handle #315 source-policy discrepancies one rule at a time, starting with RelComp's lower-bound versus upper-bound interpretation and its independent boundary oracle; then WholeOver, RelRig (preserving native readOnly uncertainty) and HomoFunc. Only after source-policy/adapter fidelity is resolved may #310 claim full-candidate detector acceptance. Preserve the remaining domain, ORSD, human/expert, article and documentation gates above.
+
+## P5e-1 RelComp source-policy checkpoint — 2026-10-27 Asia/Tehran
+
+At [commit 9ecefa6](https://github.com/ArazSaieArasi3/CM-PharmE/commit/9ecefa656651c5a5801ba42af5b227d6a6c17a9b), **18/18 distinct hosted workflows passed**, including [RelComp run 40460902265](https://github.com/ArazSaieArasi3/CM-PharmE/actions/runs/40460902265). [The named policy/evidence package](../../../ontology/candidates/2.1.0-alpha.1-relcomp-policy/README.md) records RC-D01–06, primary sources/digests, independent pre-implementation oracles, exact runtime results and applicability limits; DEC-21-10 preserves the candidate decision.
+
+The unchanged archived detector and independent source-profile predicate match their respective expectations on **14/14** synthetic frames. **3/3** historical RelComp fixtures retain identical bytes, parsed fields and engine counts. **8/8** malformed/unsupported inputs are refused. Three engine-only optional-plural states remain explicit review items. The selected shared end's normalization to ATarget is documented as interpretation; runtime count agreement does not validate archived occurrence orientation or refactoring plans.
+
+The lower-bound discrepancy slice is complete in its declared scope. It does not run the full current ontology or approve its semantics. The four-rule register is **1/4 scoped discrepancy slices verified**, with WholeOver next, then RelRig/HomoFunc and final integration. #315/#310/#306 stay open; PR #305 stays draft. The M1–M4 completions and all remaining empirical, domain, ORSD, human/expert, article/documentation and GA gates remain unchanged.
