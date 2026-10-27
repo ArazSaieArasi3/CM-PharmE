@@ -1,0 +1,133 @@
+{
+  "cases": [
+    {
+      "expected_archived_occurrences": 1,
+      "expected_profile_frame_match": 0,
+      "id": "finite-zero-2",
+      "lower": 0,
+      "mutation": "cardinality_only",
+      "upper": 2
+    },
+    {
+      "expected_archived_occurrences": 1,
+      "expected_profile_frame_match": 1,
+      "id": "finite-one-2",
+      "lower": 1,
+      "mutation": "cardinality_only",
+      "upper": 2
+    },
+    {
+      "expected_archived_occurrences": 1,
+      "expected_profile_frame_match": 1,
+      "id": "finite-two-2",
+      "lower": 2,
+      "mutation": "cardinality_only",
+      "upper": 2
+    },
+    {
+      "expected_archived_occurrences": 0,
+      "expected_profile_frame_match": 0,
+      "id": "finite-zero-1",
+      "lower": 0,
+      "mutation": "cardinality_only",
+      "upper": 1
+    },
+    {
+      "expected_archived_occurrences": 0,
+      "expected_profile_frame_match": 0,
+      "id": "finite-one-1",
+      "lower": 1,
+      "mutation": "cardinality_only",
+      "upper": 1
+    },
+    {
+      "expected_archived_occurrences": 1,
+      "expected_profile_frame_match": 0,
+      "id": "unlimited-zero",
+      "lower": 0,
+      "mutation": "cardinality_only",
+      "upper": -1
+    },
+    {
+      "expected_archived_occurrences": 1,
+      "expected_profile_frame_match": 1,
+      "id": "unlimited-one",
+      "lower": 1,
+      "mutation": "cardinality_only",
+      "upper": -1
+    },
+    {
+      "expected_archived_occurrences": 1,
+      "expected_profile_frame_match": 1,
+      "id": "unlimited-two",
+      "lower": 2,
+      "mutation": "cardinality_only",
+      "upper": -1
+    },
+    {
+      "expected_archived_occurrences": 0,
+      "expected_profile_frame_match": 0,
+      "id": "upper-zero",
+      "lower": 0,
+      "mutation": "cardinality_only",
+      "upper": 0
+    },
+    {
+      "expected_archived_occurrences": 0,
+      "expected_profile_frame_match": 0,
+      "id": "unrelated-inner",
+      "lower": 1,
+      "mutation": "unrelated-inner",
+      "upper": 2
+    },
+    {
+      "expected_archived_occurrences": 1,
+      "expected_profile_frame_match": 1,
+      "id": "transitive-inner",
+      "lower": 1,
+      "mutation": "transitive-inner",
+      "upper": 2
+    },
+    {
+      "expected_archived_occurrences": 0,
+      "expected_profile_frame_match": 0,
+      "id": "nonshared-plural",
+      "lower": 1,
+      "mutation": "nonshared-plural",
+      "upper": 1
+    },
+    {
+      "expected_archived_occurrences": 1,
+      "expected_profile_frame_match": 1,
+      "id": "reordered-positive",
+      "lower": 1,
+      "mutation": "reordered-positive",
+      "upper": 2
+    },
+    {
+      "expected_archived_occurrences": 1,
+      "expected_profile_frame_match": 0,
+      "id": "reordered-zero",
+      "lower": 0,
+      "mutation": "reordered-zero",
+      "upper": 2
+    }
+  ],
+  "expected_historical_cases_unchanged": 3,
+  "expected_scope": "One explicit association-composition frame per toy fixture. Not full-candidate or all-RelComp implementation validation.",
+  "frozen_before_implementation": true,
+  "issue": 315,
+  "profile": "CMPE-RelComp-PositiveLowerBound/1.0.0",
+  "refused_inputs": [
+    "missing_lower",
+    "missing_upper",
+    "negative_lower",
+    "invalid_interval",
+    "untyped_end",
+    "duplicate_id",
+    "cyclic_generalization",
+    "unsupported_subsetting"
+  ],
+  "schema_version": 1,
+  "slice": "P5e-1"
+}
