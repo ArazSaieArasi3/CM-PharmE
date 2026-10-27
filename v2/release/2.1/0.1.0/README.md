@@ -1,13 +1,13 @@
 # CM-PharmE 2.1 release decision and gate register — 0.1.0
 
-The [eleven-row decision register](decision-register.csv) records delegated bounded choices, their evidence, negative conditions, current status and explicit later-review questions. It does not turn research observations into an author's or external expert's review. The target is ontology **2.1**; this directory is release-planning record **0.1.0**, not an ontology version.
+The [twelve-row decision register](decision-register.csv) records delegated bounded choices, their evidence, negative conditions, current status and explicit later-review questions. It does not turn research observations into an author's or external expert's review. The target is ontology **2.1**; this directory is release-planning record **0.1.0**, not an ontology version.
 
 | Gate | Current evidence | Status for GA 2.1.0 |
 |---|---|---|
 | ORSD | Document 0.2.0, 83 stable IDs; execution ledger 0.2.0 with three fresh bounded contracts | OPEN: author content freeze and remaining contract slices |
 | Facility operation decision | [Native/OWL/SHACL overlay](../../../ontology/candidates/2.1.0-alpha.1-p3-facility-operation/README.md), 10/10 scoped fixtures, native parser, OWL RL/HermiT, zero-violation real ABox nonregression | SCOPED PASS; real operation/source evidence and broader P3 review open |
 | Four purposeful modules | RM/PV/BA/DS preserved as experimental independent packages | OPEN: detailed contracts and author semantic review #311–#314 |
-| Official full anti-patterns | RelComp and WholeOver scoped profiles verified; RelRig/HomoFunc, integration and full-candidate application remain open | OPEN: #310/#315 full-candidate adjudication |
+| Official full anti-patterns | RelComp/WholeOver scoped profiles and RelRig endpoint-review slice verified; HomoFunc, integration and full-candidate/scientific application remain open | OPEN: #310/#315 full-candidate adjudication |
 | Database/source | W6 2.0 preserved; repaired P1 source contract #307; [M1 provenance slice](../../../data/migrations/2.1/0.2.0/README.md) [M2 FacilityOperation slice](../../../data/migrations/2.1/0.3.0/README.md) and [M3 manufacturer context](../../../data/migrations/2.1/0.4.0/README.md) and [M4 capacity bearer/observation](../../../data/migrations/2.1/0.5.0/README.md) passed on copied PostgreSQL/PostGIS fixtures with 2.0/2.1 SQL/SPARQL and rollback checks ([M2 run 40232374161](https://github.com/ArazSaieArasi3/CM-PharmE/actions/runs/40232374161)) | #307/#318/#319/#320/#321 scoped CLOSED; OPEN: real capacity/operation witnesses, wider mapping and scientific acceptance |
 | Human/expert and paper | Provenance and manuscript tasks tracked | OPEN: #159/#173/#98/#171 and claim review |
 | Publication | PR #305 draft on V2 integration branch; no completed GA release evidence | OPEN: versioned diagrams, docs/Wiki, changelog, validation bundle, reviewed release/tag |
@@ -57,3 +57,15 @@ Fresh primary text and rendered-page review exposed a source-internal conflict: 
 **16/16** synthetic frame expectations pass, **3/3** historical byte/field/count-preserving replays pass and **10/10** malformed/unsupported inputs are refused. Four source-only sum-two cases remain review items. Official-parser field checks preserve end order/aggregation roles and the generalization set. Unlimited, explicit disjointness, whole-end-bound controls and reordered ends are covered. Exact local/hosted results and artifact metadata are retained in the package.
 
 The four-rule register is **2/4 scoped slices verified**. Next: **P5e-3 RelRig**, preserving native readOnly uncertainty before endpoint-policy adjudication, then HomoFunc and integration. The full candidate has not been run through this profile or archived detector; wider overlap variations and meronymic stereotypes are outside this threshold slice. #315/#310/#306 remain open and PR #305 remains draft. No final release or scientific/author acceptance is claimed.
+
+## P5e-3 RelRig explicit-endpoint review checkpoint — 2026-10-27 Asia/Tehran
+
+At [implementation 8139da3](https://github.com/ArazSaieArasi3/CM-PharmE/commit/8139da3f67509f1ac96be7cf36e4b3a9c6bee512), **20/20 distinct hosted workflows passed**, including [RelRig run 40467313319](https://github.com/ArazSaieArasi3/CM-PharmE/actions/runs/40467313319). The [policy/evidence package](../../../ontology/candidates/2.1.0-alpha.1-relrig-policy/README.md) preserves the pre-implementation decision/oracles a7c48d7, exact structural/readOnly/end-role parser checks and unchanged archived behavior. DEC-21-12 records the candidate policy.
+
+**16/16** explicit synthetic witnesses, **6/6** historical replays, **12/12** legacy refusal controls and **7/7** native admission cases pass. The rigid and Role four-cell matrices, reordered rigid matrix and optional/unlimited controls retain raw archived counts separately from the literal published condition. Candidate disposition follows semantic-review procedure: every admitted rigid frame still requires investigation of actual dependency direction. This is not an automatically accepted correction of Table 46 or the archive; endpoint intent remains a scientific review question.
+
+Two historical basic fixtures omit readOnly and retain their original parser-default false observations; they are not admitted as explicit inputs to the new policy. Four historical Boolean fixtures preserve their explicit values and original raw/published outputs. Original archive classes, adapters, source JSON and historical fixtures/results remain unchanged.
+
+The native snapshot retains **172 Properties and 82 unknown readOnly flags**, including **three mediations with six unknown ends**. These are input inventories, not RelRig detections. The stricter exact-Boolean wrapper refuses the unchanged source before conversion/detector execution; known native true/false synthetic controls preserve their values in the official parser. Other native type/bound/nature/specialization fidelity blockers remain open.
+
+The four-rule program is **3/4 scoped implementations verified**, with author/scientific interpretation and full-candidate acceptance pending. Next bounded task: **P5e-4 HomoFunc lower=1 / lower>=2**, then P5e-5 cross-rule integration. #315/#310/#306 remain open and PR #305 remains draft. No final release or automatic ontology refactoring follows.

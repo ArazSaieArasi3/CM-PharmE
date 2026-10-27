@@ -47,10 +47,12 @@ python v2/ontology/candidates/2.1.0-alpha.1-relrig-policy/run_policy.py \
   --ecj /path/to/ecj-3.39.0.jar
 ```
 
-Local evidence: **16/16** explicit witnesses, **6/6** unchanged historical replays, **12/12** malformed/out-of-scope legacy refusals and **7/7** native admission cases pass. [local-results.json](local-results.json) records structural/readOnly/role parser evidence and exact runtime hashes; [traceability.csv](traceability.csv) preserves the per-case channels. Hosted evidence is recorded after execution. [Applicability](applicability.json) explicitly
+Local evidence: **16/16** explicit witnesses, **6/6** unchanged historical replays, **12/12** malformed/out-of-scope legacy refusals and **7/7** native admission cases pass. [local-results.json](local-results.json) records structural/readOnly/role parser evidence and exact runtime hashes; [traceability.csv](traceability.csv) preserves the per-case channels. [Hosted run 40467313319](https://github.com/ArazSaieArasi3/CM-PharmE/actions/runs/40467313319) passes at implementation `8139da3f67509f1ac96be7cf36e4b3a9c6bee512`, with **20/20 distinct workflows successful**. [hosted-results.json](hosted-results.json) preserves the exact report; [ci-evidence.json](ci-evidence.json) pins workflow/job/artifact metadata. Case results, structural/readOnly/role fields, refusals, native-admission results and runtime JAR hashes agree exactly locally and on the host. Artifact ID `12717146904`, digest `sha256:7ff7958016f34ced7fc8d3eb934e095c3bd393ca1234c7cfb0148cdbb4070876`. [Applicability](applicability.json) explicitly
 records no full-candidate run or modern adapter/scientific acceptance. This is
 review routing for one restricted frame; inherited relators, other rigid/mixin
 stereotypes, arbitrary topology, refactoring correctness and actual temporal
 facts are outside scope. Do not close #315/#310/#306 or promote draft PR #305.
 
 The unchanged native snapshot has **172 Properties, 82 unknown readOnly values and three mediations with six unknown ends**. These are input inventories, not RelRig detections; original IDs are retained in the report. No values were filled and no full-candidate conversion/detector run occurred.
+
+[Four-rule register](adjudication-register.csv): **3/4 scoped implementations verified**, with author/scientific interpretation and full-candidate acceptance still pending. Next bounded task: P5e-4 HomoFunc lower=1 versus lower>=2, followed by cross-rule integration.
