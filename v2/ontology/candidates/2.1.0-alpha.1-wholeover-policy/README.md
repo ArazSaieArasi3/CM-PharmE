@@ -21,7 +21,7 @@ does not assert a simple implementation defect or a proven version-history cause
 Local execution: **16/16** cases, **3/3** byte/field/count-preserving historical
 replays and **10/10** malformed/unsupported refusals. Exact results and runtime
 JAR hashes are in [local-results.json](local-results.json); per-case links are in
-[traceability.csv](traceability.csv). Hosted evidence is recorded after execution.
+[traceability.csv](traceability.csv). [Hosted run 40465778217](https://github.com/ArazSaieArasi3/CM-PharmE/actions/runs/40465778217) passes on implementation `75b371c232516a37bab0eeee73f11171c48fed64`, with **19/19 distinct workflows successful**. [hosted-results.json](hosted-results.json) preserves the exact hosted report; [ci-evidence.json](ci-evidence.json) pins the job, artifact ID/digest and tested commit. Case results, parsed fields, refusals and runtime JAR hashes agree exactly between local and hosted runs. Artifact ID `12716463060`, digest `sha256:0583f0128e8d106909982c08993cbe4563a58494f4972ef5735e35c53138d884`.
 
 ```sh
 python v2/ontology/candidates/2.1.0-alpha.1-wholeover-policy/run_policy.py \
@@ -42,3 +42,5 @@ native unknown type/cardinality and specialized-property blockers. Source inputs
 and outputs may not be narrowed silently to fit this predicate. RelRig, HomoFunc,
 integration and independent author/scientific review remain pending. PR #305 stays
 draft; no merge, final release, production migration or GA approval follows.
+
+[Four-rule register](adjudication-register.csv): **2/4 scoped slices verified**, with author/scientific acceptance and full-candidate execution still pending. Next bounded task: P5e-3 RelRig endpoint policy with native readOnly uncertainty preserved.
