@@ -4,6 +4,15 @@
 continues from [record 0.2.0](../0.2.0/README.md); no repeated owner decision is
 needed for the bounded implementation and copied-fixture integration.
 
+**#331 is verified; #332 is next ready.** The exact implementation commit is
+`42708dc83599a84d161631ccf6d4960189a54581`. The direct push
+[hosted run 40734338360](https://github.com/ArazSaieArasi3/CM-PharmE/actions/runs/40734338360)
+passed. Its downloaded artifact ZIP SHA-256 was verified, and all sixteen
+normalized evidence fields match the local result. The 26 head-referenced workflow
+families also passed, each within its own pinned scope. PR checks used a separately
+identified merge commit with the same Git tree; primary profile evidence uses the
+direct implementation commit. See the profile's exact CI/execution records.
+
 The [M1 support profile](../../../ontology/profiles/2.1/m1-provenance/0.1.0/README.md)
 implements #331 with an isolated 50-triple vocabulary, 143-triple opt-in shape
 graph, four direct targetClass shapes and the unchanged query/key contract.
@@ -26,7 +35,7 @@ boundary while testing actual exported rows.
 
 | Packet | Issue | Release point |
 |---|---|---|
-| Exact hosted verification of the isolated profile | #331 | Scoped core ready for integration |
+| Exact hosted verification of the isolated profile — done | #331 | Scoped core ready for integration |
 | One isolated copied-W6 integration and preservation audit | #332 | Selected 2.1 mapping path verified |
 | Minimum support docs/notices/manifest and new bundle/cold replay | #306 child just in time | Reviewed 2.1 GA candidate |
 | Exact tested publication and downloaded-byte verification | #306 | Stable 2.1.0 |
@@ -38,3 +47,7 @@ does not change the old M1 verifier/database, full modern native model, scientif
 card/oracles, source-profile acceptance (1/4), historical ORSD review (0/83),
 expert evidence or published RC. No full-candidate merge or GA follows from this
 profile alone. Continue with one active packet and small justified release cuts.
+
+The three-packet release-cut review (#329/#330/#331) is HOLD for #332's copied-W6
+integration and the subsequent minimum docs/notices/new-bundle/release checks.
+This is an eligibility decision, not a guarantee of three more executions.

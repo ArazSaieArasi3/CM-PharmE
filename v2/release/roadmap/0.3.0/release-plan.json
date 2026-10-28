@@ -10,12 +10,12 @@
   ],
   "primary_target": "2.1.0",
   "published_checkpoint": "2.1.0-rc.1",
-  "status": "M1_PROFILE_IMPLEMENTED_AWAITING_HOSTED_CHECK",
+  "status": "SCOPED_M1_PROFILE_VERIFIED_READY_FOR_COPIED_DB",
   "ga_ready": false,
   "current_packet_issue": 331,
   "implementation_complete_locally": true,
-  "hosted_check_verified": false,
-  "next_ready_issue": 331,
+  "hosted_check_verified": true,
+  "next_ready_issue": 332,
   "next_after_hosted_issue": 332,
   "profile_path": "v2/ontology/profiles/2.1/m1-provenance/0.1.0",
   "profile_manifest_sha256": "2528b79a3ce8a6c43d2c41b07ff70f519bb0590a2c3a1220f4c13362e5bbbed4",
@@ -41,12 +41,34 @@
     "external_expert_results_created": 0
   },
   "remaining_before_ga": [
-    "Hosted exact-commit verification of #331",
     "Isolated copied-W6 integration #332",
     "Minimum final support manifest/docs/notices and deterministic new GA bundle/cold replay",
     "Exact tested release review, publication and downloaded-byte receipt"
   ],
   "full_modern_model_or_expert_acceptance_inferred": false,
   "default_w6_or_old_m1_changed": false,
-  "published_rc_changed": false
+  "published_rc_changed": false,
+  "completed_packet_issue": 331,
+  "implementation_commit": "42708dc83599a84d161631ccf6d4960189a54581",
+  "tested_tree_sha": "f1d9712739f3ab9c2010883461476fa3b74d322d",
+  "hosted_run_id": 40734338360,
+  "hosted_run_url": "https://github.com/ArazSaieArasi3/CM-PharmE/actions/runs/40734338360",
+  "ci_evidence": "../../../ontology/profiles/2.1/m1-provenance/0.1.0/ci-evidence.json",
+  "local_hosted_comparison_equal": true,
+  "head_referenced_workflow_families_passed": 26,
+  "head_referenced_workflow_families_total": 26,
+  "core_findings": {
+    "CORE-F01": "RESOLVED_FOR_ISOLATED_PROFILE_DATABASE_BINDING_NEXT_332",
+    "CORE-F02": "RESOLVED_TARGETED_ADMISSION_NONEMPTY_SCOPE_AND_PORTABLE_CHECKS"
+  },
+  "latest_release_cut_review": {
+    "completed_packets": [
+      329,
+      330,
+      331
+    ],
+    "result": "HOLD_FOR_COPIED_DB_AND_RELEASE_PACKAGE_CHECKS",
+    "next_issue": 332,
+    "fixed_remaining_execution_count_promised": false
+  }
 }

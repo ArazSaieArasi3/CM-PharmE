@@ -1,0 +1,671 @@
+{
+  "schema_version": "CMPE-M1ProvenanceResults/0.1.0",
+  "passed": true,
+  "contract_freeze_commit": "699bd799c0c0234e9ded1422de83885c9bde24bb",
+  "contract_sha256": "222450eeaf437abe396f42b38e577112e5f7170a1fc68e7500ffbc3915342c59",
+  "oracle_sha256": "9784157e68d4963f14a8fc5f961a534102c5859fce576e123b6b233d3e8b816c",
+  "manifest": {
+    "profile": "CMPE-M1ProvenanceProfile/0.1.0",
+    "target_ontology": "2.1.0",
+    "contract_freeze_commit": "699bd799c0c0234e9ded1422de83885c9bde24bb",
+    "source_commit": "289a64b91515bf5c6c91d9759fc6d37de50e34cc",
+    "profile_triples": 50,
+    "shape_triples": 143,
+    "supported_class_count": 4,
+    "supported_cmpe_object_property_count": 2,
+    "owl_imports": [],
+    "global_cardinality_or_disjointness_added": false,
+    "full_source_semantic_module_equivalence": false,
+    "formal_view": {
+      "excluded_serialization_predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#value",
+      "lossless_full_rdf_to_owl_claimed": false,
+      "raw_rdf_retained_for_shacl_identity_and_queries": true
+    },
+    "artifacts_sha256": {
+      "profile.ttl": "a8dca6788eff03570b4911b8b7f0933a5420fcde9945272543da86934539ce9b",
+      "shapes.ttl": "fb95d6bb104feb700c910c523ff582900374685d64f6a93686038dfe4cf6e26a",
+      "query.rq": "934344b928511424e95486231f7d6ffb2f68e25cd18fbaba07bf3c0fa645933c"
+    }
+  },
+  "python_versions": {
+    "rdflib": "7.5.0",
+    "pyshacl": "0.31.0",
+    "owlrl": "7.1.4",
+    "owlready2": "0.49"
+  },
+  "java": "openjdk version \"17.0.21\" 2026-10-20\nOpenJDK Runtime Environment Temurin-17.0.21+9 (build 17.0.21+9)\nOpenJDK 64-Bit Server VM Temurin-17.0.21+9 (build 17.0.21+9, mixed mode, sharing)\n",
+  "admission_cases": [
+    {
+      "id": "with-run",
+      "expected_stage": "ADMITTED",
+      "stage": "ADMITTED",
+      "admitted": true,
+      "shacl_conforms": true,
+      "explicit_target_union_counts": {
+        "Dataset": 1,
+        "DatasetRelease": 1,
+        "SourceRecord": 1,
+        "ProvenanceActivity": 1
+      },
+      "identity_errors": [],
+      "shacl_results": 0,
+      "query_tuples": [
+        [
+          "10.9999/synthetic-m1",
+          "release-A",
+          "7",
+          "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "run-A"
+        ]
+      ],
+      "roundtrip_formats": 4,
+      "pass_result": true
+    },
+    {
+      "id": "without-run",
+      "expected_stage": "ADMITTED",
+      "stage": "ADMITTED",
+      "admitted": true,
+      "shacl_conforms": true,
+      "explicit_target_union_counts": {
+        "Dataset": 1,
+        "DatasetRelease": 1,
+        "SourceRecord": 1,
+        "ProvenanceActivity": 0
+      },
+      "identity_errors": [],
+      "shacl_results": 0,
+      "query_tuples": [
+        [
+          "10.9999/synthetic-m1",
+          "release-A",
+          "7",
+          "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          null
+        ]
+      ],
+      "roundtrip_formats": 4,
+      "pass_result": true
+    },
+    {
+      "id": "extension-metadata",
+      "expected_stage": "ADMITTED",
+      "stage": "ADMITTED",
+      "admitted": true,
+      "shacl_conforms": true,
+      "explicit_target_union_counts": {
+        "Dataset": 1,
+        "DatasetRelease": 1,
+        "SourceRecord": 1,
+        "ProvenanceActivity": 1
+      },
+      "identity_errors": [],
+      "shacl_results": 0,
+      "query_tuples": [
+        [
+          "10.9999/synthetic-m1",
+          "release-A",
+          "7",
+          "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "run-A"
+        ]
+      ],
+      "roundtrip_formats": 4,
+      "pass_result": true
+    },
+    {
+      "id": "two-records-shared-run",
+      "expected_stage": "ADMITTED",
+      "stage": "ADMITTED",
+      "admitted": true,
+      "shacl_conforms": true,
+      "explicit_target_union_counts": {
+        "Dataset": 1,
+        "DatasetRelease": 1,
+        "SourceRecord": 2,
+        "ProvenanceActivity": 1
+      },
+      "identity_errors": [],
+      "shacl_results": 0,
+      "query_tuples": [
+        [
+          "10.9999/synthetic-m1",
+          "release-A",
+          "7",
+          "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "run-A"
+        ],
+        [
+          "10.9999/synthetic-m1",
+          "release-A",
+          "8",
+          "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "run-A"
+        ]
+      ],
+      "roundtrip_formats": 4,
+      "pass_result": true
+    },
+    {
+      "id": "same-row-distinct-release",
+      "expected_stage": "ADMITTED",
+      "stage": "ADMITTED",
+      "admitted": true,
+      "shacl_conforms": true,
+      "explicit_target_union_counts": {
+        "Dataset": 1,
+        "DatasetRelease": 2,
+        "SourceRecord": 2,
+        "ProvenanceActivity": 0
+      },
+      "identity_errors": [],
+      "shacl_results": 0,
+      "query_tuples": [
+        [
+          "10.9999/synthetic-m1",
+          "release-A",
+          "7",
+          "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          null
+        ],
+        [
+          "10.9999/synthetic-m1",
+          "release-B",
+          "7",
+          "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          null
+        ]
+      ],
+      "roundtrip_formats": 4,
+      "pass_result": true
+    },
+    {
+      "id": "same-row-distinct-hash",
+      "expected_stage": "ADMITTED",
+      "stage": "ADMITTED",
+      "admitted": true,
+      "shacl_conforms": true,
+      "explicit_target_union_counts": {
+        "Dataset": 1,
+        "DatasetRelease": 1,
+        "SourceRecord": 2,
+        "ProvenanceActivity": 0
+      },
+      "identity_errors": [],
+      "shacl_results": 0,
+      "query_tuples": [
+        [
+          "10.9999/synthetic-m1",
+          "release-A",
+          "7",
+          "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          null
+        ],
+        [
+          "10.9999/synthetic-m1",
+          "release-A",
+          "7",
+          "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          null
+        ]
+      ],
+      "roundtrip_formats": 4,
+      "pass_result": true
+    },
+    {
+      "id": "row-zero-boundary",
+      "expected_stage": "ADMITTED",
+      "stage": "ADMITTED",
+      "admitted": true,
+      "shacl_conforms": true,
+      "explicit_target_union_counts": {
+        "Dataset": 1,
+        "DatasetRelease": 1,
+        "SourceRecord": 1,
+        "ProvenanceActivity": 0
+      },
+      "identity_errors": [],
+      "shacl_results": 0,
+      "query_tuples": [
+        [
+          "10.9999/synthetic-m1",
+          "release-A",
+          "0",
+          "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          null
+        ]
+      ],
+      "roundtrip_formats": 4,
+      "pass_result": true
+    },
+    {
+      "id": "opaque-hash-boundary",
+      "expected_stage": "ADMITTED",
+      "stage": "ADMITTED",
+      "admitted": true,
+      "shacl_conforms": true,
+      "explicit_target_union_counts": {
+        "Dataset": 1,
+        "DatasetRelease": 1,
+        "SourceRecord": 1,
+        "ProvenanceActivity": 0
+      },
+      "identity_errors": [],
+      "shacl_results": 0,
+      "query_tuples": [
+        [
+          "10.9999/synthetic-m1",
+          "release-A",
+          "7",
+          "opaque source token",
+          null
+        ]
+      ],
+      "roundtrip_formats": 4,
+      "pass_result": true
+    },
+    {
+      "id": "missing-dataset-id",
+      "expected_stage": "SHACL_REJECTED",
+      "stage": "SHACL_REJECTED",
+      "admitted": false,
+      "shacl_conforms": false,
+      "explicit_target_union_counts": {
+        "Dataset": 1,
+        "DatasetRelease": 1,
+        "SourceRecord": 1,
+        "ProvenanceActivity": 1
+      },
+      "identity_errors": [],
+      "shacl_results": 1,
+      "query_tuples": null,
+      "roundtrip_formats": 4,
+      "pass_result": true
+    },
+    {
+      "id": "missing-release-type",
+      "expected_stage": "SHACL_REJECTED",
+      "stage": "SHACL_REJECTED",
+      "admitted": false,
+      "shacl_conforms": false,
+      "explicit_target_union_counts": {
+        "Dataset": 1,
+        "DatasetRelease": 1,
+        "SourceRecord": 1,
+        "ProvenanceActivity": 1
+      },
+      "identity_errors": [],
+      "shacl_results": 3,
+      "query_tuples": null,
+      "roundtrip_formats": 4,
+      "pass_result": true
+    },
+    {
+      "id": "missing-record-type",
+      "expected_stage": "SHACL_REJECTED",
+      "stage": "SHACL_REJECTED",
+      "admitted": false,
+      "shacl_conforms": false,
+      "explicit_target_union_counts": {
+        "Dataset": 1,
+        "DatasetRelease": 1,
+        "SourceRecord": 1,
+        "ProvenanceActivity": 1
+      },
+      "identity_errors": [],
+      "shacl_results": 3,
+      "query_tuples": null,
+      "roundtrip_formats": 4,
+      "pass_result": true
+    },
+    {
+      "id": "missing-run-type",
+      "expected_stage": "SHACL_REJECTED",
+      "stage": "SHACL_REJECTED",
+      "admitted": false,
+      "shacl_conforms": false,
+      "explicit_target_union_counts": {
+        "Dataset": 1,
+        "DatasetRelease": 1,
+        "SourceRecord": 1,
+        "ProvenanceActivity": 1
+      },
+      "identity_errors": [],
+      "shacl_results": 2,
+      "query_tuples": null,
+      "roundtrip_formats": 4,
+      "pass_result": true
+    },
+    {
+      "id": "missing-row-number",
+      "expected_stage": "SHACL_REJECTED",
+      "stage": "SHACL_REJECTED",
+      "admitted": false,
+      "shacl_conforms": false,
+      "explicit_target_union_counts": {
+        "Dataset": 1,
+        "DatasetRelease": 1,
+        "SourceRecord": 1,
+        "ProvenanceActivity": 1
+      },
+      "identity_errors": [],
+      "shacl_results": 1,
+      "query_tuples": null,
+      "roundtrip_formats": 4,
+      "pass_result": true
+    },
+    {
+      "id": "missing-hash",
+      "expected_stage": "SHACL_REJECTED",
+      "stage": "SHACL_REJECTED",
+      "admitted": false,
+      "shacl_conforms": false,
+      "explicit_target_union_counts": {
+        "Dataset": 1,
+        "DatasetRelease": 1,
+        "SourceRecord": 1,
+        "ProvenanceActivity": 1
+      },
+      "identity_errors": [],
+      "shacl_results": 1,
+      "query_tuples": null,
+      "roundtrip_formats": 4,
+      "pass_result": true
+    },
+    {
+      "id": "missing-record-key",
+      "expected_stage": "SHACL_REJECTED",
+      "stage": "SHACL_REJECTED",
+      "admitted": false,
+      "shacl_conforms": false,
+      "explicit_target_union_counts": {
+        "Dataset": 1,
+        "DatasetRelease": 1,
+        "SourceRecord": 1,
+        "ProvenanceActivity": 1
+      },
+      "identity_errors": [],
+      "shacl_results": 1,
+      "query_tuples": null,
+      "roundtrip_formats": 4,
+      "pass_result": true
+    },
+    {
+      "id": "two-release-owners",
+      "expected_stage": "SHACL_REJECTED",
+      "stage": "SHACL_REJECTED",
+      "admitted": false,
+      "shacl_conforms": false,
+      "explicit_target_union_counts": {
+        "Dataset": 1,
+        "DatasetRelease": 2,
+        "SourceRecord": 1,
+        "ProvenanceActivity": 1
+      },
+      "identity_errors": [],
+      "shacl_results": 1,
+      "query_tuples": null,
+      "roundtrip_formats": 4,
+      "pass_result": true
+    },
+    {
+      "id": "broken-release-link",
+      "expected_stage": "SHACL_REJECTED",
+      "stage": "SHACL_REJECTED",
+      "admitted": false,
+      "shacl_conforms": false,
+      "explicit_target_union_counts": {
+        "Dataset": 1,
+        "DatasetRelease": 1,
+        "SourceRecord": 1,
+        "ProvenanceActivity": 1
+      },
+      "identity_errors": [],
+      "shacl_results": 2,
+      "query_tuples": null,
+      "roundtrip_formats": 4,
+      "pass_result": true
+    },
+    {
+      "id": "two-generating-runs",
+      "expected_stage": "SHACL_REJECTED",
+      "stage": "SHACL_REJECTED",
+      "admitted": false,
+      "shacl_conforms": false,
+      "explicit_target_union_counts": {
+        "Dataset": 1,
+        "DatasetRelease": 1,
+        "SourceRecord": 1,
+        "ProvenanceActivity": 2
+      },
+      "identity_errors": [],
+      "shacl_results": 1,
+      "query_tuples": null,
+      "roundtrip_formats": 4,
+      "pass_result": true
+    },
+    {
+      "id": "wrong-run-identifier",
+      "expected_stage": "IDENTITY_REJECTED",
+      "stage": "IDENTITY_REJECTED",
+      "admitted": false,
+      "shacl_conforms": true,
+      "explicit_target_union_counts": {
+        "Dataset": 1,
+        "DatasetRelease": 1,
+        "SourceRecord": 1,
+        "ProvenanceActivity": 1
+      },
+      "identity_errors": [
+        {
+          "node": "https://w3id.org/cm-pharme/2.1/instance/provenance-activity/run-A",
+          "code": "PUBLIC_ID_IRI_MISMATCH"
+        }
+      ],
+      "shacl_results": 0,
+      "query_tuples": null,
+      "roundtrip_formats": 4,
+      "pass_result": true
+    },
+    {
+      "id": "key-component-mismatch",
+      "expected_stage": "IDENTITY_REJECTED",
+      "stage": "IDENTITY_REJECTED",
+      "admitted": false,
+      "shacl_conforms": true,
+      "explicit_target_union_counts": {
+        "Dataset": 1,
+        "DatasetRelease": 1,
+        "SourceRecord": 1,
+        "ProvenanceActivity": 1
+      },
+      "identity_errors": [
+        {
+          "node": "https://w3id.org/cm-pharme/2.1/instance/source-record/%5B%22release-A%22%2C7%2C%22aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa%22%5D",
+          "code": "COMPOSITE_KEY_COMPONENT_MISMATCH"
+        },
+        {
+          "node": "https://w3id.org/cm-pharme/2.1/instance/source-record/%5B%22release-A%22%2C7%2C%22aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa%22%5D",
+          "code": "RECORD_IRI_KEY_MISMATCH"
+        }
+      ],
+      "shacl_results": 0,
+      "query_tuples": null,
+      "roundtrip_formats": 4,
+      "pass_result": true
+    },
+    {
+      "id": "record-iri-mismatch",
+      "expected_stage": "IDENTITY_REJECTED",
+      "stage": "IDENTITY_REJECTED",
+      "admitted": false,
+      "shacl_conforms": true,
+      "explicit_target_union_counts": {
+        "Dataset": 1,
+        "DatasetRelease": 1,
+        "SourceRecord": 1,
+        "ProvenanceActivity": 1
+      },
+      "identity_errors": [
+        {
+          "node": "https://w3id.org/cm-pharme/2.1/instance/source-record/wrong-key",
+          "code": "RECORD_IRI_KEY_MISMATCH"
+        }
+      ],
+      "shacl_results": 0,
+      "query_tuples": null,
+      "roundtrip_formats": 4,
+      "pass_result": true
+    },
+    {
+      "id": "cross-kind-alias",
+      "expected_stage": "SHACL_REJECTED",
+      "stage": "SHACL_REJECTED",
+      "admitted": false,
+      "shacl_conforms": false,
+      "explicit_target_union_counts": {
+        "Dataset": 2,
+        "DatasetRelease": 1,
+        "SourceRecord": 1,
+        "ProvenanceActivity": 1
+      },
+      "identity_errors": [],
+      "shacl_results": 3,
+      "query_tuples": null,
+      "roundtrip_formats": 4,
+      "pass_result": true
+    },
+    {
+      "id": "empty-graph",
+      "expected_stage": "EMPTY_SCOPE_REFUSED",
+      "stage": "EMPTY_SCOPE_REFUSED",
+      "admitted": false,
+      "shacl_conforms": true,
+      "explicit_target_union_counts": {
+        "Dataset": 0,
+        "DatasetRelease": 0,
+        "SourceRecord": 0,
+        "ProvenanceActivity": 0
+      },
+      "identity_errors": [],
+      "shacl_results": 0,
+      "query_tuples": null,
+      "roundtrip_formats": 4,
+      "pass_result": true
+    },
+    {
+      "id": "typed-record-no-release",
+      "expected_stage": "SHACL_REJECTED",
+      "stage": "SHACL_REJECTED",
+      "admitted": false,
+      "shacl_conforms": false,
+      "explicit_target_union_counts": {
+        "Dataset": 1,
+        "DatasetRelease": 1,
+        "SourceRecord": 1,
+        "ProvenanceActivity": 1
+      },
+      "identity_errors": [],
+      "shacl_results": 2,
+      "query_tuples": null,
+      "roundtrip_formats": 4,
+      "pass_result": true
+    }
+  ],
+  "guard_controls": [
+    {
+      "id": "target-removal",
+      "refused": true
+    },
+    {
+      "id": "implicit-full-source-import",
+      "refused": true
+    }
+  ],
+  "hermit_cases": [
+    {
+      "id": "schema-only",
+      "expected_consistent": true,
+      "actual_consistent": true,
+      "unsatisfiable_named_classes": [],
+      "input_canonical_sha256": "7b7cff97eedc071a6c1f15d71f58eadb2a9a1d3bcdfc7f38b14a920b70707186",
+      "rdf_value_rows_excluded_from_owl_view": 0,
+      "full_rdf_input_changed": false,
+      "pass_result": true
+    },
+    {
+      "id": "with-run",
+      "expected_consistent": true,
+      "actual_consistent": true,
+      "unsatisfiable_named_classes": [],
+      "input_canonical_sha256": "506fddbb3a2e6c420b8e3c1628bb0ab54801475a04aa2105276833ecce18c18f",
+      "rdf_value_rows_excluded_from_owl_view": 1,
+      "full_rdf_input_changed": false,
+      "pass_result": true
+    },
+    {
+      "id": "missing-record-key-open-world",
+      "expected_consistent": true,
+      "actual_consistent": true,
+      "unsatisfiable_named_classes": [],
+      "input_canonical_sha256": "6bd8a0ac4d4433796c6be0246c678f6d7f7adc42af87ac2d2958ee269dae2640",
+      "rdf_value_rows_excluded_from_owl_view": 1,
+      "full_rdf_input_changed": false,
+      "pass_result": true
+    },
+    {
+      "id": "cross-kind-alias-not-global-owl-disjointness",
+      "expected_consistent": true,
+      "actual_consistent": true,
+      "unsatisfiable_named_classes": [],
+      "input_canonical_sha256": "9884db2f546ea6d96ae1855fba28ed8e31357d2405455526e54c9d515e514695",
+      "rdf_value_rows_excluded_from_owl_view": 1,
+      "full_rdf_input_changed": false,
+      "pass_result": true
+    },
+    {
+      "id": "explicit-owl-nothing-control",
+      "expected_consistent": false,
+      "actual_consistent": false,
+      "unsatisfiable_named_classes": [],
+      "input_canonical_sha256": "658c8e9063b94e5e303402949f4a7162ef8ac70a0fe3fe734305020a6c6594d1",
+      "rdf_value_rows_excluded_from_owl_view": 0,
+      "full_rdf_input_changed": false,
+      "pass_result": true
+    }
+  ],
+  "owlapi_profile": {
+    "engine": "OWLAPI 3.4.3 / Pellet bundled with Owlready2 0.49",
+    "in_owl2_dl": true,
+    "checked_views": [
+      "schema-only",
+      "with-run"
+    ],
+    "consistent": true,
+    "unsatisfiable_named_classes": 0,
+    "helper_sha256": "dd43e323ae9c58506aa50738f6e516a9e3e342e65b0f0659b81e2aa364dd6e43",
+    "raw_rdf_export_dl_conformance_claimed": false
+  },
+  "standalone_admission": {
+    "copied_runtime_files": [
+      "profile.py",
+      "profile.ttl",
+      "shapes.ttl",
+      "query.rq"
+    ],
+    "stages": {
+      "with-run": "ADMITTED",
+      "missing-record-key": "SHACL_REJECTED"
+    },
+    "historical_source_or_repository_files_copied": false,
+    "database_or_java_required_for_admission": false,
+    "pass_result": true
+  },
+  "profile_roundtrip_formats": 4,
+  "fixture_roundtrips": 96,
+  "copied_database_executed": false,
+  "old_m1_modified": false,
+  "full_native_validation_claimed": false,
+  "ga_ready": false,
+  "boundary": "Isolated six-term profile on pre-frozen synthetic witnesses; local admission is not universal OWL cardinality or complete source/identifier semantics. Copied-W6 integration remains a separate packet."
+}

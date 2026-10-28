@@ -86,6 +86,19 @@ Only then proceed to new GA bundle/replay and reviewed publication. Full native
 20-family, remaining source-policy/module/ORSD/expert work remains separately
 tracked; no new scientific acceptance is inferred here.
 
+## Verified checkpoint
+
+Implementation `42708dc83599a84d161631ccf6d4960189a54581` passed the direct push
+[run 40734338360](https://github.com/ArazSaieArasi3/CM-PharmE/actions/runs/40734338360).
+[hosted-execution.json](hosted-execution.json) identifies the actual tested commit;
+[hosted-results.json](hosted-results.json) and [local-results.json](local-results.json)
+agree on the sixteen normalized fields in
+[local-hosted-comparison.json](local-hosted-comparison.json). The primary ZIP
+digest matches GitHub's artifact digest. [ci-evidence.json](ci-evidence.json) keeps
+the exact run/job/artifact identifiers and distinguishes the PR merge tree.
+#331's bounded exit is complete; [#332](https://github.com/ArazSaieArasi3/CM-PharmE/issues/332)
+is the next separate copied-W6 integration packet.
+
 Original project ontology, shapes, fixtures and documentation in this new profile
 are offered under CC BY 4.0; original Python code is MIT under approved D-03.
 See [NOTICE.md](NOTICE.md). No external runtime/data or historical RC is relicensed.
