@@ -1,0 +1,36 @@
+{
+  "status": "PASS_AUTHOR_RECORD_AND_BOUNDED_CORE_AUDIT",
+  "source_commit": "c9792b25f7a837b3a34d2a868243e5f5e4dc1198",
+  "checks": [
+    "actual approval references exactly the three presented decisions",
+    "all three accepted decisions have explicit dispositions",
+    "RelComp both concrete judgments recorded",
+    "exact reviewed card unchanged",
+    "bounded acceptance does not alter technical evidence or global constraints",
+    "current author source-policy count is 1 of 4",
+    "all 83 historical ORSD review states remain pending",
+    "all 29 inventoried source file bytes verified",
+    "license classification accounts for every inventoried source asset",
+    "source and fixture boundaries are not blanket relicensed",
+    "every precise license-map path exists",
+    "inventory findings and exact scope reconcile",
+    "inventory does not invent implementation or runtime evidence",
+    "accepted strategy leads to scoped implementation, not automatic GA",
+    "published RC tag remains unchanged",
+    "new documentation links resolve"
+  ],
+  "checks_passed": 16,
+  "source_files_verified": 29,
+  "accepted_decisions": [
+    "D-01",
+    "SC-REL",
+    "D-03"
+  ],
+  "source_profile_acceptances": "1/4",
+  "historical_orsd_acceptances": "0/83",
+  "core_blocking_findings": 2,
+  "next_ready_issue": 331,
+  "new_database_reasoner_or_shacl_run": false,
+  "published_rc_unchanged": true,
+  "ga_ready": false
+}

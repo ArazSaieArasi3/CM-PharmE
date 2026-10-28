@@ -170,3 +170,13 @@ The first substantive follow-up is the existing RelComp scientific card, now
 tracked in #329. #330 prepares one exact core/dependency/compatibility manifest.
 The published RC and every original scientific acceptance state remain unchanged.
 Planning task #328 closes only its completed organization/decision-packet scope.
+
+## Approved incremental continuation
+
+Araz explicitly accepted D-01/SC-REL/D-03 and delegated sequencing. The
+[current approved plan](../../roadmap/0.2.0/README.md) replaces the pending-strategy
+state above for current work. RelComp's bounded scientific disposition is now
+recorded before release (#329); the exact core inventory (#330) is complete.
+Next #331 isolates and checks the six-term M1 profile before stable 2.1.0.
+Original full-candidate scientific work remains open for its own scope; no new
+GA tag, whole-candidate merge or experimental result rewrite is implied.

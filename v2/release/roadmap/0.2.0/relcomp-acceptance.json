@@ -1,0 +1,41 @@
+{
+  "schema_version": "CMPE-RelComp-AuthorDisposition/0.1.0",
+  "date": "2026-10-28",
+  "timezone": "Asia/Tehran",
+  "reviewer": "Araz Saie Arasi",
+  "status": "ACCEPTED_BOUNDED_PROFILE",
+  "profile": "CMPE-RelComp-PositiveLowerBound/1.0.0",
+  "decisions": [
+    {
+      "id": "RC-A01",
+      "disposition": "ACCEPT",
+      "scope": "Explicit lower > 0 and upper > 1 at the selected shared ATarget in declared supported frames; optional 0..* example/archive disagreement remains explicit"
+    },
+    {
+      "id": "RC-A02",
+      "disposition": "ACCEPT",
+      "scope": "Explicit shared-end-to-ATarget normalization; preserve native end IDs/order and existing supported-frame/refusal boundaries; occurrence/refactoring orientation remains outside this acceptance"
+    }
+  ],
+  "rationale": "Araz explicitly adopted the presented recommendation and its tradeoffs to preserve evidence and accelerate a bounded incremental release. The source/profile/engine/example distinctions are retained rather than silently reconciled.",
+  "rationale_origin": "Adoption of the immediately preceding concrete recommendation; not a newly invented independent source review",
+  "evidence_card": "v2/release/2.1/ga/0.1.0/relcomp-review.json",
+  "evidence_card_sha256": "d483d01ce813d9c4ff8444d38222087e159e69c1e0f9835945034df392c3962f",
+  "approval_receipt": "author-receipt.json",
+  "recorded_before_ga": true,
+  "closed_packet_issue": 329,
+  "parent_issue_remains_open": 315,
+  "profile_changed": false,
+  "old_oracles_changed": false,
+  "archived_engine_changed": false,
+  "old_runtime_reports_changed": false,
+  "fresh_source_table_review_claimed": false,
+  "full_candidate_executed": false,
+  "external_expert_acceptance": false,
+  "global_minimum_cardinality_imposed": false,
+  "remaining_source_policies": [
+    "WholeOver",
+    "RelRig",
+    "HomoFunc"
+  ]
+}

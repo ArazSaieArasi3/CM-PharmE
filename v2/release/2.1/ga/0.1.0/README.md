@@ -94,3 +94,20 @@ explicit scope decision; it does not change this audit's seven original groups
 or historical evidence. The first RelComp disposition remains #329, followed by
 the exact supported-core inventory #330. Do not infer new scientific approval
 from approval of the planning direction.
+
+## Subsequent actual author decisions — 2026-10-28
+
+Araz subsequently explicitly accepted D-01, SC-REL and D-03 and delegated
+sequencing. The [current approved plan](../../../roadmap/0.2.0/README.md) and
+[actual RelComp acceptance](../../../roadmap/0.2.0/relcomp-acceptance.json) supersede
+the pending-strategy/pending-RelComp state for current work. This original audit
+and its JSON remain a historical checkpoint, not a current acceptance counter.
+One of four bounded source profiles is now author-accepted; the other three,
+full modern candidate and all historical ORSD semantic-review rows remain open.
+
+D-01 authorizes a separately supported stable cut rather than requiring every
+full-candidate group to finish before any GA. The [completed core inventory](../../core/0.1.0/README.md)
+identifies its exact inputs and two targeted implementation blockers for #331.
+All applicable retained semantic/compatibility/validation/release checks still
+must pass. The published RC, original runtime results and original issues remain
+unchanged in their historical scientific scope.

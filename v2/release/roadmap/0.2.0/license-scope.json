@@ -1,0 +1,31 @@
+{
+  "schema_version": "CMPE-LicenseScope/0.1.0",
+  "date": "2026-10-28",
+  "policy_decision": "D-03",
+  "authority": "Araz explicitly approved the proposed policy for project-owned assets in the current chat",
+  "owned_ontology_and_documentation": "CC-BY-4.0",
+  "owned_original_software": "MIT",
+  "precise_existing_assets": "license-map.csv (only rows expressly marked CC-BY-4.0 or MIT receive this prospective grant)",
+  "new_original_narrative_and_record_paths": [
+    "v2/release/roadmap/0.2.0/",
+    "v2/release/2.1/core/0.1.0/README.md",
+    "v2/release/2.1/core/0.1.0/requirements.csv",
+    "AGENTS.md"
+  ],
+  "new_original_code_paths": [
+    "v2/release/2.1/core/0.1.0/inventory.py"
+  ],
+  "audit_facts_and_iri_lists": "License covers original record arrangement/explanations where protectable; upstream referenced objects keep their own terms",
+  "exceptions": [
+    "Vendored OntoUML schema and notice",
+    "External Python/npm/Java dependencies",
+    "External source data and document/image/PDF content",
+    "Previously published RC and historical release payloads",
+    "Original attributions and source restrictions"
+  ],
+  "cc_by_notice": "The project-owned ontology/documentation expressly listed in this scope is offered under Creative Commons Attribution 4.0 International, https://creativecommons.org/licenses/by/4.0/. Preserve attribution, the license reference and changes where applicable.",
+  "mit_text": "licenses/MIT.txt",
+  "blanket_repository_relicense": false,
+  "published_payloads_modified": false,
+  "unknown_rights_handling": "If a concrete conflicting third-party or contributor notice is discovered, preserve/exclude that asset and surface the actual conflict; do not infer a grant over it"
+}
