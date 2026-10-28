@@ -1,0 +1,52 @@
+{
+  "schema_version": "CMPE-IncrementalReleasePlan/0.3.0",
+  "date": "2026-10-28",
+  "timezone": "Asia/Tehran",
+  "approved_strategy_record": "../0.2.0/release-plan.json",
+  "accepted_decisions": [
+    "D-01",
+    "SC-REL",
+    "D-03"
+  ],
+  "primary_target": "2.1.0",
+  "published_checkpoint": "2.1.0-rc.1",
+  "status": "M1_PROFILE_IMPLEMENTED_AWAITING_HOSTED_CHECK",
+  "ga_ready": false,
+  "current_packet_issue": 331,
+  "implementation_complete_locally": true,
+  "hosted_check_verified": false,
+  "next_ready_issue": 331,
+  "next_after_hosted_issue": 332,
+  "profile_path": "v2/ontology/profiles/2.1/m1-provenance/0.1.0",
+  "profile_manifest_sha256": "2528b79a3ce8a6c43d2c41b07ff70f519bb0590a2c3a1220f4c13362e5bbbed4",
+  "profile_artifact_hashes": {
+    "profile.ttl": "a8dca6788eff03570b4911b8b7f0933a5420fcde9945272543da86934539ce9b",
+    "shapes.ttl": "fb95d6bb104feb700c910c523ff582900374685d64f6a93686038dfe4cf6e26a",
+    "query.rq": "934344b928511424e95486231f7d6ffb2f68e25cd18fbaba07bf3c0fa645933c"
+  },
+  "local_evidence": "v2/ontology/profiles/2.1/m1-provenance/0.1.0/local-results.json",
+  "local_results": {
+    "admission_oracles": 24,
+    "accepted_synthetic": 8,
+    "expected_refusals": 16,
+    "hermit_oracles": 5,
+    "owlapi_views": 2,
+    "guard_controls": 2,
+    "roundtrip_formats": 4,
+    "standalone_runtime_verified": true
+  },
+  "scientific_state": {
+    "source_policy_acceptances": "1/4",
+    "historical_orsd_acceptances": "0/83",
+    "external_expert_results_created": 0
+  },
+  "remaining_before_ga": [
+    "Hosted exact-commit verification of #331",
+    "Isolated copied-W6 integration #332",
+    "Minimum final support manifest/docs/notices and deterministic new GA bundle/cold replay",
+    "Exact tested release review, publication and downloaded-byte receipt"
+  ],
+  "full_modern_model_or_expert_acceptance_inferred": false,
+  "default_w6_or_old_m1_changed": false,
+  "published_rc_changed": false
+}
