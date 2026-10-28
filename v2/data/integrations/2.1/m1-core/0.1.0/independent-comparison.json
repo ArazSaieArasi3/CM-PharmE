@@ -1,0 +1,51 @@
+{
+  "passed": true,
+  "primary_run": 40746588214,
+  "independent_run": 40746596897,
+  "primary_tested_commit": "51185d591c9d681d943388d32e86f6d60b77042f",
+  "independent_tested_commit": "376612671f3c4b710e75875810a710a8f485beea",
+  "normalized_fields_equal": [
+    "freeze_commit",
+    "contract_sha256",
+    "oracle_sha256",
+    "source_commit",
+    "profile",
+    "profile_manifest_sha256",
+    "python_versions",
+    "database_target",
+    "selected_mapping_ids",
+    "mapping_dispositions",
+    "cases",
+    "export_mutation_refusals",
+    "target_guards",
+    "read_only_write_probe",
+    "export_connections_default_read_only",
+    "optional_fixture_update_count",
+    "optional_fixture_update_rolled_back",
+    "base_rows_schema_defaults_indexes_views_unchanged",
+    "copied_database_executed",
+    "synthetic_fixture",
+    "full_external_dataset_ingestion",
+    "full_native_validation_claimed",
+    "old_m1_or_w6_sources_modified",
+    "ga_ready"
+  ],
+  "within_each_run_base_schema_catalog_and_legacy_equal": true,
+  "different_fresh_seed_snapshot_observed": true,
+  "volatile_bootstrap_timestamps_excluded_from_cross_run_equality": true,
+  "cross_run_catalog_sha_equal": true,
+  "cross_run_legacy_kg_sha_equal": true,
+  "artifact_downloads": [
+    {
+      "run_id": 40746588214,
+      "sha256": "a795085e58e274b941723118049a794521a9b5d30ed8c44718df694b1992f985",
+      "bytes": 37084
+    },
+    {
+      "run_id": 40746596897,
+      "sha256": "c6356dfab5fbebd09635694c08f6dc0e395fce2bbd8dc3929b566a245eabbc9e",
+      "bytes": 37057
+    }
+  ],
+  "ga_ready": false
+}

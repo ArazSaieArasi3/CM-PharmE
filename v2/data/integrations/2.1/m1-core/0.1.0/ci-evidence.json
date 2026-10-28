@@ -1,0 +1,332 @@
+{
+  "schema_version": "CMPE-M1CopiedIntegrationCIEvidence/0.1.0",
+  "issue": 332,
+  "date": "2026-10-28",
+  "timezone": "Asia/Tehran",
+  "frozen_contract_commit": "44803b489a44b484fa603e6fb4e4c92d50d82641",
+  "implementation_commit": "51185d591c9d681d943388d32e86f6d60b77042f",
+  "implementation_tree_sha": "2ccf43d19e22e6546b390aeb5bc1ccfc025c7566",
+  "primary": {
+    "run_id": 40746588214,
+    "run_url": "https://github.com/ArazSaieArasi3/CM-PharmE/actions/runs/40746588214",
+    "job_id": 123021879488,
+    "job_url": "https://github.com/ArazSaieArasi3/CM-PharmE/actions/runs/40746588214/job/123021879488",
+    "event": "push",
+    "api_head_sha": "51185d591c9d681d943388d32e86f6d60b77042f",
+    "actual_tested_commit": "51185d591c9d681d943388d32e86f6d60b77042f",
+    "git_tree_sha": "2ccf43d19e22e6546b390aeb5bc1ccfc025c7566",
+    "status": "completed",
+    "conclusion": "success",
+    "artifact": {
+      "id": 12841502299,
+      "name": "cm-pharme-v2-21-m1-copied-integration",
+      "bytes": 37084,
+      "zip_sha256": "a795085e58e274b941723118049a794521a9b5d30ed8c44718df694b1992f985",
+      "expires_at": "2026-11-27T18:36:17Z",
+      "downloaded_zip_digest_verified": true
+    }
+  },
+  "independent": {
+    "run_id": 40746596897,
+    "run_url": "https://github.com/ArazSaieArasi3/CM-PharmE/actions/runs/40746596897",
+    "job_id": 123021914635,
+    "job_url": "https://github.com/ArazSaieArasi3/CM-PharmE/actions/runs/40746596897/job/123021914635",
+    "event": "pull_request",
+    "api_head_sha": "51185d591c9d681d943388d32e86f6d60b77042f",
+    "actual_tested_commit": "376612671f3c4b710e75875810a710a8f485beea",
+    "git_tree_sha": "2ccf43d19e22e6546b390aeb5bc1ccfc025c7566",
+    "status": "completed",
+    "conclusion": "success",
+    "artifact": {
+      "id": 12841239371,
+      "name": "cm-pharme-v2-21-m1-copied-integration",
+      "bytes": 37057,
+      "zip_sha256": "c6356dfab5fbebd09635694c08f6dc0e395fce2bbd8dc3929b566a245eabbc9e",
+      "expires_at": "2026-11-27T18:36:19Z",
+      "downloaded_zip_digest_verified": true
+    }
+  },
+  "independent_merge_tree_proof": {
+    "api_url": "https://api.github.com/repos/ArazSaieArasi3/CM-PharmE/git/commits/376612671f3c4b710e75875810a710a8f485beea",
+    "merge_commit": "376612671f3c4b710e75875810a710a8f485beea",
+    "tree_sha": "2ccf43d19e22e6546b390aeb5bc1ccfc025c7566",
+    "parents": [
+      "1226b0a5484f8f5d3a8d214e0d0f52f066b88999",
+      "51185d591c9d681d943388d32e86f6d60b77042f"
+    ],
+    "matches_implementation_tree": true
+  },
+  "reports": {
+    "primary": "hosted-results.json",
+    "primary_execution": "hosted-execution.json",
+    "independent": "independent-results.json",
+    "independent_execution": "independent-execution.json",
+    "comparison": "independent-comparison.json"
+  },
+  "normalized_fields_equal": 24,
+  "separately_bootstrapped_databases": 2,
+  "within_each_run_base_rows_schema_catalog_defaults_indexes_views_legacy_equal": true,
+  "cross_run_fresh_seed_snapshots_identical": false,
+  "cross_run_exception": "Bootstrap timestamps differ. Complete before/after preservation is checked within each run; only the declared 24 normalized fields plus catalog and legacy hashes are compared across runs.",
+  "export_connections_read_only": true,
+  "separate_optional_fixture_update_rolled_back": true,
+  "all_head_referenced_workflow_families_passed": 27,
+  "head_referenced_workflow_families_total": 27,
+  "workflow_families": [
+    {
+      "name": "CM-PharmE 2.0 Formal Ontology CI",
+      "run_id": 40746598296,
+      "event": "pull_request",
+      "head_sha": "51185d591c9d681d943388d32e86f6d60b77042f",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/ArazSaieArasi3/CM-PharmE/actions/runs/40746598296"
+    },
+    {
+      "name": "CM-PharmE 2.0 W6 Data/KG CI",
+      "run_id": 40746610538,
+      "event": "pull_request",
+      "head_sha": "51185d591c9d681d943388d32e86f6d60b77042f",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/ArazSaieArasi3/CM-PharmE/actions/runs/40746610538"
+    },
+    {
+      "name": "CM-PharmE 2.0 W7-E1 Structural Quality",
+      "run_id": 40746597060,
+      "event": "pull_request",
+      "head_sha": "51185d591c9d681d943388d32e86f6d60b77042f",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/ArazSaieArasi3/CM-PharmE/actions/runs/40746597060"
+    },
+    {
+      "name": "CM-PharmE 2.0 W7-E10 Representation Consistency",
+      "run_id": 40746599098,
+      "event": "pull_request",
+      "head_sha": "51185d591c9d681d943388d32e86f6d60b77042f",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/ArazSaieArasi3/CM-PharmE/actions/runs/40746599098"
+    },
+    {
+      "name": "CM-PharmE 2.0 W7-E11 Analytics and AI Evaluation",
+      "run_id": 40746597015,
+      "event": "pull_request",
+      "head_sha": "51185d591c9d681d943388d32e86f6d60b77042f",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/ArazSaieArasi3/CM-PharmE/actions/runs/40746597015"
+    },
+    {
+      "name": "CM-PharmE 2.0 W7-E2 Logical Evaluation",
+      "run_id": 40746598375,
+      "event": "pull_request",
+      "head_sha": "51185d591c9d681d943388d32e86f6d60b77042f",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/ArazSaieArasi3/CM-PharmE/actions/runs/40746598375"
+    },
+    {
+      "name": "CM-PharmE 2.0 W7-E3 OntoUML Pattern Evaluation",
+      "run_id": 40746597140,
+      "event": "pull_request",
+      "head_sha": "51185d591c9d681d943388d32e86f6d60b77042f",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/ArazSaieArasi3/CM-PharmE/actions/runs/40746597140"
+    },
+    {
+      "name": "CM-PharmE 2.0 W7-E4 Competency Questions",
+      "run_id": 40746599161,
+      "event": "pull_request",
+      "head_sha": "51185d591c9d681d943388d32e86f6d60b77042f",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/ArazSaieArasi3/CM-PharmE/actions/runs/40746599161"
+    },
+    {
+      "name": "CM-PharmE 2.0 W7-E5 SHACL Data Conformance",
+      "run_id": 40746597539,
+      "event": "pull_request",
+      "head_sha": "51185d591c9d681d943388d32e86f6d60b77042f",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/ArazSaieArasi3/CM-PharmE/actions/runs/40746597539"
+    },
+    {
+      "name": "CM-PharmE 2.0 W7-E6 Mapping Quality",
+      "run_id": 40746597616,
+      "event": "pull_request",
+      "head_sha": "51185d591c9d681d943388d32e86f6d60b77042f",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/ArazSaieArasi3/CM-PharmE/actions/runs/40746597616"
+    },
+    {
+      "name": "CM-PharmE 2.0 W7-E7 Concept Relation Coverage",
+      "run_id": 40746597519,
+      "event": "pull_request",
+      "head_sha": "51185d591c9d681d943388d32e86f6d60b77042f",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/ArazSaieArasi3/CM-PharmE/actions/runs/40746597519"
+    },
+    {
+      "name": "CM-PharmE 2.0 W7-E8 Held-out Generalizability",
+      "run_id": 40746599587,
+      "event": "pull_request",
+      "head_sha": "51185d591c9d681d943388d32e86f6d60b77042f",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/ArazSaieArasi3/CM-PharmE/actions/runs/40746599587"
+    },
+    {
+      "name": "CM-PharmE 2.1 ContextClass Projection",
+      "run_id": 40746600172,
+      "event": "pull_request",
+      "head_sha": "51185d591c9d681d943388d32e86f6d60b77042f",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/ArazSaieArasi3/CM-PharmE/actions/runs/40746600172"
+    },
+    {
+      "name": "CM-PharmE 2.1 EvidenceRecord Projection",
+      "run_id": 40746606200,
+      "event": "pull_request",
+      "head_sha": "51185d591c9d681d943388d32e86f6d60b77042f",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/ArazSaieArasi3/CM-PharmE/actions/runs/40746606200"
+    },
+    {
+      "name": "CM-PharmE 2.1 HomoFunc Source Policy",
+      "run_id": 40746597916,
+      "event": "pull_request",
+      "head_sha": "51185d591c9d681d943388d32e86f6d60b77042f",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/ArazSaieArasi3/CM-PharmE/actions/runs/40746597916"
+    },
+    {
+      "name": "CM-PharmE 2.1 M1 Copied-W6 Integration",
+      "run_id": 40746596897,
+      "event": "pull_request",
+      "head_sha": "51185d591c9d681d943388d32e86f6d60b77042f",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/ArazSaieArasi3/CM-PharmE/actions/runs/40746596897"
+    },
+    {
+      "name": "CM-PharmE 2.1 M1 Isolated Core",
+      "run_id": 40746596963,
+      "event": "pull_request",
+      "head_sha": "51185d591c9d681d943388d32e86f6d60b77042f",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/ArazSaieArasi3/CM-PharmE/actions/runs/40746596963"
+    },
+    {
+      "name": "CM-PharmE 2.1 RC Bundle Clean Replay",
+      "run_id": 40746596875,
+      "event": "pull_request",
+      "head_sha": "51185d591c9d681d943388d32e86f6d60b77042f",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/ArazSaieArasi3/CM-PharmE/actions/runs/40746596875"
+    },
+    {
+      "name": "CM-PharmE 2.1 RC Scope Freeze",
+      "run_id": 40746596889,
+      "event": "pull_request",
+      "head_sha": "51185d591c9d681d943388d32e86f6d60b77042f",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/ArazSaieArasi3/CM-PharmE/actions/runs/40746596889"
+    },
+    {
+      "name": "CM-PharmE 2.1 RDB-M1 Bounded Provenance",
+      "run_id": 40746597223,
+      "event": "pull_request",
+      "head_sha": "51185d591c9d681d943388d32e86f6d60b77042f",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/ArazSaieArasi3/CM-PharmE/actions/runs/40746597223"
+    },
+    {
+      "name": "CM-PharmE 2.1 RDB-M2 Facility Operation",
+      "run_id": 40746597817,
+      "event": "pull_request",
+      "head_sha": "51185d591c9d681d943388d32e86f6d60b77042f",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/ArazSaieArasi3/CM-PharmE/actions/runs/40746597817"
+    },
+    {
+      "name": "CM-PharmE 2.1 RDB-M3 Manufacturer Context",
+      "run_id": 40746597513,
+      "event": "pull_request",
+      "head_sha": "51185d591c9d681d943388d32e86f6d60b77042f",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/ArazSaieArasi3/CM-PharmE/actions/runs/40746597513"
+    },
+    {
+      "name": "CM-PharmE 2.1 RDB-M4 Supply Capacity",
+      "run_id": 40746599548,
+      "event": "pull_request",
+      "head_sha": "51185d591c9d681d943388d32e86f6d60b77042f",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/ArazSaieArasi3/CM-PharmE/actions/runs/40746599548"
+    },
+    {
+      "name": "CM-PharmE 2.1 RelComp Source Policy",
+      "run_id": 40746597240,
+      "event": "pull_request",
+      "head_sha": "51185d591c9d681d943388d32e86f6d60b77042f",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/ArazSaieArasi3/CM-PharmE/actions/runs/40746597240"
+    },
+    {
+      "name": "CM-PharmE 2.1 RelRig Source Policy",
+      "run_id": 40746613544,
+      "event": "pull_request",
+      "head_sha": "51185d591c9d681d943388d32e86f6d60b77042f",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/ArazSaieArasi3/CM-PharmE/actions/runs/40746613544"
+    },
+    {
+      "name": "CM-PharmE 2.1 WholeOver Source Policy",
+      "run_id": 40746597900,
+      "event": "pull_request",
+      "head_sha": "51185d591c9d681d943388d32e86f6d60b77042f",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/ArazSaieArasi3/CM-PharmE/actions/runs/40746597900"
+    },
+    {
+      "name": "V2 W8 Bounded Analytics Dashboard",
+      "run_id": 40746597150,
+      "event": "pull_request",
+      "head_sha": "51185d591c9d681d943388d32e86f6d60b77042f",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/ArazSaieArasi3/CM-PharmE/actions/runs/40746597150"
+    }
+  ],
+  "no_local_database_execution_claimed": true,
+  "synthetic_fixture_only": true,
+  "full_model_or_scientific_or_expert_acceptance_inferred": false,
+  "published_rc_modified": false,
+  "ga_ready": false,
+  "evidence_files_sha256": {
+    "hosted-results.json": "864622f2f04123311fd240beaee4ea0392227883c098d9b8b1bb1dd19bd88aef",
+    "hosted-execution.json": "7020e4066dc026a96c41d369ae06301ae69e7bb69e0c3e5f36377f5f2ba2a166",
+    "independent-results.json": "2a61ce4eb9261003b45ec398baa9c5f0fbfc3529df3800ca2beb9b5873906155",
+    "independent-execution.json": "38eb63a1b6fd53ce954bd90bc2ae4010b8e1a62635271fe072c36194ab2a5366",
+    "independent-comparison.json": "6ac39c59805bd55865d8578a928de3865bd21f5cb2565155d5812d81c52582fa"
+  }
+}

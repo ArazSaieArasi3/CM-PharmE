@@ -65,7 +65,30 @@ GA bundle. Published RC, W5/W6, old M1, full modern native and scientific/ORSD/
 expert records remain unchanged. Fixture integration is not broad scientific,
 full-source, full 36-mapping, full OntoUML or GA acceptance.
 
-## Rights
+## Exact verified checkpoint
+
+Implementation `51185d591c9d681d943388d32e86f6d60b77042f` passed the direct push
+[run 40746588214](https://github.com/ArazSaieArasi3/CM-PharmE/actions/runs/40746588214).
+The independent PR [run 40746596897](https://github.com/ArazSaieArasi3/CM-PharmE/actions/runs/40746596897)
+used actual merge commit `376612671f3c4b710e75875810a710a8f485beea`, whose tree is
+identical to the implementation tree. Each run bootstrapped its own fixture DB.
+The downloaded ZIP size/digest matches GitHub's artifact metadata in both cases;
+all 24 declared normalized fields agree. Fresh seed timestamps differ across DBs,
+while complete before/after preservation passes within each run. All 27
+head-referenced workflow families pass within their own pinned scope.
+
+See [CI identity and artifact receipts](ci-evidence.json),
+[primary report](hosted-results.json), [independent report](independent-results.json)
+and [explicit cross-run comparison](independent-comparison.json). Both baseline
+and optional-run cases return the seven frozen tuples and pass actual admission;
+both preserve all legacy SQL/SPARQL pairs, 24 tables and 22 default IRIs. This is
+hosted copied-fixture verification, not a claim of local database execution.
+
+The next bounded task is [#333](https://github.com/ArazSaieArasi3/CM-PharmE/issues/333),
+the minimum supported file/claim/rights manifest and release-specific docs.
+Archive construction/cold replay and stable publication remain separate tasks.
+
+## Rights and upstream scope
 
 Original verification code and workflow are MIT under approved D-03; original
 contracts, evidence arrangement and documentation are CC BY 4.0. See
