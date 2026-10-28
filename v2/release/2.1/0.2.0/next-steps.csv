@@ -1,0 +1,4 @@
+id,task,status,execution_size,completion
+RC-01,Freeze experimental contents and claim envelope,NEXT,One bounded preparation package,Exact artifact/version/claim/limit manifest
+RC-02,Build and replay versioned release bundle,WAIT_RC01,One bounded packaging and verification package,Archive/checksums/provenance and clean replay
+RC-03,Prepare exact tag/release payload and publish prerelease,WAIT_RC02_AND_PUBLICATION_ROUTE,One bounded publication package,Verified prerelease URL/status; payload alone is not publication

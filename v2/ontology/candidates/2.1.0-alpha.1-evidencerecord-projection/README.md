@@ -34,7 +34,7 @@ the new model matches the original historical oracle on **88/89**, and the
 explicitly versioned prospective contract on **89/89**, with exactly one declared
 transition. This is a semantic migration, not a silently updated historical test.
 [local-results.json](local-results.json) retains every original/prospective outcome.
-Hosted evidence is recorded after execution.
+[Hosted run 40680825577](https://github.com/ArazSaieArasi3/CM-PharmE/actions/runs/40680825577) passes at implementation `eecd94bdf1da9bdcbf4621b2367b81e833cd54ee`, with **23/23 distinct workflows successful**. [hosted-results.json](hosted-results.json) and [ci-evidence.json](ci-evidence.json) preserve exact evidence and original job/artifact provenance. Local/hosted native, new and ContextClass SHACL, all original/prospective regression rows, transition, temporal and HermiT results agree exactly. Candidate SHA-256 `d97d7a7f42e3fc903181d6d4ed0a2bd4e159afe4a1a3bb685e3c821a93791a91`. Artifact ID `12812327704`, digest `sha256:e3854632dcf2af12060d39da51c6630c51e67406ee0d251f354dc67f215091e1`. Other workflows retain their own historical scopes.
 
 [ontouml.json](ontouml.json) preserves all 536 identities, modern nature, roles
 and specialization references. Relative to #322, unknown readOnly/cardinality
