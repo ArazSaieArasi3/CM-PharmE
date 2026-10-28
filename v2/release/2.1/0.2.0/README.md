@@ -138,3 +138,21 @@ source-policy scientific dispositions, bounded native-fidelity corrections then
 full-candidate validation, ORSD/empirical and independent human/expert review.
 Those need evidence-based closure, not an invented task/date guarantee. All
 original issues remain; #306/#310/#315 stay open and PR #305 remains draft.
+
+## Current GA continuation audit — 2026-10-28 Asia/Tehran
+
+[Readiness inventory and bounded RelComp scientific card](../ga/0.1.0/README.md)
+complete #327 only as an audit/review packet. Seven operational groups reconcile
+the original GA criteria and all 29 pre-audit open issues. Full-candidate input
+fidelity/execution, four source-policy scientific decisions, ORSD content/contracts,
+four domain modules, real source/mapping, version-aligned human/expert/task evidence,
+and final research/docs/GA assembly remain pending. No fixed execution count is
+claimed and no old gate is waived or accepted.
+
+The next author-facing package is one RelComp disposition. One native association
+audit, one ORSD FR-04 contract and E9/HORP target-version alignment are independent
+small work packages. Current review artifacts target the older 87-concept baseline;
+current native has 138 non-datatype classes plus six datatypes. Existing E9 response
+collection and actual review findings cannot be inferred from ready templates.
+Published RC, candidate bytes, source-policy oracles and all scientific acceptance
+states remain unchanged. No model runtime is rerun for this documentation audit.
