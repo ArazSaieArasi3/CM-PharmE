@@ -1,0 +1,50 @@
+name: CM-PharmE 2.1 RC Scope Freeze
+on:
+  pull_request:
+    branches: [v2/research-program]
+    paths:
+      - 'v2/release/2.1/rc.1/scope/**'
+      - '.github/workflows/v2-21-rc-scope.yml'
+  push:
+    branches: ['v2/**']
+    paths:
+      - 'v2/release/2.1/rc.1/scope/**'
+      - '.github/workflows/v2-21-rc-scope.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  frozen-source-and-claims:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-python@v7.0.0
+        with:
+          python-version: '3.12'
+      - name: Checkout the exact payload snapshot separately
+        uses: actions/checkout@v7.0.1
+        with:
+          ref: 64edf150db8a78579928fd99b5a381f665c1afdf
+          path: build/rc01-payload-source
+          persist-credentials: false
+      - name: Verify inclusion, evidence, claims and refusal controls
+        run: >-
+          python v2/release/2.1/rc.1/scope/verify_scope.py
+          --source-root build/rc01-payload-source
+      - name: Expose exact scope evidence
+        if: always()
+        run: |
+          if test -f build/rc01-scope/report.json; then
+            cat build/rc01-scope/report.json
+          fi
+      - name: Upload scope evidence
+        if: always()
+        uses: actions/upload-artifact@v7.0.1
+        with:
+          name: cm-pharme-v2-21-rc01-scope-evidence
+          path: build/rc01-scope/
+          if-no-files-found: warn
+          retention-days: 30
