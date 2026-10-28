@@ -37,7 +37,7 @@ serialization pass; 78 parser-defaulted unknown Booleans are restored to source
 nulls. [local-results.json](local-results.json) retains exact evidence. The
 historical full-C experiment's 88/89 observation is preserved; this scoped
 migration does not include the evidenceRecord rule that changed that contract.
-Hosted results are recorded after execution.
+[Hosted run 40667790426](https://github.com/ArazSaieArasi3/CM-PharmE/actions/runs/40667790426) passes at implementation `500c5442c41c1229ed8f0ea2a1624f604054c5bc`, with **22/22 distinct workflows successful**. [hosted-results.json](hosted-results.json) and [ci-evidence.json](ci-evidence.json) retain exact results and job/artifact provenance. Local and hosted native, SHACL, all 89 regression rows, temporal and HermiT evidence agree exactly. Candidate SHA-256 `b34f20c7b406522ec7c49854c60339de750d0dfb8061da76dfb54d89d278fb11`. Artifact ID `12806089917`, digest `sha256:d735e6b8e2d1e583151a62618141149f2f494d2b271dce2136a052d9279f60ab`. Other workflows retain their own historical test scopes and do not certify the entire new native model.
 
 The new candidate has **78 unknown readOnly flags and 62 unknown cardinalities**,
 compared with 82/66 in the pinned P3 source. Eleven untyped Properties and fourteen
