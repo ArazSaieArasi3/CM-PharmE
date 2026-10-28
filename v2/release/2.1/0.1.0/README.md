@@ -1,6 +1,6 @@
 # CM-PharmE 2.1 release decision and gate register — 0.1.0
 
-The [seventeen-row decision register](decision-register.csv) records delegated bounded choices, their evidence, negative conditions, current status and explicit later-review questions. It does not turn research observations into an author's or external expert's review. The target is ontology **2.1**; this directory is release-planning record **0.1.0**, not an ontology version.
+The [eighteen-row decision register](decision-register.csv) records delegated bounded choices, their evidence, negative conditions, current status and explicit later-review questions. It does not turn research observations into an author's or external expert's review. The target is ontology **2.1**; this directory is release-planning record **0.1.0**, not an ontology version.
 
 | Gate | Current evidence | Status for GA 2.1.0 |
 |---|---|---|
@@ -103,3 +103,20 @@ This separate candidate's unknown readOnly/cardinality inventories are **76/60**
 Issue #323 completes only its bounded implementation criteria. #310/#315/#306 remain open and PR #305 stays draft. The next work changes from exhaustive unknown-field cleanup to the [finite experimental publication route, planning record 0.2.0](../0.2.0/README.md), recorded in DEC-21-17. RC-01 freezes exact scope/claims; RC-02 builds and replays the bundle; RC-03 prepares exact tag/assets and confirms prerelease publication through an available write route. These are planned bounded packages, not three guaranteed runs. No release or tag has been created.
 
 The target next publication is explicitly experimental **2.1.0-rc.1**; it is not final **2.1.0 GA**. Full native/source/scientific and original GA gates remain in force. Additional optional module features, full manuscript drafting, deep Wiki redesign and exhaustive unknown cleanup are retained as work rather than silently required before this research checkpoint. Minimum truthful documentation, hashes/provenance and bounded clean replay are mandatory before RC publication.
+
+## Experimental RC-01 contents/claims freeze — 2026-10-28 Asia/Tehran
+
+[CMPE-RC-Scope/0.1.0](../rc.1/scope/README.md) and DEC-21-18 complete #324
+only for exact contents, provenance and claim boundaries. Payload source remains
+64edf150db8a78579928fd99b5a381f665c1afdf: 1,975 files / 27,097,299 bytes,
+13 review groups / 155 selected files. Freeze c3f8f3e precedes implementation
+06c132f; local and hosted reports match, including nine refusal controls.
+Native EvidenceRecord and its 88/89 historical versus 89/89 prospective result
+remain explicitly versioned; current unknown inventories and all scientific
+acceptance limits are preserved.
+
+The [finite RC route](../0.2.0/README.md) now advances to RC-02 archive,
+checksums, current metadata and clean replay, then RC-03 verified publication.
+This new tracking row does not modify the frozen payload's original 17-row
+register. No archive, cold replay, tag, release, GA approval or draft-PR merge is
+claimed; #306/#310/#315 and all other original issues remain open.

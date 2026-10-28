@@ -29,8 +29,8 @@ mandatory. Do not merge draft PR #305 into stable main to manufacture readiness.
 
 | Order | One bounded package | Acceptance before moving on |
 |---|---|---|
-| RC-01 | Freeze experimental RC contents and claims | Exact source/artifact list, version boundaries, supported versus pending claims, exclusions and known limits; no scientific/GA approval invented |
-| RC-02 | Build and replay the release bundle | Versioned archive, checksums, provenance, minimal changelog/README, reproducible commands and a clean-checkout bounded replay tied to the exact source |
+| RC-01 — complete | Freeze experimental RC contents and claims | Exact source/artifact list, version boundaries, supported versus pending claims, exclusions and known limits; no scientific/GA approval invented |
+| RC-02 — next | Build and replay the release bundle | Versioned archive, checksums, provenance, minimal changelog/README, reproducible commands and a clean-checkout bounded replay tied to the exact source |
 | RC-03 | Prepare tag/release payload and publish prerelease | Tag/asset/source agreement, experimental prerelease flag, explicit pending gates and verified publication URL/status; never claim success from a prepared payload alone |
 
 Each row is intended as one manageable execution, with an explicit end criterion;
@@ -55,3 +55,27 @@ The planned three packages reach an experimental prerelease only when their
 actual criteria pass and publication is confirmed. They do not by themselves make
 GA ready. A final GA release follows verified closure of its own scientific and
 artifact gates, not a preselected issue-count or task-count threshold.
+
+## RC-01 verified checkpoint — 2026-10-28 Asia/Tehran
+
+[The frozen contents and claim contract](../rc.1/scope/README.md) completes #324:
+1,975 source files / 27,097,299 bytes from immutable payload source
+64edf150db8a78579928fd99b5a381f665c1afdf; 13 separately versioned review groups
+with 155 selected files. Remaining tracked files are archival reproducibility
+source, not newly validated RC assets. Freeze c3f8f3e precedes implementation
+06c132f; local and hosted reports are exactly equal and all nine refusal controls
+pass ([run 40684844072](https://github.com/ArazSaieArasi3/CM-PharmE/actions/runs/40684844072)).
+
+**Two RC packages remain; RC-02 is next.** Build the archive from that exact
+payload source, with the separately frozen scope/claim metadata, current RC
+citation, minimal changelog, reproducibility commands and checksums. Preserve
+historical citation and notices; do not invent a blanket license. Distinguish
+generated bundle metadata and tracking changes from the immutable payload source,
+and verify their provenance. The full source snapshot includes its historical
+17-row gate register; the current tracking ledger can acquire later rows without
+silently changing that snapshot.
+
+No archive, cold runtime replay, tag or release has yet been completed. RC-03
+still requires confirmed publication through an available write route or
+maintainer action. Scientific/author, full-model and GA gates remain unchanged;
+PR #305 stays draft. Completing RC-01 closes only its bounded preparation issue.

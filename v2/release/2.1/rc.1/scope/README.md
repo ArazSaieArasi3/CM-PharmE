@@ -45,7 +45,12 @@ Nine controls reject missing/tampered assets, hidden unknowns/transition, unsupp
 full-validation/scientific/native-OWL/GA claims and mislabeled root citation.
 Local verification passed: all 1,975 source files and 13 review groups match;
 all nine negative controls were refused. See [local-results.json](local-results.json).
-Hosted execution evidence is recorded separately after CI.
+Hosted verification also passed and exactly equals the local report: see
+[hosted-results.json](hosted-results.json), [CI/artifact provenance](ci-evidence.json)
+and [run 40684844072](https://github.com/ArazSaieArasi3/CM-PharmE/actions/runs/40684844072).
+Freeze c3f8f3e precedes implementation 06c132f. All 24 distinct implementation
+workflows passed within their individual declared scopes; their pinned runs are
+in ci-evidence.json. RC-01 is complete in this scope.
 
 RC-02 must still build the archive, generate current release metadata/checksums
 and demonstrate a bounded clean replay. RC-03 must still confirm tag/asset/source
