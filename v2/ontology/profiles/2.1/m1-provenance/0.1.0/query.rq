@@ -1,0 +1,12 @@
+
+PREFIX cmpe: <https://w3id.org/cm-pharme/2.1/>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT ?doi ?release_public ?row_number ?source_hash ?run_public WHERE {
+  ?d a cmpe:Dataset ; dct:identifier ?doi ; cmpe:hasDatasetRelease ?release .
+  ?release a cmpe:DatasetRelease ; dct:identifier ?release_public ;
+           cmpe:containsSourceRecord ?sr .
+  ?sr a cmpe:SourceRecord ; rdf:value ?row_number ; prov:value ?source_hash .
+  OPTIONAL { ?sr prov:wasGeneratedBy ?run . ?run dct:identifier ?run_public . }
+} ORDER BY ?doi ?release_public ?row_number ?source_hash ?run_public
