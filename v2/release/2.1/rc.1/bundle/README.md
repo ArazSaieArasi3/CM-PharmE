@@ -43,7 +43,22 @@ python v2/release/2.1/rc.1/bundle/replay_bundle.py \
   --work-root /path/to/new-empty-work --output /path/to/replay-results.json
 ```
 
-Execution evidence is recorded after local and hosted verification. The hosted
+Local and hosted verification passed with **exactly equal complete portable
+build and replay reports**: [build local](build-local-results.json),
+[build hosted](build-hosted-results.json), [replay local](replay-local-results.json),
+[replay hosted](replay-hosted-results.json), [CI/asset provenance](ci-evidence.json).
+All **25 distinct implementation workflows** passed within their individual scopes.
+The archive is **30,945,280 bytes**, SHA-256
+`21f140abb6ccde5eebb9302cd87724ce8616a2f71a046b22bf3c3c5ea01b10ba`;
+[committed sidecar](cm-pharme-2.1.0-rc.1.tar.sha256). A local rebuild using only
+the extracted source/scope/packaging files produced the same archive bytes,
+without Git history or an environment-variable bytecode workaround.
+
+[Download the prepared bundle and evidence](https://github.com/ArazSaieArasi3/CM-PharmE/actions/runs/40690186882/artifacts/12816851256)
+from [run 40690186882](https://github.com/ArazSaieArasi3/CM-PharmE/actions/runs/40690186882)
+at implementation f58a935f5c8455cce7df1338d0d380cb6d7a0a3b. The workflow artifact
+ZIP digest is distinct from the contained tar hash; both are recorded separately.
+This completes RC-02 in its bounded scope; **RC-03 is next**. The hosted
 workflow uploads the archive, sidecar hash, exact reports and logs with 90-day
 retention; committed code and pinned input snapshots support reconstruction after
 artifact expiry. Runtime versions are separate from portable deterministic

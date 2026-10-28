@@ -1,12 +1,16 @@
 {
-  "archive_created": false,
+  "archive_bytes": 30945280,
+  "archive_created": true,
+  "archive_name": "cm-pharme-2.1.0-rc.1.tar",
+  "archive_sha256": "21f140abb6ccde5eebb9302cd87724ce8616a2f71a046b22bf3c3c5ea01b10ba",
   "candidate_implementation_ci_run": 40680825577,
   "candidate_path": "v2/ontology/candidates/2.1.0-alpha.1-evidencerecord-projection/ontouml.json",
   "candidate_sha256": "d97d7a7f42e3fc903181d6d4ed0a2bd4e159afe4a1a3bb685e3c821a93791a91",
-  "clean_replay_completed": false,
+  "clean_replay_completed": true,
   "complete_scientific_acceptance_claimed": false,
   "completed_rc_packages": [
-    "RC-01"
+    "RC-01",
+    "RC-02"
   ],
   "exhaustive_unknown_cleanup_required_for_rc": false,
   "existing_issues_retained": true,
@@ -19,12 +23,15 @@
     "unknown_readonly": 76,
     "untyped_properties": 11
   },
+  "local_hosted_archive_identical": true,
   "new_features_before_rc": false,
   "next_publication_target": "2.1.0-rc.1",
-  "next_rc_package": "RC-02",
+  "next_rc_package": "RC-03",
   "payload_source_bytes": 27097299,
   "payload_source_commit": "64edf150db8a78579928fd99b5a381f665c1afdf",
   "payload_source_files": 1975,
+  "prepared_bundle_workflow_artifact_expires_at": "2027-01-26T12:43:35Z",
+  "prepared_bundle_workflow_artifact_id": 12816851256,
   "publication_kind": "EXPERIMENTAL_PRERELEASE_RESEARCH_CHECKPOINT",
   "publication_write_route_status": "NO_RELEASE_WRITE_TOOL_CURRENTLY_EXPOSED",
   "rc01_ci_run": 40684844072,
@@ -33,12 +40,18 @@
   "rc01_issue": 324,
   "rc01_scope": "../rc.1/scope/README.md",
   "rc01_scope_freeze_commit": "c3f8f3ee4c4dbe3ee43827a9ae18d104bce57ff2",
+  "rc02_bundle": "../rc.1/bundle/README.md",
+  "rc02_ci_run": 40690186882,
+  "rc02_contract_sha256": "af43da6949e0db60438682d9ed362cd9a25dff327756e09663754bca96c36ff1",
+  "rc02_freeze_commit": "56e5138a25866c9b23b3d966549ee9a41c1d4653",
+  "rc02_implementation_commit": "f58a935f5c8455cce7df1338d0d380cb6d7a0a3b",
+  "rc02_issue": 325,
   "record_version": "0.2.0",
   "release_published": false,
   "remaining_rc_packages": [
-    "RC-02",
     "RC-03"
   ],
+  "runtime_replay_scope": "EvidenceRecord bounded checks plus source-policy dossier integration; no database or all-detector rerun",
   "schema_version": 1,
   "tag_created": false,
   "tested_candidate_implementation": "eecd94bdf1da9bdcbf4621b2367b81e833cd54ee"

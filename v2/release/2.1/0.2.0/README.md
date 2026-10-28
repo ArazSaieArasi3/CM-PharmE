@@ -30,8 +30,8 @@ mandatory. Do not merge draft PR #305 into stable main to manufacture readiness.
 | Order | One bounded package | Acceptance before moving on |
 |---|---|---|
 | RC-01 — complete | Freeze experimental RC contents and claims | Exact source/artifact list, version boundaries, supported versus pending claims, exclusions and known limits; no scientific/GA approval invented |
-| RC-02 — next | Build and replay the release bundle | Versioned archive, checksums, provenance, minimal changelog/README, reproducible commands and a clean-checkout bounded replay tied to the exact source |
-| RC-03 | Prepare tag/release payload and publish prerelease | Tag/asset/source agreement, experimental prerelease flag, explicit pending gates and verified publication URL/status; never claim success from a prepared payload alone |
+| RC-02 — complete | Build and replay the release bundle | Versioned archive, checksums, provenance, minimal changelog/README, reproducible commands and a clean-checkout bounded replay tied to the exact source |
+| RC-03 — next | Prepare tag/release payload and publish prerelease | Tag/asset/source agreement, experimental prerelease flag, explicit pending gates and verified publication URL/status; never claim success from a prepared payload alone |
 
 Each row is intended as one manageable execution, with an explicit end criterion;
 new failures or missing external access may require a separately recorded fix.
@@ -66,7 +66,7 @@ source, not newly validated RC assets. Freeze c3f8f3e precedes implementation
 06c132f; local and hosted reports are exactly equal and all nine refusal controls
 pass ([run 40684844072](https://github.com/ArazSaieArasi3/CM-PharmE/actions/runs/40684844072)).
 
-**Two RC packages remain; RC-02 is next.** Build the archive from that exact
+At that RC-01 checkpoint, two packages remained and RC-02 was next. Build the archive from that exact
 payload source, with the separately frozen scope/claim metadata, current RC
 citation, minimal changelog, reproducibility commands and checksums. Preserve
 historical citation and notices; do not invent a blanket license. Distinguish
@@ -75,7 +75,40 @@ and verify their provenance. The full source snapshot includes its historical
 17-row gate register; the current tracking ledger can acquire later rows without
 silently changing that snapshot.
 
-No archive, cold runtime replay, tag or release has yet been completed. RC-03
+At that RC-01 checkpoint no archive, cold runtime replay, tag or release existed. RC-03
 still requires confirmed publication through an available write route or
 maintainer action. Scientific/author, full-model and GA gates remain unchanged;
 PR #305 stays draft. Completing RC-01 closes only its bounded preparation issue.
+
+## RC-02 verified checkpoint — 2026-10-28 Asia/Tehran
+
+[The versioned bundle and exact evidence](../rc.1/bundle/README.md) complete #325.
+Contract/metadata/refusal freeze 56e5138 precedes implementation f58a935; all
+25 distinct implementation workflows passed within their individual scopes.
+[Run 40690186882](https://github.com/ArazSaieArasi3/CM-PharmE/actions/runs/40690186882)
+provides the prepared archive, sidecar, complete portable reports and runtime logs.
+The tar has 2,001 files / 30,945,280 bytes, SHA-256
+`21f140abb6ccde5eebb9302cd87724ce8616a2f71a046b22bf3c3c5ea01b10ba`.
+Repeat builds, local/hosted builds and a local rebuild from extracted files agree
+byte-for-byte. Source 64edf15 and scope a0a9a53 remain immutable.
+
+Fresh isolated Python/npm installation and extracted-source replay reproduced
+the complete pinned EvidenceRecord report, including original-after 88/89 and
+prospective-after 89/89 with one transition. The complete four-policy dossier
+integration report and all source/scope bytes agree too. This is no fresh
+all-policy detector-engine or database execution. External downloads are
+required; installed dependencies and Git history are not in the bundle.
+
+**One RC package remains; RC-03 is next.** Revalidate the actual target commit,
+exact tag/asset/source agreement and RC labels; prepare minimal release text
+from the frozen claims and attach the exact verified tar/hash. Confirm actual
+experimental prerelease publication through a supported write route or a
+maintainer. The current connector still exposes no release-write tool. Artifact
+upload is preparation, not publication. The original artifact expires after
+90 days; committed builder code, metadata and exact sources allow reconstruction.
+No fixed execution/date guarantee follows from having one package left.
+
+Root bundle citation is RC-specific; historical source citation and notices are
+preserved, without a new blanket grant. No tag, release, merge, full-model
+20-family validation, independent scientific/author/expert or GA approval is
+claimed. #306/#310/#315 and all original issues remain; PR #305 stays draft.

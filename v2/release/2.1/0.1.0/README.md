@@ -1,6 +1,6 @@
 # CM-PharmE 2.1 release decision and gate register — 0.1.0
 
-The [eighteen-row decision register](decision-register.csv) records delegated bounded choices, their evidence, negative conditions, current status and explicit later-review questions. It does not turn research observations into an author's or external expert's review. The target is ontology **2.1**; this directory is release-planning record **0.1.0**, not an ontology version.
+The [nineteen-row decision register](decision-register.csv) records delegated bounded choices, their evidence, negative conditions, current status and explicit later-review questions. It does not turn research observations into an author's or external expert's review. The target is ontology **2.1**; this directory is release-planning record **0.1.0**, not an ontology version.
 
 | Gate | Current evidence | Status for GA 2.1.0 |
 |---|---|---|
@@ -120,3 +120,23 @@ checksums, current metadata and clean replay, then RC-03 verified publication.
 This new tracking row does not modify the frozen payload's original 17-row
 register. No archive, cold replay, tag, release, GA approval or draft-PR merge is
 claimed; #306/#310/#315 and all other original issues remain open.
+
+## Experimental RC-02 bundle and clean replay — 2026-10-28 Asia/Tehran
+
+[CMPE-RC-Bundle/0.1.0](../rc.1/bundle/README.md) and DEC-21-19 complete #325
+only for deterministic packaging and the named clean replay. Contract freeze
+56e5138 precedes implementation f58a935, with 25/25 distinct workflows passed.
+Prepared tar: 2,001 files / 30,945,280 bytes, SHA-256
+`21f140abb6ccde5eebb9302cd87724ce8616a2f71a046b22bf3c3c5ea01b10ba`.
+Local/hosted archive bytes and complete portable reports agree. Fresh runtimes
+reproduce the complete bounded native/semantic witness report and four-policy
+dossier integrity audit; all extracted source/scope bytes stay unchanged.
+Ten packaging refusal controls pass. Databases and all policy engines are not
+reexecuted; prior evidence keeps its own scope.
+
+The [finite route](../0.2.0/README.md) advances to RC-03 exact tag/asset/source
+agreement and confirmed publication. Prepared CI artifact retention is finite;
+the committed builder and pinned inputs reproduce the tar. Source 64edf15,
+historical citation/17-row register and one explicit witness transition remain
+unchanged. No tag, release, merge, full-model/scientific or GA acceptance follows;
+#306/#310/#315 remain open and PR #305 stays draft.
