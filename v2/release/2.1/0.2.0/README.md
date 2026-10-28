@@ -1,9 +1,10 @@
 # Next-publication route — planning record 0.2.0
 
-Next publication target: **2.1.0-rc.1, an explicitly experimental research
-checkpoint**. Final target **2.1.0 GA** is unchanged. This is a preparation plan,
-not an existing release, tag, completed approval or promise of a fixed number of
-runs. The earlier six rows were workstreams, several containing multiple bounded
+Published checkpoint: **[2.1.0-rc.1, an explicitly experimental research
+checkpoint](https://github.com/ArazSaieArasi3/CM-PharmE/releases/tag/2.1.0-rc.1)**.
+All three RC packages are verified complete. Next target **2.1.0 GA** retains its
+original scientific gates. The historical preparation plan below is not a promise
+of a fixed number of runs or a scientific approval. The earlier six rows were workstreams, several containing multiple bounded
 executions. Completing six labels is not a release acceptance criterion.
 
 ## Cut line for the next publication
@@ -31,7 +32,7 @@ mandatory. Do not merge draft PR #305 into stable main to manufacture readiness.
 |---|---|---|
 | RC-01 — complete | Freeze experimental RC contents and claims | Exact source/artifact list, version boundaries, supported versus pending claims, exclusions and known limits; no scientific/GA approval invented |
 | RC-02 — complete | Build and replay the release bundle | Versioned archive, checksums, provenance, minimal changelog/README, reproducible commands and a clean-checkout bounded replay tied to the exact source |
-| RC-03 — next | Prepare tag/release payload and publish prerelease | Tag/asset/source agreement, experimental prerelease flag, explicit pending gates and verified publication URL/status; never claim success from a prepared payload alone |
+| RC-03 — published | Prepare tag/release payload and publish prerelease | Tag/asset/source agreement, experimental prerelease flag, explicit pending gates and verified publication URL/status; never claim success from a prepared payload alone |
 
 Each row is intended as one manageable execution, with an explicit end criterion;
 new failures or missing external access may require a separately recorded fix.
@@ -99,7 +100,7 @@ integration report and all source/scope bytes agree too. This is no fresh
 all-policy detector-engine or database execution. External downloads are
 required; installed dependencies and Git history are not in the bundle.
 
-**One RC package remains; RC-03 is next.** Revalidate the actual target commit,
+At that RC-02 checkpoint one package remained and RC-03 was next. Revalidate the actual target commit,
 exact tag/asset/source agreement and RC labels; prepare minimal release text
 from the frozen claims and attach the exact verified tar/hash. Confirm actual
 experimental prerelease publication through a supported write route or a
@@ -112,3 +113,28 @@ Root bundle citation is RC-specific; historical source citation and notices are
 preserved, without a new blanket grant. No tag, release, merge, full-model
 20-family validation, independent scientific/author/expert or GA approval is
 claimed. #306/#310/#315 and all original issues remain; PR #305 stays draft.
+
+## RC-03 actual publication verified — 2026-10-28 Asia/Tehran
+
+**[Experimental 2.1.0-rc.1 is published](https://github.com/ArazSaieArasi3/CM-PharmE/releases/tag/2.1.0-rc.1).**
+[The live publication receipt](../rc.1/publication/README.md) completes #326.
+Release 426685466 is published at 2026-10-28T13:13:41Z, draft=false/prerelease=true;
+the direct tag ref points to frozen assembly `76c547f`. Three uploaded assets were
+independently downloaded and their full bytes/hashes match the frozen contract.
+The curated tar remains 30,945,280 bytes, SHA-256
+`21f140abb6ccde5eebb9302cd87724ce8616a2f71a046b22bf3c3c5ea01b10ba`.
+The release body matches frozen notes after CRLF-to-LF transport normalization
+only; eight refusal controls pass and an independent read-only audit agrees.
+
+The signed-in authorized GitHub release UI completed publication. No new token,
+permission expansion, default-branch substitution or stable-main merge was used.
+The stable-latest endpoint returns 404; this checkpoint is an explicit prerelease.
+Source `64edf15`, scope `a0a9a53` and builder `f58a935` remain distinct from tag assembly `76c547f`.
+GitHub automatic source archives represent the assembly tree, not the curated tar.
+Historical preparation-state fields inside immutable assets remain unchanged.
+
+**No RC publication packages remain.** Future work targets the original GA gates:
+source-policy scientific dispositions, bounded native-fidelity corrections then
+full-candidate validation, ORSD/empirical and independent human/expert review.
+Those need evidence-based closure, not an invented task/date guarantee. All
+original issues remain; #306/#310/#315 stay open and PR #305 remains draft.

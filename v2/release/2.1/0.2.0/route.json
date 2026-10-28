@@ -10,13 +10,15 @@
   "complete_scientific_acceptance_claimed": false,
   "completed_rc_packages": [
     "RC-01",
-    "RC-02"
+    "RC-02",
+    "RC-03"
   ],
   "exhaustive_unknown_cleanup_required_for_rc": false,
   "existing_issues_retained": true,
   "final_target": "2.1.0",
   "fixed_run_count_guarantee": false,
   "ga_gate_register": "../0.1.0/README.md",
+  "ga_ready": false,
   "known_input_inventories": {
     "specialized_properties": 14,
     "unknown_cardinality": 60,
@@ -25,15 +27,42 @@
   },
   "local_hosted_archive_identical": true,
   "new_features_before_rc": false,
-  "next_publication_target": "2.1.0-rc.1",
-  "next_rc_package": "RC-03",
+  "next_publication_target": "2.1.0",
+  "next_rc_package": null,
+  "next_work_scope": "Original scientific/native-fidelity/full-model/ORSD/expert GA gates; no remaining RC publication package",
   "payload_source_bytes": 27097299,
   "payload_source_commit": "64edf150db8a78579928fd99b5a381f665c1afdf",
   "payload_source_files": 1975,
   "prepared_bundle_workflow_artifact_expires_at": "2027-01-26T12:43:35Z",
   "prepared_bundle_workflow_artifact_id": 12816851256,
+  "prerelease": true,
   "publication_kind": "EXPERIMENTAL_PRERELEASE_RESEARCH_CHECKPOINT",
-  "publication_write_route_status": "NO_RELEASE_WRITE_TOOL_CURRENTLY_EXPOSED",
+  "publication_write_route_status": "COMPLETED_VIA_AUTHORIZED_SIGNED_IN_GITHUB_RELEASE_UI",
+  "published_assets": [
+    {
+      "browser_download_url": "https://github.com/ArazSaieArasi3/CM-PharmE/releases/download/2.1.0-rc.1/cm-pharme-2.1.0-rc.1.tar",
+      "bytes": 30945280,
+      "id": 685044269,
+      "name": "cm-pharme-2.1.0-rc.1.tar",
+      "sha256": "21f140abb6ccde5eebb9302cd87724ce8616a2f71a046b22bf3c3c5ea01b10ba"
+    },
+    {
+      "browser_download_url": "https://github.com/ArazSaieArasi3/CM-PharmE/releases/download/2.1.0-rc.1/cm-pharme-2.1.0-rc.1.tar.sha256",
+      "bytes": 91,
+      "id": 685044327,
+      "name": "cm-pharme-2.1.0-rc.1.tar.sha256",
+      "sha256": "9fac328ebbd108d04580c8ba1a105572834a463b200bd5e47e75f9ecd14b1dae"
+    },
+    {
+      "browser_download_url": "https://github.com/ArazSaieArasi3/CM-PharmE/releases/download/2.1.0-rc.1/cm-pharme-2.1.0-rc.1.provenance.json",
+      "bytes": 2096,
+      "id": 685044339,
+      "name": "cm-pharme-2.1.0-rc.1.provenance.json",
+      "sha256": "3ea9d84ac01249d484bf154db297be58f233d99cd6793e1dcb3452e99d3723d2"
+    }
+  ],
+  "published_at": "2026-10-28T13:13:41Z",
+  "published_checkpoint": "2.1.0-rc.1",
   "rc01_ci_run": 40684844072,
   "rc01_contract_sha256": "95f4ed0eeec7eceea3df1f03fdb4a4b28c7b9c50431f6679dac36fd054b3482a",
   "rc01_implementation_commit": "06c132fe1a45e55872ba1c8249a8a46e1f4b5517",
@@ -46,13 +75,19 @@
   "rc02_freeze_commit": "56e5138a25866c9b23b3d966549ee9a41c1d4653",
   "rc02_implementation_commit": "f58a935f5c8455cce7df1338d0d380cb6d7a0a3b",
   "rc02_issue": 325,
+  "rc03_contract_sha256": "d0f6859900cc6512b313ed6f6ba13b08bafaa3565a929a14bc1e6bdbf30e1de4",
+  "rc03_freeze_commit": "05a43dd43e8efcd11251b876b85d5dbd3c3b39be",
+  "rc03_issue": 326,
+  "rc03_publication": "../rc.1/publication/README.md",
   "record_version": "0.2.0",
-  "release_published": false,
-  "remaining_rc_packages": [
-    "RC-03"
-  ],
+  "release_assembly_commit": "76c547f02e56d116b9e86d0aef9388e9d99f0949",
+  "release_id": 426685466,
+  "release_published": true,
+  "release_url": "https://github.com/ArazSaieArasi3/CM-PharmE/releases/tag/2.1.0-rc.1",
+  "remaining_rc_packages": [],
   "runtime_replay_scope": "EvidenceRecord bounded checks plus source-policy dossier integration; no database or all-detector rerun",
   "schema_version": 1,
-  "tag_created": false,
+  "stable_latest": false,
+  "tag_created": true,
   "tested_candidate_implementation": "eecd94bdf1da9bdcbf4621b2367b81e833cd54ee"
 }

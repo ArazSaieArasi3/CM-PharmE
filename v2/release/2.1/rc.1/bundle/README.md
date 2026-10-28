@@ -1,5 +1,10 @@
 # Prepared experimental RC bundle — 0.1.0
 
+**Publication update:** [Experimental 2.1.0-rc.1 is published](https://github.com/ArazSaieArasi3/CM-PharmE/releases/tag/2.1.0-rc.1).
+The [RC-03 receipt](../publication/README.md) verifies the tag and three downloaded
+assets. The following is the historical RC-02 build record; preparation-state
+fields and archive bytes remain unchanged.
+
 Issue #325, after #324 scope freeze. Profile **CMPE-RC-Bundle/0.1.0**.
 [Layout, replay and refusal contract](bundle-contract.json), [decisions](decision.md),
 [release metadata](metadata/) and [Python version lock](requirements.lock) were

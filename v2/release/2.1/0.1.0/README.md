@@ -1,6 +1,6 @@
 # CM-PharmE 2.1 release decision and gate register — 0.1.0
 
-The [nineteen-row decision register](decision-register.csv) records delegated bounded choices, their evidence, negative conditions, current status and explicit later-review questions. It does not turn research observations into an author's or external expert's review. The target is ontology **2.1**; this directory is release-planning record **0.1.0**, not an ontology version.
+The [twenty-row decision register](decision-register.csv) records delegated bounded choices, their evidence, negative conditions, current status and explicit later-review questions. It does not turn research observations into an author's or external expert's review. The target is ontology **2.1**; this directory is release-planning record **0.1.0**, not an ontology version.
 
 | Gate | Current evidence | Status for GA 2.1.0 |
 |---|---|---|
@@ -140,3 +140,20 @@ the committed builder and pinned inputs reproduce the tar. Source 64edf15,
 historical citation/17-row register and one explicit witness transition remain
 unchanged. No tag, release, merge, full-model/scientific or GA acceptance follows;
 #306/#310/#315 remain open and PR #305 stays draft.
+
+## Experimental RC-03 publication verified — 2026-10-28 Asia/Tehran
+
+**[2.1.0-rc.1 is published as an experimental prerelease](https://github.com/ArazSaieArasi3/CM-PharmE/releases/tag/2.1.0-rc.1).**
+[Publication receipt and exact downloaded-byte evidence](../rc.1/publication/README.md)
+complete #326 and DEC-21-20. Release 426685466, published 2026-10-28T13:13:41Z,
+has draft=false/prerelease=true; tag resolves directly to assembly `76c547f`.
+All three assets were independently downloaded and match their frozen hashes;
+curated tar SHA-256 remains
+`21f140abb6ccde5eebb9302cd87724ce8616a2f71a046b22bf3c3c5ea01b10ba`.
+The assembly had 25/25 workflow families passed in their individual scopes.
+
+All RC-01/02/03 criteria are complete. Publication does not alter the immutable
+source, original witness transition, unknown inventories or scientific acceptance.
+No full-model/scientific/expert/GA approval or stable-main merge follows. Original
+GA gates above and #306/#310/#315 remain open; PR #305 stays draft. Future work
+uses the original gates and bounded slices rather than another RC packaging task.
