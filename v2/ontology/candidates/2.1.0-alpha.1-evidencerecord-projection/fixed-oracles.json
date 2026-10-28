@@ -1,0 +1,409 @@
+{
+  "expected_before_pass": 89,
+  "expected_contextclass_shacl_rows": 12,
+  "expected_contract_transitions": 1,
+  "expected_native_refusals": [
+    "projection-turned-primitive",
+    "specialization-dropped",
+    "unrelated-unknown-defaulted",
+    "element-dropped",
+    "nature-changed",
+    "primitive-identity-reverted"
+  ],
+  "expected_original_after_matches": 88,
+  "expected_prospective_pass": 89,
+  "hermit_cases": [
+    {
+      "expected_consistent": true,
+      "id": "missing-data-open-world"
+    },
+    {
+      "expected_consistent": false,
+      "id": "explicit-zero-evidence-item"
+    },
+    {
+      "expected_consistent": true,
+      "id": "nonrecord-item"
+    },
+    {
+      "expected_consistent": true,
+      "id": "documented-primitive-suffices"
+    },
+    {
+      "expected_consistent": true,
+      "id": "two-IRIs-no-distinctness"
+    },
+    {
+      "expected_consistent": false,
+      "id": "two-explicitly-distinct-records"
+    }
+  ],
+  "historical_shacl_rows": 89,
+  "schema_version": 1,
+  "shacl_cases": [
+    {
+      "expected_conforms": true,
+      "expected_projection_edges": 1,
+      "id": "record-evidence",
+      "materialize": true
+    },
+    {
+      "expected_conforms": true,
+      "expected_projection_edges": 0,
+      "id": "nonrecord-evidence",
+      "materialize": true
+    },
+    {
+      "expected_conforms": true,
+      "expected_projection_edges": 0,
+      "id": "unqualified-record",
+      "materialize": true
+    },
+    {
+      "expected_conforms": false,
+      "expected_projection_edges": 0,
+      "id": "missing-primitive-item",
+      "materialize": true
+    },
+    {
+      "expected_conforms": false,
+      "expected_projection_edges": 0,
+      "id": "missing-derived-before-materialization",
+      "materialize": false
+    },
+    {
+      "expected_conforms": false,
+      "expected_projection_edges": 1,
+      "id": "shortcut-without-parent",
+      "materialize": true
+    },
+    {
+      "expected_conforms": false,
+      "expected_projection_edges": 2,
+      "id": "stale-record",
+      "materialize": true
+    },
+    {
+      "expected_conforms": false,
+      "expected_projection_edges": 2,
+      "id": "two-record-items",
+      "materialize": true
+    },
+    {
+      "expected_conforms": true,
+      "expected_projection_edges": 1,
+      "id": "documented-primitive-suffices",
+      "materialize": true
+    },
+    {
+      "expected_conforms": false,
+      "expected_projection_edges": 0,
+      "id": "documented-primitive-missing",
+      "materialize": true
+    },
+    {
+      "expected_conforms": false,
+      "expected_projection_edges": 0,
+      "id": "documented-role-missing",
+      "materialize": true
+    },
+    {
+      "expected_conforms": false,
+      "expected_projection_edges": 1,
+      "id": "documented-shortcut-only",
+      "materialize": true
+    }
+  ],
+  "temporal_cases": [
+    {
+      "expected": "PRESERVED",
+      "id": "stable-item",
+      "input": {
+        "snapshots": [
+          {
+            "complete": true,
+            "relators": {
+              "relator-1": {
+                "evidenceItem": "p1"
+              }
+            }
+          },
+          {
+            "complete": true,
+            "relators": {
+              "relator-1": {
+                "evidenceItem": "p1"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "expected": "VIOLATION",
+      "id": "known-distinct-item-replacement",
+      "input": {
+        "different_from": [
+          [
+            "p1",
+            "p2"
+          ]
+        ],
+        "snapshots": [
+          {
+            "complete": true,
+            "relators": {
+              "relator-1": {
+                "evidenceItem": "p1"
+              }
+            }
+          },
+          {
+            "complete": true,
+            "relators": {
+              "relator-1": {
+                "evidenceItem": "p2"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "expected": "NO_COMPARABLE_IDENTITY",
+      "id": "new-established-relator-identity",
+      "input": {
+        "snapshots": [
+          {
+            "complete": true,
+            "relators": {
+              "relator-1": {
+                "evidenceItem": "p1"
+              }
+            }
+          },
+          {
+            "complete": true,
+            "relators": {
+              "relator-2": {
+                "evidenceItem": "p2"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "expected": "UNKNOWN",
+      "id": "incomplete-first-observation",
+      "input": {
+        "snapshots": [
+          {
+            "complete": false,
+            "relators": {
+              "relator-1": {
+                "evidenceItem": null
+              }
+            }
+          },
+          {
+            "complete": true,
+            "relators": {
+              "relator-1": {
+                "evidenceItem": "p1"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "expected": "PRESERVED",
+      "id": "explicit-sameAs-preserves-participant",
+      "input": {
+        "same_as": [
+          [
+            "p1",
+            "alias"
+          ]
+        ],
+        "snapshots": [
+          {
+            "complete": true,
+            "relators": {
+              "relator-1": {
+                "evidenceItem": "p1"
+              }
+            }
+          },
+          {
+            "complete": true,
+            "relators": {
+              "relator-1": {
+                "evidenceItem": "alias"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "expected": "UNKNOWN",
+      "id": "different-IRIs-alone-unknown",
+      "input": {
+        "snapshots": [
+          {
+            "complete": true,
+            "relators": {
+              "relator-1": {
+                "evidenceItem": "p1"
+              }
+            }
+          },
+          {
+            "complete": true,
+            "relators": {
+              "relator-1": {
+                "evidenceItem": "p2"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "expected": "VIOLATION",
+      "id": "equal-registry-code-cannot-override-distinctness",
+      "input": {
+        "different_from": [
+          [
+            "p1",
+            "p2"
+          ]
+        ],
+        "external_codes": {
+          "p1": "code-1",
+          "p2": "code-1"
+        },
+        "snapshots": [
+          {
+            "complete": true,
+            "relators": {
+              "relator-1": {
+                "evidenceItem": "p1"
+              }
+            }
+          },
+          {
+            "complete": true,
+            "relators": {
+              "relator-1": {
+                "evidenceItem": "p2"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "expected": "VIOLATION",
+      "id": "evidence-item-change",
+      "input": {
+        "different_from": [
+          [
+            "entry1",
+            "entry2"
+          ]
+        ],
+        "snapshots": [
+          {
+            "complete": true,
+            "relators": {
+              "relator-1": {
+                "evidenceItem": "entry1"
+              }
+            }
+          },
+          {
+            "complete": true,
+            "relators": {
+              "relator-1": {
+                "evidenceItem": "entry2"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "expected": "PRESERVED",
+      "id": "evidence-record-alias-chain",
+      "input": {
+        "same_as": [
+          [
+            "record1",
+            "record2"
+          ],
+          [
+            "record2",
+            "record3"
+          ]
+        ],
+        "snapshots": [
+          {
+            "complete": true,
+            "relators": {
+              "relator-1": {
+                "evidenceItem": "record1"
+              }
+            }
+          },
+          {
+            "complete": true,
+            "relators": {
+              "relator-1": {
+                "evidenceItem": "record3"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "expected": "INCONSISTENT_IDENTITY",
+      "id": "contradictory-identity-facts",
+      "input": {
+        "different_from": [
+          [
+            "p1",
+            "p2"
+          ]
+        ],
+        "same_as": [
+          [
+            "p1",
+            "p2"
+          ]
+        ],
+        "snapshots": [
+          {
+            "complete": true,
+            "relators": {
+              "relator-1": {
+                "evidenceItem": "p1"
+              }
+            }
+          },
+          {
+            "complete": true,
+            "relators": {
+              "relator-1": {
+                "evidenceItem": "p2"
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
