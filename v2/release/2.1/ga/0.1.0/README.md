@@ -84,3 +84,13 @@ remain required. Broader full-Wiki redesign, scoring/excellence and cross-repo
 profile extraction keep their original scope; this inventory does not turn every
 open backlog issue into a new blanket GA prerequisite. No existing issue was
 cancelled, waived or declared complete by this audit.
+
+## Later incremental-release proposal
+
+The [2026-10-28 incremental roadmap](../../../roadmap/0.1.0/README.md) responds
+to Araz's subsequent request to make smaller stable releases through 2.2/3.0 and
+retain unfinished research in later increments. It is a proposal awaiting an
+explicit scope decision; it does not change this audit's seven original groups
+or historical evidence. The first RelComp disposition remains #329, followed by
+the exact supported-core inventory #330. Do not infer new scientific approval
+from approval of the planning direction.

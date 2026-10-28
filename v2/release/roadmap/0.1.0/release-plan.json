@@ -1,0 +1,258 @@
+{
+  "schema_version": "CMPE-IncrementalReleasePlan/0.1.0",
+  "planning_issue": 328,
+  "date": "2026-10-28",
+  "timezone": "Asia/Tehran",
+  "source_commit": "30c86fc4e7578593883315d9bb6f2eebc46a68d4",
+  "status": "PROPOSED_SCOPE_AWAITING_ARAZ",
+  "ga_ready": false,
+  "original_ga_gate_groups": 7,
+  "original_ga_gates_unchanged": true,
+  "scope_amendment_approved": false,
+  "scientific_acceptance_created": false,
+  "license_adopted": false,
+  "published_checkpoint": "2.1.0-rc.1",
+  "published_tag_commit": "76c547f02e56d116b9e86d0aef9388e9d99f0949",
+  "published_ontology_contract_baseline": "v1.0.0 historical; 2.0.0-alpha.1 research contract, not invented stable 2.0.0",
+  "inventory": {
+    "original_open_issues": 29,
+    "open_prs": 4,
+    "explicit_open_epics": [
+      21,
+      22,
+      23,
+      202,
+      228
+    ],
+    "program": 24,
+    "original_open_issue_milestones": 0,
+    "original_open_issue_numbers": [
+      21,
+      22,
+      23,
+      24,
+      98,
+      103,
+      159,
+      170,
+      171,
+      173,
+      202,
+      211,
+      212,
+      213,
+      214,
+      228,
+      238,
+      239,
+      240,
+      241,
+      243,
+      244,
+      306,
+      310,
+      311,
+      312,
+      313,
+      314,
+      315
+    ],
+    "planning_issue_closed_on_completion": 328,
+    "new_open_children": [
+      329,
+      330
+    ],
+    "expected_open_after_completion": 31
+  },
+  "workstreams": {
+    "CORE_RELEASE": [
+      24,
+      306,
+      310,
+      315
+    ],
+    "DOMAIN_MODULES": [
+      311,
+      312,
+      313,
+      314
+    ],
+    "HUMAN_EVALUATION": [
+      21,
+      98,
+      103,
+      159,
+      173
+    ],
+    "APPLICATIONS": [
+      22,
+      170
+    ],
+    "RESEARCH": [
+      23,
+      171
+    ],
+    "DOCUMENTATION": [
+      202,
+      211,
+      212,
+      213,
+      214,
+      228,
+      238,
+      239,
+      240,
+      241,
+      243,
+      244
+    ]
+  },
+  "adopted_operating_direction": {
+    "owner": "Assistant prepares, researches, implements and verifies; Araz decides actual scientific commitments and release-scope/rights choices",
+    "global_reuse": true,
+    "implementation_constraints_are_scoped": true,
+    "active_execution_wip": 1,
+    "max_ready_children": 3,
+    "effort_sizes": [
+      "S",
+      "M-"
+    ],
+    "one_packet_one_coherent_outcome": true,
+    "first_followup": "RC-001",
+    "first_followup_issue": 329,
+    "do_not_expand_blocked_packet": true,
+    "technical_audit_may_proceed_while_waiting": true
+  },
+  "proposed_21_contract": {
+    "status": "NOT_YET_INVENTORIED_OR_ACCEPTED",
+    "basis": "Frozen W5/W6 research contract plus bounded M1 provenance addition, subject to exact dependency and compatibility audit",
+    "functional_seed_ids": [
+      "FR-01",
+      "FR-02",
+      "FR-25",
+      "FR-28"
+    ],
+    "quality_ids": [
+      "NFR-01",
+      "NFR-02",
+      "NFR-03",
+      "NFR-04",
+      "NFR-05",
+      "NFR-06",
+      "NFR-07",
+      "NFR-08",
+      "NFR-09",
+      "NFR-10",
+      "NFR-11",
+      "NFR-12"
+    ],
+    "seed_ids_are_not_a_complete_dependency_closure": true,
+    "stable_api": [
+      "Exact selected concept/relation IRIs and definitions",
+      "Selected logical axioms and selected SHACL profile behavior",
+      "Selected RDB mapping outputs and normalized SQL/SPARQL contracts",
+      "Versioned supported artifact/import list and migration/deprecation rules"
+    ],
+    "exclusions": [
+      "No automatic promotion of the whole modern 536-element native candidate",
+      "No claim of full 20-family candidate validation",
+      "No automatic acceptance of RM/PV/BA/DS experimental packages",
+      "No unobserved real FacilityOperation/capacity claims",
+      "No completed expert/user study or product-readiness claim"
+    ],
+    "nondeferrable": [
+      "No unresolved critical defect inside the retained support/dependency closure",
+      "Actual author acceptance for retained semantic decisions",
+      "Exact tested current contract and affected regressions",
+      "Clear source/third-party rights and notices for distributed assets",
+      "Versioned limitations, minimum usage/reproduction path and reviewed immutable release"
+    ]
+  },
+  "releases": [
+    {
+      "version": "2.1.0",
+      "goal": "Usable stable core with a small supported provenance/mapping path",
+      "scope": "Exact reviewed subset only; frozen compatibility contract retained; rest separately experimental",
+      "exit": "D-01 approved; exact dependency/critical-defect and selected requirement/quality review passed; new assembly/replay and release review",
+      "status": "PROPOSED_SCOPE"
+    },
+    {
+      "version": "2.1.x",
+      "goal": "Compatible corrections and small maintenance deliveries",
+      "scope": "Actual backward-compatible fixes; no new mandatory meaning or arbitrary version bumps",
+      "exit": "Affected regression and immutable next patch release",
+      "status": "ROLLING_PROPOSAL"
+    },
+    {
+      "version": "2.2.0",
+      "goal": "Incrementally mature opt-in native/domain and source/mapping extensions",
+      "scope": "Prioritize one completed feature/module at a time; broader #310/#315/#311–314 and deferred ORSD work remain tracked",
+      "exit": "A selected new backward-compatible capability and its actual tests/review; split further increments as 2.2.x or 2.3+ as appropriate",
+      "status": "PRIORITY_BUCKET_NOT_ALL_REQUIRED_TO_SHIP"
+    },
+    {
+      "version": "2.3.0",
+      "goal": "Cross-context data/application capability and stronger evaluation",
+      "scope": "Selected Observatory tasks/mappings, target-aligned human/expert evidence and research/docs in separate lanes",
+      "exit": "Actual new compatible functionality; studies/doc-only results follow their own artifact version or patch instead of forcing a minor bump",
+      "status": "PRIORITY_BUCKET_NOT_ALL_REQUIRED_TO_SHIP"
+    },
+    {
+      "version": "3.0.0",
+      "goal": "Reviewed integrated generation with explicit migrations where needed",
+      "scope": "Intentional incompatible semantic/schema restructuring only when justified; integrate mature modules and evidence",
+      "exit": "Breaking-change inventory, migration contract, review and tested claims; maturity alone does not require a major bump",
+      "status": "DIRECTION_NOT_DATE_COMMITMENT"
+    },
+    {
+      "version": "4.0.0",
+      "goal": "Optional longer-term ecosystem/generalization horizon",
+      "scope": "Reserve for a future demonstrated incompatible evolution; no committed feature backlog or GA prerequisite today",
+      "exit": "Future evidence-based scope and migration decision",
+      "status": "UNCOMMITTED_HORIZON"
+    }
+  ],
+  "cadence": {
+    "kind": "EVENT_DRIVEN_RELEASE_CUTS",
+    "review_after_accepted_packets": [
+      2,
+      4
+    ],
+    "rule": "After 2–4 accepted packets, check for the smallest eligible release; publish only meaningful changes with passing scoped gates",
+    "stable_publication_automatic": false,
+    "reminder_created": false,
+    "fixed_frequency_or_date_promised": false,
+    "hold_rule": "If a packet is blocked by a decision/evidence, checkpoint it and select a ready independent audit without inferring approval",
+    "process_artifacts": [
+      "Issue child with bounded exit",
+      "Exact commit/manifest and appropriate checks",
+      "Changelog/migration and claim-boundary delta",
+      "Immutable new release plus downloaded-byte receipt",
+      "Remaining work/destination register"
+    ]
+  },
+  "approval_protocol": {
+    "required_record": [
+      "Decision ID",
+      "Exact selected option and scope",
+      "Araz identity/date and actual response",
+      "Rationale and accepted limitations",
+      "Affected issue/gate/artifact list",
+      "Supersedes links; old evidence preserved"
+    ],
+    "roadmap_approval_is_not_scientific_approval": true,
+    "relcomp_approval_is_not_full_model_approval": true,
+    "pending_decisions": [
+      "D-01",
+      "D-03",
+      "SC-REL"
+    ]
+  },
+  "workflow_readiness": {
+    "existing_scope_build_replay_publish_capability": true,
+    "release_milestone_governance_incomplete": true,
+    "new_candidate_contract_audited": false,
+    "new_ga_pipeline_executed": false,
+    "new_ci_added": false
+  }
+}

@@ -156,3 +156,17 @@ current native has 138 non-datatype classes plus six datatypes. Existing E9 resp
 collection and actual review findings cannot be inferred from ready templates.
 Published RC, candidate bytes, source-policy oracles and all scientific acceptance
 states remain unchanged. No model runtime is rerun for this documentation audit.
+
+## Incremental release replan — proposed scope, 2026-10-28
+
+Araz requested frequent useful releases, global extensibility and smaller
+finishable work. The [incremental roadmap](../../roadmap/0.1.0/README.md) accounts
+for all 29 original open issues and four PRs, proposes a limited supported 2.1.0
+core and later 2.2/2.3/3.0 increments, and sizes the retained work into bounded
+packets. This is a proposed scope amendment, not approval of a new GA checklist.
+The original seven GA groups remain in force until an actual owner decision.
+
+The first substantive follow-up is the existing RelComp scientific card, now
+tracked in #329. #330 prepares one exact core/dependency/compatibility manifest.
+The published RC and every original scientific acceptance state remain unchanged.
+Planning task #328 closes only its completed organization/decision-packet scope.
