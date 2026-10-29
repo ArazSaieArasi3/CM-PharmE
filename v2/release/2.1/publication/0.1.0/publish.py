@@ -172,6 +172,7 @@ def publish(out,report):
     published=api('repos/'+c['repository']+'/releases/'+str(release_id))
     report['publication_observed']=published.get('draft') is False
     report['stable_release_visible']=published.get('draft') is False and published.get('prerelease') is False
+    report['release_url']=published['html_url']
     release_identity(published,c,False)
     require(peeled_tag(c['repository'],c['tag'])==c['target_commit'],'Published tag points elsewhere')
     report['published_assets']=asset_metadata(published,expected)
