@@ -385,6 +385,9 @@ jobs:
           python -m pip install --disable-pip-version-check 'playwright==1.55.0'
           python -m playwright install --with-deps chromium
 
+      - name: Verify fresh publication identity and all public serialization checksums
+        run: python tools/pages/verify_public_release_sync.py --build-sha "${{ github.sha }}" --output public-release-sync.json
+
       - name: Verify public V1/V2 routes and interactions
         run: >-
           python tools/pages/verify_public_pages.py
@@ -408,4 +411,5 @@ jobs:
             public-v2-explore.png
             public-v2-m1-explore.png
             public-navigation.json
+            public-release-sync.json
           if-no-files-found: warn

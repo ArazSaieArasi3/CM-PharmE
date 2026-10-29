@@ -33,7 +33,7 @@ def main():
               'pages-277-onboarding.json':'result','pages-276-wiki-audit.json':'result',
               'pages-273-final-audit.json':'result','v1-widoco-qa.json':'overall','v2-widoco-qa.json':'overall'}
     if 'v2-m1' in versions:
-        required.update({'v2-m1-widoco-qa.json':'overall','m1-reference-reproducibility.json':'result','m1-generated-338.json':'result','local-candidate-browser-338.json':'result','retained-v2-serialization-bytes.json':'result'})
+        required.update({'v2-m1-widoco-qa.json':'overall','m1-reference-reproducibility.json':'result','m1-generated-338.json':'result','local-candidate-browser-338.json':'result','retained-v2-serialization-bytes.json':'result','public-release-sync.json':'result'})
     reports={}
     for filename,field in required.items():
         data=load(args.evidence/filename);assert data[field]=='PASS',filename;reports[filename]=data
