@@ -1,0 +1,29 @@
+# SPDX-License-Identifier: MIT
+name: CM-PharmE WholeOver Decision Card
+on:
+  push:
+    branches: ['v2/**']
+    paths: ['v2/review/wholeover/0.1.0/**', '.github/workflows/v2-wholeover-review-card.yml']
+  pull_request:
+    branches: [v2/research-program]
+    paths: ['v2/review/wholeover/0.1.0/**', '.github/workflows/v2-wholeover-review-card.yml']
+permissions:
+  contents: read
+jobs:
+  decision-card:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-python@v7.0.0
+        with:
+          python-version: '3.12'
+      - name: Recheck original witnesses, refusal controls and prior reports
+        run: python v2/review/wholeover/0.1.0/verify_review.py
+      - uses: actions/upload-artifact@v7.0.1
+        with:
+          name: cm-pharme-wholeover-decision-card
+          path: v2/review/wholeover/0.1.0/verification.json
+          retention-days: 30
