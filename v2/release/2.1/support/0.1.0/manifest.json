@@ -1,0 +1,1034 @@
+{
+  "schema_version": "CMPE-SupportContract/0.1.0",
+  "issue": 333,
+  "target_distribution": "2.1.0",
+  "profile_version": "0.1.0",
+  "source_snapshot": "b9c1c26edb756fdc741cba8bb56f5c0e88feb45d",
+  "files": [
+    {
+      "path": ".github/workflows/v2-21-m1-core.yml",
+      "sha256": "eab039bb5983f0d78c5374ed74d3b69331e5c570f023baca52583e23355800b9",
+      "bytes": 2591,
+      "roles": [
+        "historical_evidence_or_notice"
+      ],
+      "license": "MIT",
+      "rights_effect": "Prospective precise original-software grant under approved D-03; frozen bytes retained"
+    },
+    {
+      "path": ".github/workflows/v2-21-m1-integration.yml",
+      "sha256": "09635102aab4e327b7d9c37591321cff7c33de9c5293d3e0bb8e9276719e0cfa",
+      "bytes": 3572,
+      "roles": [
+        "historical_evidence_or_notice"
+      ],
+      "license": "MIT",
+      "rights_effect": "Prospective precise original-software grant under approved D-03; frozen bytes retained"
+    },
+    {
+      "path": ".github/workflows/v2-21-support-contract.yml",
+      "sha256": "af0197ae5fe5d1186652c7d95d61da4a5397a73a508bb0fc4a5d1682aeefbb83",
+      "bytes": 1857,
+      "roles": [
+        "historical_evidence_or_notice"
+      ],
+      "license": "MIT",
+      "rights_effect": "Prospective precise original-software grant under approved D-03; frozen bytes retained"
+    },
+    {
+      "path": "CITATION.cff",
+      "sha256": "79c0105f521caf38795a7f2c63252990bc59668dbd44cce903b5e5e106276d62",
+      "bytes": 648,
+      "roles": [
+        "historical_evidence_or_notice"
+      ],
+      "license": "CC-BY-4.0",
+      "rights_effect": "Original ontology/documentation/record arrangement only; referenced upstream objects retain terms"
+    },
+    {
+      "path": "tools/v2_data/bootstrap_ingest.py",
+      "sha256": "339295c7e64aaf370ae06034a0adb244a0caf2415cd0373413d3208a6c34f577",
+      "bytes": 19126,
+      "roles": [
+        "fixture_bootstrap_entrypoint",
+        "integration_pinned_dependency"
+      ],
+      "license": "MIT",
+      "rights_effect": "Prospective precise original-software grant under approved D-03; frozen bytes retained"
+    },
+    {
+      "path": "tools/v2_data/compare_sql_sparql.py",
+      "sha256": "c2292ceb59ce9ec268382a36cfe1dc0708ea7c075f7496926e8e501b3b8b4da0",
+      "bytes": 3344,
+      "roles": [
+        "integration_pinned_dependency",
+        "legacy_regression_subprocess"
+      ],
+      "license": "MIT",
+      "rights_effect": "Prospective precise original-software grant under approved D-03; frozen bytes retained"
+    },
+    {
+      "path": "tools/v2_data/export_kg.py",
+      "sha256": "366d593e723f59b0cba047c650ee5e3277fe74f00d3f4b5f314bdbccac428c23",
+      "bytes": 12512,
+      "roles": [
+        "integration_pinned_dependency",
+        "legacy_regression_subprocess"
+      ],
+      "license": "MIT",
+      "rights_effect": "Prospective precise original-software grant under approved D-03; frozen bytes retained"
+    },
+    {
+      "path": "tools/v2_data/source_contract.py",
+      "sha256": "b13614652d53b9d0d1ff0fee141bba0e80ed79303d6c50eb42378a32a8448b39",
+      "bytes": 4361,
+      "roles": [
+        "fixture_bootstrap_local_import",
+        "integration_pinned_dependency"
+      ],
+      "license": "MIT",
+      "rights_effect": "Prospective precise original-software grant under approved D-03; frozen bytes retained"
+    },
+    {
+      "path": "tools/v2_ontology/CheckOWL2DL.java",
+      "sha256": "dd43e323ae9c58506aa50738f6e516a9e3e342e65b0f0659b81e2aa364dd6e43",
+      "bytes": 1445,
+      "roles": [
+        "profile_verification_java_helper"
+      ],
+      "license": "MIT",
+      "rights_effect": "Prospective precise original-software grant under approved D-03; frozen bytes retained"
+    },
+    {
+      "path": "v2/data/db/schema.sql",
+      "sha256": "1857a42d50da510f43198e47ca02ec56d255f9bb5dec0e38fef344057e8f8f0b",
+      "bytes": 10700,
+      "roles": [
+        "integration_pinned_dependency",
+        "profile_pinned_dependency"
+      ],
+      "license": "MIT",
+      "rights_effect": "Prospective precise original-software grant under approved D-03; frozen bytes retained"
+    },
+    {
+      "path": "v2/data/db/views.sql",
+      "sha256": "172e8bf333b2c860254fbc0721de51e3ef9e4547b5ada1f99ac7d07f578216e4",
+      "bytes": 3140,
+      "roles": [
+        "integration_pinned_dependency"
+      ],
+      "license": "MIT",
+      "rights_effect": "Prospective precise original-software grant under approved D-03; frozen bytes retained"
+    },
+    {
+      "path": "v2/data/fixtures/geography_alias_fixture.csv",
+      "sha256": "90021d2074dba39e24a862b92ec68984cf28b057d508c9c9035987330ede01f5",
+      "bytes": 265,
+      "roles": [
+        "integration_pinned_dependency"
+      ],
+      "license": "UPSTREAM_TERMS_RETAINED",
+      "rights_effect": "Preserve source-manifest notices and synthetic fixture labels; no blanket grant"
+    },
+    {
+      "path": "v2/data/fixtures/nhif_inpatient_fixture.csv",
+      "sha256": "088e45fb331011e3bf467ed054a9fac37921b653f242e9f8c2caa66c215fbbd7",
+      "bytes": 787,
+      "roles": [
+        "integration_pinned_dependency"
+      ],
+      "license": "UPSTREAM_TERMS_RETAINED",
+      "rights_effect": "Preserve source-manifest notices and synthetic fixture labels; no blanket grant"
+    },
+    {
+      "path": "v2/data/fixtures/nhif_outpatient_fixture.csv",
+      "sha256": "2d2d2db54efd78a26aed0b0da334c35b05c35c00ca4eb6ace0729c4a5c516af8",
+      "bytes": 847,
+      "roles": [
+        "integration_pinned_dependency"
+      ],
+      "license": "UPSTREAM_TERMS_RETAINED",
+      "rights_effect": "Preserve source-manifest notices and synthetic fixture labels; no blanket grant"
+    },
+    {
+      "path": "v2/data/integrations/2.1/m1-core/0.1.0/README.md",
+      "sha256": "fe967f13f0996c809eb667b8b5c53ba6c7a1452f3f27b28c92ed50e88d2d6f4c",
+      "bytes": 5985,
+      "roles": [
+        "historical_evidence_or_notice"
+      ],
+      "license": "CC-BY-4.0",
+      "rights_effect": "Original ontology/documentation/record arrangement only; referenced upstream objects retain terms"
+    },
+    {
+      "path": "v2/data/integrations/2.1/m1-core/0.1.0/ci-evidence.json",
+      "sha256": "130957fa18a4d3329f62166dc74fcc25200e158888c84adb16def1478eef9784",
+      "bytes": 13205,
+      "roles": [
+        "historical_evidence_or_notice"
+      ],
+      "license": "CC-BY-4.0",
+      "rights_effect": "Original ontology/documentation/record arrangement only; referenced upstream objects retain terms"
+    },
+    {
+      "path": "v2/data/integrations/2.1/m1-core/0.1.0/contract.json",
+      "sha256": "270d1b279f68ab84ab002cf04a4a7ea3272841e903baee4549fe0ff02d444dfc",
+      "bytes": 6530,
+      "roles": [
+        "integration_frozen_test_contract_or_oracle"
+      ],
+      "license": "CC-BY-4.0",
+      "rights_effect": "Original ontology/documentation/record arrangement only; referenced upstream objects retain terms"
+    },
+    {
+      "path": "v2/data/integrations/2.1/m1-core/0.1.0/fixed-oracles.json",
+      "sha256": "868e04ef5e1d66c80ecce77697a6c5bf2bd8d01384ddedd42d145bf25c07043d",
+      "bytes": 5294,
+      "roles": [
+        "integration_frozen_test_contract_or_oracle"
+      ],
+      "license": "CC-BY-4.0",
+      "rights_effect": "Original ontology/documentation/record arrangement only; referenced upstream objects retain terms"
+    },
+    {
+      "path": "v2/data/integrations/2.1/m1-core/0.1.0/freeze.json",
+      "sha256": "d0893183e6fc0dbd618e82408629104928572fa602a38b67919110942a230d48",
+      "bytes": 311,
+      "roles": [
+        "copied_integration_verification"
+      ],
+      "license": "CC-BY-4.0",
+      "rights_effect": "Original ontology/documentation/record arrangement only; referenced upstream objects retain terms"
+    },
+    {
+      "path": "v2/data/integrations/2.1/m1-core/0.1.0/hosted-execution.json",
+      "sha256": "7020e4066dc026a96c41d369ae06301ae69e7bb69e0c3e5f36377f5f2ba2a166",
+      "bytes": 300,
+      "roles": [
+        "historical_evidence_or_notice"
+      ],
+      "license": "CC-BY-4.0",
+      "rights_effect": "Original ontology/documentation/record arrangement only; referenced upstream objects retain terms"
+    },
+    {
+      "path": "v2/data/integrations/2.1/m1-core/0.1.0/hosted-results.json",
+      "sha256": "864622f2f04123311fd240beaee4ea0392227883c098d9b8b1bb1dd19bd88aef",
+      "bytes": 61382,
+      "roles": [
+        "historical_evidence_or_notice"
+      ],
+      "license": "CC-BY-4.0",
+      "rights_effect": "Original ontology/documentation/record arrangement only; referenced upstream objects retain terms"
+    },
+    {
+      "path": "v2/data/integrations/2.1/m1-core/0.1.0/independent-comparison.json",
+      "sha256": "6ac39c59805bd55865d8578a928de3865bd21f5cb2565155d5812d81c52582fa",
+      "bytes": 1576,
+      "roles": [
+        "historical_evidence_or_notice"
+      ],
+      "license": "CC-BY-4.0",
+      "rights_effect": "Original ontology/documentation/record arrangement only; referenced upstream objects retain terms"
+    },
+    {
+      "path": "v2/data/integrations/2.1/m1-core/0.1.0/independent-results.json",
+      "sha256": "2a61ce4eb9261003b45ec398baa9c5f0fbfc3529df3800ca2beb9b5873906155",
+      "bytes": 61382,
+      "roles": [
+        "historical_evidence_or_notice"
+      ],
+      "license": "CC-BY-4.0",
+      "rights_effect": "Original ontology/documentation/record arrangement only; referenced upstream objects retain terms"
+    },
+    {
+      "path": "v2/data/integrations/2.1/m1-core/0.1.0/requirements.txt",
+      "sha256": "a0b5adba8b74f73eee9ffac4c6c58fbc738cc831375e62c7765949aeecab3f17",
+      "bytes": 66,
+      "roles": [
+        "copied_integration_verification"
+      ],
+      "license": "CC-BY-4.0",
+      "rights_effect": "Original ontology/documentation/record arrangement only; referenced upstream objects retain terms"
+    },
+    {
+      "path": "v2/data/integrations/2.1/m1-core/0.1.0/verify_integration.py",
+      "sha256": "382ab686b131068c2f0f24e8bcf70c540a42f84c5e2d6cb55d642161e514f22d",
+      "bytes": 15892,
+      "roles": [
+        "copied_integration_verification"
+      ],
+      "license": "MIT",
+      "rights_effect": "Prospective precise original-software grant under approved D-03; frozen bytes retained"
+    },
+    {
+      "path": "v2/data/migrations/2.1/0.1.0/w6-mapping-crosswalk.csv",
+      "sha256": "57bbe89fd8209b4bb40372798f8016d1e12cb834df003139556a0ecdcca3ac83",
+      "bytes": 8669,
+      "roles": [
+        "integration_pinned_dependency"
+      ],
+      "license": "CC-BY-4.0",
+      "rights_effect": "Original ontology/documentation/record arrangement only; referenced upstream objects retain terms"
+    },
+    {
+      "path": "v2/data/migrations/2.1/0.2.0/mapping-dispositions.csv",
+      "sha256": "feb5e203e2a174f37d48f79d97af6fb592ecada484bc10c374b277f48e40c8ea",
+      "bytes": 6951,
+      "roles": [
+        "integration_pinned_dependency"
+      ],
+      "license": "CC-BY-4.0",
+      "rights_effect": "Original ontology/documentation/record arrangement only; referenced upstream objects retain terms"
+    },
+    {
+      "path": "v2/data/migrations/2.1/0.2.0/scope.json",
+      "sha256": "259f1f91b2e665c8a08cb6603bd62032edc1876d7ba7c1c6b31cee30198008a0",
+      "bytes": 1100,
+      "roles": [
+        "hash_only_historical_reference",
+        "profile_pinned_dependency"
+      ],
+      "license": "CC-BY-4.0",
+      "rights_effect": "Original ontology/documentation/record arrangement only; referenced upstream objects retain terms"
+    },
+    {
+      "path": "v2/data/migrations/2.1/0.2.0/verify_m1.py",
+      "sha256": "d07d944b4fe002ccdf36a94642420e39d4fabc292bcfbc2dddcfb2d966323642",
+      "bytes": 12814,
+      "roles": [
+        "imported_helper_only_never_legacy_main",
+        "integration_pinned_dependency",
+        "profile_pinned_dependency"
+      ],
+      "license": "MIT",
+      "rights_effect": "Prospective precise original-software grant under approved D-03; frozen bytes retained"
+    },
+    {
+      "path": "v2/data/queries/sql-sparql-benchmarks.json",
+      "sha256": "4bab7eabfad0101b474fae2a450effc20e822800c3d3e2ccd221502fbe2f9437",
+      "bytes": 3434,
+      "roles": [
+        "integration_pinned_dependency"
+      ],
+      "license": "CC-BY-4.0",
+      "rights_effect": "Original ontology/documentation/record arrangement only; referenced upstream objects retain terms"
+    },
+    {
+      "path": "v2/data/sources/source-manifest.json",
+      "sha256": "96d1cee8c2790e3b2e30c2f2d0eed090fa4594d27a64752f6dfc60898745de24",
+      "bytes": 5838,
+      "roles": [
+        "integration_pinned_dependency"
+      ],
+      "license": "UPSTREAM_TERMS_RETAINED",
+      "rights_effect": "Preserve source-manifest notices and synthetic fixture labels; no blanket grant"
+    },
+    {
+      "path": "v2/ontology/baseline/formal-baseline.json",
+      "sha256": "c0a58ad9435d5267049cd810ff3203414f8aa66975d57d7c4dbf81403decc665",
+      "bytes": 592,
+      "roles": [
+        "historical_evidence_or_notice"
+      ],
+      "license": "CC-BY-4.0",
+      "rights_effect": "Original ontology/documentation/record arrangement only; referenced upstream objects retain terms"
+    },
+    {
+      "path": "v2/ontology/baseline/w5-source/modules/00-metadata.ttl",
+      "sha256": "c2f973874fc4c86b458809407e518d950a07949e4f65b53846967441e95848d6",
+      "bytes": 1826,
+      "roles": [
+        "frozen_20_compatibility_reference_only"
+      ],
+      "license": "CC-BY-4.0",
+      "rights_effect": "Original ontology/documentation/record arrangement only; referenced upstream objects retain terms"
+    },
+    {
+      "path": "v2/ontology/baseline/w5-source/modules/10-core.ttl",
+      "sha256": "8fd24654c00c355da693d60a31d5ba4922bec99f01d330b6f9a4600b13302abb",
+      "bytes": 10933,
+      "roles": [
+        "frozen_20_compatibility_reference_only"
+      ],
+      "license": "CC-BY-4.0",
+      "rights_effect": "Original ontology/documentation/record arrangement only; referenced upstream objects retain terms"
+    },
+    {
+      "path": "v2/ontology/baseline/w5-source/modules/20-xinfra.ttl",
+      "sha256": "e85a1554575e0be5622176f4cf1903d83807c55412a307b7eebcad342e280e3e",
+      "bytes": 7568,
+      "roles": [
+        "frozen_20_compatibility_reference_only"
+      ],
+      "license": "CC-BY-4.0",
+      "rights_effect": "Original ontology/documentation/record arrangement only; referenced upstream objects retain terms"
+    },
+    {
+      "path": "v2/ontology/baseline/w5-source/modules/25-gate-d-disjointness.ttl",
+      "sha256": "2316723686b9986b8d28155fd5cba6b4c757cc1ab64fd0a2dc1f11a8cf1b5c60",
+      "bytes": 393,
+      "roles": [
+        "frozen_20_compatibility_reference_only"
+      ],
+      "license": "CC-BY-4.0",
+      "rights_effect": "Original ontology/documentation/record arrangement only; referenced upstream objects retain terms"
+    },
+    {
+      "path": "v2/ontology/baseline/w5-source/modules/30-extensions.ttl",
+      "sha256": "b0a2f70fee47e1eddd8af4a0ddd440673854b2cf7879c8a638151e0521167a09",
+      "bytes": 6791,
+      "roles": [
+        "frozen_20_compatibility_reference_only"
+      ],
+      "license": "CC-BY-4.0",
+      "rights_effect": "Original ontology/documentation/record arrangement only; referenced upstream objects retain terms"
+    },
+    {
+      "path": "v2/ontology/baseline/w5-source/modules/40-mappings.ttl",
+      "sha256": "b2f6674f33095aed4b9fae13ec015cda8715a793563ba28360fe0947156f660c",
+      "bytes": 1064,
+      "roles": [
+        "frozen_20_compatibility_reference_only"
+      ],
+      "license": "CC-BY-4.0",
+      "rights_effect": "Original ontology/documentation/record arrangement only; referenced upstream objects retain terms"
+    },
+    {
+      "path": "v2/ontology/candidates/2.1.0-alpha.1-p3-facility-operation/active.ttl",
+      "sha256": "93f7283f24213689f945a44685da5dd02469efe41ac856d59c4902061ea2a48d",
+      "bytes": 73775,
+      "roles": [
+        "profile_pinned_dependency",
+        "schema_derivation_reference_not_supported_full_model"
+      ],
+      "license": "CC-BY-4.0",
+      "rights_effect": "Original ontology/documentation/record arrangement only; referenced upstream objects retain terms"
+    },
+    {
+      "path": "v2/ontology/candidates/2.1.0-alpha.1-p3-facility-operation/constraints.ttl",
+      "sha256": "c147ac55fa6ce34d1ae41949ee0cd068b6da2750be1002a0dbce86f626ed2470",
+      "bytes": 31414,
+      "roles": [
+        "hash_only_historical_reference",
+        "profile_pinned_dependency"
+      ],
+      "license": "CC-BY-4.0",
+      "rights_effect": "Original ontology/documentation/record arrangement only; referenced upstream objects retain terms"
+    },
+    {
+      "path": "v2/ontology/profiles/2.1/m1-provenance/0.1.0/NOTICE.md",
+      "sha256": "a0369a8687aa2ae04b3b99ebfa7c019c98a6bedb2080696dc90be3481a828f48",
+      "bytes": 1309,
+      "roles": [
+        "historical_evidence_or_notice"
+      ],
+      "license": "CC-BY-4.0",
+      "rights_effect": "Original ontology/documentation/record arrangement only; referenced upstream objects retain terms"
+    },
+    {
+      "path": "v2/ontology/profiles/2.1/m1-provenance/0.1.0/README.md",
+      "sha256": "5c4c60f5d78f19a3c500cbb9c7956127323e06e4637d81c3bd3b81a56c181a02",
+      "bytes": 6369,
+      "roles": [
+        "historical_evidence_or_notice"
+      ],
+      "license": "CC-BY-4.0",
+      "rights_effect": "Original ontology/documentation/record arrangement only; referenced upstream objects retain terms"
+    },
+    {
+      "path": "v2/ontology/profiles/2.1/m1-provenance/0.1.0/ci-evidence.json",
+      "sha256": "e7e8af23a44582de179ad26f6b59a7e898f3921820d9407209d182be26bce9ee",
+      "bytes": 8410,
+      "roles": [
+        "historical_evidence_or_notice"
+      ],
+      "license": "CC-BY-4.0",
+      "rights_effect": "Original ontology/documentation/record arrangement only; referenced upstream objects retain terms"
+    },
+    {
+      "path": "v2/ontology/profiles/2.1/m1-provenance/0.1.0/contract.json",
+      "sha256": "222450eeaf437abe396f42b38e577112e5f7170a1fc68e7500ffbc3915342c59",
+      "bytes": 3537,
+      "roles": [
+        "profile_frozen_test_contract_or_oracle"
+      ],
+      "license": "CC-BY-4.0",
+      "rights_effect": "Original ontology/documentation/record arrangement only; referenced upstream objects retain terms"
+    },
+    {
+      "path": "v2/ontology/profiles/2.1/m1-provenance/0.1.0/fixed-oracles.json",
+      "sha256": "9784157e68d4963f14a8fc5f961a534102c5859fce576e123b6b233d3e8b816c",
+      "bytes": 9692,
+      "roles": [
+        "profile_frozen_test_contract_or_oracle"
+      ],
+      "license": "CC-BY-4.0",
+      "rights_effect": "Original ontology/documentation/record arrangement only; referenced upstream objects retain terms"
+    },
+    {
+      "path": "v2/ontology/profiles/2.1/m1-provenance/0.1.0/fixtures/broken-release-link.ttl",
+      "sha256": "fcd6c9947e40122b83322e96a21d5c22c5305a2bad1376b367e59eab054daa6d",
+      "bytes": 1296,
+      "roles": [
+        "profile_frozen_test_contract_or_oracle"
+      ],
+      "license": "CC-BY-4.0",
+      "rights_effect": "Original ontology/documentation/record arrangement only; referenced upstream objects retain terms"
+    },
+    {
+      "path": "v2/ontology/profiles/2.1/m1-provenance/0.1.0/fixtures/cross-kind-alias.ttl",
+      "sha256": "0870aeb521f761ca1355660d12e04c5d20a188b9509ab6750308614992ca48e1",
+      "bytes": 1415,
+      "roles": [
+        "profile_frozen_test_contract_or_oracle"
+      ],
+      "license": "CC-BY-4.0",
+      "rights_effect": "Original ontology/documentation/record arrangement only; referenced upstream objects retain terms"
+    },
+    {
+      "path": "v2/ontology/profiles/2.1/m1-provenance/0.1.0/fixtures/empty-graph.ttl",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1,
+      "roles": [
+        "profile_frozen_test_contract_or_oracle"
+      ],
+      "license": "CC-BY-4.0",
+      "rights_effect": "Original ontology/documentation/record arrangement only; referenced upstream objects retain terms"
+    },
+    {
+      "path": "v2/ontology/profiles/2.1/m1-provenance/0.1.0/fixtures/extension-metadata.ttl",
+      "sha256": "d824a1b5e0a615695c048f7a66490a189a005d2f5567c754760c90eee26c8527",
+      "bytes": 1496,
+      "roles": [
+        "profile_frozen_test_contract_or_oracle"
+      ],
+      "license": "CC-BY-4.0",
+      "rights_effect": "Original ontology/documentation/record arrangement only; referenced upstream objects retain terms"
+    },
+    {
+      "path": "v2/ontology/profiles/2.1/m1-provenance/0.1.0/fixtures/key-component-mismatch.ttl",
+      "sha256": "4ae726798ba4ba2c6cb023363b1da54f9d4be8c886866fe9ed637ff90cb0adb3",
+      "bytes": 1393,
+      "roles": [
+        "profile_frozen_test_contract_or_oracle"
+      ],
+      "license": "CC-BY-4.0",
+      "rights_effect": "Original ontology/documentation/record arrangement only; referenced upstream objects retain terms"
+    },
+    {
+      "path": "v2/ontology/profiles/2.1/m1-provenance/0.1.0/fixtures/missing-dataset-id.ttl",
+      "sha256": "bcb0a3e8d31ee0ee0cada72e9e1f097a38813a94c21a76049b9dbb59c5ffe779",
+      "bytes": 1349,
+      "roles": [
+        "profile_frozen_test_contract_or_oracle"
+      ],
+      "license": "CC-BY-4.0",
+      "rights_effect": "Original ontology/documentation/record arrangement only; referenced upstream objects retain terms"
+    },
+    {
+      "path": "v2/ontology/profiles/2.1/m1-provenance/0.1.0/fixtures/missing-hash.ttl",
+      "sha256": "11147b13b933f8c88751aa32cd5a88353c67aadb982bfca0ec786db17cd1538f",
+      "bytes": 1309,
+      "roles": [
+        "profile_frozen_test_contract_or_oracle"
+      ],
+      "license": "CC-BY-4.0",
+      "rights_effect": "Original ontology/documentation/record arrangement only; referenced upstream objects retain terms"
+    },
+    {
+      "path": "v2/ontology/profiles/2.1/m1-provenance/0.1.0/fixtures/missing-record-key.ttl",
+      "sha256": "e771c2efd981bac3350f2630055bba35ff494ca417bb5acf1b12c2e518ae0581",
+      "bytes": 1283,
+      "roles": [
+        "profile_frozen_test_contract_or_oracle"
+      ],
+      "license": "CC-BY-4.0",
+      "rights_effect": "Original ontology/documentation/record arrangement only; referenced upstream objects retain terms"
+    },
+    {
+      "path": "v2/ontology/profiles/2.1/m1-provenance/0.1.0/fixtures/missing-record-type.ttl",
+      "sha256": "1f5a800ae8ff194b7491c61161c74af6f27a22e819bb988a77f00e2b5ac05ce7",
+      "bytes": 1367,
+      "roles": [
+        "profile_frozen_test_contract_or_oracle"
+      ],
+      "license": "CC-BY-4.0",
+      "rights_effect": "Original ontology/documentation/record arrangement only; referenced upstream objects retain terms"
+    },
+    {
+      "path": "v2/ontology/profiles/2.1/m1-provenance/0.1.0/fixtures/missing-release-type.ttl",
+      "sha256": "9ed8d19cec33d39a458ccad493fd9b5018d4e16c7b053bfaef97c7880091d21b",
+      "bytes": 1365,
+      "roles": [
+        "profile_frozen_test_contract_or_oracle"
+      ],
+      "license": "CC-BY-4.0",
+      "rights_effect": "Original ontology/documentation/record arrangement only; referenced upstream objects retain terms"
+    },
+    {
+      "path": "v2/ontology/profiles/2.1/m1-provenance/0.1.0/fixtures/missing-row-number.ttl",
+      "sha256": "191c9ad988b2b3a538c3dbd2a93d928f6d9df416384f9c9a28c5fe39b6ba688e",
+      "bytes": 1263,
+      "roles": [
+        "profile_frozen_test_contract_or_oracle"
+      ],
+      "license": "CC-BY-4.0",
+      "rights_effect": "Original ontology/documentation/record arrangement only; referenced upstream objects retain terms"
+    },
+    {
+      "path": "v2/ontology/profiles/2.1/m1-provenance/0.1.0/fixtures/missing-run-type.ttl",
+      "sha256": "3161d879be3d74f9e365ddd2a3235ec06cd70e29b7931d9aead0b09c0f5abad0",
+      "bytes": 1361,
+      "roles": [
+        "profile_frozen_test_contract_or_oracle"
+      ],
+      "license": "CC-BY-4.0",
+      "rights_effect": "Original ontology/documentation/record arrangement only; referenced upstream objects retain terms"
+    },
+    {
+      "path": "v2/ontology/profiles/2.1/m1-provenance/0.1.0/fixtures/opaque-hash-boundary.ttl",
+      "sha256": "1b31e7152e0aadb98cfd17f4ce7f82bbea045481ce7e077512fbf8ebb303785e",
+      "bytes": 1001,
+      "roles": [
+        "profile_frozen_test_contract_or_oracle"
+      ],
+      "license": "CC-BY-4.0",
+      "rights_effect": "Original ontology/documentation/record arrangement only; referenced upstream objects retain terms"
+    },
+    {
+      "path": "v2/ontology/profiles/2.1/m1-provenance/0.1.0/fixtures/record-iri-mismatch.ttl",
+      "sha256": "d54c667007e38b4e7dd7a5ffb4358488315e11efd4be0cdda0b5bdbfdea47315",
+      "bytes": 1215,
+      "roles": [
+        "profile_frozen_test_contract_or_oracle"
+      ],
+      "license": "CC-BY-4.0",
+      "rights_effect": "Original ontology/documentation/record arrangement only; referenced upstream objects retain terms"
+    },
+    {
+      "path": "v2/ontology/profiles/2.1/m1-provenance/0.1.0/fixtures/row-zero-boundary.ttl",
+      "sha256": "177f227c1a85fdc97d309a071ffc25bee6f6ba7967ec6e598d55b6492298e80f",
+      "bytes": 1173,
+      "roles": [
+        "profile_frozen_test_contract_or_oracle"
+      ],
+      "license": "CC-BY-4.0",
+      "rights_effect": "Original ontology/documentation/record arrangement only; referenced upstream objects retain terms"
+    },
+    {
+      "path": "v2/ontology/profiles/2.1/m1-provenance/0.1.0/fixtures/same-row-distinct-hash.ttl",
+      "sha256": "29d0c06891e3ddf702215f94b2c7f204e901fdaf1a7d431d7c99b21da91219cc",
+      "bytes": 1727,
+      "roles": [
+        "profile_frozen_test_contract_or_oracle"
+      ],
+      "license": "CC-BY-4.0",
+      "rights_effect": "Original ontology/documentation/record arrangement only; referenced upstream objects retain terms"
+    },
+    {
+      "path": "v2/ontology/profiles/2.1/m1-provenance/0.1.0/fixtures/same-row-distinct-release.ttl",
+      "sha256": "0380d8fe55ca4e6c53a2abcea47f6b99bce279fe9127dac1a72655e131470b49",
+      "bytes": 1953,
+      "roles": [
+        "profile_frozen_test_contract_or_oracle"
+      ],
+      "license": "CC-BY-4.0",
+      "rights_effect": "Original ontology/documentation/record arrangement only; referenced upstream objects retain terms"
+    },
+    {
+      "path": "v2/ontology/profiles/2.1/m1-provenance/0.1.0/fixtures/two-generating-runs.ttl",
+      "sha256": "7437b94e1aa33e4de39517aa072521ef14055890e4b493bb3c1bbd9c76ffa0bb",
+      "bytes": 1596,
+      "roles": [
+        "profile_frozen_test_contract_or_oracle"
+      ],
+      "license": "CC-BY-4.0",
+      "rights_effect": "Original ontology/documentation/record arrangement only; referenced upstream objects retain terms"
+    },
+    {
+      "path": "v2/ontology/profiles/2.1/m1-provenance/0.1.0/fixtures/two-records-shared-run.ttl",
+      "sha256": "c0fd3daaf1c9dda4000f8eb4247d953eec5602c32e6c588c3517ff2b36fac65a",
+      "bytes": 2041,
+      "roles": [
+        "profile_frozen_test_contract_or_oracle"
+      ],
+      "license": "CC-BY-4.0",
+      "rights_effect": "Original ontology/documentation/record arrangement only; referenced upstream objects retain terms"
+    },
+    {
+      "path": "v2/ontology/profiles/2.1/m1-provenance/0.1.0/fixtures/two-release-owners.ttl",
+      "sha256": "1e64a348ecc6ef54e9edac1d479c9044e9b84f7741027693f6e2d51934663911",
+      "bytes": 1783,
+      "roles": [
+        "profile_frozen_test_contract_or_oracle"
+      ],
+      "license": "CC-BY-4.0",
+      "rights_effect": "Original ontology/documentation/record arrangement only; referenced upstream objects retain terms"
+    },
+    {
+      "path": "v2/ontology/profiles/2.1/m1-provenance/0.1.0/fixtures/typed-record-no-release.ttl",
+      "sha256": "69872e7a42c76b9c568c914fbd305f162ecf6d41e83adfacfeae15bc1050ed6b",
+      "bytes": 1206,
+      "roles": [
+        "profile_frozen_test_contract_or_oracle"
+      ],
+      "license": "CC-BY-4.0",
+      "rights_effect": "Original ontology/documentation/record arrangement only; referenced upstream objects retain terms"
+    },
+    {
+      "path": "v2/ontology/profiles/2.1/m1-provenance/0.1.0/fixtures/with-run.ttl",
+      "sha256": "96b2b5a4a94d154b031133f3655f5b00f6c1b84ade5b31c97b12dee2b1540c7a",
+      "bytes": 1393,
+      "roles": [
+        "profile_frozen_test_contract_or_oracle"
+      ],
+      "license": "CC-BY-4.0",
+      "rights_effect": "Original ontology/documentation/record arrangement only; referenced upstream objects retain terms"
+    },
+    {
+      "path": "v2/ontology/profiles/2.1/m1-provenance/0.1.0/fixtures/without-run.ttl",
+      "sha256": "dad3fd71bddc6b1110b86dd5c46e33214ffc19ba873a86ca1d64ec3014ada56f",
+      "bytes": 1173,
+      "roles": [
+        "profile_frozen_test_contract_or_oracle"
+      ],
+      "license": "CC-BY-4.0",
+      "rights_effect": "Original ontology/documentation/record arrangement only; referenced upstream objects retain terms"
+    },
+    {
+      "path": "v2/ontology/profiles/2.1/m1-provenance/0.1.0/fixtures/wrong-run-identifier.ttl",
+      "sha256": "d8cf7e7e516a4ffac46cbf1cea73662390157e494453fd30633962f56078c75d",
+      "bytes": 1401,
+      "roles": [
+        "profile_frozen_test_contract_or_oracle"
+      ],
+      "license": "CC-BY-4.0",
+      "rights_effect": "Original ontology/documentation/record arrangement only; referenced upstream objects retain terms"
+    },
+    {
+      "path": "v2/ontology/profiles/2.1/m1-provenance/0.1.0/freeze.json",
+      "sha256": "017214d94a97a494e39ca95876c75b95f79c615ad30d89e5cb23ea85aa87d843",
+      "bytes": 3068,
+      "roles": [
+        "profile_verification"
+      ],
+      "license": "CC-BY-4.0",
+      "rights_effect": "Original ontology/documentation/record arrangement only; referenced upstream objects retain terms"
+    },
+    {
+      "path": "v2/ontology/profiles/2.1/m1-provenance/0.1.0/hosted-execution.json",
+      "sha256": "85daae835dc93b7cb04822bf5afe7b9811191aca6227bf40ec64ec0bba5252ff",
+      "bytes": 293,
+      "roles": [
+        "historical_evidence_or_notice"
+      ],
+      "license": "CC-BY-4.0",
+      "rights_effect": "Original ontology/documentation/record arrangement only; referenced upstream objects retain terms"
+    },
+    {
+      "path": "v2/ontology/profiles/2.1/m1-provenance/0.1.0/hosted-results.json",
+      "sha256": "1e393a42a011956734e9febd7922dcd6a8b05f5615eab12a5b5de4225dabd7b3",
+      "bytes": 19151,
+      "roles": [
+        "historical_evidence_or_notice"
+      ],
+      "license": "CC-BY-4.0",
+      "rights_effect": "Original ontology/documentation/record arrangement only; referenced upstream objects retain terms"
+    },
+    {
+      "path": "v2/ontology/profiles/2.1/m1-provenance/0.1.0/incoming-axioms.csv",
+      "sha256": "d16fe06c22baa154b4668a1fec707ffa6b581080fe005cd7de2f492e0eb321b7",
+      "bytes": 1882,
+      "roles": [
+        "profile_frozen_test_contract_or_oracle"
+      ],
+      "license": "CC-BY-4.0",
+      "rights_effect": "Original ontology/documentation/record arrangement only; referenced upstream objects retain terms"
+    },
+    {
+      "path": "v2/ontology/profiles/2.1/m1-provenance/0.1.0/local-hosted-comparison.json",
+      "sha256": "0ab24a39474b84fa5f218a72a2e4c793c889818d2fed15ed1556bed7952ef446",
+      "bytes": 797,
+      "roles": [
+        "historical_evidence_or_notice"
+      ],
+      "license": "CC-BY-4.0",
+      "rights_effect": "Original ontology/documentation/record arrangement only; referenced upstream objects retain terms"
+    },
+    {
+      "path": "v2/ontology/profiles/2.1/m1-provenance/0.1.0/local-results.json",
+      "sha256": "430c5b2b836092a25f4f50bd9f81224b8f9180e6a22ee259526c3cd54467a56c",
+      "bytes": 19145,
+      "roles": [
+        "historical_evidence_or_notice"
+      ],
+      "license": "CC-BY-4.0",
+      "rights_effect": "Original ontology/documentation/record arrangement only; referenced upstream objects retain terms"
+    },
+    {
+      "path": "v2/ontology/profiles/2.1/m1-provenance/0.1.0/manifest.json",
+      "sha256": "2528b79a3ce8a6c43d2c41b07ff70f519bb0590a2c3a1220f4c13362e5bbbed4",
+      "bytes": 973,
+      "roles": [
+        "integration_pinned_dependency",
+        "profile_verification"
+      ],
+      "license": "CC-BY-4.0",
+      "rights_effect": "Original ontology/documentation/record arrangement only; referenced upstream objects retain terms"
+    },
+    {
+      "path": "v2/ontology/profiles/2.1/m1-provenance/0.1.0/profile.py",
+      "sha256": "a4ee86a5687adfd56e365da99b984617a3364a7bbc78946beda67f22c7c1838c",
+      "bytes": 12608,
+      "roles": [
+        "integration_pinned_dependency",
+        "supported_standalone_admission_runtime"
+      ],
+      "license": "MIT",
+      "rights_effect": "Prospective precise original-software grant under approved D-03; frozen bytes retained"
+    },
+    {
+      "path": "v2/ontology/profiles/2.1/m1-provenance/0.1.0/profile.ttl",
+      "sha256": "a8dca6788eff03570b4911b8b7f0933a5420fcde9945272543da86934539ce9b",
+      "bytes": 6941,
+      "roles": [
+        "integration_pinned_dependency",
+        "supported_standalone_admission_runtime"
+      ],
+      "license": "CC-BY-4.0",
+      "rights_effect": "Original ontology/documentation/record arrangement only; referenced upstream objects retain terms"
+    },
+    {
+      "path": "v2/ontology/profiles/2.1/m1-provenance/0.1.0/query.rq",
+      "sha256": "934344b928511424e95486231f7d6ffb2f68e25cd18fbaba07bf3c0fa645933c",
+      "bytes": 677,
+      "roles": [
+        "integration_pinned_dependency",
+        "profile_frozen_test_contract_or_oracle",
+        "supported_query_runtime"
+      ],
+      "license": "MIT",
+      "rights_effect": "Prospective precise original-software grant under approved D-03; frozen bytes retained"
+    },
+    {
+      "path": "v2/ontology/profiles/2.1/m1-provenance/0.1.0/requirements-runtime.txt",
+      "sha256": "116616c97b0f16d277da82a8ef359457fab475162bf06a71c5ac68f7b9fba6fa",
+      "bytes": 43,
+      "roles": [
+        "profile_verification"
+      ],
+      "license": "CC-BY-4.0",
+      "rights_effect": "Original ontology/documentation/record arrangement only; referenced upstream objects retain terms"
+    },
+    {
+      "path": "v2/ontology/profiles/2.1/m1-provenance/0.1.0/requirements-verify.txt",
+      "sha256": "20ff28ce6177d02a8a74bbed92c4c0ea35b152d9f31e3270dae8c0e1294d2695",
+      "bytes": 44,
+      "roles": [
+        "profile_verification"
+      ],
+      "license": "CC-BY-4.0",
+      "rights_effect": "Original ontology/documentation/record arrangement only; referenced upstream objects retain terms"
+    },
+    {
+      "path": "v2/ontology/profiles/2.1/m1-provenance/0.1.0/shapes.ttl",
+      "sha256": "fb95d6bb104feb700c910c523ff582900374685d64f6a93686038dfe4cf6e26a",
+      "bytes": 24018,
+      "roles": [
+        "integration_pinned_dependency",
+        "supported_standalone_admission_runtime"
+      ],
+      "license": "CC-BY-4.0",
+      "rights_effect": "Original ontology/documentation/record arrangement only; referenced upstream objects retain terms"
+    },
+    {
+      "path": "v2/ontology/profiles/2.1/m1-provenance/0.1.0/verify_profile.py",
+      "sha256": "d5e263418d07c13cf0532760210f5da06b50c64a490033936bea822e11cb65bb",
+      "bytes": 9614,
+      "roles": [
+        "profile_verification"
+      ],
+      "license": "MIT",
+      "rights_effect": "Prospective precise original-software grant under approved D-03; frozen bytes retained"
+    },
+    {
+      "path": "v2/release/2.1/core/0.1.0/inventory.json",
+      "sha256": "33032cd475b143184f6e023dcf48802baf76d1d7c9afa78e7797aa6c9033719d",
+      "bytes": 9062,
+      "roles": [
+        "hash_only_historical_reference",
+        "profile_pinned_dependency"
+      ],
+      "license": "CC-BY-4.0",
+      "rights_effect": "Original ontology/documentation/record arrangement only; referenced upstream objects retain terms"
+    },
+    {
+      "path": "v2/release/2.1/support/0.1.0/CHANGELOG.md",
+      "sha256": "71bfb5ede6b953db4501d58a929f4fd5d26bee5fe117d8a5d20ad017f51d83e4",
+      "bytes": 653,
+      "roles": [
+        "release_contract_or_documentation"
+      ],
+      "license": "CC-BY-4.0",
+      "rights_effect": "Original ontology/documentation/record arrangement only; referenced upstream objects retain terms"
+    },
+    {
+      "path": "v2/release/2.1/support/0.1.0/CITATION.cff",
+      "sha256": "622c55d2694f194cb181b22b4571229c2cd2fe26d70f05df007562fec04a9fae",
+      "bytes": 596,
+      "roles": [
+        "release_contract_or_documentation"
+      ],
+      "license": "CC-BY-4.0",
+      "rights_effect": "Original ontology/documentation/record arrangement only; referenced upstream objects retain terms"
+    },
+    {
+      "path": "v2/release/2.1/support/0.1.0/MIGRATION.md",
+      "sha256": "a13322a058a67666a10efd870f732fd95f2aa9263013be87f411b830b32c221c",
+      "bytes": 1400,
+      "roles": [
+        "release_contract_or_documentation"
+      ],
+      "license": "CC-BY-4.0",
+      "rights_effect": "Original ontology/documentation/record arrangement only; referenced upstream objects retain terms"
+    },
+    {
+      "path": "v2/release/2.1/support/0.1.0/NOTICE.md",
+      "sha256": "dca453b6970347f342b67178b26cccbb4d3008d7298ccd39c431e46dccd239bf",
+      "bytes": 2123,
+      "roles": [
+        "release_contract_or_documentation"
+      ],
+      "license": "CC-BY-4.0",
+      "rights_effect": "Original ontology/documentation/record arrangement only; referenced upstream objects retain terms"
+    },
+    {
+      "path": "v2/release/2.1/support/0.1.0/README.md",
+      "sha256": "357dc9115de8f58767bcdb289712e0db0fc32e0c7311f673d4a42527f1dad3b1",
+      "bytes": 3753,
+      "roles": [
+        "release_contract_or_documentation"
+      ],
+      "license": "CC-BY-4.0",
+      "rights_effect": "Original ontology/documentation/record arrangement only; referenced upstream objects retain terms"
+    },
+    {
+      "path": "v2/release/2.1/support/0.1.0/REPRODUCE.md",
+      "sha256": "6e1f6ff03ff24081a7e19c723f8388d7bd36b26efcc89936f81d73787b4bc8b3",
+      "bytes": 3294,
+      "roles": [
+        "release_contract_or_documentation"
+      ],
+      "license": "CC-BY-4.0",
+      "rights_effect": "Original ontology/documentation/record arrangement only; referenced upstream objects retain terms"
+    },
+    {
+      "path": "v2/release/2.1/support/0.1.0/claims.json",
+      "sha256": "d52aff5a6010258d3bab9ccec21106b1ce48baa7a2948e6ffc4260c598c31093",
+      "bytes": 1412,
+      "roles": [
+        "release_contract_or_documentation"
+      ],
+      "license": "CC-BY-4.0",
+      "rights_effect": "Original ontology/documentation/record arrangement only; referenced upstream objects retain terms"
+    },
+    {
+      "path": "v2/release/2.1/support/0.1.0/dependency-review.json",
+      "sha256": "ee5e4766514b9879911a308535527bce82d662ba4f3837db47c0492bdb316a26",
+      "bytes": 13324,
+      "roles": [
+        "release_contract_or_documentation"
+      ],
+      "license": "CC-BY-4.0",
+      "rights_effect": "Original ontology/documentation/record arrangement only; referenced upstream objects retain terms"
+    },
+    {
+      "path": "v2/release/2.1/support/0.1.0/excluded-files.csv",
+      "sha256": "b2981331fe7c8aa8326d3c6c7c92c5270101f488232ffb0b295d651a32a49ebd",
+      "bytes": 365376,
+      "roles": [
+        "explicit_exclusion_snapshot"
+      ],
+      "license": "CC-BY-4.0",
+      "rights_effect": "Original ontology/documentation/record arrangement only; referenced upstream objects retain terms"
+    },
+    {
+      "path": "v2/release/2.1/support/0.1.0/licenses/MIT.txt",
+      "sha256": "19b273a6d02ba2a1860a5a67d1142daff947cbede0922b55476bfe8ff9441656",
+      "bytes": 1099,
+      "roles": [
+        "release_contract_or_documentation"
+      ],
+      "license": "MIT",
+      "rights_effect": "Prospective precise original-software grant under approved D-03; frozen bytes retained"
+    },
+    {
+      "path": "v2/release/2.1/support/0.1.0/verify_contract.py",
+      "sha256": "118152a8556d3fbf37a291e012bb0a3bba2c884f2f9b48d546cfcfe0debd193b",
+      "bytes": 7534,
+      "roles": [
+        "release_contract_or_documentation"
+      ],
+      "license": "MIT",
+      "rights_effect": "Prospective precise original-software grant under approved D-03; frozen bytes retained"
+    },
+    {
+      "path": "v2/release/roadmap/0.2.0/author-receipt.json",
+      "sha256": "4f5548c63894a364886812ef80f46a93374635f4395695187d936660905c88a5",
+      "bytes": 1659,
+      "roles": [
+        "historical_evidence_or_notice"
+      ],
+      "license": "CC-BY-4.0",
+      "rights_effect": "Original ontology/documentation/record arrangement only; referenced upstream objects retain terms"
+    },
+    {
+      "path": "v2/release/roadmap/0.2.0/license-map.csv",
+      "sha256": "a2fefe362c1e2da1a42c9f7e6d2abcb822081eaa351129a957481ab6fd52a8c5",
+      "bytes": 6814,
+      "roles": [
+        "historical_evidence_or_notice"
+      ],
+      "license": "CC-BY-4.0",
+      "rights_effect": "Original ontology/documentation/record arrangement only; referenced upstream objects retain terms"
+    },
+    {
+      "path": "v2/release/roadmap/0.2.0/license-scope.json",
+      "sha256": "6a04d17aa0650846d58a0ef9ca80f506810fe42cc074622da25d784bfcd3b516",
+      "bytes": 1730,
+      "roles": [
+        "historical_evidence_or_notice"
+      ],
+      "license": "CC-BY-4.0",
+      "rights_effect": "Original ontology/documentation/record arrangement only; referenced upstream objects retain terms"
+    },
+    {
+      "path": "v2/release/roadmap/0.2.0/licenses/MIT.txt",
+      "sha256": "19b273a6d02ba2a1860a5a67d1142daff947cbede0922b55476bfe8ff9441656",
+      "bytes": 1099,
+      "roles": [
+        "historical_evidence_or_notice"
+      ],
+      "license": "MIT",
+      "rights_effect": "Prospective precise original-software grant under approved D-03; frozen bytes retained"
+    },
+    {
+      "path": "v2/release/roadmap/0.2.0/relcomp-acceptance.json",
+      "sha256": "dd3fd98bea28bd6a0e42287ccd745fa53a53d60f0c7b4c85d9073eca48f4662e",
+      "bytes": 1849,
+      "roles": [
+        "historical_evidence_or_notice"
+      ],
+      "license": "CC-BY-4.0",
+      "rights_effect": "Original ontology/documentation/record arrangement only; referenced upstream objects retain terms"
+    }
+  ],
+  "computational_closure_count": 60,
+  "stable_published": false,
+  "ga_ready": false,
+  "exclude_by_default": true,
+  "self_hash_rule": "manifest.json is the root index and intentionally not self-hashed. Pin its SHA-256 in the next package contract and exact CI receipt.",
+  "root_citation_sha256": "79c0105f521caf38795a7f2c63252990bc59668dbd44cce903b5e5e106276d62",
+  "license_policy": "Approved D-03, precise per-file prospective grant with upstream exceptions",
+  "next_packet": "New deterministic curated archive and cold replay; then exact reviewed publication/download verification"
+}

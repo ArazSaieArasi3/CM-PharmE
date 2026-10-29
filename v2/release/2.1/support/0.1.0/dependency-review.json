@@ -1,0 +1,442 @@
+{
+  "schema_version": "CMPE-IndependentDependencyReview/0.1.0",
+  "source_head": "b9c1c26edb756fdc741cba8bb56f5c0e88feb45d",
+  "computational_closure_count": 60,
+  "files": [
+    {
+      "path": "tools/v2_data/bootstrap_ingest.py",
+      "roles": [
+        "fixture_bootstrap_entrypoint",
+        "integration_pinned_dependency"
+      ]
+    },
+    {
+      "path": "tools/v2_data/compare_sql_sparql.py",
+      "roles": [
+        "integration_pinned_dependency",
+        "legacy_regression_subprocess"
+      ]
+    },
+    {
+      "path": "tools/v2_data/export_kg.py",
+      "roles": [
+        "integration_pinned_dependency",
+        "legacy_regression_subprocess"
+      ]
+    },
+    {
+      "path": "tools/v2_data/source_contract.py",
+      "roles": [
+        "fixture_bootstrap_local_import",
+        "integration_pinned_dependency"
+      ]
+    },
+    {
+      "path": "tools/v2_ontology/CheckOWL2DL.java",
+      "roles": [
+        "profile_verification_java_helper"
+      ]
+    },
+    {
+      "path": "v2/data/db/schema.sql",
+      "roles": [
+        "integration_pinned_dependency",
+        "profile_pinned_dependency"
+      ]
+    },
+    {
+      "path": "v2/data/db/views.sql",
+      "roles": [
+        "integration_pinned_dependency"
+      ]
+    },
+    {
+      "path": "v2/data/fixtures/geography_alias_fixture.csv",
+      "roles": [
+        "integration_pinned_dependency"
+      ]
+    },
+    {
+      "path": "v2/data/fixtures/nhif_inpatient_fixture.csv",
+      "roles": [
+        "integration_pinned_dependency"
+      ]
+    },
+    {
+      "path": "v2/data/fixtures/nhif_outpatient_fixture.csv",
+      "roles": [
+        "integration_pinned_dependency"
+      ]
+    },
+    {
+      "path": "v2/data/integrations/2.1/m1-core/0.1.0/contract.json",
+      "roles": [
+        "integration_frozen_test_contract_or_oracle"
+      ]
+    },
+    {
+      "path": "v2/data/integrations/2.1/m1-core/0.1.0/fixed-oracles.json",
+      "roles": [
+        "integration_frozen_test_contract_or_oracle"
+      ]
+    },
+    {
+      "path": "v2/data/integrations/2.1/m1-core/0.1.0/freeze.json",
+      "roles": [
+        "copied_integration_verification"
+      ]
+    },
+    {
+      "path": "v2/data/integrations/2.1/m1-core/0.1.0/requirements.txt",
+      "roles": [
+        "copied_integration_verification"
+      ]
+    },
+    {
+      "path": "v2/data/integrations/2.1/m1-core/0.1.0/verify_integration.py",
+      "roles": [
+        "copied_integration_verification"
+      ]
+    },
+    {
+      "path": "v2/data/migrations/2.1/0.1.0/w6-mapping-crosswalk.csv",
+      "roles": [
+        "integration_pinned_dependency"
+      ]
+    },
+    {
+      "path": "v2/data/migrations/2.1/0.2.0/mapping-dispositions.csv",
+      "roles": [
+        "integration_pinned_dependency"
+      ]
+    },
+    {
+      "path": "v2/data/migrations/2.1/0.2.0/scope.json",
+      "roles": [
+        "hash_only_historical_reference",
+        "profile_pinned_dependency"
+      ]
+    },
+    {
+      "path": "v2/data/migrations/2.1/0.2.0/verify_m1.py",
+      "roles": [
+        "imported_helper_only_never_legacy_main",
+        "integration_pinned_dependency",
+        "profile_pinned_dependency"
+      ]
+    },
+    {
+      "path": "v2/data/queries/sql-sparql-benchmarks.json",
+      "roles": [
+        "integration_pinned_dependency"
+      ]
+    },
+    {
+      "path": "v2/data/sources/source-manifest.json",
+      "roles": [
+        "integration_pinned_dependency"
+      ]
+    },
+    {
+      "path": "v2/ontology/candidates/2.1.0-alpha.1-p3-facility-operation/active.ttl",
+      "roles": [
+        "profile_pinned_dependency",
+        "schema_derivation_reference_not_supported_full_model"
+      ]
+    },
+    {
+      "path": "v2/ontology/candidates/2.1.0-alpha.1-p3-facility-operation/constraints.ttl",
+      "roles": [
+        "hash_only_historical_reference",
+        "profile_pinned_dependency"
+      ]
+    },
+    {
+      "path": "v2/ontology/profiles/2.1/m1-provenance/0.1.0/contract.json",
+      "roles": [
+        "profile_frozen_test_contract_or_oracle"
+      ]
+    },
+    {
+      "path": "v2/ontology/profiles/2.1/m1-provenance/0.1.0/fixed-oracles.json",
+      "roles": [
+        "profile_frozen_test_contract_or_oracle"
+      ]
+    },
+    {
+      "path": "v2/ontology/profiles/2.1/m1-provenance/0.1.0/fixtures/broken-release-link.ttl",
+      "roles": [
+        "profile_frozen_test_contract_or_oracle"
+      ]
+    },
+    {
+      "path": "v2/ontology/profiles/2.1/m1-provenance/0.1.0/fixtures/cross-kind-alias.ttl",
+      "roles": [
+        "profile_frozen_test_contract_or_oracle"
+      ]
+    },
+    {
+      "path": "v2/ontology/profiles/2.1/m1-provenance/0.1.0/fixtures/empty-graph.ttl",
+      "roles": [
+        "profile_frozen_test_contract_or_oracle"
+      ]
+    },
+    {
+      "path": "v2/ontology/profiles/2.1/m1-provenance/0.1.0/fixtures/extension-metadata.ttl",
+      "roles": [
+        "profile_frozen_test_contract_or_oracle"
+      ]
+    },
+    {
+      "path": "v2/ontology/profiles/2.1/m1-provenance/0.1.0/fixtures/key-component-mismatch.ttl",
+      "roles": [
+        "profile_frozen_test_contract_or_oracle"
+      ]
+    },
+    {
+      "path": "v2/ontology/profiles/2.1/m1-provenance/0.1.0/fixtures/missing-dataset-id.ttl",
+      "roles": [
+        "profile_frozen_test_contract_or_oracle"
+      ]
+    },
+    {
+      "path": "v2/ontology/profiles/2.1/m1-provenance/0.1.0/fixtures/missing-hash.ttl",
+      "roles": [
+        "profile_frozen_test_contract_or_oracle"
+      ]
+    },
+    {
+      "path": "v2/ontology/profiles/2.1/m1-provenance/0.1.0/fixtures/missing-record-key.ttl",
+      "roles": [
+        "profile_frozen_test_contract_or_oracle"
+      ]
+    },
+    {
+      "path": "v2/ontology/profiles/2.1/m1-provenance/0.1.0/fixtures/missing-record-type.ttl",
+      "roles": [
+        "profile_frozen_test_contract_or_oracle"
+      ]
+    },
+    {
+      "path": "v2/ontology/profiles/2.1/m1-provenance/0.1.0/fixtures/missing-release-type.ttl",
+      "roles": [
+        "profile_frozen_test_contract_or_oracle"
+      ]
+    },
+    {
+      "path": "v2/ontology/profiles/2.1/m1-provenance/0.1.0/fixtures/missing-row-number.ttl",
+      "roles": [
+        "profile_frozen_test_contract_or_oracle"
+      ]
+    },
+    {
+      "path": "v2/ontology/profiles/2.1/m1-provenance/0.1.0/fixtures/missing-run-type.ttl",
+      "roles": [
+        "profile_frozen_test_contract_or_oracle"
+      ]
+    },
+    {
+      "path": "v2/ontology/profiles/2.1/m1-provenance/0.1.0/fixtures/opaque-hash-boundary.ttl",
+      "roles": [
+        "profile_frozen_test_contract_or_oracle"
+      ]
+    },
+    {
+      "path": "v2/ontology/profiles/2.1/m1-provenance/0.1.0/fixtures/record-iri-mismatch.ttl",
+      "roles": [
+        "profile_frozen_test_contract_or_oracle"
+      ]
+    },
+    {
+      "path": "v2/ontology/profiles/2.1/m1-provenance/0.1.0/fixtures/row-zero-boundary.ttl",
+      "roles": [
+        "profile_frozen_test_contract_or_oracle"
+      ]
+    },
+    {
+      "path": "v2/ontology/profiles/2.1/m1-provenance/0.1.0/fixtures/same-row-distinct-hash.ttl",
+      "roles": [
+        "profile_frozen_test_contract_or_oracle"
+      ]
+    },
+    {
+      "path": "v2/ontology/profiles/2.1/m1-provenance/0.1.0/fixtures/same-row-distinct-release.ttl",
+      "roles": [
+        "profile_frozen_test_contract_or_oracle"
+      ]
+    },
+    {
+      "path": "v2/ontology/profiles/2.1/m1-provenance/0.1.0/fixtures/two-generating-runs.ttl",
+      "roles": [
+        "profile_frozen_test_contract_or_oracle"
+      ]
+    },
+    {
+      "path": "v2/ontology/profiles/2.1/m1-provenance/0.1.0/fixtures/two-records-shared-run.ttl",
+      "roles": [
+        "profile_frozen_test_contract_or_oracle"
+      ]
+    },
+    {
+      "path": "v2/ontology/profiles/2.1/m1-provenance/0.1.0/fixtures/two-release-owners.ttl",
+      "roles": [
+        "profile_frozen_test_contract_or_oracle"
+      ]
+    },
+    {
+      "path": "v2/ontology/profiles/2.1/m1-provenance/0.1.0/fixtures/typed-record-no-release.ttl",
+      "roles": [
+        "profile_frozen_test_contract_or_oracle"
+      ]
+    },
+    {
+      "path": "v2/ontology/profiles/2.1/m1-provenance/0.1.0/fixtures/with-run.ttl",
+      "roles": [
+        "profile_frozen_test_contract_or_oracle"
+      ]
+    },
+    {
+      "path": "v2/ontology/profiles/2.1/m1-provenance/0.1.0/fixtures/without-run.ttl",
+      "roles": [
+        "profile_frozen_test_contract_or_oracle"
+      ]
+    },
+    {
+      "path": "v2/ontology/profiles/2.1/m1-provenance/0.1.0/fixtures/wrong-run-identifier.ttl",
+      "roles": [
+        "profile_frozen_test_contract_or_oracle"
+      ]
+    },
+    {
+      "path": "v2/ontology/profiles/2.1/m1-provenance/0.1.0/freeze.json",
+      "roles": [
+        "profile_verification"
+      ]
+    },
+    {
+      "path": "v2/ontology/profiles/2.1/m1-provenance/0.1.0/incoming-axioms.csv",
+      "roles": [
+        "profile_frozen_test_contract_or_oracle"
+      ]
+    },
+    {
+      "path": "v2/ontology/profiles/2.1/m1-provenance/0.1.0/manifest.json",
+      "roles": [
+        "integration_pinned_dependency",
+        "profile_verification"
+      ]
+    },
+    {
+      "path": "v2/ontology/profiles/2.1/m1-provenance/0.1.0/profile.py",
+      "roles": [
+        "integration_pinned_dependency",
+        "supported_standalone_admission_runtime"
+      ]
+    },
+    {
+      "path": "v2/ontology/profiles/2.1/m1-provenance/0.1.0/profile.ttl",
+      "roles": [
+        "integration_pinned_dependency",
+        "supported_standalone_admission_runtime"
+      ]
+    },
+    {
+      "path": "v2/ontology/profiles/2.1/m1-provenance/0.1.0/query.rq",
+      "roles": [
+        "integration_pinned_dependency",
+        "profile_frozen_test_contract_or_oracle",
+        "supported_query_runtime"
+      ]
+    },
+    {
+      "path": "v2/ontology/profiles/2.1/m1-provenance/0.1.0/requirements-runtime.txt",
+      "roles": [
+        "profile_verification"
+      ]
+    },
+    {
+      "path": "v2/ontology/profiles/2.1/m1-provenance/0.1.0/requirements-verify.txt",
+      "roles": [
+        "profile_verification"
+      ]
+    },
+    {
+      "path": "v2/ontology/profiles/2.1/m1-provenance/0.1.0/shapes.ttl",
+      "roles": [
+        "integration_pinned_dependency",
+        "supported_standalone_admission_runtime"
+      ]
+    },
+    {
+      "path": "v2/ontology/profiles/2.1/m1-provenance/0.1.0/verify_profile.py",
+      "roles": [
+        "profile_verification"
+      ]
+    },
+    {
+      "path": "v2/release/2.1/core/0.1.0/inventory.json",
+      "roles": [
+        "hash_only_historical_reference",
+        "profile_pinned_dependency"
+      ]
+    }
+  ],
+  "requirement_file_closure": {
+    "v2/ontology/profiles/2.1/m1-provenance/0.1.0/requirements-runtime.txt": [
+      {
+        "requirement": "rdflib==7.5.0"
+      },
+      {
+        "requirement": "pyshacl==0.31.0"
+      },
+      {
+        "requirement": "owlrl==7.1.4"
+      }
+    ],
+    "v2/ontology/profiles/2.1/m1-provenance/0.1.0/requirements-verify.txt": [
+      {
+        "include": "v2/ontology/profiles/2.1/m1-provenance/0.1.0/requirements-runtime.txt"
+      },
+      {
+        "requirement": "owlready2==0.49"
+      }
+    ],
+    "v2/data/integrations/2.1/m1-core/0.1.0/requirements.txt": [
+      {
+        "requirement": "psycopg[binary]==3.2.9"
+      },
+      {
+        "requirement": "rdflib==7.5.0"
+      },
+      {
+        "requirement": "pyshacl==0.31.0"
+      },
+      {
+        "requirement": "owlrl==7.1.4"
+      }
+    ]
+  },
+  "unique_direct_requirement_specifiers": {
+    "rdflib": "7.5.0",
+    "pyshacl": "0.31.0",
+    "owlrl": "7.1.4",
+    "owlready2": "0.49",
+    "psycopg[binary]": "3.2.9"
+  },
+  "direct_requirement_count": 5,
+  "external_requirements": [
+    "Python 3.12 matches prior hosted profile",
+    "Java 17 plus Owlready2 0.49 bundled HermiT/Pellet JARs",
+    "PostgreSQL 16/PostGIS 3.4 local disposable cmpe_m1_core_332 database for copied integration"
+  ],
+  "risks": [
+    "Maintain original repository-relative directory layout: ROOT and subprocess defaults depend on it. Root directory need not contain Git metadata.",
+    "Run bootstrap and full copied integration from the package root. Wrapper must run target_guard preflight before bootstrap --reset; standalone historical bootstrap accepts a dangerous default database name and is not itself supported general migration CLI.",
+    "Run verify_profile as a script; it imports local profile by ordinary Python import. A process already holding stdlib profile in sys.modules could bind the wrong module if verifier is imported.",
+    "Historical verify_m1.py is imported for pinned pure helpers; do not run its main, which parses full P3 candidate and uses implicit database fallback.",
+    "Full P3 active.ttl is parsed only to derive six selected definitions, constraints.ttl is hash-only. Neither becomes supported full model.",
+    "Source manifest contains original upstream provenance and synthetic fixtures. Keep explicit synthetic labels even when historical inpatient release ID retains DOI/filename naming.",
+    "Direct dependencies are version-pinned but transitive dependencies, container image tag and actions are not a fully immutable environment lock. Record actual runtime; do not call image tag an immutable digest.",
+    "Existing frozen hashes require historical bytes unchanged. Do not add SPDX notices to frozen historical file bodies; record prospective owned rights in a separate per-file manifest."
+  ]
+}

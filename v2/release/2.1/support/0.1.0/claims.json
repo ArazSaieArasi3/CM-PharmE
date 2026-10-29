@@ -1,0 +1,33 @@
+{
+  "claims": [
+    {
+      "id": "C-M1-01",
+      "supported": "Four classes/two properties, isolated opt-in admission and unchanged Q21-01",
+      "evidence": "v2/ontology/profiles/2.1/m1-provenance/0.1.0/ci-evidence.json",
+      "limits": "No full model import or universal data completeness"
+    },
+    {
+      "id": "C-M1-02",
+      "supported": "24 synthetic admission expectations, five HermiT and bounded strict OWL views",
+      "evidence": "v2/ontology/profiles/2.1/m1-provenance/0.1.0/hosted-results.json",
+      "limits": "Raw RDF rdf:value payload is not the strict OWL view; no expert acceptance"
+    },
+    {
+      "id": "C-M1-03",
+      "supported": "M001-M004 copied-W6 replay, seven golden tuples, four legacy pairs and preserved schema/data",
+      "evidence": "v2/data/integrations/2.1/m1-core/0.1.0/ci-evidence.json",
+      "limits": "Seven synthetic records; two independent hosted fixture DBs; not all 36 mappings"
+    },
+    {
+      "id": "C-M1-04",
+      "supported": "Exact file/rights/claim and dependency contract",
+      "evidence": "v2/release/2.1/support/0.1.0/manifest.json",
+      "limits": "No deterministic archive, cold database replay or publication from this packet"
+    }
+  ],
+  "source_policy_acceptance": "1/4",
+  "historical_orsd_acceptance": "0/83",
+  "new_external_expert_responses": 0,
+  "full_modern_native_validation_accepted": false,
+  "stable_published": false
+}
