@@ -17,10 +17,10 @@
   "ga_ready": false,
   "ga_scope": "Comprehensive2.2 full-model target",
   "preparation_issue": 343,
-  "preparation_status": "LOCAL_VERIFIED_HOSTED_PENDING",
-  "next_ready_issue": null,
-  "next_sequenced_issue": 344,
-  "readiness_limit": "Issue344 becomes sole READY execution after343 hosted audit and durable receipt.",
+  "preparation_status": "COMPLETE_LOCAL_AND_HOSTED_VERIFIED",
+  "next_ready_issue": 344,
+  "next_sequenced_issue": null,
+  "readiness_limit": "Only344 is READY;342 is a dependent scientific validation task, not the release objective.",
   "release_contract": "v2/release/2.2/preparation/0.1.0/release-contract.json",
   "audit_report": "v2/release/2.2/preparation/0.1.0/report.json",
   "gap_register": "v2/release/2.2/preparation/0.1.0/gap-register.csv",
@@ -39,5 +39,7 @@
   "pages_baseline": "PB-2026.10.1",
   "wiki_baseline": "WB-2026.10.1",
   "future_documentation_rule": "Generate/reference/render all accepted complete-model projections from the same governed2.2 assembly and verify actual public outputs before release closure.",
-  "fixed_release_date": null
+  "fixed_release_date": null,
+  "completed_packet_issue": 343,
+  "preparation_evidence": "v2/release/2.2/preparation/0.1.0/ci-evidence.json"
 }

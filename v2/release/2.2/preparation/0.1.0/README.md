@@ -99,8 +99,10 @@ python v2/release/2.2/preparation/0.1.0/audit.py \
 A passing audit proves reproducibility and accounting within its explicit
 scope. `comprehensive_2_2_ready` remains **false**. Model files, old reports,
 published releases, oracle history and actual scientific acceptance are
-unchanged. Hosted execution identity is recorded separately in ci-evidence.json
-when verified.
+unchanged. [Hosted CI receipt](ci-evidence.json) records direct-push and PR-merge execution
+identities. Both downloaded artifact ZIP digests verify and all six audit outputs
+match local bytes exactly. [Local controls](local-verification.json) also verify
+two Python hash seeds, refusal of changed input, and restoration of source bytes.
 
 ## Next bounded execution
 

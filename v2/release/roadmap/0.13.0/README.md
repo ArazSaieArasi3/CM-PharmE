@@ -26,7 +26,7 @@ actual acceptance states. See the [row register](requirements-allocation.csv).
 
 | Stage | Issue / owner | Evidence or next outcome |
 |---|---|---|
-| Prerequisite audit | #343 | Pinned identities, fresh topology, preservation and gap registers; local verified, hosted execution pending |
+| Prerequisite audit | #343 | Pinned identities, fresh topology, preservation and gap registers; local and two hosted executions verified; identical downloaded evidence |
 | Next bounded execution | #344 | One governed assembly manifest; preserve later decisions and identify experimental proposals separately |
 | Semantic/model integration | #306, #311–#314 | One relation/requirement/domain packet at a time; review deferrals and actual coherence |
 | Scientific validation | #310, #315, #342 | Input fidelity, applicable full-model checks and actual source-policy dispositions |
