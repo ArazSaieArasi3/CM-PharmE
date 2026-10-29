@@ -259,6 +259,9 @@ jobs:
           mkdir -p build/prior-site-341/site
           tar -xf build/prior-site-341/artifact.tar -C build/prior-site-341/site
 
+      - name: Retain previous V2 download bytes after fresh semantic and checksum checks
+        run: python tools/pages/retain_prior_v2_download_bytes.py
+
       - name: Audit released M1 entity coverage and old published subtrees
         run: python tools/pages/audit_m1_generated.py
 
