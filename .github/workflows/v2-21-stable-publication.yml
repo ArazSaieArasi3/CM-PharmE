@@ -1,0 +1,48 @@
+# SPDX-License-Identifier: MIT
+name: CM-PharmE 2.1 Exact Stable Publication
+on:
+  push:
+    branches: ['v2/connectivity-audit-2-1-candidate']
+    paths: ['v2/release/2.1/publication/0.1.0/publish.request.json']
+permissions:
+  contents: write
+concurrency:
+  group: cm-pharme-stable-2-1-0
+  cancel-in-progress: false
+jobs:
+  publish-reviewed-core:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7.0.0
+        with:
+          python-version: '3.12'
+      - name: Verify one-shot request and frozen publication contract
+        run: |
+          python - <<'PY'
+          import hashlib,json,os
+          from pathlib import Path
+          here=Path('v2/release/2.1/publication/0.1.0')
+          request=json.loads((here/'publish.request.json').read_text())
+          assert request['publication_contract_sha256']==hashlib.sha256((here/'publication-contract.json').read_bytes()).hexdigest()
+          assert request['issue']==335 and request['tag']=='2.1.0'
+          out=Path('build/stable-publication');out.mkdir(parents=True,exist_ok=True)
+          keys=['GITHUB_SHA','GITHUB_RUN_ID','GITHUB_EVENT_NAME','GITHUB_RUN_ATTEMPT']
+          (out/'execution.json').write_text(json.dumps({x:os.environ[x] for x in keys},indent=2)+'\n')
+          PY
+      - name: Stage, download-verify, publish and redownload exact assets
+        run: python v2/release/2.1/publication/0.1.0/publish.py --output-dir build/stable-publication
+      - name: Upload exact publication and download receipts
+        if: always()
+        uses: actions/upload-artifact@v7.0.1
+        with:
+          name: cm-pharme-stable-2-1-0-publication
+          path: build/stable-publication/
+          if-no-files-found: warn
+          retention-days: 30
