@@ -9,10 +9,11 @@ import subprocess
 import sys
 import shutil
 import re
+import html as html_escape
 from pathlib import Path
 from urllib.parse import urljoin, urlsplit
 
-from rdflib import Graph, URIRef
+from rdflib import Graph, URIRef, RDF, OWL
 
 ROOT = Path(__file__).resolve().parents[2]
 ADAPTER = ROOT / "docs/documentation/widoco-adapter.json"
@@ -98,6 +99,26 @@ def main() -> int:
     config=ROOT / cfg["config"]
     if not config.is_file():
         print(f"ERROR: config missing: {config}", file=sys.stderr); return 7
+    external_declarations=[]
+    if cfg.get("external_declarations_from_input"):
+        graph=Graph().parse(args.ontology,format="turtle")
+        rows=[]
+        for kind in (OWL.Class,OWL.ObjectProperty,OWL.DatatypeProperty):
+            for iri in sorted(set(graph.subjects(RDF.type,kind)),key=str):
+                if str(iri).startswith(cfg["semantic_namespace"]): continue
+                external_declarations.append({"iri":str(iri),"type":str(kind)})
+                statements="\n".join(sorted(f"{p.n3()} {o.n3()}" for p,o in graph.predicate_objects(iri)))
+                esc=html_escape.escape
+                rows.append(f'<tr><td><a href="{esc(str(iri))}">{esc(str(iri))}</a></td><td>{esc(str(kind))}</td><td><pre>{esc(statements)}</pre></td></tr>')
+        section='<section id="external-profile-declarations"><h2>External vocabulary declarations in this profile</h2><p>Generated directly from the pinned TBox. These are the local declarations used by this profile, not the complete upstream vocabulary definitions. No imported axioms are added.</p><table><tr><th>IRI</th><th>Declared OWL type</th><th>Exact local statements</th></tr>'+''.join(rows)+'</table></section>'
+        args.manifest_output.parent.mkdir(parents=True,exist_ok=True)
+        intro=args.manifest_output.parent/(args.version+'-external-intro.html')
+        intro.write_text((ROOT/cfg['intro']).read_text()+section,encoding='utf-8')
+        derived=args.manifest_output.parent/(args.version+'-widoco.properties')
+        lines=config.read_text().splitlines()
+        derived.write_text('\n'.join(x for x in lines if not x.startswith('pathToIntro='))+'\npathToIntro='+str(intro.resolve())+'\n')
+        config=derived
+
     args.output.mkdir(parents=True, exist_ok=True)
     cmd=[
         "java","-jar",str(args.jar),
