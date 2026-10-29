@@ -168,7 +168,7 @@ jobs:
       - name: Rebuild M1 reference independently and compare raw output
         run: |
           python tools/pages/run_widoco.py --version v2-m1 --jar build/tools/widoco.jar --ontology build/input/v2-m1/distributions/cm-pharme-m1.ttl --output build/m1-reference-repeat --manifest-output build/evidence/v2-m1-widoco-repeat.json
-          python tools/pages/compare_widoco_regeneration.py --version v2-m1 --first build/site/ontology/2.1.0/m1/reference --second build/m1-reference-repeat --output build/evidence/m1-reference-reproducibility.json
+          python tools/pages/compare_widoco_regeneration.py --version v2-m1 --first build/site/ontology/2.1.0/m1/reference --second build/m1-reference-repeat --output build/evidence/m1-reference-reproducibility.json || { diff -u build/site/ontology/2.1.0/m1/reference/provenance/provenance-en.html build/m1-reference-repeat/provenance/provenance-en.html; exit 1; }
 
       - name: Package governed version downloads
         run: python tools/pages/run_version_pipeline.py downloads
