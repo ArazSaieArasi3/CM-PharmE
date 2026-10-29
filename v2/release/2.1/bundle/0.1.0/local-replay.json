@@ -1,0 +1,93 @@
+{
+  "schema_version": "CMPE-CuratedArchiveVerification/0.1.0",
+  "passed": true,
+  "archive_sha256": "4c9d3a1e52379c8c63b3619aedd7d0243cf702bcc078c9989a23619d50cc4350",
+  "archive_bytes": 1177600,
+  "member_count": 113,
+  "expected_digest_checked": true,
+  "support_manifest_sha256": "54af199642b1f692745be666c28d0980707d5cfcba995044c4fdebc0fd576240",
+  "trusted_external_tools": true,
+  "ga_ready": false,
+  "stable_published": false,
+  "git_used": false,
+  "database_executed": false,
+  "profile_replayed": true,
+  "malformed_archive_controls": [
+    {
+      "control": "payload-tampering",
+      "refused": true,
+      "reason": "Pinned source hash/size differs: source/v2/ontology/profiles/2.1/m1-provenance/0.1.0/profile.ttl"
+    },
+    {
+      "control": "tool-tampering",
+      "refused": true,
+      "reason": "Trusted root/tool/manifest bytes differ: release-tools/build_archive.py"
+    },
+    {
+      "control": "traversal",
+      "refused": true,
+      "reason": "Unsafe member path: cm-pharme-2.1.0/../escape.txt"
+    },
+    {
+      "control": "symlink",
+      "refused": true,
+      "reason": "Nonregular/link member refused: link"
+    },
+    {
+      "control": "unexpected",
+      "refused": true,
+      "reason": "Archive member set differs: ['unexpected.txt']"
+    },
+    {
+      "control": "missing",
+      "refused": true,
+      "reason": "Missing support member: source/tools/v2_ontology/CheckOWL2DL.java"
+    },
+    {
+      "control": "duplicate",
+      "refused": true,
+      "reason": "Duplicate archive member: package-manifest.json"
+    }
+  ],
+  "cold_replay_commands": [
+    {
+      "check": "support-contract",
+      "command": [
+        "v2/release/2.1/support/0.1.0/verify_contract.py",
+        "--output-dir",
+        "/workspace/scratch/83c4753442aa/CM-PharmE/build/ga-final-local/replay/support"
+      ],
+      "returncode": 0
+    },
+    {
+      "check": "profile",
+      "command": [
+        "v2/ontology/profiles/2.1/m1-provenance/0.1.0/verify_profile.py",
+        "--output-dir",
+        "/workspace/scratch/83c4753442aa/CM-PharmE/build/ga-final-local/replay/profile"
+      ],
+      "returncode": 0
+    },
+    {
+      "check": "integration-preflight",
+      "command": [
+        "v2/data/integrations/2.1/m1-core/0.1.0/verify_integration.py",
+        "--preflight-only"
+      ],
+      "returncode": 0
+    },
+    {
+      "check": "extracted-archive-rebuild",
+      "command": [
+        "/workspace/scratch/83c4753442aa/CM-PharmE/build/ga-final-local/replay/extracted/cm-pharme-2.1.0/release-tools/build_archive.py",
+        "--root",
+        "/workspace/scratch/83c4753442aa/CM-PharmE/build/ga-final-local/replay/extracted/cm-pharme-2.1.0/source",
+        "--output-dir",
+        "/workspace/scratch/83c4753442aa/CM-PharmE/build/ga-final-local/replay/rebuild"
+      ],
+      "returncode": 0
+    }
+  ],
+  "source_fallback_used": false,
+  "extracted_rebuild_byte_identical": true
+}

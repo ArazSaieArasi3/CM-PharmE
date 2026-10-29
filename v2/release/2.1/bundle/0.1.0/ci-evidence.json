@@ -1,0 +1,401 @@
+{
+  "schema_version": "CMPE-CuratedPackageCIEvidence/0.1.0",
+  "date": "2026-10-29",
+  "contract_freeze_commit": "cbeb9c8c52ec0b4d35261585552687b681327259",
+  "implementation_commit": "ffd6a8620f594798955567a4004aab5d50d4ae3f",
+  "archive_sha256": "4c9d3a1e52379c8c63b3619aedd7d0243cf702bcc078c9989a23619d50cc4350",
+  "archive_bytes": 1177600,
+  "member_count": 113,
+  "support_manifest_sha256": "54af199642b1f692745be666c28d0980707d5cfcba995044c4fdebc0fd576240",
+  "primary": {
+    "run": 40830382813,
+    "job": 123302977696,
+    "actual_tested_commit": "ffd6a8620f594798955567a4004aab5d50d4ae3f",
+    "reports": [
+      {
+        "schema_version": "CMPE-CuratedBuild/0.1.0",
+        "passed": true,
+        "archive": "cm-pharme-2.1.0.tar",
+        "archive_sha256": "4c9d3a1e52379c8c63b3619aedd7d0243cf702bcc078c9989a23619d50cc4350",
+        "archive_bytes": 1177600,
+        "member_count": 113,
+        "support_manifest_sha256": "54af199642b1f692745be666c28d0980707d5cfcba995044c4fdebc0fd576240",
+        "bundle_contract_sha256": "7faab60a34bd12fe24bf57ad3d659d38afd2a8c6a6debdd5149e63869482524c",
+        "independent_builds": 2,
+        "byte_identical": true,
+        "git_used": false,
+        "ga_ready": false,
+        "stable_published": false
+      },
+      {
+        "schema_version": "CMPE-CuratedBuild/0.1.0",
+        "passed": true,
+        "archive": "cm-pharme-2.1.0.tar",
+        "archive_sha256": "4c9d3a1e52379c8c63b3619aedd7d0243cf702bcc078c9989a23619d50cc4350",
+        "archive_bytes": 1177600,
+        "member_count": 113,
+        "support_manifest_sha256": "54af199642b1f692745be666c28d0980707d5cfcba995044c4fdebc0fd576240",
+        "bundle_contract_sha256": "7faab60a34bd12fe24bf57ad3d659d38afd2a8c6a6debdd5149e63869482524c",
+        "independent_builds": 2,
+        "byte_identical": true,
+        "git_used": false,
+        "ga_ready": false,
+        "stable_published": false
+      },
+      {
+        "schema_version": "CMPE-CuratedArchiveVerification/0.1.0",
+        "passed": true,
+        "archive_sha256": "4c9d3a1e52379c8c63b3619aedd7d0243cf702bcc078c9989a23619d50cc4350",
+        "archive_bytes": 1177600,
+        "member_count": 113,
+        "expected_digest_checked": false,
+        "support_manifest_sha256": "54af199642b1f692745be666c28d0980707d5cfcba995044c4fdebc0fd576240",
+        "trusted_external_tools": true,
+        "ga_ready": false,
+        "stable_published": false,
+        "git_used": false,
+        "database_executed": true,
+        "profile_replayed": true,
+        "malformed_archive_controls": [
+          {
+            "control": "payload-tampering",
+            "refused": true,
+            "reason": "Pinned source hash/size differs: source/v2/ontology/profiles/2.1/m1-provenance/0.1.0/profile.ttl"
+          },
+          {
+            "control": "tool-tampering",
+            "refused": true,
+            "reason": "Trusted root/tool/manifest bytes differ: release-tools/build_archive.py"
+          },
+          {
+            "control": "traversal",
+            "refused": true,
+            "reason": "Unsafe member path: cm-pharme-2.1.0/../escape.txt"
+          },
+          {
+            "control": "symlink",
+            "refused": true,
+            "reason": "Nonregular/link member refused: link"
+          },
+          {
+            "control": "unexpected",
+            "refused": true,
+            "reason": "Archive member set differs: ['unexpected.txt']"
+          },
+          {
+            "control": "missing",
+            "refused": true,
+            "reason": "Missing support member: source/tools/v2_ontology/CheckOWL2DL.java"
+          },
+          {
+            "control": "duplicate",
+            "refused": true,
+            "reason": "Duplicate archive member: package-manifest.json"
+          }
+        ],
+        "cold_replay_commands": [
+          {
+            "check": "support-contract",
+            "command": [
+              "v2/release/2.1/support/0.1.0/verify_contract.py",
+              "--output-dir",
+              "/home/runner/work/CM-PharmE/CM-PharmE/build/ga-core/replay/support"
+            ],
+            "returncode": 0
+          },
+          {
+            "check": "profile",
+            "command": [
+              "v2/ontology/profiles/2.1/m1-provenance/0.1.0/verify_profile.py",
+              "--output-dir",
+              "/home/runner/work/CM-PharmE/CM-PharmE/build/ga-core/replay/profile"
+            ],
+            "returncode": 0
+          },
+          {
+            "check": "integration-preflight",
+            "command": [
+              "v2/data/integrations/2.1/m1-core/0.1.0/verify_integration.py",
+              "--preflight-only"
+            ],
+            "returncode": 0
+          },
+          {
+            "check": "database-target-guard",
+            "command": [
+              "v2/data/integrations/2.1/m1-core/0.1.0/verify_integration.py",
+              "--preflight-only",
+              "--database-url",
+              "<explicit-fixture-url>"
+            ],
+            "returncode": 0
+          },
+          {
+            "check": "database-bootstrap",
+            "command": [
+              "tools/v2_data/bootstrap_ingest.py",
+              "--database-url",
+              "<explicit-fixture-url>",
+              "--reset",
+              "--report",
+              "/home/runner/work/CM-PharmE/CM-PharmE/build/ga-core/replay/integration-ingest.json"
+            ],
+            "returncode": 0
+          },
+          {
+            "check": "database-integration",
+            "command": [
+              "v2/data/integrations/2.1/m1-core/0.1.0/verify_integration.py",
+              "--database-url",
+              "<explicit-fixture-url>",
+              "--ingest-report",
+              "/home/runner/work/CM-PharmE/CM-PharmE/build/ga-core/replay/integration-ingest.json",
+              "--output-dir",
+              "/home/runner/work/CM-PharmE/CM-PharmE/build/ga-core/replay/integration"
+            ],
+            "returncode": 0
+          },
+          {
+            "check": "extracted-archive-rebuild",
+            "command": [
+              "/home/runner/work/CM-PharmE/CM-PharmE/build/ga-core/replay/extracted/cm-pharme-2.1.0/release-tools/build_archive.py",
+              "--root",
+              "/home/runner/work/CM-PharmE/CM-PharmE/build/ga-core/replay/extracted/cm-pharme-2.1.0/source",
+              "--output-dir",
+              "/home/runner/work/CM-PharmE/CM-PharmE/build/ga-core/replay/rebuild"
+            ],
+            "returncode": 0
+          }
+        ],
+        "source_fallback_used": false,
+        "extracted_rebuild_byte_identical": true,
+        "database_summary": {
+          "passed": true,
+          "source_rows": 7,
+          "legacy_pairs": 4,
+          "rollback_verified": true,
+          "schema_data_preserved": true
+        }
+      }
+    ],
+    "artifact": {
+      "id": 12878850465,
+      "name": "cm-pharme-v2-21-curated-core-package",
+      "size_in_bytes": 1018557,
+      "url": "https://api.github.com/repos/ArazSaieArasi3/CM-PharmE/actions/artifacts/12878850465",
+      "archive_download_url": "https://api.github.com/repos/ArazSaieArasi3/CM-PharmE/actions/artifacts/12878850465/zip",
+      "expired": false,
+      "created_at": "2026-10-29T06:39:03Z",
+      "expires_at": "2026-11-28T06:39:02Z",
+      "updated_at": "2026-10-29T06:39:03Z",
+      "digest": "sha256:19df937e83de5551667b5b2f8e35b398e1ab0daeb842e02ebeb011f369282ac0",
+      "workflow_run": {
+        "id": 40830382813,
+        "repository_id": 1053482924,
+        "head_repository_id": 1053482924,
+        "head_branch": "v2/connectivity-audit-2-1-candidate",
+        "head_sha": "ffd6a8620f594798955567a4004aab5d50d4ae3f"
+      }
+    }
+  },
+  "independent": {
+    "run": 40830389195,
+    "job": 123302996949,
+    "actual_tested_commit": "4d2ead55a8e12a490b0eee5da0c1427588683c9b",
+    "tree_matches_implementation": true,
+    "reports": [
+      {
+        "schema_version": "CMPE-CuratedBuild/0.1.0",
+        "passed": true,
+        "archive": "cm-pharme-2.1.0.tar",
+        "archive_sha256": "4c9d3a1e52379c8c63b3619aedd7d0243cf702bcc078c9989a23619d50cc4350",
+        "archive_bytes": 1177600,
+        "member_count": 113,
+        "support_manifest_sha256": "54af199642b1f692745be666c28d0980707d5cfcba995044c4fdebc0fd576240",
+        "bundle_contract_sha256": "7faab60a34bd12fe24bf57ad3d659d38afd2a8c6a6debdd5149e63869482524c",
+        "independent_builds": 2,
+        "byte_identical": true,
+        "git_used": false,
+        "ga_ready": false,
+        "stable_published": false
+      },
+      {
+        "schema_version": "CMPE-CuratedBuild/0.1.0",
+        "passed": true,
+        "archive": "cm-pharme-2.1.0.tar",
+        "archive_sha256": "4c9d3a1e52379c8c63b3619aedd7d0243cf702bcc078c9989a23619d50cc4350",
+        "archive_bytes": 1177600,
+        "member_count": 113,
+        "support_manifest_sha256": "54af199642b1f692745be666c28d0980707d5cfcba995044c4fdebc0fd576240",
+        "bundle_contract_sha256": "7faab60a34bd12fe24bf57ad3d659d38afd2a8c6a6debdd5149e63869482524c",
+        "independent_builds": 2,
+        "byte_identical": true,
+        "git_used": false,
+        "ga_ready": false,
+        "stable_published": false
+      },
+      {
+        "schema_version": "CMPE-CuratedArchiveVerification/0.1.0",
+        "passed": true,
+        "archive_sha256": "4c9d3a1e52379c8c63b3619aedd7d0243cf702bcc078c9989a23619d50cc4350",
+        "archive_bytes": 1177600,
+        "member_count": 113,
+        "expected_digest_checked": false,
+        "support_manifest_sha256": "54af199642b1f692745be666c28d0980707d5cfcba995044c4fdebc0fd576240",
+        "trusted_external_tools": true,
+        "ga_ready": false,
+        "stable_published": false,
+        "git_used": false,
+        "database_executed": true,
+        "profile_replayed": true,
+        "malformed_archive_controls": [
+          {
+            "control": "payload-tampering",
+            "refused": true,
+            "reason": "Pinned source hash/size differs: source/v2/ontology/profiles/2.1/m1-provenance/0.1.0/profile.ttl"
+          },
+          {
+            "control": "tool-tampering",
+            "refused": true,
+            "reason": "Trusted root/tool/manifest bytes differ: release-tools/build_archive.py"
+          },
+          {
+            "control": "traversal",
+            "refused": true,
+            "reason": "Unsafe member path: cm-pharme-2.1.0/../escape.txt"
+          },
+          {
+            "control": "symlink",
+            "refused": true,
+            "reason": "Nonregular/link member refused: link"
+          },
+          {
+            "control": "unexpected",
+            "refused": true,
+            "reason": "Archive member set differs: ['unexpected.txt']"
+          },
+          {
+            "control": "missing",
+            "refused": true,
+            "reason": "Missing support member: source/tools/v2_ontology/CheckOWL2DL.java"
+          },
+          {
+            "control": "duplicate",
+            "refused": true,
+            "reason": "Duplicate archive member: package-manifest.json"
+          }
+        ],
+        "cold_replay_commands": [
+          {
+            "check": "support-contract",
+            "command": [
+              "v2/release/2.1/support/0.1.0/verify_contract.py",
+              "--output-dir",
+              "/home/runner/work/CM-PharmE/CM-PharmE/build/ga-core/replay/support"
+            ],
+            "returncode": 0
+          },
+          {
+            "check": "profile",
+            "command": [
+              "v2/ontology/profiles/2.1/m1-provenance/0.1.0/verify_profile.py",
+              "--output-dir",
+              "/home/runner/work/CM-PharmE/CM-PharmE/build/ga-core/replay/profile"
+            ],
+            "returncode": 0
+          },
+          {
+            "check": "integration-preflight",
+            "command": [
+              "v2/data/integrations/2.1/m1-core/0.1.0/verify_integration.py",
+              "--preflight-only"
+            ],
+            "returncode": 0
+          },
+          {
+            "check": "database-target-guard",
+            "command": [
+              "v2/data/integrations/2.1/m1-core/0.1.0/verify_integration.py",
+              "--preflight-only",
+              "--database-url",
+              "<explicit-fixture-url>"
+            ],
+            "returncode": 0
+          },
+          {
+            "check": "database-bootstrap",
+            "command": [
+              "tools/v2_data/bootstrap_ingest.py",
+              "--database-url",
+              "<explicit-fixture-url>",
+              "--reset",
+              "--report",
+              "/home/runner/work/CM-PharmE/CM-PharmE/build/ga-core/replay/integration-ingest.json"
+            ],
+            "returncode": 0
+          },
+          {
+            "check": "database-integration",
+            "command": [
+              "v2/data/integrations/2.1/m1-core/0.1.0/verify_integration.py",
+              "--database-url",
+              "<explicit-fixture-url>",
+              "--ingest-report",
+              "/home/runner/work/CM-PharmE/CM-PharmE/build/ga-core/replay/integration-ingest.json",
+              "--output-dir",
+              "/home/runner/work/CM-PharmE/CM-PharmE/build/ga-core/replay/integration"
+            ],
+            "returncode": 0
+          },
+          {
+            "check": "extracted-archive-rebuild",
+            "command": [
+              "/home/runner/work/CM-PharmE/CM-PharmE/build/ga-core/replay/extracted/cm-pharme-2.1.0/release-tools/build_archive.py",
+              "--root",
+              "/home/runner/work/CM-PharmE/CM-PharmE/build/ga-core/replay/extracted/cm-pharme-2.1.0/source",
+              "--output-dir",
+              "/home/runner/work/CM-PharmE/CM-PharmE/build/ga-core/replay/rebuild"
+            ],
+            "returncode": 0
+          }
+        ],
+        "source_fallback_used": false,
+        "extracted_rebuild_byte_identical": true,
+        "database_summary": {
+          "passed": true,
+          "source_rows": 7,
+          "legacy_pairs": 4,
+          "rollback_verified": true,
+          "schema_data_preserved": true
+        }
+      }
+    ],
+    "artifact": {
+      "id": 12878083864,
+      "name": "cm-pharme-v2-21-curated-core-package",
+      "size_in_bytes": 1018422,
+      "url": "https://api.github.com/repos/ArazSaieArasi3/CM-PharmE/actions/artifacts/12878083864",
+      "archive_download_url": "https://api.github.com/repos/ArazSaieArasi3/CM-PharmE/actions/artifacts/12878083864/zip",
+      "expired": false,
+      "created_at": "2026-10-29T06:39:06Z",
+      "expires_at": "2026-11-28T06:39:05Z",
+      "updated_at": "2026-10-29T06:39:06Z",
+      "digest": "sha256:d03d46c86b1d02e23dc9f516cedc9061006f0733a19ff4e17e848ba750a3cfe0",
+      "workflow_run": {
+        "id": 40830389195,
+        "repository_id": 1053482924,
+        "head_repository_id": 1053482924,
+        "head_branch": "v2/connectivity-audit-2-1-candidate",
+        "head_sha": "ffd6a8620f594798955567a4004aab5d50d4ae3f"
+      }
+    }
+  },
+  "local_database_executed": false,
+  "local_archive_profile_and_rebuild_passed": true,
+  "hosted_independent_databases": 2,
+  "all_head_run_executions_success": 30,
+  "verification_method": "Exact checkout and build/replay JSON read in job logs; artifact metadata retained but ZIP not downloaded. Local build independently matches inner tar hash. Publication packet will download actual release assets.",
+  "ga_ready": false,
+  "stable_published": false,
+  "next_issue": 335
+}
