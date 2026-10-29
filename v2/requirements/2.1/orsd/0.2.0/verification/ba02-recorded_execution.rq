@@ -1,2 +1,0 @@
-PREFIX c: <https://w3id.org/cm-pharme/2.1/> PREFIX d: <https://w3id.org/cm-pharme/experimental/coherence/>
-SELECT DISTINCT ?cap ?activity WHERE { ?cap a c:EnterpriseCapability ; d:capabilityRealizedInLogistics ?activity } ORDER BY ?cap ?activity
