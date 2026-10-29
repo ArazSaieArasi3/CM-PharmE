@@ -1,8 +1,8 @@
 # M1 Provenance Core — release 2.1.0
 
 > **Version scope:** Released 2.1.0 M1 profile 0.1.0  
-> **Status:** Stable source release; documentation candidate  
-> **Updated:** 2026-10-29
+> **Status:** Stable source release; generated documentation  
+> **Updated:** 2026-10-30
 
 ## Purpose and supported use
 
@@ -27,16 +27,21 @@ total property counts used by reference and visualization tools.
 - [Exact supported files, hashes and rights](https://github.com/ArazSaieArasi3/CM-PharmE/blob/77a8e854d0e3927b0687346d7f8fda6a398adda7/source/v2/release/2.1/support/0.1.0/manifest.json)
 
 The complete package includes admission code, shapes, synthetic witnesses and
-reproduction instructions. The planned Pages route is `ontology/2.1.0/m1/`;
-this documentation candidate does not yet assert that its new public route is live.
-Formal reference and WebVOWL generation follow in #338, with coordinated public
-verification in #339. WebVOWL is an exploration projection of the TBox, not an
-OntoUML diagram or a complete statement of the logical semantics.
+reproduction instructions. The profile has its own documentation routes:
 
-Candidate routes for that publication (not yet verified as live):
+- [Profile overview](https://arazsaiearasi3.github.io/CM-PharmE/ontology/2.1.0/m1/)
+- [Generated formal reference](https://arazsaiearasi3.github.io/CM-PharmE/ontology/2.1.0/m1/reference/)
+- [Interactive WebVOWL projection](https://arazsaiearasi3.github.io/CM-PharmE/ontology/2.1.0/m1/explore/)
+- [Five serialization downloads](https://arazsaiearasi3.github.io/CM-PharmE/ontology/2.1.0/m1/downloads/)
+- [Citation guidance](https://arazsaiearasi3.github.io/CM-PharmE/ontology/2.1.0/m1/citation/)
+- [Exact released source tree](https://github.com/ArazSaieArasi3/CM-PharmE/tree/77a8e854d0e3927b0687346d7f8fda6a398adda7)
 
-- [Formal reference — preparation pending #338](https://arazsaiearasi3.github.io/CM-PharmE/ontology/2.1.0/m1/reference/)
-- [WebVOWL — preparation pending #338](https://arazsaiearasi3.github.io/CM-PharmE/ontology/2.1.0/m1/explore/)
+WIDOCO represents the profile declarations; external vocabulary declarations are
+identified separately. WebVOWL is an exploration projection, not an OntoUML
+diagram or a complete statement of logical semantics. Its7class/5property
+projection totals differ from the four domain classes/two domain relations.
+[Publication and synchronization receipts](https://github.com/ArazSaieArasi3/CM-PharmE/blob/main/docs/documentation/publication-339/README.md)
+record actual public QA and baseline declaration under #339.
 
 ## Admission, identity and logical view
 
@@ -86,13 +91,13 @@ upstream terms. The support manifest provides the file-level scope.
 <summary>Documentation record</summary>
 
 - **Page scope:** Released M1 provenance profile only
-- **Documentation maturity:** Source-complete candidate; live public QA pending
+- **Documentation maturity:** Source-complete generated documentation; publication receipts tracked in #339
 - **Authoritative sources:** release/2.1.0@77a8e854d0e3927b0687346d7f8fda6a398adda7
 - **Last synchronized:** 2026-10-29
 - **Last synchronized ref:** main@d185ba2751a77658db9e282f13367362068d07d0; release/2.1.0@77a8e854d0e3927b0687346d7f8fda6a398adda7
-- **Wiki baseline:** Existing WB-2026.09.1 retained; M1 increment awaits #339 public QA
+- **Wiki baseline:** WB-2026.10.1 increment; declaration follows #339 public QA; prior baseline retained
 - **Related issues:** #337, #338, #339
-- **Evidence status:** Stable source release verified; this documentation increment is not yet published
-- **Future refresh:** #338 generated reference/explorer; #339 public publication and QA
+- **Evidence status:** Exact source and generated candidate verified; live publication evidence recorded separately
+- **Future refresh:** #339 public QA and baseline; later compatible profile changes
 
 </details>

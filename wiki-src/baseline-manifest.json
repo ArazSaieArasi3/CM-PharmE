@@ -1,33 +1,21 @@
 {
-  "candidate_baseline_id": "WB-2026.09.1",
-  "created_date": "2026-09-23",
-  "declared": true,
-  "declared_date": "2026-09-24",
+  "candidate_baseline_id": "WB-2026.10.1",
+  "created_date": "2026-10-30",
+  "declared": false,
+  "maturity": "Source-complete; public QA pending",
+  "previous_baseline": "WB-2026.09.1",
+  "previous_manifest": "wiki-src/baselines/WB-2026.09.1/baseline-manifest.json",
+  "qa_issue": 339,
   "governance_issues": [
-    202,
-    203,
-    210,
     211,
-    215,
-    216,
-    217
+    244,
+    337,
+    338,
+    339,
+    341
   ],
-  "initial_controlled_publication": {
-    "failures": 0,
-    "rendered_urls_expected": 56,
-    "rendered_urls_verified": 56,
-    "source_commit": "d8251c9adb0b485b811e03269f19d18963ccf473",
-    "wiki_commit": "e470b7a50642a1bc46bcf36bdbea3a6ea0ca60d8",
-    "workflow_run": "35885115760"
-  },
-  "mandatory_future_refresh_issues": [
-    212,
-    213,
-    214
-  ],
-  "maturity": "Stable",
-  "qa_issue": 209,
-  "repository_release_state_checked_2026_09_23": "No GitHub Releases published",
+  "semantic_distribution": "2.1.0",
+  "m1_source_commit": "77a8e854d0e3927b0687346d7f8fda6a398adda7",
   "v1": {
     "branch": "main",
     "commit": "5099888668d35f798e4759e3534e707ed906db24",
@@ -38,5 +26,5 @@
     "commit": "1226b0a5484f8f5d3a8d214e0d0f52f066b88999",
     "documentation_status": "Stable-to-date / Evolving"
   },
-  "wiki_publication_state": "published and rendered-verified; declaration synchronization controlled by wiki-publish workflow"
+  "wiki_publication_state": "M1 documentation increment authorized for controlled publication; new baseline awaits public QA"
 }

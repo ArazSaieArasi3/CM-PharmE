@@ -6,7 +6,7 @@ on:
       baseline:
         description: Wiki baseline identifier
         required: true
-        default: WB-2026.09.1
+        default: WB-2026.10.1
   pull_request:
     paths:
       - 'wiki-src/**'
@@ -33,7 +33,10 @@ jobs:
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             echo "value=${{ inputs.baseline }}" >> "$GITHUB_OUTPUT"
           else
-            echo "value=WB-2026.09.1" >> "$GITHUB_OUTPUT"
+            python - <<'PY' >> "$GITHUB_OUTPUT"
+            import json
+            print("value="+json.load(open("wiki-src/baseline-manifest.json"))["candidate_baseline_id"])
+            PY
           fi
       - name: Build deterministic Wiki snapshot
         run: python tools/wiki/build_wiki_snapshot.py build --baseline "${{ steps.baseline.outputs.value }}"

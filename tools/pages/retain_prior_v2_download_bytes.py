@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # SPDX-License-Identifier: MIT
 """Retain governed old serialization bytes only after strict identity/graph checks."""
-import copy,hashlib,json,shutil
+import copy,hashlib,json,shutil,zipfile
 from pathlib import Path
 from rdflib import Graph
 from rdflib.compare import isomorphic
@@ -12,6 +12,15 @@ def read(p):return json.loads(p.read_text())
 def main():
  relative=Path('ontology/v2/current');old=ROOT/'build/prior-site-341/site'/relative;new=ROOT/'build/site'/relative
  receipt=read(ROOT/'docs/documentation/converter-identity-341/ci-evidence.json');expected=next(x for x in receipt['future_onboarding_proof']['prior_version_isolation'] if x['version']=='v2')['before_tree_sha256']
+ archive=ROOT/'docs/documentation/baselines/PB-2026.10.1.zip'
+ if archive.is_file():
+  with zipfile.ZipFile(archive) as z:
+   prefix='site/'+relative.as_posix()+'/'
+   old.mkdir(parents=True,exist_ok=True)
+   for name in z.namelist():
+    if name.startswith(prefix) and not name.endswith('/'):
+     rel=Path(name[len(prefix):]);assert not rel.is_absolute() and '..' not in rel.parts
+     p=old/rel;p.parent.mkdir(parents=True,exist_ok=True);p.write_bytes(z.read(name))
  a,b=tree(old),tree(new);assert hashlib.sha256(json.dumps(a,sort_keys=True).encode()).hexdigest()==expected,'Prior artifact identity drift'
  changed=[n for n in sorted(set(a)|set(b)) if a.get(n)!=b.get(n)]
  allowed={'downloads/'+n for n in ['cm-pharme-v2.owl','cm-pharme-v2.rdf','cm-pharme-v2.jsonld','download-manifest.json','SHA256SUMS.txt','index.html']}

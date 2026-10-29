@@ -246,6 +246,7 @@ jobs:
         run: python tools/pages/test_future_version_onboarding.py --site build/site --output build/evidence/pages-277-onboarding.json
 
       - name: Retrieve immutable prior assembled candidate for byte comparison
+        if: hashFiles('docs/documentation/baselines/PB-2026.10.1.zip') == ''
         uses: actions/download-artifact@v4
         with:
           artifact-ids: 12934165079
@@ -255,6 +256,7 @@ jobs:
           merge-multiple: true
 
       - name: Extract prior Pages archive
+        if: hashFiles('docs/documentation/baselines/PB-2026.10.1.zip') == ''
         run: |
           mkdir -p build/prior-site-341/site
           tar -xf build/prior-site-341/artifact.tar -C build/prior-site-341/site
@@ -303,6 +305,22 @@ jobs:
           name: cm-pharme-pages-build-evidence
           path: build/evidence/
           if-no-files-found: error
+          retention-days: 90
+
+      - name: Preserve exact publication control-plane source
+        uses: actions/upload-artifact@v4
+        with:
+          name: cm-pharme-publication-source-339
+          include-hidden-files: true
+          path: |
+            docs/documentation/
+            tools/pages/
+            pages-src/widoco/
+            wiki-src/
+            README.md
+            CHANGELOG.md
+            .github/workflows/pages-deploy.yml
+            .github/workflows/wiki-publish.yml
           retention-days: 90
 
   deploy:
@@ -388,5 +406,6 @@ jobs:
             public-verification.json
             public-v1-explore.png
             public-v2-explore.png
+            public-v2-m1-explore.png
             public-navigation.json
           if-no-files-found: warn

@@ -37,7 +37,7 @@ CM-PharmE currently uses two documentation profiles:
 ## Version shortcuts
 
 ### Released M1 provenance profile — 2.1.0
-- [[M1 Provenance Core 2.1.0]] — stable profile 0.1.0; documentation publication is being prepared. The full V2 model remains evolving.
+- [[M1 Provenance Core 2.1.0]] — stable profile 0.1.0; release, reference, explorer and download links. The full V2 model remains evolving.
 
 ### CM-PharmE 1.x — Stable
 - [[CM-PharmE 1.x]]

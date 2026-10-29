@@ -132,7 +132,7 @@ jobs:
           retention-days: 30
 
       - name: Finalize QA issue
-        if: steps.baseline.outputs.declared == 'true'
+        if: steps.baseline.outputs.declared == 'true' && steps.baseline.outputs.id == 'WB-2026.09.1'
         shell: bash
         run: |
           BODY=$(cat <<EOF
@@ -154,7 +154,7 @@ jobs:
           gh issue close 209 --repo "$GITHUB_REPOSITORY" --reason completed
 
       - name: Finalize archive issue
-        if: steps.baseline.outputs.declared == 'true'
+        if: steps.baseline.outputs.declared == 'true' && steps.baseline.outputs.id == 'WB-2026.09.1'
         shell: bash
         run: |
           ARCHIVE_SHA="$(cut -d' ' -f1 final-wiki-archive-sha256.txt)"

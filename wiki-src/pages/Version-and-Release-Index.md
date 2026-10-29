@@ -23,9 +23,7 @@ was published on 2026-10-29. Its three assets, exact tag target and downloaded
 bytes were verified. The curated source commit is
 `77a8e854d0e3927b0687346d7f8fda6a398adda7`.
 
-Read [[M1 Provenance Core 2.1.0]] for purpose, use, evidence and limits. Its
-planned Pages entry is `ontology/2.1.0/m1/`; source publication does not imply
-that this new reference/explorer route has already been publicly deployed.
+Read [[M1 Provenance Core 2.1.0]] for purpose, use, evidence and limits. Its [Pages overview](https://arazsaiearasi3.github.io/CM-PharmE/ontology/2.1.0/m1/) links the formal reference, WebVOWL, downloads and citation. [Publication receipts](https://github.com/ArazSaieArasi3/CM-PharmE/blob/main/docs/documentation/publication-339/README.md) separate source, deployment and live-verification identities.
 
 ## V1 and full V2
 
@@ -41,7 +39,7 @@ The separately scoped 2.1.0 release does not replace that entire model.
 The earlier Wiki foundation record used `WB-2026.09.1`; Pages documentation
 baseline `PB-2026.09.1` was declared after its own publication and rendered checks.
 The released M1 documentation increment now has its own source registration and
-candidate reader pages. Its next public documentation baseline is declared only
+generated reference/explorer. WB-2026.10.1 and PB-2026.10.1 are declared only
 after actual Wiki/Pages/WebVOWL publication and verification under #339.
 
 The 2026-09-23 foundation check recorded no GitHub Releases at that time. Later

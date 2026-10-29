@@ -2,6 +2,16 @@
 
 This changelog records research-model and repository-level changes that are meaningful for reproducibility. Git commits remain the technical history; this file records semantic and release-level change.
 
+## Documentation increment for released M1 2.1.0 — 2026-10-30
+
+- Register profile0.1.0 from exact curated release commit `77a8e854d0e3927b0687346d7f8fda6a398adda7` without replacing stable V1 or the evolving full V2 snapshot.
+- Add scoped Wiki/Pages release navigation, exact citation/source links and five graph-equivalent serialization downloads.
+- Generate audited WIDOCO reference and static WebVOWL projection; restore the original converter checksum with explicit historical Maven plugin pins.
+- Preserve old routes and prior V1/fullV2 bytes, with exact source/checksum/graph checks before retaining legacy serialization order.
+- Candidate QA passes independent reference regeneration and local Chromium load/search/zoom. Public publication receipts and the new documentation baseline are recorded separately under [publication-339](docs/documentation/publication-339/README.md).
+
+This documents an existing stable semantic release; it is not a new semantic version or full V2 research freeze.
+
 ## Unreleased / Repository Restructuring
 
 ### Repository Architecture

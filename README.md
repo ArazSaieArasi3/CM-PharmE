@@ -4,10 +4,17 @@
 
 **CM-PharmE** is an evolving, versioned, ontology-grounded conceptual model and research knowledge base for the pharmaceutical ecosystem. The repository is designed as a long-lived research asset supporting conceptual modeling, formal ontology engineering, evaluation, data mapping, publication traceability, reproducible builds, semantic-query testing and future data/application layers.
 
-> **Current stable semantic baseline:** `v1.0.0`  
-> Engineering, evaluation or manuscript revisions do **not** automatically create a new semantic model version. A new CM-PharmE release is declared only when semantic changes are explicitly identified, evaluated and versioned.
+## Current releases and documentation
 
-The latest repository-engineering closure is now integrated into `main`. It preserves the `v1.0.0` semantic baseline while substantially strengthening reproducibility, formal validation, serialization coverage, executable regression testing and research-artifact traceability.
+| Artifact | Status | Reader path |
+|---|---|---|
+| **2.1.0 — M1 Provenance Core**, profile0.1.0 | Published stable scoped profile | [Release](https://github.com/ArazSaieArasi3/CM-PharmE/releases/tag/2.1.0) · [Wiki](https://github.com/ArazSaieArasi3/CM-PharmE/wiki/M1-Provenance-Core-2.1.0) · [Reference](https://arazsaiearasi3.github.io/CM-PharmE/ontology/2.1.0/m1/reference/) · [WebVOWL](https://arazsaiearasi3.github.io/CM-PharmE/ontology/2.1.0/m1/explore/) · [Downloads](https://arazsaiearasi3.github.io/CM-PharmE/ontology/2.1.0/m1/downloads/) |
+| V1 v1.0.0 | Preserved stable full V1 baseline | [V1 documentation](https://arazsaiearasi3.github.io/CM-PharmE/ontology/v1.0.0/) |
+| Full V2 model | Stable-to-date / Evolving; research freeze pending | [V2 current documentation](https://arazsaiearasi3.github.io/CM-PharmE/ontology/v2/current/) |
+
+M1 provides four CM-PharmE classes and two CM-PharmE object properties for dataset/release/record provenance. It includes separate local admission, a strict logical view and bounded synthetic mapping evidence. This small stable profile does not establish full V2/native/module/ORSD/expert acceptance. Use the [release-specific citation](https://github.com/ArazSaieArasi3/CM-PharmE/blob/77a8e854d0e3927b0687346d7f8fda6a398adda7/CITATION.cff) for M1; the historical root citation and V1 inventories below retain their own scope. Semantic releases and documentation baselines have separate identities.
+
+[Documentation synchronization and publication evidence](docs/documentation/publication-339/README.md) · [Version index](https://github.com/ArazSaieArasi3/CM-PharmE/wiki/Version-and-Release-Index)
 
 ## Start Here
 
@@ -60,7 +67,7 @@ The model-development lineage combines PRISMA-guided evidence review, thematic s
 
 | Dimension | Current state |
 |---|---|
-| Stable semantic release | **v1.0.0** |
+| Preserved full V1 semantic release | **v1.0.0**; scoped M1 distribution **2.1.0** is listed above |
 | Canonical concepts | **39** |
 | Stable relation records | **40** — 39 OWL object properties + 1 explicit generalization |
 | Modeling domains | **5** |
