@@ -3,6 +3,15 @@
 These repository conventions record Araz's explicit 2026-10-28 direction and
 accepted decisions. Follow newer direct user instructions if they supersede them.
 
+- On 2026-10-30 Araz explicitly set comprehensive **2.2** as the next target:
+  preserve/integrate all valid V2 content, disposition isolated concepts/domains
+  through justified semantics, reconcile model/requirement/mapping/evaluation
+  gaps, and make all documentation/diagrams describe that same complete model.
+  A smaller isolated capability/profile must not be reported as completion of
+  this target. Retain the immutable 2.1.0 M1 release and prior acceptance history;
+  execute the comprehensive work through bounded packets, without silently
+  dropping domains or copying older experiments over later native decisions.
+
 - Read `v2/release/current.json` and its current approved planning record first.
   Older versioned review/CI records describe their own pinned scope; do not rewrite
   them to manufacture current acceptance.

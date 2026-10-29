@@ -1,0 +1,58 @@
+name: CM-PharmE 2.2 Complete Model Prerequisites
+on:
+  pull_request:
+    branches: [v2/research-program]
+    paths:
+      - 'v2/release/2.2/preparation/**'
+      - 'v2/release/roadmap/0.13.0/**'
+      - 'v2/release/current.json'
+      - '.github/workflows/v2-22-comprehensive-preparation.yml'
+  push:
+    branches: ['v2/**']
+    paths:
+      - 'v2/release/2.2/preparation/**'
+      - 'v2/release/roadmap/0.13.0/**'
+      - 'v2/release/current.json'
+      - '.github/workflows/v2-22-comprehensive-preparation.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-python@v7.0.0
+        with:
+          python-version: '3.12'
+      - name: Install pinned RDF parser
+        run: python -m pip install --disable-pip-version-check rdflib==7.5.0
+      - name: Recompute pinned reconciliation evidence
+        run: >-
+          python v2/release/2.2/preparation/0.1.0/audit.py
+          --output build/comprehensive-22-preparation --check-committed
+      - name: Record exact execution identity
+        env:
+          EXECUTION_SHA: ${{ github.sha }}
+          EXECUTION_REF: ${{ github.ref }}
+          EXECUTION_RUN: ${{ github.run_id }}
+        run: |
+          python - <<'PY'
+          import json, os, pathlib, platform
+          import rdflib
+          out = pathlib.Path('build/comprehensive-22-preparation')
+          record = {k: os.environ[k] for k in ['EXECUTION_SHA', 'EXECUTION_REF', 'EXECUTION_RUN']}
+          record.update(python=platform.python_version(), rdflib=rdflib.__version__)
+          (out / 'execution.json').write_text(json.dumps(record, indent=2) + '\n')
+          PY
+      - name: Upload exact audit evidence
+        if: always()
+        uses: actions/upload-artifact@v7.0.1
+        with:
+          name: cm-pharme-comprehensive-22-preparation
+          path: build/comprehensive-22-preparation/
+          if-no-files-found: error
+          retention-days: 30

@@ -1,0 +1,911 @@
+{
+  "shared_nonpackage_field_differences": [
+    {
+      "element_id": "end-classificationEntity-target",
+      "field": "isReadOnly",
+      "latest_candidate": true,
+      "older_experiment": false,
+      "integration_rule": "PRESERVE_LATER_DECISION_OR_RECORD_EXPLICIT_VERSIONED_REPLACEMENT"
+    },
+    {
+      "element_id": "end-classificationEntry-target",
+      "field": "isReadOnly",
+      "latest_candidate": true,
+      "older_experiment": false,
+      "integration_rule": "PRESERVE_LATER_DECISION_OR_RECORD_EXPLICIT_VERSIONED_REPLACEMENT"
+    },
+    {
+      "element_id": "end-contextClassificationEntry-source",
+      "field": "cardinality",
+      "latest_candidate": "0..*",
+      "older_experiment": null,
+      "integration_rule": "PRESERVE_LATER_DECISION_OR_RECORD_EXPLICIT_VERSIONED_REPLACEMENT"
+    },
+    {
+      "element_id": "end-contextClassificationEntry-source",
+      "field": "isReadOnly",
+      "latest_candidate": false,
+      "older_experiment": null,
+      "integration_rule": "PRESERVE_LATER_DECISION_OR_RECORD_EXPLICIT_VERSIONED_REPLACEMENT"
+    },
+    {
+      "element_id": "end-contextClassificationEntry-target",
+      "field": "cardinality",
+      "latest_candidate": "1",
+      "older_experiment": null,
+      "integration_rule": "PRESERVE_LATER_DECISION_OR_RECORD_EXPLICIT_VERSIONED_REPLACEMENT"
+    },
+    {
+      "element_id": "end-contextClassificationEntry-target",
+      "field": "isReadOnly",
+      "latest_candidate": true,
+      "older_experiment": null,
+      "integration_rule": "PRESERVE_LATER_DECISION_OR_RECORD_EXPLICIT_VERSIONED_REPLACEMENT"
+    },
+    {
+      "element_id": "end-contextClassificationProduct-source",
+      "field": "cardinality",
+      "latest_candidate": "0..*",
+      "older_experiment": null,
+      "integration_rule": "PRESERVE_LATER_DECISION_OR_RECORD_EXPLICIT_VERSIONED_REPLACEMENT"
+    },
+    {
+      "element_id": "end-contextClassificationProduct-source",
+      "field": "isReadOnly",
+      "latest_candidate": false,
+      "older_experiment": null,
+      "integration_rule": "PRESERVE_LATER_DECISION_OR_RECORD_EXPLICIT_VERSIONED_REPLACEMENT"
+    },
+    {
+      "element_id": "end-contextClassificationProduct-target",
+      "field": "cardinality",
+      "latest_candidate": "0..1",
+      "older_experiment": null,
+      "integration_rule": "PRESERVE_LATER_DECISION_OR_RECORD_EXPLICIT_VERSIONED_REPLACEMENT"
+    },
+    {
+      "element_id": "end-contextClassificationProduct-target",
+      "field": "isReadOnly",
+      "latest_candidate": true,
+      "older_experiment": null,
+      "integration_rule": "PRESERVE_LATER_DECISION_OR_RECORD_EXPLICIT_VERSIONED_REPLACEMENT"
+    },
+    {
+      "element_id": "end-evidenceItem-target",
+      "field": "isReadOnly",
+      "latest_candidate": true,
+      "older_experiment": false,
+      "integration_rule": "PRESERVE_LATER_DECISION_OR_RECORD_EXPLICIT_VERSIONED_REPLACEMENT"
+    },
+    {
+      "element_id": "end-evidenceRecord-source",
+      "field": "cardinality",
+      "latest_candidate": "0..*",
+      "older_experiment": null,
+      "integration_rule": "PRESERVE_LATER_DECISION_OR_RECORD_EXPLICIT_VERSIONED_REPLACEMENT"
+    },
+    {
+      "element_id": "end-evidenceRecord-source",
+      "field": "isReadOnly",
+      "latest_candidate": false,
+      "older_experiment": null,
+      "integration_rule": "PRESERVE_LATER_DECISION_OR_RECORD_EXPLICIT_VERSIONED_REPLACEMENT"
+    },
+    {
+      "element_id": "end-evidenceRecord-target",
+      "field": "cardinality",
+      "latest_candidate": "0..1",
+      "older_experiment": null,
+      "integration_rule": "PRESERVE_LATER_DECISION_OR_RECORD_EXPLICIT_VERSIONED_REPLACEMENT"
+    },
+    {
+      "element_id": "end-evidenceRecord-target",
+      "field": "isReadOnly",
+      "latest_candidate": true,
+      "older_experiment": null,
+      "integration_rule": "PRESERVE_LATER_DECISION_OR_RECORD_EXPLICIT_VERSIONED_REPLACEMENT"
+    },
+    {
+      "element_id": "end-operationOrganization-target",
+      "field": "cardinality",
+      "latest_candidate": "1",
+      "older_experiment": "1..*",
+      "integration_rule": "PRESERVE_LATER_DECISION_OR_RECORD_EXPLICIT_VERSIONED_REPLACEMENT"
+    },
+    {
+      "element_id": "rel-contextClassificationEntry",
+      "field": "isDerived",
+      "latest_candidate": true,
+      "older_experiment": false,
+      "integration_rule": "PRESERVE_LATER_DECISION_OR_RECORD_EXPLICIT_VERSIONED_REPLACEMENT"
+    },
+    {
+      "element_id": "rel-contextClassificationEntry",
+      "field": "stereotype",
+      "latest_candidate": null,
+      "older_experiment": "mediation",
+      "integration_rule": "PRESERVE_LATER_DECISION_OR_RECORD_EXPLICIT_VERSIONED_REPLACEMENT"
+    },
+    {
+      "element_id": "rel-contextClassificationProduct",
+      "field": "isDerived",
+      "latest_candidate": true,
+      "older_experiment": false,
+      "integration_rule": "PRESERVE_LATER_DECISION_OR_RECORD_EXPLICIT_VERSIONED_REPLACEMENT"
+    },
+    {
+      "element_id": "rel-contextClassificationProduct",
+      "field": "stereotype",
+      "latest_candidate": null,
+      "older_experiment": "mediation",
+      "integration_rule": "PRESERVE_LATER_DECISION_OR_RECORD_EXPLICIT_VERSIONED_REPLACEMENT"
+    },
+    {
+      "element_id": "rel-evidenceRecord",
+      "field": "isDerived",
+      "latest_candidate": true,
+      "older_experiment": false,
+      "integration_rule": "PRESERVE_LATER_DECISION_OR_RECORD_EXPLICIT_VERSIONED_REPLACEMENT"
+    },
+    {
+      "element_id": "rel-evidenceRecord",
+      "field": "stereotype",
+      "latest_candidate": null,
+      "older_experiment": "mediation",
+      "integration_rule": "PRESERVE_LATER_DECISION_OR_RECORD_EXPLICIT_VERSIONED_REPLACEMENT"
+    }
+  ],
+  "experimental_additions": [
+    {
+      "element_id": "RiskReviewActivity",
+      "element_type": "Class",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "SignalAssessmentActivity",
+      "element_type": "Class",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "SystemDeploymentActivity",
+      "element_type": "Class",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "coherence-end-capabilityRealizedInLogistics-source",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "coherence-end-capabilityRealizedInLogistics-target",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "coherence-end-logisticsFacility-source",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "coherence-end-logisticsFacility-target",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "coherence-end-logisticsProduct-source",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "coherence-end-logisticsProduct-target",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "coherence-end-procurementOrganization-source",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "coherence-end-procurementOrganization-target",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "coherence-end-procurementProduct-source",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "coherence-end-procurementProduct-target",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "coherence-end-requirementJurisdiction-source",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "coherence-end-requirementJurisdiction-target",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "coherence-end-requirementSource-source",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "coherence-end-requirementSource-target",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "coherence-end-stockoutFacility-source",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "coherence-end-stockoutFacility-target",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "coherence-end-stockoutProduct-source",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "coherence-end-stockoutProduct-target",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "coherence-end-supportsLogistics-source",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "coherence-end-supportsLogistics-target",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "coherence-rel-capabilityRealizedInLogistics",
+      "element_type": "BinaryRelation",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "coherence-rel-logisticsFacility",
+      "element_type": "BinaryRelation",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "coherence-rel-logisticsProduct",
+      "element_type": "BinaryRelation",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "coherence-rel-procurementOrganization",
+      "element_type": "BinaryRelation",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "coherence-rel-procurementProduct",
+      "element_type": "BinaryRelation",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "coherence-rel-requirementJurisdiction",
+      "element_type": "BinaryRelation",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "coherence-rel-requirementSource",
+      "element_type": "BinaryRelation",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "coherence-rel-stockoutFacility",
+      "element_type": "BinaryRelation",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "coherence-rel-stockoutProduct",
+      "element_type": "BinaryRelation",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "coherence-rel-supportsLogistics",
+      "element_type": "BinaryRelation",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "lab-end-assessmentScenario-source",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "lab-end-assessmentScenario-target",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "lab-end-capabilityRealizedIn-source",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "lab-end-capabilityRealizedIn-target",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "lab-end-citesSourceRecord-source",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "lab-end-citesSourceRecord-target",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "lab-end-deploymentComponent-source",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "lab-end-deploymentComponent-target",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "lab-end-deploymentOrganization-source",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "lab-end-deploymentOrganization-target",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "lab-end-digitalActivityDeployment-source",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "lab-end-digitalActivityDeployment-target",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "lab-end-digitalServiceActivity-source",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "lab-end-digitalServiceActivity-target",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "lab-end-digitalServiceComponent-source",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "lab-end-digitalServiceComponent-target",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "lab-end-implementsRiskPlan-source",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "lab-end-implementsRiskPlan-target",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "lab-end-planRiskResult-source",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "lab-end-planRiskResult-target",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "lab-end-pvRequirementJurisdiction-source",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "lab-end-pvRequirementJurisdiction-target",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "lab-end-pvResultAssessment-source",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "lab-end-pvResultAssessment-target",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "lab-end-pvResultSignal-source",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "lab-end-pvResultSignal-target",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "lab-end-recordDigitalActivity-source",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "lab-end-recordDigitalActivity-target",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "lab-end-reportsRecord-source",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "lab-end-reportsRecord-target",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "lab-end-resultAssessment-source",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "lab-end-resultAssessment-target",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "lab-end-reviewNewResult-source",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "lab-end-reviewNewResult-target",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "lab-end-reviewPriorResult-source",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "lab-end-reviewPriorResult-target",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "lab-end-scenarioProduct-source",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "lab-end-scenarioProduct-target",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "lab-end-serviceCapability-source",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "lab-end-serviceCapability-target",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "lab-end-signalAssessmentTarget-source",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "lab-end-signalAssessmentTarget-target",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "lab-end-signalProduct-source",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "lab-end-signalProduct-target",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "lab-end-signalSubstance-source",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "lab-end-signalSubstance-target",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "lab-end-surveillanceRequirement-source",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "lab-end-surveillanceRequirement-target",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "lab-end-surveillanceSource-source",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "lab-end-surveillanceSource-target",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "lab-end-viewOrganization-source",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "lab-end-viewOrganization-target",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "lab-end-viewService-source",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "lab-end-viewService-target",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "lab-rel-assessmentScenario",
+      "element_type": "BinaryRelation",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "lab-rel-capabilityRealizedIn",
+      "element_type": "BinaryRelation",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "lab-rel-citesSourceRecord",
+      "element_type": "BinaryRelation",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "lab-rel-deploymentComponent",
+      "element_type": "BinaryRelation",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "lab-rel-deploymentOrganization",
+      "element_type": "BinaryRelation",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "lab-rel-digitalActivityDeployment",
+      "element_type": "BinaryRelation",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "lab-rel-digitalServiceActivity",
+      "element_type": "BinaryRelation",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "lab-rel-digitalServiceComponent",
+      "element_type": "BinaryRelation",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "lab-rel-implementsRiskPlan",
+      "element_type": "BinaryRelation",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "lab-rel-planRiskResult",
+      "element_type": "BinaryRelation",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "lab-rel-pvRequirementJurisdiction",
+      "element_type": "BinaryRelation",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "lab-rel-pvResultAssessment",
+      "element_type": "BinaryRelation",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "lab-rel-pvResultSignal",
+      "element_type": "BinaryRelation",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "lab-rel-recordDigitalActivity",
+      "element_type": "BinaryRelation",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "lab-rel-reportsRecord",
+      "element_type": "BinaryRelation",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "lab-rel-resultAssessment",
+      "element_type": "BinaryRelation",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "lab-rel-reviewNewResult",
+      "element_type": "BinaryRelation",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "lab-rel-reviewPriorResult",
+      "element_type": "BinaryRelation",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "lab-rel-scenarioProduct",
+      "element_type": "BinaryRelation",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "lab-rel-serviceCapability",
+      "element_type": "BinaryRelation",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "lab-rel-signalAssessmentTarget",
+      "element_type": "BinaryRelation",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "lab-rel-signalProduct",
+      "element_type": "BinaryRelation",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "lab-rel-signalSubstance",
+      "element_type": "BinaryRelation",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "lab-rel-surveillanceRequirement",
+      "element_type": "BinaryRelation",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "lab-rel-surveillanceSource",
+      "element_type": "BinaryRelation",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "lab-rel-viewOrganization",
+      "element_type": "BinaryRelation",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "lab-rel-viewService",
+      "element_type": "BinaryRelation",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "refine-end-activityResponsibleOrganization-source",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "refine-end-activityResponsibleOrganization-target",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "refine-end-agreementCommitment-source",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "refine-end-agreementCommitment-target",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "refine-end-assessmentOrganization-source",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "refine-end-assessmentOrganization-target",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "refine-end-carrierClaim-source",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "refine-end-carrierClaim-target",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "refine-end-commitmentActor-source",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "refine-end-commitmentActor-target",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "refine-end-manufacturingFacility-source",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "refine-end-manufacturingFacility-target",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "refine-end-manufacturingProduct-source",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "refine-end-manufacturingProduct-target",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "refine-end-scenarioDependency-source",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "refine-end-scenarioDependency-target",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "refine-end-scenarioFacility-source",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "refine-end-scenarioFacility-target",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "refine-end-serviceFacility-source",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "refine-end-serviceFacility-target",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "refine-end-serviceProduct-source",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "refine-end-serviceProduct-target",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "refine-end-supportsManufacturing-source",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "refine-end-supportsManufacturing-target",
+      "element_type": "Property",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "refine-rel-activityResponsibleOrganization",
+      "element_type": "BinaryRelation",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "refine-rel-agreementCommitment",
+      "element_type": "BinaryRelation",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "refine-rel-assessmentOrganization",
+      "element_type": "BinaryRelation",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "refine-rel-carrierClaim",
+      "element_type": "BinaryRelation",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "refine-rel-commitmentActor",
+      "element_type": "BinaryRelation",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "refine-rel-manufacturingFacility",
+      "element_type": "BinaryRelation",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "refine-rel-manufacturingProduct",
+      "element_type": "BinaryRelation",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "refine-rel-scenarioDependency",
+      "element_type": "BinaryRelation",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "refine-rel-scenarioFacility",
+      "element_type": "BinaryRelation",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "refine-rel-serviceFacility",
+      "element_type": "BinaryRelation",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "refine-rel-serviceProduct",
+      "element_type": "BinaryRelation",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    },
+    {
+      "element_id": "refine-rel-supportsManufacturing",
+      "element_type": "BinaryRelation",
+      "acceptance": "EXPERIMENTAL_NOT_PROMOTED"
+    }
+  ],
+  "latest_only_ids": []
+}
