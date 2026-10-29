@@ -1,0 +1,42 @@
+# SPDX-License-Identifier: MIT
+name: Converter Identity Forensics
+on:
+  push:
+    branches: ['docs/m1-release-337']
+    paths: ['tools/pages/audit_converter_rebuild.py', '.github/workflows/pages-converter-forensics.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  forensic:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/checkout@v7.0.1
+        with:
+          repository: VisualDataWeb/OWL2VOWL
+          ref: 2833ead00122ca252a0fd0e18c5e5b696d711d2c
+          path: external/owl2vowl
+          persist-credentials: false
+      - uses: actions/setup-python@v7.0.0
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-java@v6.0.1
+        with:
+          distribution: temurin
+          java-version: '8'
+      - name: Install existing pinned semantic dependencies
+        run: python -m pip install 'rdflib==7.5.0' 'pyshacl==0.31.0' 'jsonschema==4.25.1'
+      - name: Rebuild exact governed inputs
+        run: |
+          python tools/pages/run_version_pipeline.py checkout
+          python tools/pages/run_version_pipeline.py inputs
+      - name: Compare two clean converter builds and all three projections
+        run: python tools/pages/audit_converter_rebuild.py --source external/owl2vowl --output build/converter-forensics
+      - uses: actions/upload-artifact@v7.0.1
+        if: always()
+        with:
+          name: converter-forensics-341
+          path: build/converter-forensics/
+          if-no-files-found: error
