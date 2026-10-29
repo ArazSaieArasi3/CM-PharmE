@@ -235,6 +235,20 @@ def provenance_body(version: dict, version_root: Path) -> str | None:
 """
 
 
+def released_profile_body(version: dict) -> str:
+    if version.get("asset_kind") != "released_profile":
+        return ""
+    profile = version["profile"]
+    return f"""
+<h2>What this release provides</h2>
+<p>{esc(profile['scope_summary'])}</p>
+<p>The profile connects a dataset to its releases and source records, with an optional generating activity. Its opt-in admission checks keep record identity and required export data explicit.</p>
+<p>Profile version <strong>{esc(profile['profile_version'])}</strong> is distributed in <strong>{esc(profile['distribution_version'])}</strong>. Raw RDF retains row-number assertions; the strict OWL view explicitly omits those serialization assertions. This view does not claim a lossless conversion.</p>
+<p><a href="{esc(profile['release_url'])}">Published release and complete package</a> · <a href="{esc(profile['citation_url'])}">Release-specific citation</a> · <a href="{esc(profile['canonical_ttl_url'])}">Canonical profile TTL</a> · <a href="{esc(profile['support_manifest_url'])}">Exact support and rights manifest</a></p>
+<p>The generated serialization downloads describe this TBox. Use the complete release package for admission code, shapes, synthetic witnesses and reproduction instructions.</p>
+"""
+
+
 def build(registry_path: Path, output_root: Path, css_path: Path) -> dict:
     registry = read_registry(registry_path)
     routes = validate_routes(registry)
@@ -328,6 +342,7 @@ def build(registry_path: Path, output_root: Path, css_path: Path) -> dict:
   <dt>Citation status</dt><dd>{esc(version["citation_status"])}</dd>
   <dt>Documentation fingerprint</dt><dd><code>{esc(version["documentation_input"].get("fingerprint") or "pending")}</code></dd>
 </dl>
+{released_profile_body(version)}
 <h2>Reference paths</h2>
 <ul>{subnav}</ul>
 <h2>Canonical semantic source</h2>
@@ -349,6 +364,12 @@ def build(registry_path: Path, output_root: Path, css_path: Path) -> dict:
                 special = download_body(version, version_root)
             elif slug == "provenance":
                 special = provenance_body(version, version_root)
+            if version.get("asset_kind") == "released_profile":
+                profile = version["profile"]
+                if slug == "citation":
+                    special = f'<h1>Cite the released profile</h1><p>Use the <a href="{esc(profile["citation_url"])}">2.1.0 release citation</a> and identify profile {esc(profile["profile_version"])}. The historical source citation and the evolving full V2 model have separate identities.</p>'
+                elif slug in {"reference", "explore"} and special is None:
+                    note = "The generated reference and interactive view for this released profile are being prepared. The canonical profile and complete release package are available from its overview."
             body = special or f"""
 <p class="eyebrow">{esc(version["reader_label"])}</p>
 <h1>{esc(label)}</h1>

@@ -105,6 +105,9 @@ jobs:
     if: needs.classify.outputs.should_build == 'true'
     runs-on: ubuntu-24.04
     timeout-minutes: 25
+    permissions:
+      contents: read
+      actions: read
     steps:
       - name: Checkout publication branch
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -165,6 +168,11 @@ jobs:
       - name: Generate and audit all enabled formal references
         run: python tools/pages/run_version_pipeline.py references
 
+      - name: Rebuild M1 reference independently and compare raw output
+        run: |
+          python tools/pages/run_widoco.py --version v2-m1 --jar build/tools/widoco.jar --ontology build/input/v2-m1/distributions/cm-pharme-m1.ttl --output build/m1-reference-repeat --manifest-output build/evidence/v2-m1-widoco-repeat.json
+          python tools/pages/compare_widoco_regeneration.py --version v2-m1 --first build/site/ontology/2.1.0/m1/reference --second build/m1-reference-repeat --output build/evidence/m1-reference-reproducibility.json || { diff -u build/site/ontology/2.1.0/m1/reference/provenance/provenance-en.html build/m1-reference-repeat/provenance/provenance-en.html; exit 1; }
+
       - name: Package governed version downloads
         run: python tools/pages/run_version_pipeline.py downloads
 
@@ -174,11 +182,14 @@ jobs:
           distribution: temurin
           java-version: "8"
 
+      - name: Pin historical Maven build plugins
+        run: python tools/pages/prepare_converter_build.py external/owl2vowl
+
       - name: Build and verify exact OWL2VOWL converter
         shell: bash
         run: |
           set -euo pipefail
-          (cd external/owl2vowl && mvn -B package -P standalone-release -DskipTests)
+          (cd external/owl2vowl && mvn -B -f pom.cmpe.xml package -P standalone-release -DskipTests)
           python - <<'PY'
           import hashlib, zipfile
           from pathlib import Path
@@ -234,6 +245,43 @@ jobs:
       - name: Prove future-version isolation on assembled artifacts
         run: python tools/pages/test_future_version_onboarding.py --site build/site --output build/evidence/pages-277-onboarding.json
 
+      - name: Retrieve immutable prior assembled candidate for byte comparison
+        if: hashFiles('docs/documentation/baselines/PB-2026.10.1.zip') == ''
+        uses: actions/download-artifact@v4
+        with:
+          artifact-ids: 12934165079
+          run-id: 40954904319
+          github-token: ${{ github.token }}
+          path: build/prior-site-341
+          merge-multiple: true
+
+      - name: Extract prior Pages archive
+        if: hashFiles('docs/documentation/baselines/PB-2026.10.1.zip') == ''
+        run: |
+          mkdir -p build/prior-site-341/site
+          tar -xf build/prior-site-341/artifact.tar -C build/prior-site-341/site
+
+      - name: Retain previous V2 download bytes after fresh semantic and checksum checks
+        run: python tools/pages/retain_prior_v2_download_bytes.py
+
+      - name: Audit released M1 entity coverage and old published subtrees
+        run: python tools/pages/audit_m1_generated.py
+
+      - name: Install pinned browser tooling for local candidate verification
+        run: |
+          python -m pip install 'playwright==1.55.0'
+          python -m playwright install --with-deps chromium
+
+      - name: Verify local candidate rendering search and zoom (not public QA)
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m http.server 8765 --bind 127.0.0.1 --directory build/site > build/evidence/candidate-server.log 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid"' EXIT
+          python tools/pages/verify_public_pages.py --base-url http://127.0.0.1:8765/ --output build/evidence/local-candidate-browser-338.json
+          mv public-*-explore.png build/evidence/
+
       - name: Deployment preflight
         env:
           V2_TRIGGER_SHA: ${{ needs.classify.outputs.v2_trigger_sha }}
@@ -257,6 +305,22 @@ jobs:
           name: cm-pharme-pages-build-evidence
           path: build/evidence/
           if-no-files-found: error
+          retention-days: 90
+
+      - name: Preserve exact publication control-plane source
+        uses: actions/upload-artifact@v4
+        with:
+          name: cm-pharme-publication-source-339
+          include-hidden-files: true
+          path: |
+            docs/documentation/
+            tools/pages/
+            pages-src/widoco/
+            wiki-src/
+            README.md
+            CHANGELOG.md
+            .github/workflows/pages-deploy.yml
+            .github/workflows/wiki-publish.yml
           retention-days: 90
 
   deploy:
@@ -321,6 +385,9 @@ jobs:
           python -m pip install --disable-pip-version-check 'playwright==1.55.0'
           python -m playwright install --with-deps chromium
 
+      - name: Verify fresh publication identity and all public serialization checksums
+        run: python tools/pages/verify_public_release_sync.py --build-sha "${{ github.sha }}" --output public-release-sync.json
+
       - name: Verify public V1/V2 routes and interactions
         run: >-
           python tools/pages/verify_public_pages.py
@@ -342,5 +409,7 @@ jobs:
             public-verification.json
             public-v1-explore.png
             public-v2-explore.png
+            public-v2-m1-explore.png
             public-navigation.json
+            public-release-sync.json
           if-no-files-found: warn

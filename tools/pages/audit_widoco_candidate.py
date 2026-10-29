@@ -82,9 +82,9 @@ def expected_counts(version: str, authority: dict) -> tuple[dict[str, int | None
                 "datatype_properties": int(authority["expected_datatype_properties"]),
             },
             {
-                "classes": "docs/documentation/v2-current-pages-baseline.json::expected_owl_classes",
-                "object_properties": "docs/documentation/v2-current-pages-baseline.json::expected_object_properties",
-                "datatype_properties": "docs/documentation/v2-current-pages-baseline.json::expected_datatype_properties",
+                "classes": ("docs/documentation/m1-profile-release.json" if version=="v2-m1" else "docs/documentation/v2-current-pages-baseline.json")+"::expected_owl_classes",
+                "object_properties": ("docs/documentation/m1-profile-release.json" if version=="v2-m1" else "docs/documentation/v2-current-pages-baseline.json")+"::expected_object_properties",
+                "datatype_properties": ("docs/documentation/m1-profile-release.json" if version=="v2-m1" else "docs/documentation/v2-current-pages-baseline.json")+"::expected_datatype_properties",
             },
         )
     raise ValueError(f"unsupported version {version}")

@@ -1,5 +1,5 @@
 {
-  "registry_schema_version": "1.0",
+  "registry_schema_version": "1.1",
   "repository": "ArazSaieArasi3/CM-PharmE",
   "authority_model": "Semantic Source defines; Wiki explains; Pages exposes generated/exhaustive reference.",
   "lifecycle_states": [
@@ -79,6 +79,48 @@
       "superseded_by": null,
       "public_status_label": "Stable-to-date / Evolving; current Pages snapshot includes governed naming annotations and is not a frozen semantic release.",
       "wiki_explanation_path": "V2-Formal-Ontology-and-SHACL"
+    },
+    {
+      "id": "v2-m1",
+      "asset_kind": "released_profile",
+      "profile": {
+        "base_version_id": "v2",
+        "profile_version": "0.1.0",
+        "distribution_version": "2.1.0",
+        "domain_namespace": "https://w3id.org/cm-pharme/2.1/",
+        "release_url": "https://github.com/ArazSaieArasi3/CM-PharmE/releases/tag/2.1.0",
+        "citation_url": "https://github.com/ArazSaieArasi3/CM-PharmE/blob/77a8e854d0e3927b0687346d7f8fda6a398adda7/CITATION.cff",
+        "canonical_ttl_url": "https://github.com/ArazSaieArasi3/CM-PharmE/blob/77a8e854d0e3927b0687346d7f8fda6a398adda7/source/v2/ontology/profiles/2.1/m1-provenance/0.1.0/profile.ttl",
+        "support_manifest_url": "https://github.com/ArazSaieArasi3/CM-PharmE/blob/77a8e854d0e3927b0687346d7f8fda6a398adda7/source/v2/release/2.1/support/0.1.0/manifest.json",
+        "archive_sha256": "4c9d3a1e52379c8c63b3619aedd7d0243cf702bcc078c9989a23619d50cc4350",
+        "scope_summary": "Released M1 provenance profile: four CM-PharmE classes and two CM-PharmE object properties; local admission and seven synthetic M001\u2013M004 records. Full V2 remains evolving."
+      },
+      "version_family": "CM-PharmE 2.x \u2014 released profile",
+      "reader_label": "CM-PharmE 2.1.0 \u2014 M1 Provenance Core",
+      "lifecycle_state": "stable",
+      "semantic_release": "2.1.0",
+      "semantic_source_ref": "release/2.1.0@77a8e854d0e3927b0687346d7f8fda6a398adda7",
+      "semantic_source_paths": [
+        "source/v2/ontology/profiles/2.1/m1-provenance/0.1.0/profile.ttl"
+      ],
+      "assembly_rule": "Consume the exact byte-pinned released M1 TBox through the common documentation-input pipeline; retain its 0.1.0 profile and 2.1.0 distribution identities.",
+      "documentation_input": {
+        "kind": "deterministic_assembled_ontology",
+        "source_family": "source/v2/ontology/profiles/2.1/m1-provenance/0.1.0/",
+        "build_contract_issue": 269,
+        "resolved_artifact": "generated:distributions/cm-pharme-m1.ttl",
+        "fingerprint": "7b7cff97eedc071a6c1f15d71f58eadb2a9a1d3bcdfc7f38b14a920b70707186"
+      },
+      "generated_reference_enabled": true,
+      "webvowl_enabled": true,
+      "immutable_version_path": "ontology/2.1.0/m1/",
+      "current_path": null,
+      "documentation_baseline_binding": "docs/documentation/m1-profile-release.json",
+      "citation_status": "release_specific_2.1.0_citation_bound; public documentation candidate not yet deployed",
+      "supersedes": null,
+      "superseded_by": null,
+      "wiki_explanation_path": "M1-Provenance-Core-2.1.0",
+      "public_status_label": "Stable released M1 profile; full V2 remains evolving"
     }
   ],
   "future_version_contract": {
@@ -105,6 +147,7 @@
       "superseded_by",
       "wiki_explanation_path",
       "public_status_label"
-    ]
+    ],
+    "profile_id_pattern": "vN-profile"
   }
 }

@@ -18,7 +18,7 @@ permissions:
 
 jobs:
   candidate:
-    name: Build governed V1/V2 WebVOWL candidates
+    name: Build all registered WebVOWL candidates
     runs-on: ubuntu-24.04
     timeout-minutes: 30
     steps:
@@ -27,18 +27,6 @@ jobs:
 
       - name: Guard future explorer onboarding and route isolation
         run: python tools/pages/test_webvowl_v3_contract.py
-
-      - name: Checkout exact V1 semantic source
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
-        with:
-          ref: 595ea30a66644c1b130b6c1a781dc7afbd7ba284
-          path: source-v1
-
-      - name: Checkout exact V2 semantic source
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
-        with:
-          ref: 1226b0a5484f8f5d3a8d214e0d0f52f066b88999
-          path: source-v2
 
       - name: Checkout exact WebVOWL 1.1.7 source
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
@@ -76,26 +64,20 @@ jobs:
           'rdflib==7.5.0'
           'pyshacl==0.31.0'
 
-      - name: Rebuild and gate governed V1 input
-        shell: bash
+      - name: Checkout rebuild and gate all registered semantic inputs
         run: |
-          set -euo pipefail
-          (cd source-v1 && python tools/ontology/build.py --output-root "$GITHUB_WORKSPACE/build/input/v1")
-          python tools/pages/resolve_documentation_input.py             --version v1             --build-root build/input/v1             --source-ref main@595ea30a66644c1b130b6c1a781dc7afbd7ba284             --output build/evidence/v1-input.json
+          python tools/pages/run_version_pipeline.py checkout
+          python tools/pages/run_version_pipeline.py inputs
 
-      - name: Rebuild and gate governed V2 input
-        shell: bash
-        run: |
-          set -euo pipefail
-          (cd source-v2 && python tools/v2_ontology/build_validate.py             --source-dir v2/ontology/source/modules             --conceptual-model v2/ontouml/cm-pharme-v2.conceptual-model.json             --baseline "$GITHUB_WORKSPACE/docs/documentation/v2-current-pages-baseline.json"             --shapes v2/ontology/shapes/cm-pharme-v2.shacl.ttl             --smoke-data v2/ontology/tests/formal-smoke.ttl             --output-root "$GITHUB_WORKSPACE/build/input/v2"             --require-shacl)
-          python tools/pages/resolve_documentation_input.py             --version v2             --build-root build/input/v2             --source-ref v2/research-program@1226b0a5484f8f5d3a8d214e0d0f52f066b88999             --output build/evidence/v2-input.json
+      - name: Pin historical Maven build plugins
+        run: python tools/pages/prepare_converter_build.py external/owl2vowl
 
       - name: Build exact OWL2VOWL 0.3.7 converter
         shell: bash
         run: |
           set -euo pipefail
           cd external/owl2vowl
-          mvn -B package -P standalone-release -DskipTests
+          mvn -B -f pom.cmpe.xml package -P standalone-release -DskipTests
           test -s target/OWL2VOWL-0.3.7-shaded.jar
           python - <<'PY'
           import hashlib, zipfile
@@ -112,16 +94,8 @@ jobs:
               raise SystemExit(f"OWL2VOWL content drift: {digest} != {expected}")
           PY
 
-      - name: Convert governed V1/V2 inputs to VOWL JSON
-        shell: bash
-        run: |
-          set -euo pipefail
-          mkdir -p build/vowl
-          java -jar external/owl2vowl/target/OWL2VOWL-0.3.7-shaded.jar             -file build/input/v1/distributions/cm-pharme.ttl             -output build/vowl/v1.json
-          java -jar external/owl2vowl/target/OWL2VOWL-0.3.7-shaded.jar             -file build/input/v2/distributions/cm-pharme-v2.ttl             -output build/vowl/v2.json
-          python -m json.tool build/vowl/v1.json > /dev/null
-          python -m json.tool build/vowl/v2.json > /dev/null
-          sha256sum build/vowl/v1.json build/vowl/v2.json
+      - name: Convert all enabled governed inputs
+        run: python tools/pages/run_version_pipeline.py convert
 
       - name: Build exact WebVOWL 1.1.7 frontend
         shell: bash
@@ -136,25 +110,8 @@ jobs:
           test -s deploy/js/webvowl.js
           test -s deploy/js/webvowl.app.js
 
-      - name: Package governed V1 explorer
-        run: >-
-          python tools/pages/build_webvowl_explorer.py
-          --version v1
-          --frontend-root external/webvowl/deploy
-          --vowl-json build/vowl/v1.json
-          --ontology-input build/input/v1/distributions/cm-pharme.ttl
-          --source-ref main@595ea30a66644c1b130b6c1a781dc7afbd7ba284
-          --output-root build/site
-
-      - name: Package governed V2 explorer
-        run: >-
-          python tools/pages/build_webvowl_explorer.py
-          --version v2
-          --frontend-root external/webvowl/deploy
-          --vowl-json build/vowl/v2.json
-          --ontology-input build/input/v2/distributions/cm-pharme-v2.ttl
-          --source-ref v2/research-program@1226b0a5484f8f5d3a8d214e0d0f52f066b88999
-          --output-root build/site
+      - name: Package all enabled explorers
+        run: python tools/pages/run_version_pipeline.py explorers
 
       - name: Build Pages shell around explorers
         run: python tools/pages/build_shell.py --output build/site

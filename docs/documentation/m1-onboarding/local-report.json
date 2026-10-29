@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "passed": true,
+  "version_id": "v2-m1",
+  "canonical_triples": 50,
+  "canonical_graph_sha256": "7b7cff97eedc071a6c1f15d71f58eadb2a9a1d3bcdfc7f38b14a920b70707186",
+  "domain_classes": 4,
+  "cmpe_object_properties": 2,
+  "total_object_properties": 3,
+  "total_datatype_properties": 2,
+  "schema_and_common_plan": true,
+  "independent_builds_byte_identical": true,
+  "serialization_count": 5,
+  "admission_smoke": [
+    {
+      "id": "accepted",
+      "stage": "ADMITTED"
+    },
+    {
+      "id": "missing-key",
+      "stage": "SHACL_REJECTED"
+    }
+  ],
+  "source_commit_verified": false,
+  "preserved_model_entries": [
+    "v1",
+    "v2"
+  ],
+  "preserved_shell_subtrees": [
+    "ontology/v1.0.0",
+    "ontology/v2/current"
+  ],
+  "negative_controls": [
+    "profile-as-full-model",
+    "unknown-parent",
+    "model-replacement",
+    "route-collision",
+    "incomplete-profile",
+    "immutable-semantic_source_ref",
+    "immutable-immutable_version_path",
+    "documentation-input-byte-drift",
+    "released-source-byte-drift"
+  ],
+  "generated_reference_enabled": false,
+  "webvowl_enabled": false,
+  "public_deployment": false
+}

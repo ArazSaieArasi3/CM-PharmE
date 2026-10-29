@@ -2,58 +2,56 @@
 
 > **Version scope:** Cross-version / documentation governance  
 > **Status:** Stable-to-date / Evolving  
-> **Updated:** 2026-09-23
+> **Updated:** 2026-10-29
 
-## Distinct version identifiers
+## Published release and model identities
 
-CM-PharmE uses several identifiers that must not be conflated.
-
-| Identifier type | Current example | Meaning |
+| Identifier | Scope | Current state |
 |---|---|---|
-| V1 semantic/model release | `v1.0.0` | Stable historical/current V1 semantic baseline |
-| V2 formal development version | `2.0.0-alpha.1` | Current V2 formal ontology development baseline, not final V2 release |
-| Repository branch | `main`, `v2/research-program` | Source/integration lines, not semantic version numbers |
-| Git commit | SHA | Exact repository state |
-| GitHub Release | None published at 2026-09-23 check | Repository release object; must be verified before citation |
-| DOI research package | V2 final package pending | Citable research-release mechanism if/when created |
-| Wiki baseline | `WB-2026.09.1` Candidate | Documentation snapshot identity only |
+| `v1.0.0` | Historical V1 semantic/model baseline | Stable; original source and routes preserved |
+| `2.0.0-alpha.1` | Full V2 formal development baseline | Evolving; full research/model freeze remains pending |
+| `2.1.0-rc.1` | Experimental research checkpoint | Published pre-release; original bytes preserved |
+| `2.1.0` | M1 Provenance Core distribution, containing profile `0.1.0` | Published stable scoped profile; separate from full V2 acceptance |
+| Git commit | Exact repository state | Required for reproducible source and citation |
+| Wiki and Pages baseline | Documentation snapshot | Separate from semantic/model and package versions |
+| DOI research package | Broader V2 research release | Pending its own release disposition |
 
-## V1
+## Stable M1 release
 
-`v1.0.0` is the stable semantic/model baseline represented by the V1 version record and preserved release artifacts.
+[2.1.0 — M1 Provenance Core](https://github.com/ArazSaieArasi3/CM-PharmE/releases/tag/2.1.0)
+was published on 2026-10-29. Its three assets, exact tag target and downloaded
+bytes were verified. The curated source commit is
+`77a8e854d0e3927b0687346d7f8fda6a398adda7`.
 
-- [V1 version record](https://github.com/ArazSaieArasi3/CM-PharmE/blob/main/docs/versions/v1.0.0.md)
-- [V1 release directory](https://github.com/ArazSaieArasi3/CM-PharmE/tree/main/releases/v1.0.0)
+Read [[M1 Provenance Core 2.1.0]] for purpose, use, evidence and limits. Its [Pages overview](https://arazsaiearasi3.github.io/CM-PharmE/ontology/2.1.0/m1/) links the formal reference, WebVOWL, downloads and citation. [Publication receipts](https://github.com/ArazSaieArasi3/CM-PharmE/blob/main/docs/documentation/publication-339/README.md) separate source, deployment and live-verification identities.
 
-## V2
+## V1 and full V2
 
-The current formal ontology baseline is `2.0.0-alpha.1`.
+`v1.0.0` remains the V1 semantic baseline represented by the preserved
+[V1 version record](https://github.com/ArazSaieArasi3/CM-PharmE/blob/main/docs/versions/v1.0.0.md)
+and [release directory](https://github.com/ArazSaieArasi3/CM-PharmE/tree/main/releases/v1.0.0).
+The full V2 formal development baseline remains `2.0.0-alpha.1` and evolving.
+A full V2 manuscript/research freeze retains its own gates and traceability review.
+The separately scoped 2.1.0 release does not replace that entire model.
 
-This identifier belongs to the formal development baseline. CM-PharmE 2.0 as a full research/manuscript release remains evolving.
+## Documentation identities
 
-Final V2 release/freeze requires Gate H and final traceability/release disposition.
+The earlier Wiki foundation record used `WB-2026.09.1`; Pages documentation
+baseline `PB-2026.09.1` was declared after its own publication and rendered checks.
+The released M1 documentation increment now has its own source registration and
+generated reference/explorer. WB-2026.10.1 and PB-2026.10.1 are declared only
+after actual Wiki/Pages/WebVOWL publication and verification under #339.
 
-## GitHub Release state
+The 2026-09-23 foundation check recorded no GitHub Releases at that time. Later
+experimental and stable releases above supersede that historical status; the
+foundation observation is retained as history, not the current release state.
 
-At the Wiki foundation check on 2026-09-23, the repository had **no formal GitHub Releases published**.
+## Citation and release safeguards
 
-This fact must be re-checked at every future release/freeze event.
-
-## Wiki baseline
-
-The current documentation candidate is `WB-2026.09.1`.
-
-It must remain Candidate until required content, source QA, actual Wiki publication, rendered verification and final baseline QA have passed.
-
-## Release safety rules
-
-- Do not call a directory snapshot a GitHub Release.
-- Do not call a Wiki baseline a semantic/model release.
-- Do not call `2.0.0-alpha.1` final V2.
-- Do not invent a DOI/tag/release identifier.
-- Record exact commit/ref for reproducible snapshots.
-
-## Related pages
+Use the exact source ref and release-specific citation for the artifact used.
+A branch is an integration line; a directory snapshot, a documentation baseline
+and a semantic/model release have different meanings. No DOI is inferred from a
+GitHub tag. Published stable paths and historical payloads remain unchanged.
 
 [[Wiki Versioning and Lifecycle]] · [[Citation and Reuse]] · [[V2 Reproducibility and Release Plan]]
 
@@ -64,13 +62,12 @@ It must remain Candidate until required content, source QA, actual Wiki publicat
 
 - **Page scope:** Cross-version / documentation governance
 - **Documentation maturity:** Stable-to-date / Evolving
-- **Authoritative sources:** version records, V2 formal baseline, GitHub Release state and Wiki lifecycle policy
-- **Last synchronized:** 2026-09-23
-- **Related issues:** #23, #210, #214, #217
-- **Evidence status:** V1 semantic baseline stable; V2 formal alpha baseline active; no formal GitHub Release currently published
-- **Future refresh:** #214/#217
-- **Wiki baseline:** WB-2026.09.1
-- **Authoritative source:** V1: main; V2: v2/research-program
-- **Last synchronized ref:** V1: main; V2: v2/research-program
+- **Authoritative sources:** Preserved V1/V2 records; published GitHub release2.1.0 and curated exact source; Pages baseline PB-2026.09.1
+- **Last synchronized:** 2026-10-29
+- **Last synchronized ref:** main@d185ba2751a77658db9e282f13367362068d07d0; release/2.1.0@77a8e854d0e3927b0687346d7f8fda6a398adda7
+- **Wiki baseline:** Existing WB-2026.09.1 retained; M1 increment awaits #339 public QA
+- **Related issues:** #337, #338, #339, #210, #214, #217
+- **Evidence status:** Stable M1 source release verified; new documentation publication pending
+- **Future refresh:** #339 public documentation QA and baseline declaration
 
 </details>

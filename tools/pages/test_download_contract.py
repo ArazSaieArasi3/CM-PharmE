@@ -36,7 +36,7 @@ def main():
     con=json.loads(CON.read_text())
     assert not validate(reg,con), validate(reg,con)
 
-    v3=copy.deepcopy(reg["versions"][-1])
+    v3=copy.deepcopy(next(v for v in reg["versions"] if v["id"]=="v2"))
     v3.update({
         "id":"v3","version_family":"CM-PharmE 3.x","reader_label":"CM-PharmE 3.x dry-run",
         "lifecycle_state":"evolving","semantic_release":None,

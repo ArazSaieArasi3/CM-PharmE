@@ -69,6 +69,16 @@ def main() -> int:
         )
         return 6
 
+    registry = json.loads((ROOT / "docs/documentation/ontology-version-registry.json").read_text())
+    version = next(v for v in registry["versions"] if v["id"] == args.version)
+    if version.get("asset_kind") == "released_profile":
+        expected_bytes = entry["validation_boundary"].get("expected_documentation_input_sha256")
+        if (not expected_bytes or sha256_file(artifact_path) != expected_bytes
+                or manifest.get("source_commit_verified") is not True
+                or manifest.get("source_commit") != args.source_ref.rsplit("@", 1)[1]):
+            print("ERROR: released-profile bytes or exact checkout identity failed", file=sys.stderr)
+            return 7
+
     evidence = {
         "schema_version": 1,
         "version_id": args.version,

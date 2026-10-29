@@ -70,11 +70,11 @@
         "properties": {
           "id": {
             "type": "string",
-            "pattern": "^v[0-9]+$"
+            "pattern": "^v[0-9]+(?:-[a-z][a-z0-9]*)?$"
           },
           "registry_version_id": {
             "type": "string",
-            "pattern": "^v[0-9]+$"
+            "pattern": "^v[0-9]+(?:-[a-z][a-z0-9]*)?$"
           },
           "lifecycle_state": {
             "enum": [

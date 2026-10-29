@@ -25,12 +25,15 @@ def main():
     ap=argparse.ArgumentParser();ap.add_argument('--site',type=Path,required=True);ap.add_argument('--evidence',type=Path,required=True)
     ap.add_argument('--release-input',type=Path,required=True);ap.add_argument('--archive',type=Path,required=True);ap.add_argument('--report',type=Path,required=True)
     args=ap.parse_args(); release=load(args.release_input)
-    assert release['baseline_id']=='PB-2026.09.1'
+    assert release['baseline_id'] in {'PB-2026.09.1','PB-2026.10.1'}
+    versions=release.get('registry_version_ids',['v1','v2'])
     site=load(args.site/'pages-deployment-manifest.json')
     assert site['result']=='PASS' and not site['errors'] and site['build_commit_sha']==release['published_build_commit']
     required={'public-verification.json':'result','public-navigation.json':'result',
               'pages-277-onboarding.json':'result','pages-276-wiki-audit.json':'result',
               'pages-273-final-audit.json':'result','v1-widoco-qa.json':'overall','v2-widoco-qa.json':'overall'}
+    if 'v2-m1' in versions:
+        required.update({'v2-m1-widoco-qa.json':'overall','m1-reference-reproducibility.json':'result','m1-generated-338.json':'result','local-candidate-browser-338.json':'result','retained-v2-serialization-bytes.json':'result','public-release-sync.json':'result'})
     reports={}
     for filename,field in required.items():
         data=load(args.evidence/filename);assert data[field]=='PASS',filename;reports[filename]=data
@@ -49,7 +52,7 @@ def main():
     assert not broken,broken
     registry=load(ROOT/'docs/documentation/ontology-version-registry.json')
     assert sha((ROOT/'docs/documentation/ontology-version-registry.json').read_bytes())==site['version_registry_sha256']
-    assert [v['id'] for v in registry['versions']]==['v1','v2'], 'fictional version in production registry'
+    assert [v['id'] for v in registry['versions']]==versions, 'unregistered version in production registry'
     files={}
     for prefix,root in [('site',args.site),('evidence',args.evidence)]:
         for p in sorted(root.rglob('*')):
@@ -62,11 +65,11 @@ def main():
     files['source/.github/workflows/pages-deploy.yml']=(ROOT/'.github/workflows/pages-deploy.yml').read_bytes()
     files['RELEASE-INPUT.json']=args.release_input.read_bytes()
     inventory={name:sha(data) for name,data in sorted(files.items())}
-    record={**release,'decision':'PASS — DECLARE PB-2026.09.1',
+    record={**release,'decision':'PASS — DECLARE '+release['baseline_id'],
             'identity':'Pages/documentation baseline; not an ontology semantic or research release',
             'authority_model':registry['authority_model'],'deployment_manifest':site,
             'route_inventory':load(args.site/'route-inventory.json'),
-            'coverage':{v:reports[v+'-widoco-qa.json'] for v in ['v1','v2']},
+            'coverage':{v:reports[v+'-widoco-qa.json'] for v in versions},
             'cross_surface_link_audit':reports['public-navigation.json'],
             'wiki_disposition_audit':reports['pages-276-wiki-audit.json'],
             'future_version_proof':reports['pages-277-onboarding.json']['prior_version_isolation'],

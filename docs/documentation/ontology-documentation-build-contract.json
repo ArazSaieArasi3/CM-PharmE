@@ -114,6 +114,46 @@
         "current_documentation_input_sha256": "62ef410cd5fb9ddaad75c383e45b7c05157504406d62e4845f790df12c6c66ab",
         "current_build_manifest_sha256": "debb289a2aa0b49e565fa8654371f4892f5acbe4071a36903b5ec16a59beb89b"
       }
+    },
+    {
+      "id": "v2-m1",
+      "registry_version_id": "v2-m1",
+      "lifecycle_state": "stable",
+      "semantic_source_ref": "release/2.1.0@77a8e854d0e3927b0687346d7f8fda6a398adda7",
+      "canonical_source_root": "source/v2/ontology/profiles/2.1/m1-provenance/0.1.0/",
+      "module_selection": {
+        "strategy": "exact_released_profile",
+        "pattern": "profile.ttl",
+        "ordering": "lexicographic_path_order"
+      },
+      "build": {
+        "tool": "tools/pages/build_released_profile.py",
+        "command": "python <PUBLICATION_ROOT>/tools/pages/build_released_profile.py --source-root <SOURCE_ROOT> --contract <PUBLICATION_ROOT>/docs/documentation/m1-profile-release.json --output-root <OUTPUT_ROOT>",
+        "output_root_contract": "Isolated output from a verified exact release checkout; source bytes never edited.",
+        "documentation_input_artifact": "distributions/cm-pharme-m1.ttl",
+        "build_manifest": "manifest.json",
+        "reference_authority": "<PUBLICATION_ROOT>/docs/documentation/m1-profile-release.json"
+      },
+      "expected_fingerprint": {
+        "algorithm": "sha256",
+        "representation": "canonical_ntriples",
+        "value": "7b7cff97eedc071a6c1f15d71f58eadb2a9a1d3bcdfc7f38b14a920b70707186",
+        "authority": "docs/documentation/m1-profile-release.json"
+      },
+      "expected_inventory": {
+        "canonical_triples": 50,
+        "owl_classes": 4,
+        "cmpe_object_properties": 2,
+        "object_properties": 3,
+        "datatype_properties": 2
+      },
+      "validation_boundary": {
+        "required_before_pages": true,
+        "pages_status_label": "Stable released M1 profile only. Generated reference and interactive exploration are being prepared; the full V2 ontology remains evolving.",
+        "expected_documentation_input_sha256": "a8dca6788eff03570b4911b8b7f0933a5420fcde9945272543da86934539ce9b",
+        "formal_evidence": "Published immutable profile0.1.0 checks and 2.1.0 release receipts; no new full-model or reasoner validation inferred by this documentation adapter.",
+        "full_v2_acceptance": false
+      }
     }
   ],
   "future_version_contract": {
