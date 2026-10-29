@@ -50,6 +50,35 @@ The previous synthetic V3 tests now select their explicit V2 model fixture
 instead of assuming the last registry entry is a full model. They remain
 temporary architecture tests and publish no fictional scientific version.
 
+## Executed result and remaining toolchain gate
+
+`ci-evidence.json` binds the tested implementation/PR execution trees, hosted
+artifact and local/hosted reports. The exact Git checkout passes the production
+input resolver. Nine negative controls, two independent hash-seed builds and all
+five serializations pass. The separate local report deliberately records an
+unverified materialized checkout; its other fields equal the hosted report.
+
+Hosted registry, build-contract, shell, download-bundle, rebuild-evidence and
+all three Wiki workflows pass. The download workflow now uses the common
+registry-driven checkout/input/package stages, so its assembled audit checks all
+15 serializations across V1, full V2 and M1. The new Wiki page is reachable from
+Home; inventory ordering preserves zero regeneration diff.
+
+The full WebVOWL and deployment-candidate workflows fail at the existing
+OWL2VOWL converter identity guard, before profile reference/explorer generation
+is enabled. The observed converter content digest differs from the established
+pin. A separator-framing probe did not recover that pin; the provisional probe
+is reverted and both converter workflows retain their original verifier bytes.
+The cause remains unproven. No checksum is relaxed or replaced to obtain a pass.
+
+**#337 is a source/content preparation handoff, not a fully green publication
+candidate.** PR #340 remains draft and unmerged. Next, small diagnostic #341
+resolves converter identity as a prerequisite within #338; #338 then enables and
+audits the M1 reference/projection. #339 retains public deployment, live browser
+verification and a new documentation baseline. Stable semantic2.1.0 needs no
+version bump for this documentation route. Historical baselines/releases and
+the broader scientific acceptance counts remain unchanged.
+
 Original new helper/test/workflow code is MIT and original explanatory changes
 are CC BY 4.0 under approved D-03. Preserve Araz Saie Arasi and CM-PharmE contributor
 attribution and existing upstream notices. No repository-wide grant or historical
