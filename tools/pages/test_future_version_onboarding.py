@@ -39,7 +39,7 @@ def main():
     folder=ROOT/'docs/documentation'
     configs=[pipeline.load(folder/p) for p in ['ontology-documentation-build-contract.json','widoco-adapter.json','webvowl-adapter.json','download-bundle-contract.json']]
     contract,widoco,webvowl,downloads=copy.deepcopy(configs)
-    entry=copy.deepcopy(contract['versions'][-1]);entry.update(id='v3',registry_version_id='v3',semantic_source_ref=v3['semantic_source_ref'])
+    entry=copy.deepcopy(next(v for v in contract['versions'] if v['id']=='v2'));entry.update(id='v3',registry_version_id='v3',semantic_source_ref=v3['semantic_source_ref'])
     contract['versions'].append(entry)
     for adapter,field,suffix in [(widoco,'source_ref','reference'),(webvowl,'semantic_source_ref','explore'),(downloads,'source_ref','downloads')]:
         item=copy.deepcopy(adapter['versions']['v2']);item[field]=v3['semantic_source_ref'];item['target_subpath']=v3['current_path']+suffix+'/'

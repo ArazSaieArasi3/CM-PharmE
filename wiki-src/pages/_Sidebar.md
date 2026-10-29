@@ -39,3 +39,6 @@
 - [[V2 Database Reference]]
 - [[V2 Database ERD Suite]]
 - [[V2 Database Data Dictionary]]
+
+### Released provenance profile
+- [[M1 Provenance Core 2.1.0]]

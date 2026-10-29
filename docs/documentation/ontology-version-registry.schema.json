@@ -14,7 +14,10 @@
   ],
   "properties": {
     "registry_schema_version": {
-      "const": "1.0"
+      "enum": [
+        "1.0",
+        "1.1"
+      ]
     },
     "repository": {
       "const": "ArazSaieArasi3/CM-PharmE"
@@ -94,7 +97,7 @@
         "properties": {
           "id": {
             "type": "string",
-            "pattern": "^v[0-9]+$"
+            "pattern": "^v[0-9]+(?:-[a-z][a-z0-9]*)?$"
           },
           "version_family": {
             "type": "string",
@@ -217,6 +220,70 @@
               "string",
               "null"
             ]
+          },
+          "asset_kind": {
+            "enum": [
+              "ontology_model",
+              "released_profile"
+            ]
+          },
+          "profile": {
+            "type": "object",
+            "required": [
+              "base_version_id",
+              "profile_version",
+              "distribution_version",
+              "domain_namespace",
+              "release_url",
+              "citation_url",
+              "canonical_ttl_url",
+              "support_manifest_url",
+              "archive_sha256",
+              "scope_summary"
+            ],
+            "properties": {
+              "base_version_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "profile_version": {
+                "type": "string",
+                "minLength": 1
+              },
+              "distribution_version": {
+                "type": "string",
+                "minLength": 1
+              },
+              "domain_namespace": {
+                "type": "string",
+                "minLength": 1
+              },
+              "release_url": {
+                "type": "string",
+                "minLength": 1
+              },
+              "citation_url": {
+                "type": "string",
+                "minLength": 1
+              },
+              "canonical_ttl_url": {
+                "type": "string",
+                "minLength": 1
+              },
+              "support_manifest_url": {
+                "type": "string",
+                "minLength": 1
+              },
+              "archive_sha256": {
+                "type": "string",
+                "minLength": 1
+              },
+              "scope_summary": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "additionalProperties": false
           }
         },
         "allOf": [
@@ -257,6 +324,40 @@
                 }
               }
             }
+          },
+          {
+            "if": {
+              "properties": {
+                "asset_kind": {
+                  "const": "released_profile"
+                }
+              },
+              "required": [
+                "asset_kind"
+              ]
+            },
+            "then": {
+              "required": [
+                "profile"
+              ],
+              "properties": {
+                "id": {
+                  "pattern": "^v[0-9]+-[a-z][a-z0-9]*$"
+                }
+              }
+            },
+            "else": {
+              "not": {
+                "required": [
+                  "profile"
+                ]
+              },
+              "properties": {
+                "id": {
+                  "pattern": "^v[0-9]+$"
+                }
+              }
+            }
           }
         ],
         "additionalProperties": false
@@ -291,6 +392,9 @@
           "items": {
             "type": "string"
           }
+        },
+        "profile_id_pattern": {
+          "const": "vN-profile"
         }
       },
       "additionalProperties": false

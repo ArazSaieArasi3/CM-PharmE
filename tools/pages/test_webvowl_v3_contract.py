@@ -32,7 +32,7 @@ def main() -> None:
         root = Path(tmp)
         registry = copy.deepcopy(explorer.load(explorer.REGISTRY))
         config = copy.deepcopy(explorer.load(explorer.CONFIG))
-        v3 = copy.deepcopy(registry["versions"][-1])
+        v3 = copy.deepcopy(next(v for v in registry["versions"] if v["id"]=="v2"))
         v3.update(id="v3", reader_label="Synthetic V3 test only",
                   semantic_source_ref="test@" + "a" * 40,
                   immutable_version_path="ontology/v3.0.0/", current_path=None)

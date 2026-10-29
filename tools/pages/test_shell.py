@@ -121,7 +121,7 @@ def audit_site(site: Path, registry: dict) -> None:
 
 def make_v3(registry: dict) -> dict:
     candidate = copy.deepcopy(registry)
-    base = copy.deepcopy(candidate["versions"][-1])
+    base = copy.deepcopy(next(v for v in candidate["versions"] if v["id"] == "v2"))
     base.update({
         "id": "v3",
         "version_family": "CM-PharmE 3.x",
@@ -147,7 +147,7 @@ def make_v3(registry: dict) -> dict:
         "resolved_artifact": None,
         "fingerprint": None,
     }
-    candidate["versions"][-1]["superseded_by"] = "v3"
+    next(v for v in candidate["versions"] if v["id"] == "v2")["superseded_by"] = "v3"
     candidate["versions"].append(base)
     return candidate
 

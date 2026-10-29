@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "asset_kind": "released_profile",
+  "source_commit": "77a8e854d0e3927b0687346d7f8fda6a398adda7",
+  "semantic_source_ref": "release/2.1.0@77a8e854d0e3927b0687346d7f8fda6a398adda7",
+  "distribution_version": "2.1.0",
+  "profile_version": "0.1.0",
+  "profile_path": "source/v2/ontology/profiles/2.1/m1-provenance/0.1.0/profile.ttl",
+  "runtime_path": "source/v2/ontology/profiles/2.1/m1-provenance/0.1.0/profile.py",
+  "shapes_path": "source/v2/ontology/profiles/2.1/m1-provenance/0.1.0/shapes.ttl",
+  "source_files_sha256": {
+    "source/v2/ontology/profiles/2.1/m1-provenance/0.1.0/profile.ttl": "a8dca6788eff03570b4911b8b7f0933a5420fcde9945272543da86934539ce9b",
+    "source/v2/ontology/profiles/2.1/m1-provenance/0.1.0/shapes.ttl": "fb95d6bb104feb700c910c523ff582900374685d64f6a93686038dfe4cf6e26a",
+    "source/v2/ontology/profiles/2.1/m1-provenance/0.1.0/profile.py": "a4ee86a5687adfd56e365da99b984617a3364a7bbc78946beda67f22c7c1838c",
+    "source/v2/ontology/profiles/2.1/m1-provenance/0.1.0/query.rq": "934344b928511424e95486231f7d6ffb2f68e25cd18fbaba07bf3c0fa645933c",
+    "source/v2/ontology/profiles/2.1/m1-provenance/0.1.0/fixtures/with-run.ttl": "96b2b5a4a94d154b031133f3655f5b00f6c1b84ade5b31c97b12dee2b1540c7a",
+    "source/v2/ontology/profiles/2.1/m1-provenance/0.1.0/fixtures/missing-record-key.ttl": "e771c2efd981bac3350f2630055bba35ff494ca417bb5acf1b12c2e518ae0581",
+    "CITATION.cff": "622c55d2694f194cb181b22b4571229c2cd2fe26d70f05df007562fec04a9fae"
+  },
+  "domain_namespace": "https://w3id.org/cm-pharme/2.1/",
+  "domain_classes": [
+    "https://w3id.org/cm-pharme/2.1/Dataset",
+    "https://w3id.org/cm-pharme/2.1/DatasetRelease",
+    "https://w3id.org/cm-pharme/2.1/ProvenanceActivity",
+    "https://w3id.org/cm-pharme/2.1/SourceRecord"
+  ],
+  "domain_object_properties": [
+    "https://w3id.org/cm-pharme/2.1/containsSourceRecord",
+    "https://w3id.org/cm-pharme/2.1/hasDatasetRelease"
+  ],
+  "expected_triples": 50,
+  "expected_total_object_properties": 3,
+  "expected_total_datatype_properties": 2,
+  "canonical_graph_sha256": "7b7cff97eedc071a6c1f15d71f58eadb2a9a1d3bcdfc7f38b14a920b70707186",
+  "artifact_stem": "cm-pharme-m1",
+  "admission_witnesses": [
+    {
+      "id": "accepted",
+      "path": "source/v2/ontology/profiles/2.1/m1-provenance/0.1.0/fixtures/with-run.ttl",
+      "expected_stage": "ADMITTED"
+    },
+    {
+      "id": "missing-key",
+      "path": "source/v2/ontology/profiles/2.1/m1-provenance/0.1.0/fixtures/missing-record-key.ttl",
+      "expected_stage": "SHACL_REJECTED"
+    }
+  ],
+  "release_binding": {
+    "base_version_id": "v2",
+    "profile_version": "0.1.0",
+    "distribution_version": "2.1.0",
+    "domain_namespace": "https://w3id.org/cm-pharme/2.1/",
+    "release_url": "https://github.com/ArazSaieArasi3/CM-PharmE/releases/tag/2.1.0",
+    "citation_url": "https://github.com/ArazSaieArasi3/CM-PharmE/blob/77a8e854d0e3927b0687346d7f8fda6a398adda7/CITATION.cff",
+    "canonical_ttl_url": "https://github.com/ArazSaieArasi3/CM-PharmE/blob/77a8e854d0e3927b0687346d7f8fda6a398adda7/source/v2/ontology/profiles/2.1/m1-provenance/0.1.0/profile.ttl",
+    "support_manifest_url": "https://github.com/ArazSaieArasi3/CM-PharmE/blob/77a8e854d0e3927b0687346d7f8fda6a398adda7/source/v2/release/2.1/support/0.1.0/manifest.json",
+    "archive_sha256": "4c9d3a1e52379c8c63b3619aedd7d0243cf702bcc078c9989a23619d50cc4350",
+    "scope_summary": "Released M1 provenance profile: four CM-PharmE classes and two CM-PharmE object properties; local admission and seven synthetic M001\u2013M004 records. Full V2 remains evolving."
+  },
+  "new_formal_reasoner_run_claimed": false,
+  "public_deployment_claimed": false,
+  "source_policy_acceptance": "1/4",
+  "historical_orsd_acceptance": "0/83",
+  "new_external_expert_responses": 0,
+  "expected_owl_classes": 4,
+  "expected_object_properties": 3,
+  "expected_datatype_properties": 2
+}

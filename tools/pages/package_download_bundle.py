@@ -160,8 +160,8 @@ def main() -> int:
         "research_wiki_url": WIKI_URL,
         "repository_url": REPO_URL,
         "evolution": {
-            "repository_changelog_url": REPO_URL + "/blob/main/CHANGELOG.md",
-            "curated_evolution_wiki_url": WIKI_URL + "/V1-to-V2-Research-Evolution",
+            "repository_changelog_url": REPO_URL + "/blob/" + (source_sha if rv.get("asset_kind") == "released_profile" else "main") + "/" + dv["evolution"]["repository_changelog"],
+            "curated_evolution_wiki_url": WIKI_URL + "/" + dv["evolution"]["curated_wiki_page"],
             "boundary": "The repository changelog is a technical/generated evolution aid and does not replace the curated research-evolution narrative in the Wiki."
         },
         "generated_artifacts_are_authority": False,

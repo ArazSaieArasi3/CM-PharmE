@@ -10,7 +10,8 @@ from pathlib import Path
 
 DEFAULT_REGISTRY = Path("docs/documentation/ontology-version-registry.json")
 SHA_REF = re.compile(r"^.+@[0-9a-f]{40}$")
-ID_RE = re.compile(r"^v[0-9]+$")
+ID_RE = re.compile(r"^v[0-9]+(?:-[a-z][a-z0-9]*)?$")
+MODEL_ID_RE = re.compile(r"^v[0-9]+$")
 
 REQUIRED = {
     "id", "version_family", "reader_label", "lifecycle_state",
@@ -30,8 +31,8 @@ def load_registry(path: Path) -> dict:
 
 def validate(data: dict) -> list[str]:
     errors: list[str] = []
-    if data.get("registry_schema_version") != "1.0":
-        errors.append("registry_schema_version must be 1.0")
+    if data.get("registry_schema_version") not in {"1.0", "1.1"}:
+        errors.append("registry_schema_version must be 1.0 or 1.1")
     if data.get("repository") != "ArazSaieArasi3/CM-PharmE":
         errors.append("repository must identify ArazSaieArasi3/CM-PharmE")
 
@@ -57,10 +58,34 @@ def validate(data: dict) -> list[str]:
         if missing:
             errors.append(f"{vid}: missing required fields: {', '.join(missing)}")
         if not isinstance(vid, str) or not ID_RE.fullmatch(vid):
-            errors.append(f"{vid}: id must match vN")
+            errors.append(f"{vid}: id must match vN or a declared vN-profile")
         if vid in ids:
             errors.append(f"{vid}: duplicate version id")
         ids.add(vid)
+
+        kind = version.get("asset_kind", "ontology_model")
+        if kind not in {"ontology_model", "released_profile"}:
+            errors.append(f"{vid}: unsupported asset_kind")
+        if kind == "released_profile":
+            profile = version.get("profile") or {}
+            parent = profile.get("base_version_id", "")
+            required_profile = {"base_version_id", "profile_version", "distribution_version",
+                "domain_namespace", "release_url", "citation_url", "canonical_ttl_url",
+                "support_manifest_url", "archive_sha256", "scope_summary"}
+            if required_profile - set(profile):
+                errors.append(f"{vid}: incomplete released profile binding")
+            if not MODEL_ID_RE.fullmatch(parent) or not isinstance(vid, str) or not vid.startswith(parent + "-"):
+                errors.append(f"{vid}: profile ID must identify its explicit model family")
+            if parent not in {v.get("id") for v in versions if v.get("asset_kind", "ontology_model") == "ontology_model"}:
+                errors.append(f"{vid}: unknown parent model family")
+            if version.get("semantic_release") != profile.get("distribution_version"):
+                errors.append(f"{vid}: release/profile distribution mismatch")
+            if version.get("supersedes") is not None or version.get("superseded_by") is not None:
+                errors.append(f"{vid}: scoped profile cannot replace a whole model family")
+            if not re.fullmatch(r"[0-9a-f]{64}", profile.get("archive_sha256", "")):
+                errors.append(f"{vid}: profile release archive hash must be pinned")
+        elif version.get("profile") is not None or not isinstance(vid, str) or not MODEL_ID_RE.fullmatch(vid):
+            errors.append(f"{vid}: model families use vN; a suffix requires an explicit released profile")
 
         lifecycle = version.get("lifecycle_state")
         if lifecycle not in LIFECYCLES:
@@ -129,6 +154,10 @@ def validate_against_baseline(current: dict, baseline: dict) -> list[str]:
                 errors.append(
                     f"{vid}: immutable {field} changed from {old.get(field)!r} to {new.get(field)!r}"
                 )
+        if old.get("asset_kind") == "released_profile":
+            for field in ("asset_kind", "semantic_source_paths", "semantic_release", "profile", "documentation_input"):
+                if new.get(field) != old.get(field):
+                    errors.append(f"{vid}: immutable released profile {field} changed")
     return errors
 
 
