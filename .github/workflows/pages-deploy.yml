@@ -165,6 +165,11 @@ jobs:
       - name: Generate and audit all enabled formal references
         run: python tools/pages/run_version_pipeline.py references
 
+      - name: Rebuild M1 reference independently and compare raw output
+        run: |
+          python tools/pages/run_widoco.py --version v2-m1 --jar build/tools/widoco.jar --ontology build/input/v2-m1/distributions/cm-pharme-m1.ttl --output build/m1-reference-repeat --manifest-output build/evidence/v2-m1-widoco-repeat.json
+          python tools/pages/compare_widoco_regeneration.py --version v2-m1 --first build/site/ontology/2.1.0/m1/reference --second build/m1-reference-repeat --output build/evidence/m1-reference-reproducibility.json
+
       - name: Package governed version downloads
         run: python tools/pages/run_version_pipeline.py downloads
 
@@ -236,6 +241,24 @@ jobs:
 
       - name: Prove future-version isolation on assembled artifacts
         run: python tools/pages/test_future_version_onboarding.py --site build/site --output build/evidence/pages-277-onboarding.json
+
+      - name: Audit released M1 entity coverage and old published subtrees
+        run: python tools/pages/audit_m1_generated.py
+
+      - name: Install pinned browser tooling for local candidate verification
+        run: |
+          python -m pip install 'playwright==1.55.0'
+          python -m playwright install --with-deps chromium
+
+      - name: Verify local candidate rendering search and zoom (not public QA)
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m http.server 8765 --bind 127.0.0.1 --directory build/site > build/evidence/candidate-server.log 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid"' EXIT
+          python tools/pages/verify_public_pages.py --base-url http://127.0.0.1:8765/ --output build/evidence/local-candidate-browser-338.json
+          mv public-*-explore.png build/evidence/
 
       - name: Deployment preflight
         env:

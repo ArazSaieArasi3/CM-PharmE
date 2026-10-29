@@ -49,7 +49,8 @@ def main():
     old_plan=pipeline.make_plan(base,old_build,*configs,old_dl)
     assert plan[:len(old_plan)]==old_plan
     profile=next(v for v in reg['versions'] if v['id']==PROFILE)
-    assert not profile['generated_reference_enabled'] and not profile['webvowl_enabled']
+    assert profile['generated_reference_enabled'] and profile['webvowl_enabled']
+    assert PROFILE in configs[0]['versions'] and PROFILE in configs[1]['versions']
     negatives=[]
     for name,mutate in [
         ('profile-as-full-model',lambda v:v.update(asset_kind='ontology_model')),
@@ -117,7 +118,7 @@ def main():
                 'independent_builds_byte_identical':True,'serialization_count':5,'admission_smoke':manifest['admission_smoke'],
                 'source_commit_verified':manifest['source_commit_verified'],'preserved_model_entries':['v1','v2'],
                 'preserved_shell_subtrees':old_routes,'negative_controls':negatives,
-                'generated_reference_enabled':False,'webvowl_enabled':False,'public_deployment':False}
+                'generated_reference_enabled':profile['generated_reference_enabled'],'webvowl_enabled':profile['webvowl_enabled'],'public_deployment':False}
     assert before=={p:builder.sha((source/p).read_bytes()) for p in c['source_files_sha256']}
     args.output.parent.mkdir(parents=True,exist_ok=True);args.output.write_text(json.dumps(result,indent=2)+'\n')
     print(json.dumps(result))
