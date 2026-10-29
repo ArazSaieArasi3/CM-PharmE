@@ -115,6 +115,10 @@ jobs:
       - name: Verify frozen documentation baseline archive
         run: python tools/pages/verify_baseline_archive.py
 
+      - name: Verify declared Wiki baseline archive when present
+        if: hashFiles('docs/documentation/wiki-baselines/WB-2026.10.1.zip') != ''
+        run: python tools/wiki/build_wiki_snapshot.py verify --archive docs/documentation/wiki-baselines/WB-2026.10.1.zip --wiki-commit 04e598c96f62ab3457b6250ab3d618efd4eb46d5 
+
       - name: Validate common version plan and checkout exact semantic sources
         run: python tools/pages/run_version_pipeline.py checkout --output build/evidence/version-pipeline-plan.json
 
