@@ -2,7 +2,7 @@
 
 CM-PharmE is a versioned, ontology-grounded research program for modeling and investigating the pharmaceutical ecosystem. This Wiki is the human-readable documentation layer for the stable CM-PharmE 1.x baseline and the evolving CM-PharmE 2.0 research line.
 
-> **Current Wiki baseline:** WB-2026.09.1  
+> **Current Wiki baseline:** WB-2026.10.1  
 > **CM-PharmE 1.x:** Stable  
 > **CM-PharmE 2.0:** Stable-to-date / Evolving  
 > **Important:** V2 is not final. Only currently stable evidence is documented as established.

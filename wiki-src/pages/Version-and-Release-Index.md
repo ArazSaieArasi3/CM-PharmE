@@ -2,7 +2,7 @@
 
 > **Version scope:** Cross-version / documentation governance  
 > **Status:** Stable-to-date / Evolving  
-> **Updated:** 2026-10-29
+> **Updated:** 2026-10-30
 
 ## Published release and model identities
 
@@ -63,11 +63,11 @@ GitHub tag. Published stable paths and historical payloads remain unchanged.
 - **Page scope:** Cross-version / documentation governance
 - **Documentation maturity:** Stable-to-date / Evolving
 - **Authoritative sources:** Preserved V1/V2 records; published GitHub release2.1.0 and curated exact source; Pages baseline PB-2026.09.1
-- **Last synchronized:** 2026-10-29
-- **Last synchronized ref:** main@d185ba2751a77658db9e282f13367362068d07d0; release/2.1.0@77a8e854d0e3927b0687346d7f8fda6a398adda7
-- **Wiki baseline:** Existing WB-2026.09.1 retained; M1 increment awaits #339 public QA
+- **Last synchronized:** 2026-10-30
+- **Last synchronized ref:** main@96b257d26d18419d4f65047fbd4d9d37b95b611e; release/2.1.0@77a8e854d0e3927b0687346d7f8fda6a398adda7
+- **Wiki baseline:** WB-2026.10.1 declared for the M1 increment; WB-2026.09.1 retained as history
 - **Related issues:** #337, #338, #339, #210, #214, #217
-- **Evidence status:** Stable M1 source release verified; new documentation publication pending
+- **Evidence status:** Stable M1 source and public Wiki/Pages/WebVOWL QA verified; archive receipts recorded under #339
 - **Future refresh:** #339 public documentation QA and baseline declaration
 
 </details>

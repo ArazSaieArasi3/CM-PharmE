@@ -1,8 +1,8 @@
 {
   "candidate_baseline_id": "WB-2026.10.1",
   "created_date": "2026-10-30",
-  "declared": false,
-  "maturity": "Source-complete; public QA pending",
+  "declared": true,
+  "maturity": "Stable released M1 documentation increment; full V2 evolving",
   "previous_baseline": "WB-2026.09.1",
   "previous_manifest": "wiki-src/baselines/WB-2026.09.1/baseline-manifest.json",
   "qa_issue": 339,
@@ -18,7 +18,7 @@
   "m1_source_commit": "77a8e854d0e3927b0687346d7f8fda6a398adda7",
   "v1": {
     "branch": "main",
-    "commit": "5099888668d35f798e4759e3534e707ed906db24",
+    "commit": "595ea30a66644c1b130b6c1a781dc7afbd7ba284",
     "documentation_status": "Stable"
   },
   "v2": {
@@ -26,5 +26,16 @@
     "commit": "1226b0a5484f8f5d3a8d214e0d0f52f066b88999",
     "documentation_status": "Stable-to-date / Evolving"
   },
-  "wiki_publication_state": "M1 documentation increment authorized for controlled publication; new baseline awaits public QA"
+  "wiki_publication_state": "Public Wiki and Pages QA passed; declared bounded M1 increment",
+  "declared_date": "2026-10-30",
+  "declaration_qa": {
+    "pages_run": 40968583872,
+    "pages_build_commit": "96b257d26d18419d4f65047fbd4d9d37b95b611e",
+    "wiki_run": 40968583835,
+    "wiki_commit": "41eedd2e57def11c54b91419fc7ba55a2ab4298f",
+    "wiki_urls_verified": 267,
+    "public_cross_surface_links_broken": 0,
+    "public_serializations_checked": 15,
+    "scope": "Existing semantic2.1.0 M1 profile only; full V2 scientific/editorial gates remain open"
+  }
 }

@@ -93,11 +93,11 @@ upstream terms. The support manifest provides the file-level scope.
 - **Page scope:** Released M1 provenance profile only
 - **Documentation maturity:** Source-complete generated documentation; publication receipts tracked in #339
 - **Authoritative sources:** release/2.1.0@77a8e854d0e3927b0687346d7f8fda6a398adda7
-- **Last synchronized:** 2026-10-29
-- **Last synchronized ref:** main@d185ba2751a77658db9e282f13367362068d07d0; release/2.1.0@77a8e854d0e3927b0687346d7f8fda6a398adda7
-- **Wiki baseline:** WB-2026.10.1 increment; declaration follows #339 public QA; prior baseline retained
+- **Last synchronized:** 2026-10-30
+- **Last synchronized ref:** main@96b257d26d18419d4f65047fbd4d9d37b95b611e; release/2.1.0@77a8e854d0e3927b0687346d7f8fda6a398adda7
+- **Wiki baseline:** WB-2026.10.1 declared after #339 public Wiki/Pages QA; prior baseline retained
 - **Related issues:** #337, #338, #339
-- **Evidence status:** Exact source and generated candidate verified; live publication evidence recorded separately
+- **Evidence status:** Exact source and actual public Wiki/Pages/WebVOWL QA verified; exact receipts recorded under #339
 - **Future refresh:** #339 public QA and baseline; later compatible profile changes
 
 </details>
