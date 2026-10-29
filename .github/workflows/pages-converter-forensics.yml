@@ -3,7 +3,7 @@ name: Converter Identity Forensics
 on:
   push:
     branches: ['docs/m1-release-337']
-    paths: ['tools/pages/audit_converter_rebuild.py', '.github/workflows/pages-converter-forensics.yml']
+    paths: ['tools/pages/audit_converter_rebuild.py', 'tools/pages/prepare_converter_build.py', '.github/workflows/pages-converter-forensics.yml']
   workflow_dispatch:
 permissions:
   contents: read
