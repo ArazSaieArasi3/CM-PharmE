@@ -33,6 +33,11 @@ Formal reference and WebVOWL generation follow in #338, with coordinated public
 verification in #339. WebVOWL is an exploration projection of the TBox, not an
 OntoUML diagram or a complete statement of the logical semantics.
 
+Candidate routes for that publication (not yet verified as live):
+
+- [Formal reference — preparation pending #338](https://arazsaiearasi3.github.io/CM-PharmE/ontology/2.1.0/m1/reference/)
+- [WebVOWL — preparation pending #338](https://arazsaiearasi3.github.io/CM-PharmE/ontology/2.1.0/m1/explore/)
+
 ## Admission, identity and logical view
 
 Admission is opt-in for this export contract. SHACL and local key checks verify

@@ -5,6 +5,11 @@ on:
     paths:
       - "docs/documentation/download-bundle-contract.json"
       - "docs/documentation/pages-273-download-contract.md"
+      - "docs/documentation/ontology-version-registry.json"
+      - "docs/documentation/ontology-documentation-build-contract.json"
+      - "docs/documentation/m1-profile-release.json"
+      - "tools/pages/run_version_pipeline.py"
+      - "tools/pages/build_released_profile.py"
       - "tools/pages/package_download_bundle.py"
       - "tools/pages/test_download_contract.py"
       - "tools/pages/test_download_integration.py"
@@ -18,24 +23,12 @@ permissions:
 
 jobs:
   bundle:
-    name: Build and verify V1/V2 download bundles
+    name: Build and verify every registered download bundle
     runs-on: ubuntu-24.04
     timeout-minutes: 15
     steps:
       - name: Checkout publication branch
         uses: actions/checkout@v4
-
-      - name: Checkout exact V1 source
-        uses: actions/checkout@v4
-        with:
-          ref: 595ea30a66644c1b130b6c1a781dc7afbd7ba284
-          path: source-v1
-
-      - name: Checkout exact V2 source
-        uses: actions/checkout@v4
-        with:
-          ref: 1226b0a5484f8f5d3a8d214e0d0f52f066b88999
-          path: source-v2
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -48,71 +41,38 @@ jobs:
           'rdflib==7.5.0'
           'pyshacl==0.31.0'
 
-      - name: Rebuild governed V1
-        run: >-
-          bash -lc 'cd source-v1 &&
-          python tools/ontology/build.py --output-root "$GITHUB_WORKSPACE/build/input/v1"'
-
-      - name: Gate V1 input
-        run: >-
-          python tools/pages/resolve_documentation_input.py
-          --version v1
-          --build-root build/input/v1
-          --source-ref main@595ea30a66644c1b130b6c1a781dc7afbd7ba284
-          --output build/evidence/v1-input.json
-
-      - name: Rebuild governed V2
-        shell: bash
+      - name: Checkout, rebuild and gate every registered source
         run: |
-          set -euo pipefail
-          cd source-v2
-          python tools/v2_ontology/build_validate.py             --source-dir v2/ontology/source/modules             --conceptual-model v2/ontouml/cm-pharme-v2.conceptual-model.json             --baseline "$GITHUB_WORKSPACE/docs/documentation/v2-current-pages-baseline.json"             --shapes v2/ontology/shapes/cm-pharme-v2.shacl.ttl             --smoke-data v2/ontology/tests/formal-smoke.ttl             --output-root "$GITHUB_WORKSPACE/build/input/v2"             --require-shacl
-
-      - name: Gate V2 input
-        run: >-
-          python tools/pages/resolve_documentation_input.py
-          --version v2
-          --build-root build/input/v2
-          --source-ref v2/research-program@1226b0a5484f8f5d3a8d214e0d0f52f066b88999
-          --output build/evidence/v2-input.json
+          python tools/pages/run_version_pipeline.py checkout
+          python tools/pages/run_version_pipeline.py inputs
 
       - name: Validate download contract, V3 dry run and collision guard
         run: python tools/pages/test_download_contract.py
 
-      - name: Package and verify V1 downloads
-        run: >-
-          python tools/pages/package_download_bundle.py
-          --version v1
-          --build-root build/input/v1
-          --source-ref main@595ea30a66644c1b130b6c1a781dc7afbd7ba284
-          --output-root build/pages-candidate
-
-      - name: Package and verify V2 downloads
-        run: >-
-          python tools/pages/package_download_bundle.py
-          --version v2
-          --build-root build/input/v2
-          --source-ref v2/research-program@1226b0a5484f8f5d3a8d214e0d0f52f066b88999
-          --output-root build/pages-candidate
+      - name: Package every registered download bundle
+        run: python tools/pages/run_version_pipeline.py downloads
 
       - name: Verify version isolation and mandatory files
         shell: bash
         run: |
           set -euo pipefail
-          v1=build/pages-candidate/ontology/v1.0.0/downloads
-          v2=build/pages-candidate/ontology/v2/current/downloads
-          test -d "$v1"
-          test -d "$v2"
-          test "$v1" != "$v2"
-          for dir in "$v1" "$v2"; do
-            test -s "$dir/download-manifest.json"
-            test -s "$dir/provenance.json"
-            test -s "$dir/SHA256SUMS.txt"
-            test "$(find "$dir" -maxdepth 1 -type f | wc -l)" -eq 8
-          done
-          grep -q '"lifecycle_state": "stable"' "$v1/download-manifest.json"
-          grep -q '"lifecycle_state": "evolving"' "$v2/download-manifest.json"
-          grep -q 'Stable-to-date / Evolving' "$v2/download-manifest.json"
+          python - <<'CHECK'
+          import json
+          from pathlib import Path
+          registry=json.loads(Path("docs/documentation/ontology-version-registry.json").read_text())
+          routes=[]
+          for version in registry["versions"]:
+              route=version.get("immutable_version_path") or version["current_path"]
+              assert route not in routes, route
+              routes.append(route)
+              folder=Path("build/site")/route/"downloads"
+              for name in ("download-manifest.json", "provenance.json", "SHA256SUMS.txt"):
+                  assert (folder/name).stat().st_size > 0, folder/name
+              assert len(list(folder.iterdir())) == 8, folder
+              manifest=json.loads((folder/"download-manifest.json").read_text())
+              assert manifest["lifecycle_state"] == version["lifecycle_state"]
+              assert manifest["public_status_label"] == version["public_status_label"]
+          CHECK
 
       - name: Negative test — refuse silent V1 bundle overwrite
         shell: bash
@@ -122,26 +82,21 @@ jobs:
             --version v1 \
             --build-root build/input/v1 \
             --source-ref main@595ea30a66644c1b130b6c1a781dc7afbd7ba284 \
-            --output-root build/pages-candidate
+            --output-root build/site
           status=$?
           set -e
           test "$status" -ne 0
 
-      - name: Show manifests
-        run: |
-          cat build/pages-candidate/ontology/v1.0.0/downloads/download-manifest.json
-          cat build/pages-candidate/ontology/v2/current/downloads/download-manifest.json
-
       - name: Build shell around verified bundles
-        run: python tools/pages/build_shell.py --output build/pages-candidate
+        run: python tools/pages/build_shell.py --output build/site
 
       - name: Audit assembled download pages and sample downloads
-        run: python tools/pages/test_download_integration.py --site build/pages-candidate
+        run: python tools/pages/test_download_integration.py --site build/site
 
       - name: Final #273 URL/path and traceability audit
         run: >-
           python tools/pages/audit_download_closure.py
-          --site build/pages-candidate
+          --site build/site
           --output build/evidence/pages-273-final-audit.json
 
       - name: Upload verified assembled Pages candidate
@@ -149,6 +104,6 @@ jobs:
         with:
           name: cm-pharme-pages-download-integration
           path: |
-            build/pages-candidate/
+            build/site/
             build/evidence/
           if-no-files-found: error
