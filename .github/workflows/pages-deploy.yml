@@ -105,6 +105,9 @@ jobs:
     if: needs.classify.outputs.should_build == 'true'
     runs-on: ubuntu-24.04
     timeout-minutes: 25
+    permissions:
+      contents: read
+      actions: read
     steps:
       - name: Checkout publication branch
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -241,6 +244,20 @@ jobs:
 
       - name: Prove future-version isolation on assembled artifacts
         run: python tools/pages/test_future_version_onboarding.py --site build/site --output build/evidence/pages-277-onboarding.json
+
+      - name: Retrieve immutable prior assembled candidate for byte comparison
+        uses: actions/download-artifact@v4
+        with:
+          artifact-ids: 12934165079
+          run-id: 40954904319
+          github-token: ${{ github.token }}
+          path: build/prior-site-341
+          merge-multiple: true
+
+      - name: Extract prior Pages archive
+        run: |
+          mkdir -p build/prior-site-341/site
+          tar -xf build/prior-site-341/artifact.tar -C build/prior-site-341/site
 
       - name: Audit released M1 entity coverage and old published subtrees
         run: python tools/pages/audit_m1_generated.py

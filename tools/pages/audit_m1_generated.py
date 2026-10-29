@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # SPDX-License-Identifier: MIT
 """Audit released M1 entity coverage and compare retained prior subtree receipts."""
-import hashlib,json
+import hashlib,json,difflib
 from pathlib import Path
 from rdflib import Graph,RDF,OWL
 ROOT=Path(__file__).resolve().parents[2]
@@ -25,6 +25,14 @@ def main():
   if v['version'] not in ['v1','v2']:continue
   sub='ontology/v1.0.0' if v['version']=='v1' else 'ontology/v2/current'
   digest=hashlib.sha256(json.dumps(tree(site/sub),sort_keys=True).encode()).hexdigest()
+  if digest!=v['before_tree_sha256']:
+   previous=ROOT/'build/prior-site-341/site'/sub;prior=tree(previous);current=tree(site/sub)
+   differences=[n for n in sorted(set(prior)|set(current)) if prior.get(n)!=current.get(n)]
+   print(json.dumps({'version':v['version'],'changed_paths':differences}))
+   for n in differences:
+    a=(previous/n).read_text(errors='replace') if (previous/n).is_file() else ''
+    b=(site/sub/n).read_text(errors='replace') if (site/sub/n).is_file() else ''
+    print(''.join(difflib.unified_diff(a.splitlines(True),b.splitlines(True),fromfile='prior/'+n,tofile='current/'+n))[:8000])
   assert digest==v['before_tree_sha256'],(v['version'],digest,v['before_tree_sha256'])
   hashes.append({'id':v['version'],'sha256':digest,'changed_files':0})
  result={'issue':338,'result':'PASS','source_ref':c['semantic_source_ref'],'tbox_triples':len(g),'domain_classes':len(c['domain_classes']),'domain_object_properties':len(c['domain_object_properties']),'formal_classes_covered':len(required_classes),'formal_properties_covered':len(required_properties),'vowl_counts':manifest['vowl_counts'],'vowl_json_sha256':manifest['vowl_json_sha256'],'vowl_extra_class_iris':sorted(classes-required_classes),'old_subtrees_unchanged':hashes,'public_deployment':False}
