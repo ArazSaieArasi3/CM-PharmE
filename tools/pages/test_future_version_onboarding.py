@@ -67,7 +67,8 @@ def main():
         build_shell.build(regfile,candidate,test_shell.CSS)
         for v in registry['versions']:
             ref=candidate/build_shell.route_for(v)/'reference'
-            (ref/'index.html').write_bytes((ref/'index-en.html').read_bytes())
+            if v['generated_reference_enabled']:
+                (ref/'index.html').write_bytes((ref/'index-en.html').read_bytes())
             assert before[v['id']]==digest(candidate/build_shell.route_for(v)), v['id']+': prior route changed'
         chooser=(candidate/'ontology/index.html').read_text()
         assert all(v['reader_label'] in chooser for v in future['versions'])
