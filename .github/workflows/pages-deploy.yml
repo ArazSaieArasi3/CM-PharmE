@@ -174,11 +174,14 @@ jobs:
           distribution: temurin
           java-version: "8"
 
+      - name: Pin historical Maven build plugins
+        run: python tools/pages/prepare_converter_build.py external/owl2vowl
+
       - name: Build and verify exact OWL2VOWL converter
         shell: bash
         run: |
           set -euo pipefail
-          (cd external/owl2vowl && mvn -B package -P standalone-release -DskipTests)
+          (cd external/owl2vowl && mvn -B -f pom.cmpe.xml package -P standalone-release -DskipTests)
           python - <<'PY'
           import hashlib, zipfile
           from pathlib import Path

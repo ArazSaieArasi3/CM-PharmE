@@ -7,6 +7,7 @@ from pathlib import Path
 def prepare(source):
     assert subprocess.check_output(['git','rev-parse','HEAD'],cwd=source,text=True).strip()=='2833ead00122ca252a0fd0e18c5e5b696d711d2c'
     original=source/'pom.xml';data=original.read_bytes();text=data.decode()
+    assert hashlib.sha256(data).hexdigest()=='503d7e8690e7108b8a910d0bf673bb56da93f02c9f4a28ee8ee1a09f8dc0288c', 'Upstream POM bytes changed'
     plugins='''<plugins>
             <!-- CM-PharmE: reproduce successful hosted converter run 36679317918. -->
             <plugin><groupId>org.apache.maven.plugins</groupId><artifactId>maven-resources-plugin</artifactId><version>3.4.0</version></plugin>

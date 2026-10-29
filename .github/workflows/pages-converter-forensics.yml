@@ -34,6 +34,17 @@ jobs:
           python tools/pages/run_version_pipeline.py inputs
       - name: Compare two clean converter builds and all three projections
         run: python tools/pages/audit_converter_rebuild.py --source external/owl2vowl --output build/converter-forensics
+      - name: Require restored historical identity and deterministic pinned builds
+        run: |
+          python - <<'PYCODE'
+          import json
+          from pathlib import Path
+          d=json.loads(Path('build/converter-forensics/summary.json').read_text())
+          assert d['restored_pin_twice'] and d['pinned_build_entries_identical']
+          assert d['default_to_pinned_changed_entries']==['META-INF/MANIFEST.MF']
+          for values in d['projections'].values():
+              assert len({x['sha256'] for x in values})==1
+          PYCODE
       - uses: actions/upload-artifact@v7.0.1
         if: always()
         with:

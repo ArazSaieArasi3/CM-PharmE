@@ -90,12 +90,15 @@ jobs:
           (cd source-v2 && python tools/v2_ontology/build_validate.py             --source-dir v2/ontology/source/modules             --conceptual-model v2/ontouml/cm-pharme-v2.conceptual-model.json             --baseline "$GITHUB_WORKSPACE/docs/documentation/v2-current-pages-baseline.json"             --shapes v2/ontology/shapes/cm-pharme-v2.shacl.ttl             --smoke-data v2/ontology/tests/formal-smoke.ttl             --output-root "$GITHUB_WORKSPACE/build/input/v2"             --require-shacl)
           python tools/pages/resolve_documentation_input.py             --version v2             --build-root build/input/v2             --source-ref v2/research-program@1226b0a5484f8f5d3a8d214e0d0f52f066b88999             --output build/evidence/v2-input.json
 
+      - name: Pin historical Maven build plugins
+        run: python tools/pages/prepare_converter_build.py external/owl2vowl
+
       - name: Build exact OWL2VOWL 0.3.7 converter
         shell: bash
         run: |
           set -euo pipefail
           cd external/owl2vowl
-          mvn -B package -P standalone-release -DskipTests
+          mvn -B -f pom.cmpe.xml package -P standalone-release -DskipTests
           test -s target/OWL2VOWL-0.3.7-shaded.jar
           python - <<'PY'
           import hashlib, zipfile
