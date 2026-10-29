@@ -117,7 +117,7 @@ def main():
     require(objective_ids == {"O22-01", "O22-02", "O22-03", "O22-04"}, "Authorized objective lost")
     require(set().union(*(set(g["objectives"]) for g in contract["release_gates"])) == objective_ids, "Release gates omit an objective")
     current = read_json("v2/release/current.json")
-    require(current["current_planning_record"] == "roadmap/0.13.0/release-plan.json", "Current plan does not select the comprehensive route")
+    require(current.get("scope_decision") == "SCOPE-22-01" and current.get("target_distribution") == "2.2.0", "Current plan does not select the authorized comprehensive route")
     plan = read_json("v2/release/" + current["current_planning_record"])
     require(plan["target_distribution"] == "2.2.0" and not plan["ga_ready"], "Planning readiness exceeds preparation evidence")
     latest, experiment = read_json(LATEST), read_json(EXPERIMENT)

@@ -1,0 +1,55 @@
+{
+  "schema_version": "CMPE22ReconciliationAssembly/0.1.0",
+  "issue": 344,
+  "passed": true,
+  "scope": "PROVISIONAL_NATIVE_REVIEW_ASSEMBLY;NOT_ACCEPTED_COMPLETE_MODEL",
+  "source_commit": "f7f43cb3b6f3d3cef38c30daa65e552dff3ce7c7",
+  "verified_inputs": 62,
+  "native_sha256": "270734f6fc22c6f8143fe2eb46ccb7ee29bc2a238bf5b6f0371099818eddce9f",
+  "topology": {
+    "elements": 686,
+    "classes_including_datatypes": 147,
+    "named_nondatatype_classes": 141,
+    "binary_relations": 135,
+    "components": 1,
+    "component_sizes": [
+      141
+    ],
+    "isolates": [],
+    "edge_records": 223,
+    "unknown_endpoint_types": 11,
+    "unknown_cardinality_ends": 60,
+    "unknown_readonly_ends": 76,
+    "unclassified_relations": 92
+  },
+  "baseline_nonpackage_elements_preserved": true,
+  "later_field_differences_preserved": 22,
+  "added_relation_rows": 49,
+  "proposed_native_formal_endpoint_names_match": true,
+  "official_vendored_schema_serialization_pass": true,
+  "semantic_ontouml_validation": false,
+  "full_owl_shacl_alignment": false,
+  "full_owl_shacl_blocker": "Only proposed endpoint declarations are crosswalked; full constraint semantics and profile layering require individual decisions. No obsolete formal ontology is unioned over newer decisions.",
+  "prior_deferred_gate_d_ids": [
+    "AssetAtRisk",
+    "ClinicalCareParticipant",
+    "Vulnerability"
+  ],
+  "refusal_controls": [
+    {
+      "case": "rollback_later_shared_field",
+      "refused": true
+    },
+    {
+      "case": "drop_added_relation_end",
+      "refused": true
+    },
+    {
+      "case": "silently_strengthen_proposed_bounds",
+      "refused": true
+    }
+  ],
+  "new_semantic_acceptances": 0,
+  "comprehensive_2_2_ready": false,
+  "next_packet": "One logisticsFacility decision: Facility currently fails to distinguish origin, destination and storage participation; preserve event/site/organization distinctions."
+}
