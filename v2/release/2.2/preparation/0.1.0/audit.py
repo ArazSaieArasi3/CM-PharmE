@@ -116,9 +116,9 @@ def main():
     objective_ids = {o["id"] for o in contract["objectives"]}
     require(objective_ids == {"O22-01", "O22-02", "O22-03", "O22-04"}, "Authorized objective lost")
     require(set().union(*(set(g["objectives"]) for g in contract["release_gates"])) == objective_ids, "Release gates omit an objective")
-    current = read_json("v2/release/current.json")
-    require(current.get("scope_decision") == "SCOPE-22-01" and current.get("target_distribution") == "2.2.0", "Current plan does not select the authorized comprehensive route")
-    plan = read_json("v2/release/" + current["current_planning_record"])
+    # Audit the versioned contract, not a mutable future release pointer.
+    plan = read_json("v2/release/roadmap/0.13.0/release-plan.json")
+    require(plan.get("scope_decision") == "SCOPE-22-01", "Recorded plan loses the authorized scope decision")
     require(plan["target_distribution"] == "2.2.0" and not plan["ga_ready"], "Planning readiness exceeds preparation evidence")
     latest, experiment = read_json(LATEST), read_json(EXPERIMENT)
     latest_by = {e["id"]: e for e in latest["elements"]}

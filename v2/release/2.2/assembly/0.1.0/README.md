@@ -54,8 +54,9 @@ python v2/release/2.2/assembly/0.1.0/build.py \
 ```
 
 [report.json](report.json) records the derived bytes, topology, 62 input identities,
-preservation guards and explicit scientific limits. Hosted evidence is recorded
-separately when verified. Comprehensive 2.2 remains **not ready**; no stable tag,
+preservation guards and explicit scientific limits. [Hosted evidence](ci-evidence.json) verifies two downloaded artifact digests and
+byte equality of all three outputs against local results. Two local hash seeds
+produce identical bytes; all three rollback/invalid-input controls are refused. Comprehensive 2.2 remains **not ready**; no stable tag,
 full-model public documentation, scientific acceptance or expert response is
 created by this review assembly. The released 2.1.0 M1 profile is unchanged.
 
