@@ -28,16 +28,15 @@ jobs:
           python-version: '3.12'
       - name: Resolve baseline
         id: baseline
-        shell: bash
+        env:
+          REQUESTED_BASELINE: ${{ inputs.baseline }}
         run: |
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            echo "value=${{ inputs.baseline }}" >> "$GITHUB_OUTPUT"
-          else
-            python - <<'PY' >> "$GITHUB_OUTPUT"
-            import json
-            print("value="+json.load(open("wiki-src/baseline-manifest.json"))["candidate_baseline_id"])
-            PY
-          fi
+          python - <<'RESOLVE'
+          import json, os
+          requested=os.environ.get('REQUESTED_BASELINE','').strip()
+          value=requested or json.load(open('wiki-src/baseline-manifest.json'))['candidate_baseline_id']
+          with open(os.environ['GITHUB_OUTPUT'],'a') as f: f.write('value='+value+'\n')
+          RESOLVE
       - name: Build deterministic Wiki snapshot
         run: python tools/wiki/build_wiki_snapshot.py build --baseline "${{ steps.baseline.outputs.value }}"
       - name: Verify snapshot read-back
