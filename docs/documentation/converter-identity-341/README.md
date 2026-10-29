@@ -42,3 +42,24 @@ Date:2026-10-30 (Asia/Tehran). This repairs documentation tooling for existing
 semantic2.1.0, without a semantic release bump or broader scientific acceptance.
 Original helper/diagnostic code is MIT; original explanatory content is CC BY4.0
 under approved D-03, retaining project attribution and upstream terms.
+
+## Integrated acceptance
+
+Implementation `454317d94263efc06c8fa304cffd1b38ffdfcaa6` passes all eleven
+applicable PR workflows (plus the duplicate push onboarding run). Forensic
+run40954565675 also passes with the original-POM hash guard and explicit restored
+identity assertions. [Full assembly run40954904319](https://github.com/ArazSaieArasi3/CM-PharmE/actions/runs/40954904319)
+passes converter/frontend checks, closed-loop navigation, downloads, future
+onboarding isolation and deployment preflight. Its synthetic PR merge tree equals
+the implementation tree. `ci-evidence.json` records exact jobs/artifacts and old
+subtree digests; public deploy and browser verification jobs are skipped.
+
+The integrated proof exposed a pre-existing full-model assumption in the future
+onboarding test. Reference aliases are now restored only when reference generation
+is enabled, as in the common production pipeline. All prior subtree digest
+assertions remain enforced, including the disabled M1 reference placeholder.
+No profile feature is prematurely enabled to satisfy the test.
+
+#341 is complete. #338 is the sole next ready packet; PR #340 remains a draft
+source/tooling candidate until M1 generated content and #339 publication gates
+are fulfilled. Historical #337 receipts remain observations at their own commits.

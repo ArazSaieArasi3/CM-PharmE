@@ -1,0 +1,233 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-30",
+  "timezone": "Asia/Tehran",
+  "issue": 341,
+  "result": "PASS",
+  "implementation_commit": "454317d94263efc06c8fa304cffd1b38ffdfcaa6",
+  "implementation_tree": "aacc5a24b2d9e979a3b477016eb89222b3c1a605",
+  "ci_execution_commit": "fc0acd78830ea517745c55d5af500905275641ab",
+  "ci_execution_tree": "aacc5a24b2d9e979a3b477016eb89222b3c1a605",
+  "tree_matches": true,
+  "forensic_run": 40954565675,
+  "forensic_job": 123731176996,
+  "forensic_artifacts": [
+    {
+      "id": 12933945379,
+      "name": "converter-forensics-341",
+      "size_in_bytes": 39567367,
+      "url": "https://api.github.com/repos/ArazSaieArasi3/CM-PharmE/actions/artifacts/12933945379",
+      "archive_download_url": "https://api.github.com/repos/ArazSaieArasi3/CM-PharmE/actions/artifacts/12933945379/zip",
+      "expired": false,
+      "created_at": "2026-10-29T21:06:00Z",
+      "expires_at": "2027-01-27T21:04:14Z",
+      "updated_at": "2026-10-29T21:06:00Z",
+      "digest": "sha256:3c954714bdf947b9ca57c3a60142facd6c2a311289a8d3c2332b0e6c6a6a6e1d",
+      "workflow_run": {
+        "id": 40954565675,
+        "repository_id": 1053482924,
+        "head_repository_id": 1053482924,
+        "head_branch": "docs/m1-release-337",
+        "head_sha": "9650f91cfcd52abaca4cab40007b9e29a4b70aba"
+      }
+    }
+  ],
+  "previous_forensic_run": 40953972950,
+  "prior_success_run": 36679317918,
+  "expected_converter_content_sha256_unchanged": "f500951cdd4a0963fb80a96b974f463e8cfc84660f3b46ce802b14296e5e9aee",
+  "checksum_replaced": false,
+  "restored_pin_twice": true,
+  "default_to_pinned_changed_entries": [
+    "META-INF/MANIFEST.MF"
+  ],
+  "unchanged_projection_sets": [
+    "v1",
+    "v2",
+    "v2-m1"
+  ],
+  "integration_run": 40954904319,
+  "integration_jobs": [
+    {
+      "id": 123732351605,
+      "name": "Classify Pages build request",
+      "conclusion": "success"
+    },
+    {
+      "id": 123732411962,
+      "name": "Build deploy-ready Pages artifact",
+      "conclusion": "success"
+    },
+    {
+      "id": 123733222211,
+      "name": "Deploy approved Pages artifact",
+      "conclusion": "skipped"
+    },
+    {
+      "id": 123733222692,
+      "name": "Verify rendered public Pages and WebVOWL",
+      "conclusion": "skipped"
+    }
+  ],
+  "integration_artifacts": [
+    {
+      "id": 12934165079,
+      "name": "github-pages",
+      "size_in_bytes": 896771,
+      "url": "https://api.github.com/repos/ArazSaieArasi3/CM-PharmE/actions/artifacts/12934165079",
+      "archive_download_url": "https://api.github.com/repos/ArazSaieArasi3/CM-PharmE/actions/artifacts/12934165079/zip",
+      "expired": false,
+      "created_at": "2026-10-29T21:08:07Z",
+      "expires_at": "2026-10-30T21:08:06Z",
+      "updated_at": "2026-10-29T21:08:07Z",
+      "digest": "sha256:0943267edc261fdc87a8478553f3fd4252a5f92f5bbd65004d20b6b02d09ee99",
+      "workflow_run": {
+        "id": 40954904319,
+        "repository_id": 1053482924,
+        "head_repository_id": 1053482924,
+        "head_branch": "docs/m1-release-337",
+        "head_sha": "454317d94263efc06c8fa304cffd1b38ffdfcaa6"
+      }
+    },
+    {
+      "id": 12933151885,
+      "name": "cm-pharme-pages-build-evidence",
+      "size_in_bytes": 15358,
+      "url": "https://api.github.com/repos/ArazSaieArasi3/CM-PharmE/actions/artifacts/12933151885",
+      "archive_download_url": "https://api.github.com/repos/ArazSaieArasi3/CM-PharmE/actions/artifacts/12933151885/zip",
+      "expired": false,
+      "created_at": "2026-10-29T21:08:08Z",
+      "expires_at": "2027-01-27T21:06:31Z",
+      "updated_at": "2026-10-29T21:08:08Z",
+      "digest": "sha256:ae0e18d8725e1be0c662fa3ed7de30d51ec41c6902cde5edae22d073f910cc3c",
+      "workflow_run": {
+        "id": 40954904319,
+        "repository_id": 1053482924,
+        "head_repository_id": 1053482924,
+        "head_branch": "docs/m1-release-337",
+        "head_sha": "454317d94263efc06c8fa304cffd1b38ffdfcaa6"
+      }
+    }
+  ],
+  "workflows": [
+    {
+      "id": 40954904331,
+      "name": "Pages Build Contract",
+      "conclusion": "success",
+      "head_sha": "454317d94263efc06c8fa304cffd1b38ffdfcaa6",
+      "url": "https://github.com/ArazSaieArasi3/CM-PharmE/actions/runs/40954904331"
+    },
+    {
+      "id": 40954904547,
+      "name": "Wiki Snapshot",
+      "conclusion": "success",
+      "head_sha": "454317d94263efc06c8fa304cffd1b38ffdfcaa6",
+      "url": "https://github.com/ArazSaieArasi3/CM-PharmE/actions/runs/40954904547"
+    },
+    {
+      "id": 40954904462,
+      "name": "Wiki Quality Audit",
+      "conclusion": "success",
+      "head_sha": "454317d94263efc06c8fa304cffd1b38ffdfcaa6",
+      "url": "https://github.com/ArazSaieArasi3/CM-PharmE/actions/runs/40954904462"
+    },
+    {
+      "id": 40954904338,
+      "name": "Pages Download Bundle",
+      "conclusion": "success",
+      "head_sha": "454317d94263efc06c8fa304cffd1b38ffdfcaa6",
+      "url": "https://github.com/ArazSaieArasi3/CM-PharmE/actions/runs/40954904338"
+    },
+    {
+      "id": 40954904231,
+      "name": "Pages Shell CI",
+      "conclusion": "success",
+      "head_sha": "454317d94263efc06c8fa304cffd1b38ffdfcaa6",
+      "url": "https://github.com/ArazSaieArasi3/CM-PharmE/actions/runs/40954904231"
+    },
+    {
+      "id": 40954904220,
+      "name": "Pages Registry Contract",
+      "conclusion": "success",
+      "head_sha": "454317d94263efc06c8fa304cffd1b38ffdfcaa6",
+      "url": "https://github.com/ArazSaieArasi3/CM-PharmE/actions/runs/40954904220"
+    },
+    {
+      "id": 40954904284,
+      "name": "Wiki Documentation CI",
+      "conclusion": "success",
+      "head_sha": "454317d94263efc06c8fa304cffd1b38ffdfcaa6",
+      "url": "https://github.com/ArazSaieArasi3/CM-PharmE/actions/runs/40954904284"
+    },
+    {
+      "id": 40954904357,
+      "name": "Released M1 Documentation Onboarding",
+      "conclusion": "success",
+      "head_sha": "454317d94263efc06c8fa304cffd1b38ffdfcaa6",
+      "url": "https://github.com/ArazSaieArasi3/CM-PharmE/actions/runs/40954904357"
+    },
+    {
+      "id": 40954904358,
+      "name": "Pages Rebuild Evidence",
+      "conclusion": "success",
+      "head_sha": "454317d94263efc06c8fa304cffd1b38ffdfcaa6",
+      "url": "https://github.com/ArazSaieArasi3/CM-PharmE/actions/runs/40954904358"
+    },
+    {
+      "id": 40954904319,
+      "name": "Pages Deployment Candidate",
+      "conclusion": "success",
+      "head_sha": "454317d94263efc06c8fa304cffd1b38ffdfcaa6",
+      "url": "https://github.com/ArazSaieArasi3/CM-PharmE/actions/runs/40954904319"
+    },
+    {
+      "id": 40954904264,
+      "name": "Pages WebVOWL Candidate",
+      "conclusion": "success",
+      "head_sha": "454317d94263efc06c8fa304cffd1b38ffdfcaa6",
+      "url": "https://github.com/ArazSaieArasi3/CM-PharmE/actions/runs/40954904264"
+    },
+    {
+      "id": 40954894427,
+      "name": "Released M1 Documentation Onboarding",
+      "conclusion": "success",
+      "head_sha": "454317d94263efc06c8fa304cffd1b38ffdfcaa6",
+      "url": "https://github.com/ArazSaieArasi3/CM-PharmE/actions/runs/40954894427"
+    }
+  ],
+  "future_onboarding_proof": {
+    "result": "PASS",
+    "prior_version_isolation": [
+      {
+        "version": "v1",
+        "file_count": 47,
+        "before_tree_sha256": "b8e766f000234765f5903dc8d38e759cb1a463b87c85f2234c15d84a26ea58a5",
+        "after_tree_sha256": "b8e766f000234765f5903dc8d38e759cb1a463b87c85f2234c15d84a26ea58a5",
+        "changed_files": 0
+      },
+      {
+        "version": "v2",
+        "file_count": 47,
+        "before_tree_sha256": "2a60eed86193d956980053ba463149172a05f728e933a9846cd105651010a3c9",
+        "after_tree_sha256": "2a60eed86193d956980053ba463149172a05f728e933a9846cd105651010a3c9",
+        "changed_files": 0
+      },
+      {
+        "version": "v2-m1",
+        "file_count": 15,
+        "before_tree_sha256": "76bfc0d71c05e901e4943d36601e15a60921a0fc74a92a743c83d57268656b53",
+        "after_tree_sha256": "76bfc0d71c05e901e4943d36601e15a60921a0fc74a92a743c83d57268656b53",
+        "changed_files": 0
+      }
+    ],
+    "fictional_v3_published": false
+  },
+  "recording_delta": "Evidence and README only after this implementation tree; final recording head is not represented as the tested tree.",
+  "public_deployment": false,
+  "public_browser_qa": false,
+  "m1_reference_enabled": false,
+  "m1_webvowl_enabled": false,
+  "next_ready_issue": 338,
+  "dependent_publication_issue": 339,
+  "semantic_release": "2.1.0 (unchanged)",
+  "main_merged": false
+}
