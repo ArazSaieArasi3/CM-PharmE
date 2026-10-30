@@ -1,0 +1,12 @@
+@prefix c: <https://w3id.org/cm-pharme/2.1/> .
+@prefix d: <https://w3id.org/cm-pharme/experimental/coherence/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Review TBox only. A type association does not identify an item, batch or
+# consignment, establish occurrence, or admit a source statement as world truth.
+c:DistributionLogisticsActivity a owl:Class .
+c:MedicinalProduct a owl:Class .
+d:logisticsProduct a owl:ObjectProperty ;
+  rdfs:domain c:DistributionLogisticsActivity ;
+  rdfs:range c:MedicinalProduct .

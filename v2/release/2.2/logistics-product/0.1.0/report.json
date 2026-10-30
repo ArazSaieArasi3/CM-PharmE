@@ -1,0 +1,51 @@
+{
+  "schema_version": "CMPE22LogisticsProductIntegration/0.1.0",
+  "issue": 349,
+  "passed": true,
+  "candidate_elements": 695,
+  "added_or_deleted_elements": 0,
+  "exact_previous_element_preservation_except_relation_description": true,
+  "changed_native_fields": [
+    "coherence-rel-logisticsProduct.description.en"
+  ],
+  "later_22_shared_fields_preserved": true,
+  "other_47_relation_proposals_unchanged": true,
+  "native_schema_valid": true,
+  "owl_domain_range_match_native": true,
+  "owl_rdfs_entailment_probes": [
+    {
+      "id": "explicit-type-link",
+      "product_link_entails": true,
+      "batch_or_consignment_entails": false
+    },
+    {
+      "id": "registration-only",
+      "product_link_entails": false,
+      "batch_or_consignment_entails": false
+    },
+    {
+      "id": "listing-only",
+      "product_link_entails": false,
+      "batch_or_consignment_entails": false
+    },
+    {
+      "id": "bare-event",
+      "product_link_entails": false,
+      "batch_or_consignment_entails": false
+    }
+  ],
+  "frozen_single_cases": 12,
+  "frozen_combined_cases_replayed_by_prior_probe": 3,
+  "source_qualified_named_graph_only": true,
+  "default_world_assertions": 0,
+  "global_occurrence_inferred": false,
+  "batch_identity_inferred": false,
+  "full_native_event_semantics_pending": true,
+  "hermit_status": "HOSTED_PENDING",
+  "scientific_acceptance": false,
+  "full_model_reasoned": false,
+  "source_policy_acceptance": "1/4",
+  "historical_orsd_author_acceptance": "0/83",
+  "pages_cutover_executed": false,
+  "release_ready": false
+}

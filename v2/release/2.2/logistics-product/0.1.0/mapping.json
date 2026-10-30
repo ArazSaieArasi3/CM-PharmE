@@ -1,0 +1,19 @@
+{
+  "native_relation": "coherence-rel-logisticsProduct",
+  "native_source": "DistributionLogisticsActivity",
+  "native_target": "MedicinalProduct",
+  "owl_property": "https://w3id.org/cm-pharme/experimental/coherence/logisticsProduct",
+  "local_shape": "v2/review/logistics-product/0.1.0/admission.ttl",
+  "source_graph": "sourceRecord IRI (named graph only)",
+  "projection": "Only a performed, valid, opted-in source claim maps event to product type",
+  "global_cardinality": "0..* at both ends",
+  "asserted_identity": "event and product type only",
+  "excluded_identity": [
+    "batch",
+    "item",
+    "package",
+    "consignment",
+    "source record"
+  ],
+  "scientific_status": "PROVISIONAL_NOT_AUTHOR_ACCEPTED"
+}
