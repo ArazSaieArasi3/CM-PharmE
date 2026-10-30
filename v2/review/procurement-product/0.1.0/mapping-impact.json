@@ -1,0 +1,20 @@
+{
+  "schema_version": "CMPE-ProcurementProductMappingImpact/0.1.0",
+  "decision": "AUTH-22-01/PR-PRODUCT-01",
+  "status": "DECISION_ONLY_NOT_NATIVE_PROMOTION",
+  "native_relation_id": "coherence-rel-procurementProduct",
+  "native_source": "ProcurementActivity",
+  "native_target": "MedicinalProduct",
+  "native_stereotype": null,
+  "native_global_ends": "0..* / 0..*",
+  "owl_proposed_property": "https://w3id.org/cm-pharme/experimental/coherence/procurementProduct",
+  "owl_effect_for_future_integration": "Retain object property domain/range only; no existence, receipt, fulfillment, batch key, supplier qualification or universal compliance inference",
+  "local_admission_shape": "admission.ttl",
+  "projected_candidate_graph": "one sourceRecord named graph per admitted executed purchase/acquisition claim; no default graph promotion",
+  "source_qualified_only": true,
+  "transaction_date": "explicit local xsd:date; no inferred event date",
+  "next_implementation": "One bounded technical integration only after this decision/oracles are frozen and replayed",
+  "candidate_695_element_hash_pinned_in": "freeze.json",
+  "full_native_event_semantics_pending": true,
+  "scientific_author_acceptance": false
+}

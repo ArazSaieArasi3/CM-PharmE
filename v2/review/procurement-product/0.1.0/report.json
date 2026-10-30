@@ -1,0 +1,150 @@
+{
+  "schema_version": "CMPE-ProcurementProductProbe/0.1.0",
+  "issue": 350,
+  "freeze_commit": "5c956a67b7df929e2d0ecfa5613a52fab49fd3cc",
+  "passed": true,
+  "cases": [
+    {
+      "id": "executed_invoice",
+      "expected": true,
+      "observed": true,
+      "projected_links": 1,
+      "passed": true
+    },
+    {
+      "id": "acquired_record",
+      "expected": true,
+      "observed": true,
+      "projected_links": 1,
+      "passed": true
+    },
+    {
+      "id": "planned_order",
+      "expected": false,
+      "observed": false,
+      "projected_links": 0,
+      "passed": true
+    },
+    {
+      "id": "approved_order_only",
+      "expected": false,
+      "observed": false,
+      "projected_links": 0,
+      "passed": true
+    },
+    {
+      "id": "supplier_qualification_only",
+      "expected": false,
+      "observed": false,
+      "projected_links": 0,
+      "passed": true
+    },
+    {
+      "id": "offer_listing_only",
+      "expected": false,
+      "observed": false,
+      "projected_links": 0,
+      "passed": true
+    },
+    {
+      "id": "receipt_only",
+      "expected": false,
+      "observed": false,
+      "projected_links": 0,
+      "passed": true
+    },
+    {
+      "id": "unknown_status",
+      "expected": false,
+      "observed": false,
+      "projected_links": 0,
+      "passed": true
+    },
+    {
+      "id": "executed_without_record",
+      "expected": false,
+      "observed": false,
+      "projected_links": 0,
+      "passed": true
+    },
+    {
+      "id": "executed_without_date",
+      "expected": false,
+      "observed": false,
+      "projected_links": 0,
+      "passed": true
+    },
+    {
+      "id": "physical_item_as_type",
+      "expected": false,
+      "observed": false,
+      "projected_links": 0,
+      "passed": true
+    },
+    {
+      "id": "batch_as_type",
+      "expected": false,
+      "observed": false,
+      "projected_links": 0,
+      "passed": true
+    },
+    {
+      "id": "organization_as_type",
+      "expected": false,
+      "observed": false,
+      "projected_links": 0,
+      "passed": true
+    },
+    {
+      "id": "executed_without_product",
+      "expected": false,
+      "observed": false,
+      "projected_links": 0,
+      "passed": true
+    }
+  ],
+  "combined": [
+    {
+      "id": "two_types_same_purchase",
+      "expected": 2,
+      "projected_links": 2,
+      "batch_links": 0,
+      "receipt_links": 0,
+      "passed": true
+    },
+    {
+      "id": "same_type_two_purchases",
+      "expected": 2,
+      "projected_links": 2,
+      "batch_links": 0,
+      "receipt_links": 0,
+      "passed": true
+    },
+    {
+      "id": "executed_and_planned_same_type",
+      "expected": 1,
+      "projected_links": 1,
+      "batch_links": 0,
+      "receipt_links": 0,
+      "passed": true
+    },
+    {
+      "id": "purchase_does_not_identify_batch_or_receipt",
+      "expected": 1,
+      "projected_links": 1,
+      "batch_links": 0,
+      "receipt_links": 0,
+      "passed": true
+    }
+  ],
+  "passed_cases": 14,
+  "passed_combinations": 4,
+  "native_candidate_695_untouched": true,
+  "candidate_statements_only": true,
+  "native_and_existing_experimental_owl_typed_ends_aligned": true,
+  "default_world_assertions": 0,
+  "source_policy_acceptance_unchanged": "1/4",
+  "historical_orsd_author_acceptance_unchanged": "0/83",
+  "full_model_accepted": false,
+  "pages_cutover_executed": false
+}

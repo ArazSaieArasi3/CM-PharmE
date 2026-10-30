@@ -1,0 +1,62 @@
+name: CM-PharmE 2.2 Procurement Product Decision
+on:
+  pull_request:
+    branches: [v2/research-program]
+    paths:
+      - 'v2/review/procurement-product/**'
+      - '.github/workflows/v2-22-procurement-product-decision.yml'
+  push:
+    branches: ['v2/**']
+    paths:
+      - 'v2/review/procurement-product/**'
+      - '.github/workflows/v2-22-procurement-product-decision.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  frozen-decision:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-python@v7.0.0
+        with:
+          python-version: '3.12'
+      - run: python -m pip install rdflib==7.5.0 pyshacl==0.31.0
+      - name: Verify decision and oracles predate admission probe
+        run: |
+          git fetch --no-tags --depth=1 origin 5c956a67b7df929e2d0ecfa5613a52fab49fd3cc
+          python - <<'PY'
+          import json,pathlib,subprocess
+          p=pathlib.Path('v2/review/procurement-product/0.1.0')
+          data=json.loads((p/'freeze.json').read_text())
+          for name in ('decision-card.json','sources.json','fixed-oracles.json'):
+              path=str(p/name)
+              assert subprocess.check_output(['git','show',data['oracle_commit']+':'+path])==(p/name).read_bytes()
+          assert subprocess.run(['git','cat-file','-e',data['oracle_commit']+':'+str(p/'verify.py')],capture_output=True).returncode!=0
+          pathlib.Path('build/procurement-product').mkdir(parents=True,exist_ok=True)
+          pathlib.Path('build/procurement-product/freeze-proof.json').write_text(
+              json.dumps({'commit':data['oracle_commit'],'oracles_preserved':True,
+                          'probe_absent_at_freeze':True},indent=2)+'\n')
+          PY
+      - name: Replay frozen independent and combined boundaries
+        run: >-
+          python v2/review/procurement-product/0.1.0/verify.py
+          --output build/procurement-product --check-committed
+      - name: Record execution identity
+        env:
+          EXECUTION_SHA: ${{ github.sha }}
+          EXECUTION_REF: ${{ github.ref }}
+          EXECUTION_RUN: ${{ github.run_id }}
+        run: |
+          python - <<'PY'
+          import json,os,pathlib
+          pathlib.Path('build/procurement-product/execution.json').write_text(
+              json.dumps({k:os.environ[k] for k in ['EXECUTION_SHA','EXECUTION_REF','EXECUTION_RUN']},indent=2)+'\n')
+          PY
+      - uses: actions/upload-artifact@v7.0.1
+        if: always()
+        with:
+          name: cm-pharme-procurement-product-decision
+          path: build/procurement-product/
+          if-no-files-found: error
