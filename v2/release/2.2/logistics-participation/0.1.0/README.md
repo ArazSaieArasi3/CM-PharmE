@@ -33,3 +33,7 @@ and checks a small candidate TBox with HermiT. A complete conceptual
 Event/Situation participation assessment, whole-model OWL/HermiT,
 application data mapping and scientific author disposition remain open.
 No stable distribution or public Pages model changes in this packet.
+
+[Hosted CI receipt](ci-evidence.json) verifies byte-identical candidate and mapping
+outputs on push and PR-merge, four bounded HermiT cases and unchanged #345
+replay. All 35 implementation workflow executions pass within their scopes.
