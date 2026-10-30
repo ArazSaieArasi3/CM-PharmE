@@ -1,0 +1,27 @@
+@prefix c: <https://w3id.org/cm-pharme/2.1/> .
+@prefix l: <urn:cmpe:logistics-site-lab:> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+
+# This is an opted-in source-claim admission profile, not universal model bounds.
+l:SiteClaimShape a sh:NodeShape ; sh:targetClass l:SiteClaim ;
+    sh:property [ sh:path l:activity ; sh:minCount 1 ; sh:maxCount 1 ;
+                  sh:class c:DistributionLogisticsActivity ;
+                  sh:not [ sh:class c:Facility ] ; sh:not [ sh:class c:Organization ] ] ;
+    sh:property [ sh:path l:site ; sh:minCount 1 ; sh:maxCount 1 ;
+                  sh:class c:Facility ; sh:not [ sh:class c:Organization ] ] ;
+    sh:property [ sh:path l:function ; sh:minCount 1 ; sh:maxCount 1 ;
+                  sh:in ( "origin" "destination" "storage" "unspecified" ) ] ;
+    sh:property [ sh:path l:occurrenceStatus ; sh:minCount 1 ; sh:maxCount 1 ;
+                  sh:hasValue "performed" ] ;
+    sh:property [ sh:path l:sourceRecord ; sh:minCount 1 ; sh:maxCount 1 ;
+                  sh:class c:SourceRecord ; sh:not [ sh:class c:Organization ] ;
+                  sh:not [ sh:class c:DistributionLogisticsActivity ] ] ;
+    sh:sparql [ sh:message "An event and physical site cannot be identical or known identity aliases." ;
+      sh:select """
+        PREFIX l: <urn:cmpe:logistics-site-lab:>
+        PREFIX owl: <http://www.w3.org/2002/07/owl#>
+        SELECT $this WHERE {
+          $this l:activity ?a ; l:site ?f .
+          FILTER (?a = ?f || EXISTS { ?a (owl:sameAs|^owl:sameAs)+ ?f })
+        }
+      """ ] .

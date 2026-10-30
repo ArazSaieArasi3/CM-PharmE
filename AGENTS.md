@@ -12,6 +12,13 @@ accepted decisions. Follow newer direct user instructions if they supersede them
   execute the comprehensive work through bounded packets, without silently
   dropping domains or copying older experiments over later native decisions.
 
+- PAGES-CUTOVER-22-01 (Araz, 2026-10-30) authorizes removing the published
+  2.0/2.1 Pages model content and replacing it with accepted complete 2.2 at one
+  verified cutover. This overrides older Pages path-retention rules for v2/v2-m1;
+  do not remove working content before a complete validated replacement exists.
+  Preserve source/release/tag/evidence history and unrelated V1. Do not ask again
+  for this publication permission; verify actual full-model/candidate readiness.
+
 - Read `v2/release/current.json` and its current approved planning record first.
   Older versioned review/CI records describe their own pinned scope; do not rewrite
   them to manufacture current acceptance.
