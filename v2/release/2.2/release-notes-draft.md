@@ -31,9 +31,16 @@ accepted release tag and public receipt before publication.
   and three combined cases are replayed, with bounded entailment and reasoner
   checks. The candidate is not asserted as verified world truth.
 
+- #350: a bounded procurement/product decision distinguishes a documented
+  executed purchase/acquisition and its product **type** from a planned order,
+  supplier qualification, physical receipt, delivery and batch identity.
+  Fourteen independent and four combined frozen cases passed locally and in
+  two hosted replays. The 695-element review candidate is unchanged by this
+  decision; #351 is the next technical integration.
+
 ## Pending before these become release notes
 
-- Disposition the other 47 provisional relation proposals and three deferred
+- Disposition the other 46 provisional relation proposals and three deferred
   concepts; resolve remaining domain, identity, temporal and OntoUML Event
   questions; complete native, OWL and SHACL whole-model validation.
 - Reconcile all 83 historical ORSD author dispositions and later requirements;
