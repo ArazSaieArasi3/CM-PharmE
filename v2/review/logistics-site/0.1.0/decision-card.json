@@ -1,0 +1,68 @@
+{
+  "schema_version": "CMPE-LogisticsSiteDecision/0.1.0",
+  "issue": 345,
+  "date": "2026-10-30",
+  "target": "ComprehensiveCM-PharmE2.2",
+  "relation_under_review": "https://w3id.org/cm-pharme/experimental/coherence/logisticsFacility",
+  "current_ends": [
+    "DistributionLogisticsActivity",
+    "Facility"
+  ],
+  "recommended_option": "B",
+  "recommendation_status": "ASSISTANT_RECOMMENDATION_WITH_BOUNDED_WITNESSES;NOT_INDEPENDENT_AUTHOR_ACCEPTANCE",
+  "options": [
+    {
+      "id": "A",
+      "option": "Generic physical-site context only",
+      "benefit": "Preserves minimal model and admitted unknown functions.",
+      "cost": "Cannot answer origin,destination or intermediate-storage questions.",
+      "disposition": "RETAIN_AS_GENERIC_SUPERPROPERTY_BUT_INSUFFICIENT_ALONE"
+    },
+    {
+      "id": "B",
+      "option": "Keep generic relation and add three separately named optional subproperties for documented origin,destination and storage participation.",
+      "benefit": "Answers source-backed site-function questions without new role/relator classes or loss of unknown/broad links.",
+      "cost": "Three proposed property declarations and three mappings;per-leg order,time intervals and independent site participation identity remain future requirements.",
+      "disposition": "RECOMMENDED_FOR_ONE_BOUNDED_CANDIDATE"
+    },
+    {
+      "id": "C",
+      "option": "Reify event-site-function-time-evidence participation.",
+      "benefit": "Can support repeated visits,multiple legs and separately identified assertions.",
+      "cost": "New identity/dependence/temporal pattern;not justified by a minimal two-end bridge alone.",
+      "disposition": "DEFER_UNTIL_A_REQUIRED_QUERY_NEEDS_ITS_IDENTITY"
+    }
+  ],
+  "proposed_properties": [
+    "logisticsOriginFacility",
+    "logisticsDestinationFacility",
+    "logisticsStorageFacility"
+  ],
+  "intended_meaning": "A particular occurred logistics activity uses a physical site in the specifically documented function;the data probe carries source-qualified claims and does not infer their truth.",
+  "global_policy": {
+    "domain": "DistributionLogisticsActivity",
+    "range": "Facility",
+    "specific_implies_generic": true,
+    "generic_implies_specific": false,
+    "function_disjointness": false,
+    "global_exactly_one_or_existential_constraint": false,
+    "provisional_native_bounds": "Keep prior0..* values provisional;do not equate them with approved full semantics",
+    "event_site_identity_collapse": false,
+    "legal_or_operating_roles_inferred": false
+  },
+  "local_profile_policy": "One claim records one explicit activity,physical site,function,performed-status andsource record;many claims/sites/functions per activity remain allowed. Required local fields are not global participation axioms.",
+  "native_policy": "Retain null/unknown stereotype and current base fields until supportedEvent/Situation representation is adjudicated;never label this relation material or mediation merely because nodes are typed.",
+  "reuse_assessment": {
+    "DistributionSiteRole": "A site role/legal designation does not establish actual participation or a particular route function.",
+    "FacilityOperation": "An organization-facility operating relation is distinct from a logistics event occurring at a site.",
+    "Organization": "Consignee,owner,operator or carrier must not be substituted for the physicalFacility endpoint."
+  },
+  "approval_effect_if_later_accepted": "Authorize the named bounded participation interpretation and its exact mappings/tests only;not all49 experimental relations,full nativevalidation,source-policy acceptance orGA.",
+  "unresolved": [
+    "NativeEvent/Situation participation mapping",
+    "Per-leg ordering and temporal evidence beyond one claim",
+    "Real operational witnesses and current-source mapping",
+    "Other48 experimental relations and fullOWL/SHACL alignment"
+  ],
+  "new_semantic_acceptances": 0
+}

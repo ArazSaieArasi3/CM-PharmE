@@ -1,0 +1,48 @@
+{
+  "status": "NEW_CANDIDATE_REFINEMENTS_NOT_BLANKET_AUTHOR_ACCEPTANCE",
+  "historical_83_orsd_ids_unchanged": true,
+  "requirements": [
+    {
+      "id": "R22-LS-01",
+      "statement": "Keep a physical logistics site distinct from an organization and its legal designation.",
+      "basis": "GDP-LS-01;GDP-LS-02",
+      "priority": "CANDIDATE",
+      "acceptance": "PENDING_SCIENTIFIC_DISPOSITION"
+    },
+    {
+      "id": "R22-LS-02",
+      "statement": "Distinguish documented origin,destination and storage functions without inferring an unreported function.",
+      "basis": "GDP-LS-02;GDP-LS-03",
+      "priority": "CANDIDATE",
+      "acceptance": "PENDING_SCIENTIFIC_DISPOSITION"
+    },
+    {
+      "id": "R22-LS-03",
+      "statement": "Retain a generic documented physical-site link when the specific function is unknown.",
+      "basis": "SCOPE-22-01",
+      "priority": "CANDIDATE",
+      "acceptance": "PENDING_SCIENTIFIC_DISPOSITION"
+    },
+    {
+      "id": "R22-LS-04",
+      "statement": "Do not infer an occurred logistics event from registration,authorization or a plan alone.",
+      "basis": "ExistingEvent/record distinction;SCOPE-22-01",
+      "priority": "CANDIDATE",
+      "acceptance": "PENDING_SCIENTIFIC_DISPOSITION"
+    },
+    {
+      "id": "R22-LS-05",
+      "statement": "Do not impose global exactly-one sites,total participation or disjoint site functions without supporting semantics.",
+      "basis": "GDP-LS-03;open-world modeling policy",
+      "priority": "CANDIDATE",
+      "acceptance": "PENDING_SCIENTIFIC_DISPOSITION"
+    },
+    {
+      "id": "R22-LS-06",
+      "statement": "Keep source-qualified candidate statements separate from verified world facts.",
+      "basis": "ExistingEvidenceSupport support-does-not-imply-truth policy",
+      "priority": "CANDIDATE",
+      "acceptance": "PENDING_SCIENTIFIC_DISPOSITION"
+    }
+  ]
+}

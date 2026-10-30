@@ -1,0 +1,372 @@
+{
+  "schema_version": "CMPE-LogisticsSiteBoundaryOracles/0.1.0",
+  "frozen_before_probe_implementation": true,
+  "scope": "Proposed data-admission/projection witnesses;not real operations or accepted global ontology",
+  "cases": [
+    {
+      "id": "LS01",
+      "source_classification": "SYNTHETIC_BOUNDARY_WITNESS",
+      "data": {
+        "activity": "act",
+        "activity_type": "DistributionLogisticsActivity",
+        "site": "site",
+        "site_type": "Facility",
+        "function": "origin",
+        "status": "performed",
+        "record": "record",
+        "record_type": "SourceRecord"
+      },
+      "expected_admission": true,
+      "expected_functions": [
+        "origin"
+      ],
+      "rationale": "A dispatch-site claim supports origin only;no destination or storage is inferred."
+    },
+    {
+      "id": "LS02",
+      "source_classification": "SYNTHETIC_BOUNDARY_WITNESS",
+      "data": {
+        "activity": "act",
+        "activity_type": "DistributionLogisticsActivity",
+        "site": "site",
+        "site_type": "Facility",
+        "function": "destination",
+        "status": "performed",
+        "record": "record",
+        "record_type": "SourceRecord"
+      },
+      "expected_admission": true,
+      "expected_functions": [
+        "destination"
+      ],
+      "rationale": "A documented receiving site is destination only."
+    },
+    {
+      "id": "LS03",
+      "source_classification": "SYNTHETIC_BOUNDARY_WITNESS",
+      "data": {
+        "activity": "act",
+        "activity_type": "DistributionLogisticsActivity",
+        "site": "site",
+        "site_type": "Facility",
+        "function": "storage",
+        "status": "performed",
+        "record": "record",
+        "record_type": "SourceRecord"
+      },
+      "expected_admission": true,
+      "expected_functions": [
+        "storage"
+      ],
+      "rationale": "Intermediate storage is distinct from final destination."
+    },
+    {
+      "id": "LS04",
+      "source_classification": "SYNTHETIC_BOUNDARY_WITNESS",
+      "data": {
+        "activity": "act",
+        "activity_type": "DistributionLogisticsActivity",
+        "site": "site",
+        "site_type": "Facility",
+        "function": "unspecified",
+        "status": "performed",
+        "record": "record",
+        "record_type": "SourceRecord"
+      },
+      "expected_admission": true,
+      "expected_functions": [],
+      "rationale": "A generic physical-site claim is retained without invented direction."
+    },
+    {
+      "id": "LS05",
+      "source_classification": "SYNTHETIC_BOUNDARY_WITNESS",
+      "data": {
+        "activity": "act",
+        "activity_type": "DistributionLogisticsActivity",
+        "site": "site",
+        "site_type": "Organization",
+        "function": "origin",
+        "status": "performed",
+        "record": "record",
+        "record_type": "SourceRecord"
+      },
+      "expected_admission": false,
+      "expected_functions": [],
+      "rationale": "A consignee organization cannot stand in for the physical site."
+    },
+    {
+      "id": "LS06",
+      "source_classification": "SYNTHETIC_BOUNDARY_WITNESS",
+      "data": {
+        "activity": "act",
+        "activity_type": "DistributionLogisticsActivity",
+        "site": "site",
+        "site_type": "Facility",
+        "function": "origin",
+        "status": "planned",
+        "record": "record",
+        "record_type": "SourceRecord"
+      },
+      "expected_admission": false,
+      "expected_functions": [],
+      "rationale": "A planned movement is not evidence of an occurred event in this local profile."
+    },
+    {
+      "id": "LS07",
+      "source_classification": "SYNTHETIC_BOUNDARY_WITNESS",
+      "data": {
+        "activity": "act",
+        "activity_type": "DistributionLogisticsActivity",
+        "site": "site",
+        "site_type": "Facility",
+        "function": "origin",
+        "status": "unknown",
+        "record": "record",
+        "record_type": "SourceRecord"
+      },
+      "expected_admission": false,
+      "expected_functions": [],
+      "rationale": "Unknown occurrence is not defaulted to performed."
+    },
+    {
+      "id": "LS08",
+      "source_classification": "SYNTHETIC_BOUNDARY_WITNESS",
+      "data": {
+        "activity": "act",
+        "activity_type": "EstablishmentRegistration",
+        "site": "site",
+        "site_type": "Facility",
+        "function": "origin",
+        "status": "performed",
+        "record": "record",
+        "record_type": "SourceRecord"
+      },
+      "expected_admission": false,
+      "expected_functions": [],
+      "rationale": "Registration is not a performed logistics activity."
+    },
+    {
+      "id": "LS09",
+      "source_classification": "SYNTHETIC_BOUNDARY_WITNESS",
+      "data": {
+        "activity": "act",
+        "activity_type": "RegulatoryAuthorization",
+        "site": "site",
+        "site_type": "Facility",
+        "function": "origin",
+        "status": "performed",
+        "record": "record",
+        "record_type": "SourceRecord"
+      },
+      "expected_admission": false,
+      "expected_functions": [],
+      "rationale": "A permit does not instantiate a logistics event."
+    },
+    {
+      "id": "LS10",
+      "source_classification": "SYNTHETIC_BOUNDARY_WITNESS",
+      "data": {
+        "activity": "act",
+        "activity_type": "DistributionLogisticsActivity",
+        "site": "site",
+        "site_type": "Facility",
+        "function": "origin",
+        "status": "performed",
+        "record": null,
+        "record_type": null
+      },
+      "expected_admission": false,
+      "expected_functions": [],
+      "rationale": "Missing source provenance fails this opted-in documented-claim profile."
+    },
+    {
+      "id": "LS11",
+      "source_classification": "SYNTHETIC_BOUNDARY_WITNESS",
+      "data": {
+        "activity": "act",
+        "activity_type": "DistributionLogisticsActivity",
+        "site": "site",
+        "site_type": "Facility",
+        "function": "carrier",
+        "status": "performed",
+        "record": "record",
+        "record_type": "SourceRecord"
+      },
+      "expected_admission": false,
+      "expected_functions": [],
+      "rationale": "An organization participation function is outside the physical-site function set."
+    },
+    {
+      "id": "LS12",
+      "source_classification": "SYNTHETIC_BOUNDARY_WITNESS",
+      "data": {
+        "activity": "site",
+        "activity_type": "DistributionLogisticsActivity",
+        "site": "site",
+        "site_type": "Facility",
+        "function": "origin",
+        "status": "performed",
+        "record": "record",
+        "record_type": "SourceRecord"
+      },
+      "expected_admission": false,
+      "expected_functions": [],
+      "rationale": "Activity and facility must not have identical identity."
+    },
+    {
+      "id": "LS13",
+      "source_classification": "SYNTHETIC_BOUNDARY_WITNESS",
+      "data": {
+        "activity": "act",
+        "activity_type": "DistributionLogisticsActivity",
+        "site": "site",
+        "site_type": "Facility",
+        "function": "origin",
+        "status": "performed",
+        "record": "record",
+        "record_type": "Organization"
+      },
+      "expected_admission": false,
+      "expected_functions": [],
+      "rationale": "An organization is not a source record merely because it is mentioned."
+    },
+    {
+      "id": "LS14",
+      "source_classification": "SYNTHETIC_BOUNDARY_WITNESS",
+      "data": {
+        "activity": "act",
+        "activity_type": "DistributionLogisticsActivity",
+        "site": "site",
+        "site_type": "FacilityAndOrganization",
+        "function": "origin",
+        "status": "performed",
+        "record": "record",
+        "record_type": "SourceRecord"
+      },
+      "expected_admission": false,
+      "expected_functions": [],
+      "rationale": "Do not collapse the protected organization/facility distinction."
+    },
+    {
+      "id": "LS15",
+      "source_classification": "SYNTHETIC_BOUNDARY_WITNESS",
+      "data": {
+        "activity": "act",
+        "activity_type": "DistributionLogisticsActivity",
+        "site": "site",
+        "site_type": "Facility",
+        "function": "origin",
+        "status": "performed",
+        "record": "record",
+        "record_type": "SourceRecord",
+        "same_as_activity_site": true
+      },
+      "expected_admission": false,
+      "expected_functions": [],
+      "rationale": "Known activity-site identity aliases are not ignored."
+    },
+    {
+      "id": "LS16",
+      "source_classification": "SYNTHETIC_BOUNDARY_WITNESS",
+      "data": {
+        "activity": "act",
+        "activity_type": "DistributionLogisticsActivity",
+        "site": "site",
+        "site_type": "Facility",
+        "function": null,
+        "status": "performed",
+        "record": "record",
+        "record_type": "SourceRecord"
+      },
+      "expected_admission": false,
+      "expected_functions": [],
+      "rationale": "Missing function must be explicitly unspecified,not guessed from another field."
+    }
+  ],
+  "combined_cases": [
+    {
+      "id": "LS17",
+      "members": [
+        {
+          "case": "LS01",
+          "site": "origin-a"
+        },
+        {
+          "case": "LS01",
+          "site": "origin-b"
+        }
+      ],
+      "expected_admission": true,
+      "expected_specific_pairs": [
+        [
+          "origin",
+          "origin-a"
+        ],
+        [
+          "origin",
+          "origin-b"
+        ]
+      ],
+      "rationale": "No unsupported global uniqueness of an activity origin is imposed."
+    },
+    {
+      "id": "LS18",
+      "members": [
+        {
+          "case": "LS01",
+          "site": "shared-site"
+        },
+        {
+          "case": "LS02",
+          "site": "shared-site"
+        },
+        {
+          "case": "LS03",
+          "site": "shared-site"
+        }
+      ],
+      "expected_admission": true,
+      "expected_specific_pairs": [
+        [
+          "destination",
+          "shared-site"
+        ],
+        [
+          "origin",
+          "shared-site"
+        ],
+        [
+          "storage",
+          "shared-site"
+        ]
+      ],
+      "rationale": "The same physical site can have multiple explicitly documented functions;no disjointness is invented."
+    },
+    {
+      "id": "LS19",
+      "members": [
+        {
+          "case": "LS01",
+          "site": "site-a"
+        },
+        {
+          "case": "LS02",
+          "site": "site-b"
+        }
+      ],
+      "same_label_for_sites": true,
+      "expected_admission": true,
+      "expected_specific_pairs": [
+        [
+          "destination",
+          "site-b"
+        ],
+        [
+          "origin",
+          "site-a"
+        ]
+      ],
+      "rationale": "Same labels do not merge two site identities."
+    }
+  ]
+}
