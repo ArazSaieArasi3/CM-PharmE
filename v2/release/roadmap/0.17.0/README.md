@@ -16,7 +16,7 @@ outputs match exactly; 35 workflow executions pass in their respective scopes.
 This does not establish semantic OntoUML acceptance or full-model quality.
 
 #348 is sole READY next packet: one source-qualified logisticsProduct decision
-card and independently frozen boundary witnesses. Other 47 unreviewed
+card and independently frozen boundary witnesses. Other 48 unreviewed
 relations, three deferred concepts, 83 historical ORSD scientific dispositions,
 remaining source policies and complete native/OWL/SHACL alignment are open.
 Actual source-policy acceptance is 1/4, historical ORSD author acceptance
