@@ -1,0 +1,62 @@
+name: CM-PharmE 2.2 Logistics Product Decision
+on:
+  pull_request:
+    branches: [v2/research-program]
+    paths:
+      - 'v2/review/logistics-product/**'
+      - '.github/workflows/v2-22-logistics-product-decision.yml'
+  push:
+    branches: ['v2/**']
+    paths:
+      - 'v2/review/logistics-product/**'
+      - '.github/workflows/v2-22-logistics-product-decision.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  product-boundaries:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-python@v7.0.0
+        with:
+          python-version: '3.12'
+      - run: python -m pip install rdflib==7.5.0 pyshacl==0.31.0
+      - name: Verify fixed decision and oracles predate probe
+        run: |
+          git fetch --no-tags --depth=1 origin 34a1553f341f20f046482a51d811df6eadc98c74
+          python - <<'PY'
+          import json,pathlib,subprocess
+          p=pathlib.Path('v2/review/logistics-product/0.1.0')
+          data=json.loads((p/'freeze.json').read_text())
+          for name in ('decision-card.json','sources.json','fixed-oracles.json'):
+              path=str(p/name)
+              assert subprocess.check_output(['git','show',data['oracle_commit']+':'+path])==(p/name).read_bytes()
+          assert subprocess.run(['git','cat-file','-e',data['oracle_commit']+':'+str(p/'verify.py')],capture_output=True).returncode!=0
+          pathlib.Path('build/logistics-product').mkdir(parents=True,exist_ok=True)
+          pathlib.Path('build/logistics-product/freeze-proof.json').write_text(
+              json.dumps({'commit':data['oracle_commit'],'oracle_files_preserved':True,
+                          'probe_absent_at_freeze':True},indent=2)+'\n')
+          PY
+      - name: Replay fixed boundaries
+        run: >-
+          python v2/review/logistics-product/0.1.0/verify.py
+          --output build/logistics-product --check-committed
+      - name: Record run identity
+        env:
+          EXECUTION_SHA: ${{ github.sha }}
+          EXECUTION_REF: ${{ github.ref }}
+          EXECUTION_RUN: ${{ github.run_id }}
+        run: |
+          python - <<'PY'
+          import json,os,pathlib
+          pathlib.Path('build/logistics-product/execution.json').write_text(
+              json.dumps({k:os.environ[k] for k in ['EXECUTION_SHA','EXECUTION_REF','EXECUTION_RUN']},indent=2)+'\n')
+          PY
+      - uses: actions/upload-artifact@v7.0.1
+        if: always()
+        with:
+          name: cm-pharme-logistics-product-decision
+          path: build/logistics-product/
+          if-no-files-found: error

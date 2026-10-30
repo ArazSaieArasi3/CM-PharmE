@@ -1,0 +1,121 @@
+{
+  "schema_version": "CMPE-LogisticsProductProbe/0.1.0",
+  "issue": 348,
+  "freeze_commit": "34a1553f341f20f046482a51d811df6eadc98c74",
+  "passed": true,
+  "cases": [
+    {
+      "id": "performed_named_type",
+      "expected": true,
+      "observed": true,
+      "projected_links": 1,
+      "passed": true
+    },
+    {
+      "id": "planned_named_type",
+      "expected": false,
+      "observed": false,
+      "projected_links": 0,
+      "passed": true
+    },
+    {
+      "id": "unknown_occurrence",
+      "expected": false,
+      "observed": false,
+      "projected_links": 0,
+      "passed": true
+    },
+    {
+      "id": "registration_only",
+      "expected": false,
+      "observed": false,
+      "projected_links": 0,
+      "passed": true
+    },
+    {
+      "id": "listing_only",
+      "expected": false,
+      "observed": false,
+      "projected_links": 0,
+      "passed": true
+    },
+    {
+      "id": "organization_as_product",
+      "expected": false,
+      "observed": false,
+      "projected_links": 0,
+      "passed": true
+    },
+    {
+      "id": "physical_item_as_type",
+      "expected": false,
+      "observed": false,
+      "projected_links": 0,
+      "passed": true
+    },
+    {
+      "id": "no_product_type",
+      "expected": false,
+      "observed": false,
+      "projected_links": 0,
+      "passed": true
+    },
+    {
+      "id": "no_source_record",
+      "expected": false,
+      "observed": false,
+      "projected_links": 0,
+      "passed": true
+    },
+    {
+      "id": "consignment_label_only",
+      "expected": false,
+      "observed": false,
+      "projected_links": 0,
+      "passed": true
+    },
+    {
+      "id": "batch_identifier_only",
+      "expected": false,
+      "observed": false,
+      "projected_links": 0,
+      "passed": true
+    },
+    {
+      "id": "performed_second_type",
+      "expected": true,
+      "observed": true,
+      "projected_links": 1,
+      "passed": true
+    }
+  ],
+  "combined": [
+    {
+      "id": "two_product_types_same_event",
+      "candidate_links": 2,
+      "expected": 2,
+      "passed": true
+    },
+    {
+      "id": "same_type_different_events",
+      "candidate_links": 2,
+      "expected": 2,
+      "passed": true
+    },
+    {
+      "id": "type_does_not_identify_batch",
+      "candidate_links": 1,
+      "expected": 1,
+      "passed": true
+    }
+  ],
+  "passed_cases": 12,
+  "passed_combinations": 3,
+  "candidate_statements_only": true,
+  "default_world_assertions": 0,
+  "model_promoted": false,
+  "source_policy_acceptance_unchanged": "1/4",
+  "historical_orsd_acceptance_unchanged": "0/83",
+  "full_model_accepted": false,
+  "pages_cutover_executed": false
+}

@@ -1,0 +1,14 @@
+@prefix c: <https://w3id.org/cm-pharme/2.1/> .
+@prefix l: <urn:cmpe:logistics-product-lab:> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+
+# Local admission of one explicit source claim; not global OWL restrictions.
+l:ClaimShape a sh:NodeShape ; sh:targetClass l:ProductActivityClaim ;
+ sh:property [ sh:path l:activity ; sh:minCount 1 ; sh:maxCount 1 ;
+               sh:class c:DistributionLogisticsActivity ] ;
+ sh:property [ sh:path l:productType ; sh:minCount 1 ; sh:maxCount 1 ;
+               sh:class c:MedicinalProduct ; sh:not [ sh:class c:Organization ] ] ;
+ sh:property [ sh:path l:status ; sh:minCount 1 ; sh:maxCount 1 ;
+               sh:hasValue "performed" ] ;
+ sh:property [ sh:path l:sourceRecord ; sh:minCount 1 ; sh:maxCount 1 ;
+               sh:class c:SourceRecord ] .
