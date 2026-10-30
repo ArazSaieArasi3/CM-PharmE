@@ -1,0 +1,771 @@
+{
+  "scope": "Three proposed structural fragments, nine OCL runs for three selected constraints, and twelve bounded RelSpec mutation runs. Does not certify full model or modern nature.",
+  "archive_commit": "42b926f6c2859dc87e49a96b8482eae28d02e7d5",
+  "official_ocl": [
+    {
+      "variant": "A-prior-cards",
+      "relation": "contextClassificationEntry",
+      "expected": [
+        "RULE|classificationEntry|source-lower|true",
+        "RULE|classificationEntry|target-lower|true",
+        "RULE|classificationEntry|target-readonly|true",
+        "RULE|contextClassificationEntry|source-lower|false",
+        "RULE|contextClassificationEntry|target-lower|true",
+        "RULE|contextClassificationEntry|target-readonly|true"
+      ],
+      "actual": [
+        "RULE|classificationEntry|source-lower|true",
+        "RULE|classificationEntry|target-lower|true",
+        "RULE|classificationEntry|target-readonly|true",
+        "RULE|contextClassificationEntry|source-lower|false",
+        "RULE|contextClassificationEntry|target-lower|true",
+        "RULE|contextClassificationEntry|target-readonly|true"
+      ],
+      "exit": 0,
+      "stderr": "",
+      "pass": true,
+      "conversion_losses": [
+        {
+          "id": "AppliedClassificationEntryRole",
+          "field": "restrictedTo",
+          "values": [
+            "functional-complex"
+          ],
+          "reason": "Legacy RefOntoUML class does not encode modern nature restrictions"
+        },
+        {
+          "id": "ClassificationEntry",
+          "field": "restrictedTo",
+          "values": [
+            "functional-complex"
+          ],
+          "reason": "Legacy RefOntoUML class does not encode modern nature restrictions"
+        },
+        {
+          "id": "ContextualMedicineClassificationAssignment",
+          "field": "restrictedTo",
+          "values": [
+            "relator"
+          ],
+          "reason": "Legacy RefOntoUML class does not encode modern nature restrictions"
+        },
+        {
+          "id": "ProductClassificationAssignment",
+          "field": "restrictedTo",
+          "values": [
+            "relator"
+          ],
+          "reason": "Legacy RefOntoUML class does not encode modern nature restrictions"
+        }
+      ]
+    },
+    {
+      "variant": "A-prior-cards",
+      "relation": "contextClassificationProduct",
+      "expected": [
+        "RULE|classificationEntity|source-lower|true",
+        "RULE|classificationEntity|target-lower|true",
+        "RULE|classificationEntity|target-readonly|true",
+        "RULE|contextClassificationProduct|source-lower|false",
+        "RULE|contextClassificationProduct|target-lower|true",
+        "RULE|contextClassificationProduct|target-readonly|true"
+      ],
+      "actual": [
+        "RULE|classificationEntity|source-lower|true",
+        "RULE|classificationEntity|target-lower|true",
+        "RULE|classificationEntity|target-readonly|true",
+        "RULE|contextClassificationProduct|source-lower|false",
+        "RULE|contextClassificationProduct|target-lower|true",
+        "RULE|contextClassificationProduct|target-readonly|true"
+      ],
+      "exit": 0,
+      "stderr": "",
+      "pass": true,
+      "conversion_losses": [
+        {
+          "id": "ClassifiedEntity",
+          "field": "restrictedTo",
+          "values": [
+            "functional-complex"
+          ],
+          "reason": "Legacy RefOntoUML class does not encode modern nature restrictions"
+        },
+        {
+          "id": "ClassifiedMedicinalProductRole",
+          "field": "restrictedTo",
+          "values": [
+            "functional-complex"
+          ],
+          "reason": "Legacy RefOntoUML class does not encode modern nature restrictions"
+        },
+        {
+          "id": "ClassifiedPharmaceuticalSubstanceRole",
+          "field": "restrictedTo",
+          "values": [
+            "functional-complex"
+          ],
+          "reason": "Legacy RefOntoUML class does not encode modern nature restrictions"
+        },
+        {
+          "id": "ContextualMedicineClassificationAssignment",
+          "field": "restrictedTo",
+          "values": [
+            "relator"
+          ],
+          "reason": "Legacy RefOntoUML class does not encode modern nature restrictions"
+        },
+        {
+          "id": "MedicinalProduct",
+          "field": "restrictedTo",
+          "values": [
+            "functional-complex"
+          ],
+          "reason": "Legacy RefOntoUML class does not encode modern nature restrictions"
+        },
+        {
+          "id": "PharmaceuticalSubstance",
+          "field": "restrictedTo",
+          "values": [
+            "functional-complex"
+          ],
+          "reason": "Legacy RefOntoUML class does not encode modern nature restrictions"
+        },
+        {
+          "id": "ProductClassificationAssignment",
+          "field": "restrictedTo",
+          "values": [
+            "relator"
+          ],
+          "reason": "Legacy RefOntoUML class does not encode modern nature restrictions"
+        }
+      ]
+    },
+    {
+      "variant": "A-prior-cards",
+      "relation": "evidenceRecord",
+      "expected": [
+        "RULE|evidenceItem|source-lower|true",
+        "RULE|evidenceItem|target-lower|true",
+        "RULE|evidenceItem|target-readonly|true",
+        "RULE|evidenceRecord|source-lower|false",
+        "RULE|evidenceRecord|target-lower|false",
+        "RULE|evidenceRecord|target-readonly|true"
+      ],
+      "actual": [
+        "RULE|evidenceItem|source-lower|true",
+        "RULE|evidenceItem|target-lower|true",
+        "RULE|evidenceItem|target-readonly|true",
+        "RULE|evidenceRecord|source-lower|false",
+        "RULE|evidenceRecord|target-lower|false",
+        "RULE|evidenceRecord|target-readonly|true"
+      ],
+      "exit": 0,
+      "stderr": "",
+      "pass": true,
+      "conversion_losses": [
+        {
+          "id": "EvidenceItem",
+          "field": "restrictedTo",
+          "values": [
+            "functional-complex"
+          ],
+          "reason": "Legacy RefOntoUML class does not encode modern nature restrictions"
+        },
+        {
+          "id": "EvidenceObservationResultRole",
+          "field": "restrictedTo",
+          "values": [
+            "functional-complex"
+          ],
+          "reason": "Legacy RefOntoUML class does not encode modern nature restrictions"
+        },
+        {
+          "id": "EvidenceSourceRecordRole",
+          "field": "restrictedTo",
+          "values": [
+            "functional-complex"
+          ],
+          "reason": "Legacy RefOntoUML class does not encode modern nature restrictions"
+        },
+        {
+          "id": "EvidenceSupport",
+          "field": "restrictedTo",
+          "values": [
+            "relator"
+          ],
+          "reason": "Legacy RefOntoUML class does not encode modern nature restrictions"
+        },
+        {
+          "id": "ObservationResult",
+          "field": "restrictedTo",
+          "values": [
+            "functional-complex"
+          ],
+          "reason": "Legacy RefOntoUML class does not encode modern nature restrictions"
+        },
+        {
+          "id": "SourceRecord",
+          "field": "restrictedTo",
+          "values": [
+            "functional-complex"
+          ],
+          "reason": "Legacy RefOntoUML class does not encode modern nature restrictions"
+        }
+      ]
+    },
+    {
+      "variant": "B-mandatory-mediations",
+      "relation": "contextClassificationEntry",
+      "expected": [
+        "RULE|classificationEntry|source-lower|true",
+        "RULE|classificationEntry|target-lower|true",
+        "RULE|classificationEntry|target-readonly|true",
+        "RULE|contextClassificationEntry|source-lower|true",
+        "RULE|contextClassificationEntry|target-lower|true",
+        "RULE|contextClassificationEntry|target-readonly|true"
+      ],
+      "actual": [
+        "RULE|classificationEntry|source-lower|true",
+        "RULE|classificationEntry|target-lower|true",
+        "RULE|classificationEntry|target-readonly|true",
+        "RULE|contextClassificationEntry|source-lower|true",
+        "RULE|contextClassificationEntry|target-lower|true",
+        "RULE|contextClassificationEntry|target-readonly|true"
+      ],
+      "exit": 0,
+      "stderr": "",
+      "pass": true,
+      "conversion_losses": [
+        {
+          "id": "AppliedClassificationEntryRole",
+          "field": "restrictedTo",
+          "values": [
+            "functional-complex"
+          ],
+          "reason": "Legacy RefOntoUML class does not encode modern nature restrictions"
+        },
+        {
+          "id": "ClassificationEntry",
+          "field": "restrictedTo",
+          "values": [
+            "functional-complex"
+          ],
+          "reason": "Legacy RefOntoUML class does not encode modern nature restrictions"
+        },
+        {
+          "id": "ContextualMedicineClassificationAssignment",
+          "field": "restrictedTo",
+          "values": [
+            "relator"
+          ],
+          "reason": "Legacy RefOntoUML class does not encode modern nature restrictions"
+        },
+        {
+          "id": "ProductClassificationAssignment",
+          "field": "restrictedTo",
+          "values": [
+            "relator"
+          ],
+          "reason": "Legacy RefOntoUML class does not encode modern nature restrictions"
+        }
+      ]
+    },
+    {
+      "variant": "B-mandatory-mediations",
+      "relation": "contextClassificationProduct",
+      "expected": [
+        "RULE|classificationEntity|source-lower|true",
+        "RULE|classificationEntity|target-lower|true",
+        "RULE|classificationEntity|target-readonly|true",
+        "RULE|contextClassificationProduct|source-lower|true",
+        "RULE|contextClassificationProduct|target-lower|true",
+        "RULE|contextClassificationProduct|target-readonly|true"
+      ],
+      "actual": [
+        "RULE|classificationEntity|source-lower|true",
+        "RULE|classificationEntity|target-lower|true",
+        "RULE|classificationEntity|target-readonly|true",
+        "RULE|contextClassificationProduct|source-lower|true",
+        "RULE|contextClassificationProduct|target-lower|true",
+        "RULE|contextClassificationProduct|target-readonly|true"
+      ],
+      "exit": 0,
+      "stderr": "",
+      "pass": true,
+      "conversion_losses": [
+        {
+          "id": "ClassifiedEntity",
+          "field": "restrictedTo",
+          "values": [
+            "functional-complex"
+          ],
+          "reason": "Legacy RefOntoUML class does not encode modern nature restrictions"
+        },
+        {
+          "id": "ClassifiedMedicinalProductRole",
+          "field": "restrictedTo",
+          "values": [
+            "functional-complex"
+          ],
+          "reason": "Legacy RefOntoUML class does not encode modern nature restrictions"
+        },
+        {
+          "id": "ClassifiedPharmaceuticalSubstanceRole",
+          "field": "restrictedTo",
+          "values": [
+            "functional-complex"
+          ],
+          "reason": "Legacy RefOntoUML class does not encode modern nature restrictions"
+        },
+        {
+          "id": "ContextualMedicineClassificationAssignment",
+          "field": "restrictedTo",
+          "values": [
+            "relator"
+          ],
+          "reason": "Legacy RefOntoUML class does not encode modern nature restrictions"
+        },
+        {
+          "id": "MedicinalProduct",
+          "field": "restrictedTo",
+          "values": [
+            "functional-complex"
+          ],
+          "reason": "Legacy RefOntoUML class does not encode modern nature restrictions"
+        },
+        {
+          "id": "PharmaceuticalSubstance",
+          "field": "restrictedTo",
+          "values": [
+            "functional-complex"
+          ],
+          "reason": "Legacy RefOntoUML class does not encode modern nature restrictions"
+        },
+        {
+          "id": "ProductClassificationAssignment",
+          "field": "restrictedTo",
+          "values": [
+            "relator"
+          ],
+          "reason": "Legacy RefOntoUML class does not encode modern nature restrictions"
+        }
+      ]
+    },
+    {
+      "variant": "B-mandatory-mediations",
+      "relation": "evidenceRecord",
+      "expected": [
+        "RULE|evidenceItem|source-lower|true",
+        "RULE|evidenceItem|target-lower|true",
+        "RULE|evidenceItem|target-readonly|true",
+        "RULE|evidenceRecord|source-lower|true",
+        "RULE|evidenceRecord|target-lower|true",
+        "RULE|evidenceRecord|target-readonly|true"
+      ],
+      "actual": [
+        "RULE|evidenceItem|source-lower|true",
+        "RULE|evidenceItem|target-lower|true",
+        "RULE|evidenceItem|target-readonly|true",
+        "RULE|evidenceRecord|source-lower|true",
+        "RULE|evidenceRecord|target-lower|true",
+        "RULE|evidenceRecord|target-readonly|true"
+      ],
+      "exit": 0,
+      "stderr": "",
+      "pass": true,
+      "conversion_losses": [
+        {
+          "id": "EvidenceItem",
+          "field": "restrictedTo",
+          "values": [
+            "functional-complex"
+          ],
+          "reason": "Legacy RefOntoUML class does not encode modern nature restrictions"
+        },
+        {
+          "id": "EvidenceObservationResultRole",
+          "field": "restrictedTo",
+          "values": [
+            "functional-complex"
+          ],
+          "reason": "Legacy RefOntoUML class does not encode modern nature restrictions"
+        },
+        {
+          "id": "EvidenceSourceRecordRole",
+          "field": "restrictedTo",
+          "values": [
+            "functional-complex"
+          ],
+          "reason": "Legacy RefOntoUML class does not encode modern nature restrictions"
+        },
+        {
+          "id": "EvidenceSupport",
+          "field": "restrictedTo",
+          "values": [
+            "relator"
+          ],
+          "reason": "Legacy RefOntoUML class does not encode modern nature restrictions"
+        },
+        {
+          "id": "ObservationResult",
+          "field": "restrictedTo",
+          "values": [
+            "functional-complex"
+          ],
+          "reason": "Legacy RefOntoUML class does not encode modern nature restrictions"
+        },
+        {
+          "id": "SourceRecord",
+          "field": "restrictedTo",
+          "values": [
+            "functional-complex"
+          ],
+          "reason": "Legacy RefOntoUML class does not encode modern nature restrictions"
+        }
+      ]
+    },
+    {
+      "variant": "C-derived-projections",
+      "relation": "contextClassificationEntry",
+      "expected": [
+        "RULE|classificationEntry|source-lower|true",
+        "RULE|classificationEntry|target-lower|true",
+        "RULE|classificationEntry|target-readonly|true"
+      ],
+      "actual": [
+        "RULE|classificationEntry|source-lower|true",
+        "RULE|classificationEntry|target-lower|true",
+        "RULE|classificationEntry|target-readonly|true"
+      ],
+      "exit": 0,
+      "stderr": "",
+      "pass": true,
+      "conversion_losses": [
+        {
+          "id": "AppliedClassificationEntryRole",
+          "field": "restrictedTo",
+          "values": [
+            "functional-complex"
+          ],
+          "reason": "Legacy RefOntoUML class does not encode modern nature restrictions"
+        },
+        {
+          "id": "ClassificationEntry",
+          "field": "restrictedTo",
+          "values": [
+            "functional-complex"
+          ],
+          "reason": "Legacy RefOntoUML class does not encode modern nature restrictions"
+        },
+        {
+          "id": "ContextualMedicineClassificationAssignment",
+          "field": "restrictedTo",
+          "values": [
+            "relator"
+          ],
+          "reason": "Legacy RefOntoUML class does not encode modern nature restrictions"
+        },
+        {
+          "id": "ProductClassificationAssignment",
+          "field": "restrictedTo",
+          "values": [
+            "relator"
+          ],
+          "reason": "Legacy RefOntoUML class does not encode modern nature restrictions"
+        }
+      ]
+    },
+    {
+      "variant": "C-derived-projections",
+      "relation": "contextClassificationProduct",
+      "expected": [
+        "RULE|classificationEntity|source-lower|true",
+        "RULE|classificationEntity|target-lower|true",
+        "RULE|classificationEntity|target-readonly|true"
+      ],
+      "actual": [
+        "RULE|classificationEntity|source-lower|true",
+        "RULE|classificationEntity|target-lower|true",
+        "RULE|classificationEntity|target-readonly|true"
+      ],
+      "exit": 0,
+      "stderr": "",
+      "pass": true,
+      "conversion_losses": [
+        {
+          "id": "ClassifiedEntity",
+          "field": "restrictedTo",
+          "values": [
+            "functional-complex"
+          ],
+          "reason": "Legacy RefOntoUML class does not encode modern nature restrictions"
+        },
+        {
+          "id": "ClassifiedMedicinalProductRole",
+          "field": "restrictedTo",
+          "values": [
+            "functional-complex"
+          ],
+          "reason": "Legacy RefOntoUML class does not encode modern nature restrictions"
+        },
+        {
+          "id": "ClassifiedPharmaceuticalSubstanceRole",
+          "field": "restrictedTo",
+          "values": [
+            "functional-complex"
+          ],
+          "reason": "Legacy RefOntoUML class does not encode modern nature restrictions"
+        },
+        {
+          "id": "ContextualMedicineClassificationAssignment",
+          "field": "restrictedTo",
+          "values": [
+            "relator"
+          ],
+          "reason": "Legacy RefOntoUML class does not encode modern nature restrictions"
+        },
+        {
+          "id": "MedicinalProduct",
+          "field": "restrictedTo",
+          "values": [
+            "functional-complex"
+          ],
+          "reason": "Legacy RefOntoUML class does not encode modern nature restrictions"
+        },
+        {
+          "id": "PharmaceuticalSubstance",
+          "field": "restrictedTo",
+          "values": [
+            "functional-complex"
+          ],
+          "reason": "Legacy RefOntoUML class does not encode modern nature restrictions"
+        },
+        {
+          "id": "ProductClassificationAssignment",
+          "field": "restrictedTo",
+          "values": [
+            "relator"
+          ],
+          "reason": "Legacy RefOntoUML class does not encode modern nature restrictions"
+        }
+      ]
+    },
+    {
+      "variant": "C-derived-projections",
+      "relation": "evidenceRecord",
+      "expected": [
+        "RULE|evidenceItem|source-lower|true",
+        "RULE|evidenceItem|target-lower|true",
+        "RULE|evidenceItem|target-readonly|true"
+      ],
+      "actual": [
+        "RULE|evidenceItem|source-lower|true",
+        "RULE|evidenceItem|target-lower|true",
+        "RULE|evidenceItem|target-readonly|true"
+      ],
+      "exit": 0,
+      "stderr": "",
+      "pass": true,
+      "conversion_losses": [
+        {
+          "id": "EvidenceItem",
+          "field": "restrictedTo",
+          "values": [
+            "functional-complex"
+          ],
+          "reason": "Legacy RefOntoUML class does not encode modern nature restrictions"
+        },
+        {
+          "id": "EvidenceObservationResultRole",
+          "field": "restrictedTo",
+          "values": [
+            "functional-complex"
+          ],
+          "reason": "Legacy RefOntoUML class does not encode modern nature restrictions"
+        },
+        {
+          "id": "EvidenceSourceRecordRole",
+          "field": "restrictedTo",
+          "values": [
+            "functional-complex"
+          ],
+          "reason": "Legacy RefOntoUML class does not encode modern nature restrictions"
+        },
+        {
+          "id": "EvidenceSupport",
+          "field": "restrictedTo",
+          "values": [
+            "relator"
+          ],
+          "reason": "Legacy RefOntoUML class does not encode modern nature restrictions"
+        },
+        {
+          "id": "ObservationResult",
+          "field": "restrictedTo",
+          "values": [
+            "functional-complex"
+          ],
+          "reason": "Legacy RefOntoUML class does not encode modern nature restrictions"
+        },
+        {
+          "id": "SourceRecord",
+          "field": "restrictedTo",
+          "values": [
+            "functional-complex"
+          ],
+          "reason": "Legacy RefOntoUML class does not encode modern nature restrictions"
+        }
+      ]
+    }
+  ],
+  "ocl_pass": 9,
+  "ocl_total": 9,
+  "relspec": [
+    {
+      "relation": "contextClassificationEntry",
+      "mutation": "declared",
+      "expected_engine": 0,
+      "actual_engine": 0,
+      "paired_native_contract_expected": true,
+      "paired_native_contract_actual": true,
+      "pass": true,
+      "output": "CMPE_RESULT detector=RelSpec classes=4 associations=2 occurrences=0\n",
+      "known_loss_count": 4,
+      "full_model_claim": false
+    },
+    {
+      "relation": "contextClassificationEntry",
+      "mutation": "both-references-removed",
+      "expected_engine": 1,
+      "actual_engine": 1,
+      "paired_native_contract_expected": false,
+      "paired_native_contract_actual": false,
+      "pass": true,
+      "output": "CMPE_RESULT detector=RelSpec classes=4 associations=2 occurrences=1\n",
+      "known_loss_count": 4,
+      "full_model_claim": false
+    },
+    {
+      "relation": "contextClassificationEntry",
+      "mutation": "one-reference-removed",
+      "expected_engine": 0,
+      "actual_engine": 0,
+      "paired_native_contract_expected": false,
+      "paired_native_contract_actual": false,
+      "pass": true,
+      "output": "CMPE_RESULT detector=RelSpec classes=4 associations=2 occurrences=0\n",
+      "known_loss_count": 4,
+      "full_model_claim": false
+    },
+    {
+      "relation": "contextClassificationEntry",
+      "mutation": "one-reference-crossed",
+      "expected_engine": 0,
+      "actual_engine": 0,
+      "paired_native_contract_expected": false,
+      "paired_native_contract_actual": false,
+      "pass": true,
+      "output": "CMPE_RESULT detector=RelSpec classes=4 associations=2 occurrences=0\n",
+      "known_loss_count": 4,
+      "full_model_claim": false
+    },
+    {
+      "relation": "contextClassificationProduct",
+      "mutation": "declared",
+      "expected_engine": 0,
+      "actual_engine": 0,
+      "paired_native_contract_expected": true,
+      "paired_native_contract_actual": true,
+      "pass": true,
+      "output": "CMPE_RESULT detector=RelSpec classes=7 associations=2 occurrences=0\n",
+      "known_loss_count": 7,
+      "full_model_claim": false
+    },
+    {
+      "relation": "contextClassificationProduct",
+      "mutation": "both-references-removed",
+      "expected_engine": 1,
+      "actual_engine": 1,
+      "paired_native_contract_expected": false,
+      "paired_native_contract_actual": false,
+      "pass": true,
+      "output": "CMPE_RESULT detector=RelSpec classes=7 associations=2 occurrences=1\n",
+      "known_loss_count": 7,
+      "full_model_claim": false
+    },
+    {
+      "relation": "contextClassificationProduct",
+      "mutation": "one-reference-removed",
+      "expected_engine": 0,
+      "actual_engine": 0,
+      "paired_native_contract_expected": false,
+      "paired_native_contract_actual": false,
+      "pass": true,
+      "output": "CMPE_RESULT detector=RelSpec classes=7 associations=2 occurrences=0\n",
+      "known_loss_count": 7,
+      "full_model_claim": false
+    },
+    {
+      "relation": "contextClassificationProduct",
+      "mutation": "one-reference-crossed",
+      "expected_engine": 0,
+      "actual_engine": 0,
+      "paired_native_contract_expected": false,
+      "paired_native_contract_actual": false,
+      "pass": true,
+      "output": "CMPE_RESULT detector=RelSpec classes=7 associations=2 occurrences=0\n",
+      "known_loss_count": 7,
+      "full_model_claim": false
+    },
+    {
+      "relation": "evidenceRecord",
+      "mutation": "declared",
+      "expected_engine": 0,
+      "actual_engine": 0,
+      "paired_native_contract_expected": true,
+      "paired_native_contract_actual": true,
+      "pass": true,
+      "output": "CMPE_RESULT detector=RelSpec classes=6 associations=2 occurrences=0\n",
+      "known_loss_count": 6,
+      "full_model_claim": false
+    },
+    {
+      "relation": "evidenceRecord",
+      "mutation": "both-references-removed",
+      "expected_engine": 1,
+      "actual_engine": 1,
+      "paired_native_contract_expected": false,
+      "paired_native_contract_actual": false,
+      "pass": true,
+      "output": "CMPE_RESULT detector=RelSpec classes=6 associations=2 occurrences=1\n",
+      "known_loss_count": 6,
+      "full_model_claim": false
+    },
+    {
+      "relation": "evidenceRecord",
+      "mutation": "one-reference-removed",
+      "expected_engine": 0,
+      "actual_engine": 0,
+      "paired_native_contract_expected": false,
+      "paired_native_contract_actual": false,
+      "pass": true,
+      "output": "CMPE_RESULT detector=RelSpec classes=6 associations=2 occurrences=0\n",
+      "known_loss_count": 6,
+      "full_model_claim": false
+    },
+    {
+      "relation": "evidenceRecord",
+      "mutation": "one-reference-crossed",
+      "expected_engine": 0,
+      "actual_engine": 0,
+      "paired_native_contract_expected": false,
+      "paired_native_contract_actual": false,
+      "pass": true,
+      "output": "CMPE_RESULT detector=RelSpec classes=6 associations=2 occurrences=0\n",
+      "known_loss_count": 6,
+      "full_model_claim": false
+    }
+  ],
+  "relspec_pass": 12,
+  "relspec_total": 12
+}

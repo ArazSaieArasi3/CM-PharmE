@@ -1,0 +1,7 @@
+PREFIX l: <urn:cmpe:logistics-site-lab:>
+SELECT ?claim ?activity ?site ?function ?record WHERE {
+  ?claim a l:SiteClaim ; l:activity ?activity ; l:site ?site ;
+    l:function ?function ; l:occurrenceStatus "performed" ;
+    l:sourceRecord ?record .
+}
+ORDER BY ?claim

@@ -1,0 +1,46 @@
+{
+  "schema_version": "CMPE-PagesCutover22/0.1.0",
+  "decision_id": "PAGES-CUTOVER-22-01",
+  "authorized_by": "Araz direct user instruction2026-10-30 Asia/Tehran",
+  "issue": 346,
+  "action": "REMOVE_PAGES_MODEL_CONTENT_FOR2.0_AND2.1_AND_REPLACE_WITH_COMPLETE2.2",
+  "scope": "GitHubPages;not repository/tag/release/source deletion",
+  "source_control_main_at_authorization": "42a5ae4da0e87af161e91110a044c6b146982e89",
+  "retire_registry_ids": [
+    "v2",
+    "v2-m1"
+  ],
+  "retire_public_roots": [
+    "ontology/v2/current/",
+    "ontology/2.1.0/m1/"
+  ],
+  "retire_aliases": "All aliases,chooser entries,references,explorers,downloads,citations and version-specific assets serving those2.0/2.1 model contents;inventory before cutover.",
+  "target_root": "ontology/2.2.0/",
+  "retain_unrelated_version_ids": [
+    "v1"
+  ],
+  "stable_pages_path_retention_exception": "Explicit user instruction authorizes removal of these old Pages versions;older immutable-path convention does not require asking again.",
+  "timing": "One coordinated deployment after accepted full-model and candidate-publication readiness;do not remove working content before the replacement is complete.",
+  "required_before_deployment": [
+    "Accepted_complete_2.2_model_exact_source_ref",
+    "G22_A_to_D_applicable_semantic_requirement_validation_evidence",
+    "G22_E_candidate_full_coverage_and_local_rendered_QA",
+    "G22_F_prepublication_compatibility_support_package_checks",
+    "Prior_Pages_archive_verified",
+    "Concrete_retired_route_asset_inventory",
+    "Complete_2.2_reference_diagrams_explorer_downloads_citation_build"
+  ],
+  "public_postdeployment_checks": [
+    "Exact_deployed_source_manifest",
+    "All_2.2_download_checksums_and_model_coverage",
+    "Old_2.0_2.1_payloads_not_reachable_through_any_alias",
+    "Old_semantic_downloads_not_silently_replaced_by2.2_bytes",
+    "Root_navigation_and_rendered_links",
+    "Public_explorer_load_search_zoom_and_console_network",
+    "New_baseline_and_exact_public_receipt"
+  ],
+  "failure_action": "Restore prior archived deployment and record failure;do not claim replacement complete.",
+  "circular_gate_rule": "Public E/F receipts are postdeployment outcomes;they are not prerequisites for the first cutover.",
+  "new_permission_required_for_authorized_cutover": false,
+  "state": "BLOCKED_WAITING_FOR_ACCEPTED_COMPLETE2.2"
+}

@@ -1,0 +1,85 @@
+name: CM-PharmE 2.2 Logistics Site Decision
+on:
+  pull_request:
+    branches: [v2/research-program]
+    paths:
+      - 'v2/review/logistics-site/**'
+      - 'v2/release/2.2/pages-cutover/**'
+      - '.github/workflows/v2-22-logistics-site-decision.yml'
+  push:
+    branches: ['v2/**']
+    paths:
+      - 'v2/review/logistics-site/**'
+      - 'v2/release/2.2/pages-cutover/**'
+      - '.github/workflows/v2-22-logistics-site-decision.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  decision-probes:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-python@v7.0.0
+        with:
+          python-version: '3.12'
+      - name: Install pinned bounded-probe dependencies
+        run: python -m pip install --disable-pip-version-check rdflib==7.5.0 pyshacl==0.31.0 owlrl==7.1.4
+      - name: Check immutable oracle commit before probe implementation
+        run: |
+          git fetch --no-tags --depth=1 origin 653534b5c431ca19b53333ff40a0258bcddbd99e
+          python - <<'PY'
+          import hashlib, json, pathlib, subprocess
+          freeze = '653534b5c431ca19b53333ff40a0258bcddbd99e'
+          root = pathlib.Path('v2/review/logistics-site/0.1.0')
+          data = json.loads((root / 'freeze.json').read_text())
+          files = list(data['oracle_files_sha256']) + [str(root / 'freeze.json')]
+          for path in files:
+              prior = subprocess.check_output(['git', 'show', freeze + ':' + path])
+              assert prior == pathlib.Path(path).read_bytes(), path
+          result = subprocess.run(['git', 'cat-file', '-e', freeze + ':' + str(root / 'verify.py')], capture_output=True)
+          assert result.returncode != 0, 'Probe existed before the frozen oracle commit'
+          out = pathlib.Path('build/logistics-site-decision')
+          out.mkdir(parents=True, exist_ok=True)
+          (out / 'oracle-freeze-proof.json').write_text(json.dumps({'freeze_commit': freeze, 'five_files_match_immutable_commit': True, 'probe_absent_at_freeze': True}, indent=2) + '\n')
+          PY
+      - name: Replay all fixed admission and entailment expectations
+        run: >-
+          python v2/review/logistics-site/0.1.0/verify.py
+          --output build/logistics-site-decision --check-committed
+      - name: Verify authorized cutover scope and initial blocked snapshot
+        run: |
+          python - <<'PY'
+          import json, pathlib
+          root = pathlib.Path('v2/release/2.2/pages-cutover/0.1.0')
+          p, r = [json.loads((root / n).read_text()) for n in ['policy.json', 'readiness.json']]
+          assert p['decision_id'] == r['policy_decision'] == 'PAGES-CUTOVER-22-01'
+          assert p['retire_registry_ids'] == ['v2', 'v2-m1']
+          assert p['retire_public_roots'] == ['ontology/v2/current/', 'ontology/2.1.0/m1/']
+          assert p['target_root'] == 'ontology/2.2.0/' and p['retain_unrelated_version_ids'] == ['v1']
+          assert r['cutover_ready'] is False and r['public_cutover_executed'] is False
+          pathlib.Path('build/logistics-site-decision/pages-scope.json').write_text(json.dumps({'authorized_scope_verified': True, 'initial_readiness_snapshot': 'BLOCKED', 'public_cutover_executed': False}, indent=2) + '\n')
+          PY
+      - name: Record execution identity
+        env:
+          EXECUTION_SHA: ${{ github.sha }}
+          EXECUTION_REF: ${{ github.ref }}
+          EXECUTION_RUN: ${{ github.run_id }}
+        run: |
+          python - <<'PY'
+          import importlib.metadata, json, os, pathlib, platform
+          d = {k: os.environ[k] for k in ['EXECUTION_SHA', 'EXECUTION_REF', 'EXECUTION_RUN']}
+          d.update(python=platform.python_version(), dependencies={k: importlib.metadata.version(k) for k in ['rdflib', 'pyshacl', 'owlrl']})
+          pathlib.Path('build/logistics-site-decision/execution.json').write_text(json.dumps(d, indent=2) + '\n')
+          PY
+      - name: Upload exact bounded decision evidence
+        if: always()
+        uses: actions/upload-artifact@v7.0.1
+        with:
+          name: cm-pharme-logistics-site-decision
+          path: build/logistics-site-decision/
+          if-no-files-found: error
+          retention-days: 30

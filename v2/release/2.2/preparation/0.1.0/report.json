@@ -1,0 +1,195 @@
+{
+  "schema_version": "CMPE-Comprehensive22Prerequisites/0.1.0",
+  "date": "2026-10-30",
+  "timezone": "Asia/Tehran",
+  "packet_issue": 343,
+  "audit_passed": true,
+  "comprehensive_2_2_ready": false,
+  "model_semantics_changed": false,
+  "source_commit": "2ee5c8b86740349fc74427d29eb77f3e5951000c",
+  "verified_input_files": 52,
+  "release_contract_sha256": "b629fa38aecc21dcb9db60b518d35c2c6c73a45e8a0793c246af4ac07279514b",
+  "metric": "Undirected explicit named nondatatype native classes; generalization and binary relation edges only when both ends name such a class. Unknown/anonymous ends and datatypes excluded. No semantic closure or coherence certification.",
+  "topology": {
+    "latest_native_candidate": {
+      "elements": 536,
+      "classes_including_datatypes": 144,
+      "named_nondatatype_classes": 138,
+      "binary_relations": 86,
+      "components": 14,
+      "component_sizes": [
+        125,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "isolates": [
+        "AdverseEventReportingActivity",
+        "BusinessArchitectureView",
+        "DigitalInformationSystemComponent",
+        "DistributionLogisticsActivity",
+        "ManufacturingActivity",
+        "PharmacovigilanceRequirement",
+        "PostMarketSurveillanceActivity",
+        "ProcurementActivity",
+        "RegulatoryRequirement",
+        "RiskTreatmentActivity",
+        "RiskTreatmentPlan",
+        "ServiceOfferingSpecification",
+        "StockoutSituation"
+      ],
+      "edge_records": 174,
+      "unknown_endpoint_types": 11,
+      "unknown_cardinality_ends": 60,
+      "unknown_readonly_ends": 76,
+      "unclassified_relations": 43
+    },
+    "prior_coherence_experiment": {
+      "elements": 686,
+      "classes_including_datatypes": 147,
+      "named_nondatatype_classes": 141,
+      "binary_relations": 135,
+      "components": 1,
+      "component_sizes": [
+        141
+      ],
+      "isolates": [],
+      "edge_records": 223,
+      "unknown_endpoint_types": 11,
+      "unknown_cardinality_ends": 66,
+      "unknown_readonly_ends": 82,
+      "unclassified_relations": 89
+    }
+  },
+  "gate_d": {
+    "total": 87,
+    "active_ids_retained": 84,
+    "prior_deferred_ids": [
+      "AssetAtRisk",
+      "ClinicalCareParticipant",
+      "Vulnerability"
+    ],
+    "all_ids_accounted": true,
+    "full_semantic_preservation_proved": false
+  },
+  "domains": {
+    "baseline_domains": 17,
+    "with_active_elements": 16,
+    "provisional_ownerships": 60
+  },
+  "branch_divergence": {
+    "shared_nonpackage_field_differences": 22,
+    "experiment_additions_by_type": {
+      "BinaryRelation": 49,
+      "Class": 3,
+      "Property": 98
+    },
+    "latest_only_ids": [],
+    "copy_older_experiment_over_latest_allowed": false
+  },
+  "formal_baseline": {
+    "triples": 664,
+    "declarations_by_type": {
+      "class": 81,
+      "datatype_property": 5,
+      "object_property": 52
+    },
+    "term_presence_is_not_semantic_equivalence": true
+  },
+  "orsd": {
+    "total": 83,
+    "original_ids_retained": true,
+    "recorded_acceptance_counts": {
+      "PENDING_SEMANTIC_REVIEW": 83
+    },
+    "recorded_execution_status_counts": {
+      "BOUNDED_FRESH_EXECUTION": 3,
+      "BOUNDED_PRIOR_CONTRACT_REPLAY": 23,
+      "FRESH_QUERY_AND_COUNTERMODEL": 1,
+      "REVIEW_PROTOCOL_SPECIFIED": 12,
+      "SPECIFIED_NOT_EXECUTED": 44
+    },
+    "accepted_by_this_audit": 0
+  },
+  "mapping_and_evaluation_inventories": {
+    "v2/data/mappings/ontology-rdb-mapping.csv": {
+      "rows": 36,
+      "recorded_status_counts": {
+        "bounded": 4,
+        "deferred": 2,
+        "direct": 26,
+        "one_to_many_rdf_projection": 1,
+        "polymorphic": 2,
+        "relational_projection": 1
+      },
+      "scope": "HISTORICAL_INVENTORY_NOT_REEXECUTED_ON_COMPREHENSIVE_2_2"
+    },
+    "v2/data/mappings/source-field-ontology-mapping.csv": {
+      "rows": 39,
+      "recorded_status_counts": {
+        "ambiguous": 2,
+        "bounded": 16,
+        "derived": 14,
+        "direct": 6,
+        "out_of_scope": 1
+      },
+      "scope": "HISTORICAL_INVENTORY_NOT_REEXECUTED_ON_COMPREHENSIVE_2_2"
+    },
+    "v2/data/mappings/source-mapping-coverage.csv": {
+      "rows": 6,
+      "recorded_status_counts": {
+        "alias-normalization-only": 1,
+        "fixture-executed": 2,
+        "not-executed": 3
+      },
+      "scope": "HISTORICAL_INVENTORY_NOT_REEXECUTED_ON_COMPREHENSIVE_2_2"
+    },
+    "v2/evaluation/protocol/e7-source-semantic-coverage.csv": {
+      "rows": 97,
+      "recorded_status_counts": {
+        "not_represented": 9,
+        "partial": 14,
+        "represented": 74
+      },
+      "scope": "HISTORICAL_INVENTORY_NOT_REEXECUTED_ON_COMPREHENSIVE_2_2"
+    },
+    "v2/evaluation/results/w7-claim-evidence-traceability.csv": {
+      "rows": 32,
+      "recorded_status_counts": {
+        "BOUNDED": 1,
+        "DESIGN_SUPPORTED": 1,
+        "MECHANICS_SUPPORTED": 1,
+        "SUPPORTED": 15,
+        "SUPPORTED_LIMITATION": 1,
+        "SUPPORTED_WITH_BOUNDARY": 9,
+        "SUPPORTED_WITH_WARNING": 4
+      },
+      "scope": "HISTORICAL_INVENTORY_NOT_REEXECUTED_ON_COMPREHENSIVE_2_2"
+    }
+  },
+  "released_m1": {
+    "tbox_triples": 50,
+    "released_ttl_bytes_match": true,
+    "scope": "M1 profile only"
+  },
+  "public_source_snapshot": "source-snapshot.json; captured GitHub registry/issue metadata, not a new public-browser QA",
+  "scientific_status": {
+    "source_policy_acceptances": "1/4",
+    "wholeover_author_disposition": "PENDING",
+    "historical_orsd_author_acceptance": "0/83",
+    "new_external_expert_results": 0,
+    "scope": "Carried forward from roadmap0.12.0 and issues315/342; no acceptance created by the 2.2 objective or this audit."
+  },
+  "next_ready_issue": 344,
+  "conclusion": "Earlier zero-isolate evidence is real but experimental. Later native decisions and additional domain experiments are separate lineages. Comprehensive integration, prior-deferral review, semantic decisions, current-target evaluation and same-model public documentation remain release gates."
+}

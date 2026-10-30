@@ -1,0 +1,289 @@
+{
+  "module": "BA",
+  "name": "Business Architecture",
+  "mission_fa": "توصیف قابلیت و خدمت دارویی و تعهدات همکاری در نمای تحلیلی",
+  "direction": "RETAIN_ACCEPTED_BY_USER",
+  "detailed_model_acceptance": "PENDING",
+  "owned_classes": [
+    "https://w3id.org/cm-pharme/2.1/BusinessArchitectureView",
+    "https://w3id.org/cm-pharme/2.1/EnterpriseCapability",
+    "https://w3id.org/cm-pharme/2.1/PartnerOrganizationRole",
+    "https://w3id.org/cm-pharme/2.1/ServiceOfferingSpecification",
+    "https://w3id.org/cm-pharme/2.1/StrategicPartnershipAgreement"
+  ],
+  "imported_interface_classes": [
+    "http://www.w3.org/ns/prov#Entity",
+    "https://w3id.org/cm-pharme/2.1/Assertion",
+    "https://w3id.org/cm-pharme/2.1/DistributionLogisticsActivity",
+    "https://w3id.org/cm-pharme/2.1/EvidenceItem",
+    "https://w3id.org/cm-pharme/2.1/EvidenceSourceRecordRole",
+    "https://w3id.org/cm-pharme/2.1/EvidenceSupport",
+    "https://w3id.org/cm-pharme/2.1/Facility",
+    "https://w3id.org/cm-pharme/2.1/MedicinalProduct",
+    "https://w3id.org/cm-pharme/2.1/Organization",
+    "https://w3id.org/cm-pharme/2.1/SourceRecord",
+    "https://w3id.org/cm-pharme/2.1/SupportedAssertionRole"
+  ],
+  "profiles": [
+    "ba-service",
+    "ba-view",
+    "ba-partnership",
+    "pharma-service",
+    "documented-partnership",
+    "commitment-assertion",
+    "capability-logistics",
+    "logistics"
+  ],
+  "properties": [
+    "https://w3id.org/cm-pharme/2.1/baViewRepresents",
+    "https://w3id.org/cm-pharme/2.1/capabilityBearer",
+    "https://w3id.org/cm-pharme/2.1/evidenceAssertion",
+    "https://w3id.org/cm-pharme/2.1/evidenceItem",
+    "https://w3id.org/cm-pharme/2.1/evidenceRecord",
+    "https://w3id.org/cm-pharme/2.1/partnershipParticipant",
+    "https://w3id.org/cm-pharme/experimental/coherence/capabilityRealizedInLogistics",
+    "https://w3id.org/cm-pharme/experimental/coherence/logisticsFacility",
+    "https://w3id.org/cm-pharme/experimental/coherence/logisticsProduct",
+    "https://w3id.org/cm-pharme/experimental/four-domain/profile",
+    "https://w3id.org/cm-pharme/experimental/four-domain/serviceCapability",
+    "https://w3id.org/cm-pharme/experimental/four-domain/viewOrganization",
+    "https://w3id.org/cm-pharme/experimental/four-domain/viewService",
+    "https://w3id.org/cm-pharme/experimental/refinement/agreementCommitment",
+    "https://w3id.org/cm-pharme/experimental/refinement/carrierClaim",
+    "https://w3id.org/cm-pharme/experimental/refinement/claimText",
+    "https://w3id.org/cm-pharme/experimental/refinement/commitmentActor",
+    "https://w3id.org/cm-pharme/experimental/refinement/commitmentText",
+    "https://w3id.org/cm-pharme/experimental/refinement/serviceFacility",
+    "https://w3id.org/cm-pharme/experimental/refinement/serviceProduct"
+  ],
+  "excluded_scope": [
+    "Complete enterprise architecture framework",
+    "Every outsourcing agreement being a strategic partnership",
+    "Capability implying exercised capacity"
+  ],
+  "admission_cases": [
+    {
+      "id": "lab-BA-1-positive.ttl",
+      "fixture": "fixtures/lab-BA-1-positive.ttl",
+      "expected": true,
+      "marker": null
+    },
+    {
+      "id": "lab-BA-2-boundary.ttl",
+      "fixture": "fixtures/lab-BA-2-boundary.ttl",
+      "expected": true,
+      "marker": null
+    },
+    {
+      "id": "lab-BA-3-missing-capability-bearer.ttl",
+      "fixture": "fixtures/lab-BA-3-missing-capability-bearer.ttl",
+      "expected": false,
+      "marker": "capabilityBearer"
+    },
+    {
+      "id": "lab-BA-3-service-without-capability.ttl",
+      "fixture": "fixtures/lab-BA-3-service-without-capability.ttl",
+      "expected": false,
+      "marker": "serviceCapability"
+    },
+    {
+      "id": "lab-BA-3-view-is-organization.ttl",
+      "fixture": "fixtures/lab-BA-3-view-is-organization.ttl",
+      "expected": false,
+      "marker": "distinct-BusinessArchitectureView"
+    },
+    {
+      "id": "lab-BA-3-untyped-view-reference.ttl",
+      "fixture": "fixtures/lab-BA-3-untyped-view-reference.ttl",
+      "expected": false,
+      "marker": "viewOrganization"
+    },
+    {
+      "id": "lab-BA-3-one-partner-only.ttl",
+      "fixture": "fixtures/lab-BA-3-one-partner-only.ttl",
+      "expected": false,
+      "marker": "partnershipParticipant"
+    },
+    {
+      "id": "lab-BA-3-known-partner-aliases.ttl",
+      "fixture": "fixtures/lab-BA-3-known-partner-aliases.ttl",
+      "expected": false,
+      "marker": "partners-not-known-aliases"
+    },
+    {
+      "id": "refinement-X-BA-SERVICE-positive.ttl",
+      "fixture": "fixtures/refinement-X-BA-SERVICE-positive.ttl",
+      "expected": true,
+      "marker": null
+    },
+    {
+      "id": "refinement-X-BA-COMMITMENT-positive.ttl",
+      "fixture": "fixtures/refinement-X-BA-COMMITMENT-positive.ttl",
+      "expected": true,
+      "marker": null
+    },
+    {
+      "id": "refinement-X-BA-SERVICE-boundary.ttl",
+      "fixture": "fixtures/refinement-X-BA-SERVICE-boundary.ttl",
+      "expected": true,
+      "marker": null
+    },
+    {
+      "id": "refinement-X-BA-COMMITMENT-boundary.ttl",
+      "fixture": "fixtures/refinement-X-BA-COMMITMENT-boundary.ttl",
+      "expected": true,
+      "marker": null
+    },
+    {
+      "id": "refinement-X-BA-SERVICE-missing-pharma-context.ttl",
+      "fixture": "fixtures/refinement-X-BA-SERVICE-missing-pharma-context.ttl",
+      "expected": false,
+      "marker": "pharma-service-context"
+    },
+    {
+      "id": "refinement-X-BA-SERVICE-untyped-product.ttl",
+      "fixture": "fixtures/refinement-X-BA-SERVICE-untyped-product.ttl",
+      "expected": false,
+      "marker": "serviceProduct"
+    },
+    {
+      "id": "refinement-X-BA-COMMITMENT-missing-commitment.ttl",
+      "fixture": "fixtures/refinement-X-BA-COMMITMENT-missing-commitment.ttl",
+      "expected": false,
+      "marker": "agreementCommitment"
+    },
+    {
+      "id": "refinement-X-BA-COMMITMENT-missing-source-evidence.ttl",
+      "fixture": "fixtures/refinement-X-BA-COMMITMENT-missing-source-evidence.ttl",
+      "expected": false,
+      "marker": "commitment-evidence-required"
+    },
+    {
+      "id": "refinement-X-BA-COMMITMENT-outside-actor.ttl",
+      "fixture": "fixtures/refinement-X-BA-COMMITMENT-outside-actor.ttl",
+      "expected": false,
+      "marker": "commitment-participant-agreement"
+    }
+  ],
+  "queries": [
+    {
+      "id": "CQ-BA-01",
+      "query": "PREFIX c: <https://w3id.org/cm-pharme/2.1/> PREFIX l: <https://w3id.org/cm-pharme/experimental/four-domain/> PREFIX t: <urn:cmpe-lab:> SELECT ?org WHERE { t:cap c:capabilityBearer ?org . FILTER NOT EXISTS { t:cap l:capabilityRealizedIn ?x } }",
+      "expected": [
+        [
+          "urn:cmpe-lab:org"
+        ]
+      ],
+      "fixture": "fixtures/lab-BA-1-positive.ttl"
+    },
+    {
+      "id": "CQ-BA-02",
+      "query": "PREFIX c: <https://w3id.org/cm-pharme/2.1/> PREFIX l: <https://w3id.org/cm-pharme/experimental/four-domain/> PREFIX t: <urn:cmpe-lab:> SELECT ?cap WHERE { t:service l:serviceCapability ?cap }",
+      "expected": [
+        [
+          "urn:cmpe-lab:cap"
+        ]
+      ],
+      "fixture": "fixtures/lab-BA-1-positive.ttl"
+    },
+    {
+      "id": "CQ-BA-03",
+      "query": "PREFIX c: <https://w3id.org/cm-pharme/2.1/> PREFIX l: <https://w3id.org/cm-pharme/experimental/four-domain/> PREFIX t: <urn:cmpe-lab:> SELECT ?artifact ?org WHERE { { ?artifact a c:BusinessArchitectureView ; l:viewOrganization ?org } UNION { ?artifact a c:StrategicPartnershipAgreement ; c:partnershipParticipant ?org } }",
+      "expected": [
+        [
+          "urn:cmpe-lab:agreement",
+          "urn:cmpe-lab:org"
+        ],
+        [
+          "urn:cmpe-lab:agreement",
+          "urn:cmpe-lab:org2"
+        ],
+        [
+          "urn:cmpe-lab:view",
+          "urn:cmpe-lab:org"
+        ]
+      ],
+      "fixture": "fixtures/lab-BA-1-positive.ttl"
+    },
+    {
+      "id": "X-BA-SERVICE",
+      "query": "PREFIX c: <https://w3id.org/cm-pharme/2.1/> PREFIX l: <https://w3id.org/cm-pharme/experimental/four-domain/> PREFIX r: <https://w3id.org/cm-pharme/experimental/refinement/> PREFIX t: <urn:cmpe-lab:> SELECT ?product ?capability WHERE { t:service r:serviceProduct ?product ; l:serviceCapability ?capability }",
+      "expected": [
+        [
+          "urn:cmpe-lab:serviceProduct",
+          "urn:cmpe-lab:cap"
+        ]
+      ],
+      "fixture": "fixtures/refinement-X-BA-SERVICE-positive.ttl"
+    },
+    {
+      "id": "X-BA-COMMITMENT",
+      "query": "PREFIX c: <https://w3id.org/cm-pharme/2.1/> PREFIX l: <https://w3id.org/cm-pharme/experimental/four-domain/> PREFIX r: <https://w3id.org/cm-pharme/experimental/refinement/> PREFIX t: <urn:cmpe-lab:> SELECT ?org ?source WHERE { t:agreement r:agreementCommitment ?claim . ?claim r:commitmentActor ?org . ?e c:evidenceAssertion ?claim ; c:evidenceRecord ?source }",
+      "expected": [
+        [
+          "urn:cmpe-lab:org",
+          "urn:cmpe-lab:commitmentRecord"
+        ],
+        [
+          "urn:cmpe-lab:org2",
+          "urn:cmpe-lab:commitmentRecord"
+        ]
+      ],
+      "fixture": "fixtures/refinement-X-BA-COMMITMENT-positive.ttl"
+    }
+  ],
+  "reasoner_cases": [
+    {
+      "id": "BA-schema-satisfiable",
+      "expected": true
+    },
+    {
+      "id": "BA-positive-consistent",
+      "expected": true,
+      "fixture": "fixtures/lab-BA-2-boundary.ttl"
+    },
+    {
+      "id": "BA-identity-collision-rejected",
+      "expected": false,
+      "fixture": "fixtures/lab-BA-3-view-is-organization.ttl"
+    }
+  ],
+  "limits": [
+    "Selected-signature projection; no proof of entailment preservation outside listed witnesses",
+    "Import interfaces are not counted as owned classes",
+    "SHACL profile requirements are not global OWL cardinalities",
+    "No native OntoUML module export is claimed",
+    "Source model semantic decisions, including PROV projection, remain pending"
+  ],
+  "purpose_contract": {
+    "input": "Organizations, a pharmaceutical service specification, a borne capability, and documentary partnership commitments when actually supported.",
+    "output": "An analytical architecture view linking organizations, service specifications, capabilities and evidenced collaboration commitments.",
+    "flow": "view → organization/service → capability → bearer; strategic agreement → participants/commitment/evidence.",
+    "questions": [
+      "Who bears a capability, including a capability with no recorded exercise?",
+      "Which medicinal product or facility gives the service a pharmaceutical scope?",
+      "What commitments and documentary evidence support a strategic agreement?"
+    ],
+    "definitions": {
+      "BusinessArchitectureView": "An information artifact representing selected organizational and service relationships for an analytical purpose.",
+      "ServiceOfferingSpecification": "An information artifact specifying a service offering; distinct from execution of that service.",
+      "EnterpriseCapability": "A capability borne by an organization; its presence does not imply an execution or a quantity of supply capacity.",
+      "PartnerOrganizationRole": "A contextual organization role grounded in a strategic partnership agreement.",
+      "StrategicPartnershipAgreement": "A proposed relator grounding participants and commitments; the agreement document is a separate source record."
+    },
+    "remaining": "Independent real contract evidence and adjudication of agreement/commitment/document identity; not every outsourcing arrangement is a strategic partnership."
+  },
+  "interface_ownership": {
+    "http://www.w3.org/ns/prov#Entity": "PROV standard",
+    "https://w3id.org/cm-pharme/2.1/Assertion": "CM-PharmE shared/other-domain interface; final ownership review pending",
+    "https://w3id.org/cm-pharme/2.1/DistributionLogisticsActivity": "CM-PharmE shared/other-domain interface; final ownership review pending",
+    "https://w3id.org/cm-pharme/2.1/EvidenceItem": "CM-PharmE shared/other-domain interface; final ownership review pending",
+    "https://w3id.org/cm-pharme/2.1/EvidenceSourceRecordRole": "CM-PharmE shared/other-domain interface; final ownership review pending",
+    "https://w3id.org/cm-pharme/2.1/EvidenceSupport": "CM-PharmE shared/other-domain interface; final ownership review pending",
+    "https://w3id.org/cm-pharme/2.1/Facility": "CM-PharmE shared/other-domain interface; final ownership review pending",
+    "https://w3id.org/cm-pharme/2.1/MedicinalProduct": "CM-PharmE shared/other-domain interface; final ownership review pending",
+    "https://w3id.org/cm-pharme/2.1/Organization": "CM-PharmE shared/other-domain interface; final ownership review pending",
+    "https://w3id.org/cm-pharme/2.1/SourceRecord": "CM-PharmE shared/other-domain interface; final ownership review pending",
+    "https://w3id.org/cm-pharme/2.1/SupportedAssertionRole": "CM-PharmE shared/other-domain interface; final ownership review pending"
+  }
+}

@@ -1,0 +1,5546 @@
+{
+  "scope": "Serialization fidelity only, not Event/Situation semantics or full antipattern validation.",
+  "source_sha256": "fef3295149278bdf5a9c446f9699582a565d26fa2f52f76d90f593ba00e20989",
+  "versions": {
+    "node": "v24.19.0",
+    "ontouml_js": "1.0.0",
+    "ontouml_schema": "1.0.2"
+  },
+  "runtime_hashes": {
+    "ontouml_js": "a2dfd811f8d40e477833625bdd6213dc4388ed5315fbcb399688a253d2cb9079",
+    "schema": "094324d8e6ac4505ef5ae983a45bb9b56a8b3b6960151c57736756a037344d38"
+  },
+  "source_elements": 656,
+  "parsed_elements": 656,
+  "raw_roundtrip_exact": false,
+  "raw_field_changes": 775,
+  "ledger": [
+    {
+      "id": "@project",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "@project",
+      "field": "modified",
+      "before": "2026-10-09",
+      "after": "2026-10-09T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "@project",
+      "field": "customProperties",
+      "before": null,
+      "after": "@MISSING",
+      "reason": "omitted explicit-null project metadata"
+    },
+    {
+      "id": "cm-pharme-root",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "Address",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "AdministrativeRegion",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "AdverseEventReportingActivity",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "AlternativeMedicinalProductRole",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "AlternativeMedicineAssignment",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "AppliedClassificationEntryRole",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "Assertion",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "AuthorizedFacilityRole",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "AuthorizedOrganizationRole",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "AuthorizedParty",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "AuthorizingAuthorityRole",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "AvailabilityObservationResult",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "BusinessArchitectureView",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "ClassificationEntry",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "ClassifiedEntity",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "ClassifiedMedicinalProductRole",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "ClassifiedPharmaceuticalSubstanceRole",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "ContextualMedicineClassificationAssignment",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "Country",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "CriticalMedicineClassification",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "DataQualityFinding",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "DataSourceResource",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "Dataset",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "DatasetRelease",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "DemandObservationResult",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "DependentEntity",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "DependentFacilityRole",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "DependentMedicinalProductRole",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "DependentOrganizationRole",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "DiagnosisClassificationReference",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "DigitalInformationSystemComponent",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "DisruptionEvent",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "DistributionLogisticsActivity",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "DistributionSiteRole",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "DosageFormSpecification",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "EcosystemParticipant",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "EnterpriseCapability",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "EntityMatchAssertion",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "EssentialMedicineClassification",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "EstablishmentRegistration",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "EvidenceItem",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "EvidenceObservationResultRole",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "EvidenceSourceRecordRole",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "EvidenceSupport",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "Facility",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "FacilityOperation",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "GeographicFeature",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "GeospatialPosition",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "GovernedEntity",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "GovernedFacilityRole",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "GovernedOrganizationRole",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "IdentifiedEntity",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "IdentifiedFacilityRole",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "IdentifiedGeographicFeatureRole",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "IdentifiedMedicinalProductPresentationRole",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "IdentifiedMedicinalProductRole",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "IdentifiedOrganizationRole",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "IdentifiedPharmaceuticalSubstanceRole",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "IdentifierAssignment",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "IdentifierScheme",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "IdentifierValue",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "ImporterRole",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "InventoryObservationResult",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "LeadTimeObservationResult",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "ListedPresentationRole",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "ListingResponsibleOrganizationRole",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "ManufacturerRole",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "ManufacturingActivity",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "ManufacturingSiteRole",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "MappingAssertion",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "MarketListing",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "MatchConfidence",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "MeasureValue",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "MedicinalProduct",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "MedicinalProductPresentation",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "MedicineShortageSituation",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "ObservationActivity",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "ObservationResult",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "OperatedFacilityRole",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "OperatingOrganizationRole",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "Organization",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "OversightAuthorityRole",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "PackageConfiguration",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "PartnerOrganizationRole",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "PayerFundingOrganizationRole",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "PharmaceuticalSubstance",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "PharmacovigilanceRequirement",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "PostMarketSurveillanceActivity",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "ProcurementActivity",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "ProductClassificationAssignment",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "ProductClassificationScheme",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "ProductResponsibleLabelerRole",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "ProvenanceActivity",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "ProviderEntity",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "ProviderFacilityRole",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "ProviderMedicinalProductRole",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "ProviderOrganizationRole",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "ReferenceProductRole",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "RegisteredFacilityRole",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "RegisteredOrganizationRole",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "RegisteredParty",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "RegisteringAuthorityRole",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "RegulatoryAuthorityRole",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "RegulatoryAuthorization",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "RegulatoryJurisdiction",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "RegulatoryOversight",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "RegulatoryRequirement",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "ReimbursementUtilisationObservationResult",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "ReportingPeriod",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "RiskAssessmentActivity",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "RiskTreatmentActivity",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "RiskTreatmentPlan",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "ServiceOfferingSpecification",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "SourceRecord",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "StockoutSituation",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "StrategicPartnershipAgreement",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "Strength",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "SupplyCapacity",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "SupplyCapacityObservationResult",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "SupplyDependency",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "SupportedAssertionRole",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "ThirdPartyLogisticsProviderRole",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "TimeInterval",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "UsedIdentifierSchemeRole",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "WholesaleDistributorRole",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-AdministrativeRegion-GeographicFeature",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-AlternativeMedicinalProductRole-MedicinalProduct",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-AppliedClassificationEntryRole-ClassificationEntry",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-AuthorizedFacilityRole-AuthorizedParty",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-AuthorizedFacilityRole-Facility",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-AuthorizedOrganizationRole-AuthorizedParty",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-AuthorizedOrganizationRole-Organization",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-AuthorizingAuthorityRole-RegulatoryAuthorityRole",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-AvailabilityObservationResult-ObservationResult",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-ClassifiedMedicinalProductRole-ClassifiedEntity",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-ClassifiedMedicinalProductRole-MedicinalProduct",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-ClassifiedPharmaceuticalSubstanceRole-ClassifiedEntity",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-ClassifiedPharmaceuticalSubstanceRole-PharmaceuticalSubstance",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-ContextualMedicineClassificationAssignment-ProductClassificationAssignment",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-Country-GeographicFeature",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-CriticalMedicineClassification-ContextualMedicineClassificationAssignment",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-DataQualityFinding-Assertion",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-DemandObservationResult-ObservationResult",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-DependentFacilityRole-DependentEntity",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-DependentFacilityRole-Facility",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-DependentMedicinalProductRole-DependentEntity",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-DependentMedicinalProductRole-MedicinalProduct",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-DependentOrganizationRole-DependentEntity",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-DependentOrganizationRole-Organization",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-DistributionSiteRole-EcosystemParticipant",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-DistributionSiteRole-Facility",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-EntityMatchAssertion-Assertion",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-EssentialMedicineClassification-ContextualMedicineClassificationAssignment",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-EvidenceObservationResultRole-EvidenceItem",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-EvidenceObservationResultRole-ObservationResult",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-EvidenceSourceRecordRole-EvidenceItem",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-EvidenceSourceRecordRole-SourceRecord",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-GovernedFacilityRole-Facility",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-GovernedFacilityRole-GovernedEntity",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-GovernedOrganizationRole-GovernedEntity",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-GovernedOrganizationRole-Organization",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-IdentifiedFacilityRole-Facility",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-IdentifiedFacilityRole-IdentifiedEntity",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-IdentifiedGeographicFeatureRole-GeographicFeature",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-IdentifiedGeographicFeatureRole-IdentifiedEntity",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-IdentifiedMedicinalProductPresentationRole-IdentifiedEntity",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-IdentifiedMedicinalProductPresentationRole-MedicinalProductPresentation",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-IdentifiedMedicinalProductRole-IdentifiedEntity",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-IdentifiedMedicinalProductRole-MedicinalProduct",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-IdentifiedOrganizationRole-IdentifiedEntity",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-IdentifiedOrganizationRole-Organization",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-IdentifiedPharmaceuticalSubstanceRole-IdentifiedEntity",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-IdentifiedPharmaceuticalSubstanceRole-PharmaceuticalSubstance",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-ImporterRole-EcosystemParticipant",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-ImporterRole-Organization",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-InventoryObservationResult-ObservationResult",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-LeadTimeObservationResult-ObservationResult",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-ListedPresentationRole-MedicinalProductPresentation",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-ManufacturerRole-EcosystemParticipant",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-ManufacturerRole-Organization",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-ManufacturingSiteRole-EcosystemParticipant",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-ManufacturingSiteRole-Facility",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-MappingAssertion-Assertion",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-OperatedFacilityRole-Facility",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-OperatingOrganizationRole-Organization",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-OversightAuthorityRole-RegulatoryAuthorityRole",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-PartnerOrganizationRole-Organization",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-PayerFundingOrganizationRole-EcosystemParticipant",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-PayerFundingOrganizationRole-Organization",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-ProductResponsibleLabelerRole-EcosystemParticipant",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-ProductResponsibleLabelerRole-Organization",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-ProviderFacilityRole-Facility",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-ProviderFacilityRole-ProviderEntity",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-ProviderMedicinalProductRole-MedicinalProduct",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-ProviderMedicinalProductRole-ProviderEntity",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-ProviderOrganizationRole-Organization",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-ProviderOrganizationRole-ProviderEntity",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-ReferenceProductRole-MedicinalProduct",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-RegisteredFacilityRole-Facility",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-RegisteredFacilityRole-RegisteredParty",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-RegisteredOrganizationRole-Organization",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-RegisteredOrganizationRole-RegisteredParty",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-RegisteringAuthorityRole-RegulatoryAuthorityRole",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-RegulatoryAuthorityRole-EcosystemParticipant",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-RegulatoryAuthorityRole-Organization",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-ReimbursementUtilisationObservationResult-ObservationResult",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-SupplyCapacityObservationResult-ObservationResult",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-SupportedAssertionRole-Assertion",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-ThirdPartyLogisticsProviderRole-EcosystemParticipant",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-ThirdPartyLogisticsProviderRole-Organization",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-UsedIdentifierSchemeRole-IdentifierScheme",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-WholesaleDistributorRole-EcosystemParticipant",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-WholesaleDistributorRole-Organization",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "rel-alternativeForProduct",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-alternativeForProduct-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-alternativeForProduct-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "rel-alternativeProduct",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-alternativeProduct-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-alternativeProduct-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "rel-assertionAboutProduct",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-assertionAboutProduct-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-assertionAboutProduct-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "rel-authorizationAuthority",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-authorizationAuthority-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-authorizationAuthority-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "rel-authorizationJurisdiction",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-authorizationJurisdiction-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-authorizationJurisdiction-source",
+      "field": "isReadOnly",
+      "before": null,
+      "after": false,
+      "reason": "unknown boolean coerced to false: restore explicit source null"
+    },
+    {
+      "id": "end-authorizationJurisdiction-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-authorizationJurisdiction-target",
+      "field": "isReadOnly",
+      "before": null,
+      "after": false,
+      "reason": "unknown boolean coerced to false: restore explicit source null"
+    },
+    {
+      "id": "rel-authorizationParty",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-authorizationParty-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-authorizationParty-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "rel-baViewRepresents",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-baViewRepresents-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-baViewRepresents-source",
+      "field": "isReadOnly",
+      "before": null,
+      "after": false,
+      "reason": "unknown boolean coerced to false: restore explicit source null"
+    },
+    {
+      "id": "end-baViewRepresents-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-baViewRepresents-target",
+      "field": "isReadOnly",
+      "before": null,
+      "after": false,
+      "reason": "unknown boolean coerced to false: restore explicit source null"
+    },
+    {
+      "id": "rel-capabilityBearer",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "rel-capabilityBearer",
+      "field": "modified",
+      "before": "2026-10-08",
+      "after": "2026-10-08T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-capabilityBearer-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-capabilityBearer-source",
+      "field": "modified",
+      "before": "2026-10-08",
+      "after": "2026-10-08T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-capabilityBearer-source",
+      "field": "isReadOnly",
+      "before": null,
+      "after": false,
+      "reason": "unknown boolean coerced to false: restore explicit source null"
+    },
+    {
+      "id": "end-capabilityBearer-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-capabilityBearer-target",
+      "field": "modified",
+      "before": "2026-10-08",
+      "after": "2026-10-08T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-capabilityBearer-target",
+      "field": "isReadOnly",
+      "before": null,
+      "after": false,
+      "reason": "unknown boolean coerced to false: restore explicit source null"
+    },
+    {
+      "id": "rel-capacityBearer",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "rel-capacityBearer",
+      "field": "modified",
+      "before": "2026-10-09",
+      "after": "2026-10-09T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-capacityBearer-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-capacityBearer-source",
+      "field": "isReadOnly",
+      "before": null,
+      "after": false,
+      "reason": "unknown boolean coerced to false: restore explicit source null"
+    },
+    {
+      "id": "end-capacityBearer-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-capacityBearer-target",
+      "field": "isReadOnly",
+      "before": null,
+      "after": false,
+      "reason": "unknown boolean coerced to false: restore explicit source null"
+    },
+    {
+      "id": "rel-classificationEntity",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-classificationEntity-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-classificationEntity-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "rel-classificationEntry",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-classificationEntry-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-classificationEntry-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "rel-containsSourceRecord",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-containsSourceRecord-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-containsSourceRecord-source",
+      "field": "isReadOnly",
+      "before": null,
+      "after": false,
+      "reason": "unknown boolean coerced to false: restore explicit source null"
+    },
+    {
+      "id": "end-containsSourceRecord-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-containsSourceRecord-target",
+      "field": "isReadOnly",
+      "before": null,
+      "after": false,
+      "reason": "unknown boolean coerced to false: restore explicit source null"
+    },
+    {
+      "id": "rel-contextClassificationEntry",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-contextClassificationEntry-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-contextClassificationEntry-source",
+      "field": "isReadOnly",
+      "before": null,
+      "after": false,
+      "reason": "unknown boolean coerced to false: restore explicit source null"
+    },
+    {
+      "id": "end-contextClassificationEntry-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-contextClassificationEntry-target",
+      "field": "isReadOnly",
+      "before": null,
+      "after": false,
+      "reason": "unknown boolean coerced to false: restore explicit source null"
+    },
+    {
+      "id": "rel-contextClassificationJurisdiction",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "rel-contextClassificationJurisdiction",
+      "field": "modified",
+      "before": "2026-10-08",
+      "after": "2026-10-08T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-contextClassificationJurisdiction-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-contextClassificationJurisdiction-source",
+      "field": "isReadOnly",
+      "before": null,
+      "after": false,
+      "reason": "unknown boolean coerced to false: restore explicit source null"
+    },
+    {
+      "id": "end-contextClassificationJurisdiction-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-contextClassificationJurisdiction-target",
+      "field": "isReadOnly",
+      "before": null,
+      "after": false,
+      "reason": "unknown boolean coerced to false: restore explicit source null"
+    },
+    {
+      "id": "rel-contextClassificationProduct",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-contextClassificationProduct-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-contextClassificationProduct-source",
+      "field": "isReadOnly",
+      "before": null,
+      "after": false,
+      "reason": "unknown boolean coerced to false: restore explicit source null"
+    },
+    {
+      "id": "end-contextClassificationProduct-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-contextClassificationProduct-target",
+      "field": "isReadOnly",
+      "before": null,
+      "after": false,
+      "reason": "unknown boolean coerced to false: restore explicit source null"
+    },
+    {
+      "id": "rel-dependencyDependent",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-dependencyDependent-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-dependencyDependent-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "rel-dependencyProvider",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-dependencyProvider-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-dependencyProvider-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "rel-disruptionAffects",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-disruptionAffects-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-disruptionAffects-source",
+      "field": "isReadOnly",
+      "before": null,
+      "after": false,
+      "reason": "unknown boolean coerced to false: restore explicit source null"
+    },
+    {
+      "id": "end-disruptionAffects-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-disruptionAffects-target",
+      "field": "isReadOnly",
+      "before": null,
+      "after": false,
+      "reason": "unknown boolean coerced to false: restore explicit source null"
+    },
+    {
+      "id": "rel-disruptionAffectsDependency",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-disruptionAffectsDependency-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-disruptionAffectsDependency-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "rel-entryInScheme",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "rel-entryInScheme",
+      "field": "modified",
+      "before": "2026-10-08",
+      "after": "2026-10-08T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-entryInScheme-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-entryInScheme-source",
+      "field": "isReadOnly",
+      "before": null,
+      "after": false,
+      "reason": "unknown boolean coerced to false: restore explicit source null"
+    },
+    {
+      "id": "end-entryInScheme-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-entryInScheme-target",
+      "field": "isReadOnly",
+      "before": null,
+      "after": false,
+      "reason": "unknown boolean coerced to false: restore explicit source null"
+    },
+    {
+      "id": "rel-evidenceAssertion",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-evidenceAssertion-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-evidenceAssertion-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "rel-evidenceItem",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-evidenceItem-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-evidenceItem-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "rel-evidenceRecord",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-evidenceRecord-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-evidenceRecord-source",
+      "field": "isReadOnly",
+      "before": null,
+      "after": false,
+      "reason": "unknown boolean coerced to false: restore explicit source null"
+    },
+    {
+      "id": "end-evidenceRecord-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-evidenceRecord-target",
+      "field": "isReadOnly",
+      "before": null,
+      "after": false,
+      "reason": "unknown boolean coerced to false: restore explicit source null"
+    },
+    {
+      "id": "rel-generatedAssertion",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-generatedAssertion-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-generatedAssertion-source",
+      "field": "isReadOnly",
+      "before": null,
+      "after": false,
+      "reason": "unknown boolean coerced to false: restore explicit source null"
+    },
+    {
+      "id": "end-generatedAssertion-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-generatedAssertion-target",
+      "field": "isReadOnly",
+      "before": null,
+      "after": false,
+      "reason": "unknown boolean coerced to false: restore explicit source null"
+    },
+    {
+      "id": "rel-hasActiveSubstance",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "rel-hasActiveSubstance",
+      "field": "modified",
+      "before": "2026-10-08",
+      "after": "2026-10-08T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-hasActiveSubstance-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-hasActiveSubstance-source",
+      "field": "isReadOnly",
+      "before": null,
+      "after": false,
+      "reason": "unknown boolean coerced to false: restore explicit source null"
+    },
+    {
+      "id": "end-hasActiveSubstance-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-hasActiveSubstance-target",
+      "field": "isReadOnly",
+      "before": null,
+      "after": false,
+      "reason": "unknown boolean coerced to false: restore explicit source null"
+    },
+    {
+      "id": "rel-hasDatasetRelease",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-hasDatasetRelease-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-hasDatasetRelease-source",
+      "field": "isReadOnly",
+      "before": null,
+      "after": false,
+      "reason": "unknown boolean coerced to false: restore explicit source null"
+    },
+    {
+      "id": "end-hasDatasetRelease-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-hasDatasetRelease-target",
+      "field": "isReadOnly",
+      "before": null,
+      "after": false,
+      "reason": "unknown boolean coerced to false: restore explicit source null"
+    },
+    {
+      "id": "rel-hasDosageForm",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "rel-hasDosageForm",
+      "field": "modified",
+      "before": "2026-10-08",
+      "after": "2026-10-08T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-hasDosageForm-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-hasDosageForm-source",
+      "field": "isReadOnly",
+      "before": null,
+      "after": false,
+      "reason": "unknown boolean coerced to false: restore explicit source null"
+    },
+    {
+      "id": "end-hasDosageForm-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-hasDosageForm-target",
+      "field": "isReadOnly",
+      "before": null,
+      "after": false,
+      "reason": "unknown boolean coerced to false: restore explicit source null"
+    },
+    {
+      "id": "rel-hasMatchConfidence",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "rel-hasMatchConfidence",
+      "field": "modified",
+      "before": "2026-10-08",
+      "after": "2026-10-08T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-hasMatchConfidence-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-hasMatchConfidence-source",
+      "field": "modified",
+      "before": "2026-10-08",
+      "after": "2026-10-08T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-hasMatchConfidence-source",
+      "field": "isReadOnly",
+      "before": null,
+      "after": false,
+      "reason": "unknown boolean coerced to false: restore explicit source null"
+    },
+    {
+      "id": "end-hasMatchConfidence-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-hasMatchConfidence-target",
+      "field": "modified",
+      "before": "2026-10-08",
+      "after": "2026-10-08T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-hasMatchConfidence-target",
+      "field": "isReadOnly",
+      "before": null,
+      "after": false,
+      "reason": "unknown boolean coerced to false: restore explicit source null"
+    },
+    {
+      "id": "rel-hasPackageConfiguration",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "rel-hasPackageConfiguration",
+      "field": "modified",
+      "before": "2026-10-08",
+      "after": "2026-10-08T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-hasPackageConfiguration-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-hasPackageConfiguration-source",
+      "field": "isReadOnly",
+      "before": null,
+      "after": false,
+      "reason": "unknown boolean coerced to false: restore explicit source null"
+    },
+    {
+      "id": "end-hasPackageConfiguration-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-hasPackageConfiguration-target",
+      "field": "isReadOnly",
+      "before": null,
+      "after": false,
+      "reason": "unknown boolean coerced to false: restore explicit source null"
+    },
+    {
+      "id": "rel-hasStrength",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-hasStrength-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-hasStrength-source",
+      "field": "isReadOnly",
+      "before": null,
+      "after": false,
+      "reason": "unknown boolean coerced to false: restore explicit source null"
+    },
+    {
+      "id": "end-hasStrength-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-hasStrength-target",
+      "field": "isReadOnly",
+      "before": null,
+      "after": false,
+      "reason": "unknown boolean coerced to false: restore explicit source null"
+    },
+    {
+      "id": "rel-identifierEntity",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-identifierEntity-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-identifierEntity-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "rel-identifierScheme",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-identifierScheme-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-identifierScheme-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "rel-listingJurisdiction",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-listingJurisdiction-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-listingJurisdiction-source",
+      "field": "isReadOnly",
+      "before": null,
+      "after": false,
+      "reason": "unknown boolean coerced to false: restore explicit source null"
+    },
+    {
+      "id": "end-listingJurisdiction-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-listingJurisdiction-target",
+      "field": "isReadOnly",
+      "before": null,
+      "after": false,
+      "reason": "unknown boolean coerced to false: restore explicit source null"
+    },
+    {
+      "id": "rel-listingPresentation",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-listingPresentation-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-listingPresentation-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "rel-listingResponsibleOrganization",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-listingResponsibleOrganization-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-listingResponsibleOrganization-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "rel-locatedIn",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-locatedIn-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-locatedIn-source",
+      "field": "isReadOnly",
+      "before": null,
+      "after": false,
+      "reason": "unknown boolean coerced to false: restore explicit source null"
+    },
+    {
+      "id": "end-locatedIn-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-locatedIn-target",
+      "field": "isReadOnly",
+      "before": null,
+      "after": false,
+      "reason": "unknown boolean coerced to false: restore explicit source null"
+    },
+    {
+      "id": "rel-maintainsDataset",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-maintainsDataset-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-maintainsDataset-source",
+      "field": "isReadOnly",
+      "before": null,
+      "after": false,
+      "reason": "unknown boolean coerced to false: restore explicit source null"
+    },
+    {
+      "id": "end-maintainsDataset-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-maintainsDataset-target",
+      "field": "isReadOnly",
+      "before": null,
+      "after": false,
+      "reason": "unknown boolean coerced to false: restore explicit source null"
+    },
+    {
+      "id": "rel-matchObject",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-matchObject-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-matchObject-source",
+      "field": "isReadOnly",
+      "before": null,
+      "after": false,
+      "reason": "unknown boolean coerced to false: restore explicit source null"
+    },
+    {
+      "id": "end-matchObject-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-matchObject-target",
+      "field": "isReadOnly",
+      "before": null,
+      "after": false,
+      "reason": "unknown boolean coerced to false: restore explicit source null"
+    },
+    {
+      "id": "rel-matchSubject",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-matchSubject-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-matchSubject-source",
+      "field": "isReadOnly",
+      "before": null,
+      "after": false,
+      "reason": "unknown boolean coerced to false: restore explicit source null"
+    },
+    {
+      "id": "end-matchSubject-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-matchSubject-target",
+      "field": "isReadOnly",
+      "before": null,
+      "after": false,
+      "reason": "unknown boolean coerced to false: restore explicit source null"
+    },
+    {
+      "id": "rel-observationAboutPresentation",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-observationAboutPresentation-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-observationAboutPresentation-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "rel-observationAboutProduct",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-observationAboutProduct-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-observationAboutProduct-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "rel-observationResultAbout",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-observationResultAbout-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-observationResultAbout-source",
+      "field": "isReadOnly",
+      "before": null,
+      "after": false,
+      "reason": "unknown boolean coerced to false: restore explicit source null"
+    },
+    {
+      "id": "end-observationResultAbout-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-observationResultAbout-target",
+      "field": "isReadOnly",
+      "before": null,
+      "after": false,
+      "reason": "unknown boolean coerced to false: restore explicit source null"
+    },
+    {
+      "id": "rel-operates",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-operates-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-operates-source",
+      "field": "isReadOnly",
+      "before": null,
+      "after": false,
+      "reason": "unknown boolean coerced to false: restore explicit source null"
+    },
+    {
+      "id": "end-operates-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-operates-target",
+      "field": "isReadOnly",
+      "before": null,
+      "after": false,
+      "reason": "unknown boolean coerced to false: restore explicit source null"
+    },
+    {
+      "id": "rel-operationFacility",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-operationFacility-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-operationFacility-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "rel-operationOrganization",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-operationOrganization-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-operationOrganization-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "rel-oversightAuthorityRole",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-oversightAuthorityRole-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-oversightAuthorityRole-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "rel-oversightGovernedEntity",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-oversightGovernedEntity-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-oversightGovernedEntity-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "rel-partnershipParticipant",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-partnershipParticipant-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-partnershipParticipant-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "rel-presentationOf",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "rel-presentationOf",
+      "field": "modified",
+      "before": "2026-10-08",
+      "after": "2026-10-08T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-presentationOf-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-presentationOf-source",
+      "field": "isReadOnly",
+      "before": null,
+      "after": false,
+      "reason": "unknown boolean coerced to false: restore explicit source null"
+    },
+    {
+      "id": "end-presentationOf-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-presentationOf-target",
+      "field": "isReadOnly",
+      "before": null,
+      "after": false,
+      "reason": "unknown boolean coerced to false: restore explicit source null"
+    },
+    {
+      "id": "rel-producesObservationResult",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-producesObservationResult-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-producesObservationResult-source",
+      "field": "isReadOnly",
+      "before": null,
+      "after": false,
+      "reason": "unknown boolean coerced to false: restore explicit source null"
+    },
+    {
+      "id": "end-producesObservationResult-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-producesObservationResult-target",
+      "field": "isReadOnly",
+      "before": null,
+      "after": false,
+      "reason": "unknown boolean coerced to false: restore explicit source null"
+    },
+    {
+      "id": "rel-registrationAuthority",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-registrationAuthority-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-registrationAuthority-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "rel-registrationEntity",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-registrationEntity-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-registrationEntity-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "rel-registrationJurisdiction",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-registrationJurisdiction-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-registrationJurisdiction-source",
+      "field": "isReadOnly",
+      "before": null,
+      "after": false,
+      "reason": "unknown boolean coerced to false: restore explicit source null"
+    },
+    {
+      "id": "end-registrationJurisdiction-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-registrationJurisdiction-target",
+      "field": "isReadOnly",
+      "before": null,
+      "after": false,
+      "reason": "unknown boolean coerced to false: restore explicit source null"
+    },
+    {
+      "id": "rel-reimbursementDiagnosisContext",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-reimbursementDiagnosisContext-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-reimbursementDiagnosisContext-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "rel-riskAssessmentConcerns",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-riskAssessmentConcerns-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-riskAssessmentConcerns-source",
+      "field": "isReadOnly",
+      "before": null,
+      "after": false,
+      "reason": "unknown boolean coerced to false: restore explicit source null"
+    },
+    {
+      "id": "end-riskAssessmentConcerns-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-riskAssessmentConcerns-target",
+      "field": "isReadOnly",
+      "before": null,
+      "after": false,
+      "reason": "unknown boolean coerced to false: restore explicit source null"
+    },
+    {
+      "id": "rel-riskAssessmentConcernsDependency",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-riskAssessmentConcernsDependency-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-riskAssessmentConcernsDependency-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "rel-riskTreatmentAddresses",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-riskTreatmentAddresses-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-riskTreatmentAddresses-source",
+      "field": "isReadOnly",
+      "before": null,
+      "after": false,
+      "reason": "unknown boolean coerced to false: restore explicit source null"
+    },
+    {
+      "id": "end-riskTreatmentAddresses-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-riskTreatmentAddresses-target",
+      "field": "isReadOnly",
+      "before": null,
+      "after": false,
+      "reason": "unknown boolean coerced to false: restore explicit source null"
+    },
+    {
+      "id": "rel-shortageJurisdiction",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-shortageJurisdiction-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-shortageJurisdiction-source",
+      "field": "isReadOnly",
+      "before": null,
+      "after": false,
+      "reason": "unknown boolean coerced to false: restore explicit source null"
+    },
+    {
+      "id": "end-shortageJurisdiction-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-shortageJurisdiction-target",
+      "field": "isReadOnly",
+      "before": null,
+      "after": false,
+      "reason": "unknown boolean coerced to false: restore explicit source null"
+    },
+    {
+      "id": "rel-shortagePresentation",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "rel-shortagePresentation",
+      "field": "modified",
+      "before": "2026-10-08",
+      "after": "2026-10-08T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-shortagePresentation-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-shortagePresentation-source",
+      "field": "isReadOnly",
+      "before": null,
+      "after": false,
+      "reason": "unknown boolean coerced to false: restore explicit source null"
+    },
+    {
+      "id": "end-shortagePresentation-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-shortagePresentation-target",
+      "field": "isReadOnly",
+      "before": null,
+      "after": false,
+      "reason": "unknown boolean coerced to false: restore explicit source null"
+    },
+    {
+      "id": "rel-shortageProduct",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "rel-shortageProduct",
+      "field": "modified",
+      "before": "2026-10-08",
+      "after": "2026-10-08T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-shortageProduct-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-shortageProduct-source",
+      "field": "isReadOnly",
+      "before": null,
+      "after": false,
+      "reason": "unknown boolean coerced to false: restore explicit source null"
+    },
+    {
+      "id": "end-shortageProduct-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-shortageProduct-target",
+      "field": "isReadOnly",
+      "before": null,
+      "after": false,
+      "reason": "unknown boolean coerced to false: restore explicit source null"
+    },
+    {
+      "id": "rel-usedSourceArtifact",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-usedSourceArtifact-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-usedSourceArtifact-source",
+      "field": "isReadOnly",
+      "before": null,
+      "after": false,
+      "reason": "unknown boolean coerced to false: restore explicit source null"
+    },
+    {
+      "id": "end-usedSourceArtifact-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-usedSourceArtifact-target",
+      "field": "isReadOnly",
+      "before": null,
+      "after": false,
+      "reason": "unknown boolean coerced to false: restore explicit source null"
+    },
+    {
+      "id": "rel-withinCountry",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "rel-withinCountry",
+      "field": "modified",
+      "before": "2026-10-08",
+      "after": "2026-10-08T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-withinCountry-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-withinCountry-source",
+      "field": "isReadOnly",
+      "before": null,
+      "after": false,
+      "reason": "unknown boolean coerced to false: restore explicit source null"
+    },
+    {
+      "id": "end-withinCountry-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-withinCountry-target",
+      "field": "isReadOnly",
+      "before": null,
+      "after": false,
+      "reason": "unknown boolean coerced to false: restore explicit source null"
+    },
+    {
+      "id": "rel-withinRegion",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "rel-withinRegion",
+      "field": "modified",
+      "before": "2026-10-08",
+      "after": "2026-10-08T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-withinRegion-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-withinRegion-source",
+      "field": "isReadOnly",
+      "before": null,
+      "after": false,
+      "reason": "unknown boolean coerced to false: restore explicit source null"
+    },
+    {
+      "id": "end-withinRegion-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-withinRegion-target",
+      "field": "isReadOnly",
+      "before": null,
+      "after": false,
+      "reason": "unknown boolean coerced to false: restore explicit source null"
+    },
+    {
+      "id": "gs-RegisteredParty",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gs-AuthorizedParty",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gs-GovernedEntity",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gs-ClassifiedEntity",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gs-EvidenceItem",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gs-IdentifiedEntity",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gs-DependentEntity",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gs-ProviderEntity",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "decision-RR-01",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "decision-RR-02",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "decision-RR-03",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "decision-RR-04",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "decision-RR-05",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "decision-RR-06",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "decision-RR-07",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "decision-RR-08",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "decision-RR-09",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "decision-RR-10",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "decision-RR-11",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "decision-RR-12",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "decision-RR-13",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "decision-RR-14",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "decision-RR-15",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "decision-S-01",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "decision-S-02",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "decision-S-03",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "decision-S-04",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "decision-S-05",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "decision-S-06",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "decision-S-07",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-ListingResponsibleOrganizationRole-ProductResponsibleLabelerRole",
+      "field": "created",
+      "before": "2026-10-06",
+      "after": "2026-10-06T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "ManufacturingResponsibility",
+      "field": "created",
+      "before": "2026-10-07",
+      "after": "2026-10-07T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "ManufacturingResponsibilitySubjectRole",
+      "field": "created",
+      "before": "2026-10-07",
+      "after": "2026-10-07T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-ManufacturingResponsibilitySubjectRole-MedicinalProduct",
+      "field": "created",
+      "before": "2026-10-07",
+      "after": "2026-10-07T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "rel-manufacturingResponsibilityHolder",
+      "field": "created",
+      "before": "2026-10-07",
+      "after": "2026-10-07T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-manufacturingResponsibilityHolder-source",
+      "field": "created",
+      "before": "2026-10-07",
+      "after": "2026-10-07T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-manufacturingResponsibilityHolder-target",
+      "field": "created",
+      "before": "2026-10-07",
+      "after": "2026-10-07T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "rel-manufacturingResponsibilityCounterpart",
+      "field": "created",
+      "before": "2026-10-07",
+      "after": "2026-10-07T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-manufacturingResponsibilityCounterpart-source",
+      "field": "created",
+      "before": "2026-10-07",
+      "after": "2026-10-07T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-manufacturingResponsibilityCounterpart-target",
+      "field": "created",
+      "before": "2026-10-07",
+      "after": "2026-10-07T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "ManufacturingSiteUse",
+      "field": "created",
+      "before": "2026-10-07",
+      "after": "2026-10-07T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "AssigningManufacturingSiteUseOrganizationRole",
+      "field": "created",
+      "before": "2026-10-07",
+      "after": "2026-10-07T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-AssigningManufacturingSiteUseOrganizationRole-Organization",
+      "field": "created",
+      "before": "2026-10-07",
+      "after": "2026-10-07T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "rel-manufacturingSiteUseHolder",
+      "field": "created",
+      "before": "2026-10-07",
+      "after": "2026-10-07T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-manufacturingSiteUseHolder-source",
+      "field": "created",
+      "before": "2026-10-07",
+      "after": "2026-10-07T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-manufacturingSiteUseHolder-target",
+      "field": "created",
+      "before": "2026-10-07",
+      "after": "2026-10-07T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "rel-manufacturingSiteUseCounterpart",
+      "field": "created",
+      "before": "2026-10-07",
+      "after": "2026-10-07T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-manufacturingSiteUseCounterpart-source",
+      "field": "created",
+      "before": "2026-10-07",
+      "after": "2026-10-07T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-manufacturingSiteUseCounterpart-target",
+      "field": "created",
+      "before": "2026-10-07",
+      "after": "2026-10-07T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "ImportResponsibility",
+      "field": "created",
+      "before": "2026-10-07",
+      "after": "2026-10-07T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "ImportResponsibilitySubjectRole",
+      "field": "created",
+      "before": "2026-10-07",
+      "after": "2026-10-07T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-ImportResponsibilitySubjectRole-MedicinalProduct",
+      "field": "created",
+      "before": "2026-10-07",
+      "after": "2026-10-07T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "rel-importResponsibilityHolder",
+      "field": "created",
+      "before": "2026-10-07",
+      "after": "2026-10-07T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-importResponsibilityHolder-source",
+      "field": "created",
+      "before": "2026-10-07",
+      "after": "2026-10-07T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-importResponsibilityHolder-target",
+      "field": "created",
+      "before": "2026-10-07",
+      "after": "2026-10-07T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "rel-importResponsibilityCounterpart",
+      "field": "created",
+      "before": "2026-10-07",
+      "after": "2026-10-07T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-importResponsibilityCounterpart-source",
+      "field": "created",
+      "before": "2026-10-07",
+      "after": "2026-10-07T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-importResponsibilityCounterpart-target",
+      "field": "created",
+      "before": "2026-10-07",
+      "after": "2026-10-07T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "WholesaleResponsibility",
+      "field": "created",
+      "before": "2026-10-07",
+      "after": "2026-10-07T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "WholesaleResponsibilitySubjectRole",
+      "field": "created",
+      "before": "2026-10-07",
+      "after": "2026-10-07T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-WholesaleResponsibilitySubjectRole-MedicinalProduct",
+      "field": "created",
+      "before": "2026-10-07",
+      "after": "2026-10-07T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "rel-wholesaleResponsibilityHolder",
+      "field": "created",
+      "before": "2026-10-07",
+      "after": "2026-10-07T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-wholesaleResponsibilityHolder-source",
+      "field": "created",
+      "before": "2026-10-07",
+      "after": "2026-10-07T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-wholesaleResponsibilityHolder-target",
+      "field": "created",
+      "before": "2026-10-07",
+      "after": "2026-10-07T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "rel-wholesaleResponsibilityCounterpart",
+      "field": "created",
+      "before": "2026-10-07",
+      "after": "2026-10-07T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-wholesaleResponsibilityCounterpart-source",
+      "field": "created",
+      "before": "2026-10-07",
+      "after": "2026-10-07T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-wholesaleResponsibilityCounterpart-target",
+      "field": "created",
+      "before": "2026-10-07",
+      "after": "2026-10-07T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "LogisticsServiceCommitment",
+      "field": "created",
+      "before": "2026-10-07",
+      "after": "2026-10-07T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "CommissioningLogisticsClientRole",
+      "field": "created",
+      "before": "2026-10-07",
+      "after": "2026-10-07T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-CommissioningLogisticsClientRole-Organization",
+      "field": "created",
+      "before": "2026-10-07",
+      "after": "2026-10-07T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "rel-logisticsServiceCommitmentHolder",
+      "field": "created",
+      "before": "2026-10-07",
+      "after": "2026-10-07T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-logisticsServiceCommitmentHolder-source",
+      "field": "created",
+      "before": "2026-10-07",
+      "after": "2026-10-07T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-logisticsServiceCommitmentHolder-target",
+      "field": "created",
+      "before": "2026-10-07",
+      "after": "2026-10-07T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "rel-logisticsServiceCommitmentCounterpart",
+      "field": "created",
+      "before": "2026-10-07",
+      "after": "2026-10-07T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-logisticsServiceCommitmentCounterpart-source",
+      "field": "created",
+      "before": "2026-10-07",
+      "after": "2026-10-07T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-logisticsServiceCommitmentCounterpart-target",
+      "field": "created",
+      "before": "2026-10-07",
+      "after": "2026-10-07T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "DistributionSiteUse",
+      "field": "created",
+      "before": "2026-10-07",
+      "after": "2026-10-07T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "AssigningDistributionSiteUseOrganizationRole",
+      "field": "created",
+      "before": "2026-10-07",
+      "after": "2026-10-07T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-AssigningDistributionSiteUseOrganizationRole-Organization",
+      "field": "created",
+      "before": "2026-10-07",
+      "after": "2026-10-07T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "rel-distributionSiteUseHolder",
+      "field": "created",
+      "before": "2026-10-07",
+      "after": "2026-10-07T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-distributionSiteUseHolder-source",
+      "field": "created",
+      "before": "2026-10-07",
+      "after": "2026-10-07T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-distributionSiteUseHolder-target",
+      "field": "created",
+      "before": "2026-10-07",
+      "after": "2026-10-07T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "rel-distributionSiteUseCounterpart",
+      "field": "created",
+      "before": "2026-10-07",
+      "after": "2026-10-07T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-distributionSiteUseCounterpart-source",
+      "field": "created",
+      "before": "2026-10-07",
+      "after": "2026-10-07T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-distributionSiteUseCounterpart-target",
+      "field": "created",
+      "before": "2026-10-07",
+      "after": "2026-10-07T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "RegulatoryMandate",
+      "field": "created",
+      "before": "2026-10-07",
+      "after": "2026-10-07T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "MandateConferringOrganizationRole",
+      "field": "created",
+      "before": "2026-10-07",
+      "after": "2026-10-07T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-MandateConferringOrganizationRole-Organization",
+      "field": "created",
+      "before": "2026-10-07",
+      "after": "2026-10-07T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "rel-regulatoryMandateHolder",
+      "field": "created",
+      "before": "2026-10-07",
+      "after": "2026-10-07T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-regulatoryMandateHolder-source",
+      "field": "created",
+      "before": "2026-10-07",
+      "after": "2026-10-07T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-regulatoryMandateHolder-target",
+      "field": "created",
+      "before": "2026-10-07",
+      "after": "2026-10-07T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "rel-regulatoryMandateCounterpart",
+      "field": "created",
+      "before": "2026-10-07",
+      "after": "2026-10-07T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-regulatoryMandateCounterpart-source",
+      "field": "created",
+      "before": "2026-10-07",
+      "after": "2026-10-07T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-regulatoryMandateCounterpart-target",
+      "field": "created",
+      "before": "2026-10-07",
+      "after": "2026-10-07T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "ProductLabelResponsibility",
+      "field": "created",
+      "before": "2026-10-07",
+      "after": "2026-10-07T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "ProductLabelCommitmentOrganizationRole",
+      "field": "created",
+      "before": "2026-10-07",
+      "after": "2026-10-07T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-ProductLabelCommitmentOrganizationRole-ProductResponsibleLabelerRole",
+      "field": "created",
+      "before": "2026-10-07",
+      "after": "2026-10-07T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "ResponsibilitySubjectProductRole",
+      "field": "created",
+      "before": "2026-10-07",
+      "after": "2026-10-07T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-ResponsibilitySubjectProductRole-MedicinalProduct",
+      "field": "created",
+      "before": "2026-10-07",
+      "after": "2026-10-07T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "rel-productLabelResponsibilityHolder",
+      "field": "created",
+      "before": "2026-10-07",
+      "after": "2026-10-07T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-productLabelResponsibilityHolder-source",
+      "field": "created",
+      "before": "2026-10-07",
+      "after": "2026-10-07T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-productLabelResponsibilityHolder-target",
+      "field": "created",
+      "before": "2026-10-07",
+      "after": "2026-10-07T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "rel-productLabelResponsibilityCounterpart",
+      "field": "created",
+      "before": "2026-10-07",
+      "after": "2026-10-07T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-productLabelResponsibilityCounterpart-source",
+      "field": "created",
+      "before": "2026-10-07",
+      "after": "2026-10-07T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-productLabelResponsibilityCounterpart-target",
+      "field": "created",
+      "before": "2026-10-07",
+      "after": "2026-10-07T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "InstitutionalFundingCommitment",
+      "field": "created",
+      "before": "2026-10-07",
+      "after": "2026-10-07T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "InstitutionallyFundedOrganizationRole",
+      "field": "created",
+      "before": "2026-10-07",
+      "after": "2026-10-07T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gen-InstitutionallyFundedOrganizationRole-Organization",
+      "field": "created",
+      "before": "2026-10-07",
+      "after": "2026-10-07T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "rel-institutionalFundingCommitmentHolder",
+      "field": "created",
+      "before": "2026-10-07",
+      "after": "2026-10-07T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-institutionalFundingCommitmentHolder-source",
+      "field": "created",
+      "before": "2026-10-07",
+      "after": "2026-10-07T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-institutionalFundingCommitmentHolder-target",
+      "field": "created",
+      "before": "2026-10-07",
+      "after": "2026-10-07T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "rel-institutionalFundingCommitmentCounterpart",
+      "field": "created",
+      "before": "2026-10-07",
+      "after": "2026-10-07T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-institutionalFundingCommitmentCounterpart-source",
+      "field": "created",
+      "before": "2026-10-07",
+      "after": "2026-10-07T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-institutionalFundingCommitmentCounterpart-target",
+      "field": "created",
+      "before": "2026-10-07",
+      "after": "2026-10-07T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "gs-product-responsibility-routes",
+      "field": "created",
+      "before": "2026-10-07",
+      "after": "2026-10-07T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "g3d-scope-note",
+      "field": "created",
+      "before": "2026-10-07",
+      "after": "2026-10-07T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "rel-productHasActiveSubstance",
+      "field": "created",
+      "before": "2026-10-08",
+      "after": "2026-10-08T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "rel-productHasActiveSubstance",
+      "field": "modified",
+      "before": "2026-10-08",
+      "after": "2026-10-08T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-productHasActiveSubstance-source",
+      "field": "created",
+      "before": "2026-10-08",
+      "after": "2026-10-08T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-productHasActiveSubstance-source",
+      "field": "modified",
+      "before": "2026-10-08",
+      "after": "2026-10-08T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-productHasActiveSubstance-source",
+      "field": "isReadOnly",
+      "before": null,
+      "after": false,
+      "reason": "unknown boolean coerced to false: restore explicit source null"
+    },
+    {
+      "id": "end-productHasActiveSubstance-target",
+      "field": "created",
+      "before": "2026-10-08",
+      "after": "2026-10-08T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-productHasActiveSubstance-target",
+      "field": "modified",
+      "before": "2026-10-08",
+      "after": "2026-10-08T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-productHasActiveSubstance-target",
+      "field": "isReadOnly",
+      "before": null,
+      "after": false,
+      "reason": "unknown boolean coerced to false: restore explicit source null"
+    },
+    {
+      "id": "g3-2e-e-scope-note",
+      "field": "created",
+      "before": "2026-10-08",
+      "after": "2026-10-08T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "g3-2e-e-scope-note",
+      "field": "modified",
+      "before": "2026-10-08",
+      "after": "2026-10-08T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "rel-organizationHasSupplyCapacity",
+      "field": "created",
+      "before": "2026-10-09",
+      "after": "2026-10-09T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "rel-organizationHasSupplyCapacity",
+      "field": "modified",
+      "before": "2026-10-09",
+      "after": "2026-10-09T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-organizationHasSupplyCapacity-source",
+      "field": "created",
+      "before": "2026-10-09",
+      "after": "2026-10-09T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-organizationHasSupplyCapacity-source",
+      "field": "modified",
+      "before": "2026-10-09",
+      "after": "2026-10-09T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-organizationHasSupplyCapacity-source",
+      "field": "isReadOnly",
+      "before": null,
+      "after": false,
+      "reason": "unknown boolean coerced to false: restore explicit source null"
+    },
+    {
+      "id": "end-organizationHasSupplyCapacity-target",
+      "field": "created",
+      "before": "2026-10-09",
+      "after": "2026-10-09T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-organizationHasSupplyCapacity-target",
+      "field": "modified",
+      "before": "2026-10-09",
+      "after": "2026-10-09T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-organizationHasSupplyCapacity-target",
+      "field": "isReadOnly",
+      "before": null,
+      "after": false,
+      "reason": "unknown boolean coerced to false: restore explicit source null"
+    },
+    {
+      "id": "rel-facilityHasSupplyCapacity",
+      "field": "created",
+      "before": "2026-10-09",
+      "after": "2026-10-09T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "rel-facilityHasSupplyCapacity",
+      "field": "modified",
+      "before": "2026-10-09",
+      "after": "2026-10-09T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-facilityHasSupplyCapacity-source",
+      "field": "created",
+      "before": "2026-10-09",
+      "after": "2026-10-09T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-facilityHasSupplyCapacity-source",
+      "field": "modified",
+      "before": "2026-10-09",
+      "after": "2026-10-09T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-facilityHasSupplyCapacity-source",
+      "field": "isReadOnly",
+      "before": null,
+      "after": false,
+      "reason": "unknown boolean coerced to false: restore explicit source null"
+    },
+    {
+      "id": "end-facilityHasSupplyCapacity-target",
+      "field": "created",
+      "before": "2026-10-09",
+      "after": "2026-10-09T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-facilityHasSupplyCapacity-target",
+      "field": "modified",
+      "before": "2026-10-09",
+      "after": "2026-10-09T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-facilityHasSupplyCapacity-target",
+      "field": "isReadOnly",
+      "before": null,
+      "after": false,
+      "reason": "unknown boolean coerced to false: restore explicit source null"
+    },
+    {
+      "id": "rel-capacityOrganizationBearer",
+      "field": "created",
+      "before": "2026-10-09",
+      "after": "2026-10-09T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "rel-capacityOrganizationBearer",
+      "field": "modified",
+      "before": "2026-10-09",
+      "after": "2026-10-09T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-capacityOrganizationBearer-source",
+      "field": "created",
+      "before": "2026-10-09",
+      "after": "2026-10-09T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-capacityOrganizationBearer-source",
+      "field": "modified",
+      "before": "2026-10-09",
+      "after": "2026-10-09T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-capacityOrganizationBearer-source",
+      "field": "isReadOnly",
+      "before": null,
+      "after": false,
+      "reason": "unknown boolean coerced to false: restore explicit source null"
+    },
+    {
+      "id": "end-capacityOrganizationBearer-target",
+      "field": "created",
+      "before": "2026-10-09",
+      "after": "2026-10-09T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-capacityOrganizationBearer-target",
+      "field": "modified",
+      "before": "2026-10-09",
+      "after": "2026-10-09T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-capacityOrganizationBearer-target",
+      "field": "isReadOnly",
+      "before": null,
+      "after": false,
+      "reason": "unknown boolean coerced to false: restore explicit source null"
+    },
+    {
+      "id": "rel-capacityFacilityBearer",
+      "field": "created",
+      "before": "2026-10-09",
+      "after": "2026-10-09T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "rel-capacityFacilityBearer",
+      "field": "modified",
+      "before": "2026-10-09",
+      "after": "2026-10-09T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-capacityFacilityBearer-source",
+      "field": "created",
+      "before": "2026-10-09",
+      "after": "2026-10-09T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-capacityFacilityBearer-source",
+      "field": "modified",
+      "before": "2026-10-09",
+      "after": "2026-10-09T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-capacityFacilityBearer-source",
+      "field": "isReadOnly",
+      "before": null,
+      "after": false,
+      "reason": "unknown boolean coerced to false: restore explicit source null"
+    },
+    {
+      "id": "end-capacityFacilityBearer-target",
+      "field": "created",
+      "before": "2026-10-09",
+      "after": "2026-10-09T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-capacityFacilityBearer-target",
+      "field": "modified",
+      "before": "2026-10-09",
+      "after": "2026-10-09T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "end-capacityFacilityBearer-target",
+      "field": "isReadOnly",
+      "before": null,
+      "after": false,
+      "reason": "unknown boolean coerced to false: restore explicit source null"
+    },
+    {
+      "id": "p4a-capacity-xor-note",
+      "field": "created",
+      "before": "2026-10-09",
+      "after": "2026-10-09T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "p4a-capacity-xor-note",
+      "field": "modified",
+      "before": "2026-10-09",
+      "after": "2026-10-09T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "RiskReviewActivity",
+      "field": "created",
+      "before": "2026-10-09",
+      "after": "2026-10-09T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "SignalAssessmentActivity",
+      "field": "created",
+      "before": "2026-10-09",
+      "after": "2026-10-09T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "SystemDeploymentActivity",
+      "field": "created",
+      "before": "2026-10-09",
+      "after": "2026-10-09T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "lab-end-scenarioProduct-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "lab-end-scenarioProduct-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "lab-rel-scenarioProduct",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "lab-end-assessmentScenario-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "lab-end-assessmentScenario-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "lab-rel-assessmentScenario",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "lab-end-resultAssessment-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "lab-end-resultAssessment-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "lab-rel-resultAssessment",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "lab-end-citesSourceRecord-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "lab-end-citesSourceRecord-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "lab-rel-citesSourceRecord",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "lab-end-planRiskResult-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "lab-end-planRiskResult-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "lab-rel-planRiskResult",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "lab-end-implementsRiskPlan-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "lab-end-implementsRiskPlan-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "lab-rel-implementsRiskPlan",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "lab-end-reviewPriorResult-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "lab-end-reviewPriorResult-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "lab-rel-reviewPriorResult",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "lab-end-reviewNewResult-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "lab-end-reviewNewResult-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "lab-rel-reviewNewResult",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "lab-end-reportsRecord-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "lab-end-reportsRecord-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "lab-rel-reportsRecord",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "lab-end-signalProduct-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "lab-end-signalProduct-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "lab-rel-signalProduct",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "lab-end-signalSubstance-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "lab-end-signalSubstance-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "lab-rel-signalSubstance",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "lab-end-signalAssessmentTarget-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "lab-end-signalAssessmentTarget-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "lab-rel-signalAssessmentTarget",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "lab-end-pvResultSignal-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "lab-end-pvResultSignal-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "lab-rel-pvResultSignal",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "lab-end-pvResultAssessment-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "lab-end-pvResultAssessment-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "lab-rel-pvResultAssessment",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "lab-end-pvRequirementJurisdiction-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "lab-end-pvRequirementJurisdiction-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "lab-rel-pvRequirementJurisdiction",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "lab-end-surveillanceRequirement-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "lab-end-surveillanceRequirement-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "lab-rel-surveillanceRequirement",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "lab-end-surveillanceSource-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "lab-end-surveillanceSource-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "lab-rel-surveillanceSource",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "lab-end-serviceCapability-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "lab-end-serviceCapability-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "lab-rel-serviceCapability",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "lab-end-viewOrganization-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "lab-end-viewOrganization-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "lab-rel-viewOrganization",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "lab-end-viewService-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "lab-end-viewService-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "lab-rel-viewService",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "lab-end-capabilityRealizedIn-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "lab-end-capabilityRealizedIn-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "lab-rel-capabilityRealizedIn",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "lab-end-deploymentComponent-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "lab-end-deploymentComponent-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "lab-rel-deploymentComponent",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "lab-end-deploymentOrganization-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "lab-end-deploymentOrganization-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "lab-rel-deploymentOrganization",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "lab-end-digitalActivityDeployment-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "lab-end-digitalActivityDeployment-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "lab-rel-digitalActivityDeployment",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "lab-end-recordDigitalActivity-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "lab-end-recordDigitalActivity-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "lab-rel-recordDigitalActivity",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "lab-end-digitalServiceComponent-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "lab-end-digitalServiceComponent-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "lab-rel-digitalServiceComponent",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "lab-end-digitalServiceActivity-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "lab-end-digitalServiceActivity-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "lab-rel-digitalServiceActivity",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "refine-end-scenarioFacility-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "refine-end-scenarioFacility-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "refine-rel-scenarioFacility",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "refine-end-scenarioDependency-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "refine-end-scenarioDependency-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "refine-rel-scenarioDependency",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "refine-end-carrierClaim-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "refine-end-carrierClaim-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "refine-rel-carrierClaim",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "refine-end-assessmentOrganization-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "refine-end-assessmentOrganization-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "refine-rel-assessmentOrganization",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "refine-end-serviceProduct-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "refine-end-serviceProduct-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "refine-rel-serviceProduct",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "refine-end-serviceFacility-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "refine-end-serviceFacility-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "refine-rel-serviceFacility",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "refine-end-agreementCommitment-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "refine-end-agreementCommitment-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "refine-rel-agreementCommitment",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "refine-end-commitmentActor-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "refine-end-commitmentActor-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "refine-rel-commitmentActor",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "refine-end-supportsManufacturing-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "refine-end-supportsManufacturing-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "refine-rel-supportsManufacturing",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "refine-end-manufacturingProduct-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "refine-end-manufacturingProduct-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "refine-rel-manufacturingProduct",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "refine-end-manufacturingFacility-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "refine-end-manufacturingFacility-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "refine-rel-manufacturingFacility",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "refine-end-activityResponsibleOrganization-source",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "refine-end-activityResponsibleOrganization-target",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    },
+    {
+      "id": "refine-rel-activityResponsibleOrganization",
+      "field": "created",
+      "before": "2026-10-05",
+      "after": "2026-10-05T00:00:00.000Z",
+      "reason": "equal-instant date lexical normalization"
+    }
+  ],
+  "readonly_unknown_to_false": 82,
+  "events_preserved": 13,
+  "situations": 2,
+  "preservation": {
+    "stereotype": {
+      "total": 522,
+      "unchanged": 522
+    },
+    "restrictedTo": {
+      "total": 147,
+      "unchanged": 147
+    },
+    "propertyType": {
+      "total": 250,
+      "unchanged": 250
+    },
+    "cardinality": {
+      "total": 250,
+      "unchanged": 250
+    },
+    "subsettedProperties": {
+      "total": 250,
+      "unchanged": 250
+    },
+    "redefinedProperties": {
+      "total": 250,
+      "unchanged": 250
+    },
+    "text": {
+      "total": 25,
+      "unchanged": 25
+    }
+  },
+  "guarded_roundtrip_canonical_equal": true,
+  "guarded_export_written": false,
+  "canonical_source_sha256": "401fb4b6be07da41f38e9d6c83e651b8d2f5e8f94b53e0ef8eb4865dd4d576b3",
+  "canonical_guarded_sha256": "401fb4b6be07da41f38e9d6c83e651b8d2f5e8f94b53e0ef8eb4865dd4d576b3",
+  "refusal_cases": [
+    {
+      "name": "event-coerced-to-kind",
+      "rejected": true,
+      "error": "Unapproved drift RiskAssessmentActivity.stereotype",
+      "pass": true
+    },
+    {
+      "name": "situation-coerced-to-kind",
+      "rejected": true,
+      "error": "Unapproved drift StockoutSituation.stereotype",
+      "pass": true
+    },
+    {
+      "name": "nature-removed",
+      "rejected": true,
+      "error": "Unapproved drift SupplyCapacity.restrictedTo",
+      "pass": true
+    },
+    {
+      "name": "note-erased",
+      "rejected": true,
+      "error": "Unapproved drift decision-RR-01.text",
+      "pass": true
+    },
+    {
+      "name": "subsetting-reference-dropped",
+      "rejected": true,
+      "error": "Unapproved drift end-evidenceRecord-target.subsettedProperties",
+      "pass": true
+    },
+    {
+      "name": "unknown-cardinality-defaulted",
+      "rejected": true,
+      "error": "Unapproved drift end-evidenceRecord-target.cardinality",
+      "pass": true
+    },
+    {
+      "name": "known-readonly-false-to-true",
+      "rejected": true,
+      "error": "Unapproved drift end-classificationEntry-target.isReadOnly",
+      "pass": true
+    },
+    {
+      "name": "unknown-readonly-null-to-true",
+      "rejected": true,
+      "error": "Unapproved drift end-evidenceRecord-target.isReadOnly",
+      "pass": true
+    },
+    {
+      "name": "element-dropped",
+      "rejected": true,
+      "error": "Element identity/count drift",
+      "pass": true
+    },
+    {
+      "name": "unknown-field-injected",
+      "rejected": true,
+      "error": "Unapproved drift SupplyCapacity.unexpectedField",
+      "pass": true
+    }
+  ],
+  "refusal_pass": 10,
+  "refusal_total": 10,
+  "caveat": "The in-memory official parsed model has defaulted booleans. Guard restores the serialized JSON using the original input; native decision checks must read original/guarded JSON, not the parsed booleans."
+}

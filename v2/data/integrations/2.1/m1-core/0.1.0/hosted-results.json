@@ -1,0 +1,1179 @@
+{
+  "base_rows_schema_defaults_indexes_views_unchanged": true,
+  "boundary": "One isolated synthetic copied fixture and M001-M004; no default schema migration, new source ingestion, full modern-native/domain/expert/GA claim",
+  "cases": [
+    {
+      "admission": {
+        "admitted": true,
+        "explicit_target_union_counts": {
+          "Dataset": 2,
+          "DatasetRelease": 2,
+          "ProvenanceActivity": 1,
+          "SourceRecord": 7
+        },
+        "identity_errors": [],
+        "shacl_conforms": true,
+        "shacl_results": 0,
+        "stage": "ADMITTED"
+      },
+      "graph_sha256": "ed50d447202217d57fc97f47be2c738cb28d8cce5b200dabde5db3f77446a586",
+      "graph_triples": 54,
+      "id": "baseline",
+      "logical_view_excluded_row_triples": 7,
+      "logical_view_triples": 47,
+      "missing_runs": 0,
+      "normalized_sparql": [
+        [
+          "10.5281/zenodo.19160637",
+          "P2-NHIF-INPATIENT:release:10.5281/zenodo.19160637",
+          "1",
+          "f0fb3f70a295148804827a01123a733d88653739a78efe7d8f9097d3b23f268f",
+          "run:w6-fixture:3cef83edd2c025392ef3"
+        ],
+        [
+          "10.5281/zenodo.19160637",
+          "P2-NHIF-INPATIENT:release:10.5281/zenodo.19160637",
+          "2",
+          "9d9effd47c9e69335d7b59674a08bf7aa834750d4050b0cec01813033bef645e",
+          "run:w6-fixture:3cef83edd2c025392ef3"
+        ],
+        [
+          "10.5281/zenodo.19160637",
+          "P2-NHIF-INPATIENT:release:10.5281/zenodo.19160637",
+          "3",
+          "9a04638ca531ec2ef13b7cc8ad97639e1a8bd238de3a7f108f1d645b8da8abbf",
+          "run:w6-fixture:3cef83edd2c025392ef3"
+        ],
+        [
+          "10.5281/zenodo.19160825",
+          "P1-NHIF-OUTPATIENT:release:10.5281/zenodo.19160825:synthetic-fixture",
+          "1",
+          "fc4f28d217129c90048aa48ae817d46ec9700198bd225de85897488d523817f4",
+          "run:w6-fixture:3cef83edd2c025392ef3"
+        ],
+        [
+          "10.5281/zenodo.19160825",
+          "P1-NHIF-OUTPATIENT:release:10.5281/zenodo.19160825:synthetic-fixture",
+          "2",
+          "a1b73cba4dce3de797bd12311c188f4db3359cf7e0675bd43dbca1630895aa3e",
+          "run:w6-fixture:3cef83edd2c025392ef3"
+        ],
+        [
+          "10.5281/zenodo.19160825",
+          "P1-NHIF-OUTPATIENT:release:10.5281/zenodo.19160825:synthetic-fixture",
+          "3",
+          "e30a93d01230d0a5b973173d4ea79c3b388b9d6e62a0ccce0c533ee88173dcfd",
+          "run:w6-fixture:3cef83edd2c025392ef3"
+        ],
+        [
+          "10.5281/zenodo.19160825",
+          "P1-NHIF-OUTPATIENT:release:10.5281/zenodo.19160825:synthetic-fixture",
+          "4",
+          "bf75833af67c1112ca4ba829f2fb55c38bc5eaab5ac0f347424705e518b5d4ca",
+          "run:w6-fixture:3cef83edd2c025392ef3"
+        ]
+      ],
+      "normalized_sql": [
+        [
+          "10.5281/zenodo.19160637",
+          "P2-NHIF-INPATIENT:release:10.5281/zenodo.19160637",
+          "1",
+          "f0fb3f70a295148804827a01123a733d88653739a78efe7d8f9097d3b23f268f",
+          "run:w6-fixture:3cef83edd2c025392ef3"
+        ],
+        [
+          "10.5281/zenodo.19160637",
+          "P2-NHIF-INPATIENT:release:10.5281/zenodo.19160637",
+          "2",
+          "9d9effd47c9e69335d7b59674a08bf7aa834750d4050b0cec01813033bef645e",
+          "run:w6-fixture:3cef83edd2c025392ef3"
+        ],
+        [
+          "10.5281/zenodo.19160637",
+          "P2-NHIF-INPATIENT:release:10.5281/zenodo.19160637",
+          "3",
+          "9a04638ca531ec2ef13b7cc8ad97639e1a8bd238de3a7f108f1d645b8da8abbf",
+          "run:w6-fixture:3cef83edd2c025392ef3"
+        ],
+        [
+          "10.5281/zenodo.19160825",
+          "P1-NHIF-OUTPATIENT:release:10.5281/zenodo.19160825:synthetic-fixture",
+          "1",
+          "fc4f28d217129c90048aa48ae817d46ec9700198bd225de85897488d523817f4",
+          "run:w6-fixture:3cef83edd2c025392ef3"
+        ],
+        [
+          "10.5281/zenodo.19160825",
+          "P1-NHIF-OUTPATIENT:release:10.5281/zenodo.19160825:synthetic-fixture",
+          "2",
+          "a1b73cba4dce3de797bd12311c188f4db3359cf7e0675bd43dbca1630895aa3e",
+          "run:w6-fixture:3cef83edd2c025392ef3"
+        ],
+        [
+          "10.5281/zenodo.19160825",
+          "P1-NHIF-OUTPATIENT:release:10.5281/zenodo.19160825:synthetic-fixture",
+          "3",
+          "e30a93d01230d0a5b973173d4ea79c3b388b9d6e62a0ccce0c533ee88173dcfd",
+          "run:w6-fixture:3cef83edd2c025392ef3"
+        ],
+        [
+          "10.5281/zenodo.19160825",
+          "P1-NHIF-OUTPATIENT:release:10.5281/zenodo.19160825:synthetic-fixture",
+          "4",
+          "bf75833af67c1112ca4ba829f2fb55c38bc5eaab5ac0f347424705e518b5d4ca",
+          "run:w6-fixture:3cef83edd2c025392ef3"
+        ]
+      ],
+      "normalized_tuple_sha256": "6376a08431708847a610d138d74997fb81d855e4e4685cd0bcaa0c03e2eb0434",
+      "passed": true,
+      "query_rows": 7,
+      "raw_rdf_unchanged": true,
+      "roundtrip_formats": [
+        "turtle",
+        "nt",
+        "xml",
+        "json-ld"
+      ],
+      "source_keys": 7
+    },
+    {
+      "admission": {
+        "admitted": true,
+        "explicit_target_union_counts": {
+          "Dataset": 2,
+          "DatasetRelease": 2,
+          "ProvenanceActivity": 1,
+          "SourceRecord": 7
+        },
+        "identity_errors": [],
+        "shacl_conforms": true,
+        "shacl_results": 0,
+        "stage": "ADMITTED"
+      },
+      "fixture_transaction": {
+        "column": "source_record.transformation_run_id",
+        "durable_fixture_change": false,
+        "export_sql": "Pinned unchanged SELECT",
+        "rolled_back": true,
+        "rows_updated": 1
+      },
+      "graph_sha256": "28d12b68f47ecfef7023529f02cc286fb93ddf56623e65eee8939b372434a351",
+      "graph_triples": 53,
+      "id": "optional-run-rollback",
+      "logical_view_excluded_row_triples": 7,
+      "logical_view_triples": 46,
+      "missing_runs": 1,
+      "normalized_sparql": [
+        [
+          "10.5281/zenodo.19160637",
+          "P2-NHIF-INPATIENT:release:10.5281/zenodo.19160637",
+          "1",
+          "f0fb3f70a295148804827a01123a733d88653739a78efe7d8f9097d3b23f268f",
+          "run:w6-fixture:3cef83edd2c025392ef3"
+        ],
+        [
+          "10.5281/zenodo.19160637",
+          "P2-NHIF-INPATIENT:release:10.5281/zenodo.19160637",
+          "2",
+          "9d9effd47c9e69335d7b59674a08bf7aa834750d4050b0cec01813033bef645e",
+          "run:w6-fixture:3cef83edd2c025392ef3"
+        ],
+        [
+          "10.5281/zenodo.19160637",
+          "P2-NHIF-INPATIENT:release:10.5281/zenodo.19160637",
+          "3",
+          "9a04638ca531ec2ef13b7cc8ad97639e1a8bd238de3a7f108f1d645b8da8abbf",
+          "run:w6-fixture:3cef83edd2c025392ef3"
+        ],
+        [
+          "10.5281/zenodo.19160825",
+          "P1-NHIF-OUTPATIENT:release:10.5281/zenodo.19160825:synthetic-fixture",
+          "1",
+          "fc4f28d217129c90048aa48ae817d46ec9700198bd225de85897488d523817f4",
+          null
+        ],
+        [
+          "10.5281/zenodo.19160825",
+          "P1-NHIF-OUTPATIENT:release:10.5281/zenodo.19160825:synthetic-fixture",
+          "2",
+          "a1b73cba4dce3de797bd12311c188f4db3359cf7e0675bd43dbca1630895aa3e",
+          "run:w6-fixture:3cef83edd2c025392ef3"
+        ],
+        [
+          "10.5281/zenodo.19160825",
+          "P1-NHIF-OUTPATIENT:release:10.5281/zenodo.19160825:synthetic-fixture",
+          "3",
+          "e30a93d01230d0a5b973173d4ea79c3b388b9d6e62a0ccce0c533ee88173dcfd",
+          "run:w6-fixture:3cef83edd2c025392ef3"
+        ],
+        [
+          "10.5281/zenodo.19160825",
+          "P1-NHIF-OUTPATIENT:release:10.5281/zenodo.19160825:synthetic-fixture",
+          "4",
+          "bf75833af67c1112ca4ba829f2fb55c38bc5eaab5ac0f347424705e518b5d4ca",
+          "run:w6-fixture:3cef83edd2c025392ef3"
+        ]
+      ],
+      "normalized_sql": [
+        [
+          "10.5281/zenodo.19160637",
+          "P2-NHIF-INPATIENT:release:10.5281/zenodo.19160637",
+          "1",
+          "f0fb3f70a295148804827a01123a733d88653739a78efe7d8f9097d3b23f268f",
+          "run:w6-fixture:3cef83edd2c025392ef3"
+        ],
+        [
+          "10.5281/zenodo.19160637",
+          "P2-NHIF-INPATIENT:release:10.5281/zenodo.19160637",
+          "2",
+          "9d9effd47c9e69335d7b59674a08bf7aa834750d4050b0cec01813033bef645e",
+          "run:w6-fixture:3cef83edd2c025392ef3"
+        ],
+        [
+          "10.5281/zenodo.19160637",
+          "P2-NHIF-INPATIENT:release:10.5281/zenodo.19160637",
+          "3",
+          "9a04638ca531ec2ef13b7cc8ad97639e1a8bd238de3a7f108f1d645b8da8abbf",
+          "run:w6-fixture:3cef83edd2c025392ef3"
+        ],
+        [
+          "10.5281/zenodo.19160825",
+          "P1-NHIF-OUTPATIENT:release:10.5281/zenodo.19160825:synthetic-fixture",
+          "1",
+          "fc4f28d217129c90048aa48ae817d46ec9700198bd225de85897488d523817f4",
+          null
+        ],
+        [
+          "10.5281/zenodo.19160825",
+          "P1-NHIF-OUTPATIENT:release:10.5281/zenodo.19160825:synthetic-fixture",
+          "2",
+          "a1b73cba4dce3de797bd12311c188f4db3359cf7e0675bd43dbca1630895aa3e",
+          "run:w6-fixture:3cef83edd2c025392ef3"
+        ],
+        [
+          "10.5281/zenodo.19160825",
+          "P1-NHIF-OUTPATIENT:release:10.5281/zenodo.19160825:synthetic-fixture",
+          "3",
+          "e30a93d01230d0a5b973173d4ea79c3b388b9d6e62a0ccce0c533ee88173dcfd",
+          "run:w6-fixture:3cef83edd2c025392ef3"
+        ],
+        [
+          "10.5281/zenodo.19160825",
+          "P1-NHIF-OUTPATIENT:release:10.5281/zenodo.19160825:synthetic-fixture",
+          "4",
+          "bf75833af67c1112ca4ba829f2fb55c38bc5eaab5ac0f347424705e518b5d4ca",
+          "run:w6-fixture:3cef83edd2c025392ef3"
+        ]
+      ],
+      "normalized_tuple_sha256": "5e6d3c40d6604b83b8a45dcc05ec9ed1abc2e6d46cdd8c779e34428c80251a5d",
+      "passed": true,
+      "query_rows": 7,
+      "raw_rdf_unchanged": true,
+      "roundtrip_formats": [
+        "turtle",
+        "nt",
+        "xml",
+        "json-ld"
+      ],
+      "source_keys": 7
+    }
+  ],
+  "catalog_after": {
+    "indexes": [
+      {
+        "indexdef": "CREATE UNIQUE INDEX assertion_pkey ON cmpe.assertion USING btree (assertion_id)",
+        "indexname": "assertion_pkey",
+        "tablename": "assertion"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX assertion_public_id_key ON cmpe.assertion USING btree (public_id)",
+        "indexname": "assertion_public_id_key",
+        "tablename": "assertion"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX classification_entry_classification_scheme_id_code_key ON cmpe.classification_entry USING btree (classification_scheme_id, code)",
+        "indexname": "classification_entry_classification_scheme_id_code_key",
+        "tablename": "classification_entry"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX classification_entry_pkey ON cmpe.classification_entry USING btree (classification_entry_id)",
+        "indexname": "classification_entry_pkey",
+        "tablename": "classification_entry"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX classification_entry_public_id_key ON cmpe.classification_entry USING btree (public_id)",
+        "indexname": "classification_entry_public_id_key",
+        "tablename": "classification_entry"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX dataset_pkey ON cmpe.dataset USING btree (dataset_id)",
+        "indexname": "dataset_pkey",
+        "tablename": "dataset"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX dataset_public_id_key ON cmpe.dataset USING btree (public_id)",
+        "indexname": "dataset_public_id_key",
+        "tablename": "dataset"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX dataset_release_pkey ON cmpe.dataset_release USING btree (dataset_release_id)",
+        "indexname": "dataset_release_pkey",
+        "tablename": "dataset_release"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX dataset_release_public_id_key ON cmpe.dataset_release USING btree (public_id)",
+        "indexname": "dataset_release_public_id_key",
+        "tablename": "dataset_release"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX diagnosis_reference_pkey ON cmpe.diagnosis_reference USING btree (diagnosis_reference_id)",
+        "indexname": "diagnosis_reference_pkey",
+        "tablename": "diagnosis_reference"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX diagnosis_reference_public_id_key ON cmpe.diagnosis_reference USING btree (public_id)",
+        "indexname": "diagnosis_reference_public_id_key",
+        "tablename": "diagnosis_reference"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX diagnosis_reference_scheme_code_key ON cmpe.diagnosis_reference USING btree (scheme, code)",
+        "indexname": "diagnosis_reference_scheme_code_key",
+        "tablename": "diagnosis_reference"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX entity_match_assertion_pkey ON cmpe.entity_match_assertion USING btree (entity_match_assertion_id)",
+        "indexname": "entity_match_assertion_pkey",
+        "tablename": "entity_match_assertion"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX entity_match_assertion_public_id_key ON cmpe.entity_match_assertion USING btree (public_id)",
+        "indexname": "entity_match_assertion_public_id_key",
+        "tablename": "entity_match_assertion"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX evidence_support_pkey ON cmpe.evidence_support USING btree (evidence_support_id)",
+        "indexname": "evidence_support_pkey",
+        "tablename": "evidence_support"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX evidence_support_public_id_key ON cmpe.evidence_support USING btree (public_id)",
+        "indexname": "evidence_support_public_id_key",
+        "tablename": "evidence_support"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX evidence_support_source_record_id_assertion_id_key ON cmpe.evidence_support USING btree (source_record_id, assertion_id)",
+        "indexname": "evidence_support_source_record_id_assertion_id_key",
+        "tablename": "evidence_support"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX facility_pkey ON cmpe.facility USING btree (facility_id)",
+        "indexname": "facility_pkey",
+        "tablename": "facility"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX facility_public_id_key ON cmpe.facility USING btree (public_id)",
+        "indexname": "facility_public_id_key",
+        "tablename": "facility"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX facility_operation_pkey ON cmpe.facility_operation USING btree (facility_operation_id)",
+        "indexname": "facility_operation_pkey",
+        "tablename": "facility_operation"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX facility_operation_public_id_key ON cmpe.facility_operation USING btree (public_id)",
+        "indexname": "facility_operation_public_id_key",
+        "tablename": "facility_operation"
+      },
+      {
+        "indexdef": "CREATE INDEX geography_geom_gix ON cmpe.geography USING gist (geom)",
+        "indexname": "geography_geom_gix",
+        "tablename": "geography"
+      },
+      {
+        "indexdef": "CREATE INDEX geography_geonames_idx ON cmpe.geography USING btree (geonames_id) WHERE (geonames_id IS NOT NULL)",
+        "indexname": "geography_geonames_idx",
+        "tablename": "geography"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX geography_pkey ON cmpe.geography USING btree (geography_id)",
+        "indexname": "geography_pkey",
+        "tablename": "geography"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX geography_public_id_key ON cmpe.geography USING btree (public_id)",
+        "indexname": "geography_public_id_key",
+        "tablename": "geography"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX geography_alias_pkey ON cmpe.geography_alias USING btree (geography_alias_id)",
+        "indexname": "geography_alias_pkey",
+        "tablename": "geography_alias"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX geography_alias_source_system_source_value_key ON cmpe.geography_alias USING btree (source_system, source_value)",
+        "indexname": "geography_alias_source_system_source_value_key",
+        "tablename": "geography_alias"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX identifier_assignment_identifier_scheme_id_lexical_value_en_key ON cmpe.identifier_assignment USING btree (identifier_scheme_id, lexical_value, entity_type, entity_public_id)",
+        "indexname": "identifier_assignment_identifier_scheme_id_lexical_value_en_key",
+        "tablename": "identifier_assignment"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX identifier_assignment_pkey ON cmpe.identifier_assignment USING btree (identifier_assignment_id)",
+        "indexname": "identifier_assignment_pkey",
+        "tablename": "identifier_assignment"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX identifier_assignment_public_id_key ON cmpe.identifier_assignment USING btree (public_id)",
+        "indexname": "identifier_assignment_public_id_key",
+        "tablename": "identifier_assignment"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX identifier_scheme_pkey ON cmpe.identifier_scheme USING btree (identifier_scheme_id)",
+        "indexname": "identifier_scheme_pkey",
+        "tablename": "identifier_scheme"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX identifier_scheme_public_id_key ON cmpe.identifier_scheme USING btree (public_id)",
+        "indexname": "identifier_scheme_public_id_key",
+        "tablename": "identifier_scheme"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX medicinal_product_pkey ON cmpe.medicinal_product USING btree (medicinal_product_id)",
+        "indexname": "medicinal_product_pkey",
+        "tablename": "medicinal_product"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX medicinal_product_public_id_key ON cmpe.medicinal_product USING btree (public_id)",
+        "indexname": "medicinal_product_public_id_key",
+        "tablename": "medicinal_product"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX medicine_shortage_situation_pkey ON cmpe.medicine_shortage_situation USING btree (shortage_id)",
+        "indexname": "medicine_shortage_situation_pkey",
+        "tablename": "medicine_shortage_situation"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX medicine_shortage_situation_public_id_key ON cmpe.medicine_shortage_situation USING btree (public_id)",
+        "indexname": "medicine_shortage_situation_public_id_key",
+        "tablename": "medicine_shortage_situation"
+      },
+      {
+        "indexdef": "CREATE INDEX observation_geo_idx ON cmpe.observation_result USING btree (geography_id)",
+        "indexname": "observation_geo_idx",
+        "tablename": "observation_result"
+      },
+      {
+        "indexdef": "CREATE INDEX observation_period_idx ON cmpe.observation_result USING btree (reporting_period)",
+        "indexname": "observation_period_idx",
+        "tablename": "observation_result"
+      },
+      {
+        "indexdef": "CREATE INDEX observation_presentation_idx ON cmpe.observation_result USING btree (product_presentation_id)",
+        "indexname": "observation_presentation_idx",
+        "tablename": "observation_result"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX observation_result_pkey ON cmpe.observation_result USING btree (observation_result_id)",
+        "indexname": "observation_result_pkey",
+        "tablename": "observation_result"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX observation_result_public_id_key ON cmpe.observation_result USING btree (public_id)",
+        "indexname": "observation_result_public_id_key",
+        "tablename": "observation_result"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX organization_pkey ON cmpe.organization USING btree (organization_id)",
+        "indexname": "organization_pkey",
+        "tablename": "organization"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX organization_public_id_key ON cmpe.organization USING btree (public_id)",
+        "indexname": "organization_public_id_key",
+        "tablename": "organization"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX pharmaceutical_substance_pkey ON cmpe.pharmaceutical_substance USING btree (substance_id)",
+        "indexname": "pharmaceutical_substance_pkey",
+        "tablename": "pharmaceutical_substance"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX pharmaceutical_substance_public_id_key ON cmpe.pharmaceutical_substance USING btree (public_id)",
+        "indexname": "pharmaceutical_substance_public_id_key",
+        "tablename": "pharmaceutical_substance"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX product_classification_assign_medicinal_product_id_classifi_key ON cmpe.product_classification_assignment USING btree (medicinal_product_id, classification_entry_id)",
+        "indexname": "product_classification_assign_medicinal_product_id_classifi_key",
+        "tablename": "product_classification_assignment"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX product_classification_assignment_pkey ON cmpe.product_classification_assignment USING btree (product_classification_assignment_id)",
+        "indexname": "product_classification_assignment_pkey",
+        "tablename": "product_classification_assignment"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX product_classification_assignment_public_id_key ON cmpe.product_classification_assignment USING btree (public_id)",
+        "indexname": "product_classification_assignment_public_id_key",
+        "tablename": "product_classification_assignment"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX product_classification_scheme_pkey ON cmpe.product_classification_scheme USING btree (classification_scheme_id)",
+        "indexname": "product_classification_scheme_pkey",
+        "tablename": "product_classification_scheme"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX product_classification_scheme_public_id_key ON cmpe.product_classification_scheme USING btree (public_id)",
+        "indexname": "product_classification_scheme_public_id_key",
+        "tablename": "product_classification_scheme"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX product_presentation_pkey ON cmpe.product_presentation USING btree (product_presentation_id)",
+        "indexname": "product_presentation_pkey",
+        "tablename": "product_presentation"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX product_presentation_public_id_key ON cmpe.product_presentation USING btree (public_id)",
+        "indexname": "product_presentation_public_id_key",
+        "tablename": "product_presentation"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX regulatory_jurisdiction_pkey ON cmpe.regulatory_jurisdiction USING btree (regulatory_jurisdiction_id)",
+        "indexname": "regulatory_jurisdiction_pkey",
+        "tablename": "regulatory_jurisdiction"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX regulatory_jurisdiction_public_id_key ON cmpe.regulatory_jurisdiction USING btree (public_id)",
+        "indexname": "regulatory_jurisdiction_public_id_key",
+        "tablename": "regulatory_jurisdiction"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX source_record_dataset_release_id_row_number_source_hash_key ON cmpe.source_record USING btree (dataset_release_id, row_number, source_hash)",
+        "indexname": "source_record_dataset_release_id_row_number_source_hash_key",
+        "tablename": "source_record"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX source_record_pkey ON cmpe.source_record USING btree (source_record_id)",
+        "indexname": "source_record_pkey",
+        "tablename": "source_record"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX transformation_run_pkey ON cmpe.transformation_run USING btree (transformation_run_id)",
+        "indexname": "transformation_run_pkey",
+        "tablename": "transformation_run"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX transformation_run_public_id_key ON cmpe.transformation_run USING btree (public_id)",
+        "indexname": "transformation_run_public_id_key",
+        "tablename": "transformation_run"
+      }
+    ],
+    "ontology_iri_defaults": {
+      "assertion": "'https://w3id.org/cm-pharme/2.0/Assertion'::text",
+      "classification_entry": "'https://w3id.org/cm-pharme/2.0/ClassificationEntry'::text",
+      "dataset": "'https://w3id.org/cm-pharme/2.0/Dataset'::text",
+      "dataset_release": "'https://w3id.org/cm-pharme/2.0/DatasetRelease'::text",
+      "diagnosis_reference": "'https://w3id.org/cm-pharme/2.0/DiagnosisClassificationReference'::text",
+      "entity_match_assertion": "'https://w3id.org/cm-pharme/2.0/EntityMatchAssertion'::text",
+      "evidence_support": "'https://w3id.org/cm-pharme/2.0/EvidenceSupport'::text",
+      "facility": "'https://w3id.org/cm-pharme/2.0/Facility'::text",
+      "facility_operation": "'https://w3id.org/cm-pharme/2.0/FacilityOperation'::text",
+      "identifier_assignment": "'https://w3id.org/cm-pharme/2.0/IdentifierAssignment'::text",
+      "identifier_scheme": "'https://w3id.org/cm-pharme/2.0/IdentifierScheme'::text",
+      "medicinal_product": "'https://w3id.org/cm-pharme/2.0/MedicinalProduct'::text",
+      "medicine_shortage_situation": "'https://w3id.org/cm-pharme/2.0/MedicineShortageSituation'::text",
+      "observation_result": "'https://w3id.org/cm-pharme/2.0/ReimbursementUtilisationObservationResult'::text",
+      "organization": "'https://w3id.org/cm-pharme/2.0/Organization'::text",
+      "pharmaceutical_substance": "'https://w3id.org/cm-pharme/2.0/PharmaceuticalSubstance'::text",
+      "product_classification_assignment": "'https://w3id.org/cm-pharme/2.0/ProductClassificationAssignment'::text",
+      "product_classification_scheme": "'https://w3id.org/cm-pharme/2.0/ProductClassificationScheme'::text",
+      "product_presentation": "'https://w3id.org/cm-pharme/2.0/MedicinalProductPresentation'::text",
+      "regulatory_jurisdiction": "'https://w3id.org/cm-pharme/2.0/RegulatoryJurisdiction'::text",
+      "source_record": "'https://w3id.org/cm-pharme/2.0/SourceRecord'::text",
+      "transformation_run": "'https://w3id.org/cm-pharme/2.0/ProvenanceActivity'::text"
+    },
+    "runtime": {
+      "db": "cmpe_m1_core_332",
+      "pg": 160004,
+      "postgis": "3.4.3"
+    },
+    "sha256": "e49561ecffc20e7bd10c81fe220c2a0357d5c5bada261c7988a1327e121acc1c",
+    "views": [
+      {
+        "definition": " SELECT ema.public_id AS match_id,\n    ema.matched_entity_type,\n    ema.matched_public_id,\n    ema.method,\n    ema.confidence,\n    ema.status,\n    a.source_hash AS source_hash_a,\n    b.source_hash AS source_hash_b\n   FROM ((cmpe.entity_match_assertion ema\n     JOIN cmpe.source_record a ON ((a.source_record_id = ema.source_record_a_id)))\n     JOIN cmpe.source_record b ON ((b.source_record_id = ema.source_record_b_id)));",
+        "viewname": "v_entity_matches"
+      },
+      {
+        "definition": " SELECT o.public_id AS observation_id,\n    o.observation_kind,\n    pp.public_id AS presentation_id,\n    mp.public_id AS product_id,\n    f.public_id AS facility_id,\n    g.public_id AS geography_id,\n    g.canonical_name AS geography_name,\n    d.code AS diagnosis_code,\n    o.reporting_period,\n    o.reporting_part,\n    o.patient_count,\n    o.package_count,\n    o.cost_original,\n    o.currency,\n    o.cost_bgn,\n    o.cost_eur,\n    sr.source_hash,\n    dr.public_id AS dataset_release_id,\n    ds.public_id AS dataset_id\n   FROM ((((((((cmpe.observation_result o\n     LEFT JOIN cmpe.product_presentation pp ON ((pp.product_presentation_id = o.product_presentation_id)))\n     LEFT JOIN cmpe.medicinal_product mp ON ((mp.medicinal_product_id = pp.medicinal_product_id)))\n     LEFT JOIN cmpe.facility f ON ((f.facility_id = o.facility_id)))\n     LEFT JOIN cmpe.geography g ON ((g.geography_id = o.geography_id)))\n     LEFT JOIN cmpe.diagnosis_reference d ON ((d.diagnosis_reference_id = o.diagnosis_reference_id)))\n     JOIN cmpe.source_record sr ON ((sr.source_record_id = o.source_record_id)))\n     JOIN cmpe.dataset_release dr ON ((dr.dataset_release_id = sr.dataset_release_id)))\n     JOIN cmpe.dataset ds ON ((ds.dataset_id = dr.dataset_id)));",
+        "viewname": "v_observations"
+      },
+      {
+        "definition": " SELECT pp.public_id AS presentation_id,\n    mp.public_id AS product_id,\n    mp.preferred_name AS product_name,\n    ps.public_id AS substance_id,\n    ps.preferred_name AS substance_name,\n    pp.packaging,\n    pp.concentration,\n    pp.num_in_pack,\n    ia.lexical_value AS nhif_code\n   FROM ((((cmpe.product_presentation pp\n     JOIN cmpe.medicinal_product mp ON ((mp.medicinal_product_id = pp.medicinal_product_id)))\n     LEFT JOIN cmpe.pharmaceutical_substance ps ON ((ps.substance_id = mp.primary_substance_id)))\n     LEFT JOIN cmpe.identifier_assignment ia ON (((ia.entity_type = 'product_presentation'::text) AND (ia.entity_public_id = pp.public_id))))\n     LEFT JOIN cmpe.identifier_scheme ids ON ((ids.identifier_scheme_id = ia.identifier_scheme_id)))\n  WHERE ((ids.scheme_name = 'NHIF product code'::text) OR (ids.scheme_name IS NULL));",
+        "viewname": "v_product_presentations"
+      },
+      {
+        "definition": " SELECT a.public_id AS assertion_id,\n    a.subject_public_id,\n    a.predicate_key,\n    a.object_lexical,\n    a.object_public_id,\n    es.public_id AS evidence_support_id,\n    sr.source_record_id,\n    sr.source_hash,\n    sr.row_number,\n    dr.public_id AS dataset_release_id,\n    ds.public_id AS dataset_id,\n    ds.doi,\n    tr.public_id AS transformation_run_id,\n    tr.adapter_name,\n    tr.adapter_version\n   FROM (((((cmpe.assertion a\n     JOIN cmpe.evidence_support es ON ((es.assertion_id = a.assertion_id)))\n     JOIN cmpe.source_record sr ON ((sr.source_record_id = es.source_record_id)))\n     JOIN cmpe.dataset_release dr ON ((dr.dataset_release_id = sr.dataset_release_id)))\n     JOIN cmpe.dataset ds ON ((ds.dataset_id = dr.dataset_id)))\n     LEFT JOIN cmpe.transformation_run tr ON ((tr.transformation_run_id = sr.transformation_run_id)));",
+        "viewname": "v_provenance_lineage"
+      }
+    ]
+  },
+  "catalog_before": {
+    "indexes": [
+      {
+        "indexdef": "CREATE UNIQUE INDEX assertion_pkey ON cmpe.assertion USING btree (assertion_id)",
+        "indexname": "assertion_pkey",
+        "tablename": "assertion"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX assertion_public_id_key ON cmpe.assertion USING btree (public_id)",
+        "indexname": "assertion_public_id_key",
+        "tablename": "assertion"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX classification_entry_classification_scheme_id_code_key ON cmpe.classification_entry USING btree (classification_scheme_id, code)",
+        "indexname": "classification_entry_classification_scheme_id_code_key",
+        "tablename": "classification_entry"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX classification_entry_pkey ON cmpe.classification_entry USING btree (classification_entry_id)",
+        "indexname": "classification_entry_pkey",
+        "tablename": "classification_entry"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX classification_entry_public_id_key ON cmpe.classification_entry USING btree (public_id)",
+        "indexname": "classification_entry_public_id_key",
+        "tablename": "classification_entry"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX dataset_pkey ON cmpe.dataset USING btree (dataset_id)",
+        "indexname": "dataset_pkey",
+        "tablename": "dataset"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX dataset_public_id_key ON cmpe.dataset USING btree (public_id)",
+        "indexname": "dataset_public_id_key",
+        "tablename": "dataset"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX dataset_release_pkey ON cmpe.dataset_release USING btree (dataset_release_id)",
+        "indexname": "dataset_release_pkey",
+        "tablename": "dataset_release"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX dataset_release_public_id_key ON cmpe.dataset_release USING btree (public_id)",
+        "indexname": "dataset_release_public_id_key",
+        "tablename": "dataset_release"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX diagnosis_reference_pkey ON cmpe.diagnosis_reference USING btree (diagnosis_reference_id)",
+        "indexname": "diagnosis_reference_pkey",
+        "tablename": "diagnosis_reference"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX diagnosis_reference_public_id_key ON cmpe.diagnosis_reference USING btree (public_id)",
+        "indexname": "diagnosis_reference_public_id_key",
+        "tablename": "diagnosis_reference"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX diagnosis_reference_scheme_code_key ON cmpe.diagnosis_reference USING btree (scheme, code)",
+        "indexname": "diagnosis_reference_scheme_code_key",
+        "tablename": "diagnosis_reference"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX entity_match_assertion_pkey ON cmpe.entity_match_assertion USING btree (entity_match_assertion_id)",
+        "indexname": "entity_match_assertion_pkey",
+        "tablename": "entity_match_assertion"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX entity_match_assertion_public_id_key ON cmpe.entity_match_assertion USING btree (public_id)",
+        "indexname": "entity_match_assertion_public_id_key",
+        "tablename": "entity_match_assertion"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX evidence_support_pkey ON cmpe.evidence_support USING btree (evidence_support_id)",
+        "indexname": "evidence_support_pkey",
+        "tablename": "evidence_support"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX evidence_support_public_id_key ON cmpe.evidence_support USING btree (public_id)",
+        "indexname": "evidence_support_public_id_key",
+        "tablename": "evidence_support"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX evidence_support_source_record_id_assertion_id_key ON cmpe.evidence_support USING btree (source_record_id, assertion_id)",
+        "indexname": "evidence_support_source_record_id_assertion_id_key",
+        "tablename": "evidence_support"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX facility_pkey ON cmpe.facility USING btree (facility_id)",
+        "indexname": "facility_pkey",
+        "tablename": "facility"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX facility_public_id_key ON cmpe.facility USING btree (public_id)",
+        "indexname": "facility_public_id_key",
+        "tablename": "facility"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX facility_operation_pkey ON cmpe.facility_operation USING btree (facility_operation_id)",
+        "indexname": "facility_operation_pkey",
+        "tablename": "facility_operation"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX facility_operation_public_id_key ON cmpe.facility_operation USING btree (public_id)",
+        "indexname": "facility_operation_public_id_key",
+        "tablename": "facility_operation"
+      },
+      {
+        "indexdef": "CREATE INDEX geography_geom_gix ON cmpe.geography USING gist (geom)",
+        "indexname": "geography_geom_gix",
+        "tablename": "geography"
+      },
+      {
+        "indexdef": "CREATE INDEX geography_geonames_idx ON cmpe.geography USING btree (geonames_id) WHERE (geonames_id IS NOT NULL)",
+        "indexname": "geography_geonames_idx",
+        "tablename": "geography"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX geography_pkey ON cmpe.geography USING btree (geography_id)",
+        "indexname": "geography_pkey",
+        "tablename": "geography"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX geography_public_id_key ON cmpe.geography USING btree (public_id)",
+        "indexname": "geography_public_id_key",
+        "tablename": "geography"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX geography_alias_pkey ON cmpe.geography_alias USING btree (geography_alias_id)",
+        "indexname": "geography_alias_pkey",
+        "tablename": "geography_alias"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX geography_alias_source_system_source_value_key ON cmpe.geography_alias USING btree (source_system, source_value)",
+        "indexname": "geography_alias_source_system_source_value_key",
+        "tablename": "geography_alias"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX identifier_assignment_identifier_scheme_id_lexical_value_en_key ON cmpe.identifier_assignment USING btree (identifier_scheme_id, lexical_value, entity_type, entity_public_id)",
+        "indexname": "identifier_assignment_identifier_scheme_id_lexical_value_en_key",
+        "tablename": "identifier_assignment"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX identifier_assignment_pkey ON cmpe.identifier_assignment USING btree (identifier_assignment_id)",
+        "indexname": "identifier_assignment_pkey",
+        "tablename": "identifier_assignment"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX identifier_assignment_public_id_key ON cmpe.identifier_assignment USING btree (public_id)",
+        "indexname": "identifier_assignment_public_id_key",
+        "tablename": "identifier_assignment"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX identifier_scheme_pkey ON cmpe.identifier_scheme USING btree (identifier_scheme_id)",
+        "indexname": "identifier_scheme_pkey",
+        "tablename": "identifier_scheme"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX identifier_scheme_public_id_key ON cmpe.identifier_scheme USING btree (public_id)",
+        "indexname": "identifier_scheme_public_id_key",
+        "tablename": "identifier_scheme"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX medicinal_product_pkey ON cmpe.medicinal_product USING btree (medicinal_product_id)",
+        "indexname": "medicinal_product_pkey",
+        "tablename": "medicinal_product"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX medicinal_product_public_id_key ON cmpe.medicinal_product USING btree (public_id)",
+        "indexname": "medicinal_product_public_id_key",
+        "tablename": "medicinal_product"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX medicine_shortage_situation_pkey ON cmpe.medicine_shortage_situation USING btree (shortage_id)",
+        "indexname": "medicine_shortage_situation_pkey",
+        "tablename": "medicine_shortage_situation"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX medicine_shortage_situation_public_id_key ON cmpe.medicine_shortage_situation USING btree (public_id)",
+        "indexname": "medicine_shortage_situation_public_id_key",
+        "tablename": "medicine_shortage_situation"
+      },
+      {
+        "indexdef": "CREATE INDEX observation_geo_idx ON cmpe.observation_result USING btree (geography_id)",
+        "indexname": "observation_geo_idx",
+        "tablename": "observation_result"
+      },
+      {
+        "indexdef": "CREATE INDEX observation_period_idx ON cmpe.observation_result USING btree (reporting_period)",
+        "indexname": "observation_period_idx",
+        "tablename": "observation_result"
+      },
+      {
+        "indexdef": "CREATE INDEX observation_presentation_idx ON cmpe.observation_result USING btree (product_presentation_id)",
+        "indexname": "observation_presentation_idx",
+        "tablename": "observation_result"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX observation_result_pkey ON cmpe.observation_result USING btree (observation_result_id)",
+        "indexname": "observation_result_pkey",
+        "tablename": "observation_result"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX observation_result_public_id_key ON cmpe.observation_result USING btree (public_id)",
+        "indexname": "observation_result_public_id_key",
+        "tablename": "observation_result"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX organization_pkey ON cmpe.organization USING btree (organization_id)",
+        "indexname": "organization_pkey",
+        "tablename": "organization"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX organization_public_id_key ON cmpe.organization USING btree (public_id)",
+        "indexname": "organization_public_id_key",
+        "tablename": "organization"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX pharmaceutical_substance_pkey ON cmpe.pharmaceutical_substance USING btree (substance_id)",
+        "indexname": "pharmaceutical_substance_pkey",
+        "tablename": "pharmaceutical_substance"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX pharmaceutical_substance_public_id_key ON cmpe.pharmaceutical_substance USING btree (public_id)",
+        "indexname": "pharmaceutical_substance_public_id_key",
+        "tablename": "pharmaceutical_substance"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX product_classification_assign_medicinal_product_id_classifi_key ON cmpe.product_classification_assignment USING btree (medicinal_product_id, classification_entry_id)",
+        "indexname": "product_classification_assign_medicinal_product_id_classifi_key",
+        "tablename": "product_classification_assignment"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX product_classification_assignment_pkey ON cmpe.product_classification_assignment USING btree (product_classification_assignment_id)",
+        "indexname": "product_classification_assignment_pkey",
+        "tablename": "product_classification_assignment"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX product_classification_assignment_public_id_key ON cmpe.product_classification_assignment USING btree (public_id)",
+        "indexname": "product_classification_assignment_public_id_key",
+        "tablename": "product_classification_assignment"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX product_classification_scheme_pkey ON cmpe.product_classification_scheme USING btree (classification_scheme_id)",
+        "indexname": "product_classification_scheme_pkey",
+        "tablename": "product_classification_scheme"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX product_classification_scheme_public_id_key ON cmpe.product_classification_scheme USING btree (public_id)",
+        "indexname": "product_classification_scheme_public_id_key",
+        "tablename": "product_classification_scheme"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX product_presentation_pkey ON cmpe.product_presentation USING btree (product_presentation_id)",
+        "indexname": "product_presentation_pkey",
+        "tablename": "product_presentation"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX product_presentation_public_id_key ON cmpe.product_presentation USING btree (public_id)",
+        "indexname": "product_presentation_public_id_key",
+        "tablename": "product_presentation"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX regulatory_jurisdiction_pkey ON cmpe.regulatory_jurisdiction USING btree (regulatory_jurisdiction_id)",
+        "indexname": "regulatory_jurisdiction_pkey",
+        "tablename": "regulatory_jurisdiction"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX regulatory_jurisdiction_public_id_key ON cmpe.regulatory_jurisdiction USING btree (public_id)",
+        "indexname": "regulatory_jurisdiction_public_id_key",
+        "tablename": "regulatory_jurisdiction"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX source_record_dataset_release_id_row_number_source_hash_key ON cmpe.source_record USING btree (dataset_release_id, row_number, source_hash)",
+        "indexname": "source_record_dataset_release_id_row_number_source_hash_key",
+        "tablename": "source_record"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX source_record_pkey ON cmpe.source_record USING btree (source_record_id)",
+        "indexname": "source_record_pkey",
+        "tablename": "source_record"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX transformation_run_pkey ON cmpe.transformation_run USING btree (transformation_run_id)",
+        "indexname": "transformation_run_pkey",
+        "tablename": "transformation_run"
+      },
+      {
+        "indexdef": "CREATE UNIQUE INDEX transformation_run_public_id_key ON cmpe.transformation_run USING btree (public_id)",
+        "indexname": "transformation_run_public_id_key",
+        "tablename": "transformation_run"
+      }
+    ],
+    "ontology_iri_defaults": {
+      "assertion": "'https://w3id.org/cm-pharme/2.0/Assertion'::text",
+      "classification_entry": "'https://w3id.org/cm-pharme/2.0/ClassificationEntry'::text",
+      "dataset": "'https://w3id.org/cm-pharme/2.0/Dataset'::text",
+      "dataset_release": "'https://w3id.org/cm-pharme/2.0/DatasetRelease'::text",
+      "diagnosis_reference": "'https://w3id.org/cm-pharme/2.0/DiagnosisClassificationReference'::text",
+      "entity_match_assertion": "'https://w3id.org/cm-pharme/2.0/EntityMatchAssertion'::text",
+      "evidence_support": "'https://w3id.org/cm-pharme/2.0/EvidenceSupport'::text",
+      "facility": "'https://w3id.org/cm-pharme/2.0/Facility'::text",
+      "facility_operation": "'https://w3id.org/cm-pharme/2.0/FacilityOperation'::text",
+      "identifier_assignment": "'https://w3id.org/cm-pharme/2.0/IdentifierAssignment'::text",
+      "identifier_scheme": "'https://w3id.org/cm-pharme/2.0/IdentifierScheme'::text",
+      "medicinal_product": "'https://w3id.org/cm-pharme/2.0/MedicinalProduct'::text",
+      "medicine_shortage_situation": "'https://w3id.org/cm-pharme/2.0/MedicineShortageSituation'::text",
+      "observation_result": "'https://w3id.org/cm-pharme/2.0/ReimbursementUtilisationObservationResult'::text",
+      "organization": "'https://w3id.org/cm-pharme/2.0/Organization'::text",
+      "pharmaceutical_substance": "'https://w3id.org/cm-pharme/2.0/PharmaceuticalSubstance'::text",
+      "product_classification_assignment": "'https://w3id.org/cm-pharme/2.0/ProductClassificationAssignment'::text",
+      "product_classification_scheme": "'https://w3id.org/cm-pharme/2.0/ProductClassificationScheme'::text",
+      "product_presentation": "'https://w3id.org/cm-pharme/2.0/MedicinalProductPresentation'::text",
+      "regulatory_jurisdiction": "'https://w3id.org/cm-pharme/2.0/RegulatoryJurisdiction'::text",
+      "source_record": "'https://w3id.org/cm-pharme/2.0/SourceRecord'::text",
+      "transformation_run": "'https://w3id.org/cm-pharme/2.0/ProvenanceActivity'::text"
+    },
+    "runtime": {
+      "db": "cmpe_m1_core_332",
+      "pg": 160004,
+      "postgis": "3.4.3"
+    },
+    "sha256": "e49561ecffc20e7bd10c81fe220c2a0357d5c5bada261c7988a1327e121acc1c",
+    "views": [
+      {
+        "definition": " SELECT ema.public_id AS match_id,\n    ema.matched_entity_type,\n    ema.matched_public_id,\n    ema.method,\n    ema.confidence,\n    ema.status,\n    a.source_hash AS source_hash_a,\n    b.source_hash AS source_hash_b\n   FROM ((cmpe.entity_match_assertion ema\n     JOIN cmpe.source_record a ON ((a.source_record_id = ema.source_record_a_id)))\n     JOIN cmpe.source_record b ON ((b.source_record_id = ema.source_record_b_id)));",
+        "viewname": "v_entity_matches"
+      },
+      {
+        "definition": " SELECT o.public_id AS observation_id,\n    o.observation_kind,\n    pp.public_id AS presentation_id,\n    mp.public_id AS product_id,\n    f.public_id AS facility_id,\n    g.public_id AS geography_id,\n    g.canonical_name AS geography_name,\n    d.code AS diagnosis_code,\n    o.reporting_period,\n    o.reporting_part,\n    o.patient_count,\n    o.package_count,\n    o.cost_original,\n    o.currency,\n    o.cost_bgn,\n    o.cost_eur,\n    sr.source_hash,\n    dr.public_id AS dataset_release_id,\n    ds.public_id AS dataset_id\n   FROM ((((((((cmpe.observation_result o\n     LEFT JOIN cmpe.product_presentation pp ON ((pp.product_presentation_id = o.product_presentation_id)))\n     LEFT JOIN cmpe.medicinal_product mp ON ((mp.medicinal_product_id = pp.medicinal_product_id)))\n     LEFT JOIN cmpe.facility f ON ((f.facility_id = o.facility_id)))\n     LEFT JOIN cmpe.geography g ON ((g.geography_id = o.geography_id)))\n     LEFT JOIN cmpe.diagnosis_reference d ON ((d.diagnosis_reference_id = o.diagnosis_reference_id)))\n     JOIN cmpe.source_record sr ON ((sr.source_record_id = o.source_record_id)))\n     JOIN cmpe.dataset_release dr ON ((dr.dataset_release_id = sr.dataset_release_id)))\n     JOIN cmpe.dataset ds ON ((ds.dataset_id = dr.dataset_id)));",
+        "viewname": "v_observations"
+      },
+      {
+        "definition": " SELECT pp.public_id AS presentation_id,\n    mp.public_id AS product_id,\n    mp.preferred_name AS product_name,\n    ps.public_id AS substance_id,\n    ps.preferred_name AS substance_name,\n    pp.packaging,\n    pp.concentration,\n    pp.num_in_pack,\n    ia.lexical_value AS nhif_code\n   FROM ((((cmpe.product_presentation pp\n     JOIN cmpe.medicinal_product mp ON ((mp.medicinal_product_id = pp.medicinal_product_id)))\n     LEFT JOIN cmpe.pharmaceutical_substance ps ON ((ps.substance_id = mp.primary_substance_id)))\n     LEFT JOIN cmpe.identifier_assignment ia ON (((ia.entity_type = 'product_presentation'::text) AND (ia.entity_public_id = pp.public_id))))\n     LEFT JOIN cmpe.identifier_scheme ids ON ((ids.identifier_scheme_id = ia.identifier_scheme_id)))\n  WHERE ((ids.scheme_name = 'NHIF product code'::text) OR (ids.scheme_name IS NULL));",
+        "viewname": "v_product_presentations"
+      },
+      {
+        "definition": " SELECT a.public_id AS assertion_id,\n    a.subject_public_id,\n    a.predicate_key,\n    a.object_lexical,\n    a.object_public_id,\n    es.public_id AS evidence_support_id,\n    sr.source_record_id,\n    sr.source_hash,\n    sr.row_number,\n    dr.public_id AS dataset_release_id,\n    ds.public_id AS dataset_id,\n    ds.doi,\n    tr.public_id AS transformation_run_id,\n    tr.adapter_name,\n    tr.adapter_version\n   FROM (((((cmpe.assertion a\n     JOIN cmpe.evidence_support es ON ((es.assertion_id = a.assertion_id)))\n     JOIN cmpe.source_record sr ON ((sr.source_record_id = es.source_record_id)))\n     JOIN cmpe.dataset_release dr ON ((dr.dataset_release_id = sr.dataset_release_id)))\n     JOIN cmpe.dataset ds ON ((ds.dataset_id = dr.dataset_id)))\n     LEFT JOIN cmpe.transformation_run tr ON ((tr.transformation_run_id = sr.transformation_run_id)));",
+        "viewname": "v_provenance_lineage"
+      }
+    ]
+  },
+  "contract_sha256": "270d1b279f68ab84ab002cf04a4a7ea3272841e903baee4549fe0ff02d444dfc",
+  "copied_database_executed": true,
+  "database_after": {
+    "data_sha256": "e9cb27ef52edbd4544d4b04474dff40a975449510d6e73eec733640bd09c2271",
+    "row_counts": {
+      "assertion": 7,
+      "classification_entry": 2,
+      "dataset": 2,
+      "dataset_release": 2,
+      "diagnosis_reference": 2,
+      "entity_match_assertion": 2,
+      "evidence_support": 7,
+      "facility": 2,
+      "facility_operation": 0,
+      "geography": 2,
+      "geography_alias": 2,
+      "identifier_assignment": 4,
+      "identifier_scheme": 2,
+      "medicinal_product": 2,
+      "medicine_shortage_situation": 0,
+      "observation_result": 7,
+      "organization": 0,
+      "pharmaceutical_substance": 2,
+      "product_classification_assignment": 2,
+      "product_classification_scheme": 1,
+      "product_presentation": 2,
+      "regulatory_jurisdiction": 0,
+      "source_record": 7,
+      "transformation_run": 1
+    },
+    "schema_sha256": "c0d12fc52ae1fcfdf37d9c62332a1951e8205a346f43caee25698c7805b794fc",
+    "table_sha256": {
+      "assertion": "e826f7737f2d2bf0e16ecdc7d1eb51fc8cdd0239b8c2cd3e86c5bba9aa36ee0d",
+      "classification_entry": "c1339ce8232b87f267d4f5c346ce25e59a9b9dc1f1e9166c95a706f12d960911",
+      "dataset": "5b0ccf53be8d1fc30e750cbc73462cb76f87d897bfb19a50168d8db1121cff02",
+      "dataset_release": "aefb50bcb4d5f2281a488617bfe0c80171862e3af3bad3689249ee513f5e12ff",
+      "diagnosis_reference": "df88a1f5ebfc82a562ec9f1837d24de39c417c3850488be3a134a08dcef1ea61",
+      "entity_match_assertion": "599e0aa8cbf7b4cafab4650ad9b7fdd5832d622127e11f6ac641828f5d34e703",
+      "evidence_support": "e96adf07b6a6ee46e6e8f72a2457c7c4879110e0f7a6ef010535c8a806ac85b8",
+      "facility": "6f02d35d6172d5ea03e9ce753c5be9a0c26b91a61bf790a0a62a6a7508f26ada",
+      "facility_operation": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "geography": "ebcbbc8182cbd8783be929d46d6b1181c569d33823c69eaea220b5286b945af2",
+      "geography_alias": "e311bbefaa5c89be4724882ac3f9622500a6da60c3a9b491741d2afd3b2743cd",
+      "identifier_assignment": "6e8543b4586ef12a076eac1949c2cd92c9b7160568b23d789a1fbe2bc4e7f442",
+      "identifier_scheme": "4aa173b3b3c174cb23828acdf0d52c8cb10b979dea3ef7a52eb77912feabd57e",
+      "medicinal_product": "f0fabbd0c4d4fcac0806becd6a84a983a18255c5ece6293e5d4dae79258e9cc6",
+      "medicine_shortage_situation": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "observation_result": "bd2a57abf160d694c90bbdd68c6defce369388d2c597a0c337dc0691930f8d81",
+      "organization": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "pharmaceutical_substance": "815f284d05825511633ed55b7e295b156aa96ed8cd8bfb24101280bc4a22bab7",
+      "product_classification_assignment": "aeb7a221e6b94203e9241a66e31394b37bd96198875a3cc7fa968a68e93fb348",
+      "product_classification_scheme": "076ff23e368950d2d00a5e268c193e5c46b2784b254562d1ec80cf608c3791af",
+      "product_presentation": "da543f5b65966c81f53e5e21565a6067d4dc3b290c7af2bbbc10be546e1c8a68",
+      "regulatory_jurisdiction": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "source_record": "e618cf408dfd1c5080ff7126d1d54ad0c3a4ab741daa961995049f6d35cbf3ec",
+      "transformation_run": "dad925fcc1f067d58f3157e62a45d9ea61b4caddba1b92877ff52b7a5bdc8c60"
+    },
+    "versions": {
+      "pg_version": "PostgreSQL 16.4 (Debian 16.4-1.pgdg110+2) on x86_64-pc-linux-gnu, compiled by gcc (Debian 10.2.1-6) 10.2.1 20210110, 64-bit",
+      "postgis_version": "POSTGIS=\"3.4.3 e365945\" [EXTENSION] PGSQL=\"160\" GEOS=\"3.9.0-CAPI-1.16.2\" PROJ=\"7.2.1 NETWORK_ENABLED=OFF URL_ENDPOINT=https://cdn.proj.org USER_WRITABLE_DIRECTORY=/var/lib/postgresql/.local/share/proj DATABASE_PATH=/usr/share/proj/proj.db\" LIBXML=\"2.9.10\" LIBJSON=\"0.15\" LIBPROTOBUF=\"1.3.3\" WAGYU=\"0.5.0 (Internal)\" TOPOLOGY"
+    }
+  },
+  "database_before": {
+    "data_sha256": "e9cb27ef52edbd4544d4b04474dff40a975449510d6e73eec733640bd09c2271",
+    "row_counts": {
+      "assertion": 7,
+      "classification_entry": 2,
+      "dataset": 2,
+      "dataset_release": 2,
+      "diagnosis_reference": 2,
+      "entity_match_assertion": 2,
+      "evidence_support": 7,
+      "facility": 2,
+      "facility_operation": 0,
+      "geography": 2,
+      "geography_alias": 2,
+      "identifier_assignment": 4,
+      "identifier_scheme": 2,
+      "medicinal_product": 2,
+      "medicine_shortage_situation": 0,
+      "observation_result": 7,
+      "organization": 0,
+      "pharmaceutical_substance": 2,
+      "product_classification_assignment": 2,
+      "product_classification_scheme": 1,
+      "product_presentation": 2,
+      "regulatory_jurisdiction": 0,
+      "source_record": 7,
+      "transformation_run": 1
+    },
+    "schema_sha256": "c0d12fc52ae1fcfdf37d9c62332a1951e8205a346f43caee25698c7805b794fc",
+    "table_sha256": {
+      "assertion": "e826f7737f2d2bf0e16ecdc7d1eb51fc8cdd0239b8c2cd3e86c5bba9aa36ee0d",
+      "classification_entry": "c1339ce8232b87f267d4f5c346ce25e59a9b9dc1f1e9166c95a706f12d960911",
+      "dataset": "5b0ccf53be8d1fc30e750cbc73462cb76f87d897bfb19a50168d8db1121cff02",
+      "dataset_release": "aefb50bcb4d5f2281a488617bfe0c80171862e3af3bad3689249ee513f5e12ff",
+      "diagnosis_reference": "df88a1f5ebfc82a562ec9f1837d24de39c417c3850488be3a134a08dcef1ea61",
+      "entity_match_assertion": "599e0aa8cbf7b4cafab4650ad9b7fdd5832d622127e11f6ac641828f5d34e703",
+      "evidence_support": "e96adf07b6a6ee46e6e8f72a2457c7c4879110e0f7a6ef010535c8a806ac85b8",
+      "facility": "6f02d35d6172d5ea03e9ce753c5be9a0c26b91a61bf790a0a62a6a7508f26ada",
+      "facility_operation": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "geography": "ebcbbc8182cbd8783be929d46d6b1181c569d33823c69eaea220b5286b945af2",
+      "geography_alias": "e311bbefaa5c89be4724882ac3f9622500a6da60c3a9b491741d2afd3b2743cd",
+      "identifier_assignment": "6e8543b4586ef12a076eac1949c2cd92c9b7160568b23d789a1fbe2bc4e7f442",
+      "identifier_scheme": "4aa173b3b3c174cb23828acdf0d52c8cb10b979dea3ef7a52eb77912feabd57e",
+      "medicinal_product": "f0fabbd0c4d4fcac0806becd6a84a983a18255c5ece6293e5d4dae79258e9cc6",
+      "medicine_shortage_situation": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "observation_result": "bd2a57abf160d694c90bbdd68c6defce369388d2c597a0c337dc0691930f8d81",
+      "organization": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "pharmaceutical_substance": "815f284d05825511633ed55b7e295b156aa96ed8cd8bfb24101280bc4a22bab7",
+      "product_classification_assignment": "aeb7a221e6b94203e9241a66e31394b37bd96198875a3cc7fa968a68e93fb348",
+      "product_classification_scheme": "076ff23e368950d2d00a5e268c193e5c46b2784b254562d1ec80cf608c3791af",
+      "product_presentation": "da543f5b65966c81f53e5e21565a6067d4dc3b290c7af2bbbc10be546e1c8a68",
+      "regulatory_jurisdiction": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "source_record": "e618cf408dfd1c5080ff7126d1d54ad0c3a4ab741daa961995049f6d35cbf3ec",
+      "transformation_run": "dad925fcc1f067d58f3157e62a45d9ea61b4caddba1b92877ff52b7a5bdc8c60"
+    },
+    "versions": {
+      "pg_version": "PostgreSQL 16.4 (Debian 16.4-1.pgdg110+2) on x86_64-pc-linux-gnu, compiled by gcc (Debian 10.2.1-6) 10.2.1 20210110, 64-bit",
+      "postgis_version": "POSTGIS=\"3.4.3 e365945\" [EXTENSION] PGSQL=\"160\" GEOS=\"3.9.0-CAPI-1.16.2\" PROJ=\"7.2.1 NETWORK_ENABLED=OFF URL_ENDPOINT=https://cdn.proj.org USER_WRITABLE_DIRECTORY=/var/lib/postgresql/.local/share/proj DATABASE_PATH=/usr/share/proj/proj.db\" LIBXML=\"2.9.10\" LIBJSON=\"0.15\" LIBPROTOBUF=\"1.3.3\" WAGYU=\"0.5.0 (Internal)\" TOPOLOGY"
+    }
+  },
+  "database_target": "cmpe_m1_core_332",
+  "export_connections_default_read_only": true,
+  "export_mutation_refusals": [
+    {
+      "actual_stage": "SHACL_REJECTED",
+      "expected_stage": "SHACL_REJECTED",
+      "id": "missing-record-type",
+      "refused": true
+    },
+    {
+      "actual_stage": "SHACL_REJECTED",
+      "expected_stage": "SHACL_REJECTED",
+      "id": "missing-record-key",
+      "refused": true
+    },
+    {
+      "actual_stage": "IDENTITY_REJECTED",
+      "expected_stage": "IDENTITY_REJECTED",
+      "id": "hash-key-mismatch",
+      "refused": true
+    }
+  ],
+  "freeze_commit": "44803b489a44b484fa603e6fb4e4c92d50d82641",
+  "full_external_dataset_ingestion": false,
+  "full_native_validation_claimed": false,
+  "ga_ready": false,
+  "legacy_after": {
+    "kg_sha256": "8bec44df9e77a2541a5711433292e7cee9fdea9f9342258c86cfafd1d98f2a52",
+    "kg_triples": 398,
+    "pairs_passed": 4,
+    "query_sha256": "b79ae91f684ecd11bc94f8c94e92828b3030553e3a52048afbbde9c10ba60e48"
+  },
+  "legacy_before": {
+    "kg_sha256": "8bec44df9e77a2541a5711433292e7cee9fdea9f9342258c86cfafd1d98f2a52",
+    "kg_triples": 398,
+    "pairs_passed": 4,
+    "query_sha256": "b79ae91f684ecd11bc94f8c94e92828b3030553e3a52048afbbde9c10ba60e48"
+  },
+  "mapping_dispositions": {
+    "EXECUTED_BOUNDED_21": 4,
+    "QUALITY_REVIEW_NO_21_EXPORT": 1,
+    "UNIMPLEMENTED_21_KEEP_20": 29,
+    "ZERO_CHANGE_NO_TABLE": 2
+  },
+  "old_m1_or_w6_sources_modified": false,
+  "optional_fixture_update_count": 1,
+  "optional_fixture_update_rolled_back": true,
+  "oracle_sha256": "868e04ef5e1d66c80ecce77697a6c5bf2bd8d01384ddedd42d145bf25c07043d",
+  "passed": true,
+  "profile": "v2/ontology/profiles/2.1/m1-provenance/0.1.0/",
+  "profile_manifest_sha256": "2528b79a3ce8a6c43d2c41b07ff70f519bb0590a2c3a1220f4c13362e5bbbed4",
+  "python_versions": {
+    "owlrl": "7.1.4",
+    "psycopg": "3.2.9",
+    "pyshacl": "0.31.0",
+    "rdflib": "7.5.0"
+  },
+  "read_only_write_probe": {
+    "refused": true,
+    "sqlstate": "25006",
+    "where_false": true
+  },
+  "rollback": "Baseline exports use enforced read-only connections. A separate single nullable-FK fixture update was rolled back; all W6 row/schema/default/index/view and legacy KG/query snapshots match.",
+  "schema_version": "CMPE-M1CopiedIntegrationResults/0.1.0",
+  "selected_mapping_ids": [
+    "M001",
+    "M002",
+    "M003",
+    "M004"
+  ],
+  "software": {
+    "libpq_version": 170005,
+    "psycopg_binary": "3.2.9",
+    "psycopg_implementation": "binary",
+    "python": "3.12.15"
+  },
+  "source_commit": "2108b9bd24a380fce6018da813d1bbda6d0be12d",
+  "synthetic_fixture": true,
+  "target_guards": [
+    {
+      "id": "default-postgres",
+      "refused": true
+    },
+    {
+      "id": "legacy-default",
+      "refused": true
+    },
+    {
+      "id": "nonloopback",
+      "refused": true
+    }
+  ]
+}

@@ -1,0 +1,308 @@
+{
+  "profiles": 5,
+  "source_extractions": 6,
+  "real_guidance_documents": 1,
+  "real_action_announcements": 0,
+  "operational_submissions": 0,
+  "shacl": {
+    "conforms": true,
+    "violations": []
+  },
+  "hermit": {
+    "consistent": true,
+    "unsatisfiable_named_classes": [],
+    "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+    "prov_profile": "two conflicting annotation-property declarations removed; raw source retained"
+  },
+  "checks": [
+    {
+      "name": "official-guidance-profiles-shacl",
+      "pass": true
+    },
+    {
+      "name": "official-guidance-hermit",
+      "pass": true
+    },
+    {
+      "name": "routine-shortage-routine-unknown-activation-or-time",
+      "pass": true,
+      "result": {
+        "verdict": "UNKNOWN",
+        "dimensions": {
+          "version": "MATCH",
+          "scenario": "MATCH",
+          "submission": "MATCH",
+          "jurisdiction": "MATCH",
+          "role": "MATCH",
+          "route": "MATCH",
+          "actor": "MATCH",
+          "portfolio": "MATCH",
+          "product": "MATCH",
+          "action": "NOT_REQUIRED",
+          "time": "UNKNOWN",
+          "marketing": "MATCH"
+        },
+        "frequency": "UNKNOWN",
+        "legal_compliance": "NOT_ASSESSED",
+        "operational_readiness": "NOT_ASSESSED"
+      }
+    },
+    {
+      "name": "https://w3id.org/cm-pharme/experimental/reporting-context/EMA-routine-cap-1.4-marketing-policy",
+      "pass": true
+    },
+    {
+      "name": "availability-preparedness-unknown-activation-or-time",
+      "pass": true,
+      "result": {
+        "verdict": "UNKNOWN",
+        "dimensions": {
+          "version": "MATCH",
+          "scenario": "MATCH",
+          "submission": "MATCH",
+          "jurisdiction": "MATCH",
+          "role": "MATCH",
+          "route": "MATCH",
+          "actor": "MATCH",
+          "portfolio": "MATCH",
+          "product": "UNKNOWN",
+          "action": "UNKNOWN",
+          "time": "UNKNOWN",
+          "marketing": "MATCH"
+        },
+        "frequency": "UNKNOWN",
+        "legal_compliance": "NOT_ASSESSED",
+        "operational_readiness": "NOT_ASSESSED"
+      }
+    },
+    {
+      "name": "https://w3id.org/cm-pharme/experimental/reporting-context/EMA-preparedness-availability-1.4-does-not-fabricate-action",
+      "pass": true
+    },
+    {
+      "name": "https://w3id.org/cm-pharme/experimental/reporting-context/EMA-preparedness-availability-1.4-marketing-policy",
+      "pass": true
+    },
+    {
+      "name": "manufacturing-preparedness-unknown-activation-or-time",
+      "pass": true,
+      "result": {
+        "verdict": "UNKNOWN",
+        "dimensions": {
+          "version": "MATCH",
+          "scenario": "MATCH",
+          "submission": "MATCH",
+          "jurisdiction": "MATCH",
+          "role": "MATCH",
+          "route": "MATCH",
+          "actor": "MATCH",
+          "portfolio": "MATCH",
+          "product": "UNKNOWN",
+          "action": "UNKNOWN",
+          "time": "UNKNOWN",
+          "marketing": "NOT_REQUIRED"
+        },
+        "frequency": "UNKNOWN",
+        "legal_compliance": "NOT_ASSESSED",
+        "operational_readiness": "NOT_ASSESSED"
+      }
+    },
+    {
+      "name": "https://w3id.org/cm-pharme/experimental/reporting-context/EMA-preparedness-manufacturing-1.4-does-not-fabricate-action",
+      "pass": true
+    },
+    {
+      "name": "https://w3id.org/cm-pharme/experimental/reporting-context/EMA-preparedness-manufacturing-1.4-marketing-policy",
+      "pass": true
+    },
+    {
+      "name": "alternative-therapies-preparedness-unknown-activation-or-time",
+      "pass": true,
+      "result": {
+        "verdict": "UNKNOWN",
+        "dimensions": {
+          "version": "MATCH",
+          "scenario": "MATCH",
+          "submission": "MATCH",
+          "jurisdiction": "MATCH",
+          "role": "MATCH",
+          "route": "MATCH",
+          "actor": "MATCH",
+          "portfolio": "MATCH",
+          "product": "UNKNOWN",
+          "action": "UNKNOWN",
+          "time": "UNKNOWN",
+          "marketing": "NOT_REQUIRED"
+        },
+        "frequency": "UNKNOWN",
+        "legal_compliance": "NOT_ASSESSED",
+        "operational_readiness": "NOT_ASSESSED"
+      }
+    },
+    {
+      "name": "https://w3id.org/cm-pharme/experimental/reporting-context/EMA-preparedness-alternatives-1.4-does-not-fabricate-action",
+      "pass": true
+    },
+    {
+      "name": "https://w3id.org/cm-pharme/experimental/reporting-context/EMA-preparedness-alternatives-1.4-marketing-policy",
+      "pass": true
+    },
+    {
+      "name": "availability-crisis-unknown-activation-or-time",
+      "pass": true,
+      "result": {
+        "verdict": "UNKNOWN",
+        "dimensions": {
+          "version": "MATCH",
+          "scenario": "MATCH",
+          "submission": "MATCH",
+          "jurisdiction": "MATCH",
+          "role": "MATCH",
+          "route": "MATCH",
+          "actor": "MATCH",
+          "portfolio": "MATCH",
+          "product": "UNKNOWN",
+          "action": "UNKNOWN",
+          "time": "UNKNOWN",
+          "marketing": "MATCH"
+        },
+        "frequency": "UNKNOWN",
+        "legal_compliance": "NOT_ASSESSED",
+        "operational_readiness": "NOT_ASSESSED"
+      }
+    },
+    {
+      "name": "https://w3id.org/cm-pharme/experimental/reporting-context/EMA-crisis-availability-1.4-does-not-fabricate-action",
+      "pass": true
+    },
+    {
+      "name": "https://w3id.org/cm-pharme/experimental/reporting-context/EMA-crisis-availability-1.4-marketing-policy",
+      "pass": true
+    }
+  ],
+  "pass": 16,
+  "total": 16,
+  "outcomes": [
+    {
+      "scope": "https://w3id.org/cm-pharme/experimental/reporting-context/EMA-routine-cap-1.4",
+      "context_origin": "SYNTHETIC_NOT_REAL_SUBMISSION",
+      "result": {
+        "verdict": "UNKNOWN",
+        "dimensions": {
+          "version": "MATCH",
+          "scenario": "MATCH",
+          "submission": "MATCH",
+          "jurisdiction": "MATCH",
+          "role": "MATCH",
+          "route": "MATCH",
+          "actor": "MATCH",
+          "portfolio": "MATCH",
+          "product": "MATCH",
+          "action": "NOT_REQUIRED",
+          "time": "UNKNOWN",
+          "marketing": "MATCH"
+        },
+        "frequency": "UNKNOWN",
+        "legal_compliance": "NOT_ASSESSED",
+        "operational_readiness": "NOT_ASSESSED"
+      }
+    },
+    {
+      "scope": "https://w3id.org/cm-pharme/experimental/reporting-context/EMA-preparedness-availability-1.4",
+      "context_origin": "SYNTHETIC_NOT_REAL_SUBMISSION",
+      "result": {
+        "verdict": "UNKNOWN",
+        "dimensions": {
+          "version": "MATCH",
+          "scenario": "MATCH",
+          "submission": "MATCH",
+          "jurisdiction": "MATCH",
+          "role": "MATCH",
+          "route": "MATCH",
+          "actor": "MATCH",
+          "portfolio": "MATCH",
+          "product": "UNKNOWN",
+          "action": "UNKNOWN",
+          "time": "UNKNOWN",
+          "marketing": "MATCH"
+        },
+        "frequency": "UNKNOWN",
+        "legal_compliance": "NOT_ASSESSED",
+        "operational_readiness": "NOT_ASSESSED"
+      }
+    },
+    {
+      "scope": "https://w3id.org/cm-pharme/experimental/reporting-context/EMA-preparedness-manufacturing-1.4",
+      "context_origin": "SYNTHETIC_NOT_REAL_SUBMISSION",
+      "result": {
+        "verdict": "UNKNOWN",
+        "dimensions": {
+          "version": "MATCH",
+          "scenario": "MATCH",
+          "submission": "MATCH",
+          "jurisdiction": "MATCH",
+          "role": "MATCH",
+          "route": "MATCH",
+          "actor": "MATCH",
+          "portfolio": "MATCH",
+          "product": "UNKNOWN",
+          "action": "UNKNOWN",
+          "time": "UNKNOWN",
+          "marketing": "NOT_REQUIRED"
+        },
+        "frequency": "UNKNOWN",
+        "legal_compliance": "NOT_ASSESSED",
+        "operational_readiness": "NOT_ASSESSED"
+      }
+    },
+    {
+      "scope": "https://w3id.org/cm-pharme/experimental/reporting-context/EMA-preparedness-alternatives-1.4",
+      "context_origin": "SYNTHETIC_NOT_REAL_SUBMISSION",
+      "result": {
+        "verdict": "UNKNOWN",
+        "dimensions": {
+          "version": "MATCH",
+          "scenario": "MATCH",
+          "submission": "MATCH",
+          "jurisdiction": "MATCH",
+          "role": "MATCH",
+          "route": "MATCH",
+          "actor": "MATCH",
+          "portfolio": "MATCH",
+          "product": "UNKNOWN",
+          "action": "UNKNOWN",
+          "time": "UNKNOWN",
+          "marketing": "NOT_REQUIRED"
+        },
+        "frequency": "UNKNOWN",
+        "legal_compliance": "NOT_ASSESSED",
+        "operational_readiness": "NOT_ASSESSED"
+      }
+    },
+    {
+      "scope": "https://w3id.org/cm-pharme/experimental/reporting-context/EMA-crisis-availability-1.4",
+      "context_origin": "SYNTHETIC_NOT_REAL_SUBMISSION",
+      "result": {
+        "verdict": "UNKNOWN",
+        "dimensions": {
+          "version": "MATCH",
+          "scenario": "MATCH",
+          "submission": "MATCH",
+          "jurisdiction": "MATCH",
+          "role": "MATCH",
+          "route": "MATCH",
+          "actor": "MATCH",
+          "portfolio": "MATCH",
+          "product": "UNKNOWN",
+          "action": "UNKNOWN",
+          "time": "UNKNOWN",
+          "marketing": "MATCH"
+        },
+        "frequency": "UNKNOWN",
+        "legal_compliance": "NOT_ASSESSED",
+        "operational_readiness": "NOT_ASSESSED"
+      }
+    }
+  ],
+  "limit": "Real documentary evidence plus explicitly synthetic query contexts. No actual reporting obligation, account readiness or legal compliance determination."
+}

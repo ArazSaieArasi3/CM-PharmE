@@ -1,0 +1,80 @@
+{
+  "scope": "Published RelRig constraint and implementation differ in both tested end and boolean polarity; catalogue prose also less specific. This is a source-adjudication issue, not an automatically diagnosed ontology defect.",
+  "documentation": "https://ontouml.readthedocs.io/en/latest/anti-patterns/RelRig/index.html",
+  "documentation_rule": "isReadOnly(mediatedEnd)=true",
+  "implementation_rule": "skip if isReadOnly(relatorEnd)=true",
+  "archive_commit": "42b926f6c2859dc87e49a96b8482eae28d02e7d5",
+  "total": 4,
+  "engine_expectation_pass": 4,
+  "documentation_matches": 2,
+  "rows": [
+    {
+      "name": "RelRig-readonly-00",
+      "relator_end_readonly": false,
+      "mediated_end_readonly": false,
+      "parsed_fields": [
+        "mA|Agreement|false",
+        "mB|ParticipatingPerson|false"
+      ],
+      "fields_preserved": true,
+      "expected_engine": 1,
+      "actual": 1,
+      "engine_expectation_pass": true,
+      "literal_documentation_constraint_expected": 0,
+      "literal_documentation_constraint_matches": false,
+      "fixture_sha256": "aede75c91c78d15eee9ad10f4bb699c8f42d941008b7817106194b8deb415c96",
+      "output": "CMPE_RESULT detector=RelRig classes=3 associations=1 occurrences=1\n"
+    },
+    {
+      "name": "RelRig-readonly-01",
+      "relator_end_readonly": false,
+      "mediated_end_readonly": true,
+      "parsed_fields": [
+        "mA|Agreement|false",
+        "mB|ParticipatingPerson|true"
+      ],
+      "fields_preserved": true,
+      "expected_engine": 1,
+      "actual": 1,
+      "engine_expectation_pass": true,
+      "literal_documentation_constraint_expected": 1,
+      "literal_documentation_constraint_matches": true,
+      "fixture_sha256": "0ffee674a4fcfae5b64fccf66d4784c68b394cc60897990c3c23bff63d1287b8",
+      "output": "CMPE_RESULT detector=RelRig classes=3 associations=1 occurrences=1\n"
+    },
+    {
+      "name": "RelRig-readonly-10",
+      "relator_end_readonly": true,
+      "mediated_end_readonly": false,
+      "parsed_fields": [
+        "mA|Agreement|true",
+        "mB|ParticipatingPerson|false"
+      ],
+      "fields_preserved": true,
+      "expected_engine": 0,
+      "actual": 0,
+      "engine_expectation_pass": true,
+      "literal_documentation_constraint_expected": 0,
+      "literal_documentation_constraint_matches": true,
+      "fixture_sha256": "3fe4e17b7caa9657b8e2ca646c15b0330e550e16823176dc90a0648d639c7459",
+      "output": "CMPE_RESULT detector=RelRig classes=3 associations=1 occurrences=0\n"
+    },
+    {
+      "name": "RelRig-readonly-11",
+      "relator_end_readonly": true,
+      "mediated_end_readonly": true,
+      "parsed_fields": [
+        "mA|Agreement|true",
+        "mB|ParticipatingPerson|true"
+      ],
+      "fields_preserved": true,
+      "expected_engine": 0,
+      "actual": 0,
+      "engine_expectation_pass": true,
+      "literal_documentation_constraint_expected": 1,
+      "literal_documentation_constraint_matches": false,
+      "fixture_sha256": "3ca9ff75a04ebf3d97b2df92b64132f6ecc03fda867a9fadffccf5481e06930b",
+      "output": "CMPE_RESULT detector=RelRig classes=3 associations=1 occurrences=0\n"
+    }
+  ]
+}

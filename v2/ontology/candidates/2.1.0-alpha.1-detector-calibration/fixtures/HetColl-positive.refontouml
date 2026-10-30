@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='utf-8'?>
+<RefOntoUML:Package xmlns:RefOntoUML="http://nemo.inf.ufes.br/ontouml/refontouml" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmi:version="2.0" xmi:id="pkg" name="HetColl-positive" visibility="public">
+  <packagedElement xsi:type="RefOntoUML:Collective" xmi:id="Group" name="Group" visibility="public" isAbstract="false" />
+  <packagedElement xsi:type="RefOntoUML:Kind" xmi:id="MemberA" name="MemberA" visibility="public" isAbstract="false" />
+  <packagedElement xsi:type="RefOntoUML:Kind" xmi:id="MemberB" name="MemberB" visibility="public" isAbstract="false" />
+  <packagedElement xsi:type="RefOntoUML:memberOf" xmi:id="membershipA" name="membershipA" visibility="public" memberEnd="membershipAA membershipAB">
+    <ownedEnd xmi:id="membershipAA" name="membershipAA" type="Group" association="membershipA" aggregation="shared" visibility="public">
+      <lowerValue xsi:type="RefOntoUML:LiteralInteger" xmi:id="membershipAAlower" value="0" />
+      <upperValue xsi:type="RefOntoUML:LiteralUnlimitedNatural" xmi:id="membershipAAupper" value="1" />
+    </ownedEnd>
+    <ownedEnd xmi:id="membershipAB" name="membershipAB" type="MemberA" association="membershipA" aggregation="none" visibility="public">
+      <lowerValue xsi:type="RefOntoUML:LiteralInteger" xmi:id="membershipABlower" value="1" />
+      <upperValue xsi:type="RefOntoUML:LiteralUnlimitedNatural" xmi:id="membershipABupper" value="-1" />
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="RefOntoUML:memberOf" xmi:id="membershipB" name="membershipB" visibility="public" memberEnd="membershipBA membershipBB">
+    <ownedEnd xmi:id="membershipBA" name="membershipBA" type="Group" association="membershipB" aggregation="shared" visibility="public">
+      <lowerValue xsi:type="RefOntoUML:LiteralInteger" xmi:id="membershipBAlower" value="0" />
+      <upperValue xsi:type="RefOntoUML:LiteralUnlimitedNatural" xmi:id="membershipBAupper" value="1" />
+    </ownedEnd>
+    <ownedEnd xmi:id="membershipBB" name="membershipBB" type="MemberB" association="membershipB" aggregation="none" visibility="public">
+      <lowerValue xsi:type="RefOntoUML:LiteralInteger" xmi:id="membershipBBlower" value="1" />
+      <upperValue xsi:type="RefOntoUML:LiteralUnlimitedNatural" xmi:id="membershipBBupper" value="-1" />
+    </ownedEnd>
+  </packagedElement>
+</RefOntoUML:Package>

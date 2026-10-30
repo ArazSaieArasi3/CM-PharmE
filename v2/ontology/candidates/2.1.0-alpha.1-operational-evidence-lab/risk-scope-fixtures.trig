@@ -1,0 +1,398 @@
+@prefix ns1: <https://w3id.org/cm-pharme/experimental/source-group/> .
+@prefix ns2: <https://w3id.org/cm-pharme/experimental/documentary-evidence/> .
+@prefix ns3: <https://w3id.org/cm-pharme/experimental/reporting-context/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<urn:cmpe-risk-scope:wrong-entry-version> {
+    <urn:cmpe-evidence:riskScenario> a <https://w3id.org/cm-pharme/2.1/Assertion> ;
+        ns2:riskProfile "source-scoped-risk-scenario" ;
+        ns2:scenarioScopeDescription <urn:cmpe-evidence:riskScope> ;
+        ns3:evidencePointer "RM-EMA-2020#p1 More about the medicine" .
+
+    <urn:cmpe-evidence:risk-entry-1> a <https://w3id.org/cm-pharme/2.1/Assertion> ;
+        ns1:entryOrdinal 1 ;
+        ns1:entrySource <urn:cmpe-evidence:RM-EMA-2020> ;
+        ns1:evidencePointer "EMA/603826/2020#page=1" ;
+        ns1:labelKindProposal "unqualified-name" ;
+        ns1:profile "source-group-entry" ;
+        ns1:scopeVersion "wrong" ;
+        ns1:sourceLabel "candesartan" .
+
+    <urn:cmpe-evidence:risk-entry-2> a <https://w3id.org/cm-pharme/2.1/Assertion> ;
+        ns1:entryOrdinal 2 ;
+        ns1:entrySource <urn:cmpe-evidence:RM-EMA-2020> ;
+        ns1:evidencePointer "EMA/603826/2020#page=1" ;
+        ns1:labelKindProposal "unqualified-name" ;
+        ns1:profile "source-group-entry" ;
+        ns1:scopeVersion "EMA-603826-2020-sartan-review-scope" ;
+        ns1:sourceLabel "irbesartan" .
+
+    <urn:cmpe-evidence:risk-entry-3> a <https://w3id.org/cm-pharme/2.1/Assertion> ;
+        ns1:entryOrdinal 3 ;
+        ns1:entrySource <urn:cmpe-evidence:RM-EMA-2020> ;
+        ns1:evidencePointer "EMA/603826/2020#page=1" ;
+        ns1:labelKindProposal "unqualified-name" ;
+        ns1:profile "source-group-entry" ;
+        ns1:scopeVersion "EMA-603826-2020-sartan-review-scope" ;
+        ns1:sourceLabel "losartan" .
+
+    <urn:cmpe-evidence:risk-entry-4> a <https://w3id.org/cm-pharme/2.1/Assertion> ;
+        ns1:entryOrdinal 4 ;
+        ns1:entrySource <urn:cmpe-evidence:RM-EMA-2020> ;
+        ns1:evidencePointer "EMA/603826/2020#page=1" ;
+        ns1:labelKindProposal "unqualified-name" ;
+        ns1:profile "source-group-entry" ;
+        ns1:scopeVersion "EMA-603826-2020-sartan-review-scope" ;
+        ns1:sourceLabel "olmesartan" .
+
+    <urn:cmpe-evidence:risk-entry-5> a <https://w3id.org/cm-pharme/2.1/Assertion> ;
+        ns1:entryOrdinal 5 ;
+        ns1:entrySource <urn:cmpe-evidence:RM-EMA-2020> ;
+        ns1:evidencePointer "EMA/603826/2020#page=1" ;
+        ns1:labelKindProposal "unqualified-name" ;
+        ns1:profile "source-group-entry" ;
+        ns1:scopeVersion "EMA-603826-2020-sartan-review-scope" ;
+        ns1:sourceLabel "valsartan" .
+
+    <urn:cmpe-evidence:riskScope> a <https://w3id.org/cm-pharme/2.1/Assertion> ;
+        ns1:profile "source-group-scope" ;
+        ns1:scopeEntry <urn:cmpe-evidence:risk-entry-1>,
+            <urn:cmpe-evidence:risk-entry-2>,
+            <urn:cmpe-evidence:risk-entry-3>,
+            <urn:cmpe-evidence:risk-entry-4>,
+            <urn:cmpe-evidence:risk-entry-5> ;
+        ns1:scopeSource <urn:cmpe-evidence:RM-EMA-2020> ;
+        ns1:scopeVersion "EMA-603826-2020-sartan-review-scope" ;
+        ns1:sourceLabel "sartan-review-included-labels" .
+
+    <urn:cmpe-evidence:RM-EMA-2020> a <https://w3id.org/cm-pharme/2.1/SourceRecord> ;
+        ns2:sourceID "RM-EMA-2020" .
+}
+
+<urn:cmpe-risk-scope:source-family-without-fake-product> {
+    <urn:cmpe-evidence:riskScenario> a <https://w3id.org/cm-pharme/2.1/Assertion> ;
+        ns2:riskProfile "source-scoped-risk-scenario" ;
+        ns2:scenarioScopeDescription <urn:cmpe-evidence:riskScope> ;
+        ns3:evidencePointer "RM-EMA-2020#p1 More about the medicine" .
+
+    <urn:cmpe-evidence:risk-entry-1> a <https://w3id.org/cm-pharme/2.1/Assertion> ;
+        ns1:entryOrdinal 1 ;
+        ns1:entrySource <urn:cmpe-evidence:RM-EMA-2020> ;
+        ns1:evidencePointer "EMA/603826/2020#page=1" ;
+        ns1:labelKindProposal "unqualified-name" ;
+        ns1:profile "source-group-entry" ;
+        ns1:scopeVersion "EMA-603826-2020-sartan-review-scope" ;
+        ns1:sourceLabel "candesartan" .
+
+    <urn:cmpe-evidence:risk-entry-2> a <https://w3id.org/cm-pharme/2.1/Assertion> ;
+        ns1:entryOrdinal 2 ;
+        ns1:entrySource <urn:cmpe-evidence:RM-EMA-2020> ;
+        ns1:evidencePointer "EMA/603826/2020#page=1" ;
+        ns1:labelKindProposal "unqualified-name" ;
+        ns1:profile "source-group-entry" ;
+        ns1:scopeVersion "EMA-603826-2020-sartan-review-scope" ;
+        ns1:sourceLabel "irbesartan" .
+
+    <urn:cmpe-evidence:risk-entry-3> a <https://w3id.org/cm-pharme/2.1/Assertion> ;
+        ns1:entryOrdinal 3 ;
+        ns1:entrySource <urn:cmpe-evidence:RM-EMA-2020> ;
+        ns1:evidencePointer "EMA/603826/2020#page=1" ;
+        ns1:labelKindProposal "unqualified-name" ;
+        ns1:profile "source-group-entry" ;
+        ns1:scopeVersion "EMA-603826-2020-sartan-review-scope" ;
+        ns1:sourceLabel "losartan" .
+
+    <urn:cmpe-evidence:risk-entry-4> a <https://w3id.org/cm-pharme/2.1/Assertion> ;
+        ns1:entryOrdinal 4 ;
+        ns1:entrySource <urn:cmpe-evidence:RM-EMA-2020> ;
+        ns1:evidencePointer "EMA/603826/2020#page=1" ;
+        ns1:labelKindProposal "unqualified-name" ;
+        ns1:profile "source-group-entry" ;
+        ns1:scopeVersion "EMA-603826-2020-sartan-review-scope" ;
+        ns1:sourceLabel "olmesartan" .
+
+    <urn:cmpe-evidence:risk-entry-5> a <https://w3id.org/cm-pharme/2.1/Assertion> ;
+        ns1:entryOrdinal 5 ;
+        ns1:entrySource <urn:cmpe-evidence:RM-EMA-2020> ;
+        ns1:evidencePointer "EMA/603826/2020#page=1" ;
+        ns1:labelKindProposal "unqualified-name" ;
+        ns1:profile "source-group-entry" ;
+        ns1:scopeVersion "EMA-603826-2020-sartan-review-scope" ;
+        ns1:sourceLabel "valsartan" .
+
+    <urn:cmpe-evidence:riskScope> a <https://w3id.org/cm-pharme/2.1/Assertion> ;
+        ns1:profile "source-group-scope" ;
+        ns1:scopeEntry <urn:cmpe-evidence:risk-entry-1>,
+            <urn:cmpe-evidence:risk-entry-2>,
+            <urn:cmpe-evidence:risk-entry-3>,
+            <urn:cmpe-evidence:risk-entry-4>,
+            <urn:cmpe-evidence:risk-entry-5> ;
+        ns1:scopeSource <urn:cmpe-evidence:RM-EMA-2020> ;
+        ns1:scopeVersion "EMA-603826-2020-sartan-review-scope" ;
+        ns1:sourceLabel "sartan-review-included-labels" .
+
+    <urn:cmpe-evidence:RM-EMA-2020> a <https://w3id.org/cm-pharme/2.1/SourceRecord> ;
+        ns2:sourceID "RM-EMA-2020" .
+}
+
+<urn:cmpe-risk-scope:scope-is-carrier> {
+    <urn:cmpe-evidence:riskScenario> a <https://w3id.org/cm-pharme/2.1/Assertion> ;
+        ns2:riskProfile "source-scoped-risk-scenario" ;
+        ns2:scenarioScopeDescription <urn:cmpe-evidence:riskScope> ;
+        ns3:evidencePointer "RM-EMA-2020#p1 More about the medicine" .
+
+    <urn:cmpe-evidence:risk-entry-1> a <https://w3id.org/cm-pharme/2.1/Assertion> ;
+        ns1:entryOrdinal 1 ;
+        ns1:entrySource <urn:cmpe-evidence:RM-EMA-2020> ;
+        ns1:evidencePointer "EMA/603826/2020#page=1" ;
+        ns1:labelKindProposal "unqualified-name" ;
+        ns1:profile "source-group-entry" ;
+        ns1:scopeVersion "EMA-603826-2020-sartan-review-scope" ;
+        ns1:sourceLabel "candesartan" .
+
+    <urn:cmpe-evidence:risk-entry-2> a <https://w3id.org/cm-pharme/2.1/Assertion> ;
+        ns1:entryOrdinal 2 ;
+        ns1:entrySource <urn:cmpe-evidence:RM-EMA-2020> ;
+        ns1:evidencePointer "EMA/603826/2020#page=1" ;
+        ns1:labelKindProposal "unqualified-name" ;
+        ns1:profile "source-group-entry" ;
+        ns1:scopeVersion "EMA-603826-2020-sartan-review-scope" ;
+        ns1:sourceLabel "irbesartan" .
+
+    <urn:cmpe-evidence:risk-entry-3> a <https://w3id.org/cm-pharme/2.1/Assertion> ;
+        ns1:entryOrdinal 3 ;
+        ns1:entrySource <urn:cmpe-evidence:RM-EMA-2020> ;
+        ns1:evidencePointer "EMA/603826/2020#page=1" ;
+        ns1:labelKindProposal "unqualified-name" ;
+        ns1:profile "source-group-entry" ;
+        ns1:scopeVersion "EMA-603826-2020-sartan-review-scope" ;
+        ns1:sourceLabel "losartan" .
+
+    <urn:cmpe-evidence:risk-entry-4> a <https://w3id.org/cm-pharme/2.1/Assertion> ;
+        ns1:entryOrdinal 4 ;
+        ns1:entrySource <urn:cmpe-evidence:RM-EMA-2020> ;
+        ns1:evidencePointer "EMA/603826/2020#page=1" ;
+        ns1:labelKindProposal "unqualified-name" ;
+        ns1:profile "source-group-entry" ;
+        ns1:scopeVersion "EMA-603826-2020-sartan-review-scope" ;
+        ns1:sourceLabel "olmesartan" .
+
+    <urn:cmpe-evidence:risk-entry-5> a <https://w3id.org/cm-pharme/2.1/Assertion> ;
+        ns1:entryOrdinal 5 ;
+        ns1:entrySource <urn:cmpe-evidence:RM-EMA-2020> ;
+        ns1:evidencePointer "EMA/603826/2020#page=1" ;
+        ns1:labelKindProposal "unqualified-name" ;
+        ns1:profile "source-group-entry" ;
+        ns1:scopeVersion "EMA-603826-2020-sartan-review-scope" ;
+        ns1:sourceLabel "valsartan" .
+
+    <urn:cmpe-evidence:riskScope> a <https://w3id.org/cm-pharme/2.1/Assertion>,
+            <https://w3id.org/cm-pharme/2.1/SourceRecord> ;
+        ns1:profile "source-group-scope" ;
+        ns1:scopeEntry <urn:cmpe-evidence:risk-entry-1>,
+            <urn:cmpe-evidence:risk-entry-2>,
+            <urn:cmpe-evidence:risk-entry-3>,
+            <urn:cmpe-evidence:risk-entry-4>,
+            <urn:cmpe-evidence:risk-entry-5> ;
+        ns1:scopeSource <urn:cmpe-evidence:RM-EMA-2020> ;
+        ns1:scopeVersion "EMA-603826-2020-sartan-review-scope" ;
+        ns1:sourceLabel "sartan-review-included-labels" .
+
+    <urn:cmpe-evidence:RM-EMA-2020> a <https://w3id.org/cm-pharme/2.1/SourceRecord> ;
+        ns2:sourceID "RM-EMA-2020" .
+}
+
+<urn:cmpe-risk-scope:missing-member-label> {
+    <urn:cmpe-evidence:riskScenario> a <https://w3id.org/cm-pharme/2.1/Assertion> ;
+        ns2:riskProfile "source-scoped-risk-scenario" ;
+        ns2:scenarioScopeDescription <urn:cmpe-evidence:riskScope> ;
+        ns3:evidencePointer "RM-EMA-2020#p1 More about the medicine" .
+
+    <urn:cmpe-evidence:risk-entry-1> a <https://w3id.org/cm-pharme/2.1/Assertion> ;
+        ns1:entryOrdinal 1 ;
+        ns1:entrySource <urn:cmpe-evidence:RM-EMA-2020> ;
+        ns1:evidencePointer "EMA/603826/2020#page=1" ;
+        ns1:labelKindProposal "unqualified-name" ;
+        ns1:profile "source-group-entry" ;
+        ns1:scopeVersion "EMA-603826-2020-sartan-review-scope" .
+
+    <urn:cmpe-evidence:risk-entry-2> a <https://w3id.org/cm-pharme/2.1/Assertion> ;
+        ns1:entryOrdinal 2 ;
+        ns1:entrySource <urn:cmpe-evidence:RM-EMA-2020> ;
+        ns1:evidencePointer "EMA/603826/2020#page=1" ;
+        ns1:labelKindProposal "unqualified-name" ;
+        ns1:profile "source-group-entry" ;
+        ns1:scopeVersion "EMA-603826-2020-sartan-review-scope" ;
+        ns1:sourceLabel "irbesartan" .
+
+    <urn:cmpe-evidence:risk-entry-3> a <https://w3id.org/cm-pharme/2.1/Assertion> ;
+        ns1:entryOrdinal 3 ;
+        ns1:entrySource <urn:cmpe-evidence:RM-EMA-2020> ;
+        ns1:evidencePointer "EMA/603826/2020#page=1" ;
+        ns1:labelKindProposal "unqualified-name" ;
+        ns1:profile "source-group-entry" ;
+        ns1:scopeVersion "EMA-603826-2020-sartan-review-scope" ;
+        ns1:sourceLabel "losartan" .
+
+    <urn:cmpe-evidence:risk-entry-4> a <https://w3id.org/cm-pharme/2.1/Assertion> ;
+        ns1:entryOrdinal 4 ;
+        ns1:entrySource <urn:cmpe-evidence:RM-EMA-2020> ;
+        ns1:evidencePointer "EMA/603826/2020#page=1" ;
+        ns1:labelKindProposal "unqualified-name" ;
+        ns1:profile "source-group-entry" ;
+        ns1:scopeVersion "EMA-603826-2020-sartan-review-scope" ;
+        ns1:sourceLabel "olmesartan" .
+
+    <urn:cmpe-evidence:risk-entry-5> a <https://w3id.org/cm-pharme/2.1/Assertion> ;
+        ns1:entryOrdinal 5 ;
+        ns1:entrySource <urn:cmpe-evidence:RM-EMA-2020> ;
+        ns1:evidencePointer "EMA/603826/2020#page=1" ;
+        ns1:labelKindProposal "unqualified-name" ;
+        ns1:profile "source-group-entry" ;
+        ns1:scopeVersion "EMA-603826-2020-sartan-review-scope" ;
+        ns1:sourceLabel "valsartan" .
+
+    <urn:cmpe-evidence:riskScope> a <https://w3id.org/cm-pharme/2.1/Assertion> ;
+        ns1:profile "source-group-scope" ;
+        ns1:scopeEntry <urn:cmpe-evidence:risk-entry-1>,
+            <urn:cmpe-evidence:risk-entry-2>,
+            <urn:cmpe-evidence:risk-entry-3>,
+            <urn:cmpe-evidence:risk-entry-4>,
+            <urn:cmpe-evidence:risk-entry-5> ;
+        ns1:scopeSource <urn:cmpe-evidence:RM-EMA-2020> ;
+        ns1:scopeVersion "EMA-603826-2020-sartan-review-scope" ;
+        ns1:sourceLabel "sartan-review-included-labels" .
+
+    <urn:cmpe-evidence:RM-EMA-2020> a <https://w3id.org/cm-pharme/2.1/SourceRecord> ;
+        ns2:sourceID "RM-EMA-2020" .
+}
+
+<urn:cmpe-risk-scope:missing-scope-source> {
+    <urn:cmpe-evidence:riskScenario> a <https://w3id.org/cm-pharme/2.1/Assertion> ;
+        ns2:riskProfile "source-scoped-risk-scenario" ;
+        ns2:scenarioScopeDescription <urn:cmpe-evidence:riskScope> ;
+        ns3:evidencePointer "RM-EMA-2020#p1 More about the medicine" .
+
+    <urn:cmpe-evidence:risk-entry-1> a <https://w3id.org/cm-pharme/2.1/Assertion> ;
+        ns1:entryOrdinal 1 ;
+        ns1:entrySource <urn:cmpe-evidence:RM-EMA-2020> ;
+        ns1:evidencePointer "EMA/603826/2020#page=1" ;
+        ns1:labelKindProposal "unqualified-name" ;
+        ns1:profile "source-group-entry" ;
+        ns1:scopeVersion "EMA-603826-2020-sartan-review-scope" ;
+        ns1:sourceLabel "candesartan" .
+
+    <urn:cmpe-evidence:risk-entry-2> a <https://w3id.org/cm-pharme/2.1/Assertion> ;
+        ns1:entryOrdinal 2 ;
+        ns1:entrySource <urn:cmpe-evidence:RM-EMA-2020> ;
+        ns1:evidencePointer "EMA/603826/2020#page=1" ;
+        ns1:labelKindProposal "unqualified-name" ;
+        ns1:profile "source-group-entry" ;
+        ns1:scopeVersion "EMA-603826-2020-sartan-review-scope" ;
+        ns1:sourceLabel "irbesartan" .
+
+    <urn:cmpe-evidence:risk-entry-3> a <https://w3id.org/cm-pharme/2.1/Assertion> ;
+        ns1:entryOrdinal 3 ;
+        ns1:entrySource <urn:cmpe-evidence:RM-EMA-2020> ;
+        ns1:evidencePointer "EMA/603826/2020#page=1" ;
+        ns1:labelKindProposal "unqualified-name" ;
+        ns1:profile "source-group-entry" ;
+        ns1:scopeVersion "EMA-603826-2020-sartan-review-scope" ;
+        ns1:sourceLabel "losartan" .
+
+    <urn:cmpe-evidence:risk-entry-4> a <https://w3id.org/cm-pharme/2.1/Assertion> ;
+        ns1:entryOrdinal 4 ;
+        ns1:entrySource <urn:cmpe-evidence:RM-EMA-2020> ;
+        ns1:evidencePointer "EMA/603826/2020#page=1" ;
+        ns1:labelKindProposal "unqualified-name" ;
+        ns1:profile "source-group-entry" ;
+        ns1:scopeVersion "EMA-603826-2020-sartan-review-scope" ;
+        ns1:sourceLabel "olmesartan" .
+
+    <urn:cmpe-evidence:risk-entry-5> a <https://w3id.org/cm-pharme/2.1/Assertion> ;
+        ns1:entryOrdinal 5 ;
+        ns1:entrySource <urn:cmpe-evidence:RM-EMA-2020> ;
+        ns1:evidencePointer "EMA/603826/2020#page=1" ;
+        ns1:labelKindProposal "unqualified-name" ;
+        ns1:profile "source-group-entry" ;
+        ns1:scopeVersion "EMA-603826-2020-sartan-review-scope" ;
+        ns1:sourceLabel "valsartan" .
+
+    <urn:cmpe-evidence:riskScope> a <https://w3id.org/cm-pharme/2.1/Assertion> ;
+        ns1:profile "source-group-scope" ;
+        ns1:scopeEntry <urn:cmpe-evidence:risk-entry-1>,
+            <urn:cmpe-evidence:risk-entry-2>,
+            <urn:cmpe-evidence:risk-entry-3>,
+            <urn:cmpe-evidence:risk-entry-4>,
+            <urn:cmpe-evidence:risk-entry-5> ;
+        ns1:scopeVersion "EMA-603826-2020-sartan-review-scope" ;
+        ns1:sourceLabel "sartan-review-included-labels" .
+
+    <urn:cmpe-evidence:RM-EMA-2020> a <https://w3id.org/cm-pharme/2.1/SourceRecord> ;
+        ns2:sourceID "RM-EMA-2020" .
+}
+
+<urn:cmpe-risk-scope:missing-required-scope-link> {
+    <urn:cmpe-evidence:riskScenario> a <https://w3id.org/cm-pharme/2.1/Assertion> ;
+        ns2:riskProfile "source-scoped-risk-scenario" ;
+        ns3:evidencePointer "RM-EMA-2020#p1 More about the medicine" .
+
+    <urn:cmpe-evidence:riskScope> a <https://w3id.org/cm-pharme/2.1/Assertion> ;
+        ns1:profile "source-group-scope" ;
+        ns1:scopeEntry <urn:cmpe-evidence:risk-entry-1>,
+            <urn:cmpe-evidence:risk-entry-2>,
+            <urn:cmpe-evidence:risk-entry-3>,
+            <urn:cmpe-evidence:risk-entry-4>,
+            <urn:cmpe-evidence:risk-entry-5> ;
+        ns1:scopeSource <urn:cmpe-evidence:RM-EMA-2020> ;
+        ns1:scopeVersion "EMA-603826-2020-sartan-review-scope" ;
+        ns1:sourceLabel "sartan-review-included-labels" .
+
+    <urn:cmpe-evidence:risk-entry-1> a <https://w3id.org/cm-pharme/2.1/Assertion> ;
+        ns1:entryOrdinal 1 ;
+        ns1:entrySource <urn:cmpe-evidence:RM-EMA-2020> ;
+        ns1:evidencePointer "EMA/603826/2020#page=1" ;
+        ns1:labelKindProposal "unqualified-name" ;
+        ns1:profile "source-group-entry" ;
+        ns1:scopeVersion "EMA-603826-2020-sartan-review-scope" ;
+        ns1:sourceLabel "candesartan" .
+
+    <urn:cmpe-evidence:risk-entry-2> a <https://w3id.org/cm-pharme/2.1/Assertion> ;
+        ns1:entryOrdinal 2 ;
+        ns1:entrySource <urn:cmpe-evidence:RM-EMA-2020> ;
+        ns1:evidencePointer "EMA/603826/2020#page=1" ;
+        ns1:labelKindProposal "unqualified-name" ;
+        ns1:profile "source-group-entry" ;
+        ns1:scopeVersion "EMA-603826-2020-sartan-review-scope" ;
+        ns1:sourceLabel "irbesartan" .
+
+    <urn:cmpe-evidence:risk-entry-3> a <https://w3id.org/cm-pharme/2.1/Assertion> ;
+        ns1:entryOrdinal 3 ;
+        ns1:entrySource <urn:cmpe-evidence:RM-EMA-2020> ;
+        ns1:evidencePointer "EMA/603826/2020#page=1" ;
+        ns1:labelKindProposal "unqualified-name" ;
+        ns1:profile "source-group-entry" ;
+        ns1:scopeVersion "EMA-603826-2020-sartan-review-scope" ;
+        ns1:sourceLabel "losartan" .
+
+    <urn:cmpe-evidence:risk-entry-4> a <https://w3id.org/cm-pharme/2.1/Assertion> ;
+        ns1:entryOrdinal 4 ;
+        ns1:entrySource <urn:cmpe-evidence:RM-EMA-2020> ;
+        ns1:evidencePointer "EMA/603826/2020#page=1" ;
+        ns1:labelKindProposal "unqualified-name" ;
+        ns1:profile "source-group-entry" ;
+        ns1:scopeVersion "EMA-603826-2020-sartan-review-scope" ;
+        ns1:sourceLabel "olmesartan" .
+
+    <urn:cmpe-evidence:risk-entry-5> a <https://w3id.org/cm-pharme/2.1/Assertion> ;
+        ns1:entryOrdinal 5 ;
+        ns1:entrySource <urn:cmpe-evidence:RM-EMA-2020> ;
+        ns1:evidencePointer "EMA/603826/2020#page=1" ;
+        ns1:labelKindProposal "unqualified-name" ;
+        ns1:profile "source-group-entry" ;
+        ns1:scopeVersion "EMA-603826-2020-sartan-review-scope" ;
+        ns1:sourceLabel "valsartan" .
+
+    <urn:cmpe-evidence:RM-EMA-2020> a <https://w3id.org/cm-pharme/2.1/SourceRecord> ;
+        ns2:sourceID "RM-EMA-2020" .
+}

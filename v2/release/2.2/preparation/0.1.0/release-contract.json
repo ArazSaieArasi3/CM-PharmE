@@ -1,0 +1,129 @@
+{
+  "schema_version": "CMPE-Comprehensive22ReleaseContract/0.1.0",
+  "target_distribution": "2.2.0",
+  "release_kind": "COMPREHENSIVE_FULL_V2_CONTINUATION",
+  "scope_authorized_by": "Araz explicit instruction in ChatGPT on2026-10-30 Asia/Tehran",
+  "scope_decision_id": "SCOPE-22-01",
+  "supersedes_future_target": "roadmap/0.12.0 next-compatible-capability objective only; historical released2.1.0 support and actual scientific dispositions unchanged",
+  "objectives": [
+    {
+      "id": "O22-01",
+      "objective": "Preserve and integrate all valid V2 content.",
+      "exit": "Every baseline concept, property, constraint, domain and valid later decision has a versioned preservation/migration disposition; omissions or retirement require scientific rationale and explicit author disposition, not a smaller release cut."
+    },
+    {
+      "id": "O22-02",
+      "objective": "Review isolated concepts and domains and connect them through justified semantics.",
+      "exit": "Every active concept has a justified path within its declared module and appropriate cross-domain function, or an explicitly reviewed exception; every bridge has source/requirement, typed ends, identity/dependence/temporal treatment and positive/negative witnesses. A connected graph alone cannot pass."
+    },
+    {
+      "id": "O22-03",
+      "objective": "Identify and disposition model, requirement, mapping and evaluation gaps.",
+      "exit": "All 83 historical ORSD IDs and subsequent requirements are reconciled with the current assembly; accepted mandatory requirements have current-target evidence, all other gaps have reasoned dispositions; mappings and evaluation claims identify exact versions, limits and remaining unknowns."
+    },
+    {
+      "id": "O22-04",
+      "objective": "Make documentation and diagrams represent that same complete model.",
+      "exit": "Native model, formal projections, profile admission rules, domain/overview diagrams, Wiki, Pages reference, WebVOWL, downloads and release manifest share one exact governed model version and coverage crosswalk; filtered views disclose omissions and cannot stand in for the complete inventory."
+    }
+  ],
+  "release_gates": [
+    {
+      "id": "G22-A",
+      "name": "Full V2 preservation and governed assembly",
+      "objectives": [
+        "O22-01"
+      ],
+      "required_evidence": [
+        "Complete concept/property/constraint/domain/decision migration crosswalk",
+        "One deterministic versioned assembly manifest",
+        "Review S-04/S-05 against comprehensive scope; preserve all prior history",
+        "Protect later FacilityOperation/ContextClass/EvidenceRecord decisions during integration"
+      ],
+      "status": "OPEN"
+    },
+    {
+      "id": "G22-B",
+      "name": "Semantic domain coherence and justified connections",
+      "objectives": [
+        "O22-01",
+        "O22-02"
+      ],
+      "required_evidence": [
+        "Current full-model topology plus individually justified isolate/module dispositions",
+        "Mission and ownership review of all 17 original domains and any accepted additions",
+        "Relation decisions and cross-domain scenario witnesses/counterexamples",
+        "Specific review of the 49 older experimental relations and three added classes; no bulk acceptance"
+      ],
+      "status": "OPEN"
+    },
+    {
+      "id": "G22-C",
+      "name": "Requirements and source/data mapping reconciliation",
+      "objectives": [
+        "O22-03"
+      ],
+      "required_evidence": [
+        "All 83 original IDs and later requirements traced to current-target contracts, evidence and dispositions",
+        "Accepted mandatory requirements pass their fixed oracles",
+        "All baseline field/RDB mappings, scoped M1-M4 migrations and source semantics reconciled without inflated full-data claims",
+        "Frozen held-out first-pass results preserved; new prospective evidence separately versioned"
+      ],
+      "status": "OPEN"
+    },
+    {
+      "id": "G22-D",
+      "name": "Formal, native and scientific validation",
+      "objectives": [
+        "O22-02",
+        "O22-03"
+      ],
+      "required_evidence": [
+        "Applicable native input fidelity and supported detector coverage with honest limits",
+        "Source-policy dispositions under315; unknown/null fields retained until evidence or an explicit validation route resolves them",
+        "OWL consistency and concrete-class satisfiability; SHACL, temporal, cross-module and negative/mutation regression",
+        "Real scientific/author disposition required by retained306/310 gates; no invented expert results"
+      ],
+      "status": "OPEN"
+    },
+    {
+      "id": "G22-E",
+      "name": "Same-complete-model documentation and publication QA",
+      "objectives": [
+        "O22-04"
+      ],
+      "required_evidence": [
+        "Exact source/manifest binding for each projection and complete class/relation/domain coverage",
+        "Overview and domain diagrams; no undocumented omissions by filtering or export",
+        "Wiki/Pages/WebVOWL/download/citation navigation with rendered public QA after acceptance",
+        "Applicable original211/213/244 acceptance criteria or explicitly approved dispositions retained"
+      ],
+      "status": "OPEN"
+    },
+    {
+      "id": "G22-F",
+      "name": "Compatibility, support and reproducible full-model release",
+      "objectives": [
+        "O22-01",
+        "O22-02",
+        "O22-03",
+        "O22-04"
+      ],
+      "required_evidence": [
+        "M1 2.1.0 compatibility regression and explicit full-V2 migration/support contract",
+        "All mandatory full-model release blockers resolved; no silent reduction to one profile",
+        "Pinned licenses/notices and citations, deterministic package, cold replay, downloaded-byte verification",
+        "Exact accepted assembly tag and public documentation alignment; no date inferred from packet counts"
+      ],
+      "status": "OPEN"
+    }
+  ],
+  "comprehensive_release_ready": false,
+  "validity_rule": "Preserve valid content and proven decisions. Reassess questionable or previously deferred items against the full objective. An invented bridge, guessed cardinality or silent removal cannot establish coherence.",
+  "version_rule": "2.2 is the authorized target while compatibility can be preserved; any genuinely incompatible commitment requires a separate evidenced version decision, not an automatic jump to3.0.",
+  "scope_reduction_requires_explicit_author_decision": true,
+  "no_zero_isolate_proxy_for_semantic_coherence": true,
+  "old_M1_release_immutable": true,
+  "existing_scientific_gates_not_waived": true,
+  "new_expert_responses": 0
+}

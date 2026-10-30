@@ -1,0 +1,318 @@
+@prefix ns1: <https://w3id.org/cm-pharme/2.1/> .
+@prefix ns2: <https://example.org/cm-pharme-lab/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://example.org/cm-pharme-lab/AlternativeMedicineAssignment/ctx2> a ns2:Context ;
+    ns2:jurisdiction "synthetic-J2" ;
+    ns2:schemeVersion "v2" .
+
+<https://example.org/cm-pharme-lab/AlternativeMedicineAssignment/r1> a ns2:CompleteRelator,
+        ns1:AlternativeMedicineAssignment ;
+    ns2:context <https://example.org/cm-pharme-lab/AlternativeMedicineAssignment/ctx1> ;
+    ns2:source <https://example.org/cm-pharme-lab/AlternativeMedicineAssignment/src1> ;
+    ns1:alternativeForProduct <https://example.org/cm-pharme-lab/AlternativeMedicineAssignment/reference0> ;
+    ns1:alternativeProduct <https://example.org/cm-pharme-lab/AlternativeMedicineAssignment/alternative0> ;
+    ns1:validFrom "2026-01-01T00:00:00+00:00"^^xsd:dateTime ;
+    ns1:validTo "2027-01-01T00:00:00+00:00"^^xsd:dateTime .
+
+<https://example.org/cm-pharme-lab/ContextualMedicineClassificationAssignment/ctx2> a ns2:Context ;
+    ns2:jurisdiction "synthetic-J2" ;
+    ns2:schemeVersion "v2" .
+
+<https://example.org/cm-pharme-lab/ContextualMedicineClassificationAssignment/r1> a ns2:CompleteRelator,
+        ns1:ContextualMedicineClassificationAssignment ;
+    ns2:context <https://example.org/cm-pharme-lab/ContextualMedicineClassificationAssignment/ctx1> ;
+    ns2:source <https://example.org/cm-pharme-lab/ContextualMedicineClassificationAssignment/src1> ;
+    ns1:classificationEntity <https://example.org/cm-pharme-lab/ContextualMedicineClassificationAssignment/subject0> ;
+    ns1:classificationEntry <https://example.org/cm-pharme-lab/ContextualMedicineClassificationAssignment/entry0> ;
+    ns1:validFrom "2026-01-01T00:00:00+00:00"^^xsd:dateTime ;
+    ns1:validTo "2027-01-01T00:00:00+00:00"^^xsd:dateTime .
+
+<https://example.org/cm-pharme-lab/EstablishmentRegistration/ctx2> a ns2:Context ;
+    ns2:jurisdiction "synthetic-J2" ;
+    ns2:schemeVersion "v2" .
+
+<https://example.org/cm-pharme-lab/EstablishmentRegistration/r1> a ns2:CompleteRelator,
+        ns1:EstablishmentRegistration ;
+    ns2:context <https://example.org/cm-pharme-lab/EstablishmentRegistration/ctx1> ;
+    ns2:source <https://example.org/cm-pharme-lab/EstablishmentRegistration/src1> ;
+    ns1:registrationAuthority <https://example.org/cm-pharme-lab/EstablishmentRegistration/authority0> ;
+    ns1:registrationEntity <https://example.org/cm-pharme-lab/EstablishmentRegistration/subject0> ;
+    ns1:validFrom "2026-01-01T00:00:00+00:00"^^xsd:dateTime ;
+    ns1:validTo "2027-01-01T00:00:00+00:00"^^xsd:dateTime .
+
+<https://example.org/cm-pharme-lab/EvidenceSupport/ctx2> a ns2:Context ;
+    ns2:jurisdiction "synthetic-J2" ;
+    ns2:schemeVersion "v2" .
+
+<https://example.org/cm-pharme-lab/EvidenceSupport/r1> a ns2:CompleteRelator,
+        ns1:EvidenceSupport ;
+    ns2:context <https://example.org/cm-pharme-lab/EvidenceSupport/ctx1> ;
+    ns2:source <https://example.org/cm-pharme-lab/EvidenceSupport/src1> ;
+    ns1:evidenceAssertion <https://example.org/cm-pharme-lab/EvidenceSupport/claim0> ;
+    ns1:evidenceItem <https://example.org/cm-pharme-lab/EvidenceSupport/evidence0> ;
+    ns1:validFrom "2026-01-01T00:00:00+00:00"^^xsd:dateTime ;
+    ns1:validTo "2027-01-01T00:00:00+00:00"^^xsd:dateTime .
+
+<https://example.org/cm-pharme-lab/FacilityOperation/ctx2> a ns2:Context ;
+    ns2:jurisdiction "synthetic-J2" ;
+    ns2:schemeVersion "v2" .
+
+<https://example.org/cm-pharme-lab/FacilityOperation/r1> a ns2:CompleteRelator,
+        ns1:FacilityOperation ;
+    ns2:context <https://example.org/cm-pharme-lab/FacilityOperation/ctx1> ;
+    ns2:source <https://example.org/cm-pharme-lab/FacilityOperation/src1> ;
+    ns1:operationFacility <https://example.org/cm-pharme-lab/FacilityOperation/facility0> ;
+    ns1:operationOrganization <https://example.org/cm-pharme-lab/FacilityOperation/operator0> ;
+    ns1:validFrom "2026-01-01T00:00:00+00:00"^^xsd:dateTime ;
+    ns1:validTo "2027-01-01T00:00:00+00:00"^^xsd:dateTime .
+
+<https://example.org/cm-pharme-lab/IdentifierAssignment/ctx2> a ns2:Context ;
+    ns2:jurisdiction "synthetic-J2" ;
+    ns2:schemeVersion "v2" .
+
+<https://example.org/cm-pharme-lab/IdentifierAssignment/r1> a ns2:CompleteRelator,
+        ns1:IdentifierAssignment ;
+    ns2:context <https://example.org/cm-pharme-lab/IdentifierAssignment/ctx1> ;
+    ns2:source <https://example.org/cm-pharme-lab/IdentifierAssignment/src1> ;
+    ns1:identifierEntity <https://example.org/cm-pharme-lab/IdentifierAssignment/subject0> ;
+    ns1:identifierLexicalValue "0012"^^xsd:string ;
+    ns1:identifierScheme <https://example.org/cm-pharme-lab/IdentifierAssignment/scheme0> ;
+    ns1:validFrom "2026-01-01T00:00:00+00:00"^^xsd:dateTime ;
+    ns1:validTo "2027-01-01T00:00:00+00:00"^^xsd:dateTime .
+
+<https://example.org/cm-pharme-lab/MarketListing/ctx2> a ns2:Context ;
+    ns2:jurisdiction "synthetic-J2" ;
+    ns2:schemeVersion "v2" .
+
+<https://example.org/cm-pharme-lab/MarketListing/r1> a ns2:CompleteRelator,
+        ns1:MarketListing ;
+    ns2:context <https://example.org/cm-pharme-lab/MarketListing/ctx1> ;
+    ns2:source <https://example.org/cm-pharme-lab/MarketListing/src1> ;
+    ns1:listingPresentation <https://example.org/cm-pharme-lab/MarketListing/presentation0> ;
+    ns1:listingResponsibleOrganization <https://example.org/cm-pharme-lab/MarketListing/responsible0> ;
+    ns1:validFrom "2026-01-01T00:00:00+00:00"^^xsd:dateTime ;
+    ns1:validTo "2027-01-01T00:00:00+00:00"^^xsd:dateTime .
+
+<https://example.org/cm-pharme-lab/ProductClassificationAssignment/ctx2> a ns2:Context ;
+    ns2:jurisdiction "synthetic-J2" ;
+    ns2:schemeVersion "v2" .
+
+<https://example.org/cm-pharme-lab/ProductClassificationAssignment/r1> a ns2:CompleteRelator,
+        ns1:ProductClassificationAssignment ;
+    ns2:context <https://example.org/cm-pharme-lab/ProductClassificationAssignment/ctx1> ;
+    ns2:source <https://example.org/cm-pharme-lab/ProductClassificationAssignment/src1> ;
+    ns1:classificationEntity <https://example.org/cm-pharme-lab/ProductClassificationAssignment/subject0> ;
+    ns1:classificationEntry <https://example.org/cm-pharme-lab/ProductClassificationAssignment/entry0> ;
+    ns1:validFrom "2026-01-01T00:00:00+00:00"^^xsd:dateTime ;
+    ns1:validTo "2027-01-01T00:00:00+00:00"^^xsd:dateTime .
+
+<https://example.org/cm-pharme-lab/RegulatoryAuthorization/ctx2> a ns2:Context ;
+    ns2:jurisdiction "synthetic-J2" ;
+    ns2:schemeVersion "v2" .
+
+<https://example.org/cm-pharme-lab/RegulatoryAuthorization/r1> a ns2:CompleteRelator,
+        ns1:RegulatoryAuthorization ;
+    ns2:context <https://example.org/cm-pharme-lab/RegulatoryAuthorization/ctx1> ;
+    ns2:source <https://example.org/cm-pharme-lab/RegulatoryAuthorization/src1> ;
+    ns1:authorizationAuthority <https://example.org/cm-pharme-lab/RegulatoryAuthorization/authority0> ;
+    ns1:authorizationParty <https://example.org/cm-pharme-lab/RegulatoryAuthorization/subject0> ;
+    ns1:validFrom "2026-01-01T00:00:00+00:00"^^xsd:dateTime ;
+    ns1:validTo "2027-01-01T00:00:00+00:00"^^xsd:dateTime .
+
+<https://example.org/cm-pharme-lab/RegulatoryOversight/ctx2> a ns2:Context ;
+    ns2:jurisdiction "synthetic-J2" ;
+    ns2:schemeVersion "v2" .
+
+<https://example.org/cm-pharme-lab/RegulatoryOversight/r1> a ns2:CompleteRelator,
+        ns1:RegulatoryOversight ;
+    ns2:context <https://example.org/cm-pharme-lab/RegulatoryOversight/ctx1> ;
+    ns2:source <https://example.org/cm-pharme-lab/RegulatoryOversight/src1> ;
+    ns1:oversightAuthorityRole <https://example.org/cm-pharme-lab/RegulatoryOversight/authority0> ;
+    ns1:oversightGovernedEntity <https://example.org/cm-pharme-lab/RegulatoryOversight/subject0> ;
+    ns1:validFrom "2026-01-01T00:00:00+00:00"^^xsd:dateTime ;
+    ns1:validTo "2027-01-01T00:00:00+00:00"^^xsd:dateTime .
+
+<https://example.org/cm-pharme-lab/StrategicPartnershipAgreement/ctx2> a ns2:Context ;
+    ns2:jurisdiction "synthetic-J2" ;
+    ns2:schemeVersion "v2" .
+
+<https://example.org/cm-pharme-lab/StrategicPartnershipAgreement/r1> a ns2:CompleteRelator,
+        ns1:StrategicPartnershipAgreement ;
+    ns2:context <https://example.org/cm-pharme-lab/StrategicPartnershipAgreement/ctx1> ;
+    ns2:source <https://example.org/cm-pharme-lab/StrategicPartnershipAgreement/src1> ;
+    ns1:partnershipParticipant <https://example.org/cm-pharme-lab/StrategicPartnershipAgreement/partner0>,
+        <https://example.org/cm-pharme-lab/StrategicPartnershipAgreement/partner1> ;
+    ns1:validFrom "2026-01-01T00:00:00+00:00"^^xsd:dateTime ;
+    ns1:validTo "2027-01-01T00:00:00+00:00"^^xsd:dateTime .
+
+<https://example.org/cm-pharme-lab/SupplyDependency/ctx2> a ns2:Context ;
+    ns2:jurisdiction "synthetic-J2" ;
+    ns2:schemeVersion "v2" .
+
+<https://example.org/cm-pharme-lab/SupplyDependency/r1> a ns2:CompleteRelator,
+        ns1:SupplyDependency ;
+    ns2:context <https://example.org/cm-pharme-lab/SupplyDependency/ctx1> ;
+    ns2:source <https://example.org/cm-pharme-lab/SupplyDependency/src1> ;
+    ns1:dependencyDependent <https://example.org/cm-pharme-lab/SupplyDependency/dependent0> ;
+    ns1:dependencyProvider <https://example.org/cm-pharme-lab/SupplyDependency/provider0> ;
+    ns1:validFrom "2026-01-01T00:00:00+00:00"^^xsd:dateTime ;
+    ns1:validTo "2027-01-01T00:00:00+00:00"^^xsd:dateTime .
+
+<https://example.org/cm-pharme-lab/AlternativeMedicineAssignment/alternative0> a ns1:AlternativeMedicinalProductRole,
+        ns1:MedicinalProduct ;
+    owl:differentFrom <https://example.org/cm-pharme-lab/AlternativeMedicineAssignment/reference0> .
+
+<https://example.org/cm-pharme-lab/AlternativeMedicineAssignment/ctx1> a ns2:Context ;
+    ns2:jurisdiction "synthetic-J1" ;
+    ns2:schemeVersion "v1" .
+
+<https://example.org/cm-pharme-lab/AlternativeMedicineAssignment/src1> a ns2:Source .
+
+<https://example.org/cm-pharme-lab/ContextualMedicineClassificationAssignment/ctx1> a ns2:Context ;
+    ns2:jurisdiction "synthetic-J1" ;
+    ns2:schemeVersion "v1" .
+
+<https://example.org/cm-pharme-lab/ContextualMedicineClassificationAssignment/entry0> a ns1:AppliedClassificationEntryRole,
+        ns1:ClassificationEntry ;
+    owl:differentFrom <https://example.org/cm-pharme-lab/ContextualMedicineClassificationAssignment/subject0> .
+
+<https://example.org/cm-pharme-lab/ContextualMedicineClassificationAssignment/src1> a ns2:Source .
+
+<https://example.org/cm-pharme-lab/EstablishmentRegistration/authority0> a ns1:Organization,
+        ns1:RegisteringAuthorityRole ;
+    owl:differentFrom <https://example.org/cm-pharme-lab/EstablishmentRegistration/subject0> .
+
+<https://example.org/cm-pharme-lab/EstablishmentRegistration/ctx1> a ns2:Context ;
+    ns2:jurisdiction "synthetic-J1" ;
+    ns2:schemeVersion "v1" .
+
+<https://example.org/cm-pharme-lab/EstablishmentRegistration/src1> a ns2:Source .
+
+<https://example.org/cm-pharme-lab/EvidenceSupport/claim0> a ns1:Assertion,
+        ns1:SupportedAssertionRole ;
+    owl:differentFrom <https://example.org/cm-pharme-lab/EvidenceSupport/evidence0> .
+
+<https://example.org/cm-pharme-lab/EvidenceSupport/ctx1> a ns2:Context ;
+    ns2:jurisdiction "synthetic-J1" ;
+    ns2:schemeVersion "v1" .
+
+<https://example.org/cm-pharme-lab/EvidenceSupport/src1> a ns2:Source .
+
+<https://example.org/cm-pharme-lab/FacilityOperation/ctx1> a ns2:Context ;
+    ns2:jurisdiction "synthetic-J1" ;
+    ns2:schemeVersion "v1" .
+
+<https://example.org/cm-pharme-lab/FacilityOperation/facility0> a ns1:Facility,
+        ns1:OperatedFacilityRole ;
+    owl:differentFrom <https://example.org/cm-pharme-lab/FacilityOperation/operator0> .
+
+<https://example.org/cm-pharme-lab/FacilityOperation/src1> a ns2:Source .
+
+<https://example.org/cm-pharme-lab/IdentifierAssignment/ctx1> a ns2:Context ;
+    ns2:jurisdiction "synthetic-J1" ;
+    ns2:schemeVersion "v1" .
+
+<https://example.org/cm-pharme-lab/IdentifierAssignment/scheme0> a ns1:IdentifierScheme,
+        ns1:UsedIdentifierSchemeRole ;
+    owl:differentFrom <https://example.org/cm-pharme-lab/IdentifierAssignment/subject0> .
+
+<https://example.org/cm-pharme-lab/IdentifierAssignment/src1> a ns2:Source .
+
+<https://example.org/cm-pharme-lab/MarketListing/ctx1> a ns2:Context ;
+    ns2:jurisdiction "synthetic-J1" ;
+    ns2:schemeVersion "v1" .
+
+<https://example.org/cm-pharme-lab/MarketListing/presentation0> a ns1:ListedPresentationRole,
+        ns1:MedicinalProductPresentation ;
+    owl:differentFrom <https://example.org/cm-pharme-lab/MarketListing/responsible0> .
+
+<https://example.org/cm-pharme-lab/MarketListing/src1> a ns2:Source .
+
+<https://example.org/cm-pharme-lab/ProductClassificationAssignment/ctx1> a ns2:Context ;
+    ns2:jurisdiction "synthetic-J1" ;
+    ns2:schemeVersion "v1" .
+
+<https://example.org/cm-pharme-lab/ProductClassificationAssignment/entry0> a ns1:AppliedClassificationEntryRole,
+        ns1:ClassificationEntry ;
+    owl:differentFrom <https://example.org/cm-pharme-lab/ProductClassificationAssignment/subject0> .
+
+<https://example.org/cm-pharme-lab/ProductClassificationAssignment/src1> a ns2:Source .
+
+<https://example.org/cm-pharme-lab/RegulatoryAuthorization/authority0> a ns1:AuthorizingAuthorityRole,
+        ns1:Organization ;
+    owl:differentFrom <https://example.org/cm-pharme-lab/RegulatoryAuthorization/subject0> .
+
+<https://example.org/cm-pharme-lab/RegulatoryAuthorization/ctx1> a ns2:Context ;
+    ns2:jurisdiction "synthetic-J1" ;
+    ns2:schemeVersion "v1" .
+
+<https://example.org/cm-pharme-lab/RegulatoryAuthorization/src1> a ns2:Source .
+
+<https://example.org/cm-pharme-lab/RegulatoryOversight/authority0> a ns1:Organization,
+        ns1:OversightAuthorityRole ;
+    owl:differentFrom <https://example.org/cm-pharme-lab/RegulatoryOversight/subject0> .
+
+<https://example.org/cm-pharme-lab/RegulatoryOversight/ctx1> a ns2:Context ;
+    ns2:jurisdiction "synthetic-J1" ;
+    ns2:schemeVersion "v1" .
+
+<https://example.org/cm-pharme-lab/RegulatoryOversight/src1> a ns2:Source .
+
+<https://example.org/cm-pharme-lab/StrategicPartnershipAgreement/ctx1> a ns2:Context ;
+    ns2:jurisdiction "synthetic-J1" ;
+    ns2:schemeVersion "v1" .
+
+<https://example.org/cm-pharme-lab/StrategicPartnershipAgreement/partner0> a ns1:Organization,
+        ns1:PartnerOrganizationRole ;
+    owl:differentFrom <https://example.org/cm-pharme-lab/StrategicPartnershipAgreement/partner1> .
+
+<https://example.org/cm-pharme-lab/StrategicPartnershipAgreement/src1> a ns2:Source .
+
+<https://example.org/cm-pharme-lab/SupplyDependency/ctx1> a ns2:Context ;
+    ns2:jurisdiction "synthetic-J1" ;
+    ns2:schemeVersion "v1" .
+
+<https://example.org/cm-pharme-lab/SupplyDependency/dependent0> a ns1:DependentOrganizationRole,
+        ns1:Organization ;
+    owl:differentFrom <https://example.org/cm-pharme-lab/SupplyDependency/provider0> .
+
+<https://example.org/cm-pharme-lab/SupplyDependency/src1> a ns2:Source .
+
+<https://example.org/cm-pharme-lab/AlternativeMedicineAssignment/reference0> a ns1:MedicinalProduct,
+        ns1:ReferenceProductRole .
+
+<https://example.org/cm-pharme-lab/ContextualMedicineClassificationAssignment/subject0> a ns1:ClassifiedMedicinalProductRole,
+        ns1:MedicinalProduct .
+
+<https://example.org/cm-pharme-lab/EstablishmentRegistration/subject0> a ns1:Organization,
+        ns1:RegisteredOrganizationRole .
+
+<https://example.org/cm-pharme-lab/EvidenceSupport/evidence0> a ns1:EvidenceSourceRecordRole,
+        ns1:SourceRecord .
+
+<https://example.org/cm-pharme-lab/FacilityOperation/operator0> a ns1:OperatingOrganizationRole,
+        ns1:Organization .
+
+<https://example.org/cm-pharme-lab/IdentifierAssignment/subject0> a ns1:IdentifiedOrganizationRole,
+        ns1:Organization .
+
+<https://example.org/cm-pharme-lab/MarketListing/responsible0> a ns1:ListingResponsibleOrganizationRole,
+        ns1:Organization .
+
+<https://example.org/cm-pharme-lab/ProductClassificationAssignment/subject0> a ns1:ClassifiedMedicinalProductRole,
+        ns1:MedicinalProduct .
+
+<https://example.org/cm-pharme-lab/RegulatoryAuthorization/subject0> a ns1:AuthorizedOrganizationRole,
+        ns1:Organization .
+
+<https://example.org/cm-pharme-lab/RegulatoryOversight/subject0> a ns1:GovernedOrganizationRole,
+        ns1:Organization .
+
+<https://example.org/cm-pharme-lab/StrategicPartnershipAgreement/partner1> a ns1:Organization,
+        ns1:PartnerOrganizationRole .
+
+<https://example.org/cm-pharme-lab/SupplyDependency/provider0> a ns1:Organization,
+        ns1:ProviderOrganizationRole .
+

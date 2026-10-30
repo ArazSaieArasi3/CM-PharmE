@@ -1,0 +1,19 @@
+@prefix c: <https://w3id.org/cm-pharme/2.1/> .
+@prefix p: <urn:cmpe:procurement-product-lab:> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Explicit opt-in source claim only; neither global OWL axiom nor EU compliance test.
+p:ClaimShape a sh:NodeShape ; sh:targetClass p:ProcurementProductClaim ;
+ sh:property [ sh:path p:activity ; sh:minCount 1 ; sh:maxCount 1 ;
+               sh:class c:ProcurementActivity ] ;
+ sh:property [ sh:path p:productType ; sh:minCount 1 ; sh:maxCount 1 ;
+               sh:class c:MedicinalProduct ] ;
+ sh:property [ sh:path p:status ; sh:minCount 1 ; sh:maxCount 1 ;
+               sh:in ("executed" "acquired") ] ;
+ sh:property [ sh:path p:transactionDate ; sh:minCount 1 ; sh:maxCount 1 ;
+               sh:datatype xsd:date ] ;
+ sh:property [ sh:path p:recordKind ; sh:minCount 1 ; sh:maxCount 1 ;
+               sh:in ("purchase_invoice" "acquisition_record") ] ;
+ sh:property [ sh:path p:sourceRecord ; sh:minCount 1 ; sh:maxCount 1 ;
+               sh:class c:SourceRecord ] .

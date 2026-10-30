@@ -1,0 +1,1942 @@
+@prefix c: <https://w3id.org/cm-pharme/2.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix l: <https://w3id.org/cm-pharme/experimental/four-domain/> .
+@prefix ns1: <https://w3id.org/cm-pharme/2.1/meta/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix r: <https://w3id.org/cm-pharme/experimental/refinement/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+dcterms:creator a owl:AnnotationProperty .
+
+dcterms:description a owl:AnnotationProperty .
+
+dcterms:issued a owl:AnnotationProperty .
+
+dcterms:title a owl:AnnotationProperty .
+
+skos:altLabel a owl:AnnotationProperty .
+
+skos:closeMatch a owl:AnnotationProperty .
+
+c:Address a rdfs:Datatype ;
+    rdfs:label "Address"@en ;
+    ns1:conceptualModule "x-infra" ;
+    ns1:ontoumlStereotype "Datatype" .
+
+c:AuthorizedFacilityRole a owl:Class ;
+    rdfs:subClassOf c:AuthorizedParty,
+        c:Facility ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:ontoumlStereotype "Role" .
+
+c:AuthorizedOrganizationRole a owl:Class ;
+    rdfs:subClassOf c:AuthorizedParty,
+        c:Organization ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:ontoumlStereotype "Role" .
+
+c:AvailabilityObservationResult a owl:Class ;
+    rdfs:label "Availability Observation Result"@en ;
+    rdfs:subClassOf c:ObservationResult ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "core" ;
+    ns1:ontoumlStereotype "Subkind" .
+
+c:ClassifiedPharmaceuticalSubstanceRole a owl:Class ;
+    rdfs:subClassOf c:ClassifiedEntity,
+        c:PharmaceuticalSubstance ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:ontoumlStereotype "Role" .
+
+c:CriticalMedicineClassification a owl:Class ;
+    rdfs:label "Critical Medicine Classification Assignment"@en ;
+    rdfs:subClassOf c:ContextualMedicineClassificationAssignment ;
+    skos:altLabel "Critical Medicine Classification"@en ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "extension" ;
+    ns1:ontoumlStereotype "Subkind" .
+
+c:DataQualityFinding a owl:Class ;
+    rdfs:label "Data Quality Finding"@en ;
+    rdfs:subClassOf c:Assertion ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "x-infra" ;
+    ns1:ontoumlStereotype "Subkind" .
+
+c:DemandObservationResult a owl:Class ;
+    rdfs:label "Demand Observation Result"@en ;
+    rdfs:subClassOf c:ObservationResult ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "core" ;
+    ns1:ontoumlStereotype "Subkind" .
+
+c:DependentFacilityRole a owl:Class ;
+    rdfs:subClassOf c:DependentEntity,
+        c:Facility ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:ontoumlStereotype "Role" .
+
+c:DependentMedicinalProductRole a owl:Class ;
+    rdfs:subClassOf c:DependentEntity,
+        c:MedicinalProduct ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:ontoumlStereotype "Role" .
+
+c:DependentOrganizationRole a owl:Class ;
+    rdfs:subClassOf c:DependentEntity,
+        c:Organization ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:ontoumlStereotype "Role" .
+
+c:DistributionLogisticsActivity a owl:Class ;
+    rdfs:label "Pharmaceutical Logistics Activity"@en ;
+    skos:altLabel "Distribution / Logistics Activity"@en ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "core" ;
+    ns1:ontoumlStereotype "Event" .
+
+c:EssentialMedicineClassification a owl:Class ;
+    rdfs:label "Essential Medicine Classification Assignment"@en ;
+    rdfs:subClassOf c:ContextualMedicineClassificationAssignment ;
+    skos:altLabel "Essential Medicine Classification"@en ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "extension" ;
+    ns1:ontoumlStereotype "Subkind" .
+
+c:EvidenceObservationResultRole a owl:Class ;
+    rdfs:subClassOf c:EvidenceItem,
+        c:ObservationResult ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:ontoumlStereotype "Role" .
+
+c:GeospatialPosition a rdfs:Datatype ;
+    rdfs:label "Geospatial Position"@en ;
+    ns1:conceptualModule "x-infra" ;
+    ns1:ontoumlStereotype "Datatype" .
+
+c:GovernedFacilityRole a owl:Class ;
+    rdfs:subClassOf c:Facility,
+        c:GovernedEntity ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:ontoumlStereotype "Role" .
+
+c:GovernedOrganizationRole a owl:Class ;
+    rdfs:subClassOf c:GovernedEntity,
+        c:Organization ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:ontoumlStereotype "Role" .
+
+c:IdentifiedFacilityRole a owl:Class ;
+    rdfs:subClassOf c:Facility,
+        c:IdentifiedEntity ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:ontoumlStereotype "Role" .
+
+c:IdentifiedGeographicFeatureRole a owl:Class ;
+    rdfs:subClassOf c:GeographicFeature,
+        c:IdentifiedEntity ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:ontoumlStereotype "Role" .
+
+c:IdentifiedMedicinalProductPresentationRole a owl:Class ;
+    rdfs:subClassOf c:IdentifiedEntity,
+        c:MedicinalProductPresentation ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:ontoumlStereotype "Role" .
+
+c:IdentifiedMedicinalProductRole a owl:Class ;
+    rdfs:subClassOf c:IdentifiedEntity,
+        c:MedicinalProduct ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:ontoumlStereotype "Role" .
+
+c:IdentifiedOrganizationRole a owl:Class ;
+    rdfs:subClassOf c:IdentifiedEntity,
+        c:Organization ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:ontoumlStereotype "Role" .
+
+c:IdentifiedPharmaceuticalSubstanceRole a owl:Class ;
+    rdfs:subClassOf c:IdentifiedEntity,
+        c:PharmaceuticalSubstance ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:ontoumlStereotype "Role" .
+
+c:IdentifierValue a rdfs:Datatype ;
+    rdfs:label "Identifier Value"@en ;
+    ns1:conceptualModule "x-infra" ;
+    ns1:ontoumlStereotype "Datatype" .
+
+c:InventoryObservationResult a owl:Class ;
+    rdfs:label "Inventory Observation Result"@en ;
+    rdfs:subClassOf c:ObservationResult ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "extension" ;
+    ns1:ontoumlStereotype "Subkind" .
+
+c:LeadTimeObservationResult a owl:Class ;
+    rdfs:label "Lead Time Observation Result"@en ;
+    rdfs:subClassOf c:ObservationResult ;
+    skos:altLabel "Lead-Time Observation Result"@en ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "extension" ;
+    ns1:ontoumlStereotype "Subkind" .
+
+c:MappingAssertion a owl:Class ;
+    rdfs:label "Mapping Assertion"@en ;
+    rdfs:subClassOf c:Assertion ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "x-infra" ;
+    ns1:ontoumlStereotype "Subkind" .
+
+c:MeasureValue a rdfs:Datatype ;
+    rdfs:label "Measure Value"@en ;
+    ns1:conceptualModule "x-infra" ;
+    ns1:ontoumlStereotype "Datatype" .
+
+c:ProcurementActivity a owl:Class ;
+    rdfs:label "Procurement Activity"@en ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "extension" ;
+    ns1:ontoumlStereotype "Event" .
+
+c:ProviderFacilityRole a owl:Class ;
+    rdfs:subClassOf c:Facility,
+        c:ProviderEntity ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:ontoumlStereotype "Role" .
+
+c:ProviderMedicinalProductRole a owl:Class ;
+    rdfs:subClassOf c:MedicinalProduct,
+        c:ProviderEntity ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:ontoumlStereotype "Role" .
+
+c:ProviderOrganizationRole a owl:Class ;
+    rdfs:subClassOf c:Organization,
+        c:ProviderEntity ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:ontoumlStereotype "Role" .
+
+c:RegisteredFacilityRole a owl:Class ;
+    rdfs:subClassOf c:Facility,
+        c:RegisteredParty ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:ontoumlStereotype "Role" .
+
+c:RegisteredOrganizationRole a owl:Class ;
+    rdfs:subClassOf c:Organization,
+        c:RegisteredParty ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:ontoumlStereotype "Role" .
+
+c:RegulatoryRequirement a owl:Class ;
+    rdfs:label "Regulatory Requirement"@en ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "extension" ;
+    ns1:ontoumlStereotype "Kind" .
+
+c:ReportingPeriod a rdfs:Datatype ;
+    rdfs:label "Reporting Period"@en ;
+    ns1:conceptualModule "x-infra" ;
+    ns1:ontoumlStereotype "Datatype" .
+
+c:StockoutSituation a owl:Class ;
+    rdfs:label "Stockout Situation"@en ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "extension" ;
+    ns1:ontoumlStereotype "Situation" .
+
+c:TimeInterval a rdfs:Datatype ;
+    rdfs:label "Time Interval"@en ;
+    ns1:conceptualModule "x-infra" ;
+    ns1:ontoumlStereotype "Datatype" .
+
+c:authorizationJurisdiction a owl:ObjectProperty ;
+    rdfs:domain c:RegulatoryAuthorization ;
+    rdfs:range c:RegulatoryJurisdiction .
+
+c:containsSourceRecord a owl:ObjectProperty ;
+    rdfs:domain c:DatasetRelease ;
+    rdfs:range c:SourceRecord .
+
+c:contextClassificationEntry a owl:ObjectProperty ;
+    rdfs:domain c:ContextualMedicineClassificationAssignment ;
+    rdfs:range c:AppliedClassificationEntryRole ;
+    rdfs:subPropertyOf c:classificationEntry .
+
+c:contextClassificationJurisdiction a owl:ObjectProperty ;
+    rdfs:domain c:ContextualMedicineClassificationAssignment ;
+    rdfs:range c:RegulatoryJurisdiction .
+
+c:contextClassificationProduct a owl:ObjectProperty ;
+    rdfs:domain c:ContextualMedicineClassificationAssignment ;
+    rdfs:range c:ClassifiedMedicinalProductRole ;
+    rdfs:subPropertyOf c:classificationEntity .
+
+c:disruptionAffectsDependency a owl:ObjectProperty ;
+    rdfs:comment "Source-supported impact link only; does not entail causation of shortage."@en ;
+    rdfs:domain c:DisruptionEvent ;
+    rdfs:range c:SupplyDependency ;
+    rdfs:subPropertyOf c:disruptionAffects .
+
+c:entryInScheme a owl:ObjectProperty ;
+    rdfs:domain c:ClassificationEntry ;
+    rdfs:range c:ProductClassificationScheme .
+
+c:evidenceRecord a owl:ObjectProperty ;
+    rdfs:domain c:EvidenceSupport ;
+    rdfs:range c:EvidenceSourceRecordRole ;
+    rdfs:subPropertyOf c:evidenceItem .
+
+c:facilityHasSupplyCapacity a owl:ObjectProperty ;
+    rdfs:domain c:Facility ;
+    rdfs:range c:SupplyCapacity ;
+    owl:inverseOf c:capacityFacilityBearer .
+
+c:generatedAssertion a owl:ObjectProperty ;
+    rdfs:domain c:ProvenanceActivity ;
+    rdfs:range c:Assertion .
+
+c:hasDatasetRelease a owl:ObjectProperty ;
+    rdfs:domain c:Dataset ;
+    rdfs:range c:DatasetRelease .
+
+c:hasDosageForm a owl:ObjectProperty ;
+    rdfs:domain c:MedicinalProductPresentation ;
+    rdfs:range c:DosageFormSpecification .
+
+c:hasPackageConfiguration a owl:ObjectProperty ;
+    rdfs:domain c:MedicinalProductPresentation ;
+    rdfs:range c:PackageConfiguration .
+
+c:hasStrength a owl:ObjectProperty ;
+    rdfs:domain c:MedicinalProductPresentation ;
+    rdfs:range c:Strength .
+
+c:identifierLexicalValue a owl:DatatypeProperty ;
+    rdfs:domain c:IdentifierAssignment ;
+    rdfs:range xsd:string .
+
+c:listingJurisdiction a owl:ObjectProperty ;
+    rdfs:domain c:MarketListing ;
+    rdfs:range c:RegulatoryJurisdiction .
+
+c:locatedIn a owl:ObjectProperty ;
+    rdfs:range c:GeographicFeature .
+
+c:maintainsDataset a owl:ObjectProperty ;
+    rdfs:domain c:DataSourceResource ;
+    rdfs:range c:Dataset .
+
+c:matchObject a owl:ObjectProperty ;
+    rdfs:domain c:EntityMatchAssertion .
+
+c:matchSubject a owl:ObjectProperty ;
+    rdfs:domain c:EntityMatchAssertion .
+
+c:measureNumericValue a owl:DatatypeProperty ;
+    rdfs:domain c:ObservationResult ;
+    rdfs:range xsd:decimal .
+
+c:measureUnitLabel a owl:DatatypeProperty ;
+    rdfs:domain c:ObservationResult ;
+    rdfs:range xsd:string .
+
+ns1:conceptualModelVersion a owl:AnnotationProperty .
+
+ns1:conceptualModule a owl:AnnotationProperty .
+
+ns1:derivedFromRelator a owl:AnnotationProperty .
+
+ns1:formalizationNote a owl:AnnotationProperty .
+
+ns1:formalizationStatus a owl:AnnotationProperty .
+
+ns1:gateDIdentifier a owl:AnnotationProperty .
+
+ns1:materialRelation a owl:AnnotationProperty .
+
+ns1:ontoumlStereotype a owl:AnnotationProperty .
+
+ns1:persistentNamespaceStatus a owl:AnnotationProperty .
+
+ns1:sourceStatus a owl:AnnotationProperty .
+
+c:observationAboutPresentation a owl:ObjectProperty ;
+    rdfs:comment "Information about an identified presentation; no substitution for Product."@en ;
+    rdfs:domain c:ObservationResult ;
+    rdfs:range c:MedicinalProductPresentation ;
+    rdfs:subPropertyOf c:observationResultAbout .
+
+c:observationAboutProduct a owl:ObjectProperty ;
+    rdfs:comment "Information about a product; not an observation event or a product identity assertion."@en ;
+    rdfs:domain c:ObservationResult ;
+    rdfs:range c:MedicinalProduct ;
+    rdfs:subPropertyOf c:observationResultAbout .
+
+c:ontology a owl:Ontology ;
+    dcterms:creator "Araz Saie Arasi" ;
+    dcterms:description "Non-release review snapshot derived from the frozen CM-PharmE 2.0 baseline; semantics remain provisional."@en ;
+    dcterms:issued "2026-10-04"^^xsd:date ;
+    dcterms:title "CM-PharmE 2.1 Design Candidate"@en ;
+    owl:versionIRI c:2.1.0-alpha.1-g3-2e-f-candidate ;
+    owl:versionInfo "2.1.0-alpha.1-g3-2e-f-candidate" ;
+    ns1:formalizationStatus "G3-2e-F supported OWL subset aligned to native G3-2e-E; official conformance and scientific release acceptance pending" ;
+    ns1:persistentNamespaceStatus "w3id target namespace selected; redirect registration pending" .
+
+c:operates a owl:ObjectProperty ;
+    rdfs:domain c:Organization ;
+    rdfs:range c:Facility ;
+    ns1:derivedFromRelator "FacilityOperation" ;
+    ns1:materialRelation true .
+
+c:organizationHasSupplyCapacity a owl:ObjectProperty ;
+    rdfs:domain c:Organization ;
+    rdfs:range c:SupplyCapacity ;
+    owl:inverseOf c:capacityOrganizationBearer .
+
+c:presentationOf a owl:ObjectProperty ;
+    rdfs:domain c:MedicinalProductPresentation ;
+    rdfs:range c:MedicinalProduct .
+
+c:producesObservationResult a owl:ObjectProperty ;
+    rdfs:domain c:ObservationActivity ;
+    rdfs:range c:ObservationResult .
+
+c:productHasActiveSubstance a owl:ObjectProperty ;
+    rdfs:comment "Evidence-admitted Product-specific active substance link; no global existence, maximum one, presentation promotion or composition assertion."@en ;
+    rdfs:domain c:MedicinalProduct ;
+    rdfs:range c:PharmaceuticalSubstance ;
+    rdfs:subPropertyOf c:hasActiveSubstance .
+
+c:registrationJurisdiction a owl:ObjectProperty ;
+    rdfs:domain c:EstablishmentRegistration ;
+    rdfs:range c:RegulatoryJurisdiction .
+
+c:reimbursementDiagnosisContext a owl:ObjectProperty ;
+    rdfs:comment "Diagnosis classification context of an aggregate observation; never a patient diagnosis assertion."@en ;
+    rdfs:domain c:ReimbursementUtilisationObservationResult ;
+    rdfs:range c:DiagnosisClassificationReference .
+
+c:riskAssessmentConcernsDependency a owl:ObjectProperty ;
+    rdfs:comment "Assessment topic only; no vulnerability or quantitative risk conclusion is entailed."@en ;
+    rdfs:domain c:RiskAssessmentActivity ;
+    rdfs:range c:SupplyDependency ;
+    rdfs:subPropertyOf c:riskAssessmentConcerns .
+
+c:riskTreatmentAddresses a owl:ObjectProperty ;
+    rdfs:domain c:RiskTreatmentActivity .
+
+c:shortageJurisdiction a owl:ObjectProperty ;
+    rdfs:domain c:MedicineShortageSituation ;
+    rdfs:range c:RegulatoryJurisdiction .
+
+c:shortagePresentation a owl:ObjectProperty ;
+    rdfs:domain c:MedicineShortageSituation ;
+    rdfs:range c:MedicinalProductPresentation .
+
+c:shortageProduct a owl:ObjectProperty ;
+    rdfs:domain c:MedicineShortageSituation ;
+    rdfs:range c:MedicinalProduct .
+
+c:usedSourceArtifact a owl:ObjectProperty ;
+    rdfs:domain c:ProvenanceActivity .
+
+c:validFrom a owl:DatatypeProperty ;
+    rdfs:range xsd:dateTime .
+
+c:validTo a owl:DatatypeProperty ;
+    rdfs:range xsd:dateTime .
+
+c:withinCountry a owl:IrreflexiveProperty,
+        owl:ObjectProperty ;
+    rdfs:domain c:GeographicFeature ;
+    rdfs:range c:Country .
+
+c:withinRegion a owl:IrreflexiveProperty,
+        owl:ObjectProperty ;
+    rdfs:domain c:GeographicFeature ;
+    rdfs:range c:AdministrativeRegion .
+
+l:assessmentScenario a owl:ObjectProperty ;
+    rdfs:domain c:RiskAssessmentActivity ;
+    rdfs:range c:Assertion .
+
+l:atTime a owl:DatatypeProperty ;
+    rdfs:range xsd:dateTime .
+
+l:capabilityRealizedIn a owl:ObjectProperty ;
+    rdfs:domain c:EnterpriseCapability ;
+    rdfs:range c:ManufacturingActivity .
+
+l:causallyEstablished a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:range xsd:boolean .
+
+l:citesSourceRecord a owl:ObjectProperty ;
+    rdfs:domain c:Assertion ;
+    rdfs:range c:SourceRecord .
+
+l:componentVersion a owl:DatatypeProperty ;
+    rdfs:range xsd:string .
+
+l:conclusion a owl:DatatypeProperty ;
+    rdfs:range xsd:string .
+
+l:deploymentComponent a owl:ObjectProperty ;
+    rdfs:domain c:SystemDeploymentActivity ;
+    rdfs:range c:DigitalInformationSystemComponent .
+
+l:deploymentOrganization a owl:ObjectProperty ;
+    rdfs:domain c:SystemDeploymentActivity ;
+    rdfs:range c:Organization .
+
+l:digitalActivityDeployment a owl:ObjectProperty ;
+    rdfs:domain c:ProvenanceActivity ;
+    rdfs:range c:SystemDeploymentActivity .
+
+l:digitalServiceActivity a owl:ObjectProperty ;
+    rdfs:domain c:ServiceOfferingSpecification ;
+    rdfs:range c:ProvenanceActivity .
+
+l:digitalServiceComponent a owl:ObjectProperty ;
+    rdfs:domain c:ServiceOfferingSpecification ;
+    rdfs:range c:DigitalInformationSystemComponent .
+
+l:implementsRiskPlan a owl:ObjectProperty ;
+    rdfs:domain c:RiskTreatmentActivity ;
+    rdfs:range c:RiskTreatmentPlan .
+
+l:ontology a owl:Ontology ;
+    rdfs:comment "Review experiment only. No release or full OntoUML conformance claim." .
+
+l:planRiskResult a owl:ObjectProperty ;
+    rdfs:domain c:RiskTreatmentPlan ;
+    rdfs:range c:Assertion .
+
+l:profile a owl:DatatypeProperty ;
+    rdfs:range xsd:string .
+
+l:pvRequirementJurisdiction a owl:ObjectProperty ;
+    rdfs:domain c:PharmacovigilanceRequirement ;
+    rdfs:range c:RegulatoryJurisdiction .
+
+l:pvResultAssessment a owl:ObjectProperty ;
+    rdfs:domain c:Assertion ;
+    rdfs:range c:SignalAssessmentActivity .
+
+l:pvResultSignal a owl:ObjectProperty ;
+    rdfs:domain c:Assertion ;
+    rdfs:range c:Assertion .
+
+l:recordDigitalActivity a owl:ObjectProperty ;
+    rdfs:domain c:SourceRecord ;
+    rdfs:range c:ProvenanceActivity .
+
+l:reportsRecord a owl:ObjectProperty ;
+    rdfs:domain c:AdverseEventReportingActivity ;
+    rdfs:range c:SourceRecord .
+
+l:resultAssessment a owl:ObjectProperty ;
+    rdfs:domain c:Assertion ;
+    rdfs:range c:RiskAssessmentActivity .
+
+l:reviewNewResult a owl:ObjectProperty ;
+    rdfs:domain c:RiskReviewActivity ;
+    rdfs:range c:Assertion .
+
+l:reviewPriorResult a owl:ObjectProperty ;
+    rdfs:domain c:RiskReviewActivity ;
+    rdfs:range c:Assertion .
+
+l:scenarioProduct a owl:ObjectProperty ;
+    rdfs:domain c:Assertion ;
+    rdfs:range c:MedicinalProduct ;
+    rdfs:subPropertyOf c:assertionAboutProduct .
+
+l:serviceCapability a owl:ObjectProperty ;
+    rdfs:domain c:ServiceOfferingSpecification ;
+    rdfs:range c:EnterpriseCapability .
+
+l:signalAssessmentTarget a owl:ObjectProperty ;
+    rdfs:domain c:SignalAssessmentActivity ;
+    rdfs:range c:Assertion .
+
+l:signalProduct a owl:ObjectProperty ;
+    rdfs:domain c:Assertion ;
+    rdfs:range c:MedicinalProduct ;
+    rdfs:subPropertyOf c:assertionAboutProduct .
+
+l:signalStatus a owl:DatatypeProperty ;
+    rdfs:range xsd:string .
+
+l:signalSubstance a owl:ObjectProperty ;
+    rdfs:domain c:Assertion ;
+    rdfs:range c:PharmaceuticalSubstance .
+
+l:surveillanceRequirement a owl:ObjectProperty ;
+    rdfs:domain c:PostMarketSurveillanceActivity ;
+    rdfs:range c:PharmacovigilanceRequirement .
+
+l:surveillanceSource a owl:ObjectProperty ;
+    rdfs:domain c:PostMarketSurveillanceActivity ;
+    rdfs:range c:SourceRecord .
+
+l:viewOrganization a owl:ObjectProperty ;
+    rdfs:domain c:BusinessArchitectureView ;
+    rdfs:range c:Organization ;
+    rdfs:subPropertyOf c:baViewRepresents .
+
+l:viewService a owl:ObjectProperty ;
+    rdfs:domain c:BusinessArchitectureView ;
+    rdfs:range c:ServiceOfferingSpecification .
+
+r:activityResponsibleOrganization a owl:ObjectProperty ;
+    rdfs:domain c:ProvenanceActivity ;
+    rdfs:range c:Organization .
+
+r:agreementCommitment a owl:ObjectProperty ;
+    rdfs:domain c:StrategicPartnershipAgreement ;
+    rdfs:range c:Assertion .
+
+r:assessmentOrganization a owl:ObjectProperty ;
+    rdfs:domain c:SignalAssessmentActivity ;
+    rdfs:range c:Organization .
+
+r:carrierClaim a owl:ObjectProperty ;
+    rdfs:domain c:SourceRecord ;
+    rdfs:range c:Assertion .
+
+r:caseIdentifier a owl:DatatypeProperty ;
+    rdfs:range xsd:string .
+
+r:caseIdentifierScheme a owl:DatatypeProperty ;
+    rdfs:range xsd:string .
+
+r:claimText a owl:DatatypeProperty ;
+    rdfs:range xsd:string .
+
+r:commitmentActor a owl:ObjectProperty ;
+    rdfs:domain c:Assertion ;
+    rdfs:range c:Organization .
+
+r:commitmentText a owl:DatatypeProperty ;
+    rdfs:range xsd:string .
+
+r:manufacturingFacility a owl:ObjectProperty ;
+    rdfs:domain c:ManufacturingActivity ;
+    rdfs:range c:Facility .
+
+r:manufacturingProduct a owl:ObjectProperty ;
+    rdfs:domain c:ManufacturingActivity ;
+    rdfs:range c:MedicinalProduct .
+
+r:scenarioDependency a owl:ObjectProperty ;
+    rdfs:domain c:Assertion ;
+    rdfs:range c:SupplyDependency .
+
+r:scenarioFacility a owl:ObjectProperty ;
+    rdfs:domain c:Assertion ;
+    rdfs:range c:Facility .
+
+r:serviceFacility a owl:ObjectProperty ;
+    rdfs:domain c:ServiceOfferingSpecification ;
+    rdfs:range c:Facility .
+
+r:serviceProduct a owl:ObjectProperty ;
+    rdfs:domain c:ServiceOfferingSpecification ;
+    rdfs:range c:MedicinalProduct .
+
+r:supportsManufacturing a owl:ObjectProperty ;
+    rdfs:domain c:ProvenanceActivity ;
+    rdfs:range c:ManufacturingActivity .
+
+c:AdministrativeRegion a owl:Class ;
+    rdfs:label "Administrative Region"@en ;
+    rdfs:subClassOf c:GeographicFeature ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "x-infra" ;
+    ns1:ontoumlStereotype "Subkind" .
+
+c:AdverseEventReportingActivity a owl:Class ;
+    rdfs:label "Adverse Event Reporting Activity"@en ;
+    owl:disjointWith c:SourceRecord ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "extension" ;
+    ns1:ontoumlStereotype "Event" .
+
+c:ClassifiedMedicinalProductRole a owl:Class ;
+    rdfs:subClassOf c:ClassifiedEntity,
+        c:MedicinalProduct ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:ontoumlStereotype "Role" .
+
+c:Country a owl:Class ;
+    rdfs:label "Country"@en ;
+    rdfs:subClassOf c:GeographicFeature ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "x-infra" ;
+    ns1:ontoumlStereotype "Subkind" .
+
+c:DataSourceResource a owl:Class ;
+    rdfs:label "Data Source"@en ;
+    skos:altLabel "Data Source Resource"@en ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "x-infra" ;
+    ns1:ontoumlStereotype "Kind" .
+
+c:DiagnosisClassificationReference a owl:Class ;
+    rdfs:label "Diagnosis Classification Reference"@en ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "extension" ;
+    ns1:ontoumlStereotype "Kind" .
+
+c:DosageFormSpecification a owl:Class ;
+    rdfs:label "Dosage Form Specification"@en ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "core" ;
+    ns1:ontoumlStereotype "Kind" .
+
+c:EvidenceSourceRecordRole a owl:Class ;
+    rdfs:subClassOf c:EvidenceItem,
+        c:SourceRecord ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:ontoumlStereotype "Role" .
+
+c:IdentifierScheme a owl:Class ;
+    rdfs:label "Identifier Scheme"@en ;
+    rdfs:comment "May represent NDC, ATC, ChEMBL, GeoNames, regulatory or dataset-specific identifier schemes. No scheme is assumed globally identifying outside its documented scope."@en ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "x-infra" ;
+    ns1:ontoumlStereotype "Kind" .
+
+c:MatchConfidence a owl:Class ;
+    rdfs:label "Match Confidence"@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onClass c:EntityMatchAssertion ;
+            owl:onProperty [ owl:inverseOf c:hasMatchConfidence ] ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "x-infra" ;
+    ns1:ontoumlStereotype "Quality" .
+
+c:ObservationActivity a owl:Class ;
+    rdfs:label "Observation Activity"@en ;
+    owl:disjointWith c:ObservationResult ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "x-infra" ;
+    ns1:ontoumlStereotype "Event" .
+
+c:PackageConfiguration a owl:Class ;
+    rdfs:label "Package Configuration"@en ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "core" ;
+    ns1:ontoumlStereotype "Kind" .
+
+c:ProductClassificationScheme a owl:Class ;
+    rdfs:label "Product Classification Scheme"@en ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "core" ;
+    ns1:ontoumlStereotype "Kind" .
+
+c:ReimbursementUtilisationObservationResult a owl:Class ;
+    rdfs:label "Reimbursement and Utilization Observation Result"@en ;
+    rdfs:subClassOf c:ObservationResult ;
+    skos:altLabel "Reimbursement / Utilisation Observation Result"@en ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "extension" ;
+    ns1:ontoumlStereotype "Subkind" .
+
+c:Strength a owl:Class ;
+    rdfs:label "Strength"@en ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "core" ;
+    ns1:ontoumlStereotype "Quality" .
+
+c:SupplyCapacityObservationResult a owl:Class ;
+    rdfs:label "Supply Capacity Observation Result"@en ;
+    rdfs:subClassOf c:ObservationResult ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "core" ;
+    ns1:ontoumlStereotype "Subkind" .
+
+c:baViewRepresents a owl:ObjectProperty ;
+    rdfs:domain c:BusinessArchitectureView .
+
+c:capabilityBearer a owl:ObjectProperty ;
+    rdfs:domain c:EnterpriseCapability ;
+    rdfs:range c:Organization .
+
+c:disruptionAffects a owl:ObjectProperty ;
+    rdfs:domain c:DisruptionEvent .
+
+c:hasActiveSubstance a owl:ObjectProperty ;
+    rdfs:range c:PharmaceuticalSubstance .
+
+c:hasMatchConfidence a owl:ObjectProperty ;
+    rdfs:domain c:EntityMatchAssertion ;
+    rdfs:range c:MatchConfidence .
+
+c:riskAssessmentConcerns a owl:ObjectProperty ;
+    rdfs:domain c:RiskAssessmentActivity .
+
+c:AssigningDistributionSiteUseOrganizationRole a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass c:DistributionSiteUse ;
+            owl:onProperty [ owl:inverseOf c:distributionSiteUseCounterpart ] ],
+        c:Organization ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:ontoumlStereotype "Role" .
+
+c:AssigningManufacturingSiteUseOrganizationRole a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass c:ManufacturingSiteUse ;
+            owl:onProperty [ owl:inverseOf c:manufacturingSiteUseCounterpart ] ],
+        c:Organization ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:ontoumlStereotype "Role" .
+
+c:ClassificationEntry a owl:Class ;
+    rdfs:label "Classification Entry"@en ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "core" ;
+    ns1:ontoumlStereotype "Kind" .
+
+c:CommissioningLogisticsClientRole a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass c:LogisticsServiceCommitment ;
+            owl:onProperty [ owl:inverseOf c:logisticsServiceCommitmentCounterpart ] ],
+        c:Organization ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:ontoumlStereotype "Role" .
+
+c:Dataset a owl:Class ;
+    rdfs:label "Dataset"@en ;
+    skos:closeMatch prov:Entity ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "x-infra" ;
+    ns1:ontoumlStereotype "Kind" .
+
+c:DatasetRelease a owl:Class ;
+    rdfs:label "Dataset Release"@en ;
+    skos:closeMatch prov:Entity ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "x-infra" ;
+    ns1:ontoumlStereotype "Kind" .
+
+c:DigitalInformationSystemComponent a owl:Class ;
+    rdfs:label "Digital System Component"@en ;
+    owl:disjointWith c:SourceRecord ;
+    skos:altLabel "Digital / Information System Component"@en ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "extension" ;
+    ns1:ontoumlStereotype "Kind" .
+
+c:DisruptionEvent a owl:Class ;
+    rdfs:label "Disruption Event"@en ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "extension" ;
+    ns1:ontoumlStereotype "Event" .
+
+c:DistributionSiteRole a owl:Class ;
+    rdfs:label "Distribution Site"@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass c:DistributionSiteUse ;
+            owl:onProperty [ owl:inverseOf c:distributionSiteUseHolder ] ],
+        c:EcosystemParticipant,
+        c:Facility ;
+    skos:altLabel "Distribution Site Role"@en ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "core" ;
+    ns1:ontoumlStereotype "Role" .
+
+c:ImportResponsibilitySubjectRole a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass c:ImportResponsibility ;
+            owl:onProperty [ owl:inverseOf c:importResponsibilityCounterpart ] ],
+        c:MedicinalProduct ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:ontoumlStereotype "Role" .
+
+c:ImporterRole a owl:Class ;
+    rdfs:label "Importer"@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass c:ImportResponsibility ;
+            owl:onProperty [ owl:inverseOf c:importResponsibilityHolder ] ],
+        c:EcosystemParticipant,
+        c:Organization ;
+    skos:altLabel "Importer Role"@en ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "core" ;
+    ns1:ontoumlStereotype "Role" .
+
+c:InstitutionallyFundedOrganizationRole a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass c:InstitutionalFundingCommitment ;
+            owl:onProperty [ owl:inverseOf c:institutionalFundingCommitmentCounterpart ] ],
+        c:Organization ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:ontoumlStereotype "Role" .
+
+c:MandateConferringOrganizationRole a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass c:RegulatoryMandate ;
+            owl:onProperty [ owl:inverseOf c:regulatoryMandateCounterpart ] ],
+        c:Organization ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:ontoumlStereotype "Role" .
+
+c:ManufacturerRole a owl:Class ;
+    rdfs:label "Manufacturer"@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass c:ManufacturingResponsibility ;
+            owl:onProperty [ owl:inverseOf c:manufacturingResponsibilityHolder ] ],
+        c:EcosystemParticipant,
+        c:Organization ;
+    skos:altLabel "Manufacturer Role"@en ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "core" ;
+    ns1:ontoumlStereotype "Role" .
+
+c:ManufacturingResponsibilitySubjectRole a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass c:ManufacturingResponsibility ;
+            owl:onProperty [ owl:inverseOf c:manufacturingResponsibilityCounterpart ] ],
+        c:MedicinalProduct ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:ontoumlStereotype "Role" .
+
+c:ManufacturingSiteRole a owl:Class ;
+    rdfs:label "Manufacturing Site"@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass c:ManufacturingSiteUse ;
+            owl:onProperty [ owl:inverseOf c:manufacturingSiteUseHolder ] ],
+        c:EcosystemParticipant,
+        c:Facility ;
+    skos:altLabel "Manufacturing Site Role"@en ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "core" ;
+    ns1:ontoumlStereotype "Role" .
+
+c:OperatingOrganizationRole a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass c:FacilityOperation ;
+            owl:onProperty [ owl:inverseOf c:operationOrganization ] ],
+        c:Organization ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:ontoumlStereotype "Role" .
+
+c:PartnerOrganizationRole a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass c:StrategicPartnershipAgreement ;
+            owl:onProperty [ owl:inverseOf c:partnershipParticipant ] ],
+        c:Organization ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:ontoumlStereotype "Role" .
+
+c:PayerFundingOrganizationRole a owl:Class ;
+    rdfs:label "Healthcare Financing Organization"@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass c:InstitutionalFundingCommitment ;
+            owl:onProperty [ owl:inverseOf c:institutionalFundingCommitmentHolder ] ],
+        c:EcosystemParticipant,
+        c:Organization ;
+    skos:altLabel "Funding Organization"@en,
+        "Payer / Funding Organization Role"@en,
+        "Payer Organization"@en ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "extension" ;
+    ns1:ontoumlStereotype "Role" .
+
+c:PharmacovigilanceRequirement a owl:Class ;
+    rdfs:label "Pharmacovigilance Requirement"@en ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "extension" ;
+    ns1:ontoumlStereotype "Kind" .
+
+c:PostMarketSurveillanceActivity a owl:Class ;
+    rdfs:label "Post-Market Surveillance Activity"@en ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "extension" ;
+    ns1:ontoumlStereotype "Event" .
+
+c:ProductResponsibleLabelerRole a owl:Class ;
+    rdfs:label "Product Responsible Organization"@en ;
+    rdfs:subClassOf c:EcosystemParticipant,
+        c:Organization ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( c:ListingResponsibleOrganizationRole c:ProductLabelCommitmentOrganizationRole ) ;
+            ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ] ;
+    skos:altLabel "Labeler"@en,
+        "Product-Responsible / Labeler Role"@en ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "core" ;
+    ns1:ontoumlStereotype "Role" .
+
+c:ResponsibilitySubjectProductRole a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass c:ProductLabelResponsibility ;
+            owl:onProperty [ owl:inverseOf c:productLabelResponsibilityCounterpart ] ],
+        c:MedicinalProduct ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:ontoumlStereotype "Role" .
+
+c:RiskReviewActivity a owl:Class ;
+    rdfs:comment "An occurrence reviewing an earlier risk assessment/result. It need not repeat the assessment." ;
+    owl:disjointWith c:Assertion .
+
+c:RiskTreatmentActivity a owl:Class ;
+    rdfs:label "Risk Treatment Activity"@en ;
+    owl:disjointWith c:RiskTreatmentPlan ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "extension" ;
+    ns1:ontoumlStereotype "Event" .
+
+c:ThirdPartyLogisticsProviderRole a owl:Class ;
+    rdfs:label "Third-Party Logistics Provider"@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass c:LogisticsServiceCommitment ;
+            owl:onProperty [ owl:inverseOf c:logisticsServiceCommitmentHolder ] ],
+        c:EcosystemParticipant,
+        c:Organization ;
+    skos:altLabel "Third-Party Logistics Provider Role"@en ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "core" ;
+    ns1:ontoumlStereotype "Role" .
+
+c:WholesaleDistributorRole a owl:Class ;
+    rdfs:label "Wholesale Distributor"@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass c:WholesaleResponsibility ;
+            owl:onProperty [ owl:inverseOf c:wholesaleResponsibilityHolder ] ],
+        c:EcosystemParticipant,
+        c:Organization ;
+    skos:altLabel "Wholesale Distributor Role"@en ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "core" ;
+    ns1:ontoumlStereotype "Role" .
+
+c:WholesaleResponsibilitySubjectRole a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass c:WholesaleResponsibility ;
+            owl:onProperty [ owl:inverseOf c:wholesaleResponsibilityCounterpart ] ],
+        c:MedicinalProduct ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:ontoumlStereotype "Role" .
+
+c:assertionAboutProduct a owl:ObjectProperty ;
+    rdfs:comment "Bounded product-target aboutness; the full polymorphic assertion target family remains for G3."@en ;
+    rdfs:domain c:Assertion ;
+    rdfs:range c:MedicinalProduct .
+
+c:capacityFacilityBearer a owl:ObjectProperty ;
+    rdfs:domain c:SupplyCapacity ;
+    rdfs:range c:Facility ;
+    rdfs:subPropertyOf c:capacityBearer .
+
+c:capacityOrganizationBearer a owl:ObjectProperty ;
+    rdfs:domain c:SupplyCapacity ;
+    rdfs:range c:Organization ;
+    rdfs:subPropertyOf c:capacityBearer .
+
+c:distributionSiteUseHolder a owl:ObjectProperty ;
+    rdfs:domain c:DistributionSiteUse ;
+    rdfs:range c:DistributionSiteRole ;
+    owl:propertyDisjointWith c:distributionSiteUseCounterpart .
+
+c:importResponsibilityHolder a owl:ObjectProperty ;
+    rdfs:domain c:ImportResponsibility ;
+    rdfs:range c:ImporterRole ;
+    owl:propertyDisjointWith c:importResponsibilityCounterpart .
+
+c:institutionalFundingCommitmentHolder a owl:ObjectProperty ;
+    rdfs:domain c:InstitutionalFundingCommitment ;
+    rdfs:range c:PayerFundingOrganizationRole ;
+    owl:propertyDisjointWith c:institutionalFundingCommitmentCounterpart .
+
+c:logisticsServiceCommitmentHolder a owl:ObjectProperty ;
+    rdfs:domain c:LogisticsServiceCommitment ;
+    rdfs:range c:ThirdPartyLogisticsProviderRole ;
+    owl:propertyDisjointWith c:logisticsServiceCommitmentCounterpart .
+
+c:manufacturingResponsibilityHolder a owl:ObjectProperty ;
+    rdfs:domain c:ManufacturingResponsibility ;
+    rdfs:range c:ManufacturerRole ;
+    owl:propertyDisjointWith c:manufacturingResponsibilityCounterpart .
+
+c:manufacturingSiteUseHolder a owl:ObjectProperty ;
+    rdfs:domain c:ManufacturingSiteUse ;
+    rdfs:range c:ManufacturingSiteRole ;
+    owl:propertyDisjointWith c:manufacturingSiteUseCounterpart .
+
+c:observationResultAbout a owl:ObjectProperty ;
+    rdfs:domain c:ObservationResult .
+
+c:operationOrganization a owl:ObjectProperty ;
+    rdfs:domain c:FacilityOperation ;
+    rdfs:range c:OperatingOrganizationRole ;
+    owl:propertyDisjointWith c:operationFacility .
+
+c:productLabelResponsibilityHolder a owl:ObjectProperty ;
+    rdfs:domain c:ProductLabelResponsibility ;
+    rdfs:range c:ProductLabelCommitmentOrganizationRole ;
+    owl:propertyDisjointWith c:productLabelResponsibilityCounterpart .
+
+c:regulatoryMandateHolder a owl:ObjectProperty ;
+    rdfs:domain c:RegulatoryMandate ;
+    rdfs:range c:RegulatoryAuthorityRole ;
+    owl:propertyDisjointWith c:regulatoryMandateCounterpart .
+
+c:wholesaleResponsibilityHolder a owl:ObjectProperty ;
+    rdfs:domain c:WholesaleResponsibility ;
+    rdfs:range c:WholesaleDistributorRole ;
+    owl:propertyDisjointWith c:wholesaleResponsibilityCounterpart .
+
+c:AlternativeMedicinalProductRole a owl:Class ;
+    rdfs:label "Alternative Medicinal Product"@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass c:AlternativeMedicineAssignment ;
+            owl:onProperty [ owl:inverseOf c:alternativeProduct ] ],
+        c:MedicinalProduct ;
+    skos:altLabel "Alternative Medicinal Product Role"@en ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "extension" ;
+    ns1:ontoumlStereotype "Role" .
+
+c:AuthorizingAuthorityRole a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass c:RegulatoryAuthorization ;
+            owl:onProperty [ owl:inverseOf c:authorizationAuthority ] ],
+        c:RegulatoryAuthorityRole ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:ontoumlStereotype "Role" .
+
+c:BusinessArchitectureView a owl:Class ;
+    rdfs:label "Business Architecture View"@en ;
+    owl:disjointWith c:Organization ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "extension" ;
+    ns1:ontoumlStereotype "Kind" .
+
+c:EnterpriseCapability a owl:Class ;
+    rdfs:label "Enterprise Capability"@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onClass c:Organization ;
+            owl:onProperty c:capabilityBearer ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "extension" ;
+    ns1:ontoumlStereotype "Mode" .
+
+c:ListedPresentationRole a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass c:MarketListing ;
+            owl:onProperty [ owl:inverseOf c:listingPresentation ] ],
+        c:MedicinalProductPresentation ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:ontoumlStereotype "Role" .
+
+c:MedicineShortageSituation a owl:Class ;
+    rdfs:label "Medicine Shortage Situation"@en ;
+    owl:disjointWith c:SourceRecord ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "core" ;
+    ns1:ontoumlStereotype "Situation" .
+
+c:OperatedFacilityRole a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass c:FacilityOperation ;
+            owl:onProperty [ owl:inverseOf c:operationFacility ] ],
+        c:Facility ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:ontoumlStereotype "Role" .
+
+c:OversightAuthorityRole a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass c:RegulatoryOversight ;
+            owl:onProperty [ owl:inverseOf c:oversightAuthorityRole ] ],
+        c:RegulatoryAuthorityRole ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:ontoumlStereotype "Role" .
+
+c:ProductLabelCommitmentOrganizationRole a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass c:ProductLabelResponsibility ;
+            owl:onProperty [ owl:inverseOf c:productLabelResponsibilityHolder ] ],
+        c:ProductResponsibleLabelerRole ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:ontoumlStereotype "Role" .
+
+c:ReferenceProductRole a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass c:AlternativeMedicineAssignment ;
+            owl:onProperty [ owl:inverseOf c:alternativeForProduct ] ],
+        c:MedicinalProduct ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:ontoumlStereotype "Role" .
+
+c:RegisteringAuthorityRole a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass c:EstablishmentRegistration ;
+            owl:onProperty [ owl:inverseOf c:registrationAuthority ] ],
+        c:RegulatoryAuthorityRole ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:ontoumlStereotype "Role" .
+
+c:RiskTreatmentPlan a owl:Class ;
+    rdfs:label "Risk Treatment Plan"@en ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "extension" ;
+    ns1:ontoumlStereotype "Kind" .
+
+c:SignalAssessmentActivity a owl:Class ;
+    rdfs:comment "An occurrence assessing a medicinal safety signal; separate from reporting and from assessment content." ;
+    owl:disjointWith c:Assertion .
+
+c:StrategicPartnershipAgreement a owl:Class ;
+    rdfs:label "Strategic Partnership Agreement"@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+            owl:onClass c:PartnerOrganizationRole ;
+            owl:onProperty c:partnershipParticipant ],
+        [ a owl:Restriction ;
+            owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+            owl:onClass c:Organization ;
+            owl:onProperty c:partnershipParticipant ] ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "extension" ;
+    ns1:ontoumlStereotype "Relator" .
+
+c:SupportedAssertionRole a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass c:EvidenceSupport ;
+            owl:onProperty [ owl:inverseOf c:evidenceAssertion ] ],
+        c:Assertion ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:ontoumlStereotype "Role" .
+
+c:SystemDeploymentActivity a owl:Class ;
+    rdfs:comment "An actual installation/deployment of an identified component version in an organizational context. Not an ETL/provenance transformation." ;
+    owl:disjointWith c:SourceRecord .
+
+c:UsedIdentifierSchemeRole a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass c:IdentifierAssignment ;
+            owl:onProperty [ owl:inverseOf c:identifierScheme ] ],
+        c:IdentifierScheme ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:ontoumlStereotype "Role" .
+
+c:alternativeForProduct a owl:ObjectProperty ;
+    rdfs:domain c:AlternativeMedicineAssignment ;
+    rdfs:range c:ReferenceProductRole ;
+    owl:propertyDisjointWith c:alternativeProduct .
+
+c:authorizationAuthority a owl:ObjectProperty ;
+    rdfs:domain c:RegulatoryAuthorization ;
+    rdfs:range c:AuthorizingAuthorityRole ;
+    owl:propertyDisjointWith c:authorizationParty .
+
+c:capacityBearer a owl:ObjectProperty ;
+    rdfs:domain c:SupplyCapacity ;
+    rdfs:range [ a owl:Class ;
+            owl:unionOf ( c:Organization c:Facility ) ] .
+
+c:dependencyDependent a owl:ObjectProperty ;
+    rdfs:domain c:SupplyDependency ;
+    rdfs:range c:DependentEntity ;
+    owl:propertyDisjointWith c:dependencyProvider .
+
+c:distributionSiteUseCounterpart a owl:ObjectProperty ;
+    rdfs:domain c:DistributionSiteUse ;
+    rdfs:range c:AssigningDistributionSiteUseOrganizationRole .
+
+c:identifierEntity a owl:ObjectProperty ;
+    rdfs:domain c:IdentifierAssignment ;
+    rdfs:range c:IdentifiedEntity ;
+    owl:propertyDisjointWith c:identifierScheme .
+
+c:importResponsibilityCounterpart a owl:ObjectProperty ;
+    rdfs:domain c:ImportResponsibility ;
+    rdfs:range c:ImportResponsibilitySubjectRole .
+
+c:institutionalFundingCommitmentCounterpart a owl:ObjectProperty ;
+    rdfs:domain c:InstitutionalFundingCommitment ;
+    rdfs:range c:InstitutionallyFundedOrganizationRole .
+
+c:listingPresentation a owl:ObjectProperty ;
+    rdfs:domain c:MarketListing ;
+    rdfs:range c:ListedPresentationRole ;
+    owl:propertyDisjointWith c:listingResponsibleOrganization .
+
+c:logisticsServiceCommitmentCounterpart a owl:ObjectProperty ;
+    rdfs:domain c:LogisticsServiceCommitment ;
+    rdfs:range c:CommissioningLogisticsClientRole .
+
+c:manufacturingResponsibilityCounterpart a owl:ObjectProperty ;
+    rdfs:domain c:ManufacturingResponsibility ;
+    rdfs:range c:ManufacturingResponsibilitySubjectRole .
+
+c:manufacturingSiteUseCounterpart a owl:ObjectProperty ;
+    rdfs:domain c:ManufacturingSiteUse ;
+    rdfs:range c:AssigningManufacturingSiteUseOrganizationRole .
+
+c:oversightAuthorityRole a owl:ObjectProperty ;
+    rdfs:domain c:RegulatoryOversight ;
+    rdfs:range c:OversightAuthorityRole ;
+    owl:propertyDisjointWith c:oversightGovernedEntity .
+
+c:partnershipParticipant a owl:ObjectProperty ;
+    rdfs:domain c:StrategicPartnershipAgreement ;
+    rdfs:range c:PartnerOrganizationRole .
+
+c:productLabelResponsibilityCounterpart a owl:ObjectProperty ;
+    rdfs:domain c:ProductLabelResponsibility ;
+    rdfs:range c:ResponsibilitySubjectProductRole .
+
+c:registrationAuthority a owl:ObjectProperty ;
+    rdfs:domain c:EstablishmentRegistration ;
+    rdfs:range c:RegisteringAuthorityRole ;
+    owl:propertyDisjointWith c:registrationEntity .
+
+c:regulatoryMandateCounterpart a owl:ObjectProperty ;
+    rdfs:domain c:RegulatoryMandate ;
+    rdfs:range c:MandateConferringOrganizationRole .
+
+c:wholesaleResponsibilityCounterpart a owl:ObjectProperty ;
+    rdfs:domain c:WholesaleResponsibility ;
+    rdfs:range c:WholesaleResponsibilitySubjectRole .
+
+c:AlternativeMedicineAssignment a owl:Class ;
+    rdfs:label "Alternative Medicinal Product Assignment"@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass c:ReferenceProductRole ;
+            owl:onProperty c:alternativeForProduct ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass c:AlternativeMedicinalProductRole ;
+            owl:onProperty c:alternativeProduct ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass c:ReferenceProductRole ;
+            owl:onProperty c:alternativeForProduct ],
+        [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass c:AlternativeMedicinalProductRole ;
+            owl:onProperty c:alternativeProduct ] ;
+    skos:altLabel "Alternative Medicine Assignment"@en ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "extension" ;
+    ns1:ontoumlStereotype "Relator" .
+
+c:AppliedClassificationEntryRole a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass c:ProductClassificationAssignment ;
+            owl:onProperty [ owl:inverseOf c:classificationEntry ] ],
+        c:ClassificationEntry ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:ontoumlStereotype "Role" .
+
+c:DistributionSiteUse a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onClass c:AssigningDistributionSiteUseOrganizationRole ;
+            owl:onProperty c:distributionSiteUseCounterpart ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        [ a owl:Restriction ;
+            owl:onClass c:DistributionSiteRole ;
+            owl:onProperty c:distributionSiteUseHolder ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:ontoumlStereotype "Relator" .
+
+c:EntityMatchAssertion a owl:Class ;
+    rdfs:label "Entity Match Assertion"@en ;
+    rdfs:subClassOf c:Assertion ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "x-infra" ;
+    ns1:ontoumlStereotype "Subkind" .
+
+c:FacilityOperation a owl:Class ;
+    rdfs:label "Facility Operation"@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass c:OperatedFacilityRole ;
+            owl:onProperty c:operationFacility ],
+        [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass c:OperatedFacilityRole ;
+            owl:onProperty c:operationFacility ],
+        [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass c:OperatingOrganizationRole ;
+            owl:onProperty c:operationOrganization ] ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "core" ;
+    ns1:ontoumlStereotype "Relator" .
+
+c:ImportResponsibility a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onClass c:ImporterRole ;
+            owl:onProperty c:importResponsibilityHolder ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        [ a owl:Restriction ;
+            owl:onClass c:ImportResponsibilitySubjectRole ;
+            owl:onProperty c:importResponsibilityCounterpart ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:ontoumlStereotype "Relator" .
+
+c:InstitutionalFundingCommitment a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onClass c:PayerFundingOrganizationRole ;
+            owl:onProperty c:institutionalFundingCommitmentHolder ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        [ a owl:Restriction ;
+            owl:onClass c:InstitutionallyFundedOrganizationRole ;
+            owl:onProperty c:institutionalFundingCommitmentCounterpart ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:ontoumlStereotype "Relator" .
+
+c:ListingResponsibleOrganizationRole a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass c:MarketListing ;
+            owl:onProperty [ owl:inverseOf c:listingResponsibleOrganization ] ],
+        c:ProductResponsibleLabelerRole ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:ontoumlStereotype "Role" .
+
+c:LogisticsServiceCommitment a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onClass c:CommissioningLogisticsClientRole ;
+            owl:onProperty c:logisticsServiceCommitmentCounterpart ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        [ a owl:Restriction ;
+            owl:onClass c:ThirdPartyLogisticsProviderRole ;
+            owl:onProperty c:logisticsServiceCommitmentHolder ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:ontoumlStereotype "Relator" .
+
+c:ManufacturingActivity a owl:Class ;
+    rdfs:label "Manufacturing Activity"@en ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "core" ;
+    ns1:ontoumlStereotype "Event" .
+
+c:ManufacturingResponsibility a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onClass c:ManufacturerRole ;
+            owl:onProperty c:manufacturingResponsibilityHolder ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        [ a owl:Restriction ;
+            owl:onClass c:ManufacturingResponsibilitySubjectRole ;
+            owl:onProperty c:manufacturingResponsibilityCounterpart ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:ontoumlStereotype "Relator" .
+
+c:ManufacturingSiteUse a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onClass c:AssigningManufacturingSiteUseOrganizationRole ;
+            owl:onProperty c:manufacturingSiteUseCounterpart ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        [ a owl:Restriction ;
+            owl:onClass c:ManufacturingSiteRole ;
+            owl:onProperty c:manufacturingSiteUseHolder ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:ontoumlStereotype "Relator" .
+
+c:ProductLabelResponsibility a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onClass c:ResponsibilitySubjectProductRole ;
+            owl:onProperty c:productLabelResponsibilityCounterpart ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        [ a owl:Restriction ;
+            owl:onClass c:ProductLabelCommitmentOrganizationRole ;
+            owl:onProperty c:productLabelResponsibilityHolder ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:ontoumlStereotype "Relator" .
+
+c:RegulatoryMandate a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onClass c:MandateConferringOrganizationRole ;
+            owl:onProperty c:regulatoryMandateCounterpart ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        [ a owl:Restriction ;
+            owl:onClass c:RegulatoryAuthorityRole ;
+            owl:onProperty c:regulatoryMandateHolder ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:ontoumlStereotype "Relator" .
+
+c:RegulatoryOversight a owl:Class ;
+    rdfs:label "Regulatory Oversight"@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass c:GovernedEntity ;
+            owl:onProperty c:oversightGovernedEntity ],
+        [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass c:OversightAuthorityRole ;
+            owl:onProperty c:oversightAuthorityRole ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass c:OversightAuthorityRole ;
+            owl:onProperty c:oversightAuthorityRole ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass c:GovernedEntity ;
+            owl:onProperty c:oversightGovernedEntity ] ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "extension" ;
+    ns1:ontoumlStereotype "Relator" .
+
+c:RiskAssessmentActivity a owl:Class ;
+    rdfs:label "Risk Assessment Activity"@en ;
+    owl:disjointWith c:Assertion ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "extension" ;
+    ns1:ontoumlStereotype "Event" .
+
+c:WholesaleResponsibility a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onClass c:WholesaleDistributorRole ;
+            owl:onProperty c:wholesaleResponsibilityHolder ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        [ a owl:Restriction ;
+            owl:onClass c:WholesaleResponsibilitySubjectRole ;
+            owl:onProperty c:wholesaleResponsibilityCounterpart ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:ontoumlStereotype "Relator" .
+
+c:alternativeProduct a owl:ObjectProperty ;
+    rdfs:domain c:AlternativeMedicineAssignment ;
+    rdfs:range c:AlternativeMedicinalProductRole .
+
+c:authorizationParty a owl:ObjectProperty ;
+    rdfs:domain c:RegulatoryAuthorization ;
+    rdfs:range c:AuthorizedParty .
+
+c:classificationEntity a owl:ObjectProperty ;
+    rdfs:domain c:ProductClassificationAssignment ;
+    rdfs:range c:ClassifiedEntity ;
+    owl:propertyDisjointWith c:classificationEntry .
+
+c:dependencyProvider a owl:ObjectProperty ;
+    rdfs:domain c:SupplyDependency ;
+    rdfs:range c:ProviderEntity .
+
+c:evidenceAssertion a owl:ObjectProperty ;
+    rdfs:domain c:EvidenceSupport ;
+    rdfs:range c:SupportedAssertionRole .
+
+c:evidenceItem a owl:ObjectProperty ;
+    rdfs:domain c:EvidenceSupport ;
+    rdfs:range c:EvidenceItem ;
+    owl:propertyDisjointWith c:evidenceAssertion .
+
+c:identifierScheme a owl:ObjectProperty ;
+    rdfs:domain c:IdentifierAssignment ;
+    rdfs:range c:UsedIdentifierSchemeRole .
+
+c:listingResponsibleOrganization a owl:ObjectProperty ;
+    rdfs:domain c:MarketListing ;
+    rdfs:range c:ListingResponsibleOrganizationRole .
+
+c:operationFacility a owl:ObjectProperty ;
+    rdfs:domain c:FacilityOperation ;
+    rdfs:range c:OperatedFacilityRole .
+
+c:oversightGovernedEntity a owl:ObjectProperty ;
+    rdfs:domain c:RegulatoryOversight ;
+    rdfs:range c:GovernedEntity .
+
+c:registrationEntity a owl:ObjectProperty ;
+    rdfs:domain c:EstablishmentRegistration ;
+    rdfs:range c:RegisteredParty .
+
+c:AuthorizedParty a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass c:RegulatoryAuthorization ;
+            owl:onProperty [ owl:inverseOf c:authorizationParty ] ] ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:ontoumlStereotype "RoleMixin" .
+
+c:ClassifiedEntity a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass c:ProductClassificationAssignment ;
+            owl:onProperty [ owl:inverseOf c:classificationEntity ] ] ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:ontoumlStereotype "RoleMixin" .
+
+c:ContextualMedicineClassificationAssignment a owl:Class ;
+    rdfs:label "Contextual Medicine Classification Assignment"@en ;
+    rdfs:subClassOf c:ProductClassificationAssignment ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "extension" ;
+    ns1:ontoumlStereotype "Subkind" .
+
+c:EstablishmentRegistration a owl:Class ;
+    rdfs:label "Establishment Registration"@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass c:RegisteringAuthorityRole ;
+            owl:onProperty c:registrationAuthority ],
+        [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass c:RegisteringAuthorityRole ;
+            owl:onProperty c:registrationAuthority ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass c:RegisteredParty ;
+            owl:onProperty c:registrationEntity ],
+        [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass c:RegisteredParty ;
+            owl:onProperty c:registrationEntity ] ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "core" ;
+    ns1:ontoumlStereotype "Relator" .
+
+c:EvidenceItem a owl:Class ;
+    rdfs:label "Evidence Item"@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass c:EvidenceSupport ;
+            owl:onProperty [ owl:inverseOf c:evidenceItem ] ] ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "x-infra" ;
+    ns1:ontoumlStereotype "RoleMixin" .
+
+c:EvidenceSupport a owl:Class ;
+    rdfs:label "Evidence Support"@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass c:EvidenceItem ;
+            owl:onProperty c:evidenceItem ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass c:SupportedAssertionRole ;
+            owl:onProperty c:evidenceAssertion ],
+        [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass c:SupportedAssertionRole ;
+            owl:onProperty c:evidenceAssertion ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass c:EvidenceItem ;
+            owl:onProperty c:evidenceItem ] ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "x-infra" ;
+    ns1:ontoumlStereotype "Relator" .
+
+c:GovernedEntity a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass c:RegulatoryOversight ;
+            owl:onProperty [ owl:inverseOf c:oversightGovernedEntity ] ] ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:ontoumlStereotype "RoleMixin" .
+
+c:IdentifierAssignment a owl:Class ;
+    rdfs:label "Identifier Assignment"@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass c:IdentifiedEntity ;
+            owl:onProperty c:identifierEntity ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass c:UsedIdentifierSchemeRole ;
+            owl:onProperty c:identifierScheme ],
+        [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass c:IdentifiedEntity ;
+            owl:onProperty c:identifierEntity ],
+        [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass c:UsedIdentifierSchemeRole ;
+            owl:onProperty c:identifierScheme ] ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "x-infra" ;
+    ns1:ontoumlStereotype "Relator" .
+
+c:MarketListing a owl:Class ;
+    rdfs:label "Market Listing"@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass c:ListingResponsibleOrganizationRole ;
+            owl:onProperty c:listingResponsibleOrganization ],
+        [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass c:ListingResponsibleOrganizationRole ;
+            owl:onProperty c:listingResponsibleOrganization ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass c:ListedPresentationRole ;
+            owl:onProperty c:listingPresentation ],
+        [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass c:ListedPresentationRole ;
+            owl:onProperty c:listingPresentation ] ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "core" ;
+    ns1:ontoumlStereotype "Relator" .
+
+c:ProductClassificationAssignment a owl:Class ;
+    rdfs:label "Product Classification Assignment"@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass c:ClassifiedEntity ;
+            owl:onProperty c:classificationEntity ],
+        [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass c:AppliedClassificationEntryRole ;
+            owl:onProperty c:classificationEntry ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass c:ClassifiedEntity ;
+            owl:onProperty c:classificationEntity ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass c:AppliedClassificationEntryRole ;
+            owl:onProperty c:classificationEntry ] ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "core" ;
+    ns1:ontoumlStereotype "Relator" .
+
+c:RegisteredParty a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass c:EstablishmentRegistration ;
+            owl:onProperty [ owl:inverseOf c:registrationEntity ] ] ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:ontoumlStereotype "RoleMixin" .
+
+c:RegulatoryAuthorityRole a owl:Class ;
+    rdfs:label "Regulatory Authority"@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass c:RegulatoryMandate ;
+            owl:onProperty [ owl:inverseOf c:regulatoryMandateHolder ] ],
+        c:EcosystemParticipant,
+        c:Organization ;
+    skos:altLabel "Regulatory Authority Role"@en ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "core" ;
+    ns1:ontoumlStereotype "Role" .
+
+c:RegulatoryAuthorization a owl:Class ;
+    rdfs:label "Regulatory Authorization"@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass c:AuthorizingAuthorityRole ;
+            owl:onProperty c:authorizationAuthority ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass c:AuthorizedParty ;
+            owl:onProperty c:authorizationParty ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass c:AuthorizingAuthorityRole ;
+            owl:onProperty c:authorizationAuthority ],
+        [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass c:AuthorizedParty ;
+            owl:onProperty c:authorizationParty ] ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "core" ;
+    ns1:ontoumlStereotype "Relator" .
+
+c:SupplyCapacity a owl:Class ;
+    rdfs:label "Supply Capacity"@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty c:capacityBearer ],
+        [ a owl:Class ;
+            owl:unionOf ( [ a owl:Restriction ;
+                        owl:onProperty c:capacityOrganizationBearer ;
+                        owl:someValuesFrom c:Organization ] [ a owl:Restriction ;
+                        owl:onProperty c:capacityFacilityBearer ;
+                        owl:someValuesFrom c:Facility ] ) ] ;
+    owl:disjointWith c:SupplyCapacityObservationResult ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "core" ;
+    ns1:ontoumlStereotype "Mode" .
+
+c:classificationEntry a owl:ObjectProperty ;
+    rdfs:domain c:ProductClassificationAssignment ;
+    rdfs:range c:AppliedClassificationEntryRole .
+
+c:DependentEntity a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass c:SupplyDependency ;
+            owl:onProperty [ owl:inverseOf c:dependencyDependent ] ] ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:ontoumlStereotype "RoleMixin" .
+
+c:PharmaceuticalSubstance a owl:Class ;
+    rdfs:label "Pharmaceutical Substance"@en ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "core" ;
+    ns1:ontoumlStereotype "Kind" .
+
+c:ProviderEntity a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass c:SupplyDependency ;
+            owl:onProperty [ owl:inverseOf c:dependencyProvider ] ] ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:ontoumlStereotype "RoleMixin" .
+
+c:ServiceOfferingSpecification a owl:Class ;
+    rdfs:label "Service Offering Specification"@en ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "extension" ;
+    ns1:ontoumlStereotype "Kind" .
+
+c:GeographicFeature a owl:Class ;
+    rdfs:label "Geographic Feature"@en ;
+    rdfs:seeAlso <https://www.geonames.org/ontology#Feature> ;
+    owl:disjointWith c:RegulatoryJurisdiction ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "x-infra" ;
+    ns1:ontoumlStereotype "Kind" .
+
+c:ProvenanceActivity a owl:Class ;
+    rdfs:label "Provenance Activity"@en ;
+    skos:closeMatch prov:Activity ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "x-infra" ;
+    ns1:ontoumlStereotype "Event" .
+
+c:SupplyDependency a owl:Class ;
+    rdfs:label "Supply Dependency"@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass c:ProviderEntity ;
+            owl:onProperty c:dependencyProvider ],
+        [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass c:DependentEntity ;
+            owl:onProperty c:dependencyDependent ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass c:ProviderEntity ;
+            owl:onProperty c:dependencyProvider ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass c:DependentEntity ;
+            owl:onProperty c:dependencyDependent ] ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "extension" ;
+    ns1:ontoumlStereotype "Relator" .
+
+c:RegulatoryJurisdiction a owl:Class ;
+    rdfs:label "Regulatory Jurisdiction"@en ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "core" ;
+    ns1:ontoumlStereotype "Kind" .
+
+c:EcosystemParticipant a owl:Class ;
+    rdfs:label "Ecosystem Participant"@en ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "core" ;
+    ns1:ontoumlStereotype "RoleMixin" .
+
+c:IdentifiedEntity a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass c:IdentifierAssignment ;
+            owl:onProperty [ owl:inverseOf c:identifierEntity ] ] ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:ontoumlStereotype "RoleMixin" .
+
+c:MedicinalProductPresentation a owl:Class ;
+    rdfs:label "Medicinal Product Presentation"@en ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "core" ;
+    ns1:ontoumlStereotype "Kind" .
+
+c:SourceRecord a owl:Class ;
+    rdfs:label "Source Record"@en ;
+    skos:closeMatch prov:Entity ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "x-infra" ;
+    ns1:ontoumlStereotype "Kind" .
+
+c:ObservationResult a owl:Class ;
+    rdfs:label "Observation Result"@en ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "x-infra" ;
+    ns1:ontoumlStereotype "Kind" .
+
+c:Facility a owl:Class ;
+    rdfs:label "Facility"@en ;
+    owl:disjointWith c:GeographicFeature ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "core" ;
+    ns1:ontoumlStereotype "Kind" .
+
+c:MedicinalProduct a owl:Class ;
+    rdfs:label "Medicinal Product"@en ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "core" ;
+    ns1:ontoumlStereotype "Kind" .
+
+c:Assertion a owl:Class ;
+    rdfs:label "Assertion"@en ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "x-infra" ;
+    ns1:ontoumlStereotype "Kind" .
+
+c:Organization a owl:Class ;
+    rdfs:label "Organization"@en ;
+    ns1:conceptualModelVersion "2.1.0-alpha.1-g3d-candidate" ;
+    ns1:conceptualModule "core" ;
+    ns1:ontoumlStereotype "Kind" .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( c:Organization c:Facility c:RegulatoryJurisdiction c:MedicinalProduct c:PharmaceuticalSubstance c:MedicinalProductPresentation ) .

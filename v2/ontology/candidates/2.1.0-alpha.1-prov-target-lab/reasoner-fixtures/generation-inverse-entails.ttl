@@ -1,0 +1,11 @@
+@prefix l: <https://w3id.org/cm-pharme/experimental/four-domain/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix t1: <urn:cmpe-prov-target:> .
+
+t1:x l:recordDigitalActivity t1:y .
+
+[] a owl:NegativePropertyAssertion ;
+    owl:assertionProperty prov:generated ;
+    owl:sourceIndividual t1:y ;
+    owl:targetIndividual t1:x .

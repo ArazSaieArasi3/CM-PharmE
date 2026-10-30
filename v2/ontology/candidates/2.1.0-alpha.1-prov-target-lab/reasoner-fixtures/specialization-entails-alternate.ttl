@@ -1,0 +1,10 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix t1: <urn:cmpe-prov-target:> .
+
+t1:x prov:specializationOf t1:y .
+
+[] a owl:NegativePropertyAssertion ;
+    owl:assertionProperty prov:alternateOf ;
+    owl:sourceIndividual t1:x ;
+    owl:targetIndividual t1:y .

@@ -1,0 +1,198 @@
+{
+  "source_rows": 5,
+  "package_projections": 7,
+  "triples": 227,
+  "source_last_updated": "2026-10-09",
+  "source_sha256": "ecb97302aa8cb3148a7971045811164bef22a4d988542d8af77a0829091330de",
+  "shacl": {
+    "conforms": true,
+    "violations": []
+  },
+  "hermit": {
+    "consistent": true,
+    "unsatisfiable_named_classes": [],
+    "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+    "prov_profile": "two conflicting annotation-property declarations removed; raw source retained"
+  },
+  "approval_countermodel": {
+    "consistent": true,
+    "unsatisfiable_named_classes": [],
+    "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+    "prov_profile": "two conflicting annotation-property declarations removed; raw source retained"
+  },
+  "mutation": {
+    "conforms": false,
+    "violations": [
+      {
+        "path": "",
+        "constraint": "https://w3id.org/cm-pharme/experimental/registry-policy/approval-needs-independent-decision",
+        "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent"
+      }
+    ]
+  },
+  "checks": [
+    {
+      "name": "api-product-rows",
+      "expected": 5,
+      "actual": 5,
+      "pass": true
+    },
+    {
+      "name": "all-packages-projected",
+      "expected": 7,
+      "actual": 7,
+      "pass": true
+    },
+    {
+      "name": "all-projections-traceable",
+      "expected": 7,
+      "actual": 7,
+      "pass": true
+    },
+    {
+      "name": "approval-unknown-76162-741-14",
+      "expected": "UNKNOWN",
+      "actual": "UNKNOWN",
+      "pass": true
+    },
+    {
+      "name": "window-unknown-76162-741-14",
+      "expected": "UNKNOWN",
+      "actual": "UNKNOWN",
+      "pass": true
+    },
+    {
+      "name": "approval-unknown-80425-0302-1",
+      "expected": "UNKNOWN",
+      "actual": "UNKNOWN",
+      "pass": true
+    },
+    {
+      "name": "window-unknown-80425-0302-1",
+      "expected": "UNKNOWN",
+      "actual": "UNKNOWN",
+      "pass": true
+    },
+    {
+      "name": "approval-unknown-80425-0302-2",
+      "expected": "UNKNOWN",
+      "actual": "UNKNOWN",
+      "pass": true
+    },
+    {
+      "name": "window-unknown-80425-0302-2",
+      "expected": "UNKNOWN",
+      "actual": "UNKNOWN",
+      "pass": true
+    },
+    {
+      "name": "approval-unknown-80425-0302-3",
+      "expected": "UNKNOWN",
+      "actual": "UNKNOWN",
+      "pass": true
+    },
+    {
+      "name": "window-unknown-80425-0302-3",
+      "expected": "UNKNOWN",
+      "actual": "UNKNOWN",
+      "pass": true
+    },
+    {
+      "name": "approval-unknown-80425-0556-1",
+      "expected": "UNKNOWN",
+      "actual": "UNKNOWN",
+      "pass": true
+    },
+    {
+      "name": "window-unknown-80425-0556-1",
+      "expected": "UNKNOWN",
+      "actual": "UNKNOWN",
+      "pass": true
+    },
+    {
+      "name": "approval-unknown-0615-8382-39",
+      "expected": "UNKNOWN",
+      "actual": "UNKNOWN",
+      "pass": true
+    },
+    {
+      "name": "window-unknown-0615-8382-39",
+      "expected": "UNKNOWN",
+      "actual": "UNKNOWN",
+      "pass": true
+    },
+    {
+      "name": "approval-unknown-80830-2305-2",
+      "expected": "UNKNOWN",
+      "actual": "UNKNOWN",
+      "pass": true
+    },
+    {
+      "name": "window-unknown-80830-2305-2",
+      "expected": "UNKNOWN",
+      "actual": "UNKNOWN",
+      "pass": true
+    },
+    {
+      "name": "no-authorization-assertion",
+      "expected": 0,
+      "actual": 0,
+      "pass": true
+    },
+    {
+      "name": "contains-product-package-date-difference",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "name": "native-plus-profile-shacl",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "name": "full-prov-hermit-consistent",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "name": "no-approval-countermodel",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "name": "unsupported-approval-mutation-rejected",
+      "expected": false,
+      "actual": false,
+      "pass": true
+    },
+    {
+      "name": "synthetic-end-boundary-control",
+      "expected": "WITHIN_DECLARED_WINDOW",
+      "actual": "WITHIN_DECLARED_WINDOW",
+      "pass": true
+    },
+    {
+      "name": "synthetic-end-exclusive-control",
+      "expected": "OUTSIDE_DECLARED_WINDOW",
+      "actual": "OUTSIDE_DECLARED_WINDOW",
+      "pass": true
+    },
+    {
+      "name": "synthetic-decision-detection-control",
+      "expected": "SOURCE_DECISION_AVAILABLE_NOT_VERIFIED",
+      "actual": "SOURCE_DECISION_AVAILABLE_NOT_VERIFIED",
+      "pass": true
+    }
+  ],
+  "pass": 26,
+  "total": 26,
+  "sampling": "First five API results with no randomization or representativeness claim.",
+  "identity": "Source-scoped product/package/labeler references; no cross-source sameAs, labeler name deduplication or independently verified identity.",
+  "provenance": "Projection activity is this local transformation, not the historical FDA/labeler submission event. wasAttributedTo identifies the source-reported labeler; no FDA verification claim.",
+  "coverage": "Real listing/package/attribution/derived-record paths only. No establishment-registration, independent approval, ESMP, revision or risk-event witness.",
+  "query_fix": "Previous lab helpers use fixed fixture IRIs; these checks use explicit record bindings. The initial helper run is preserved but is not valid real-data query evidence."
+}

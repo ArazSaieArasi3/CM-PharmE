@@ -1,0 +1,190 @@
+@prefix c: <https://w3id.org/cm-pharme/2.1/> .
+@prefix d: <https://w3id.org/cm-pharme/experimental/coherence/> .
+@prefix l: <https://w3id.org/cm-pharme/experimental/four-domain/> .
+@prefix r: <https://w3id.org/cm-pharme/experimental/refinement/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+c:EnterpriseCapabilityBearerShape a sh:NodeShape ;
+    sh:property [ sh:class c:Organization ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path c:capabilityBearer ] ;
+    sh:targetClass c:EnterpriseCapability .
+
+c:EvidenceAliasShape a sh:NodeShape ;
+    sh:sparql [ sh:message "evidenceRecord must subset evidenceItem" ;
+            sh:select "SELECT $this WHERE { $this <https://w3id.org/cm-pharme/2.1/evidenceRecord> ?x . FILTER NOT EXISTS { $this <https://w3id.org/cm-pharme/2.1/evidenceItem> ?x } }" ],
+        [ sh:message "evidenceRecord must subset evidenceItem" ;
+            sh:select "SELECT $this WHERE { $this <https://w3id.org/cm-pharme/2.1/evidenceRecord> ?x . FILTER NOT EXISTS { $this <https://w3id.org/cm-pharme/2.1/evidenceItem> ?x } }" ] ;
+    sh:targetSubjectsOf c:evidenceRecord .
+
+c:EvidenceItemDependenceShape a sh:NodeShape ;
+    sh:property [ sh:class c:EvidenceSupport ;
+            sh:minCount 1 ;
+            sh:path [ sh:inversePath c:evidenceItem ] ] ;
+    sh:targetClass c:EvidenceItem .
+
+c:EvidenceSupportShape a sh:NodeShape ;
+    sh:property [ sh:class c:SupportedAssertionRole ;
+            sh:disjoint c:evidenceItem ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path c:evidenceAssertion ],
+        [ sh:class c:EvidenceItem ;
+            sh:disjoint c:evidenceAssertion ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path c:evidenceItem ] ;
+    sh:targetClass c:EvidenceSupport .
+
+c:PartnerOrganizationRoleDependenceShape a sh:NodeShape ;
+    sh:property [ sh:class c:StrategicPartnershipAgreement ;
+            sh:minCount 1 ;
+            sh:path [ sh:inversePath c:partnershipParticipant ] ] ;
+    sh:targetClass c:PartnerOrganizationRole .
+
+c:StrategicPartnershipAgreementShape a sh:NodeShape ;
+    sh:property [ sh:class c:PartnerOrganizationRole ;
+            sh:minCount 2 ;
+            sh:path c:partnershipParticipant ] ;
+    sh:targetClass c:StrategicPartnershipAgreement .
+
+c:SupportedAssertionRoleDependenceShape a sh:NodeShape ;
+    sh:property [ sh:class c:EvidenceSupport ;
+            sh:minCount 1 ;
+            sh:path [ sh:inversePath c:evidenceAssertion ] ] ;
+    sh:targetClass c:SupportedAssertionRole .
+
+d:capability-logisticsShape a sh:NodeShape ;
+    sh:class c:EnterpriseCapability ;
+    sh:property [ sh:class c:DistributionLogisticsActivity ;
+            sh:minCount 1 ;
+            sh:path d:capabilityRealizedInLogistics ] ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select "SELECT ?this WHERE { ?this <https://w3id.org/cm-pharme/experimental/coherence/profile> \"capability-logistics\" . }" ] .
+
+d:logisticsShape a sh:NodeShape ;
+    sh:class c:DistributionLogisticsActivity ;
+    sh:property [ sh:class c:Facility ;
+            sh:minCount 1 ;
+            sh:path d:logisticsFacility ],
+        [ sh:class c:MedicinalProduct ;
+            sh:minCount 1 ;
+            sh:path d:logisticsProduct ] ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select "SELECT ?this WHERE { ?this <https://w3id.org/cm-pharme/experimental/coherence/profile> \"logistics\" . }" ] .
+
+l:shape-ba-partnership a sh:NodeShape ;
+    sh:class c:StrategicPartnershipAgreement ;
+    sh:property l:field-ba-partnership-c-partnershipParticipant ;
+    sh:sparql l:partners-not-known-aliases ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select "SELECT ?this WHERE { ?this <https://w3id.org/cm-pharme/experimental/four-domain/profile> \"ba-partnership\" . }" ] .
+
+l:shape-ba-service a sh:NodeShape ;
+    sh:class c:ServiceOfferingSpecification ;
+    sh:property l:field-ba-service-serviceCapability ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select "SELECT ?this WHERE { ?this <https://w3id.org/cm-pharme/experimental/four-domain/profile> \"ba-service\" . }" ] .
+
+l:shape-ba-view a sh:NodeShape ;
+    sh:class c:BusinessArchitectureView ;
+    sh:property l:field-ba-view-viewOrganization,
+        l:field-ba-view-viewService ;
+    sh:sparql l:distinct-BusinessArchitectureView-Organization ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select "SELECT ?this WHERE { ?this <https://w3id.org/cm-pharme/experimental/four-domain/profile> \"ba-view\" . }" ] .
+
+r:shape-documented-partnership a sh:NodeShape ;
+    sh:class c:StrategicPartnershipAgreement ;
+    sh:property r:field-documented-partnership-agreementCommitment ;
+    sh:sparql r:commitment-evidence-required,
+        r:commitment-participant-agreement ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select "SELECT ?this WHERE { ?this <https://w3id.org/cm-pharme/experimental/four-domain/profile> \"documented-partnership\" }" ] .
+
+r:shape-pharma-service a sh:NodeShape ;
+    sh:class c:ServiceOfferingSpecification ;
+    sh:property r:field-pharma-service-serviceCapability,
+        r:field-pharma-service-serviceFacility,
+        r:field-pharma-service-serviceProduct ;
+    sh:sparql r:pharma-service-context ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select "SELECT ?this WHERE { ?this <https://w3id.org/cm-pharme/experimental/four-domain/profile> \"pharma-service\" }" ] .
+
+<urn:cmpe-policy:CarrierClaimIdentityShape> a sh:NodeShape ;
+    sh:sparql <urn:cmpe-policy:CarrierNotOwnClaim> ;
+    sh:targetSubjectsOf r:carrierClaim .
+
+l:distinct-BusinessArchitectureView-Organization a sh:SPARQLConstraint ;
+    sh:message "Content and real-world bearer/occurrence must not be the same node." ;
+    sh:select "SELECT $this WHERE { $this a <https://w3id.org/cm-pharme/2.1/BusinessArchitectureView> , <https://w3id.org/cm-pharme/2.1/Organization> . }" .
+
+l:field-ba-partnership-c-partnershipParticipant sh:class c:PartnerOrganizationRole ;
+    sh:minCount 2 ;
+    sh:path c:partnershipParticipant .
+
+l:field-ba-service-serviceCapability sh:class c:EnterpriseCapability ;
+    sh:minCount 1 ;
+    sh:path l:serviceCapability .
+
+l:field-ba-view-viewOrganization sh:class c:Organization ;
+    sh:minCount 1 ;
+    sh:path l:viewOrganization .
+
+l:field-ba-view-viewService sh:class c:ServiceOfferingSpecification ;
+    sh:minCount 0 ;
+    sh:path l:viewService .
+
+l:partners-not-known-aliases a sh:SPARQLConstraint ;
+    sh:message "Two known aliases do not establish two distinct organizations." ;
+    sh:select "SELECT DISTINCT $this WHERE { $this <https://w3id.org/cm-pharme/2.1/partnershipParticipant> ?a, ?b . ?a <http://www.w3.org/2002/07/owl#sameAs> ?b . FILTER(?a != ?b) }" .
+
+r:commitment-evidence-required a sh:SPARQLConstraint ;
+    sh:message "Commitment requires the existing EvidenceSupport/SourceRecord pattern." ;
+    sh:select "SELECT $this WHERE { $this <https://w3id.org/cm-pharme/experimental/refinement/agreementCommitment> ?c . FILTER NOT EXISTS { ?e a <https://w3id.org/cm-pharme/2.1/EvidenceSupport> ; <https://w3id.org/cm-pharme/2.1/evidenceAssertion> ?c ; <https://w3id.org/cm-pharme/2.1/evidenceRecord> ?s . ?c a <https://w3id.org/cm-pharme/2.1/SupportedAssertionRole> . ?s a <https://w3id.org/cm-pharme/2.1/SourceRecord> , <https://w3id.org/cm-pharme/2.1/EvidenceSourceRecordRole> . } }" .
+
+r:commitment-participant-agreement a sh:SPARQLConstraint ;
+    sh:message "The commitment actor set and agreement participant set must agree in this bounded admission profile." ;
+    sh:select "SELECT $this WHERE { $this <https://w3id.org/cm-pharme/experimental/refinement/agreementCommitment> ?c . { ?c <https://w3id.org/cm-pharme/experimental/refinement/commitmentActor> ?org . FILTER NOT EXISTS { $this <https://w3id.org/cm-pharme/2.1/partnershipParticipant> ?org } } UNION { $this <https://w3id.org/cm-pharme/2.1/partnershipParticipant> ?org . FILTER NOT EXISTS { ?c <https://w3id.org/cm-pharme/experimental/refinement/commitmentActor> ?org } } }" .
+
+r:field-commitment-assertion-commitmentActor sh:class c:Organization ;
+    sh:minCount 2 ;
+    sh:path r:commitmentActor .
+
+r:field-commitment-assertion-commitmentText sh:datatype xsd:string ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:path r:commitmentText .
+
+r:field-documented-partnership-agreementCommitment sh:class c:Assertion ;
+    sh:minCount 1 ;
+    sh:node r:shape-commitment-assertion ;
+    sh:path r:agreementCommitment .
+
+r:field-pharma-service-serviceCapability sh:class c:EnterpriseCapability ;
+    sh:minCount 1 ;
+    sh:path l:serviceCapability .
+
+r:field-pharma-service-serviceFacility sh:class c:Facility ;
+    sh:minCount 0 ;
+    sh:path r:serviceFacility .
+
+r:field-pharma-service-serviceProduct sh:class c:MedicinalProduct ;
+    sh:minCount 0 ;
+    sh:path r:serviceProduct .
+
+r:pharma-service-context a sh:SPARQLConstraint ;
+    sh:message "A pharmaceutical service needs a product or facility context." ;
+    sh:select "SELECT $this WHERE { FILTER NOT EXISTS { $this <https://w3id.org/cm-pharme/experimental/refinement/serviceProduct> ?p } FILTER NOT EXISTS { $this <https://w3id.org/cm-pharme/experimental/refinement/serviceFacility> ?f } }" .
+
+r:shape-commitment-assertion a sh:NodeShape ;
+    sh:class c:Assertion ;
+    sh:property r:field-commitment-assertion-commitmentActor,
+        r:field-commitment-assertion-commitmentText ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:select "SELECT ?this WHERE { ?this <https://w3id.org/cm-pharme/experimental/four-domain/profile> \"commitment-assertion\" }" ] .
+
+<urn:cmpe-policy:CarrierNotOwnClaim> sh:message "A carrier must differ from its carried claim, including explicit sameAs aliases." ;
+    sh:select "SELECT $this ?value WHERE { $this <https://w3id.org/cm-pharme/experimental/refinement/carrierClaim> ?value . $this (<http://www.w3.org/2002/07/owl#sameAs>|^<http://www.w3.org/2002/07/owl#sameAs>)* ?value . }" .

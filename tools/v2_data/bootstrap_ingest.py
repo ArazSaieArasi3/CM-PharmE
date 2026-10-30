@@ -15,8 +15,7 @@ import re
 from pathlib import Path
 from typing import Any
 
-import psycopg
-from psycopg.rows import dict_row
+from source_contract import validate_local_csv
 
 CMPE = "https://w3id.org/cm-pharme/2.0/"
 
@@ -32,6 +31,9 @@ def args():
     p.add_argument("--manifest", default="v2/data/sources/source-manifest.json")
     p.add_argument("--reset", action="store_true")
     p.add_argument("--report", default="build/w6/ingest-report.json")
+    p.add_argument("--outpatient-mode", choices=["synthetic-fixture", "published-file"], default="synthetic-fixture")
+    p.add_argument("--source-metadata", help="Pinned Zenodo metadata JSON, required for a published file")
+    p.add_argument("--contract-only", action="store_true", help="Check input identity/header before connecting to PostgreSQL")
     return p.parse_args()
 
 
@@ -74,6 +76,8 @@ def upsert_dataset(cur, spec: dict[str, Any]) -> tuple[int, int]:
         RETURNING dataset_id
     """, (spec["id"], spec["id"], spec.get("doi"), spec["role"], spec.get("license_note")))
     release_public = f"{spec['id']}:release:{spec.get('doi') or 'contract'}"
+    if spec.get("execution_scope"):
+        release_public += ":" + spec["execution_scope"]
     release_id = one(cur, """
         INSERT INTO cmpe.dataset_release(dataset_id,public_id,release_label,source_filename)
         VALUES (%s,%s,%s,%s)
@@ -260,6 +264,19 @@ def main():
     out_spec = specs["P1-NHIF-OUTPATIENT"]
     in_spec = specs["P2-NHIF-INPATIENT"]
     Path(a.report).parent.mkdir(parents=True, exist_ok=True)
+    metadata = json.loads(Path(a.source_metadata).read_text()) if a.source_metadata else None
+    contract = validate_local_csv(out_spec, a.outpatient, a.outpatient_mode, metadata)
+    if a.contract_only:
+        Path(a.report).write_text(json.dumps(contract, indent=2) + "\n")
+        print(json.dumps(contract))
+        return
+    if a.outpatient_mode != "synthetic-fixture":
+        raise ValueError("This bootstrap command ingests synthetic fixtures only; use a separate reviewed real-source pipeline.")
+    from psycopg.rows import dict_row
+    import psycopg
+    # Source attribution is retained, while fixture release identity and filename remain explicit.
+    out_spec = dict(out_spec, file_contract=out_spec["synthetic_fixture"]["filename"],
+                    execution_scope="synthetic-fixture")
 
     with psycopg.connect(a.database_url, row_factory=dict_row) as conn:
         conn.autocommit = True
@@ -326,6 +343,7 @@ def main():
         "accepted_cross_source_match_assertions_created": match_count,
         "counts": counts,
         "held_out_used": False,
+        "outpatient_input_contract": contract,
     }
     Path(a.report).write_text(json.dumps(report, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     print(json.dumps(report, indent=2, sort_keys=True))

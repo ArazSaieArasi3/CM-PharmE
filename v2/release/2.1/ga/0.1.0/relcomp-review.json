@@ -1,0 +1,64 @@
+{
+  "candidate_profile": "CMPE-RelComp-PositiveLowerBound/1.0.0",
+  "catalogue_html_same_as_original_pin": true,
+  "date": "2026-10-28",
+  "decisions_required": [
+    {
+      "id": "RC-A01",
+      "question": "Accept the positive-lower-bound condition only for the separately named bounded candidate profile, retaining the optional example/engine disagreement explicitly?"
+    },
+    {
+      "id": "RC-A02",
+      "question": "Accept explicit shared-end-to-ATarget role normalization for declared frames, with original end IDs/order preserved and occurrence/refactoring orientation still out of scope?"
+    }
+  ],
+  "fresh_catalogue": [
+    {
+      "bytes": 13282,
+      "name": "catalogue.html",
+      "sha256": "9cae22c390ae0944defb9d7e2c81c2412ce5f5f6c5cc215ec78a17eee8202ab0",
+      "url": "https://ontouml.readthedocs.io/en/latest/anti-patterns/RelComp/index.html"
+    },
+    {
+      "bytes": 105151,
+      "name": "examples.png",
+      "sha256": "e733ba057427409ff3360b82230d5558108877c08c337ff0703940ca8410fd10",
+      "url": "https://ontouml.readthedocs.io/en/latest/_images/examples12.png"
+    }
+  ],
+  "governing_thesis_provenance": "Inherited unchanged from original sources.json/Table44 review; current PDF web retrieval failed, so no fresh PDF/table re-review is claimed.",
+  "observations": [
+    {
+      "id": "RC-SR-01",
+      "kind": "DIRECT_TEXT",
+      "observation": "The catalogue criterion requires a positive minimum and plural maximum at the named ATarget end."
+    },
+    {
+      "id": "RC-SR-02",
+      "kind": "DIRECT_DIAGRAM_READING",
+      "observation": "In the first BugTracker/Feature example, the Feature end of offersFeature is 0..* and the inner dependency relates Feature to Feature. The University example uses 1..* at Department."
+    },
+    {
+      "id": "RC-SR-03",
+      "kind": "INFERENCE_REQUIRES_DISPOSITION",
+      "observation": "With the explicitly bound shared Feature end, the first diagram is outside the named positive-lower-bound profile. This is a source example/signature tension; it does not prove which text/diagram/author intention is wrong."
+    },
+    {
+      "id": "RC-SR-04",
+      "kind": "PRESERVED_RUNTIME_EVIDENCE",
+      "observation": "Existing unlimited-zero witness has archived count1 and profile match0, while unlimited-one has archived count1 and profile match1. No diagram conversion or new detector run is claimed."
+    }
+  ],
+  "profile": "CMPE-RelComp-ScientificReviewCard/0.1.0",
+  "recommendation": "Retain the named bounded candidate policy as the recommendation; scientific adoption requires explicit reviewer rationale acknowledging the optional example and role normalization. Keep raw archive outputs and unknown/unsupported refusals. Revision requires a new profile/oracle, not editing history.",
+  "schema_version": 1,
+  "scientific_acceptance_recorded": false,
+  "state_changes": {
+    "author_approval_inferred": false,
+    "expert_evidence_created": false,
+    "full_candidate_executed": false,
+    "old_oracles_changed": false,
+    "original_profile_changed": false
+  },
+  "status": "PREPARED_PENDING_AUTHOR_SCIENTIFIC_REVIEW"
+}

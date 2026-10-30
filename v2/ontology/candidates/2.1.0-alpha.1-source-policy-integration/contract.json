@@ -1,0 +1,125 @@
+{
+  "archive_commit": "42b926f6c2859dc87e49a96b8482eae28d02e7d5",
+  "bundle": "CMPE-SourcePolicyReview/0.1.0",
+  "expected_inventory": {
+    "elements": 536,
+    "properties": 172,
+    "specialized_properties": 14,
+    "unknown_cardinality": 66,
+    "unknown_readonly": 82,
+    "untyped_properties": 11
+  },
+  "expected_totals": {
+    "case_rows": 62,
+    "historical_replay_rows": 16,
+    "legacy_refusal_rows": 40,
+    "native_admission_rows": 7
+  },
+  "forbidden_claims": {
+    "author_scientific_accepted": false,
+    "full_candidate_executed": false,
+    "release_approved": false,
+    "scientific_gate_closed": false
+  },
+  "negative_controls": [
+    "tampered_case_result",
+    "snapshot_unknown_defaulted",
+    "fabricated_acceptance",
+    "missing_rule"
+  ],
+  "required_review_status": "PENDING_AUTHOR_SCIENTIFIC_REVIEW",
+  "rules": [
+    {
+      "artifact_digest": "sha256:8eb98710493ad725e490beecde776a8e5cb8f8198a3588dec3cda477d63f70b1",
+      "expected_cases": 14,
+      "expected_historical": 3,
+      "expected_native_admission": 0,
+      "expected_refusals": 8,
+      "files_sha256": {
+        "v2/ontology/candidates/2.1.0-alpha.1-relcomp-policy/applicability.json": "a5f05b7b754251852ecce331ec14abdfb6dce6a18251c9e6d9597000b78afea7",
+        "v2/ontology/candidates/2.1.0-alpha.1-relcomp-policy/ci-evidence.json": "6550ad9e75af054725d29d8c7adb0bea4bcb3a235c162aefff1e80b5638cb4f3",
+        "v2/ontology/candidates/2.1.0-alpha.1-relcomp-policy/decision.md": "c442e05681e2d856dbc2a2296a7daee876f240c8e28e8a7ab79f04f9cb57faf9",
+        "v2/ontology/candidates/2.1.0-alpha.1-relcomp-policy/fixed-oracles.json": "55b4956650c86e768cd0fd616ddb8f315ec9e71fa0e3dfb6c828772db62a7b16",
+        "v2/ontology/candidates/2.1.0-alpha.1-relcomp-policy/hosted-results.json": "0ad98458e7b33201ceacc317f102a5dfe69b036a695bec409380adf3d5d1d665",
+        "v2/ontology/candidates/2.1.0-alpha.1-relcomp-policy/local-results.json": "0c3949d95442122b0f95c64fc210333f3cef99cf644129d850d8f67ff10500df",
+        "v2/ontology/candidates/2.1.0-alpha.1-relcomp-policy/sources.json": "6187ddf24c70181103f1f90e59f39ccf7d1b0d9d38cc8d38fd71bce83dbc06e5"
+      },
+      "implementation_commit": "9ecefa656651c5a5801ba42af5b227d6a6c17a9b",
+      "oracle_commit": "e3d0aa0949738c2c6f19431d56d75a564eb53a2b",
+      "package": "v2/ontology/candidates/2.1.0-alpha.1-relcomp-policy",
+      "profile": "CMPE-RelComp-PositiveLowerBound/1.0.0",
+      "rule": "RelComp",
+      "run_id": 40460902265
+    },
+    {
+      "artifact_digest": "sha256:0583f0128e8d106909982c08993cbe4563a58494f4972ef5735e35c53138d884",
+      "expected_cases": 16,
+      "expected_historical": 3,
+      "expected_native_admission": 0,
+      "expected_refusals": 10,
+      "files_sha256": {
+        "v2/ontology/candidates/2.1.0-alpha.1-wholeover-policy/applicability.json": "bf779a353edb348ac82ab36a405b4143d5b88be65104a2bbec20af8418a0c985",
+        "v2/ontology/candidates/2.1.0-alpha.1-wholeover-policy/ci-evidence.json": "00e072cd2bb235a33869e375b282ff2b478e6f20eb34487c20600253b15bd637",
+        "v2/ontology/candidates/2.1.0-alpha.1-wholeover-policy/decision.md": "101293cc50e7eb5930fa36386dd8b1d82b3d8225cd363cd67d7dabc36966be4a",
+        "v2/ontology/candidates/2.1.0-alpha.1-wholeover-policy/fixed-oracles.json": "8e899db1240fe26e2f690e5708efed260eac5d708b3ec74f200df9054441e166",
+        "v2/ontology/candidates/2.1.0-alpha.1-wholeover-policy/hosted-results.json": "20816e14d165b48faa73af10d3012e2b420eef48444b597d7045177c363d8743",
+        "v2/ontology/candidates/2.1.0-alpha.1-wholeover-policy/local-results.json": "abd36579f5886cac4fc9a999e8c43ecf1e7fb8ac11d0aed635a03f2dfe4a667d",
+        "v2/ontology/candidates/2.1.0-alpha.1-wholeover-policy/sources.json": "65904cbae6c0e7ff33c6b2ae6bde08fbd1d7fe82aaa15e7d819835444f977f0b"
+      },
+      "implementation_commit": "75b371c232516a37bab0eeee73f11171c48fed64",
+      "oracle_commit": "a689d3e93bc2ab8c16a05c9f5719b8d2c12ce62a",
+      "package": "v2/ontology/candidates/2.1.0-alpha.1-wholeover-policy",
+      "profile": "CMPE-WholeOver-UpperSumTwo/1.0.0",
+      "rule": "WholeOver",
+      "run_id": 40465778217
+    },
+    {
+      "artifact_digest": "sha256:7ff7958016f34ced7fc8d3eb934e095c3bd393ca1234c7cfb0148cdbb4070876",
+      "expected_cases": 16,
+      "expected_historical": 6,
+      "expected_native_admission": 7,
+      "expected_refusals": 12,
+      "files_sha256": {
+        "v2/ontology/candidates/2.1.0-alpha.1-relrig-policy/applicability.json": "f1863db2d3a9a74cce3554b379cea859c714be386543c8726f96a5022d4bc6e0",
+        "v2/ontology/candidates/2.1.0-alpha.1-relrig-policy/ci-evidence.json": "603ab29014526258cadfe20f15891aeffe369fb3ea8d70f0946f7a89ed13814e",
+        "v2/ontology/candidates/2.1.0-alpha.1-relrig-policy/decision.md": "67bd6db491cd82776a9de379925d01588c9c3a3a4fda0b1938aa7cef0828d0dd",
+        "v2/ontology/candidates/2.1.0-alpha.1-relrig-policy/fixed-oracles.json": "f3dc9d725eb7846038405d12ee763569f7d05e9ca604b7142fe5baabf3cc9748",
+        "v2/ontology/candidates/2.1.0-alpha.1-relrig-policy/hosted-results.json": "be0f54b9d7a549616d90bd96a944aa484cb134518768771902f9c7ececa7a6f9",
+        "v2/ontology/candidates/2.1.0-alpha.1-relrig-policy/local-results.json": "4682fab53a421ef709aab6f22f0e94a2d657985cd693141f419f2933e508bee3",
+        "v2/ontology/candidates/2.1.0-alpha.1-relrig-policy/sources.json": "5e9741c443d661bc0bedacf8959e9a1659895b7c2180040d0c8b368dfbfdd7f5"
+      },
+      "implementation_commit": "8139da3f67509f1ac96be7cf36e4b3a9c6bee512",
+      "oracle_commit": "a7c48d75d76972190c9c76d2ba61dcbe64710aaf",
+      "package": "v2/ontology/candidates/2.1.0-alpha.1-relrig-policy",
+      "profile": "CMPE-RelRig-ExplicitEndpointReview/1.0.0",
+      "rule": "RelRig",
+      "run_id": 40467313319
+    },
+    {
+      "artifact_digest": "sha256:d41191b96ca9a511658e05441c8712360269da28f74096017338f9ae6b27621d",
+      "expected_cases": 16,
+      "expected_historical": 4,
+      "expected_native_admission": 0,
+      "expected_refusals": 10,
+      "files_sha256": {
+        "v2/ontology/candidates/2.1.0-alpha.1-homofunc-policy/applicability.json": "89095f302cf663dfe7053b68faf18d2c52b0a40cbb7014854b27b329bfde8606",
+        "v2/ontology/candidates/2.1.0-alpha.1-homofunc-policy/ci-evidence.json": "9ee97f5d6d852490c9a524862cc23902767d80a64125d54296d2d9891f4e728a",
+        "v2/ontology/candidates/2.1.0-alpha.1-homofunc-policy/decision.md": "aa49ef62a4cc2357576937ff1e3a9d61aed4bf10cd3771571bfa563b8e85c60f",
+        "v2/ontology/candidates/2.1.0-alpha.1-homofunc-policy/fixed-oracles.json": "4370138a0d952369702a4aec5101fb5d2d9e356823310952c8b5f45180cf2363",
+        "v2/ontology/candidates/2.1.0-alpha.1-homofunc-policy/hosted-results.json": "71457fc1672d3c9c983939e575706fef62fc55596434035abdeeb8915f06e3f4",
+        "v2/ontology/candidates/2.1.0-alpha.1-homofunc-policy/local-results.json": "6ec9fa2097c054bd8b23a4b7f3ef73df299c46377ae99594fda9b86b7c27b2c9",
+        "v2/ontology/candidates/2.1.0-alpha.1-homofunc-policy/sources.json": "361410e038a654072c764b5f7f35d1e6e667e7a6ffda7449abb6b64fe3a59956"
+      },
+      "implementation_commit": "5493bc041291e3cd1459bc148106c5c7ee998aaf",
+      "oracle_commit": "9dd92b243391a0ac5d45ad51925b9ea170eeac3c",
+      "package": "v2/ontology/candidates/2.1.0-alpha.1-homofunc-policy",
+      "profile": "CMPE-HomoFunc-MinimumTwo/1.0.0",
+      "rule": "HomoFunc",
+      "run_id": 40472176042
+    }
+  ],
+  "schema_version": 1,
+  "target_canonical_sha256": "bcfc07f7c11c7f086cf418e7407ae95030e7ec87a434d7844a9309a6e21d7a66",
+  "target_snapshot_path": "v2/ontology/candidates/2.1.0-alpha.1-p3-facility-operation/ontouml.json",
+  "target_snapshot_sha256": "02a4a9ed358c70e182626b3fc144bc1d9b3e3c06f704f06fb1716e7be0e3aa1a"
+}

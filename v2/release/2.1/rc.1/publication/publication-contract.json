@@ -1,0 +1,72 @@
+{
+  "assembly_commit": "76c547f02e56d116b9e86d0aef9388e9d99f0949",
+  "expected_assets": [
+    {
+      "bytes": 30945280,
+      "name": "cm-pharme-2.1.0-rc.1.tar",
+      "sha256": "21f140abb6ccde5eebb9302cd87724ce8616a2f71a046b22bf3c3c5ea01b10ba"
+    },
+    {
+      "bytes": 91,
+      "name": "cm-pharme-2.1.0-rc.1.tar.sha256",
+      "sha256": "9fac328ebbd108d04580c8ba1a105572834a463b200bd5e47e75f9ecd14b1dae"
+    },
+    {
+      "bytes": 2096,
+      "name": "cm-pharme-2.1.0-rc.1.provenance.json",
+      "sha256": "3ea9d84ac01249d484bf154db297be58f233d99cd6793e1dcb3452e99d3723d2"
+    }
+  ],
+  "expected_target_workflow_families": 25,
+  "frozen_metadata_sha256": {
+    "release-notes.md": "46df4aad2e3a2afe12fd0372f9db03cf7de1b054ddd82157d15255a3d8443e51",
+    "release-plan.json": "3ea9d84ac01249d484bf154db297be58f233d99cd6793e1dcb3452e99d3723d2",
+    "target-ci.json": "8a5a8271a11f3104c2e3145a0b106078864b036de5f40c46145418b83d7eab99"
+  },
+  "held_gates": [
+    306,
+    310,
+    315
+  ],
+  "issue": 326,
+  "negative_controls": [
+    {
+      "id": "wrong-tag",
+      "reason": "release-identity"
+    },
+    {
+      "id": "wrong-assembly",
+      "reason": "source-agreement"
+    },
+    {
+      "id": "ga-ready",
+      "reason": "unsupported-claim"
+    },
+    {
+      "id": "stable-label",
+      "reason": "release-policy"
+    },
+    {
+      "id": "suppressed-transition",
+      "reason": "claim-boundary"
+    },
+    {
+      "id": "missing-ci-family",
+      "reason": "ci-provenance"
+    },
+    {
+      "id": "tampered-asset",
+      "reason": "asset-integrity"
+    },
+    {
+      "id": "edited-notes",
+      "reason": "metadata-drift"
+    }
+  ],
+  "profile": "CMPE-RC-Publication/0.1.0",
+  "release_branch": "release/2.1.0-rc.1",
+  "repository": "ArazSaieArasi3/CM-PharmE",
+  "schema_version": 1,
+  "tag": "2.1.0-rc.1",
+  "title": "CM-PharmE 2.1.0-rc.1 \u2014 Experimental Research Checkpoint"
+}

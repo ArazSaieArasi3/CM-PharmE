@@ -1,0 +1,507 @@
+{
+  "cases": [
+    {
+      "name": "registration-positive",
+      "requirements": [
+        "B2-RG-01",
+        "B2-RG-02",
+        "B2-RG-04",
+        "B2-RG-07"
+      ],
+      "polarity": "positive",
+      "expected_conforms": true,
+      "actual_conforms": true,
+      "marker": null,
+      "violations": [],
+      "fixture": "fixtures/registration-positive.ttl",
+      "pass": true
+    },
+    {
+      "name": "listing-positive",
+      "requirements": [
+        "B2-RG-03",
+        "B2-RG-04",
+        "B2-RG-06"
+      ],
+      "polarity": "positive",
+      "expected_conforms": true,
+      "actual_conforms": true,
+      "marker": null,
+      "violations": [],
+      "fixture": "fixtures/listing-positive.ttl",
+      "pass": true
+    },
+    {
+      "name": "organization-self-report-positive",
+      "requirements": [
+        "B2-RG-07"
+      ],
+      "polarity": "positive",
+      "expected_conforms": true,
+      "actual_conforms": true,
+      "marker": null,
+      "violations": [],
+      "fixture": "fixtures/organization-self-report-positive.ttl",
+      "pass": true
+    },
+    {
+      "name": "provenance-positive",
+      "requirements": [
+        "B2-DS-07",
+        "B2-DS-08",
+        "B2-DS-09",
+        "B2-DS-10"
+      ],
+      "polarity": "positive",
+      "expected_conforms": true,
+      "actual_conforms": true,
+      "marker": null,
+      "violations": [],
+      "fixture": "fixtures/provenance-positive.ttl",
+      "pass": true
+    },
+    {
+      "name": "submission-positive",
+      "requirements": [
+        "B2-RG-08"
+      ],
+      "polarity": "positive",
+      "expected_conforms": true,
+      "actual_conforms": true,
+      "marker": null,
+      "violations": [],
+      "fixture": "fixtures/submission-positive.ttl",
+      "pass": true
+    },
+    {
+      "name": "potential-shortage-positive",
+      "requirements": [
+        "B2-RP-02"
+      ],
+      "polarity": "positive",
+      "expected_conforms": true,
+      "actual_conforms": true,
+      "marker": null,
+      "violations": [],
+      "fixture": "fixtures/potential-shortage-positive.ttl",
+      "pass": true
+    },
+    {
+      "name": "routine-scope-positive",
+      "requirements": [
+        "B2-RP-01",
+        "B2-RP-03",
+        "B2-RP-04"
+      ],
+      "polarity": "positive",
+      "expected_conforms": true,
+      "actual_conforms": true,
+      "marker": null,
+      "violations": [],
+      "fixture": "fixtures/routine-scope-positive.ttl",
+      "pass": true
+    },
+    {
+      "name": "preparedness-scope-positive",
+      "requirements": [
+        "B2-RP-01",
+        "B2-RP-03",
+        "B2-RP-04"
+      ],
+      "polarity": "positive",
+      "expected_conforms": true,
+      "actual_conforms": true,
+      "marker": null,
+      "violations": [],
+      "fixture": "fixtures/preparedness-scope-positive.ttl",
+      "pass": true
+    },
+    {
+      "name": "crisis-scope-positive",
+      "requirements": [
+        "B2-RP-01",
+        "B2-RP-03",
+        "B2-RP-04"
+      ],
+      "polarity": "positive",
+      "expected_conforms": true,
+      "actual_conforms": true,
+      "marker": null,
+      "violations": [],
+      "fixture": "fixtures/crisis-scope-positive.ttl",
+      "pass": true
+    },
+    {
+      "name": "missing-inherited-authority-grounding",
+      "requirements": [
+        "B2-RG-01"
+      ],
+      "polarity": "negative",
+      "expected_conforms": false,
+      "actual_conforms": false,
+      "marker": "MinCountConstraintComponent",
+      "violations": [
+        {
+          "focus": "urn:cmpe-registry-policy:authority",
+          "path": "n95cf6cb167f940f990ab44821e57a201b126",
+          "constraint": "",
+          "shape": "n95cf6cb167f940f990ab44821e57a201b125",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent"
+        }
+      ],
+      "fixture": "fixtures/missing-inherited-authority-grounding.ttl",
+      "pass": true
+    },
+    {
+      "name": "registration-is-not-listing",
+      "requirements": [
+        "B2-RG-01"
+      ],
+      "polarity": "negative",
+      "expected_conforms": false,
+      "actual_conforms": false,
+      "marker": "fact-kind-subject-agreement",
+      "violations": [
+        {
+          "focus": "urn:cmpe-registry-policy:record",
+          "path": "",
+          "constraint": "https://w3id.org/cm-pharme/experimental/registry-policy/fact-kind-subject-agreement",
+          "shape": "https://w3id.org/cm-pharme/experimental/registry-policy/shape-registry-record",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent"
+        }
+      ],
+      "fixture": "fixtures/registration-is-not-listing.ttl",
+      "pass": true
+    },
+    {
+      "name": "registration-alone-cannot-support-approval",
+      "requirements": [
+        "B2-RG-02"
+      ],
+      "polarity": "negative",
+      "expected_conforms": false,
+      "actual_conforms": false,
+      "marker": "approval-needs-independent-decision",
+      "violations": [
+        {
+          "focus": "urn:cmpe-registry-policy:record",
+          "path": "",
+          "constraint": "https://w3id.org/cm-pharme/experimental/registry-policy/approval-needs-independent-decision",
+          "shape": "https://w3id.org/cm-pharme/experimental/registry-policy/shape-registry-record",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent"
+        }
+      ],
+      "fixture": "fixtures/registration-alone-cannot-support-approval.ttl",
+      "pass": true
+    },
+    {
+      "name": "listing-cannot-approve-itself",
+      "requirements": [
+        "B2-RG-03"
+      ],
+      "polarity": "negative",
+      "expected_conforms": false,
+      "actual_conforms": false,
+      "marker": "approval-needs-independent-decision",
+      "violations": [
+        {
+          "focus": "urn:cmpe-registry-policy:record",
+          "path": "",
+          "constraint": "https://w3id.org/cm-pharme/experimental/registry-policy/approval-needs-independent-decision",
+          "shape": "https://w3id.org/cm-pharme/experimental/registry-policy/shape-registry-record",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent"
+        }
+      ],
+      "fixture": "fixtures/listing-cannot-approve-itself.ttl",
+      "pass": true
+    },
+    {
+      "name": "missing-submitting-labeler",
+      "requirements": [
+        "B2-RG-04"
+      ],
+      "polarity": "negative",
+      "expected_conforms": false,
+      "actual_conforms": false,
+      "marker": "wasAttributedTo",
+      "violations": [
+        {
+          "focus": "urn:cmpe-registry-policy:record",
+          "path": "http://www.w3.org/ns/prov#wasAttributedTo",
+          "constraint": "",
+          "shape": "N3de46ce804c84c758e1ec03eeb10fb4f",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent"
+        }
+      ],
+      "fixture": "fixtures/missing-submitting-labeler.ttl",
+      "pass": true
+    },
+    {
+      "name": "reversed-marketing-dates",
+      "requirements": [
+        "B2-RG-06"
+      ],
+      "polarity": "negative",
+      "expected_conforms": false,
+      "actual_conforms": false,
+      "marker": "marketing-interval-order",
+      "violations": [
+        {
+          "focus": "urn:cmpe-registry-policy:record",
+          "path": "",
+          "constraint": "https://w3id.org/cm-pharme/experimental/registry-policy/marketing-interval-order",
+          "shape": "https://w3id.org/cm-pharme/experimental/registry-policy/shape-registry-record",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent"
+        }
+      ],
+      "fixture": "fixtures/reversed-marketing-dates.ttl",
+      "pass": true
+    },
+    {
+      "name": "record-subject-alias",
+      "requirements": [
+        "B2-RG-07"
+      ],
+      "polarity": "negative",
+      "expected_conforms": false,
+      "actual_conforms": false,
+      "marker": "record-not-subject",
+      "violations": [
+        {
+          "focus": "urn:cmpe-registry-policy:record",
+          "path": "",
+          "constraint": "https://w3id.org/cm-pharme/experimental/registry-policy/record-not-subject",
+          "shape": "https://w3id.org/cm-pharme/experimental/registry-policy/shape-registry-record",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent"
+        }
+      ],
+      "fixture": "fixtures/record-subject-alias.ttl",
+      "pass": true
+    },
+    {
+      "name": "payload-product-alias",
+      "requirements": [
+        "B2-RG-08"
+      ],
+      "polarity": "negative",
+      "expected_conforms": false,
+      "actual_conforms": false,
+      "marker": "payload-not-product",
+      "violations": [
+        {
+          "focus": "urn:cmpe-registry-policy:record",
+          "path": "",
+          "constraint": "https://w3id.org/cm-pharme/experimental/registry-policy/payload-not-product",
+          "shape": "https://w3id.org/cm-pharme/experimental/registry-policy/shape-submission-record",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent"
+        }
+      ],
+      "fixture": "fixtures/payload-product-alias.ttl",
+      "pass": true
+    },
+    {
+      "name": "missing-jurisdiction",
+      "requirements": [
+        "B2-RP-01"
+      ],
+      "polarity": "negative",
+      "expected_conforms": false,
+      "actual_conforms": false,
+      "marker": "jurisdiction",
+      "violations": [
+        {
+          "focus": "urn:cmpe-registry-policy:requirement",
+          "path": "https://w3id.org/cm-pharme/experimental/registry-policy/jurisdiction",
+          "constraint": "",
+          "shape": "N9de68adabe0147078de8a3dc98385b02",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent"
+        }
+      ],
+      "fixture": "fixtures/missing-jurisdiction.ttl",
+      "pass": true
+    },
+    {
+      "name": "routine-NAP-overgeneralization",
+      "requirements": [
+        "B2-RP-03"
+      ],
+      "polarity": "negative",
+      "expected_conforms": false,
+      "actual_conforms": false,
+      "marker": "routine-scope-guard",
+      "violations": [
+        {
+          "focus": "urn:cmpe-registry-policy:requirement",
+          "path": "",
+          "constraint": "https://w3id.org/cm-pharme/experimental/registry-policy/routine-scope-guard",
+          "shape": "https://w3id.org/cm-pharme/experimental/registry-policy/shape-reporting-scope",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent"
+        }
+      ],
+      "fixture": "fixtures/routine-NAP-overgeneralization.ttl",
+      "pass": true
+    },
+    {
+      "name": "action-without-explicit-product-scope",
+      "requirements": [
+        "B2-RP-03"
+      ],
+      "polarity": "negative",
+      "expected_conforms": false,
+      "actual_conforms": false,
+      "marker": "action-scope-required",
+      "violations": [
+        {
+          "focus": "urn:cmpe-registry-policy:requirement",
+          "path": "",
+          "constraint": "https://w3id.org/cm-pharme/experimental/registry-policy/action-scope-required",
+          "shape": "https://w3id.org/cm-pharme/experimental/registry-policy/shape-reporting-scope",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent"
+        }
+      ],
+      "fixture": "fixtures/action-without-explicit-product-scope.ttl",
+      "pass": true
+    },
+    {
+      "name": "missing-action-frequency",
+      "requirements": [
+        "B2-RP-04"
+      ],
+      "polarity": "negative",
+      "expected_conforms": false,
+      "actual_conforms": false,
+      "marker": "frequency",
+      "violations": [
+        {
+          "focus": "urn:cmpe-registry-policy:requirement",
+          "path": "https://w3id.org/cm-pharme/experimental/registry-policy/frequency",
+          "constraint": "",
+          "shape": "N889be83194ae4ab2a1247075c951f455",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent"
+        }
+      ],
+      "fixture": "fixtures/missing-action-frequency.ttl",
+      "pass": true
+    },
+    {
+      "name": "potential-claim-is-not-situation",
+      "requirements": [
+        "B2-RP-02"
+      ],
+      "polarity": "negative",
+      "expected_conforms": false,
+      "actual_conforms": false,
+      "marker": "claim-not-situation",
+      "violations": [
+        {
+          "focus": "urn:cmpe-registry-policy:claim",
+          "path": "",
+          "constraint": "https://w3id.org/cm-pharme/experimental/registry-policy/claim-not-situation",
+          "shape": "https://w3id.org/cm-pharme/experimental/registry-policy/shape-shortage-claim",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent"
+        }
+      ],
+      "fixture": "fixtures/potential-claim-is-not-situation.ttl",
+      "pass": true
+    },
+    {
+      "name": "record-activity-alias",
+      "requirements": [
+        "B2-DS-07"
+      ],
+      "polarity": "negative",
+      "expected_conforms": false,
+      "actual_conforms": false,
+      "marker": "record-not-generating-activity",
+      "violations": [
+        {
+          "focus": "urn:cmpe-registry-policy:record",
+          "path": "",
+          "constraint": "https://w3id.org/cm-pharme/experimental/registry-policy/record-not-generating-activity",
+          "shape": "https://w3id.org/cm-pharme/experimental/registry-policy/shape-provenance-record",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent"
+        }
+      ],
+      "fixture": "fixtures/record-activity-alias.ttl",
+      "pass": true
+    },
+    {
+      "name": "attribution-does-not-replace-activity-association",
+      "requirements": [
+        "B2-DS-08"
+      ],
+      "polarity": "negative",
+      "expected_conforms": false,
+      "actual_conforms": false,
+      "marker": "associated-actor-required",
+      "violations": [
+        {
+          "focus": "urn:cmpe-registry-policy:record",
+          "path": "",
+          "constraint": "https://w3id.org/cm-pharme/experimental/registry-policy/associated-actor-required",
+          "shape": "https://w3id.org/cm-pharme/experimental/registry-policy/shape-provenance-record",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent"
+        }
+      ],
+      "fixture": "fixtures/attribution-does-not-replace-activity-association.ttl",
+      "pass": true
+    },
+    {
+      "name": "revision-missing-explicit-derivation",
+      "requirements": [
+        "B2-DS-09"
+      ],
+      "polarity": "negative",
+      "expected_conforms": false,
+      "actual_conforms": false,
+      "marker": "revision-needs-lineage",
+      "violations": [
+        {
+          "focus": "urn:cmpe-registry-policy:record",
+          "path": "",
+          "constraint": "https://w3id.org/cm-pharme/experimental/registry-policy/revision-needs-lineage",
+          "shape": "https://w3id.org/cm-pharme/experimental/registry-policy/shape-provenance-record",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent"
+        }
+      ],
+      "fixture": "fixtures/revision-missing-explicit-derivation.ttl",
+      "pass": true
+    },
+    {
+      "name": "revision-alias-chain",
+      "requirements": [
+        "B2-DS-10"
+      ],
+      "polarity": "negative",
+      "expected_conforms": false,
+      "actual_conforms": false,
+      "marker": "revision-known-identity-collision",
+      "violations": [
+        {
+          "focus": "urn:cmpe-registry-policy:record",
+          "path": "",
+          "constraint": "https://w3id.org/cm-pharme/experimental/registry-policy/revision-known-identity-collision",
+          "shape": "https://w3id.org/cm-pharme/experimental/registry-policy/shape-provenance-record",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent"
+        }
+      ],
+      "fixture": "fixtures/revision-alias-chain.ttl",
+      "pass": true
+    },
+    {
+      "name": "coincident-marketing-and-retrieval-allowed",
+      "requirements": [
+        "B2-RG-06"
+      ],
+      "polarity": "boundary",
+      "expected_conforms": true,
+      "actual_conforms": true,
+      "marker": null,
+      "violations": [],
+      "fixture": "fixtures/coincident-marketing-and-retrieval-allowed.ttl",
+      "pass": true
+    }
+  ],
+  "pass": 27,
+  "total": 27
+}

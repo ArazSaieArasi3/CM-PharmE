@@ -1,0 +1,803 @@
+{
+  "status": "static trigger screen, not official OntoUML conformance",
+  "baseline": {
+    "domains": {
+      "CORE — Ecosystem Observation": {
+        "concepts": 3,
+        "relators": 0,
+        "rolemixins": 0,
+        "events": 0,
+        "situations": 0,
+        "datatypes": 0
+      },
+      "CORE — Ecosystem Organization": {
+        "concepts": 8,
+        "relators": 0,
+        "rolemixins": 1,
+        "events": 0,
+        "situations": 0,
+        "datatypes": 0
+      },
+      "CORE — Facility Operations": {
+        "concepts": 4,
+        "relators": 1,
+        "rolemixins": 0,
+        "events": 0,
+        "situations": 0,
+        "datatypes": 0
+      },
+      "CORE — Pharmaceutical Product": {
+        "concepts": 10,
+        "relators": 2,
+        "rolemixins": 0,
+        "events": 0,
+        "situations": 0,
+        "datatypes": 0
+      },
+      "CORE — Regulatory Governance": {
+        "concepts": 3,
+        "relators": 2,
+        "rolemixins": 0,
+        "events": 0,
+        "situations": 0,
+        "datatypes": 0
+      },
+      "CORE — Supply Operations": {
+        "concepts": 4,
+        "relators": 0,
+        "rolemixins": 0,
+        "events": 2,
+        "situations": 1,
+        "datatypes": 0
+      },
+      "EXT — Business Architecture": {
+        "concepts": 4,
+        "relators": 1,
+        "rolemixins": 0,
+        "events": 0,
+        "situations": 0,
+        "datatypes": 0
+      },
+      "EXT — Clinical Care": {
+        "concepts": 1,
+        "relators": 0,
+        "rolemixins": 1,
+        "events": 0,
+        "situations": 0,
+        "datatypes": 0
+      },
+      "EXT — Digital Systems": {
+        "concepts": 1,
+        "relators": 0,
+        "rolemixins": 0,
+        "events": 0,
+        "situations": 0,
+        "datatypes": 0
+      },
+      "EXT — Market Access": {
+        "concepts": 3,
+        "relators": 0,
+        "rolemixins": 0,
+        "events": 0,
+        "situations": 0,
+        "datatypes": 0
+      },
+      "EXT — Pharmacovigilance": {
+        "concepts": 3,
+        "relators": 0,
+        "rolemixins": 0,
+        "events": 2,
+        "situations": 0,
+        "datatypes": 0
+      },
+      "EXT — Regulatory Policy": {
+        "concepts": 2,
+        "relators": 1,
+        "rolemixins": 0,
+        "events": 0,
+        "situations": 0,
+        "datatypes": 0
+      },
+      "EXT — Risk Management": {
+        "concepts": 5,
+        "relators": 0,
+        "rolemixins": 1,
+        "events": 2,
+        "situations": 0,
+        "datatypes": 0
+      },
+      "EXT — Supply Resilience": {
+        "concepts": 11,
+        "relators": 3,
+        "rolemixins": 0,
+        "events": 2,
+        "situations": 1,
+        "datatypes": 0
+      },
+      "X-INFRA — Entity Identity": {
+        "concepts": 5,
+        "relators": 1,
+        "rolemixins": 0,
+        "events": 0,
+        "situations": 0,
+        "datatypes": 1
+      },
+      "X-INFRA — Evidence Traceability": {
+        "concepts": 13,
+        "relators": 1,
+        "rolemixins": 1,
+        "events": 2,
+        "situations": 0,
+        "datatypes": 1
+      },
+      "X-INFRA — Spatiotemporal Context": {
+        "concepts": 7,
+        "relators": 0,
+        "rolemixins": 0,
+        "events": 0,
+        "situations": 0,
+        "datatypes": 4
+      }
+    },
+    "relator_mediation_endpoints": {
+      "AlternativeAssignment": [
+        "Product",
+        "AlternativeRole"
+      ],
+      "Authorization": [
+        "RegAuthorityRole",
+        "EcosystemParticipant"
+      ],
+      "ClassAssignment": [
+        "Product",
+        "ClassEntry"
+      ],
+      "ContextClass": [],
+      "EvidenceSupport": [
+        "EvidenceItem",
+        "Assertion"
+      ],
+      "FacilityOperation": [
+        "Organization",
+        "Facility"
+      ],
+      "IdAssignment": [
+        "IdValue",
+        "IdScheme"
+      ],
+      "MarketListing": [
+        "Presentation",
+        "LabelerRole"
+      ],
+      "Partnership": [
+        "Organization"
+      ],
+      "Registration": [
+        "RegAuthorityRole",
+        "Facility"
+      ],
+      "RegulatoryOversight": [
+        "RegAuthorityRole"
+      ],
+      "SupplyDependency": [
+        "Organization",
+        "Facility"
+      ]
+    },
+    "relators_with_fewer_than_two_drawn_mediations": [
+      "ContextClass",
+      "Partnership",
+      "RegulatoryOversight"
+    ],
+    "datatype_mediation_triggers": [
+      [
+        "IdAssignment",
+        "IdValue"
+      ]
+    ],
+    "rigid_type_mediation_triggers": [
+      [
+        "FacilityOperation",
+        "Organization"
+      ],
+      [
+        "FacilityOperation",
+        "Facility"
+      ],
+      [
+        "Registration",
+        "Facility"
+      ],
+      [
+        "ClassAssignment",
+        "Product"
+      ],
+      [
+        "ClassAssignment",
+        "ClassEntry"
+      ],
+      [
+        "MarketListing",
+        "Presentation"
+      ],
+      [
+        "EvidenceSupport",
+        "Assertion"
+      ],
+      [
+        "IdAssignment",
+        "IdScheme"
+      ],
+      [
+        "AlternativeAssignment",
+        "Product"
+      ],
+      [
+        "SupplyDependency",
+        "Organization"
+      ],
+      [
+        "SupplyDependency",
+        "Facility"
+      ],
+      [
+        "Partnership",
+        "Organization"
+      ]
+    ],
+    "rolemixins_without_abstract_keyword": [],
+    "rolemixins_without_drawn_subtypes": [
+      "AssetAtRisk",
+      "ClinicalParticipant",
+      "EvidenceItem"
+    ],
+    "modes_or_qualities_without_drawn_characterization": [],
+    "product_role_also_ecosystem_participant": false,
+    "generalization_count": 29
+  },
+  "corrected_projection": {
+    "domains": {
+      "CORE — Ecosystem Observation": {
+        "concepts": 3,
+        "relators": 0,
+        "rolemixins": 0,
+        "events": 0,
+        "situations": 0,
+        "datatypes": 0
+      },
+      "CORE — Ecosystem Organization": {
+        "concepts": 8,
+        "relators": 0,
+        "rolemixins": 1,
+        "events": 0,
+        "situations": 0,
+        "datatypes": 0
+      },
+      "CORE — Facility Operations": {
+        "concepts": 4,
+        "relators": 1,
+        "rolemixins": 0,
+        "events": 0,
+        "situations": 0,
+        "datatypes": 0
+      },
+      "CORE — Pharmaceutical Product": {
+        "concepts": 10,
+        "relators": 2,
+        "rolemixins": 0,
+        "events": 0,
+        "situations": 0,
+        "datatypes": 0
+      },
+      "CORE — Regulatory Governance": {
+        "concepts": 3,
+        "relators": 2,
+        "rolemixins": 0,
+        "events": 0,
+        "situations": 0,
+        "datatypes": 0
+      },
+      "CORE — Supply Operations": {
+        "concepts": 4,
+        "relators": 0,
+        "rolemixins": 0,
+        "events": 2,
+        "situations": 1,
+        "datatypes": 0
+      },
+      "EXT — Business Architecture": {
+        "concepts": 4,
+        "relators": 1,
+        "rolemixins": 0,
+        "events": 0,
+        "situations": 0,
+        "datatypes": 0
+      },
+      "EXT — Clinical Care": {
+        "concepts": 1,
+        "relators": 0,
+        "rolemixins": 1,
+        "events": 0,
+        "situations": 0,
+        "datatypes": 0
+      },
+      "EXT — Digital Systems": {
+        "concepts": 1,
+        "relators": 0,
+        "rolemixins": 0,
+        "events": 0,
+        "situations": 0,
+        "datatypes": 0
+      },
+      "EXT — Market Access": {
+        "concepts": 3,
+        "relators": 0,
+        "rolemixins": 0,
+        "events": 0,
+        "situations": 0,
+        "datatypes": 0
+      },
+      "EXT — Pharmacovigilance": {
+        "concepts": 3,
+        "relators": 0,
+        "rolemixins": 0,
+        "events": 2,
+        "situations": 0,
+        "datatypes": 0
+      },
+      "EXT — Regulatory Policy": {
+        "concepts": 2,
+        "relators": 1,
+        "rolemixins": 0,
+        "events": 0,
+        "situations": 0,
+        "datatypes": 0
+      },
+      "EXT — Risk Management": {
+        "concepts": 5,
+        "relators": 0,
+        "rolemixins": 1,
+        "events": 2,
+        "situations": 0,
+        "datatypes": 0
+      },
+      "EXT — Supply Resilience": {
+        "concepts": 11,
+        "relators": 3,
+        "rolemixins": 0,
+        "events": 2,
+        "situations": 1,
+        "datatypes": 0
+      },
+      "X-INFRA — Entity Identity": {
+        "concepts": 5,
+        "relators": 1,
+        "rolemixins": 0,
+        "events": 0,
+        "situations": 0,
+        "datatypes": 1
+      },
+      "X-INFRA — Evidence Traceability": {
+        "concepts": 13,
+        "relators": 1,
+        "rolemixins": 1,
+        "events": 2,
+        "situations": 0,
+        "datatypes": 1
+      },
+      "X-INFRA — Spatiotemporal Context": {
+        "concepts": 7,
+        "relators": 0,
+        "rolemixins": 0,
+        "events": 0,
+        "situations": 0,
+        "datatypes": 4
+      }
+    },
+    "relator_mediation_endpoints": {
+      "AlternativeAssignment": [
+        "Product",
+        "AlternativeRole"
+      ],
+      "Authorization": [
+        "RegAuthorityRole",
+        "EcosystemParticipant"
+      ],
+      "ClassAssignment": [
+        "Product",
+        "ClassEntry"
+      ],
+      "ContextClass": [],
+      "EvidenceSupport": [
+        "EvidenceItem",
+        "Assertion"
+      ],
+      "FacilityOperation": [
+        "Organization",
+        "Facility"
+      ],
+      "IdAssignment": [
+        "IdValue",
+        "IdScheme"
+      ],
+      "MarketListing": [
+        "Presentation",
+        "LabelerRole"
+      ],
+      "Partnership": [
+        "Organization"
+      ],
+      "Registration": [
+        "RegAuthorityRole",
+        "Facility"
+      ],
+      "RegulatoryOversight": [
+        "RegAuthorityRole"
+      ],
+      "SupplyDependency": [
+        "Organization",
+        "Facility"
+      ]
+    },
+    "relators_with_fewer_than_two_drawn_mediations": [
+      "ContextClass",
+      "Partnership",
+      "RegulatoryOversight"
+    ],
+    "datatype_mediation_triggers": [
+      [
+        "IdAssignment",
+        "IdValue"
+      ]
+    ],
+    "rigid_type_mediation_triggers": [
+      [
+        "FacilityOperation",
+        "Organization"
+      ],
+      [
+        "FacilityOperation",
+        "Facility"
+      ],
+      [
+        "Registration",
+        "Facility"
+      ],
+      [
+        "ClassAssignment",
+        "Product"
+      ],
+      [
+        "ClassAssignment",
+        "ClassEntry"
+      ],
+      [
+        "MarketListing",
+        "Presentation"
+      ],
+      [
+        "EvidenceSupport",
+        "Assertion"
+      ],
+      [
+        "IdAssignment",
+        "IdScheme"
+      ],
+      [
+        "AlternativeAssignment",
+        "Product"
+      ],
+      [
+        "SupplyDependency",
+        "Organization"
+      ],
+      [
+        "SupplyDependency",
+        "Facility"
+      ],
+      [
+        "Partnership",
+        "Organization"
+      ]
+    ],
+    "rolemixins_without_abstract_keyword": [],
+    "rolemixins_without_drawn_subtypes": [
+      "AssetAtRisk",
+      "ClinicalParticipant",
+      "EvidenceItem"
+    ],
+    "modes_or_qualities_without_drawn_characterization": [],
+    "product_role_also_ecosystem_participant": false,
+    "generalization_count": 29
+  },
+  "review_candidate_diagram": {
+    "domains": {
+      "CORE — Ecosystem Observation": {
+        "concepts": 3,
+        "relators": 0,
+        "rolemixins": 0,
+        "events": 0,
+        "situations": 0,
+        "datatypes": 0
+      },
+      "CORE — Ecosystem Organization": {
+        "concepts": 8,
+        "relators": 0,
+        "rolemixins": 1,
+        "events": 0,
+        "situations": 0,
+        "datatypes": 0
+      },
+      "CORE — Facility Operations": {
+        "concepts": 4,
+        "relators": 1,
+        "rolemixins": 0,
+        "events": 0,
+        "situations": 0,
+        "datatypes": 0
+      },
+      "CORE — Pharmaceutical Product": {
+        "concepts": 10,
+        "relators": 2,
+        "rolemixins": 0,
+        "events": 0,
+        "situations": 0,
+        "datatypes": 0
+      },
+      "CORE — Regulatory Governance": {
+        "concepts": 3,
+        "relators": 2,
+        "rolemixins": 0,
+        "events": 0,
+        "situations": 0,
+        "datatypes": 0
+      },
+      "CORE — Supply Operations": {
+        "concepts": 4,
+        "relators": 0,
+        "rolemixins": 0,
+        "events": 2,
+        "situations": 1,
+        "datatypes": 0
+      },
+      "EXT — Business Architecture": {
+        "concepts": 4,
+        "relators": 1,
+        "rolemixins": 0,
+        "events": 0,
+        "situations": 0,
+        "datatypes": 0
+      },
+      "EXT — Clinical Care": {
+        "concepts": 1,
+        "relators": 0,
+        "rolemixins": 1,
+        "events": 0,
+        "situations": 0,
+        "datatypes": 0
+      },
+      "EXT — Digital Systems": {
+        "concepts": 1,
+        "relators": 0,
+        "rolemixins": 0,
+        "events": 0,
+        "situations": 0,
+        "datatypes": 0
+      },
+      "EXT — Market Access": {
+        "concepts": 3,
+        "relators": 0,
+        "rolemixins": 0,
+        "events": 0,
+        "situations": 0,
+        "datatypes": 0
+      },
+      "EXT — Pharmacovigilance": {
+        "concepts": 3,
+        "relators": 0,
+        "rolemixins": 0,
+        "events": 2,
+        "situations": 0,
+        "datatypes": 0
+      },
+      "EXT — Regulatory Policy": {
+        "concepts": 2,
+        "relators": 1,
+        "rolemixins": 0,
+        "events": 0,
+        "situations": 0,
+        "datatypes": 0
+      },
+      "EXT — Risk Management": {
+        "concepts": 5,
+        "relators": 0,
+        "rolemixins": 1,
+        "events": 2,
+        "situations": 0,
+        "datatypes": 0
+      },
+      "EXT — Supply Resilience": {
+        "concepts": 11,
+        "relators": 3,
+        "rolemixins": 0,
+        "events": 2,
+        "situations": 1,
+        "datatypes": 0
+      },
+      "X-INFRA — Entity Identity": {
+        "concepts": 5,
+        "relators": 1,
+        "rolemixins": 0,
+        "events": 0,
+        "situations": 0,
+        "datatypes": 1
+      },
+      "X-INFRA — Evidence Traceability": {
+        "concepts": 13,
+        "relators": 1,
+        "rolemixins": 1,
+        "events": 2,
+        "situations": 0,
+        "datatypes": 1
+      },
+      "X-INFRA — Spatiotemporal Context": {
+        "concepts": 7,
+        "relators": 0,
+        "rolemixins": 0,
+        "events": 0,
+        "situations": 0,
+        "datatypes": 4
+      }
+    },
+    "relator_mediation_endpoints": {
+      "AlternativeAssignment": [
+        "Product",
+        "AlternativeRole"
+      ],
+      "Authorization": [
+        "RegAuthorityRole",
+        "EcosystemParticipant"
+      ],
+      "ClassAssignment": [
+        "Product",
+        "ClassEntry"
+      ],
+      "ContextClass": [
+        "Product",
+        "ClassEntry"
+      ],
+      "EvidenceSupport": [
+        "EvidenceItem",
+        "Assertion",
+        "SourceRecord"
+      ],
+      "FacilityOperation": [
+        "Organization",
+        "Facility"
+      ],
+      "IdAssignment": [
+        "IdScheme"
+      ],
+      "MarketListing": [
+        "Presentation",
+        "LabelerRole"
+      ],
+      "Partnership": [
+        "Organization"
+      ],
+      "Registration": [
+        "RegAuthorityRole",
+        "Facility"
+      ],
+      "RegulatoryOversight": [
+        "RegAuthorityRole"
+      ],
+      "SupplyDependency": [
+        "Organization",
+        "Facility"
+      ]
+    },
+    "relators_with_fewer_than_two_drawn_mediations": [
+      "IdAssignment",
+      "Partnership",
+      "RegulatoryOversight"
+    ],
+    "datatype_mediation_triggers": [],
+    "rigid_type_mediation_triggers": [
+      [
+        "FacilityOperation",
+        "Organization"
+      ],
+      [
+        "FacilityOperation",
+        "Facility"
+      ],
+      [
+        "Registration",
+        "Facility"
+      ],
+      [
+        "ClassAssignment",
+        "Product"
+      ],
+      [
+        "ClassAssignment",
+        "ClassEntry"
+      ],
+      [
+        "MarketListing",
+        "Presentation"
+      ],
+      [
+        "EvidenceSupport",
+        "Assertion"
+      ],
+      [
+        "IdAssignment",
+        "IdScheme"
+      ],
+      [
+        "AlternativeAssignment",
+        "Product"
+      ],
+      [
+        "SupplyDependency",
+        "Organization"
+      ],
+      [
+        "SupplyDependency",
+        "Facility"
+      ],
+      [
+        "Partnership",
+        "Organization"
+      ],
+      [
+        "EvidenceSupport",
+        "SourceRecord"
+      ],
+      [
+        "ContextClass",
+        "Product"
+      ],
+      [
+        "ContextClass",
+        "ClassEntry"
+      ]
+    ],
+    "rolemixins_without_abstract_keyword": [],
+    "rolemixins_without_drawn_subtypes": [
+      "AssetAtRisk",
+      "ClinicalParticipant",
+      "EvidenceItem"
+    ],
+    "modes_or_qualities_without_drawn_characterization": [],
+    "product_role_also_ecosystem_participant": false,
+    "generalization_count": 29
+  },
+  "formal_cross_projection_checks": {
+    "alternative_role_subclass_of_ecosystem_participant": true,
+    "alternative_role_subclass_of_medicinal_product": true,
+    "bin_over_direct_overlap_triggers": [
+      {
+        "property": "withinCountry",
+        "domain": "GeographicFeature",
+        "range": "Country"
+      },
+      {
+        "property": "withinRegion",
+        "domain": "GeographicFeature",
+        "range": "AdministrativeRegion"
+      }
+    ],
+    "alternative_assignment_parallel_product_properties": [
+      "alternativeForProduct",
+      "alternativeProduct"
+    ]
+  },
+  "limitations": [
+    "Multiplicity, generalization-set, read-only and existential-dependence meta-properties are unavailable in W4 PlantUML.",
+    "An anti-pattern trigger requires human interpretation and may be justified; an untriggered check is not certification.",
+    "The OWL graph does not preserve all OntoUML stereotypes of relations or modal constraints."
+  ]
+}

@@ -1,0 +1,433 @@
+{
+  "scope": "19 structural RepRel triggers, B2 selected synthetic fixtures, and native B2 review overlay",
+  "evidence_ranking": {
+    "A_explicit_context_reference": 4,
+    "B_indirect_context_references": 1,
+    "C_no_extra_typed_reference": 14
+  },
+  "provisional_policy": "Keep mediation cardinalities; no global tuple uniqueness; author to decide contextual and temporal identity.",
+  "warning": "Typed reference existence and synthetic SHACL acceptance do not establish business-key uniqueness or validity dates.",
+  "rows": [
+    {
+      "relator": "AlternativeMedicineAssignment",
+      "tier": "C_no_extra_typed_reference",
+      "mediations": [
+        "alternativeForProduct",
+        "alternativeProduct"
+      ],
+      "model_evidence": "No additional typed relation or attribute proves the proposed scope/time discriminator in the native model.",
+      "untested_hypothesis": "reference product, alternative product, decision context and effective period",
+      "known_gap": [
+        "effective interval and uniqueness scope have not been established in the native model"
+      ],
+      "fixture_evidence": "Selected B2 focal SHACL accepts two same-party-tuple instances and rejects a missing end; no uniqueness constraint tested.",
+      "recommended_interim_rule": "Preserve repeatability and required mediation ends; do not set blanket max 1 or add tuple uniqueness.",
+      "author_question": "Can two concurrent instances mediate exactly the same participants? If yes, which recorded key/scope/version differentiates them? If no, which source rule and valid-time boundaries establish scoped uniqueness?",
+      "decision_options": [
+        "allow repeats with a documented discriminator",
+        "enforce scoped concurrent uniqueness with approved fields/interval",
+        "defer pending source evidence"
+      ],
+      "disposition": "PENDING_SCIENTIFIC_ADJUDICATION"
+    },
+    {
+      "relator": "EstablishmentRegistration",
+      "tier": "A_explicit_context_reference",
+      "mediations": [
+        "registrationAuthority",
+        "registrationEntity"
+      ],
+      "model_evidence": "Native typed association registrationJurisdiction exists; its cardinality is unfilled. This is a potential discriminator, not a proven identity key.",
+      "untested_hypothesis": "registered party, authority, jurisdiction, registration event and validity period",
+      "known_gap": [
+        "effective interval and uniqueness scope have not been established in the native model"
+      ],
+      "fixture_evidence": "Selected B2 focal SHACL accepts two same-party-tuple instances and rejects a missing end; no uniqueness constraint tested.",
+      "recommended_interim_rule": "Preserve repeatability and required mediation ends; do not set blanket max 1 or add tuple uniqueness.",
+      "author_question": "Can two concurrent instances mediate exactly the same participants? If yes, which recorded key/scope/version differentiates them? If no, which source rule and valid-time boundaries establish scoped uniqueness?",
+      "decision_options": [
+        "allow repeats with a documented discriminator",
+        "enforce scoped concurrent uniqueness with approved fields/interval",
+        "defer pending source evidence"
+      ],
+      "disposition": "PENDING_SCIENTIFIC_ADJUDICATION"
+    },
+    {
+      "relator": "EvidenceSupport",
+      "tier": "A_explicit_context_reference",
+      "mediations": [
+        "evidenceAssertion",
+        "evidenceItem"
+      ],
+      "model_evidence": "Native typed association evidenceRecord exists; its cardinality is unfilled. This is a potential discriminator, not a proven identity key.",
+      "untested_hypothesis": "assertion, evidence item, source version and provenance of support",
+      "known_gap": [
+        "effective interval and uniqueness scope have not been established in the native model"
+      ],
+      "fixture_evidence": "Selected B2 focal SHACL accepts two same-party-tuple instances and rejects a missing end; no uniqueness constraint tested.",
+      "recommended_interim_rule": "Preserve repeatability and required mediation ends; do not set blanket max 1 or add tuple uniqueness.",
+      "author_question": "Can two concurrent instances mediate exactly the same participants? If yes, which recorded key/scope/version differentiates them? If no, which source rule and valid-time boundaries establish scoped uniqueness?",
+      "decision_options": [
+        "allow repeats with a documented discriminator",
+        "enforce scoped concurrent uniqueness with approved fields/interval",
+        "defer pending source evidence"
+      ],
+      "disposition": "PENDING_SCIENTIFIC_ADJUDICATION"
+    },
+    {
+      "relator": "FacilityOperation",
+      "tier": "C_no_extra_typed_reference",
+      "mediations": [
+        "operationFacility",
+        "operationOrganization"
+      ],
+      "model_evidence": "No additional typed relation or attribute proves the proposed scope/time discriminator in the native model.",
+      "untested_hypothesis": "organization, facility, operation agreement and effective period",
+      "known_gap": [
+        "effective interval and uniqueness scope have not been established in the native model"
+      ],
+      "fixture_evidence": "Selected B2 focal SHACL accepts two same-party-tuple instances and rejects a missing end; no uniqueness constraint tested.",
+      "recommended_interim_rule": "Preserve repeatability and required mediation ends; do not set blanket max 1 or add tuple uniqueness.",
+      "author_question": "Can two concurrent instances mediate exactly the same participants? If yes, which recorded key/scope/version differentiates them? If no, which source rule and valid-time boundaries establish scoped uniqueness?",
+      "decision_options": [
+        "allow repeats with a documented discriminator",
+        "enforce scoped concurrent uniqueness with approved fields/interval",
+        "defer pending source evidence"
+      ],
+      "disposition": "PENDING_SCIENTIFIC_ADJUDICATION"
+    },
+    {
+      "relator": "IdentifierAssignment",
+      "tier": "C_no_extra_typed_reference",
+      "mediations": [
+        "identifierEntity",
+        "identifierScheme"
+      ],
+      "model_evidence": "No additional typed relation or attribute proves the proposed scope/time discriminator in the native model.",
+      "untested_hypothesis": "entity, identifier scheme, lexical value and validity period",
+      "known_gap": [
+        "lexical identifier value is not a native attribute in this overlay",
+        "effective interval and uniqueness scope have not been established in the native model"
+      ],
+      "fixture_evidence": "Selected B2 focal SHACL accepts two same-party-tuple instances and rejects a missing end; no uniqueness constraint tested.",
+      "recommended_interim_rule": "Preserve repeatability and required mediation ends; do not set blanket max 1 or add tuple uniqueness.",
+      "author_question": "Can two concurrent instances mediate exactly the same participants? If yes, which recorded key/scope/version differentiates them? If no, which source rule and valid-time boundaries establish scoped uniqueness?",
+      "decision_options": [
+        "allow repeats with a documented discriminator",
+        "enforce scoped concurrent uniqueness with approved fields/interval",
+        "defer pending source evidence"
+      ],
+      "disposition": "PENDING_SCIENTIFIC_ADJUDICATION"
+    },
+    {
+      "relator": "MarketListing",
+      "tier": "A_explicit_context_reference",
+      "mediations": [
+        "listingPresentation",
+        "listingResponsibleOrganization"
+      ],
+      "model_evidence": "Native typed association listingJurisdiction exists; its cardinality is unfilled. This is a potential discriminator, not a proven identity key.",
+      "untested_hypothesis": "presentation, responsible organization, jurisdiction, listing identifier and effective period",
+      "known_gap": [
+        "effective interval and uniqueness scope have not been established in the native model"
+      ],
+      "fixture_evidence": "Selected B2 focal SHACL accepts two same-party-tuple instances and rejects a missing end; no uniqueness constraint tested.",
+      "recommended_interim_rule": "Preserve repeatability and required mediation ends; do not set blanket max 1 or add tuple uniqueness.",
+      "author_question": "Can two concurrent instances mediate exactly the same participants? If yes, which recorded key/scope/version differentiates them? If no, which source rule and valid-time boundaries establish scoped uniqueness?",
+      "decision_options": [
+        "allow repeats with a documented discriminator",
+        "enforce scoped concurrent uniqueness with approved fields/interval",
+        "defer pending source evidence"
+      ],
+      "disposition": "PENDING_SCIENTIFIC_ADJUDICATION"
+    },
+    {
+      "relator": "ProductClassificationAssignment",
+      "tier": "C_no_extra_typed_reference",
+      "mediations": [
+        "classificationEntity",
+        "classificationEntry"
+      ],
+      "model_evidence": "No additional typed relation or attribute proves the proposed scope/time discriminator in the native model.",
+      "untested_hypothesis": "classified entity, entry, scheme version and classification context",
+      "known_gap": [
+        "effective interval and uniqueness scope have not been established in the native model"
+      ],
+      "fixture_evidence": "Selected B2 focal SHACL accepts two same-party-tuple instances and rejects a missing end; no uniqueness constraint tested.",
+      "recommended_interim_rule": "Preserve repeatability and required mediation ends; do not set blanket max 1 or add tuple uniqueness.",
+      "author_question": "Can two concurrent instances mediate exactly the same participants? If yes, which recorded key/scope/version differentiates them? If no, which source rule and valid-time boundaries establish scoped uniqueness?",
+      "decision_options": [
+        "allow repeats with a documented discriminator",
+        "enforce scoped concurrent uniqueness with approved fields/interval",
+        "defer pending source evidence"
+      ],
+      "disposition": "PENDING_SCIENTIFIC_ADJUDICATION"
+    },
+    {
+      "relator": "RegulatoryAuthorization",
+      "tier": "A_explicit_context_reference",
+      "mediations": [
+        "authorizationAuthority",
+        "authorizationParty"
+      ],
+      "model_evidence": "Native typed association authorizationJurisdiction exists; its cardinality is unfilled. This is a potential discriminator, not a proven identity key.",
+      "untested_hypothesis": "authorized party, authority, jurisdiction, authorization scope and validity period",
+      "known_gap": [
+        "effective interval and uniqueness scope have not been established in the native model"
+      ],
+      "fixture_evidence": "Selected B2 focal SHACL accepts two same-party-tuple instances and rejects a missing end; no uniqueness constraint tested.",
+      "recommended_interim_rule": "Preserve repeatability and required mediation ends; do not set blanket max 1 or add tuple uniqueness.",
+      "author_question": "Can two concurrent instances mediate exactly the same participants? If yes, which recorded key/scope/version differentiates them? If no, which source rule and valid-time boundaries establish scoped uniqueness?",
+      "decision_options": [
+        "allow repeats with a documented discriminator",
+        "enforce scoped concurrent uniqueness with approved fields/interval",
+        "defer pending source evidence"
+      ],
+      "disposition": "PENDING_SCIENTIFIC_ADJUDICATION"
+    },
+    {
+      "relator": "RegulatoryOversight",
+      "tier": "C_no_extra_typed_reference",
+      "mediations": [
+        "oversightAuthorityRole",
+        "oversightGovernedEntity"
+      ],
+      "model_evidence": "No additional typed relation or attribute proves the proposed scope/time discriminator in the native model.",
+      "untested_hypothesis": "authority, governed entity, legal basis, scope and period",
+      "known_gap": [
+        "effective interval and uniqueness scope have not been established in the native model"
+      ],
+      "fixture_evidence": "Selected B2 focal SHACL accepts two same-party-tuple instances and rejects a missing end; no uniqueness constraint tested.",
+      "recommended_interim_rule": "Preserve repeatability and required mediation ends; do not set blanket max 1 or add tuple uniqueness.",
+      "author_question": "Can two concurrent instances mediate exactly the same participants? If yes, which recorded key/scope/version differentiates them? If no, which source rule and valid-time boundaries establish scoped uniqueness?",
+      "decision_options": [
+        "allow repeats with a documented discriminator",
+        "enforce scoped concurrent uniqueness with approved fields/interval",
+        "defer pending source evidence"
+      ],
+      "disposition": "PENDING_SCIENTIFIC_ADJUDICATION"
+    },
+    {
+      "relator": "SupplyDependency",
+      "tier": "B_indirect_context_references",
+      "mediations": [
+        "dependencyDependent",
+        "dependencyProvider"
+      ],
+      "model_evidence": "disruptionAffectsDependency and riskAssessmentConcernsDependency refer to this relator; neither is a confirmed identity discriminator.",
+      "untested_hypothesis": "dependent entity, provider, supplied subject and effective period",
+      "known_gap": [
+        "effective interval and uniqueness scope have not been established in the native model"
+      ],
+      "fixture_evidence": "Selected B2 focal SHACL accepts two same-party-tuple instances and rejects a missing end; no uniqueness constraint tested.",
+      "recommended_interim_rule": "Preserve repeatability and required mediation ends; do not set blanket max 1 or add tuple uniqueness.",
+      "author_question": "Can two concurrent instances mediate exactly the same participants? If yes, which recorded key/scope/version differentiates them? If no, which source rule and valid-time boundaries establish scoped uniqueness?",
+      "decision_options": [
+        "allow repeats with a documented discriminator",
+        "enforce scoped concurrent uniqueness with approved fields/interval",
+        "defer pending source evidence"
+      ],
+      "disposition": "PENDING_SCIENTIFIC_ADJUDICATION"
+    },
+    {
+      "relator": "ManufacturingResponsibility",
+      "tier": "C_no_extra_typed_reference",
+      "mediations": [
+        "manufacturingResponsibilityHolder",
+        "manufacturingResponsibilityCounterpart"
+      ],
+      "model_evidence": "No additional typed relation or attribute proves the proposed scope/time discriminator in the native model.",
+      "untested_hypothesis": "holder, subject, legal instrument and effective period",
+      "known_gap": [
+        "effective interval and uniqueness scope have not been established in the native model"
+      ],
+      "fixture_evidence": "Selected B2 focal SHACL accepts two same-party-tuple instances and rejects a missing end; no uniqueness constraint tested.",
+      "recommended_interim_rule": "Preserve repeatability and required mediation ends; do not set blanket max 1 or add tuple uniqueness.",
+      "author_question": "Can two concurrent instances mediate exactly the same participants? If yes, which recorded key/scope/version differentiates them? If no, which source rule and valid-time boundaries establish scoped uniqueness?",
+      "decision_options": [
+        "allow repeats with a documented discriminator",
+        "enforce scoped concurrent uniqueness with approved fields/interval",
+        "defer pending source evidence"
+      ],
+      "disposition": "PENDING_SCIENTIFIC_ADJUDICATION"
+    },
+    {
+      "relator": "ManufacturingSiteUse",
+      "tier": "C_no_extra_typed_reference",
+      "mediations": [
+        "manufacturingSiteUseHolder",
+        "manufacturingSiteUseCounterpart"
+      ],
+      "model_evidence": "No additional typed relation or attribute proves the proposed scope/time discriminator in the native model.",
+      "untested_hypothesis": "facility, assigning organization, use authorization and effective period",
+      "known_gap": [
+        "effective interval and uniqueness scope have not been established in the native model"
+      ],
+      "fixture_evidence": "Selected B2 focal SHACL accepts two same-party-tuple instances and rejects a missing end; no uniqueness constraint tested.",
+      "recommended_interim_rule": "Preserve repeatability and required mediation ends; do not set blanket max 1 or add tuple uniqueness.",
+      "author_question": "Can two concurrent instances mediate exactly the same participants? If yes, which recorded key/scope/version differentiates them? If no, which source rule and valid-time boundaries establish scoped uniqueness?",
+      "decision_options": [
+        "allow repeats with a documented discriminator",
+        "enforce scoped concurrent uniqueness with approved fields/interval",
+        "defer pending source evidence"
+      ],
+      "disposition": "PENDING_SCIENTIFIC_ADJUDICATION"
+    },
+    {
+      "relator": "ImportResponsibility",
+      "tier": "C_no_extra_typed_reference",
+      "mediations": [
+        "importResponsibilityHolder",
+        "importResponsibilityCounterpart"
+      ],
+      "model_evidence": "No additional typed relation or attribute proves the proposed scope/time discriminator in the native model.",
+      "untested_hypothesis": "importer, subject, legal instrument and effective period",
+      "known_gap": [
+        "effective interval and uniqueness scope have not been established in the native model"
+      ],
+      "fixture_evidence": "Selected B2 focal SHACL accepts two same-party-tuple instances and rejects a missing end; no uniqueness constraint tested.",
+      "recommended_interim_rule": "Preserve repeatability and required mediation ends; do not set blanket max 1 or add tuple uniqueness.",
+      "author_question": "Can two concurrent instances mediate exactly the same participants? If yes, which recorded key/scope/version differentiates them? If no, which source rule and valid-time boundaries establish scoped uniqueness?",
+      "decision_options": [
+        "allow repeats with a documented discriminator",
+        "enforce scoped concurrent uniqueness with approved fields/interval",
+        "defer pending source evidence"
+      ],
+      "disposition": "PENDING_SCIENTIFIC_ADJUDICATION"
+    },
+    {
+      "relator": "WholesaleResponsibility",
+      "tier": "C_no_extra_typed_reference",
+      "mediations": [
+        "wholesaleResponsibilityHolder",
+        "wholesaleResponsibilityCounterpart"
+      ],
+      "model_evidence": "No additional typed relation or attribute proves the proposed scope/time discriminator in the native model.",
+      "untested_hypothesis": "distributor, subject, legal instrument and effective period",
+      "known_gap": [
+        "effective interval and uniqueness scope have not been established in the native model"
+      ],
+      "fixture_evidence": "Selected B2 focal SHACL accepts two same-party-tuple instances and rejects a missing end; no uniqueness constraint tested.",
+      "recommended_interim_rule": "Preserve repeatability and required mediation ends; do not set blanket max 1 or add tuple uniqueness.",
+      "author_question": "Can two concurrent instances mediate exactly the same participants? If yes, which recorded key/scope/version differentiates them? If no, which source rule and valid-time boundaries establish scoped uniqueness?",
+      "decision_options": [
+        "allow repeats with a documented discriminator",
+        "enforce scoped concurrent uniqueness with approved fields/interval",
+        "defer pending source evidence"
+      ],
+      "disposition": "PENDING_SCIENTIFIC_ADJUDICATION"
+    },
+    {
+      "relator": "LogisticsServiceCommitment",
+      "tier": "C_no_extra_typed_reference",
+      "mediations": [
+        "logisticsServiceCommitmentHolder",
+        "logisticsServiceCommitmentCounterpart"
+      ],
+      "model_evidence": "No additional typed relation or attribute proves the proposed scope/time discriminator in the native model.",
+      "untested_hypothesis": "provider, client, service scope and effective period",
+      "known_gap": [
+        "effective interval and uniqueness scope have not been established in the native model"
+      ],
+      "fixture_evidence": "Selected B2 focal SHACL accepts two same-party-tuple instances and rejects a missing end; no uniqueness constraint tested.",
+      "recommended_interim_rule": "Preserve repeatability and required mediation ends; do not set blanket max 1 or add tuple uniqueness.",
+      "author_question": "Can two concurrent instances mediate exactly the same participants? If yes, which recorded key/scope/version differentiates them? If no, which source rule and valid-time boundaries establish scoped uniqueness?",
+      "decision_options": [
+        "allow repeats with a documented discriminator",
+        "enforce scoped concurrent uniqueness with approved fields/interval",
+        "defer pending source evidence"
+      ],
+      "disposition": "PENDING_SCIENTIFIC_ADJUDICATION"
+    },
+    {
+      "relator": "DistributionSiteUse",
+      "tier": "C_no_extra_typed_reference",
+      "mediations": [
+        "distributionSiteUseHolder",
+        "distributionSiteUseCounterpart"
+      ],
+      "model_evidence": "No additional typed relation or attribute proves the proposed scope/time discriminator in the native model.",
+      "untested_hypothesis": "site, assigning organization, use authorization and effective period",
+      "known_gap": [
+        "effective interval and uniqueness scope have not been established in the native model"
+      ],
+      "fixture_evidence": "Selected B2 focal SHACL accepts two same-party-tuple instances and rejects a missing end; no uniqueness constraint tested.",
+      "recommended_interim_rule": "Preserve repeatability and required mediation ends; do not set blanket max 1 or add tuple uniqueness.",
+      "author_question": "Can two concurrent instances mediate exactly the same participants? If yes, which recorded key/scope/version differentiates them? If no, which source rule and valid-time boundaries establish scoped uniqueness?",
+      "decision_options": [
+        "allow repeats with a documented discriminator",
+        "enforce scoped concurrent uniqueness with approved fields/interval",
+        "defer pending source evidence"
+      ],
+      "disposition": "PENDING_SCIENTIFIC_ADJUDICATION"
+    },
+    {
+      "relator": "RegulatoryMandate",
+      "tier": "C_no_extra_typed_reference",
+      "mediations": [
+        "regulatoryMandateHolder",
+        "regulatoryMandateCounterpart"
+      ],
+      "model_evidence": "No additional typed relation or attribute proves the proposed scope/time discriminator in the native model.",
+      "untested_hypothesis": "authority, conferring organization, jurisdiction, legal instrument and effective period",
+      "known_gap": [
+        "effective interval and uniqueness scope have not been established in the native model"
+      ],
+      "fixture_evidence": "Selected B2 focal SHACL accepts two same-party-tuple instances and rejects a missing end; no uniqueness constraint tested.",
+      "recommended_interim_rule": "Preserve repeatability and required mediation ends; do not set blanket max 1 or add tuple uniqueness.",
+      "author_question": "Can two concurrent instances mediate exactly the same participants? If yes, which recorded key/scope/version differentiates them? If no, which source rule and valid-time boundaries establish scoped uniqueness?",
+      "decision_options": [
+        "allow repeats with a documented discriminator",
+        "enforce scoped concurrent uniqueness with approved fields/interval",
+        "defer pending source evidence"
+      ],
+      "disposition": "PENDING_SCIENTIFIC_ADJUDICATION"
+    },
+    {
+      "relator": "ProductLabelResponsibility",
+      "tier": "C_no_extra_typed_reference",
+      "mediations": [
+        "productLabelResponsibilityHolder",
+        "productLabelResponsibilityCounterpart"
+      ],
+      "model_evidence": "No additional typed relation or attribute proves the proposed scope/time discriminator in the native model.",
+      "untested_hypothesis": "responsible organization, product, commitment and effective period",
+      "known_gap": [
+        "effective interval and uniqueness scope have not been established in the native model"
+      ],
+      "fixture_evidence": "Selected B2 focal SHACL accepts two same-party-tuple instances and rejects a missing end; no uniqueness constraint tested.",
+      "recommended_interim_rule": "Preserve repeatability and required mediation ends; do not set blanket max 1 or add tuple uniqueness.",
+      "author_question": "Can two concurrent instances mediate exactly the same participants? If yes, which recorded key/scope/version differentiates them? If no, which source rule and valid-time boundaries establish scoped uniqueness?",
+      "decision_options": [
+        "allow repeats with a documented discriminator",
+        "enforce scoped concurrent uniqueness with approved fields/interval",
+        "defer pending source evidence"
+      ],
+      "disposition": "PENDING_SCIENTIFIC_ADJUDICATION"
+    },
+    {
+      "relator": "InstitutionalFundingCommitment",
+      "tier": "C_no_extra_typed_reference",
+      "mediations": [
+        "institutionalFundingCommitmentHolder",
+        "institutionalFundingCommitmentCounterpart"
+      ],
+      "model_evidence": "No additional typed relation or attribute proves the proposed scope/time discriminator in the native model.",
+      "untested_hypothesis": "funding organization, funded organization, institutional instrument and effective period",
+      "known_gap": [
+        "effective interval and uniqueness scope have not been established in the native model"
+      ],
+      "fixture_evidence": "Selected B2 focal SHACL accepts two same-party-tuple instances and rejects a missing end; no uniqueness constraint tested.",
+      "recommended_interim_rule": "Preserve repeatability and required mediation ends; do not set blanket max 1 or add tuple uniqueness.",
+      "author_question": "Can two concurrent instances mediate exactly the same participants? If yes, which recorded key/scope/version differentiates them? If no, which source rule and valid-time boundaries establish scoped uniqueness?",
+      "decision_options": [
+        "allow repeats with a documented discriminator",
+        "enforce scoped concurrent uniqueness with approved fields/interval",
+        "defer pending source evidence"
+      ],
+      "disposition": "PENDING_SCIENTIFIC_ADJUDICATION"
+    }
+  ],
+  "official_detector_status": "NOT_RUN",
+  "author_signoff": "PENDING"
+}

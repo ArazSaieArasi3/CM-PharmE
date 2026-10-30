@@ -1,0 +1,144 @@
+{
+  "source": {
+    "url": "https://www.ema.europa.eu/system/files/documents/other/20260428_mah-user-guide_for-publication-en.pdf",
+    "resolved_url": "https://www.ema.europa.eu/system/files/documents/other/20260428_mah-user-guide_for-publication-en.pdf",
+    "retrieved_at": "2026-10-09T20:48:09.853469+00:00",
+    "bytes": 4662771,
+    "sha256": "824d036a0cca848a9cd3e33bd58d4a0df1351059798e3b6429621130ecb41405",
+    "document_version": "1.4",
+    "document_date": "2026-04-28",
+    "pages_used": [
+      7,
+      19,
+      24,
+      35,
+      49,
+      51
+    ],
+    "cached_pdf_in_repository": false,
+    "reason": "Source URL and byte hash recorded; selected semantics are manually traced, no invented action data.",
+    "page_numbering": "printed one-based PDF pages"
+  },
+  "extractions": [
+    {
+      "id": "E01",
+      "pages": [
+        35
+      ],
+      "rule": "A specific preparedness action or crisis determines its own product scope and reporting start; generic guidance is not an action announcement.",
+      "requirements": [
+        "CTX-04",
+        "CTX-05"
+      ]
+    },
+    {
+      "id": "E02",
+      "pages": [
+        35,
+        51
+      ],
+      "rule": "Availability templates require marketed or temporarily unavailable status for the relevant product/presentation and country.",
+      "requirements": [
+        "CTX-02",
+        "CTX-07"
+      ]
+    },
+    {
+      "id": "E03",
+      "pages": [
+        35
+      ],
+      "rule": "Manufacturing and alternative-therapy forms are generated independently of marketing status.",
+      "requirements": [
+        "CTX-07"
+      ]
+    },
+    {
+      "id": "E04",
+      "pages": [
+        49
+      ],
+      "rule": "Submission frequency is specified for the particular crisis or preparedness action.",
+      "requirements": [
+        "CTX-06"
+      ]
+    },
+    {
+      "id": "E05",
+      "pages": [
+        19,
+        24
+      ],
+      "rule": "Routine CAP shortage templates use the marketing status of the presentation in the specific country.",
+      "requirements": [
+        "CTX-02",
+        "CTX-07"
+      ]
+    },
+    {
+      "id": "E06",
+      "pages": [
+        7,
+        35
+      ],
+      "rule": "Product-master-data completeness and account/access prerequisites remain separate from matching the bounded scope criteria.",
+      "requirements": [
+        "CTX-08"
+      ]
+    }
+  ],
+  "status": "MANUAL_SOURCE_TRACED_DESIGN_EXTRACTION_NOT_INDEPENDENT_EXPERT_VALIDATION",
+  "profiles": [
+    {
+      "id": "https://w3id.org/cm-pharme/experimental/reporting-context/EMA-routine-cap-1.4",
+      "scenario": "routine",
+      "kind": "routine-shortage",
+      "marketing_policy": "require-marketed-status",
+      "pages": [
+        19,
+        24
+      ]
+    },
+    {
+      "id": "https://w3id.org/cm-pharme/experimental/reporting-context/EMA-preparedness-availability-1.4",
+      "scenario": "preparedness",
+      "kind": "availability",
+      "marketing_policy": "require-marketed-status",
+      "pages": [
+        35,
+        51
+      ]
+    },
+    {
+      "id": "https://w3id.org/cm-pharme/experimental/reporting-context/EMA-preparedness-manufacturing-1.4",
+      "scenario": "preparedness",
+      "kind": "manufacturing",
+      "marketing_policy": "not-a-condition",
+      "pages": [
+        35
+      ]
+    },
+    {
+      "id": "https://w3id.org/cm-pharme/experimental/reporting-context/EMA-preparedness-alternatives-1.4",
+      "scenario": "preparedness",
+      "kind": "alternative-therapies",
+      "marketing_policy": "not-a-condition",
+      "pages": [
+        35
+      ]
+    },
+    {
+      "id": "https://w3id.org/cm-pharme/experimental/reporting-context/EMA-crisis-availability-1.4",
+      "scenario": "crisis",
+      "kind": "availability",
+      "marketing_policy": "require-marketed-status",
+      "pages": [
+        35,
+        51
+      ]
+    }
+  ],
+  "real_operational_ESMP_submissions": 0,
+  "real_action_announcements_retrieved": 0,
+  "search_limit": "Targeted searches on ema.europa.eu found versioned guidance, platform launch notices and descriptions of preparedness monitoring. No complete action-specific notice with product scope/start/frequency was retrieved. This does not prove none exists."
+}

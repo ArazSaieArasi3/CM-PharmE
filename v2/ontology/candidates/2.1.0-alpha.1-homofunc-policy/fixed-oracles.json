@@ -1,0 +1,147 @@
+{
+  "cases": [
+    {
+      "expected_archived_occurrences": 1,
+      "expected_profile_frame_match": 0,
+      "id": "lower-0-upper-0",
+      "lower": 0,
+      "mutation": "none",
+      "upper": 0
+    },
+    {
+      "expected_archived_occurrences": 1,
+      "expected_profile_frame_match": 0,
+      "id": "lower-0-upper-1",
+      "lower": 0,
+      "mutation": "none",
+      "upper": 1
+    },
+    {
+      "expected_archived_occurrences": 1,
+      "expected_profile_frame_match": 0,
+      "id": "lower-0-upper-2",
+      "lower": 0,
+      "mutation": "none",
+      "upper": 2
+    },
+    {
+      "expected_archived_occurrences": 1,
+      "expected_profile_frame_match": 0,
+      "id": "lower-0-upper-unlimited",
+      "lower": 0,
+      "mutation": "none",
+      "upper": -1
+    },
+    {
+      "expected_archived_occurrences": 1,
+      "expected_profile_frame_match": 0,
+      "id": "lower-1-upper-1",
+      "lower": 1,
+      "mutation": "none",
+      "upper": 1
+    },
+    {
+      "expected_archived_occurrences": 1,
+      "expected_profile_frame_match": 0,
+      "id": "lower-1-upper-2",
+      "lower": 1,
+      "mutation": "none",
+      "upper": 2
+    },
+    {
+      "expected_archived_occurrences": 1,
+      "expected_profile_frame_match": 0,
+      "id": "lower-1-upper-unlimited",
+      "lower": 1,
+      "mutation": "none",
+      "upper": -1
+    },
+    {
+      "expected_archived_occurrences": 1,
+      "expected_profile_frame_match": 1,
+      "id": "lower-2-upper-2",
+      "lower": 2,
+      "mutation": "none",
+      "upper": 2
+    },
+    {
+      "expected_archived_occurrences": 1,
+      "expected_profile_frame_match": 1,
+      "id": "lower-2-upper-3",
+      "lower": 2,
+      "mutation": "none",
+      "upper": 3
+    },
+    {
+      "expected_archived_occurrences": 1,
+      "expected_profile_frame_match": 1,
+      "id": "lower-2-upper-unlimited",
+      "lower": 2,
+      "mutation": "none",
+      "upper": -1
+    },
+    {
+      "expected_archived_occurrences": 1,
+      "expected_profile_frame_match": 1,
+      "id": "lower-3-upper-3",
+      "lower": 3,
+      "mutation": "none",
+      "upper": 3
+    },
+    {
+      "expected_archived_occurrences": 1,
+      "expected_profile_frame_match": 1,
+      "id": "lower-3-upper-unlimited",
+      "lower": 3,
+      "mutation": "none",
+      "upper": -1
+    },
+    {
+      "expected_archived_occurrences": 0,
+      "expected_profile_frame_match": 0,
+      "id": "two-part-types",
+      "lower": 2,
+      "mutation": "two-parts",
+      "upper": 2
+    },
+    {
+      "expected_archived_occurrences": 1,
+      "expected_profile_frame_match": 0,
+      "id": "reordered-lower-one",
+      "lower": 1,
+      "mutation": "reordered",
+      "upper": -1
+    },
+    {
+      "expected_archived_occurrences": 1,
+      "expected_profile_frame_match": 1,
+      "id": "reordered-lower-two",
+      "lower": 2,
+      "mutation": "reordered",
+      "upper": -1
+    },
+    {
+      "expected_archived_occurrences": 1,
+      "expected_profile_frame_match": 0,
+      "id": "whole-lower-two-only",
+      "lower": 1,
+      "mutation": "whole-lower-two",
+      "upper": -1
+    }
+  ],
+  "profile": "CMPE-HomoFunc-MinimumTwo/1.0.0",
+  "refused_inputs": [
+    "missing_lower",
+    "missing_upper",
+    "negative_lower",
+    "invalid_interval",
+    "untyped_end",
+    "duplicate_id",
+    "unsupported_subsetting",
+    "ambiguous_aggregation",
+    "unsupported_stereotype",
+    "unsupported_ancestry"
+  ],
+  "schema_version": 1,
+  "scope": "One explicit direct componentOf frame, or a two-distinct-part negative control, with only nonabstract legacy Kinds and no ancestry; not a full model search."
+}

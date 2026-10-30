@@ -1,0 +1,821 @@
+{
+  "requirements": [
+    {
+      "id": "R-RM-01",
+      "statement_fa": "موضوع هر ارزیابی ریسک باید به زمینهٔ دارویی مشخص قابل ردیابی باشد.",
+      "original_acceptance_fa": "پرسش، محصول/تأسیسات/وابستگی موضوع را برگرداند؛ موضوع نامعلوم به‌عنوان نقص اطلاعات مشخص شود.",
+      "source_ids": [
+        "S1",
+        "S6"
+      ],
+      "competency_question_ids": [
+        "CQ-RM-01"
+      ],
+      "candidate_properties": [
+        "assessmentScenario",
+        "scenarioProduct"
+      ],
+      "admission_profiles": [
+        "risk-assessment",
+        "risk-scenario"
+      ],
+      "fixture_paths": [
+        "fixtures/RM-1-positive.ttl",
+        "fixtures/RM-2-boundary.ttl",
+        "fixtures/RM-3-missing-scenario-topic.ttl"
+      ],
+      "bounded_case_expectations_pass": true,
+      "query_expectations_pass": true,
+      "related_module_reasoner_cases": [
+        "RM-identity-collision",
+        "RM-plan-with-zero-executions-countermodel"
+      ],
+      "coverage_limit": "Product path tested; facility and supply-dependency scenario paths remain unimplemented.",
+      "status": "MAPPED_WITH_BOUNDED_EVIDENCE_NOT_ACCEPTED",
+      "author_acceptance": false
+    },
+    {
+      "id": "R-RM-02",
+      "statement_fa": "نتیجهٔ هر ارزیابی باید از رخداد انجام ارزیابی متمایز باشد.",
+      "original_acceptance_fa": "شناسه نتیجه و رخداد قابل تفکیک باشند؛ نبود نتیجهٔ منتشرشده به معنی نبود رخداد نیست.",
+      "source_ids": [
+        "S1",
+        "S6"
+      ],
+      "competency_question_ids": [
+        "CQ-RM-01"
+      ],
+      "candidate_properties": [
+        "resultAssessment"
+      ],
+      "admission_profiles": [
+        "risk-result"
+      ],
+      "fixture_paths": [
+        "fixtures/RM-1-positive.ttl",
+        "fixtures/RM-2-boundary.ttl",
+        "fixtures/RM-3-result-is-assessment.ttl"
+      ],
+      "bounded_case_expectations_pass": true,
+      "query_expectations_pass": true,
+      "related_module_reasoner_cases": [
+        "RM-identity-collision",
+        "RM-plan-with-zero-executions-countermodel"
+      ],
+      "coverage_limit": "Event/content collision rejected; unpublished-result identity cases need an independent witness.",
+      "status": "MAPPED_WITH_BOUNDED_EVIDENCE_NOT_ACCEPTED",
+      "author_acceptance": false
+    },
+    {
+      "id": "R-RM-03",
+      "statement_fa": "مبنای شواهد هر نتیجهٔ ارزیابی باید قابل بازیابی باشد.",
+      "original_acceptance_fa": "نتیجهٔ پذیرفته‌شده در پروفایل داده به حداقل یک SourceRecord/Assertion متصل باشد.",
+      "source_ids": [
+        "S1",
+        "S6"
+      ],
+      "competency_question_ids": [
+        "CQ-RM-01"
+      ],
+      "candidate_properties": [
+        "citesSourceRecord"
+      ],
+      "admission_profiles": [
+        "risk-result"
+      ],
+      "fixture_paths": [
+        "fixtures/RM-1-positive.ttl",
+        "fixtures/RM-2-boundary.ttl",
+        "fixtures/RM-3-missing-evidence.ttl"
+      ],
+      "bounded_case_expectations_pass": true,
+      "query_expectations_pass": true,
+      "related_module_reasoner_cases": [
+        "RM-identity-collision",
+        "RM-plan-with-zero-executions-countermodel"
+      ],
+      "coverage_limit": "Recoverable citation is tested, not evidential strength or qualified EvidenceSupport.",
+      "status": "MAPPED_WITH_BOUNDED_EVIDENCE_NOT_ACCEPTED",
+      "author_acceptance": false
+    },
+    {
+      "id": "R-RM-04",
+      "statement_fa": "برنامهٔ رسیدگی باید به نتیجهٔ ارزیابی موردنظر متصل باشد.",
+      "original_acceptance_fa": "پرسش برنامه فقط ارزیابی‌های تصریح‌شده را برگرداند.",
+      "source_ids": [
+        "S1",
+        "S6"
+      ],
+      "competency_question_ids": [
+        "CQ-RM-02"
+      ],
+      "candidate_properties": [
+        "planRiskResult"
+      ],
+      "admission_profiles": [
+        "risk-plan"
+      ],
+      "fixture_paths": [
+        "fixtures/RM-1-positive.ttl",
+        "fixtures/RM-2-boundary.ttl",
+        "fixtures/RM-3-dangling-plan-result.ttl"
+      ],
+      "bounded_case_expectations_pass": true,
+      "query_expectations_pass": true,
+      "related_module_reasoner_cases": [
+        "RM-identity-collision",
+        "RM-plan-with-zero-executions-countermodel"
+      ],
+      "coverage_limit": "Typed explicit references tested; target Assertion need not yet satisfy the risk-result profile.",
+      "status": "MAPPED_WITH_BOUNDED_EVIDENCE_NOT_ACCEPTED",
+      "author_acceptance": false
+    },
+    {
+      "id": "R-RM-05",
+      "statement_fa": "وقوع اقدام رسیدگی باید مستقل از وجود برنامه قابل تشخیص باشد.",
+      "original_acceptance_fa": "وجود برنامه بدون رخداد، اجرای اقدام را نتیجه ندهد.",
+      "source_ids": [
+        "S1",
+        "S6"
+      ],
+      "competency_question_ids": [
+        "CQ-RM-02"
+      ],
+      "candidate_properties": [
+        "implementsRiskPlan"
+      ],
+      "admission_profiles": [
+        "risk-treatment"
+      ],
+      "fixture_paths": [
+        "fixtures/RM-1-positive.ttl",
+        "fixtures/RM-2-boundary.ttl",
+        "fixtures/RM-3-dangling-executed-plan.ttl"
+      ],
+      "bounded_case_expectations_pass": true,
+      "query_expectations_pass": true,
+      "related_module_reasoner_cases": [
+        "RM-identity-collision",
+        "RM-plan-with-zero-executions-countermodel"
+      ],
+      "coverage_limit": "HermiT countermodel permits a plan with zero executions; actual execution still requires evidence.",
+      "status": "MAPPED_WITH_BOUNDED_EVIDENCE_NOT_ACCEPTED",
+      "author_acceptance": false
+    },
+    {
+      "id": "R-RM-06",
+      "statement_fa": "هر بازبینی باید نتیجهٔ پیشین مورد بازبینی را مشخص کند.",
+      "original_acceptance_fa": "زنجیره نسخه/زمان نتیجه‌های قبلی حفظ شود.",
+      "source_ids": [
+        "S1",
+        "S6"
+      ],
+      "competency_question_ids": [
+        "CQ-RM-03"
+      ],
+      "candidate_properties": [
+        "reviewPriorResult",
+        "reviewNewResult",
+        "atTime"
+      ],
+      "admission_profiles": [
+        "risk-review"
+      ],
+      "fixture_paths": [
+        "fixtures/RM-1-positive.ttl",
+        "fixtures/RM-2-boundary.ttl",
+        "fixtures/RM-3-missing-review-predecessor.ttl",
+        "fixtures/RM-3-backdated-revision.ttl"
+      ],
+      "bounded_case_expectations_pass": true,
+      "query_expectations_pass": true,
+      "related_module_reasoner_cases": [
+        "RM-identity-collision",
+        "RM-plan-with-zero-executions-countermodel"
+      ],
+      "coverage_limit": "Two-result time ordering tested; full revision identity and review-author provenance remain open.",
+      "status": "MAPPED_WITH_BOUNDED_EVIDENCE_NOT_ACCEPTED",
+      "author_acceptance": false
+    },
+    {
+      "id": "R-PV-01",
+      "statement_fa": "اطلاعات گزارش ایمنی باید از رخداد گزارش‌کردن متمایز باشد.",
+      "original_acceptance_fa": "بازارسال همان محتوا، رخداد جدید را بدون ادغام خودکار گزارش‌ها ثبت کند.",
+      "source_ids": [
+        "S2",
+        "S3",
+        "S6"
+      ],
+      "competency_question_ids": [
+        "CQ-PV-01"
+      ],
+      "candidate_properties": [
+        "reportsRecord"
+      ],
+      "admission_profiles": [
+        "safety-reporting"
+      ],
+      "fixture_paths": [
+        "fixtures/PV-1-positive.ttl",
+        "fixtures/PV-2-boundary.ttl",
+        "fixtures/PV-3-reporting-is-record.ttl"
+      ],
+      "bounded_case_expectations_pass": true,
+      "query_expectations_pass": true,
+      "related_module_reasoner_cases": [
+        "PV-identity-collision",
+        "PV-signal-without-established-causality-countermodel",
+        "PV-jurisdiction-B-not-implied-countermodel"
+      ],
+      "coverage_limit": "Repeated reporting of one carrier tested; content identity across different report carriers is unresolved.",
+      "status": "MAPPED_WITH_BOUNDED_EVIDENCE_NOT_ACCEPTED",
+      "author_acceptance": false
+    },
+    {
+      "id": "R-PV-02",
+      "statement_fa": "موضوع سیگنال باید به محصول یا مادهٔ دارویی مشخص متصل باشد.",
+      "original_acceptance_fa": "سیگنال ماده‌ای بدون اجبار ساختن یک برند قابل ثبت باشد.",
+      "source_ids": [
+        "S2",
+        "S3",
+        "S6"
+      ],
+      "competency_question_ids": [
+        "CQ-PV-01"
+      ],
+      "candidate_properties": [
+        "signalProduct",
+        "signalSubstance"
+      ],
+      "admission_profiles": [
+        "safety-signal"
+      ],
+      "fixture_paths": [
+        "fixtures/PV-1-positive.ttl",
+        "fixtures/PV-2-boundary.ttl",
+        "fixtures/PV-3-missing-target.ttl"
+      ],
+      "bounded_case_expectations_pass": true,
+      "query_expectations_pass": true,
+      "related_module_reasoner_cases": [
+        "PV-identity-collision",
+        "PV-signal-without-established-causality-countermodel",
+        "PV-jurisdiction-B-not-implied-countermodel"
+      ],
+      "coverage_limit": "Both product and substance paths tested; no brand requirement introduced.",
+      "status": "MAPPED_WITH_BOUNDED_EVIDENCE_NOT_ACCEPTED",
+      "author_acceptance": false
+    },
+    {
+      "id": "R-PV-03",
+      "statement_fa": "پشتوانهٔ هر سیگنال باید به منابع آن قابل ردیابی باشد.",
+      "original_acceptance_fa": "منبع ادعاشده موجود و قابل ارجاع باشد؛ نبود گزارش فردی سیگنال مبتنی بر مطالعه را رد نکند.",
+      "source_ids": [
+        "S2",
+        "S3",
+        "S6"
+      ],
+      "competency_question_ids": [
+        "CQ-PV-01"
+      ],
+      "candidate_properties": [
+        "citesSourceRecord"
+      ],
+      "admission_profiles": [
+        "safety-signal"
+      ],
+      "fixture_paths": [
+        "fixtures/PV-1-positive.ttl",
+        "fixtures/PV-2-boundary.ttl",
+        "fixtures/PV-3-missing-signal-source.ttl"
+      ],
+      "bounded_case_expectations_pass": true,
+      "query_expectations_pass": true,
+      "related_module_reasoner_cases": [
+        "PV-identity-collision",
+        "PV-signal-without-established-causality-countermodel",
+        "PV-jurisdiction-B-not-implied-countermodel"
+      ],
+      "coverage_limit": "Study-source reference works without an individual report; citation is not established causal evidence.",
+      "status": "MAPPED_WITH_BOUNDED_EVIDENCE_NOT_ACCEPTED",
+      "author_acceptance": false
+    },
+    {
+      "id": "R-PV-04",
+      "statement_fa": "هر نتیجهٔ ارزیابی باید به سیگنال مورد ارزیابی متصل باشد.",
+      "original_acceptance_fa": "سیگنال و نتیجهٔ ارزیابی آن شناسه و نوع متمایز داشته باشند.",
+      "source_ids": [
+        "S2",
+        "S3",
+        "S6"
+      ],
+      "competency_question_ids": [
+        "CQ-PV-02"
+      ],
+      "candidate_properties": [
+        "pvResultSignal",
+        "pvResultAssessment",
+        "signalAssessmentTarget"
+      ],
+      "admission_profiles": [
+        "signal-result",
+        "signal-assessment"
+      ],
+      "fixture_paths": [
+        "fixtures/PV-1-positive.ttl",
+        "fixtures/PV-2-boundary.ttl",
+        "fixtures/PV-3-dangling-signal.ttl",
+        "fixtures/PV-3-signal-is-own-result.ttl",
+        "fixtures/PV-3-signal-result-alias.ttl",
+        "fixtures/PV-3-result-assessment-target-disagreement.ttl"
+      ],
+      "bounded_case_expectations_pass": true,
+      "query_expectations_pass": true,
+      "related_module_reasoner_cases": [
+        "PV-identity-collision",
+        "PV-signal-without-established-causality-countermodel",
+        "PV-jurisdiction-B-not-implied-countermodel"
+      ],
+      "coverage_limit": "Distinct identifiers and assessment-target agreement tested; both contents remain Assertion, with profile-level distinctions only.",
+      "status": "MAPPED_WITH_BOUNDED_EVIDENCE_NOT_ACCEPTED",
+      "author_acceptance": false
+    },
+    {
+      "id": "R-PV-05",
+      "statement_fa": "وضعیت نتیجهٔ ارزیابی باید به زمان ارزیابی مقید باشد.",
+      "original_acceptance_fa": "نتیجهٔ بازبینی، تاریخچهٔ قبلی را پاک نکند.",
+      "source_ids": [
+        "S2",
+        "S3",
+        "S6"
+      ],
+      "competency_question_ids": [
+        "CQ-PV-02"
+      ],
+      "candidate_properties": [
+        "atTime",
+        "signalStatus"
+      ],
+      "admission_profiles": [
+        "signal-result"
+      ],
+      "fixture_paths": [
+        "fixtures/PV-1-positive.ttl",
+        "fixtures/PV-2-boundary.ttl",
+        "fixtures/PV-3-missing-result-time.ttl"
+      ],
+      "bounded_case_expectations_pass": true,
+      "query_expectations_pass": true,
+      "related_module_reasoner_cases": [
+        "PV-identity-collision",
+        "PV-signal-without-established-causality-countermodel",
+        "PV-jurisdiction-B-not-implied-countermodel"
+      ],
+      "coverage_limit": "Two timed results preserved; authority responsible for an assessment and controlled status vocabulary remain open.",
+      "status": "MAPPED_WITH_BOUNDED_EVIDENCE_NOT_ACCEPTED",
+      "author_acceptance": false
+    },
+    {
+      "id": "R-PV-06",
+      "statement_fa": "اعمال الزام فارماکوویژیلانس باید به قلمرو مقرراتی مشخص مقید باشد.",
+      "original_acceptance_fa": "الزام منطقه A به‌طور خودکار به منطقه B تعمیم نیابد.",
+      "source_ids": [
+        "S2",
+        "S3",
+        "S6"
+      ],
+      "competency_question_ids": [
+        "CQ-PV-03"
+      ],
+      "candidate_properties": [
+        "pvRequirementJurisdiction",
+        "surveillanceRequirement"
+      ],
+      "admission_profiles": [
+        "pv-requirement",
+        "pv-surveillance"
+      ],
+      "fixture_paths": [
+        "fixtures/PV-1-positive.ttl",
+        "fixtures/PV-2-boundary.ttl",
+        "fixtures/PV-3-missing-jurisdiction.ttl"
+      ],
+      "bounded_case_expectations_pass": true,
+      "query_expectations_pass": true,
+      "related_module_reasoner_cases": [
+        "PV-identity-collision",
+        "PV-signal-without-established-causality-countermodel",
+        "PV-jurisdiction-B-not-implied-countermodel"
+      ],
+      "coverage_limit": "Explicit jurisdiction linkage and non-propagation tested; actual legal applicability/compliance is not inferred.",
+      "status": "MAPPED_WITH_BOUNDED_EVIDENCE_NOT_ACCEPTED",
+      "author_acceptance": false
+    },
+    {
+      "id": "R-BA-01",
+      "statement_fa": "هر EnterpriseCapability باید حامل سازمانی مشخص داشته باشد.",
+      "original_acceptance_fa": "حامل با رابطه موجود capabilityBearer قابل بازیابی باشد؛ Mode بی‌حامل در پروفایل کامل رد شود.",
+      "source_ids": [
+        "S4",
+        "S5",
+        "S7"
+      ],
+      "competency_question_ids": [
+        "CQ-BA-01"
+      ],
+      "candidate_properties": [
+        "c:capabilityBearer"
+      ],
+      "admission_profiles": [
+        "ba-service"
+      ],
+      "fixture_paths": [
+        "fixtures/BA-1-positive.ttl",
+        "fixtures/BA-2-boundary.ttl",
+        "fixtures/BA-3-missing-capability-bearer.ttl"
+      ],
+      "bounded_case_expectations_pass": true,
+      "query_expectations_pass": true,
+      "related_module_reasoner_cases": [
+        "BA-identity-collision",
+        "BA-capability-with-zero-exercises-countermodel"
+      ],
+      "coverage_limit": "Reuses the existing intrinsic Mode bearer relation; this does not adjudicate every capability identity condition.",
+      "status": "MAPPED_WITH_BOUNDED_EVIDENCE_NOT_ACCEPTED",
+      "author_acceptance": false
+    },
+    {
+      "id": "R-BA-02",
+      "statement_fa": "وجود قابلیت نباید وقوع فعالیت متناظر را الزام کند.",
+      "original_acceptance_fa": "سازمان دارای قابلیت غیرفعال مجاز باشد.",
+      "source_ids": [
+        "S4",
+        "S5",
+        "S7"
+      ],
+      "competency_question_ids": [
+        "CQ-BA-01"
+      ],
+      "candidate_properties": [
+        "capabilityRealizedIn"
+      ],
+      "admission_profiles": [
+        "ba-service"
+      ],
+      "fixture_paths": [
+        "fixtures/BA-1-positive.ttl",
+        "fixtures/BA-2-boundary.ttl"
+      ],
+      "bounded_case_expectations_pass": true,
+      "query_expectations_pass": true,
+      "related_module_reasoner_cases": [
+        "BA-identity-collision",
+        "BA-capability-with-zero-exercises-countermodel"
+      ],
+      "coverage_limit": "Consistent zero-exercise countermodel tested; realization only targets ManufacturingActivity in this experiment.",
+      "status": "MAPPED_WITH_BOUNDED_EVIDENCE_NOT_ACCEPTED",
+      "author_acceptance": false
+    },
+    {
+      "id": "R-BA-03",
+      "statement_fa": "ServiceOfferingSpecification باید به موضوع خدمت دارویی متصل باشد.",
+      "original_acceptance_fa": "حداقل یک قابلیت/فعالیت/محصول مرتبط در پروفایل پذیرفته‌شده مشخص باشد.",
+      "source_ids": [
+        "S4",
+        "S5",
+        "S7"
+      ],
+      "competency_question_ids": [
+        "CQ-BA-02"
+      ],
+      "candidate_properties": [
+        "serviceCapability"
+      ],
+      "admission_profiles": [
+        "ba-service"
+      ],
+      "fixture_paths": [
+        "fixtures/BA-1-positive.ttl",
+        "fixtures/BA-2-boundary.ttl",
+        "fixtures/BA-3-service-without-capability.ttl"
+      ],
+      "bounded_case_expectations_pass": true,
+      "query_expectations_pass": true,
+      "related_module_reasoner_cases": [
+        "BA-identity-collision",
+        "BA-capability-with-zero-exercises-countermodel"
+      ],
+      "coverage_limit": "Capability dependency tested; a generic capability does not yet establish a pharmaceutical service context.",
+      "status": "MAPPED_WITH_BOUNDED_EVIDENCE_NOT_ACCEPTED",
+      "author_acceptance": false
+    },
+    {
+      "id": "R-BA-04",
+      "statement_fa": "BusinessArchitectureView باید به شناسه‌های موجودیت‌های اصلی ارجاع دهد.",
+      "original_acceptance_fa": "نمای جدید برای یک سازمان، سازمان دوم ایجاد نکند.",
+      "source_ids": [
+        "S4",
+        "S5",
+        "S7"
+      ],
+      "competency_question_ids": [
+        "CQ-BA-03"
+      ],
+      "candidate_properties": [
+        "viewOrganization",
+        "viewService"
+      ],
+      "admission_profiles": [
+        "ba-view"
+      ],
+      "fixture_paths": [
+        "fixtures/BA-1-positive.ttl",
+        "fixtures/BA-2-boundary.ttl",
+        "fixtures/BA-3-view-is-organization.ttl",
+        "fixtures/BA-3-untyped-view-reference.ttl"
+      ],
+      "bounded_case_expectations_pass": true,
+      "query_expectations_pass": true,
+      "related_module_reasoner_cases": [
+        "BA-identity-collision",
+        "BA-capability-with-zero-exercises-countermodel"
+      ],
+      "coverage_limit": "Reuses organization identifiers; no automatic new organization follows from creating a view.",
+      "status": "MAPPED_WITH_BOUNDED_EVIDENCE_NOT_ACCEPTED",
+      "author_acceptance": false
+    },
+    {
+      "id": "R-BA-05",
+      "statement_fa": "مشارکت در StrategicPartnershipAgreement باید از تعامل اتفاقی متمایز باشد.",
+      "original_acceptance_fa": "تعامل بدون شاهد تعهد، خودکار PartnerOrganizationRole نسازد.",
+      "source_ids": [
+        "S4",
+        "S5",
+        "S7"
+      ],
+      "competency_question_ids": [
+        "CQ-BA-03"
+      ],
+      "candidate_properties": [
+        "c:partnershipParticipant"
+      ],
+      "admission_profiles": [
+        "ba-partnership"
+      ],
+      "fixture_paths": [
+        "fixtures/BA-1-positive.ttl",
+        "fixtures/BA-2-boundary.ttl",
+        "fixtures/BA-3-one-partner-only.ttl",
+        "fixtures/BA-3-known-partner-aliases.ttl"
+      ],
+      "bounded_case_expectations_pass": true,
+      "query_expectations_pass": true,
+      "related_module_reasoner_cases": [
+        "BA-identity-collision",
+        "BA-capability-with-zero-exercises-countermodel"
+      ],
+      "coverage_limit": "Only participant admission tested. Commitment evidence and casual-interaction-without-partner inference remain unimplemented.",
+      "status": "MAPPED_WITH_BOUNDED_EVIDENCE_NOT_ACCEPTED",
+      "author_acceptance": false
+    },
+    {
+      "id": "R-BA-06",
+      "statement_fa": "هویت موجودیت‌های هسته باید مستقل از وجود نمای معماری بماند.",
+      "original_acceptance_fa": "حذف نمای اختیاری، هویت یا طبقه‌بندی اجباری محصول و تأسیسات را تغییر ندهد.",
+      "source_ids": [
+        "S4",
+        "S5",
+        "S7"
+      ],
+      "competency_question_ids": [
+        "CQ-BA-03"
+      ],
+      "candidate_properties": [
+        "viewOrganization"
+      ],
+      "admission_profiles": [
+        "ba-view"
+      ],
+      "fixture_paths": [
+        "fixtures/BA-1-positive.ttl",
+        "fixtures/BA-2-boundary.ttl"
+      ],
+      "bounded_case_expectations_pass": true,
+      "query_expectations_pass": true,
+      "related_module_reasoner_cases": [
+        "BA-identity-collision",
+        "BA-capability-with-zero-exercises-countermodel"
+      ],
+      "coverage_limit": "Fixture without a view keeps explicit product/facility types; no full identity or deletion semantics proof.",
+      "status": "MAPPED_WITH_BOUNDED_EVIDENCE_NOT_ACCEPTED",
+      "author_acceptance": false
+    },
+    {
+      "id": "R-DS-01",
+      "statement_fa": "هویت جزء سامانه باید از هویت رکورد تولیدشده متمایز باشد.",
+      "original_acceptance_fa": "سامانه و SourceRecord شناسه و نوع قابل تفکیک داشته باشند.",
+      "source_ids": [
+        "S5",
+        "S6"
+      ],
+      "competency_question_ids": [
+        "CQ-DS-02"
+      ],
+      "candidate_properties": [
+        "recordDigitalActivity",
+        "deploymentComponent"
+      ],
+      "admission_profiles": [
+        "digital-record",
+        "deployment"
+      ],
+      "fixture_paths": [
+        "fixtures/DS-1-positive.ttl",
+        "fixtures/DS-2-boundary.ttl",
+        "fixtures/DS-3-record-is-component.ttl"
+      ],
+      "bounded_case_expectations_pass": true,
+      "query_expectations_pass": true,
+      "related_module_reasoner_cases": [
+        "DS-identity-collision",
+        "DS-record-with-no-authorization-in-model-countermodel"
+      ],
+      "coverage_limit": "Explicit record/component identity collision rejected; software artifact versus agent modeling remains open.",
+      "status": "MAPPED_WITH_BOUNDED_EVIDENCE_NOT_ACCEPTED",
+      "author_acceptance": false
+    },
+    {
+      "id": "R-DS-02",
+      "statement_fa": "نسخه جزء سامانهٔ استفاده‌شده باید قابل بازیابی باشد.",
+      "original_acceptance_fa": "دو اجرای دارای نسخه‌های مختلف در ردیابی ادغام نشوند.",
+      "source_ids": [
+        "S5",
+        "S6"
+      ],
+      "competency_question_ids": [
+        "CQ-DS-01"
+      ],
+      "candidate_properties": [
+        "digitalActivityDeployment",
+        "componentVersion"
+      ],
+      "admission_profiles": [
+        "digital-activity",
+        "deployment"
+      ],
+      "fixture_paths": [
+        "fixtures/DS-1-positive.ttl",
+        "fixtures/DS-2-boundary.ttl",
+        "fixtures/DS-3-missing-version.ttl"
+      ],
+      "bounded_case_expectations_pass": true,
+      "query_expectations_pass": true,
+      "related_module_reasoner_cases": [
+        "DS-identity-collision",
+        "DS-record-with-no-authorization-in-model-countermodel"
+      ],
+      "coverage_limit": "Two deployments/versions preserve the first record trace; version identity is a local string, not a complete version model.",
+      "status": "MAPPED_WITH_BOUNDED_EVIDENCE_NOT_ACCEPTED",
+      "author_acceptance": false
+    },
+    {
+      "id": "R-DS-03",
+      "statement_fa": "رابطه پشتیبانی سامانه باید به فعالیت دارویی مشخص متصل باشد.",
+      "original_acceptance_fa": "نام بردن سامانه بدون فعالیت مرتبط، پوشش عملکرد دامنه شمرده نشود.",
+      "source_ids": [
+        "S5",
+        "S6"
+      ],
+      "competency_question_ids": [
+        "CQ-DS-01"
+      ],
+      "candidate_properties": [
+        "digitalServiceActivity",
+        "digitalServiceComponent"
+      ],
+      "admission_profiles": [
+        "digital-service"
+      ],
+      "fixture_paths": [
+        "fixtures/DS-1-positive.ttl",
+        "fixtures/DS-2-boundary.ttl",
+        "fixtures/DS-3-service-without-supported-activity.ttl"
+      ],
+      "bounded_case_expectations_pass": true,
+      "query_expectations_pass": true,
+      "related_module_reasoner_cases": [
+        "DS-identity-collision",
+        "DS-record-with-no-authorization-in-model-countermodel"
+      ],
+      "coverage_limit": "Only ingestion/transformation ProvenanceActivity is supported; pharmaceutical business-activity grounding is still missing.",
+      "status": "MAPPED_WITH_BOUNDED_EVIDENCE_NOT_ACCEPTED",
+      "author_acceptance": false
+    },
+    {
+      "id": "R-DS-04",
+      "statement_fa": "منشأ رکورد باید از مسیر فعالیت تولیدکننده قابل ردیابی باشد.",
+      "original_acceptance_fa": "مسیر رکورد→فعالیت→جزء/نسخه و عامل مسئول برای پروفایل کامل قابل پرس‌وجو باشد.",
+      "source_ids": [
+        "S5",
+        "S6"
+      ],
+      "competency_question_ids": [
+        "CQ-DS-02"
+      ],
+      "candidate_properties": [
+        "recordDigitalActivity",
+        "digitalActivityDeployment",
+        "deploymentComponent",
+        "deploymentOrganization"
+      ],
+      "admission_profiles": [
+        "digital-record",
+        "digital-activity",
+        "deployment"
+      ],
+      "fixture_paths": [
+        "fixtures/DS-1-positive.ttl",
+        "fixtures/DS-2-boundary.ttl",
+        "fixtures/DS-3-missing-generating-activity.ttl"
+      ],
+      "bounded_case_expectations_pass": true,
+      "query_expectations_pass": true,
+      "related_module_reasoner_cases": [
+        "DS-identity-collision",
+        "DS-record-with-no-authorization-in-model-countermodel"
+      ],
+      "coverage_limit": "Record/activity/component/operator path queried; deployment organization is not automatically the responsible actor for every transformation.",
+      "status": "MAPPED_WITH_BOUNDED_EVIDENCE_NOT_ACCEPTED",
+      "author_acceptance": false
+    },
+    {
+      "id": "R-DS-05",
+      "statement_fa": "هر استقرار باید زمان وقوع مشخص داشته باشد.",
+      "original_acceptance_fa": "تغییر نسخه با رخداد استقرار جدید و حفظ تاریخچه نمایش داده شود.",
+      "source_ids": [
+        "S5",
+        "S6"
+      ],
+      "competency_question_ids": [
+        "CQ-DS-03"
+      ],
+      "candidate_properties": [
+        "atTime",
+        "componentVersion"
+      ],
+      "admission_profiles": [
+        "deployment",
+        "digital-activity"
+      ],
+      "fixture_paths": [
+        "fixtures/DS-1-positive.ttl",
+        "fixtures/DS-2-boundary.ttl",
+        "fixtures/DS-3-missing-deployment-time.ttl",
+        "fixtures/DS-3-deployment-after-use.ttl"
+      ],
+      "bounded_case_expectations_pass": true,
+      "query_expectations_pass": true,
+      "related_module_reasoner_cases": [
+        "DS-identity-collision",
+        "DS-record-with-no-authorization-in-model-countermodel"
+      ],
+      "coverage_limit": "Timestamped upgrade history tested; validity intervals, overlapping deployments and rollback policy remain open.",
+      "status": "MAPPED_WITH_BOUNDED_EVIDENCE_NOT_ACCEPTED",
+      "author_acceptance": false
+    },
+    {
+      "id": "R-DS-06",
+      "statement_fa": "وجود رکورد دیجیتال نباید به‌تنهایی مجوز مقرراتی ایجاد کند.",
+      "original_acceptance_fa": "رکورد رجیستری بدون شاهد مجوز، RegulatoryAuthorization استنتاج نکند.",
+      "source_ids": [
+        "S5",
+        "S6"
+      ],
+      "competency_question_ids": [
+        "CQ-DS-02"
+      ],
+      "candidate_properties": [
+        "recordDigitalActivity"
+      ],
+      "admission_profiles": [
+        "digital-record"
+      ],
+      "fixture_paths": [
+        "fixtures/DS-1-positive.ttl",
+        "fixtures/DS-2-boundary.ttl"
+      ],
+      "bounded_case_expectations_pass": true,
+      "query_expectations_pass": true,
+      "related_module_reasoner_cases": [
+        "DS-identity-collision",
+        "DS-record-with-no-authorization-in-model-countermodel"
+      ],
+      "coverage_limit": "A consistent model with no RegulatoryAuthorization shows the scoped non-entailment; no registry or compliance completeness claim.",
+      "status": "MAPPED_WITH_BOUNDED_EVIDENCE_NOT_ACCEPTED",
+      "author_acceptance": false
+    }
+  ],
+  "mapped_count": 24,
+  "accepted_count": 0,
+  "meaning": "24/24 trace records, not 24/24 proven requirements. Every row retains an explicit limitation."
+}

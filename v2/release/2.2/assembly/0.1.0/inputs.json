@@ -1,0 +1,311 @@
+{
+  "schema_version": "CMPE22AssemblyManifest/0.1.0",
+  "source_commit": "f7f43cb3b6f3d3cef38c30daa65e552dff3ce7c7",
+  "status": "GOVERNED_PROVISIONAL_REVIEW_ASSEMBLY_NOT_SEMANTIC_PROMOTION",
+  "native_base": "v2/ontology/candidates/2.1.0-alpha.1-evidencerecord-projection/ontouml.json",
+  "native_experiment": "v2/ontology/candidates/2.1.0-alpha.1-domain-coherence-lab/ontouml-experimental.json",
+  "serialization_schema": "tools/v2_ontology/vendor/ontouml-schema.json",
+  "experimental_declaration_sources": [
+    "v2/ontology/candidates/2.1.0-alpha.1-four-domain-refinement/experimental.owl.ttl",
+    "v2/ontology/candidates/2.1.0-alpha.1-domain-coherence-lab/proposed-delta.ttl"
+  ],
+  "formal_lanes": [
+    {
+      "role": "Later formal base;retain native decision fidelity",
+      "paths": [
+        "v2/ontology/candidates/2.1.0-alpha.1-p3-facility-operation/active.ttl",
+        "v2/ontology/candidates/2.1.0-alpha.1-contextclass-projection/owl-delta.ttl",
+        "v2/ontology/candidates/2.1.0-alpha.1-evidencerecord-projection/owl-delta.ttl"
+      ],
+      "acceptance": "BOUNDED_PRIOR_EVIDENCE;NOT_FULL_ALIGNMENT"
+    },
+    {
+      "role": "Experimental declaration/evidence lane;do not blindly union old full graphs over later constraints",
+      "paths": [
+        "v2/ontology/candidates/2.1.0-alpha.1-four-domain-refinement/experimental.owl.ttl",
+        "v2/ontology/candidates/2.1.0-alpha.1-domain-coherence-lab/proposed-delta.ttl"
+      ],
+      "acceptance": "EXPERIMENTAL_PENDING"
+    }
+  ],
+  "admission_layers": [
+    {
+      "path": "v2/ontology/candidates/2.1.0-alpha.1-p3-facility-operation/constraints.ttl",
+      "scope": "Existing bounded base"
+    },
+    {
+      "path": "v2/ontology/candidates/2.1.0-alpha.1-evidencerecord-projection/combined.shacl.ttl",
+      "scope": "Versioned qualified-evidence witness contract;historical transition preserved"
+    },
+    {
+      "path": "v2/ontology/candidates/2.1.0-alpha.1-four-domain-refinement/combined.shacl.ttl",
+      "scope": "Experimental opt-in profiles;not universal global constraints"
+    },
+    {
+      "path": "v2/ontology/candidates/2.1.0-alpha.1-domain-coherence-lab/proposed-shapes.ttl",
+      "scope": "Experimental opt-in coherence profiles;not universal participation"
+    }
+  ],
+  "assembly_rules": [
+    "Latest base wins for every shared nonpackage element and field",
+    "Add only experimental IDs absent from base;retain their exact proposed values and identities",
+    "Union package membership without deleting or duplicating IDs",
+    "Permit only explicit project id/name/modified labeling changes",
+    "No scientific acceptance,automatic deferral reversal or formal/profile semantic equivalence is created"
+  ],
+  "preservation_crosswalks": [
+    "v2/release/2.2/preparation/0.1.0/gate-d-preservation.csv",
+    "v2/release/2.2/preparation/0.1.0/baseline-formal-terms.csv",
+    "v2/release/2.2/preparation/0.1.0/branch-divergence.json"
+  ],
+  "files": {
+    "tools/v2_ontology/connectivity_audit.py": {
+      "sha256": "4a396d0019d41916a2c0ec2e09223dc9a6d0320e9396a7a7e48e0570043a1880",
+      "git_blob_sha": "ae32928ae47421798dcfae02dd7837eecdc55e40"
+    },
+    "tools/v2_ontology/vendor/ontouml-schema.json": {
+      "sha256": "d79318a3a4761c78156bfa707f794756cc7be24e8f98dbbf92b261f28a124783",
+      "git_blob_sha": "9ddcd56aac165fee2154a90c2ed4649d5b4d9c61"
+    },
+    "v2/data/mappings/ontology-rdb-mapping.csv": {
+      "sha256": "0fa424b1acdab2b35ecbe69745bf7e92e3a981f65a7ea55c9c07cf6cde43424e",
+      "git_blob_sha": "1150c2ba8de3b2eb111efb8ec716e215d18f7e2e"
+    },
+    "v2/data/mappings/source-field-ontology-mapping.csv": {
+      "sha256": "d9439614e2397271b796ffb744c996ff0875017e2810f42ddf3b1d6b985e17ef",
+      "git_blob_sha": "75e7464be0f03fc8abb79995cf458159d3dfae7d"
+    },
+    "v2/data/mappings/source-mapping-coverage.csv": {
+      "sha256": "2813e9e834b23bdbb8ef5decb4fe172b385c419556095bf580010fedc71a6d22",
+      "git_blob_sha": "5414ed1231870b581d5a2a613b31be92043ecfd7"
+    },
+    "v2/evaluation/protocol/e7-source-semantic-coverage.csv": {
+      "sha256": "fa001ee3aeb6745a73688ca770786d07db80cf63d4b8ef4f7503826588f474bf",
+      "git_blob_sha": "5595f6eb90430d562133ed04bbd072d933a707be"
+    },
+    "v2/evaluation/results/w7-claim-evidence-traceability.csv": {
+      "sha256": "62cf355f1cf5aa9044c0af88ce56663999bffba38630fd66469a478cbcdd55ca",
+      "git_blob_sha": "c3bc2163123e6ba0a833ea75d7c1dbba878a1d5e"
+    },
+    "v2/ontology/candidates/2.1.0-alpha.1-candidate/decisions.json": {
+      "sha256": "7405772209ab6f865b6f56ef5d57eaefcaa18e8dd7faa2959ffd875580ec4120",
+      "git_blob_sha": "8cb80a111720049e32ab635427cdd2dfb2750388"
+    },
+    "v2/ontology/candidates/2.1.0-alpha.1-candidate/deferred-not-imported.ttl": {
+      "sha256": "e2344692f0ad7949956784c7af364f183379aee1d61a621994c1e8520ac4994a",
+      "git_blob_sha": "726ead4fd17713e949a2298db8d3397c5f106944"
+    },
+    "v2/ontology/candidates/2.1.0-alpha.1-contextclass-projection/combined.shacl.ttl": {
+      "sha256": "278873ed2a092f4e97c881a9021f90dcbdc2c6f300f04292d3c4df79b49ecbed",
+      "git_blob_sha": "cc64c86b31b58a0f93879f5fbe2aaa3df4f24aa7"
+    },
+    "v2/ontology/candidates/2.1.0-alpha.1-contextclass-projection/contract.json": {
+      "sha256": "4b29818efad75f46ba300c450b36dff5d197271fdebac2ca605ab6393e372ffe",
+      "git_blob_sha": "97ff393a685b15e848091070297f77a57ad03e18"
+    },
+    "v2/ontology/candidates/2.1.0-alpha.1-contextclass-projection/ontouml.json": {
+      "sha256": "b34f20c7b406522ec7c49854c60339de750d0dfb8061da76dfb54d89d278fb11",
+      "git_blob_sha": "ff96af20c7567f6c8afeb892eb86393f2239b533"
+    },
+    "v2/ontology/candidates/2.1.0-alpha.1-contextclass-projection/owl-delta.ttl": {
+      "sha256": "9997598961553de9ba4a5fb7ec02a24467bdc611270dcda7cf9e6f0fb6268122",
+      "git_blob_sha": "eebe3485fe68178d96adaac08077bf75a5f0f754"
+    },
+    "v2/ontology/candidates/2.1.0-alpha.1-domain-coherence-lab/README.md": {
+      "sha256": "d180ca4985e85b0ab0e0cf82c5d77952b1aecbe4dc8eecbed60af9fc559eeb60",
+      "git_blob_sha": "c66c073d1e7be7fd3aae704f699b17dc554aea80"
+    },
+    "v2/ontology/candidates/2.1.0-alpha.1-domain-coherence-lab/continuation-checkpoint.json": {
+      "sha256": "9982ab88aaf368e29b704d8f7b17f0e91a8e6f717f3604b344a4b1802bfc3fad",
+      "git_blob_sha": "2c62c1a45401d266de7ad6ca05f91d4b85186dc4"
+    },
+    "v2/ontology/candidates/2.1.0-alpha.1-domain-coherence-lab/decision-dossier.json": {
+      "sha256": "5c5df373f7dc9dae109e642668486085035742c20fa1635c894055d490835150",
+      "git_blob_sha": "dde111f1c12d44d6c58a4eb5752168b426a39127"
+    },
+    "v2/ontology/candidates/2.1.0-alpha.1-domain-coherence-lab/domain-coherence.json": {
+      "sha256": "23c9ada8f11bf7f19a318b378f04f77cdbf70638ba43a50fb116ef6ba75284b3",
+      "git_blob_sha": "c500ea896988af225dd9180649c829a78b5b8411"
+    },
+    "v2/ontology/candidates/2.1.0-alpha.1-domain-coherence-lab/lab.py": {
+      "sha256": "cf2ccefa09fdc1c5ee2ccdac91de1c4085753f940b39206f437eef3118e2907c",
+      "git_blob_sha": "84b91e2274615ad8762dd8a6047184825bca5212"
+    },
+    "v2/ontology/candidates/2.1.0-alpha.1-domain-coherence-lab/ontouml-experimental.json": {
+      "sha256": "2386f7fb24a07dee3961d1f75bcec1b566f2d6fb4df8b8edc7bc32807af9f10b",
+      "git_blob_sha": "100a2448f628703ac1a580b7b3ea0d1025a67165"
+    },
+    "v2/ontology/candidates/2.1.0-alpha.1-domain-coherence-lab/proposed-delta.ttl": {
+      "sha256": "2d492ad437555b4f8ef6a01760590a8ed12689bceea2ad8fdb752ccd593180cb",
+      "git_blob_sha": "820063723073e89386f7689152196a29419596cd"
+    },
+    "v2/ontology/candidates/2.1.0-alpha.1-domain-coherence-lab/proposed-shapes.ttl": {
+      "sha256": "ba063b4f9c5b46c60d49aa0d71afc23a3c9c164133a4ebf0b0d9a3e295182e89",
+      "git_blob_sha": "00e8ed2e4e7d68d4e84108497112d08dc0b243cc"
+    },
+    "v2/ontology/candidates/2.1.0-alpha.1-domain-coherence-lab/relation-decision-cards.json": {
+      "sha256": "5204ca43b72e105f6b8bb8a4a13d7d286b2fde2b9ce1e3822fbfed409c30af2c",
+      "git_blob_sha": "5180b3eb3b7cb13e996e71953a4f62b3f429c92c"
+    },
+    "v2/ontology/candidates/2.1.0-alpha.1-domain-coherence-lab/relation-proposals.json": {
+      "sha256": "d16571688ab0f33273cef4826e39950aa5b0ace7d8a250ca9d7175515c21ad34",
+      "git_blob_sha": "27eabab951619d5c763b7dd5e7218a7a29c67712"
+    },
+    "v2/ontology/candidates/2.1.0-alpha.1-domain-coherence-lab/repository-evidence.json": {
+      "sha256": "50215abf6a6b38dd5a616b5c35f40389a93b3b4547664e0a0f4fcb706c47af78",
+      "git_blob_sha": "e062a5ded56ce84272bfc2aa37e7735b589867dd"
+    },
+    "v2/ontology/candidates/2.1.0-alpha.1-domain-coherence-lab/sources.json": {
+      "sha256": "faf9ab9916ad6fc77c79c638af22377d803b542a76498e9037fa5faa9b751bdf",
+      "git_blob_sha": "3816d28e9e92c31bad4bbe40b3f9219900477723"
+    },
+    "v2/ontology/candidates/2.1.0-alpha.1-domain-coherence-lab/topology.json": {
+      "sha256": "a2caf58f9db59e67a186d2fd678ff627981965825378245de0c8cbd20f638e50",
+      "git_blob_sha": "59e7696b7dc66c01b5efb70cc401a0954073f3cd"
+    },
+    "v2/ontology/candidates/2.1.0-alpha.1-evidencerecord-projection/combined.shacl.ttl": {
+      "sha256": "1d153d3be527534e9a48f2f9c38aeff8019a62f1ebad4d1c00f324a9ac6472e7",
+      "git_blob_sha": "25f25b6d2eaef2b8366974a352a30b9cb08ed511"
+    },
+    "v2/ontology/candidates/2.1.0-alpha.1-evidencerecord-projection/contract.json": {
+      "sha256": "b35bc67d504418dc283c848d5ed5512c21f924e6541933abf2389cd9c44fa9bc",
+      "git_blob_sha": "f80c97c1a50db9c12de2e82ca3d61f5cbb0e3172"
+    },
+    "v2/ontology/candidates/2.1.0-alpha.1-evidencerecord-projection/ontouml.json": {
+      "sha256": "d97d7a7f42e3fc903181d6d4ed0a2bd4e159afe4a1a3bb685e3c821a93791a91",
+      "git_blob_sha": "356c7fa0d881a3f9a95f5b1c2badc62b3c8795b3"
+    },
+    "v2/ontology/candidates/2.1.0-alpha.1-evidencerecord-projection/owl-delta.ttl": {
+      "sha256": "6139617baa232ca37da412cd9a24eb7f68376a89d477c53140cd9290c409705d",
+      "git_blob_sha": "3825a917d5dbb19a89a6f75f52d491b53e5346e5"
+    },
+    "v2/ontology/candidates/2.1.0-alpha.1-evidencerecord-projection/verify_slice.py": {
+      "sha256": "4e86b5563bf672e1dc42fd4fde9a839a2a64efcf65d5d67666c393549ee605ca",
+      "git_blob_sha": "2e84622691390ae3e449b6fcf1e2b29077ac862e"
+    },
+    "v2/ontology/candidates/2.1.0-alpha.1-four-domain-lab/model-manifest.json": {
+      "sha256": "a9eb27a8975214767bb7844e2690861ddcce472edbbc4057834cd962ae11896d",
+      "git_blob_sha": "8be0baa8bdf0011434ebc0a30f7667e302805767"
+    },
+    "v2/ontology/candidates/2.1.0-alpha.1-four-domain-lab/relation-review-queue.json": {
+      "sha256": "857da108d47222870caa12f1aab2f58afabebd2d083ff94fe843f03dba69983a",
+      "git_blob_sha": "17916695ac7972a1bf1c8fa0642d3ef6c1f95286"
+    },
+    "v2/ontology/candidates/2.1.0-alpha.1-four-domain-lab/requirement-traceability.json": {
+      "sha256": "4d7c503bbc5a9ebf382ad5fce482310a2c380ec1259e09164981117fa49040f0",
+      "git_blob_sha": "56508945fca50d465d543193b36c1803f79b41a5"
+    },
+    "v2/ontology/candidates/2.1.0-alpha.1-four-domain-refinement/combined.shacl.ttl": {
+      "sha256": "930604033ffb0bd9669c97de083aba647288367a432b570d04ab3643b5d22c86",
+      "git_blob_sha": "b1eb42217a27bd7274bf957ef0e744ee3fa28816"
+    },
+    "v2/ontology/candidates/2.1.0-alpha.1-four-domain-refinement/experimental.owl.ttl": {
+      "sha256": "8c37e6ca3c7405515a5f387a5228831a57f1be9eb27f3211484077e609bbd8fa",
+      "git_blob_sha": "4a916ff1fc9ecbae86dac3a45efe954aafe4520a"
+    },
+    "v2/ontology/candidates/2.1.0-alpha.1-four-domain-refinement/model-manifest.json": {
+      "sha256": "2d1cefa246b6ba7316602aa419d0eda03aa01c19ec9f422a234ed8f5e72445c0",
+      "git_blob_sha": "fe926e5c87feef47fd6f4f474b7dafc3e911277c"
+    },
+    "v2/ontology/candidates/2.1.0-alpha.1-g3-3-e-connectivity-evidence/README.md": {
+      "sha256": "6752fae4d413ac33306571b1d012ebd9b75aa685677fd8204eefa255b4a8b265",
+      "git_blob_sha": "d8bab5f06bec3f80506c48faf77a48558263624d"
+    },
+    "v2/ontology/candidates/2.1.0-alpha.1-g3-3-e-connectivity-evidence/connectivity-evidence.json": {
+      "sha256": "de3bf620810cf9817e6da09e3dc69668c00b4849473df2027454d07ab07400f5",
+      "git_blob_sha": "8cd31c142262b5465931121eb1f884c24e05b715"
+    },
+    "v2/ontology/candidates/2.1.0-alpha.1-g3-3-f-review-handoff/DOMAIN-TABLE.md": {
+      "sha256": "a6288effd1d3c1b77f52e526009262593fc866d806d2d95652ec00a572674c74",
+      "git_blob_sha": "1a2e78fdcb4159ad96886fc32f75bd1dc07f86b9"
+    },
+    "v2/ontology/candidates/2.1.0-alpha.1-g3-3-f-review-handoff/ISOLATES-FA.md": {
+      "sha256": "4e3a71d845c31bc61a3de0abe72d70d5cfcb66f11a39f89e1e2442196e3afa3e",
+      "git_blob_sha": "7aa264c2c2aafe5b1fc56a28c5351c75e9fd3693"
+    },
+    "v2/ontology/candidates/2.1.0-alpha.1-g3-3-f-review-handoff/domain-inventory.json": {
+      "sha256": "4c3cd39cb332ae078f9028336cad6094c26707b6bdc8e00792b50b005b715a09",
+      "git_blob_sha": "e055908328859d6f44d033a903c4142e62216af1"
+    },
+    "v2/ontology/candidates/2.1.0-alpha.1-g3-3-f-review-handoff/registry.json": {
+      "sha256": "ebf06fe000e6a9fc07802678254592362c57327f4ace3c6cea4883e909cc2a34",
+      "git_blob_sha": "4fac4e3c96cde39e5550804855b493597be0ccb9"
+    },
+    "v2/ontology/candidates/2.1.0-alpha.1-g3-p4a-supply-capacity/active.ttl": {
+      "sha256": "c62f0abb21df3aad36154ed6aa04ab0287bc7ce7a5fd6a04effc8cd338f6f304",
+      "git_blob_sha": "391f823aeeee2a06f5607f8ace671317a8a4bf45"
+    },
+    "v2/ontology/candidates/2.1.0-alpha.1-p3-facility-operation/active.ttl": {
+      "sha256": "93f7283f24213689f945a44685da5dd02469efe41ac856d59c4902061ea2a48d",
+      "git_blob_sha": "f4c2a67239f326ff8627301fb34250da13c60c19"
+    },
+    "v2/ontology/candidates/2.1.0-alpha.1-p3-facility-operation/build-manifest.json": {
+      "sha256": "35b83f99664c37c5cc7f1b0423c9bb2846e50c0993fcd57652486810a4daef66",
+      "git_blob_sha": "5ccec14dc140499d49fdd2f72801b094a623b9e5"
+    },
+    "v2/ontology/candidates/2.1.0-alpha.1-p3-facility-operation/constraints.ttl": {
+      "sha256": "c147ac55fa6ce34d1ae41949ee0cd068b6da2750be1002a0dbce86f626ed2470",
+      "git_blob_sha": "be5f895ef8bafd26b97d593c2f6a900167e3c136"
+    },
+    "v2/ontology/profiles/2.1/m1-provenance/0.1.0/profile.ttl": {
+      "sha256": "a8dca6788eff03570b4911b8b7f0933a5420fcde9945272543da86934539ce9b",
+      "git_blob_sha": "97a330eb603b58b44f4b944c5aa11370db322381"
+    },
+    "v2/ontology/source/modules/00-metadata.ttl": {
+      "sha256": "c2f973874fc4c86b458809407e518d950a07949e4f65b53846967441e95848d6",
+      "git_blob_sha": "3b436e7b8a643b53d99daab5eb196f8d54c0877b"
+    },
+    "v2/ontology/source/modules/10-core.ttl": {
+      "sha256": "8ab9379b5afd9a647952df8608f924d7955e4c0937c7361106b13c7c7460ebf0",
+      "git_blob_sha": "2e5cdb7e81231e7d3cffa93975339edd02c10553"
+    },
+    "v2/ontology/source/modules/20-xinfra.ttl": {
+      "sha256": "3f47af81d82faf37a85c24cd8adba45ba68845f665da95de144e4e43285859c6",
+      "git_blob_sha": "d71d32c5a42b4666df14c91a1370d5c76bace44b"
+    },
+    "v2/ontology/source/modules/25-gate-d-disjointness.ttl": {
+      "sha256": "2316723686b9986b8d28155fd5cba6b4c757cc1ab64fd0a2dc1f11a8cf1b5c60",
+      "git_blob_sha": "ba4d274448a6cd7def8b355c64dd045c134ee1c4"
+    },
+    "v2/ontology/source/modules/30-extensions.ttl": {
+      "sha256": "2ce5a963f4424435e576525ff3007016f61390b28407ef469af655b37267510e",
+      "git_blob_sha": "8926e9db2eee4fec80ccc87ae85ee592c3291dac"
+    },
+    "v2/ontology/source/modules/40-mappings.ttl": {
+      "sha256": "b2f6674f33095aed4b9fae13ec015cda8715a793563ba28360fe0947156f660c",
+      "git_blob_sha": "f9c83db5b000b36d0269a770ede5a75ac1cda52a"
+    },
+    "v2/ontouml/cm-pharme-v2.conceptual-model.json": {
+      "sha256": "ebf06fe000e6a9fc07802678254592362c57327f4ace3c6cea4883e909cc2a34",
+      "git_blob_sha": "4fac4e3c96cde39e5550804855b493597be0ccb9"
+    },
+    "v2/release/roadmap/0.1.0/requirements-allocation.csv": {
+      "sha256": "a54332a2f5adf5dd75e5fd7a905e57998fdbc8920703a69bc1fcc33d47fb6793",
+      "git_blob_sha": "ad6a85a8fc4b452fb7d4faa7b88740e59baf2d78"
+    },
+    "v2/release/roadmap/0.12.0/next-steps.csv": {
+      "sha256": "4810364255dd47f61da945080db0590f7c23231cb388197c84ba6f54657294fe",
+      "git_blob_sha": "7be23ad5369e9c8950cf201cbb9e87957fca1651"
+    },
+    "v2/requirements/2.1/execution/0.2.0/README.md": {
+      "sha256": "1f881fcfa2f9089462923984cd1e68ae9a746fecd315981b649e7b328aceae5a",
+      "git_blob_sha": "27b55610797f30e72c9f20cc447974aef99a8d47"
+    },
+    "v2/requirements/2.1/execution/0.2.0/traceability-ledger.csv": {
+      "sha256": "030d708d33ed6fd5dfa2d6e807bee099e76c7d51551dca9025d947effc412b1d",
+      "git_blob_sha": "0a6f9e2ff04aeab0c509083449deaeea5a768cdb"
+    },
+    "v2/requirements/2.1/orsd/0.2.0/closure.json": {
+      "sha256": "c6f7e386de061208d5b6acb2276a1f275825202690e270462887f7b9a78d6731",
+      "git_blob_sha": "ff5e5c55fc4f1ef84b19f293c3058397c39fcbee"
+    },
+    "v2/research/w4/connectivity-audit-2.1-candidate.md": {
+      "sha256": "53640fd38c810721fc5e24b842d89a067a75499736097e57c94ae41f691618b2",
+      "git_blob_sha": "dcda6e04c047348723e8355f0fbd9ff57a4ebedf"
+    },
+    "v2/research/w4/connectivity-audit-baseline.json": {
+      "sha256": "5560d6db5f288c21c9a90eede25a31ee103a16246a2139ded2ddc68b76b45de7",
+      "git_blob_sha": "3d7653a9984dc181867a48c96e90c9ac89016dd9"
+    }
+  }
+}

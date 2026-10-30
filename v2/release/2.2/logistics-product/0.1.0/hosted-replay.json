@@ -1,0 +1,112 @@
+[
+  {
+    "event": "push",
+    "archive_sha256": "0766f3cdacec2ff06acf9973d1bbc6bc85e8bf809f6df4f2bc34d749d043d014",
+    "matched_files": {
+      "candidate-ontouml.json.gz": "e6bd96af053ff3e99d0a7c43618cef4a4283846afce13e4821b687c650ac4f3e",
+      "mapping.json": "297035ea2afbf138854f6c99e0c3e0edc2d7073abf17fe7039163725bbc42364",
+      "report.json": "adec17080fa301e40639d00e983dfc5e4ab076faf244993f20d2ccffb360ef68",
+      "case-results.json": "5664e7f697c86ede48f973bf0e16487a9818a4dfa0a20d940cfcbdae00c50658"
+    },
+    "frozen_report_sha256": "da2eccf5732bf39db5a6dab293df463eea8ec6e0929919f3d0e4bbe91e399ef3",
+    "frozen_results_sha256": "2cdbec4d5d9d6261a6698f0983f9be6d06ed31977460a5a19909aacc12de0ef3",
+    "hermit": {
+      "hermit_cases": [
+        {
+          "id": "no-product-recorded",
+          "consistent": true,
+          "unsatisfiable_named_classes": []
+        },
+        {
+          "id": "one-type",
+          "consistent": true,
+          "unsatisfiable_named_classes": []
+        },
+        {
+          "id": "two-types-one-event",
+          "consistent": true,
+          "unsatisfiable_named_classes": []
+        },
+        {
+          "id": "same-type-two-events",
+          "consistent": true,
+          "unsatisfiable_named_classes": []
+        }
+      ],
+      "status": "BOUNDED_TBOX_ONLY",
+      "full_model_reasoned": false,
+      "scientific_acceptance": false
+    },
+    "execution": {
+      "EXECUTION_SHA": "5ce166f61f9273845f878a1f7681ad820eb6da49",
+      "EXECUTION_RUN": "41067136085",
+      "EXECUTION_REF": "refs/heads/v2/connectivity-audit-2-1-candidate",
+      "python": "3.12.15"
+    },
+    "zip_members": [
+      "logistics-product-frozen/report.json",
+      "logistics-product-frozen/results.csv",
+      "logistics-product/candidate-ontouml.json.gz",
+      "logistics-product/case-results.json",
+      "logistics-product/execution.json",
+      "logistics-product/hermit.json",
+      "logistics-product/mapping.json",
+      "logistics-product/report.json"
+    ]
+  },
+  {
+    "event": "pr",
+    "archive_sha256": "dad2d9b59b503660cf53753f02e38362650e9fb743babbdcc2a4806a7f455584",
+    "matched_files": {
+      "candidate-ontouml.json.gz": "e6bd96af053ff3e99d0a7c43618cef4a4283846afce13e4821b687c650ac4f3e",
+      "mapping.json": "297035ea2afbf138854f6c99e0c3e0edc2d7073abf17fe7039163725bbc42364",
+      "report.json": "adec17080fa301e40639d00e983dfc5e4ab076faf244993f20d2ccffb360ef68",
+      "case-results.json": "5664e7f697c86ede48f973bf0e16487a9818a4dfa0a20d940cfcbdae00c50658"
+    },
+    "frozen_report_sha256": "da2eccf5732bf39db5a6dab293df463eea8ec6e0929919f3d0e4bbe91e399ef3",
+    "frozen_results_sha256": "2cdbec4d5d9d6261a6698f0983f9be6d06ed31977460a5a19909aacc12de0ef3",
+    "hermit": {
+      "hermit_cases": [
+        {
+          "id": "no-product-recorded",
+          "consistent": true,
+          "unsatisfiable_named_classes": []
+        },
+        {
+          "id": "one-type",
+          "consistent": true,
+          "unsatisfiable_named_classes": []
+        },
+        {
+          "id": "two-types-one-event",
+          "consistent": true,
+          "unsatisfiable_named_classes": []
+        },
+        {
+          "id": "same-type-two-events",
+          "consistent": true,
+          "unsatisfiable_named_classes": []
+        }
+      ],
+      "status": "BOUNDED_TBOX_ONLY",
+      "full_model_reasoned": false,
+      "scientific_acceptance": false
+    },
+    "execution": {
+      "EXECUTION_SHA": "7778e3d75924e534c58e6397613d762ddc1ab5fd",
+      "EXECUTION_RUN": "41067146801",
+      "EXECUTION_REF": "refs/pull/305/merge",
+      "python": "3.12.15"
+    },
+    "zip_members": [
+      "logistics-product-frozen/report.json",
+      "logistics-product-frozen/results.csv",
+      "logistics-product/candidate-ontouml.json.gz",
+      "logistics-product/case-results.json",
+      "logistics-product/execution.json",
+      "logistics-product/hermit.json",
+      "logistics-product/mapping.json",
+      "logistics-product/report.json"
+    ]
+  }
+]

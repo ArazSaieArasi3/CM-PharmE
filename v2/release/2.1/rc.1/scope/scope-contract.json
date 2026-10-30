@@ -1,0 +1,70 @@
+{
+  "archive_created": false,
+  "current_native_path": "v2/ontology/candidates/2.1.0-alpha.1-evidencerecord-projection/ontouml.json",
+  "current_native_sha256": "d97d7a7f42e3fc903181d6d4ed0a2bd4e159afe4a1a3bb685e3c821a93791a91",
+  "expected": {
+    "negative_controls": [
+      {
+        "expected_reason": "source-file-set",
+        "id": "missing-current-asset"
+      },
+      {
+        "expected_reason": "source-file-integrity",
+        "id": "tampered-file-digest"
+      },
+      {
+        "expected_reason": "inventory-mismatch",
+        "id": "hidden-native-unknowns"
+      },
+      {
+        "expected_reason": "witness-transition-mismatch",
+        "id": "suppressed-witness-transition"
+      },
+      {
+        "expected_reason": "unsupported-claim",
+        "id": "full-validator-claim"
+      },
+      {
+        "expected_reason": "unsupported-claim",
+        "id": "scientific-approval-claim"
+      },
+      {
+        "expected_reason": "unsupported-claim",
+        "id": "complete-native-owl-claim"
+      },
+      {
+        "expected_reason": "release-policy",
+        "id": "ga-release-label"
+      },
+      {
+        "expected_reason": "citation-scope",
+        "id": "historical-citation-promoted"
+      }
+    ],
+    "review_groups": 13,
+    "source_bytes": 27097299,
+    "source_files": 1975
+  },
+  "issue": 324,
+  "payload_git_tree": "b20e2420620120f276bbc5a0117079f30dccc5b5",
+  "payload_source_commit": "64edf150db8a78579928fd99b5a381f665c1afdf",
+  "pinned_metadata_sha256": {
+    "artifact-index.csv": "390295c0141620c0c90cb29b297f420f7732cc4122c43c10197f9a187d93430b",
+    "artifacts.json": "e5c39f5dfc0a8b5b648258ab12d0aed98e6950a5f9a44d6d29ca5bd32910f3e8",
+    "claims.json": "f3a0d5d32ba376e27ada4422208bdacc5047b2f387c3cdf45e0a02381a89fe97",
+    "decision.md": "1ed0a73b843ef11a5fd1b7d0e2f05b0e29fa74656d108b6f59dc042e00ad511d",
+    "known-limits.json": "f88ecb48a6c3416fc235c5e617100916220672ae9608434b0b8e7cbf9f0fdadf",
+    "payload-ci.json": "f06c9b57a5006353f4d5d3e0922433273b1746303d4ce7da9acd34c32ce94839",
+    "payload-manifest.json": "ff1f0b4d7d8570191cc080a4d0982579644e6146d980d1e4972e085d5ed0a2bf"
+  },
+  "release_published": false,
+  "required_held_gates": [
+    306,
+    310,
+    315
+  ],
+  "schema_version": 1,
+  "scope_id": "CMPE-RC-Scope/0.1.0",
+  "tag_created": false,
+  "target": "2.1.0-rc.1"
+}

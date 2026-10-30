@@ -1,0 +1,87 @@
+# SPDX-License-Identifier: MIT
+name: CM-PharmE 2.1 M1 Copied-W6 Integration
+on:
+  pull_request:
+    branches: [v2/research-program]
+    paths:
+      - 'v2/data/integrations/2.1/m1-core/0.1.0/**'
+      - 'v2/ontology/profiles/2.1/m1-provenance/0.1.0/**'
+      - 'v2/data/migrations/2.1/0.2.0/**'
+      - 'v2/data/migrations/2.1/0.1.0/w6-mapping-crosswalk.csv'
+      - 'v2/data/db/**'
+      - 'v2/data/fixtures/**'
+      - 'v2/data/sources/source-manifest.json'
+      - 'v2/data/queries/sql-sparql-benchmarks.json'
+      - 'tools/v2_data/**'
+      - '.github/workflows/v2-21-m1-integration.yml'
+  push:
+    branches: ['v2/**']
+    paths:
+      - 'v2/data/integrations/2.1/m1-core/0.1.0/**'
+      - 'v2/ontology/profiles/2.1/m1-provenance/0.1.0/**'
+      - 'v2/data/migrations/2.1/0.2.0/**'
+      - 'v2/data/migrations/2.1/0.1.0/w6-mapping-crosswalk.csv'
+      - 'v2/data/db/**'
+      - 'v2/data/fixtures/**'
+      - 'v2/data/sources/source-manifest.json'
+      - 'v2/data/queries/sql-sparql-benchmarks.json'
+      - 'tools/v2_data/**'
+      - '.github/workflows/v2-21-m1-integration.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  copied-w6-isolated-profile:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    services:
+      postgres:
+        image: postgis/postgis:16-3.4
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: cmpe_m1_core_332
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd "pg_isready -U postgres -d cmpe_m1_core_332"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      DATABASE_URL: postgresql://postgres:postgres@localhost:5432/cmpe_m1_core_332
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-python@v7.0.0
+        with:
+          python-version: '3.12'
+      - name: Install pinned integration dependencies
+        run: python -m pip install --disable-pip-version-check -r v2/data/integrations/2.1/m1-core/0.1.0/requirements.txt
+      - name: Record exact execution identity
+        run: |
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          out = Path('build/m1-copied-integration')
+          out.mkdir(parents=True, exist_ok=True)
+          keys = ['GITHUB_SHA', 'GITHUB_RUN_ID', 'GITHUB_RUN_ATTEMPT', 'GITHUB_EVENT_NAME', 'GITHUB_WORKFLOW_REF']
+          (out / 'execution.json').write_text(json.dumps({key: os.environ[key] for key in keys}, indent=2) + '\n')
+          PY
+      - name: Validate frozen inputs and isolated target before fixture bootstrap
+        run: python v2/data/integrations/2.1/m1-core/0.1.0/verify_integration.py --preflight-only --database-url "$DATABASE_URL"
+      - name: Bootstrap only the fresh isolated W6 synthetic fixture
+        run: >-
+          python tools/v2_data/bootstrap_ingest.py --database-url "$DATABASE_URL"
+          --reset --report build/m1-copied-integration/ingest.json
+      - name: Verify old pairs, isolated profile, optional run and exact rollback
+        run: >-
+          python v2/data/integrations/2.1/m1-core/0.1.0/verify_integration.py
+          --database-url "$DATABASE_URL" --ingest-report build/m1-copied-integration/ingest.json
+      - name: Upload bounded copied-database evidence
+        if: always()
+        uses: actions/upload-artifact@v7.0.1
+        with:
+          name: cm-pharme-v2-21-m1-copied-integration
+          path: build/m1-copied-integration/
+          if-no-files-found: warn
+          retention-days: 30

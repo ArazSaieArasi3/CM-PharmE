@@ -1,0 +1,87 @@
+{
+  "checks": [
+    {
+      "name": "disposition-20223",
+      "actual": "SOURCE_REPORTED",
+      "expected": "SOURCE_REPORTED",
+      "pass": true
+    },
+    {
+      "name": "interpreted-result-link-20223",
+      "actual": "MAPPING_PROPOSED",
+      "expected": "MAPPING_PROPOSED",
+      "pass": true
+    },
+    {
+      "name": "disposition-20308",
+      "actual": "SOURCE_REPORTED",
+      "expected": "SOURCE_REPORTED",
+      "pass": true
+    },
+    {
+      "name": "interpreted-result-link-20308",
+      "actual": "MAPPING_PROPOSED",
+      "expected": "MAPPING_PROPOSED",
+      "pass": true
+    },
+    {
+      "name": "group-not-forced-into-one-substance",
+      "actual": 0,
+      "expected": 0,
+      "pass": true
+    },
+    {
+      "name": "disposition-20300",
+      "actual": "SOURCE_REPORTED",
+      "expected": "SOURCE_REPORTED",
+      "pass": true
+    },
+    {
+      "name": "interpreted-result-link-20300",
+      "actual": "MAPPING_PROPOSED",
+      "expected": "MAPPING_PROPOSED",
+      "pass": true
+    },
+    {
+      "name": "three-different-source-dispositions",
+      "actual": 3,
+      "expected": 3,
+      "pass": true
+    },
+    {
+      "name": "combined-shapes",
+      "actual": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "name": "hermit",
+      "actual": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "name": "source-recommendation-without-materialized-link-or-causal-proof",
+      "actual": true,
+      "expected": true,
+      "pass": true
+    }
+  ],
+  "pass": 11,
+  "total": 11,
+  "claims": 17,
+  "rows": 3,
+  "hermit": {
+    "consistent": true,
+    "unsatisfiable_named_classes": [],
+    "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+    "prov_profile": "two conflicting annotation-property declarations removed; raw source retained"
+  },
+  "countermodel": {
+    "consistent": true,
+    "unsatisfiable_named_classes": [],
+    "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+    "prov_profile": "two conflicting annotation-property declarations removed; raw source retained"
+  },
+  "causality_established": false
+}

@@ -1,0 +1,40 @@
+{
+  "schema_version": "CMPE-TechnicalReleaseCutReview/0.1.0",
+  "date": "2026-10-29",
+  "reviewer": "Assistant technical review under Araz existing release authorization",
+  "owner_exact_bytes_review_claimed": false,
+  "decision": "ACCEPT_BOUNDED_PACKAGE_FOR_EXACT_STABLE_PUBLICATION",
+  "approved_prior_strategy": [
+    "D-01",
+    "SC-REL",
+    "D-03"
+  ],
+  "scope": "2.1.0 M1 Provenance Core only, profile0.1.0; not whole full-model candidate",
+  "support_manifest_sha256": "54af199642b1f692745be666c28d0980707d5cfcba995044c4fdebc0fd576240",
+  "archive_sha256": "4c9d3a1e52379c8c63b3619aedd7d0243cf702bcc078c9989a23619d50cc4350",
+  "archive_bytes": 1177600,
+  "member_count": 113,
+  "criteria": {
+    "exact_support_rights_docs": true,
+    "unmodified_frozen_inputs": true,
+    "independent_review_corrections_applied": true,
+    "two_hosted_fresh_databases_replayed": true,
+    "local_hosted_archive_digest_equal": true,
+    "seven_archive_refusal_controls": true,
+    "extracted_rebuild_identical": true,
+    "no_retained_critical_defect_known": true,
+    "separate_curated_release_tree": true
+  },
+  "evidence": {
+    "support_implementation": "0c39a9805191cc138d7c183113f3684f35725868",
+    "package_implementation": "ffd6a8620f594798955567a4004aab5d50d4ae3f",
+    "primary_run": 40830382813,
+    "independent_run": 40830389195
+  },
+  "scientific_state": {
+    "source_policy_acceptances": "1/4",
+    "historical_orsd_acceptances": "0/83",
+    "new_external_expert_results": 0
+  },
+  "publication_still_requires": "Exact draft/published asset byte downloads and stable tag-target verification; no existing release overwrite"
+}

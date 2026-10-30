@@ -1,0 +1,49 @@
+# SPDX-License-Identifier: MIT
+name: CM-PharmE 2.1 Minimum Support Contract
+on:
+  push:
+    branches: ['v2/**']
+    paths: ['v2/release/2.1/support/0.1.0/**', '.github/workflows/v2-21-support-contract.yml']
+  pull_request:
+    branches: [v2/research-program]
+    paths: ['v2/release/2.1/support/0.1.0/**', '.github/workflows/v2-21-support-contract.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  support-contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-python@v7.0.0
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-java@v5.7.0
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Install declared verification dependencies
+        run: |
+          python -m pip install -r v2/ontology/profiles/2.1/m1-provenance/0.1.0/requirements-verify.txt
+          python -m pip install -r v2/data/integrations/2.1/m1-core/0.1.0/requirements.txt
+      - name: Record execution identity
+        run: |
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          out=Path('build/support-contract');out.mkdir(parents=True,exist_ok=True)
+          keys=['GITHUB_SHA','GITHUB_RUN_ID','GITHUB_EVENT_NAME','GITHUB_RUN_ATTEMPT']
+          (out/'execution.json').write_text(json.dumps({x:os.environ[x] for x in keys},indent=2)+'\n')
+          PY
+      - name: Verify support contract and cold declared-file replay
+        run: python v2/release/2.1/support/0.1.0/verify_contract.py --cold-profile
+      - uses: actions/upload-artifact@v7.0.1
+        if: always()
+        with:
+          name: cm-pharme-v2-21-support-contract
+          path: build/support-contract/
+          if-no-files-found: warn
+          retention-days: 30

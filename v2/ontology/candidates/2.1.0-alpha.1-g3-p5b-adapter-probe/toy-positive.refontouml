@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<RefOntoUML:Package xmlns:RefOntoUML="http://nemo.inf.ufes.br/ontouml/refontouml" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmi:version="2.0" xmi:id="_cmpe_cm-pharme-root" name="CMPharmEtoypositive" visibility="public">
+  <packagedElement xsi:type="RefOntoUML:Kind" xmi:id="_cmpe_Organization" name="Organization" visibility="public" />
+  <packagedElement xsi:type="RefOntoUML:Association" xmi:id="_cmpe_rel-toy" name="toyRelation" visibility="public" memberEnd="_cmpe_end-toy-source _cmpe_end-toy-target">
+    <ownedEnd xmi:id="_cmpe_end-toy-source" name="end-toy-source" visibility="public" type="_cmpe_Organization" association="_cmpe_rel-toy">
+      <upperValue xsi:type="RefOntoUML:LiteralUnlimitedNatural" xmi:id="_cmpe_end-toy-source-upper" value="1" />
+      <lowerValue xsi:type="RefOntoUML:LiteralInteger" xmi:id="_cmpe_end-toy-source-lower" value="0" />
+    </ownedEnd>
+    <ownedEnd xmi:id="_cmpe_end-toy-target" name="end-toy-target" visibility="public" type="_cmpe_Organization" association="_cmpe_rel-toy">
+      <upperValue xsi:type="RefOntoUML:LiteralUnlimitedNatural" xmi:id="_cmpe_end-toy-target-upper" value="-1" />
+      <lowerValue xsi:type="RefOntoUML:LiteralInteger" xmi:id="_cmpe_end-toy-target-lower" value="0" />
+    </ownedEnd>
+  </packagedElement>
+</RefOntoUML:Package>

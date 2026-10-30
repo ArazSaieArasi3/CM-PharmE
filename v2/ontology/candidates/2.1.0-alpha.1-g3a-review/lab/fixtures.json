@@ -1,0 +1,4719 @@
+[
+  {
+    "id": "FacilityOperation-minimal",
+    "fixture": {
+      "entities": {
+        "operator0": "Organization",
+        "facility0": "Facility"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "FacilityOperation",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "operator",
+          "operator0"
+        ],
+        [
+          "r1",
+          "facility",
+          "facility0"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": true,
+    "expected_rule": null,
+    "decisions": []
+  },
+  {
+    "id": "FacilityOperation-missing-operator",
+    "fixture": {
+      "entities": {
+        "operator0": "Organization",
+        "facility0": "Facility"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "FacilityOperation",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "facility",
+          "facility0"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": false,
+    "expected_rule": "CARDINALITY",
+    "decisions": []
+  },
+  {
+    "id": "FacilityOperation-event-in-operator",
+    "fixture": {
+      "entities": {
+        "operator0": "ManufacturingActivity",
+        "facility0": "Facility"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "FacilityOperation",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "operator",
+          "operator0"
+        ],
+        [
+          "r1",
+          "facility",
+          "facility0"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": false,
+    "expected_rule": "KIND",
+    "decisions": []
+  },
+  {
+    "id": "FacilityOperation-missing-facility",
+    "fixture": {
+      "entities": {
+        "operator0": "Organization",
+        "facility0": "Facility"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "FacilityOperation",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "operator",
+          "operator0"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": false,
+    "expected_rule": "CARDINALITY",
+    "decisions": []
+  },
+  {
+    "id": "FacilityOperation-event-in-facility",
+    "fixture": {
+      "entities": {
+        "operator0": "Organization",
+        "facility0": "ManufacturingActivity"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "FacilityOperation",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "operator",
+          "operator0"
+        ],
+        [
+          "r1",
+          "facility",
+          "facility0"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": false,
+    "expected_rule": "KIND",
+    "decisions": []
+  },
+  {
+    "id": "FacilityOperation-excess-facility",
+    "fixture": {
+      "entities": {
+        "operator0": "Organization",
+        "facility0": "Facility",
+        "extra": "Facility"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "FacilityOperation",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "operator",
+          "operator0"
+        ],
+        [
+          "r1",
+          "facility",
+          "facility0"
+        ],
+        [
+          "r1",
+          "facility",
+          "extra"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": false,
+    "expected_rule": "CARDINALITY",
+    "decisions": []
+  },
+  {
+    "id": "EstablishmentRegistration-minimal",
+    "fixture": {
+      "entities": {
+        "authority0": "Organization",
+        "subject0": "Organization"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "EstablishmentRegistration",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "authority",
+          "authority0"
+        ],
+        [
+          "r1",
+          "subject",
+          "subject0"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": true,
+    "expected_rule": null,
+    "decisions": []
+  },
+  {
+    "id": "EstablishmentRegistration-missing-authority",
+    "fixture": {
+      "entities": {
+        "authority0": "Organization",
+        "subject0": "Organization"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "EstablishmentRegistration",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "subject",
+          "subject0"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": false,
+    "expected_rule": "CARDINALITY",
+    "decisions": []
+  },
+  {
+    "id": "EstablishmentRegistration-event-in-authority",
+    "fixture": {
+      "entities": {
+        "authority0": "ManufacturingActivity",
+        "subject0": "Organization"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "EstablishmentRegistration",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "authority",
+          "authority0"
+        ],
+        [
+          "r1",
+          "subject",
+          "subject0"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": false,
+    "expected_rule": "KIND",
+    "decisions": []
+  },
+  {
+    "id": "EstablishmentRegistration-excess-authority",
+    "fixture": {
+      "entities": {
+        "authority0": "Organization",
+        "subject0": "Organization",
+        "extra": "Organization"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "EstablishmentRegistration",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "authority",
+          "authority0"
+        ],
+        [
+          "r1",
+          "subject",
+          "subject0"
+        ],
+        [
+          "r1",
+          "authority",
+          "extra"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": false,
+    "expected_rule": "CARDINALITY",
+    "decisions": []
+  },
+  {
+    "id": "EstablishmentRegistration-missing-subject",
+    "fixture": {
+      "entities": {
+        "authority0": "Organization",
+        "subject0": "Organization"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "EstablishmentRegistration",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "authority",
+          "authority0"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": false,
+    "expected_rule": "CARDINALITY",
+    "decisions": []
+  },
+  {
+    "id": "EstablishmentRegistration-event-in-subject",
+    "fixture": {
+      "entities": {
+        "authority0": "Organization",
+        "subject0": "ManufacturingActivity"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "EstablishmentRegistration",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "authority",
+          "authority0"
+        ],
+        [
+          "r1",
+          "subject",
+          "subject0"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": false,
+    "expected_rule": "KIND",
+    "decisions": []
+  },
+  {
+    "id": "EstablishmentRegistration-excess-subject",
+    "fixture": {
+      "entities": {
+        "authority0": "Organization",
+        "subject0": "Organization",
+        "extra": "Organization"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "EstablishmentRegistration",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "authority",
+          "authority0"
+        ],
+        [
+          "r1",
+          "subject",
+          "subject0"
+        ],
+        [
+          "r1",
+          "subject",
+          "extra"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": false,
+    "expected_rule": "CARDINALITY",
+    "decisions": []
+  },
+  {
+    "id": "EstablishmentRegistration-subject-Facility",
+    "fixture": {
+      "entities": {
+        "authority0": "Organization",
+        "subject0": "Facility"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "EstablishmentRegistration",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "authority",
+          "authority0"
+        ],
+        [
+          "r1",
+          "subject",
+          "subject0"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": true,
+    "expected_rule": null,
+    "decisions": []
+  },
+  {
+    "id": "RegulatoryAuthorization-minimal",
+    "fixture": {
+      "entities": {
+        "authority0": "Organization",
+        "subject0": "Organization"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "RegulatoryAuthorization",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "authority",
+          "authority0"
+        ],
+        [
+          "r1",
+          "subject",
+          "subject0"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": true,
+    "expected_rule": null,
+    "decisions": []
+  },
+  {
+    "id": "RegulatoryAuthorization-missing-authority",
+    "fixture": {
+      "entities": {
+        "authority0": "Organization",
+        "subject0": "Organization"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "RegulatoryAuthorization",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "subject",
+          "subject0"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": false,
+    "expected_rule": "CARDINALITY",
+    "decisions": []
+  },
+  {
+    "id": "RegulatoryAuthorization-event-in-authority",
+    "fixture": {
+      "entities": {
+        "authority0": "ManufacturingActivity",
+        "subject0": "Organization"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "RegulatoryAuthorization",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "authority",
+          "authority0"
+        ],
+        [
+          "r1",
+          "subject",
+          "subject0"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": false,
+    "expected_rule": "KIND",
+    "decisions": []
+  },
+  {
+    "id": "RegulatoryAuthorization-excess-authority",
+    "fixture": {
+      "entities": {
+        "authority0": "Organization",
+        "subject0": "Organization",
+        "extra": "Organization"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "RegulatoryAuthorization",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "authority",
+          "authority0"
+        ],
+        [
+          "r1",
+          "subject",
+          "subject0"
+        ],
+        [
+          "r1",
+          "authority",
+          "extra"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": false,
+    "expected_rule": "CARDINALITY",
+    "decisions": []
+  },
+  {
+    "id": "RegulatoryAuthorization-missing-subject",
+    "fixture": {
+      "entities": {
+        "authority0": "Organization",
+        "subject0": "Organization"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "RegulatoryAuthorization",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "authority",
+          "authority0"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": false,
+    "expected_rule": "CARDINALITY",
+    "decisions": []
+  },
+  {
+    "id": "RegulatoryAuthorization-event-in-subject",
+    "fixture": {
+      "entities": {
+        "authority0": "Organization",
+        "subject0": "ManufacturingActivity"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "RegulatoryAuthorization",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "authority",
+          "authority0"
+        ],
+        [
+          "r1",
+          "subject",
+          "subject0"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": false,
+    "expected_rule": "KIND",
+    "decisions": []
+  },
+  {
+    "id": "RegulatoryAuthorization-excess-subject",
+    "fixture": {
+      "entities": {
+        "authority0": "Organization",
+        "subject0": "Organization",
+        "extra": "Organization"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "RegulatoryAuthorization",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "authority",
+          "authority0"
+        ],
+        [
+          "r1",
+          "subject",
+          "subject0"
+        ],
+        [
+          "r1",
+          "subject",
+          "extra"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": false,
+    "expected_rule": "CARDINALITY",
+    "decisions": []
+  },
+  {
+    "id": "RegulatoryAuthorization-subject-Facility",
+    "fixture": {
+      "entities": {
+        "authority0": "Organization",
+        "subject0": "Facility"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "RegulatoryAuthorization",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "authority",
+          "authority0"
+        ],
+        [
+          "r1",
+          "subject",
+          "subject0"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": true,
+    "expected_rule": null,
+    "decisions": []
+  },
+  {
+    "id": "ProductClassificationAssignment-minimal",
+    "fixture": {
+      "entities": {
+        "subject0": "MedicinalProduct",
+        "entry0": "ClassificationEntry"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "ProductClassificationAssignment",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "subject",
+          "subject0"
+        ],
+        [
+          "r1",
+          "entry",
+          "entry0"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": true,
+    "expected_rule": null,
+    "decisions": []
+  },
+  {
+    "id": "ProductClassificationAssignment-missing-subject",
+    "fixture": {
+      "entities": {
+        "subject0": "MedicinalProduct",
+        "entry0": "ClassificationEntry"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "ProductClassificationAssignment",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "entry",
+          "entry0"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": false,
+    "expected_rule": "CARDINALITY",
+    "decisions": []
+  },
+  {
+    "id": "ProductClassificationAssignment-event-in-subject",
+    "fixture": {
+      "entities": {
+        "subject0": "ManufacturingActivity",
+        "entry0": "ClassificationEntry"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "ProductClassificationAssignment",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "subject",
+          "subject0"
+        ],
+        [
+          "r1",
+          "entry",
+          "entry0"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": false,
+    "expected_rule": "KIND",
+    "decisions": []
+  },
+  {
+    "id": "ProductClassificationAssignment-excess-subject",
+    "fixture": {
+      "entities": {
+        "subject0": "MedicinalProduct",
+        "entry0": "ClassificationEntry",
+        "extra": "MedicinalProduct"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "ProductClassificationAssignment",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "subject",
+          "subject0"
+        ],
+        [
+          "r1",
+          "entry",
+          "entry0"
+        ],
+        [
+          "r1",
+          "subject",
+          "extra"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": false,
+    "expected_rule": "CARDINALITY",
+    "decisions": []
+  },
+  {
+    "id": "ProductClassificationAssignment-subject-PharmaceuticalSubstance",
+    "fixture": {
+      "entities": {
+        "subject0": "PharmaceuticalSubstance",
+        "entry0": "ClassificationEntry"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "ProductClassificationAssignment",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "subject",
+          "subject0"
+        ],
+        [
+          "r1",
+          "entry",
+          "entry0"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": true,
+    "expected_rule": null,
+    "decisions": []
+  },
+  {
+    "id": "ProductClassificationAssignment-missing-entry",
+    "fixture": {
+      "entities": {
+        "subject0": "MedicinalProduct",
+        "entry0": "ClassificationEntry"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "ProductClassificationAssignment",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "subject",
+          "subject0"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": false,
+    "expected_rule": "CARDINALITY",
+    "decisions": []
+  },
+  {
+    "id": "ProductClassificationAssignment-event-in-entry",
+    "fixture": {
+      "entities": {
+        "subject0": "MedicinalProduct",
+        "entry0": "ManufacturingActivity"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "ProductClassificationAssignment",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "subject",
+          "subject0"
+        ],
+        [
+          "r1",
+          "entry",
+          "entry0"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": false,
+    "expected_rule": "KIND",
+    "decisions": []
+  },
+  {
+    "id": "ProductClassificationAssignment-excess-entry",
+    "fixture": {
+      "entities": {
+        "subject0": "MedicinalProduct",
+        "entry0": "ClassificationEntry",
+        "extra": "ClassificationEntry"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "ProductClassificationAssignment",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "subject",
+          "subject0"
+        ],
+        [
+          "r1",
+          "entry",
+          "entry0"
+        ],
+        [
+          "r1",
+          "entry",
+          "extra"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": false,
+    "expected_rule": "CARDINALITY",
+    "decisions": []
+  },
+  {
+    "id": "MarketListing-minimal",
+    "fixture": {
+      "entities": {
+        "presentation0": "MedicinalProductPresentation",
+        "responsible0": "Organization"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "MarketListing",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "presentation",
+          "presentation0"
+        ],
+        [
+          "r1",
+          "responsible",
+          "responsible0"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": true,
+    "expected_rule": null,
+    "decisions": []
+  },
+  {
+    "id": "MarketListing-missing-presentation",
+    "fixture": {
+      "entities": {
+        "presentation0": "MedicinalProductPresentation",
+        "responsible0": "Organization"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "MarketListing",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "responsible",
+          "responsible0"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": false,
+    "expected_rule": "CARDINALITY",
+    "decisions": []
+  },
+  {
+    "id": "MarketListing-event-in-presentation",
+    "fixture": {
+      "entities": {
+        "presentation0": "ManufacturingActivity",
+        "responsible0": "Organization"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "MarketListing",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "presentation",
+          "presentation0"
+        ],
+        [
+          "r1",
+          "responsible",
+          "responsible0"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": false,
+    "expected_rule": "KIND",
+    "decisions": []
+  },
+  {
+    "id": "MarketListing-excess-presentation",
+    "fixture": {
+      "entities": {
+        "presentation0": "MedicinalProductPresentation",
+        "responsible0": "Organization",
+        "extra": "MedicinalProductPresentation"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "MarketListing",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "presentation",
+          "presentation0"
+        ],
+        [
+          "r1",
+          "responsible",
+          "responsible0"
+        ],
+        [
+          "r1",
+          "presentation",
+          "extra"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": false,
+    "expected_rule": "CARDINALITY",
+    "decisions": []
+  },
+  {
+    "id": "MarketListing-missing-responsible",
+    "fixture": {
+      "entities": {
+        "presentation0": "MedicinalProductPresentation",
+        "responsible0": "Organization"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "MarketListing",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "presentation",
+          "presentation0"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": false,
+    "expected_rule": "CARDINALITY",
+    "decisions": []
+  },
+  {
+    "id": "MarketListing-event-in-responsible",
+    "fixture": {
+      "entities": {
+        "presentation0": "MedicinalProductPresentation",
+        "responsible0": "ManufacturingActivity"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "MarketListing",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "presentation",
+          "presentation0"
+        ],
+        [
+          "r1",
+          "responsible",
+          "responsible0"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": false,
+    "expected_rule": "KIND",
+    "decisions": []
+  },
+  {
+    "id": "MarketListing-excess-responsible",
+    "fixture": {
+      "entities": {
+        "presentation0": "MedicinalProductPresentation",
+        "responsible0": "Organization",
+        "extra": "Organization"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "MarketListing",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "presentation",
+          "presentation0"
+        ],
+        [
+          "r1",
+          "responsible",
+          "responsible0"
+        ],
+        [
+          "r1",
+          "responsible",
+          "extra"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": false,
+    "expected_rule": "CARDINALITY",
+    "decisions": []
+  },
+  {
+    "id": "EvidenceSupport-minimal",
+    "fixture": {
+      "entities": {
+        "evidence0": "SourceRecord",
+        "claim0": "Assertion"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "EvidenceSupport",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "evidence",
+          "evidence0"
+        ],
+        [
+          "r1",
+          "claim",
+          "claim0"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": true,
+    "expected_rule": null,
+    "decisions": []
+  },
+  {
+    "id": "EvidenceSupport-missing-evidence",
+    "fixture": {
+      "entities": {
+        "evidence0": "SourceRecord",
+        "claim0": "Assertion"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "EvidenceSupport",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "claim",
+          "claim0"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": false,
+    "expected_rule": "CARDINALITY",
+    "decisions": []
+  },
+  {
+    "id": "EvidenceSupport-event-in-evidence",
+    "fixture": {
+      "entities": {
+        "evidence0": "ManufacturingActivity",
+        "claim0": "Assertion"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "EvidenceSupport",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "evidence",
+          "evidence0"
+        ],
+        [
+          "r1",
+          "claim",
+          "claim0"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": false,
+    "expected_rule": "KIND",
+    "decisions": []
+  },
+  {
+    "id": "EvidenceSupport-excess-evidence",
+    "fixture": {
+      "entities": {
+        "evidence0": "SourceRecord",
+        "claim0": "Assertion",
+        "extra": "SourceRecord"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "EvidenceSupport",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "evidence",
+          "evidence0"
+        ],
+        [
+          "r1",
+          "claim",
+          "claim0"
+        ],
+        [
+          "r1",
+          "evidence",
+          "extra"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": false,
+    "expected_rule": "CARDINALITY",
+    "decisions": []
+  },
+  {
+    "id": "EvidenceSupport-evidence-ObservationResult",
+    "fixture": {
+      "entities": {
+        "evidence0": "ObservationResult",
+        "claim0": "Assertion"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "EvidenceSupport",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "evidence",
+          "evidence0"
+        ],
+        [
+          "r1",
+          "claim",
+          "claim0"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": true,
+    "expected_rule": null,
+    "decisions": []
+  },
+  {
+    "id": "EvidenceSupport-missing-claim",
+    "fixture": {
+      "entities": {
+        "evidence0": "SourceRecord",
+        "claim0": "Assertion"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "EvidenceSupport",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "evidence",
+          "evidence0"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": false,
+    "expected_rule": "CARDINALITY",
+    "decisions": []
+  },
+  {
+    "id": "EvidenceSupport-event-in-claim",
+    "fixture": {
+      "entities": {
+        "evidence0": "SourceRecord",
+        "claim0": "ManufacturingActivity"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "EvidenceSupport",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "evidence",
+          "evidence0"
+        ],
+        [
+          "r1",
+          "claim",
+          "claim0"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": false,
+    "expected_rule": "KIND",
+    "decisions": []
+  },
+  {
+    "id": "EvidenceSupport-excess-claim",
+    "fixture": {
+      "entities": {
+        "evidence0": "SourceRecord",
+        "claim0": "Assertion",
+        "extra": "Assertion"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "EvidenceSupport",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "evidence",
+          "evidence0"
+        ],
+        [
+          "r1",
+          "claim",
+          "claim0"
+        ],
+        [
+          "r1",
+          "claim",
+          "extra"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": false,
+    "expected_rule": "CARDINALITY",
+    "decisions": []
+  },
+  {
+    "id": "IdentifierAssignment-minimal",
+    "fixture": {
+      "entities": {
+        "subject0": "Organization",
+        "scheme0": "IdentifierScheme"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "IdentifierAssignment",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": "0012"
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "subject",
+          "subject0"
+        ],
+        [
+          "r1",
+          "scheme",
+          "scheme0"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": true,
+    "expected_rule": null,
+    "decisions": []
+  },
+  {
+    "id": "IdentifierAssignment-missing-subject",
+    "fixture": {
+      "entities": {
+        "subject0": "Organization",
+        "scheme0": "IdentifierScheme"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "IdentifierAssignment",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": "0012"
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "scheme",
+          "scheme0"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": false,
+    "expected_rule": "CARDINALITY",
+    "decisions": []
+  },
+  {
+    "id": "IdentifierAssignment-event-in-subject",
+    "fixture": {
+      "entities": {
+        "subject0": "ManufacturingActivity",
+        "scheme0": "IdentifierScheme"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "IdentifierAssignment",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": "0012"
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "subject",
+          "subject0"
+        ],
+        [
+          "r1",
+          "scheme",
+          "scheme0"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": false,
+    "expected_rule": "KIND",
+    "decisions": []
+  },
+  {
+    "id": "IdentifierAssignment-excess-subject",
+    "fixture": {
+      "entities": {
+        "subject0": "Organization",
+        "scheme0": "IdentifierScheme",
+        "extra": "Organization"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "IdentifierAssignment",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": "0012"
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "subject",
+          "subject0"
+        ],
+        [
+          "r1",
+          "scheme",
+          "scheme0"
+        ],
+        [
+          "r1",
+          "subject",
+          "extra"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": false,
+    "expected_rule": "CARDINALITY",
+    "decisions": []
+  },
+  {
+    "id": "IdentifierAssignment-subject-Facility",
+    "fixture": {
+      "entities": {
+        "subject0": "Facility",
+        "scheme0": "IdentifierScheme"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "IdentifierAssignment",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": "0012"
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "subject",
+          "subject0"
+        ],
+        [
+          "r1",
+          "scheme",
+          "scheme0"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": true,
+    "expected_rule": null,
+    "decisions": []
+  },
+  {
+    "id": "IdentifierAssignment-subject-MedicinalProduct",
+    "fixture": {
+      "entities": {
+        "subject0": "MedicinalProduct",
+        "scheme0": "IdentifierScheme"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "IdentifierAssignment",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": "0012"
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "subject",
+          "subject0"
+        ],
+        [
+          "r1",
+          "scheme",
+          "scheme0"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": true,
+    "expected_rule": null,
+    "decisions": []
+  },
+  {
+    "id": "IdentifierAssignment-subject-PharmaceuticalSubstance",
+    "fixture": {
+      "entities": {
+        "subject0": "PharmaceuticalSubstance",
+        "scheme0": "IdentifierScheme"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "IdentifierAssignment",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": "0012"
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "subject",
+          "subject0"
+        ],
+        [
+          "r1",
+          "scheme",
+          "scheme0"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": true,
+    "expected_rule": null,
+    "decisions": []
+  },
+  {
+    "id": "IdentifierAssignment-subject-MedicinalProductPresentation",
+    "fixture": {
+      "entities": {
+        "subject0": "MedicinalProductPresentation",
+        "scheme0": "IdentifierScheme"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "IdentifierAssignment",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": "0012"
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "subject",
+          "subject0"
+        ],
+        [
+          "r1",
+          "scheme",
+          "scheme0"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": true,
+    "expected_rule": null,
+    "decisions": []
+  },
+  {
+    "id": "IdentifierAssignment-subject-GeographicFeature",
+    "fixture": {
+      "entities": {
+        "subject0": "GeographicFeature",
+        "scheme0": "IdentifierScheme"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "IdentifierAssignment",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": "0012"
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "subject",
+          "subject0"
+        ],
+        [
+          "r1",
+          "scheme",
+          "scheme0"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": true,
+    "expected_rule": null,
+    "decisions": []
+  },
+  {
+    "id": "IdentifierAssignment-missing-scheme",
+    "fixture": {
+      "entities": {
+        "subject0": "Organization",
+        "scheme0": "IdentifierScheme"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "IdentifierAssignment",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": "0012"
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "subject",
+          "subject0"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": false,
+    "expected_rule": "CARDINALITY",
+    "decisions": []
+  },
+  {
+    "id": "IdentifierAssignment-event-in-scheme",
+    "fixture": {
+      "entities": {
+        "subject0": "Organization",
+        "scheme0": "ManufacturingActivity"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "IdentifierAssignment",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": "0012"
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "subject",
+          "subject0"
+        ],
+        [
+          "r1",
+          "scheme",
+          "scheme0"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": false,
+    "expected_rule": "KIND",
+    "decisions": []
+  },
+  {
+    "id": "IdentifierAssignment-excess-scheme",
+    "fixture": {
+      "entities": {
+        "subject0": "Organization",
+        "scheme0": "IdentifierScheme",
+        "extra": "IdentifierScheme"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "IdentifierAssignment",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": "0012"
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "subject",
+          "subject0"
+        ],
+        [
+          "r1",
+          "scheme",
+          "scheme0"
+        ],
+        [
+          "r1",
+          "scheme",
+          "extra"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": false,
+    "expected_rule": "CARDINALITY",
+    "decisions": []
+  },
+  {
+    "id": "AlternativeMedicineAssignment-minimal",
+    "fixture": {
+      "entities": {
+        "reference0": "MedicinalProduct",
+        "alternative0": "MedicinalProduct"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "AlternativeMedicineAssignment",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "reference",
+          "reference0"
+        ],
+        [
+          "r1",
+          "alternative",
+          "alternative0"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": true,
+    "expected_rule": null,
+    "decisions": []
+  },
+  {
+    "id": "AlternativeMedicineAssignment-missing-reference",
+    "fixture": {
+      "entities": {
+        "reference0": "MedicinalProduct",
+        "alternative0": "MedicinalProduct"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "AlternativeMedicineAssignment",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "alternative",
+          "alternative0"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": false,
+    "expected_rule": "CARDINALITY",
+    "decisions": []
+  },
+  {
+    "id": "AlternativeMedicineAssignment-event-in-reference",
+    "fixture": {
+      "entities": {
+        "reference0": "ManufacturingActivity",
+        "alternative0": "MedicinalProduct"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "AlternativeMedicineAssignment",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "reference",
+          "reference0"
+        ],
+        [
+          "r1",
+          "alternative",
+          "alternative0"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": false,
+    "expected_rule": "KIND",
+    "decisions": []
+  },
+  {
+    "id": "AlternativeMedicineAssignment-excess-reference",
+    "fixture": {
+      "entities": {
+        "reference0": "MedicinalProduct",
+        "alternative0": "MedicinalProduct",
+        "extra": "MedicinalProduct"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "AlternativeMedicineAssignment",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "reference",
+          "reference0"
+        ],
+        [
+          "r1",
+          "alternative",
+          "alternative0"
+        ],
+        [
+          "r1",
+          "reference",
+          "extra"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": false,
+    "expected_rule": "CARDINALITY",
+    "decisions": []
+  },
+  {
+    "id": "AlternativeMedicineAssignment-missing-alternative",
+    "fixture": {
+      "entities": {
+        "reference0": "MedicinalProduct",
+        "alternative0": "MedicinalProduct"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "AlternativeMedicineAssignment",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "reference",
+          "reference0"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": false,
+    "expected_rule": "CARDINALITY",
+    "decisions": []
+  },
+  {
+    "id": "AlternativeMedicineAssignment-event-in-alternative",
+    "fixture": {
+      "entities": {
+        "reference0": "MedicinalProduct",
+        "alternative0": "ManufacturingActivity"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "AlternativeMedicineAssignment",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "reference",
+          "reference0"
+        ],
+        [
+          "r1",
+          "alternative",
+          "alternative0"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": false,
+    "expected_rule": "KIND",
+    "decisions": []
+  },
+  {
+    "id": "AlternativeMedicineAssignment-excess-alternative",
+    "fixture": {
+      "entities": {
+        "reference0": "MedicinalProduct",
+        "alternative0": "MedicinalProduct",
+        "extra": "MedicinalProduct"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "AlternativeMedicineAssignment",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "reference",
+          "reference0"
+        ],
+        [
+          "r1",
+          "alternative",
+          "alternative0"
+        ],
+        [
+          "r1",
+          "alternative",
+          "extra"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": false,
+    "expected_rule": "CARDINALITY",
+    "decisions": []
+  },
+  {
+    "id": "SupplyDependency-minimal",
+    "fixture": {
+      "entities": {
+        "dependent0": "Organization",
+        "provider0": "Organization"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "SupplyDependency",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "dependent",
+          "dependent0"
+        ],
+        [
+          "r1",
+          "provider",
+          "provider0"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": true,
+    "expected_rule": null,
+    "decisions": []
+  },
+  {
+    "id": "SupplyDependency-missing-dependent",
+    "fixture": {
+      "entities": {
+        "dependent0": "Organization",
+        "provider0": "Organization"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "SupplyDependency",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "provider",
+          "provider0"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": false,
+    "expected_rule": "CARDINALITY",
+    "decisions": []
+  },
+  {
+    "id": "SupplyDependency-event-in-dependent",
+    "fixture": {
+      "entities": {
+        "dependent0": "ManufacturingActivity",
+        "provider0": "Organization"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "SupplyDependency",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "dependent",
+          "dependent0"
+        ],
+        [
+          "r1",
+          "provider",
+          "provider0"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": false,
+    "expected_rule": "KIND",
+    "decisions": []
+  },
+  {
+    "id": "SupplyDependency-excess-dependent",
+    "fixture": {
+      "entities": {
+        "dependent0": "Organization",
+        "provider0": "Organization",
+        "extra": "Organization"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "SupplyDependency",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "dependent",
+          "dependent0"
+        ],
+        [
+          "r1",
+          "provider",
+          "provider0"
+        ],
+        [
+          "r1",
+          "dependent",
+          "extra"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": false,
+    "expected_rule": "CARDINALITY",
+    "decisions": []
+  },
+  {
+    "id": "SupplyDependency-dependent-Facility",
+    "fixture": {
+      "entities": {
+        "dependent0": "Facility",
+        "provider0": "Organization"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "SupplyDependency",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "dependent",
+          "dependent0"
+        ],
+        [
+          "r1",
+          "provider",
+          "provider0"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": true,
+    "expected_rule": null,
+    "decisions": []
+  },
+  {
+    "id": "SupplyDependency-dependent-MedicinalProduct",
+    "fixture": {
+      "entities": {
+        "dependent0": "MedicinalProduct",
+        "provider0": "Organization"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "SupplyDependency",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "dependent",
+          "dependent0"
+        ],
+        [
+          "r1",
+          "provider",
+          "provider0"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": true,
+    "expected_rule": null,
+    "decisions": []
+  },
+  {
+    "id": "SupplyDependency-missing-provider",
+    "fixture": {
+      "entities": {
+        "dependent0": "Organization",
+        "provider0": "Organization"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "SupplyDependency",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "dependent",
+          "dependent0"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": false,
+    "expected_rule": "CARDINALITY",
+    "decisions": []
+  },
+  {
+    "id": "SupplyDependency-event-in-provider",
+    "fixture": {
+      "entities": {
+        "dependent0": "Organization",
+        "provider0": "ManufacturingActivity"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "SupplyDependency",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "dependent",
+          "dependent0"
+        ],
+        [
+          "r1",
+          "provider",
+          "provider0"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": false,
+    "expected_rule": "KIND",
+    "decisions": []
+  },
+  {
+    "id": "SupplyDependency-excess-provider",
+    "fixture": {
+      "entities": {
+        "dependent0": "Organization",
+        "provider0": "Organization",
+        "extra": "Organization"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "SupplyDependency",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "dependent",
+          "dependent0"
+        ],
+        [
+          "r1",
+          "provider",
+          "provider0"
+        ],
+        [
+          "r1",
+          "provider",
+          "extra"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": false,
+    "expected_rule": "CARDINALITY",
+    "decisions": []
+  },
+  {
+    "id": "SupplyDependency-provider-Facility",
+    "fixture": {
+      "entities": {
+        "dependent0": "Organization",
+        "provider0": "Facility"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "SupplyDependency",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "dependent",
+          "dependent0"
+        ],
+        [
+          "r1",
+          "provider",
+          "provider0"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": true,
+    "expected_rule": null,
+    "decisions": []
+  },
+  {
+    "id": "SupplyDependency-provider-MedicinalProduct",
+    "fixture": {
+      "entities": {
+        "dependent0": "Organization",
+        "provider0": "MedicinalProduct"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "SupplyDependency",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "dependent",
+          "dependent0"
+        ],
+        [
+          "r1",
+          "provider",
+          "provider0"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": true,
+    "expected_rule": null,
+    "decisions": []
+  },
+  {
+    "id": "RegulatoryOversight-minimal",
+    "fixture": {
+      "entities": {
+        "authority0": "Organization",
+        "subject0": "Organization"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "RegulatoryOversight",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "authority",
+          "authority0"
+        ],
+        [
+          "r1",
+          "subject",
+          "subject0"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": true,
+    "expected_rule": null,
+    "decisions": []
+  },
+  {
+    "id": "RegulatoryOversight-missing-authority",
+    "fixture": {
+      "entities": {
+        "authority0": "Organization",
+        "subject0": "Organization"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "RegulatoryOversight",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "subject",
+          "subject0"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": false,
+    "expected_rule": "CARDINALITY",
+    "decisions": []
+  },
+  {
+    "id": "RegulatoryOversight-event-in-authority",
+    "fixture": {
+      "entities": {
+        "authority0": "ManufacturingActivity",
+        "subject0": "Organization"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "RegulatoryOversight",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "authority",
+          "authority0"
+        ],
+        [
+          "r1",
+          "subject",
+          "subject0"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": false,
+    "expected_rule": "KIND",
+    "decisions": []
+  },
+  {
+    "id": "RegulatoryOversight-excess-authority",
+    "fixture": {
+      "entities": {
+        "authority0": "Organization",
+        "subject0": "Organization",
+        "extra": "Organization"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "RegulatoryOversight",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "authority",
+          "authority0"
+        ],
+        [
+          "r1",
+          "subject",
+          "subject0"
+        ],
+        [
+          "r1",
+          "authority",
+          "extra"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": false,
+    "expected_rule": "CARDINALITY",
+    "decisions": []
+  },
+  {
+    "id": "RegulatoryOversight-missing-subject",
+    "fixture": {
+      "entities": {
+        "authority0": "Organization",
+        "subject0": "Organization"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "RegulatoryOversight",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "authority",
+          "authority0"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": false,
+    "expected_rule": "CARDINALITY",
+    "decisions": []
+  },
+  {
+    "id": "RegulatoryOversight-event-in-subject",
+    "fixture": {
+      "entities": {
+        "authority0": "Organization",
+        "subject0": "ManufacturingActivity"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "RegulatoryOversight",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "authority",
+          "authority0"
+        ],
+        [
+          "r1",
+          "subject",
+          "subject0"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": false,
+    "expected_rule": "KIND",
+    "decisions": []
+  },
+  {
+    "id": "RegulatoryOversight-excess-subject",
+    "fixture": {
+      "entities": {
+        "authority0": "Organization",
+        "subject0": "Organization",
+        "extra": "Organization"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "RegulatoryOversight",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "authority",
+          "authority0"
+        ],
+        [
+          "r1",
+          "subject",
+          "subject0"
+        ],
+        [
+          "r1",
+          "subject",
+          "extra"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": false,
+    "expected_rule": "CARDINALITY",
+    "decisions": []
+  },
+  {
+    "id": "RegulatoryOversight-subject-Facility",
+    "fixture": {
+      "entities": {
+        "authority0": "Organization",
+        "subject0": "Facility"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "RegulatoryOversight",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "authority",
+          "authority0"
+        ],
+        [
+          "r1",
+          "subject",
+          "subject0"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": true,
+    "expected_rule": null,
+    "decisions": []
+  },
+  {
+    "id": "StrategicPartnershipAgreement-minimal",
+    "fixture": {
+      "entities": {
+        "partner0": "Organization",
+        "partner1": "Organization"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "StrategicPartnershipAgreement",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "partner",
+          "partner0"
+        ],
+        [
+          "r1",
+          "partner",
+          "partner1"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": true,
+    "expected_rule": null,
+    "decisions": []
+  },
+  {
+    "id": "StrategicPartnershipAgreement-missing-partner",
+    "fixture": {
+      "entities": {
+        "partner0": "Organization",
+        "partner1": "Organization"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "StrategicPartnershipAgreement",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": false,
+    "expected_rule": "CARDINALITY",
+    "decisions": []
+  },
+  {
+    "id": "StrategicPartnershipAgreement-event-in-partner",
+    "fixture": {
+      "entities": {
+        "partner0": "ManufacturingActivity",
+        "partner1": "Organization"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "StrategicPartnershipAgreement",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "partner",
+          "partner0"
+        ],
+        [
+          "r1",
+          "partner",
+          "partner1"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": false,
+    "expected_rule": "KIND",
+    "decisions": []
+  },
+  {
+    "id": "ContextualMedicineClassificationAssignment-minimal",
+    "fixture": {
+      "entities": {
+        "subject0": "MedicinalProduct",
+        "entry0": "ClassificationEntry"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "ContextualMedicineClassificationAssignment",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "subject",
+          "subject0"
+        ],
+        [
+          "r1",
+          "entry",
+          "entry0"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": true,
+    "expected_rule": null,
+    "decisions": []
+  },
+  {
+    "id": "ContextualMedicineClassificationAssignment-missing-subject",
+    "fixture": {
+      "entities": {
+        "subject0": "MedicinalProduct",
+        "entry0": "ClassificationEntry"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "ContextualMedicineClassificationAssignment",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "entry",
+          "entry0"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": false,
+    "expected_rule": "CARDINALITY",
+    "decisions": []
+  },
+  {
+    "id": "ContextualMedicineClassificationAssignment-event-in-subject",
+    "fixture": {
+      "entities": {
+        "subject0": "ManufacturingActivity",
+        "entry0": "ClassificationEntry"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "ContextualMedicineClassificationAssignment",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "subject",
+          "subject0"
+        ],
+        [
+          "r1",
+          "entry",
+          "entry0"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": false,
+    "expected_rule": "KIND",
+    "decisions": []
+  },
+  {
+    "id": "ContextualMedicineClassificationAssignment-excess-subject",
+    "fixture": {
+      "entities": {
+        "subject0": "MedicinalProduct",
+        "entry0": "ClassificationEntry",
+        "extra": "MedicinalProduct"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "ContextualMedicineClassificationAssignment",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "subject",
+          "subject0"
+        ],
+        [
+          "r1",
+          "entry",
+          "entry0"
+        ],
+        [
+          "r1",
+          "subject",
+          "extra"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": false,
+    "expected_rule": "CARDINALITY",
+    "decisions": []
+  },
+  {
+    "id": "ContextualMedicineClassificationAssignment-subject-PharmaceuticalSubstance",
+    "fixture": {
+      "entities": {
+        "subject0": "PharmaceuticalSubstance",
+        "entry0": "ClassificationEntry"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "ContextualMedicineClassificationAssignment",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "subject",
+          "subject0"
+        ],
+        [
+          "r1",
+          "entry",
+          "entry0"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": true,
+    "expected_rule": null,
+    "decisions": []
+  },
+  {
+    "id": "ContextualMedicineClassificationAssignment-missing-entry",
+    "fixture": {
+      "entities": {
+        "subject0": "MedicinalProduct",
+        "entry0": "ClassificationEntry"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "ContextualMedicineClassificationAssignment",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "subject",
+          "subject0"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": false,
+    "expected_rule": "CARDINALITY",
+    "decisions": []
+  },
+  {
+    "id": "ContextualMedicineClassificationAssignment-event-in-entry",
+    "fixture": {
+      "entities": {
+        "subject0": "MedicinalProduct",
+        "entry0": "ManufacturingActivity"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "ContextualMedicineClassificationAssignment",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "subject",
+          "subject0"
+        ],
+        [
+          "r1",
+          "entry",
+          "entry0"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": false,
+    "expected_rule": "KIND",
+    "decisions": []
+  },
+  {
+    "id": "ContextualMedicineClassificationAssignment-excess-entry",
+    "fixture": {
+      "entities": {
+        "subject0": "MedicinalProduct",
+        "entry0": "ClassificationEntry",
+        "extra": "ClassificationEntry"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "ContextualMedicineClassificationAssignment",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "subject",
+          "subject0"
+        ],
+        [
+          "r1",
+          "entry",
+          "entry0"
+        ],
+        [
+          "r1",
+          "entry",
+          "extra"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": false,
+    "expected_rule": "CARDINALITY",
+    "decisions": []
+  },
+  {
+    "id": "joint-operation",
+    "fixture": {
+      "entities": {
+        "operator0": "Organization",
+        "facility0": "Facility",
+        "operator2": "Organization"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "FacilityOperation",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "operator",
+          "operator0"
+        ],
+        [
+          "r1",
+          "facility",
+          "facility0"
+        ],
+        [
+          "r1",
+          "operator",
+          "operator2"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": true,
+    "expected_rule": null,
+    "decisions": []
+  },
+  {
+    "id": "three-partners",
+    "fixture": {
+      "entities": {
+        "partner0": "Organization",
+        "partner1": "Organization",
+        "partner2": "Organization"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "StrategicPartnershipAgreement",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "partner",
+          "partner0"
+        ],
+        [
+          "r1",
+          "partner",
+          "partner1"
+        ],
+        [
+          "r1",
+          "partner",
+          "partner2"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": true,
+    "expected_rule": null,
+    "decisions": []
+  },
+  {
+    "id": "AlternativeMedicineAssignment-self",
+    "fixture": {
+      "entities": {
+        "reference0": "MedicinalProduct",
+        "alternative0": "MedicinalProduct"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "AlternativeMedicineAssignment",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "reference",
+          "reference0"
+        ],
+        [
+          "r1",
+          "alternative",
+          "reference0"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": false,
+    "expected_rule": "DISTINCT",
+    "decisions": []
+  },
+  {
+    "id": "SupplyDependency-self",
+    "fixture": {
+      "entities": {
+        "dependent0": "Organization",
+        "provider0": "Organization"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "SupplyDependency",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "dependent",
+          "dependent0"
+        ],
+        [
+          "r1",
+          "provider",
+          "dependent0"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": false,
+    "expected_rule": "DISTINCT",
+    "decisions": []
+  },
+  {
+    "id": "RegulatoryOversight-self",
+    "fixture": {
+      "entities": {
+        "authority0": "Organization",
+        "subject0": "Organization"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "RegulatoryOversight",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "authority",
+          "authority0"
+        ],
+        [
+          "r1",
+          "subject",
+          "authority0"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": false,
+    "expected_rule": "DISTINCT",
+    "decisions": []
+  },
+  {
+    "id": "product-can-switch-contextual-roles",
+    "fixture": {
+      "entities": {
+        "reference0": "MedicinalProduct",
+        "alternative0": "MedicinalProduct"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "AlternativeMedicineAssignment",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        },
+        {
+          "id": "r2",
+          "type": "AlternativeMedicineAssignment",
+          "context": "ctx2",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "reference",
+          "reference0"
+        ],
+        [
+          "r1",
+          "alternative",
+          "alternative0"
+        ],
+        [
+          "r2",
+          "reference",
+          "alternative0"
+        ],
+        [
+          "r2",
+          "alternative",
+          "reference0"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": true,
+    "expected_rule": null,
+    "decisions": []
+  },
+  {
+    "id": "independent-agreements-same-partners",
+    "fixture": {
+      "entities": {
+        "partner0": "Organization",
+        "partner1": "Organization"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "StrategicPartnershipAgreement",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        },
+        {
+          "id": "r2",
+          "type": "StrategicPartnershipAgreement",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "partner",
+          "partner0"
+        ],
+        [
+          "r1",
+          "partner",
+          "partner1"
+        ],
+        [
+          "r2",
+          "partner",
+          "partner0"
+        ],
+        [
+          "r2",
+          "partner",
+          "partner1"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": true,
+    "expected_rule": null,
+    "decisions": []
+  },
+  {
+    "id": "same-lexical-value-different-schemes",
+    "fixture": {
+      "entities": {
+        "subject0": "Organization",
+        "scheme0": "IdentifierScheme",
+        "scheme2": "IdentifierScheme"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "IdentifierAssignment",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": "0012"
+        },
+        {
+          "id": "r2",
+          "type": "IdentifierAssignment",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": "0012"
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "subject",
+          "subject0"
+        ],
+        [
+          "r1",
+          "scheme",
+          "scheme0"
+        ],
+        [
+          "r2",
+          "subject",
+          "subject0"
+        ],
+        [
+          "r2",
+          "scheme",
+          "scheme2"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": true,
+    "expected_rule": null,
+    "decisions": []
+  },
+  {
+    "id": "missing-source",
+    "fixture": {
+      "entities": {
+        "subject0": "Organization",
+        "scheme0": "IdentifierScheme"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "IdentifierAssignment",
+          "context": "ctx1",
+          "source": null,
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": "0012"
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "subject",
+          "subject0"
+        ],
+        [
+          "r1",
+          "scheme",
+          "scheme0"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": false,
+    "expected_rule": "PROVENANCE",
+    "decisions": []
+  },
+  {
+    "id": "missing-context",
+    "fixture": {
+      "entities": {
+        "subject0": "Organization",
+        "scheme0": "IdentifierScheme"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "IdentifierAssignment",
+          "context": null,
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": "0012"
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "subject",
+          "subject0"
+        ],
+        [
+          "r1",
+          "scheme",
+          "scheme0"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": false,
+    "expected_rule": "PROVENANCE",
+    "decisions": []
+  },
+  {
+    "id": "missing-start",
+    "fixture": {
+      "entities": {
+        "subject0": "Organization",
+        "scheme0": "IdentifierScheme"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "IdentifierAssignment",
+          "context": "ctx1",
+          "source": "src1",
+          "start": null,
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": "0012"
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "subject",
+          "subject0"
+        ],
+        [
+          "r1",
+          "scheme",
+          "scheme0"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": false,
+    "expected_rule": "TIME",
+    "decisions": []
+  },
+  {
+    "id": "missing-lexical",
+    "fixture": {
+      "entities": {
+        "subject0": "Organization",
+        "scheme0": "IdentifierScheme"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "IdentifierAssignment",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "subject",
+          "subject0"
+        ],
+        [
+          "r1",
+          "scheme",
+          "scheme0"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": false,
+    "expected_rule": "LEXICAL",
+    "decisions": []
+  },
+  {
+    "id": "empty-validity-interval",
+    "fixture": {
+      "entities": {
+        "subject0": "Organization",
+        "scheme0": "IdentifierScheme"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "IdentifierAssignment",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2026-01-01T00:00:00Z",
+          "lexical": "0012"
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "subject",
+          "subject0"
+        ],
+        [
+          "r1",
+          "scheme",
+          "scheme0"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": false,
+    "expected_rule": "TIME",
+    "decisions": []
+  },
+  {
+    "id": "reversed-validity-interval",
+    "fixture": {
+      "entities": {
+        "subject0": "Organization",
+        "scheme0": "IdentifierScheme"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "IdentifierAssignment",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2028-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": "0012"
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "subject",
+          "subject0"
+        ],
+        [
+          "r1",
+          "scheme",
+          "scheme0"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": false,
+    "expected_rule": "TIME",
+    "decisions": []
+  },
+  {
+    "id": "evidence-alias-counts-once",
+    "fixture": {
+      "entities": {
+        "evidence0": "SourceRecord",
+        "claim0": "Assertion"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "EvidenceSupport",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "evidence",
+          "evidence0"
+        ],
+        [
+          "r1",
+          "claim",
+          "claim0"
+        ]
+      ],
+      "aliases": [
+        [
+          "r1",
+          "evidenceRecord",
+          "evidence0"
+        ]
+      ],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": true,
+    "expected_rule": null,
+    "decisions": []
+  },
+  {
+    "id": "evidence-alias-not-subset",
+    "fixture": {
+      "entities": {
+        "evidence0": "SourceRecord",
+        "claim0": "Assertion",
+        "otherrecord": "SourceRecord"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "EvidenceSupport",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "evidence",
+          "evidence0"
+        ],
+        [
+          "r1",
+          "claim",
+          "claim0"
+        ]
+      ],
+      "aliases": [
+        [
+          "r1",
+          "evidenceRecord",
+          "otherrecord"
+        ]
+      ],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": false,
+    "expected_rule": "ALIAS",
+    "decisions": []
+  },
+  {
+    "id": "contextual-aliases-subset",
+    "fixture": {
+      "entities": {
+        "subject0": "MedicinalProduct",
+        "entry0": "ClassificationEntry"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "ContextualMedicineClassificationAssignment",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "subject",
+          "subject0"
+        ],
+        [
+          "r1",
+          "entry",
+          "entry0"
+        ]
+      ],
+      "aliases": [
+        [
+          "r1",
+          "contextClassificationProduct",
+          "subject0"
+        ],
+        [
+          "r1",
+          "contextClassificationEntry",
+          "entry0"
+        ]
+      ],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": true,
+    "expected_rule": null,
+    "decisions": []
+  },
+  {
+    "id": "deferred-AssetAtRisk",
+    "fixture": {
+      "entities": {
+        "operator0": "Organization",
+        "facility0": "Facility",
+        "deferred": "AssetAtRisk"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "FacilityOperation",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "operator",
+          "operator0"
+        ],
+        [
+          "r1",
+          "facility",
+          "facility0"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": false,
+    "expected_rule": "DEFERRED",
+    "decisions": []
+  },
+  {
+    "id": "deferred-Vulnerability",
+    "fixture": {
+      "entities": {
+        "operator0": "Organization",
+        "facility0": "Facility",
+        "deferred": "Vulnerability"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "FacilityOperation",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "operator",
+          "operator0"
+        ],
+        [
+          "r1",
+          "facility",
+          "facility0"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": false,
+    "expected_rule": "DEFERRED",
+    "decisions": []
+  },
+  {
+    "id": "deferred-ClinicalCareParticipant",
+    "fixture": {
+      "entities": {
+        "operator0": "Organization",
+        "facility0": "Facility",
+        "deferred": "ClinicalCareParticipant"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "FacilityOperation",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "operator",
+          "operator0"
+        ],
+        [
+          "r1",
+          "facility",
+          "facility0"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": false,
+    "expected_rule": "DEFERRED",
+    "decisions": []
+  },
+  {
+    "id": "geo-chain",
+    "fixture": {
+      "entities": {
+        "operator0": "Organization",
+        "facility0": "Facility",
+        "g1": "AdministrativeRegion",
+        "g2": "AdministrativeRegion",
+        "g3": "AdministrativeRegion"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "FacilityOperation",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "operator",
+          "operator0"
+        ],
+        [
+          "r1",
+          "facility",
+          "facility0"
+        ]
+      ],
+      "aliases": [],
+      "geo": [
+        [
+          "g1",
+          "g2"
+        ],
+        [
+          "g2",
+          "g3"
+        ]
+      ],
+      "roles": []
+    },
+    "expected_valid": true,
+    "expected_rule": null,
+    "decisions": []
+  },
+  {
+    "id": "geo-self",
+    "fixture": {
+      "entities": {
+        "operator0": "Organization",
+        "facility0": "Facility",
+        "g1": "AdministrativeRegion",
+        "g2": "AdministrativeRegion",
+        "g3": "AdministrativeRegion"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "FacilityOperation",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "operator",
+          "operator0"
+        ],
+        [
+          "r1",
+          "facility",
+          "facility0"
+        ]
+      ],
+      "aliases": [],
+      "geo": [
+        [
+          "g1",
+          "g1"
+        ]
+      ],
+      "roles": []
+    },
+    "expected_valid": false,
+    "expected_rule": "CYCLE",
+    "decisions": []
+  },
+  {
+    "id": "geo-two-cycle",
+    "fixture": {
+      "entities": {
+        "operator0": "Organization",
+        "facility0": "Facility",
+        "g1": "AdministrativeRegion",
+        "g2": "AdministrativeRegion",
+        "g3": "AdministrativeRegion"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "FacilityOperation",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "operator",
+          "operator0"
+        ],
+        [
+          "r1",
+          "facility",
+          "facility0"
+        ]
+      ],
+      "aliases": [],
+      "geo": [
+        [
+          "g1",
+          "g2"
+        ],
+        [
+          "g2",
+          "g1"
+        ]
+      ],
+      "roles": []
+    },
+    "expected_valid": false,
+    "expected_rule": "CYCLE",
+    "decisions": []
+  },
+  {
+    "id": "geo-three-cycle",
+    "fixture": {
+      "entities": {
+        "operator0": "Organization",
+        "facility0": "Facility",
+        "g1": "AdministrativeRegion",
+        "g2": "AdministrativeRegion",
+        "g3": "AdministrativeRegion"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "FacilityOperation",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "operator",
+          "operator0"
+        ],
+        [
+          "r1",
+          "facility",
+          "facility0"
+        ]
+      ],
+      "aliases": [],
+      "geo": [
+        [
+          "g1",
+          "g2"
+        ],
+        [
+          "g2",
+          "g3"
+        ],
+        [
+          "g3",
+          "g1"
+        ]
+      ],
+      "roles": []
+    },
+    "expected_valid": false,
+    "expected_rule": "CYCLE",
+    "decisions": []
+  },
+  {
+    "id": "organization-without-any-role-or-authorization",
+    "fixture": {
+      "entities": {
+        "operator0": "Organization",
+        "facility0": "Facility",
+        "idle": "Organization"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "FacilityOperation",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "operator",
+          "operator0"
+        ],
+        [
+          "r1",
+          "facility",
+          "facility0"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": []
+    },
+    "expected_valid": true,
+    "expected_rule": null,
+    "decisions": []
+  },
+  {
+    "id": "role-without-grounding-relation",
+    "fixture": {
+      "entities": {
+        "operator0": "Organization",
+        "facility0": "Facility",
+        "idle": "Organization"
+      },
+      "relations": [
+        {
+          "id": "r1",
+          "type": "FacilityOperation",
+          "context": "ctx1",
+          "source": "src1",
+          "start": "2026-01-01T00:00:00Z",
+          "end": "2027-01-01T00:00:00Z",
+          "lexical": null
+        }
+      ],
+      "parts": [
+        [
+          "r1",
+          "operator",
+          "operator0"
+        ],
+        [
+          "r1",
+          "facility",
+          "facility0"
+        ]
+      ],
+      "aliases": [],
+      "geo": [],
+      "roles": [
+        [
+          "idle",
+          "OperatingOrganizationRole"
+        ]
+      ]
+    },
+    "expected_valid": false,
+    "expected_rule": "GROUNDING",
+    "decisions": []
+  }
+]

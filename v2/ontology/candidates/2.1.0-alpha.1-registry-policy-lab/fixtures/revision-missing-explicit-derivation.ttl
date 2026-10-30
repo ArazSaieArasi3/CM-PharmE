@@ -1,0 +1,24 @@
+@prefix c: <https://w3id.org/cm-pharme/2.1/> .
+@prefix l: <https://w3id.org/cm-pharme/experimental/four-domain/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix p: <https://w3id.org/cm-pharme/experimental/registry-policy/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix t: <urn:cmpe-registry-policy:> .
+
+t:record a c:SourceRecord ;
+    owl:differentFrom t:previous ;
+    prov:wasAttributedTo t:author ;
+    prov:wasRevisionOf t:previous ;
+    l:recordDigitalActivity t:activity ;
+    p:profile "provenance-record" ;
+    p:version "2" .
+
+t:activity a c:ProvenanceActivity ;
+    prov:wasAssociatedWith t:operator .
+
+t:author a c:Organization .
+
+t:operator a c:Organization .
+
+t:previous a c:SourceRecord ;
+    p:version "1" .

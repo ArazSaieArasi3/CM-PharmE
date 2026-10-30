@@ -1,0 +1,40 @@
+{
+  "as_of": "2026-10-08 Asia/Tehran",
+  "counting_rule": "Only a closed named package contributes to the percentage; scoped passes do not imply full conformance.",
+  "major_stage_status": {
+    "G1": "closed",
+    "G2": "closed",
+    "G3": "active",
+    "G4": "pending",
+    "G5": "pending",
+    "closed_count": 2,
+    "total": 5,
+    "closed_percent": 40.0
+  },
+  "G3_package_status": {
+    "P1_integrated_candidate": "closed",
+    "P2_42_relation_first_reviews": "closed",
+    "P3_scientific_adjudication": "in progress; 29 relation rows, 14 isolate proposals, 10 ImpAbs endpoint questions, 19 RepRel tuple policies pending",
+    "P4_semantic_integration": "in progress; SupplyCapacity typed bearer route remains open",
+    "P5_ontouml_validation": "in progress; B3 bounded RelComp/RelOver/ImpAbs prefilters done; official full 20-pattern engine not run",
+    "P6_formal_empirical_validation": "pending",
+    "P7_candidate_and_reviewer_gate": "pending",
+    "closed_count": 2,
+    "total": 7,
+    "closed_percent": 28.6
+  },
+  "G3_3_B2_status": "completed",
+  "next_exact_turn": "G3-3-C integrated OWL DL and pySHACL validation of approved candidate, positive/negative regressions and explicit reasoner limits",
+  "remaining_bounded_turns": [
+    "G3-3-C integrated OWL DL and SHACL validation",
+    "G3-3-D real-source migration",
+    "G3-3-E connectivity and isolate evidence",
+    "G3-3-F traceability and human review handoff"
+  ],
+  "human_gates": [
+    "Scientific dispositions on patterns, remaining 29 relations and 14 isolate proposals",
+    "Final acceptance and release"
+  ],
+  "conditional_extra_work": "If full anti-pattern detector, temporal uniqueness, or author decisions remain unavailable, keep P5 open rather than treating bounded prefilters as a clean certificate.",
+  "G3_3_B3_status": "completed bounded structural and evidence-ranking packet; author and official detector gates remain"
+}

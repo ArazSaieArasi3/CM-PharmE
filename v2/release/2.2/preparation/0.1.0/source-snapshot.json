@@ -1,0 +1,79 @@
+{
+  "schema_version": "CMPE22SourceSnapshot/0.1.0",
+  "date": "2026-10-30",
+  "timezone": "Asia/Tehran",
+  "scope": "Captured repository metadata and last recorded publication identity; not new semantic acceptance or new public-browser QA.",
+  "public_control_plane": {
+    "commit": "42a5ae4da0e87af161e91110a044c6b146982e89",
+    "registry_path": "docs/documentation/ontology-version-registry.json",
+    "registry_git_blob_sha": "bf3b61f5af21ed43fc99d77e22b90457c8db2b52",
+    "registry_sha256": "33ee215f40b086ce401f447fd83f7e5a4d9f3842c59097025e4cbfb374d06e29",
+    "records": [
+      {
+        "id": "v1",
+        "reader_label": "CM-PharmE 1.0",
+        "lifecycle_state": "stable",
+        "semantic_source_ref": "main@595ea30a66644c1b130b6c1a781dc7afbd7ba284",
+        "semantic_source_paths": [
+          "ontology/source/modules/"
+        ],
+        "immutable_version_path": "ontology/v1.0.0/",
+        "current_path": null
+      },
+      {
+        "id": "v2",
+        "reader_label": "CM-PharmE 2.0",
+        "lifecycle_state": "evolving",
+        "semantic_source_ref": "v2/research-program@1226b0a5484f8f5d3a8d214e0d0f52f066b88999",
+        "semantic_source_paths": [
+          "v2/ontology/source/modules/00-metadata.ttl",
+          "v2/ontology/source/modules/10-core.ttl",
+          "v2/ontology/source/modules/20-xinfra.ttl",
+          "v2/ontology/source/modules/25-gate-d-disjointness.ttl",
+          "v2/ontology/source/modules/30-extensions.ttl",
+          "v2/ontology/source/modules/40-mappings.ttl"
+        ],
+        "immutable_version_path": null,
+        "current_path": "ontology/v2/current/"
+      },
+      {
+        "id": "v2-m1",
+        "reader_label": "CM-PharmE 2.1.0 \u2014 M1 Provenance Core",
+        "lifecycle_state": "stable",
+        "semantic_source_ref": "release/2.1.0@77a8e854d0e3927b0687346d7f8fda6a398adda7",
+        "semantic_source_paths": [
+          "source/v2/ontology/profiles/2.1/m1-provenance/0.1.0/profile.ttl"
+        ],
+        "immutable_version_path": "ontology/2.1.0/m1/",
+        "current_path": null
+      }
+    ]
+  },
+  "stable_m1": {
+    "distribution_version": "2.1.0",
+    "profile_version": "0.1.0",
+    "source_commit": "77a8e854d0e3927b0687346d7f8fda6a398adda7",
+    "ttl_sha256": "a8dca6788eff03570b4911b8b7f0933a5420fcde9945272543da86934539ce9b",
+    "support_scope": "M1 provenance only; not comprehensive full V2"
+  },
+  "scientific_status": {
+    "source_policy_acceptances": "1/4",
+    "wholeover_author_disposition": "PENDING",
+    "historical_orsd_author_acceptance": "0/83",
+    "new_external_expert_results": 0,
+    "scope": "Carried forward from roadmap0.12.0 and issues315/342; no acceptance created by the 2.2 objective or this audit."
+  },
+  "documentation_baselines": {
+    "pages": "PB-2026.10.1",
+    "wiki": "WB-2026.10.1",
+    "published_wiki_commit": "04e598c96f62ab3457b6250ab3d618efd4eb46d5",
+    "last_public_pages_run": 40970246150
+  },
+  "branch_strategy": {
+    "pr": 305,
+    "draft": true,
+    "base": "v2/research-program",
+    "head_branch": "v2/connectivity-audit-2-1-candidate",
+    "note": "Historical branch/path names retained; new objective and plans explicitly target comprehensive2.2."
+  }
+}

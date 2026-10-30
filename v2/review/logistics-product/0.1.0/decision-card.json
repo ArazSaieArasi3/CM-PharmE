@@ -1,0 +1,52 @@
+{
+  "schema_version": "CMPE-LogisticsProductDecision/0.1.0",
+  "issue": 348,
+  "decision_id": "AUTH-22-01/LS-PRODUCT-01",
+  "authority": "Araz delegated bounded 2.2 decisions 2026-10-30",
+  "current_relation": "https://w3id.org/cm-pharme/experimental/coherence/logisticsProduct",
+  "source": "DistributionLogisticsActivity",
+  "target": "MedicinalProduct",
+  "alternatives": [
+    {
+      "id": "A",
+      "choice": "Unqualified activity-product link",
+      "benefit": "Smallest graph",
+      "cost": "Conflates product type with movement evidence",
+      "decision": "REJECT"
+    },
+    {
+      "id": "B",
+      "choice": "Keep generic association with narrow documented product-type meaning and local source-claim admission",
+      "benefit": "Preserves candidate while separating product type, batch and actual event",
+      "cost": "Does not answer batch/consignment identity questions",
+      "decision": "ADOPT_FOR_BOUNDED_REVIEW"
+    },
+    {
+      "id": "C",
+      "choice": "Create consignment or batch participation entity now",
+      "benefit": "Could support batch and route queries",
+      "cost": "Identity, temporal and evidence criteria are not yet justified",
+      "decision": "DEFER_TO_EXPLICIT_REQUIREMENT"
+    }
+  ],
+  "selected": "B",
+  "selected_status": "DELEGATED_BOUNDED_MODELING_DECISION",
+  "meaning": "A particular occurred logistics activity is documented as associated with this medicinal product type; the source-qualified claim is a candidate statement.",
+  "identity": "Event identity and product type identity stay distinct; batch, item, package, consignment and source-record identities cannot be derived from product type.",
+  "direction": "DistributionLogisticsActivity to MedicinalProduct",
+  "temporal_scope": "Activity occurrence is explicit in local admission; no date or route is inferred from product type.",
+  "global_bounds": "0..* provisional at both ends; no universal existence, exact-one or functionality/disjointness.",
+  "local_admission": "one claim has exactly one event, one named MedicinalProduct, performed status, one source record; multiple claims per event/product are allowed.",
+  "native": "Keep current null stereotype and source event/target product kind; semantic Event participation remains a full-model validation task.",
+  "owl": "Keep provisional object property, domain/range only in bounded proposal; no existential, equivalence, item/batch property or global cardinality.",
+  "shacl": "Source-qualified opted-in claim validation; invalid/unknown does not project.",
+  "no_implied_truth": [
+    "registration or listing implies no logistics event",
+    "planned event implies no occurred movement",
+    "product type implies no batch or consignment",
+    "source claim implies no verified world truth"
+  ],
+  "release_effect": "One of 49 experimental relations gains a bounded delegated interpretation; no complete-model acceptance or release readiness.",
+  "unchanged_other_proposals": 48,
+  "scientific_full_model_validation": false
+}

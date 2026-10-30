@@ -1,0 +1,111 @@
+{
+  "name": "G3 completion work packages",
+  "as_of": "2026-10-08 Asia/Tehran",
+  "counting_rule": "Equal-count package closure; 2/7=28.6% of named deliverable packages, NOT effort-weighted/validation completeness; 10 bounded agent turns + 2 human gates remain, gates are not counted as agent work",
+  "packages": [
+    {
+      "id": "G3-P1",
+      "name": "G3d integrated candidate",
+      "status": "DONE",
+      "evidence": "g3d-candidate README/contract/results; scoped synthetic tests and reasoners"
+    },
+    {
+      "id": "G3-P2",
+      "name": "42 relation detailed first reviews",
+      "status": "DONE",
+      "evidence": "G3-2b/c/d/e-a register; author review remains pending"
+    },
+    {
+      "id": "G3-P3",
+      "name": "Scientific adjudication and 14 isolate truthmakers",
+      "status": "IN_PROGRESS",
+      "turns": [
+        {
+          "id": "G3-2e-B",
+          "deliverable": "42-row triage with recommendations, conflicts, evidence and exact author questions; no implicit approval",
+          "status": "DONE",
+          "evidence": "G3-2e-B 42-row triage packet and author choices"
+        },
+        {
+          "id": "G3-2e-C",
+          "deliverable": "14-isolate connection proposals with positive/negative witness and no invented edges",
+          "status": "PENDING"
+        }
+      ],
+      "human_gate": "Scientific adjudication of proposals; unanswered proposals remain pending and cannot be promoted"
+    },
+    {
+      "id": "G3-P4",
+      "name": "Approved semantic integration",
+      "status": "PENDING",
+      "turns": [
+        {
+          "id": "G3-2e-E",
+          "deliverable": "Native OntoUML candidate, typed ends, justified multiplicities and schema checks"
+        },
+        {
+          "id": "G3-2e-F",
+          "deliverable": "Aligned OWL/SHACL candidate and explicit operates derivation or documented exclusion with tests"
+        }
+      ]
+    },
+    {
+      "id": "G3-P5",
+      "name": "Official OntoUML validation",
+      "status": "PENDING",
+      "turns": [
+        {
+          "id": "G3-3-A",
+          "deliverable": "Run official parser/schema and anti-pattern tooling, archive versions and raw findings"
+        },
+        {
+          "id": "G3-3-B",
+          "deliverable": "Adjudicate each pattern/anti-pattern occurrence, refactor or justify with counterexample and scope"
+        }
+      ]
+    },
+    {
+      "id": "G3-P6",
+      "name": "Formal and empirical validation",
+      "status": "PENDING",
+      "turns": [
+        {
+          "id": "G3-3-C",
+          "deliverable": "OWL HermiT/Pellet and SHACL positive/negative regression on integrated candidate"
+        },
+        {
+          "id": "G3-3-D",
+          "deliverable": "Source-to-candidate migration for available real datasets, temporal/provenance admission and gap report"
+        },
+        {
+          "id": "G3-3-E",
+          "deliverable": "Connectivity/domain metrics and evidence-backed disposition of 14 isolates"
+        }
+      ]
+    },
+    {
+      "id": "G3-P7",
+      "name": "Candidate gate and reproducibility",
+      "status": "PENDING",
+      "turns": [
+        {
+          "id": "G3-3-F",
+          "deliverable": "Traceability, versioned release candidate, issue/PR gate, reviewer packet and G4 handoff; human scientific acceptance explicit"
+        }
+      ],
+      "human_gate": "Final scientific acceptance and authorization for release, after reviewer packet"
+    }
+  ],
+  "remaining_packages": 5,
+  "remaining_atomic_turns": 9,
+  "known_open_items": {
+    "scientific_author_dispositions": "42/42 pending",
+    "official_antipattern_run": "not run on integrated overlay",
+    "real_data_migration": "incomplete",
+    "named_class_components": 15,
+    "isolates": 14
+  },
+  "next_exact_turn": "G3-2e-C: evaluate 14 old isolates one by one; propose only evidence-backed connectors with negative cases and source links; no blind graph densification",
+  "human_gates": 2,
+  "completed_atomic_turns_since_g3_2e_a": 1
+}

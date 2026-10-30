@@ -1,0 +1,262 @@
+{
+  "scope": "G3-3-C integrated review candidate: actual full candidate SHACL shapes on synthetic graphs; HermiT OWL DL on converted RDF/XML; OWL RL subproperty entailment; not a full anti-pattern or real-data certificate",
+  "versions": {
+    "rdflib": "7.6.0",
+    "pyshacl": "0.30.1",
+    "owlready2": "0.49",
+    "owlrl": "7.6.2",
+    "reasoner": "HermiT bundled with Owlready2"
+  },
+  "inputs": {
+    "native_elements": 523,
+    "owl_triples": 1598,
+    "base_owl_triples": 1588,
+    "shacl_triples": 678,
+    "base_shacl_triples": 655,
+    "sha256": {
+      "native": "752abd468c991381f3d80042d24b3597b58d735c5c698a0fcf25ac9d06355d50",
+      "owl": "96630c946b849194cd6b6099bc7a307bc1c26c27c35883642849bc8a942b355c",
+      "shapes": "f5cfd077e96b7c659b22502f81ac50d1a4cd2f275b7a4dd619d34a68d7b307a1",
+      "base_owl": "de8bf086c8776c61ef8a03d1e68f7eb90740b7fef46b068ca4e2b94075f69e35",
+      "base_shapes": "dd28a1ce70efd3cb8e48b133df8c957be794e8136cdbb01ebc83c487a934b34e"
+    }
+  },
+  "full_candidate_shacl": {
+    "case_count": 11,
+    "pass_count": 11,
+    "new_rejections_vs_baseline_shapes": 8,
+    "cases": [
+      {
+        "name": "valid_product_capability_confidence_and_unscored_assertion",
+        "expected_conforms": true,
+        "conforms": true,
+        "pass": true,
+        "validation_results": 0,
+        "result_paths": [],
+        "base_shapes_conforms": true,
+        "base_shapes_results": 0,
+        "fixture_triples": 12
+      },
+      {
+        "name": "product_without_active_substance_allowed",
+        "expected_conforms": true,
+        "conforms": true,
+        "pass": true,
+        "validation_results": 0,
+        "result_paths": [],
+        "base_shapes_conforms": true,
+        "base_shapes_results": 0,
+        "fixture_triples": 13
+      },
+      {
+        "name": "presentation_on_product_only_property_rejected",
+        "expected_conforms": false,
+        "conforms": false,
+        "pass": true,
+        "validation_results": 2,
+        "result_paths": [],
+        "base_shapes_conforms": true,
+        "base_shapes_results": 0,
+        "fixture_triples": 14
+      },
+      {
+        "name": "untyped_active_substance_rejected",
+        "expected_conforms": false,
+        "conforms": false,
+        "pass": true,
+        "validation_results": 1,
+        "result_paths": [
+          "https://w3id.org/cm-pharme/2.1/productHasActiveSubstance"
+        ],
+        "base_shapes_conforms": true,
+        "base_shapes_results": 0,
+        "fixture_triples": 13
+      },
+      {
+        "name": "capability_with_no_bearer_rejected",
+        "expected_conforms": false,
+        "conforms": false,
+        "pass": true,
+        "validation_results": 1,
+        "result_paths": [
+          "https://w3id.org/cm-pharme/2.1/capabilityBearer"
+        ],
+        "base_shapes_conforms": true,
+        "base_shapes_results": 0,
+        "fixture_triples": 13
+      },
+      {
+        "name": "capability_with_two_bearers_rejected",
+        "expected_conforms": false,
+        "conforms": false,
+        "pass": true,
+        "validation_results": 1,
+        "result_paths": [
+          "https://w3id.org/cm-pharme/2.1/capabilityBearer"
+        ],
+        "base_shapes_conforms": true,
+        "base_shapes_results": 0,
+        "fixture_triples": 13
+      },
+      {
+        "name": "capability_with_untyped_bearer_rejected",
+        "expected_conforms": false,
+        "conforms": false,
+        "pass": true,
+        "validation_results": 2,
+        "result_paths": [
+          "https://w3id.org/cm-pharme/2.1/capabilityBearer"
+        ],
+        "base_shapes_conforms": true,
+        "base_shapes_results": 0,
+        "fixture_triples": 13
+      },
+      {
+        "name": "confidence_with_no_assertion_rejected",
+        "expected_conforms": false,
+        "conforms": false,
+        "pass": true,
+        "validation_results": 1,
+        "result_paths": [
+          "^https://w3id.org/cm-pharme/2.1/hasMatchConfidence"
+        ],
+        "base_shapes_conforms": true,
+        "base_shapes_results": 0,
+        "fixture_triples": 13
+      },
+      {
+        "name": "confidence_with_two_assertions_rejected",
+        "expected_conforms": false,
+        "conforms": false,
+        "pass": true,
+        "validation_results": 1,
+        "result_paths": [
+          "^https://w3id.org/cm-pharme/2.1/hasMatchConfidence"
+        ],
+        "base_shapes_conforms": true,
+        "base_shapes_results": 0,
+        "fixture_triples": 13
+      },
+      {
+        "name": "confidence_with_wrong_bearer_rejected",
+        "expected_conforms": false,
+        "conforms": false,
+        "pass": true,
+        "validation_results": 2,
+        "result_paths": [
+          "^https://w3id.org/cm-pharme/2.1/hasMatchConfidence"
+        ],
+        "base_shapes_conforms": true,
+        "base_shapes_results": 0,
+        "fixture_triples": 14
+      },
+      {
+        "name": "supply_capacity_without_bearer_current_gap",
+        "expected_conforms": true,
+        "conforms": true,
+        "pass": true,
+        "validation_results": 0,
+        "result_paths": [],
+        "base_shapes_conforms": true,
+        "base_shapes_results": 0,
+        "fixture_triples": 13
+      }
+    ]
+  },
+  "owl_dl_reasoner": {
+    "case_count": 8,
+    "pass_count": 8,
+    "cases": [
+      {
+        "name": "baseline_TBox_coherent",
+        "expected_consistent": true,
+        "consistent": true,
+        "unsatisfiable_classes": [],
+        "classes_imported": 138,
+        "ontology_triples": 1588,
+        "asserted_fixture_triples": 0,
+        "pass": true
+      },
+      {
+        "name": "candidate_TBox_coherent",
+        "expected_consistent": true,
+        "consistent": true,
+        "unsatisfiable_classes": [],
+        "classes_imported": 138,
+        "ontology_triples": 1598,
+        "asserted_fixture_triples": 0,
+        "pass": true
+      },
+      {
+        "name": "valid_unscored_assertion_and_unfilled_product",
+        "expected_consistent": true,
+        "consistent": true,
+        "unsatisfiable_classes": [],
+        "classes_imported": 138,
+        "ontology_triples": 1598,
+        "asserted_fixture_triples": 2,
+        "pass": true
+      },
+      {
+        "name": "product_and_presentation_disjoint",
+        "expected_consistent": false,
+        "consistent": false,
+        "unsatisfiable_classes": [],
+        "classes_imported": 138,
+        "ontology_triples": 1598,
+        "asserted_fixture_triples": 2,
+        "pass": true
+      },
+      {
+        "name": "two_capability_bearers_no_inequality_consistent_OWA",
+        "expected_consistent": true,
+        "consistent": true,
+        "unsatisfiable_classes": [],
+        "classes_imported": 138,
+        "ontology_triples": 1598,
+        "asserted_fixture_triples": 5,
+        "pass": true
+      },
+      {
+        "name": "two_explicitly_distinct_capability_bearers_inconsistent",
+        "expected_consistent": false,
+        "consistent": false,
+        "unsatisfiable_classes": [],
+        "classes_imported": 138,
+        "ontology_triples": 1598,
+        "asserted_fixture_triples": 6,
+        "pass": true
+      },
+      {
+        "name": "two_explicitly_distinct_confidence_bearers_inconsistent",
+        "expected_consistent": false,
+        "consistent": false,
+        "unsatisfiable_classes": [],
+        "classes_imported": 138,
+        "ontology_triples": 1598,
+        "asserted_fixture_triples": 6,
+        "pass": true
+      },
+      {
+        "name": "supply_capacity_without_asserted_bearer_consistent_OWA",
+        "expected_consistent": true,
+        "consistent": true,
+        "unsatisfiable_classes": [],
+        "classes_imported": 138,
+        "ontology_triples": 1598,
+        "asserted_fixture_triples": 1,
+        "pass": true
+      }
+    ]
+  },
+  "owl_rl_subproperty_entailment": {
+    "case": "productHasActiveSubstance entails hasActiveSubstance",
+    "pass": true
+  },
+  "known_limits": [
+    "SHACL closed-world missing-value checks must not be read as OWL DL inconsistency under the open-world assumption.",
+    "Two bearer IRIs need explicit inequality for OWL exact-one inconsistency; SHACL rejects two explicit nodes without it.",
+    "SupplyCapacity typed Organization/Facility exactly-one-of-two bearer route is not formalized.",
+    "No compatible official 20-pattern detector, full mapped baseline regression, or real-source migration in this run."
+  ]
+}

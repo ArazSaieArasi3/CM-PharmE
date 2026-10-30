@@ -1,0 +1,179 @@
+@prefix ns1: <https://w3id.org/cm-pharme/experimental/four-domain/> .
+@prefix ns2: <https://w3id.org/cm-pharme/experimental/refinement/> .
+@prefix ns3: <https://w3id.org/cm-pharme/2.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<urn:cmpe-lab:agreement> a ns3:StrategicPartnershipAgreement ;
+    ns3:partnershipParticipant <urn:cmpe-lab:org>,
+        <urn:cmpe-lab:org2> ;
+    ns1:profile "ba-partnership",
+        "documented-partnership" ;
+    ns2:agreementCommitment <urn:cmpe-lab:commitment> .
+
+<urn:cmpe-lab:commitmentEvidence> a ns3:EvidenceSupport ;
+    ns3:evidenceAssertion <urn:cmpe-lab:commitment> ;
+    ns3:evidenceItem <urn:cmpe-lab:commitmentRecord> ;
+    ns3:evidenceRecord <urn:cmpe-lab:commitmentRecord> .
+
+<urn:cmpe-lab:copyReporting> a ns3:AdverseEventReportingActivity ;
+    ns1:atTime "2026-10-03T10:00:00+00:00"^^xsd:dateTime ;
+    ns1:profile "safety-reporting" ;
+    ns1:reportsRecord <urn:cmpe-lab:reportCopy> .
+
+<urn:cmpe-lab:digitalService> a ns3:ServiceOfferingSpecification ;
+    ns1:digitalServiceActivity <urn:cmpe-lab:transform> ;
+    ns1:digitalServiceComponent <urn:cmpe-lab:component> ;
+    ns1:profile "digital-service",
+        "manufacturing-digital-service" .
+
+<urn:cmpe-lab:jB> a ns3:RegulatoryJurisdiction .
+
+<urn:cmpe-lab:plan> a ns3:RiskTreatmentPlan ;
+    ns1:planRiskResult <urn:cmpe-lab:riskResult> ;
+    ns1:profile "risk-plan" .
+
+<urn:cmpe-lab:record> a ns3:SourceRecord ;
+    ns1:profile "digital-record" ;
+    ns1:recordDigitalActivity <urn:cmpe-lab:transform> .
+
+<urn:cmpe-lab:reporting> a ns3:AdverseEventReportingActivity ;
+    ns1:atTime "2026-10-01T10:00:00+00:00"^^xsd:dateTime ;
+    ns1:profile "safety-reporting" ;
+    ns1:reportsRecord <urn:cmpe-lab:report> .
+
+<urn:cmpe-lab:serviceFacility> a ns3:Facility .
+
+<urn:cmpe-lab:signalResult> a ns3:Assertion ;
+    ns1:atTime "2026-10-02T10:00:00+00:00"^^xsd:dateTime ;
+    ns1:profile "signal-result" ;
+    ns1:pvResultAssessment <urn:cmpe-lab:signalAssessment> ;
+    ns1:pvResultSignal <urn:cmpe-lab:signal> ;
+    ns1:signalStatus "under-review" .
+
+<urn:cmpe-lab:surveillance> a ns3:PostMarketSurveillanceActivity ;
+    ns1:profile "pv-surveillance" ;
+    ns1:surveillanceRequirement <urn:cmpe-lab:pvRule> ;
+    ns1:surveillanceSource <urn:cmpe-lab:report> .
+
+<urn:cmpe-lab:view> a ns3:BusinessArchitectureView ;
+    ns1:profile "ba-view" ;
+    ns1:viewOrganization <urn:cmpe-lab:org> ;
+    ns1:viewService <urn:cmpe-lab:service> .
+
+<urn:cmpe-lab:assessment> a ns3:RiskAssessmentActivity ;
+    ns1:assessmentScenario <urn:cmpe-lab:scenario> ;
+    ns1:profile "risk-assessment" .
+
+<urn:cmpe-lab:assessorA> a ns3:Organization .
+
+<urn:cmpe-lab:cap> a ns3:EnterpriseCapability ;
+    ns3:capabilityBearer <urn:cmpe-lab:org> .
+
+<urn:cmpe-lab:deployment> a ns3:SystemDeploymentActivity ;
+    ns1:atTime "2026-10-01T10:00:00+00:00"^^xsd:dateTime ;
+    ns1:componentVersion "1.0" ;
+    ns1:deploymentComponent <urn:cmpe-lab:component> ;
+    ns1:deploymentOrganization <urn:cmpe-lab:operator> ;
+    ns1:profile "deployment" .
+
+<urn:cmpe-lab:jA> a ns3:RegulatoryJurisdiction .
+
+<urn:cmpe-lab:manufacturedProduct> a ns3:MedicinalProduct .
+
+<urn:cmpe-lab:manufacturing> a ns3:ManufacturingActivity ;
+    ns1:profile "manufacturing-context" ;
+    ns2:manufacturingFacility <urn:cmpe-lab:manufacturingSite> ;
+    ns2:manufacturingProduct <urn:cmpe-lab:manufacturedProduct> .
+
+<urn:cmpe-lab:manufacturingSite> a ns3:Facility .
+
+<urn:cmpe-lab:medicine> a ns3:MedicinalProduct .
+
+<urn:cmpe-lab:processor> a ns3:Organization ;
+    owl:differentFrom <urn:cmpe-lab:operator> .
+
+<urn:cmpe-lab:product> a ns3:MedicinalProduct .
+
+<urn:cmpe-lab:pvRule> a ns3:PharmacovigilanceRequirement ;
+    ns1:profile "pv-requirement" ;
+    ns1:pvRequirementJurisdiction <urn:cmpe-lab:jA> .
+
+<urn:cmpe-lab:riskResult> a ns3:Assertion ;
+    ns1:atTime "2026-10-01T10:00:00+00:00"^^xsd:dateTime ;
+    ns1:citesSourceRecord <urn:cmpe-lab:source> ;
+    ns1:conclusion "review supply continuity" ;
+    ns1:profile "risk-result" ;
+    ns1:resultAssessment <urn:cmpe-lab:assessment> .
+
+<urn:cmpe-lab:scenario> a ns3:Assertion ;
+    ns1:profile "risk-scenario" ;
+    ns1:scenarioProduct <urn:cmpe-lab:product> .
+
+<urn:cmpe-lab:service> a ns3:ServiceOfferingSpecification ;
+    ns1:profile "ba-service",
+        "pharma-service" ;
+    ns1:serviceCapability <urn:cmpe-lab:cap> ;
+    ns2:serviceProduct <urn:cmpe-lab:serviceProduct> .
+
+<urn:cmpe-lab:serviceProduct> a ns3:MedicinalProduct .
+
+<urn:cmpe-lab:signalAssessment> a ns3:SignalAssessmentActivity ;
+    ns1:profile "attributed-signal-assessment",
+        "signal-assessment" ;
+    ns1:signalAssessmentTarget <urn:cmpe-lab:signal> ;
+    ns2:assessmentOrganization <urn:cmpe-lab:assessorA> .
+
+<urn:cmpe-lab:source> a ns3:SourceRecord .
+
+<urn:cmpe-lab:commitment> a ns3:Assertion,
+        ns3:SupportedAssertionRole ;
+    ns1:profile "commitment-assertion" ;
+    ns2:commitmentActor <urn:cmpe-lab:org>,
+        <urn:cmpe-lab:org2> ;
+    ns2:commitmentText "Synthetic organizations commit to the stated joint service." .
+
+<urn:cmpe-lab:commitmentRecord> a ns3:EvidenceItem,
+        ns3:EvidenceSourceRecordRole,
+        ns3:SourceRecord .
+
+<urn:cmpe-lab:component> a ns3:DigitalInformationSystemComponent .
+
+<urn:cmpe-lab:operator> a ns3:Organization .
+
+<urn:cmpe-lab:reportCopy> a ns3:SourceRecord ;
+    ns1:profile "report-carrier" ;
+    ns2:carrierClaim <urn:cmpe-lab:reportedClaim> ;
+    ns2:caseIdentifier "SYNTHETIC-CASE-1" ;
+    ns2:caseIdentifierScheme "synthetic-local-case-id-not-E2B-conformance" .
+
+<urn:cmpe-lab:reportedClaim> a ns3:Assertion ;
+    ns1:profile "report-claim" ;
+    ns2:claimText "A source reports a suspected event; causation is unestablished." .
+
+<urn:cmpe-lab:signal> a ns3:Assertion ;
+    ns1:citesSourceRecord <urn:cmpe-lab:report> ;
+    ns1:profile "safety-signal" ;
+    ns1:signalProduct <urn:cmpe-lab:medicine> .
+
+<urn:cmpe-lab:transform> a ns3:ProvenanceActivity ;
+    ns1:atTime "2026-10-02T10:00:00+00:00"^^xsd:dateTime ;
+    ns1:digitalActivityDeployment <urn:cmpe-lab:deployment> ;
+    ns1:profile "digital-activity",
+        "manufacturing-data-activity" ;
+    ns2:activityResponsibleOrganization <urn:cmpe-lab:processor> ;
+    ns2:supportsManufacturing <urn:cmpe-lab:manufacturing> .
+
+<urn:cmpe-lab:org2> a ns3:Organization,
+        ns3:PartnerOrganizationRole .
+
+<urn:cmpe-lab:report> a ns3:SourceRecord ;
+    owl:differentFrom <urn:cmpe-lab:reportCopy> ;
+    ns1:profile "report-carrier" ;
+    ns2:carrierClaim <urn:cmpe-lab:reportedClaim> ;
+    ns2:caseIdentifier "SYNTHETIC-CASE-1" ;
+    ns2:caseIdentifierScheme "synthetic-local-case-id-not-E2B-conformance" .
+
+<urn:cmpe-lab:org> a ns3:Organization,
+        ns3:PartnerOrganizationRole ;
+    owl:differentFrom <urn:cmpe-lab:org2> .

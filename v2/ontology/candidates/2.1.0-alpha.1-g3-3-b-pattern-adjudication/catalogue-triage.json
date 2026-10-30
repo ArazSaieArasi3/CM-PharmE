@@ -1,0 +1,527 @@
+{
+  "qualification": "Bespoke bounded structural prefilter; candidate counts are not full anti-pattern counts or clean certificates.",
+  "catalogue_entries": 20,
+  "official_detector_executed": false,
+  "entries": [
+    {
+      "pattern": "BinOver",
+      "source": "https://ontouml.readthedocs.io/en/latest/anti-patterns/BinOver/index.html",
+      "prefilter": "simple same-or-ancestor endpoints",
+      "candidate_count": 2,
+      "disposition": "review_irreflexivity_or_narrow_ends",
+      "witnesses": [
+        {
+          "id": "rel-withinCountry",
+          "name": "withinCountry",
+          "stereotype": null,
+          "source": "GeographicFeature",
+          "target": "Country",
+          "source_card": null,
+          "target_card": null,
+          "source_readonly": null,
+          "target_readonly": null,
+          "source_id": "end-withinCountry-source",
+          "target_id": "end-withinCountry-target"
+        },
+        {
+          "id": "rel-withinRegion",
+          "name": "withinRegion",
+          "stereotype": null,
+          "source": "GeographicFeature",
+          "target": "AdministrativeRegion",
+          "source_card": null,
+          "target_card": null,
+          "source_readonly": null,
+          "target_readonly": null,
+          "source_id": "end-withinRegion-source",
+          "target_id": "end-withinRegion-target"
+        }
+      ],
+      "official_detector_status": "NOT_RUN",
+      "semantic_sign_off": "PENDING"
+    },
+    {
+      "pattern": "DecInt",
+      "source": "https://ontouml.readthedocs.io/en/latest/anti-patterns/DecInt/index.html",
+      "prefilter": "two concrete immediate parents",
+      "candidate_count": 1,
+      "disposition": "same_Organization_identity_provider; no empty intersection shown",
+      "witnesses": [
+        {
+          "class": "ListingResponsibleOrganizationRole",
+          "parents": [
+            "Organization",
+            "ProductResponsibleLabelerRole"
+          ]
+        }
+      ],
+      "official_detector_status": "NOT_RUN",
+      "semantic_sign_off": "PENDING"
+    },
+    {
+      "pattern": "DepPhase",
+      "source": "https://ontouml.readthedocs.io/en/latest/anti-patterns/DepPhase/index.html",
+      "prefilter": "phase mediated",
+      "candidate_count": 0,
+      "disposition": "no_phase_classes",
+      "witnesses": [],
+      "official_detector_status": "NOT_RUN",
+      "semantic_sign_off": "PENDING"
+    },
+    {
+      "pattern": "FreeRole",
+      "source": "https://ontouml.readthedocs.io/en/latest/anti-patterns/FreeRole/index.html",
+      "prefilter": "direct role child without own mediation",
+      "candidate_count": 0,
+      "disposition": "no_direct_candidate; indirect conditions untested",
+      "witnesses": [],
+      "official_detector_status": "NOT_RUN",
+      "semantic_sign_off": "PENDING"
+    },
+    {
+      "pattern": "GSRig",
+      "source": "https://ontouml.readthedocs.io/en/latest/anti-patterns/GSRig/index.html",
+      "prefilter": "mixed rigid/anti-rigid members of a set",
+      "candidate_count": 0,
+      "disposition": "no_mixed_set",
+      "witnesses": [],
+      "official_detector_status": "NOT_RUN",
+      "semantic_sign_off": "PENDING"
+    },
+    {
+      "pattern": "HetColl",
+      "source": "https://ontouml.readthedocs.io/en/latest/anti-patterns/HetColl/index.html",
+      "prefilter": "memberOf relations",
+      "candidate_count": 0,
+      "disposition": "no_memberOf",
+      "witnesses": [],
+      "official_detector_status": "NOT_RUN",
+      "semantic_sign_off": "PENDING"
+    },
+    {
+      "pattern": "HomoFunc",
+      "source": "https://ontouml.readthedocs.io/en/latest/anti-patterns/HomoFunc/index.html",
+      "prefilter": "componentOf relations",
+      "candidate_count": 0,
+      "disposition": "no_componentOf",
+      "witnesses": [],
+      "official_detector_status": "NOT_RUN",
+      "semantic_sign_off": "PENDING"
+    },
+    {
+      "pattern": "ImpAbs",
+      "source": "https://ontouml.readthedocs.io/en/latest/anti-patterns/ImpAbs/index.html",
+      "prefilter": "multi-valued end with at least two descendants",
+      "candidate_count": 10,
+      "disposition": "review_subtype_cardinality_and_scope",
+      "witnesses": [
+        {
+          "relation": "assertionAboutProduct",
+          "end": "source",
+          "class": "Assertion",
+          "subtype_count": 4
+        },
+        {
+          "relation": "assertionAboutProduct",
+          "end": "target",
+          "class": "MedicinalProduct",
+          "subtype_count": 10
+        },
+        {
+          "relation": "classificationEntity",
+          "end": "source",
+          "class": "ProductClassificationAssignment",
+          "subtype_count": 3
+        },
+        {
+          "relation": "classificationEntry",
+          "end": "source",
+          "class": "ProductClassificationAssignment",
+          "subtype_count": 3
+        },
+        {
+          "relation": "observationAboutPresentation",
+          "end": "source",
+          "class": "ObservationResult",
+          "subtype_count": 7
+        },
+        {
+          "relation": "observationAboutPresentation",
+          "end": "target",
+          "class": "MedicinalProductPresentation",
+          "subtype_count": 2
+        },
+        {
+          "relation": "observationAboutProduct",
+          "end": "source",
+          "class": "ObservationResult",
+          "subtype_count": 7
+        },
+        {
+          "relation": "observationAboutProduct",
+          "end": "target",
+          "class": "MedicinalProduct",
+          "subtype_count": 10
+        },
+        {
+          "relation": "productHasActiveSubstance",
+          "end": "source",
+          "class": "MedicinalProduct",
+          "subtype_count": 10
+        },
+        {
+          "relation": "productHasActiveSubstance",
+          "end": "target",
+          "class": "PharmaceuticalSubstance",
+          "subtype_count": 2
+        }
+      ],
+      "official_detector_status": "NOT_RUN",
+      "semantic_sign_off": "PENDING"
+    },
+    {
+      "pattern": "MixIden",
+      "source": "https://ontouml.readthedocs.io/en/latest/anti-patterns/MixIden/index.html",
+      "prefilter": "roleMixin children identity provider check",
+      "candidate_count": 9,
+      "disposition": "nine_roleMixins_have_multiple_distinct_provider_classes; no_same_provider_only_candidate",
+      "witnesses": [
+        {
+          "non_sortal": "AuthorizedParty",
+          "children": [
+            "AuthorizedFacilityRole",
+            "AuthorizedOrganizationRole"
+          ]
+        },
+        {
+          "non_sortal": "ClassifiedEntity",
+          "children": [
+            "ClassifiedMedicinalProductRole",
+            "ClassifiedPharmaceuticalSubstanceRole"
+          ]
+        },
+        {
+          "non_sortal": "DependentEntity",
+          "children": [
+            "DependentFacilityRole",
+            "DependentMedicinalProductRole",
+            "DependentOrganizationRole"
+          ]
+        },
+        {
+          "non_sortal": "EcosystemParticipant",
+          "children": [
+            "DistributionSiteRole",
+            "ImporterRole",
+            "ManufacturerRole",
+            "ManufacturingSiteRole",
+            "PayerFundingOrganizationRole",
+            "ProductResponsibleLabelerRole",
+            "RegulatoryAuthorityRole",
+            "ThirdPartyLogisticsProviderRole",
+            "WholesaleDistributorRole"
+          ]
+        },
+        {
+          "non_sortal": "EvidenceItem",
+          "children": [
+            "EvidenceObservationResultRole",
+            "EvidenceSourceRecordRole"
+          ]
+        },
+        {
+          "non_sortal": "GovernedEntity",
+          "children": [
+            "GovernedFacilityRole",
+            "GovernedOrganizationRole"
+          ]
+        },
+        {
+          "non_sortal": "IdentifiedEntity",
+          "children": [
+            "IdentifiedFacilityRole",
+            "IdentifiedGeographicFeatureRole",
+            "IdentifiedMedicinalProductPresentationRole",
+            "IdentifiedMedicinalProductRole",
+            "IdentifiedOrganizationRole",
+            "IdentifiedPharmaceuticalSubstanceRole"
+          ]
+        },
+        {
+          "non_sortal": "ProviderEntity",
+          "children": [
+            "ProviderFacilityRole",
+            "ProviderMedicinalProductRole",
+            "ProviderOrganizationRole"
+          ]
+        },
+        {
+          "non_sortal": "RegisteredParty",
+          "children": [
+            "RegisteredFacilityRole",
+            "RegisteredOrganizationRole"
+          ]
+        }
+      ],
+      "official_detector_status": "NOT_RUN",
+      "semantic_sign_off": "PENDING"
+    },
+    {
+      "pattern": "MixRig",
+      "source": "https://ontouml.readthedocs.io/en/latest/anti-patterns/MixRig/index.html",
+      "prefilter": "mixin class",
+      "candidate_count": 0,
+      "disposition": "no_mixin",
+      "witnesses": [],
+      "official_detector_status": "NOT_RUN",
+      "semantic_sign_off": "PENDING"
+    },
+    {
+      "pattern": "MultDep",
+      "source": "https://ontouml.readthedocs.io/en/latest/anti-patterns/MultDep/index.html",
+      "prefilter": "direct mediated class with two unrelated relators",
+      "candidate_count": 0,
+      "disposition": "no_direct_candidate; indirect conditions untested",
+      "witnesses": [],
+      "official_detector_status": "NOT_RUN",
+      "semantic_sign_off": "PENDING"
+    },
+    {
+      "pattern": "PartOver",
+      "source": "https://ontouml.readthedocs.io/en/latest/anti-patterns/PartOver/index.html",
+      "prefilter": "meronymic relations",
+      "candidate_count": 0,
+      "disposition": "no_meronymic_relation",
+      "witnesses": [],
+      "official_detector_status": "NOT_RUN",
+      "semantic_sign_off": "PENDING"
+    },
+    {
+      "pattern": "RelComp",
+      "source": "https://ontouml.readthedocs.io/en/latest/anti-patterns/RelComp/index.html",
+      "prefilter": "pairwise association composition",
+      "candidate_count": null,
+      "disposition": "not_scanned; full engine pending",
+      "witnesses": [],
+      "official_detector_status": "NOT_RUN",
+      "semantic_sign_off": "PENDING"
+    },
+    {
+      "pattern": "RelOver",
+      "source": "https://ontouml.readthedocs.io/en/latest/anti-patterns/RelOver/index.html",
+      "prefilter": "overlapping mediated types and summed upper cardinalities",
+      "candidate_count": null,
+      "disposition": "not_scanned; full engine pending",
+      "witnesses": [],
+      "official_detector_status": "NOT_RUN",
+      "semantic_sign_off": "PENDING"
+    },
+    {
+      "pattern": "RelRig",
+      "source": "https://ontouml.readthedocs.io/en/latest/anti-patterns/RelRig/index.html",
+      "prefilter": "mediation to rigid endpoint",
+      "candidate_count": 0,
+      "disposition": "42 mediations terminate in roles or roleMixins, not a rigid class",
+      "witnesses": [],
+      "official_detector_status": "NOT_RUN",
+      "semantic_sign_off": "PENDING"
+    },
+    {
+      "pattern": "RelSpec",
+      "source": "https://ontouml.readthedocs.io/en/latest/anti-patterns/RelSpec/index.html",
+      "prefilter": "known typed endpoint specialization",
+      "candidate_count": 3,
+      "disposition": "all_three_pairs_have_end_subsetting; 38 untyped associations require review",
+      "witnesses": [
+        [
+          "classificationEntity",
+          "contextClassificationProduct"
+        ],
+        [
+          "classificationEntry",
+          "contextClassificationEntry"
+        ],
+        [
+          "evidenceItem",
+          "evidenceRecord"
+        ]
+      ],
+      "official_detector_status": "NOT_RUN",
+      "semantic_sign_off": "PENDING"
+    },
+    {
+      "pattern": "RepRel",
+      "source": "https://ontouml.readthedocs.io/en/latest/anti-patterns/RepRel/index.html",
+      "prefilter": "two or more mediations from relator with relator-end upper >1",
+      "candidate_count": 19,
+      "disposition": "temporal/current uniqueness and repeatability need domain decisions",
+      "witnesses": [
+        {
+          "relator": "AlternativeMedicineAssignment",
+          "mediations": [
+            "alternativeForProduct",
+            "alternativeProduct"
+          ]
+        },
+        {
+          "relator": "EstablishmentRegistration",
+          "mediations": [
+            "registrationAuthority",
+            "registrationEntity"
+          ]
+        },
+        {
+          "relator": "EvidenceSupport",
+          "mediations": [
+            "evidenceAssertion",
+            "evidenceItem"
+          ]
+        },
+        {
+          "relator": "FacilityOperation",
+          "mediations": [
+            "operationFacility",
+            "operationOrganization"
+          ]
+        },
+        {
+          "relator": "IdentifierAssignment",
+          "mediations": [
+            "identifierEntity",
+            "identifierScheme"
+          ]
+        },
+        {
+          "relator": "MarketListing",
+          "mediations": [
+            "listingPresentation",
+            "listingResponsibleOrganization"
+          ]
+        },
+        {
+          "relator": "ProductClassificationAssignment",
+          "mediations": [
+            "classificationEntity",
+            "classificationEntry"
+          ]
+        },
+        {
+          "relator": "RegulatoryAuthorization",
+          "mediations": [
+            "authorizationAuthority",
+            "authorizationParty"
+          ]
+        },
+        {
+          "relator": "RegulatoryOversight",
+          "mediations": [
+            "oversightAuthorityRole",
+            "oversightGovernedEntity"
+          ]
+        },
+        {
+          "relator": "SupplyDependency",
+          "mediations": [
+            "dependencyDependent",
+            "dependencyProvider"
+          ]
+        },
+        {
+          "relator": "ManufacturingResponsibility",
+          "mediations": [
+            "manufacturingResponsibilityHolder",
+            "manufacturingResponsibilityCounterpart"
+          ]
+        },
+        {
+          "relator": "ManufacturingSiteUse",
+          "mediations": [
+            "manufacturingSiteUseHolder",
+            "manufacturingSiteUseCounterpart"
+          ]
+        },
+        {
+          "relator": "ImportResponsibility",
+          "mediations": [
+            "importResponsibilityHolder",
+            "importResponsibilityCounterpart"
+          ]
+        },
+        {
+          "relator": "WholesaleResponsibility",
+          "mediations": [
+            "wholesaleResponsibilityHolder",
+            "wholesaleResponsibilityCounterpart"
+          ]
+        },
+        {
+          "relator": "LogisticsServiceCommitment",
+          "mediations": [
+            "logisticsServiceCommitmentHolder",
+            "logisticsServiceCommitmentCounterpart"
+          ]
+        },
+        {
+          "relator": "DistributionSiteUse",
+          "mediations": [
+            "distributionSiteUseHolder",
+            "distributionSiteUseCounterpart"
+          ]
+        },
+        {
+          "relator": "RegulatoryMandate",
+          "mediations": [
+            "regulatoryMandateHolder",
+            "regulatoryMandateCounterpart"
+          ]
+        },
+        {
+          "relator": "ProductLabelResponsibility",
+          "mediations": [
+            "productLabelResponsibilityHolder",
+            "productLabelResponsibilityCounterpart"
+          ]
+        },
+        {
+          "relator": "InstitutionalFundingCommitment",
+          "mediations": [
+            "institutionalFundingCommitmentHolder",
+            "institutionalFundingCommitmentCounterpart"
+          ]
+        }
+      ],
+      "official_detector_status": "NOT_RUN",
+      "semantic_sign_off": "PENDING"
+    },
+    {
+      "pattern": "UndefFormal",
+      "source": "https://ontouml.readthedocs.io/en/latest/anti-patterns/UndefFormal/index.html",
+      "prefilter": "formal association",
+      "candidate_count": 0,
+      "disposition": "no_formal_stereotype",
+      "witnesses": [],
+      "official_detector_status": "NOT_RUN",
+      "semantic_sign_off": "PENDING"
+    },
+    {
+      "pattern": "UndefPhase",
+      "source": "https://ontouml.readthedocs.io/en/latest/anti-patterns/UndefPhase/index.html",
+      "prefilter": "phase class",
+      "candidate_count": 0,
+      "disposition": "no_phase_classes",
+      "witnesses": [],
+      "official_detector_status": "NOT_RUN",
+      "semantic_sign_off": "PENDING"
+    },
+    {
+      "pattern": "WholeOver",
+      "source": "https://ontouml.readthedocs.io/en/latest/anti-patterns/WholeOver/index.html",
+      "prefilter": "meronymic relations",
+      "candidate_count": 0,
+      "disposition": "no_meronymic_relation",
+      "witnesses": [],
+      "official_detector_status": "NOT_RUN",
+      "semantic_sign_off": "PENDING"
+    }
+  ]
+}

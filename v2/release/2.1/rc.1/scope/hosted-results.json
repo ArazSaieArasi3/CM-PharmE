@@ -1,0 +1,91 @@
+{
+  "archive_created": false,
+  "claim_boundary": "Source inclusion/provenance and scope/claim checks only. Scientific/GA acceptance, archive construction, cold replay and publication remain separate.",
+  "clean_replay_completed": false,
+  "contract_sha256": "95f4ed0eeec7eceea3df1f03fdb4a4b28c7b9c50431f6679dac36fd054b3482a",
+  "evidence_record": {
+    "contextclass_rows": 12,
+    "declared_transitions": 1,
+    "hermit_rows": 6,
+    "historical_before_matches": 89,
+    "historical_oracles_rewritten": false,
+    "new_shacl_rows": 12,
+    "original_after_matches": 88,
+    "prospective_after_matches": 89,
+    "prospective_contract": "CMPE-QualifiedEvidenceWitness/0.2.0",
+    "temporal_rows": 10
+  },
+  "freeze_commit": "c3f8f3ee4c4dbe3ee43827a9ae18d104bce57ff2",
+  "ga_ready": false,
+  "native_inventory": {
+    "elements": 536,
+    "properties": 172,
+    "specialized_properties": 14,
+    "unknown_cardinality": 60,
+    "unknown_readonly": 76,
+    "untyped_properties": 11
+  },
+  "native_sha256": "d97d7a7f42e3fc903181d6d4ed0a2bd4e159afe4a1a3bb685e3c821a93791a91",
+  "negative_controls": [
+    {
+      "id": "missing-current-asset",
+      "reason": "source-file-set",
+      "refused": true
+    },
+    {
+      "id": "tampered-file-digest",
+      "reason": "source-file-integrity",
+      "refused": true
+    },
+    {
+      "id": "hidden-native-unknowns",
+      "reason": "inventory-mismatch",
+      "refused": true
+    },
+    {
+      "id": "suppressed-witness-transition",
+      "reason": "witness-transition-mismatch",
+      "refused": true
+    },
+    {
+      "id": "full-validator-claim",
+      "reason": "unsupported-claim",
+      "refused": true
+    },
+    {
+      "id": "scientific-approval-claim",
+      "reason": "unsupported-claim",
+      "refused": true
+    },
+    {
+      "id": "complete-native-owl-claim",
+      "reason": "unsupported-claim",
+      "refused": true
+    },
+    {
+      "id": "ga-release-label",
+      "reason": "release-policy",
+      "refused": true
+    },
+    {
+      "id": "historical-citation-promoted",
+      "reason": "citation-scope",
+      "refused": true
+    }
+  ],
+  "orsd_registered_rows": 83,
+  "passed": true,
+  "payload_git_tree": "b20e2420620120f276bbc5a0117079f30dccc5b5",
+  "payload_source_commit": "64edf150db8a78579928fd99b5a381f665c1afdf",
+  "release_published": false,
+  "review_groups": 13,
+  "schema_version": 1,
+  "scope_frozen": true,
+  "scope_id": "CMPE-RC-Scope/0.1.0",
+  "selected_review_files": 155,
+  "source_bytes": 27097299,
+  "source_files": 1975,
+  "source_policy_case_rows": 62,
+  "source_workflow_families": 23,
+  "tag_created": false
+}

@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<RefOntoUML:Package xmlns:RefOntoUML="http://nemo.inf.ufes.br/ontouml/refontouml" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmi:version="2.0" xmi:id="pkg" name="DecInt-positive" visibility="public">
+  <packagedElement xsi:type="RefOntoUML:Kind" xmi:id="Person" name="Person" visibility="public" isAbstract="false" />
+  <packagedElement xsi:type="RefOntoUML:Role" xmi:id="Employed" name="Employed" visibility="public" isAbstract="false">
+    <generalization xmi:id="EmployedToPerson" general="Person" />
+  </packagedElement>
+  <packagedElement xsi:type="RefOntoUML:Role" xmi:id="Student" name="Student" visibility="public" isAbstract="false">
+    <generalization xmi:id="StudentToPerson" general="Person" />
+  </packagedElement>
+  <packagedElement xsi:type="RefOntoUML:Role" xmi:id="WorkingStudent" name="WorkingStudent" visibility="public" isAbstract="false">
+    <generalization xmi:id="WorkingStudentToEmployed" general="Employed" />
+    <generalization xmi:id="WorkingStudentToStudent" general="Student" />
+  </packagedElement>
+</RefOntoUML:Package>

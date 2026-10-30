@@ -1,0 +1,182 @@
+{
+  "previous_positive_fixture_fields": [
+    {
+      "field": "actionAnnounced",
+      "category": "regulatory-context-review",
+      "design_note": "Evidence of a specified reporting action; do not make it a timeless requirement property.",
+      "native_change": false,
+      "author_accepted": false
+    },
+    {
+      "field": "actorRole",
+      "category": "regulatory-context-review",
+      "design_note": "Model applicability of a role in context; string values are current interface vocabulary.",
+      "native_change": false,
+      "author_accepted": false
+    },
+    {
+      "field": "approvalConclusion",
+      "category": "query-conclusion",
+      "design_note": "Separate source claim and computed answer; never derive authorization from listing.",
+      "native_change": false,
+      "author_accepted": false
+    },
+    {
+      "field": "authorizationRoute",
+      "category": "regulatory-context-review",
+      "design_note": "Context selector CAP/NAP; not proof of current product approval.",
+      "native_change": false,
+      "author_accepted": false
+    },
+    {
+      "field": "externalKey",
+      "category": "source-identity-metadata",
+      "design_note": "Source-scoped key; evaluate reuse of IdentifierAssignment only when scheme/authority truthmakers exist.",
+      "native_change": false,
+      "author_accepted": false
+    },
+    {
+      "field": "frequency",
+      "category": "regulatory-context-review",
+      "design_note": "Versioned action-specific obligation; no universal cadence.",
+      "native_change": false,
+      "author_accepted": false
+    },
+    {
+      "field": "jurisdiction",
+      "category": "regulatory-context-review",
+      "design_note": "Context of applicability; distinguish listingJurisdiction from reporting applicability.",
+      "native_change": false,
+      "author_accepted": false
+    },
+    {
+      "field": "marketingEnd",
+      "category": "source-asserted-time",
+      "design_note": "Missing means unspecified; no infinite interval assumption in current query contract.",
+      "native_change": false,
+      "author_accepted": false
+    },
+    {
+      "field": "marketingStart",
+      "category": "source-asserted-time",
+      "design_note": "Bind to product or package explicitly. Do not coalesce levels or use retrieval time.",
+      "native_change": false,
+      "author_accepted": false
+    },
+    {
+      "field": "payloadFormat",
+      "category": "source-format-metadata",
+      "design_note": "Carrier syntax metadata; not a product characteristic.",
+      "native_change": false,
+      "author_accepted": false
+    },
+    {
+      "field": "profile",
+      "category": "validation-control",
+      "design_note": "Keep as admission metadata; no domain class.",
+      "native_change": false,
+      "author_accepted": false
+    },
+    {
+      "field": "recordKind",
+      "category": "source-format-metadata",
+      "design_note": "Source-schema discriminator; do not equate to native stereotypes.",
+      "native_change": false,
+      "author_accepted": false
+    },
+    {
+      "field": "recordSubject",
+      "category": "content-aboutness-review",
+      "design_note": "Keep record/content/subject distinct; existing carrierClaim + typed assertion aboutness may cover claims, not automatically every record.",
+      "native_change": false,
+      "author_accepted": false
+    },
+    {
+      "field": "release",
+      "category": "existing-path-candidate",
+      "design_note": "Candidate inverse path of containsSourceRecord in this ingestion contract only; no new native relation needed yet.",
+      "native_change": false,
+      "author_accepted": false
+    },
+    {
+      "field": "representsFact",
+      "category": "content-aboutness-review",
+      "design_note": "Source assertion about a registration/listing; requires a representation/claim bridge, not identity.",
+      "native_change": false,
+      "author_accepted": false
+    },
+    {
+      "field": "retrievedAt",
+      "category": "provenance-metadata",
+      "design_note": "Retrieval occurrence time; not product marketing or original generation time.",
+      "native_change": false,
+      "author_accepted": false
+    },
+    {
+      "field": "scenario",
+      "category": "regulatory-context-review",
+      "design_note": "Routine/preparedness/crisis selector; not an actual disruption event.",
+      "native_change": false,
+      "author_accepted": false
+    },
+    {
+      "field": "scopeComplete",
+      "category": "validation-control",
+      "design_note": "Local completeness assertion; never global closed-world completeness.",
+      "native_change": false,
+      "author_accepted": false
+    },
+    {
+      "field": "scopedProduct",
+      "category": "regulatory-context-review",
+      "design_note": "Declared product scope of one action; absence is not global exclusion.",
+      "native_change": false,
+      "author_accepted": false
+    },
+    {
+      "field": "shortageStatus",
+      "category": "source-asserted-status",
+      "design_note": "Potential/actual label belongs to claim; never alone instantiate a shortage situation.",
+      "native_change": false,
+      "author_accepted": false
+    },
+    {
+      "field": "sourceVersion",
+      "category": "source-identity-metadata",
+      "design_note": "Version of the cited rule/guidance snapshot, not event time.",
+      "native_change": false,
+      "author_accepted": false
+    },
+    {
+      "field": "version",
+      "category": "source-identity-metadata",
+      "design_note": "Record version; distinctness/lineage must be explicit.",
+      "native_change": false,
+      "author_accepted": false
+    }
+  ],
+  "reviewed": 22,
+  "new_positive_fixture_Q_predicates": [
+    "https://w3id.org/cm-pharme/experimental/prov-target/assessmentOutput",
+    "https://w3id.org/cm-pharme/experimental/prov-target/claim",
+    "https://w3id.org/cm-pharme/experimental/prov-target/effectObservedAt",
+    "https://w3id.org/cm-pharme/experimental/prov-target/eventStart",
+    "https://w3id.org/cm-pharme/experimental/prov-target/evidenceKind",
+    "https://w3id.org/cm-pharme/experimental/prov-target/family",
+    "https://w3id.org/cm-pharme/experimental/prov-target/jsonPointer",
+    "https://w3id.org/cm-pharme/experimental/prov-target/productMarketingStart",
+    "https://w3id.org/cm-pharme/experimental/prov-target/rawMarketingCategory",
+    "https://w3id.org/cm-pharme/experimental/prov-target/releaseKind",
+    "https://w3id.org/cm-pharme/experimental/prov-target/retrievalURL",
+    "https://w3id.org/cm-pharme/experimental/prov-target/source",
+    "https://w3id.org/cm-pharme/experimental/prov-target/sourceLastUpdated",
+    "https://w3id.org/cm-pharme/experimental/prov-target/sourceProductId",
+    "https://w3id.org/cm-pharme/experimental/prov-target/sourceRecord",
+    "https://w3id.org/cm-pharme/experimental/prov-target/sourceSHA256",
+    "https://w3id.org/cm-pharme/experimental/prov-target/target",
+    "https://w3id.org/cm-pharme/experimental/prov-target/targetClass"
+  ],
+  "no_native_addition_from_these_fields": true,
+  "next_design": "Develop the minimum contextual reporting-applicability model and record/claim/fact bridge from source witnesses; reuse provenance/source metadata instead of adding a native class per field.",
+  "limit": "Desk triage only, not complete implementation or scientific acceptance. Other fields in SHACL/negative controls, e.g. approvalEvidence, are outside the historical 22-field inventory."
+}

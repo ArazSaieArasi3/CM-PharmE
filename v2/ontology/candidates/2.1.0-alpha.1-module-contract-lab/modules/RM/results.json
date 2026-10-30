@@ -1,0 +1,233 @@
+{
+  "module": "RM",
+  "scope": "bounded regression; not full semantic acceptance or a formal locality module",
+  "admission": [
+    {
+      "id": "lab-RM-1-positive.ttl",
+      "conforms": true,
+      "pass": true,
+      "violations": []
+    },
+    {
+      "id": "lab-RM-2-boundary.ttl",
+      "conforms": true,
+      "pass": true,
+      "violations": []
+    },
+    {
+      "id": "lab-RM-3-missing-scenario-topic.ttl",
+      "conforms": false,
+      "pass": true,
+      "violations": [
+        {
+          "path": "",
+          "constraint": "https://w3id.org/cm-pharme/experimental/refinement/scenarioProduct-or-context-required",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent"
+        }
+      ]
+    },
+    {
+      "id": "lab-RM-3-missing-evidence.ttl",
+      "conforms": false,
+      "pass": true,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/four-domain/citesSourceRecord",
+          "constraint": "",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent"
+        }
+      ]
+    },
+    {
+      "id": "lab-RM-3-dangling-plan-result.ttl",
+      "conforms": false,
+      "pass": true,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/four-domain/planRiskResult",
+          "constraint": "",
+          "component": "http://www.w3.org/ns/shacl#ClassConstraintComponent"
+        }
+      ]
+    },
+    {
+      "id": "lab-RM-3-result-is-assessment.ttl",
+      "conforms": false,
+      "pass": true,
+      "violations": [
+        {
+          "path": "",
+          "constraint": "https://w3id.org/cm-pharme/experimental/four-domain/distinct-RiskAssessmentActivity-Assertion",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent"
+        }
+      ]
+    },
+    {
+      "id": "lab-RM-3-missing-review-predecessor.ttl",
+      "conforms": false,
+      "pass": true,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/four-domain/reviewPriorResult",
+          "constraint": "",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent"
+        }
+      ]
+    },
+    {
+      "id": "lab-RM-3-backdated-revision.ttl",
+      "conforms": false,
+      "pass": true,
+      "violations": [
+        {
+          "path": "",
+          "constraint": "https://w3id.org/cm-pharme/experimental/four-domain/review-time-order",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent"
+        }
+      ]
+    },
+    {
+      "id": "lab-RM-3-dangling-executed-plan.ttl",
+      "conforms": false,
+      "pass": true,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/four-domain/implementsRiskPlan",
+          "constraint": "",
+          "component": "http://www.w3.org/ns/shacl#ClassConstraintComponent"
+        }
+      ]
+    },
+    {
+      "id": "refinement-X-RM-CONTEXT-positive.ttl",
+      "conforms": true,
+      "pass": true,
+      "violations": []
+    },
+    {
+      "id": "refinement-X-RM-CONTEXT-boundary.ttl",
+      "conforms": true,
+      "pass": true,
+      "violations": []
+    },
+    {
+      "id": "refinement-X-RM-CONTEXT-dependency-boundary.ttl",
+      "conforms": true,
+      "pass": true,
+      "violations": []
+    },
+    {
+      "id": "refinement-X-RM-CONTEXT-missing-context.ttl",
+      "conforms": false,
+      "pass": true,
+      "violations": [
+        {
+          "path": "",
+          "constraint": "https://w3id.org/cm-pharme/experimental/refinement/scenarioProduct-or-context-required",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent"
+        }
+      ]
+    },
+    {
+      "id": "refinement-X-RM-CONTEXT-untyped-facility.ttl",
+      "conforms": false,
+      "pass": true,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/refinement/scenarioFacility",
+          "constraint": "",
+          "component": "http://www.w3.org/ns/shacl#ClassConstraintComponent"
+        }
+      ]
+    }
+  ],
+  "queries": [
+    {
+      "id": "CQ-RM-01",
+      "actual": [
+        [
+          "urn:cmpe-lab:scenario",
+          "urn:cmpe-lab:assessment",
+          "urn:cmpe-lab:product",
+          "urn:cmpe-lab:source"
+        ]
+      ],
+      "pass": true
+    },
+    {
+      "id": "CQ-RM-02",
+      "actual": [
+        [
+          "urn:cmpe-lab:plan"
+        ]
+      ],
+      "pass": true
+    },
+    {
+      "id": "CQ-RM-03",
+      "actual": [
+        [
+          "urn:cmpe-lab:riskResult",
+          "urn:cmpe-lab:riskResult2",
+          "urn:cmpe-lab:source",
+          "revised assessment"
+        ]
+      ],
+      "pass": true
+    },
+    {
+      "id": "X-RM-CONTEXT",
+      "actual": [
+        [
+          "urn:cmpe-lab:riskFacility"
+        ]
+      ],
+      "pass": true
+    }
+  ],
+  "reasoner": [
+    {
+      "id": "RM-schema-satisfiable",
+      "consistent": true,
+      "unsatisfiable_named_classes": [],
+      "pass": true
+    },
+    {
+      "id": "RM-positive-consistent",
+      "consistent": true,
+      "unsatisfiable_named_classes": [],
+      "pass": true
+    },
+    {
+      "id": "RM-identity-collision-rejected",
+      "consistent": false,
+      "unsatisfiable_named_classes": [],
+      "pass": true
+    }
+  ],
+  "source_scope_lookups": [],
+  "counts": {
+    "admission": [
+      14,
+      14
+    ],
+    "queries": [
+      4,
+      4
+    ],
+    "reasoner": [
+      3,
+      3
+    ],
+    "source_scope_lookups": [
+      0,
+      0
+    ]
+  },
+  "runtime": {
+    "python": "3.12.14",
+    "rdflib": "7.6.0",
+    "pyshacl": "0.30.1",
+    "owlready2": "0.49"
+  }
+}

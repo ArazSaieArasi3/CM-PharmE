@@ -1,0 +1,274 @@
+{
+  "checks": [
+    {
+      "id": "real-documentary-witnesses",
+      "kind": "admission",
+      "actual": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "id": "missing-mode",
+      "kind": "admission",
+      "actual": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "id": "bad-mode",
+      "kind": "admission",
+      "actual": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "id": "missing-precision",
+      "kind": "admission",
+      "actual": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "id": "invalid-month",
+      "kind": "admission",
+      "actual": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "id": "invalid-day",
+      "kind": "admission",
+      "actual": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "id": "planned-as-event-time",
+      "kind": "admission",
+      "actual": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "id": "mapping-as-extraction",
+      "kind": "admission",
+      "actual": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "id": "untraceable-claim",
+      "kind": "admission",
+      "actual": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "id": "unknown-time-as-day",
+      "kind": "admission",
+      "actual": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "id": "bad-source-date",
+      "kind": "admission",
+      "actual": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "id": "claim-carrier-collision",
+      "kind": "admission",
+      "actual": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "id": "risk-review-reported",
+      "kind": "query",
+      "actual": "SOURCE_REPORTED_OCCURRENCE",
+      "expected": "SOURCE_REPORTED_OCCURRENCE",
+      "pass": true
+    },
+    {
+      "id": "requirement-not-execution",
+      "kind": "query",
+      "actual": "NOT_REPORTED_IN_SELECTED_MODE",
+      "expected": "NOT_REPORTED_IN_SELECTED_MODE",
+      "pass": true
+    },
+    {
+      "id": "requirement-preserved",
+      "kind": "query",
+      "actual": "SOURCE_REPORTED_REQUIRED",
+      "expected": "SOURCE_REPORTED_REQUIRED",
+      "pass": true
+    },
+    {
+      "id": "batch-plan-preserved",
+      "kind": "query",
+      "actual": "SOURCE_REPORTED_PLANNED",
+      "expected": "SOURCE_REPORTED_PLANNED",
+      "pass": true
+    },
+    {
+      "id": "batch-plan-not-occurrence",
+      "kind": "query",
+      "actual": "NOT_REPORTED_IN_SELECTED_MODE",
+      "expected": "NOT_REPORTED_IN_SELECTED_MODE",
+      "pass": true
+    },
+    {
+      "id": "transfer-complete-after-update",
+      "kind": "query",
+      "actual": "SOURCE_REPORTED_OCCURRENCE",
+      "expected": "SOURCE_REPORTED_OCCURRENCE",
+      "pass": true
+    },
+    {
+      "id": "no-future-report-leak",
+      "kind": "query",
+      "actual": "NOT_REPORTED_IN_SELECTED_MODE",
+      "expected": "NOT_REPORTED_IN_SELECTED_MODE",
+      "pass": true
+    },
+    {
+      "id": "production-commenced",
+      "kind": "query",
+      "actual": "SOURCE_REPORTED_OCCURRENCE",
+      "expected": "SOURCE_REPORTED_OCCURRENCE",
+      "pass": true
+    },
+    {
+      "id": "additional-lines-remain-plan",
+      "kind": "query",
+      "actual": "NOT_REPORTED_IN_SELECTED_MODE",
+      "expected": "NOT_REPORTED_IN_SELECTED_MODE",
+      "pass": true
+    },
+    {
+      "id": "launch-has-documentary-evidence",
+      "kind": "query",
+      "actual": "SOURCE_REPORTED_OCCURRENCE",
+      "expected": "SOURCE_REPORTED_OCCURRENCE",
+      "pass": true
+    },
+    {
+      "id": "build-version-not-invented",
+      "kind": "query",
+      "actual": "NOT_REPORTED_IN_SELECTED_MODE",
+      "expected": "NOT_REPORTED_IN_SELECTED_MODE",
+      "pass": true
+    },
+    {
+      "id": "standard-is-supported",
+      "kind": "query",
+      "actual": "SOURCE_REPORTED_CAPABILITY",
+      "expected": "SOURCE_REPORTED_CAPABILITY",
+      "pass": true
+    },
+    {
+      "id": "licence-report",
+      "kind": "query",
+      "actual": "SOURCE_REPORTED_AUTHORIZATION_REPORT",
+      "expected": "SOURCE_REPORTED_AUTHORIZATION_REPORT",
+      "pass": true
+    },
+    {
+      "id": "licence-not-marketing-approval",
+      "kind": "query",
+      "actual": "NOT_REPORTED_IN_SELECTED_MODE",
+      "expected": "NOT_REPORTED_IN_SELECTED_MODE",
+      "pass": true
+    },
+    {
+      "id": "mapping-remains-proposal",
+      "kind": "query",
+      "actual": "MAPPING_PROPOSED",
+      "expected": "MAPPING_PROPOSED",
+      "pass": true
+    },
+    {
+      "id": "month-retains-range",
+      "kind": "time",
+      "actual": [
+        "2019-01-01",
+        "2019-01-31"
+      ],
+      "expected": [
+        "2019-01-01",
+        "2019-01-31"
+      ],
+      "pass": true
+    },
+    {
+      "id": "day-precision",
+      "kind": "time",
+      "actual": [
+        "2017-11-22",
+        "2017-11-22"
+      ],
+      "expected": [
+        "2017-11-22",
+        "2017-11-22"
+      ],
+      "pass": true
+    },
+    {
+      "id": "year-not-invented-quarter",
+      "kind": "time",
+      "actual": [
+        "2022-01-01",
+        "2022-12-31"
+      ],
+      "expected": [
+        "2022-01-01",
+        "2022-12-31"
+      ],
+      "pass": true
+    },
+    {
+      "id": "explicit-conflict-visible",
+      "kind": "query",
+      "actual": "SOURCE_CONFLICT",
+      "expected": "SOURCE_CONFLICT",
+      "pass": true
+    }
+  ],
+  "passed": 31,
+  "total": 31,
+  "logical": [
+    {
+      "id": "full-positive",
+      "consistent": true,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "prov_profile": "two conflicting annotation-property declarations removed; raw source retained",
+      "expected": true,
+      "pass": true
+    },
+    {
+      "id": "no-materialized-mapping",
+      "consistent": true,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "prov_profile": "two conflicting annotation-property declarations removed; raw source retained",
+      "expected": true,
+      "pass": true
+    },
+    {
+      "id": "claim-source-identity-collision",
+      "consistent": false,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "prov_profile": "two conflicting annotation-property declarations removed; raw source retained",
+      "expected": false,
+      "pass": true
+    }
+  ],
+  "logical_passed": 3,
+  "source_count": 7,
+  "source_extractions": 36,
+  "proposed_mappings": 13
+}

@@ -1,0 +1,147 @@
+{
+  "tool": "OntoUML/ontouml-validator archived commit 46f54c1a5225fc9ea74ac2256fd4a673e9101a40",
+  "input": "json2graph legacy projection augmented with source class name/stereotype/restrictedTo",
+  "coverage": "13 implemented class-only rules, not full validator or 20 anti-pattern catalogue",
+  "class_count": 144,
+  "graph_triples": 4191,
+  "rules": [
+    {
+      "code": "R_CL_XJZ",
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "code": "R_CL_JOJ",
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "code": "R_CL_UMC",
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "code": "R_CL_AIB",
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "code": "R_CL_EDA",
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "code": "R_CL_ZGT",
+      "warnings": [],
+      "errors": [
+        {
+          "source": "urn:uuid:5d7bf4fe-c3db-53ad-83d1-cad8d0ea8109#ListingResponsibleOrganizationRole",
+          "message": "The class 'ListingResponsibleOrganizationRole' is a base sortal with 2 ultimate sortals supertypes."
+        }
+      ]
+    },
+    {
+      "code": "R_CL_GJU",
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "code": "R_CL_BWZ",
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "code": "R_CL_YOK",
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "code": "R_CL_QJC",
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "code": "R_CL_EGT",
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "code": "R_CL_EMV",
+      "warnings": [
+        {
+          "source": "urn:uuid:5d7bf4fe-c3db-53ad-83d1-cad8d0ea8109#EnterpriseCapability",
+          "message": "The class 'Enterprise Capability' with stereotype 'https://w3id.org/ontouml#mode' has no restrictedTo value. "
+        },
+        {
+          "source": "urn:uuid:5d7bf4fe-c3db-53ad-83d1-cad8d0ea8109#SupplyCapacity",
+          "message": "The class 'Supply Capacity' with stereotype 'https://w3id.org/ontouml#mode' has no restrictedTo value. "
+        }
+      ],
+      "errors": []
+    },
+    {
+      "code": "R_CL_ALX",
+      "warnings": [],
+      "errors": []
+    }
+  ],
+  "summary": {
+    "warnings": 2,
+    "errors": 1,
+    "exceptions": 0,
+    "by_rule": {
+      "R_CL_XJZ": [
+        0,
+        0
+      ],
+      "R_CL_JOJ": [
+        0,
+        0
+      ],
+      "R_CL_UMC": [
+        0,
+        0
+      ],
+      "R_CL_AIB": [
+        0,
+        0
+      ],
+      "R_CL_EDA": [
+        0,
+        0
+      ],
+      "R_CL_ZGT": [
+        0,
+        1
+      ],
+      "R_CL_GJU": [
+        0,
+        0
+      ],
+      "R_CL_BWZ": [
+        0,
+        0
+      ],
+      "R_CL_YOK": [
+        0,
+        0
+      ],
+      "R_CL_QJC": [
+        0,
+        0
+      ],
+      "R_CL_EGT": [
+        0,
+        0
+      ],
+      "R_CL_EMV": [
+        2,
+        0
+      ],
+      "R_CL_ALX": [
+        0,
+        0
+      ]
+    }
+  }
+}

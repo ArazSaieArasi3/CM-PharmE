@@ -1,0 +1,296 @@
+{
+  "audit_issue": 330,
+  "baseline": {
+    "canonical_sha256": "59ef47eeed732290736e60bfa1c6bf43a12d15df2f50cff931badb5938cc954a",
+    "datatype_properties": 5,
+    "datatypes": 6,
+    "files": 6,
+    "historical_semantic_approval_not_extended": true,
+    "object_properties": 52,
+    "owl_classes": 81,
+    "owl_imports": [],
+    "triples": 642
+  },
+  "compatibility": {
+    "default_database_migration": false,
+    "full_namespace_equivalence_claimed": false,
+    "full_native_or_v1_equivalence_claimed": false,
+    "historical_reference_bytes_unchanged": true,
+    "new_profile_actual_regression_pending": true,
+    "six_terms_outgoing_logical_signatures_match_after_namespace_normalization": true,
+    "v1": "Historical 1.0.0 remains separate; 2.x is a new major generation"
+  },
+  "dependencies": {
+    "database_image": "postgis/postgis:16-3.4",
+    "direct_python_dependencies": [
+      "psycopg[binary]==3.2.9",
+      "rdflib==7.5.0",
+      "pyshacl==0.31.0"
+    ],
+    "external_runtime_bundled": false,
+    "files_pinned": 29,
+    "lockfile_for_new_cut_not_yet_built": true,
+    "python": "3.12",
+    "python_static_imports": [
+      {
+        "imports": [
+          "__future__",
+          "argparse",
+          "compare_sql_sparql",
+          "csv",
+          "hashlib",
+          "json",
+          "os",
+          "pathlib",
+          "platform",
+          "psycopg",
+          "psycopg.rows",
+          "pyshacl",
+          "rdflib",
+          "rdflib.compare",
+          "rdflib.namespace",
+          "subprocess",
+          "sys",
+          "urllib.parse"
+        ],
+        "path": "v2/data/migrations/2.1/0.2.0/verify_m1.py"
+      },
+      {
+        "imports": [
+          "__future__",
+          "argparse",
+          "csv",
+          "hashlib",
+          "json",
+          "os",
+          "pathlib",
+          "psycopg",
+          "psycopg.rows",
+          "re",
+          "source_contract",
+          "typing"
+        ],
+        "path": "tools/v2_data/bootstrap_ingest.py"
+      },
+      {
+        "imports": [
+          "__future__",
+          "csv",
+          "hashlib",
+          "pathlib"
+        ],
+        "path": "tools/v2_data/source_contract.py"
+      },
+      {
+        "imports": [
+          "__future__",
+          "argparse",
+          "hashlib",
+          "json",
+          "os",
+          "pathlib",
+          "psycopg",
+          "psycopg.rows",
+          "rdflib",
+          "rdflib.compare",
+          "rdflib.namespace",
+          "urllib.parse"
+        ],
+        "path": "tools/v2_data/export_kg.py"
+      },
+      {
+        "imports": [
+          "__future__",
+          "argparse",
+          "decimal",
+          "json",
+          "os",
+          "pathlib",
+          "psycopg",
+          "psycopg.rows",
+          "rdflib"
+        ],
+        "path": "tools/v2_data/compare_sql_sparql.py"
+      }
+    ]
+  },
+  "findings": [
+    {
+      "finding": "Historical M1 validation imports the whole experimental P3 TBox/shapes rather than a separate supported entrypoint",
+      "id": "CORE-F01",
+      "resolution_issue": 331,
+      "severity": "BLOCKS_SCOPED_GA"
+    },
+    {
+      "finding": "No direct targetClass shape for the four selected M1 classes; targeted admission/focus coverage is not established by old conformance",
+      "id": "CORE-F02",
+      "resolution_issue": 331,
+      "severity": "BLOCKS_SCOPED_GA"
+    },
+    {
+      "finding": "FR-28 issuer/system identifier requirement is broader than the existing composite source-record key; do not declare the entire requirement satisfied",
+      "id": "CORE-F03",
+      "resolution": "Keep scoped identity contract; defer broader FR-28 implementation",
+      "severity": "CLAIM_SCOPE"
+    }
+  ],
+  "ga_ready": false,
+  "m1": {
+    "advanced_target_count": 0,
+    "direct_target_class_shapes": 0,
+    "historical_conformance_is_not_targeted_completeness_evidence": true,
+    "historical_shape_triples": 764,
+    "historical_tbox_triples": 1649,
+    "incoming_references_to_review": [
+      [
+        "https://w3id.org/cm-pharme/2.1/EvidenceSourceRecordRole",
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+        "https://w3id.org/cm-pharme/2.1/SourceRecord"
+      ],
+      [
+        "https://w3id.org/cm-pharme/2.1/MedicineShortageSituation",
+        "http://www.w3.org/2002/07/owl#disjointWith",
+        "https://w3id.org/cm-pharme/2.1/SourceRecord"
+      ],
+      [
+        "https://w3id.org/cm-pharme/2.1/generatedAssertion",
+        "http://www.w3.org/2000/01/rdf-schema#domain",
+        "https://w3id.org/cm-pharme/2.1/ProvenanceActivity"
+      ],
+      [
+        "https://w3id.org/cm-pharme/2.1/maintainsDataset",
+        "http://www.w3.org/2000/01/rdf-schema#range",
+        "https://w3id.org/cm-pharme/2.1/Dataset"
+      ],
+      [
+        "https://w3id.org/cm-pharme/2.1/usedSourceArtifact",
+        "http://www.w3.org/2000/01/rdf-schema#domain",
+        "https://w3id.org/cm-pharme/2.1/ProvenanceActivity"
+      ]
+    ],
+    "isolated_semantic_module_claimed": false,
+    "seed_defining_triples": 30,
+    "seeds": [
+      {
+        "historical_iri": "https://w3id.org/cm-pharme/2.0/Dataset",
+        "iri": "https://w3id.org/cm-pharme/2.1/Dataset",
+        "name": "Dataset",
+        "namespace_normalized_outgoing_logical_signature_equal": true,
+        "signature": [
+          [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+            "http://www.w3.org/2002/07/owl#Class"
+          ]
+        ],
+        "target_class_shapes": []
+      },
+      {
+        "historical_iri": "https://w3id.org/cm-pharme/2.0/DatasetRelease",
+        "iri": "https://w3id.org/cm-pharme/2.1/DatasetRelease",
+        "name": "DatasetRelease",
+        "namespace_normalized_outgoing_logical_signature_equal": true,
+        "signature": [
+          [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+            "http://www.w3.org/2002/07/owl#Class"
+          ]
+        ],
+        "target_class_shapes": []
+      },
+      {
+        "historical_iri": "https://w3id.org/cm-pharme/2.0/SourceRecord",
+        "iri": "https://w3id.org/cm-pharme/2.1/SourceRecord",
+        "name": "SourceRecord",
+        "namespace_normalized_outgoing_logical_signature_equal": true,
+        "signature": [
+          [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+            "http://www.w3.org/2002/07/owl#Class"
+          ]
+        ],
+        "target_class_shapes": []
+      },
+      {
+        "historical_iri": "https://w3id.org/cm-pharme/2.0/ProvenanceActivity",
+        "iri": "https://w3id.org/cm-pharme/2.1/ProvenanceActivity",
+        "name": "ProvenanceActivity",
+        "namespace_normalized_outgoing_logical_signature_equal": true,
+        "signature": [
+          [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+            "http://www.w3.org/2002/07/owl#Class"
+          ]
+        ],
+        "target_class_shapes": []
+      },
+      {
+        "historical_iri": "https://w3id.org/cm-pharme/2.0/hasDatasetRelease",
+        "iri": "https://w3id.org/cm-pharme/2.1/hasDatasetRelease",
+        "name": "hasDatasetRelease",
+        "namespace_normalized_outgoing_logical_signature_equal": true,
+        "signature": [
+          [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+            "http://www.w3.org/2002/07/owl#ObjectProperty"
+          ],
+          [
+            "http://www.w3.org/2000/01/rdf-schema#domain",
+            "{cmpe}/Dataset"
+          ],
+          [
+            "http://www.w3.org/2000/01/rdf-schema#range",
+            "{cmpe}/DatasetRelease"
+          ]
+        ],
+        "target_class_shapes": []
+      },
+      {
+        "historical_iri": "https://w3id.org/cm-pharme/2.0/containsSourceRecord",
+        "iri": "https://w3id.org/cm-pharme/2.1/containsSourceRecord",
+        "name": "containsSourceRecord",
+        "namespace_normalized_outgoing_logical_signature_equal": true,
+        "signature": [
+          [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+            "http://www.w3.org/2002/07/owl#ObjectProperty"
+          ],
+          [
+            "http://www.w3.org/2000/01/rdf-schema#domain",
+            "{cmpe}/DatasetRelease"
+          ],
+          [
+            "http://www.w3.org/2000/01/rdf-schema#range",
+            "{cmpe}/SourceRecord"
+          ]
+        ],
+        "target_class_shapes": []
+      }
+    ],
+    "selected_cmpe_classes": [
+      "Dataset",
+      "DatasetRelease",
+      "SourceRecord",
+      "ProvenanceActivity"
+    ],
+    "selected_cmpe_properties": [
+      "hasDatasetRelease",
+      "containsSourceRecord"
+    ],
+    "selected_mapping_ids": [
+      "M001",
+      "M002",
+      "M003",
+      "M004"
+    ],
+    "target_node_count": 0,
+    "target_objects_of_count": 0,
+    "target_subjects_of_intersection": []
+  },
+  "model_or_oracle_changed": false,
+  "new_database_run": false,
+  "new_reasoner_run": false,
+  "new_shacl_execution": false,
+  "schema_version": "CMPE-CoreInventory/0.1.0",
+  "source_commit": "c9792b25f7a837b3a34d2a868243e5f5e4dc1198",
+  "status": "PASS_INVENTORY_NOT_IMPLEMENTATION_OR_GA"
+}

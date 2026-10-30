@@ -1,0 +1,112 @@
+@prefix ns1: <https://w3id.org/cm-pharme/2.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+<https://example.org/cm-pharme-g3d/DistributionSiteUse-r> a ns1:DistributionSiteUse ;
+    ns1:distributionSiteUseCounterpart <https://example.org/cm-pharme-g3d/DistributionSiteUse-counterpart> ;
+    ns1:distributionSiteUseHolder <https://example.org/cm-pharme-g3d/DistributionSiteUse-holder> .
+
+<https://example.org/cm-pharme-g3d/ImportResponsibility-r> a ns1:ImportResponsibility ;
+    ns1:importResponsibilityCounterpart <https://example.org/cm-pharme-g3d/ImportResponsibility-counterpart> ;
+    ns1:importResponsibilityHolder <https://example.org/cm-pharme-g3d/ImportResponsibility-holder> .
+
+<https://example.org/cm-pharme-g3d/InstitutionalFundingCommitment-r> a ns1:InstitutionalFundingCommitment ;
+    ns1:institutionalFundingCommitmentCounterpart <https://example.org/cm-pharme-g3d/InstitutionalFundingCommitment-counterpart> ;
+    ns1:institutionalFundingCommitmentHolder <https://example.org/cm-pharme-g3d/InstitutionalFundingCommitment-holder> .
+
+<https://example.org/cm-pharme-g3d/LogisticsServiceCommitment-r> a ns1:LogisticsServiceCommitment ;
+    ns1:logisticsServiceCommitmentCounterpart <https://example.org/cm-pharme-g3d/LogisticsServiceCommitment-counterpart> ;
+    ns1:logisticsServiceCommitmentHolder <https://example.org/cm-pharme-g3d/LogisticsServiceCommitment-holder> .
+
+<https://example.org/cm-pharme-g3d/ManufacturingResponsibility-r> a ns1:ManufacturingResponsibility ;
+    ns1:manufacturingResponsibilityCounterpart <https://example.org/cm-pharme-g3d/ManufacturingResponsibility-counterpart> ;
+    ns1:manufacturingResponsibilityHolder <https://example.org/cm-pharme-g3d/ManufacturingResponsibility-holder> .
+
+<https://example.org/cm-pharme-g3d/ManufacturingSiteUse-r> a ns1:ManufacturingSiteUse ;
+    ns1:manufacturingSiteUseCounterpart <https://example.org/cm-pharme-g3d/ManufacturingSiteUse-counterpart> ;
+    ns1:manufacturingSiteUseHolder <https://example.org/cm-pharme-g3d/ManufacturingSiteUse-holder> .
+
+<https://example.org/cm-pharme-g3d/ProductLabelResponsibility-r> a ns1:ProductLabelResponsibility ;
+    ns1:productLabelResponsibilityCounterpart <https://example.org/cm-pharme-g3d/ProductLabelResponsibility-counterpart> ;
+    ns1:productLabelResponsibilityHolder <https://example.org/cm-pharme-g3d/ProductLabelResponsibility-holder> .
+
+<https://example.org/cm-pharme-g3d/RegulatoryMandate-r> a ns1:RegulatoryMandate ;
+    ns1:regulatoryMandateCounterpart <https://example.org/cm-pharme-g3d/RegulatoryMandate-counterpart> ;
+    ns1:regulatoryMandateHolder <https://example.org/cm-pharme-g3d/RegulatoryMandate-holder> .
+
+<https://example.org/cm-pharme-g3d/WholesaleResponsibility-r> a ns1:WholesaleResponsibility ;
+    ns1:wholesaleResponsibilityCounterpart <https://example.org/cm-pharme-g3d/WholesaleResponsibility-counterpart> ;
+    ns1:wholesaleResponsibilityHolder <https://example.org/cm-pharme-g3d/WholesaleResponsibility-holder> .
+
+<https://example.org/cm-pharme-g3d/listing> a ns1:MarketListing ;
+    ns1:listingPresentation <https://example.org/cm-pharme-g3d/presentation> ;
+    ns1:listingResponsibleOrganization <https://example.org/cm-pharme-g3d/listingActor> .
+
+<https://example.org/cm-pharme-g3d/DistributionSiteUse-holder> a ns1:DistributionSiteRole,
+        ns1:Facility ;
+    owl:differentFrom <https://example.org/cm-pharme-g3d/DistributionSiteUse-counterpart> .
+
+<https://example.org/cm-pharme-g3d/ImportResponsibility-holder> a ns1:ImporterRole,
+        ns1:Organization ;
+    owl:differentFrom <https://example.org/cm-pharme-g3d/ImportResponsibility-counterpart> .
+
+<https://example.org/cm-pharme-g3d/InstitutionalFundingCommitment-holder> a ns1:Organization,
+        ns1:PayerFundingOrganizationRole ;
+    owl:differentFrom <https://example.org/cm-pharme-g3d/InstitutionalFundingCommitment-counterpart> .
+
+<https://example.org/cm-pharme-g3d/LogisticsServiceCommitment-holder> a ns1:Organization,
+        ns1:ThirdPartyLogisticsProviderRole ;
+    owl:differentFrom <https://example.org/cm-pharme-g3d/LogisticsServiceCommitment-counterpart> .
+
+<https://example.org/cm-pharme-g3d/ManufacturingResponsibility-holder> a ns1:ManufacturerRole,
+        ns1:Organization ;
+    owl:differentFrom <https://example.org/cm-pharme-g3d/ManufacturingResponsibility-counterpart> .
+
+<https://example.org/cm-pharme-g3d/ManufacturingSiteUse-holder> a ns1:Facility,
+        ns1:ManufacturingSiteRole ;
+    owl:differentFrom <https://example.org/cm-pharme-g3d/ManufacturingSiteUse-counterpart> .
+
+<https://example.org/cm-pharme-g3d/ProductLabelResponsibility-holder> a ns1:Organization,
+        ns1:ProductLabelCommitmentOrganizationRole ;
+    owl:differentFrom <https://example.org/cm-pharme-g3d/ProductLabelResponsibility-counterpart> .
+
+<https://example.org/cm-pharme-g3d/RegulatoryMandate-holder> a ns1:Organization,
+        ns1:RegulatoryAuthorityRole ;
+    owl:differentFrom <https://example.org/cm-pharme-g3d/RegulatoryMandate-counterpart> .
+
+<https://example.org/cm-pharme-g3d/WholesaleResponsibility-holder> a ns1:Organization,
+        ns1:WholesaleDistributorRole ;
+    owl:differentFrom <https://example.org/cm-pharme-g3d/WholesaleResponsibility-counterpart> .
+
+<https://example.org/cm-pharme-g3d/listingActor> a ns1:ListingResponsibleOrganizationRole,
+        ns1:Organization .
+
+<https://example.org/cm-pharme-g3d/presentation> a ns1:ListedPresentationRole,
+        ns1:MedicinalProductPresentation .
+
+<https://example.org/cm-pharme-g3d/DistributionSiteUse-counterpart> a ns1:AssigningDistributionSiteUseOrganizationRole,
+        ns1:Organization .
+
+<https://example.org/cm-pharme-g3d/ImportResponsibility-counterpart> a ns1:ImportResponsibilitySubjectRole,
+        ns1:MedicinalProduct .
+
+<https://example.org/cm-pharme-g3d/InstitutionalFundingCommitment-counterpart> a ns1:InstitutionallyFundedOrganizationRole,
+        ns1:Organization .
+
+<https://example.org/cm-pharme-g3d/LogisticsServiceCommitment-counterpart> a ns1:CommissioningLogisticsClientRole,
+        ns1:Organization .
+
+<https://example.org/cm-pharme-g3d/ManufacturingResponsibility-counterpart> a ns1:ManufacturingResponsibilitySubjectRole,
+        ns1:MedicinalProduct .
+
+<https://example.org/cm-pharme-g3d/ManufacturingSiteUse-counterpart> a ns1:AssigningManufacturingSiteUseOrganizationRole,
+        ns1:Organization .
+
+<https://example.org/cm-pharme-g3d/ProductLabelResponsibility-counterpart> a ns1:MedicinalProduct,
+        ns1:ResponsibilitySubjectProductRole .
+
+<https://example.org/cm-pharme-g3d/RegulatoryMandate-counterpart> a ns1:MandateConferringOrganizationRole,
+        ns1:Organization .
+
+<https://example.org/cm-pharme-g3d/WholesaleResponsibility-counterpart> a ns1:MedicinalProduct,
+        ns1:WholesaleResponsibilitySubjectRole .
+

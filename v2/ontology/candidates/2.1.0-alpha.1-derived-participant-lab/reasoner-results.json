@@ -1,0 +1,102 @@
+{
+  "cases": [
+    {
+      "name": "C-tbox-coherent",
+      "variant": "C",
+      "expected_consistent": true,
+      "actual_consistent": true,
+      "unsatisfiable_named_classes": [],
+      "pass": true
+    },
+    {
+      "name": "context-substance",
+      "variant": "BASELINE",
+      "expected_consistent": true,
+      "actual_consistent": true,
+      "unsatisfiable_named_classes": [],
+      "pass": true
+    },
+    {
+      "name": "context-substance",
+      "variant": "B",
+      "expected_consistent": false,
+      "actual_consistent": false,
+      "unsatisfiable_named_classes": [],
+      "pass": true
+    },
+    {
+      "name": "context-substance",
+      "variant": "C",
+      "expected_consistent": true,
+      "actual_consistent": true,
+      "unsatisfiable_named_classes": [],
+      "pass": true
+    },
+    {
+      "name": "nonrecord-evidence",
+      "variant": "BASELINE",
+      "expected_consistent": true,
+      "actual_consistent": true,
+      "unsatisfiable_named_classes": [],
+      "pass": true
+    },
+    {
+      "name": "nonrecord-evidence",
+      "variant": "B",
+      "expected_consistent": false,
+      "actual_consistent": false,
+      "unsatisfiable_named_classes": [],
+      "pass": true
+    },
+    {
+      "name": "nonrecord-evidence",
+      "variant": "C",
+      "expected_consistent": true,
+      "actual_consistent": true,
+      "unsatisfiable_named_classes": [],
+      "pass": true
+    },
+    {
+      "name": "missing-data-is-not-OWL-inconsistency",
+      "variant": "C",
+      "expected_consistent": true,
+      "actual_consistent": true,
+      "unsatisfiable_named_classes": [],
+      "pass": true
+    },
+    {
+      "name": "explicit-zero-contradicts-required-entry",
+      "variant": "C",
+      "expected_consistent": false,
+      "actual_consistent": false,
+      "unsatisfiable_named_classes": [],
+      "pass": true
+    },
+    {
+      "name": "different-IRIs-do-not-prove-distinct-products",
+      "variant": "C",
+      "expected_consistent": true,
+      "actual_consistent": true,
+      "unsatisfiable_named_classes": [],
+      "pass": true
+    },
+    {
+      "name": "two-explicitly-distinct-products-inconsistent",
+      "variant": "C",
+      "expected_consistent": false,
+      "actual_consistent": false,
+      "unsatisfiable_named_classes": [],
+      "pass": true
+    },
+    {
+      "name": "prior-combined-witness",
+      "variant": "C",
+      "expected_consistent": true,
+      "actual_consistent": true,
+      "unsatisfiable_named_classes": [],
+      "pass": true
+    }
+  ],
+  "pass": 12,
+  "total": 12
+}

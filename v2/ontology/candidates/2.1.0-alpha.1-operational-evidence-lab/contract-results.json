@@ -1,0 +1,111 @@
+{
+  "checks": [
+    {
+      "id": "documentary-claims-admitted",
+      "actual": true,
+      "expected": true,
+      "kind": "admission",
+      "pass": true
+    },
+    {
+      "id": "three-party-projected-commitment",
+      "actual": true,
+      "expected": true,
+      "kind": "projection",
+      "pass": true
+    },
+    {
+      "id": "missing-source-evidence",
+      "actual": false,
+      "expected": false,
+      "kind": "projection",
+      "pass": true
+    },
+    {
+      "id": "outsider-added",
+      "actual": false,
+      "expected": false,
+      "kind": "projection",
+      "pass": true
+    },
+    {
+      "id": "collapsed-party-set",
+      "actual": false,
+      "expected": false,
+      "kind": "projection",
+      "pass": true
+    },
+    {
+      "id": "document-as-agreement",
+      "actual": false,
+      "expected": false,
+      "kind": "projection",
+      "pass": true
+    },
+    {
+      "id": "three-signatory-labels",
+      "actual": 3,
+      "expected": 3,
+      "kind": "query",
+      "pass": true
+    },
+    {
+      "id": "made-differs-from-effective",
+      "actual": true,
+      "expected": true,
+      "kind": "query",
+      "pass": true
+    },
+    {
+      "id": "missing-work-orders-not-invented",
+      "actual": "SOURCE_REPORTED_ASSESSMENT_CONTENT",
+      "expected": "SOURCE_REPORTED_ASSESSMENT_CONTENT",
+      "kind": "query",
+      "pass": true
+    },
+    {
+      "id": "required-work-order-not-proved-executed",
+      "actual": "NOT_REPORTED_IN_SELECTED_MODE",
+      "expected": "NOT_REPORTED_IN_SELECTED_MODE",
+      "kind": "query",
+      "pass": true
+    },
+    {
+      "id": "projected-three-party-query",
+      "actual": [
+        "urn:cmpe-evidence:LonzaLtd",
+        "urn:cmpe-evidence:LonzaSales",
+        "urn:cmpe-evidence:ModernaTX"
+      ],
+      "expected": [
+        "urn:cmpe-evidence:LonzaLtd",
+        "urn:cmpe-evidence:LonzaSales",
+        "urn:cmpe-evidence:ModernaTX"
+      ],
+      "kind": "query",
+      "pass": true
+    }
+  ],
+  "passed": 11,
+  "total": 11,
+  "logical": [
+    {
+      "id": "projected-contract-consistent",
+      "consistent": true,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "prov_profile": "two conflicting annotation-property declarations removed; raw source retained",
+      "pass": true
+    },
+    {
+      "id": "agreement-is-not-source",
+      "consistent": true,
+      "unsatisfiable_named_classes": [],
+      "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+      "prov_profile": "two conflicting annotation-property declarations removed; raw source retained",
+      "pass": true
+    }
+  ],
+  "projection_status": "PROPOSED_MAPPING_USING_EXISTING_MODEL; NOT_SCIENTIFICALLY_ACCEPTED",
+  "future_gap": "The exact-participant-set bounded profile does not yet model an affiliate-only SOW or subset commitments. Do not generalize this all-party witness to every contractual obligation."
+}

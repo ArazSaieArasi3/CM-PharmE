@@ -1,0 +1,150 @@
+@prefix c: <https://w3id.org/cm-pharme/2.1/> .
+@prefix l: <https://w3id.org/cm-pharme/experimental/four-domain/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix p: <https://w3id.org/cm-pharme/experimental/registry-policy/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix r: <https://w3id.org/cm-pharme/experimental/refinement/> .
+@prefix t: <urn:cmpe-registry-policy:> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+t:provenance-record a c:SourceRecord ;
+    owl:differentFrom t:provenance-previous ;
+    prov:wasAttributedTo t:provenance-author ;
+    prov:wasDerivedFrom t:provenance-previous ;
+    prov:wasRevisionOf t:provenance-previous ;
+    l:recordDigitalActivity t:provenance-activity ;
+    p:profile "provenance-record" ;
+    p:version "2" .
+
+t:registry-mandate a c:RegulatoryMandate ;
+    c:regulatoryMandateCounterpart t:registry-conferrer ;
+    c:regulatoryMandateHolder t:registry-authority .
+
+t:reporting-requirement a c:RegulatoryRequirement ;
+    c:validFrom "2026-10-01T00:00:00+00:00"^^xsd:dateTime ;
+    c:validTo "2026-11-01T00:00:00+00:00"^^xsd:dateTime ;
+    p:actionAnnounced true ;
+    p:actorRole "MAH",
+        "NCA" ;
+    p:authorizationRoute "CAP",
+        "NAP" ;
+    p:frequency "synthetic-action-specific-frequency" ;
+    p:jurisdiction t:reporting-jurisdiction ;
+    p:profile "reporting-scope" ;
+    p:scenario "crisis" ;
+    p:scopeComplete true ;
+    p:scopedProduct t:reporting-product ;
+    p:sourceVersion "synthetic-guidance-snapshot-1" .
+
+t:shortage-claim a c:Assertion ;
+    c:assertionAboutProduct t:shortage-product ;
+    p:profile "shortage-claim" ;
+    p:shortageStatus "potential" .
+
+t:submission-record a c:SourceRecord ;
+    owl:differentFrom t:submission-previous ;
+    prov:wasAttributedTo t:submission-author ;
+    prov:wasDerivedFrom t:submission-previous ;
+    prov:wasRevisionOf t:submission-previous ;
+    l:recordDigitalActivity t:submission-activity ;
+    r:carrierClaim t:submission-claim ;
+    p:payloadFormat "SPL" ;
+    p:profile "provenance-record",
+        "submission-record" ;
+    p:version "2" .
+
+t:listing-fact a c:MarketListing ;
+    c:listingJurisdiction t:listing-jurisdiction ;
+    c:listingPresentation t:listing-presentation ;
+    c:listingResponsibleOrganization t:listing-reporter .
+
+t:listing-jurisdiction a c:RegulatoryJurisdiction .
+
+t:listing-product a c:MedicinalProduct .
+
+t:listing-record a c:SourceRecord ;
+    prov:wasAttributedTo t:listing-reporter ;
+    p:approvalConclusion "unknown" ;
+    p:externalKey "SYNTHETIC-001" ;
+    p:marketingEnd "2026-11-01"^^xsd:date ;
+    p:marketingStart "2026-09-01"^^xsd:date ;
+    p:profile "registry-record" ;
+    p:recordKind "listing" ;
+    p:recordSubject t:listing-presentation ;
+    p:release t:listing-release ;
+    p:representsFact t:listing-fact ;
+    p:retrievedAt "2026-10-01T10:00:00+00:00"^^xsd:dateTime .
+
+t:listing-release a c:DatasetRelease ;
+    c:containsSourceRecord t:listing-record .
+
+t:provenance-activity a c:ProvenanceActivity ;
+    prov:wasAssociatedWith t:provenance-operator .
+
+t:provenance-author a c:Organization .
+
+t:provenance-operator a c:Organization .
+
+t:registry-conferrer a c:MandateConferringOrganizationRole,
+        c:Organization .
+
+t:registry-fact a c:EstablishmentRegistration ;
+    c:registrationAuthority t:registry-authority ;
+    c:registrationEntity t:registry-facility ;
+    c:registrationJurisdiction t:registry-jurisdiction .
+
+t:registry-jurisdiction a c:RegulatoryJurisdiction .
+
+t:registry-record a c:SourceRecord ;
+    prov:wasAttributedTo t:registry-reporter ;
+    p:approvalConclusion "unknown" ;
+    p:externalKey "SYNTHETIC-001" ;
+    p:profile "registry-record" ;
+    p:recordKind "registration" ;
+    p:recordSubject t:registry-facility ;
+    p:release t:registry-release ;
+    p:representsFact t:registry-fact ;
+    p:retrievedAt "2026-10-01T10:00:00+00:00"^^xsd:dateTime .
+
+t:registry-release a c:DatasetRelease ;
+    c:containsSourceRecord t:registry-record .
+
+t:registry-reporter a c:Organization .
+
+t:reporting-jurisdiction a c:RegulatoryJurisdiction .
+
+t:reporting-product a c:MedicinalProduct .
+
+t:shortage-product a c:MedicinalProduct .
+
+t:submission-activity a c:ProvenanceActivity ;
+    prov:wasAssociatedWith t:submission-operator .
+
+t:submission-author a c:Organization .
+
+t:submission-claim a c:Assertion ;
+    c:assertionAboutProduct t:submission-product .
+
+t:submission-operator a c:Organization .
+
+t:submission-product a c:MedicinalProduct .
+
+t:listing-presentation a c:ListedPresentationRole,
+        c:MedicinalProductPresentation ;
+    c:presentationOf t:listing-product .
+
+t:listing-reporter a c:ListingResponsibleOrganizationRole,
+        c:Organization .
+
+t:registry-authority a c:Organization,
+        c:RegisteringAuthorityRole .
+
+t:registry-facility a c:Facility,
+        c:RegisteredFacilityRole,
+        c:RegisteredParty .
+
+t:provenance-previous a c:SourceRecord ;
+    p:version "1" .
+
+t:submission-previous a c:SourceRecord ;
+    p:version "1" .

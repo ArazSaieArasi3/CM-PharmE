@@ -1,0 +1,662 @@
+{
+  "version": "2.1.0-alpha.1-g3d-candidate",
+  "profiles": {
+    "FacilityOperation": {
+      "operator": {
+        "property": "operationOrganization",
+        "target": "OperatingOrganizationRole",
+        "kinds": {
+          "Organization": "OperatingOrganizationRole"
+        },
+        "min": 1,
+        "max": null
+      },
+      "facility": {
+        "property": "operationFacility",
+        "target": "OperatedFacilityRole",
+        "kinds": {
+          "Facility": "OperatedFacilityRole"
+        },
+        "min": 1,
+        "max": 1
+      }
+    },
+    "EstablishmentRegistration": {
+      "authority": {
+        "property": "registrationAuthority",
+        "target": "RegisteringAuthorityRole",
+        "kinds": {
+          "Organization": "RegisteringAuthorityRole"
+        },
+        "min": 1,
+        "max": 1
+      },
+      "subject": {
+        "property": "registrationEntity",
+        "target": "RegisteredParty",
+        "kinds": {
+          "Organization": "RegisteredOrganizationRole",
+          "Facility": "RegisteredFacilityRole"
+        },
+        "min": 1,
+        "max": 1
+      }
+    },
+    "RegulatoryAuthorization": {
+      "authority": {
+        "property": "authorizationAuthority",
+        "target": "AuthorizingAuthorityRole",
+        "kinds": {
+          "Organization": "AuthorizingAuthorityRole"
+        },
+        "min": 1,
+        "max": 1
+      },
+      "subject": {
+        "property": "authorizationParty",
+        "target": "AuthorizedParty",
+        "kinds": {
+          "Organization": "AuthorizedOrganizationRole",
+          "Facility": "AuthorizedFacilityRole"
+        },
+        "min": 1,
+        "max": 1
+      }
+    },
+    "ProductClassificationAssignment": {
+      "subject": {
+        "property": "classificationEntity",
+        "target": "ClassifiedEntity",
+        "kinds": {
+          "MedicinalProduct": "ClassifiedMedicinalProductRole",
+          "PharmaceuticalSubstance": "ClassifiedPharmaceuticalSubstanceRole"
+        },
+        "min": 1,
+        "max": 1
+      },
+      "entry": {
+        "property": "classificationEntry",
+        "target": "AppliedClassificationEntryRole",
+        "kinds": {
+          "ClassificationEntry": "AppliedClassificationEntryRole"
+        },
+        "min": 1,
+        "max": 1
+      }
+    },
+    "MarketListing": {
+      "presentation": {
+        "property": "listingPresentation",
+        "target": "ListedPresentationRole",
+        "kinds": {
+          "MedicinalProductPresentation": "ListedPresentationRole"
+        },
+        "min": 1,
+        "max": 1
+      },
+      "responsible": {
+        "property": "listingResponsibleOrganization",
+        "target": "ListingResponsibleOrganizationRole",
+        "kinds": {
+          "Organization": "ListingResponsibleOrganizationRole"
+        },
+        "min": 1,
+        "max": 1
+      }
+    },
+    "EvidenceSupport": {
+      "evidence": {
+        "property": "evidenceItem",
+        "target": "EvidenceItem",
+        "kinds": {
+          "SourceRecord": "EvidenceSourceRecordRole",
+          "ObservationResult": "EvidenceObservationResultRole"
+        },
+        "min": 1,
+        "max": 1
+      },
+      "claim": {
+        "property": "evidenceAssertion",
+        "target": "SupportedAssertionRole",
+        "kinds": {
+          "Assertion": "SupportedAssertionRole"
+        },
+        "min": 1,
+        "max": 1
+      }
+    },
+    "IdentifierAssignment": {
+      "subject": {
+        "property": "identifierEntity",
+        "target": "IdentifiedEntity",
+        "kinds": {
+          "Organization": "IdentifiedOrganizationRole",
+          "Facility": "IdentifiedFacilityRole",
+          "MedicinalProduct": "IdentifiedMedicinalProductRole",
+          "PharmaceuticalSubstance": "IdentifiedPharmaceuticalSubstanceRole",
+          "MedicinalProductPresentation": "IdentifiedMedicinalProductPresentationRole",
+          "GeographicFeature": "IdentifiedGeographicFeatureRole"
+        },
+        "min": 1,
+        "max": 1
+      },
+      "scheme": {
+        "property": "identifierScheme",
+        "target": "UsedIdentifierSchemeRole",
+        "kinds": {
+          "IdentifierScheme": "UsedIdentifierSchemeRole"
+        },
+        "min": 1,
+        "max": 1
+      }
+    },
+    "AlternativeMedicineAssignment": {
+      "reference": {
+        "property": "alternativeForProduct",
+        "target": "ReferenceProductRole",
+        "kinds": {
+          "MedicinalProduct": "ReferenceProductRole"
+        },
+        "min": 1,
+        "max": 1
+      },
+      "alternative": {
+        "property": "alternativeProduct",
+        "target": "AlternativeMedicinalProductRole",
+        "kinds": {
+          "MedicinalProduct": "AlternativeMedicinalProductRole"
+        },
+        "min": 1,
+        "max": 1
+      }
+    },
+    "SupplyDependency": {
+      "dependent": {
+        "property": "dependencyDependent",
+        "target": "DependentEntity",
+        "kinds": {
+          "Organization": "DependentOrganizationRole",
+          "Facility": "DependentFacilityRole",
+          "MedicinalProduct": "DependentMedicinalProductRole"
+        },
+        "min": 1,
+        "max": 1
+      },
+      "provider": {
+        "property": "dependencyProvider",
+        "target": "ProviderEntity",
+        "kinds": {
+          "Organization": "ProviderOrganizationRole",
+          "Facility": "ProviderFacilityRole",
+          "MedicinalProduct": "ProviderMedicinalProductRole"
+        },
+        "min": 1,
+        "max": 1
+      }
+    },
+    "RegulatoryOversight": {
+      "authority": {
+        "property": "oversightAuthorityRole",
+        "target": "OversightAuthorityRole",
+        "kinds": {
+          "Organization": "OversightAuthorityRole"
+        },
+        "min": 1,
+        "max": 1
+      },
+      "subject": {
+        "property": "oversightGovernedEntity",
+        "target": "GovernedEntity",
+        "kinds": {
+          "Organization": "GovernedOrganizationRole",
+          "Facility": "GovernedFacilityRole"
+        },
+        "min": 1,
+        "max": 1
+      }
+    },
+    "StrategicPartnershipAgreement": {
+      "partner": {
+        "property": "partnershipParticipant",
+        "target": "PartnerOrganizationRole",
+        "kinds": {
+          "Organization": "PartnerOrganizationRole"
+        },
+        "min": 2,
+        "max": null
+      }
+    },
+    "ContextualMedicineClassificationAssignment": {
+      "subject": {
+        "property": "classificationEntity",
+        "target": "ClassifiedEntity",
+        "kinds": {
+          "MedicinalProduct": "ClassifiedMedicinalProductRole",
+          "PharmaceuticalSubstance": "ClassifiedPharmaceuticalSubstanceRole"
+        },
+        "min": 1,
+        "max": 1
+      },
+      "entry": {
+        "property": "classificationEntry",
+        "target": "AppliedClassificationEntryRole",
+        "kinds": {
+          "ClassificationEntry": "AppliedClassificationEntryRole"
+        },
+        "min": 1,
+        "max": 1
+      }
+    }
+  },
+  "new_roles": {
+    "OperatingOrganizationRole": {
+      "identity": "Organization",
+      "parent": "Organization"
+    },
+    "OperatedFacilityRole": {
+      "identity": "Facility",
+      "parent": "Facility"
+    },
+    "RegisteredOrganizationRole": {
+      "identity": "Organization",
+      "parent": "Organization"
+    },
+    "RegisteredFacilityRole": {
+      "identity": "Facility",
+      "parent": "Facility"
+    },
+    "AuthorizedOrganizationRole": {
+      "identity": "Organization",
+      "parent": "Organization"
+    },
+    "AuthorizedFacilityRole": {
+      "identity": "Facility",
+      "parent": "Facility"
+    },
+    "GovernedOrganizationRole": {
+      "identity": "Organization",
+      "parent": "Organization"
+    },
+    "GovernedFacilityRole": {
+      "identity": "Facility",
+      "parent": "Facility"
+    },
+    "RegisteringAuthorityRole": {
+      "identity": "Organization",
+      "parent": "RegulatoryAuthorityRole"
+    },
+    "AuthorizingAuthorityRole": {
+      "identity": "Organization",
+      "parent": "RegulatoryAuthorityRole"
+    },
+    "OversightAuthorityRole": {
+      "identity": "Organization",
+      "parent": "RegulatoryAuthorityRole"
+    },
+    "ClassifiedMedicinalProductRole": {
+      "identity": "MedicinalProduct",
+      "parent": "MedicinalProduct"
+    },
+    "ClassifiedPharmaceuticalSubstanceRole": {
+      "identity": "PharmaceuticalSubstance",
+      "parent": "PharmaceuticalSubstance"
+    },
+    "AppliedClassificationEntryRole": {
+      "identity": "ClassificationEntry",
+      "parent": "ClassificationEntry"
+    },
+    "ListedPresentationRole": {
+      "identity": "MedicinalProductPresentation",
+      "parent": "MedicinalProductPresentation"
+    },
+    "ListingResponsibleOrganizationRole": {
+      "identity": "Organization",
+      "parent": "Organization"
+    },
+    "SupportedAssertionRole": {
+      "identity": "Assertion",
+      "parent": "Assertion"
+    },
+    "EvidenceSourceRecordRole": {
+      "identity": "SourceRecord",
+      "parent": "SourceRecord"
+    },
+    "EvidenceObservationResultRole": {
+      "identity": "ObservationResult",
+      "parent": "ObservationResult"
+    },
+    "IdentifiedOrganizationRole": {
+      "identity": "Organization",
+      "parent": "Organization"
+    },
+    "IdentifiedFacilityRole": {
+      "identity": "Facility",
+      "parent": "Facility"
+    },
+    "IdentifiedMedicinalProductRole": {
+      "identity": "MedicinalProduct",
+      "parent": "MedicinalProduct"
+    },
+    "IdentifiedPharmaceuticalSubstanceRole": {
+      "identity": "PharmaceuticalSubstance",
+      "parent": "PharmaceuticalSubstance"
+    },
+    "IdentifiedMedicinalProductPresentationRole": {
+      "identity": "MedicinalProductPresentation",
+      "parent": "MedicinalProductPresentation"
+    },
+    "IdentifiedGeographicFeatureRole": {
+      "identity": "GeographicFeature",
+      "parent": "GeographicFeature"
+    },
+    "UsedIdentifierSchemeRole": {
+      "identity": "IdentifierScheme",
+      "parent": "IdentifierScheme"
+    },
+    "ReferenceProductRole": {
+      "identity": "MedicinalProduct",
+      "parent": "MedicinalProduct"
+    },
+    "DependentOrganizationRole": {
+      "identity": "Organization",
+      "parent": "Organization"
+    },
+    "DependentFacilityRole": {
+      "identity": "Facility",
+      "parent": "Facility"
+    },
+    "DependentMedicinalProductRole": {
+      "identity": "MedicinalProduct",
+      "parent": "MedicinalProduct"
+    },
+    "ProviderOrganizationRole": {
+      "identity": "Organization",
+      "parent": "Organization"
+    },
+    "ProviderFacilityRole": {
+      "identity": "Facility",
+      "parent": "Facility"
+    },
+    "ProviderMedicinalProductRole": {
+      "identity": "MedicinalProduct",
+      "parent": "MedicinalProduct"
+    },
+    "PartnerOrganizationRole": {
+      "identity": "Organization",
+      "parent": "Organization"
+    }
+  },
+  "role_mixins": {
+    "RegisteredParty": [
+      "RegisteredOrganizationRole",
+      "RegisteredFacilityRole"
+    ],
+    "AuthorizedParty": [
+      "AuthorizedOrganizationRole",
+      "AuthorizedFacilityRole"
+    ],
+    "GovernedEntity": [
+      "GovernedOrganizationRole",
+      "GovernedFacilityRole"
+    ],
+    "ClassifiedEntity": [
+      "ClassifiedMedicinalProductRole",
+      "ClassifiedPharmaceuticalSubstanceRole"
+    ],
+    "EvidenceItem": [
+      "EvidenceSourceRecordRole",
+      "EvidenceObservationResultRole"
+    ],
+    "IdentifiedEntity": [
+      "IdentifiedOrganizationRole",
+      "IdentifiedFacilityRole",
+      "IdentifiedMedicinalProductRole",
+      "IdentifiedPharmaceuticalSubstanceRole",
+      "IdentifiedMedicinalProductPresentationRole",
+      "IdentifiedGeographicFeatureRole"
+    ],
+    "DependentEntity": [
+      "DependentOrganizationRole",
+      "DependentFacilityRole",
+      "DependentMedicinalProductRole"
+    ],
+    "ProviderEntity": [
+      "ProviderOrganizationRole",
+      "ProviderFacilityRole",
+      "ProviderMedicinalProductRole"
+    ]
+  },
+  "deferred": {
+    "AssetAtRisk": "S-04",
+    "Vulnerability": "S-04",
+    "ClinicalCareParticipant": "S-05"
+  },
+  "protected_distinctions": [
+    [
+      "Organization",
+      "Facility"
+    ],
+    [
+      "Facility",
+      "GeographicFeature"
+    ],
+    [
+      "GeographicFeature",
+      "RegulatoryJurisdiction"
+    ],
+    [
+      "MedicinalProduct",
+      "PharmaceuticalSubstance"
+    ],
+    [
+      "MedicinalProduct",
+      "MedicinalProductPresentation"
+    ],
+    [
+      "ObservationActivity",
+      "ObservationResult"
+    ],
+    [
+      "MedicineShortageSituation",
+      "SourceRecord"
+    ],
+    [
+      "SupplyCapacity",
+      "SupplyCapacityObservationResult"
+    ]
+  ],
+  "temporal_policy": "[valid_from,valid_to); RDF exports are explicit time snapshots; no claim of full modal semantics",
+  "identity_policy": "same participant identity in every Role; distinct relation IDs may represent independent agreements with same participants; source record IDs are provenance, not relation identity",
+  "closed_profile": "These complete-instance admission constraints do not mean missing source data is false.",
+  "g2_connections": [
+    "observationAboutProduct",
+    "observationAboutPresentation",
+    "assertionAboutProduct",
+    "riskAssessmentConcernsDependency",
+    "disruptionAffectsDependency",
+    "reimbursementDiagnosisContext"
+  ],
+  "g3_profiles": {
+    "ManufacturingResponsibility": {
+      "holder": {
+        "property": "manufacturingResponsibilityHolder",
+        "target": "ManufacturerRole",
+        "kinds": {
+          "Organization": "ManufacturerRole"
+        },
+        "min": 1,
+        "max": 1
+      },
+      "counterpart": {
+        "property": "manufacturingResponsibilityCounterpart",
+        "target": "ManufacturingResponsibilitySubjectRole",
+        "kinds": {
+          "MedicinalProduct": "ManufacturingResponsibilitySubjectRole"
+        },
+        "min": 1,
+        "max": 1
+      }
+    },
+    "ManufacturingSiteUse": {
+      "holder": {
+        "property": "manufacturingSiteUseHolder",
+        "target": "ManufacturingSiteRole",
+        "kinds": {
+          "Facility": "ManufacturingSiteRole"
+        },
+        "min": 1,
+        "max": 1
+      },
+      "counterpart": {
+        "property": "manufacturingSiteUseCounterpart",
+        "target": "AssigningManufacturingSiteUseOrganizationRole",
+        "kinds": {
+          "Organization": "AssigningManufacturingSiteUseOrganizationRole"
+        },
+        "min": 1,
+        "max": 1
+      }
+    },
+    "ImportResponsibility": {
+      "holder": {
+        "property": "importResponsibilityHolder",
+        "target": "ImporterRole",
+        "kinds": {
+          "Organization": "ImporterRole"
+        },
+        "min": 1,
+        "max": 1
+      },
+      "counterpart": {
+        "property": "importResponsibilityCounterpart",
+        "target": "ImportResponsibilitySubjectRole",
+        "kinds": {
+          "MedicinalProduct": "ImportResponsibilitySubjectRole"
+        },
+        "min": 1,
+        "max": 1
+      }
+    },
+    "WholesaleResponsibility": {
+      "holder": {
+        "property": "wholesaleResponsibilityHolder",
+        "target": "WholesaleDistributorRole",
+        "kinds": {
+          "Organization": "WholesaleDistributorRole"
+        },
+        "min": 1,
+        "max": 1
+      },
+      "counterpart": {
+        "property": "wholesaleResponsibilityCounterpart",
+        "target": "WholesaleResponsibilitySubjectRole",
+        "kinds": {
+          "MedicinalProduct": "WholesaleResponsibilitySubjectRole"
+        },
+        "min": 1,
+        "max": 1
+      }
+    },
+    "LogisticsServiceCommitment": {
+      "holder": {
+        "property": "logisticsServiceCommitmentHolder",
+        "target": "ThirdPartyLogisticsProviderRole",
+        "kinds": {
+          "Organization": "ThirdPartyLogisticsProviderRole"
+        },
+        "min": 1,
+        "max": 1
+      },
+      "counterpart": {
+        "property": "logisticsServiceCommitmentCounterpart",
+        "target": "CommissioningLogisticsClientRole",
+        "kinds": {
+          "Organization": "CommissioningLogisticsClientRole"
+        },
+        "min": 1,
+        "max": 1
+      }
+    },
+    "DistributionSiteUse": {
+      "holder": {
+        "property": "distributionSiteUseHolder",
+        "target": "DistributionSiteRole",
+        "kinds": {
+          "Facility": "DistributionSiteRole"
+        },
+        "min": 1,
+        "max": 1
+      },
+      "counterpart": {
+        "property": "distributionSiteUseCounterpart",
+        "target": "AssigningDistributionSiteUseOrganizationRole",
+        "kinds": {
+          "Organization": "AssigningDistributionSiteUseOrganizationRole"
+        },
+        "min": 1,
+        "max": 1
+      }
+    },
+    "RegulatoryMandate": {
+      "holder": {
+        "property": "regulatoryMandateHolder",
+        "target": "RegulatoryAuthorityRole",
+        "kinds": {
+          "Organization": "RegulatoryAuthorityRole"
+        },
+        "min": 1,
+        "max": 1
+      },
+      "counterpart": {
+        "property": "regulatoryMandateCounterpart",
+        "target": "MandateConferringOrganizationRole",
+        "kinds": {
+          "Organization": "MandateConferringOrganizationRole"
+        },
+        "min": 1,
+        "max": 1
+      }
+    },
+    "ProductLabelResponsibility": {
+      "holder": {
+        "property": "productLabelResponsibilityHolder",
+        "target": "ProductLabelCommitmentOrganizationRole",
+        "kinds": {
+          "Organization": "ProductLabelCommitmentOrganizationRole"
+        },
+        "min": 1,
+        "max": 1
+      },
+      "counterpart": {
+        "property": "productLabelResponsibilityCounterpart",
+        "target": "ResponsibilitySubjectProductRole",
+        "kinds": {
+          "MedicinalProduct": "ResponsibilitySubjectProductRole"
+        },
+        "min": 1,
+        "max": 1
+      }
+    },
+    "InstitutionalFundingCommitment": {
+      "holder": {
+        "property": "institutionalFundingCommitmentHolder",
+        "target": "PayerFundingOrganizationRole",
+        "kinds": {
+          "Organization": "PayerFundingOrganizationRole"
+        },
+        "min": 1,
+        "max": 1
+      },
+      "counterpart": {
+        "property": "institutionalFundingCommitmentCounterpart",
+        "target": "InstitutionallyFundedOrganizationRole",
+        "kinds": {
+          "Organization": "InstitutionallyFundedOrganizationRole"
+        },
+        "min": 1,
+        "max": 1
+      }
+    }
+  },
+  "g3_scope": "Institutional funding only; no person entitlement. Product role is inclusive union of two routes. No scope-only authorization implies responsibility."
+}

@@ -1,0 +1,64 @@
+name: CM-PharmE 2.1 RelComp Source Policy
+
+on:
+  pull_request:
+    branches: [v2/research-program]
+    paths:
+      - 'v2/ontology/candidates/2.1.0-alpha.1-relcomp-policy/**'
+      - '.github/workflows/v2-21-relcomp-policy.yml'
+  push:
+    branches: ['v2/**']
+    paths:
+      - 'v2/ontology/candidates/2.1.0-alpha.1-relcomp-policy/**'
+      - '.github/workflows/v2-21-relcomp-policy.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  relcomp-lower-bound:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-python@v7.0.0
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-java@v5.7.0
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Checkout unchanged pinned public OLED archive
+        uses: actions/checkout@v7.0.1
+        with:
+          repository: nemo-ufes/ontouml-lightweight-editor
+          ref: 42b926f6c2859dc87e49a96b8482eae28d02e7d5
+          path: build/relcomp-runtime/oled
+          persist-credentials: false
+      - name: Download pinned compiler
+        run: >-
+          curl --fail --location --max-time 60
+          --output build/relcomp-runtime/ecj-3.39.0.jar
+          https://repo.maven.apache.org/maven2/org/eclipse/jdt/ecj/3.39.0/ecj-3.39.0.jar
+      - name: Verify source/profile and archived-runtime boundary evidence
+        run: >-
+          python v2/ontology/candidates/2.1.0-alpha.1-relcomp-policy/run_policy.py
+          --archive build/relcomp-runtime/oled
+          --ecj build/relcomp-runtime/ecj-3.39.0.jar
+      - name: Expose exact scoped evidence
+        if: always()
+        run: |
+          if test -f build/relcomp-policy/report.json; then
+            cat build/relcomp-policy/report.json
+          fi
+      - name: Upload scoped evidence
+        if: always()
+        uses: actions/upload-artifact@v7.0.1
+        with:
+          name: cm-pharme-v2-21-relcomp-policy-evidence
+          path: build/relcomp-policy/
+          if-no-files-found: warn
+          retention-days: 30

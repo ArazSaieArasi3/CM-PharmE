@@ -1,0 +1,45 @@
+{
+  "as_of": "2026-10-09 Asia/Tehran",
+  "package": "G3-3-C integrated validation",
+  "formal_alignment": {
+    "native_elements": 523,
+    "native_class_generalizations": 99,
+    "owl_direct_class_edges": 99,
+    "named_classes": 138,
+    "datatypes": 6,
+    "native_and_owl_binary_relations": 82,
+    "owl_redundant_direct_edge_removed": 1,
+    "owl_triples": 1598
+  },
+  "executed_checks": {
+    "full_candidate_pyshacl": 11,
+    "HermiT_consistency_and_coherence": 8,
+    "OWL_RL_subproperty_entailment": 1,
+    "selected_geography_pyshacl_replay": 6,
+    "focal_RepRel_pyshacl_replay": 38,
+    "adapted_RDFLib_graph_and_query_on_aligned_candidate": 23,
+    "total_expected_outcome_checks": 87,
+    "failures": 0
+  },
+  "comparative_behavior": "8 negative cases rejected by new full candidate shapes and accepted by the older baseline shapes",
+  "known_gap": "SupplyCapacity without a typed bearer conforms to candidate SHACL; a HermiT consistency pass cannot prove bearer completeness under the open-world assumption.",
+  "external_gates": [
+    "Official full 20-pattern anti-pattern detector unavailable/unrun",
+    "29 relation dispositions, 14 isolate connectors, 10 ImpAbs endpoint questions and 19 RepRel uniqueness policies need scientific review",
+    "Source-data mapping and migration not executed in G3-C"
+  ],
+  "progress": {
+    "closed_major_stages": 2,
+    "total_major_stages": 5,
+    "closed_major_stage_percent": 40.0,
+    "closed_G3_packages": 2,
+    "total_G3_packages": 7,
+    "closed_G3_package_percent": 28.6,
+    "remaining_bounded_turns": [
+      "G3-3-D",
+      "G3-3-E",
+      "G3-3-F"
+    ]
+  },
+  "release_status": "REVIEW_CANDIDATE_ONLY"
+}

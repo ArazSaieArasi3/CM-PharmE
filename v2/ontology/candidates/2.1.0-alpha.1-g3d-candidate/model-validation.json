@@ -1,0 +1,124 @@
+{
+  "classes": 138,
+  "datatypes": 6,
+  "concepts": 144,
+  "object_properties": 81,
+  "added_relators": 9,
+  "added_roles": 10,
+  "added_mediations": 18,
+  "schema_errors": 0,
+  "native_elements": 520,
+  "identity_checks": [
+    {
+      "role": "ManufacturerRole",
+      "identity_providers": [
+        "Organization"
+      ],
+      "passed": true
+    },
+    {
+      "role": "ManufacturingSiteRole",
+      "identity_providers": [
+        "Facility"
+      ],
+      "passed": true
+    },
+    {
+      "role": "ImporterRole",
+      "identity_providers": [
+        "Organization"
+      ],
+      "passed": true
+    },
+    {
+      "role": "WholesaleDistributorRole",
+      "identity_providers": [
+        "Organization"
+      ],
+      "passed": true
+    },
+    {
+      "role": "ThirdPartyLogisticsProviderRole",
+      "identity_providers": [
+        "Organization"
+      ],
+      "passed": true
+    },
+    {
+      "role": "DistributionSiteRole",
+      "identity_providers": [
+        "Facility"
+      ],
+      "passed": true
+    },
+    {
+      "role": "RegulatoryAuthorityRole",
+      "identity_providers": [
+        "Organization"
+      ],
+      "passed": true
+    },
+    {
+      "role": "ProductResponsibleLabelerRole",
+      "identity_providers": [
+        "Organization"
+      ],
+      "passed": true
+    },
+    {
+      "role": "PayerFundingOrganizationRole",
+      "identity_providers": [
+        "Organization"
+      ],
+      "passed": true
+    }
+  ],
+  "unresolved_prior_relation_records": 42,
+  "new_mediations_typed": 18,
+  "official_antipattern_engine": "NOT_RUN",
+  "full_conformance": "NOT_ESTABLISHED",
+  "topology_before": {
+    "metric": "Named class graph: named subclass edges and named domain-range object-property edges; no datatypes, existential restrictions, anonymous unions or inferred semantics",
+    "classes": 119,
+    "components": 15,
+    "largest_component": 105,
+    "isolates": [
+      "AdverseEventReportingActivity",
+      "BusinessArchitectureView",
+      "DigitalInformationSystemComponent",
+      "DistributionLogisticsActivity",
+      "ManufacturingActivity",
+      "PharmacovigilanceRequirement",
+      "PostMarketSurveillanceActivity",
+      "ProcurementActivity",
+      "RegulatoryRequirement",
+      "RiskTreatmentActivity",
+      "RiskTreatmentPlan",
+      "ServiceOfferingSpecification",
+      "StockoutSituation",
+      "SupplyCapacity"
+    ]
+  },
+  "topology_after": {
+    "metric": "Named class graph: named subclass edges and named domain-range object-property edges; no datatypes, existential restrictions, anonymous unions or inferred semantics",
+    "classes": 138,
+    "components": 15,
+    "largest_component": 124,
+    "isolates": [
+      "AdverseEventReportingActivity",
+      "BusinessArchitectureView",
+      "DigitalInformationSystemComponent",
+      "DistributionLogisticsActivity",
+      "ManufacturingActivity",
+      "PharmacovigilanceRequirement",
+      "PostMarketSurveillanceActivity",
+      "ProcurementActivity",
+      "RegulatoryRequirement",
+      "RiskTreatmentActivity",
+      "RiskTreatmentPlan",
+      "ServiceOfferingSpecification",
+      "StockoutSituation",
+      "SupplyCapacity"
+    ]
+  }
+}

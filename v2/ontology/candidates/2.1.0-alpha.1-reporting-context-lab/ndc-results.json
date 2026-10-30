@@ -1,0 +1,482 @@
+{
+  "strata_retrieved": 5,
+  "received_rows": 15,
+  "unique_source_product_ids": 15,
+  "prior_sample_overlap": 5,
+  "new_unique_product_ids_beyond_prior": 10,
+  "package_projections": 19,
+  "structured_claims": 150,
+  "triples": 1358,
+  "category_counts": {
+    "NDA": 3,
+    "ANDA": 4,
+    "OTC MONOGRAPH DRUG": 4,
+    "UNAPPROVED DRUG OTHER": 3,
+    "UNAPPROVED HOMEOPATHIC": 1
+  },
+  "product_end_present": 3,
+  "product_package_start_disagreements": 2,
+  "shacl": {
+    "conforms": true,
+    "violations": []
+  },
+  "hermit": {
+    "consistent": true,
+    "unsatisfiable_named_classes": [],
+    "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+    "prov_profile": "two conflicting annotation-property declarations removed; raw source retained"
+  },
+  "countermodel": {
+    "consistent": true,
+    "unsatisfiable_named_classes": [],
+    "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked",
+    "prov_profile": "two conflicting annotation-property declarations removed; raw source retained"
+  },
+  "checks": [
+    {
+      "name": "product-date-lexical-76162-741_73a6c0df-9ae0-7f13-afb6-0c0b099c4d56-marketing_start_date",
+      "actual": "20260901",
+      "expected": "20260901",
+      "pass": true
+    },
+    {
+      "name": "package-date-lexical-76162-741-14-marketing_start_date",
+      "actual": "20260901",
+      "expected": "20260901",
+      "pass": true
+    },
+    {
+      "name": "product-date-lexical-79403-791_46366161-f003-2826-e063-6394a90a91a5-marketing_start_date",
+      "actual": "20251218",
+      "expected": "20251218",
+      "pass": true
+    },
+    {
+      "name": "package-date-lexical-79403-791-08-marketing_start_date",
+      "actual": "20251218",
+      "expected": "20251218",
+      "pass": true
+    },
+    {
+      "name": "product-date-lexical-78206-182_11256523-425c-48e8-afe1-e3a4e28c892e-marketing_start_date",
+      "actual": "20210601",
+      "expected": "20210601",
+      "pass": true
+    },
+    {
+      "name": "package-date-lexical-78206-182-01-marketing_start_date",
+      "actual": "20210601",
+      "expected": "20210601",
+      "pass": true
+    },
+    {
+      "name": "package-date-lexical-78206-182-02-marketing_start_date",
+      "actual": "20210601",
+      "expected": "20210601",
+      "pass": true
+    },
+    {
+      "name": "product-date-lexical-80425-0302_2a9bfe6a-6d68-b262-e063-6294a90a1cf3-marketing_start_date",
+      "actual": "20230410",
+      "expected": "20230410",
+      "pass": true
+    },
+    {
+      "name": "package-date-lexical-80425-0302-1-marketing_start_date",
+      "actual": "20230410",
+      "expected": "20230410",
+      "pass": true
+    },
+    {
+      "name": "package-date-lexical-80425-0302-2-marketing_start_date",
+      "actual": "20230410",
+      "expected": "20230410",
+      "pass": true
+    },
+    {
+      "name": "package-date-lexical-80425-0302-3-marketing_start_date",
+      "actual": "20230410",
+      "expected": "20230410",
+      "pass": true
+    },
+    {
+      "name": "product-date-lexical-0615-8382_8970ba1c-ea60-4d30-be3b-e53b1bdc7871-marketing_start_date",
+      "actual": "20200810",
+      "expected": "20200810",
+      "pass": true
+    },
+    {
+      "name": "package-date-lexical-0615-8382-39-marketing_start_date",
+      "actual": "20210209",
+      "expected": "20210209",
+      "pass": true
+    },
+    {
+      "name": "product-date-lexical-80830-2305_cc28f253-e8e4-40b1-aaf8-1218fc83674c-marketing_start_date",
+      "actual": "20260113",
+      "expected": "20260113",
+      "pass": true
+    },
+    {
+      "name": "package-date-lexical-80830-2305-2-marketing_start_date",
+      "actual": "20260113",
+      "expected": "20260113",
+      "pass": true
+    },
+    {
+      "name": "product-date-lexical-76354-164_3fa7dd15-9f09-b4e4-e063-6294a90a0518-marketing_start_date",
+      "actual": "20250917",
+      "expected": "20250917",
+      "pass": true
+    },
+    {
+      "name": "package-date-lexical-76354-164-01-marketing_start_date",
+      "actual": "20250918",
+      "expected": "20250918",
+      "pass": true
+    },
+    {
+      "name": "product-date-lexical-76986-016_44f5c1bc-ded0-beef-e063-6394a90ab562-marketing_start_date",
+      "actual": "20251202",
+      "expected": "20251202",
+      "pass": true
+    },
+    {
+      "name": "package-date-lexical-76986-016-01-marketing_start_date",
+      "actual": "20251202",
+      "expected": "20251202",
+      "pass": true
+    },
+    {
+      "name": "package-date-lexical-76986-016-02-marketing_start_date",
+      "actual": "20251202",
+      "expected": "20251202",
+      "pass": true
+    },
+    {
+      "name": "product-date-lexical-79481-4700_c261a96e-f3ff-40c6-8aed-87050816c6a8-marketing_start_date",
+      "actual": "20260701",
+      "expected": "20260701",
+      "pass": true
+    },
+    {
+      "name": "package-date-lexical-79481-4700-2-marketing_start_date",
+      "actual": "20260701",
+      "expected": "20260701",
+      "pass": true
+    },
+    {
+      "name": "product-date-lexical-80425-0556_43045630-8bf9-59ae-e063-6294a90a2ebe-marketing_start_date",
+      "actual": "20251107",
+      "expected": "20251107",
+      "pass": true
+    },
+    {
+      "name": "package-date-lexical-80425-0556-1-marketing_start_date",
+      "actual": "20251107",
+      "expected": "20251107",
+      "pass": true
+    },
+    {
+      "name": "product-date-lexical-76420-775_47db203d-4edb-d91b-e063-6394a90af5eb-marketing_start_date",
+      "actual": "20140815",
+      "expected": "20140815",
+      "pass": true
+    },
+    {
+      "name": "package-date-lexical-76420-775-01-marketing_start_date",
+      "actual": "20140815",
+      "expected": "20140815",
+      "pass": true
+    },
+    {
+      "name": "product-date-lexical-84984-012_59da3063-66be-31d2-e063-6294a90abab5-marketing_start_date",
+      "actual": "20260825",
+      "expected": "20260825",
+      "pass": true
+    },
+    {
+      "name": "package-date-lexical-84984-012-01-marketing_start_date",
+      "actual": "20260825",
+      "expected": "20260825",
+      "pass": true
+    },
+    {
+      "name": "product-date-lexical-82982-070_198ba216-39a2-3d98-e063-6394a90a9f0b-marketing_start_date",
+      "actual": "20230613",
+      "expected": "20230613",
+      "pass": true
+    },
+    {
+      "name": "product-date-lexical-82982-070_198ba216-39a2-3d98-e063-6394a90a9f0b-marketing_end_date",
+      "actual": "20270630",
+      "expected": "20270630",
+      "pass": true
+    },
+    {
+      "name": "package-date-lexical-82982-070-02-marketing_start_date",
+      "actual": "20230613",
+      "expected": "20230613",
+      "pass": true
+    },
+    {
+      "name": "package-date-lexical-82982-070-02-marketing_end_date",
+      "actual": "20270630",
+      "expected": "20270630",
+      "pass": true
+    },
+    {
+      "name": "product-date-lexical-83027-0043_500181d4-47d4-414c-acea-c64f8de0f4cf-marketing_start_date",
+      "actual": "20230321",
+      "expected": "20230321",
+      "pass": true
+    },
+    {
+      "name": "product-date-lexical-83027-0043_500181d4-47d4-414c-acea-c64f8de0f4cf-marketing_end_date",
+      "actual": "20280502",
+      "expected": "20280502",
+      "pass": true
+    },
+    {
+      "name": "package-date-lexical-83027-0043-1-marketing_start_date",
+      "actual": "20230321",
+      "expected": "20230321",
+      "pass": true
+    },
+    {
+      "name": "package-date-lexical-83027-0043-1-marketing_end_date",
+      "actual": "20280502",
+      "expected": "20280502",
+      "pass": true
+    },
+    {
+      "name": "product-date-lexical-87204-185_5af8270d-d996-af70-e063-6294a90a3297-marketing_start_date",
+      "actual": "20260701",
+      "expected": "20260701",
+      "pass": true
+    },
+    {
+      "name": "product-date-lexical-87204-185_5af8270d-d996-af70-e063-6294a90a3297-marketing_end_date",
+      "actual": "20270705",
+      "expected": "20270705",
+      "pass": true
+    },
+    {
+      "name": "package-date-lexical-87204-185-01-marketing_start_date",
+      "actual": "20260701",
+      "expected": "20260701",
+      "pass": true
+    },
+    {
+      "name": "package-date-lexical-87204-185-01-marketing_end_date",
+      "actual": "20270705",
+      "expected": "20270705",
+      "pass": true
+    },
+    {
+      "name": "five-predeclared-strata-retrieved",
+      "actual": 5,
+      "expected": 5,
+      "pass": true
+    },
+    {
+      "name": "exact-category-after-query-nda",
+      "actual": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "name": "exact-category-after-query-anda",
+      "actual": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "name": "exact-category-after-query-otc",
+      "actual": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "name": "exact-category-after-query-unapproved",
+      "actual": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "name": "dated-end-present",
+      "actual": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "name": "proposed-listing-query-76162-741-14",
+      "actual": "MAPPING_PROPOSED",
+      "expected": "MAPPING_PROPOSED",
+      "pass": true
+    },
+    {
+      "name": "proposed-listing-query-79403-791-08",
+      "actual": "MAPPING_PROPOSED",
+      "expected": "MAPPING_PROPOSED",
+      "pass": true
+    },
+    {
+      "name": "proposed-listing-query-78206-182-01",
+      "actual": "MAPPING_PROPOSED",
+      "expected": "MAPPING_PROPOSED",
+      "pass": true
+    },
+    {
+      "name": "proposed-listing-query-78206-182-02",
+      "actual": "MAPPING_PROPOSED",
+      "expected": "MAPPING_PROPOSED",
+      "pass": true
+    },
+    {
+      "name": "proposed-listing-query-80425-0302-1",
+      "actual": "MAPPING_PROPOSED",
+      "expected": "MAPPING_PROPOSED",
+      "pass": true
+    },
+    {
+      "name": "proposed-listing-query-80425-0302-2",
+      "actual": "MAPPING_PROPOSED",
+      "expected": "MAPPING_PROPOSED",
+      "pass": true
+    },
+    {
+      "name": "proposed-listing-query-80425-0302-3",
+      "actual": "MAPPING_PROPOSED",
+      "expected": "MAPPING_PROPOSED",
+      "pass": true
+    },
+    {
+      "name": "proposed-listing-query-0615-8382-39",
+      "actual": "MAPPING_PROPOSED",
+      "expected": "MAPPING_PROPOSED",
+      "pass": true
+    },
+    {
+      "name": "proposed-listing-query-80830-2305-2",
+      "actual": "MAPPING_PROPOSED",
+      "expected": "MAPPING_PROPOSED",
+      "pass": true
+    },
+    {
+      "name": "proposed-listing-query-76354-164-01",
+      "actual": "MAPPING_PROPOSED",
+      "expected": "MAPPING_PROPOSED",
+      "pass": true
+    },
+    {
+      "name": "proposed-listing-query-76986-016-01",
+      "actual": "MAPPING_PROPOSED",
+      "expected": "MAPPING_PROPOSED",
+      "pass": true
+    },
+    {
+      "name": "proposed-listing-query-76986-016-02",
+      "actual": "MAPPING_PROPOSED",
+      "expected": "MAPPING_PROPOSED",
+      "pass": true
+    },
+    {
+      "name": "proposed-listing-query-79481-4700-2",
+      "actual": "MAPPING_PROPOSED",
+      "expected": "MAPPING_PROPOSED",
+      "pass": true
+    },
+    {
+      "name": "proposed-listing-query-80425-0556-1",
+      "actual": "MAPPING_PROPOSED",
+      "expected": "MAPPING_PROPOSED",
+      "pass": true
+    },
+    {
+      "name": "proposed-listing-query-76420-775-01",
+      "actual": "MAPPING_PROPOSED",
+      "expected": "MAPPING_PROPOSED",
+      "pass": true
+    },
+    {
+      "name": "proposed-listing-query-84984-012-01",
+      "actual": "MAPPING_PROPOSED",
+      "expected": "MAPPING_PROPOSED",
+      "pass": true
+    },
+    {
+      "name": "proposed-listing-query-82982-070-02",
+      "actual": "MAPPING_PROPOSED",
+      "expected": "MAPPING_PROPOSED",
+      "pass": true
+    },
+    {
+      "name": "proposed-listing-query-83027-0043-1",
+      "actual": "MAPPING_PROPOSED",
+      "expected": "MAPPING_PROPOSED",
+      "pass": true
+    },
+    {
+      "name": "proposed-listing-query-87204-185-01",
+      "actual": "MAPPING_PROPOSED",
+      "expected": "MAPPING_PROPOSED",
+      "pass": true
+    },
+    {
+      "name": "zero-world-listing-types",
+      "actual": 0,
+      "expected": 0,
+      "pass": true
+    },
+    {
+      "name": "zero-world-listed-role-types",
+      "actual": 0,
+      "expected": 0,
+      "pass": true
+    },
+    {
+      "name": "zero-world-listing-relations",
+      "actual": 0,
+      "expected": 0,
+      "pass": true
+    },
+    {
+      "name": "zero-authorizations",
+      "actual": 0,
+      "expected": 0,
+      "pass": true
+    },
+    {
+      "name": "claim-profile-shacl",
+      "actual": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "name": "source-claim-graph-hermit",
+      "actual": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "name": "all-listings-remain-source-claims-countermodel",
+      "actual": true,
+      "expected": true,
+      "pass": true
+    }
+  ],
+  "pass": 72,
+  "total": 72,
+  "limits": [
+    "Purposive quota sample, not random or representative. Product_id is a source identifier, not a universal identity proof.",
+    "Classifying source-referenced products/presentations is a mapping proposal. Described listings and roles are kept as claims without world-fact materialization.",
+    "These counts do not validate actual approval, establishment registration, ESMP submissions or real risk incidents.",
+    "Prior seven-package graph is unchanged; this claim-only representation is a separate proposed migration target.",
+    "Four interpreted propositions per package, including listing responsibility, are mapping proposals; they are not explicit NDC source fields. RG-07 remains open."
+  ],
+  "claim_origin_counts": {
+    "source-extracted": 74,
+    "mapping-interpretation": 76
+  }
+}

@@ -1,0 +1,8 @@
+@prefix c: <https://w3id.org/cm-pharme/2.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix t1: <urn:cmpe-prov-target:> .
+
+t1:x a [ a owl:Class ;
+            owl:complementOf prov:Entity ],
+        c:SourceRecord .

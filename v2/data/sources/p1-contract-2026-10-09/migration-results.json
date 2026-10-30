@@ -1,0 +1,121 @@
+{
+  "source_record": "10.5281/zenodo.19160825",
+  "sample_scope": "five deterministic byte-range prefixes; 768 records, not representative of the whole source",
+  "input": {
+    "sampled_rows": 768,
+    "schema_accepted": 768,
+    "preflight_rejected": 0,
+    "missing_cells": {},
+    "column_count": 19,
+    "field_projection_status": {
+      "region_num": "RDF_semantic_or_descriptive",
+      "region_name": "RDF_semantic_or_descriptive",
+      "atc_code": "RDF_semantic_or_descriptive",
+      "atc_name": "classification_label_only_not_confirmed_substance_identity",
+      "nhif_code": "RDF_semantic_or_descriptive",
+      "market_name": "RDF_semantic_or_descriptive",
+      "packaging": "descriptive_presentation_text_only_not_formal_package_semantics",
+      "concentration": "descriptive_presentation_text_only_not_formal_package_semantics",
+      "num_in_pack": "descriptive_presentation_text_only_not_formal_package_semantics",
+      "icd_code": "RDF_semantic_or_descriptive",
+      "icd_name": "RDF_semantic_or_descriptive",
+      "patients_num": "RDF_semantic_or_descriptive",
+      "pack_num": "RDF_semantic_or_descriptive",
+      "costs": "raw_source_and_provenance_only",
+      "period": "RDF_semantic_or_descriptive",
+      "part": "raw_source_and_provenance_only",
+      "currency": "raw_source_and_provenance_only",
+      "costs_bgn": "RDF_semantic_or_descriptive",
+      "costs_eur": "RDF_semantic_or_descriptive"
+    }
+  },
+  "mapped": {
+    "rdf_triples": 39272,
+    "source_records": 768,
+    "reimbursement_metric_observations": 3072,
+    "product_nodes": 264,
+    "presentation_nodes": 264,
+    "region_nodes": 5,
+    "atc_entry_nodes": 65,
+    "diagnosis_nodes": 46,
+    "nhif_codes_with_multiple_presentation_keys": {},
+    "atc_codes_with_multiple_labels": {},
+    "asserted_pharmaceutical_substances": 0,
+    "asserted_product_active_substance_links": 0,
+    "asserted_patient_individuals": 0
+  },
+  "full_candidate_pyshacl": {
+    "conforms": true,
+    "validation_results": 0,
+    "admitted_rows": 768,
+    "rejected_rows_by_full_graph": 0,
+    "scope": "All shapes on the complete 768-row mapped graph, no RDFS/OWL inference"
+  },
+  "negative_sensitivity": {
+    "cases": [
+      {
+        "case": "real_identifier_missing_scheme",
+        "expected_conforms": false,
+        "conforms": false,
+        "validation_results": 1,
+        "sample_focus": [
+          "https://w3id.org/cm-pharme/2.1/data/g3d/p1-19160825/nhif-identifier-assignment/3323c0e0eab6e158c9f8"
+        ],
+        "pass": true
+      },
+      {
+        "case": "real_classification_missing_entry",
+        "expected_conforms": false,
+        "conforms": false,
+        "validation_results": 3,
+        "sample_focus": [
+          "https://w3id.org/cm-pharme/2.1/data/g3d/p1-19160825/atc-classification-assignment/b37a7e3bdb5471984b1f",
+          "https://w3id.org/cm-pharme/2.1/data/g3d/p1-19160825/atc-entry/bedc18ec82c5f73670dd"
+        ],
+        "pass": true
+      },
+      {
+        "case": "real_observation_wrong_product_type",
+        "expected_conforms": false,
+        "conforms": false,
+        "validation_results": 1,
+        "sample_focus": [
+          "https://w3id.org/cm-pharme/2.1/data/g3d/p1-19160825/observation/03f0b09b8bcfa2bf7f01/patients_num"
+        ],
+        "pass": true
+      },
+      {
+        "case": "real_geography_self_containment",
+        "expected_conforms": false,
+        "conforms": false,
+        "validation_results": 2,
+        "sample_focus": [
+          "https://w3id.org/cm-pharme/2.1/data/g3d/p1-19160825/region/17ed66724c8340060331"
+        ],
+        "pass": true
+      },
+      {
+        "case": "real_presentation_on_product_only_active_substance_relation",
+        "expected_conforms": false,
+        "conforms": false,
+        "validation_results": 3,
+        "sample_focus": [
+          "https://w3id.org/cm-pharme/2.1/data/g3d/p1-19160825/source-presentation/c92dc2998d358a09343e"
+        ],
+        "pass": true
+      }
+    ],
+    "passed": 5
+  },
+  "preflight_rejections": [],
+  "abox": {
+    "path": "real-source-abox.nt",
+    "sha256": "939a80c8f3d4342e81c74c193cd9e65dc61b1b7e271ba99856edfd988daebfa9",
+    "compressed_base64_path": "real-source-abox.nt.gz.b64",
+    "compressed_gzip_sha256": "a5a16ac03d35b99dca330ddb3d647e71c1c95950d743835acad5565c440b4790",
+    "witness_path": "one-real-row-witness.ttl",
+    "witness_triples": 82,
+    "witness_pyshacl_conforms": true
+  },
+  "interpretation_limit": "No claim of full-source quality, external validity, clinical correctness, verified product/substance identity, unique patients or approved 29 relation/14 isolate/19 RepRel policies."
+}

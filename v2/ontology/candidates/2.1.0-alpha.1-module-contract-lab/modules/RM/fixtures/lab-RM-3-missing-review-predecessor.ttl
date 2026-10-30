@@ -1,0 +1,48 @@
+@prefix c: <https://w3id.org/cm-pharme/2.1/> .
+@prefix l: <https://w3id.org/cm-pharme/experimental/four-domain/> .
+@prefix t: <urn:cmpe-lab:> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+t:action a c:RiskTreatmentActivity ;
+    l:atTime "2026-10-03T10:00:00+00:00"^^xsd:dateTime ;
+    l:implementsRiskPlan t:plan ;
+    l:profile "risk-treatment" .
+
+t:review a c:RiskReviewActivity ;
+    l:atTime "2026-10-02T10:00:00+00:00"^^xsd:dateTime ;
+    l:profile "risk-review" ;
+    l:reviewNewResult t:riskResult2 .
+
+t:assessment a c:RiskAssessmentActivity ;
+    l:assessmentScenario t:scenario ;
+    l:profile "risk-assessment" .
+
+t:assessment2 a c:RiskAssessmentActivity ;
+    l:assessmentScenario t:scenario ;
+    l:profile "risk-assessment" .
+
+t:plan a c:RiskTreatmentPlan ;
+    l:planRiskResult t:riskResult ;
+    l:profile "risk-plan" .
+
+t:product a c:MedicinalProduct .
+
+t:riskResult a c:Assertion ;
+    l:atTime "2026-10-01T10:00:00+00:00"^^xsd:dateTime ;
+    l:citesSourceRecord t:source ;
+    l:conclusion "review supply continuity" ;
+    l:profile "risk-result" ;
+    l:resultAssessment t:assessment .
+
+t:riskResult2 a c:Assertion ;
+    l:atTime "2026-10-02T10:00:00+00:00"^^xsd:dateTime ;
+    l:citesSourceRecord t:source ;
+    l:conclusion "revised assessment" ;
+    l:profile "risk-result" ;
+    l:resultAssessment t:assessment2 .
+
+t:scenario a c:Assertion ;
+    l:profile "risk-scenario" ;
+    l:scenarioProduct t:product .
+
+t:source a c:SourceRecord .

@@ -1,0 +1,45 @@
+{
+  "schema_version": "CMPE-DocumentationReleaseRoute/0.1.0",
+  "date": "2026-10-29",
+  "main_control_plane_commit": "d185ba2751a77658db9e282f13367362068d07d0",
+  "source_files_sha256": {
+    "docs/documentation/ontology-version-registry.json": "cc6b5fd66b854a5fbea1da45ec9a753d331961875df05d75496f506d5395c12f",
+    "docs/documentation/webvowl-adapter.json": "a19dd2e2b9a0d3362a60bd4ad05fdd73d7cc25ffddd38d1b10afa9a3fa2ca690",
+    "docs/documentation/v2-current-pages-baseline.json": "1c21c95cff43dbfb29128c1477ecdc5404fb70501ead9466f29714aeb254ec66",
+    "docs/documentation/pages-278-release-audit.md": "45a68775cd40a32f1a812882ebcfb96430ca5ce2c2f4c0a6d18c214eedcd8729",
+    "docs/documentation/pages-deployment-policy.json": "8d4f046713d9effc54e725eb4a9acd1eaf7e02397eefccc5b72574842246fe1d"
+  },
+  "observed_main_registry_entries": [
+    "v1: stable v1.0.0",
+    "v2: evolving full 2.0 documentation snapshot"
+  ],
+  "existing_documentation_baseline": "PB-2026.09.1",
+  "baseline_declared_date": "2026-09-30",
+  "documentation_target": "Published 2.1.0 M1 Provenance Core, profile0.1.0",
+  "exact_profile_source_commit": "77a8e854d0e3927b0687346d7f8fda6a398adda7",
+  "exact_profile_source_path": "source/v2/ontology/profiles/2.1/m1-provenance/0.1.0/profile.ttl",
+  "need_semantic_22_release_before_docs": false,
+  "need_wholeover_acceptance_before_m1_docs": false,
+  "route": [
+    {
+      "issue": 337,
+      "state": "READY_AFTER_336",
+      "outcome": "Exact scoped registration/build contract and reader-facing Wiki/Pages cluster"
+    },
+    {
+      "issue": 338,
+      "state": "AFTER_337",
+      "outcome": "Generated formal reference and verified static WebVOWL projection"
+    },
+    {
+      "issue": 339,
+      "state": "AFTER_337_338",
+      "outcome": "Governed public deployment, rendered cross-surface QA and new documentation baseline"
+    }
+  ],
+  "new_public_surfaces_deployed_this_packet": false,
+  "live_browser_verification_this_packet": false,
+  "live_web_attempts": "Pages and Wiki retrieval did not yield page contents; this route uses exact main control-plane records, not a new live-availability claim.",
+  "schedule": "Dependency/outcome-based; no fixed execution count or calendar deadline",
+  "broader_full_model_limit": "The evolving full V2 entry stays evolving until its own retained scientific/native/module/claim gates pass. Existing M1 release does not accept that entire model."
+}

@@ -1,0 +1,43 @@
+{
+  "capacities": [
+    {
+      "bearer_public_id": "m4-fixture-organization:capacity",
+      "bearer_type": "organization",
+      "public_id": "m4-fixture-capacity:organization",
+      "source_key": "capacity-assertion"
+    },
+    {
+      "bearer_public_id": "m4-fixture-facility:capacity",
+      "bearer_type": "facility",
+      "public_id": "m4-fixture-capacity:facility",
+      "source_key": null
+    }
+  ],
+  "claim_kind": "synthetic_fixture",
+  "identity_boundary": "Capacity public IDs denote separate test Modes in a versioned projection; measurement public ID denotes an observation. Projection version is not a claim about changing the Mode identity.",
+  "no_capacity_organization": "m4-fixture-organization:no-capacity",
+  "observation": {
+    "facility_public_id": "m4-fixture-facility:observation-only",
+    "observation_kind": "supply_capacity",
+    "package_count": "120",
+    "public_id": "m4-fixture-observation:capacity-measurement",
+    "reporting_period": "2026-01-01",
+    "source_key": "observation-record",
+    "unit": "synthetic packages per reporting period"
+  },
+  "projection_version": "0.5.0",
+  "real_capacity_witnesses": 0,
+  "schema_version": 1,
+  "source_records": {
+    "capacity-assertion": {
+      "case": "explicit Organization SupplyCapacity assertion",
+      "claim_kind": "synthetic_fixture",
+      "fixture_only": true
+    },
+    "observation-record": {
+      "case": "capacity measurement without Mode or inferred bearer capacity",
+      "claim_kind": "synthetic_fixture",
+      "fixture_only": true
+    }
+  }
+}

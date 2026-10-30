@@ -1,0 +1,72 @@
+{
+  "schema_version": "CMPE-WholeOverDecisionCard/0.1.0",
+  "issue": 336,
+  "parent_issue": 315,
+  "date": "2026-10-29",
+  "profile": "CMPE-WholeOver-UpperSumTwo/1.0.0",
+  "status": "PREPARATION_COMPLETE_PENDING_ACTUAL_AUTHOR_DISPOSITION",
+  "author_disposition": "PENDING",
+  "source_policy_acceptances": "1/4",
+  "recommended_option": "A",
+  "questions": [
+    {
+      "id": "WO-A01",
+      "recommendation": "Retain explicit description/formula >=2 precedence for the separately named restricted profile; retain >2 diagrams and archive >=3 observations as a documented source conflict.",
+      "rationale": "Explicit formal description and current catalogue align; discrepancy is exposed rather than silently reconciled.",
+      "cost": "Four threshold-two synthetic witnesses remain source-only review items; original author intent and a complete overlap algorithm remain unproven."
+    },
+    {
+      "id": "WO-A02",
+      "recommendation": "Retain aggregation-bound partEnd roles and restricted two-componentOf sibling-part/refusal scope, including reordered ends.",
+      "rationale": "Avoid summing whole ends or copying the catalogue mediatedEnd transcription mismatch.",
+      "cost": "Wider inherited/meronymic/real-model applicability needs separate evidence."
+    }
+  ],
+  "alternatives": [
+    {
+      "id": "A",
+      "recommended": true,
+      "choice": "Retain named >=2 source profile; preserve unmodified archive >=3 separately",
+      "approval_effect": "Only if actually accepted by Araz: one bounded source-policy disposition; source-policy total would become 2/4. No such acceptance is recorded by this preparation."
+    },
+    {
+      "id": "B",
+      "recommended": false,
+      "choice": "Prefer >2 diagram/archive threshold for a different named policy",
+      "approval_effect": "Requires a separately versioned profile/oracle; never rewrite the existing accepted or frozen expectations."
+    },
+    {
+      "id": "C",
+      "recommended": false,
+      "choice": "Defer governing scientific choice; retain both result streams",
+      "approval_effect": "No new source-policy acceptance; stable M1 documentation can continue independently."
+    }
+  ],
+  "source_only_review_cases": [
+    "sum-two-mandatory",
+    "sum-two-optional",
+    "sum-two-asymmetric",
+    "reordered-sum-two"
+  ],
+  "full_candidate_executed": false,
+  "fresh_java_archive_execution": false,
+  "primary_evidence": {
+    "thesis_table": 51,
+    "printed_pages": [
+      196,
+      197
+    ],
+    "pdf_pages": [
+      197,
+      198
+    ],
+    "pdf_sha256": "93834ad042127f6791cb9714aaae3f9cabfa54815f9fc48ef6a67b5176b4e8e9",
+    "fresh_pdf_inspected_this_packet": false,
+    "primary_pdf_access_attempt": "Web retrieval unavailable; the preserved prior source review is reused with its original hash and limits.",
+    "catalogue_url": "https://ontouml.readthedocs.io/en/latest/anti-patterns/WholeOver/index.html",
+    "fresh_catalogue_text_checked": true,
+    "fresh_catalogue_observation": "Description uses part-end upper sum at least two or unlimited, plus potential overlap; displayed formula names mediatedEnd despite the partEnd definition.",
+    "fresh_raw_html_hash_claimed": false
+  },
+  "next_ready_work": "Supported 2.1.0 documentation onboarding; no need to await WholeOver author disposition or semantic 2.2.0."
+}

@@ -1,0 +1,24 @@
+{
+  "source_triples": 1146,
+  "reasoning_triples": 1144,
+  "removed_triples": [
+    [
+      "http://www.w3.org/ns/prov#specializationOf",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ],
+    [
+      "http://www.w3.org/ns/prov#wasRevisionOf",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ]
+  ],
+  "added_triples": [],
+  "status": "PROPOSED_EXPLICIT_REASONING_PROJECTION_NOT_AUTHOR_ACCEPTED",
+  "retains_every_other_source_triple": true,
+  "imports": [],
+  "basis": "OWL 2 structural specification section 5.8.1 requires object/data/annotation property IRIs to be disjoint. The downloaded source dual-declares specializationOf and wasRevisionOf.",
+  "raw_run": "initial-direct-results.json: 35/36; revision entailment fails with raw source in this parser.",
+  "initial_owlready_run": "initial-owlready-results.json: 36/36, but loader explicitly attempted to repair dual property declarations.",
+  "limitation": "No complete OWL2 DL profile checker or PROV-CONSTRAINTS validation is claimed. Header metadata including the source revision IRI is retained unchanged."
+}

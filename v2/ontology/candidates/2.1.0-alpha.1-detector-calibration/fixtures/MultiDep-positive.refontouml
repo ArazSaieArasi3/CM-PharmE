@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='utf-8'?>
+<RefOntoUML:Package xmlns:RefOntoUML="http://nemo.inf.ufes.br/ontouml/refontouml" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmi:version="2.0" xmi:id="pkg" name="MultiDep-positive" visibility="public">
+  <packagedElement xsi:type="RefOntoUML:Kind" xmi:id="Actor" name="Actor" visibility="public" isAbstract="false" />
+  <packagedElement xsi:type="RefOntoUML:Relator" xmi:id="R1" name="R1" visibility="public" isAbstract="false" />
+  <packagedElement xsi:type="RefOntoUML:Relator" xmi:id="R2" name="R2" visibility="public" isAbstract="false" />
+  <packagedElement xsi:type="RefOntoUML:Mediation" xmi:id="m1" name="m1" visibility="public" memberEnd="m1A m1B">
+    <ownedEnd xmi:id="m1A" name="m1A" type="R1" association="m1" aggregation="none" visibility="public">
+      <lowerValue xsi:type="RefOntoUML:LiteralInteger" xmi:id="m1Alower" value="1" />
+      <upperValue xsi:type="RefOntoUML:LiteralUnlimitedNatural" xmi:id="m1Aupper" value="1" />
+    </ownedEnd>
+    <ownedEnd xmi:id="m1B" name="m1B" type="Actor" association="m1" aggregation="none" visibility="public">
+      <lowerValue xsi:type="RefOntoUML:LiteralInteger" xmi:id="m1Blower" value="1" />
+      <upperValue xsi:type="RefOntoUML:LiteralUnlimitedNatural" xmi:id="m1Bupper" value="1" />
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="RefOntoUML:Mediation" xmi:id="m2" name="m2" visibility="public" memberEnd="m2A m2B">
+    <ownedEnd xmi:id="m2A" name="m2A" type="R2" association="m2" aggregation="none" visibility="public">
+      <lowerValue xsi:type="RefOntoUML:LiteralInteger" xmi:id="m2Alower" value="1" />
+      <upperValue xsi:type="RefOntoUML:LiteralUnlimitedNatural" xmi:id="m2Aupper" value="1" />
+    </ownedEnd>
+    <ownedEnd xmi:id="m2B" name="m2B" type="Actor" association="m2" aggregation="none" visibility="public">
+      <lowerValue xsi:type="RefOntoUML:LiteralInteger" xmi:id="m2Blower" value="1" />
+      <upperValue xsi:type="RefOntoUML:LiteralUnlimitedNatural" xmi:id="m2Bupper" value="1" />
+    </ownedEnd>
+  </packagedElement>
+</RefOntoUML:Package>

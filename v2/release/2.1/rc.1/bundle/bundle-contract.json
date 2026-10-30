@@ -1,0 +1,135 @@
+{
+  "archive_name": "cm-pharme-2.1.0-rc.1.tar",
+  "code_files": [
+    "build_bundle.py",
+    "verify_bundle.py",
+    "replay_bundle.py"
+  ],
+  "compression": "none",
+  "decisions_sha256": "1d6fdaa744e505a8755532034120cf28d166b211bd900c6cf32d8b37c952ee21",
+  "expected": {
+    "bundle_files": 2001,
+    "review_groups": 13,
+    "scope_files": 13,
+    "selected_review_files": 155,
+    "source_bytes": 27097299,
+    "source_files": 1975
+  },
+  "held_gate_issues": [
+    306,
+    310,
+    315
+  ],
+  "issue": 325,
+  "kind": "EXPERIMENTAL_RESEARCH_CHECKPOINT",
+  "metadata_sha256": {
+    "CHANGELOG.md": "51e3c740f73a48cc5764c5b3c138de8d30ee7680027a9395c1337c0179fe60b6",
+    "CITATION.cff": "6b9c49ca6f94daffdf7d4b43c7d2f164607378af8824b48f28e187cd78e7d385",
+    "NOTICE.md": "21b4065afcd0310d80233af6f7bbd3e4db2506d0bb60d890dee0a1cf176dd691",
+    "README.md": "52f5714a8ed47e57fe31321a14d87fde0ac7f5315164c7238d57f67e254df572",
+    "REPRODUCE.md": "676480672518614aaad04899ba00b7e6f56634ed7be7d930d66496e06d0fc610"
+  },
+  "negative_controls": [
+    {
+      "expected_reason": "payload-files",
+      "id": "missing-source"
+    },
+    {
+      "expected_reason": "payload-integrity",
+      "id": "tampered-source"
+    },
+    {
+      "expected_reason": "bundle-files",
+      "id": "extra-unmanifested"
+    },
+    {
+      "expected_reason": "unsafe-archive-path",
+      "id": "unsafe-path"
+    },
+    {
+      "expected_reason": "unsafe-member",
+      "id": "symlink-member"
+    },
+    {
+      "expected_reason": "duplicate-member",
+      "id": "duplicate-member"
+    },
+    {
+      "expected_reason": "metadata-drift",
+      "id": "historical-citation"
+    },
+    {
+      "expected_reason": "metadata-drift",
+      "id": "suppressed-transition"
+    },
+    {
+      "expected_reason": "release-policy",
+      "id": "ga-claim"
+    },
+    {
+      "expected_reason": "checksum-file",
+      "id": "checksum-tamper"
+    }
+  ],
+  "payload_git_tree": "b20e2420620120f276bbc5a0117079f30dccc5b5",
+  "payload_source_commit": "64edf150db8a78579928fd99b5a381f665c1afdf",
+  "profile": "CMPE-RC-Bundle/0.1.0",
+  "publication": {
+    "ga_ready": false,
+    "release_published": false,
+    "tag_created": false
+  },
+  "replay": {
+    "all_policy_engines_rerun": false,
+    "database_rerun": false,
+    "expected_native_profile": "CMPE-EvidenceRecordProjection/0.1.0",
+    "fresh_dependencies_required": true,
+    "integration": "v2/ontology/candidates/2.1.0-alpha.1-source-policy-integration",
+    "integration_complete_report_equality": true,
+    "java_major": 17,
+    "native": "v2/ontology/candidates/2.1.0-alpha.1-evidencerecord-projection",
+    "native_complete_report_equality": true,
+    "node_major": 24,
+    "offline": false,
+    "python_major_minor": [
+      3,
+      12
+    ]
+  },
+  "requirements_sha256": "a7f61731eb325dc2f35fb8b7e04ae9f3519f837255b4102d1a20fc61e62b4919",
+  "root_files": [
+    "README.md",
+    "CITATION.cff",
+    "CHANGELOG.md",
+    "NOTICE.md",
+    "REPRODUCE.md",
+    "PROVENANCE.json",
+    "CONTENTS.sha256",
+    "bundle-contract.json",
+    "requirements.lock",
+    "decision.md",
+    "build_bundle.py",
+    "verify_bundle.py",
+    "replay_bundle.py"
+  ],
+  "schema_version": 1,
+  "scope_contract_sha256": "95f4ed0eeec7eceea3df1f03fdb4a4b28c7b9c50431f6679dac36fd054b3482a",
+  "scope_files_sha256": {
+    "README.md": "ff0ebc7a7af9068bbc203b04c82ade36acd332298761bb40252e23e8cca5e2cd",
+    "artifact-index.csv": "390295c0141620c0c90cb29b297f420f7732cc4122c43c10197f9a187d93430b",
+    "artifacts.json": "e5c39f5dfc0a8b5b648258ab12d0aed98e6950a5f9a44d6d29ca5bd32910f3e8",
+    "ci-evidence.json": "eb9f8f0d5092390808df1df092628ebb27bc681ab2f1b5de01e775905576b9ea",
+    "claims.json": "f3a0d5d32ba376e27ada4422208bdacc5047b2f387c3cdf45e0a02381a89fe97",
+    "decision.md": "1ed0a73b843ef11a5fd1b7d0e2f05b0e29fa74656d108b6f59dc042e00ad511d",
+    "hosted-results.json": "a85b32a9eb1f8138a3a292a7b3dd089f4906a1b7e1849928b36c5e514d9686ec",
+    "known-limits.json": "f88ecb48a6c3416fc235c5e617100916220672ae9608434b0b8e7cbf9f0fdadf",
+    "local-results.json": "a85b32a9eb1f8138a3a292a7b3dd089f4906a1b7e1849928b36c5e514d9686ec",
+    "payload-ci.json": "f06c9b57a5006353f4d5d3e0922433273b1746303d4ce7da9acd34c32ce94839",
+    "payload-manifest.json": "ff1f0b4d7d8570191cc080a4d0982579644e6146d980d1e4972e085d5ed0a2bf",
+    "scope-contract.json": "95f4ed0eeec7eceea3df1f03fdb4a4b28c7b9c50431f6679dac36fd054b3482a",
+    "verify_scope.py": "43d195ab54de8b98436758c77b36bbcaf56ed6b644fcdccbfb77e493c0380aae"
+  },
+  "scope_source_commit": "a0a9a539c3891476847b52fed4c65d9ccae8d485",
+  "target": "2.1.0-rc.1",
+  "top_directory": "cm-pharme-2.1.0-rc.1"
+}

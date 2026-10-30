@@ -1,0 +1,238 @@
+{
+  "module": "RM",
+  "name": "Risk Management",
+  "mission_fa": "ارزیابی، برنامهٔ رسیدگی و بازبینی ریسک کیفیت و تداوم عرضهٔ دارو",
+  "direction": "RETAIN_ACCEPTED_BY_USER",
+  "detailed_model_acceptance": "PENDING",
+  "owned_classes": [
+    "https://w3id.org/cm-pharme/2.1/RiskAssessmentActivity",
+    "https://w3id.org/cm-pharme/2.1/RiskReviewActivity",
+    "https://w3id.org/cm-pharme/2.1/RiskTreatmentActivity",
+    "https://w3id.org/cm-pharme/2.1/RiskTreatmentPlan"
+  ],
+  "imported_interface_classes": [
+    "http://www.w3.org/ns/prov#Entity",
+    "https://w3id.org/cm-pharme/2.1/Assertion",
+    "https://w3id.org/cm-pharme/2.1/DependentEntity",
+    "https://w3id.org/cm-pharme/2.1/Facility",
+    "https://w3id.org/cm-pharme/2.1/MedicinalProduct",
+    "https://w3id.org/cm-pharme/2.1/ProviderEntity",
+    "https://w3id.org/cm-pharme/2.1/SourceRecord",
+    "https://w3id.org/cm-pharme/2.1/SupplyDependency"
+  ],
+  "profiles": [
+    "risk-scenario",
+    "risk-assessment",
+    "risk-result",
+    "risk-plan",
+    "risk-treatment",
+    "risk-review"
+  ],
+  "properties": [
+    "https://w3id.org/cm-pharme/2.1/assertionAboutProduct",
+    "https://w3id.org/cm-pharme/2.1/dependencyDependent",
+    "https://w3id.org/cm-pharme/2.1/dependencyProvider",
+    "https://w3id.org/cm-pharme/experimental/four-domain/assessmentScenario",
+    "https://w3id.org/cm-pharme/experimental/four-domain/atTime",
+    "https://w3id.org/cm-pharme/experimental/four-domain/citesSourceRecord",
+    "https://w3id.org/cm-pharme/experimental/four-domain/conclusion",
+    "https://w3id.org/cm-pharme/experimental/four-domain/implementsRiskPlan",
+    "https://w3id.org/cm-pharme/experimental/four-domain/planRiskResult",
+    "https://w3id.org/cm-pharme/experimental/four-domain/profile",
+    "https://w3id.org/cm-pharme/experimental/four-domain/resultAssessment",
+    "https://w3id.org/cm-pharme/experimental/four-domain/reviewNewResult",
+    "https://w3id.org/cm-pharme/experimental/four-domain/reviewPriorResult",
+    "https://w3id.org/cm-pharme/experimental/four-domain/scenarioProduct",
+    "https://w3id.org/cm-pharme/experimental/refinement/scenarioDependency",
+    "https://w3id.org/cm-pharme/experimental/refinement/scenarioFacility"
+  ],
+  "excluded_scope": [
+    "Patient-level clinical risk prediction",
+    "All enterprise risk categories",
+    "Plan existence implying execution or effectiveness"
+  ],
+  "admission_cases": [
+    {
+      "id": "lab-RM-1-positive.ttl",
+      "fixture": "fixtures/lab-RM-1-positive.ttl",
+      "expected": true,
+      "marker": null
+    },
+    {
+      "id": "lab-RM-2-boundary.ttl",
+      "fixture": "fixtures/lab-RM-2-boundary.ttl",
+      "expected": true,
+      "marker": null
+    },
+    {
+      "id": "lab-RM-3-missing-scenario-topic.ttl",
+      "fixture": "fixtures/lab-RM-3-missing-scenario-topic.ttl",
+      "expected": false,
+      "marker": "scenarioProduct"
+    },
+    {
+      "id": "lab-RM-3-missing-evidence.ttl",
+      "fixture": "fixtures/lab-RM-3-missing-evidence.ttl",
+      "expected": false,
+      "marker": "citesSourceRecord"
+    },
+    {
+      "id": "lab-RM-3-dangling-plan-result.ttl",
+      "fixture": "fixtures/lab-RM-3-dangling-plan-result.ttl",
+      "expected": false,
+      "marker": "planRiskResult"
+    },
+    {
+      "id": "lab-RM-3-result-is-assessment.ttl",
+      "fixture": "fixtures/lab-RM-3-result-is-assessment.ttl",
+      "expected": false,
+      "marker": "distinct-RiskAssessmentActivity"
+    },
+    {
+      "id": "lab-RM-3-missing-review-predecessor.ttl",
+      "fixture": "fixtures/lab-RM-3-missing-review-predecessor.ttl",
+      "expected": false,
+      "marker": "reviewPriorResult"
+    },
+    {
+      "id": "lab-RM-3-backdated-revision.ttl",
+      "fixture": "fixtures/lab-RM-3-backdated-revision.ttl",
+      "expected": false,
+      "marker": "review-time-order"
+    },
+    {
+      "id": "lab-RM-3-dangling-executed-plan.ttl",
+      "fixture": "fixtures/lab-RM-3-dangling-executed-plan.ttl",
+      "expected": false,
+      "marker": "implementsRiskPlan"
+    },
+    {
+      "id": "refinement-X-RM-CONTEXT-positive.ttl",
+      "fixture": "fixtures/refinement-X-RM-CONTEXT-positive.ttl",
+      "expected": true,
+      "marker": null
+    },
+    {
+      "id": "refinement-X-RM-CONTEXT-boundary.ttl",
+      "fixture": "fixtures/refinement-X-RM-CONTEXT-boundary.ttl",
+      "expected": true,
+      "marker": null
+    },
+    {
+      "id": "refinement-X-RM-CONTEXT-dependency-boundary.ttl",
+      "fixture": "fixtures/refinement-X-RM-CONTEXT-dependency-boundary.ttl",
+      "expected": true,
+      "marker": null
+    },
+    {
+      "id": "refinement-X-RM-CONTEXT-missing-context.ttl",
+      "fixture": "fixtures/refinement-X-RM-CONTEXT-missing-context.ttl",
+      "expected": false,
+      "marker": "scenarioProduct-or-context-required"
+    },
+    {
+      "id": "refinement-X-RM-CONTEXT-untyped-facility.ttl",
+      "fixture": "fixtures/refinement-X-RM-CONTEXT-untyped-facility.ttl",
+      "expected": false,
+      "marker": "scenarioFacility"
+    }
+  ],
+  "queries": [
+    {
+      "id": "CQ-RM-01",
+      "query": "PREFIX c: <https://w3id.org/cm-pharme/2.1/> PREFIX l: <https://w3id.org/cm-pharme/experimental/four-domain/> PREFIX t: <urn:cmpe-lab:> SELECT ?scenario ?assessment ?product ?evidence WHERE { t:riskResult l:resultAssessment ?assessment ; l:citesSourceRecord ?evidence . ?assessment l:assessmentScenario ?scenario . ?scenario l:scenarioProduct ?product }",
+      "expected": [
+        [
+          "urn:cmpe-lab:scenario",
+          "urn:cmpe-lab:assessment",
+          "urn:cmpe-lab:product",
+          "urn:cmpe-lab:source"
+        ]
+      ],
+      "fixture": "fixtures/lab-RM-1-positive.ttl"
+    },
+    {
+      "id": "CQ-RM-02",
+      "query": "PREFIX c: <https://w3id.org/cm-pharme/2.1/> PREFIX l: <https://w3id.org/cm-pharme/experimental/four-domain/> PREFIX t: <urn:cmpe-lab:> SELECT ?plan WHERE { ?plan l:planRiskResult t:riskResult . FILTER NOT EXISTS { ?a l:implementsRiskPlan ?plan } }",
+      "expected": [
+        [
+          "urn:cmpe-lab:plan"
+        ]
+      ],
+      "fixture": "fixtures/lab-RM-1-positive.ttl"
+    },
+    {
+      "id": "CQ-RM-03",
+      "query": "PREFIX c: <https://w3id.org/cm-pharme/2.1/> PREFIX l: <https://w3id.org/cm-pharme/experimental/four-domain/> PREFIX t: <urn:cmpe-lab:> SELECT ?old ?new ?source ?conclusion WHERE { t:review l:reviewPriorResult ?old ; l:reviewNewResult ?new . ?new l:citesSourceRecord ?source ; l:conclusion ?conclusion }",
+      "expected": [
+        [
+          "urn:cmpe-lab:riskResult",
+          "urn:cmpe-lab:riskResult2",
+          "urn:cmpe-lab:source",
+          "revised assessment"
+        ]
+      ],
+      "fixture": "fixtures/lab-RM-2-boundary.ttl"
+    },
+    {
+      "id": "X-RM-CONTEXT",
+      "query": "PREFIX c: <https://w3id.org/cm-pharme/2.1/> PREFIX l: <https://w3id.org/cm-pharme/experimental/four-domain/> PREFIX r: <https://w3id.org/cm-pharme/experimental/refinement/> PREFIX t: <urn:cmpe-lab:> SELECT ?facility WHERE { t:assessment l:assessmentScenario/r:scenarioFacility ?facility }",
+      "expected": [
+        [
+          "urn:cmpe-lab:riskFacility"
+        ]
+      ],
+      "fixture": "fixtures/refinement-X-RM-CONTEXT-boundary.ttl"
+    }
+  ],
+  "reasoner_cases": [
+    {
+      "id": "RM-schema-satisfiable",
+      "expected": true
+    },
+    {
+      "id": "RM-positive-consistent",
+      "expected": true,
+      "fixture": "fixtures/lab-RM-2-boundary.ttl"
+    },
+    {
+      "id": "RM-identity-collision-rejected",
+      "expected": false,
+      "fixture": "fixtures/lab-RM-3-result-is-assessment.ttl"
+    }
+  ],
+  "limits": [
+    "Selected-signature projection; no proof of entailment preservation outside listed witnesses",
+    "Import interfaces are not counted as owned classes",
+    "SHACL profile requirements are not global OWL cardinalities",
+    "No native OntoUML module export is claimed",
+    "Source model semantic decisions, including PROV projection, remain pending"
+  ],
+  "purpose_contract": {
+    "input": "A scoped medicinal product, facility or supply dependency; a documentary source; assessment and optional review occurrences.",
+    "output": "Traceable assessment content, a treatment plan, separately evidenced treatment execution, and predecessor/successor review content.",
+    "flow": "scenario → assessment → result/evidence → plan; execution references the plan; review connects prior/new results.",
+    "questions": [
+      "What product, facility or dependency is assessed, and which source supports the result?",
+      "Which plans have no recorded execution in this dataset?",
+      "Which review changed which result and conclusion?"
+    ],
+    "definitions": {
+      "RiskAssessmentActivity": "An occurrence assessing a scoped risk scenario; distinct from its result content.",
+      "RiskTreatmentActivity": "An occurrence executing a risk treatment plan; the plan alone does not establish this occurrence.",
+      "RiskTreatmentPlan": "An information artifact specifying a proposed treatment response to an assessment result.",
+      "RiskReviewActivity": "An occurrence reviewing earlier assessment content and connecting it with new content."
+    },
+    "remaining": "Real independent risk assessment/review evidence, treatment effectiveness, agreed temporal semantics and review of event/content boundaries."
+  },
+  "interface_ownership": {
+    "http://www.w3.org/ns/prov#Entity": "PROV standard",
+    "https://w3id.org/cm-pharme/2.1/Assertion": "CM-PharmE shared/other-domain interface; final ownership review pending",
+    "https://w3id.org/cm-pharme/2.1/DependentEntity": "CM-PharmE shared/other-domain interface; final ownership review pending",
+    "https://w3id.org/cm-pharme/2.1/Facility": "CM-PharmE shared/other-domain interface; final ownership review pending",
+    "https://w3id.org/cm-pharme/2.1/MedicinalProduct": "CM-PharmE shared/other-domain interface; final ownership review pending",
+    "https://w3id.org/cm-pharme/2.1/ProviderEntity": "CM-PharmE shared/other-domain interface; final ownership review pending",
+    "https://w3id.org/cm-pharme/2.1/SourceRecord": "CM-PharmE shared/other-domain interface; final ownership review pending",
+    "https://w3id.org/cm-pharme/2.1/SupplyDependency": "CM-PharmE shared/other-domain interface; final ownership review pending"
+  }
+}

@@ -1,0 +1,17 @@
+case_id,part_upper_bounds,disjoint,archived_observation,named_profile_match,disposition
+sum-zero,"[0, 0]",False,0,0,NO_MATCH_IN_THIS_FRAME_NOT_CLEAN_CERTIFICATE
+sum-one,"[0, 1]",False,0,0,NO_MATCH_IN_THIS_FRAME_NOT_CLEAN_CERTIFICATE
+sum-two-mandatory,"[1, 1]",False,0,1,SOURCE_ONLY_REVIEW_REQUIRED
+sum-two-optional,"[1, 1]",False,0,1,SOURCE_ONLY_REVIEW_REQUIRED
+sum-two-asymmetric,"[0, 2]",False,0,1,SOURCE_ONLY_REVIEW_REQUIRED
+sum-three,"[1, 2]",False,1,1,BOTH_MATCH_REQUIRES_DOMAIN_REVIEW
+sum-three-reversed-bounds,"[2, 1]",False,1,1,BOTH_MATCH_REQUIRES_DOMAIN_REVIEW
+sum-four,"[2, 2]",False,1,1,BOTH_MATCH_REQUIRES_DOMAIN_REVIEW
+unlimited-left,"[-1, 1]",False,1,1,BOTH_MATCH_REQUIRES_DOMAIN_REVIEW
+unlimited-right,"[1, -1]",False,1,1,BOTH_MATCH_REQUIRES_DOMAIN_REVIEW
+disjoint-sum-two,"[1, 1]",True,0,0,NO_MATCH_IN_THIS_FRAME_NOT_CLEAN_CERTIFICATE
+disjoint-sum-three,"[1, 2]",True,0,0,NO_MATCH_IN_THIS_FRAME_NOT_CLEAN_CERTIFICATE
+disjoint-unlimited,"[1, -1]",True,0,0,NO_MATCH_IN_THIS_FRAME_NOT_CLEAN_CERTIFICATE
+whole-ends-plural-only,"[0, 1]",False,0,0,NO_MATCH_IN_THIS_FRAME_NOT_CLEAN_CERTIFICATE
+reordered-sum-two,"[1, 1]",False,0,1,SOURCE_ONLY_REVIEW_REQUIRED
+reordered-sum-three,"[1, 2]",False,1,1,BOTH_MATCH_REQUIRES_DOMAIN_REVIEW

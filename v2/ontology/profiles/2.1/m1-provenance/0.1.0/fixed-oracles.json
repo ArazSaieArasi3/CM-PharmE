@@ -1,0 +1,315 @@
+{
+  "schema_version": "CMPE-M1ProvenanceOracles/0.1.0",
+  "case_count": 24,
+  "fixture_origin": "Declared synthetic hand-specified witness/mutation set; not copied database evidence",
+  "fixed_before_verifier": true,
+  "cases": [
+    {
+      "id": "with-run",
+      "fixture": "fixtures/with-run.ttl",
+      "expected_stage": "ADMITTED",
+      "expected_query_rows": 1,
+      "purpose": "complete source/release/record/run path",
+      "expected_shacl_conforms": true,
+      "expected_query_tuples": [
+        [
+          "10.9999/synthetic-m1",
+          "release-A",
+          "7",
+          "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "run-A"
+        ]
+      ]
+    },
+    {
+      "id": "without-run",
+      "fixture": "fixtures/without-run.ttl",
+      "expected_stage": "ADMITTED",
+      "expected_query_rows": 1,
+      "purpose": "a run is optional; no fabricated activity",
+      "expected_shacl_conforms": true,
+      "expected_query_tuples": [
+        [
+          "10.9999/synthetic-m1",
+          "release-A",
+          "7",
+          "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          null
+        ]
+      ]
+    },
+    {
+      "id": "extension-metadata",
+      "fixture": "fixtures/extension-metadata.ttl",
+      "expected_stage": "ADMITTED",
+      "expected_query_rows": 1,
+      "purpose": "extra context metadata remains allowed",
+      "expected_shacl_conforms": true,
+      "expected_query_tuples": [
+        [
+          "10.9999/synthetic-m1",
+          "release-A",
+          "7",
+          "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "run-A"
+        ]
+      ]
+    },
+    {
+      "id": "two-records-shared-run",
+      "fixture": "fixtures/two-records-shared-run.ttl",
+      "expected_stage": "ADMITTED",
+      "expected_query_rows": 2,
+      "purpose": "one run may generate multiple records",
+      "expected_shacl_conforms": true,
+      "expected_query_tuples": [
+        [
+          "10.9999/synthetic-m1",
+          "release-A",
+          "7",
+          "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "run-A"
+        ],
+        [
+          "10.9999/synthetic-m1",
+          "release-A",
+          "8",
+          "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "run-A"
+        ]
+      ]
+    },
+    {
+      "id": "same-row-distinct-release",
+      "fixture": "fixtures/same-row-distinct-release.ttl",
+      "expected_stage": "ADMITTED",
+      "expected_query_rows": 2,
+      "purpose": "release identity participates in the key",
+      "expected_shacl_conforms": true,
+      "expected_query_tuples": [
+        [
+          "10.9999/synthetic-m1",
+          "release-A",
+          "7",
+          "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          null
+        ],
+        [
+          "10.9999/synthetic-m1",
+          "release-B",
+          "7",
+          "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          null
+        ]
+      ]
+    },
+    {
+      "id": "same-row-distinct-hash",
+      "fixture": "fixtures/same-row-distinct-hash.ttl",
+      "expected_stage": "ADMITTED",
+      "expected_query_rows": 2,
+      "purpose": "hash value participates in the key",
+      "expected_shacl_conforms": true,
+      "expected_query_tuples": [
+        [
+          "10.9999/synthetic-m1",
+          "release-A",
+          "7",
+          "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          null
+        ],
+        [
+          "10.9999/synthetic-m1",
+          "release-A",
+          "7",
+          "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          null
+        ]
+      ]
+    },
+    {
+      "id": "row-zero-boundary",
+      "fixture": "fixtures/row-zero-boundary.ttl",
+      "expected_stage": "ADMITTED",
+      "expected_query_rows": 1,
+      "purpose": "do not invent a positive-only row restriction absent from SQL",
+      "expected_shacl_conforms": true,
+      "expected_query_tuples": [
+        [
+          "10.9999/synthetic-m1",
+          "release-A",
+          "0",
+          "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          null
+        ]
+      ]
+    },
+    {
+      "id": "opaque-hash-boundary",
+      "fixture": "fixtures/opaque-hash-boundary.ttl",
+      "expected_stage": "ADMITTED",
+      "expected_query_rows": 1,
+      "purpose": "no globally guessed digest algorithm",
+      "expected_shacl_conforms": true,
+      "expected_query_tuples": [
+        [
+          "10.9999/synthetic-m1",
+          "release-A",
+          "7",
+          "opaque source token",
+          null
+        ]
+      ]
+    },
+    {
+      "id": "missing-dataset-id",
+      "fixture": "fixtures/missing-dataset-id.ttl",
+      "expected_stage": "SHACL_REJECTED",
+      "expected_query_rows": null,
+      "purpose": "dataset identifier required for this export profile",
+      "expected_shacl_conforms": false
+    },
+    {
+      "id": "missing-release-type",
+      "fixture": "fixtures/missing-release-type.ttl",
+      "expected_stage": "SHACL_REJECTED",
+      "expected_query_rows": null,
+      "purpose": "link target typing must not escape target selection",
+      "expected_shacl_conforms": false
+    },
+    {
+      "id": "missing-record-type",
+      "fixture": "fixtures/missing-record-type.ttl",
+      "expected_stage": "SHACL_REJECTED",
+      "expected_query_rows": null,
+      "purpose": "record link target typing must be explicit",
+      "expected_shacl_conforms": false
+    },
+    {
+      "id": "missing-run-type",
+      "fixture": "fixtures/missing-run-type.ttl",
+      "expected_stage": "SHACL_REJECTED",
+      "expected_query_rows": null,
+      "purpose": "a present run must be explicitly typed",
+      "expected_shacl_conforms": false
+    },
+    {
+      "id": "missing-row-number",
+      "fixture": "fixtures/missing-row-number.ttl",
+      "expected_stage": "SHACL_REJECTED",
+      "expected_query_rows": null,
+      "purpose": "record row number required",
+      "expected_shacl_conforms": false
+    },
+    {
+      "id": "missing-hash",
+      "fixture": "fixtures/missing-hash.ttl",
+      "expected_stage": "SHACL_REJECTED",
+      "expected_query_rows": null,
+      "purpose": "record source hash required",
+      "expected_shacl_conforms": false
+    },
+    {
+      "id": "missing-record-key",
+      "fixture": "fixtures/missing-record-key.ttl",
+      "expected_stage": "SHACL_REJECTED",
+      "expected_query_rows": null,
+      "purpose": "record composite identifier required",
+      "expected_shacl_conforms": false
+    },
+    {
+      "id": "two-release-owners",
+      "fixture": "fixtures/two-release-owners.ttl",
+      "expected_stage": "SHACL_REJECTED",
+      "expected_query_rows": null,
+      "purpose": "one record has exactly one owning release in this export",
+      "expected_shacl_conforms": false
+    },
+    {
+      "id": "broken-release-link",
+      "fixture": "fixtures/broken-release-link.ttl",
+      "expected_stage": "SHACL_REJECTED",
+      "expected_query_rows": null,
+      "purpose": "a release cannot be disconnected from its dataset",
+      "expected_shacl_conforms": false
+    },
+    {
+      "id": "two-generating-runs",
+      "fixture": "fixtures/two-generating-runs.ttl",
+      "expected_stage": "SHACL_REJECTED",
+      "expected_query_rows": null,
+      "purpose": "the selected SQL source has at most one run per record",
+      "expected_shacl_conforms": false
+    },
+    {
+      "id": "wrong-run-identifier",
+      "fixture": "fixtures/wrong-run-identifier.ttl",
+      "expected_stage": "IDENTITY_REJECTED",
+      "expected_query_rows": null,
+      "purpose": "run IRI and retained public identifier must agree",
+      "expected_shacl_conforms": true
+    },
+    {
+      "id": "key-component-mismatch",
+      "fixture": "fixtures/key-component-mismatch.ttl",
+      "expected_stage": "IDENTITY_REJECTED",
+      "expected_query_rows": null,
+      "purpose": "encoded key must match the actual owning release/row/hash",
+      "expected_shacl_conforms": true
+    },
+    {
+      "id": "record-iri-mismatch",
+      "fixture": "fixtures/record-iri-mismatch.ttl",
+      "expected_stage": "IDENTITY_REJECTED",
+      "expected_query_rows": null,
+      "purpose": "minted record IRI must match its canonical key",
+      "expected_shacl_conforms": true
+    },
+    {
+      "id": "cross-kind-alias",
+      "fixture": "fixtures/cross-kind-alias.ttl",
+      "expected_stage": "SHACL_REJECTED",
+      "expected_query_rows": null,
+      "purpose": "focused record cannot simultaneously be another M1 export kind",
+      "expected_shacl_conforms": false
+    },
+    {
+      "id": "empty-graph",
+      "fixture": "fixtures/empty-graph.ttl",
+      "expected_stage": "EMPTY_SCOPE_REFUSED",
+      "expected_query_rows": null,
+      "purpose": "empty targets are not a successful M1 witness",
+      "expected_shacl_conforms": true
+    },
+    {
+      "id": "typed-record-no-release",
+      "fixture": "fixtures/typed-record-no-release.ttl",
+      "expected_stage": "SHACL_REJECTED",
+      "expected_query_rows": null,
+      "purpose": "an explicitly typed orphan remains a focus node",
+      "expected_shacl_conforms": false
+    }
+  ],
+  "reasoner_cases": [
+    {
+      "id": "schema-only",
+      "expected_consistent": true
+    },
+    {
+      "id": "with-run",
+      "expected_consistent": true
+    },
+    {
+      "id": "missing-record-key-open-world",
+      "expected_consistent": true
+    },
+    {
+      "id": "cross-kind-alias-not-global-owl-disjointness",
+      "expected_consistent": true
+    },
+    {
+      "id": "explicit-owl-nothing-control",
+      "expected_consistent": false
+    }
+  ]
+}

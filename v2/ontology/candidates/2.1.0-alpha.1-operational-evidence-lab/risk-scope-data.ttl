@@ -1,0 +1,70 @@
+@prefix b: <https://w3id.org/cm-pharme/experimental/reporting-context/> .
+@prefix c: <https://w3id.org/cm-pharme/2.1/> .
+@prefix e: <https://w3id.org/cm-pharme/experimental/documentary-evidence/> .
+@prefix ns1: <https://w3id.org/cm-pharme/experimental/source-group/> .
+@prefix t: <urn:cmpe-evidence:> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+t:riskScenario a c:Assertion ;
+    e:riskProfile "source-scoped-risk-scenario" ;
+    e:scenarioScopeDescription t:riskScope ;
+    b:evidencePointer "RM-EMA-2020#p1 More about the medicine" .
+
+t:risk-entry-1 a c:Assertion ;
+    ns1:entryOrdinal 1 ;
+    ns1:entrySource t:RM-EMA-2020 ;
+    ns1:evidencePointer "EMA/603826/2020#page=1" ;
+    ns1:labelKindProposal "unqualified-name" ;
+    ns1:profile "source-group-entry" ;
+    ns1:scopeVersion "EMA-603826-2020-sartan-review-scope" ;
+    ns1:sourceLabel "candesartan" .
+
+t:risk-entry-2 a c:Assertion ;
+    ns1:entryOrdinal 2 ;
+    ns1:entrySource t:RM-EMA-2020 ;
+    ns1:evidencePointer "EMA/603826/2020#page=1" ;
+    ns1:labelKindProposal "unqualified-name" ;
+    ns1:profile "source-group-entry" ;
+    ns1:scopeVersion "EMA-603826-2020-sartan-review-scope" ;
+    ns1:sourceLabel "irbesartan" .
+
+t:risk-entry-3 a c:Assertion ;
+    ns1:entryOrdinal 3 ;
+    ns1:entrySource t:RM-EMA-2020 ;
+    ns1:evidencePointer "EMA/603826/2020#page=1" ;
+    ns1:labelKindProposal "unqualified-name" ;
+    ns1:profile "source-group-entry" ;
+    ns1:scopeVersion "EMA-603826-2020-sartan-review-scope" ;
+    ns1:sourceLabel "losartan" .
+
+t:risk-entry-4 a c:Assertion ;
+    ns1:entryOrdinal 4 ;
+    ns1:entrySource t:RM-EMA-2020 ;
+    ns1:evidencePointer "EMA/603826/2020#page=1" ;
+    ns1:labelKindProposal "unqualified-name" ;
+    ns1:profile "source-group-entry" ;
+    ns1:scopeVersion "EMA-603826-2020-sartan-review-scope" ;
+    ns1:sourceLabel "olmesartan" .
+
+t:risk-entry-5 a c:Assertion ;
+    ns1:entryOrdinal 5 ;
+    ns1:entrySource t:RM-EMA-2020 ;
+    ns1:evidencePointer "EMA/603826/2020#page=1" ;
+    ns1:labelKindProposal "unqualified-name" ;
+    ns1:profile "source-group-entry" ;
+    ns1:scopeVersion "EMA-603826-2020-sartan-review-scope" ;
+    ns1:sourceLabel "valsartan" .
+
+t:riskScope a c:Assertion ;
+    ns1:profile "source-group-scope" ;
+    ns1:scopeEntry t:risk-entry-1,
+        t:risk-entry-2,
+        t:risk-entry-3,
+        t:risk-entry-4,
+        t:risk-entry-5 ;
+    ns1:scopeSource t:RM-EMA-2020 ;
+    ns1:scopeVersion "EMA-603826-2020-sartan-review-scope" ;
+    ns1:sourceLabel "sartan-review-included-labels" .
+
+t:RM-EMA-2020 a c:SourceRecord ;
+    e:sourceID "RM-EMA-2020" .

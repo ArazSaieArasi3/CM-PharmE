@@ -1,0 +1,342 @@
+{
+  "id": "cm-pharme-g3-2d-native",
+  "type": "Project",
+  "name": {
+    "en": "two-subtypes-upper-two"
+  },
+  "created": "2026-10-05",
+  "modified": "2026-10-08",
+  "alternativeNames": [],
+  "description": null,
+  "editorialNotes": [],
+  "creators": [],
+  "contributors": [],
+  "customProperties": null,
+  "elements": [
+    {
+      "id": "cm-pharme-root",
+      "type": "Package",
+      "name": {
+        "en": "cm-pharme-root"
+      },
+      "created": "2026-10-05",
+      "modified": null,
+      "alternativeNames": [],
+      "description": null,
+      "editorialNotes": [],
+      "creators": [],
+      "contributors": [],
+      "customProperties": null,
+      "contents": [
+        "Parent",
+        "Other",
+        "association",
+        "association-a",
+        "association-b",
+        "Child0",
+        "g0",
+        "Child1",
+        "g1",
+        "special",
+        "special-a",
+        "special-b"
+      ]
+    },
+    {
+      "id": "Parent",
+      "type": "Class",
+      "name": {
+        "en": "Parent"
+      },
+      "created": "2026-10-05",
+      "modified": null,
+      "alternativeNames": [],
+      "description": null,
+      "editorialNotes": [],
+      "creators": [],
+      "contributors": [],
+      "customProperties": null,
+      "stereotype": "kind",
+      "isDerived": false,
+      "isAbstract": false,
+      "properties": [],
+      "literals": [],
+      "restrictedTo": [
+        "functional-complex"
+      ],
+      "isPowertype": false,
+      "order": "1"
+    },
+    {
+      "id": "Other",
+      "type": "Class",
+      "name": {
+        "en": "Other"
+      },
+      "created": "2026-10-05",
+      "modified": null,
+      "alternativeNames": [],
+      "description": null,
+      "editorialNotes": [],
+      "creators": [],
+      "contributors": [],
+      "customProperties": null,
+      "stereotype": "kind",
+      "isDerived": false,
+      "isAbstract": false,
+      "properties": [],
+      "literals": [],
+      "restrictedTo": [
+        "functional-complex"
+      ],
+      "isPowertype": false,
+      "order": "1"
+    },
+    {
+      "id": "association",
+      "type": "BinaryRelation",
+      "name": {
+        "en": "association"
+      },
+      "created": "2026-10-09",
+      "modified": "2026-10-09",
+      "alternativeNames": [],
+      "description": null,
+      "editorialNotes": [],
+      "creators": [],
+      "contributors": [],
+      "customProperties": null,
+      "stereotype": null,
+      "isDerived": false,
+      "isAbstract": false,
+      "properties": [
+        "association-a",
+        "association-b"
+      ]
+    },
+    {
+      "id": "association-a",
+      "type": "Property",
+      "name": {
+        "en": "association-a"
+      },
+      "created": "2026-10-09",
+      "modified": "2026-10-09",
+      "alternativeNames": [],
+      "description": null,
+      "editorialNotes": [],
+      "creators": [],
+      "contributors": [],
+      "customProperties": null,
+      "stereotype": null,
+      "isDerived": false,
+      "subsettedProperties": [],
+      "redefinedProperties": [],
+      "aggregationKind": "NONE",
+      "cardinality": "0..1",
+      "isOrdered": false,
+      "isReadOnly": null,
+      "propertyType": "Other"
+    },
+    {
+      "id": "association-b",
+      "type": "Property",
+      "name": {
+        "en": "association-b"
+      },
+      "created": "2026-10-09",
+      "modified": "2026-10-09",
+      "alternativeNames": [],
+      "description": null,
+      "editorialNotes": [],
+      "creators": [],
+      "contributors": [],
+      "customProperties": null,
+      "stereotype": null,
+      "isDerived": false,
+      "subsettedProperties": [],
+      "redefinedProperties": [],
+      "aggregationKind": "NONE",
+      "cardinality": "0..2",
+      "isOrdered": false,
+      "isReadOnly": null,
+      "propertyType": "Parent"
+    },
+    {
+      "id": "Child0",
+      "type": "Class",
+      "name": {
+        "en": "Child0"
+      },
+      "created": "2026-10-05",
+      "modified": null,
+      "alternativeNames": [],
+      "description": null,
+      "editorialNotes": [],
+      "creators": [],
+      "contributors": [],
+      "customProperties": null,
+      "stereotype": "subkind",
+      "isDerived": false,
+      "isAbstract": false,
+      "properties": [],
+      "literals": [],
+      "restrictedTo": [
+        "functional-complex"
+      ],
+      "isPowertype": false,
+      "order": "1"
+    },
+    {
+      "id": "g0",
+      "type": "Generalization",
+      "name": {
+        "en": "g0"
+      },
+      "created": "2026-10-05",
+      "modified": null,
+      "alternativeNames": [],
+      "description": null,
+      "editorialNotes": [],
+      "creators": [],
+      "contributors": [],
+      "customProperties": null,
+      "general": "Parent",
+      "specific": "Child0"
+    },
+    {
+      "id": "Child1",
+      "type": "Class",
+      "name": {
+        "en": "Child1"
+      },
+      "created": "2026-10-05",
+      "modified": null,
+      "alternativeNames": [],
+      "description": null,
+      "editorialNotes": [],
+      "creators": [],
+      "contributors": [],
+      "customProperties": null,
+      "stereotype": "subkind",
+      "isDerived": false,
+      "isAbstract": false,
+      "properties": [],
+      "literals": [],
+      "restrictedTo": [
+        "functional-complex"
+      ],
+      "isPowertype": false,
+      "order": "1"
+    },
+    {
+      "id": "g1",
+      "type": "Generalization",
+      "name": {
+        "en": "g1"
+      },
+      "created": "2026-10-05",
+      "modified": null,
+      "alternativeNames": [],
+      "description": null,
+      "editorialNotes": [],
+      "creators": [],
+      "contributors": [],
+      "customProperties": null,
+      "general": "Parent",
+      "specific": "Child1"
+    },
+    {
+      "id": "special",
+      "type": "BinaryRelation",
+      "name": {
+        "en": "special"
+      },
+      "created": "2026-10-09",
+      "modified": "2026-10-09",
+      "alternativeNames": [],
+      "description": null,
+      "editorialNotes": [],
+      "creators": [],
+      "contributors": [],
+      "customProperties": null,
+      "stereotype": null,
+      "isDerived": false,
+      "isAbstract": false,
+      "properties": [
+        "special-a",
+        "special-b"
+      ]
+    },
+    {
+      "id": "special-a",
+      "type": "Property",
+      "name": {
+        "en": "special-a"
+      },
+      "created": "2026-10-09",
+      "modified": "2026-10-09",
+      "alternativeNames": [],
+      "description": null,
+      "editorialNotes": [],
+      "creators": [],
+      "contributors": [],
+      "customProperties": null,
+      "stereotype": null,
+      "isDerived": false,
+      "subsettedProperties": [],
+      "redefinedProperties": [
+        "association-a"
+      ],
+      "aggregationKind": "NONE",
+      "cardinality": "0..1",
+      "isOrdered": false,
+      "isReadOnly": null,
+      "propertyType": "Other"
+    },
+    {
+      "id": "special-b",
+      "type": "Property",
+      "name": {
+        "en": "special-b"
+      },
+      "created": "2026-10-09",
+      "modified": "2026-10-09",
+      "alternativeNames": [],
+      "description": null,
+      "editorialNotes": [],
+      "creators": [],
+      "contributors": [],
+      "customProperties": null,
+      "stereotype": null,
+      "isDerived": false,
+      "subsettedProperties": [],
+      "redefinedProperties": [
+        "association-b"
+      ],
+      "aggregationKind": "NONE",
+      "cardinality": "0..2",
+      "isOrdered": false,
+      "isReadOnly": null,
+      "propertyType": "Child0"
+    }
+  ],
+  "root": "cm-pharme-root",
+  "publisher": null,
+  "designedForTasks": [],
+  "license": null,
+  "accessRights": [],
+  "themes": [],
+  "contexts": [],
+  "ontologyTypes": [],
+  "representationStyle": null,
+  "namespace": "https://w3id.org/cm-pharme/2.1/",
+  "landingPages": [],
+  "sources": [],
+  "bibliographicCitations": [],
+  "keywords": [],
+  "acronyms": [],
+  "languages": [
+    "en"
+  ]
+}

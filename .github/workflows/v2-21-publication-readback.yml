@@ -1,0 +1,64 @@
+# SPDX-License-Identifier: MIT
+name: CM-PharmE 2.1 Independent Publication Readback
+on:
+  push:
+    branches: ['v2/connectivity-audit-2-1-candidate']
+    paths: ['v2/release/2.1/publication/0.1.0/readback.request.json']
+permissions:
+  actions: read
+  contents: read
+jobs:
+  independent-readback:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7.0.0
+        with:
+          python-version: '3.12'
+      - name: Retrieve pinned publication receipt and independently download public assets
+        run: |
+          python - <<'PY'
+          import hashlib,json,subprocess,zipfile
+          from pathlib import Path
+          repo='ArazSaieArasi3/CM-PharmE'
+          out=Path('build/publication-readback');out.mkdir(parents=True,exist_ok=True)
+          request=json.loads(Path('v2/release/2.1/publication/0.1.0/readback.request.json').read_text())
+          def gh(*args):return subprocess.check_output(['gh',*args])
+          payload=gh('api',f'repos/{repo}/actions/artifacts/{request["artifact_id"]}/zip')
+          assert hashlib.sha256(payload).hexdigest()==request['artifact_sha256']
+          archive=out/'publication-evidence.zip';archive.write_bytes(payload)
+          with zipfile.ZipFile(archive) as z:
+              receipt=json.loads(z.read('publication-report.json'))
+          assert receipt['passed'] and receipt['stable_published']
+          assert receipt['target_commit']==request['target_commit'] and receipt['archive_sha256']==request['archive_sha256']
+          release=json.loads(gh('api',f'repos/{repo}/releases/tags/2.1.0'))
+          assert release['id']==receipt['release_id'] and not release['draft'] and not release['prerelease']
+          tag=json.loads(gh('api',f'repos/{repo}/git/ref/tags/2.1.0'))
+          assert tag['object']['type']=='commit' and tag['object']['sha']==request['target_commit']
+          downloads=out/'downloaded';downloads.mkdir()
+          gh('release','download','2.1.0','--repo',repo,'--dir',str(downloads))
+          expected=receipt['published_downloads']
+          assert {p.name for p in downloads.iterdir()}==set(expected)
+          actual={}
+          for p in downloads.iterdir():
+              actual[p.name]={'sha256':hashlib.sha256(p.read_bytes()).hexdigest(),'bytes':p.stat().st_size}
+              assert actual[p.name]==expected[p.name]
+          result={'schema_version':'CMPE-IndependentPublicationReadback/0.1.0','passed':True,
+                  'publication_receipt_zip_sha256':request['artifact_sha256'],
+                  'published_release_url':release['html_url'],'publication_receipt':receipt,
+                  'independent_public_downloads':actual,'tag_target_verified':True,
+                  'stable_published':True,'github_release':release}
+          (out/'readback.json').write_text(json.dumps(result,indent=2)+'\n')
+          print(json.dumps(result))
+          PY
+      - uses: actions/upload-artifact@v7.0.1
+        if: always()
+        with:
+          name: cm-pharme-stable-2-1-0-independent-readback
+          path: build/publication-readback/
+          retention-days: 30

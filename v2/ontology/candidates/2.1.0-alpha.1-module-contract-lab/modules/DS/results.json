@@ -1,0 +1,334 @@
+{
+  "module": "DS",
+  "scope": "bounded regression; not full semantic acceptance or a formal locality module",
+  "admission": [
+    {
+      "id": "lab-DS-1-positive.ttl",
+      "conforms": true,
+      "pass": true,
+      "violations": []
+    },
+    {
+      "id": "lab-DS-2-boundary.ttl",
+      "conforms": true,
+      "pass": true,
+      "violations": []
+    },
+    {
+      "id": "lab-DS-3-missing-version.ttl",
+      "conforms": false,
+      "pass": true,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/four-domain/componentVersion",
+          "constraint": "",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent"
+        }
+      ]
+    },
+    {
+      "id": "lab-DS-3-missing-generating-activity.ttl",
+      "conforms": false,
+      "pass": true,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/four-domain/recordDigitalActivity",
+          "constraint": "",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent"
+        }
+      ]
+    },
+    {
+      "id": "lab-DS-3-record-is-component.ttl",
+      "conforms": false,
+      "pass": true,
+      "violations": [
+        {
+          "path": "",
+          "constraint": "https://w3id.org/cm-pharme/experimental/four-domain/distinct-SourceRecord-DigitalInformationSystemComponent",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent"
+        }
+      ]
+    },
+    {
+      "id": "lab-DS-3-missing-deployment-time.ttl",
+      "conforms": false,
+      "pass": true,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/four-domain/atTime",
+          "constraint": "",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent"
+        }
+      ]
+    },
+    {
+      "id": "lab-DS-3-deployment-after-use.ttl",
+      "conforms": false,
+      "pass": true,
+      "violations": [
+        {
+          "path": "",
+          "constraint": "https://w3id.org/cm-pharme/experimental/four-domain/deployment-before-use",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent"
+        }
+      ]
+    },
+    {
+      "id": "lab-DS-3-service-without-supported-activity.ttl",
+      "conforms": false,
+      "pass": true,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/four-domain/digitalServiceActivity",
+          "constraint": "",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent"
+        }
+      ]
+    },
+    {
+      "id": "refinement-X-DS-PHARMA-positive.ttl",
+      "conforms": true,
+      "pass": true,
+      "violations": []
+    },
+    {
+      "id": "refinement-X-DS-RESPONSIBILITY-positive.ttl",
+      "conforms": true,
+      "pass": true,
+      "violations": []
+    },
+    {
+      "id": "refinement-X-DS-PHARMA-boundary.ttl",
+      "conforms": true,
+      "pass": true,
+      "violations": []
+    },
+    {
+      "id": "refinement-X-DS-RESPONSIBILITY-boundary.ttl",
+      "conforms": true,
+      "pass": true,
+      "violations": []
+    },
+    {
+      "id": "refinement-X-DS-PHARMA-missing-manufacturing.ttl",
+      "conforms": false,
+      "pass": true,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/refinement/supportsManufacturing",
+          "constraint": "",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent"
+        },
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/four-domain/digitalServiceActivity",
+          "constraint": "",
+          "component": "http://www.w3.org/ns/shacl#NodeConstraintComponent"
+        },
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/refinement/supportsManufacturing",
+          "constraint": "",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent"
+        }
+      ]
+    },
+    {
+      "id": "refinement-X-DS-PHARMA-missing-manufactured-product.ttl",
+      "conforms": false,
+      "pass": true,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/refinement/manufacturingProduct",
+          "constraint": "",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent"
+        },
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/refinement/supportsManufacturing",
+          "constraint": "",
+          "component": "http://www.w3.org/ns/shacl#NodeConstraintComponent"
+        },
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/refinement/manufacturingProduct",
+          "constraint": "",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent"
+        },
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/four-domain/digitalServiceActivity",
+          "constraint": "",
+          "component": "http://www.w3.org/ns/shacl#NodeConstraintComponent"
+        },
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/refinement/supportsManufacturing",
+          "constraint": "",
+          "component": "http://www.w3.org/ns/shacl#NodeConstraintComponent"
+        },
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/refinement/manufacturingProduct",
+          "constraint": "",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent"
+        }
+      ]
+    },
+    {
+      "id": "refinement-X-DS-PHARMA-service-component-disagreement.ttl",
+      "conforms": false,
+      "pass": true,
+      "violations": [
+        {
+          "path": "",
+          "constraint": "https://w3id.org/cm-pharme/experimental/refinement/service-component-agreement",
+          "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent"
+        }
+      ]
+    },
+    {
+      "id": "refinement-X-DS-RESPONSIBILITY-missing-responsibility.ttl",
+      "conforms": false,
+      "pass": true,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/refinement/activityResponsibleOrganization",
+          "constraint": "",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent"
+        },
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/four-domain/digitalServiceActivity",
+          "constraint": "",
+          "component": "http://www.w3.org/ns/shacl#NodeConstraintComponent"
+        },
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/refinement/activityResponsibleOrganization",
+          "constraint": "",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent"
+        }
+      ]
+    },
+    {
+      "id": "refinement-X-DS-RESPONSIBILITY-untyped-responsible-actor.ttl",
+      "conforms": false,
+      "pass": true,
+      "violations": [
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/refinement/activityResponsibleOrganization",
+          "constraint": "",
+          "component": "http://www.w3.org/ns/shacl#ClassConstraintComponent"
+        },
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/four-domain/digitalServiceActivity",
+          "constraint": "",
+          "component": "http://www.w3.org/ns/shacl#NodeConstraintComponent"
+        },
+        {
+          "path": "https://w3id.org/cm-pharme/experimental/refinement/activityResponsibleOrganization",
+          "constraint": "",
+          "component": "http://www.w3.org/ns/shacl#ClassConstraintComponent"
+        }
+      ]
+    }
+  ],
+  "queries": [
+    {
+      "id": "CQ-DS-01",
+      "actual": [
+        [
+          "urn:cmpe-lab:component",
+          "1.0"
+        ]
+      ],
+      "pass": true
+    },
+    {
+      "id": "CQ-DS-02",
+      "actual": [
+        [
+          "urn:cmpe-lab:transform",
+          "urn:cmpe-lab:component",
+          "urn:cmpe-lab:operator"
+        ]
+      ],
+      "pass": true
+    },
+    {
+      "id": "CQ-DS-03",
+      "actual": [
+        [
+          "urn:cmpe-lab:operator",
+          "1.0",
+          "2026-10-01T10:00:00+00:00"
+        ],
+        [
+          "urn:cmpe-lab:operator2",
+          "2.0",
+          "2026-10-03T10:00:00+00:00"
+        ]
+      ],
+      "pass": true
+    },
+    {
+      "id": "X-DS-PHARMA",
+      "actual": [
+        [
+          "urn:cmpe-lab:manufacturing",
+          "urn:cmpe-lab:manufacturedProduct",
+          "urn:cmpe-lab:manufacturingSite"
+        ]
+      ],
+      "pass": true
+    },
+    {
+      "id": "X-DS-RESPONSIBILITY",
+      "actual": [
+        [
+          "urn:cmpe-lab:processor",
+          "urn:cmpe-lab:operator"
+        ]
+      ],
+      "pass": true
+    }
+  ],
+  "reasoner": [
+    {
+      "id": "DS-schema-satisfiable",
+      "consistent": true,
+      "unsatisfiable_named_classes": [],
+      "pass": true
+    },
+    {
+      "id": "DS-positive-consistent",
+      "consistent": true,
+      "unsatisfiable_named_classes": [],
+      "pass": true
+    },
+    {
+      "id": "DS-identity-collision-rejected",
+      "consistent": false,
+      "unsatisfiable_named_classes": [],
+      "pass": true
+    }
+  ],
+  "source_scope_lookups": [],
+  "counts": {
+    "admission": [
+      17,
+      17
+    ],
+    "queries": [
+      5,
+      5
+    ],
+    "reasoner": [
+      3,
+      3
+    ],
+    "source_scope_lookups": [
+      0,
+      0
+    ]
+  },
+  "runtime": {
+    "python": "3.12.14",
+    "rdflib": "7.6.0",
+    "pyshacl": "0.30.1",
+    "owlready2": "0.49"
+  }
+}

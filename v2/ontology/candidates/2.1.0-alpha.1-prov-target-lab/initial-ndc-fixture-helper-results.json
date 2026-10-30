@@ -1,0 +1,105 @@
+{
+  "source_rows": 5,
+  "package_projections": 7,
+  "triples": 227,
+  "source_last_updated": "2026-10-09",
+  "source_sha256": "ecb97302aa8cb3148a7971045811164bef22a4d988542d8af77a0829091330de",
+  "shacl": {
+    "conforms": true,
+    "violations": []
+  },
+  "hermit": {
+    "consistent": true,
+    "unsatisfiable_named_classes": [],
+    "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked"
+  },
+  "approval_countermodel": {
+    "consistent": true,
+    "unsatisfiable_named_classes": [],
+    "engine": "direct HermiT CLI/OWLAPI; RDF/XML graph-isomorphism checked"
+  },
+  "mutation": {
+    "conforms": false,
+    "violations": [
+      {
+        "path": "",
+        "constraint": "https://w3id.org/cm-pharme/experimental/registry-policy/approval-needs-independent-decision",
+        "component": "http://www.w3.org/ns/shacl#SPARQLConstraintComponent"
+      }
+    ]
+  },
+  "checks": [
+    {
+      "name": "api-product-rows",
+      "expected": 5,
+      "actual": 5,
+      "pass": true
+    },
+    {
+      "name": "all-packages-projected",
+      "expected": 7,
+      "actual": 7,
+      "pass": true
+    },
+    {
+      "name": "all-projections-traceable",
+      "expected": 7,
+      "actual": 7,
+      "pass": true
+    },
+    {
+      "name": "approval-query-is-unknown",
+      "expected": "UNKNOWN",
+      "actual": "UNKNOWN",
+      "pass": true
+    },
+    {
+      "name": "no-authorization-assertion",
+      "expected": 0,
+      "actual": 0,
+      "pass": true
+    },
+    {
+      "name": "missing-package-end-keeps-window-unknown",
+      "expected": "UNKNOWN",
+      "actual": "UNKNOWN",
+      "pass": true
+    },
+    {
+      "name": "contains-product-package-date-difference",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "name": "native-plus-profile-shacl",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "name": "full-prov-hermit-consistent",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "name": "no-approval-countermodel",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "name": "unsupported-approval-mutation-rejected",
+      "expected": false,
+      "actual": false,
+      "pass": true
+    }
+  ],
+  "pass": 11,
+  "total": 11,
+  "sampling": "First five API results with no randomization or representativeness claim.",
+  "identity": "Source-scoped product/package/labeler references; no cross-source sameAs, labeler name deduplication or independently verified identity.",
+  "provenance": "Projection activity is this local transformation, not the historical FDA/labeler submission event. wasAttributedTo identifies the source-reported labeler; no FDA verification claim.",
+  "coverage": "Real listing/package/attribution/derived-record paths only. No establishment-registration, independent approval, ESMP, revision or risk-event witness."
+}

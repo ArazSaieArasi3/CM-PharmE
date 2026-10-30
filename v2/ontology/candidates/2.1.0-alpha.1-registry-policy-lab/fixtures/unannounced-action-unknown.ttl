@@ -1,0 +1,23 @@
+@prefix c: <https://w3id.org/cm-pharme/2.1/> .
+@prefix p: <https://w3id.org/cm-pharme/experimental/registry-policy/> .
+@prefix t: <urn:cmpe-registry-policy:> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+t:requirement a c:RegulatoryRequirement ;
+    c:validFrom "2026-10-01T00:00:00+00:00"^^xsd:dateTime ;
+    c:validTo "2026-11-01T00:00:00+00:00"^^xsd:dateTime ;
+    p:actorRole "MAH",
+        "NCA" ;
+    p:authorizationRoute "CAP",
+        "NAP" ;
+    p:frequency "synthetic-action-specific-frequency" ;
+    p:jurisdiction t:jurisdiction ;
+    p:profile "reporting-scope" ;
+    p:scenario "crisis" ;
+    p:scopeComplete true ;
+    p:scopedProduct t:product ;
+    p:sourceVersion "synthetic-guidance-snapshot-1" .
+
+t:jurisdiction a c:RegulatoryJurisdiction .
+
+t:product a c:MedicinalProduct .

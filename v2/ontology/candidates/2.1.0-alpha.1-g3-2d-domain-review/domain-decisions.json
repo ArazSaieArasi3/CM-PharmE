@@ -1,0 +1,346 @@
+{
+  "scope": "20 pending domain-semantics relations; native-only candidate where justified",
+  "source_revision": "accb79534f43c940b2214ef74557b4e9de7e0ada",
+  "records": [
+    {
+      "id": "rel-assertionAboutProduct",
+      "name": "assertionAboutProduct",
+      "group": "evidence",
+      "allowed_ends": [
+        "Assertion",
+        "MedicinalProduct"
+      ],
+      "truthmaker": "A claim explicitly identifies a Product.",
+      "cardinality": "No new universal multiplicity; empirical source completeness is separate",
+      "temporal_scope": "Source/release/provenance version and time",
+      "negative_example": "A claim about a Presentation alone cannot be promoted to Product scope.",
+      "recommendation": "Retain untyped until author settles truthmaker and global constraints",
+      "source_path": "v2/research/w4/integrated-ontouml-model.md",
+      "author_disposition": "PENDING",
+      "review_depth": "DETAILED_DESIGN_REVIEW"
+    },
+    {
+      "id": "rel-capabilityBearer",
+      "name": "capabilityBearer",
+      "group": "organization/capability",
+      "allowed_ends": [
+        "EnterpriseCapability",
+        "Organization"
+      ],
+      "truthmaker": "Capability is a Mode inhering in an Organization; source direction Mode→bearer reverses Characterization.",
+      "cardinality": "No new universal multiplicity; empirical source completeness is separate",
+      "temporal_scope": "Bearer lifetime and capability assessment interval",
+      "negative_example": "One intrinsic Mode cannot inhere in two distinct Organizations.",
+      "recommendation": "Preserve Mode→bearer property; introduce inverse bearer→Mode only with explicit design and constraints",
+      "source_path": "v2/research/w4/business-architecture-view.md",
+      "author_disposition": "PENDING",
+      "review_depth": "DETAILED_DESIGN_REVIEW"
+    },
+    {
+      "id": "rel-containsSourceRecord",
+      "name": "containsSourceRecord",
+      "group": "source/provenance",
+      "allowed_ends": [
+        "DatasetRelease",
+        "SourceRecord"
+      ],
+      "truthmaker": "Release manifest/provenance assigns a SourceRecord to DatasetRelease.",
+      "cardinality": "No new universal multiplicity; empirical source completeness is separate",
+      "temporal_scope": "Source/release/provenance version and time",
+      "negative_example": "Occurrence in a different release is not membership here.",
+      "recommendation": "Retain untyped until author settles truthmaker and global constraints",
+      "source_path": "v2/research/w4/integrated-ontouml-model.md",
+      "author_disposition": "PENDING",
+      "review_depth": "DETAILED_DESIGN_REVIEW"
+    },
+    {
+      "id": "rel-contextClassificationJurisdiction",
+      "name": "contextClassificationJurisdiction",
+      "group": "classification",
+      "allowed_ends": [
+        "ContextualMedicineClassificationAssignment",
+        "RegulatoryJurisdiction"
+      ],
+      "truthmaker": "A specific Assignment references legal jurisdictional scope.",
+      "cardinality": "No new universal multiplicity; empirical source completeness is separate",
+      "temporal_scope": "Scheme/assignment version and jurisdiction",
+      "negative_example": "Classification in J1 does not transfer to J2.",
+      "recommendation": "Retain untyped until author settles truthmaker and global constraints",
+      "source_path": "v2/research/w4/integrated-ontouml-model.md",
+      "author_disposition": "PENDING",
+      "review_depth": "DETAILED_DESIGN_REVIEW"
+    },
+    {
+      "id": "rel-entryInScheme",
+      "name": "entryInScheme",
+      "group": "classification",
+      "allowed_ends": [
+        "ClassificationEntry",
+        "ProductClassificationScheme"
+      ],
+      "truthmaker": "Scheme/version defines a ClassificationEntry.",
+      "cardinality": "No new universal multiplicity; empirical source completeness is separate",
+      "temporal_scope": "Scheme/assignment version and jurisdiction",
+      "negative_example": "Equal code strings across schemes do not identify one entry.",
+      "recommendation": "Retain untyped until author settles truthmaker and global constraints",
+      "source_path": "v2/research/w4/integrated-ontouml-model.md",
+      "author_disposition": "PENDING",
+      "review_depth": "DETAILED_DESIGN_REVIEW"
+    },
+    {
+      "id": "rel-generatedAssertion",
+      "name": "generatedAssertion",
+      "group": "source/provenance",
+      "allowed_ends": [
+        "ProvenanceActivity",
+        "Assertion"
+      ],
+      "truthmaker": "A ProvenanceActivity output trace names the Assertion.",
+      "cardinality": "No new universal multiplicity; empirical source completeness is separate",
+      "temporal_scope": "Source/release/provenance version and time",
+      "negative_example": "Reading an Assertion does not mean the activity generated it.",
+      "recommendation": "Retain untyped until author settles truthmaker and global constraints",
+      "source_path": "v2/research/w4/integrated-ontouml-model.md",
+      "author_disposition": "PENDING",
+      "review_depth": "DETAILED_DESIGN_REVIEW"
+    },
+    {
+      "id": "rel-hasDatasetRelease",
+      "name": "hasDatasetRelease",
+      "group": "source/provenance",
+      "allowed_ends": [
+        "Dataset",
+        "DatasetRelease"
+      ],
+      "truthmaker": "Release lineage names a Dataset and its DatasetRelease.",
+      "cardinality": "No new universal multiplicity; empirical source completeness is separate",
+      "temporal_scope": "Source/release/provenance version and time",
+      "negative_example": "Equal publication dates do not merge releases.",
+      "recommendation": "Retain untyped until author settles truthmaker and global constraints",
+      "source_path": "v2/research/w4/integrated-ontouml-model.md",
+      "author_disposition": "PENDING",
+      "review_depth": "DETAILED_DESIGN_REVIEW"
+    },
+    {
+      "id": "rel-hasDosageForm",
+      "name": "hasDosageForm",
+      "group": "product structure",
+      "allowed_ends": [
+        "MedicinalProductPresentation",
+        "DosageFormSpecification"
+      ],
+      "truthmaker": "Presentation specification refers to DosageFormSpecification.",
+      "cardinality": "No new universal multiplicity; empirical source completeness is separate",
+      "temporal_scope": "Product/presentation specification version",
+      "negative_example": "A generic Product dosage label does not identify this Presentation's form.",
+      "recommendation": "Retain untyped until author settles truthmaker and global constraints",
+      "source_path": "v2/research/w4/integrated-ontouml-model.md",
+      "author_disposition": "PENDING",
+      "review_depth": "DETAILED_DESIGN_REVIEW"
+    },
+    {
+      "id": "rel-hasMatchConfidence",
+      "name": "hasMatchConfidence",
+      "group": "source/provenance",
+      "allowed_ends": [
+        "EntityMatchAssertion",
+        "MatchConfidence"
+      ],
+      "truthmaker": "MatchConfidence is an intrinsic Quality of one EntityMatchAssertion; totality remains unresolved.",
+      "cardinality": "No new universal multiplicity; empirical source completeness is separate",
+      "temporal_scope": "Source/release/provenance version and time",
+      "negative_example": "One Quality individual cannot belong to two distinct Assertions.",
+      "recommendation": "Quality requires Characterization; decide totality and source coverage before native change",
+      "source_path": "v2/research/w4/integrated-ontouml-model.md",
+      "author_disposition": "PENDING",
+      "review_depth": "DETAILED_DESIGN_REVIEW"
+    },
+    {
+      "id": "rel-hasPackageConfiguration",
+      "name": "hasPackageConfiguration",
+      "group": "product structure",
+      "allowed_ends": [
+        "MedicinalProductPresentation",
+        "PackageConfiguration"
+      ],
+      "truthmaker": "Presentation specification references PackageConfiguration.",
+      "cardinality": "No new universal multiplicity; empirical source completeness is separate",
+      "temporal_scope": "Product/presentation specification version",
+      "negative_example": "A pack-size value is insufficient to identify a configuration.",
+      "recommendation": "Retain untyped until author settles truthmaker and global constraints",
+      "source_path": "v2/research/w4/integrated-ontouml-model.md",
+      "author_disposition": "PENDING",
+      "review_depth": "DETAILED_DESIGN_REVIEW"
+    },
+    {
+      "id": "rel-hasStrength",
+      "name": "hasStrength",
+      "group": "product structure",
+      "allowed_ends": [
+        "MedicinalProductPresentation",
+        "Strength"
+      ],
+      "truthmaker": "W4 says Strength is the Quality characterizing ProductPresentation.",
+      "cardinality": "bearer 1; Quality 1..* in native candidate",
+      "temporal_scope": "Product/presentation specification version",
+      "negative_example": "One Strength individual cannot belong to two distinct Presentations.",
+      "recommendation": "Native Characterization with W4 bearer→Quality direction; OWL/SHACL integration still required",
+      "source_path": "v2/research/w4/integrated-ontouml-model.md",
+      "author_disposition": "PENDING",
+      "review_depth": "DETAILED_DESIGN_REVIEW"
+    },
+    {
+      "id": "rel-maintainsDataset",
+      "name": "maintainsDataset",
+      "group": "source/provenance",
+      "allowed_ends": [
+        "DataSourceResource",
+        "Dataset"
+      ],
+      "truthmaker": "Stewardship evidence identifies a DataSourceResource maintaining Dataset.",
+      "cardinality": "No new universal multiplicity; empirical source completeness is separate",
+      "temporal_scope": "Source/release/provenance version and time",
+      "negative_example": "Hosting a copy does not prove maintenance.",
+      "recommendation": "Retain untyped until author settles truthmaker and global constraints",
+      "source_path": "v2/research/w4/integrated-ontouml-model.md",
+      "author_disposition": "PENDING",
+      "review_depth": "DETAILED_DESIGN_REVIEW"
+    },
+    {
+      "id": "rel-presentationOf",
+      "name": "presentationOf",
+      "group": "product structure",
+      "allowed_ends": [
+        "MedicinalProductPresentation",
+        "MedicinalProduct"
+      ],
+      "truthmaker": "Product definition explicitly identifies the Presentation's Product.",
+      "cardinality": "No new universal multiplicity; empirical source completeness is separate",
+      "temporal_scope": "Product/presentation specification version",
+      "negative_example": "A Product source row alone does not instantiate a Presentation.",
+      "recommendation": "Retain untyped until author settles truthmaker and global constraints",
+      "source_path": "v2/research/w4/integrated-ontouml-model.md",
+      "author_disposition": "PENDING",
+      "review_depth": "DETAILED_DESIGN_REVIEW"
+    },
+    {
+      "id": "rel-producesObservationResult",
+      "name": "producesObservationResult",
+      "group": "observation/shortage",
+      "allowed_ends": [
+        "ObservationActivity",
+        "ObservationResult"
+      ],
+      "truthmaker": "Provenance links an ObservationActivity to its generated Result.",
+      "cardinality": "No new universal multiplicity; empirical source completeness is separate",
+      "temporal_scope": "Situation/reporting interval distinct from source timestamp",
+      "negative_example": "An imported aggregate result does not entail a particular event.",
+      "recommendation": "Retain untyped until author settles truthmaker and global constraints",
+      "source_path": "v2/research/w4/events-situations-observations.md",
+      "author_disposition": "PENDING",
+      "review_depth": "DETAILED_DESIGN_REVIEW"
+    },
+    {
+      "id": "rel-reimbursementDiagnosisContext",
+      "name": "reimbursementDiagnosisContext",
+      "group": "observation/shortage",
+      "allowed_ends": [
+        "ReimbursementUtilisationObservationResult",
+        "DiagnosisClassificationReference"
+      ],
+      "truthmaker": "Aggregate source references a versioned DiagnosisClassificationReference.",
+      "cardinality": "No new universal multiplicity; empirical source completeness is separate",
+      "temporal_scope": "Situation/reporting interval distinct from source timestamp",
+      "negative_example": "Counts do not instantiate patients or diagnoses.",
+      "recommendation": "Retain untyped until author settles truthmaker and global constraints",
+      "source_path": "v2/research/w4/events-situations-observations.md",
+      "author_disposition": "PENDING",
+      "review_depth": "DETAILED_DESIGN_REVIEW"
+    },
+    {
+      "id": "rel-shortageJurisdiction",
+      "name": "shortageJurisdiction",
+      "group": "observation/shortage",
+      "allowed_ends": [
+        "MedicineShortageSituation",
+        "RegulatoryJurisdiction"
+      ],
+      "truthmaker": "Source identifies a jurisdictionally bounded ShortageSituation.",
+      "cardinality": "No new universal multiplicity; empirical source completeness is separate",
+      "temporal_scope": "Situation/reporting interval distinct from source timestamp",
+      "negative_example": "A J1 shortage does not imply a J2 shortage.",
+      "recommendation": "Retain untyped until author settles truthmaker and global constraints",
+      "source_path": "v2/research/w4/events-situations-observations.md",
+      "author_disposition": "PENDING",
+      "review_depth": "DETAILED_DESIGN_REVIEW"
+    },
+    {
+      "id": "rel-shortagePresentation",
+      "name": "shortagePresentation",
+      "group": "observation/shortage",
+      "allowed_ends": [
+        "MedicineShortageSituation",
+        "MedicinalProductPresentation"
+      ],
+      "truthmaker": "Source identifies a particular presentation in a shortage.",
+      "cardinality": "No new universal multiplicity; empirical source completeness is separate",
+      "temporal_scope": "Situation/reporting interval distinct from source timestamp",
+      "negative_example": "Product-only report does not identify a package/presentation.",
+      "recommendation": "Retain untyped until author settles truthmaker and global constraints",
+      "source_path": "v2/research/w4/events-situations-observations.md",
+      "author_disposition": "PENDING",
+      "review_depth": "DETAILED_DESIGN_REVIEW"
+    },
+    {
+      "id": "rel-shortageProduct",
+      "name": "shortageProduct",
+      "group": "observation/shortage",
+      "allowed_ends": [
+        "MedicineShortageSituation",
+        "MedicinalProduct"
+      ],
+      "truthmaker": "Source identifies the Product concerned by shortage.",
+      "cardinality": "No new universal multiplicity; empirical source completeness is separate",
+      "temporal_scope": "Situation/reporting interval distinct from source timestamp",
+      "negative_example": "Presentation shortage does not establish shortage of all presentations.",
+      "recommendation": "Retain untyped until author settles truthmaker and global constraints",
+      "source_path": "v2/research/w4/events-situations-observations.md",
+      "author_disposition": "PENDING",
+      "review_depth": "DETAILED_DESIGN_REVIEW"
+    },
+    {
+      "id": "rel-withinCountry",
+      "name": "withinCountry",
+      "group": "space",
+      "allowed_ends": [
+        "GeographicFeature",
+        "Country"
+      ],
+      "truthmaker": "Geographic reference establishes feature containment in Country.",
+      "cardinality": "No new universal multiplicity; empirical source completeness is separate",
+      "temporal_scope": "Geographic boundary/reference version",
+      "negative_example": "Country cannot be within itself; Jurisdiction is distinct.",
+      "recommendation": "Retain untyped until author settles truthmaker and global constraints",
+      "source_path": "v2/research/w4/geography-jurisdiction.md",
+      "author_disposition": "PENDING",
+      "review_depth": "DETAILED_DESIGN_REVIEW"
+    },
+    {
+      "id": "rel-withinRegion",
+      "name": "withinRegion",
+      "group": "space",
+      "allowed_ends": [
+        "GeographicFeature",
+        "AdministrativeRegion"
+      ],
+      "truthmaker": "Geographic reference establishes feature containment in AdministrativeRegion.",
+      "cardinality": "No new universal multiplicity; empirical source completeness is separate",
+      "temporal_scope": "Geographic boundary/reference version",
+      "negative_example": "Region cannot be within itself or inferred from postal label.",
+      "recommendation": "Retain untyped until author settles truthmaker and global constraints",
+      "source_path": "v2/research/w4/geography-jurisdiction.md",
+      "author_disposition": "PENDING",
+      "review_depth": "DETAILED_DESIGN_REVIEW"
+    }
+  ]
+}

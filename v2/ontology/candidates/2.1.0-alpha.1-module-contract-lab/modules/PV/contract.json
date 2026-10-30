@@ -1,0 +1,623 @@
+{
+  "module": "PV",
+  "name": "Pharmacovigilance",
+  "mission_fa": "پیوند شاهد ایمنی، سیگنال و نتیجهٔ ارزیابیِ قابل‌ردیابی",
+  "direction": "RETAIN_ACCEPTED_BY_USER",
+  "detailed_model_acceptance": "PENDING",
+  "owned_classes": [
+    "https://w3id.org/cm-pharme/2.1/AdverseEventReportingActivity",
+    "https://w3id.org/cm-pharme/2.1/PharmacovigilanceRequirement",
+    "https://w3id.org/cm-pharme/2.1/PostMarketSurveillanceActivity",
+    "https://w3id.org/cm-pharme/2.1/SignalAssessmentActivity"
+  ],
+  "imported_interface_classes": [
+    "http://www.w3.org/ns/prov#Entity",
+    "https://w3id.org/cm-pharme/2.1/Assertion",
+    "https://w3id.org/cm-pharme/2.1/MedicinalProduct",
+    "https://w3id.org/cm-pharme/2.1/Organization",
+    "https://w3id.org/cm-pharme/2.1/PharmaceuticalSubstance",
+    "https://w3id.org/cm-pharme/2.1/RegulatoryJurisdiction",
+    "https://w3id.org/cm-pharme/2.1/SourceRecord",
+    "https://w3id.org/cm-pharme/experimental/reporting-context/StructuredClaim"
+  ],
+  "profiles": [
+    "safety-reporting",
+    "safety-signal",
+    "signal-assessment",
+    "signal-result",
+    "pv-requirement",
+    "pv-surveillance",
+    "report-carrier",
+    "report-claim",
+    "attributed-signal-assessment",
+    "source-group-scope",
+    "source-group-entry"
+  ],
+  "properties": [
+    "https://w3id.org/cm-pharme/2.1/assertionAboutProduct",
+    "https://w3id.org/cm-pharme/experimental/four-domain/atTime",
+    "https://w3id.org/cm-pharme/experimental/four-domain/citesSourceRecord",
+    "https://w3id.org/cm-pharme/experimental/four-domain/profile",
+    "https://w3id.org/cm-pharme/experimental/four-domain/pvRequirementJurisdiction",
+    "https://w3id.org/cm-pharme/experimental/four-domain/pvResultAssessment",
+    "https://w3id.org/cm-pharme/experimental/four-domain/pvResultSignal",
+    "https://w3id.org/cm-pharme/experimental/four-domain/reportsRecord",
+    "https://w3id.org/cm-pharme/experimental/four-domain/signalAssessmentTarget",
+    "https://w3id.org/cm-pharme/experimental/four-domain/signalProduct",
+    "https://w3id.org/cm-pharme/experimental/four-domain/signalStatus",
+    "https://w3id.org/cm-pharme/experimental/four-domain/signalSubstance",
+    "https://w3id.org/cm-pharme/experimental/four-domain/surveillanceRequirement",
+    "https://w3id.org/cm-pharme/experimental/four-domain/surveillanceSource",
+    "https://w3id.org/cm-pharme/experimental/refinement/assessmentOrganization",
+    "https://w3id.org/cm-pharme/experimental/refinement/carrierClaim",
+    "https://w3id.org/cm-pharme/experimental/refinement/caseIdentifier",
+    "https://w3id.org/cm-pharme/experimental/refinement/caseIdentifierScheme",
+    "https://w3id.org/cm-pharme/experimental/refinement/claimText",
+    "https://w3id.org/cm-pharme/experimental/reporting-context/claimOrigin",
+    "https://w3id.org/cm-pharme/experimental/reporting-context/claimSubject",
+    "https://w3id.org/cm-pharme/experimental/reporting-context/evidencePointer",
+    "https://w3id.org/cm-pharme/experimental/reporting-context/objectResource",
+    "https://w3id.org/cm-pharme/experimental/reporting-context/objectValue",
+    "https://w3id.org/cm-pharme/experimental/reporting-context/polarity",
+    "https://w3id.org/cm-pharme/experimental/reporting-context/predicateIRI",
+    "https://w3id.org/cm-pharme/experimental/reporting-context/sourceSHA256",
+    "https://w3id.org/cm-pharme/experimental/reporting-context/sourceURL",
+    "https://w3id.org/cm-pharme/experimental/source-group/entryOrdinal",
+    "https://w3id.org/cm-pharme/experimental/source-group/entrySource",
+    "https://w3id.org/cm-pharme/experimental/source-group/evidencePointer",
+    "https://w3id.org/cm-pharme/experimental/source-group/labelKindProposal",
+    "https://w3id.org/cm-pharme/experimental/source-group/scopeEntry",
+    "https://w3id.org/cm-pharme/experimental/source-group/scopeSource",
+    "https://w3id.org/cm-pharme/experimental/source-group/scopeVersion",
+    "https://w3id.org/cm-pharme/experimental/source-group/sourceLabel"
+  ],
+  "excluded_scope": [
+    "Patient event invention from a recommendation",
+    "Signal implying established causality",
+    "A complete ICSR/E2B implementation"
+  ],
+  "admission_cases": [
+    {
+      "id": "lab-PV-1-positive.ttl",
+      "fixture": "fixtures/lab-PV-1-positive.ttl",
+      "expected": true,
+      "marker": null
+    },
+    {
+      "id": "lab-PV-2-boundary.ttl",
+      "fixture": "fixtures/lab-PV-2-boundary.ttl",
+      "expected": true,
+      "marker": null
+    },
+    {
+      "id": "lab-PV-3-missing-target.ttl",
+      "fixture": "fixtures/lab-PV-3-missing-target.ttl",
+      "expected": false,
+      "marker": "signal-target-required"
+    },
+    {
+      "id": "lab-PV-3-missing-signal-source.ttl",
+      "fixture": "fixtures/lab-PV-3-missing-signal-source.ttl",
+      "expected": false,
+      "marker": "citesSourceRecord"
+    },
+    {
+      "id": "lab-PV-3-dangling-signal.ttl",
+      "fixture": "fixtures/lab-PV-3-dangling-signal.ttl",
+      "expected": false,
+      "marker": "pvResultSignal"
+    },
+    {
+      "id": "lab-PV-3-missing-result-time.ttl",
+      "fixture": "fixtures/lab-PV-3-missing-result-time.ttl",
+      "expected": false,
+      "marker": "atTime"
+    },
+    {
+      "id": "lab-PV-3-missing-jurisdiction.ttl",
+      "fixture": "fixtures/lab-PV-3-missing-jurisdiction.ttl",
+      "expected": false,
+      "marker": "pvRequirementJurisdiction"
+    },
+    {
+      "id": "lab-PV-3-reporting-is-record.ttl",
+      "fixture": "fixtures/lab-PV-3-reporting-is-record.ttl",
+      "expected": false,
+      "marker": "distinct-AdverseEventReportingActivity"
+    },
+    {
+      "id": "lab-PV-3-signal-is-own-result.ttl",
+      "fixture": "fixtures/lab-PV-3-signal-is-own-result.ttl",
+      "expected": false,
+      "marker": "signal-result-distinct"
+    },
+    {
+      "id": "lab-PV-3-signal-result-alias.ttl",
+      "fixture": "fixtures/lab-PV-3-signal-result-alias.ttl",
+      "expected": false,
+      "marker": "signal-result-distinct"
+    },
+    {
+      "id": "lab-PV-3-result-assessment-target-disagreement.ttl",
+      "fixture": "fixtures/lab-PV-3-result-assessment-target-disagreement.ttl",
+      "expected": false,
+      "marker": "signal-result-agreement"
+    },
+    {
+      "id": "refinement-X-PV-CARRIER-positive.ttl",
+      "fixture": "fixtures/refinement-X-PV-CARRIER-positive.ttl",
+      "expected": true,
+      "marker": null
+    },
+    {
+      "id": "refinement-X-PV-ACTOR-positive.ttl",
+      "fixture": "fixtures/refinement-X-PV-ACTOR-positive.ttl",
+      "expected": true,
+      "marker": null
+    },
+    {
+      "id": "refinement-X-PV-SURVEILLANCE-positive.ttl",
+      "fixture": "fixtures/refinement-X-PV-SURVEILLANCE-positive.ttl",
+      "expected": true,
+      "marker": null
+    },
+    {
+      "id": "refinement-X-PV-CARRIER-boundary.ttl",
+      "fixture": "fixtures/refinement-X-PV-CARRIER-boundary.ttl",
+      "expected": true,
+      "marker": null
+    },
+    {
+      "id": "refinement-X-PV-ACTOR-boundary.ttl",
+      "fixture": "fixtures/refinement-X-PV-ACTOR-boundary.ttl",
+      "expected": true,
+      "marker": null
+    },
+    {
+      "id": "refinement-X-PV-SURVEILLANCE-boundary.ttl",
+      "fixture": "fixtures/refinement-X-PV-SURVEILLANCE-boundary.ttl",
+      "expected": true,
+      "marker": null
+    },
+    {
+      "id": "refinement-X-PV-CARRIER-missing-claim.ttl",
+      "fixture": "fixtures/refinement-X-PV-CARRIER-missing-claim.ttl",
+      "expected": false,
+      "marker": "carrierClaim"
+    },
+    {
+      "id": "refinement-X-PV-CARRIER-missing-claim-content.ttl",
+      "fixture": "fixtures/refinement-X-PV-CARRIER-missing-claim-content.ttl",
+      "expected": false,
+      "marker": "carrierClaim"
+    },
+    {
+      "id": "refinement-X-PV-CARRIER-carrier-as-claim.ttl",
+      "fixture": "fixtures/refinement-X-PV-CARRIER-carrier-as-claim.ttl",
+      "expected": false,
+      "marker": "carrier-not-claim"
+    },
+    {
+      "id": "refinement-X-PV-ACTOR-missing-actor.ttl",
+      "fixture": "fixtures/refinement-X-PV-ACTOR-missing-actor.ttl",
+      "expected": false,
+      "marker": "assessmentOrganization"
+    },
+    {
+      "id": "refinement-X-PV-ACTOR-untyped-actor.ttl",
+      "fixture": "fixtures/refinement-X-PV-ACTOR-untyped-actor.ttl",
+      "expected": false,
+      "marker": "assessmentOrganization"
+    },
+    {
+      "id": "refinement-X-PV-SURVEILLANCE-missing-source.ttl",
+      "fixture": "fixtures/refinement-X-PV-SURVEILLANCE-missing-source.ttl",
+      "expected": false,
+      "marker": "surveillanceSource"
+    },
+    {
+      "id": "refinement-X-PV-SURVEILLANCE-untyped-source.ttl",
+      "fixture": "fixtures/refinement-X-PV-SURVEILLANCE-untyped-source.ttl",
+      "expected": false,
+      "marker": "surveillanceSource"
+    },
+    {
+      "id": "group-complete-documentary-scope.ttl",
+      "fixture": "fixtures/group-complete-documentary-scope.ttl",
+      "expected": true,
+      "marker": null
+    },
+    {
+      "id": "group-missing-source.ttl",
+      "fixture": "fixtures/group-missing-source.ttl",
+      "expected": false,
+      "marker": null
+    },
+    {
+      "id": "group-scope-is-source-carrier.ttl",
+      "fixture": "fixtures/group-scope-is-source-carrier.ttl",
+      "expected": false,
+      "marker": null
+    },
+    {
+      "id": "group-entry-is-source-carrier.ttl",
+      "fixture": "fixtures/group-entry-is-source-carrier.ttl",
+      "expected": false,
+      "marker": null
+    },
+    {
+      "id": "group-missing-label.ttl",
+      "fixture": "fixtures/group-missing-label.ttl",
+      "expected": false,
+      "marker": null
+    },
+    {
+      "id": "group-missing-pointer.ttl",
+      "fixture": "fixtures/group-missing-pointer.ttl",
+      "expected": false,
+      "marker": null
+    },
+    {
+      "id": "group-wrong-version.ttl",
+      "fixture": "fixtures/group-wrong-version.ttl",
+      "expected": false,
+      "marker": null
+    },
+    {
+      "id": "group-duplicate-ordinal.ttl",
+      "fixture": "fixtures/group-duplicate-ordinal.ttl",
+      "expected": false,
+      "marker": null
+    },
+    {
+      "id": "group-entry-as-untyped-resource.ttl",
+      "fixture": "fixtures/group-entry-as-untyped-resource.ttl",
+      "expected": false,
+      "marker": null
+    },
+    {
+      "id": "group-wrong-source.ttl",
+      "fixture": "fixtures/group-wrong-source.ttl",
+      "expected": false,
+      "marker": null
+    },
+    {
+      "id": "group-nested-entry-without-label-or-profile.ttl",
+      "fixture": "fixtures/group-nested-entry-without-label-or-profile.ttl",
+      "expected": false,
+      "marker": null
+    }
+  ],
+  "queries": [
+    {
+      "id": "CQ-PV-01",
+      "query": "PREFIX c: <https://w3id.org/cm-pharme/2.1/> PREFIX l: <https://w3id.org/cm-pharme/experimental/four-domain/> PREFIX t: <urn:cmpe-lab:> SELECT ?target ?source WHERE { t:signal l:signalSubstance ?target ; l:citesSourceRecord ?source }",
+      "expected": [
+        [
+          "urn:cmpe-lab:substance",
+          "urn:cmpe-lab:study"
+        ]
+      ],
+      "fixture": "fixtures/lab-PV-2-boundary.ttl"
+    },
+    {
+      "id": "CQ-PV-02",
+      "query": "PREFIX c: <https://w3id.org/cm-pharme/2.1/> PREFIX l: <https://w3id.org/cm-pharme/experimental/four-domain/> PREFIX t: <urn:cmpe-lab:> SELECT ?assessment ?status ?time WHERE { ?r l:pvResultSignal t:signal ; l:pvResultAssessment ?assessment ; l:signalStatus ?status ; l:atTime ?time }",
+      "expected": [
+        [
+          "urn:cmpe-lab:signalAssessment",
+          "under-review",
+          "2026-10-02T10:00:00+00:00"
+        ],
+        [
+          "urn:cmpe-lab:signalAssessment2",
+          "refuted-at-this-time",
+          "2026-10-03T10:00:00+00:00"
+        ]
+      ],
+      "fixture": "fixtures/lab-PV-2-boundary.ttl"
+    },
+    {
+      "id": "CQ-PV-03",
+      "query": "PREFIX c: <https://w3id.org/cm-pharme/2.1/> PREFIX l: <https://w3id.org/cm-pharme/experimental/four-domain/> PREFIX t: <urn:cmpe-lab:> SELECT ?activity ?requirement ?jurisdiction WHERE { ?activity l:surveillanceRequirement ?requirement . ?requirement l:pvRequirementJurisdiction ?jurisdiction }",
+      "expected": [
+        [
+          "urn:cmpe-lab:surveillance",
+          "urn:cmpe-lab:pvRule",
+          "urn:cmpe-lab:jA"
+        ]
+      ],
+      "fixture": "fixtures/lab-PV-1-positive.ttl"
+    },
+    {
+      "id": "X-PV-CARRIER",
+      "query": "PREFIX c: <https://w3id.org/cm-pharme/2.1/> PREFIX l: <https://w3id.org/cm-pharme/experimental/four-domain/> PREFIX r: <https://w3id.org/cm-pharme/experimental/refinement/> PREFIX t: <urn:cmpe-lab:> SELECT ?record ?case ?claim WHERE { ?record r:caseIdentifier ?case ; r:carrierClaim ?claim }",
+      "expected": [
+        [
+          "urn:cmpe-lab:report",
+          "SYNTHETIC-CASE-1",
+          "urn:cmpe-lab:reportedClaim"
+        ],
+        [
+          "urn:cmpe-lab:reportCopy",
+          "SYNTHETIC-CASE-1",
+          "urn:cmpe-lab:updatedClaim"
+        ]
+      ],
+      "fixture": "fixtures/refinement-X-PV-CARRIER-boundary.ttl"
+    },
+    {
+      "id": "X-PV-ACTOR",
+      "query": "PREFIX c: <https://w3id.org/cm-pharme/2.1/> PREFIX l: <https://w3id.org/cm-pharme/experimental/four-domain/> PREFIX r: <https://w3id.org/cm-pharme/experimental/refinement/> PREFIX t: <urn:cmpe-lab:> SELECT ?org ?status ?time WHERE { ?result l:pvResultAssessment/r:assessmentOrganization ?org ; l:signalStatus ?status ; l:atTime ?time }",
+      "expected": [
+        [
+          "urn:cmpe-lab:assessorA",
+          "under-review",
+          "2026-10-02T10:00:00+00:00"
+        ],
+        [
+          "urn:cmpe-lab:assessorB",
+          "refuted-at-this-time",
+          "2026-10-03T10:00:00+00:00"
+        ]
+      ],
+      "fixture": "fixtures/refinement-X-PV-ACTOR-boundary.ttl"
+    },
+    {
+      "id": "X-PV-SURVEILLANCE",
+      "query": "PREFIX c: <https://w3id.org/cm-pharme/2.1/> PREFIX l: <https://w3id.org/cm-pharme/experimental/four-domain/> PREFIX r: <https://w3id.org/cm-pharme/experimental/refinement/> PREFIX t: <urn:cmpe-lab:> SELECT ?source ?requirement WHERE { t:surveillance l:surveillanceSource ?source ; l:surveillanceRequirement ?requirement }",
+      "expected": [
+        [
+          "urn:cmpe-lab:report",
+          "urn:cmpe-lab:pvRule"
+        ]
+      ],
+      "fixture": "fixtures/refinement-X-PV-SURVEILLANCE-positive.ttl"
+    },
+    {
+      "id": "group-entry-count",
+      "query": "PREFIX g: <https://w3id.org/cm-pharme/experimental/source-group/> PREFIX t: <urn:cmpe-group:> SELECT (COUNT(?entry) AS ?count) WHERE { t:scope g:scopeEntry ?entry }",
+      "expected": [
+        [
+          "28"
+        ]
+      ],
+      "fixture": "fixtures/group-complete-documentary-scope.ttl"
+    },
+    {
+      "id": "group-combination-label",
+      "query": "PREFIX g: <https://w3id.org/cm-pharme/experimental/source-group/> PREFIX t: <urn:cmpe-group:> SELECT ?label WHERE { t:entry-1 g:sourceLabel ?label }",
+      "expected": [
+        [
+          "chlormadinone/ethinylestradiol"
+        ]
+      ],
+      "fixture": "fixtures/group-complete-documentary-scope.ttl"
+    },
+    {
+      "id": "group-source-version",
+      "query": "PREFIX g: <https://w3id.org/cm-pharme/experimental/source-group/> PREFIX t: <urn:cmpe-group:> SELECT ?version WHERE { t:scope g:scopeVersion ?version }",
+      "expected": [
+        [
+          "EMA-PRAC-183502-2026-EPITT20300-footnote4"
+        ]
+      ],
+      "fixture": "fixtures/group-complete-documentary-scope.ttl"
+    }
+  ],
+  "reasoner_cases": [
+    {
+      "id": "PV-schema-satisfiable",
+      "expected": true
+    },
+    {
+      "id": "PV-positive-consistent",
+      "expected": true,
+      "fixture": "fixtures/lab-PV-2-boundary.ttl"
+    },
+    {
+      "id": "PV-identity-collision-rejected",
+      "expected": false,
+      "fixture": "fixtures/lab-PV-3-reporting-is-record.ttl"
+    },
+    {
+      "id": "PV-source-scope-positive",
+      "expected": true,
+      "fixture": "fixtures/group-complete-documentary-scope.ttl"
+    },
+    {
+      "id": "PV-source-scope-is-not-carrier",
+      "expected": false,
+      "fixture": "fixtures/group-scope-is-source-collision.ttl"
+    }
+  ],
+  "limits": [
+    "Selected-signature projection; no proof of entailment preservation outside listed witnesses",
+    "Import interfaces are not counted as owned classes",
+    "SHACL profile requirements are not global OWL cardinalities",
+    "No native OntoUML module export is claimed",
+    "Source model semantic decisions, including PROV projection, remain pending"
+  ],
+  "source_scope_lookups": [
+    {
+      "id": "exact-unqualified-label",
+      "input": {
+        "version": "EMA-PRAC-183502-2026-EPITT20300-footnote4",
+        "label": "dienogest"
+      },
+      "expected": "SOURCE_LABEL_LISTED"
+    },
+    {
+      "id": "combination-as-listed",
+      "input": {
+        "version": "EMA-PRAC-183502-2026-EPITT20300-footnote4",
+        "label": "dienogest/estradiol"
+      },
+      "expected": "SOURCE_LABEL_LISTED"
+    },
+    {
+      "id": "no-component-propagation",
+      "input": {
+        "version": "EMA-PRAC-183502-2026-EPITT20300-footnote4",
+        "label": "ethinylestradiol"
+      },
+      "expected": "NOT_LISTED_IN_EXTRACTED_SCOPE_UNKNOWN_CHEMICAL_MEMBERSHIP"
+    },
+    {
+      "id": "no-reordered-combination-equivalence",
+      "input": {
+        "version": "EMA-PRAC-183502-2026-EPITT20300-footnote4",
+        "label": "ethinylestradiol/chlormadinone"
+      },
+      "expected": "NOT_LISTED_IN_EXTRACTED_SCOPE_UNKNOWN_CHEMICAL_MEMBERSHIP"
+    },
+    {
+      "id": "no-dose-assumption",
+      "input": {
+        "version": "EMA-PRAC-183502-2026-EPITT20300-footnote4",
+        "label": "medroxyprogesterone"
+      },
+      "expected": "UNKNOWN_QUALIFIERS"
+    },
+    {
+      "id": "source-version-mismatch",
+      "input": {
+        "label": "dienogest",
+        "version": "later"
+      },
+      "expected": "UNKNOWN_SOURCE_VERSION"
+    },
+    {
+      "id": "case-only-normalization",
+      "input": {
+        "version": "EMA-PRAC-183502-2026-EPITT20300-footnote4",
+        "label": " DIENOGEST "
+      },
+      "expected": "SOURCE_LABEL_LISTED"
+    },
+    {
+      "id": "amount-99",
+      "input": {
+        "version": "EMA-PRAC-183502-2026-EPITT20300-footnote4",
+        "label": "medroxyprogesterone",
+        "amount": 99,
+        "unit": "mg",
+        "route": "oral",
+        "basis": "source-formulation-amount"
+      },
+      "expected": "QUALIFIER_MATCH_UNDER_PROPOSED_MAPPING"
+    },
+    {
+      "id": "amount-100",
+      "input": {
+        "version": "EMA-PRAC-183502-2026-EPITT20300-footnote4",
+        "label": "medroxyprogesterone",
+        "amount": 100,
+        "unit": "mg",
+        "route": "oral",
+        "basis": "source-formulation-amount"
+      },
+      "expected": "OUTSIDE_THIS_ENTRY_UNDER_PROPOSED_MAPPING"
+    },
+    {
+      "id": "amount-101",
+      "input": {
+        "version": "EMA-PRAC-183502-2026-EPITT20300-footnote4",
+        "label": "medroxyprogesterone",
+        "amount": 101,
+        "unit": "mg",
+        "route": "oral",
+        "basis": "source-formulation-amount"
+      },
+      "expected": "OUTSIDE_THIS_ENTRY_UNDER_PROPOSED_MAPPING"
+    },
+    {
+      "id": "amount--1",
+      "input": {
+        "version": "EMA-PRAC-183502-2026-EPITT20300-footnote4",
+        "label": "medroxyprogesterone",
+        "amount": -1,
+        "unit": "mg",
+        "route": "oral",
+        "basis": "source-formulation-amount"
+      },
+      "expected": "INVALID_INPUT"
+    },
+    {
+      "id": "amount-NaN",
+      "input": {
+        "version": "EMA-PRAC-183502-2026-EPITT20300-footnote4",
+        "label": "medroxyprogesterone",
+        "amount": "NaN",
+        "unit": "mg",
+        "route": "oral",
+        "basis": "source-formulation-amount"
+      },
+      "expected": "INVALID_INPUT"
+    },
+    {
+      "id": "qualifier-{'unit': 'g'}",
+      "input": {
+        "version": "EMA-PRAC-183502-2026-EPITT20300-footnote4",
+        "label": "medroxyprogesterone",
+        "amount": 50,
+        "unit": "g",
+        "route": "oral",
+        "basis": "source-formulation-amount"
+      },
+      "expected": "UNKNOWN_UNSUPPORTED_UNIT"
+    },
+    {
+      "id": "qualifier-{'route': 'injection'}",
+      "input": {
+        "version": "EMA-PRAC-183502-2026-EPITT20300-footnote4",
+        "label": "medroxyprogesterone",
+        "amount": 50,
+        "unit": "mg",
+        "route": "injection",
+        "basis": "source-formulation-amount"
+      },
+      "expected": "OUTSIDE_THIS_ENTRY_UNDER_PROPOSED_MAPPING"
+    },
+    {
+      "id": "qualifier-{'basis': 'daily-dose'}",
+      "input": {
+        "version": "EMA-PRAC-183502-2026-EPITT20300-footnote4",
+        "label": "medroxyprogesterone",
+        "amount": 50,
+        "unit": "mg",
+        "route": "oral",
+        "basis": "daily-dose"
+      },
+      "expected": "UNKNOWN_AMOUNT_BASIS"
+    }
+  ],
+  "purpose_contract": {
+    "input": "A safety report or other documentary source, a product/substance or versioned source-defined group scope, and optionally an attributed assessment occurrence.",
+    "output": "Traceable signal content and assessment-result content; source statements separated from proposed mappings and actual events.",
+    "flow": "source record → reported content → safety signal → assessment → result; a documentary scope points to versioned lexical entries.",
+    "questions": [
+      "Which target and source are associated with a signal?",
+      "How do successive assessment results differ, and who is attributed as assessor?",
+      "Which jurisdiction/requirement supports surveillance?",
+      "Which labels are listed in this exact source scope, and which qualifiers remain unknown?"
+    ],
+    "definitions": {
+      "AdverseEventReportingActivity": "An occurrence reporting safety-related content through a record; it is not the record or a clinical adverse event.",
+      "PharmacovigilanceRequirement": "An information object specifying a pharmacovigilance requirement in its applicability context.",
+      "PostMarketSurveillanceActivity": "An occurrence conducting post-market surveillance under an identified requirement using identified sources.",
+      "SignalAssessmentActivity": "An occurrence assessing a safety signal; distinct from reporting and assessment-result content."
+    },
+    "remaining": "Actual assessment/time evidence, an ICSR contract, canonical chemical identity mapping, legal applicability/version review and native representation of accepted information profiles."
+  },
+  "interface_ownership": {
+    "http://www.w3.org/ns/prov#Entity": "PROV standard",
+    "https://w3id.org/cm-pharme/2.1/Assertion": "CM-PharmE shared/other-domain interface; final ownership review pending",
+    "https://w3id.org/cm-pharme/2.1/MedicinalProduct": "CM-PharmE shared/other-domain interface; final ownership review pending",
+    "https://w3id.org/cm-pharme/2.1/Organization": "CM-PharmE shared/other-domain interface; final ownership review pending",
+    "https://w3id.org/cm-pharme/2.1/PharmaceuticalSubstance": "CM-PharmE shared/other-domain interface; final ownership review pending",
+    "https://w3id.org/cm-pharme/2.1/RegulatoryJurisdiction": "CM-PharmE shared/other-domain interface; final ownership review pending",
+    "https://w3id.org/cm-pharme/2.1/SourceRecord": "CM-PharmE shared/other-domain interface; final ownership review pending",
+    "https://w3id.org/cm-pharme/experimental/reporting-context/StructuredClaim": "CM-PharmE shared/other-domain interface; final ownership review pending"
+  }
+}

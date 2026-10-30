@@ -1,0 +1,2625 @@
+@prefix ns1: <https://w3id.org/cm-pharme/experimental/reporting-context/> .
+@prefix ns2: <https://w3id.org/cm-pharme/experimental/refinement/> .
+@prefix ns3: <https://w3id.org/cm-pharme/2.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<urn:cmpe-context-case:resource-and-literal-object> {
+    <urn:cmpe-context:record> a ns3:SourceRecord ;
+        ns2:carrierClaim <urn:cmpe-context:claim> .
+
+    <urn:cmpe-context:claim> a ns1:StructuredClaim ;
+        ns1:claimOrigin "synthetic" ;
+        ns1:claimSubject <urn:cmpe-context:listing> ;
+        ns1:evidencePointer "synthetic:/claim" ;
+        ns1:objectResource <urn:cmpe-context:presentation> ;
+        ns1:objectValue "extra" ;
+        ns1:polarity "positive" ;
+        ns1:predicateIRI "https://w3id.org/cm-pharme/2.1/listingPresentation"^^xsd:anyURI .
+}
+
+<urn:cmpe-context-case:missing-portfolio> {
+    <urn:cmpe-context:context> a ns1:ReportingContextDescription ;
+        ns1:contextAction <urn:cmpe-context:action> ;
+        ns1:contextActor <urn:cmpe-context:org> ;
+        ns1:contextCountry "DE" ;
+        ns1:contextJurisdiction <urn:cmpe-context:jurisdiction> ;
+        ns1:contextPresentation <urn:cmpe-context:presentation> ;
+        ns1:contextProduct <urn:cmpe-context:product> ;
+        ns1:contextRole "MAH" ;
+        ns1:contextRoute "CAP" ;
+        ns1:contextVersion "synthetic-v1" ;
+        ns1:evaluatedAt "2026-10-10T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:marketingCountry "DE" ;
+        ns1:marketingStatus "marketed" ;
+        ns1:scenario "preparedness" ;
+        ns1:submissionKind "availability" .
+
+    <urn:cmpe-context:spec> a ns1:ReportingScopeSpecification ;
+        ns1:actionEvidence <urn:cmpe-context:notice> ;
+        ns1:actionEvidenceKind "action-announcement" ;
+        ns1:actionReference <urn:cmpe-context:action> ;
+        ns1:actionState "announced" ;
+        ns1:allowedRole "MAH" ;
+        ns1:allowedRoute "CAP" ;
+        ns1:effectiveFrom "2026-10-01T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:effectiveTo "2026-11-01T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:marketingPolicy "require-marketed-status" ;
+        ns1:reportingFrequency "synthetic-weekly" ;
+        ns1:scenario "preparedness" ;
+        ns1:scopeComplete true ;
+        ns1:scopeJurisdiction <urn:cmpe-context:jurisdiction> ;
+        ns1:scopeMode "enumerated" ;
+        ns1:scopedProduct <urn:cmpe-context:product> ;
+        ns1:specificationSource <urn:cmpe-context:document> ;
+        ns1:specificationVersion "synthetic-v1" ;
+        ns1:submissionKind "availability" .
+
+    <urn:cmpe-context:document> a ns3:SourceRecord .
+
+    <urn:cmpe-context:notice> a ns3:SourceRecord .
+
+    <urn:cmpe-context:org> a ns3:Organization .
+
+    <urn:cmpe-context:jurisdiction> a ns3:RegulatoryJurisdiction .
+
+    <urn:cmpe-context:presentation> a ns3:MedicinalProductPresentation ;
+        ns3:presentationOf <urn:cmpe-context:product> .
+
+    <urn:cmpe-context:product> a ns3:MedicinalProduct .
+}
+
+<urn:cmpe-context-case:missing-actor> {
+    <urn:cmpe-context:context> a ns1:ReportingContextDescription ;
+        ns1:contextAction <urn:cmpe-context:action> ;
+        ns1:contextCountry "DE" ;
+        ns1:contextJurisdiction <urn:cmpe-context:jurisdiction> ;
+        ns1:contextPresentation <urn:cmpe-context:presentation> ;
+        ns1:contextProduct <urn:cmpe-context:product> ;
+        ns1:contextRole "MAH" ;
+        ns1:contextRoute "CAP" ;
+        ns1:contextVersion "synthetic-v1" ;
+        ns1:evaluatedAt "2026-10-10T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:marketingCountry "DE" ;
+        ns1:marketingStatus "marketed" ;
+        ns1:portfolioRelationDeclared true ;
+        ns1:scenario "preparedness" ;
+        ns1:submissionKind "availability" .
+
+    <urn:cmpe-context:spec> a ns1:ReportingScopeSpecification ;
+        ns1:actionEvidence <urn:cmpe-context:notice> ;
+        ns1:actionEvidenceKind "action-announcement" ;
+        ns1:actionReference <urn:cmpe-context:action> ;
+        ns1:actionState "announced" ;
+        ns1:allowedRole "MAH" ;
+        ns1:allowedRoute "CAP" ;
+        ns1:effectiveFrom "2026-10-01T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:effectiveTo "2026-11-01T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:marketingPolicy "require-marketed-status" ;
+        ns1:reportingFrequency "synthetic-weekly" ;
+        ns1:scenario "preparedness" ;
+        ns1:scopeComplete true ;
+        ns1:scopeJurisdiction <urn:cmpe-context:jurisdiction> ;
+        ns1:scopeMode "enumerated" ;
+        ns1:scopedProduct <urn:cmpe-context:product> ;
+        ns1:specificationSource <urn:cmpe-context:document> ;
+        ns1:specificationVersion "synthetic-v1" ;
+        ns1:submissionKind "availability" .
+
+    <urn:cmpe-context:org> a ns3:Organization .
+
+    <urn:cmpe-context:document> a ns3:SourceRecord .
+
+    <urn:cmpe-context:notice> a ns3:SourceRecord .
+
+    <urn:cmpe-context:presentation> a ns3:MedicinalProductPresentation ;
+        ns3:presentationOf <urn:cmpe-context:product> .
+
+    <urn:cmpe-context:jurisdiction> a ns3:RegulatoryJurisdiction .
+
+    <urn:cmpe-context:product> a ns3:MedicinalProduct .
+}
+
+<urn:cmpe-context-case:mapping-is-not-source-extraction> {
+    <urn:cmpe-context:origin-record-0> a ns3:SourceRecord ;
+        ns2:carrierClaim <urn:cmpe-context:origin-claim-0> .
+
+    <urn:cmpe-context:origin-claim-0> a ns1:StructuredClaim ;
+        ns1:claimOrigin "mapping-interpretation" ;
+        ns1:claimSubject <urn:cmpe-context:listing> ;
+        ns1:evidencePointer "synthetic:/claim" ;
+        ns1:objectResource <urn:cmpe-context:presentation> ;
+        ns1:polarity "positive" ;
+        ns1:predicateIRI "https://w3id.org/cm-pharme/2.1/listingPresentation"^^xsd:anyURI .
+}
+
+<urn:cmpe-context-case:other-product-complete-list> {
+    <urn:cmpe-context:otherProduct> a ns3:MedicinalProduct .
+
+    <urn:cmpe-context:context> a ns1:ReportingContextDescription ;
+        ns1:contextAction <urn:cmpe-context:action> ;
+        ns1:contextActor <urn:cmpe-context:org> ;
+        ns1:contextCountry "DE" ;
+        ns1:contextJurisdiction <urn:cmpe-context:jurisdiction> ;
+        ns1:contextProduct <urn:cmpe-context:otherProduct> ;
+        ns1:contextRole "MAH" ;
+        ns1:contextRoute "CAP" ;
+        ns1:contextVersion "synthetic-v1" ;
+        ns1:evaluatedAt "2026-10-10T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:marketingCountry "DE" ;
+        ns1:marketingStatus "marketed" ;
+        ns1:portfolioRelationDeclared true ;
+        ns1:scenario "preparedness" ;
+        ns1:submissionKind "availability" .
+
+    <urn:cmpe-context:spec> a ns1:ReportingScopeSpecification ;
+        ns1:actionEvidence <urn:cmpe-context:notice> ;
+        ns1:actionEvidenceKind "action-announcement" ;
+        ns1:actionReference <urn:cmpe-context:action> ;
+        ns1:actionState "announced" ;
+        ns1:allowedRole "MAH" ;
+        ns1:allowedRoute "CAP" ;
+        ns1:effectiveFrom "2026-10-01T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:effectiveTo "2026-11-01T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:marketingPolicy "require-marketed-status" ;
+        ns1:reportingFrequency "synthetic-weekly" ;
+        ns1:scenario "preparedness" ;
+        ns1:scopeComplete true ;
+        ns1:scopeJurisdiction <urn:cmpe-context:jurisdiction> ;
+        ns1:scopeMode "enumerated" ;
+        ns1:scopedProduct <urn:cmpe-context:product> ;
+        ns1:specificationSource <urn:cmpe-context:document> ;
+        ns1:specificationVersion "synthetic-v1" ;
+        ns1:submissionKind "availability" .
+
+    <urn:cmpe-context:org> a ns3:Organization .
+
+    <urn:cmpe-context:document> a ns3:SourceRecord .
+
+    <urn:cmpe-context:notice> a ns3:SourceRecord .
+
+    <urn:cmpe-context:presentation> a ns3:MedicinalProductPresentation ;
+        ns3:presentationOf <urn:cmpe-context:product> .
+
+    <urn:cmpe-context:jurisdiction> a ns3:RegulatoryJurisdiction .
+
+    <urn:cmpe-context:product> a ns3:MedicinalProduct .
+}
+
+<urn:cmpe-context-case:not-in-MAH-portfolio> {
+    <urn:cmpe-context:context> a ns1:ReportingContextDescription ;
+        ns1:contextAction <urn:cmpe-context:action> ;
+        ns1:contextActor <urn:cmpe-context:org> ;
+        ns1:contextCountry "DE" ;
+        ns1:contextJurisdiction <urn:cmpe-context:jurisdiction> ;
+        ns1:contextPresentation <urn:cmpe-context:presentation> ;
+        ns1:contextProduct <urn:cmpe-context:product> ;
+        ns1:contextRole "MAH" ;
+        ns1:contextRoute "CAP" ;
+        ns1:contextVersion "synthetic-v1" ;
+        ns1:evaluatedAt "2026-10-10T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:marketingCountry "DE" ;
+        ns1:marketingStatus "marketed" ;
+        ns1:portfolioRelationDeclared false ;
+        ns1:scenario "preparedness" ;
+        ns1:submissionKind "availability" .
+
+    <urn:cmpe-context:spec> a ns1:ReportingScopeSpecification ;
+        ns1:actionEvidence <urn:cmpe-context:notice> ;
+        ns1:actionEvidenceKind "action-announcement" ;
+        ns1:actionReference <urn:cmpe-context:action> ;
+        ns1:actionState "announced" ;
+        ns1:allowedRole "MAH" ;
+        ns1:allowedRoute "CAP" ;
+        ns1:effectiveFrom "2026-10-01T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:effectiveTo "2026-11-01T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:marketingPolicy "require-marketed-status" ;
+        ns1:reportingFrequency "synthetic-weekly" ;
+        ns1:scenario "preparedness" ;
+        ns1:scopeComplete true ;
+        ns1:scopeJurisdiction <urn:cmpe-context:jurisdiction> ;
+        ns1:scopeMode "enumerated" ;
+        ns1:scopedProduct <urn:cmpe-context:product> ;
+        ns1:specificationSource <urn:cmpe-context:document> ;
+        ns1:specificationVersion "synthetic-v1" ;
+        ns1:submissionKind "availability" .
+
+    <urn:cmpe-context:org> a ns3:Organization .
+
+    <urn:cmpe-context:document> a ns3:SourceRecord .
+
+    <urn:cmpe-context:notice> a ns3:SourceRecord .
+
+    <urn:cmpe-context:presentation> a ns3:MedicinalProductPresentation ;
+        ns3:presentationOf <urn:cmpe-context:product> .
+
+    <urn:cmpe-context:jurisdiction> a ns3:RegulatoryJurisdiction .
+
+    <urn:cmpe-context:product> a ns3:MedicinalProduct .
+}
+
+<urn:cmpe-context-case:ambiguous-context-role> {
+    <urn:cmpe-context:context> a ns1:ReportingContextDescription ;
+        ns1:contextAction <urn:cmpe-context:action> ;
+        ns1:contextActor <urn:cmpe-context:org> ;
+        ns1:contextCountry "DE" ;
+        ns1:contextJurisdiction <urn:cmpe-context:jurisdiction> ;
+        ns1:contextPresentation <urn:cmpe-context:presentation> ;
+        ns1:contextProduct <urn:cmpe-context:product> ;
+        ns1:contextRole "MAH",
+            "NCA" ;
+        ns1:contextRoute "CAP" ;
+        ns1:contextVersion "synthetic-v1" ;
+        ns1:evaluatedAt "2026-10-10T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:marketingCountry "DE" ;
+        ns1:marketingStatus "marketed" ;
+        ns1:portfolioRelationDeclared true ;
+        ns1:scenario "preparedness" ;
+        ns1:submissionKind "availability" .
+
+    <urn:cmpe-context:spec> a ns1:ReportingScopeSpecification ;
+        ns1:actionEvidence <urn:cmpe-context:notice> ;
+        ns1:actionEvidenceKind "action-announcement" ;
+        ns1:actionReference <urn:cmpe-context:action> ;
+        ns1:actionState "announced" ;
+        ns1:allowedRole "MAH" ;
+        ns1:allowedRoute "CAP" ;
+        ns1:effectiveFrom "2026-10-01T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:effectiveTo "2026-11-01T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:marketingPolicy "require-marketed-status" ;
+        ns1:reportingFrequency "synthetic-weekly" ;
+        ns1:scenario "preparedness" ;
+        ns1:scopeComplete true ;
+        ns1:scopeJurisdiction <urn:cmpe-context:jurisdiction> ;
+        ns1:scopeMode "enumerated" ;
+        ns1:scopedProduct <urn:cmpe-context:product> ;
+        ns1:specificationSource <urn:cmpe-context:document> ;
+        ns1:specificationVersion "synthetic-v1" ;
+        ns1:submissionKind "availability" .
+
+    <urn:cmpe-context:org> a ns3:Organization .
+
+    <urn:cmpe-context:document> a ns3:SourceRecord .
+
+    <urn:cmpe-context:notice> a ns3:SourceRecord .
+
+    <urn:cmpe-context:presentation> a ns3:MedicinalProductPresentation ;
+        ns3:presentationOf <urn:cmpe-context:product> .
+
+    <urn:cmpe-context:jurisdiction> a ns3:RegulatoryJurisdiction .
+
+    <urn:cmpe-context:product> a ns3:MedicinalProduct .
+}
+
+<urn:cmpe-context-case:alternative-therapies-independent-of-marketing> {
+    <urn:cmpe-context:context> a ns1:ReportingContextDescription ;
+        ns1:contextAction <urn:cmpe-context:action> ;
+        ns1:contextActor <urn:cmpe-context:org> ;
+        ns1:contextCountry "DE" ;
+        ns1:contextJurisdiction <urn:cmpe-context:jurisdiction> ;
+        ns1:contextPresentation <urn:cmpe-context:presentation> ;
+        ns1:contextProduct <urn:cmpe-context:product> ;
+        ns1:contextRole "MAH" ;
+        ns1:contextRoute "CAP" ;
+        ns1:contextVersion "synthetic-v1" ;
+        ns1:evaluatedAt "2026-10-10T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:marketingCountry "DE" ;
+        ns1:portfolioRelationDeclared true ;
+        ns1:scenario "preparedness" ;
+        ns1:submissionKind "alternative-therapies" .
+
+    <urn:cmpe-context:spec> a ns1:ReportingScopeSpecification ;
+        ns1:actionEvidence <urn:cmpe-context:notice> ;
+        ns1:actionEvidenceKind "action-announcement" ;
+        ns1:actionReference <urn:cmpe-context:action> ;
+        ns1:actionState "announced" ;
+        ns1:allowedRole "MAH" ;
+        ns1:allowedRoute "CAP" ;
+        ns1:effectiveFrom "2026-10-01T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:effectiveTo "2026-11-01T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:marketingPolicy "not-a-condition" ;
+        ns1:reportingFrequency "synthetic-weekly" ;
+        ns1:scenario "preparedness" ;
+        ns1:scopeComplete true ;
+        ns1:scopeJurisdiction <urn:cmpe-context:jurisdiction> ;
+        ns1:scopeMode "enumerated" ;
+        ns1:scopedProduct <urn:cmpe-context:product> ;
+        ns1:specificationSource <urn:cmpe-context:document> ;
+        ns1:specificationVersion "synthetic-v1" ;
+        ns1:submissionKind "alternative-therapies" .
+
+    <urn:cmpe-context:org> a ns3:Organization .
+
+    <urn:cmpe-context:document> a ns3:SourceRecord .
+
+    <urn:cmpe-context:notice> a ns3:SourceRecord .
+
+    <urn:cmpe-context:presentation> a ns3:MedicinalProductPresentation ;
+        ns3:presentationOf <urn:cmpe-context:product> .
+
+    <urn:cmpe-context:jurisdiction> a ns3:RegulatoryJurisdiction .
+
+    <urn:cmpe-context:product> a ns3:MedicinalProduct .
+}
+
+<urn:cmpe-context-case:presentation-product-mismatch> {
+    <urn:cmpe-context:otherProduct> a ns3:MedicinalProduct .
+
+    <urn:cmpe-context:context> a ns1:ReportingContextDescription ;
+        ns1:contextAction <urn:cmpe-context:action> ;
+        ns1:contextActor <urn:cmpe-context:org> ;
+        ns1:contextCountry "DE" ;
+        ns1:contextJurisdiction <urn:cmpe-context:jurisdiction> ;
+        ns1:contextPresentation <urn:cmpe-context:presentation> ;
+        ns1:contextProduct <urn:cmpe-context:otherProduct> ;
+        ns1:contextRole "MAH" ;
+        ns1:contextRoute "CAP" ;
+        ns1:contextVersion "synthetic-v1" ;
+        ns1:evaluatedAt "2026-10-10T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:marketingCountry "DE" ;
+        ns1:marketingStatus "marketed" ;
+        ns1:portfolioRelationDeclared true ;
+        ns1:scenario "preparedness" ;
+        ns1:submissionKind "availability" .
+
+    <urn:cmpe-context:spec> a ns1:ReportingScopeSpecification ;
+        ns1:actionEvidence <urn:cmpe-context:notice> ;
+        ns1:actionEvidenceKind "action-announcement" ;
+        ns1:actionReference <urn:cmpe-context:action> ;
+        ns1:actionState "announced" ;
+        ns1:allowedRole "MAH" ;
+        ns1:allowedRoute "CAP" ;
+        ns1:effectiveFrom "2026-10-01T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:effectiveTo "2026-11-01T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:marketingPolicy "require-marketed-status" ;
+        ns1:reportingFrequency "synthetic-weekly" ;
+        ns1:scenario "preparedness" ;
+        ns1:scopeComplete true ;
+        ns1:scopeJurisdiction <urn:cmpe-context:jurisdiction> ;
+        ns1:scopeMode "enumerated" ;
+        ns1:scopedProduct <urn:cmpe-context:product> ;
+        ns1:specificationSource <urn:cmpe-context:document> ;
+        ns1:specificationVersion "synthetic-v1" ;
+        ns1:submissionKind "availability" .
+
+    <urn:cmpe-context:org> a ns3:Organization .
+
+    <urn:cmpe-context:document> a ns3:SourceRecord .
+
+    <urn:cmpe-context:notice> a ns3:SourceRecord .
+
+    <urn:cmpe-context:presentation> a ns3:MedicinalProductPresentation ;
+        ns3:presentationOf <urn:cmpe-context:product> .
+
+    <urn:cmpe-context:jurisdiction> a ns3:RegulatoryJurisdiction .
+
+    <urn:cmpe-context:product> a ns3:MedicinalProduct .
+}
+
+<urn:cmpe-context-case:missing-action-evidence> {
+    <urn:cmpe-context:context> a ns1:ReportingContextDescription ;
+        ns1:contextAction <urn:cmpe-context:action> ;
+        ns1:contextActor <urn:cmpe-context:org> ;
+        ns1:contextCountry "DE" ;
+        ns1:contextJurisdiction <urn:cmpe-context:jurisdiction> ;
+        ns1:contextPresentation <urn:cmpe-context:presentation> ;
+        ns1:contextProduct <urn:cmpe-context:product> ;
+        ns1:contextRole "MAH" ;
+        ns1:contextRoute "CAP" ;
+        ns1:contextVersion "synthetic-v1" ;
+        ns1:evaluatedAt "2026-10-10T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:marketingCountry "DE" ;
+        ns1:marketingStatus "marketed" ;
+        ns1:portfolioRelationDeclared true ;
+        ns1:scenario "preparedness" ;
+        ns1:submissionKind "availability" .
+
+    <urn:cmpe-context:spec> a ns1:ReportingScopeSpecification ;
+        ns1:actionEvidenceKind "action-announcement" ;
+        ns1:actionReference <urn:cmpe-context:action> ;
+        ns1:actionState "announced" ;
+        ns1:allowedRole "MAH" ;
+        ns1:allowedRoute "CAP" ;
+        ns1:effectiveFrom "2026-10-01T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:effectiveTo "2026-11-01T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:marketingPolicy "require-marketed-status" ;
+        ns1:reportingFrequency "synthetic-weekly" ;
+        ns1:scenario "preparedness" ;
+        ns1:scopeComplete true ;
+        ns1:scopeJurisdiction <urn:cmpe-context:jurisdiction> ;
+        ns1:scopeMode "enumerated" ;
+        ns1:scopedProduct <urn:cmpe-context:product> ;
+        ns1:specificationSource <urn:cmpe-context:document> ;
+        ns1:specificationVersion "synthetic-v1" ;
+        ns1:submissionKind "availability" .
+
+    <urn:cmpe-context:notice> a ns3:SourceRecord .
+
+    <urn:cmpe-context:org> a ns3:Organization .
+
+    <urn:cmpe-context:document> a ns3:SourceRecord .
+
+    <urn:cmpe-context:presentation> a ns3:MedicinalProductPresentation ;
+        ns3:presentationOf <urn:cmpe-context:product> .
+
+    <urn:cmpe-context:jurisdiction> a ns3:RegulatoryJurisdiction .
+
+    <urn:cmpe-context:product> a ns3:MedicinalProduct .
+}
+
+<urn:cmpe-context-case:wrong-submission-kind> {
+    <urn:cmpe-context:context> a ns1:ReportingContextDescription ;
+        ns1:contextAction <urn:cmpe-context:action> ;
+        ns1:contextActor <urn:cmpe-context:org> ;
+        ns1:contextCountry "DE" ;
+        ns1:contextJurisdiction <urn:cmpe-context:jurisdiction> ;
+        ns1:contextPresentation <urn:cmpe-context:presentation> ;
+        ns1:contextProduct <urn:cmpe-context:product> ;
+        ns1:contextRole "MAH" ;
+        ns1:contextRoute "CAP" ;
+        ns1:contextVersion "synthetic-v1" ;
+        ns1:evaluatedAt "2026-10-10T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:marketingCountry "DE" ;
+        ns1:marketingStatus "marketed" ;
+        ns1:portfolioRelationDeclared true ;
+        ns1:scenario "preparedness" ;
+        ns1:submissionKind "manufacturing" .
+
+    <urn:cmpe-context:spec> a ns1:ReportingScopeSpecification ;
+        ns1:actionEvidence <urn:cmpe-context:notice> ;
+        ns1:actionEvidenceKind "action-announcement" ;
+        ns1:actionReference <urn:cmpe-context:action> ;
+        ns1:actionState "announced" ;
+        ns1:allowedRole "MAH" ;
+        ns1:allowedRoute "CAP" ;
+        ns1:effectiveFrom "2026-10-01T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:effectiveTo "2026-11-01T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:marketingPolicy "require-marketed-status" ;
+        ns1:reportingFrequency "synthetic-weekly" ;
+        ns1:scenario "preparedness" ;
+        ns1:scopeComplete true ;
+        ns1:scopeJurisdiction <urn:cmpe-context:jurisdiction> ;
+        ns1:scopeMode "enumerated" ;
+        ns1:scopedProduct <urn:cmpe-context:product> ;
+        ns1:specificationSource <urn:cmpe-context:document> ;
+        ns1:specificationVersion "synthetic-v1" ;
+        ns1:submissionKind "availability" .
+
+    <urn:cmpe-context:notice> a ns3:SourceRecord .
+
+    <urn:cmpe-context:org> a ns3:Organization .
+
+    <urn:cmpe-context:document> a ns3:SourceRecord .
+
+    <urn:cmpe-context:presentation> a ns3:MedicinalProductPresentation ;
+        ns3:presentationOf <urn:cmpe-context:product> .
+
+    <urn:cmpe-context:jurisdiction> a ns3:RegulatoryJurisdiction .
+
+    <urn:cmpe-context:product> a ns3:MedicinalProduct .
+}
+
+<urn:cmpe-context-case:routine-no-action-notice-required> {
+    <urn:cmpe-context:context> a ns1:ReportingContextDescription ;
+        ns1:contextAction <urn:cmpe-context:action> ;
+        ns1:contextActor <urn:cmpe-context:org> ;
+        ns1:contextCountry "DE" ;
+        ns1:contextJurisdiction <urn:cmpe-context:jurisdiction> ;
+        ns1:contextPresentation <urn:cmpe-context:presentation> ;
+        ns1:contextProduct <urn:cmpe-context:product> ;
+        ns1:contextRole "MAH" ;
+        ns1:contextRoute "CAP" ;
+        ns1:contextVersion "synthetic-v1" ;
+        ns1:evaluatedAt "2026-10-10T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:marketingCountry "DE" ;
+        ns1:marketingStatus "marketed" ;
+        ns1:portfolioRelationDeclared true ;
+        ns1:scenario "routine" ;
+        ns1:submissionKind "routine-shortage" .
+
+    <urn:cmpe-context:spec> a ns1:ReportingScopeSpecification ;
+        ns1:actionEvidenceKind "action-announcement" ;
+        ns1:actionReference <urn:cmpe-context:action> ;
+        ns1:allowedRole "MAH" ;
+        ns1:allowedRoute "CAP" ;
+        ns1:effectiveFrom "2026-10-01T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:effectiveTo "2026-11-01T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:marketingPolicy "require-marketed-status" ;
+        ns1:reportingFrequency "synthetic-weekly" ;
+        ns1:scenario "routine" ;
+        ns1:scopeComplete true ;
+        ns1:scopeJurisdiction <urn:cmpe-context:jurisdiction> ;
+        ns1:scopeMode "enumerated" ;
+        ns1:scopedProduct <urn:cmpe-context:product> ;
+        ns1:specificationSource <urn:cmpe-context:document> ;
+        ns1:specificationVersion "synthetic-v1" ;
+        ns1:submissionKind "routine-shortage" .
+
+    <urn:cmpe-context:notice> a ns3:SourceRecord .
+
+    <urn:cmpe-context:org> a ns3:Organization .
+
+    <urn:cmpe-context:document> a ns3:SourceRecord .
+
+    <urn:cmpe-context:presentation> a ns3:MedicinalProductPresentation ;
+        ns3:presentationOf <urn:cmpe-context:product> .
+
+    <urn:cmpe-context:jurisdiction> a ns3:RegulatoryJurisdiction .
+
+    <urn:cmpe-context:product> a ns3:MedicinalProduct .
+}
+
+<urn:cmpe-context-case:complete-context-positive> {
+    <urn:cmpe-context:context> a ns1:ReportingContextDescription ;
+        ns1:contextAction <urn:cmpe-context:action> ;
+        ns1:contextActor <urn:cmpe-context:org> ;
+        ns1:contextCountry "DE" ;
+        ns1:contextJurisdiction <urn:cmpe-context:jurisdiction> ;
+        ns1:contextPresentation <urn:cmpe-context:presentation> ;
+        ns1:contextProduct <urn:cmpe-context:product> ;
+        ns1:contextRole "MAH" ;
+        ns1:contextRoute "CAP" ;
+        ns1:contextVersion "synthetic-v1" ;
+        ns1:evaluatedAt "2026-10-10T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:marketingCountry "DE" ;
+        ns1:marketingStatus "marketed" ;
+        ns1:portfolioRelationDeclared true ;
+        ns1:scenario "preparedness" ;
+        ns1:submissionKind "availability" .
+
+    <urn:cmpe-context:spec> a ns1:ReportingScopeSpecification ;
+        ns1:actionEvidence <urn:cmpe-context:notice> ;
+        ns1:actionEvidenceKind "action-announcement" ;
+        ns1:actionReference <urn:cmpe-context:action> ;
+        ns1:actionState "announced" ;
+        ns1:allowedRole "MAH" ;
+        ns1:allowedRoute "CAP" ;
+        ns1:effectiveFrom "2026-10-01T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:effectiveTo "2026-11-01T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:marketingPolicy "require-marketed-status" ;
+        ns1:reportingFrequency "synthetic-weekly" ;
+        ns1:scenario "preparedness" ;
+        ns1:scopeComplete true ;
+        ns1:scopeJurisdiction <urn:cmpe-context:jurisdiction> ;
+        ns1:scopeMode "enumerated" ;
+        ns1:scopedProduct <urn:cmpe-context:product> ;
+        ns1:specificationSource <urn:cmpe-context:document> ;
+        ns1:specificationVersion "synthetic-v1" ;
+        ns1:submissionKind "availability" .
+
+    <urn:cmpe-context:notice> a ns3:SourceRecord .
+
+    <urn:cmpe-context:org> a ns3:Organization .
+
+    <urn:cmpe-context:document> a ns3:SourceRecord .
+
+    <urn:cmpe-context:presentation> a ns3:MedicinalProductPresentation ;
+        ns3:presentationOf <urn:cmpe-context:product> .
+
+    <urn:cmpe-context:jurisdiction> a ns3:RegulatoryJurisdiction .
+
+    <urn:cmpe-context:product> a ns3:MedicinalProduct .
+}
+
+<urn:cmpe-context-case:type-claim-does-not-create-authorization> {
+    <urn:cmpe-context:record> a ns3:SourceRecord ;
+        ns2:carrierClaim <urn:cmpe-context:claim> .
+
+    <urn:cmpe-context:x> a _:N285f0731670644bf9c240ef9335b031b .
+
+    <urn:cmpe-context:claim> a ns1:StructuredClaim ;
+        ns1:claimOrigin "synthetic" ;
+        ns1:claimSubject <urn:cmpe-context:x> ;
+        ns1:evidencePointer "synthetic:/claim" ;
+        ns1:objectResource ns3:RegulatoryAuthorization ;
+        ns1:polarity "positive" ;
+        ns1:predicateIRI "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"^^xsd:anyURI .
+
+    _:N285f0731670644bf9c240ef9335b031b a owl:Class ;
+        owl:complementOf ns3:RegulatoryAuthorization .
+}
+
+<urn:cmpe-context-case:inclusive-start> {
+    <urn:cmpe-context:context> a ns1:ReportingContextDescription ;
+        ns1:contextAction <urn:cmpe-context:action> ;
+        ns1:contextActor <urn:cmpe-context:org> ;
+        ns1:contextCountry "DE" ;
+        ns1:contextJurisdiction <urn:cmpe-context:jurisdiction> ;
+        ns1:contextPresentation <urn:cmpe-context:presentation> ;
+        ns1:contextProduct <urn:cmpe-context:product> ;
+        ns1:contextRole "MAH" ;
+        ns1:contextRoute "CAP" ;
+        ns1:contextVersion "synthetic-v1" ;
+        ns1:evaluatedAt "2026-10-01T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:marketingCountry "DE" ;
+        ns1:marketingStatus "marketed" ;
+        ns1:portfolioRelationDeclared true ;
+        ns1:scenario "preparedness" ;
+        ns1:submissionKind "availability" .
+
+    <urn:cmpe-context:spec> a ns1:ReportingScopeSpecification ;
+        ns1:actionEvidence <urn:cmpe-context:notice> ;
+        ns1:actionEvidenceKind "action-announcement" ;
+        ns1:actionReference <urn:cmpe-context:action> ;
+        ns1:actionState "announced" ;
+        ns1:allowedRole "MAH" ;
+        ns1:allowedRoute "CAP" ;
+        ns1:effectiveFrom "2026-10-01T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:effectiveTo "2026-11-01T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:marketingPolicy "require-marketed-status" ;
+        ns1:reportingFrequency "synthetic-weekly" ;
+        ns1:scenario "preparedness" ;
+        ns1:scopeComplete true ;
+        ns1:scopeJurisdiction <urn:cmpe-context:jurisdiction> ;
+        ns1:scopeMode "enumerated" ;
+        ns1:scopedProduct <urn:cmpe-context:product> ;
+        ns1:specificationSource <urn:cmpe-context:document> ;
+        ns1:specificationVersion "synthetic-v1" ;
+        ns1:submissionKind "availability" .
+
+    <urn:cmpe-context:notice> a ns3:SourceRecord .
+
+    <urn:cmpe-context:org> a ns3:Organization .
+
+    <urn:cmpe-context:document> a ns3:SourceRecord .
+
+    <urn:cmpe-context:presentation> a ns3:MedicinalProductPresentation ;
+        ns3:presentationOf <urn:cmpe-context:product> .
+
+    <urn:cmpe-context:jurisdiction> a ns3:RegulatoryJurisdiction .
+
+    <urn:cmpe-context:product> a ns3:MedicinalProduct .
+}
+
+<urn:cmpe-context-case:claim-carrier-alias> {
+    <urn:cmpe-context:record> a ns3:SourceRecord ;
+        ns2:carrierClaim <urn:cmpe-context:claim> .
+
+    <urn:cmpe-context:claim> a ns1:StructuredClaim ;
+        owl:sameAs <urn:cmpe-context:record> ;
+        ns1:claimOrigin "synthetic" ;
+        ns1:claimSubject <urn:cmpe-context:listing> ;
+        ns1:evidencePointer "synthetic:/claim" ;
+        ns1:objectResource <urn:cmpe-context:presentation> ;
+        ns1:polarity "positive" ;
+        ns1:predicateIRI "https://w3id.org/cm-pharme/2.1/listingPresentation"^^xsd:anyURI .
+}
+
+<urn:cmpe-context-case:specification-is-not-source-carrier> {
+    <urn:cmpe-context:context> a ns1:ReportingContextDescription ;
+        ns1:contextAction <urn:cmpe-context:action> ;
+        ns1:contextActor <urn:cmpe-context:org> ;
+        ns1:contextCountry "DE" ;
+        ns1:contextJurisdiction <urn:cmpe-context:jurisdiction> ;
+        ns1:contextPresentation <urn:cmpe-context:presentation> ;
+        ns1:contextProduct <urn:cmpe-context:product> ;
+        ns1:contextRole "MAH" ;
+        ns1:contextRoute "CAP" ;
+        ns1:contextVersion "synthetic-v1" ;
+        ns1:evaluatedAt "2026-10-10T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:marketingCountry "DE" ;
+        ns1:marketingStatus "marketed" ;
+        ns1:portfolioRelationDeclared true ;
+        ns1:scenario "preparedness" ;
+        ns1:submissionKind "availability" .
+
+    <urn:cmpe-context:spec> a ns3:SourceRecord,
+            ns1:ReportingScopeSpecification ;
+        ns1:actionEvidence <urn:cmpe-context:notice> ;
+        ns1:actionEvidenceKind "action-announcement" ;
+        ns1:actionReference <urn:cmpe-context:action> ;
+        ns1:actionState "announced" ;
+        ns1:allowedRole "MAH" ;
+        ns1:allowedRoute "CAP" ;
+        ns1:effectiveFrom "2026-10-01T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:effectiveTo "2026-11-01T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:marketingPolicy "require-marketed-status" ;
+        ns1:reportingFrequency "synthetic-weekly" ;
+        ns1:scenario "preparedness" ;
+        ns1:scopeComplete true ;
+        ns1:scopeJurisdiction <urn:cmpe-context:jurisdiction> ;
+        ns1:scopeMode "enumerated" ;
+        ns1:scopedProduct <urn:cmpe-context:product> ;
+        ns1:specificationSource <urn:cmpe-context:document> ;
+        ns1:specificationVersion "synthetic-v1" ;
+        ns1:submissionKind "availability" .
+
+    <urn:cmpe-context:notice> a ns3:SourceRecord .
+
+    <urn:cmpe-context:org> a ns3:Organization .
+
+    <urn:cmpe-context:document> a ns3:SourceRecord .
+
+    <urn:cmpe-context:presentation> a ns3:MedicinalProductPresentation ;
+        ns3:presentationOf <urn:cmpe-context:product> .
+
+    <urn:cmpe-context:jurisdiction> a ns3:RegulatoryJurisdiction .
+
+    <urn:cmpe-context:product> a ns3:MedicinalProduct .
+}
+
+<urn:cmpe-context-case:context-is-an-assertion-description> {
+    <urn:cmpe-context:context> a _:N40859305635346c499ffc5db84797ff4,
+            ns1:ReportingContextDescription .
+
+    _:N40859305635346c499ffc5db84797ff4 a owl:Class ;
+        owl:complementOf ns3:Assertion .
+}
+
+<urn:cmpe-context-case:unknown-record-selector-rejected> {
+    <urn:cmpe-context:spec> a ns1:ReportingScopeSpecification ;
+        ns1:actionEvidence <urn:cmpe-context:notice> ;
+        ns1:actionEvidenceKind "action-announcement" ;
+        ns1:actionReference <urn:cmpe-context:action> ;
+        ns1:actionState "announced" ;
+        ns1:allowedRole "MAH" ;
+        ns1:allowedRoute "CAP" ;
+        ns1:effectiveFrom "2026-10-01T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:effectiveTo "2026-11-01T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:marketingPolicy "require-marketed-status" ;
+        ns1:reportingFrequency "synthetic-weekly" ;
+        ns1:scenario "preparedness" ;
+        ns1:scopeComplete true ;
+        ns1:scopeJurisdiction <urn:cmpe-context:jurisdiction> ;
+        ns1:scopeMode "enumerated" ;
+        ns1:scopedProduct <urn:cmpe-context:product> ;
+        ns1:specificationSource <urn:cmpe-context:document> ;
+        ns1:specificationVersion "synthetic-v1" ;
+        ns1:submissionKind "availability" .
+
+    <urn:cmpe-context:context> a ns1:ReportingContextDescription ;
+        ns1:contextAction <urn:cmpe-context:action> ;
+        ns1:contextActor <urn:cmpe-context:org> ;
+        ns1:contextCountry "DE" ;
+        ns1:contextJurisdiction <urn:cmpe-context:jurisdiction> ;
+        ns1:contextPresentation <urn:cmpe-context:presentation> ;
+        ns1:contextProduct <urn:cmpe-context:product> ;
+        ns1:contextRole "MAH" ;
+        ns1:contextRoute "CAP" ;
+        ns1:contextVersion "synthetic-v1" ;
+        ns1:evaluatedAt "2026-10-10T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:marketingCountry "DE" ;
+        ns1:marketingStatus "marketed" ;
+        ns1:portfolioRelationDeclared true ;
+        ns1:scenario "preparedness" ;
+        ns1:submissionKind "availability" .
+
+    <urn:cmpe-context:notice> a ns3:SourceRecord .
+
+    <urn:cmpe-context:org> a ns3:Organization .
+
+    <urn:cmpe-context:document> a ns3:SourceRecord .
+
+    <urn:cmpe-context:presentation> a ns3:MedicinalProductPresentation ;
+        ns3:presentationOf <urn:cmpe-context:product> .
+
+    <urn:cmpe-context:jurisdiction> a ns3:RegulatoryJurisdiction .
+
+    <urn:cmpe-context:product> a ns3:MedicinalProduct .
+}
+
+<urn:cmpe-context-case:wrong-jurisdiction> {
+    <urn:cmpe-context:otherJurisdiction> a ns3:RegulatoryJurisdiction .
+
+    <urn:cmpe-context:spec> a ns1:ReportingScopeSpecification ;
+        ns1:actionEvidence <urn:cmpe-context:notice> ;
+        ns1:actionEvidenceKind "action-announcement" ;
+        ns1:actionReference <urn:cmpe-context:action> ;
+        ns1:actionState "announced" ;
+        ns1:allowedRole "MAH" ;
+        ns1:allowedRoute "CAP" ;
+        ns1:effectiveFrom "2026-10-01T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:effectiveTo "2026-11-01T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:marketingPolicy "require-marketed-status" ;
+        ns1:reportingFrequency "synthetic-weekly" ;
+        ns1:scenario "preparedness" ;
+        ns1:scopeComplete true ;
+        ns1:scopeJurisdiction <urn:cmpe-context:jurisdiction> ;
+        ns1:scopeMode "enumerated" ;
+        ns1:scopedProduct <urn:cmpe-context:product> ;
+        ns1:specificationSource <urn:cmpe-context:document> ;
+        ns1:specificationVersion "synthetic-v1" ;
+        ns1:submissionKind "availability" .
+
+    <urn:cmpe-context:context> a ns1:ReportingContextDescription ;
+        ns1:contextAction <urn:cmpe-context:action> ;
+        ns1:contextActor <urn:cmpe-context:org> ;
+        ns1:contextCountry "DE" ;
+        ns1:contextJurisdiction <urn:cmpe-context:otherJurisdiction> ;
+        ns1:contextPresentation <urn:cmpe-context:presentation> ;
+        ns1:contextProduct <urn:cmpe-context:product> ;
+        ns1:contextRole "MAH" ;
+        ns1:contextRoute "CAP" ;
+        ns1:contextVersion "synthetic-v1" ;
+        ns1:evaluatedAt "2026-10-10T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:marketingCountry "DE" ;
+        ns1:marketingStatus "marketed" ;
+        ns1:portfolioRelationDeclared true ;
+        ns1:scenario "preparedness" ;
+        ns1:submissionKind "availability" .
+
+    <urn:cmpe-context:notice> a ns3:SourceRecord .
+
+    <urn:cmpe-context:org> a ns3:Organization .
+
+    <urn:cmpe-context:document> a ns3:SourceRecord .
+
+    <urn:cmpe-context:presentation> a ns3:MedicinalProductPresentation ;
+        ns3:presentationOf <urn:cmpe-context:product> .
+
+    <urn:cmpe-context:jurisdiction> a ns3:RegulatoryJurisdiction .
+
+    <urn:cmpe-context:product> a ns3:MedicinalProduct .
+}
+
+<urn:cmpe-context-case:literal-resource-object> {
+    <urn:cmpe-context:record> a ns3:SourceRecord ;
+        ns2:carrierClaim <urn:cmpe-context:claim> .
+
+    <urn:cmpe-context:claim> a ns1:StructuredClaim ;
+        ns1:claimOrigin "synthetic" ;
+        ns1:claimSubject <urn:cmpe-context:listing> ;
+        ns1:evidencePointer "synthetic:/claim" ;
+        ns1:objectResource "not-an-iri" ;
+        ns1:polarity "positive" ;
+        ns1:predicateIRI "https://w3id.org/cm-pharme/2.1/listingPresentation"^^xsd:anyURI .
+}
+
+<urn:cmpe-context-case:launch-is-not-action> {
+    <urn:cmpe-context:spec> a ns1:ReportingScopeSpecification ;
+        ns1:actionEvidence <urn:cmpe-context:notice> ;
+        ns1:actionEvidenceKind "platform-launch" ;
+        ns1:actionReference <urn:cmpe-context:action> ;
+        ns1:actionState "announced" ;
+        ns1:allowedRole "MAH" ;
+        ns1:allowedRoute "CAP" ;
+        ns1:effectiveFrom "2026-10-01T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:effectiveTo "2026-11-01T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:marketingPolicy "require-marketed-status" ;
+        ns1:reportingFrequency "synthetic-weekly" ;
+        ns1:scenario "preparedness" ;
+        ns1:scopeComplete true ;
+        ns1:scopeJurisdiction <urn:cmpe-context:jurisdiction> ;
+        ns1:scopeMode "enumerated" ;
+        ns1:scopedProduct <urn:cmpe-context:product> ;
+        ns1:specificationSource <urn:cmpe-context:document> ;
+        ns1:specificationVersion "synthetic-v1" ;
+        ns1:submissionKind "availability" .
+
+    <urn:cmpe-context:context> a ns1:ReportingContextDescription ;
+        ns1:contextAction <urn:cmpe-context:action> ;
+        ns1:contextActor <urn:cmpe-context:org> ;
+        ns1:contextCountry "DE" ;
+        ns1:contextJurisdiction <urn:cmpe-context:jurisdiction> ;
+        ns1:contextPresentation <urn:cmpe-context:presentation> ;
+        ns1:contextProduct <urn:cmpe-context:product> ;
+        ns1:contextRole "MAH" ;
+        ns1:contextRoute "CAP" ;
+        ns1:contextVersion "synthetic-v1" ;
+        ns1:evaluatedAt "2026-10-10T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:marketingCountry "DE" ;
+        ns1:marketingStatus "marketed" ;
+        ns1:portfolioRelationDeclared true ;
+        ns1:scenario "preparedness" ;
+        ns1:submissionKind "availability" .
+
+    <urn:cmpe-context:notice> a ns3:SourceRecord .
+
+    <urn:cmpe-context:org> a ns3:Organization .
+
+    <urn:cmpe-context:document> a ns3:SourceRecord .
+
+    <urn:cmpe-context:presentation> a ns3:MedicinalProductPresentation ;
+        ns3:presentationOf <urn:cmpe-context:product> .
+
+    <urn:cmpe-context:jurisdiction> a ns3:RegulatoryJurisdiction .
+
+    <urn:cmpe-context:product> a ns3:MedicinalProduct .
+}
+
+<urn:cmpe-context-case:context-description-not-shortage-fact> {
+    <urn:cmpe-context:spec> a ns1:ReportingScopeSpecification ;
+        ns1:actionEvidence <urn:cmpe-context:notice> ;
+        ns1:actionEvidenceKind "action-announcement" ;
+        ns1:actionReference <urn:cmpe-context:action> ;
+        ns1:actionState "announced" ;
+        ns1:allowedRole "MAH" ;
+        ns1:allowedRoute "CAP" ;
+        ns1:effectiveFrom "2026-10-01T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:effectiveTo "2026-11-01T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:marketingPolicy "require-marketed-status" ;
+        ns1:reportingFrequency "synthetic-weekly" ;
+        ns1:scenario "preparedness" ;
+        ns1:scopeComplete true ;
+        ns1:scopeJurisdiction <urn:cmpe-context:jurisdiction> ;
+        ns1:scopeMode "enumerated" ;
+        ns1:scopedProduct <urn:cmpe-context:product> ;
+        ns1:specificationSource <urn:cmpe-context:document> ;
+        ns1:specificationVersion "synthetic-v1" ;
+        ns1:submissionKind "availability" .
+
+    <urn:cmpe-context:context> a _:N3dac1a909bd6430d81fb8be7322b790e,
+            ns1:ReportingContextDescription ;
+        ns1:contextAction <urn:cmpe-context:action> ;
+        ns1:contextActor <urn:cmpe-context:org> ;
+        ns1:contextCountry "DE" ;
+        ns1:contextJurisdiction <urn:cmpe-context:jurisdiction> ;
+        ns1:contextPresentation <urn:cmpe-context:presentation> ;
+        ns1:contextProduct <urn:cmpe-context:product> ;
+        ns1:contextRole "MAH" ;
+        ns1:contextRoute "CAP" ;
+        ns1:contextVersion "synthetic-v1" ;
+        ns1:evaluatedAt "2026-10-10T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:marketingCountry "DE" ;
+        ns1:marketingStatus "marketed" ;
+        ns1:portfolioRelationDeclared true ;
+        ns1:scenario "preparedness" ;
+        ns1:submissionKind "availability" .
+
+    <urn:cmpe-context:notice> a ns3:SourceRecord .
+
+    <urn:cmpe-context:org> a ns3:Organization .
+
+    <urn:cmpe-context:document> a ns3:SourceRecord .
+
+    <urn:cmpe-context:presentation> a ns3:MedicinalProductPresentation ;
+        ns3:presentationOf <urn:cmpe-context:product> .
+
+    <urn:cmpe-context:jurisdiction> a ns3:RegulatoryJurisdiction .
+
+    <urn:cmpe-context:product> a ns3:MedicinalProduct .
+
+    _:N3dac1a909bd6430d81fb8be7322b790e a owl:Class ;
+        owl:complementOf ns3:MedicineShortageSituation .
+}
+
+<urn:cmpe-context-case:different-rule-version> {
+    <urn:cmpe-context:spec> a ns1:ReportingScopeSpecification ;
+        ns1:actionEvidence <urn:cmpe-context:notice> ;
+        ns1:actionEvidenceKind "action-announcement" ;
+        ns1:actionReference <urn:cmpe-context:action> ;
+        ns1:actionState "announced" ;
+        ns1:allowedRole "MAH" ;
+        ns1:allowedRoute "CAP" ;
+        ns1:effectiveFrom "2026-10-01T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:effectiveTo "2026-11-01T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:marketingPolicy "require-marketed-status" ;
+        ns1:reportingFrequency "synthetic-weekly" ;
+        ns1:scenario "preparedness" ;
+        ns1:scopeComplete true ;
+        ns1:scopeJurisdiction <urn:cmpe-context:jurisdiction> ;
+        ns1:scopeMode "enumerated" ;
+        ns1:scopedProduct <urn:cmpe-context:product> ;
+        ns1:specificationSource <urn:cmpe-context:document> ;
+        ns1:specificationVersion "synthetic-v1" ;
+        ns1:submissionKind "availability" .
+
+    <urn:cmpe-context:context> a ns1:ReportingContextDescription ;
+        ns1:contextAction <urn:cmpe-context:action> ;
+        ns1:contextActor <urn:cmpe-context:org> ;
+        ns1:contextCountry "DE" ;
+        ns1:contextJurisdiction <urn:cmpe-context:jurisdiction> ;
+        ns1:contextPresentation <urn:cmpe-context:presentation> ;
+        ns1:contextProduct <urn:cmpe-context:product> ;
+        ns1:contextRole "MAH" ;
+        ns1:contextRoute "CAP" ;
+        ns1:contextVersion "synthetic-v2" ;
+        ns1:evaluatedAt "2026-10-10T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:marketingCountry "DE" ;
+        ns1:marketingStatus "marketed" ;
+        ns1:portfolioRelationDeclared true ;
+        ns1:scenario "preparedness" ;
+        ns1:submissionKind "availability" .
+
+    <urn:cmpe-context:notice> a ns3:SourceRecord .
+
+    <urn:cmpe-context:org> a ns3:Organization .
+
+    <urn:cmpe-context:document> a ns3:SourceRecord .
+
+    <urn:cmpe-context:presentation> a ns3:MedicinalProductPresentation ;
+        ns3:presentationOf <urn:cmpe-context:product> .
+
+    <urn:cmpe-context:jurisdiction> a ns3:RegulatoryJurisdiction .
+
+    <urn:cmpe-context:product> a ns3:MedicinalProduct .
+}
+
+<urn:cmpe-context-case:positive-source-claim> {
+    <urn:cmpe-context:record> a ns3:SourceRecord ;
+        ns2:carrierClaim <urn:cmpe-context:claim> .
+
+    <urn:cmpe-context:claim> a ns1:StructuredClaim ;
+        ns1:claimOrigin "synthetic" ;
+        ns1:claimSubject <urn:cmpe-context:listing> ;
+        ns1:evidencePointer "synthetic:/claim" ;
+        ns1:objectResource <urn:cmpe-context:presentation> ;
+        ns1:polarity "positive" ;
+        ns1:predicateIRI "https://w3id.org/cm-pharme/2.1/listingPresentation"^^xsd:anyURI .
+}
+
+<urn:cmpe-context-case:wrong-role> {
+    <urn:cmpe-context:spec> a ns1:ReportingScopeSpecification ;
+        ns1:actionEvidence <urn:cmpe-context:notice> ;
+        ns1:actionEvidenceKind "action-announcement" ;
+        ns1:actionReference <urn:cmpe-context:action> ;
+        ns1:actionState "announced" ;
+        ns1:allowedRole "MAH" ;
+        ns1:allowedRoute "CAP" ;
+        ns1:effectiveFrom "2026-10-01T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:effectiveTo "2026-11-01T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:marketingPolicy "require-marketed-status" ;
+        ns1:reportingFrequency "synthetic-weekly" ;
+        ns1:scenario "preparedness" ;
+        ns1:scopeComplete true ;
+        ns1:scopeJurisdiction <urn:cmpe-context:jurisdiction> ;
+        ns1:scopeMode "enumerated" ;
+        ns1:scopedProduct <urn:cmpe-context:product> ;
+        ns1:specificationSource <urn:cmpe-context:document> ;
+        ns1:specificationVersion "synthetic-v1" ;
+        ns1:submissionKind "availability" .
+
+    <urn:cmpe-context:context> a ns1:ReportingContextDescription ;
+        ns1:contextAction <urn:cmpe-context:action> ;
+        ns1:contextActor <urn:cmpe-context:org> ;
+        ns1:contextCountry "DE" ;
+        ns1:contextJurisdiction <urn:cmpe-context:jurisdiction> ;
+        ns1:contextPresentation <urn:cmpe-context:presentation> ;
+        ns1:contextProduct <urn:cmpe-context:product> ;
+        ns1:contextRole "NCA" ;
+        ns1:contextRoute "CAP" ;
+        ns1:contextVersion "synthetic-v1" ;
+        ns1:evaluatedAt "2026-10-10T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:marketingCountry "DE" ;
+        ns1:marketingStatus "marketed" ;
+        ns1:portfolioRelationDeclared true ;
+        ns1:scenario "preparedness" ;
+        ns1:submissionKind "availability" .
+
+    <urn:cmpe-context:notice> a ns3:SourceRecord .
+
+    <urn:cmpe-context:org> a ns3:Organization .
+
+    <urn:cmpe-context:document> a ns3:SourceRecord .
+
+    <urn:cmpe-context:presentation> a ns3:MedicinalProductPresentation ;
+        ns3:presentationOf <urn:cmpe-context:product> .
+
+    <urn:cmpe-context:jurisdiction> a ns3:RegulatoryJurisdiction .
+
+    <urn:cmpe-context:product> a ns3:MedicinalProduct .
+}
+
+<urn:cmpe-context-case:claim-without-carrier> {
+    <urn:cmpe-context:record> a ns3:SourceRecord .
+
+    <urn:cmpe-context:claim> a ns1:StructuredClaim ;
+        ns1:claimOrigin "synthetic" ;
+        ns1:claimSubject <urn:cmpe-context:listing> ;
+        ns1:evidencePointer "synthetic:/claim" ;
+        ns1:objectResource <urn:cmpe-context:presentation> ;
+        ns1:polarity "positive" ;
+        ns1:predicateIRI "https://w3id.org/cm-pharme/2.1/listingPresentation"^^xsd:anyURI .
+}
+
+<urn:cmpe-context-case:conflicting-source-claims> {
+    <urn:cmpe-context:otherRecord> a ns3:SourceRecord ;
+        ns2:carrierClaim <urn:cmpe-context:counterclaim> .
+
+    <urn:cmpe-context:counterclaim> a ns1:StructuredClaim ;
+        ns1:claimOrigin "synthetic" ;
+        ns1:claimSubject <urn:cmpe-context:listing> ;
+        ns1:evidencePointer "synthetic:/claim" ;
+        ns1:objectResource <urn:cmpe-context:presentation> ;
+        ns1:polarity "negative" ;
+        ns1:predicateIRI "https://w3id.org/cm-pharme/2.1/listingPresentation"^^xsd:anyURI .
+
+    <urn:cmpe-context:record> a ns3:SourceRecord ;
+        ns2:carrierClaim <urn:cmpe-context:claim> .
+
+    <urn:cmpe-context:claim> a ns1:StructuredClaim ;
+        ns1:claimOrigin "synthetic" ;
+        ns1:claimSubject <urn:cmpe-context:listing> ;
+        ns1:evidencePointer "synthetic:/claim" ;
+        ns1:objectResource <urn:cmpe-context:presentation> ;
+        ns1:polarity "positive" ;
+        ns1:predicateIRI "https://w3id.org/cm-pharme/2.1/listingPresentation"^^xsd:anyURI .
+}
+
+<urn:cmpe-context-case:guidance-is-not-action> {
+    <urn:cmpe-context:spec> a ns1:ReportingScopeSpecification ;
+        ns1:actionEvidence <urn:cmpe-context:notice> ;
+        ns1:actionEvidenceKind "guidance" ;
+        ns1:actionReference <urn:cmpe-context:action> ;
+        ns1:actionState "announced" ;
+        ns1:allowedRole "MAH" ;
+        ns1:allowedRoute "CAP" ;
+        ns1:effectiveFrom "2026-10-01T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:effectiveTo "2026-11-01T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:marketingPolicy "require-marketed-status" ;
+        ns1:reportingFrequency "synthetic-weekly" ;
+        ns1:scenario "preparedness" ;
+        ns1:scopeComplete true ;
+        ns1:scopeJurisdiction <urn:cmpe-context:jurisdiction> ;
+        ns1:scopeMode "enumerated" ;
+        ns1:scopedProduct <urn:cmpe-context:product> ;
+        ns1:specificationSource <urn:cmpe-context:document> ;
+        ns1:specificationVersion "synthetic-v1" ;
+        ns1:submissionKind "availability" .
+
+    <urn:cmpe-context:context> a ns1:ReportingContextDescription ;
+        ns1:contextAction <urn:cmpe-context:action> ;
+        ns1:contextActor <urn:cmpe-context:org> ;
+        ns1:contextCountry "DE" ;
+        ns1:contextJurisdiction <urn:cmpe-context:jurisdiction> ;
+        ns1:contextPresentation <urn:cmpe-context:presentation> ;
+        ns1:contextProduct <urn:cmpe-context:product> ;
+        ns1:contextRole "MAH" ;
+        ns1:contextRoute "CAP" ;
+        ns1:contextVersion "synthetic-v1" ;
+        ns1:evaluatedAt "2026-10-10T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:marketingCountry "DE" ;
+        ns1:marketingStatus "marketed" ;
+        ns1:portfolioRelationDeclared true ;
+        ns1:scenario "preparedness" ;
+        ns1:submissionKind "availability" .
+
+    <urn:cmpe-context:notice> a ns3:SourceRecord .
+
+    <urn:cmpe-context:org> a ns3:Organization .
+
+    <urn:cmpe-context:document> a ns3:SourceRecord .
+
+    <urn:cmpe-context:presentation> a ns3:MedicinalProductPresentation ;
+        ns3:presentationOf <urn:cmpe-context:product> .
+
+    <urn:cmpe-context:jurisdiction> a ns3:RegulatoryJurisdiction .
+
+    <urn:cmpe-context:product> a ns3:MedicinalProduct .
+}
+
+<urn:cmpe-context-case:structured-claim-positive> {
+    <urn:cmpe-context:record> a ns3:SourceRecord ;
+        ns2:carrierClaim <urn:cmpe-context:claim> .
+
+    <urn:cmpe-context:claim> a ns1:StructuredClaim ;
+        ns1:claimOrigin "synthetic" ;
+        ns1:claimSubject <urn:cmpe-context:listing> ;
+        ns1:evidencePointer "synthetic:/claim" ;
+        ns1:objectResource <urn:cmpe-context:presentation> ;
+        ns1:polarity "positive" ;
+        ns1:predicateIRI "https://w3id.org/cm-pharme/2.1/listingPresentation"^^xsd:anyURI .
+}
+
+<urn:cmpe-context-case:negative-source-claim> {
+    <urn:cmpe-context:denial> a ns1:StructuredClaim ;
+        ns1:claimOrigin "synthetic" ;
+        ns1:claimSubject <urn:cmpe-context:listing> ;
+        ns1:evidencePointer "synthetic:/claim" ;
+        ns1:objectResource <urn:cmpe-context:presentation> ;
+        ns1:polarity "negative" ;
+        ns1:predicateIRI "https://w3id.org/cm-pharme/2.1/listingPresentation"^^xsd:anyURI .
+
+    <urn:cmpe-context:otherRecord> a ns3:SourceRecord ;
+        ns2:carrierClaim <urn:cmpe-context:denial> .
+}
+
+<urn:cmpe-context-case:complete-synthetic-context> {
+    <urn:cmpe-context:spec> a ns1:ReportingScopeSpecification ;
+        ns1:actionEvidence <urn:cmpe-context:notice> ;
+        ns1:actionEvidenceKind "action-announcement" ;
+        ns1:actionReference <urn:cmpe-context:action> ;
+        ns1:actionState "announced" ;
+        ns1:allowedRole "MAH" ;
+        ns1:allowedRoute "CAP" ;
+        ns1:effectiveFrom "2026-10-01T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:effectiveTo "2026-11-01T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:marketingPolicy "require-marketed-status" ;
+        ns1:reportingFrequency "synthetic-weekly" ;
+        ns1:scenario "preparedness" ;
+        ns1:scopeComplete true ;
+        ns1:scopeJurisdiction <urn:cmpe-context:jurisdiction> ;
+        ns1:scopeMode "enumerated" ;
+        ns1:scopedProduct <urn:cmpe-context:product> ;
+        ns1:specificationSource <urn:cmpe-context:document> ;
+        ns1:specificationVersion "synthetic-v1" ;
+        ns1:submissionKind "availability" .
+
+    <urn:cmpe-context:context> a ns1:ReportingContextDescription ;
+        ns1:contextAction <urn:cmpe-context:action> ;
+        ns1:contextActor <urn:cmpe-context:org> ;
+        ns1:contextCountry "DE" ;
+        ns1:contextJurisdiction <urn:cmpe-context:jurisdiction> ;
+        ns1:contextPresentation <urn:cmpe-context:presentation> ;
+        ns1:contextProduct <urn:cmpe-context:product> ;
+        ns1:contextRole "MAH" ;
+        ns1:contextRoute "CAP" ;
+        ns1:contextVersion "synthetic-v1" ;
+        ns1:evaluatedAt "2026-10-10T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:marketingCountry "DE" ;
+        ns1:marketingStatus "marketed" ;
+        ns1:portfolioRelationDeclared true ;
+        ns1:scenario "preparedness" ;
+        ns1:submissionKind "availability" .
+
+    <urn:cmpe-context:notice> a ns3:SourceRecord .
+
+    <urn:cmpe-context:org> a ns3:Organization .
+
+    <urn:cmpe-context:document> a ns3:SourceRecord .
+
+    <urn:cmpe-context:presentation> a ns3:MedicinalProductPresentation ;
+        ns3:presentationOf <urn:cmpe-context:product> .
+
+    <urn:cmpe-context:jurisdiction> a ns3:RegulatoryJurisdiction .
+
+    <urn:cmpe-context:product> a ns3:MedicinalProduct .
+}
+
+<urn:cmpe-context-case:claim-does-not-create-listing> {
+    <urn:cmpe-context:record> a ns3:SourceRecord ;
+        ns2:carrierClaim <urn:cmpe-context:claim> .
+
+    <urn:cmpe-context:listing> a _:N75de79adfe9c40039634b65db19408cd .
+
+    <urn:cmpe-context:claim> a ns1:StructuredClaim ;
+        ns1:claimOrigin "synthetic" ;
+        ns1:claimSubject <urn:cmpe-context:listing> ;
+        ns1:evidencePointer "synthetic:/claim" ;
+        ns1:objectResource <urn:cmpe-context:presentation> ;
+        ns1:polarity "positive" ;
+        ns1:predicateIRI "https://w3id.org/cm-pharme/2.1/listingPresentation"^^xsd:anyURI .
+
+    _:N75de79adfe9c40039634b65db19408cd a owl:Class ;
+        owl:complementOf ns3:MarketListing .
+}
+
+<urn:cmpe-context-case:conflicting-claims-remain-logically-consistent> {
+    <urn:cmpe-context:otherRecord> a ns3:SourceRecord ;
+        ns2:carrierClaim <urn:cmpe-context:counterclaim> .
+
+    <urn:cmpe-context:counterclaim> a ns1:StructuredClaim ;
+        ns1:claimOrigin "synthetic" ;
+        ns1:claimSubject <urn:cmpe-context:listing> ;
+        ns1:evidencePointer "synthetic:/claim" ;
+        ns1:objectResource <urn:cmpe-context:presentation> ;
+        ns1:polarity "negative" ;
+        ns1:predicateIRI "https://w3id.org/cm-pharme/2.1/listingPresentation"^^xsd:anyURI .
+
+    <urn:cmpe-context:record> a ns3:SourceRecord ;
+        ns2:carrierClaim <urn:cmpe-context:claim> .
+
+    <urn:cmpe-context:claim> a ns1:StructuredClaim ;
+        ns1:claimOrigin "synthetic" ;
+        ns1:claimSubject <urn:cmpe-context:listing> ;
+        ns1:evidencePointer "synthetic:/claim" ;
+        ns1:objectResource <urn:cmpe-context:presentation> ;
+        ns1:polarity "positive" ;
+        ns1:predicateIRI "https://w3id.org/cm-pharme/2.1/listingPresentation"^^xsd:anyURI .
+}
+
+<urn:cmpe-context-case:claim-carrier-identity-collision> {
+    <urn:cmpe-context:record> a ns3:SourceRecord ;
+        ns2:carrierClaim <urn:cmpe-context:claim> .
+
+    <urn:cmpe-context:claim> a ns1:StructuredClaim ;
+        owl:sameAs <urn:cmpe-context:record> ;
+        ns1:claimOrigin "synthetic" ;
+        ns1:claimSubject <urn:cmpe-context:listing> ;
+        ns1:evidencePointer "synthetic:/claim" ;
+        ns1:objectResource <urn:cmpe-context:presentation> ;
+        ns1:polarity "positive" ;
+        ns1:predicateIRI "https://w3id.org/cm-pharme/2.1/listingPresentation"^^xsd:anyURI .
+}
+
+<urn:cmpe-context-case:not-marketed-availability> {
+    <urn:cmpe-context:spec> a ns1:ReportingScopeSpecification ;
+        ns1:actionEvidence <urn:cmpe-context:notice> ;
+        ns1:actionEvidenceKind "action-announcement" ;
+        ns1:actionReference <urn:cmpe-context:action> ;
+        ns1:actionState "announced" ;
+        ns1:allowedRole "MAH" ;
+        ns1:allowedRoute "CAP" ;
+        ns1:effectiveFrom "2026-10-01T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:effectiveTo "2026-11-01T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:marketingPolicy "require-marketed-status" ;
+        ns1:reportingFrequency "synthetic-weekly" ;
+        ns1:scenario "preparedness" ;
+        ns1:scopeComplete true ;
+        ns1:scopeJurisdiction <urn:cmpe-context:jurisdiction> ;
+        ns1:scopeMode "enumerated" ;
+        ns1:scopedProduct <urn:cmpe-context:product> ;
+        ns1:specificationSource <urn:cmpe-context:document> ;
+        ns1:specificationVersion "synthetic-v1" ;
+        ns1:submissionKind "availability" .
+
+    <urn:cmpe-context:context> a ns1:ReportingContextDescription ;
+        ns1:contextAction <urn:cmpe-context:action> ;
+        ns1:contextActor <urn:cmpe-context:org> ;
+        ns1:contextCountry "DE" ;
+        ns1:contextJurisdiction <urn:cmpe-context:jurisdiction> ;
+        ns1:contextPresentation <urn:cmpe-context:presentation> ;
+        ns1:contextProduct <urn:cmpe-context:product> ;
+        ns1:contextRole "MAH" ;
+        ns1:contextRoute "CAP" ;
+        ns1:contextVersion "synthetic-v1" ;
+        ns1:evaluatedAt "2026-10-10T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:marketingCountry "DE" ;
+        ns1:marketingStatus "not-marketed" ;
+        ns1:portfolioRelationDeclared true ;
+        ns1:scenario "preparedness" ;
+        ns1:submissionKind "availability" .
+
+    <urn:cmpe-context:notice> a ns3:SourceRecord .
+
+    <urn:cmpe-context:org> a ns3:Organization .
+
+    <urn:cmpe-context:document> a ns3:SourceRecord .
+
+    <urn:cmpe-context:presentation> a ns3:MedicinalProductPresentation ;
+        ns3:presentationOf <urn:cmpe-context:product> .
+
+    <urn:cmpe-context:jurisdiction> a ns3:RegulatoryJurisdiction .
+
+    <urn:cmpe-context:product> a ns3:MedicinalProduct .
+}
+
+<urn:cmpe-context-case:untyped-source-reference> {
+    <urn:cmpe-context:spec> a ns1:ReportingScopeSpecification ;
+        ns1:actionEvidence <urn:cmpe-context:notice> ;
+        ns1:actionEvidenceKind "action-announcement" ;
+        ns1:actionReference <urn:cmpe-context:action> ;
+        ns1:actionState "announced" ;
+        ns1:allowedRole "MAH" ;
+        ns1:allowedRoute "CAP" ;
+        ns1:effectiveFrom "2026-10-01T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:effectiveTo "2026-11-01T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:marketingPolicy "require-marketed-status" ;
+        ns1:reportingFrequency "synthetic-weekly" ;
+        ns1:scenario "preparedness" ;
+        ns1:scopeComplete true ;
+        ns1:scopeJurisdiction <urn:cmpe-context:jurisdiction> ;
+        ns1:scopeMode "enumerated" ;
+        ns1:scopedProduct <urn:cmpe-context:product> ;
+        ns1:specificationSource <urn:cmpe-context:missingSource> ;
+        ns1:specificationVersion "synthetic-v1" ;
+        ns1:submissionKind "availability" .
+
+    <urn:cmpe-context:context> a ns1:ReportingContextDescription ;
+        ns1:contextAction <urn:cmpe-context:action> ;
+        ns1:contextActor <urn:cmpe-context:org> ;
+        ns1:contextCountry "DE" ;
+        ns1:contextJurisdiction <urn:cmpe-context:jurisdiction> ;
+        ns1:contextPresentation <urn:cmpe-context:presentation> ;
+        ns1:contextProduct <urn:cmpe-context:product> ;
+        ns1:contextRole "MAH" ;
+        ns1:contextRoute "CAP" ;
+        ns1:contextVersion "synthetic-v1" ;
+        ns1:evaluatedAt "2026-10-10T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:marketingCountry "DE" ;
+        ns1:marketingStatus "marketed" ;
+        ns1:portfolioRelationDeclared true ;
+        ns1:scenario "preparedness" ;
+        ns1:submissionKind "availability" .
+
+    <urn:cmpe-context:notice> a ns3:SourceRecord .
+
+    <urn:cmpe-context:document> a ns3:SourceRecord .
+
+    <urn:cmpe-context:org> a ns3:Organization .
+
+    <urn:cmpe-context:presentation> a ns3:MedicinalProductPresentation ;
+        ns3:presentationOf <urn:cmpe-context:product> .
+
+    <urn:cmpe-context:jurisdiction> a ns3:RegulatoryJurisdiction .
+
+    <urn:cmpe-context:product> a ns3:MedicinalProduct .
+}
+
+<urn:cmpe-context-case:absent-is-not-false> {
+    <urn:cmpe-context:record> a ns3:SourceRecord ;
+        ns2:carrierClaim <urn:cmpe-context:claim> .
+
+    <urn:cmpe-context:claim> a ns1:StructuredClaim ;
+        ns1:claimOrigin "synthetic" ;
+        ns1:claimSubject <urn:cmpe-context:listing> ;
+        ns1:evidencePointer "synthetic:/claim" ;
+        ns1:objectResource <urn:cmpe-context:presentation> ;
+        ns1:polarity "positive" ;
+        ns1:predicateIRI "https://w3id.org/cm-pharme/2.1/listingPresentation"^^xsd:anyURI .
+}
+
+<urn:cmpe-context-case:other-product-incomplete-list> {
+    <urn:cmpe-context:otherProduct> a ns3:MedicinalProduct .
+
+    <urn:cmpe-context:spec> a ns1:ReportingScopeSpecification ;
+        ns1:actionEvidence <urn:cmpe-context:notice> ;
+        ns1:actionEvidenceKind "action-announcement" ;
+        ns1:actionReference <urn:cmpe-context:action> ;
+        ns1:actionState "announced" ;
+        ns1:allowedRole "MAH" ;
+        ns1:allowedRoute "CAP" ;
+        ns1:effectiveFrom "2026-10-01T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:effectiveTo "2026-11-01T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:marketingPolicy "require-marketed-status" ;
+        ns1:reportingFrequency "synthetic-weekly" ;
+        ns1:scenario "preparedness" ;
+        ns1:scopeComplete false ;
+        ns1:scopeJurisdiction <urn:cmpe-context:jurisdiction> ;
+        ns1:scopeMode "enumerated" ;
+        ns1:scopedProduct <urn:cmpe-context:product> ;
+        ns1:specificationSource <urn:cmpe-context:document> ;
+        ns1:specificationVersion "synthetic-v1" ;
+        ns1:submissionKind "availability" .
+
+    <urn:cmpe-context:context> a ns1:ReportingContextDescription ;
+        ns1:contextAction <urn:cmpe-context:action> ;
+        ns1:contextActor <urn:cmpe-context:org> ;
+        ns1:contextCountry "DE" ;
+        ns1:contextJurisdiction <urn:cmpe-context:jurisdiction> ;
+        ns1:contextProduct <urn:cmpe-context:otherProduct> ;
+        ns1:contextRole "MAH" ;
+        ns1:contextRoute "CAP" ;
+        ns1:contextVersion "synthetic-v1" ;
+        ns1:evaluatedAt "2026-10-10T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:marketingCountry "DE" ;
+        ns1:marketingStatus "marketed" ;
+        ns1:portfolioRelationDeclared true ;
+        ns1:scenario "preparedness" ;
+        ns1:submissionKind "availability" .
+
+    <urn:cmpe-context:notice> a ns3:SourceRecord .
+
+    <urn:cmpe-context:document> a ns3:SourceRecord .
+
+    <urn:cmpe-context:org> a ns3:Organization .
+
+    <urn:cmpe-context:presentation> a ns3:MedicinalProductPresentation ;
+        ns3:presentationOf <urn:cmpe-context:product> .
+
+    <urn:cmpe-context:jurisdiction> a ns3:RegulatoryJurisdiction .
+
+    <urn:cmpe-context:product> a ns3:MedicinalProduct .
+}
+
+<urn:cmpe-context-case:literal-subject> {
+    <urn:cmpe-context:record> a ns3:SourceRecord ;
+        ns2:carrierClaim <urn:cmpe-context:claim> .
+
+    <urn:cmpe-context:claim> a ns1:StructuredClaim ;
+        ns1:claimOrigin "synthetic" ;
+        ns1:claimSubject "not-an-iri" ;
+        ns1:evidencePointer "synthetic:/claim" ;
+        ns1:objectResource <urn:cmpe-context:presentation> ;
+        ns1:polarity "positive" ;
+        ns1:predicateIRI "https://w3id.org/cm-pharme/2.1/listingPresentation"^^xsd:anyURI .
+}
+
+<urn:cmpe-context-case:resource-in-literal-slot> {
+    <urn:cmpe-context:record> a ns3:SourceRecord ;
+        ns2:carrierClaim <urn:cmpe-context:claim> .
+
+    <urn:cmpe-context:claim> a ns1:StructuredClaim ;
+        ns1:claimOrigin "synthetic" ;
+        ns1:claimSubject <urn:cmpe-context:listing> ;
+        ns1:evidencePointer "synthetic:/claim" ;
+        ns1:objectValue <urn:cmpe-context:wrongLiteral> ;
+        ns1:polarity "positive" ;
+        ns1:predicateIRI "https://w3id.org/cm-pharme/2.1/listingPresentation"^^xsd:anyURI .
+}
+
+<urn:cmpe-context-case:missing-claim-origin> {
+    <urn:cmpe-context:record> a ns3:SourceRecord ;
+        ns2:carrierClaim <urn:cmpe-context:claim> .
+
+    <urn:cmpe-context:claim> a ns1:StructuredClaim ;
+        ns1:claimSubject <urn:cmpe-context:listing> ;
+        ns1:evidencePointer "synthetic:/claim" ;
+        ns1:objectResource <urn:cmpe-context:presentation> ;
+        ns1:polarity "positive" ;
+        ns1:predicateIRI "https://w3id.org/cm-pharme/2.1/listingPresentation"^^xsd:anyURI .
+}
+
+<urn:cmpe-context-case:different-action> {
+    <urn:cmpe-context:spec> a ns1:ReportingScopeSpecification ;
+        ns1:actionEvidence <urn:cmpe-context:notice> ;
+        ns1:actionEvidenceKind "action-announcement" ;
+        ns1:actionReference <urn:cmpe-context:action> ;
+        ns1:actionState "announced" ;
+        ns1:allowedRole "MAH" ;
+        ns1:allowedRoute "CAP" ;
+        ns1:effectiveFrom "2026-10-01T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:effectiveTo "2026-11-01T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:marketingPolicy "require-marketed-status" ;
+        ns1:reportingFrequency "synthetic-weekly" ;
+        ns1:scenario "preparedness" ;
+        ns1:scopeComplete true ;
+        ns1:scopeJurisdiction <urn:cmpe-context:jurisdiction> ;
+        ns1:scopeMode "enumerated" ;
+        ns1:scopedProduct <urn:cmpe-context:product> ;
+        ns1:specificationSource <urn:cmpe-context:document> ;
+        ns1:specificationVersion "synthetic-v1" ;
+        ns1:submissionKind "availability" .
+
+    <urn:cmpe-context:context> a ns1:ReportingContextDescription ;
+        ns1:contextAction <urn:cmpe-context:otherAction> ;
+        ns1:contextActor <urn:cmpe-context:org> ;
+        ns1:contextCountry "DE" ;
+        ns1:contextJurisdiction <urn:cmpe-context:jurisdiction> ;
+        ns1:contextPresentation <urn:cmpe-context:presentation> ;
+        ns1:contextProduct <urn:cmpe-context:product> ;
+        ns1:contextRole "MAH" ;
+        ns1:contextRoute "CAP" ;
+        ns1:contextVersion "synthetic-v1" ;
+        ns1:evaluatedAt "2026-10-10T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:marketingCountry "DE" ;
+        ns1:marketingStatus "marketed" ;
+        ns1:portfolioRelationDeclared true ;
+        ns1:scenario "preparedness" ;
+        ns1:submissionKind "availability" .
+
+    <urn:cmpe-context:notice> a ns3:SourceRecord .
+
+    <urn:cmpe-context:document> a ns3:SourceRecord .
+
+    <urn:cmpe-context:org> a ns3:Organization .
+
+    <urn:cmpe-context:presentation> a ns3:MedicinalProductPresentation ;
+        ns3:presentationOf <urn:cmpe-context:product> .
+
+    <urn:cmpe-context:jurisdiction> a ns3:RegulatoryJurisdiction .
+
+    <urn:cmpe-context:product> a ns3:MedicinalProduct .
+}
+
+<urn:cmpe-context-case:missing-timezone> {
+    <urn:cmpe-context:spec> a ns1:ReportingScopeSpecification ;
+        ns1:actionEvidence <urn:cmpe-context:notice> ;
+        ns1:actionEvidenceKind "action-announcement" ;
+        ns1:actionReference <urn:cmpe-context:action> ;
+        ns1:actionState "announced" ;
+        ns1:allowedRole "MAH" ;
+        ns1:allowedRoute "CAP" ;
+        ns1:effectiveFrom "2026-10-01T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:effectiveTo "2026-11-01T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:marketingPolicy "require-marketed-status" ;
+        ns1:reportingFrequency "synthetic-weekly" ;
+        ns1:scenario "preparedness" ;
+        ns1:scopeComplete true ;
+        ns1:scopeJurisdiction <urn:cmpe-context:jurisdiction> ;
+        ns1:scopeMode "enumerated" ;
+        ns1:scopedProduct <urn:cmpe-context:product> ;
+        ns1:specificationSource <urn:cmpe-context:document> ;
+        ns1:specificationVersion "synthetic-v1" ;
+        ns1:submissionKind "availability" .
+
+    <urn:cmpe-context:context> a ns1:ReportingContextDescription ;
+        ns1:contextAction <urn:cmpe-context:action> ;
+        ns1:contextActor <urn:cmpe-context:org> ;
+        ns1:contextCountry "DE" ;
+        ns1:contextJurisdiction <urn:cmpe-context:jurisdiction> ;
+        ns1:contextPresentation <urn:cmpe-context:presentation> ;
+        ns1:contextProduct <urn:cmpe-context:product> ;
+        ns1:contextRole "MAH" ;
+        ns1:contextRoute "CAP" ;
+        ns1:contextVersion "synthetic-v1" ;
+        ns1:evaluatedAt "2026-10-10T00:00:00"^^xsd:dateTime ;
+        ns1:marketingCountry "DE" ;
+        ns1:marketingStatus "marketed" ;
+        ns1:portfolioRelationDeclared true ;
+        ns1:scenario "preparedness" ;
+        ns1:submissionKind "availability" .
+
+    <urn:cmpe-context:notice> a ns3:SourceRecord .
+
+    <urn:cmpe-context:document> a ns3:SourceRecord .
+
+    <urn:cmpe-context:org> a ns3:Organization .
+
+    <urn:cmpe-context:presentation> a ns3:MedicinalProductPresentation ;
+        ns3:presentationOf <urn:cmpe-context:product> .
+
+    <urn:cmpe-context:jurisdiction> a ns3:RegulatoryJurisdiction .
+
+    <urn:cmpe-context:product> a ns3:MedicinalProduct .
+}
+
+<urn:cmpe-context-case:unannounced-action> {
+    <urn:cmpe-context:spec> a ns1:ReportingScopeSpecification ;
+        ns1:actionEvidence <urn:cmpe-context:notice> ;
+        ns1:actionEvidenceKind "action-announcement" ;
+        ns1:actionReference <urn:cmpe-context:action> ;
+        ns1:actionState "not-announced" ;
+        ns1:allowedRole "MAH" ;
+        ns1:allowedRoute "CAP" ;
+        ns1:effectiveFrom "2026-10-01T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:effectiveTo "2026-11-01T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:marketingPolicy "require-marketed-status" ;
+        ns1:reportingFrequency "synthetic-weekly" ;
+        ns1:scenario "preparedness" ;
+        ns1:scopeComplete true ;
+        ns1:scopeJurisdiction <urn:cmpe-context:jurisdiction> ;
+        ns1:scopeMode "enumerated" ;
+        ns1:scopedProduct <urn:cmpe-context:product> ;
+        ns1:specificationSource <urn:cmpe-context:document> ;
+        ns1:specificationVersion "synthetic-v1" ;
+        ns1:submissionKind "availability" .
+
+    <urn:cmpe-context:context> a ns1:ReportingContextDescription ;
+        ns1:contextAction <urn:cmpe-context:action> ;
+        ns1:contextActor <urn:cmpe-context:org> ;
+        ns1:contextCountry "DE" ;
+        ns1:contextJurisdiction <urn:cmpe-context:jurisdiction> ;
+        ns1:contextPresentation <urn:cmpe-context:presentation> ;
+        ns1:contextProduct <urn:cmpe-context:product> ;
+        ns1:contextRole "MAH" ;
+        ns1:contextRoute "CAP" ;
+        ns1:contextVersion "synthetic-v1" ;
+        ns1:evaluatedAt "2026-10-10T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:marketingCountry "DE" ;
+        ns1:marketingStatus "marketed" ;
+        ns1:portfolioRelationDeclared true ;
+        ns1:scenario "preparedness" ;
+        ns1:submissionKind "availability" .
+
+    <urn:cmpe-context:notice> a ns3:SourceRecord .
+
+    <urn:cmpe-context:document> a ns3:SourceRecord .
+
+    <urn:cmpe-context:org> a ns3:Organization .
+
+    <urn:cmpe-context:presentation> a ns3:MedicinalProductPresentation ;
+        ns3:presentationOf <urn:cmpe-context:product> .
+
+    <urn:cmpe-context:jurisdiction> a ns3:RegulatoryJurisdiction .
+
+    <urn:cmpe-context:product> a ns3:MedicinalProduct .
+}
+
+<urn:cmpe-context-case:direct-source-extraction> {
+    <urn:cmpe-context:origin-record-0> a ns3:SourceRecord ;
+        ns2:carrierClaim <urn:cmpe-context:origin-claim-0> .
+
+    <urn:cmpe-context:origin-claim-0> a ns1:StructuredClaim ;
+        ns1:claimOrigin "source-extracted" ;
+        ns1:claimSubject <urn:cmpe-context:listing> ;
+        ns1:evidencePointer "synthetic:/claim" ;
+        ns1:objectResource <urn:cmpe-context:presentation> ;
+        ns1:polarity "positive" ;
+        ns1:predicateIRI "https://w3id.org/cm-pharme/2.1/listingPresentation"^^xsd:anyURI .
+}
+
+<urn:cmpe-context-case:manufacturing-independent-of-marketing> {
+    <urn:cmpe-context:spec> a ns1:ReportingScopeSpecification ;
+        ns1:actionEvidence <urn:cmpe-context:notice> ;
+        ns1:actionEvidenceKind "action-announcement" ;
+        ns1:actionReference <urn:cmpe-context:action> ;
+        ns1:actionState "announced" ;
+        ns1:allowedRole "MAH" ;
+        ns1:allowedRoute "CAP" ;
+        ns1:effectiveFrom "2026-10-01T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:effectiveTo "2026-11-01T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:marketingPolicy "not-a-condition" ;
+        ns1:reportingFrequency "synthetic-weekly" ;
+        ns1:scenario "preparedness" ;
+        ns1:scopeComplete true ;
+        ns1:scopeJurisdiction <urn:cmpe-context:jurisdiction> ;
+        ns1:scopeMode "enumerated" ;
+        ns1:scopedProduct <urn:cmpe-context:product> ;
+        ns1:specificationSource <urn:cmpe-context:document> ;
+        ns1:specificationVersion "synthetic-v1" ;
+        ns1:submissionKind "manufacturing" .
+
+    <urn:cmpe-context:context> a ns1:ReportingContextDescription ;
+        ns1:contextAction <urn:cmpe-context:action> ;
+        ns1:contextActor <urn:cmpe-context:org> ;
+        ns1:contextCountry "DE" ;
+        ns1:contextJurisdiction <urn:cmpe-context:jurisdiction> ;
+        ns1:contextPresentation <urn:cmpe-context:presentation> ;
+        ns1:contextProduct <urn:cmpe-context:product> ;
+        ns1:contextRole "MAH" ;
+        ns1:contextRoute "CAP" ;
+        ns1:contextVersion "synthetic-v1" ;
+        ns1:evaluatedAt "2026-10-10T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:marketingCountry "DE" ;
+        ns1:portfolioRelationDeclared true ;
+        ns1:scenario "preparedness" ;
+        ns1:submissionKind "manufacturing" .
+
+    <urn:cmpe-context:notice> a ns3:SourceRecord .
+
+    <urn:cmpe-context:document> a ns3:SourceRecord .
+
+    <urn:cmpe-context:org> a ns3:Organization .
+
+    <urn:cmpe-context:presentation> a ns3:MedicinalProductPresentation ;
+        ns3:presentationOf <urn:cmpe-context:product> .
+
+    <urn:cmpe-context:jurisdiction> a ns3:RegulatoryJurisdiction .
+
+    <urn:cmpe-context:product> a ns3:MedicinalProduct .
+}
+
+<urn:cmpe-context-case:complete-declared-match> {
+    <urn:cmpe-context:spec> a ns1:ReportingScopeSpecification ;
+        ns1:actionEvidence <urn:cmpe-context:notice> ;
+        ns1:actionEvidenceKind "action-announcement" ;
+        ns1:actionReference <urn:cmpe-context:action> ;
+        ns1:actionState "announced" ;
+        ns1:allowedRole "MAH" ;
+        ns1:allowedRoute "CAP" ;
+        ns1:effectiveFrom "2026-10-01T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:effectiveTo "2026-11-01T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:marketingPolicy "require-marketed-status" ;
+        ns1:reportingFrequency "synthetic-weekly" ;
+        ns1:scenario "preparedness" ;
+        ns1:scopeComplete true ;
+        ns1:scopeJurisdiction <urn:cmpe-context:jurisdiction> ;
+        ns1:scopeMode "enumerated" ;
+        ns1:scopedProduct <urn:cmpe-context:product> ;
+        ns1:specificationSource <urn:cmpe-context:document> ;
+        ns1:specificationVersion "synthetic-v1" ;
+        ns1:submissionKind "availability" .
+
+    <urn:cmpe-context:context> a ns1:ReportingContextDescription ;
+        ns1:contextAction <urn:cmpe-context:action> ;
+        ns1:contextActor <urn:cmpe-context:org> ;
+        ns1:contextCountry "DE" ;
+        ns1:contextJurisdiction <urn:cmpe-context:jurisdiction> ;
+        ns1:contextPresentation <urn:cmpe-context:presentation> ;
+        ns1:contextProduct <urn:cmpe-context:product> ;
+        ns1:contextRole "MAH" ;
+        ns1:contextRoute "CAP" ;
+        ns1:contextVersion "synthetic-v1" ;
+        ns1:evaluatedAt "2026-10-10T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:marketingCountry "DE" ;
+        ns1:marketingStatus "marketed" ;
+        ns1:portfolioRelationDeclared true ;
+        ns1:scenario "preparedness" ;
+        ns1:submissionKind "availability" .
+
+    <urn:cmpe-context:notice> a ns3:SourceRecord .
+
+    <urn:cmpe-context:document> a ns3:SourceRecord .
+
+    <urn:cmpe-context:org> a ns3:Organization .
+
+    <urn:cmpe-context:presentation> a ns3:MedicinalProductPresentation ;
+        ns3:presentationOf <urn:cmpe-context:product> .
+
+    <urn:cmpe-context:jurisdiction> a ns3:RegulatoryJurisdiction .
+
+    <urn:cmpe-context:product> a ns3:MedicinalProduct .
+}
+
+<urn:cmpe-context-case:scope-match-no-authorization> {
+    <urn:cmpe-context:spec> a ns1:ReportingScopeSpecification ;
+        ns1:actionEvidence <urn:cmpe-context:notice> ;
+        ns1:actionEvidenceKind "action-announcement" ;
+        ns1:actionReference <urn:cmpe-context:action> ;
+        ns1:actionState "announced" ;
+        ns1:allowedRole "MAH" ;
+        ns1:allowedRoute "CAP" ;
+        ns1:effectiveFrom "2026-10-01T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:effectiveTo "2026-11-01T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:marketingPolicy "require-marketed-status" ;
+        ns1:reportingFrequency "synthetic-weekly" ;
+        ns1:scenario "preparedness" ;
+        ns1:scopeComplete true ;
+        ns1:scopeJurisdiction <urn:cmpe-context:jurisdiction> ;
+        ns1:scopeMode "enumerated" ;
+        ns1:scopedProduct <urn:cmpe-context:product> ;
+        ns1:specificationSource <urn:cmpe-context:document> ;
+        ns1:specificationVersion "synthetic-v1" ;
+        ns1:submissionKind "availability" .
+
+    <urn:cmpe-context:context> a ns1:ReportingContextDescription ;
+        ns1:contextAction <urn:cmpe-context:action> ;
+        ns1:contextActor <urn:cmpe-context:org> ;
+        ns1:contextCountry "DE" ;
+        ns1:contextJurisdiction <urn:cmpe-context:jurisdiction> ;
+        ns1:contextPresentation <urn:cmpe-context:presentation> ;
+        ns1:contextProduct <urn:cmpe-context:product> ;
+        ns1:contextRole "MAH" ;
+        ns1:contextRoute "CAP" ;
+        ns1:contextVersion "synthetic-v1" ;
+        ns1:evaluatedAt "2026-10-10T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:marketingCountry "DE" ;
+        ns1:marketingStatus "marketed" ;
+        ns1:portfolioRelationDeclared true ;
+        ns1:scenario "preparedness" ;
+        ns1:submissionKind "availability" .
+
+    <urn:cmpe-context:notice> a ns3:SourceRecord .
+
+    <urn:cmpe-context:document> a ns3:SourceRecord .
+
+    <urn:cmpe-context:org> a _:Na6bd5f4bbd9c4835a1d3e3585f7b2323,
+            ns3:Organization .
+
+    <urn:cmpe-context:presentation> a ns3:MedicinalProductPresentation ;
+        ns3:presentationOf <urn:cmpe-context:product> .
+
+    <urn:cmpe-context:jurisdiction> a ns3:RegulatoryJurisdiction .
+
+    <urn:cmpe-context:product> a ns3:MedicinalProduct .
+
+    _:Na6bd5f4bbd9c4835a1d3e3585f7b2323 a owl:Class ;
+        owl:complementOf ns3:AuthorizedOrganizationRole .
+}
+
+<urn:cmpe-context-case:wrong-scenario> {
+    <urn:cmpe-context:spec> a ns1:ReportingScopeSpecification ;
+        ns1:actionEvidence <urn:cmpe-context:notice> ;
+        ns1:actionEvidenceKind "action-announcement" ;
+        ns1:actionReference <urn:cmpe-context:action> ;
+        ns1:actionState "announced" ;
+        ns1:allowedRole "MAH" ;
+        ns1:allowedRoute "CAP" ;
+        ns1:effectiveFrom "2026-10-01T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:effectiveTo "2026-11-01T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:marketingPolicy "require-marketed-status" ;
+        ns1:reportingFrequency "synthetic-weekly" ;
+        ns1:scenario "preparedness" ;
+        ns1:scopeComplete true ;
+        ns1:scopeJurisdiction <urn:cmpe-context:jurisdiction> ;
+        ns1:scopeMode "enumerated" ;
+        ns1:scopedProduct <urn:cmpe-context:product> ;
+        ns1:specificationSource <urn:cmpe-context:document> ;
+        ns1:specificationVersion "synthetic-v1" ;
+        ns1:submissionKind "availability" .
+
+    <urn:cmpe-context:context> a ns1:ReportingContextDescription ;
+        ns1:contextAction <urn:cmpe-context:action> ;
+        ns1:contextActor <urn:cmpe-context:org> ;
+        ns1:contextCountry "DE" ;
+        ns1:contextJurisdiction <urn:cmpe-context:jurisdiction> ;
+        ns1:contextPresentation <urn:cmpe-context:presentation> ;
+        ns1:contextProduct <urn:cmpe-context:product> ;
+        ns1:contextRole "MAH" ;
+        ns1:contextRoute "CAP" ;
+        ns1:contextVersion "synthetic-v1" ;
+        ns1:evaluatedAt "2026-10-10T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:marketingCountry "DE" ;
+        ns1:marketingStatus "marketed" ;
+        ns1:portfolioRelationDeclared true ;
+        ns1:scenario "crisis" ;
+        ns1:submissionKind "availability" .
+
+    <urn:cmpe-context:notice> a ns3:SourceRecord .
+
+    <urn:cmpe-context:document> a ns3:SourceRecord .
+
+    <urn:cmpe-context:org> a ns3:Organization .
+
+    <urn:cmpe-context:presentation> a ns3:MedicinalProductPresentation ;
+        ns3:presentationOf <urn:cmpe-context:product> .
+
+    <urn:cmpe-context:jurisdiction> a ns3:RegulatoryJurisdiction .
+
+    <urn:cmpe-context:product> a ns3:MedicinalProduct .
+}
+
+<urn:cmpe-context-case:temporary-unavailability-admitted> {
+    <urn:cmpe-context:spec> a ns1:ReportingScopeSpecification ;
+        ns1:actionEvidence <urn:cmpe-context:notice> ;
+        ns1:actionEvidenceKind "action-announcement" ;
+        ns1:actionReference <urn:cmpe-context:action> ;
+        ns1:actionState "announced" ;
+        ns1:allowedRole "MAH" ;
+        ns1:allowedRoute "CAP" ;
+        ns1:effectiveFrom "2026-10-01T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:effectiveTo "2026-11-01T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:marketingPolicy "require-marketed-status" ;
+        ns1:reportingFrequency "synthetic-weekly" ;
+        ns1:scenario "preparedness" ;
+        ns1:scopeComplete true ;
+        ns1:scopeJurisdiction <urn:cmpe-context:jurisdiction> ;
+        ns1:scopeMode "enumerated" ;
+        ns1:scopedProduct <urn:cmpe-context:product> ;
+        ns1:specificationSource <urn:cmpe-context:document> ;
+        ns1:specificationVersion "synthetic-v1" ;
+        ns1:submissionKind "availability" .
+
+    <urn:cmpe-context:context> a ns1:ReportingContextDescription ;
+        ns1:contextAction <urn:cmpe-context:action> ;
+        ns1:contextActor <urn:cmpe-context:org> ;
+        ns1:contextCountry "DE" ;
+        ns1:contextJurisdiction <urn:cmpe-context:jurisdiction> ;
+        ns1:contextPresentation <urn:cmpe-context:presentation> ;
+        ns1:contextProduct <urn:cmpe-context:product> ;
+        ns1:contextRole "MAH" ;
+        ns1:contextRoute "CAP" ;
+        ns1:contextVersion "synthetic-v1" ;
+        ns1:evaluatedAt "2026-10-10T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:marketingCountry "DE" ;
+        ns1:marketingStatus "temporarily-unavailable" ;
+        ns1:portfolioRelationDeclared true ;
+        ns1:scenario "preparedness" ;
+        ns1:submissionKind "availability" .
+
+    <urn:cmpe-context:notice> a ns3:SourceRecord .
+
+    <urn:cmpe-context:document> a ns3:SourceRecord .
+
+    <urn:cmpe-context:org> a ns3:Organization .
+
+    <urn:cmpe-context:presentation> a ns3:MedicinalProductPresentation ;
+        ns3:presentationOf <urn:cmpe-context:product> .
+
+    <urn:cmpe-context:jurisdiction> a ns3:RegulatoryJurisdiction .
+
+    <urn:cmpe-context:product> a ns3:MedicinalProduct .
+}
+
+<urn:cmpe-context-case:no-claim-object> {
+    <urn:cmpe-context:record> a ns3:SourceRecord ;
+        ns2:carrierClaim <urn:cmpe-context:claim> .
+
+    <urn:cmpe-context:claim> a ns1:StructuredClaim ;
+        ns1:claimOrigin "synthetic" ;
+        ns1:claimSubject <urn:cmpe-context:listing> ;
+        ns1:evidencePointer "synthetic:/claim" ;
+        ns1:polarity "positive" ;
+        ns1:predicateIRI "https://w3id.org/cm-pharme/2.1/listingPresentation"^^xsd:anyURI .
+}
+
+<urn:cmpe-context-case:source-denial-is-not-negative-world-assertion> {
+    <urn:cmpe-context:denial> a ns1:StructuredClaim ;
+        ns1:claimOrigin "synthetic" ;
+        ns1:claimSubject <urn:cmpe-context:listing> ;
+        ns1:evidencePointer "synthetic:/claim" ;
+        ns1:objectResource <urn:cmpe-context:presentation> ;
+        ns1:polarity "negative" ;
+        ns1:predicateIRI "https://w3id.org/cm-pharme/2.1/listingPresentation"^^xsd:anyURI .
+
+    <urn:cmpe-context:otherRecord> a ns3:SourceRecord ;
+        ns2:carrierClaim <urn:cmpe-context:denial> .
+
+    <urn:cmpe-context:listing> ns3:listingPresentation <urn:cmpe-context:presentation> .
+}
+
+<urn:cmpe-context-case:conflicting-mapping-proposals> {
+    <urn:cmpe-context:origin-record-1> a ns3:SourceRecord ;
+        ns2:carrierClaim <urn:cmpe-context:origin-claim-1> .
+
+    <urn:cmpe-context:origin-claim-1> a ns1:StructuredClaim ;
+        ns1:claimOrigin "mapping-interpretation" ;
+        ns1:claimSubject <urn:cmpe-context:listing> ;
+        ns1:evidencePointer "synthetic:/claim" ;
+        ns1:objectResource <urn:cmpe-context:presentation> ;
+        ns1:polarity "negative" ;
+        ns1:predicateIRI "https://w3id.org/cm-pharme/2.1/listingPresentation"^^xsd:anyURI .
+
+    <urn:cmpe-context:origin-record-0> a ns3:SourceRecord ;
+        ns2:carrierClaim <urn:cmpe-context:origin-claim-0> .
+
+    <urn:cmpe-context:origin-claim-0> a ns1:StructuredClaim ;
+        ns1:claimOrigin "mapping-interpretation" ;
+        ns1:claimSubject <urn:cmpe-context:listing> ;
+        ns1:evidencePointer "synthetic:/claim" ;
+        ns1:objectResource <urn:cmpe-context:presentation> ;
+        ns1:polarity "positive" ;
+        ns1:predicateIRI "https://w3id.org/cm-pharme/2.1/listingPresentation"^^xsd:anyURI .
+}
+
+<urn:cmpe-context-case:mixed-origin-answer> {
+    <urn:cmpe-context:origin-record-1> a ns3:SourceRecord ;
+        ns2:carrierClaim <urn:cmpe-context:origin-claim-1> .
+
+    <urn:cmpe-context:origin-claim-1> a ns1:StructuredClaim ;
+        ns1:claimOrigin "mapping-interpretation" ;
+        ns1:claimSubject <urn:cmpe-context:listing> ;
+        ns1:evidencePointer "synthetic:/claim" ;
+        ns1:objectResource <urn:cmpe-context:presentation> ;
+        ns1:polarity "positive" ;
+        ns1:predicateIRI "https://w3id.org/cm-pharme/2.1/listingPresentation"^^xsd:anyURI .
+
+    <urn:cmpe-context:origin-record-0> a ns3:SourceRecord ;
+        ns2:carrierClaim <urn:cmpe-context:origin-claim-0> .
+
+    <urn:cmpe-context:origin-claim-0> a ns1:StructuredClaim ;
+        ns1:claimOrigin "source-extracted" ;
+        ns1:claimSubject <urn:cmpe-context:listing> ;
+        ns1:evidencePointer "synthetic:/claim" ;
+        ns1:objectResource <urn:cmpe-context:presentation> ;
+        ns1:polarity "positive" ;
+        ns1:predicateIRI "https://w3id.org/cm-pharme/2.1/listingPresentation"^^xsd:anyURI .
+}
+
+<urn:cmpe-context-case:wrong-route> {
+    <urn:cmpe-context:spec> a ns1:ReportingScopeSpecification ;
+        ns1:actionEvidence <urn:cmpe-context:notice> ;
+        ns1:actionEvidenceKind "action-announcement" ;
+        ns1:actionReference <urn:cmpe-context:action> ;
+        ns1:actionState "announced" ;
+        ns1:allowedRole "MAH" ;
+        ns1:allowedRoute "CAP" ;
+        ns1:effectiveFrom "2026-10-01T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:effectiveTo "2026-11-01T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:marketingPolicy "require-marketed-status" ;
+        ns1:reportingFrequency "synthetic-weekly" ;
+        ns1:scenario "preparedness" ;
+        ns1:scopeComplete true ;
+        ns1:scopeJurisdiction <urn:cmpe-context:jurisdiction> ;
+        ns1:scopeMode "enumerated" ;
+        ns1:scopedProduct <urn:cmpe-context:product> ;
+        ns1:specificationSource <urn:cmpe-context:document> ;
+        ns1:specificationVersion "synthetic-v1" ;
+        ns1:submissionKind "availability" .
+
+    <urn:cmpe-context:context> a ns1:ReportingContextDescription ;
+        ns1:contextAction <urn:cmpe-context:action> ;
+        ns1:contextActor <urn:cmpe-context:org> ;
+        ns1:contextCountry "DE" ;
+        ns1:contextJurisdiction <urn:cmpe-context:jurisdiction> ;
+        ns1:contextPresentation <urn:cmpe-context:presentation> ;
+        ns1:contextProduct <urn:cmpe-context:product> ;
+        ns1:contextRole "MAH" ;
+        ns1:contextRoute "NAP" ;
+        ns1:contextVersion "synthetic-v1" ;
+        ns1:evaluatedAt "2026-10-10T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:marketingCountry "DE" ;
+        ns1:marketingStatus "marketed" ;
+        ns1:portfolioRelationDeclared true ;
+        ns1:scenario "preparedness" ;
+        ns1:submissionKind "availability" .
+
+    <urn:cmpe-context:notice> a ns3:SourceRecord .
+
+    <urn:cmpe-context:document> a ns3:SourceRecord .
+
+    <urn:cmpe-context:org> a ns3:Organization .
+
+    <urn:cmpe-context:presentation> a ns3:MedicinalProductPresentation ;
+        ns3:presentationOf <urn:cmpe-context:product> .
+
+    <urn:cmpe-context:jurisdiction> a ns3:RegulatoryJurisdiction .
+
+    <urn:cmpe-context:product> a ns3:MedicinalProduct .
+}
+
+<urn:cmpe-context-case:predicate-is-not-anyURI> {
+    <urn:cmpe-context:record> a ns3:SourceRecord ;
+        ns2:carrierClaim <urn:cmpe-context:claim> .
+
+    <urn:cmpe-context:claim> a ns1:StructuredClaim ;
+        ns1:claimOrigin "synthetic" ;
+        ns1:claimSubject <urn:cmpe-context:listing> ;
+        ns1:evidencePointer "synthetic:/claim" ;
+        ns1:objectResource <urn:cmpe-context:presentation> ;
+        ns1:polarity "positive" ;
+        ns1:predicateIRI "https://w3id.org/cm-pharme/2.1/listingPresentation" .
+}
+
+<urn:cmpe-context-case:missing-version> {
+    <urn:cmpe-context:spec> a ns1:ReportingScopeSpecification ;
+        ns1:actionEvidence <urn:cmpe-context:notice> ;
+        ns1:actionEvidenceKind "action-announcement" ;
+        ns1:actionReference <urn:cmpe-context:action> ;
+        ns1:actionState "announced" ;
+        ns1:allowedRole "MAH" ;
+        ns1:allowedRoute "CAP" ;
+        ns1:effectiveFrom "2026-10-01T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:effectiveTo "2026-11-01T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:marketingPolicy "require-marketed-status" ;
+        ns1:reportingFrequency "synthetic-weekly" ;
+        ns1:scenario "preparedness" ;
+        ns1:scopeComplete true ;
+        ns1:scopeJurisdiction <urn:cmpe-context:jurisdiction> ;
+        ns1:scopeMode "enumerated" ;
+        ns1:scopedProduct <urn:cmpe-context:product> ;
+        ns1:specificationSource <urn:cmpe-context:document> ;
+        ns1:specificationVersion "synthetic-v1" ;
+        ns1:submissionKind "availability" .
+
+    <urn:cmpe-context:context> a ns1:ReportingContextDescription ;
+        ns1:contextAction <urn:cmpe-context:action> ;
+        ns1:contextActor <urn:cmpe-context:org> ;
+        ns1:contextCountry "DE" ;
+        ns1:contextJurisdiction <urn:cmpe-context:jurisdiction> ;
+        ns1:contextPresentation <urn:cmpe-context:presentation> ;
+        ns1:contextProduct <urn:cmpe-context:product> ;
+        ns1:contextRole "MAH" ;
+        ns1:contextRoute "CAP" ;
+        ns1:evaluatedAt "2026-10-10T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:marketingCountry "DE" ;
+        ns1:marketingStatus "marketed" ;
+        ns1:portfolioRelationDeclared true ;
+        ns1:scenario "preparedness" ;
+        ns1:submissionKind "availability" .
+
+    <urn:cmpe-context:notice> a ns3:SourceRecord .
+
+    <urn:cmpe-context:document> a ns3:SourceRecord .
+
+    <urn:cmpe-context:org> a ns3:Organization .
+
+    <urn:cmpe-context:presentation> a ns3:MedicinalProductPresentation ;
+        ns3:presentationOf <urn:cmpe-context:product> .
+
+    <urn:cmpe-context:jurisdiction> a ns3:RegulatoryJurisdiction .
+
+    <urn:cmpe-context:product> a ns3:MedicinalProduct .
+}
+
+<urn:cmpe-context-case:expired-at-exclusive-end> {
+    <urn:cmpe-context:spec> a ns1:ReportingScopeSpecification ;
+        ns1:actionEvidence <urn:cmpe-context:notice> ;
+        ns1:actionEvidenceKind "action-announcement" ;
+        ns1:actionReference <urn:cmpe-context:action> ;
+        ns1:actionState "announced" ;
+        ns1:allowedRole "MAH" ;
+        ns1:allowedRoute "CAP" ;
+        ns1:effectiveFrom "2026-10-01T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:effectiveTo "2026-11-01T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:marketingPolicy "require-marketed-status" ;
+        ns1:reportingFrequency "synthetic-weekly" ;
+        ns1:scenario "preparedness" ;
+        ns1:scopeComplete true ;
+        ns1:scopeJurisdiction <urn:cmpe-context:jurisdiction> ;
+        ns1:scopeMode "enumerated" ;
+        ns1:scopedProduct <urn:cmpe-context:product> ;
+        ns1:specificationSource <urn:cmpe-context:document> ;
+        ns1:specificationVersion "synthetic-v1" ;
+        ns1:submissionKind "availability" .
+
+    <urn:cmpe-context:context> a ns1:ReportingContextDescription ;
+        ns1:contextAction <urn:cmpe-context:action> ;
+        ns1:contextActor <urn:cmpe-context:org> ;
+        ns1:contextCountry "DE" ;
+        ns1:contextJurisdiction <urn:cmpe-context:jurisdiction> ;
+        ns1:contextPresentation <urn:cmpe-context:presentation> ;
+        ns1:contextProduct <urn:cmpe-context:product> ;
+        ns1:contextRole "MAH" ;
+        ns1:contextRoute "CAP" ;
+        ns1:contextVersion "synthetic-v1" ;
+        ns1:evaluatedAt "2026-11-01T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:marketingCountry "DE" ;
+        ns1:marketingStatus "marketed" ;
+        ns1:portfolioRelationDeclared true ;
+        ns1:scenario "preparedness" ;
+        ns1:submissionKind "availability" .
+
+    <urn:cmpe-context:notice> a ns3:SourceRecord .
+
+    <urn:cmpe-context:document> a ns3:SourceRecord .
+
+    <urn:cmpe-context:org> a ns3:Organization .
+
+    <urn:cmpe-context:presentation> a ns3:MedicinalProductPresentation ;
+        ns3:presentationOf <urn:cmpe-context:product> .
+
+    <urn:cmpe-context:jurisdiction> a ns3:RegulatoryJurisdiction .
+
+    <urn:cmpe-context:product> a ns3:MedicinalProduct .
+}
+
+<urn:cmpe-context-case:frequency-not-hardcoded> {
+    <urn:cmpe-context:spec> a ns1:ReportingScopeSpecification ;
+        ns1:actionEvidence <urn:cmpe-context:notice> ;
+        ns1:actionEvidenceKind "action-announcement" ;
+        ns1:actionReference <urn:cmpe-context:action> ;
+        ns1:actionState "announced" ;
+        ns1:allowedRole "MAH" ;
+        ns1:allowedRoute "CAP" ;
+        ns1:effectiveFrom "2026-10-01T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:effectiveTo "2026-11-01T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:marketingPolicy "require-marketed-status" ;
+        ns1:reportingFrequency "synthetic-monthly" ;
+        ns1:scenario "preparedness" ;
+        ns1:scopeComplete true ;
+        ns1:scopeJurisdiction <urn:cmpe-context:jurisdiction> ;
+        ns1:scopeMode "enumerated" ;
+        ns1:scopedProduct <urn:cmpe-context:product> ;
+        ns1:specificationSource <urn:cmpe-context:document> ;
+        ns1:specificationVersion "synthetic-v1" ;
+        ns1:submissionKind "availability" .
+
+    <urn:cmpe-context:context> a ns1:ReportingContextDescription ;
+        ns1:contextAction <urn:cmpe-context:action> ;
+        ns1:contextActor <urn:cmpe-context:org> ;
+        ns1:contextCountry "DE" ;
+        ns1:contextJurisdiction <urn:cmpe-context:jurisdiction> ;
+        ns1:contextPresentation <urn:cmpe-context:presentation> ;
+        ns1:contextProduct <urn:cmpe-context:product> ;
+        ns1:contextRole "MAH" ;
+        ns1:contextRoute "CAP" ;
+        ns1:contextVersion "synthetic-v1" ;
+        ns1:evaluatedAt "2026-10-10T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:marketingCountry "DE" ;
+        ns1:marketingStatus "marketed" ;
+        ns1:portfolioRelationDeclared true ;
+        ns1:scenario "preparedness" ;
+        ns1:submissionKind "availability" .
+
+    <urn:cmpe-context:notice> a ns3:SourceRecord .
+
+    <urn:cmpe-context:document> a ns3:SourceRecord .
+
+    <urn:cmpe-context:org> a ns3:Organization .
+
+    <urn:cmpe-context:presentation> a ns3:MedicinalProductPresentation ;
+        ns3:presentationOf <urn:cmpe-context:product> .
+
+    <urn:cmpe-context:jurisdiction> a ns3:RegulatoryJurisdiction .
+
+    <urn:cmpe-context:product> a ns3:MedicinalProduct .
+}
+
+<urn:cmpe-context-case:unknown-marketing-status> {
+    <urn:cmpe-context:spec> a ns1:ReportingScopeSpecification ;
+        ns1:actionEvidence <urn:cmpe-context:notice> ;
+        ns1:actionEvidenceKind "action-announcement" ;
+        ns1:actionReference <urn:cmpe-context:action> ;
+        ns1:actionState "announced" ;
+        ns1:allowedRole "MAH" ;
+        ns1:allowedRoute "CAP" ;
+        ns1:effectiveFrom "2026-10-01T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:effectiveTo "2026-11-01T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:marketingPolicy "require-marketed-status" ;
+        ns1:reportingFrequency "synthetic-weekly" ;
+        ns1:scenario "preparedness" ;
+        ns1:scopeComplete true ;
+        ns1:scopeJurisdiction <urn:cmpe-context:jurisdiction> ;
+        ns1:scopeMode "enumerated" ;
+        ns1:scopedProduct <urn:cmpe-context:product> ;
+        ns1:specificationSource <urn:cmpe-context:document> ;
+        ns1:specificationVersion "synthetic-v1" ;
+        ns1:submissionKind "availability" .
+
+    <urn:cmpe-context:context> a ns1:ReportingContextDescription ;
+        ns1:contextAction <urn:cmpe-context:action> ;
+        ns1:contextActor <urn:cmpe-context:org> ;
+        ns1:contextCountry "DE" ;
+        ns1:contextJurisdiction <urn:cmpe-context:jurisdiction> ;
+        ns1:contextPresentation <urn:cmpe-context:presentation> ;
+        ns1:contextProduct <urn:cmpe-context:product> ;
+        ns1:contextRole "MAH" ;
+        ns1:contextRoute "CAP" ;
+        ns1:contextVersion "synthetic-v1" ;
+        ns1:evaluatedAt "2026-10-10T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:marketingCountry "DE" ;
+        ns1:portfolioRelationDeclared true ;
+        ns1:scenario "preparedness" ;
+        ns1:submissionKind "availability" .
+
+    <urn:cmpe-context:notice> a ns3:SourceRecord .
+
+    <urn:cmpe-context:document> a ns3:SourceRecord .
+
+    <urn:cmpe-context:org> a ns3:Organization .
+
+    <urn:cmpe-context:presentation> a ns3:MedicinalProductPresentation ;
+        ns3:presentationOf <urn:cmpe-context:product> .
+
+    <urn:cmpe-context:jurisdiction> a ns3:RegulatoryJurisdiction .
+
+    <urn:cmpe-context:product> a ns3:MedicinalProduct .
+}
+
+<urn:cmpe-context-case:missing-role> {
+    <urn:cmpe-context:spec> a ns1:ReportingScopeSpecification ;
+        ns1:actionEvidence <urn:cmpe-context:notice> ;
+        ns1:actionEvidenceKind "action-announcement" ;
+        ns1:actionReference <urn:cmpe-context:action> ;
+        ns1:actionState "announced" ;
+        ns1:allowedRole "MAH" ;
+        ns1:allowedRoute "CAP" ;
+        ns1:effectiveFrom "2026-10-01T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:effectiveTo "2026-11-01T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:marketingPolicy "require-marketed-status" ;
+        ns1:reportingFrequency "synthetic-weekly" ;
+        ns1:scenario "preparedness" ;
+        ns1:scopeComplete true ;
+        ns1:scopeJurisdiction <urn:cmpe-context:jurisdiction> ;
+        ns1:scopeMode "enumerated" ;
+        ns1:scopedProduct <urn:cmpe-context:product> ;
+        ns1:specificationSource <urn:cmpe-context:document> ;
+        ns1:specificationVersion "synthetic-v1" ;
+        ns1:submissionKind "availability" .
+
+    <urn:cmpe-context:context> a ns1:ReportingContextDescription ;
+        ns1:contextAction <urn:cmpe-context:action> ;
+        ns1:contextActor <urn:cmpe-context:org> ;
+        ns1:contextCountry "DE" ;
+        ns1:contextJurisdiction <urn:cmpe-context:jurisdiction> ;
+        ns1:contextPresentation <urn:cmpe-context:presentation> ;
+        ns1:contextProduct <urn:cmpe-context:product> ;
+        ns1:contextRoute "CAP" ;
+        ns1:contextVersion "synthetic-v1" ;
+        ns1:evaluatedAt "2026-10-10T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:marketingCountry "DE" ;
+        ns1:marketingStatus "marketed" ;
+        ns1:portfolioRelationDeclared true ;
+        ns1:scenario "preparedness" ;
+        ns1:submissionKind "availability" .
+
+    <urn:cmpe-context:notice> a ns3:SourceRecord .
+
+    <urn:cmpe-context:document> a ns3:SourceRecord .
+
+    <urn:cmpe-context:org> a ns3:Organization .
+
+    <urn:cmpe-context:presentation> a ns3:MedicinalProductPresentation ;
+        ns3:presentationOf <urn:cmpe-context:product> .
+
+    <urn:cmpe-context:jurisdiction> a ns3:RegulatoryJurisdiction .
+
+    <urn:cmpe-context:product> a ns3:MedicinalProduct .
+}
+
+<urn:cmpe-context-case:missing-end> {
+    <urn:cmpe-context:spec> a ns1:ReportingScopeSpecification ;
+        ns1:actionEvidence <urn:cmpe-context:notice> ;
+        ns1:actionEvidenceKind "action-announcement" ;
+        ns1:actionReference <urn:cmpe-context:action> ;
+        ns1:actionState "announced" ;
+        ns1:allowedRole "MAH" ;
+        ns1:allowedRoute "CAP" ;
+        ns1:effectiveFrom "2026-10-01T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:marketingPolicy "require-marketed-status" ;
+        ns1:reportingFrequency "synthetic-weekly" ;
+        ns1:scenario "preparedness" ;
+        ns1:scopeComplete true ;
+        ns1:scopeJurisdiction <urn:cmpe-context:jurisdiction> ;
+        ns1:scopeMode "enumerated" ;
+        ns1:scopedProduct <urn:cmpe-context:product> ;
+        ns1:specificationSource <urn:cmpe-context:document> ;
+        ns1:specificationVersion "synthetic-v1" ;
+        ns1:submissionKind "availability" .
+
+    <urn:cmpe-context:context> a ns1:ReportingContextDescription ;
+        ns1:contextAction <urn:cmpe-context:action> ;
+        ns1:contextActor <urn:cmpe-context:org> ;
+        ns1:contextCountry "DE" ;
+        ns1:contextJurisdiction <urn:cmpe-context:jurisdiction> ;
+        ns1:contextPresentation <urn:cmpe-context:presentation> ;
+        ns1:contextProduct <urn:cmpe-context:product> ;
+        ns1:contextRole "MAH" ;
+        ns1:contextRoute "CAP" ;
+        ns1:contextVersion "synthetic-v1" ;
+        ns1:evaluatedAt "2026-10-10T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:marketingCountry "DE" ;
+        ns1:marketingStatus "marketed" ;
+        ns1:portfolioRelationDeclared true ;
+        ns1:scenario "preparedness" ;
+        ns1:submissionKind "availability" .
+
+    <urn:cmpe-context:notice> a ns3:SourceRecord .
+
+    <urn:cmpe-context:document> a ns3:SourceRecord .
+
+    <urn:cmpe-context:org> a ns3:Organization .
+
+    <urn:cmpe-context:presentation> a ns3:MedicinalProductPresentation ;
+        ns3:presentationOf <urn:cmpe-context:product> .
+
+    <urn:cmpe-context:jurisdiction> a ns3:RegulatoryJurisdiction .
+
+    <urn:cmpe-context:product> a ns3:MedicinalProduct .
+}
+
+<urn:cmpe-context-case:marketing-country-mismatch> {
+    <urn:cmpe-context:spec> a ns1:ReportingScopeSpecification ;
+        ns1:actionEvidence <urn:cmpe-context:notice> ;
+        ns1:actionEvidenceKind "action-announcement" ;
+        ns1:actionReference <urn:cmpe-context:action> ;
+        ns1:actionState "announced" ;
+        ns1:allowedRole "MAH" ;
+        ns1:allowedRoute "CAP" ;
+        ns1:effectiveFrom "2026-10-01T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:effectiveTo "2026-11-01T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:marketingPolicy "require-marketed-status" ;
+        ns1:reportingFrequency "synthetic-weekly" ;
+        ns1:scenario "preparedness" ;
+        ns1:scopeComplete true ;
+        ns1:scopeJurisdiction <urn:cmpe-context:jurisdiction> ;
+        ns1:scopeMode "enumerated" ;
+        ns1:scopedProduct <urn:cmpe-context:product> ;
+        ns1:specificationSource <urn:cmpe-context:document> ;
+        ns1:specificationVersion "synthetic-v1" ;
+        ns1:submissionKind "availability" .
+
+    <urn:cmpe-context:context> a ns1:ReportingContextDescription ;
+        ns1:contextAction <urn:cmpe-context:action> ;
+        ns1:contextActor <urn:cmpe-context:org> ;
+        ns1:contextCountry "DE" ;
+        ns1:contextJurisdiction <urn:cmpe-context:jurisdiction> ;
+        ns1:contextPresentation <urn:cmpe-context:presentation> ;
+        ns1:contextProduct <urn:cmpe-context:product> ;
+        ns1:contextRole "MAH" ;
+        ns1:contextRoute "CAP" ;
+        ns1:contextVersion "synthetic-v1" ;
+        ns1:evaluatedAt "2026-10-10T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:marketingCountry "FR" ;
+        ns1:marketingStatus "marketed" ;
+        ns1:portfolioRelationDeclared true ;
+        ns1:scenario "preparedness" ;
+        ns1:submissionKind "availability" .
+
+    <urn:cmpe-context:notice> a ns3:SourceRecord .
+
+    <urn:cmpe-context:document> a ns3:SourceRecord .
+
+    <urn:cmpe-context:org> a ns3:Organization .
+
+    <urn:cmpe-context:presentation> a ns3:MedicinalProductPresentation ;
+        ns3:presentationOf <urn:cmpe-context:product> .
+
+    <urn:cmpe-context:jurisdiction> a ns3:RegulatoryJurisdiction .
+
+    <urn:cmpe-context:product> a ns3:MedicinalProduct .
+}
+
+<urn:cmpe-context-case:NCA-does-not-need-MAH-portfolio> {
+    <urn:cmpe-context:spec> a ns1:ReportingScopeSpecification ;
+        ns1:actionEvidence <urn:cmpe-context:notice> ;
+        ns1:actionEvidenceKind "action-announcement" ;
+        ns1:actionReference <urn:cmpe-context:action> ;
+        ns1:actionState "announced" ;
+        ns1:allowedRole "NCA" ;
+        ns1:allowedRoute "CAP" ;
+        ns1:effectiveFrom "2026-10-01T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:effectiveTo "2026-11-01T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:marketingPolicy "require-marketed-status" ;
+        ns1:reportingFrequency "synthetic-weekly" ;
+        ns1:scenario "preparedness" ;
+        ns1:scopeComplete true ;
+        ns1:scopeJurisdiction <urn:cmpe-context:jurisdiction> ;
+        ns1:scopeMode "enumerated" ;
+        ns1:scopedProduct <urn:cmpe-context:product> ;
+        ns1:specificationSource <urn:cmpe-context:document> ;
+        ns1:specificationVersion "synthetic-v1" ;
+        ns1:submissionKind "availability" .
+
+    <urn:cmpe-context:context> a ns1:ReportingContextDescription ;
+        ns1:contextAction <urn:cmpe-context:action> ;
+        ns1:contextActor <urn:cmpe-context:org> ;
+        ns1:contextCountry "DE" ;
+        ns1:contextJurisdiction <urn:cmpe-context:jurisdiction> ;
+        ns1:contextPresentation <urn:cmpe-context:presentation> ;
+        ns1:contextProduct <urn:cmpe-context:product> ;
+        ns1:contextRole "NCA" ;
+        ns1:contextRoute "CAP" ;
+        ns1:contextVersion "synthetic-v1" ;
+        ns1:evaluatedAt "2026-10-10T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:marketingCountry "DE" ;
+        ns1:marketingStatus "marketed" ;
+        ns1:scenario "preparedness" ;
+        ns1:submissionKind "availability" .
+
+    <urn:cmpe-context:notice> a ns3:SourceRecord .
+
+    <urn:cmpe-context:document> a ns3:SourceRecord .
+
+    <urn:cmpe-context:org> a ns3:Organization .
+
+    <urn:cmpe-context:presentation> a ns3:MedicinalProductPresentation ;
+        ns3:presentationOf <urn:cmpe-context:product> .
+
+    <urn:cmpe-context:jurisdiction> a ns3:RegulatoryJurisdiction .
+
+    <urn:cmpe-context:product> a ns3:MedicinalProduct .
+}
+
+<urn:cmpe-context-case:missing-product> {
+    <urn:cmpe-context:spec> a ns1:ReportingScopeSpecification ;
+        ns1:actionEvidence <urn:cmpe-context:notice> ;
+        ns1:actionEvidenceKind "action-announcement" ;
+        ns1:actionReference <urn:cmpe-context:action> ;
+        ns1:actionState "announced" ;
+        ns1:allowedRole "MAH" ;
+        ns1:allowedRoute "CAP" ;
+        ns1:effectiveFrom "2026-10-01T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:effectiveTo "2026-11-01T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:marketingPolicy "require-marketed-status" ;
+        ns1:reportingFrequency "synthetic-weekly" ;
+        ns1:scenario "preparedness" ;
+        ns1:scopeComplete true ;
+        ns1:scopeJurisdiction <urn:cmpe-context:jurisdiction> ;
+        ns1:scopeMode "enumerated" ;
+        ns1:scopedProduct <urn:cmpe-context:product> ;
+        ns1:specificationSource <urn:cmpe-context:document> ;
+        ns1:specificationVersion "synthetic-v1" ;
+        ns1:submissionKind "availability" .
+
+    <urn:cmpe-context:context> a ns1:ReportingContextDescription ;
+        ns1:contextAction <urn:cmpe-context:action> ;
+        ns1:contextActor <urn:cmpe-context:org> ;
+        ns1:contextCountry "DE" ;
+        ns1:contextJurisdiction <urn:cmpe-context:jurisdiction> ;
+        ns1:contextPresentation <urn:cmpe-context:presentation> ;
+        ns1:contextRole "MAH" ;
+        ns1:contextRoute "CAP" ;
+        ns1:contextVersion "synthetic-v1" ;
+        ns1:evaluatedAt "2026-10-10T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:marketingCountry "DE" ;
+        ns1:marketingStatus "marketed" ;
+        ns1:portfolioRelationDeclared true ;
+        ns1:scenario "preparedness" ;
+        ns1:submissionKind "availability" .
+
+    <urn:cmpe-context:notice> a ns3:SourceRecord .
+
+    <urn:cmpe-context:document> a ns3:SourceRecord .
+
+    <urn:cmpe-context:org> a ns3:Organization .
+
+    <urn:cmpe-context:presentation> a ns3:MedicinalProductPresentation ;
+        ns3:presentationOf <urn:cmpe-context:product> .
+
+    <urn:cmpe-context:jurisdiction> a ns3:RegulatoryJurisdiction .
+
+    <urn:cmpe-context:product> a ns3:MedicinalProduct .
+}
+
+<urn:cmpe-context-case:claim-does-not-assert-relation> {
+    <urn:cmpe-context:record> a ns3:SourceRecord ;
+        ns2:carrierClaim <urn:cmpe-context:claim> .
+
+    <urn:cmpe-context:claim> a ns1:StructuredClaim ;
+        ns1:claimOrigin "synthetic" ;
+        ns1:claimSubject <urn:cmpe-context:listing> ;
+        ns1:evidencePointer "synthetic:/claim" ;
+        ns1:objectResource <urn:cmpe-context:presentation> ;
+        ns1:polarity "positive" ;
+        ns1:predicateIRI "https://w3id.org/cm-pharme/2.1/listingPresentation"^^xsd:anyURI .
+
+    _:N7d47f6b653b940fcb1324b78d2f94761 a owl:NegativePropertyAssertion ;
+        owl:assertionProperty ns3:listingPresentation ;
+        owl:sourceIndividual <urn:cmpe-context:listing> ;
+        owl:targetIndividual <urn:cmpe-context:presentation> .
+}
+
+<urn:cmpe-context-case:reversed-effective-interval> {
+    <urn:cmpe-context:spec> a ns1:ReportingScopeSpecification ;
+        ns1:actionEvidence <urn:cmpe-context:notice> ;
+        ns1:actionEvidenceKind "action-announcement" ;
+        ns1:actionReference <urn:cmpe-context:action> ;
+        ns1:actionState "announced" ;
+        ns1:allowedRole "MAH" ;
+        ns1:allowedRoute "CAP" ;
+        ns1:effectiveFrom "2026-10-01T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:effectiveTo "2026-09-01T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:marketingPolicy "require-marketed-status" ;
+        ns1:reportingFrequency "synthetic-weekly" ;
+        ns1:scenario "preparedness" ;
+        ns1:scopeComplete true ;
+        ns1:scopeJurisdiction <urn:cmpe-context:jurisdiction> ;
+        ns1:scopeMode "enumerated" ;
+        ns1:scopedProduct <urn:cmpe-context:product> ;
+        ns1:specificationSource <urn:cmpe-context:document> ;
+        ns1:specificationVersion "synthetic-v1" ;
+        ns1:submissionKind "availability" .
+
+    <urn:cmpe-context:context> a ns1:ReportingContextDescription ;
+        ns1:contextAction <urn:cmpe-context:action> ;
+        ns1:contextActor <urn:cmpe-context:org> ;
+        ns1:contextCountry "DE" ;
+        ns1:contextJurisdiction <urn:cmpe-context:jurisdiction> ;
+        ns1:contextPresentation <urn:cmpe-context:presentation> ;
+        ns1:contextProduct <urn:cmpe-context:product> ;
+        ns1:contextRole "MAH" ;
+        ns1:contextRoute "CAP" ;
+        ns1:contextVersion "synthetic-v1" ;
+        ns1:evaluatedAt "2026-10-10T00:00:00+00:00"^^xsd:dateTime ;
+        ns1:marketingCountry "DE" ;
+        ns1:marketingStatus "marketed" ;
+        ns1:portfolioRelationDeclared true ;
+        ns1:scenario "preparedness" ;
+        ns1:submissionKind "availability" .
+
+    <urn:cmpe-context:notice> a ns3:SourceRecord .
+
+    <urn:cmpe-context:document> a ns3:SourceRecord .
+
+    <urn:cmpe-context:org> a ns3:Organization .
+
+    <urn:cmpe-context:presentation> a ns3:MedicinalProductPresentation ;
+        ns3:presentationOf <urn:cmpe-context:product> .
+
+    <urn:cmpe-context:jurisdiction> a ns3:RegulatoryJurisdiction .
+
+    <urn:cmpe-context:product> a ns3:MedicinalProduct .
+}

@@ -1,0 +1,46 @@
+{
+  "native_delta": {
+    "changed_class_restrictedTo": 142,
+    "other_element_changes": 0,
+    "unresolved_modes": [
+      "EnterpriseCapability",
+      "SupplyCapacity"
+    ]
+  },
+  "current_schema_parser": {
+    "tool_versions": {
+      "node": "v24.19.0",
+      "ontouml_js": "1.0.0",
+      "ontouml_schema": "1.0.2",
+      "ajv": "8.20.0"
+    },
+    "schema_valid": true,
+    "schema_errors": null,
+    "parsed": {
+      "type": "Project16",
+      "id": "cm-pharme-g3-2d-native",
+      "classes": 144
+    },
+    "parse_error": null
+  },
+  "legacy_verifier_before": {
+    "class_missing_nature_restrictions": 144,
+    "generalization_incompatible_natures": 100
+  },
+  "legacy_verifier_after": {
+    "class_missing_nature_restrictions": 2
+  },
+  "legacy_verifier_after_issue_ids": [
+    "EnterpriseCapability",
+    "SupplyCapacity"
+  ],
+  "archived_graph_validator": {
+    "commit": "46f54c1a5225fc9ea74ac2256fd4a673e9101a40",
+    "scope": "13 implemented class rules, source metadata augmented onto converted RDF graph",
+    "warnings": 2,
+    "errors": 1,
+    "error_disposition": "R_CL_ZGT counts the same Organization ultimate sortal via a direct and an indirect path in ListingResponsibleOrganizationRole; only one distinct provider. Tool false positive for this hierarchy.",
+    "full_catalogue_engine": "NOT_RUN"
+  },
+  "candidate_promotion": "NOT_PROMOTED; separate nature-only overlay for scientific review"
+}

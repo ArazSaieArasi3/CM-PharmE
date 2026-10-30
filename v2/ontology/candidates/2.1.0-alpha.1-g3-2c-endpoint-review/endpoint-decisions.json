@@ -1,0 +1,227 @@
+{
+  "source_commit": "d95b5640c14d2c43c1e88a9a76ef78067f058916",
+  "status": "BOUNDED_DESIGN_RECOMMENDATIONS_NOT_FINAL_SCIENTIFIC_SIGNOFF",
+  "reviewed": 11,
+  "records": [
+    {
+      "name": "baViewRepresents",
+      "source": "https://github.com/ArazSaieArasi3/CM-PharmE/blob/d95b5640c14d2c43c1e88a9a76ef78067f058916/v2/research/w4/business-architecture-view.md",
+      "target": {
+        "class": null,
+        "stereotype": null,
+        "multiplicity": null,
+        "subsetted_end": null
+      },
+      "owl_domain": "BusinessArchitectureView",
+      "owl_range": null,
+      "prior_review_record": "RR-017",
+      "recommended_policy": "KEEP_BROAD_VIEW_REFERENCE",
+      "rationale": "BA view topics include organizations, activities, capabilities, governance, partnerships and offerings; no shared target class has been justified.",
+      "positive_synthetic_illustration": "A BA view explicitly references an organization and an activity as separate topics.",
+      "negative_acceptance_condition": "Do not infer that a view target acquires a new identity or that core depends on the optional BA module.",
+      "remaining_evidence": "Define a documented target family or qualified topic links if cross-family query need is approved.",
+      "scientific_acceptance": "PENDING_AUTHOR",
+      "model_change": "NONE"
+    },
+    {
+      "name": "capacityBearer",
+      "source": "https://github.com/ArazSaieArasi3/CM-PharmE/blob/d95b5640c14d2c43c1e88a9a76ef78067f058916/v2/research/w4/events-situations-observations.md",
+      "target": {
+        "class": null,
+        "stereotype": null,
+        "multiplicity": null,
+        "subsetted_end": null
+      },
+      "owl_domain": "SupplyCapacity",
+      "owl_range": null,
+      "prior_review_record": "RR-005",
+      "recommended_policy": "REFACTOR_DIRECTION_AND_BEARER_PATTERN",
+      "rationale": "SupplyCapacity is a Mode; current Mode→unspecified bearer direction cannot be labelled characterization directly. W4 permits Organization or Facility, which have different Kind identities.",
+      "positive_synthetic_illustration": "An evidenced capacity instance inheres in exactly one organization or facility at a time.",
+      "negative_acceptance_condition": "Do not infer capacity from an aggregate observation or assign the same intrinsic Mode to two different bearer individuals.",
+      "remaining_evidence": "Choose explicit inverse bearer→Mode characterization or scoped bearer roles; justify minimum/maximum and optional possession.",
+      "scientific_acceptance": "PENDING_AUTHOR",
+      "model_change": "NONE"
+    },
+    {
+      "name": "disruptionAffects",
+      "source": "https://github.com/ArazSaieArasi3/CM-PharmE/blob/d95b5640c14d2c43c1e88a9a76ef78067f058916/v2/research/w4/risk-resilience-extension.md",
+      "target": {
+        "class": null,
+        "stereotype": null,
+        "multiplicity": null,
+        "subsetted_end": null
+      },
+      "owl_domain": "DisruptionEvent",
+      "owl_range": null,
+      "prior_review_record": "RR-014",
+      "recommended_policy": "KEEP_OPEN_GENERIC_PARENT",
+      "rationale": "W4 allows affected facility, activity, dependency or availability context; the typed SupplyDependency child is narrower than the parent.",
+      "positive_synthetic_illustration": "An evidenced disruption affects a specific dependency in a dated episode.",
+      "negative_acceptance_condition": "A co-reported shortage alone cannot establish a causal disruption or its target.",
+      "remaining_evidence": "Specify admitted target families and causal evidence before general OWL range or stereotype.",
+      "scientific_acceptance": "PENDING_AUTHOR",
+      "model_change": "NONE"
+    },
+    {
+      "name": "hasActiveSubstance",
+      "source": "https://github.com/ArazSaieArasi3/CM-PharmE/blob/d95b5640c14d2c43c1e88a9a76ef78067f058916/v2/research/w4/integrated-ontouml-model.md",
+      "target": {
+        "class": "PharmaceuticalSubstance",
+        "stereotype": "kind",
+        "multiplicity": null,
+        "subsetted_end": null
+      },
+      "owl_domain": null,
+      "owl_range": "PharmaceuticalSubstance",
+      "prior_review_record": "RR-003",
+      "recommended_policy": "SCOPED_PRODUCT_MAPPING_ONLY",
+      "rationale": "W4 mentions Product or Presentation; W6 maps medicinal_product.primary_substance_id as a bounded primary-substance hook, not a universal ontology domain.",
+      "positive_synthetic_illustration": "A medicinal product with a source-backed primary substance identifier maps to that substance.",
+      "negative_acceptance_condition": "Do not infer that a presentation using the parent relation is a MedicinalProduct; these Kinds are disjoint.",
+      "remaining_evidence": "Keep parent domain open; test separate Product and Presentation scoped patterns and composition cardinalities.",
+      "scientific_acceptance": "PENDING_AUTHOR",
+      "model_change": "NONE"
+    },
+    {
+      "name": "locatedIn",
+      "source": "https://github.com/ArazSaieArasi3/CM-PharmE/blob/d95b5640c14d2c43c1e88a9a76ef78067f058916/v2/research/w4/geography-jurisdiction.md",
+      "target": {
+        "class": "GeographicFeature",
+        "stereotype": "kind",
+        "multiplicity": null,
+        "subsetted_end": null
+      },
+      "owl_domain": null,
+      "owl_range": "GeographicFeature",
+      "prior_review_record": "RR-011",
+      "recommended_policy": "SCOPED_FACILITY_MAPPING_ONLY",
+      "rationale": "W4 and W6 give Facility→GeographicFeature and facility.geography_id, but the generic parent is not proven Facility-only for every future source.",
+      "positive_synthetic_illustration": "A facility has a source-backed physical location feature.",
+      "negative_acceptance_condition": "An organization's headquarters or a jurisdiction label must not be typed Facility via a global domain axiom.",
+      "remaining_evidence": "Preserve generic parent until all locatable entity families reviewed; use a scoped facility location contract.",
+      "scientific_acceptance": "PENDING_AUTHOR",
+      "model_change": "NONE"
+    },
+    {
+      "name": "matchObject",
+      "source": "https://github.com/ArazSaieArasi3/CM-PharmE/blob/d95b5640c14d2c43c1e88a9a76ef78067f058916/v2/research/w6/provenance-entity-resolution.md",
+      "target": {
+        "class": null,
+        "stereotype": null,
+        "multiplicity": null,
+        "subsetted_end": null
+      },
+      "owl_domain": "EntityMatchAssertion",
+      "owl_range": null,
+      "prior_review_record": "RR-010",
+      "recommended_policy": "SAME_TYPE_POLICY_AS_MATCH_SUBJECT_PENDING",
+      "rationale": "W6 entity-resolution assertions compare two source-record references and retain a canonical matched entity type/identifier; target representation and entity must not be conflated.",
+      "positive_synthetic_illustration": "An assertion records two source records, matched entity type, method and status.",
+      "negative_acceptance_condition": "An ambiguous record pair is not an accepted real-world identity equality.",
+      "remaining_evidence": "Define whether subject/object are SourceRecord or a typed union, symmetrical admissibility, cardinality and identity constraints.",
+      "scientific_acceptance": "PENDING_AUTHOR",
+      "model_change": "NONE"
+    },
+    {
+      "name": "matchSubject",
+      "source": "https://github.com/ArazSaieArasi3/CM-PharmE/blob/d95b5640c14d2c43c1e88a9a76ef78067f058916/v2/research/w6/provenance-entity-resolution.md",
+      "target": {
+        "class": null,
+        "stereotype": null,
+        "multiplicity": null,
+        "subsetted_end": null
+      },
+      "owl_domain": "EntityMatchAssertion",
+      "owl_range": null,
+      "prior_review_record": "RR-009",
+      "recommended_policy": "SAME_TYPE_POLICY_AS_MATCH_OBJECT_PENDING",
+      "rationale": "W6 represents two source-record references for an assertion; fixing one endpoint to Product or Presentation would exclude other match domains.",
+      "positive_synthetic_illustration": "An assertion identifies its first source record with provenance.",
+      "negative_acceptance_condition": "A source identifier alone is not universal canonical entity identity.",
+      "remaining_evidence": "Define a common endpoint policy with matchObject, disjoint source-vs-entity layers and acceptable null/ambiguous status.",
+      "scientific_acceptance": "PENDING_AUTHOR",
+      "model_change": "NONE"
+    },
+    {
+      "name": "observationResultAbout",
+      "source": "https://github.com/ArazSaieArasi3/CM-PharmE/blob/d95b5640c14d2c43c1e88a9a76ef78067f058916/v2/research/w4/events-situations-observations.md",
+      "target": {
+        "class": null,
+        "stereotype": null,
+        "multiplicity": null,
+        "subsetted_end": null
+      },
+      "owl_domain": "ObservationResult",
+      "owl_range": null,
+      "prior_review_record": "RR-006",
+      "recommended_policy": "KEEP_OPEN_ABOUTNESS_PARENT",
+      "rationale": "W4 results can be about products, presentations, supply capacity or other contexts; G2 introduced scoped product and presentation children.",
+      "positive_synthetic_illustration": "A source observation names a specific product or presentation as its subject.",
+      "negative_acceptance_condition": "An aggregate result does not create a patient individual, and a product link does not identify a presentation.",
+      "remaining_evidence": "Test all result subfamilies before a common range; preserve child target distinctions and resolve aboutness truthmaker.",
+      "scientific_acceptance": "PENDING_AUTHOR",
+      "model_change": "NONE"
+    },
+    {
+      "name": "riskAssessmentConcerns",
+      "source": "https://github.com/ArazSaieArasi3/CM-PharmE/blob/d95b5640c14d2c43c1e88a9a76ef78067f058916/v2/research/w4/risk-resilience-extension.md",
+      "target": {
+        "class": null,
+        "stereotype": null,
+        "multiplicity": null,
+        "subsetted_end": null
+      },
+      "owl_domain": "RiskAssessmentActivity",
+      "owl_range": null,
+      "prior_review_record": "RR-015",
+      "recommended_policy": "KEEP_OPEN_ASSESSMENT_PARENT",
+      "rationale": "A risk assessment may concern dependencies, vulnerabilities and other conditions; AssetAtRisk was explicitly deferred from the active G1 import.",
+      "positive_synthetic_illustration": "An assessment evaluates cited evidence about a supply dependency.",
+      "negative_acceptance_condition": "Mentioning an asset does not prove a vulnerability or quantified risk.",
+      "remaining_evidence": "Admit target families with assessment evidence; do not impose a deferred AssetAtRisk range.",
+      "scientific_acceptance": "PENDING_AUTHOR",
+      "model_change": "NONE"
+    },
+    {
+      "name": "riskTreatmentAddresses",
+      "source": "https://github.com/ArazSaieArasi3/CM-PharmE/blob/d95b5640c14d2c43c1e88a9a76ef78067f058916/v2/research/w4/risk-resilience-extension.md",
+      "target": {
+        "class": null,
+        "stereotype": null,
+        "multiplicity": null,
+        "subsetted_end": null
+      },
+      "owl_domain": "RiskTreatmentActivity",
+      "owl_range": null,
+      "prior_review_record": "RR-016",
+      "recommended_policy": "KEEP_OPEN_TREATMENT_TARGET",
+      "rationale": "The extension has RiskTreatmentActivity and RiskTreatmentPlan but no settled common target among risk, vulnerability, asset or consequence.",
+      "positive_synthetic_illustration": "A treatment activity explicitly addresses a documented, identified target under a plan.",
+      "negative_acceptance_condition": "Do not claim that every treatment is effective, or that a target is necessarily a SupplyDependency.",
+      "remaining_evidence": "Define treatment plan/target semantics, evidence and direction before adding range or stereotype.",
+      "scientific_acceptance": "PENDING_AUTHOR",
+      "model_change": "NONE"
+    },
+    {
+      "name": "usedSourceArtifact",
+      "source": "https://github.com/ArazSaieArasi3/CM-PharmE/blob/d95b5640c14d2c43c1e88a9a76ef78067f058916/v2/research/w3/provenance-evidence-observation.md",
+      "target": {
+        "class": null,
+        "stereotype": null,
+        "multiplicity": null,
+        "subsetted_end": null
+      },
+      "owl_domain": "ProvenanceActivity",
+      "owl_range": null,
+      "prior_review_record": "RR-007",
+      "recommended_policy": "KEEP_OPEN_PROVENANCE_INPUT",
+      "rationale": "W3/W6 separate datasets, releases, source records, documents and transformation inputs; DataSourceResource is not shown to subsume them all.",
+      "positive_synthetic_illustration": "A transformation activity uses an identified source record with release and fingerprint.",
+      "negative_acceptance_condition": "A dataset name alone cannot fabricate a source record or complete provenance chain.",
+      "remaining_evidence": "Specify the admitted source-artifact abstraction or scoped subproperties for record/release/document; check PROV alignment.",
+      "scientific_acceptance": "PENDING_AUTHOR",
+      "model_change": "NONE"
+    }
+  ]
+}

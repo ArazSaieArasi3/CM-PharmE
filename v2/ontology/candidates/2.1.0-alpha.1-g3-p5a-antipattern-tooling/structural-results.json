@@ -1,0 +1,392 @@
+{
+  "scope": "B3 bounded structural checks on B2 native review overlay; not an official full anti-pattern detector",
+  "model_elements": 536,
+  "relations": 86,
+  "typed_relations": 75,
+  "relation_missing_cardinality": 33,
+  "ImpAbs": {
+    "trigger_end_count": 10,
+    "distinct_relations": 6,
+    "rows": [
+      {
+        "relation": "assertionAboutProduct",
+        "end": "source",
+        "type": "Assertion",
+        "cardinality": "0..*",
+        "descendants": [
+          "DataQualityFinding",
+          "EntityMatchAssertion",
+          "MappingAssertion",
+          "SupportedAssertionRole"
+        ],
+        "specializing_associations": [],
+        "known_enforcement": "base RDF SHACL checks endpoint class; no subtype-specific cardinality for this broad association",
+        "recommendation": "Keep broad relation provisionally; decide subtype-specific lower/upper bounds and meta-properties from source examples, then encode only supported restrictions.",
+        "decision": "PENDING_SCIENTIFIC_ADJUDICATION"
+      },
+      {
+        "relation": "assertionAboutProduct",
+        "end": "target",
+        "type": "MedicinalProduct",
+        "cardinality": "0..*",
+        "descendants": [
+          "AlternativeMedicinalProductRole",
+          "ClassifiedMedicinalProductRole",
+          "DependentMedicinalProductRole",
+          "IdentifiedMedicinalProductRole",
+          "ImportResponsibilitySubjectRole",
+          "ManufacturingResponsibilitySubjectRole",
+          "ProviderMedicinalProductRole",
+          "ReferenceProductRole",
+          "ResponsibilitySubjectProductRole",
+          "WholesaleResponsibilitySubjectRole"
+        ],
+        "specializing_associations": [],
+        "known_enforcement": "base RDF SHACL checks endpoint class; no subtype-specific cardinality for this broad association",
+        "recommendation": "Keep broad relation provisionally; decide subtype-specific lower/upper bounds and meta-properties from source examples, then encode only supported restrictions.",
+        "decision": "PENDING_SCIENTIFIC_ADJUDICATION"
+      },
+      {
+        "relation": "classificationEntity",
+        "end": "source",
+        "type": "ProductClassificationAssignment",
+        "cardinality": "1..*",
+        "descendants": [
+          "ContextualMedicineClassificationAssignment",
+          "CriticalMedicineClassification",
+          "EssentialMedicineClassification"
+        ],
+        "specializing_associations": [
+          {
+            "relation": "contextClassificationProduct",
+            "source": "ContextualMedicineClassificationAssignment",
+            "target": "ClassifiedMedicinalProductRole",
+            "cardinality_at_end": null
+          }
+        ],
+        "known_enforcement": "focal mediation SHACL checks relator's required end; specialized contextual subset may apply",
+        "recommendation": "Keep broad relation provisionally; decide subtype-specific lower/upper bounds and meta-properties from source examples, then encode only supported restrictions.",
+        "decision": "PENDING_SCIENTIFIC_ADJUDICATION"
+      },
+      {
+        "relation": "classificationEntry",
+        "end": "source",
+        "type": "ProductClassificationAssignment",
+        "cardinality": "1..*",
+        "descendants": [
+          "ContextualMedicineClassificationAssignment",
+          "CriticalMedicineClassification",
+          "EssentialMedicineClassification"
+        ],
+        "specializing_associations": [
+          {
+            "relation": "contextClassificationEntry",
+            "source": "ContextualMedicineClassificationAssignment",
+            "target": "AppliedClassificationEntryRole",
+            "cardinality_at_end": null
+          }
+        ],
+        "known_enforcement": "focal mediation SHACL checks relator's required end; specialized contextual subset may apply",
+        "recommendation": "Keep broad relation provisionally; decide subtype-specific lower/upper bounds and meta-properties from source examples, then encode only supported restrictions.",
+        "decision": "PENDING_SCIENTIFIC_ADJUDICATION"
+      },
+      {
+        "relation": "observationAboutPresentation",
+        "end": "source",
+        "type": "ObservationResult",
+        "cardinality": "0..*",
+        "descendants": [
+          "AvailabilityObservationResult",
+          "DemandObservationResult",
+          "EvidenceObservationResultRole",
+          "InventoryObservationResult",
+          "LeadTimeObservationResult",
+          "ReimbursementUtilisationObservationResult",
+          "SupplyCapacityObservationResult"
+        ],
+        "specializing_associations": [],
+        "known_enforcement": "base RDF SHACL checks endpoint class; no subtype-specific cardinality for this broad association",
+        "recommendation": "Keep broad relation provisionally; decide subtype-specific lower/upper bounds and meta-properties from source examples, then encode only supported restrictions.",
+        "decision": "PENDING_SCIENTIFIC_ADJUDICATION"
+      },
+      {
+        "relation": "observationAboutPresentation",
+        "end": "target",
+        "type": "MedicinalProductPresentation",
+        "cardinality": "0..*",
+        "descendants": [
+          "IdentifiedMedicinalProductPresentationRole",
+          "ListedPresentationRole"
+        ],
+        "specializing_associations": [],
+        "known_enforcement": "base RDF SHACL checks endpoint class; no subtype-specific cardinality for this broad association",
+        "recommendation": "Keep broad relation provisionally; decide subtype-specific lower/upper bounds and meta-properties from source examples, then encode only supported restrictions.",
+        "decision": "PENDING_SCIENTIFIC_ADJUDICATION"
+      },
+      {
+        "relation": "observationAboutProduct",
+        "end": "source",
+        "type": "ObservationResult",
+        "cardinality": "0..*",
+        "descendants": [
+          "AvailabilityObservationResult",
+          "DemandObservationResult",
+          "EvidenceObservationResultRole",
+          "InventoryObservationResult",
+          "LeadTimeObservationResult",
+          "ReimbursementUtilisationObservationResult",
+          "SupplyCapacityObservationResult"
+        ],
+        "specializing_associations": [],
+        "known_enforcement": "base RDF SHACL checks endpoint class; no subtype-specific cardinality for this broad association",
+        "recommendation": "Keep broad relation provisionally; decide subtype-specific lower/upper bounds and meta-properties from source examples, then encode only supported restrictions.",
+        "decision": "PENDING_SCIENTIFIC_ADJUDICATION"
+      },
+      {
+        "relation": "observationAboutProduct",
+        "end": "target",
+        "type": "MedicinalProduct",
+        "cardinality": "0..*",
+        "descendants": [
+          "AlternativeMedicinalProductRole",
+          "ClassifiedMedicinalProductRole",
+          "DependentMedicinalProductRole",
+          "IdentifiedMedicinalProductRole",
+          "ImportResponsibilitySubjectRole",
+          "ManufacturingResponsibilitySubjectRole",
+          "ProviderMedicinalProductRole",
+          "ReferenceProductRole",
+          "ResponsibilitySubjectProductRole",
+          "WholesaleResponsibilitySubjectRole"
+        ],
+        "specializing_associations": [],
+        "known_enforcement": "base RDF SHACL checks endpoint class; no subtype-specific cardinality for this broad association",
+        "recommendation": "Keep broad relation provisionally; decide subtype-specific lower/upper bounds and meta-properties from source examples, then encode only supported restrictions.",
+        "decision": "PENDING_SCIENTIFIC_ADJUDICATION"
+      },
+      {
+        "relation": "productHasActiveSubstance",
+        "end": "source",
+        "type": "MedicinalProduct",
+        "cardinality": "0..*",
+        "descendants": [
+          "AlternativeMedicinalProductRole",
+          "ClassifiedMedicinalProductRole",
+          "DependentMedicinalProductRole",
+          "IdentifiedMedicinalProductRole",
+          "ImportResponsibilitySubjectRole",
+          "ManufacturingResponsibilitySubjectRole",
+          "ProviderMedicinalProductRole",
+          "ReferenceProductRole",
+          "ResponsibilitySubjectProductRole",
+          "WholesaleResponsibilitySubjectRole"
+        ],
+        "specializing_associations": [],
+        "known_enforcement": "base RDF SHACL checks endpoint class; no subtype-specific cardinality for this broad association",
+        "recommendation": "Keep broad relation provisionally; decide subtype-specific lower/upper bounds and meta-properties from source examples, then encode only supported restrictions.",
+        "decision": "PENDING_SCIENTIFIC_ADJUDICATION"
+      },
+      {
+        "relation": "productHasActiveSubstance",
+        "end": "target",
+        "type": "PharmaceuticalSubstance",
+        "cardinality": "0..*",
+        "descendants": [
+          "ClassifiedPharmaceuticalSubstanceRole",
+          "IdentifiedPharmaceuticalSubstanceRole"
+        ],
+        "specializing_associations": [],
+        "known_enforcement": "base RDF SHACL checks endpoint class; no subtype-specific cardinality for this broad association",
+        "recommendation": "Keep broad relation provisionally; decide subtype-specific lower/upper bounds and meta-properties from source examples, then encode only supported restrictions.",
+        "decision": "PENDING_SCIENTIFIC_ADJUDICATION"
+      }
+    ]
+  },
+  "RelComp": {
+    "known_cardinality_candidate_pairs": 0,
+    "candidates": [],
+    "unknown_A_target_cardinality_structural_pairs": 2,
+    "unknown_cardinality_pairs": [
+      {
+        "A": "withinCountry",
+        "A_source": "GeographicFeature",
+        "A_target": "Country",
+        "A_target_card": null,
+        "B": "withinRegion",
+        "B_source": "GeographicFeature",
+        "B_target": "AdministrativeRegion",
+        "same_side": [
+          "source"
+        ]
+      },
+      {
+        "A": "withinRegion",
+        "A_source": "GeographicFeature",
+        "A_target": "AdministrativeRegion",
+        "A_target_card": null,
+        "B": "withinCountry",
+        "B_source": "GeographicFeature",
+        "B_target": "Country",
+        "same_side": [
+          "source"
+        ]
+      }
+    ]
+  },
+  "RelOver": {
+    "relators_with_potential_overlap": 5,
+    "known_upper_sum_gt_two": 0,
+    "unknown_upper_sum": 1,
+    "rows": [
+      {
+        "relator": "AlternativeMedicineAssignment",
+        "mediations": [
+          {
+            "name": "alternativeForProduct",
+            "mediated_type": "ReferenceProductRole",
+            "mediated_end_card": "1"
+          },
+          {
+            "name": "alternativeProduct",
+            "mediated_type": "AlternativeMedicinalProductRole",
+            "mediated_end_card": "1"
+          }
+        ],
+        "overlapping_pairs": [
+          {
+            "left": "alternativeForProduct",
+            "left_type": "ReferenceProductRole",
+            "right": "alternativeProduct",
+            "right_type": "AlternativeMedicinalProductRole",
+            "basis": "possible_shared_ancestor_without_declared_disjointness"
+          }
+        ],
+        "known_upper_sum": 2,
+        "unknown_upper_mediations": [],
+        "upper_sum_gt_two": false,
+        "overlap_status": "potential only; individual co-instantiation and disjointness need semantic review"
+      },
+      {
+        "relator": "EvidenceSupport",
+        "mediations": [
+          {
+            "name": "evidenceAssertion",
+            "mediated_type": "SupportedAssertionRole",
+            "mediated_end_card": "1"
+          },
+          {
+            "name": "evidenceItem",
+            "mediated_type": "EvidenceItem",
+            "mediated_end_card": "1"
+          },
+          {
+            "name": "evidenceRecord",
+            "mediated_type": "EvidenceSourceRecordRole",
+            "mediated_end_card": null
+          }
+        ],
+        "overlapping_pairs": [
+          {
+            "left": "evidenceItem",
+            "left_type": "EvidenceItem",
+            "right": "evidenceRecord",
+            "right_type": "EvidenceSourceRecordRole",
+            "basis": "same_or_subtype"
+          }
+        ],
+        "known_upper_sum": 2,
+        "unknown_upper_mediations": [
+          "evidenceRecord"
+        ],
+        "upper_sum_gt_two": null,
+        "overlap_status": "potential only; individual co-instantiation and disjointness need semantic review"
+      },
+      {
+        "relator": "LogisticsServiceCommitment",
+        "mediations": [
+          {
+            "name": "logisticsServiceCommitmentHolder",
+            "mediated_type": "ThirdPartyLogisticsProviderRole",
+            "mediated_end_card": "1"
+          },
+          {
+            "name": "logisticsServiceCommitmentCounterpart",
+            "mediated_type": "CommissioningLogisticsClientRole",
+            "mediated_end_card": "1"
+          }
+        ],
+        "overlapping_pairs": [
+          {
+            "left": "logisticsServiceCommitmentHolder",
+            "left_type": "ThirdPartyLogisticsProviderRole",
+            "right": "logisticsServiceCommitmentCounterpart",
+            "right_type": "CommissioningLogisticsClientRole",
+            "basis": "possible_shared_ancestor_without_declared_disjointness"
+          }
+        ],
+        "known_upper_sum": 2,
+        "unknown_upper_mediations": [],
+        "upper_sum_gt_two": false,
+        "overlap_status": "potential only; individual co-instantiation and disjointness need semantic review"
+      },
+      {
+        "relator": "RegulatoryMandate",
+        "mediations": [
+          {
+            "name": "regulatoryMandateHolder",
+            "mediated_type": "RegulatoryAuthorityRole",
+            "mediated_end_card": "1"
+          },
+          {
+            "name": "regulatoryMandateCounterpart",
+            "mediated_type": "MandateConferringOrganizationRole",
+            "mediated_end_card": "1"
+          }
+        ],
+        "overlapping_pairs": [
+          {
+            "left": "regulatoryMandateHolder",
+            "left_type": "RegulatoryAuthorityRole",
+            "right": "regulatoryMandateCounterpart",
+            "right_type": "MandateConferringOrganizationRole",
+            "basis": "possible_shared_ancestor_without_declared_disjointness"
+          }
+        ],
+        "known_upper_sum": 2,
+        "unknown_upper_mediations": [],
+        "upper_sum_gt_two": false,
+        "overlap_status": "potential only; individual co-instantiation and disjointness need semantic review"
+      },
+      {
+        "relator": "InstitutionalFundingCommitment",
+        "mediations": [
+          {
+            "name": "institutionalFundingCommitmentHolder",
+            "mediated_type": "PayerFundingOrganizationRole",
+            "mediated_end_card": "1"
+          },
+          {
+            "name": "institutionalFundingCommitmentCounterpart",
+            "mediated_type": "InstitutionallyFundedOrganizationRole",
+            "mediated_end_card": "1"
+          }
+        ],
+        "overlapping_pairs": [
+          {
+            "left": "institutionalFundingCommitmentHolder",
+            "left_type": "PayerFundingOrganizationRole",
+            "right": "institutionalFundingCommitmentCounterpart",
+            "right_type": "InstitutionallyFundedOrganizationRole",
+            "basis": "possible_shared_ancestor_without_declared_disjointness"
+          }
+        ],
+        "known_upper_sum": 2,
+        "unknown_upper_mediations": [],
+        "upper_sum_gt_two": false,
+        "overlap_status": "potential only; individual co-instantiation and disjointness need semantic review"
+      }
+    ]
+  },
+  "official_detector_status": "NOT_RUN",
+  "scientific_signoff": "PENDING"
+}

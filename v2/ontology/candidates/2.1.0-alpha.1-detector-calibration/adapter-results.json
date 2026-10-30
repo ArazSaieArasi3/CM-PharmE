@@ -1,0 +1,277 @@
+{
+  "scope": "Specialization reference serialization and bounded detector sensitivity only; 14 actual specialized ends are NOT adjudicated or fully validated.",
+  "archive_commit": "42b926f6c2859dc87e49a96b8482eae28d02e7d5",
+  "cases": [
+    {
+      "name": "undeclared",
+      "expected_relspec": 1,
+      "actual_relspec": 1,
+      "native_schema_parser_pass": true,
+      "official_parser_fields_preserved": true,
+      "expected_fields": [
+        "END|association-a|Other|0|1||",
+        "END|association-b|Parent|0|2||",
+        "END|special-a|Other|0|1||",
+        "END|special-b|Child0|0|2||"
+      ],
+      "actual_fields": [
+        "END|association-a|Other|0|1||",
+        "END|association-b|Parent|0|2||",
+        "END|special-a|Other|0|1||",
+        "END|special-b|Child0|0|2||"
+      ],
+      "source_unmodified": true,
+      "pass": true,
+      "conversion": {
+        "classes": 4,
+        "binary_relations": 2,
+        "generalizations": 2,
+        "generalization_sets": 0,
+        "ends": 4,
+        "known_semantic_losses": [
+          {
+            "id": "Parent",
+            "field": "restrictedTo",
+            "values": [
+              "functional-complex"
+            ],
+            "reason": "Legacy RefOntoUML class does not encode modern nature restrictions"
+          },
+          {
+            "id": "Other",
+            "field": "restrictedTo",
+            "values": [
+              "functional-complex"
+            ],
+            "reason": "Legacy RefOntoUML class does not encode modern nature restrictions"
+          },
+          {
+            "id": "Child0",
+            "field": "restrictedTo",
+            "values": [
+              "functional-complex"
+            ],
+            "reason": "Legacy RefOntoUML class does not encode modern nature restrictions"
+          },
+          {
+            "id": "Child1",
+            "field": "restrictedTo",
+            "values": [
+              "functional-complex"
+            ],
+            "reason": "Legacy RefOntoUML class does not encode modern nature restrictions"
+          }
+        ],
+        "scope": "Extended strict structural subset, nature losses remain explicit; full candidate not supported.",
+        "specialized_ends": 0,
+        "specialization_references": 0,
+        "reference_serialization_verified_scope": "Binary end references only; not proof of UML semantic validity or full candidate fidelity."
+      },
+      "source_sha256": "e5924f073bea971b433783263d728f9e73d1564e02bab7855d92791056999af6",
+      "xmi_sha256": "6b6a720117fdd94259d185354dfb06752ae9f579ecc9332a44e4d2571aaec840",
+      "output": "CMPE_RESULT detector=RelSpec classes=4 associations=2 occurrences=1\n"
+    },
+    {
+      "name": "subsetting",
+      "expected_relspec": 0,
+      "actual_relspec": 0,
+      "native_schema_parser_pass": true,
+      "official_parser_fields_preserved": true,
+      "expected_fields": [
+        "END|association-a|Other|0|1||",
+        "END|association-b|Parent|0|2||",
+        "END|special-a|Other|0|1|association-a|",
+        "END|special-b|Child0|0|2|association-b|"
+      ],
+      "actual_fields": [
+        "END|association-a|Other|0|1||",
+        "END|association-b|Parent|0|2||",
+        "END|special-a|Other|0|1|association-a|",
+        "END|special-b|Child0|0|2|association-b|"
+      ],
+      "source_unmodified": true,
+      "pass": true,
+      "conversion": {
+        "classes": 4,
+        "binary_relations": 2,
+        "generalizations": 2,
+        "generalization_sets": 0,
+        "ends": 4,
+        "known_semantic_losses": [
+          {
+            "id": "Parent",
+            "field": "restrictedTo",
+            "values": [
+              "functional-complex"
+            ],
+            "reason": "Legacy RefOntoUML class does not encode modern nature restrictions"
+          },
+          {
+            "id": "Other",
+            "field": "restrictedTo",
+            "values": [
+              "functional-complex"
+            ],
+            "reason": "Legacy RefOntoUML class does not encode modern nature restrictions"
+          },
+          {
+            "id": "Child0",
+            "field": "restrictedTo",
+            "values": [
+              "functional-complex"
+            ],
+            "reason": "Legacy RefOntoUML class does not encode modern nature restrictions"
+          },
+          {
+            "id": "Child1",
+            "field": "restrictedTo",
+            "values": [
+              "functional-complex"
+            ],
+            "reason": "Legacy RefOntoUML class does not encode modern nature restrictions"
+          }
+        ],
+        "scope": "Extended strict structural subset, nature losses remain explicit; full candidate not supported.",
+        "specialized_ends": 2,
+        "specialization_references": 2,
+        "reference_serialization_verified_scope": "Binary end references only; not proof of UML semantic validity or full candidate fidelity."
+      },
+      "source_sha256": "d2655f7278874c25e215cd7767bdb8302de75dee2ebfee92c5ceeb511d53cd6d",
+      "xmi_sha256": "1789f57e2518f75c12f255a803dcacffc4626eb2f6266238b26455ab83972627",
+      "output": "CMPE_RESULT detector=RelSpec classes=4 associations=2 occurrences=0\n"
+    },
+    {
+      "name": "redefinition",
+      "expected_relspec": 0,
+      "actual_relspec": 0,
+      "native_schema_parser_pass": true,
+      "official_parser_fields_preserved": true,
+      "expected_fields": [
+        "END|association-a|Other|0|1||",
+        "END|association-b|Parent|0|2||",
+        "END|special-a|Other|0|1||association-a",
+        "END|special-b|Child0|0|2||association-b"
+      ],
+      "actual_fields": [
+        "END|association-a|Other|0|1||",
+        "END|association-b|Parent|0|2||",
+        "END|special-a|Other|0|1||association-a",
+        "END|special-b|Child0|0|2||association-b"
+      ],
+      "source_unmodified": true,
+      "pass": true,
+      "conversion": {
+        "classes": 4,
+        "binary_relations": 2,
+        "generalizations": 2,
+        "generalization_sets": 0,
+        "ends": 4,
+        "known_semantic_losses": [
+          {
+            "id": "Parent",
+            "field": "restrictedTo",
+            "values": [
+              "functional-complex"
+            ],
+            "reason": "Legacy RefOntoUML class does not encode modern nature restrictions"
+          },
+          {
+            "id": "Other",
+            "field": "restrictedTo",
+            "values": [
+              "functional-complex"
+            ],
+            "reason": "Legacy RefOntoUML class does not encode modern nature restrictions"
+          },
+          {
+            "id": "Child0",
+            "field": "restrictedTo",
+            "values": [
+              "functional-complex"
+            ],
+            "reason": "Legacy RefOntoUML class does not encode modern nature restrictions"
+          },
+          {
+            "id": "Child1",
+            "field": "restrictedTo",
+            "values": [
+              "functional-complex"
+            ],
+            "reason": "Legacy RefOntoUML class does not encode modern nature restrictions"
+          }
+        ],
+        "scope": "Extended strict structural subset, nature losses remain explicit; full candidate not supported.",
+        "specialized_ends": 2,
+        "specialization_references": 2,
+        "reference_serialization_verified_scope": "Binary end references only; not proof of UML semantic validity or full candidate fidelity."
+      },
+      "source_sha256": "5345d35dc520ca9404351a2994abc457c6f835acabacb611713986007c8565e1",
+      "xmi_sha256": "62331e0ba2e199907d50c0fadb7bfe98bd56ec14d1e288988bf548766d416799",
+      "output": "CMPE_RESULT detector=RelSpec classes=4 associations=2 occurrences=0\n"
+    }
+  ],
+  "refusal_guards": [
+    {
+      "name": "missing-target",
+      "refused": true,
+      "message": "Unresolved or non-end specialization target",
+      "expected_marker": "Unresolved",
+      "pass": true
+    },
+    {
+      "name": "class-as-target",
+      "refused": true,
+      "message": "Unresolved or non-end specialization target",
+      "expected_marker": "non-end",
+      "pass": true
+    },
+    {
+      "name": "self-reference",
+      "refused": true,
+      "message": "Self specialization reference",
+      "expected_marker": "Self",
+      "pass": true
+    },
+    {
+      "name": "cycle",
+      "refused": true,
+      "message": "Cyclic specialization references",
+      "expected_marker": "Cyclic",
+      "pass": true
+    },
+    {
+      "name": "unknown-cardinality",
+      "refused": true,
+      "message": "Unspecified cardinality cannot safely become an EMF default",
+      "expected_marker": "Unspecified cardinality",
+      "pass": true
+    },
+    {
+      "name": "untyped-end",
+      "refused": true,
+      "message": "Relation special has an untyped or unresolved end",
+      "expected_marker": "untyped",
+      "pass": true
+    },
+    {
+      "name": "event-remains-unsupported",
+      "refused": true,
+      "message": "Class stereotype is absent in archived RefOntoUML Ecore",
+      "expected_marker": "Class stereotype",
+      "pass": true
+    },
+    {
+      "name": "duplicate-target",
+      "refused": true,
+      "message": "Duplicate specialization target",
+      "expected_marker": "Duplicate specialization",
+      "pass": true
+    }
+  ],
+  "case_pass": 3,
+  "case_total": 3,
+  "guard_pass": 8,
+  "guard_total": 8,
+  "full_candidate_result": "REFUSED: Unsupported element kinds: [('decision-RR-01', 'Note'), ('decision-RR-02', 'Note'), ('decision-RR-03', 'Note'), ('decision-RR-04', 'Note')]",
+  "full_candidate_executed": false
+}

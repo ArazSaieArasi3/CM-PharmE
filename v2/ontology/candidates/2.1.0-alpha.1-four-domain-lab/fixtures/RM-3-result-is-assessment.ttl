@@ -1,0 +1,28 @@
+@prefix c: <https://w3id.org/cm-pharme/2.1/> .
+@prefix l: <https://w3id.org/cm-pharme/experimental/four-domain/> .
+@prefix t: <urn:cmpe-lab:> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+t:plan a c:RiskTreatmentPlan ;
+    l:planRiskResult t:riskResult ;
+    l:profile "risk-plan" .
+
+t:assessment a c:RiskAssessmentActivity ;
+    l:assessmentScenario t:scenario ;
+    l:profile "risk-assessment" .
+
+t:product a c:MedicinalProduct .
+
+t:riskResult a c:Assertion,
+        c:RiskAssessmentActivity ;
+    l:atTime "2026-10-01T10:00:00+00:00"^^xsd:dateTime ;
+    l:citesSourceRecord t:source ;
+    l:conclusion "review supply continuity" ;
+    l:profile "risk-result" ;
+    l:resultAssessment t:assessment .
+
+t:scenario a c:Assertion ;
+    l:profile "risk-scenario" ;
+    l:scenarioProduct t:product .
+
+t:source a c:SourceRecord .

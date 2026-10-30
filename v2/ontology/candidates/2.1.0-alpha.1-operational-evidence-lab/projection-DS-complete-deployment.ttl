@@ -1,0 +1,9 @@
+@prefix c: <https://w3id.org/cm-pharme/2.1/> .
+@prefix l: <https://w3id.org/cm-pharme/experimental/four-domain/> .
+@prefix t: <urn:cmpe-evidence:> .
+
+t:launch a c:SystemDeploymentActivity ;
+    l:deploymentComponent t:system ;
+    l:profile "deployment" .
+
+t:system a c:DigitalInformationSystemComponent .

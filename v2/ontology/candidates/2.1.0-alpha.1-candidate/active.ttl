@@ -1,0 +1,1343 @@
+@prefix cmmeta: <https://w3id.org/cm-pharme/2.1/meta/> .
+@prefix cmpe: <https://w3id.org/cm-pharme/2.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix geonames: <https://www.geonames.org/ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+dct:creator a owl:AnnotationProperty .
+
+dct:description a owl:AnnotationProperty .
+
+dct:issued a owl:AnnotationProperty .
+
+dct:title a owl:AnnotationProperty .
+
+skos:altLabel a owl:AnnotationProperty .
+
+skos:closeMatch a owl:AnnotationProperty .
+
+cmpe:Address a rdfs:Datatype ;
+    rdfs:label "Address"@en ;
+    cmmeta:conceptualModule "x-infra" ;
+    cmmeta:ontoumlStereotype "Datatype" .
+
+cmpe:AdverseEventReportingActivity a owl:Class ;
+    rdfs:label "Adverse Event Reporting Activity"@en ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:conceptualModule "extension" ;
+    cmmeta:ontoumlStereotype "Event" .
+
+cmpe:AuthorizedFacilityRole a owl:Class ;
+    rdfs:subClassOf cmpe:AuthorizedParty,
+        cmpe:Facility ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:ontoumlStereotype "Role" .
+
+cmpe:AuthorizedOrganizationRole a owl:Class ;
+    rdfs:subClassOf cmpe:AuthorizedParty,
+        cmpe:Organization ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:ontoumlStereotype "Role" .
+
+cmpe:AvailabilityObservationResult a owl:Class ;
+    rdfs:label "Availability Observation Result"@en ;
+    rdfs:subClassOf cmpe:ObservationResult ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:conceptualModule "core" ;
+    cmmeta:ontoumlStereotype "Subkind" .
+
+cmpe:ClassifiedPharmaceuticalSubstanceRole a owl:Class ;
+    rdfs:subClassOf cmpe:ClassifiedEntity,
+        cmpe:PharmaceuticalSubstance ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:ontoumlStereotype "Role" .
+
+cmpe:CriticalMedicineClassification a owl:Class ;
+    rdfs:label "Critical Medicine Classification Assignment"@en ;
+    rdfs:subClassOf cmpe:ContextualMedicineClassificationAssignment ;
+    skos:altLabel "Critical Medicine Classification"@en ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:conceptualModule "extension" ;
+    cmmeta:ontoumlStereotype "Subkind" .
+
+cmpe:DataQualityFinding a owl:Class ;
+    rdfs:label "Data Quality Finding"@en ;
+    rdfs:subClassOf cmpe:Assertion ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:conceptualModule "x-infra" ;
+    cmmeta:ontoumlStereotype "Subkind" .
+
+cmpe:DemandObservationResult a owl:Class ;
+    rdfs:label "Demand Observation Result"@en ;
+    rdfs:subClassOf cmpe:ObservationResult ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:conceptualModule "core" ;
+    cmmeta:ontoumlStereotype "Subkind" .
+
+cmpe:DependentFacilityRole a owl:Class ;
+    rdfs:subClassOf cmpe:DependentEntity,
+        cmpe:Facility ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:ontoumlStereotype "Role" .
+
+cmpe:DependentMedicinalProductRole a owl:Class ;
+    rdfs:subClassOf cmpe:DependentEntity,
+        cmpe:MedicinalProduct ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:ontoumlStereotype "Role" .
+
+cmpe:DependentOrganizationRole a owl:Class ;
+    rdfs:subClassOf cmpe:DependentEntity,
+        cmpe:Organization ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:ontoumlStereotype "Role" .
+
+cmpe:DiagnosisClassificationReference a owl:Class ;
+    rdfs:label "Diagnosis Classification Reference"@en ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:conceptualModule "extension" ;
+    cmmeta:ontoumlStereotype "Kind" .
+
+cmpe:DigitalInformationSystemComponent a owl:Class ;
+    rdfs:label "Digital System Component"@en ;
+    skos:altLabel "Digital / Information System Component"@en ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:conceptualModule "extension" ;
+    cmmeta:ontoumlStereotype "Kind" .
+
+cmpe:DistributionLogisticsActivity a owl:Class ;
+    rdfs:label "Pharmaceutical Logistics Activity"@en ;
+    skos:altLabel "Distribution / Logistics Activity"@en ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:conceptualModule "core" ;
+    cmmeta:ontoumlStereotype "Event" .
+
+cmpe:DistributionSiteRole a owl:Class ;
+    rdfs:label "Distribution Site"@en ;
+    rdfs:subClassOf cmpe:EcosystemParticipant,
+        cmpe:Facility ;
+    skos:altLabel "Distribution Site Role"@en ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:conceptualModule "core" ;
+    cmmeta:ontoumlStereotype "Role" .
+
+cmpe:EssentialMedicineClassification a owl:Class ;
+    rdfs:label "Essential Medicine Classification Assignment"@en ;
+    rdfs:subClassOf cmpe:ContextualMedicineClassificationAssignment ;
+    skos:altLabel "Essential Medicine Classification"@en ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:conceptualModule "extension" ;
+    cmmeta:ontoumlStereotype "Subkind" .
+
+cmpe:EvidenceObservationResultRole a owl:Class ;
+    rdfs:subClassOf cmpe:EvidenceItem,
+        cmpe:ObservationResult ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:ontoumlStereotype "Role" .
+
+cmpe:GeospatialPosition a rdfs:Datatype ;
+    rdfs:label "Geospatial Position"@en ;
+    cmmeta:conceptualModule "x-infra" ;
+    cmmeta:ontoumlStereotype "Datatype" .
+
+cmpe:GovernedFacilityRole a owl:Class ;
+    rdfs:subClassOf cmpe:Facility,
+        cmpe:GovernedEntity ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:ontoumlStereotype "Role" .
+
+cmpe:GovernedOrganizationRole a owl:Class ;
+    rdfs:subClassOf cmpe:GovernedEntity,
+        cmpe:Organization ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:ontoumlStereotype "Role" .
+
+cmpe:IdentifiedFacilityRole a owl:Class ;
+    rdfs:subClassOf cmpe:Facility,
+        cmpe:IdentifiedEntity ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:ontoumlStereotype "Role" .
+
+cmpe:IdentifiedGeographicFeatureRole a owl:Class ;
+    rdfs:subClassOf cmpe:GeographicFeature,
+        cmpe:IdentifiedEntity ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:ontoumlStereotype "Role" .
+
+cmpe:IdentifiedMedicinalProductPresentationRole a owl:Class ;
+    rdfs:subClassOf cmpe:IdentifiedEntity,
+        cmpe:MedicinalProductPresentation ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:ontoumlStereotype "Role" .
+
+cmpe:IdentifiedMedicinalProductRole a owl:Class ;
+    rdfs:subClassOf cmpe:IdentifiedEntity,
+        cmpe:MedicinalProduct ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:ontoumlStereotype "Role" .
+
+cmpe:IdentifiedOrganizationRole a owl:Class ;
+    rdfs:subClassOf cmpe:IdentifiedEntity,
+        cmpe:Organization ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:ontoumlStereotype "Role" .
+
+cmpe:IdentifiedPharmaceuticalSubstanceRole a owl:Class ;
+    rdfs:subClassOf cmpe:IdentifiedEntity,
+        cmpe:PharmaceuticalSubstance ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:ontoumlStereotype "Role" .
+
+cmpe:IdentifierValue a rdfs:Datatype ;
+    rdfs:label "Identifier Value"@en ;
+    cmmeta:conceptualModule "x-infra" ;
+    cmmeta:ontoumlStereotype "Datatype" .
+
+cmpe:ImporterRole a owl:Class ;
+    rdfs:label "Importer"@en ;
+    rdfs:subClassOf cmpe:EcosystemParticipant,
+        cmpe:Organization ;
+    skos:altLabel "Importer Role"@en ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:conceptualModule "core" ;
+    cmmeta:ontoumlStereotype "Role" .
+
+cmpe:InventoryObservationResult a owl:Class ;
+    rdfs:label "Inventory Observation Result"@en ;
+    rdfs:subClassOf cmpe:ObservationResult ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:conceptualModule "extension" ;
+    cmmeta:ontoumlStereotype "Subkind" .
+
+cmpe:LeadTimeObservationResult a owl:Class ;
+    rdfs:label "Lead Time Observation Result"@en ;
+    rdfs:subClassOf cmpe:ObservationResult ;
+    skos:altLabel "Lead-Time Observation Result"@en ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:conceptualModule "extension" ;
+    cmmeta:ontoumlStereotype "Subkind" .
+
+cmpe:ManufacturerRole a owl:Class ;
+    rdfs:label "Manufacturer"@en ;
+    rdfs:subClassOf cmpe:EcosystemParticipant,
+        cmpe:Organization ;
+    skos:altLabel "Manufacturer Role"@en ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:conceptualModule "core" ;
+    cmmeta:ontoumlStereotype "Role" .
+
+cmpe:ManufacturingActivity a owl:Class ;
+    rdfs:label "Manufacturing Activity"@en ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:conceptualModule "core" ;
+    cmmeta:ontoumlStereotype "Event" .
+
+cmpe:ManufacturingSiteRole a owl:Class ;
+    rdfs:label "Manufacturing Site"@en ;
+    rdfs:subClassOf cmpe:EcosystemParticipant,
+        cmpe:Facility ;
+    skos:altLabel "Manufacturing Site Role"@en ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:conceptualModule "core" ;
+    cmmeta:ontoumlStereotype "Role" .
+
+cmpe:MappingAssertion a owl:Class ;
+    rdfs:label "Mapping Assertion"@en ;
+    rdfs:subClassOf cmpe:Assertion ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:conceptualModule "x-infra" ;
+    cmmeta:ontoumlStereotype "Subkind" .
+
+cmpe:MeasureValue a rdfs:Datatype ;
+    rdfs:label "Measure Value"@en ;
+    cmmeta:conceptualModule "x-infra" ;
+    cmmeta:ontoumlStereotype "Datatype" .
+
+cmpe:PayerFundingOrganizationRole a owl:Class ;
+    rdfs:label "Healthcare Financing Organization"@en ;
+    rdfs:subClassOf cmpe:EcosystemParticipant,
+        cmpe:Organization ;
+    skos:altLabel "Funding Organization"@en,
+        "Payer / Funding Organization Role"@en,
+        "Payer Organization"@en ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:conceptualModule "extension" ;
+    cmmeta:ontoumlStereotype "Role" .
+
+cmpe:PharmacovigilanceRequirement a owl:Class ;
+    rdfs:label "Pharmacovigilance Requirement"@en ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:conceptualModule "extension" ;
+    cmmeta:ontoumlStereotype "Kind" .
+
+cmpe:PostMarketSurveillanceActivity a owl:Class ;
+    rdfs:label "Post-Market Surveillance Activity"@en ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:conceptualModule "extension" ;
+    cmmeta:ontoumlStereotype "Event" .
+
+cmpe:ProcurementActivity a owl:Class ;
+    rdfs:label "Procurement Activity"@en ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:conceptualModule "extension" ;
+    cmmeta:ontoumlStereotype "Event" .
+
+cmpe:ProductResponsibleLabelerRole a owl:Class ;
+    rdfs:label "Product Responsible Organization"@en ;
+    rdfs:subClassOf cmpe:EcosystemParticipant,
+        cmpe:Organization ;
+    skos:altLabel "Labeler"@en,
+        "Product-Responsible / Labeler Role"@en ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:conceptualModule "core" ;
+    cmmeta:ontoumlStereotype "Role" .
+
+cmpe:ProviderFacilityRole a owl:Class ;
+    rdfs:subClassOf cmpe:Facility,
+        cmpe:ProviderEntity ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:ontoumlStereotype "Role" .
+
+cmpe:ProviderMedicinalProductRole a owl:Class ;
+    rdfs:subClassOf cmpe:MedicinalProduct,
+        cmpe:ProviderEntity ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:ontoumlStereotype "Role" .
+
+cmpe:ProviderOrganizationRole a owl:Class ;
+    rdfs:subClassOf cmpe:Organization,
+        cmpe:ProviderEntity ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:ontoumlStereotype "Role" .
+
+cmpe:RegisteredFacilityRole a owl:Class ;
+    rdfs:subClassOf cmpe:Facility,
+        cmpe:RegisteredParty ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:ontoumlStereotype "Role" .
+
+cmpe:RegisteredOrganizationRole a owl:Class ;
+    rdfs:subClassOf cmpe:Organization,
+        cmpe:RegisteredParty ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:ontoumlStereotype "Role" .
+
+cmpe:RegulatoryRequirement a owl:Class ;
+    rdfs:label "Regulatory Requirement"@en ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:conceptualModule "extension" ;
+    cmmeta:ontoumlStereotype "Kind" .
+
+cmpe:ReimbursementUtilisationObservationResult a owl:Class ;
+    rdfs:label "Reimbursement and Utilization Observation Result"@en ;
+    rdfs:subClassOf cmpe:ObservationResult ;
+    skos:altLabel "Reimbursement / Utilisation Observation Result"@en ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:conceptualModule "extension" ;
+    cmmeta:ontoumlStereotype "Subkind" .
+
+cmpe:ReportingPeriod a rdfs:Datatype ;
+    rdfs:label "Reporting Period"@en ;
+    cmmeta:conceptualModule "x-infra" ;
+    cmmeta:ontoumlStereotype "Datatype" .
+
+cmpe:RiskTreatmentPlan a owl:Class ;
+    rdfs:label "Risk Treatment Plan"@en ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:conceptualModule "extension" ;
+    cmmeta:ontoumlStereotype "Kind" .
+
+cmpe:ServiceOfferingSpecification a owl:Class ;
+    rdfs:label "Service Offering Specification"@en ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:conceptualModule "extension" ;
+    cmmeta:ontoumlStereotype "Kind" .
+
+cmpe:StockoutSituation a owl:Class ;
+    rdfs:label "Stockout Situation"@en ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:conceptualModule "extension" ;
+    cmmeta:ontoumlStereotype "Situation" .
+
+cmpe:ThirdPartyLogisticsProviderRole a owl:Class ;
+    rdfs:label "Third-Party Logistics Provider"@en ;
+    rdfs:subClassOf cmpe:EcosystemParticipant,
+        cmpe:Organization ;
+    skos:altLabel "Third-Party Logistics Provider Role"@en ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:conceptualModule "core" ;
+    cmmeta:ontoumlStereotype "Role" .
+
+cmpe:TimeInterval a rdfs:Datatype ;
+    rdfs:label "Time Interval"@en ;
+    cmmeta:conceptualModule "x-infra" ;
+    cmmeta:ontoumlStereotype "Datatype" .
+
+cmpe:WholesaleDistributorRole a owl:Class ;
+    rdfs:label "Wholesale Distributor"@en ;
+    rdfs:subClassOf cmpe:EcosystemParticipant,
+        cmpe:Organization ;
+    skos:altLabel "Wholesale Distributor Role"@en ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:conceptualModule "core" ;
+    cmmeta:ontoumlStereotype "Role" .
+
+cmpe:authorizationJurisdiction a owl:ObjectProperty ;
+    rdfs:domain cmpe:RegulatoryAuthorization ;
+    rdfs:range cmpe:RegulatoryJurisdiction .
+
+cmpe:baViewRepresents a owl:ObjectProperty ;
+    rdfs:domain cmpe:BusinessArchitectureView .
+
+cmpe:capacityBearer a owl:ObjectProperty ;
+    rdfs:domain cmpe:SupplyCapacity .
+
+cmpe:containsSourceRecord a owl:ObjectProperty ;
+    rdfs:domain cmpe:DatasetRelease ;
+    rdfs:range cmpe:SourceRecord .
+
+cmpe:contextClassificationEntry a owl:ObjectProperty ;
+    rdfs:domain cmpe:ContextualMedicineClassificationAssignment ;
+    rdfs:range cmpe:AppliedClassificationEntryRole ;
+    rdfs:subPropertyOf cmpe:classificationEntry .
+
+cmpe:contextClassificationJurisdiction a owl:ObjectProperty ;
+    rdfs:domain cmpe:ContextualMedicineClassificationAssignment ;
+    rdfs:range cmpe:RegulatoryJurisdiction .
+
+cmpe:contextClassificationProduct a owl:ObjectProperty ;
+    rdfs:domain cmpe:ContextualMedicineClassificationAssignment ;
+    rdfs:range cmpe:ClassifiedMedicinalProductRole ;
+    rdfs:subPropertyOf cmpe:classificationEntity .
+
+cmpe:disruptionAffects a owl:ObjectProperty ;
+    rdfs:domain cmpe:DisruptionEvent .
+
+cmpe:entryInScheme a owl:ObjectProperty ;
+    rdfs:domain cmpe:ClassificationEntry ;
+    rdfs:range cmpe:ProductClassificationScheme .
+
+cmpe:evidenceRecord a owl:ObjectProperty ;
+    rdfs:domain cmpe:EvidenceSupport ;
+    rdfs:range cmpe:EvidenceSourceRecordRole ;
+    rdfs:subPropertyOf cmpe:evidenceItem .
+
+cmpe:generatedAssertion a owl:ObjectProperty ;
+    rdfs:domain cmpe:ProvenanceActivity ;
+    rdfs:range cmpe:Assertion .
+
+cmpe:hasActiveSubstance a owl:ObjectProperty ;
+    rdfs:range cmpe:PharmaceuticalSubstance .
+
+cmpe:hasDatasetRelease a owl:ObjectProperty ;
+    rdfs:domain cmpe:Dataset ;
+    rdfs:range cmpe:DatasetRelease .
+
+cmpe:hasDosageForm a owl:ObjectProperty ;
+    rdfs:domain cmpe:MedicinalProductPresentation ;
+    rdfs:range cmpe:DosageFormSpecification .
+
+cmpe:hasMatchConfidence a owl:ObjectProperty ;
+    rdfs:domain cmpe:EntityMatchAssertion ;
+    rdfs:range cmpe:MatchConfidence .
+
+cmpe:hasPackageConfiguration a owl:ObjectProperty ;
+    rdfs:domain cmpe:MedicinalProductPresentation ;
+    rdfs:range cmpe:PackageConfiguration .
+
+cmpe:hasStrength a owl:ObjectProperty ;
+    rdfs:domain cmpe:MedicinalProductPresentation ;
+    rdfs:range cmpe:Strength .
+
+cmpe:identifierLexicalValue a owl:DatatypeProperty ;
+    rdfs:domain cmpe:IdentifierAssignment ;
+    rdfs:range xsd:string .
+
+cmpe:listingJurisdiction a owl:ObjectProperty ;
+    rdfs:domain cmpe:MarketListing ;
+    rdfs:range cmpe:RegulatoryJurisdiction .
+
+cmpe:locatedIn a owl:ObjectProperty ;
+    rdfs:range cmpe:GeographicFeature .
+
+cmpe:maintainsDataset a owl:ObjectProperty ;
+    rdfs:domain cmpe:DataSourceResource ;
+    rdfs:range cmpe:Dataset .
+
+cmpe:matchObject a owl:ObjectProperty ;
+    rdfs:domain cmpe:EntityMatchAssertion .
+
+cmpe:matchSubject a owl:ObjectProperty ;
+    rdfs:domain cmpe:EntityMatchAssertion .
+
+cmpe:measureNumericValue a owl:DatatypeProperty ;
+    rdfs:domain cmpe:ObservationResult ;
+    rdfs:range xsd:decimal .
+
+cmpe:measureUnitLabel a owl:DatatypeProperty ;
+    rdfs:domain cmpe:ObservationResult ;
+    rdfs:range xsd:string .
+
+cmmeta:conceptualModelVersion a owl:AnnotationProperty .
+
+cmmeta:conceptualModule a owl:AnnotationProperty .
+
+cmmeta:derivedFromRelator a owl:AnnotationProperty .
+
+cmmeta:formalizationNote a owl:AnnotationProperty .
+
+cmmeta:formalizationStatus a owl:AnnotationProperty .
+
+cmmeta:gateDIdentifier a owl:AnnotationProperty .
+
+cmmeta:materialRelation a owl:AnnotationProperty .
+
+cmmeta:ontoumlStereotype a owl:AnnotationProperty .
+
+cmmeta:persistentNamespaceStatus a owl:AnnotationProperty .
+
+cmmeta:sourceStatus a owl:AnnotationProperty .
+
+cmpe:observationResultAbout a owl:ObjectProperty ;
+    rdfs:domain cmpe:ObservationResult .
+
+cmpe:ontology a owl:Ontology ;
+    dct:creator "Araz Saie Arasi" ;
+    dct:description "Non-release review snapshot derived from the frozen CM-PharmE 2.0 baseline; semantics remain provisional."@en ;
+    dct:issued "2026-10-04"^^xsd:date ;
+    dct:title "CM-PharmE 2.1 Design Candidate"@en ;
+    owl:versionIRI cmpe:2.1.0-alpha.1-candidate ;
+    owl:versionInfo "2.1.0-alpha.1-candidate" ;
+    cmmeta:formalizationStatus "G1 author-approved implementation candidate; full validation and release gate pending" ;
+    cmmeta:persistentNamespaceStatus "w3id target namespace selected; redirect registration pending" .
+
+cmpe:operates a owl:ObjectProperty ;
+    rdfs:domain cmpe:Organization ;
+    rdfs:range cmpe:Facility ;
+    cmmeta:derivedFromRelator "FacilityOperation" ;
+    cmmeta:materialRelation true .
+
+cmpe:presentationOf a owl:ObjectProperty ;
+    rdfs:domain cmpe:MedicinalProductPresentation ;
+    rdfs:range cmpe:MedicinalProduct .
+
+cmpe:producesObservationResult a owl:ObjectProperty ;
+    rdfs:domain cmpe:ObservationActivity ;
+    rdfs:range cmpe:ObservationResult .
+
+cmpe:registrationJurisdiction a owl:ObjectProperty ;
+    rdfs:domain cmpe:EstablishmentRegistration ;
+    rdfs:range cmpe:RegulatoryJurisdiction .
+
+cmpe:riskAssessmentConcerns a owl:ObjectProperty ;
+    rdfs:domain cmpe:RiskAssessmentActivity .
+
+cmpe:riskTreatmentAddresses a owl:ObjectProperty ;
+    rdfs:domain cmpe:RiskTreatmentActivity .
+
+cmpe:shortageJurisdiction a owl:ObjectProperty ;
+    rdfs:domain cmpe:MedicineShortageSituation ;
+    rdfs:range cmpe:RegulatoryJurisdiction .
+
+cmpe:shortagePresentation a owl:ObjectProperty ;
+    rdfs:domain cmpe:MedicineShortageSituation ;
+    rdfs:range cmpe:MedicinalProductPresentation .
+
+cmpe:shortageProduct a owl:ObjectProperty ;
+    rdfs:domain cmpe:MedicineShortageSituation ;
+    rdfs:range cmpe:MedicinalProduct .
+
+cmpe:usedSourceArtifact a owl:ObjectProperty ;
+    rdfs:domain cmpe:ProvenanceActivity .
+
+cmpe:validFrom a owl:DatatypeProperty ;
+    rdfs:range xsd:dateTime .
+
+cmpe:validTo a owl:DatatypeProperty ;
+    rdfs:range xsd:dateTime .
+
+cmpe:withinCountry a owl:IrreflexiveProperty,
+        owl:ObjectProperty ;
+    rdfs:domain cmpe:GeographicFeature ;
+    rdfs:range cmpe:Country .
+
+cmpe:withinRegion a owl:IrreflexiveProperty,
+        owl:ObjectProperty ;
+    rdfs:domain cmpe:GeographicFeature ;
+    rdfs:range cmpe:AdministrativeRegion .
+
+cmpe:AdministrativeRegion a owl:Class ;
+    rdfs:label "Administrative Region"@en ;
+    rdfs:subClassOf cmpe:GeographicFeature ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:conceptualModule "x-infra" ;
+    cmmeta:ontoumlStereotype "Subkind" .
+
+cmpe:BusinessArchitectureView a owl:Class ;
+    rdfs:label "Business Architecture View"@en ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:conceptualModule "extension" ;
+    cmmeta:ontoumlStereotype "Kind" .
+
+cmpe:ClassifiedMedicinalProductRole a owl:Class ;
+    rdfs:subClassOf cmpe:ClassifiedEntity,
+        cmpe:MedicinalProduct ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:ontoumlStereotype "Role" .
+
+cmpe:Country a owl:Class ;
+    rdfs:label "Country"@en ;
+    rdfs:subClassOf cmpe:GeographicFeature ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:conceptualModule "x-infra" ;
+    cmmeta:ontoumlStereotype "Subkind" .
+
+cmpe:DataSourceResource a owl:Class ;
+    rdfs:label "Data Source"@en ;
+    skos:altLabel "Data Source Resource"@en ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:conceptualModule "x-infra" ;
+    cmmeta:ontoumlStereotype "Kind" .
+
+cmpe:DisruptionEvent a owl:Class ;
+    rdfs:label "Disruption Event"@en ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:conceptualModule "extension" ;
+    cmmeta:ontoumlStereotype "Event" .
+
+cmpe:DosageFormSpecification a owl:Class ;
+    rdfs:label "Dosage Form Specification"@en ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:conceptualModule "core" ;
+    cmmeta:ontoumlStereotype "Kind" .
+
+cmpe:EnterpriseCapability a owl:Class ;
+    rdfs:label "Enterprise Capability"@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onClass cmpe:Organization ;
+            owl:onProperty cmpe:capabilityBearer ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:conceptualModule "extension" ;
+    cmmeta:ontoumlStereotype "Mode" .
+
+cmpe:EvidenceSourceRecordRole a owl:Class ;
+    rdfs:subClassOf cmpe:EvidenceItem,
+        cmpe:SourceRecord ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:ontoumlStereotype "Role" .
+
+cmpe:IdentifierScheme a owl:Class ;
+    rdfs:label "Identifier Scheme"@en ;
+    rdfs:comment "May represent NDC, ATC, ChEMBL, GeoNames, regulatory or dataset-specific identifier schemes. No scheme is assumed globally identifying outside its documented scope."@en ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:conceptualModule "x-infra" ;
+    cmmeta:ontoumlStereotype "Kind" .
+
+cmpe:MatchConfidence a owl:Class ;
+    rdfs:label "Match Confidence"@en ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:conceptualModule "x-infra" ;
+    cmmeta:ontoumlStereotype "Quality" .
+
+cmpe:ObservationActivity a owl:Class ;
+    rdfs:label "Observation Activity"@en ;
+    owl:disjointWith cmpe:ObservationResult ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:conceptualModule "x-infra" ;
+    cmmeta:ontoumlStereotype "Event" .
+
+cmpe:PackageConfiguration a owl:Class ;
+    rdfs:label "Package Configuration"@en ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:conceptualModule "core" ;
+    cmmeta:ontoumlStereotype "Kind" .
+
+cmpe:ProductClassificationScheme a owl:Class ;
+    rdfs:label "Product Classification Scheme"@en ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:conceptualModule "core" ;
+    cmmeta:ontoumlStereotype "Kind" .
+
+cmpe:RiskAssessmentActivity a owl:Class ;
+    rdfs:label "Risk Assessment Activity"@en ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:conceptualModule "extension" ;
+    cmmeta:ontoumlStereotype "Event" .
+
+cmpe:RiskTreatmentActivity a owl:Class ;
+    rdfs:label "Risk Treatment Activity"@en ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:conceptualModule "extension" ;
+    cmmeta:ontoumlStereotype "Event" .
+
+cmpe:Strength a owl:Class ;
+    rdfs:label "Strength"@en ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:conceptualModule "core" ;
+    cmmeta:ontoumlStereotype "Quality" .
+
+cmpe:SupplyCapacity a owl:Class ;
+    rdfs:label "Supply Capacity"@en ;
+    owl:disjointWith cmpe:SupplyCapacityObservationResult ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:conceptualModule "core" ;
+    cmmeta:ontoumlStereotype "Mode" .
+
+cmpe:SupplyCapacityObservationResult a owl:Class ;
+    rdfs:label "Supply Capacity Observation Result"@en ;
+    rdfs:subClassOf cmpe:ObservationResult ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:conceptualModule "core" ;
+    cmmeta:ontoumlStereotype "Subkind" .
+
+cmpe:capabilityBearer a owl:ObjectProperty ;
+    rdfs:domain cmpe:EnterpriseCapability ;
+    rdfs:range cmpe:Organization .
+
+cmpe:ClassificationEntry a owl:Class ;
+    rdfs:label "Classification Entry"@en ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:conceptualModule "core" ;
+    cmmeta:ontoumlStereotype "Kind" .
+
+cmpe:Dataset a owl:Class ;
+    rdfs:label "Dataset"@en ;
+    skos:closeMatch prov:Entity ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:conceptualModule "x-infra" ;
+    cmmeta:ontoumlStereotype "Kind" .
+
+cmpe:DatasetRelease a owl:Class ;
+    rdfs:label "Dataset Release"@en ;
+    skos:closeMatch prov:Entity ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:conceptualModule "x-infra" ;
+    cmmeta:ontoumlStereotype "Kind" .
+
+cmpe:OperatingOrganizationRole a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass cmpe:FacilityOperation ;
+            owl:onProperty [ owl:inverseOf cmpe:operationOrganization ] ],
+        cmpe:Organization ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:ontoumlStereotype "Role" .
+
+cmpe:PartnerOrganizationRole a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass cmpe:StrategicPartnershipAgreement ;
+            owl:onProperty [ owl:inverseOf cmpe:partnershipParticipant ] ],
+        cmpe:Organization ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:ontoumlStereotype "Role" .
+
+cmpe:ProvenanceActivity a owl:Class ;
+    rdfs:label "Provenance Activity"@en ;
+    skos:closeMatch prov:Activity ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:conceptualModule "x-infra" ;
+    cmmeta:ontoumlStereotype "Event" .
+
+cmpe:StrategicPartnershipAgreement a owl:Class ;
+    rdfs:label "Strategic Partnership Agreement"@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+            owl:onClass cmpe:PartnerOrganizationRole ;
+            owl:onProperty cmpe:partnershipParticipant ],
+        [ a owl:Restriction ;
+            owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+            owl:onClass cmpe:Organization ;
+            owl:onProperty cmpe:partnershipParticipant ] ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:conceptualModule "extension" ;
+    cmmeta:ontoumlStereotype "Relator" .
+
+cmpe:operationOrganization a owl:ObjectProperty ;
+    rdfs:domain cmpe:FacilityOperation ;
+    rdfs:range cmpe:OperatingOrganizationRole ;
+    owl:propertyDisjointWith cmpe:operationFacility .
+
+cmpe:AlternativeMedicinalProductRole a owl:Class ;
+    rdfs:label "Alternative Medicinal Product"@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass cmpe:AlternativeMedicineAssignment ;
+            owl:onProperty [ owl:inverseOf cmpe:alternativeProduct ] ],
+        cmpe:MedicinalProduct ;
+    skos:altLabel "Alternative Medicinal Product Role"@en ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:conceptualModule "extension" ;
+    cmmeta:ontoumlStereotype "Role" .
+
+cmpe:AuthorizingAuthorityRole a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass cmpe:RegulatoryAuthorization ;
+            owl:onProperty [ owl:inverseOf cmpe:authorizationAuthority ] ],
+        cmpe:RegulatoryAuthorityRole ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:ontoumlStereotype "Role" .
+
+cmpe:EntityMatchAssertion a owl:Class ;
+    rdfs:label "Entity Match Assertion"@en ;
+    rdfs:subClassOf cmpe:Assertion ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:conceptualModule "x-infra" ;
+    cmmeta:ontoumlStereotype "Subkind" .
+
+cmpe:ListedPresentationRole a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass cmpe:MarketListing ;
+            owl:onProperty [ owl:inverseOf cmpe:listingPresentation ] ],
+        cmpe:MedicinalProductPresentation ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:ontoumlStereotype "Role" .
+
+cmpe:ListingResponsibleOrganizationRole a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass cmpe:MarketListing ;
+            owl:onProperty [ owl:inverseOf cmpe:listingResponsibleOrganization ] ],
+        cmpe:Organization ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:ontoumlStereotype "Role" .
+
+cmpe:MedicineShortageSituation a owl:Class ;
+    rdfs:label "Medicine Shortage Situation"@en ;
+    owl:disjointWith cmpe:SourceRecord ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:conceptualModule "core" ;
+    cmmeta:ontoumlStereotype "Situation" .
+
+cmpe:OperatedFacilityRole a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass cmpe:FacilityOperation ;
+            owl:onProperty [ owl:inverseOf cmpe:operationFacility ] ],
+        cmpe:Facility ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:ontoumlStereotype "Role" .
+
+cmpe:OversightAuthorityRole a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass cmpe:RegulatoryOversight ;
+            owl:onProperty [ owl:inverseOf cmpe:oversightAuthorityRole ] ],
+        cmpe:RegulatoryAuthorityRole ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:ontoumlStereotype "Role" .
+
+cmpe:ReferenceProductRole a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass cmpe:AlternativeMedicineAssignment ;
+            owl:onProperty [ owl:inverseOf cmpe:alternativeForProduct ] ],
+        cmpe:MedicinalProduct ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:ontoumlStereotype "Role" .
+
+cmpe:RegisteringAuthorityRole a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass cmpe:EstablishmentRegistration ;
+            owl:onProperty [ owl:inverseOf cmpe:registrationAuthority ] ],
+        cmpe:RegulatoryAuthorityRole ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:ontoumlStereotype "Role" .
+
+cmpe:RegulatoryAuthorityRole a owl:Class ;
+    rdfs:label "Regulatory Authority"@en ;
+    rdfs:subClassOf cmpe:EcosystemParticipant,
+        cmpe:Organization ;
+    skos:altLabel "Regulatory Authority Role"@en ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:conceptualModule "core" ;
+    cmmeta:ontoumlStereotype "Role" .
+
+cmpe:SourceRecord a owl:Class ;
+    rdfs:label "Source Record"@en ;
+    skos:closeMatch prov:Entity ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:conceptualModule "x-infra" ;
+    cmmeta:ontoumlStereotype "Kind" .
+
+cmpe:SupportedAssertionRole a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass cmpe:EvidenceSupport ;
+            owl:onProperty [ owl:inverseOf cmpe:evidenceAssertion ] ],
+        cmpe:Assertion ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:ontoumlStereotype "Role" .
+
+cmpe:UsedIdentifierSchemeRole a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass cmpe:IdentifierAssignment ;
+            owl:onProperty [ owl:inverseOf cmpe:identifierScheme ] ],
+        cmpe:IdentifierScheme ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:ontoumlStereotype "Role" .
+
+cmpe:alternativeForProduct a owl:ObjectProperty ;
+    rdfs:domain cmpe:AlternativeMedicineAssignment ;
+    rdfs:range cmpe:ReferenceProductRole ;
+    owl:propertyDisjointWith cmpe:alternativeProduct .
+
+cmpe:authorizationAuthority a owl:ObjectProperty ;
+    rdfs:domain cmpe:RegulatoryAuthorization ;
+    rdfs:range cmpe:AuthorizingAuthorityRole ;
+    owl:propertyDisjointWith cmpe:authorizationParty .
+
+cmpe:dependencyDependent a owl:ObjectProperty ;
+    rdfs:domain cmpe:SupplyDependency ;
+    rdfs:range cmpe:DependentEntity ;
+    owl:propertyDisjointWith cmpe:dependencyProvider .
+
+cmpe:identifierEntity a owl:ObjectProperty ;
+    rdfs:domain cmpe:IdentifierAssignment ;
+    rdfs:range cmpe:IdentifiedEntity ;
+    owl:propertyDisjointWith cmpe:identifierScheme .
+
+cmpe:listingPresentation a owl:ObjectProperty ;
+    rdfs:domain cmpe:MarketListing ;
+    rdfs:range cmpe:ListedPresentationRole ;
+    owl:propertyDisjointWith cmpe:listingResponsibleOrganization .
+
+cmpe:oversightAuthorityRole a owl:ObjectProperty ;
+    rdfs:domain cmpe:RegulatoryOversight ;
+    rdfs:range cmpe:OversightAuthorityRole ;
+    owl:propertyDisjointWith cmpe:oversightGovernedEntity .
+
+cmpe:partnershipParticipant a owl:ObjectProperty ;
+    rdfs:domain cmpe:StrategicPartnershipAgreement ;
+    rdfs:range cmpe:PartnerOrganizationRole .
+
+cmpe:registrationAuthority a owl:ObjectProperty ;
+    rdfs:domain cmpe:EstablishmentRegistration ;
+    rdfs:range cmpe:RegisteringAuthorityRole ;
+    owl:propertyDisjointWith cmpe:registrationEntity .
+
+cmpe:AlternativeMedicineAssignment a owl:Class ;
+    rdfs:label "Alternative Medicinal Product Assignment"@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass cmpe:ReferenceProductRole ;
+            owl:onProperty cmpe:alternativeForProduct ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass cmpe:AlternativeMedicinalProductRole ;
+            owl:onProperty cmpe:alternativeProduct ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass cmpe:ReferenceProductRole ;
+            owl:onProperty cmpe:alternativeForProduct ],
+        [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass cmpe:AlternativeMedicinalProductRole ;
+            owl:onProperty cmpe:alternativeProduct ] ;
+    skos:altLabel "Alternative Medicine Assignment"@en ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:conceptualModule "extension" ;
+    cmmeta:ontoumlStereotype "Relator" .
+
+cmpe:AppliedClassificationEntryRole a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass cmpe:ProductClassificationAssignment ;
+            owl:onProperty [ owl:inverseOf cmpe:classificationEntry ] ],
+        cmpe:ClassificationEntry ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:ontoumlStereotype "Role" .
+
+cmpe:FacilityOperation a owl:Class ;
+    rdfs:label "Facility Operation"@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass cmpe:OperatedFacilityRole ;
+            owl:onProperty cmpe:operationFacility ],
+        [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass cmpe:OperatedFacilityRole ;
+            owl:onProperty cmpe:operationFacility ],
+        [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass cmpe:OperatingOrganizationRole ;
+            owl:onProperty cmpe:operationOrganization ] ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:conceptualModule "core" ;
+    cmmeta:ontoumlStereotype "Relator" .
+
+cmpe:PharmaceuticalSubstance a owl:Class ;
+    rdfs:label "Pharmaceutical Substance"@en ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:conceptualModule "core" ;
+    cmmeta:ontoumlStereotype "Kind" .
+
+cmpe:RegulatoryOversight a owl:Class ;
+    rdfs:label "Regulatory Oversight"@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass cmpe:GovernedEntity ;
+            owl:onProperty cmpe:oversightGovernedEntity ],
+        [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass cmpe:OversightAuthorityRole ;
+            owl:onProperty cmpe:oversightAuthorityRole ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass cmpe:OversightAuthorityRole ;
+            owl:onProperty cmpe:oversightAuthorityRole ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass cmpe:GovernedEntity ;
+            owl:onProperty cmpe:oversightGovernedEntity ] ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:conceptualModule "extension" ;
+    cmmeta:ontoumlStereotype "Relator" .
+
+cmpe:SupplyDependency a owl:Class ;
+    rdfs:label "Supply Dependency"@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass cmpe:ProviderEntity ;
+            owl:onProperty cmpe:dependencyProvider ],
+        [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass cmpe:DependentEntity ;
+            owl:onProperty cmpe:dependencyDependent ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass cmpe:ProviderEntity ;
+            owl:onProperty cmpe:dependencyProvider ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass cmpe:DependentEntity ;
+            owl:onProperty cmpe:dependencyDependent ] ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:conceptualModule "extension" ;
+    cmmeta:ontoumlStereotype "Relator" .
+
+cmpe:alternativeProduct a owl:ObjectProperty ;
+    rdfs:domain cmpe:AlternativeMedicineAssignment ;
+    rdfs:range cmpe:AlternativeMedicinalProductRole .
+
+cmpe:authorizationParty a owl:ObjectProperty ;
+    rdfs:domain cmpe:RegulatoryAuthorization ;
+    rdfs:range cmpe:AuthorizedParty .
+
+cmpe:classificationEntity a owl:ObjectProperty ;
+    rdfs:domain cmpe:ProductClassificationAssignment ;
+    rdfs:range cmpe:ClassifiedEntity ;
+    owl:propertyDisjointWith cmpe:classificationEntry .
+
+cmpe:dependencyProvider a owl:ObjectProperty ;
+    rdfs:domain cmpe:SupplyDependency ;
+    rdfs:range cmpe:ProviderEntity .
+
+cmpe:evidenceAssertion a owl:ObjectProperty ;
+    rdfs:domain cmpe:EvidenceSupport ;
+    rdfs:range cmpe:SupportedAssertionRole .
+
+cmpe:evidenceItem a owl:ObjectProperty ;
+    rdfs:domain cmpe:EvidenceSupport ;
+    rdfs:range cmpe:EvidenceItem ;
+    owl:propertyDisjointWith cmpe:evidenceAssertion .
+
+cmpe:identifierScheme a owl:ObjectProperty ;
+    rdfs:domain cmpe:IdentifierAssignment ;
+    rdfs:range cmpe:UsedIdentifierSchemeRole .
+
+cmpe:listingResponsibleOrganization a owl:ObjectProperty ;
+    rdfs:domain cmpe:MarketListing ;
+    rdfs:range cmpe:ListingResponsibleOrganizationRole .
+
+cmpe:operationFacility a owl:ObjectProperty ;
+    rdfs:domain cmpe:FacilityOperation ;
+    rdfs:range cmpe:OperatedFacilityRole .
+
+cmpe:oversightGovernedEntity a owl:ObjectProperty ;
+    rdfs:domain cmpe:RegulatoryOversight ;
+    rdfs:range cmpe:GovernedEntity .
+
+cmpe:registrationEntity a owl:ObjectProperty ;
+    rdfs:domain cmpe:EstablishmentRegistration ;
+    rdfs:range cmpe:RegisteredParty .
+
+cmpe:Assertion a owl:Class ;
+    rdfs:label "Assertion"@en ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:conceptualModule "x-infra" ;
+    cmmeta:ontoumlStereotype "Kind" .
+
+cmpe:AuthorizedParty a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass cmpe:RegulatoryAuthorization ;
+            owl:onProperty [ owl:inverseOf cmpe:authorizationParty ] ] ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:ontoumlStereotype "RoleMixin" .
+
+cmpe:ClassifiedEntity a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass cmpe:ProductClassificationAssignment ;
+            owl:onProperty [ owl:inverseOf cmpe:classificationEntity ] ] ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:ontoumlStereotype "RoleMixin" .
+
+cmpe:ContextualMedicineClassificationAssignment a owl:Class ;
+    rdfs:label "Contextual Medicine Classification Assignment"@en ;
+    rdfs:subClassOf cmpe:ProductClassificationAssignment ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:conceptualModule "extension" ;
+    cmmeta:ontoumlStereotype "Subkind" .
+
+cmpe:EstablishmentRegistration a owl:Class ;
+    rdfs:label "Establishment Registration"@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass cmpe:RegisteringAuthorityRole ;
+            owl:onProperty cmpe:registrationAuthority ],
+        [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass cmpe:RegisteringAuthorityRole ;
+            owl:onProperty cmpe:registrationAuthority ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass cmpe:RegisteredParty ;
+            owl:onProperty cmpe:registrationEntity ],
+        [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass cmpe:RegisteredParty ;
+            owl:onProperty cmpe:registrationEntity ] ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:conceptualModule "core" ;
+    cmmeta:ontoumlStereotype "Relator" .
+
+cmpe:EvidenceItem a owl:Class ;
+    rdfs:label "Evidence Item"@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass cmpe:EvidenceSupport ;
+            owl:onProperty [ owl:inverseOf cmpe:evidenceItem ] ] ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:conceptualModule "x-infra" ;
+    cmmeta:ontoumlStereotype "RoleMixin" .
+
+cmpe:EvidenceSupport a owl:Class ;
+    rdfs:label "Evidence Support"@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass cmpe:EvidenceItem ;
+            owl:onProperty cmpe:evidenceItem ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass cmpe:SupportedAssertionRole ;
+            owl:onProperty cmpe:evidenceAssertion ],
+        [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass cmpe:SupportedAssertionRole ;
+            owl:onProperty cmpe:evidenceAssertion ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass cmpe:EvidenceItem ;
+            owl:onProperty cmpe:evidenceItem ] ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:conceptualModule "x-infra" ;
+    cmmeta:ontoumlStereotype "Relator" .
+
+cmpe:GovernedEntity a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass cmpe:RegulatoryOversight ;
+            owl:onProperty [ owl:inverseOf cmpe:oversightGovernedEntity ] ] ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:ontoumlStereotype "RoleMixin" .
+
+cmpe:IdentifierAssignment a owl:Class ;
+    rdfs:label "Identifier Assignment"@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass cmpe:IdentifiedEntity ;
+            owl:onProperty cmpe:identifierEntity ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass cmpe:UsedIdentifierSchemeRole ;
+            owl:onProperty cmpe:identifierScheme ],
+        [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass cmpe:IdentifiedEntity ;
+            owl:onProperty cmpe:identifierEntity ],
+        [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass cmpe:UsedIdentifierSchemeRole ;
+            owl:onProperty cmpe:identifierScheme ] ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:conceptualModule "x-infra" ;
+    cmmeta:ontoumlStereotype "Relator" .
+
+cmpe:MarketListing a owl:Class ;
+    rdfs:label "Market Listing"@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass cmpe:ListingResponsibleOrganizationRole ;
+            owl:onProperty cmpe:listingResponsibleOrganization ],
+        [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass cmpe:ListingResponsibleOrganizationRole ;
+            owl:onProperty cmpe:listingResponsibleOrganization ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass cmpe:ListedPresentationRole ;
+            owl:onProperty cmpe:listingPresentation ],
+        [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass cmpe:ListedPresentationRole ;
+            owl:onProperty cmpe:listingPresentation ] ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:conceptualModule "core" ;
+    cmmeta:ontoumlStereotype "Relator" .
+
+cmpe:ProductClassificationAssignment a owl:Class ;
+    rdfs:label "Product Classification Assignment"@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass cmpe:ClassifiedEntity ;
+            owl:onProperty cmpe:classificationEntity ],
+        [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass cmpe:AppliedClassificationEntryRole ;
+            owl:onProperty cmpe:classificationEntry ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass cmpe:ClassifiedEntity ;
+            owl:onProperty cmpe:classificationEntity ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass cmpe:AppliedClassificationEntryRole ;
+            owl:onProperty cmpe:classificationEntry ] ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:conceptualModule "core" ;
+    cmmeta:ontoumlStereotype "Relator" .
+
+cmpe:RegisteredParty a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass cmpe:EstablishmentRegistration ;
+            owl:onProperty [ owl:inverseOf cmpe:registrationEntity ] ] ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:ontoumlStereotype "RoleMixin" .
+
+cmpe:RegulatoryAuthorization a owl:Class ;
+    rdfs:label "Regulatory Authorization"@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass cmpe:AuthorizingAuthorityRole ;
+            owl:onProperty cmpe:authorizationAuthority ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass cmpe:AuthorizedParty ;
+            owl:onProperty cmpe:authorizationParty ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass cmpe:AuthorizingAuthorityRole ;
+            owl:onProperty cmpe:authorizationAuthority ],
+        [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass cmpe:AuthorizedParty ;
+            owl:onProperty cmpe:authorizationParty ] ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:conceptualModule "core" ;
+    cmmeta:ontoumlStereotype "Relator" .
+
+cmpe:classificationEntry a owl:ObjectProperty ;
+    rdfs:domain cmpe:ProductClassificationAssignment ;
+    rdfs:range cmpe:AppliedClassificationEntryRole .
+
+cmpe:DependentEntity a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass cmpe:SupplyDependency ;
+            owl:onProperty [ owl:inverseOf cmpe:dependencyDependent ] ] ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:ontoumlStereotype "RoleMixin" .
+
+cmpe:ProviderEntity a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass cmpe:SupplyDependency ;
+            owl:onProperty [ owl:inverseOf cmpe:dependencyProvider ] ] ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:ontoumlStereotype "RoleMixin" .
+
+cmpe:GeographicFeature a owl:Class ;
+    rdfs:label "Geographic Feature"@en ;
+    rdfs:seeAlso geonames:Feature ;
+    owl:disjointWith cmpe:RegulatoryJurisdiction ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:conceptualModule "x-infra" ;
+    cmmeta:ontoumlStereotype "Kind" .
+
+cmpe:RegulatoryJurisdiction a owl:Class ;
+    rdfs:label "Regulatory Jurisdiction"@en ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:conceptualModule "core" ;
+    cmmeta:ontoumlStereotype "Kind" .
+
+cmpe:MedicinalProductPresentation a owl:Class ;
+    rdfs:label "Medicinal Product Presentation"@en ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:conceptualModule "core" ;
+    cmmeta:ontoumlStereotype "Kind" .
+
+cmpe:EcosystemParticipant a owl:Class ;
+    rdfs:label "Ecosystem Participant"@en ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:conceptualModule "core" ;
+    cmmeta:ontoumlStereotype "RoleMixin" .
+
+cmpe:IdentifiedEntity a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass cmpe:IdentifierAssignment ;
+            owl:onProperty [ owl:inverseOf cmpe:identifierEntity ] ] ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:ontoumlStereotype "RoleMixin" .
+
+cmpe:MedicinalProduct a owl:Class ;
+    rdfs:label "Medicinal Product"@en ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:conceptualModule "core" ;
+    cmmeta:ontoumlStereotype "Kind" .
+
+cmpe:Facility a owl:Class ;
+    rdfs:label "Facility"@en ;
+    owl:disjointWith cmpe:GeographicFeature ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:conceptualModule "core" ;
+    cmmeta:ontoumlStereotype "Kind" .
+
+cmpe:ObservationResult a owl:Class ;
+    rdfs:label "Observation Result"@en ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:conceptualModule "x-infra" ;
+    cmmeta:ontoumlStereotype "Kind" .
+
+cmpe:Organization a owl:Class ;
+    rdfs:label "Organization"@en ;
+    cmmeta:conceptualModelVersion "2.1.0-alpha.1-candidate" ;
+    cmmeta:conceptualModule "core" ;
+    cmmeta:ontoumlStereotype "Kind" .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( cmpe:Organization cmpe:Facility cmpe:RegulatoryJurisdiction cmpe:MedicinalProduct cmpe:PharmaceuticalSubstance cmpe:MedicinalProductPresentation ) .
+

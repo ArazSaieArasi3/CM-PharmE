@@ -1,0 +1,24 @@
+{
+  "schema_version": "CMPE-PagesRetirementSeed/0.1.0",
+  "source_main": "42a5ae4da0e87af161e91110a044c6b146982e89",
+  "registry_blob_sha": "bf3b61f5af21ed43fc99d77e22b90457c8db2b52",
+  "registry_sha256": "33ee215f40b086ce401f447fd83f7e5a4d9f3842c59097025e4cbfb374d06e29",
+  "retire": [
+    {
+      "id": "v2",
+      "reader_label": "CM-PharmE 2.0",
+      "root": "ontology/v2/current/",
+      "semantic_source_ref": "v2/research-program@1226b0a5484f8f5d3a8d214e0d0f52f066b88999"
+    },
+    {
+      "id": "v2-m1",
+      "reader_label": "CM-PharmE 2.1.0 \u2014 M1 Provenance Core",
+      "root": "ontology/2.1.0/m1/",
+      "semantic_source_ref": "release/2.1.0@77a8e854d0e3927b0687346d7f8fda6a398adda7"
+    }
+  ],
+  "preserve_ids": [
+    "v1"
+  ],
+  "requires_fresh_complete_route_alias_asset_inventory_at_cutover": true
+}

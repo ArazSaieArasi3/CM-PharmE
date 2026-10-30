@@ -1,0 +1,154 @@
+{
+  "boundary": "Synthetic copied-W6 capacity/measurement prototype only. No Mode from a measurement, no real capacity witness, no universal bearer-capacity existence or full 2.1 scientific/GA acceptance.",
+  "database_executed": false,
+  "model_commit": "f1b357847356479ee749e5d91cb3adf131ff30e1",
+  "oracle_commit": "e750774db38c9946c9d3abdb4c801c88df271301",
+  "passed": true,
+  "rdf": {
+    "capacity_rows": [
+      [
+        "m4-fixture-capacity:facility",
+        "0.5.0",
+        "facility",
+        "m4-fixture-facility:capacity",
+        "synthetic_fixture",
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        "m4-fixture-capacity:organization",
+        "0.5.0",
+        "organization",
+        "m4-fixture-organization:capacity",
+        "synthetic_fixture",
+        "m4-fixture-release:0.5.0",
+        "1",
+        "14e5b59eafe19930e8ee248a8051f05b2dcad514e0bd943f041187fac9d536e2",
+        "m4-fixture-run:0.5.0",
+        "m4-fixture-assertion:capacity-assertion",
+        "m4-fixture-evidence:capacity-assertion"
+      ]
+    ],
+    "graph_sha256": "3c79e1f52b7ce3c48040605cdd90a08a442d2e540b9919641a0a9f7aa29ad1cc",
+    "graph_triples": 61,
+    "native": {
+      "boundary": "Native anchors and multiplicities only; full candidate parser/anti-pattern approval remains separate.",
+      "intrinsic_mode": true,
+      "native_xor_note_present": true,
+      "two_typed_characterizations": true
+    },
+    "observation_only_capacity_rows": 0,
+    "observation_rows": [
+      [
+        "m4-fixture-observation:capacity-measurement",
+        "m4-fixture-facility:observation-only",
+        "2026-01-01",
+        "120",
+        "01a4f484d717f3d7134915d63f2f9b8e66204868d8ab9e5af2391a631618c330",
+        "m4-fixture-release:0.5.0",
+        "m4-fixture-run:0.5.0",
+        "m4-fixture-assertion:observation-record",
+        "m4-fixture-evidence:observation-record"
+      ]
+    ],
+    "owl": {
+      "all_expected_met": true,
+      "derived_bearer_pairs": 2,
+      "expected": {
+        "eligible_bearers_with_zero_capacities": true,
+        "missing_explicit_bearer_open_world": true,
+        "observation_mode_collision": false,
+        "observation_without_capacity": true,
+        "organization_and_facility_routes": false,
+        "positive": true,
+        "two_distinct_organizations": false,
+        "two_organization_iris_without_inequality": true,
+        "wrong_typed_bearer": false
+      },
+      "observation_did_not_create_mode": true,
+      "observed": {
+        "eligible_bearers_with_zero_capacities": true,
+        "missing_explicit_bearer_open_world": true,
+        "observation_mode_collision": false,
+        "observation_without_capacity": true,
+        "organization_and_facility_routes": false,
+        "positive": true,
+        "two_distinct_organizations": false,
+        "two_organization_iris_without_inequality": true,
+        "wrong_typed_bearer": false
+      },
+      "primary_only_export": true
+    },
+    "rdf_roundtrip": true,
+    "real_capacity_witnesses": 0,
+    "shacl": {
+      "all_expected_met": true,
+      "expected": {
+        "both_routes": false,
+        "broad_only": false,
+        "facility_bearer_unknown_source": true,
+        "misaligned_assertion": false,
+        "missing_bearer": false,
+        "no_capacity_required": true,
+        "observation_and_mode_collision": false,
+        "observation_used_as_mode": false,
+        "organization_bearer": true,
+        "partial_provenance": false,
+        "positive_export": true,
+        "two_organization_bearers": false,
+        "typed_inverse_only": false,
+        "wrong_bearer_type": false
+      },
+      "observed": {
+        "both_routes": false,
+        "broad_only": false,
+        "facility_bearer_unknown_source": true,
+        "misaligned_assertion": false,
+        "missing_bearer": false,
+        "no_capacity_required": true,
+        "observation_and_mode_collision": false,
+        "observation_used_as_mode": false,
+        "organization_bearer": true,
+        "partial_provenance": false,
+        "positive_export": true,
+        "two_organization_bearers": false,
+        "typed_inverse_only": false,
+        "wrong_bearer_type": false
+      },
+      "violation_counts": {
+        "both_routes": 2,
+        "broad_only": 3,
+        "facility_bearer_unknown_source": 0,
+        "misaligned_assertion": 1,
+        "missing_bearer": 2,
+        "no_capacity_required": 0,
+        "observation_and_mode_collision": 2,
+        "observation_used_as_mode": 2,
+        "organization_bearer": 0,
+        "partial_provenance": 1,
+        "positive_export": 0,
+        "two_organization_bearers": 2,
+        "typed_inverse_only": 3,
+        "wrong_bearer_type": 2
+      }
+    },
+    "unknown_source_capacity_rows": 1
+  },
+  "requirements": [
+    "FR-14",
+    "FR-15"
+  ],
+  "schema_version": 1,
+  "scope": "OFFLINE_RDF_ONLY_NO_POSTGRESQL_CLAIM",
+  "software": {
+    "owlready2": "0.49",
+    "psycopg": "3.2.9",
+    "pyshacl": "0.31.0",
+    "python": "3.12.14",
+    "rdflib": "7.5.0"
+  }
+}

@@ -1,0 +1,5 @@
+# Frozen W5 formal source snapshot
+
+These six Turtle modules are byte-for-byte copies of `v2/ontology/source/modules/*.ttl` at commit `5b36726d01fcec9ec790611fa0a8c9a7e0380570`, after the explicit OWL annotation-property fix. Their RDF union is 642 triples and canonical SHA-256 `59ef47eeed732290736e60bfa1c6bf43a12d15df2f50cff931badb5938cc954a`, matching `../formal-baseline.json`.
+
+`tools/v2_ontology/build_validate.py` and the frozen W7 E1 structural evaluation use this snapshot by default. The later `v2/ontology/source/modules` is an editorial naming revision introduced in commit `4bebc04cfdbbdf71ee08f90bb52922e5e4fcb0c9`: its union is 664 triples with changed labels/alternative labels. It remains available for candidate-building and other work that explicitly references it. A W5/W7 historical fingerprint must never be silently replaced by the later graph. Callers that mean the naming revision may pass `--source-dir v2/ontology/source/modules` where supported, with a separate stated expectation.

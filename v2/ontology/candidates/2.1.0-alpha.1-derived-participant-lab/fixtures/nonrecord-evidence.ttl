@@ -1,0 +1,13 @@
+@prefix ns1: <https://w3id.org/cm-pharme/2.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+<urn:cmpe-participant-lab:support> a ns1:EvidenceSupport ;
+    ns1:evidenceAssertion <urn:cmpe-participant-lab:claim> ;
+    ns1:evidenceItem <urn:cmpe-participant-lab:item> .
+
+<urn:cmpe-participant-lab:claim> a ns1:Assertion,
+        ns1:SupportedAssertionRole .
+
+<urn:cmpe-participant-lab:item> a [ owl:complementOf ns1:SourceRecord ],
+        ns1:Dataset,
+        ns1:EvidenceItem .

@@ -1,0 +1,19 @@
+@prefix cmpe: <https://w3id.org/cm-pharme/2.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/cm-pharme/2.1/instance/dataset/dataset-A> a cmpe:Dataset ;
+    dct:identifier "10.9999/synthetic-m1" ;
+    cmpe:hasDatasetRelease <https://w3id.org/cm-pharme/2.1/instance/dataset-release/release-A> .
+
+<https://w3id.org/cm-pharme/2.1/instance/dataset-release/release-A> a cmpe:DatasetRelease ;
+    dct:identifier "release-A" ;
+    cmpe:containsSourceRecord <https://w3id.org/cm-pharme/2.1/instance/source-record/%5B%22release-A%22%2C0%2C%22aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa%22%5D> .
+
+<https://w3id.org/cm-pharme/2.1/instance/source-record/%5B%22release-A%22%2C0%2C%22aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa%22%5D> a cmpe:SourceRecord ;
+    dct:identifier "[\"release-A\",0,\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\"]" ;
+    rdf:value 0 ;
+    prov:value "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" .
+

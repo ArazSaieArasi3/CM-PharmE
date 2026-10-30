@@ -1,0 +1,44 @@
+@prefix ns1: <https://w3id.org/cm-pharme/2.1/> .
+
+<https://example.org/cm-pharme-g2/assertionAboutProduct-s> a ns1:Assertion ;
+    ns1:assertionAboutProduct <https://example.org/cm-pharme-g2/assertionAboutProduct-o> .
+
+<https://example.org/cm-pharme-g2/disruptionAffectsDependency-s> a ns1:DisruptionEvent ;
+    ns1:disruptionAffectsDependency <https://example.org/cm-pharme-g2/disruptionAffectsDependency-o> .
+
+<https://example.org/cm-pharme-g2/observationAboutPresentation-s> a ns1:ObservationResult ;
+    ns1:observationAboutPresentation <https://example.org/cm-pharme-g2/observationAboutPresentation-o> .
+
+<https://example.org/cm-pharme-g2/observationAboutProduct-s> a ns1:ObservationResult ;
+    ns1:observationAboutProduct <https://example.org/cm-pharme-g2/observationAboutProduct-o> .
+
+<https://example.org/cm-pharme-g2/reimbursementDiagnosisContext-s> a ns1:ReimbursementUtilisationObservationResult ;
+    ns1:reimbursementDiagnosisContext <https://example.org/cm-pharme-g2/reimbursementDiagnosisContext-o> .
+
+<https://example.org/cm-pharme-g2/riskAssessmentConcernsDependency-s> a ns1:RiskAssessmentActivity ;
+    ns1:riskAssessmentConcernsDependency <https://example.org/cm-pharme-g2/riskAssessmentConcernsDependency-o> .
+
+<https://example.org/cm-pharme-g2/assertionAboutProduct-o> a ns1:MedicinalProduct .
+
+<https://example.org/cm-pharme-g2/disruptionAffectsDependency-dependent> a ns1:DependentOrganizationRole .
+
+<https://example.org/cm-pharme-g2/disruptionAffectsDependency-o> a ns1:SupplyDependency ;
+    ns1:dependencyDependent <https://example.org/cm-pharme-g2/disruptionAffectsDependency-dependent> ;
+    ns1:dependencyProvider <https://example.org/cm-pharme-g2/disruptionAffectsDependency-provider> .
+
+<https://example.org/cm-pharme-g2/disruptionAffectsDependency-provider> a ns1:ProviderOrganizationRole .
+
+<https://example.org/cm-pharme-g2/observationAboutPresentation-o> a ns1:MedicinalProductPresentation .
+
+<https://example.org/cm-pharme-g2/observationAboutProduct-o> a ns1:MedicinalProduct .
+
+<https://example.org/cm-pharme-g2/reimbursementDiagnosisContext-o> a ns1:DiagnosisClassificationReference .
+
+<https://example.org/cm-pharme-g2/riskAssessmentConcernsDependency-dependent> a ns1:DependentOrganizationRole .
+
+<https://example.org/cm-pharme-g2/riskAssessmentConcernsDependency-o> a ns1:SupplyDependency ;
+    ns1:dependencyDependent <https://example.org/cm-pharme-g2/riskAssessmentConcernsDependency-dependent> ;
+    ns1:dependencyProvider <https://example.org/cm-pharme-g2/riskAssessmentConcernsDependency-provider> .
+
+<https://example.org/cm-pharme-g2/riskAssessmentConcernsDependency-provider> a ns1:ProviderOrganizationRole .
+

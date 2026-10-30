@@ -1,0 +1,100 @@
+{
+  "scope": "Seven already-declared paired end specializations and their OWL domain/range/subPropertyOf axioms only. No cardinality equivalence, full-model equivalence, reasoner execution, or scientific acceptance.",
+  "native_sha256": "fef3295149278bdf5a9c446f9699582a565d26fa2f52f76d90f593ba00e20989",
+  "owl_sha256": "8c37e6ca3c7405515a5f387a5228831a57f1be9eb27f3211484077e609bbd8fa",
+  "rows": [
+    {
+      "relation": "rel-contextClassificationEntry",
+      "parent_relation": "rel-classificationEntry",
+      "owl_property": "https://w3id.org/cm-pharme/2.1/contextClassificationEntry",
+      "owl_parent_property": "https://w3id.org/cm-pharme/2.1/classificationEntry",
+      "checks": {
+        "native_end_orientation_agrees": true,
+        "owl_subproperty_present": true,
+        "domain_matches": true,
+        "range_matches": true
+      },
+      "pass": true
+    },
+    {
+      "relation": "rel-contextClassificationProduct",
+      "parent_relation": "rel-classificationEntity",
+      "owl_property": "https://w3id.org/cm-pharme/2.1/contextClassificationProduct",
+      "owl_parent_property": "https://w3id.org/cm-pharme/2.1/classificationEntity",
+      "checks": {
+        "native_end_orientation_agrees": true,
+        "owl_subproperty_present": true,
+        "domain_matches": true,
+        "range_matches": true
+      },
+      "pass": true
+    },
+    {
+      "relation": "rel-disruptionAffectsDependency",
+      "parent_relation": "rel-disruptionAffects",
+      "owl_property": "https://w3id.org/cm-pharme/2.1/disruptionAffectsDependency",
+      "owl_parent_property": "https://w3id.org/cm-pharme/2.1/disruptionAffects",
+      "checks": {
+        "native_end_orientation_agrees": true,
+        "owl_subproperty_present": true,
+        "domain_matches": true,
+        "range_matches": true
+      },
+      "pass": true
+    },
+    {
+      "relation": "rel-evidenceRecord",
+      "parent_relation": "rel-evidenceItem",
+      "owl_property": "https://w3id.org/cm-pharme/2.1/evidenceRecord",
+      "owl_parent_property": "https://w3id.org/cm-pharme/2.1/evidenceItem",
+      "checks": {
+        "native_end_orientation_agrees": true,
+        "owl_subproperty_present": true,
+        "domain_matches": true,
+        "range_matches": true
+      },
+      "pass": true
+    },
+    {
+      "relation": "rel-observationAboutPresentation",
+      "parent_relation": "rel-observationResultAbout",
+      "owl_property": "https://w3id.org/cm-pharme/2.1/observationAboutPresentation",
+      "owl_parent_property": "https://w3id.org/cm-pharme/2.1/observationResultAbout",
+      "checks": {
+        "native_end_orientation_agrees": true,
+        "owl_subproperty_present": true,
+        "domain_matches": true,
+        "range_matches": true
+      },
+      "pass": true
+    },
+    {
+      "relation": "rel-observationAboutProduct",
+      "parent_relation": "rel-observationResultAbout",
+      "owl_property": "https://w3id.org/cm-pharme/2.1/observationAboutProduct",
+      "owl_parent_property": "https://w3id.org/cm-pharme/2.1/observationResultAbout",
+      "checks": {
+        "native_end_orientation_agrees": true,
+        "owl_subproperty_present": true,
+        "domain_matches": true,
+        "range_matches": true
+      },
+      "pass": true
+    },
+    {
+      "relation": "rel-riskAssessmentConcernsDependency",
+      "parent_relation": "rel-riskAssessmentConcerns",
+      "owl_property": "https://w3id.org/cm-pharme/2.1/riskAssessmentConcernsDependency",
+      "owl_parent_property": "https://w3id.org/cm-pharme/2.1/riskAssessmentConcerns",
+      "checks": {
+        "native_end_orientation_agrees": true,
+        "owl_subproperty_present": true,
+        "domain_matches": true,
+        "range_matches": true
+      },
+      "pass": true
+    }
+  ],
+  "pass": 7,
+  "total": 7
+}

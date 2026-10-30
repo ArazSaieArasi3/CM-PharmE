@@ -1,0 +1,113 @@
+{
+  "all_policy_engines_reexecuted": false,
+  "archive_bytes": 30945280,
+  "archive_negative_controls": [
+    {
+      "id": "missing-source",
+      "reason": "payload-files",
+      "refused": true
+    },
+    {
+      "id": "tampered-source",
+      "reason": "payload-integrity",
+      "refused": true
+    },
+    {
+      "id": "extra-unmanifested",
+      "reason": "bundle-files",
+      "refused": true
+    },
+    {
+      "id": "unsafe-path",
+      "reason": "unsafe-archive-path",
+      "refused": true
+    },
+    {
+      "id": "symlink-member",
+      "reason": "unsafe-member",
+      "refused": true
+    },
+    {
+      "id": "duplicate-member",
+      "reason": "duplicate-member",
+      "refused": true
+    },
+    {
+      "id": "historical-citation",
+      "reason": "metadata-drift",
+      "refused": true
+    },
+    {
+      "id": "suppressed-transition",
+      "reason": "metadata-drift",
+      "refused": true
+    },
+    {
+      "id": "ga-claim",
+      "reason": "release-policy",
+      "refused": true
+    },
+    {
+      "id": "checksum-tamper",
+      "reason": "checksum-file",
+      "refused": true
+    }
+  ],
+  "archive_sha256": "21f140abb6ccde5eebb9302cd87724ce8616a2f71a046b22bf3c3c5ea01b10ba",
+  "bundle_files": 2001,
+  "claim_boundary": "Fresh extracted bounded EvidenceRecord runtime replay plus committed four-policy dossier integration and scope/source integrity. No database/all-detector/full-model/scientific/GA acceptance or publication.",
+  "clean_replay_completed": true,
+  "complete_integration_report_equal": true,
+  "complete_native_report_equal": true,
+  "database_reexecuted": false,
+  "evidence_record": {
+    "contextclass_rows": 12,
+    "declared_transitions": 1,
+    "hermit_rows": 6,
+    "historical_before_matches": 89,
+    "historical_oracles_rewritten": false,
+    "new_shacl_rows": 12,
+    "original_after_matches": 88,
+    "prospective_after_matches": 89,
+    "prospective_contract": "CMPE-QualifiedEvidenceWitness/0.2.0",
+    "temporal_rows": 10
+  },
+  "existing_dependencies_reused": false,
+  "external_downloads_required": true,
+  "extracted_snapshot_unchanged": true,
+  "fresh_npm_environment": true,
+  "fresh_python_environment": true,
+  "full_20_family_candidate_execution": false,
+  "ga_ready": false,
+  "independent_scientific_acceptance": false,
+  "integration_report_canonical_sha256": "4b4177a30299a459d172ff168db86e4f4e4ece2c5d9f4332f7369bdb230f69be",
+  "native_inventory": {
+    "elements": 536,
+    "properties": 172,
+    "specialized_properties": 14,
+    "unknown_cardinality": 60,
+    "unknown_readonly": 76,
+    "untyped_properties": 11
+  },
+  "native_profile": "CMPE-EvidenceRecordProjection/0.1.0",
+  "native_report_canonical_sha256": "f873dc5a154c0ba2be02226aabf0368bfbbe414ccd84c6ce388e1f77c0c77953",
+  "native_sha256": "d97d7a7f42e3fc903181d6d4ed0a2bd4e159afe4a1a3bb685e3c821a93791a91",
+  "offline_reproduction_claimed": false,
+  "packaging_contract_commit": "56e5138a25866c9b23b3d966549ee9a41c1d4653",
+  "packaging_contract_sha256": "af43da6949e0db60438682d9ed362cd9a25dff327756e09663754bca96c36ff1",
+  "passed": true,
+  "payload_source_commit": "64edf150db8a78579928fd99b5a381f665c1afdf",
+  "profile": "CMPE-RC-Bundle/0.1.0",
+  "release_published": false,
+  "schema_version": 1,
+  "scope_source_commit": "a0a9a539c3891476847b52fed4c65d9ccae8d485",
+  "source_files": 1975,
+  "source_policy_totals": {
+    "case_rows": 62,
+    "historical_replay_rows": 16,
+    "legacy_refusal_rows": 40,
+    "native_admission_rows": 7
+  },
+  "source_scope_recheck_equal": true,
+  "tag_created": false
+}

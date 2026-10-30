@@ -1,0 +1,327 @@
+{
+  "schema_version": "CMPE-LogisticsSiteDecisionProbe/0.1.0",
+  "issue": 345,
+  "profile": "CMPE-QualifiedLogisticsSiteClaim/0.1.0",
+  "oracle_freeze_commit": "653534b5c431ca19b53333ff40a0258bcddbd99e",
+  "freeze_sha256": "3dff1a2f3104a38194044fb9139f7c103d40482a0e5ce57744192583b371f272",
+  "passed": true,
+  "cases": [
+    {
+      "id": "LS01",
+      "expected_admission": true,
+      "observed_admission": true,
+      "specific_pairs": [
+        [
+          "origin",
+          "site"
+        ]
+      ],
+      "generic_pairs": 1,
+      "default_world_graph_empty": true,
+      "violation_components": [],
+      "source_classification": "SYNTHETIC_BOUNDARY_WITNESS",
+      "passed": true
+    },
+    {
+      "id": "LS02",
+      "expected_admission": true,
+      "observed_admission": true,
+      "specific_pairs": [
+        [
+          "destination",
+          "site"
+        ]
+      ],
+      "generic_pairs": 1,
+      "default_world_graph_empty": true,
+      "violation_components": [],
+      "source_classification": "SYNTHETIC_BOUNDARY_WITNESS",
+      "passed": true
+    },
+    {
+      "id": "LS03",
+      "expected_admission": true,
+      "observed_admission": true,
+      "specific_pairs": [
+        [
+          "storage",
+          "site"
+        ]
+      ],
+      "generic_pairs": 1,
+      "default_world_graph_empty": true,
+      "violation_components": [],
+      "source_classification": "SYNTHETIC_BOUNDARY_WITNESS",
+      "passed": true
+    },
+    {
+      "id": "LS04",
+      "expected_admission": true,
+      "observed_admission": true,
+      "specific_pairs": [],
+      "generic_pairs": 1,
+      "default_world_graph_empty": true,
+      "violation_components": [],
+      "source_classification": "SYNTHETIC_BOUNDARY_WITNESS",
+      "passed": true
+    },
+    {
+      "id": "LS05",
+      "expected_admission": false,
+      "observed_admission": false,
+      "specific_pairs": [],
+      "generic_pairs": 0,
+      "default_world_graph_empty": true,
+      "violation_components": [
+        "http://www.w3.org/ns/shacl#ClassConstraintComponent",
+        "http://www.w3.org/ns/shacl#NotConstraintComponent"
+      ],
+      "source_classification": "SYNTHETIC_BOUNDARY_WITNESS",
+      "passed": true
+    },
+    {
+      "id": "LS06",
+      "expected_admission": false,
+      "observed_admission": false,
+      "specific_pairs": [],
+      "generic_pairs": 0,
+      "default_world_graph_empty": true,
+      "violation_components": [
+        "http://www.w3.org/ns/shacl#HasValueConstraintComponent"
+      ],
+      "source_classification": "SYNTHETIC_BOUNDARY_WITNESS",
+      "passed": true
+    },
+    {
+      "id": "LS07",
+      "expected_admission": false,
+      "observed_admission": false,
+      "specific_pairs": [],
+      "generic_pairs": 0,
+      "default_world_graph_empty": true,
+      "violation_components": [
+        "http://www.w3.org/ns/shacl#HasValueConstraintComponent"
+      ],
+      "source_classification": "SYNTHETIC_BOUNDARY_WITNESS",
+      "passed": true
+    },
+    {
+      "id": "LS08",
+      "expected_admission": false,
+      "observed_admission": false,
+      "specific_pairs": [],
+      "generic_pairs": 0,
+      "default_world_graph_empty": true,
+      "violation_components": [
+        "http://www.w3.org/ns/shacl#ClassConstraintComponent"
+      ],
+      "source_classification": "SYNTHETIC_BOUNDARY_WITNESS",
+      "passed": true
+    },
+    {
+      "id": "LS09",
+      "expected_admission": false,
+      "observed_admission": false,
+      "specific_pairs": [],
+      "generic_pairs": 0,
+      "default_world_graph_empty": true,
+      "violation_components": [
+        "http://www.w3.org/ns/shacl#ClassConstraintComponent"
+      ],
+      "source_classification": "SYNTHETIC_BOUNDARY_WITNESS",
+      "passed": true
+    },
+    {
+      "id": "LS10",
+      "expected_admission": false,
+      "observed_admission": false,
+      "specific_pairs": [],
+      "generic_pairs": 0,
+      "default_world_graph_empty": true,
+      "violation_components": [
+        "http://www.w3.org/ns/shacl#MinCountConstraintComponent"
+      ],
+      "source_classification": "SYNTHETIC_BOUNDARY_WITNESS",
+      "passed": true
+    },
+    {
+      "id": "LS11",
+      "expected_admission": false,
+      "observed_admission": false,
+      "specific_pairs": [],
+      "generic_pairs": 0,
+      "default_world_graph_empty": true,
+      "violation_components": [
+        "http://www.w3.org/ns/shacl#InConstraintComponent"
+      ],
+      "source_classification": "SYNTHETIC_BOUNDARY_WITNESS",
+      "passed": true
+    },
+    {
+      "id": "LS12",
+      "expected_admission": false,
+      "observed_admission": false,
+      "specific_pairs": [],
+      "generic_pairs": 0,
+      "default_world_graph_empty": true,
+      "violation_components": [
+        "http://www.w3.org/ns/shacl#NotConstraintComponent",
+        "http://www.w3.org/ns/shacl#SPARQLConstraintComponent"
+      ],
+      "source_classification": "SYNTHETIC_BOUNDARY_WITNESS",
+      "passed": true
+    },
+    {
+      "id": "LS13",
+      "expected_admission": false,
+      "observed_admission": false,
+      "specific_pairs": [],
+      "generic_pairs": 0,
+      "default_world_graph_empty": true,
+      "violation_components": [
+        "http://www.w3.org/ns/shacl#ClassConstraintComponent",
+        "http://www.w3.org/ns/shacl#NotConstraintComponent"
+      ],
+      "source_classification": "SYNTHETIC_BOUNDARY_WITNESS",
+      "passed": true
+    },
+    {
+      "id": "LS14",
+      "expected_admission": false,
+      "observed_admission": false,
+      "specific_pairs": [],
+      "generic_pairs": 0,
+      "default_world_graph_empty": true,
+      "violation_components": [
+        "http://www.w3.org/ns/shacl#NotConstraintComponent"
+      ],
+      "source_classification": "SYNTHETIC_BOUNDARY_WITNESS",
+      "passed": true
+    },
+    {
+      "id": "LS15",
+      "expected_admission": false,
+      "observed_admission": false,
+      "specific_pairs": [],
+      "generic_pairs": 0,
+      "default_world_graph_empty": true,
+      "violation_components": [
+        "http://www.w3.org/ns/shacl#SPARQLConstraintComponent"
+      ],
+      "source_classification": "SYNTHETIC_BOUNDARY_WITNESS",
+      "passed": true
+    },
+    {
+      "id": "LS16",
+      "expected_admission": false,
+      "observed_admission": false,
+      "specific_pairs": [],
+      "generic_pairs": 0,
+      "default_world_graph_empty": true,
+      "violation_components": [
+        "http://www.w3.org/ns/shacl#MinCountConstraintComponent"
+      ],
+      "source_classification": "SYNTHETIC_BOUNDARY_WITNESS",
+      "passed": true
+    },
+    {
+      "id": "LS17",
+      "expected_admission": true,
+      "observed_admission": true,
+      "specific_pairs": [
+        [
+          "origin",
+          "origin-a"
+        ],
+        [
+          "origin",
+          "origin-b"
+        ]
+      ],
+      "generic_pairs": 2,
+      "default_world_graph_empty": true,
+      "violation_components": [],
+      "source_classification": "SYNTHETIC_BOUNDARY_WITNESS",
+      "passed": true
+    },
+    {
+      "id": "LS18",
+      "expected_admission": true,
+      "observed_admission": true,
+      "specific_pairs": [
+        [
+          "destination",
+          "shared-site"
+        ],
+        [
+          "origin",
+          "shared-site"
+        ],
+        [
+          "storage",
+          "shared-site"
+        ]
+      ],
+      "generic_pairs": 1,
+      "default_world_graph_empty": true,
+      "violation_components": [],
+      "source_classification": "SYNTHETIC_BOUNDARY_WITNESS",
+      "passed": true
+    },
+    {
+      "id": "LS19",
+      "expected_admission": true,
+      "observed_admission": true,
+      "specific_pairs": [
+        [
+          "destination",
+          "site-b"
+        ],
+        [
+          "origin",
+          "site-a"
+        ]
+      ],
+      "generic_pairs": 2,
+      "default_world_graph_empty": true,
+      "violation_components": [],
+      "source_classification": "SYNTHETIC_BOUNDARY_WITNESS",
+      "passed": true
+    }
+  ],
+  "rdfs_probes": [
+    {
+      "case": "origin_implies_generic_only",
+      "passed": true
+    },
+    {
+      "case": "destination_implies_generic_only",
+      "passed": true
+    },
+    {
+      "case": "storage_implies_generic_only",
+      "passed": true
+    },
+    {
+      "case": "generic_does_not_guess_function",
+      "passed": true
+    },
+    {
+      "case": "registration_alone_invents_no_event_or_participation",
+      "passed": true
+    }
+  ],
+  "oracle_cases_passed": 19,
+  "rdfs_probes_passed": 5,
+  "protected_native_assembly_and_crosswalk_unchanged": true,
+  "source_qualified_candidates_only": true,
+  "default_world_truth_assertions_created": 0,
+  "model_promoted": false,
+  "independent_scientific_acceptance": false,
+  "whole_model_native_or_hermit_validation": false,
+  "source_policy_acceptances": "1/4",
+  "historical_orsd_author_acceptance": "0/83",
+  "new_expert_results": 0,
+  "pages_cutover_executed": false,
+  "scope": "Source-qualified synthetic claim admission and proposed relation RDFS entailment only. Fixed oracles predate implementation. Broad links do not invent site function,actual event,legal role,identity merge or world truth."
+}

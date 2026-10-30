@@ -1,0 +1,71 @@
+[
+  {
+    "id": "D-01",
+    "topic": "Small stable 2.1.0 support cut and deferral",
+    "status": "PROPOSED_AWAITING_ARAZ",
+    "recommended": "Approve a scoped stable core after CORE-001/002 dependency/compatibility review; retain unfinished modern native, modules, broader data, expert and product/research work as separately labeled future work",
+    "benefits": [
+      "Shortens the critical path",
+      "Delivers a reusable versioned contract",
+      "Preserves later scientific work without claiming it complete"
+    ],
+    "costs": [
+      "2.1.0 will support less than the entire current research candidate",
+      "Requires a precise artifact/import/claim boundary and some author review"
+    ],
+    "alternative": "Keep all original seven groups as all-at-once GA prerequisites",
+    "alternative_cost": "Stronger single comprehensive milestone but continued serialization and delayed release",
+    "approval_effect": "Only an explicit recorded scope amendment can replace the applicable original GA checklist; inventory is not final semantic acceptance"
+  },
+  {
+    "id": "D-02",
+    "topic": "Global reuse and local constraints",
+    "status": "DIRECTION_AUTHORIZED_IMPLEMENTATION_PENDING_REVIEW",
+    "recommended": "Keep identity/meaning in the core; place country/source/application completeness, cardinality and database restrictions in named opt-in profiles unless globally justified",
+    "benefits": [
+      "Global extension and sparse data remain usable",
+      "RDB/SHACL implementation needs do not accidentally become universal axioms"
+    ],
+    "costs": [
+      "Profile selection and validation must be explicit",
+      "Some applications need a stricter local schema"
+    ],
+    "alternative": "Apply one strict global implementation schema to all use cases",
+    "alternative_cost": "Fewer profile choices but unsupported global restrictions and poor reuse",
+    "approval_effect": "The user authorized the design direction, not blanket deletion/weakening of current axioms; review each actual semantic delta"
+  },
+  {
+    "id": "D-03",
+    "topic": "Reuse license for assets with confirmed rights",
+    "status": "PROPOSED_AWAITING_RIGHTSHOLDER_CONFIRMATION",
+    "recommended": "After rights inventory: CC BY 4.0 for owned ontology/docs and MIT for owned software; preserve external data/software terms and notices",
+    "benefits": [
+      "Clear international reuse and modification route",
+      "Attribution for research artifacts and permissive code reuse"
+    ],
+    "costs": [
+      "Rights holders and asset boundaries need confirmation",
+      "Third-party content cannot be covered by an invented blanket grant"
+    ],
+    "alternative": "Retain existing per-asset notices while finalizing ownership",
+    "alternative_cost": "Current publication can retain its limits, but broad reuse permissions remain unclear",
+    "approval_effect": "No root LICENSE or asset relicense is applied by this proposal; confirm authority before adopting any grant"
+  },
+  {
+    "id": "SC-REL",
+    "topic": "RelComp RC-A01 / RC-A02",
+    "status": "PROPOSED_AWAITING_ARAZ_SCIENTIFIC_DISPOSITION",
+    "recommended": "Retain the named positive-lower shared-ATarget profile, unchanged archived channel and visible optional-example discrepancy",
+    "benefits": [
+      "Keeps text/engine/example differences inspectable",
+      "Avoids silently declaring a zero-lower association invalid or rewriting official history"
+    ],
+    "costs": [
+      "The optional BugTracker example remains a recorded interpretation tension",
+      "Acceptance is only for this bounded profile, not the full model"
+    ],
+    "alternative": "Revise the semantic profile to include the optional case after explicit new-source adjudication",
+    "alternative_cost": "Needs a new named/versioned oracle and boundary tests; cannot rewrite old outcomes",
+    "approval_effect": "An actual ACCEPT/REVISE/DEFER response with rationale closes only this card; it neither approves the other three policies nor the full ontology"
+  }
+]

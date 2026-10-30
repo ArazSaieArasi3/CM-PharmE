@@ -1,0 +1,71 @@
+{
+  "relation": "operates",
+  "source_native": "v2/ontology/candidates/2.1.0-alpha.1-g3-2a-native-review/ontouml.json",
+  "source_owl": "v2/ontology/candidates/2.1.0-alpha.1-g3d-candidate/active.ttl",
+  "source_fixture": "v2/ontology/candidates/2.1.0-alpha.1-g3d-candidate/lab/legacy-contract/fixtures.json",
+  "ontouml": "rel-operates isDerived=true, stereotype=material; operationOrganization and operationFacility are mediation from FacilityOperation to role subtypes of Organization and Facility.",
+  "rule": "operates(o,f,t) iff there exists FacilityOperation r with operationOrganization(r,oRole), operationFacility(r,fRole), oRole is an Organization o, fRole is a Facility f, and r is valid at t. Match the SAME relator r; preserve its source and validity.",
+  "caveat": "The legacy relational fixtures represent role-bearing entity IDs directly; a production rule must make the Role→Kind identity link explicit. G3d OWL has a derivedFromRelator annotation but no executable property chain or derivation axiom.",
+  "fixture_results": [
+    {
+      "id": "FacilityOperation-minimal",
+      "expected_valid": true,
+      "actual_valid": true,
+      "expected_rule": null,
+      "actual_rule": null,
+      "derived_pairs": [
+        [
+          "operator0",
+          "facility0"
+        ]
+      ],
+      "pass": true
+    },
+    {
+      "id": "FacilityOperation-missing-operator",
+      "expected_valid": false,
+      "actual_valid": false,
+      "expected_rule": "CARDINALITY",
+      "actual_rule": "CARDINALITY",
+      "derived_pairs": [],
+      "pass": true
+    },
+    {
+      "id": "FacilityOperation-event-in-operator",
+      "expected_valid": false,
+      "actual_valid": false,
+      "expected_rule": "KIND",
+      "actual_rule": "KIND",
+      "derived_pairs": [],
+      "pass": true
+    },
+    {
+      "id": "FacilityOperation-missing-facility",
+      "expected_valid": false,
+      "actual_valid": false,
+      "expected_rule": "CARDINALITY",
+      "actual_rule": "CARDINALITY",
+      "derived_pairs": [],
+      "pass": true
+    },
+    {
+      "id": "FacilityOperation-event-in-facility",
+      "expected_valid": false,
+      "actual_valid": false,
+      "expected_rule": "KIND",
+      "actual_rule": "KIND",
+      "derived_pairs": [],
+      "pass": true
+    },
+    {
+      "id": "FacilityOperation-excess-facility",
+      "expected_valid": false,
+      "actual_valid": false,
+      "expected_rule": "CARDINALITY",
+      "actual_rule": "CARDINALITY",
+      "derived_pairs": [],
+      "pass": true
+    }
+  ],
+  "author_disposition": "PENDING"
+}

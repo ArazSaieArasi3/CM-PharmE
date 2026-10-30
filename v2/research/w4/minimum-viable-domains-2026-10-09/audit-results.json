@@ -1,0 +1,96 @@
+{
+  "status": "PASS_PACKAGE_INTEGRITY_AND_BASELINE_TOPOLOGY_ONLY",
+  "semantic_tests_run": false,
+  "as_of": "2026-10-09",
+  "baseline_commit": "71a8615d7e89b2ee735ca21be4e6f49683816555",
+  "baseline_sha256": {
+    "ontouml.json": "264d26d263e5fa25e432dc65dd6b0402bf274958c9d18c32be2d2583634deaca",
+    "active.ttl": "c62f0abb21df3aad36154ed6aa04ab0287bc7ce7a5fd6a04effc8cd338f6f304",
+    "constraints.ttl": "510a65519ae0534c48c98250134bc8a4b2b658dd571e185c030af112ef461229"
+  },
+  "native_elements": 536,
+  "native_types": {
+    "Package": 1,
+    "Class": 144,
+    "Generalization": 99,
+    "BinaryRelation": 86,
+    "Property": 172,
+    "GeneralizationSet": 9,
+    "Note": 25
+  },
+  "named_classes": 138,
+  "fully_typed_named_class_relations": 75,
+  "undirected_unique_edges": 170,
+  "components": 14,
+  "largest_component": 125,
+  "isolates": [
+    "AdverseEventReportingActivity",
+    "BusinessArchitectureView",
+    "DigitalInformationSystemComponent",
+    "DistributionLogisticsActivity",
+    "ManufacturingActivity",
+    "PharmacovigilanceRequirement",
+    "PostMarketSurveillanceActivity",
+    "ProcurementActivity",
+    "RegulatoryRequirement",
+    "RiskTreatmentActivity",
+    "RiskTreatmentPlan",
+    "ServiceOfferingSpecification",
+    "StockoutSituation"
+  ],
+  "module_counts": [
+    {
+      "domain": "Risk Management",
+      "existing": 3,
+      "isolates": [
+        "RiskTreatmentActivity",
+        "RiskTreatmentPlan"
+      ],
+      "candidate_slots": 6,
+      "proposed_new_slots": 3
+    },
+    {
+      "domain": "Pharmacovigilance",
+      "existing": 3,
+      "isolates": [
+        "AdverseEventReportingActivity",
+        "PharmacovigilanceRequirement",
+        "PostMarketSurveillanceActivity"
+      ],
+      "candidate_slots": 7,
+      "proposed_new_slots": 4
+    },
+    {
+      "domain": "Business Architecture",
+      "existing": 5,
+      "isolates": [
+        "BusinessArchitectureView",
+        "ServiceOfferingSpecification"
+      ],
+      "candidate_slots": 5,
+      "proposed_new_slots": 0
+    },
+    {
+      "domain": "Digital Systems",
+      "existing": 1,
+      "isolates": [
+        "DigitalInformationSystemComponent"
+      ],
+      "candidate_slots": 3,
+      "proposed_new_slots": 2
+    }
+  ],
+  "requirements": 24,
+  "competency_questions": 12,
+  "designed_scenarios": 16,
+  "proposed_relation_designs": 19,
+  "proposed_new_concept_slots": 9,
+  "preserved_work_items": 23,
+  "source_records": 7,
+  "limits": [
+    "No official OntoUML detector or reasoner rerun in this documentation turn.",
+    "Scenario designs have not executed.",
+    "Candidate concept counts are not accepted ontology changes.",
+    "Source-informed proposed requirements are not universal regulatory requirements."
+  ]
+}

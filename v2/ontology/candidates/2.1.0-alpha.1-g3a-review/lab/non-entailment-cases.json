@@ -1,0 +1,77 @@
+{
+  "method": "Joint consistency with explicit class complements supplies countermodels for these twelve particular unwanted entailments. This is not a complete modal/temporal role test.",
+  "cases": [
+    {
+      "id": "registration-not-manufacture",
+      "asserted_type": "Organization",
+      "context": "EstablishmentRegistration",
+      "not_entailed": "ManufacturerRole"
+    },
+    {
+      "id": "registered-site-not-manufacturing-site",
+      "asserted_type": "Facility",
+      "context": "EstablishmentRegistration",
+      "not_entailed": "ManufacturingSiteRole"
+    },
+    {
+      "id": "operator-not-manufacturer",
+      "asserted_type": "Organization",
+      "context": "FacilityOperation",
+      "not_entailed": "ManufacturerRole"
+    },
+    {
+      "id": "operated-site-not-manufacturing-site",
+      "asserted_type": "Facility",
+      "context": "FacilityOperation",
+      "not_entailed": "ManufacturingSiteRole"
+    },
+    {
+      "id": "generic-license-not-import-scope",
+      "asserted_type": "Organization",
+      "context": "RegulatoryAuthorization",
+      "not_entailed": "ImporterRole"
+    },
+    {
+      "id": "generic-license-not-wholesale",
+      "asserted_type": "Organization",
+      "context": "RegulatoryAuthorization",
+      "not_entailed": "WholesaleDistributorRole"
+    },
+    {
+      "id": "generic-license-not-3pl",
+      "asserted_type": "Organization",
+      "context": "RegulatoryAuthorization",
+      "not_entailed": "ThirdPartyLogisticsProviderRole"
+    },
+    {
+      "id": "generic-site-license-not-distribution-use",
+      "asserted_type": "Facility",
+      "context": "RegulatoryAuthorization",
+      "not_entailed": "DistributionSiteRole"
+    },
+    {
+      "id": "labeler-not-manufacturer",
+      "asserted_type": "ListingResponsibleOrganizationRole",
+      "context": null,
+      "not_entailed": "ManufacturerRole"
+    },
+    {
+      "id": "listing-responsibility-not-payment",
+      "asserted_type": "ListingResponsibleOrganizationRole",
+      "context": null,
+      "not_entailed": "PayerFundingOrganizationRole"
+    },
+    {
+      "id": "organization-not-authority",
+      "asserted_type": "Organization",
+      "context": null,
+      "not_entailed": "RegulatoryAuthorityRole"
+    },
+    {
+      "id": "broad-responsibility-not-necessarily-listed",
+      "asserted_type": "ProductResponsibleLabelerRole",
+      "context": null,
+      "not_entailed": "ListingResponsibleOrganizationRole"
+    }
+  ]
+}

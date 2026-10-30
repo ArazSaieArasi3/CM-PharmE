@@ -1,0 +1,11 @@
+@prefix ns1: <https://w3id.org/cm-pharme/experimental/refinement/> .
+
+<urn:cmpe-lab:contactRecord> a <https://w3id.org/cm-pharme/2.1/SourceRecord> ;
+    ns1:carrierClaim <urn:cmpe-lab:contactClaim> .
+
+<urn:cmpe-lab:org> a <https://w3id.org/cm-pharme/2.1/Organization> .
+
+<urn:cmpe-lab:org2> a <https://w3id.org/cm-pharme/2.1/Organization> .
+
+<urn:cmpe-lab:contactClaim> a <https://w3id.org/cm-pharme/2.1/Assertion> ;
+    ns1:claimText "Two organizations met; no agreement is asserted." .

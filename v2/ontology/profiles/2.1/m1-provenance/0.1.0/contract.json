@@ -1,0 +1,69 @@
+{
+  "schema_version": "CMPE-M1ProvenanceProfile/0.1.0",
+  "target_ontology": "2.1.0",
+  "issue": 331,
+  "date": "2026-10-28",
+  "source_commit": "289a64b91515bf5c6c91d9759fc6d37de50e34cc",
+  "source_sha256": {
+    "v2/ontology/candidates/2.1.0-alpha.1-p3-facility-operation/active.ttl": "93f7283f24213689f945a44685da5dd02469efe41ac856d59c4902061ea2a48d",
+    "v2/ontology/candidates/2.1.0-alpha.1-p3-facility-operation/constraints.ttl": "c147ac55fa6ce34d1ae41949ee0cd068b6da2750be1002a0dbce86f626ed2470",
+    "v2/data/migrations/2.1/0.2.0/verify_m1.py": "d07d944b4fe002ccdf36a94642420e39d4fabc292bcfbc2dddcfb2d966323642",
+    "v2/data/migrations/2.1/0.2.0/scope.json": "259f1f91b2e665c8a08cb6603bd62032edc1876d7ba7c1c6b31cee30198008a0",
+    "v2/data/db/schema.sql": "1857a42d50da510f43198e47ca02ec56d255f9bb5dec0e38fef344057e8f8f0b",
+    "v2/release/2.1/core/0.1.0/inventory.json": "33032cd475b143184f6e023dcf48802baf76d1d7c9afa78e7797aa6c9033719d"
+  },
+  "selected_terms": [
+    "Dataset",
+    "DatasetRelease",
+    "SourceRecord",
+    "ProvenanceActivity",
+    "hasDatasetRelease",
+    "containsSourceRecord"
+  ],
+  "namespace": "https://w3id.org/cm-pharme/2.1/",
+  "instance_namespace": "https://w3id.org/cm-pharme/2.1/instance/",
+  "profile_namespace": "https://w3id.org/cm-pharme/2.1/profiles/m1-provenance/0.1.0/",
+  "isolation": {
+    "copy_exact_defining_triples": true,
+    "expected_defining_triples": 30,
+    "owl_imports_allowed": false,
+    "incoming_axiom_dispositions": "incoming-axioms.csv",
+    "full_semantic_module_equivalence_claimed": false
+  },
+  "admission": {
+    "require_nonempty_dataset_release_record_scope": true,
+    "explicit_type_required": true,
+    "extra_metadata_allowed": true,
+    "dataset": "IRI; one nonempty string DOI/source identifier and at least one explicitly typed release",
+    "release": "IRI; one nonempty public identifier; exactly one owning dataset and at least one typed source record",
+    "record": "IRI; one canonical JSON [release public ID, integer row, opaque nonempty source hash] identifier; one row, hash and owning release; zero or one typed run",
+    "activity": "IRI; one nonempty public identifier and at least one generated record; a run is optional",
+    "local_kind_separation": "Focused nodes cannot have more than one of the four M1 export types; not an added universal OWL disjointness axiom",
+    "identity": "Existing percent-encoded M1 instance IRI and composite key rules; no global owl:sameAs inference",
+    "row_bound": "xsd:integer; no invented positivity restriction",
+    "hash_bound": "Opaque nonempty string; no digest algorithm inferred",
+    "profile_only_constraints": true
+  },
+  "query": {
+    "path": "query.rq",
+    "sha256": "934344b928511424e95486231f7d6ffb2f68e25cd18fbaba07bf3c0fa645933c",
+    "source": "Exact PAIR_SPARQL from historical M1; fixture golden tuples frozen separately"
+  },
+  "direct_python_dependencies": {
+    "rdflib": "7.5.0",
+    "pyshacl": "0.31.0",
+    "owlrl": "7.1.4",
+    "owlready2": "0.49"
+  },
+  "license": {
+    "ontology_shapes_fixtures_and_original_docs": "CC-BY-4.0",
+    "original_code": "MIT",
+    "authority": "Approved D-03; preserve source attribution; no external asset/runtime relicense"
+  },
+  "limits": [
+    "Synthetic profile witnesses only; copied-W6 integration is the next separate packet",
+    "No full modern native/antipattern/ORSD/expert acceptance",
+    "No new SQL schema migration or published RC modification",
+    "Formal OWL existence and profile data admission remain distinct"
+  ]
+}
