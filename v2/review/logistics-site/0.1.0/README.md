@@ -65,8 +65,11 @@ python v2/review/logistics-site/0.1.0/verify.py \
 
 [report.json](report.json) and [boundary-results.csv](boundary-results.csv) expose
 each expected/observed result. Local execution versions and hosted execution
-identities are recorded separately when verified; no identical-runtime claim is
-made. Source-policy acceptance remains1/4, historical ORSD author acceptance0/83,
+identities are recorded separately in [ci-evidence.json](ci-evidence.json); both
+hosted archives were downloaded, digest-verified and compared against the local
+report/CSV bytes. Push and PR-merge trees match. All 35 executions across 33
+workflow families pass on implementation 2ae2f63e0fbf2109ec32ecd21ef41ee69601c048.
+No identical-runtime claim is made. Source-policy acceptance remains1/4, historical ORSD author acceptance0/83,
 WholeOver author disposition pending and new expert results zero.
 
 This is the concrete decision/evidence handoff for one bounded implementation.
@@ -75,3 +78,12 @@ alignment and complete-model release/publication gates remain open. The separate
 [Pages replacement policy](../../../release/2.2/pages-cutover/0.1.0/README.md)
 implements Araz's future publication direction; no old public model is deleted
 by this preparation packet.
+
+## Completed preparation and next packet
+
+#345 is complete as decision/evidence preparation. The recommended option B is
+reviewable; actual scientific author disposition remains pending. #347 is the
+sole READY technical review increment. It may implement the provisional pattern
+without promoting it to an accepted whole-model ontology. The comprehensive 2.2
+release and authorized Pages replacement remain blocked by their own full-model
+gates.
