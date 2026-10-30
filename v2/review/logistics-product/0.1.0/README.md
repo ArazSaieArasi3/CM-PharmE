@@ -32,3 +32,7 @@ triples remain source-qualified; they are not promoted to world truth.
 The frozen packet changes no native/OWL artifact and does not close the
 complete 2.2 release gate. A separate implementation/probe verifies these
 boundaries and pins its own hosted evidence.
+
+The [hosted receipt](ci-evidence.json) pins the frozen oracle commit, both
+independent successful runs and byte-equal outputs. The bounded choice is
+authorized under AUTH-22-01; full scientific model validation remains open.

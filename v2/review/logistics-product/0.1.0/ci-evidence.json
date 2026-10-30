@@ -1,0 +1,48 @@
+{
+  "schema_version": "CMPE-LogisticsProductCIReceipt/0.1.0",
+  "issue": 348,
+  "oracle_freeze_commit": "34a1553f341f20f046482a51d811df6eadc98c74",
+  "implementation_commit": "24cc101d73043f67c1110c3570410b6ef12aa0c0",
+  "implementation_tree": "bfa08a8a9f6a67e24b1586d51f570d080c0bbef6",
+  "pr_merge_commit": "ace5ae761b5b6d8ef03b44644152b7900f004001",
+  "pr_merge_tree_equal": true,
+  "hosted_artifacts": [
+    {
+      "kind": "push",
+      "artifact_sha256": "f77d09f8e488ce90dd3863d6cbd3a39ed371f7dd9be7fdcb72e01afb9da39cb6",
+      "execution": {
+        "EXECUTION_SHA": "24cc101d73043f67c1110c3570410b6ef12aa0c0",
+        "EXECUTION_REF": "refs/heads/v2/connectivity-audit-2-1-candidate",
+        "EXECUTION_RUN": "41041666869"
+      },
+      "report_and_csv_equal_local": true,
+      "freeze_proof": {
+        "commit": "34a1553f341f20f046482a51d811df6eadc98c74",
+        "oracle_files_preserved": true,
+        "probe_absent_at_freeze": true
+      }
+    },
+    {
+      "kind": "pr",
+      "artifact_sha256": "f75803b4de7e660281fe5b5c545fdf1269165bf7725214341957ed24297059a8",
+      "execution": {
+        "EXECUTION_SHA": "ace5ae761b5b6d8ef03b44644152b7900f004001",
+        "EXECUTION_REF": "refs/pull/305/merge",
+        "EXECUTION_RUN": "41041675659"
+      },
+      "report_and_csv_equal_local": true,
+      "freeze_proof": {
+        "commit": "34a1553f341f20f046482a51d811df6eadc98c74",
+        "oracle_files_preserved": true,
+        "probe_absent_at_freeze": true
+      }
+    }
+  ],
+  "fixed_single_cases": 12,
+  "fixed_combined_cases": 3,
+  "decision": "LS-PRODUCT-01",
+  "authority": "AUTH-22-01",
+  "decision_scope": "ADOPTED_BOUNDED_INTERPRETATION_WITHOUT_FULL_MODEL_VALIDATION",
+  "publication_ready": false,
+  "pages_cutover_executed": false
+}
