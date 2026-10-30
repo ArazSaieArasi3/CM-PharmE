@@ -1,0 +1,121 @@
+{
+  "schema_version": "CMPE-LogisticsProductFixedOracles/0.1.0",
+  "cases": [
+    {
+      "id": "performed_named_type",
+      "status": "performed",
+      "product_class": "MedicinalProduct",
+      "record_class": "SourceRecord",
+      "admit": true
+    },
+    {
+      "id": "planned_named_type",
+      "status": "planned",
+      "product_class": "MedicinalProduct",
+      "record_class": "SourceRecord",
+      "admit": false
+    },
+    {
+      "id": "unknown_occurrence",
+      "status": "unknown",
+      "product_class": "MedicinalProduct",
+      "record_class": "SourceRecord",
+      "admit": false
+    },
+    {
+      "id": "registration_only",
+      "status": "none",
+      "product_class": "MedicinalProduct",
+      "record_class": "SourceRecord",
+      "admit": false
+    },
+    {
+      "id": "listing_only",
+      "status": "none",
+      "product_class": "MedicinalProduct",
+      "record_class": "SourceRecord",
+      "admit": false
+    },
+    {
+      "id": "organization_as_product",
+      "status": "performed",
+      "product_class": "Organization",
+      "record_class": "SourceRecord",
+      "admit": false
+    },
+    {
+      "id": "physical_item_as_type",
+      "status": "performed",
+      "product_class": "PhysicalItem",
+      "record_class": "SourceRecord",
+      "admit": false
+    },
+    {
+      "id": "no_product_type",
+      "status": "performed",
+      "product_class": "none",
+      "record_class": "SourceRecord",
+      "admit": false
+    },
+    {
+      "id": "no_source_record",
+      "status": "performed",
+      "product_class": "MedicinalProduct",
+      "record_class": "none",
+      "admit": false
+    },
+    {
+      "id": "consignment_label_only",
+      "status": "none",
+      "product_class": "Consignment",
+      "record_class": "SourceRecord",
+      "admit": false
+    },
+    {
+      "id": "batch_identifier_only",
+      "status": "none",
+      "product_class": "BatchIdentifier",
+      "record_class": "SourceRecord",
+      "admit": false
+    },
+    {
+      "id": "performed_second_type",
+      "status": "performed",
+      "product_class": "MedicinalProduct",
+      "record_class": "SourceRecord",
+      "admit": true
+    }
+  ],
+  "combined": [
+    {
+      "id": "two_product_types_same_event",
+      "member_cases": [
+        "performed_named_type",
+        "performed_second_type"
+      ],
+      "expected_candidate_links": 2
+    },
+    {
+      "id": "same_type_different_events",
+      "member_cases": [
+        "performed_named_type",
+        "performed_second_type"
+      ],
+      "expected_candidate_links": 2
+    },
+    {
+      "id": "type_does_not_identify_batch",
+      "member_cases": [
+        "performed_named_type"
+      ],
+      "expected_batch_links": 0
+    }
+  ],
+  "negative_inferences": [
+    "registration_to_event",
+    "listing_to_event",
+    "type_to_batch",
+    "generic_type_to_consignment",
+    "source_claim_to_default_world_truth"
+  ]
+}

@@ -19,6 +19,13 @@ accepted decisions. Follow newer direct user instructions if they supersede them
   Preserve source/release/tag/evidence history and unrelated V1. Do not ask again
   for this publication permission; verify actual full-model/candidate readiness.
 
+- AUTH-22-01 (Araz, 2026-10-30) delegates bounded scientific and modeling
+  choices needed to reach comprehensive 2.2 to the assistant. Record each
+  choice with alternatives, source evidence, benefits, costs, uncertainty,
+  verification and release effect. Continue without renewed approval for
+  decisions inside this scope. This delegation does not create external
+  expert evidence, validate an untested model or waive release gates.
+
 - Read `v2/release/current.json` and its current approved planning record first.
   Older versioned review/CI records describe their own pinned scope; do not rewrite
   them to manufacture current acceptance.
