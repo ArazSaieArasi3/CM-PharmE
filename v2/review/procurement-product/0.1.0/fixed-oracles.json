@@ -1,0 +1,159 @@
+{
+  "schema_version": "CMPE-ProcurementProductFixedOracles/0.1.0",
+  "cases": [
+    {
+      "id": "executed_invoice",
+      "status": "executed",
+      "product_class": "MedicinalProduct",
+      "record_kind": "purchase_invoice",
+      "date": "2026-10-30",
+      "admit": true
+    },
+    {
+      "id": "acquired_record",
+      "status": "acquired",
+      "product_class": "MedicinalProduct",
+      "record_kind": "acquisition_record",
+      "date": "2026-10-30",
+      "admit": true
+    },
+    {
+      "id": "planned_order",
+      "status": "planned",
+      "product_class": "MedicinalProduct",
+      "record_kind": "draft_order",
+      "date": "2026-10-30",
+      "admit": false
+    },
+    {
+      "id": "approved_order_only",
+      "status": "approved",
+      "product_class": "MedicinalProduct",
+      "record_kind": "draft_order",
+      "date": "2026-10-30",
+      "admit": false
+    },
+    {
+      "id": "supplier_qualification_only",
+      "status": "none",
+      "product_class": "MedicinalProduct",
+      "record_kind": "supplier_qualification",
+      "date": "2026-10-30",
+      "admit": false
+    },
+    {
+      "id": "offer_listing_only",
+      "status": "none",
+      "product_class": "MedicinalProduct",
+      "record_kind": "offer_listing",
+      "date": "2026-10-30",
+      "admit": false
+    },
+    {
+      "id": "receipt_only",
+      "status": "none",
+      "product_class": "MedicinalProduct",
+      "record_kind": "receipt_only",
+      "date": "2026-10-30",
+      "admit": false
+    },
+    {
+      "id": "unknown_status",
+      "status": "unknown",
+      "product_class": "MedicinalProduct",
+      "record_kind": "purchase_invoice",
+      "date": "2026-10-30",
+      "admit": false
+    },
+    {
+      "id": "executed_without_record",
+      "status": "executed",
+      "product_class": "MedicinalProduct",
+      "record_kind": "none",
+      "date": "2026-10-30",
+      "admit": false
+    },
+    {
+      "id": "executed_without_date",
+      "status": "executed",
+      "product_class": "MedicinalProduct",
+      "record_kind": "purchase_invoice",
+      "date": "none",
+      "admit": false
+    },
+    {
+      "id": "physical_item_as_type",
+      "status": "executed",
+      "product_class": "PhysicalItem",
+      "record_kind": "purchase_invoice",
+      "date": "2026-10-30",
+      "admit": false
+    },
+    {
+      "id": "batch_as_type",
+      "status": "executed",
+      "product_class": "Batch",
+      "record_kind": "purchase_invoice",
+      "date": "2026-10-30",
+      "admit": false
+    },
+    {
+      "id": "organization_as_type",
+      "status": "executed",
+      "product_class": "Organization",
+      "record_kind": "purchase_invoice",
+      "date": "2026-10-30",
+      "admit": false
+    },
+    {
+      "id": "executed_without_product",
+      "status": "executed",
+      "product_class": "none",
+      "record_kind": "purchase_invoice",
+      "date": "2026-10-30",
+      "admit": false
+    }
+  ],
+  "combined": [
+    {
+      "id": "two_types_same_purchase",
+      "member_cases": [
+        "executed_invoice",
+        "acquired_record"
+      ],
+      "expected_candidate_links": 2
+    },
+    {
+      "id": "same_type_two_purchases",
+      "member_cases": [
+        "executed_invoice",
+        "acquired_record"
+      ],
+      "expected_candidate_links": 2
+    },
+    {
+      "id": "executed_and_planned_same_type",
+      "member_cases": [
+        "executed_invoice",
+        "planned_order"
+      ],
+      "expected_candidate_links": 1
+    },
+    {
+      "id": "purchase_does_not_identify_batch_or_receipt",
+      "member_cases": [
+        "executed_invoice"
+      ],
+      "expected_candidate_links": 1,
+      "expected_batch_links": 0,
+      "expected_receipt_links": 0
+    }
+  ],
+  "negative_inferences": [
+    "planned_order_to_executed_procurement",
+    "supplier_qualification_to_purchase",
+    "purchase_to_receipt_or_delivery",
+    "product_type_to_batch_or_consignment",
+    "source_candidate_to_default_world_truth"
+  ]
+}

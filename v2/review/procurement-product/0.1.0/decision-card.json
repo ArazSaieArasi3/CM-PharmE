@@ -1,0 +1,54 @@
+{
+  "schema_version": "CMPE-ProcurementProductDecision/0.1.0",
+  "issue": 350,
+  "decision_id": "AUTH-22-01/PR-PRODUCT-01",
+  "authority": "Araz delegated bounded 2.2 decisions 2026-10-30",
+  "current_relation": "https://w3id.org/cm-pharme/experimental/coherence/procurementProduct",
+  "source": "ProcurementActivity",
+  "target": "MedicinalProduct",
+  "alternatives": [
+    {
+      "id": "A",
+      "choice": "Unqualified planned or executed procurement/product link",
+      "benefit": "Convenient for broad intent search",
+      "cost": "Planned orders and supplier offers would be confused with executed acquisition",
+      "decision": "REJECT"
+    },
+    {
+      "id": "B",
+      "choice": "Documented executed purchase/acquisition event associated with a medicinal product type, admitted only as a source-qualified candidate",
+      "benefit": "Keeps existing typed relation while separating intent, purchase, receipt and item identity",
+      "cost": "Does not encode planned intent, line-item quantity, batch or delivery; requires explicit transaction evidence",
+      "decision": "ADOPT_FOR_BOUNDED_REVIEW"
+    },
+    {
+      "id": "C",
+      "choice": "Create procurement line item, consignment and batch participation now",
+      "benefit": "Could answer quantity and batch questions after proper modeling",
+      "cost": "No agreed identity, evidence, cardinality or CQ contract yet; risks false precision",
+      "decision": "DEFER_TO_EXPLICIT_REQUIREMENT"
+    }
+  ],
+  "selected": "B",
+  "selected_status": "DELEGATED_BOUNDED_MODELING_DECISION",
+  "meaning": "A particular executed purchase or acquisition activity is documented as concerning this medicinal product type. A source-qualified candidate statement is not verified world truth.",
+  "identity": "Procurement event, medicinal product type, physical item/batch, order, purchase invoice, receipt and source record remain distinct; neither product type nor order identity yields batch identity.",
+  "direction": "ProcurementActivity to MedicinalProduct",
+  "temporal_scope": "Executed purchase/acquisition evidenced by source record and transaction date; no receipt, supply, fulfillment or delivery follows from it.",
+  "global_bounds": "0..* provisional at both ends; no universal occurrence, existential, exact-one, functional or compliance axiom.",
+  "local_admission": "An opted-in claim has one ProcurementActivity event, one MedicinalProduct type, one performed transaction status, one transaction date and one SourceRecord with purchase-invoice or acquisition-record evidence; source record graph remains candidate only.",
+  "native": "Existing null stereotype and optional typed ends remain; full OntoUML Event and procurement line semantics pending.",
+  "owl": "Existing proposed object property domain/range only in bounded review; no inference to receipt, batch or supplier qualification.",
+  "shacl": "Local source-qualified candidate admission; unknown, planned or qualification-only evidence does not project.",
+  "no_implied_truth": [
+    "planned order implies no executed procurement",
+    "supplier offer or qualification implies no executed procurement",
+    "purchase implies no receipt, fulfillment or delivery",
+    "type implies no batch/item/consignment",
+    "source claim implies no verified default-world assertion"
+  ],
+  "release_effect": "One of 47 remaining original experimental proposals receives bounded interpretation; 46 remain after this choice. No complete-model acceptance.",
+  "unchanged_other_proposals": 46,
+  "candidate_695_elements_unchanged_by_this_decision": true,
+  "scientific_full_model_validation": false
+}
